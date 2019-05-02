@@ -2,76 +2,74 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7198912347
-	for <lists+linux-um@lfdr.de>; Thu,  2 May 2019 22:26:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C83A112365
+	for <lists+linux-um@lfdr.de>; Thu,  2 May 2019 22:30:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DzNS3clQho5O1FoKdw4W9XwEJ9W90xSgRi+jHGCysWQ=; b=rhxM4GFV48QXSW
-	cD3ZcSH9ltoj+gY/URNjrAoBNT8VawQ3/QROhBabESC3p1plUPmhIdn6Ve5Qnfze8dV6zjrmvChMw
-	gFaMMvDrDCI+MKDN2LY/Ir9o3dY/LwzUnsEQdyDaYxsSVSjuD1jVIzNUTZ8gcn4I8pE/vuRvWA1K3
-	h2EXqY5gVRlJJmYsgScDLIi8EUnbbufIzWKYzBu6VyDTcd4ditZa+TOFF9obKu05ll6St+ZqciCR7
-	WLHs2a+C8ag1PjB3ZTsPiP5fuzhJSX8sRfvV5hQspAMsRprKjpmnEc27CGPWFVmubkhDVbEsEt2JG
-	MlJ6WfZhbWczzq7JfbYg==;
+	List-Owner; bh=0T9bx10K+A7PbLa6jLn5nzPpWfv9XwiIsMd4i3JPgvI=; b=Zk7LfSnOb6Q0ci
+	fUZwcOoGTWxEjAH3ypGT8PulN69gLaHzJgO7+Ac7fLncGgSXg2a1tOJcYtEcYfWJD+5QDwe/k4ZGt
+	vAtdMGoyGrItiFaLu0RynmFAORAMXMSLBJkmLQgVRWB4MyEt0nPSHnAw95uqMWaa3dHKhGKCEmnJR
+	/xKGVakDivf6Os4+R9d9A2/J3PWEkZmddOmrnEP9/qgzrAUlub/C1il2mKBQ+XZEMtPfw+IP7FNIj
+	Pjqfxruceeo8EZUeb/V2ekG9wNY8EWnXwo3CQlXiLvM445ezq6qzz+FWsRlw8dEF8f8Fc9Wdz8o2r
+	MgAMF3XjkGsFlcA5gvgg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMIHT-0005oA-6M; Thu, 02 May 2019 20:26:11 +0000
-Received: from mail-ot1-x342.google.com ([2607:f8b0:4864:20::342])
+	id 1hMILb-0007RX-6Z; Thu, 02 May 2019 20:30:27 +0000
+Received: from mail-ot1-x344.google.com ([2607:f8b0:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMIHP-0005nZ-U9
- for linux-um@lists.infradead.org; Thu, 02 May 2019 20:26:09 +0000
-Received: by mail-ot1-x342.google.com with SMTP id r20so3346936otg.4
- for <linux-um@lists.infradead.org>; Thu, 02 May 2019 13:26:07 -0700 (PDT)
+ id 1hMILY-0007R4-Fd
+ for linux-um@lists.infradead.org; Thu, 02 May 2019 20:30:25 +0000
+Received: by mail-ot1-x344.google.com with SMTP id g24so3367637otq.2
+ for <linux-um@lists.infradead.org>; Thu, 02 May 2019 13:30:24 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=UjYVT5cAdmQKUfv9t8ccIVDdyBls+aL8RkatsPsXvcs=;
- b=S/NLBkmmg3Md+sTx08gED5HrktmpwZikr8idsPoedLBx4NGY0vsICG/2JByh1OPLMl
- SoIkyImRxqPDEOFyC2ZMo66T4y64AzxZJe60LUPIIZ+2whbKVnm1u/h2cZWzkh0Pg7xc
- EXNw4yJNZ9fhJbGVtdrs9Sah16nUmTboVs4KkvhykHpn/i4zj9XsNumXBLK6Ynb0YPNG
- +tpKFc1Qf+4khDJxrAPPVZg4LS8WUK6j1vznFw5a8jr0zVqX9peLg5vYA1eBwQqixHhg
- xvPSDH5tHp5fJ/MAFS5gSf8uCUub0+kg9vZwn+lDYmBqYVC0qg8nx8pyREf5ogAUd63R
- E26Q==
+ :cc; bh=EDdiyphkogtVcXTbSVRyR+FjzQZde+G185126UMJh7I=;
+ b=gITVrJC9deQ8wHwXinOhDV5dI98+XHC/WuqFuL8GH7a8CRP7Weez43rOFpDLFNlC0p
+ SurYDhddnsqnL5Ihvys33lK/4j+PLxs8IphZcAQuHXXE7X5COStC3ZBhj/5h/Hdg9FPW
+ sQYG3mb/RBDu620PDIXl0abFAqievobMhbfvYW6GdeEoPEN8iXGYFBkxbfpJn8Y1y4f8
+ F6SjQjXGRwZVR+lGXlZDhrUGxSdzCSH/YiD/bsD5q2GkFQLqoLWuw3S9nlwb/QcTf+/G
+ D2dqk3uPHxSxGLiPz52WCid9DnN+TbYr8zJiLQQDEG4D0HgQVfXL2NqaKqq1E/1r4TBH
+ gHpA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=UjYVT5cAdmQKUfv9t8ccIVDdyBls+aL8RkatsPsXvcs=;
- b=ndnYHkOy9Zq1htwC8kXMY9Kzlee4YFufCV4mkQmqdGdCVCfJxjUIn0BIoDpxu4I4RJ
- 16UKxvmMJWDhyNdAEGHZtCfnAxrjD7k1GHCt+YnyYkRdQq6n6sLiUA+XrPE3I7deNpPy
- oMr1T6dM4LdBSWd9rvyx3stYPoY9zhCz11iVjIl8qHa6ZexfK4l3DpZ9MBojLQ5lDyCT
- GsXh8UohhDMKyFMv6jV8V1I6G+Re9GrwiD20Ac7HCRL08KMUjIfCrKHvzgQnuy+GGq73
- xJhr9oHQjJm1X/WllHE1n7t0NqXB2yK4aq8haM1ojW6cYfsIgDOI6nTk1L/nnwKeEAS1
- F+RA==
-X-Gm-Message-State: APjAAAWbwckThVOKHTjBPM1UFVZ71oW0FDNcCzGWffVKBfORsBVEm3M1
- t6tRMcQyoT1+7j7pKmho8SplxfDuT6HpwZccNDj1sg==
-X-Google-Smtp-Source: APXvYqxyYrm8zG8OMTTxqGADAYUvr/vXQpVESafN7Cz0pZWyjDkgKl1eFOtZxYdb1jr2uV1YoMkUpLh/i+1PnNqQJjM=
-X-Received: by 2002:a05:6830:204a:: with SMTP id
- f10mr3731908otp.83.1556828766432; 
- Thu, 02 May 2019 13:26:06 -0700 (PDT)
+ bh=EDdiyphkogtVcXTbSVRyR+FjzQZde+G185126UMJh7I=;
+ b=lxoA+fNx8eEN1pP7oZ4gN7SXTUsgnN6q5U8fgysMKY4loJtUzTWvqWTwNu5F+x+pqg
+ 6+5/1xcH0kQOXuzvjGpwhQVoKC8+uPguB32chU02IbW4W1Uaa3WGgilbzWj+TXFWXnWn
+ cTABTXDWLYjNOMAf6SXJsNbYxboeUusmxLq2Gw9jeL4o3CnWCt5TrtdO4+soafXa/FJj
+ AYYs7SmTty5Qz2ldJGoGoLlgYFa9tw/cPulxuhm+49Ru84CmnlExvs9FddnPhilnUFpz
+ F9QEZ0irpo3lsTQjqDWsnCHMwqQemY2s19Z++kvfPPQZ7JpeQKfkFe+JwLNPTymKlcd6
+ tA8Q==
+X-Gm-Message-State: APjAAAWmlj1KoCK+HxJo8dP7wql5R8D6GGyR7ThWKPBtKAqBGJmU9Pek
+ tel1jixIcAdYmUwRRK/mhINMR33ZxvnmNAwJaMhh6w==
+X-Google-Smtp-Source: APXvYqz43GD9Ydk/3iHIuvGx3dSX5DTZZLzaJSUOTfbGyq2mCG6ID5DjuBQ5u6fo5kf0q+kWNBtbkFi3ckrHB0dUqUs=
+X-Received: by 2002:a9d:7f19:: with SMTP id j25mr3854222otq.25.1556829023216; 
+ Thu, 02 May 2019 13:30:23 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190501230126.229218-1-brendanhiggins@google.com>
- <20190501230126.229218-5-brendanhiggins@google.com>
- <20190502110008.GC12416@kroah.com>
-In-Reply-To: <20190502110008.GC12416@kroah.com>
+ <20190501230126.229218-8-brendanhiggins@google.com>
+ <20190502105849.GB12416@kroah.com>
+In-Reply-To: <20190502105849.GB12416@kroah.com>
 From: Brendan Higgins <brendanhiggins@google.com>
-Date: Thu, 2 May 2019 13:25:54 -0700
-Message-ID: <CAFd5g47ssM7RQZxQsUJ86UigcF-Uz+Kwv2yvKN_gZK-TtW89bA@mail.gmail.com>
-Subject: Re: [PATCH v2 04/17] kunit: test: add kunit_stream a std::stream like
- logger
+Date: Thu, 2 May 2019 13:30:12 -0700
+Message-ID: <CAFd5g44os8xEMMiROkmX_KM4-9yL=+y6kw4-JApxhdzJV5pwkg@mail.gmail.com>
+Subject: Re: [PATCH v2 07/17] kunit: test: add initial tests
 To: Greg KH <gregkh@linuxfoundation.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190502_132607_993514_C4BD5025 
-X-CRM114-Status: GOOD (  10.40  )
+X-CRM114-CacheID: sfid-20190502_133024_548962_77CAE832 
+X-CRM114-Status: GOOD (  18.23  )
 X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:342 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
  -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
  white-list
@@ -123,22 +121,57 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Thu, May 2, 2019 at 4:00 AM Greg KH <gregkh@linuxfoundation.org> wrote:
+On Thu, May 2, 2019 at 3:58 AM Greg KH <gregkh@linuxfoundation.org> wrote:
 >
-> On Wed, May 01, 2019 at 04:01:13PM -0700, Brendan Higgins wrote:
-> > A lot of the expectation and assertion infrastructure prints out fairly
-> > complicated test failure messages, so add a C++ style log library for
-> > for logging test results.
+> On Wed, May 01, 2019 at 04:01:16PM -0700, Brendan Higgins wrote:
+> > Add a test for string stream along with a simpler example.
+> >
+> > Signed-off-by: Brendan Higgins <brendanhiggins@google.com>
+> > ---
+> >  kunit/Kconfig              | 12 ++++++
+> >  kunit/Makefile             |  4 ++
+> >  kunit/example-test.c       | 88 ++++++++++++++++++++++++++++++++++++++
+> >  kunit/string-stream-test.c | 61 ++++++++++++++++++++++++++
+> >  4 files changed, 165 insertions(+)
+> >  create mode 100644 kunit/example-test.c
+> >  create mode 100644 kunit/string-stream-test.c
+> >
+> > diff --git a/kunit/Kconfig b/kunit/Kconfig
+> > index 64480092b2c24..5cb500355c873 100644
+> > --- a/kunit/Kconfig
+> > +++ b/kunit/Kconfig
+> > @@ -13,4 +13,16 @@ config KUNIT
+> >         special hardware. For more information, please see
+> >         Documentation/kunit/
+> >
+> > +config KUNIT_TEST
+> > +     bool "KUnit test for KUnit"
+> > +     depends on KUNIT
+> > +     help
+> > +       Enables KUnit test to test KUnit.
+> > +
+> > +config KUNIT_EXAMPLE_TEST
+> > +     bool "Example test for KUnit"
+> > +     depends on KUNIT
+> > +     help
+> > +       Enables example KUnit test to demo features of KUnit.
 >
-> Ideally we would always use a standard logging format, like the
-> kselftest tests all are aiming to do.  That way the output can be easily
-> parsed by tools to see if the tests succeed/fail easily.
->
-> Any chance of having this logging framework enforcing that format as
-> well?
+> Can't these tests be module?
 
-I agree with your comment on the later patch that we should handle
-this at the wrapper script layer (KUnit tool).
+At this time, no. KUnit doesn't support loading tests as kernel
+modules; it is something we could add in in the future, but I would
+rather not open that can of worms right now. There are some other
+things I would like to do that would probably be easier to do before
+adding support for tests as loadable modules.
+
+>
+> Or am I mis-reading the previous logic?
+>
+> Anyway, just a question, nothing objecting to this as-is for now.
+
+Cool
+
+Cheers!
 
 _______________________________________________
 linux-um mailing list
