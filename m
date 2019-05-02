@@ -2,107 +2,91 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7B8D112262
-	for <lists+linux-um@lfdr.de>; Thu,  2 May 2019 21:10:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7198912347
+	for <lists+linux-um@lfdr.de>; Thu,  2 May 2019 22:26:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=evOFv2GykjyjpEYwoC8OxtTmhjSPbzjs87ibEcwyXKI=; b=Ch+d9LPownH27R
-	/c/mNalPbQy7XkrYSXRc9yjTtXaEnQovlW7wSsNPQ3ngaWYBwDgaw4VpgeabnOFS2i0I870eCyV7g
-	suZq+h8Az/dadDwQJImw7lJaAXsGi7QYb2CRr9Yj0wXk/YpkAzl24EppeXqmY1qbskpsAqtum4B1E
-	CssP68tB6zUlfQbyf+NemtP0klDNp404+2aSx0wK1EW4mqkbBqgzsyzp6VMaiXBO/MdqGgtb7Znwe
-	jWe9nvc7DTAQ7//s5PZaxJYfS+IJWROeKXFyv2jexNp+m+nV1VKmFQBsZ+//LDuU6KFedmbK5IjaC
-	/bSA+MxUcKb5LcSBEpmA==;
+	List-Owner; bh=DzNS3clQho5O1FoKdw4W9XwEJ9W90xSgRi+jHGCysWQ=; b=rhxM4GFV48QXSW
+	cD3ZcSH9ltoj+gY/URNjrAoBNT8VawQ3/QROhBabESC3p1plUPmhIdn6Ve5Qnfze8dV6zjrmvChMw
+	gFaMMvDrDCI+MKDN2LY/Ir9o3dY/LwzUnsEQdyDaYxsSVSjuD1jVIzNUTZ8gcn4I8pE/vuRvWA1K3
+	h2EXqY5gVRlJJmYsgScDLIi8EUnbbufIzWKYzBu6VyDTcd4ditZa+TOFF9obKu05ll6St+ZqciCR7
+	WLHs2a+C8ag1PjB3ZTsPiP5fuzhJSX8sRfvV5hQspAMsRprKjpmnEc27CGPWFVmubkhDVbEsEt2JG
+	MlJ6WfZhbWczzq7JfbYg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMH5m-0003V6-O9; Thu, 02 May 2019 19:10:02 +0000
-Received: from mail-eopbgr740108.outbound.protection.outlook.com
- ([40.107.74.108] helo=NAM01-BN3-obe.outbound.protection.outlook.com)
+	id 1hMIHT-0005oA-6M; Thu, 02 May 2019 20:26:11 +0000
+Received: from mail-ot1-x342.google.com ([2607:f8b0:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMH5b-0003LO-Dk; Thu, 02 May 2019 19:09:52 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=wavesemi.onmicrosoft.com; s=selector1-wavecomp-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=3uRzdcIsJFDRPuamLXXcZJewA+rYe1vjm3/bXx2cTtI=;
- b=UoDeGPVhr6JZ7JNyhlHHRROKNEf0NVYR3XZ6bqIqahCovm96BewjlvjGgoNstrrWx8X2FGIWt1hlA2voOr4yKZ2l5wY2wSULDuWJE5gc4fbfJvODff2SAeUk1Q2LbkGhLrcmCIJnuqlUVwJoIDAarSwHlNhS+xIjPE2/ZV/K//w=
-Received: from MWHPR2201MB1277.namprd22.prod.outlook.com (10.174.162.17) by
- MWHPR2201MB1022.namprd22.prod.outlook.com (10.174.167.23) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.1856.10; Thu, 2 May 2019 19:09:48 +0000
-Received: from MWHPR2201MB1277.namprd22.prod.outlook.com
- ([fe80::b9d6:bf19:ec58:2765]) by MWHPR2201MB1277.namprd22.prod.outlook.com
- ([fe80::b9d6:bf19:ec58:2765%7]) with mapi id 15.20.1835.018; Thu, 2 May 2019
- 19:09:48 +0000
-From: Paul Burton <paul.burton@mips.com>
-To: Mike Rapoport <rppt@linux.ibm.com>
-Subject: Re: [PATCH 08/15] mips: switch to generic version of pte allocation
-Thread-Topic: [PATCH 08/15] mips: switch to generic version of pte allocation
-Thread-Index: AQHVAPvhYRXSn9iSl02DVsubJsLUFKZYMz4A
-Date: Thu, 2 May 2019 19:09:47 +0000
-Message-ID: <20190502190945.rrrxfxo3rbhgc3cx@pburton-laptop>
-References: <1556810922-20248-1-git-send-email-rppt@linux.ibm.com>
- <1556810922-20248-9-git-send-email-rppt@linux.ibm.com>
-In-Reply-To: <1556810922-20248-9-git-send-email-rppt@linux.ibm.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-clientproxiedby: BY5PR16CA0008.namprd16.prod.outlook.com
- (2603:10b6:a03:1a0::21) To MWHPR2201MB1277.namprd22.prod.outlook.com
- (2603:10b6:301:24::17)
-user-agent: NeoMutt/20180716
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=pburton@wavecomp.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-originating-ip: [12.94.197.246]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 91079f33-430b-47c0-f67b-08d6cf31be4b
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(2017052603328)(7193020);
- SRVR:MWHPR2201MB1022; 
-x-ms-traffictypediagnostic: MWHPR2201MB1022:
-x-microsoft-antispam-prvs: <MWHPR2201MB10220E9C1EE86CAAD5D4533BC1340@MWHPR2201MB1022.namprd22.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:6790;
-x-forefront-prvs: 0025434D2D
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(7916004)(346002)(136003)(376002)(39840400004)(366004)(396003)(199004)(189003)(6116002)(25786009)(3846002)(99286004)(6512007)(6486002)(71190400001)(6436002)(53936002)(4326008)(71200400001)(68736007)(9686003)(76176011)(229853002)(52116002)(6246003)(305945005)(7736002)(7406005)(7416002)(64756008)(66446008)(66476007)(73956011)(6916009)(66556008)(478600001)(66946007)(33716001)(6506007)(386003)(54906003)(42882007)(316002)(256004)(14444005)(66066001)(81156014)(5660300002)(8936002)(58126008)(81166006)(2906002)(486006)(26005)(476003)(446003)(44832011)(102836004)(1076003)(8676002)(186003)(14454004)(11346002)(4744005)(41533002);
- DIR:OUT; SFP:1102; SCL:1; SRVR:MWHPR2201MB1022;
- H:MWHPR2201MB1277.namprd22.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: wavecomp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: M0XTyWwxLd3yYpP2blH3NYKZ4bTHNO3PM20OCTP+DzZIHyYhQH9pfCtE+IiXKjd8NNv5X3Dd/rlNUfRK8P/qw9sW43SPzJBAlmY9ams9neR9CePfEzRVcw/XEAcVa+RQOKr5ncqBxc6KQ8sWUZS8DNT0t4fZEftl/zkE67d2830JYqraQ8tgl8T3+Q6WjbCnCuleR7jesV4G37l39dVlcmWqv1fOJRWiI4TVnP+xAOOWVX8Xqx8/a0eaGfBME3TFz8Ug1vg8TirGdknFPO8BLK8tR9d77vo2WyCBSDiAL1NF7vixTzpQGrOtu5iwuSF+RtyVT+vXlYbSPuoxprV4UKBEl9qbd4Yipk1eBxldrxqQUW46PMgZGLnbKxjqZfIINmsQFoMzGqH4Z25w00m7AbkZWLv+kToXQh0ohU67Bfc=
-Content-ID: <5F06A475B76E7846961ABC0FB62B828B@namprd22.prod.outlook.com>
+ id 1hMIHP-0005nZ-U9
+ for linux-um@lists.infradead.org; Thu, 02 May 2019 20:26:09 +0000
+Received: by mail-ot1-x342.google.com with SMTP id r20so3346936otg.4
+ for <linux-um@lists.infradead.org>; Thu, 02 May 2019 13:26:07 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=UjYVT5cAdmQKUfv9t8ccIVDdyBls+aL8RkatsPsXvcs=;
+ b=S/NLBkmmg3Md+sTx08gED5HrktmpwZikr8idsPoedLBx4NGY0vsICG/2JByh1OPLMl
+ SoIkyImRxqPDEOFyC2ZMo66T4y64AzxZJe60LUPIIZ+2whbKVnm1u/h2cZWzkh0Pg7xc
+ EXNw4yJNZ9fhJbGVtdrs9Sah16nUmTboVs4KkvhykHpn/i4zj9XsNumXBLK6Ynb0YPNG
+ +tpKFc1Qf+4khDJxrAPPVZg4LS8WUK6j1vznFw5a8jr0zVqX9peLg5vYA1eBwQqixHhg
+ xvPSDH5tHp5fJ/MAFS5gSf8uCUub0+kg9vZwn+lDYmBqYVC0qg8nx8pyREf5ogAUd63R
+ E26Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=UjYVT5cAdmQKUfv9t8ccIVDdyBls+aL8RkatsPsXvcs=;
+ b=ndnYHkOy9Zq1htwC8kXMY9Kzlee4YFufCV4mkQmqdGdCVCfJxjUIn0BIoDpxu4I4RJ
+ 16UKxvmMJWDhyNdAEGHZtCfnAxrjD7k1GHCt+YnyYkRdQq6n6sLiUA+XrPE3I7deNpPy
+ oMr1T6dM4LdBSWd9rvyx3stYPoY9zhCz11iVjIl8qHa6ZexfK4l3DpZ9MBojLQ5lDyCT
+ GsXh8UohhDMKyFMv6jV8V1I6G+Re9GrwiD20Ac7HCRL08KMUjIfCrKHvzgQnuy+GGq73
+ xJhr9oHQjJm1X/WllHE1n7t0NqXB2yK4aq8haM1ojW6cYfsIgDOI6nTk1L/nnwKeEAS1
+ F+RA==
+X-Gm-Message-State: APjAAAWbwckThVOKHTjBPM1UFVZ71oW0FDNcCzGWffVKBfORsBVEm3M1
+ t6tRMcQyoT1+7j7pKmho8SplxfDuT6HpwZccNDj1sg==
+X-Google-Smtp-Source: APXvYqxyYrm8zG8OMTTxqGADAYUvr/vXQpVESafN7Cz0pZWyjDkgKl1eFOtZxYdb1jr2uV1YoMkUpLh/i+1PnNqQJjM=
+X-Received: by 2002:a05:6830:204a:: with SMTP id
+ f10mr3731908otp.83.1556828766432; 
+ Thu, 02 May 2019 13:26:06 -0700 (PDT)
 MIME-Version: 1.0
-X-OriginatorOrg: mips.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 91079f33-430b-47c0-f67b-08d6cf31be4b
-X-MS-Exchange-CrossTenant-originalarrivaltime: 02 May 2019 19:09:47.6013 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 463607d3-1db3-40a0-8a29-970c56230104
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: MWHPR2201MB1022
+References: <20190501230126.229218-1-brendanhiggins@google.com>
+ <20190501230126.229218-5-brendanhiggins@google.com>
+ <20190502110008.GC12416@kroah.com>
+In-Reply-To: <20190502110008.GC12416@kroah.com>
+From: Brendan Higgins <brendanhiggins@google.com>
+Date: Thu, 2 May 2019 13:25:54 -0700
+Message-ID: <CAFd5g47ssM7RQZxQsUJ86UigcF-Uz+Kwv2yvKN_gZK-TtW89bA@mail.gmail.com>
+Subject: Re: [PATCH v2 04/17] kunit: test: add kunit_stream a std::stream like
+ logger
+To: Greg KH <gregkh@linuxfoundation.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190502_120951_466208_2BDE019C 
-X-CRM114-Status: UNSURE (   8.18  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190502_132607_993514_C4BD5025 
+X-CRM114-Status: GOOD (  10.40  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.74.108 listed in list.dnswl.org]
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ no trust [2607:f8b0:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 T_DKIMWL_WL_MED        DKIMwl.org - Medium sender
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -114,58 +98,47 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: Michal Hocko <mhocko@suse.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Palmer Dabbelt <palmer@sifive.com>,
- "linux-mips@vger.kernel.org" <linux-mips@vger.kernel.org>,
- Guo Ren <guoren@kernel.org>,
- "linux-hexagon@vger.kernel.org" <linux-hexagon@vger.kernel.org>,
- "linux-riscv@lists.infradead.org" <linux-riscv@lists.infradead.org>,
- "linux-arch@vger.kernel.org" <linux-arch@vger.kernel.org>,
- Michael Ellerman <mpe@ellerman.id.au>, Helge Deller <deller@gmx.de>,
- "x86@kernel.org" <x86@kernel.org>, Russell King <linux@armlinux.org.uk>,
- Matthew Wilcox <willy@infradead.org>,
- Geert Uytterhoeven <geert@linux-m68k.org>, Matt Turner <mattst88@gmail.com>,
- Sam Creasey <sammy@sammy.net>, Arnd Bergmann <arnd@arndb.de>,
- "linux-alpha@vger.kernel.org" <linux-alpha@vger.kernel.org>,
- "linux-um@lists.infradead.org" <linux-um@lists.infradead.org>,
- "linux-m68k@lists.linux-m68k.org" <linux-m68k@lists.linux-m68k.org>,
- Greentime Hu <green.hu@gmail.com>,
- "nios2-dev@lists.rocketboards.org" <nios2-dev@lists.rocketboards.org>,
- Guan Xuetao <gxt@pku.edu.cn>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-parisc@vger.kernel.org" <linux-parisc@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Richard Kuo <rkuo@codeaurora.org>, Richard Weinberger <richard@nod.at>,
- Ley Foon Tan <lftan@altera.com>, Andrew Morton <akpm@linux-foundation.org>,
- "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>
+Cc: Petr Mladek <pmladek@suse.com>, linux-doc@vger.kernel.org,
+ Amir Goldstein <amir73il@gmail.com>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
+ Sasha Levin <Alexander.Levin@microsoft.com>,
+ Michael Ellerman <mpe@ellerman.id.au>, linux-kselftest@vger.kernel.org,
+ shuah@kernel.org, Rob Herring <robh@kernel.org>,
+ linux-nvdimm <linux-nvdimm@lists.01.org>,
+ Frank Rowand <frowand.list@gmail.com>, Knut Omang <knut.omang@oracle.com>,
+ Kieran Bingham <kieran.bingham@ideasonboard.com>, wfg@linux.intel.com,
+ Joel Stanley <joel@jms.id.au>, David Rientjes <rientjes@google.com>,
+ Jeff Dike <jdike@addtoit.com>, Dan Carpenter <dan.carpenter@oracle.com>,
+ devicetree <devicetree@vger.kernel.org>, linux-kbuild@vger.kernel.org, "Bird,
+ Timothy" <Tim.Bird@sony.com>, linux-um@lists.infradead.org,
+ Steven Rostedt <rostedt@goodmis.org>, Julia Lawall <julia.lawall@lip6.fr>,
+ Dan Williams <dan.j.williams@intel.com>, kunit-dev@googlegroups.com,
+ Richard Weinberger <richard@nod.at>, Stephen Boyd <sboyd@kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Luis Chamberlain <mcgrof@kernel.org>, Daniel Vetter <daniel@ffwll.ch>,
+ Kees Cook <keescook@google.com>, linux-fsdevel@vger.kernel.org,
+ Logan Gunthorpe <logang@deltatee.com>, Kevin Hilman <khilman@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-Hi Mike,
+On Thu, May 2, 2019 at 4:00 AM Greg KH <gregkh@linuxfoundation.org> wrote:
+>
+> On Wed, May 01, 2019 at 04:01:13PM -0700, Brendan Higgins wrote:
+> > A lot of the expectation and assertion infrastructure prints out fairly
+> > complicated test failure messages, so add a C++ style log library for
+> > for logging test results.
+>
+> Ideally we would always use a standard logging format, like the
+> kselftest tests all are aiming to do.  That way the output can be easily
+> parsed by tools to see if the tests succeed/fail easily.
+>
+> Any chance of having this logging framework enforcing that format as
+> well?
 
-On Thu, May 02, 2019 at 06:28:35PM +0300, Mike Rapoport wrote:
-> MIPS allocates kernel PTE pages with
-> 
-> 	__get_free_pages(GFP_KERNEL | __GFP_ZERO, PTE_ORDER)
-> 
-> and user PTE pages with
-> 
-> 	alloc_pages(GFP_KERNEL | __GFP_ZERO, PTE_ORDER)
-
-That bit isn't quite true - we don't use __GFP_ZERO in pte_alloc_one() &
-instead call clear_highpage() on the allocated page. Not that I have a
-problem with using __GFP_ZERO - it seems like the more optimal choice.
-It just might be worth mentioning the change & expected equivalent
-behavior.
-
-Otherwise:
-
-    Acked-by: Paul Burton <paul.burton@mips.com>
-
-Thanks,
-    Paul
+I agree with your comment on the later patch that we should handle
+this at the wrapper script layer (KUnit tool).
 
 _______________________________________________
 linux-um mailing list
