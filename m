@@ -2,79 +2,90 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C83A112365
-	for <lists+linux-um@lfdr.de>; Thu,  2 May 2019 22:30:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BE4AC123FD
+	for <lists+linux-um@lfdr.de>; Thu,  2 May 2019 23:16:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0T9bx10K+A7PbLa6jLn5nzPpWfv9XwiIsMd4i3JPgvI=; b=Zk7LfSnOb6Q0ci
-	fUZwcOoGTWxEjAH3ypGT8PulN69gLaHzJgO7+Ac7fLncGgSXg2a1tOJcYtEcYfWJD+5QDwe/k4ZGt
-	vAtdMGoyGrItiFaLu0RynmFAORAMXMSLBJkmLQgVRWB4MyEt0nPSHnAw95uqMWaa3dHKhGKCEmnJR
-	/xKGVakDivf6Os4+R9d9A2/J3PWEkZmddOmrnEP9/qgzrAUlub/C1il2mKBQ+XZEMtPfw+IP7FNIj
-	Pjqfxruceeo8EZUeb/V2ekG9wNY8EWnXwo3CQlXiLvM445ezq6qzz+FWsRlw8dEF8f8Fc9Wdz8o2r
-	MgAMF3XjkGsFlcA5gvgg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=DEbTrRUxrLZ8ZXarQ/nhDqgf/dSxqt505lhxq/mTxGU=; b=G9EtADwk8I89pm
+	fmZj/J0XUeLj2FQD+HOvVvMvKtfe2K0SYS+lxDTQBltP/u8ISkR4tltwp1Lz/kXpIxuHcHGUz0fGb
+	vFvIm/jZd+fDj6ePhZw0VI2A53PFhw+sohvciQV7SRwRbYqIqalHsSrqRMvQQ0+Z7Mcuccno7Z0fe
+	fiAn//Wdlqn8eJy2ZUkwQvE+GF81K12+x0CZ/YX05yQgfaPj7FBaZGKCTmb4Xd8a8SCbp+EECAvdG
+	0e0emEpOM1UWqrs+lMu5X0azg8IdFxPEv608QU99OzjdzzliJfpjKEQ4sPJSqNKvDQvBG2XB4FFlP
+	+I6q20S8L8I6RzPq3idA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMILb-0007RX-6Z; Thu, 02 May 2019 20:30:27 +0000
-Received: from mail-ot1-x344.google.com ([2607:f8b0:4864:20::344])
+	id 1hMJ4A-0006JT-SG; Thu, 02 May 2019 21:16:30 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMILY-0007R4-Fd
- for linux-um@lists.infradead.org; Thu, 02 May 2019 20:30:25 +0000
-Received: by mail-ot1-x344.google.com with SMTP id g24so3367637otq.2
- for <linux-um@lists.infradead.org>; Thu, 02 May 2019 13:30:24 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=EDdiyphkogtVcXTbSVRyR+FjzQZde+G185126UMJh7I=;
- b=gITVrJC9deQ8wHwXinOhDV5dI98+XHC/WuqFuL8GH7a8CRP7Weez43rOFpDLFNlC0p
- SurYDhddnsqnL5Ihvys33lK/4j+PLxs8IphZcAQuHXXE7X5COStC3ZBhj/5h/Hdg9FPW
- sQYG3mb/RBDu620PDIXl0abFAqievobMhbfvYW6GdeEoPEN8iXGYFBkxbfpJn8Y1y4f8
- F6SjQjXGRwZVR+lGXlZDhrUGxSdzCSH/YiD/bsD5q2GkFQLqoLWuw3S9nlwb/QcTf+/G
- D2dqk3uPHxSxGLiPz52WCid9DnN+TbYr8zJiLQQDEG4D0HgQVfXL2NqaKqq1E/1r4TBH
- gHpA==
+ id 1hMJ47-0006In-VH
+ for linux-um@lists.infradead.org; Thu, 02 May 2019 21:16:29 +0000
+Received: by mail-pg1-x543.google.com with SMTP id w22so317195pgi.6
+ for <linux-um@lists.infradead.org>; Thu, 02 May 2019 14:16:27 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=SXzn4PL7BS9Zk+Qjz5Z6ao7p78pnuZhgvrrpjIHBgqs=;
+ b=kCJFdJIIF969KctuD3d2wM6Ofbq6dPOZFLTH8wlGl+7+cVokVRuDwro7NOWN9ohV8k
+ ImAl50lyzEBsv7yN+yDsApIRZoLtSCfwhyzyxPvjXoEWcvwOBh4YVBGfYFjfXofVIUhG
+ 4IdfwHyJltRS5sW89ee6jcilUM33Ka1rf9l/1hx/r4xvkgirrOsCcjMVyOo7fNRjZFEX
+ W57GSaPxOGJB3pNyXX+NzqVUj3/2JEPXwOjRvCBv8sNkyMt8fb6SSscfdGTffg6t6JdB
+ E1xSneePimV/qvTL3gOacgC8P6jcyMC1ik1HBxyp2Tove1HOXYfOKbo6mTy7cNVaJPvY
+ TkNA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=EDdiyphkogtVcXTbSVRyR+FjzQZde+G185126UMJh7I=;
- b=lxoA+fNx8eEN1pP7oZ4gN7SXTUsgnN6q5U8fgysMKY4loJtUzTWvqWTwNu5F+x+pqg
- 6+5/1xcH0kQOXuzvjGpwhQVoKC8+uPguB32chU02IbW4W1Uaa3WGgilbzWj+TXFWXnWn
- cTABTXDWLYjNOMAf6SXJsNbYxboeUusmxLq2Gw9jeL4o3CnWCt5TrtdO4+soafXa/FJj
- AYYs7SmTty5Qz2ldJGoGoLlgYFa9tw/cPulxuhm+49Ru84CmnlExvs9FddnPhilnUFpz
- F9QEZ0irpo3lsTQjqDWsnCHMwqQemY2s19Z++kvfPPQZ7JpeQKfkFe+JwLNPTymKlcd6
- tA8Q==
-X-Gm-Message-State: APjAAAWmlj1KoCK+HxJo8dP7wql5R8D6GGyR7ThWKPBtKAqBGJmU9Pek
- tel1jixIcAdYmUwRRK/mhINMR33ZxvnmNAwJaMhh6w==
-X-Google-Smtp-Source: APXvYqz43GD9Ydk/3iHIuvGx3dSX5DTZZLzaJSUOTfbGyq2mCG6ID5DjuBQ5u6fo5kf0q+kWNBtbkFi3ckrHB0dUqUs=
-X-Received: by 2002:a9d:7f19:: with SMTP id j25mr3854222otq.25.1556829023216; 
- Thu, 02 May 2019 13:30:23 -0700 (PDT)
-MIME-Version: 1.0
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=SXzn4PL7BS9Zk+Qjz5Z6ao7p78pnuZhgvrrpjIHBgqs=;
+ b=Wls/ownk9NOWA7FEGh8TE6MWh2mtp8WiWGCDT6wVhS1ONUH2Qkt4hNW9xzJYd09Y8V
+ QlPzTJkWZg7qLblApnH/D694oBBvgkxu2XNaYRs0pa0qf04nqOYhO8lexT2iro7+Beil
+ K9UDSI7sJbwyb0yTsrEEdTe/FqaQb5hAB6BLFpwhPbW3xMnl9sAof+WJZFnH22szEBRK
+ gHgH9Yo8mHoAu9QP0DpU4HtcknG8z8vfOaJl5sGQgmBYiMtOkpFHFr+g2Pa4FMlOtpYB
+ fObUSSSgPCH5/6kjNh1+W9on0/31ooIOih+Bk/+CSDWee6VTy7VyBr08cJVAPf5qMqTx
+ Qvpw==
+X-Gm-Message-State: APjAAAXAPwL2qPRAKoeAQhem60Nv9/8Ble3bGqPWvxvBVNdJI04Lm0dF
+ f7g6tNVDboADQvRYmSUvk6++jDnbNC8=
+X-Google-Smtp-Source: APXvYqyaAKrOO8dNkOZg12O3d42lENfOgkrL7qBtR/V01hTlj71I+CQb4vEU5IP/L2A0+G0+xdSQEg==
+X-Received: by 2002:a63:5f42:: with SMTP id t63mr6174518pgb.275.1556831786717; 
+ Thu, 02 May 2019 14:16:26 -0700 (PDT)
+Received: from [192.168.1.70] (c-24-6-192-50.hsd1.ca.comcast.net.
+ [24.6.192.50])
+ by smtp.gmail.com with ESMTPSA id f63sm102173pfc.180.2019.05.02.14.16.23
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Thu, 02 May 2019 14:16:26 -0700 (PDT)
+Subject: Re: [PATCH v2 12/17] kunit: tool: add Python wrappers for running
+ KUnit tests
+To: Brendan Higgins <brendanhiggins@google.com>,
+ Greg KH <gregkh@linuxfoundation.org>
 References: <20190501230126.229218-1-brendanhiggins@google.com>
- <20190501230126.229218-8-brendanhiggins@google.com>
- <20190502105849.GB12416@kroah.com>
-In-Reply-To: <20190502105849.GB12416@kroah.com>
-From: Brendan Higgins <brendanhiggins@google.com>
-Date: Thu, 2 May 2019 13:30:12 -0700
-Message-ID: <CAFd5g44os8xEMMiROkmX_KM4-9yL=+y6kw4-JApxhdzJV5pwkg@mail.gmail.com>
-Subject: Re: [PATCH v2 07/17] kunit: test: add initial tests
-To: Greg KH <gregkh@linuxfoundation.org>
+ <20190501230126.229218-13-brendanhiggins@google.com>
+ <20190502110220.GD12416@kroah.com>
+ <CAFd5g47t=EdLKFCT=CnPkrM2z0nDVo24Gz4j0VxFOJbARP37Lg@mail.gmail.com>
+From: Frank Rowand <frowand.list@gmail.com>
+Message-ID: <a49c5088-a821-210c-66de-f422536f5b01@gmail.com>
+Date: Thu, 2 May 2019 14:16:23 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
+MIME-Version: 1.0
+In-Reply-To: <CAFd5g47t=EdLKFCT=CnPkrM2z0nDVo24Gz4j0VxFOJbARP37Lg@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190502_133024_548962_77CAE832 
-X-CRM114-Status: GOOD (  18.23  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20190502_141628_035483_4F2A90FE 
+X-CRM114-Status: GOOD (  19.09  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:344 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (frowand.list[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -83,8 +94,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 T_DKIMWL_WL_MED        DKIMwl.org - Medium sender
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -102,9 +111,10 @@ Cc: Petr Mladek <pmladek@suse.com>, linux-doc@vger.kernel.org,
  Sasha Levin <Alexander.Levin@microsoft.com>,
  Michael Ellerman <mpe@ellerman.id.au>, linux-kselftest@vger.kernel.org,
  shuah@kernel.org, Rob Herring <robh@kernel.org>,
- linux-nvdimm <linux-nvdimm@lists.01.org>,
- Frank Rowand <frowand.list@gmail.com>, Knut Omang <knut.omang@oracle.com>,
- Kieran Bingham <kieran.bingham@ideasonboard.com>, wfg@linux.intel.com,
+ linux-nvdimm <linux-nvdimm@lists.01.org>, Kevin Hilman <khilman@baylibre.com>,
+ Knut Omang <knut.omang@oracle.com>,
+ Kieran Bingham <kieran.bingham@ideasonboard.com>,
+ Felix Guo <felixguoxiuping@gmail.com>, wfg@linux.intel.com,
  Joel Stanley <joel@jms.id.au>, David Rientjes <rientjes@google.com>,
  Jeff Dike <jdike@addtoit.com>, Dan Carpenter <dan.carpenter@oracle.com>,
  devicetree <devicetree@vger.kernel.org>, linux-kbuild@vger.kernel.org, "Bird,
@@ -115,63 +125,57 @@ Cc: Petr Mladek <pmladek@suse.com>, linux-doc@vger.kernel.org,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
  Luis Chamberlain <mcgrof@kernel.org>, Daniel Vetter <daniel@ffwll.ch>,
  Kees Cook <keescook@google.com>, linux-fsdevel@vger.kernel.org,
- Logan Gunthorpe <logang@deltatee.com>, Kevin Hilman <khilman@baylibre.com>
+ Logan Gunthorpe <logang@deltatee.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Thu, May 2, 2019 at 3:58 AM Greg KH <gregkh@linuxfoundation.org> wrote:
->
-> On Wed, May 01, 2019 at 04:01:16PM -0700, Brendan Higgins wrote:
-> > Add a test for string stream along with a simpler example.
-> >
-> > Signed-off-by: Brendan Higgins <brendanhiggins@google.com>
-> > ---
-> >  kunit/Kconfig              | 12 ++++++
-> >  kunit/Makefile             |  4 ++
-> >  kunit/example-test.c       | 88 ++++++++++++++++++++++++++++++++++++++
-> >  kunit/string-stream-test.c | 61 ++++++++++++++++++++++++++
-> >  4 files changed, 165 insertions(+)
-> >  create mode 100644 kunit/example-test.c
-> >  create mode 100644 kunit/string-stream-test.c
-> >
-> > diff --git a/kunit/Kconfig b/kunit/Kconfig
-> > index 64480092b2c24..5cb500355c873 100644
-> > --- a/kunit/Kconfig
-> > +++ b/kunit/Kconfig
-> > @@ -13,4 +13,16 @@ config KUNIT
-> >         special hardware. For more information, please see
-> >         Documentation/kunit/
-> >
-> > +config KUNIT_TEST
-> > +     bool "KUnit test for KUnit"
-> > +     depends on KUNIT
-> > +     help
-> > +       Enables KUnit test to test KUnit.
-> > +
-> > +config KUNIT_EXAMPLE_TEST
-> > +     bool "Example test for KUnit"
-> > +     depends on KUNIT
-> > +     help
-> > +       Enables example KUnit test to demo features of KUnit.
->
-> Can't these tests be module?
+On 5/2/19 11:07 AM, Brendan Higgins wrote:
+> On Thu, May 2, 2019 at 4:02 AM Greg KH <gregkh@linuxfoundation.org> wrote:
+>>
+>> On Wed, May 01, 2019 at 04:01:21PM -0700, Brendan Higgins wrote:
+>>> From: Felix Guo <felixguoxiuping@gmail.com>
+>>>
+>>> The ultimate goal is to create minimal isolated test binaries; in the
+>>> meantime we are using UML to provide the infrastructure to run tests, so
+>>> define an abstract way to configure and run tests that allow us to
+>>> change the context in which tests are built without affecting the user.
+>>> This also makes pretty and dynamic error reporting, and a lot of other
+>>> nice features easier.
+>>>
+>>> kunit_config.py:
+>>>   - parse .config and Kconfig files.
+>>>
+>>> kunit_kernel.py: provides helper functions to:
+>>>   - configure the kernel using kunitconfig.
+>>>   - build the kernel with the appropriate configuration.
+>>>   - provide function to invoke the kernel and stream the output back.
+>>>
+>>> Signed-off-by: Felix Guo <felixguoxiuping@gmail.com>
+>>> Signed-off-by: Brendan Higgins <brendanhiggins@google.com>
+>>
+>> Ah, here's probably my answer to my previous logging format question,
+>> right?  What's the chance that these wrappers output stuff in a standard
+>> format that test-framework-tools can already parse?  :)
+> 
+> It should be pretty easy to do. I had some patches that pack up the
+> results into a serialized format for a presubmit service; it should be
+> pretty straightforward to take the same logic and just change the
+> output format.
 
-At this time, no. KUnit doesn't support loading tests as kernel
-modules; it is something we could add in in the future, but I would
-rather not open that can of worms right now. There are some other
-things I would like to do that would probably be easier to do before
-adding support for tests as loadable modules.
+When examining and trying out the previous versions of the patch I found
+the wrappers useful to provide information about how to control and use
+the tests, but I had no interest in using the scripts as they do not
+fit in with my personal environment and workflow.
 
->
-> Or am I mis-reading the previous logic?
->
-> Anyway, just a question, nothing objecting to this as-is for now.
+In the previous versions of the patch, these helper scripts are optional,
+which is good for my use case.  If the helper scripts are required to
+get the data into the proper format then the scripts are not quite so
+optional, they become the expected environment.  I think the proper
+format should exist without the helper scripts.
 
-Cool
-
-Cheers!
+-Frank
 
 _______________________________________________
 linux-um mailing list
