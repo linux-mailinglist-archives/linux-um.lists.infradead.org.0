@@ -2,80 +2,80 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4B3DD120B1
-	for <lists+linux-um@lfdr.de>; Thu,  2 May 2019 18:56:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 54A20121B0
+	for <lists+linux-um@lfdr.de>; Thu,  2 May 2019 20:08:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=kD4p7uogruWnkHC29KwWf72E3wcwFSmQnOErQfqxiOY=; b=TPKPhAprKjjZ73/p6l7qUhxmB
-	9L+L5i3w/D2V/xyoyxiXqti1q+VkQHwPSc9B/Dva90RiRLk8+8/I3jWIRMTkQucDL5lbEH8CaQLNl
-	gc1rVJPNOQKWJfQ4qdJxjSewyJY92S1W6kP4U6Wb9fpSI3abtS+VR/SPhSW+qx0+5z+iIUdtYoPR/
-	hy7RLAl/XM4ecCSDgURMpH+bfVXObdfMj82Ky0z9XHfM/w2NQ7c+ZdS7mTv6sveuPqIpvrjY3ack4
-	TRMeYvMIeRSsGycueRi/cawKHmo8dv3eCT52V8yTmv2wsutPBWSoF5utjbxib2NIyDl+bH8ZvC2e9
-	7NFJzu5rQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Nk25rfpd8phHdO57hsfr5d3BKiCMAONib4YTJ8WV1K8=; b=lFGWStHfssja1z
+	rDC0P83rsD7Pvl3j4kNu1X92I3OR/QbtuZHrp8x7D9EfdfzVwVhK0dpwMeUDCFPehNIKsOw0JMGTM
+	Mex1N/woE7Knax3YRjsmf+sSqsBvy83JwSnAeKItJuzGC2BoSk+rc0W8GPYhf2SI6epe79WKPhlwi
+	RAJVZbc13H6ONiMh249WKjzrmXqf7NPM1fnb+IfV065+1GHw4A8U5ZdVxjUZxZ/WeafT0EJueSrbu
+	JdiAqzjuCL5/MUhgWUvcP0j4XcUxaEOwqVljryXLA75q8aLYBoE9l8oDVPBGArK37Im/hqdxL656H
+	FEsteIS2WjwjqhUviY7Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMF0V-00062V-RC; Thu, 02 May 2019 16:56:27 +0000
-Received: from pegase1.c-s.fr ([93.17.236.30])
+	id 1hMG8C-00079s-Ez; Thu, 02 May 2019 18:08:28 +0000
+Received: from mail-ot1-x343.google.com ([2607:f8b0:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMF0G-0005sl-L5; Thu, 02 May 2019 16:56:19 +0000
-Received: from localhost (mailhub1-int [192.168.12.234])
- by localhost (Postfix) with ESMTP id 44w1cS5Fwsz9v0Sx;
- Thu,  2 May 2019 18:56:08 +0200 (CEST)
-Authentication-Results: localhost; dkim=pass
- reason="1024-bit key; insecure key"
- header.d=c-s.fr header.i=@c-s.fr header.b=b8I7W1X+; dkim-adsp=pass;
- dkim-atps=neutral
-X-Virus-Scanned: Debian amavisd-new at c-s.fr
-Received: from pegase1.c-s.fr ([192.168.12.234])
- by localhost (pegase1.c-s.fr [192.168.12.234]) (amavisd-new, port 10024)
- with ESMTP id 4wFI9OSqYAkB; Thu,  2 May 2019 18:56:08 +0200 (CEST)
-Received: from messagerie.si.c-s.fr (messagerie.si.c-s.fr [192.168.25.192])
- by pegase1.c-s.fr (Postfix) with ESMTP id 44w1cS3z29z9v0Sy;
- Thu,  2 May 2019 18:56:08 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=c-s.fr; s=mail;
- t=1556816168; bh=Q15LZ3d9bdq9dEoD9BccUn9mlT4iR41PhF1gwPGTDdo=;
- h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
- b=b8I7W1X+eD9E6f4QICHVyiGb2O+HBaJpc4Gwg6pUFtlpNKygpjn8VED8m8xg+JkOB
- IY+qSAZGLB4WFz+ZuAhNE6IOZlIPudaswik9x6vnbwMIKU3+fxYh/fSD0okZc5lnaA
- cdvwJC11zLQtHCiz8Kggoo4ZlThkHqB1Sg9CxUag=
-Received: from localhost (localhost [127.0.0.1])
- by messagerie.si.c-s.fr (Postfix) with ESMTP id 3A25B8B8FE;
- Thu,  2 May 2019 18:56:10 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at c-s.fr
-Received: from messagerie.si.c-s.fr ([127.0.0.1])
- by localhost (messagerie.si.c-s.fr [127.0.0.1]) (amavisd-new, port 10023)
- with ESMTP id RamEpSyy5iYB; Thu,  2 May 2019 18:56:10 +0200 (CEST)
-Received: from PO15451 (unknown [192.168.4.90])
- by messagerie.si.c-s.fr (Postfix) with ESMTP id CE4878B899;
- Thu,  2 May 2019 18:56:08 +0200 (CEST)
-Subject: Re: [PATCH 12/15] powerpc/nohash/64: switch to generic version of pte
- allocation
-To: Mike Rapoport <rppt@linux.ibm.com>,
- Andrew Morton <akpm@linux-foundation.org>
-References: <1556810922-20248-1-git-send-email-rppt@linux.ibm.com>
- <1556810922-20248-13-git-send-email-rppt@linux.ibm.com>
-From: Christophe Leroy <christophe.leroy@c-s.fr>
-Message-ID: <adcb6ae6-48d9-5ba9-2732-a0ab1d96667c@c-s.fr>
-Date: Thu, 2 May 2019 18:56:07 +0200
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ id 1hMG89-00078p-VS
+ for linux-um@lists.infradead.org; Thu, 02 May 2019 18:08:27 +0000
+Received: by mail-ot1-x343.google.com with SMTP id r20so2954195otg.4
+ for <linux-um@lists.infradead.org>; Thu, 02 May 2019 11:08:23 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=79fGKeHlH9FAaVSR1O2RxcfKwTsSnTq5QCRHjsEaUQU=;
+ b=p6+GkF2pa0r8kIFWr3Ue5xSJ4hl91lXS3nyMKkOj5gQv9nBUeqd4BeLUxnZv1anIlK
+ lg1rsW/DG5+gG35Q6B+ZLV3xvGi60oYqbQR6qqrpeA01srJDWSHy+u56ea2PsXrn8x+q
+ dAZDe0q27TZ76u7UainpJzKpuJcdKWXXDrVVYsacHOUkrblZnv39zmUQ3mgKo/PyMxtj
+ cBGYHB2uWwE8NxbLX7q9WWmg2lFe3RBeI4j2lZBmhh5c2j8csXxGrExgKmjwwY08DAy9
+ PMxuPc1keMhPOI13z500WCy1D+qUSgNiYEXKQhnXWgZ+09G9ndEGtieagtsVwWkzEqOt
+ uIWw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=79fGKeHlH9FAaVSR1O2RxcfKwTsSnTq5QCRHjsEaUQU=;
+ b=FqWpetynNiTX3Ugg36TvmQOaNOszqjHdgmPxMNJI8Zt483B8d+ys/1DgFyILYl+0Yp
+ AdV4qSZBwt//BLtbdr70NRuJG8/IRQBCt4uEtKi2qw/DUA1zS1lT6JoKzEb4dKR53pu8
+ KSnf0jnpC92OdanOQFaNmvJ4sMXQLw0ClewYRncLJfxwoGrQkk9NDHrSYiKyr2VKM2ci
+ KbJzkPIz4aWQWd78NoGpeBcUvmip4rWmZyXq7TXc3PyldDlaS4WWeKAaxqzg9W2LaoYE
+ vzl1P8BYx1I9U2bFY1Clv/czgWcEGF0F0i5TLcxEl6pTD8/zfvCzQ+Jp+zDyLszLzbp+
+ 3h4Q==
+X-Gm-Message-State: APjAAAVRlDkHIbHX3w4Ei7oAMMVkF0+hZUrQJaY/8XaK1Q6G8EKW7d46
+ 2bgeG6IJBKpEx2T+XhEwiKqsdg/zQfP7RbBIHTWJhw==
+X-Google-Smtp-Source: APXvYqw/nI7b+z83V0GIDl0oQazXtqsfs+CMRGbHgYqDLdBGzPB7zXqfHkbXMcNZ2dozl9lGwjO1NMDSJQAOJdRu1uE=
+X-Received: by 2002:a9d:3621:: with SMTP id w30mr3409606otb.98.1556820502021; 
+ Thu, 02 May 2019 11:08:22 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <1556810922-20248-13-git-send-email-rppt@linux.ibm.com>
-Content-Language: fr
+References: <20190501230126.229218-1-brendanhiggins@google.com>
+ <20190501230126.229218-13-brendanhiggins@google.com>
+ <20190502110220.GD12416@kroah.com>
+In-Reply-To: <20190502110220.GD12416@kroah.com>
+From: Brendan Higgins <brendanhiggins@google.com>
+Date: Thu, 2 May 2019 11:07:57 -0700
+Message-ID: <CAFd5g47t=EdLKFCT=CnPkrM2z0nDVo24Gz4j0VxFOJbARP37Lg@mail.gmail.com>
+Subject: Re: [PATCH v2 12/17] kunit: tool: add Python wrappers for running
+ KUnit tests
+To: Greg KH <gregkh@linuxfoundation.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190502_095618_108248_8137A965 
-X-CRM114-Status: GOOD (  15.27  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190502_110826_013855_1EC8F0E0 
+X-CRM114-Status: GOOD (  15.36  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [93.17.236.30 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:343 listed in]
+ [list.dnswl.org]
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -84,6 +84,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 T_DKIMWL_WL_MED        DKIMwl.org - Medium sender
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -95,63 +97,67 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: Michal Hocko <mhocko@suse.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Palmer Dabbelt <palmer@sifive.com>, linux-kernel@vger.kernel.org,
- Guo Ren <guoren@kernel.org>, linux-riscv@lists.infradead.org,
- linux-arch@vger.kernel.org, Richard Weinberger <richard@nod.at>,
- Helge Deller <deller@gmx.de>, x86@kernel.org,
- Russell King <linux@armlinux.org.uk>, Matthew Wilcox <willy@infradead.org>,
- Geert Uytterhoeven <geert@linux-m68k.org>, Matt Turner <mattst88@gmail.com>,
- Sam Creasey <sammy@sammy.net>, Arnd Bergmann <arnd@arndb.de>,
- linux-alpha@vger.kernel.org, linux-um@lists.infradead.org,
- linux-m68k@lists.linux-m68k.org, Greentime Hu <green.hu@gmail.com>,
- Ley Foon Tan <lftan@altera.com>, Guan Xuetao <gxt@pku.edu.cn>,
- linux-arm-kernel@lists.infradead.org, linux-parisc@vger.kernel.org,
- linux-mips@vger.kernel.org, Richard Kuo <rkuo@codeaurora.org>,
- Paul Burton <paul.burton@mips.com>, linux-hexagon@vger.kernel.org,
- nios2-dev@lists.rocketboards.org, linuxppc-dev@lists.ozlabs.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Petr Mladek <pmladek@suse.com>, linux-doc@vger.kernel.org,
+ Amir Goldstein <amir73il@gmail.com>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
+ Sasha Levin <Alexander.Levin@microsoft.com>,
+ Michael Ellerman <mpe@ellerman.id.au>, linux-kselftest@vger.kernel.org,
+ shuah@kernel.org, Rob Herring <robh@kernel.org>,
+ linux-nvdimm <linux-nvdimm@lists.01.org>,
+ Frank Rowand <frowand.list@gmail.com>, Knut Omang <knut.omang@oracle.com>,
+ Kieran Bingham <kieran.bingham@ideasonboard.com>,
+ Felix Guo <felixguoxiuping@gmail.com>, wfg@linux.intel.com,
+ Joel Stanley <joel@jms.id.au>, David Rientjes <rientjes@google.com>,
+ Jeff Dike <jdike@addtoit.com>, Dan Carpenter <dan.carpenter@oracle.com>,
+ devicetree <devicetree@vger.kernel.org>, linux-kbuild@vger.kernel.org, "Bird,
+ Timothy" <Tim.Bird@sony.com>, linux-um@lists.infradead.org,
+ Steven Rostedt <rostedt@goodmis.org>, Julia Lawall <julia.lawall@lip6.fr>,
+ Dan Williams <dan.j.williams@intel.com>, kunit-dev@googlegroups.com,
+ Richard Weinberger <richard@nod.at>, Stephen Boyd <sboyd@kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Luis Chamberlain <mcgrof@kernel.org>, Daniel Vetter <daniel@ffwll.ch>,
+ Kees Cook <keescook@google.com>, linux-fsdevel@vger.kernel.org,
+ Logan Gunthorpe <logang@deltatee.com>, Kevin Hilman <khilman@baylibre.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-CgpMZSAwMi8wNS8yMDE5IMOgIDE3OjI4LCBNaWtlIFJhcG9wb3J0IGEgw6ljcml0wqA6Cj4gVGhl
-IDY0LWJpdCBib29rLUUgcG93ZXJwYyBpbXBsZW1lbnRzIHB0ZV9hbGxvY19vbmUoKSwKPiBwdGVf
-YWxsb2Nfb25lX2tlcm5lbCgpLCBwdGVfZnJlZV9rZXJuZWwoKSBhbmQgcHRlX2ZyZWUoKSB0aGUg
-c2FtZSB3YXkgYXMKPiB0aGUgZ2VuZXJpYyB2ZXJzaW9uLgoKV2lsbCBzb29uIGJlIGNvbnZlcnRl
-ZCB0byB0aGUgc2FtZSBhcyB0aGUgMyBvdGhlciBQUEMgc3ViYXJjaGVzLCBzZWUKaHR0cHM6Ly9w
-YXRjaHdvcmsub3psYWJzLm9yZy9wYXRjaC8xMDkxNTkwLwoKQ2hyaXN0b3BoZQoKPiAKPiBTd2l0
-Y2ggaXQgdG8gdGhlIGdlbmVyaWMgdmVyc2lvbiB0aGF0IGRvZXMgZXhhY3RseSB0aGUgc2FtZSB0
-aGluZy4KPiAKPiBTaWduZWQtb2ZmLWJ5OiBNaWtlIFJhcG9wb3J0IDxycHB0QGxpbnV4LmlibS5j
-b20+Cj4gLS0tCj4gICBhcmNoL3Bvd2VycGMvaW5jbHVkZS9hc20vbm9oYXNoLzY0L3BnYWxsb2Mu
-aCB8IDM1ICsrLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KPiAgIDEgZmlsZSBjaGFuZ2VkLCAy
-IGluc2VydGlvbnMoKyksIDMzIGRlbGV0aW9ucygtKQo+IAo+IGRpZmYgLS1naXQgYS9hcmNoL3Bv
-d2VycGMvaW5jbHVkZS9hc20vbm9oYXNoLzY0L3BnYWxsb2MuaCBiL2FyY2gvcG93ZXJwYy9pbmNs
-dWRlL2FzbS9ub2hhc2gvNjQvcGdhbGxvYy5oCj4gaW5kZXggNjZkMDg2Zi4uYmZiNTNhMCAxMDA2
-NDQKPiAtLS0gYS9hcmNoL3Bvd2VycGMvaW5jbHVkZS9hc20vbm9oYXNoLzY0L3BnYWxsb2MuaAo+
-ICsrKyBiL2FyY2gvcG93ZXJwYy9pbmNsdWRlL2FzbS9ub2hhc2gvNjQvcGdhbGxvYy5oCj4gQEAg
-LTExLDYgKzExLDggQEAKPiAgICNpbmNsdWRlIDxsaW51eC9jcHVtYXNrLmg+Cj4gICAjaW5jbHVk
-ZSA8bGludXgvcGVyY3B1Lmg+Cj4gICAKPiArI2luY2x1ZGUgPGFzbS1nZW5lcmljL3BnYWxsb2Mu
-aD4JLyogZm9yIHB0ZV97YWxsb2MsZnJlZX1fb25lICovCj4gKwo+ICAgc3RydWN0IHZtZW1tYXBf
-YmFja2luZyB7Cj4gICAJc3RydWN0IHZtZW1tYXBfYmFja2luZyAqbGlzdDsKPiAgIAl1bnNpZ25l
-ZCBsb25nIHBoeXM7Cj4gQEAgLTkyLDM5ICs5NCw2IEBAIHN0YXRpYyBpbmxpbmUgdm9pZCBwbWRf
-ZnJlZShzdHJ1Y3QgbW1fc3RydWN0ICptbSwgcG1kX3QgKnBtZCkKPiAgIAlrbWVtX2NhY2hlX2Zy
-ZWUoUEdUX0NBQ0hFKFBNRF9DQUNIRV9JTkRFWCksIHBtZCk7Cj4gICB9Cj4gICAKPiAtCj4gLXN0
-YXRpYyBpbmxpbmUgcHRlX3QgKnB0ZV9hbGxvY19vbmVfa2VybmVsKHN0cnVjdCBtbV9zdHJ1Y3Qg
-Km1tKQo+IC17Cj4gLQlyZXR1cm4gKHB0ZV90ICopX19nZXRfZnJlZV9wYWdlKEdGUF9LRVJORUwg
-fCBfX0dGUF9aRVJPKTsKPiAtfQo+IC0KPiAtc3RhdGljIGlubGluZSBwZ3RhYmxlX3QgcHRlX2Fs
-bG9jX29uZShzdHJ1Y3QgbW1fc3RydWN0ICptbSkKPiAtewo+IC0Jc3RydWN0IHBhZ2UgKnBhZ2U7
-Cj4gLQlwdGVfdCAqcHRlOwo+IC0KPiAtCXB0ZSA9IChwdGVfdCAqKV9fZ2V0X2ZyZWVfcGFnZShH
-RlBfS0VSTkVMIHwgX19HRlBfWkVSTyB8IF9fR0ZQX0FDQ09VTlQpOwo+IC0JaWYgKCFwdGUpCj4g
-LQkJcmV0dXJuIE5VTEw7Cj4gLQlwYWdlID0gdmlydF90b19wYWdlKHB0ZSk7Cj4gLQlpZiAoIXBn
-dGFibGVfcGFnZV9jdG9yKHBhZ2UpKSB7Cj4gLQkJX19mcmVlX3BhZ2UocGFnZSk7Cj4gLQkJcmV0
-dXJuIE5VTEw7Cj4gLQl9Cj4gLQlyZXR1cm4gcGFnZTsKPiAtfQo+IC0KPiAtc3RhdGljIGlubGlu
-ZSB2b2lkIHB0ZV9mcmVlX2tlcm5lbChzdHJ1Y3QgbW1fc3RydWN0ICptbSwgcHRlX3QgKnB0ZSkK
-PiAtewo+IC0JZnJlZV9wYWdlKCh1bnNpZ25lZCBsb25nKXB0ZSk7Cj4gLX0KPiAtCj4gLXN0YXRp
-YyBpbmxpbmUgdm9pZCBwdGVfZnJlZShzdHJ1Y3QgbW1fc3RydWN0ICptbSwgcGd0YWJsZV90IHB0
-ZXBhZ2UpCj4gLXsKPiAtCXBndGFibGVfcGFnZV9kdG9yKHB0ZXBhZ2UpOwo+IC0JX19mcmVlX3Bh
-Z2UocHRlcGFnZSk7Cj4gLX0KPiAtCj4gICBzdGF0aWMgaW5saW5lIHZvaWQgcGd0YWJsZV9mcmVl
-KHZvaWQgKnRhYmxlLCBpbnQgc2hpZnQpCj4gICB7Cj4gICAJaWYgKCFzaGlmdCkgewo+IAoKX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtdW0gbWFp
-bGluZyBsaXN0CmxpbnV4LXVtQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJh
-ZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC11bQo=
+On Thu, May 2, 2019 at 4:02 AM Greg KH <gregkh@linuxfoundation.org> wrote:
+>
+> On Wed, May 01, 2019 at 04:01:21PM -0700, Brendan Higgins wrote:
+> > From: Felix Guo <felixguoxiuping@gmail.com>
+> >
+> > The ultimate goal is to create minimal isolated test binaries; in the
+> > meantime we are using UML to provide the infrastructure to run tests, so
+> > define an abstract way to configure and run tests that allow us to
+> > change the context in which tests are built without affecting the user.
+> > This also makes pretty and dynamic error reporting, and a lot of other
+> > nice features easier.
+> >
+> > kunit_config.py:
+> >   - parse .config and Kconfig files.
+> >
+> > kunit_kernel.py: provides helper functions to:
+> >   - configure the kernel using kunitconfig.
+> >   - build the kernel with the appropriate configuration.
+> >   - provide function to invoke the kernel and stream the output back.
+> >
+> > Signed-off-by: Felix Guo <felixguoxiuping@gmail.com>
+> > Signed-off-by: Brendan Higgins <brendanhiggins@google.com>
+>
+> Ah, here's probably my answer to my previous logging format question,
+> right?  What's the chance that these wrappers output stuff in a standard
+> format that test-framework-tools can already parse?  :)
+
+It should be pretty easy to do. I had some patches that pack up the
+results into a serialized format for a presubmit service; it should be
+pretty straightforward to take the same logic and just change the
+output format.
+
+Cheers
+
+_______________________________________________
+linux-um mailing list
+linux-um@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-um
