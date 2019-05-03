@@ -2,80 +2,59 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9775D12DB1
-	for <lists+linux-um@lfdr.de>; Fri,  3 May 2019 14:33:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C2D7112F2E
+	for <lists+linux-um@lfdr.de>; Fri,  3 May 2019 15:30:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rK3IYkhXsT3WlaP+YeHegzuzYMocdB0gvG5bnZ2JWOY=; b=RB733bg121U8t4
-	tA9pKO98YONLsN42w4AOdqOJHn9hPyD//N8Zt3AUqdlJBwpknV1MLokaZ8yd6o0ziLYiJEJevwJMx
-	//JNUwWBDCpqXiZxKHaVtGV3zJEHUFgTObTBSIi3Z5cWHG4KjqJW572UsQTp6W3aSC1CYoKiZ+2vK
-	A/l1eK4WYqoZTI71ovX9sAqhYUwoGWB7N0ooPNDj6XBTdFUpMt25V+M68WGL2x/n9vlNRmpM0IoFk
-	+ik1uQPbYmCZItzyK28gYzNbdXpmzTP0wTDcgVoAmtGYOwzBnd3zAv6QrjvUOIYsEYi+zeeAD/yS7
-	Ic1q/++lwA81+SxpBTIw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=gx2qeokPaU0my304TgmDQpeeeY+hcgn/BLzyvRMT+Ek=; b=ea15AxQ0GRTsUSc4N7U0NzpkY
+	TrBlwQ9v8iVO4L2OU+pP+29YJVUxshjN2Bdn+t7ptNgd2euO9LmvasgPM5Eo3B6ommqMFUjP+mPGg
+	7FwK/ZKs18vvCqLjwOWpWrARXSl5on/5Kav6sR7Kw4RzqnhOLwBzLSuS10AmwI7yqlgFnB3LBWcg6
+	+eah8beEYIFtbVbBdjSukwNziQYx7dmsiePz4PDZU0hhsgr1ql3FmL1oLHqTa8kfS+6I+1auk0osW
+	qAvQL6SWIOLu3VFVOSxXlTKFAx5EwDFxHwfQl8k/lZ4fQ24TU7990SOfj0ktYgoC5Tayns0NsRhge
+	lS/5pKrWQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMXNx-0005tS-AA; Fri, 03 May 2019 12:33:53 +0000
-Received: from ale.deltatee.com ([207.54.116.67])
+	id 1hMYGe-0000ZI-T0; Fri, 03 May 2019 13:30:24 +0000
+Received: from ivanoab6.miniserver.com ([5.153.251.140]
+ helo=www.kot-begemot.co.uk)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMXNt-0005t1-UR
- for linux-um@lists.infradead.org; Fri, 03 May 2019 12:33:51 +0000
-Received: from adsl-173-228-226-134.prtc.net ([173.228.226.134]
- helo=[172.20.29.49])
- by ale.deltatee.com with esmtpsa (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
- (Exim 4.89) (envelope-from <logang@deltatee.com>)
- id 1hMXNQ-0007dH-Hy; Fri, 03 May 2019 06:33:22 -0600
-To: Brendan Higgins <brendanhiggins@google.com>
-References: <20190501230126.229218-1-brendanhiggins@google.com>
- <20190501230126.229218-9-brendanhiggins@google.com>
- <0a605543-477a-1854-eb35-6e586606889b@deltatee.com>
- <CAFd5g47hxAd=+72xbPJbWPdZCXRXmtLpsGhUh=zc7MSwfcaGJQ@mail.gmail.com>
-From: Logan Gunthorpe <logang@deltatee.com>
-Message-ID: <b2379db6-634a-001e-6f67-37427d8a2666@deltatee.com>
-Date: Fri, 3 May 2019 06:33:02 -0600
+ id 1hMYGW-00087a-7F; Fri, 03 May 2019 13:30:18 +0000
+Received: from [192.168.17.6] (helo=jain.kot-begemot.co.uk)
+ by www.kot-begemot.co.uk with esmtps (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <anton.ivanov@cambridgegreys.com>)
+ id 1hMYFM-00074d-Bk; Fri, 03 May 2019 13:29:04 +0000
+Received: from jain.kot-begemot.co.uk ([192.168.3.3])
+ by jain.kot-begemot.co.uk with esmtp (Exim 4.89)
+ (envelope-from <anton.ivanov@cambridgegreys.com>)
+ id 1hMYFF-0001a5-CV; Fri, 03 May 2019 14:29:03 +0100
+Subject: Re: [PATCH 14/15] um: switch to generic version of pte allocation
+To: Mike Rapoport <rppt@linux.ibm.com>,
+ Andrew Morton <akpm@linux-foundation.org>
+References: <1556810922-20248-1-git-send-email-rppt@linux.ibm.com>
+ <1556810922-20248-15-git-send-email-rppt@linux.ibm.com>
+From: Anton Ivanov <anton.ivanov@cambridgegreys.com>
+Message-ID: <3fddc076-1843-ee84-febb-44c8d317489f@cambridgegreys.com>
+Date: Fri, 3 May 2019 14:28:56 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <CAFd5g47hxAd=+72xbPJbWPdZCXRXmtLpsGhUh=zc7MSwfcaGJQ@mail.gmail.com>
+In-Reply-To: <1556810922-20248-15-git-send-email-rppt@linux.ibm.com>
 Content-Language: en-US
-X-SA-Exim-Connect-IP: 173.228.226.134
-X-SA-Exim-Rcpt-To: wfg@linux.intel.com, rostedt@goodmis.org,
- rientjes@google.com, richard@nod.at, pmladek@suse.com, mpe@ellerman.id.au,
- knut.omang@oracle.com, khilman@baylibre.com, julia.lawall@lip6.fr,
- joel@jms.id.au, jdike@addtoit.com, daniel@ffwll.ch, dan.j.williams@intel.com,
- dan.carpenter@oracle.com, amir73il@gmail.com, Tim.Bird@sony.com,
- Alexander.Levin@microsoft.com, linux-um@lists.infradead.org,
- linux-nvdimm@lists.01.org, linux-kselftest@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-kbuild@vger.kernel.org,
- linux-fsdevel@vger.kernel.org, linux-doc@vger.kernel.org,
- kunit-dev@googlegroups.com, dri-devel@lists.freedesktop.org,
- devicetree@vger.kernel.org, shuah@kernel.org, sboyd@kernel.org,
- robh@kernel.org, mcgrof@kernel.org, kieran.bingham@ideasonboard.com,
- keescook@google.com, gregkh@linuxfoundation.org, frowand.list@gmail.com,
- brendanhiggins@google.com
-X-SA-Exim-Mail-From: logang@deltatee.com
-X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on ale.deltatee.com
-X-Spam-Level: 
-X-Spam-Status: No, score=-8.9 required=5.0 tests=ALL_TRUSTED,BAYES_00,
- GREYLIST_ISWHITE autolearn=ham autolearn_force=no version=3.4.2
-Subject: Re: [PATCH v2 08/17] kunit: test: add support for test abort
-X-SA-Exim-Version: 4.2.1 (built Tue, 02 Aug 2016 21:08:31 +0000)
-X-SA-Exim-Scanned: Yes (on ale.deltatee.com)
+X-Spam-Score: -1.0
+X-Spam-Score: -1.0
+X-Clacks-Overhead: GNU Terry Pratchett
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190503_053350_034043_29F73AAA 
-X-CRM114-Status: GOOD (  31.59  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190503_063016_395699_5E259523 
+X-CRM114-Status: GOOD (  19.67  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.54.116.67 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -87,155 +66,122 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: Petr Mladek <pmladek@suse.com>, linux-doc@vger.kernel.org,
- Amir Goldstein <amir73il@gmail.com>,
- dri-devel <dri-devel@lists.freedesktop.org>,
- Sasha Levin <Alexander.Levin@microsoft.com>,
- Michael Ellerman <mpe@ellerman.id.au>, linux-kselftest@vger.kernel.org,
- shuah@kernel.org, Rob Herring <robh@kernel.org>,
- linux-nvdimm <linux-nvdimm@lists.01.org>,
- Frank Rowand <frowand.list@gmail.com>, Knut Omang <knut.omang@oracle.com>,
- Kieran Bingham <kieran.bingham@ideasonboard.com>, wfg@linux.intel.com,
- Joel Stanley <joel@jms.id.au>, David Rientjes <rientjes@google.com>,
- Jeff Dike <jdike@addtoit.com>, Dan Carpenter <dan.carpenter@oracle.com>,
- devicetree <devicetree@vger.kernel.org>, linux-kbuild@vger.kernel.org, "Bird,
- Timothy" <Tim.Bird@sony.com>, linux-um@lists.infradead.org,
- Steven Rostedt <rostedt@goodmis.org>, Julia Lawall <julia.lawall@lip6.fr>,
- Dan Williams <dan.j.williams@intel.com>, kunit-dev@googlegroups.com,
- Richard Weinberger <richard@nod.at>, Stephen Boyd <sboyd@kernel.org>,
- Greg KH <gregkh@linuxfoundation.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Luis Chamberlain <mcgrof@kernel.org>, Daniel Vetter <daniel@ffwll.ch>,
- Kees Cook <keescook@google.com>, linux-fsdevel@vger.kernel.org,
- Kevin Hilman <khilman@baylibre.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Michal Hocko <mhocko@suse.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ Palmer Dabbelt <palmer@sifive.com>, linux-kernel@vger.kernel.org,
+ Guo Ren <guoren@kernel.org>, linux-hexagon@vger.kernel.org,
+ linux-riscv@lists.infradead.org, linux-arch@vger.kernel.org,
+ Richard Weinberger <richard@nod.at>, Helge Deller <deller@gmx.de>,
+ x86@kernel.org, Russell King <linux@armlinux.org.uk>,
+ Matthew Wilcox <willy@infradead.org>,
+ Geert Uytterhoeven <geert@linux-m68k.org>, Matt Turner <mattst88@gmail.com>,
+ Sam Creasey <sammy@sammy.net>, Arnd Bergmann <arnd@arndb.de>,
+ linux-alpha@vger.kernel.org, linux-um@lists.infradead.org,
+ linux-m68k@lists.linux-m68k.org, Greentime Hu <green.hu@gmail.com>,
+ Ley Foon Tan <lftan@altera.com>, Guan Xuetao <gxt@pku.edu.cn>,
+ linux-arm-kernel@lists.infradead.org, linux-parisc@vger.kernel.org,
+ linux-mips@vger.kernel.org, Richard Kuo <rkuo@codeaurora.org>,
+ Paul Burton <paul.burton@mips.com>, Michael Ellerman <mpe@ellerman.id.au>,
+ nios2-dev@lists.rocketboards.org, linuxppc-dev@lists.ozlabs.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
 
 
-On 2019-05-03 12:48 a.m., Brendan Higgins wrote:
-> On Thu, May 2, 2019 at 8:15 PM Logan Gunthorpe <logang@deltatee.com> wrote:
->> On 2019-05-01 5:01 p.m., Brendan Higgins wrote:
->>> +/*
->>> + * struct kunit_try_catch - provides a generic way to run code which might fail.
->>> + * @context: used to pass user data to the try and catch functions.
->>> + *
->>> + * kunit_try_catch provides a generic, architecture independent way to execute
->>> + * an arbitrary function of type kunit_try_catch_func_t which may bail out by
->>> + * calling kunit_try_catch_throw(). If kunit_try_catch_throw() is called, @try
->>> + * is stopped at the site of invocation and @catch is catch is called.
->>
->> I found some of the C++ comparisons in this series a bit distasteful but
->> wasn't going to say anything until I saw the try catch.... But looking
->> into the implementation it's just a thread that can exit early which
->> seems fine to me. Just a poor choice of name I guess...
+On 02/05/2019 16:28, Mike Rapoport wrote:
+> um allocates PTE pages with __get_free_page() and uses
+> GFP_KERNEL | __GFP_ZERO for the allocations.
 > 
-> Guilty as charged (I have a long history with C++, sorry). Would you
-> prefer I changed the name? I just figured that try-catch is a commonly
-> understood pattern that describes exactly what I am doing.
-
-It is a commonly understood pattern, but I don't think it's what the
-code is doing. Try-catch cleans up an entire stack and allows each level
-of the stack to apply local cleanup. This implementation simply exits a
-thread and has none of that complexity. To me, it seems like an odd
-abstraction here as it's really just a test runner that can exit early
-(though I haven't seen the follow-up UML implementation).
-
-I would prefer to see this cleaned up such that the abstraction matches
-more what's going on but I don't feel that strongly about it so I'll
-leave it up to you to figure out what's best unless other reviewers have
-stronger opinions.
-
->>
->> [snip]
->>
->>> +static void __noreturn kunit_abort(struct kunit *test)
->>> +{
->>> +     kunit_set_death_test(test, true);
->>> +
->>> +     kunit_try_catch_throw(&test->try_catch);
->>> +
->>> +     /*
->>> +      * Throw could not abort from test.
->>> +      *
->>> +      * XXX: we should never reach this line! As kunit_try_catch_throw is
->>> +      * marked __noreturn.
->>> +      */
->>> +     WARN_ONCE(true, "Throw could not abort from test!\n");
->>> +}
->>> +
->>>  int kunit_init_test(struct kunit *test, const char *name)
->>>  {
->>>       spin_lock_init(&test->lock);
->>> @@ -77,6 +103,7 @@ int kunit_init_test(struct kunit *test, const char *name)
->>>       test->name = name;
->>>       test->vprintk = kunit_vprintk;
->>>       test->fail = kunit_fail;
->>> +     test->abort = kunit_abort;
->>
->> There are a number of these function pointers which seem to be pointless
->> to me as you only ever set them to one function. Just call the function
->> directly. As it is, it is an unnecessary indirection for someone reading
->> the code. If and when you have multiple implementations of the function
->> then add the pointer. Don't assume you're going to need it later on and
->> add all this maintenance burden if you never use it..
+> Switch it to the generic version that does exactly the same thing for the
+> kernel page tables and adds __GFP_ACCOUNT for the user PTEs.
 > 
-> Ah, yes, Frank (and probably others) previously asked me to remove
-> unnecessary method pointers; I removed all the totally unused ones. As
-> for these, I don't use them in this patchset, but I use them in my
-> patchsets that will follow up this one. These in particular are
-> present so that they can be mocked out for testing.
-
-Adding indirection and function pointers solely for the purpose of
-mocking out while testing doesn't sit well with me and I don't think it
-should be a pattern that's encouraged. Adding extra complexity like this
-to a design to make it unit-testable doesn't seem like something that
-makes sense in kernel code. Especially given that indirect calls are
-more expensive in the age of spectre.
-
-Also, mocking these particular functions seems like it's an artifact of
-how you've designed the try/catch abstraction. If the abstraction was
-more around an abort-able test runner then it doesn't make sense to need
-to mock out the abort/fail functions as you will be testing overly
-generic features of something that don't seem necessary to the
-implementation.
-
->>
->> [snip]
->>
->>> +void kunit_generic_try_catch_init(struct kunit_try_catch *try_catch)
->>> +{
->>> +     try_catch->run = kunit_generic_run_try_catch;
->>> +     try_catch->throw = kunit_generic_throw;
->>> +}
->>
->> Same here. There's only one implementation of try_catch and I can't
->> really see any sensible justification for another implementation. Even
->> if there is, add the indirection when the second implementation is
->> added. This isn't C++ and we don't need to make everything a "method".
+> The pte_free() and pte_free_kernel() versions are identical to the generic
+> ones and can be simply dropped.
 > 
-> These methods are for a UML specific implementation in a follow up
-> patchset, which is needed for some features like crash recovery, death
-> tests, and removes dependence on kthreads.
+> Signed-off-by: Mike Rapoport <rppt@linux.ibm.com>
+> ---
+>   arch/um/include/asm/pgalloc.h | 16 ++--------------
+>   arch/um/kernel/mem.c          | 22 ----------------------
+>   2 files changed, 2 insertions(+), 36 deletions(-)
 > 
-> I know this probably sounds like premature complexity. Arguably it is
-> in hindsight, but I wrote those features before I pulled out these
-> interfaces (they were actually both originally in this patchset, but I
-> dropped them to make this patchset easier to review). I can remove
-> these methods and add them back in when I actually use them in the
-> follow up patchsets if you prefer.
+> diff --git a/arch/um/include/asm/pgalloc.h b/arch/um/include/asm/pgalloc.h
+> index 99eb568..d7b282e 100644
+> --- a/arch/um/include/asm/pgalloc.h
+> +++ b/arch/um/include/asm/pgalloc.h
+> @@ -10,6 +10,8 @@
+>   
+>   #include <linux/mm.h>
+>   
+> +#include <asm-generic/pgalloc.h>	/* for pte_{alloc,free}_one */
+> +
+>   #define pmd_populate_kernel(mm, pmd, pte) \
+>   	set_pmd(pmd, __pmd(_PAGE_TABLE + (unsigned long) __pa(pte)))
+>   
+> @@ -25,20 +27,6 @@
+>   extern pgd_t *pgd_alloc(struct mm_struct *);
+>   extern void pgd_free(struct mm_struct *mm, pgd_t *pgd);
+>   
+> -extern pte_t *pte_alloc_one_kernel(struct mm_struct *);
+> -extern pgtable_t pte_alloc_one(struct mm_struct *);
+> -
+> -static inline void pte_free_kernel(struct mm_struct *mm, pte_t *pte)
+> -{
+> -	free_page((unsigned long) pte);
+> -}
+> -
+> -static inline void pte_free(struct mm_struct *mm, pgtable_t pte)
+> -{
+> -	pgtable_page_dtor(pte);
+> -	__free_page(pte);
+> -}
+> -
+>   #define __pte_free_tlb(tlb,pte, address)		\
+>   do {							\
+>   	pgtable_page_dtor(pte);				\
+> diff --git a/arch/um/kernel/mem.c b/arch/um/kernel/mem.c
+> index 99aa11b..2280374 100644
+> --- a/arch/um/kernel/mem.c
+> +++ b/arch/um/kernel/mem.c
+> @@ -215,28 +215,6 @@ void pgd_free(struct mm_struct *mm, pgd_t *pgd)
+>   	free_page((unsigned long) pgd);
+>   }
+>   
+> -pte_t *pte_alloc_one_kernel(struct mm_struct *mm)
+> -{
+> -	pte_t *pte;
+> -
+> -	pte = (pte_t *)__get_free_page(GFP_KERNEL|__GFP_ZERO);
+> -	return pte;
+> -}
+> -
+> -pgtable_t pte_alloc_one(struct mm_struct *mm)
+> -{
+> -	struct page *pte;
+> -
+> -	pte = alloc_page(GFP_KERNEL|__GFP_ZERO);
+> -	if (!pte)
+> -		return NULL;
+> -	if (!pgtable_page_ctor(pte)) {
+> -		__free_page(pte);
+> -		return NULL;
+> -	}
+> -	return pte;
+> -}
+> -
+>   #ifdef CONFIG_3_LEVEL_PGTABLES
+>   pmd_t *pmd_alloc_one(struct mm_struct *mm, unsigned long address)
+>   {
+> 
 
-Yes, remove them now and add them back when you use them in follow-up
-patches. If reviewers find problems with the follow-up patches or have a
-better suggestion on how to do what ever it is you are doing, then you
-just have this unnecessary code and there's wasted developer time and
-review bandwidth that will need to be spent cleaning it up.
 
-Thanks,
+Reviewed-by: Anton Ivanov <anton.ivanov@cambridgegreys.com>
+Acked-by: Anton Ivanov <anton.ivanov@cambridgegreys.com>
 
-Logan
+-- 
+Anton R. Ivanov
+Cambridgegreys Limited. Registered in England. Company Number 10273661
+https://www.cambridgegreys.com/
 
 _______________________________________________
 linux-um mailing list
