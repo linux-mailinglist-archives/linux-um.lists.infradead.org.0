@@ -2,74 +2,75 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A5D63125AB
-	for <lists+linux-um@lfdr.de>; Fri,  3 May 2019 02:41:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 303A2125B4
+	for <lists+linux-um@lfdr.de>; Fri,  3 May 2019 02:44:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4O/ORI7hwkyb6Ege6PzgM2+OGOMMAzVyowQzo/RBanE=; b=hbhWtURViTy+QA
-	AZmNZTP7ghJvxLYNsijbrXju9FxFdaO4gxdsqXC80rwbdmtxRMZCODb+68klq1JVrxLM0WdSV+JOE
-	VziW87rbPD//lFrKVXoY6fCnClTt2wxdqmBWZOcafvEJa4o07BRv32C1J/H2AZySsPpf+w6d/HqqO
-	D0YTkTfOzw9YcJS1CeXBognfVnS3q4pZdRO5anKEu0RfQzPobe9tJAVwtbFHtjk6F6uvlp0PWOCoy
-	HZEMa0yvHKsO7AJbZGAGY3WYCvf5wR3x7mnZp8Kq0gyMrgXNJUYoQELkkmBmh+IsKsBCaOYMIH80X
-	30JeVAYMP152IyAg3aFw==;
+	List-Owner; bh=uVJmqwZLodvIfpZ02C/OwDI6oRznZXMM6UM/bUOO/rw=; b=Hazqvy0/5cQcnZ
+	V3gzh7vCrBe0K/VlrNimq+93qc8oiJY8DXgQ8XlYI/spleHMmXK3g9FNN7YZ+tN+5FZ+f8rjgElEP
+	zwWtPzH4HXhqgwQnXbb7z6tSZ1jq3Iodqm1w4vDHNiK+C0iInufwL6J6GH7F+4XWEQx2bM+1MCAxm
+	Ti3FcEWdhC9qfxF+Du9EhiBH7AXR0DlSgCuRWMmhUdY7CTBG/SSPx9CNGq+JMxYvJSAPK1qQWruj6
+	DZjKJOAu+OpCDVkk/KL3d2H18ynOyVavNgNSztdYJxmsPoLIKumP6uz+wPtZEfDdjRR4y+cI92N9q
+	OoYe/foBzyrxguvthbGQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMMGS-0003Ac-SQ; Fri, 03 May 2019 00:41:24 +0000
-Received: from mail-oi1-x244.google.com ([2607:f8b0:4864:20::244])
+	id 1hMMJJ-0003Mj-BM; Fri, 03 May 2019 00:44:21 +0000
+Received: from mail-oi1-x241.google.com ([2607:f8b0:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMMGP-0003AA-WC
- for linux-um@lists.infradead.org; Fri, 03 May 2019 00:41:23 +0000
-Received: by mail-oi1-x244.google.com with SMTP id w130so2800585oie.6
- for <linux-um@lists.infradead.org>; Thu, 02 May 2019 17:41:21 -0700 (PDT)
+ id 1hMMJG-0003Ln-3R
+ for linux-um@lists.infradead.org; Fri, 03 May 2019 00:44:19 +0000
+Received: by mail-oi1-x241.google.com with SMTP id v23so3221029oif.8
+ for <linux-um@lists.infradead.org>; Thu, 02 May 2019 17:44:17 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=i/LGIUMFfkHhxCSDT3fm51UOA28cPrGRFTawiLz9qdU=;
- b=FJIAYLW9LNf9oanARKl7TfF4hN+5D95QZaw548QJynu0CjT8BCwlpKeraO6t9YYkOs
- GtNX3/gAG5EXPOJwbqEw8XIrwSSwlKCrob0M1UGIcbcgu72bFgtpR14EttoAsQY2aDgu
- R3g2UNQXhcb3FGDMQxi+sYsTRkYHs3qzvEqqHMGSEtbYKM2QA4nxdIkJahuLnsBoO2+c
- TGr8njZSgd2pD66c4pynpYDwYtRx3F05qDNXkbRYRi3lANeuXFpYdvOTMjhMHRrrhF8P
- 3i1MCfzjUMz11YJpZRIR9WsEPFVnmwGmtj8MUe4JYxQcAMMsvhz5BhNLX+0hNU5ukE4d
- 83hA==
+ :cc; bh=A2hincFuCgvv5JHuCTV0zjcSgRetC4sQsA2RxJqwbHE=;
+ b=OmqtnHqhiWeR9Oui8paJzv152rY6QABSkuQBz4HTi+7RcYfpqAMASWqQsmYpDFgDN6
+ 8u4QGxIX+281+PUfSj8hi/U7tm8NJ9VAxVw6f/1fIubO5IRk2JSVgWheDKh9YqA4Wsbf
+ 24sX8hJEdjs5npjlV/LbLiqkJxkPc5vfXFxPFLtHmaYVvwOT1Kl25XRCnzlFSWh2Q25H
+ cUcrTa1e6pmnoMfZEaTHDQhpE68nGq58M6J2ln/kAXPBqhupBP9xcAgry1zyiFWDMuo5
+ NRZs5NySNRdFsKgdLNe5bdoZ8f/LlUzn/ZIEd8r9DQV7aKNkXapSSaI0cJxyrsljswdm
+ UMNw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=i/LGIUMFfkHhxCSDT3fm51UOA28cPrGRFTawiLz9qdU=;
- b=OqgjN35j+8eXNgaO/UO5DIT27XpnMjzcqoDii2QPM3CnMDjxQ6HXa+3md+peoll7m+
- kNGgq1w+YLE1kX8bu8zQg7EYrtX0dUgtUdH11W2B0WlnLKf56LtBoCRlkGr4UiipcwRR
- YEY7qh1KuQyZHiHG5CL8avfZcZn02n+cK1WBgC5megxm9MvB4w1yjndkOH8GxXrg5stU
- fD2VbTWYS+mJu6fF8SkXYMK4u03FqbD1AoYwChft1zKs3q6PnZ8w7a/Kcza3Y6lLO7lg
- MkNH5mCbCBFCBsR+eH2RwnF10a827IfVSHQjB+Gnko6g95QrYsw9ggTZP3OmVFT0J7lI
- ESAQ==
-X-Gm-Message-State: APjAAAXTpz0lchYE/f6BLqog3LMRPkzhKM9B3Ug4j0wHli8Zcg9KNFjp
- c0naOsG7SpfxrVDEo8oiutgaxRKmEuOTEbRxMZtnTA==
-X-Google-Smtp-Source: APXvYqx+IeNo/M2uU5es7ZAJsOSGR6b01vZ0dEQaWTEj9cNFRVwEHLuSMfXDE/OIHXARFXXWqbF1LQIlh8BGLZyE6Eo=
-X-Received: by 2002:aca:4586:: with SMTP id s128mr4126147oia.148.1556844080319; 
- Thu, 02 May 2019 17:41:20 -0700 (PDT)
+ bh=A2hincFuCgvv5JHuCTV0zjcSgRetC4sQsA2RxJqwbHE=;
+ b=KMhJLD2sG84YaohCnKkCk1SzJGiG3zxyD8v8nN13iZj34qoD1YLRbkDpTRV5XW6KKJ
+ Xw7yjDBTvY/kdfPupFKPzZPHrm1kuC9esLC8XjNr4mnjPfMAHXFVqjhxVSJOnR5QX+OK
+ FG4jb3idKE/4Vy58Q7a3uye1szNcM+0zwfWQuk7oK94UH4zgDug+n1AIBZqCM/f2I6lM
+ lX+i3HAD+OcnZ71divi/w12Qyq9Y1Uir3Cirm57rtcUQ1uICNtFQmdZTbCC15aBzUSvX
+ XbIE3pmsHWdFny7UcJ2iANHAobKMcF6hUQeETnS6NujoknzAjlljWeucBom7XtWICS9N
+ 7y3w==
+X-Gm-Message-State: APjAAAUTlDidxcpUtxdF61NJ73W1JPCDzgUoe5lQ6nz2E24Iisla57te
+ jBSNqsLaCjd6Aja+AVMogxVrYb+MHV6f81QWqz2Gfg==
+X-Google-Smtp-Source: APXvYqyH7XhI3a/DkRyh575w1BCN/DsRH5SQN4U4GjnrWhviWpfRz21kNlgkWO7kwhjd2fwRpqP4aZoATeVVAm4A6kc=
+X-Received: by 2002:aca:4586:: with SMTP id s128mr4131634oia.148.1556844256812; 
+ Thu, 02 May 2019 17:44:16 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190501230126.229218-1-brendanhiggins@google.com>
- <20190502105053.GA12416@kroah.com> <20190502110513.GF12416@kroah.com>
-In-Reply-To: <20190502110513.GF12416@kroah.com>
+ <20190502105053.GA12416@kroah.com>
+ <76e84d54-6b7e-8cc1-492b-43822fc43ac4@kernel.org>
+In-Reply-To: <76e84d54-6b7e-8cc1-492b-43822fc43ac4@kernel.org>
 From: Brendan Higgins <brendanhiggins@google.com>
-Date: Thu, 2 May 2019 17:41:08 -0700
-Message-ID: <CAFd5g46RyQ+jaV3bDejBaeca4Yv3G9ppT5JxdKqZw6PSbiSDYw@mail.gmail.com>
+Date: Thu, 2 May 2019 17:44:05 -0700
+Message-ID: <CAFd5g47JiSXHvMEu9NovkGdG7ugMCwVO0pGwT7bC=NCghD0w-g@mail.gmail.com>
 Subject: Re: [PATCH v2 00/17] kunit: introduce KUnit, the Linux kernel unit
  testing framework
-To: Greg KH <gregkh@linuxfoundation.org>
+To: shuah <shuah@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190502_174122_061891_BD8D27E2 
-X-CRM114-Status: GOOD (  19.57  )
+X-CRM114-CacheID: sfid-20190502_174418_170608_24D03A61 
+X-CRM114-Status: GOOD (  12.91  )
 X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:244 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:241 listed in]
  [list.dnswl.org]
  -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
  white-list
@@ -101,9 +102,9 @@ Cc: Petr Mladek <pmladek@suse.com>, linux-doc@vger.kernel.org,
  dri-devel <dri-devel@lists.freedesktop.org>,
  Sasha Levin <Alexander.Levin@microsoft.com>,
  Michael Ellerman <mpe@ellerman.id.au>, linux-kselftest@vger.kernel.org,
- shuah@kernel.org, Rob Herring <robh@kernel.org>,
- linux-nvdimm <linux-nvdimm@lists.01.org>,
- Frank Rowand <frowand.list@gmail.com>, Knut Omang <knut.omang@oracle.com>,
+ Frank Rowand <frowand.list@gmail.com>, Rob Herring <robh@kernel.org>,
+ linux-nvdimm <linux-nvdimm@lists.01.org>, Kevin Hilman <khilman@baylibre.com>,
+ Knut Omang <knut.omang@oracle.com>,
  Kieran Bingham <kieran.bingham@ideasonboard.com>, wfg@linux.intel.com,
  Joel Stanley <joel@jms.id.au>, David Rientjes <rientjes@google.com>,
  Jeff Dike <jdike@addtoit.com>, Dan Carpenter <dan.carpenter@oracle.com>,
@@ -112,64 +113,44 @@ Cc: Petr Mladek <pmladek@suse.com>, linux-doc@vger.kernel.org,
  Steven Rostedt <rostedt@goodmis.org>, Julia Lawall <julia.lawall@lip6.fr>,
  Dan Williams <dan.j.williams@intel.com>, kunit-dev@googlegroups.com,
  Richard Weinberger <richard@nod.at>, Stephen Boyd <sboyd@kernel.org>,
+ Greg KH <gregkh@linuxfoundation.org>,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
  Luis Chamberlain <mcgrof@kernel.org>, Daniel Vetter <daniel@ffwll.ch>,
  Kees Cook <keescook@google.com>, linux-fsdevel@vger.kernel.org,
- Logan Gunthorpe <logang@deltatee.com>, Kevin Hilman <khilman@baylibre.com>
+ Logan Gunthorpe <logang@deltatee.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Thu, May 2, 2019 at 4:05 AM Greg KH <gregkh@linuxfoundation.org> wrote:
+On Thu, May 2, 2019 at 7:04 AM shuah <shuah@kernel.org> wrote:
 >
-> On Thu, May 02, 2019 at 12:50:53PM +0200, Greg KH wrote:
+> On 5/2/19 4:50 AM, Greg KH wrote:
 > > On Wed, May 01, 2019 at 04:01:09PM -0700, Brendan Higgins wrote:
-> > > ## TLDR
-> > >
-> > > I rebased the last patchset on 5.1-rc7 in hopes that we can get this in
-> > > 5.2.
+> >> ## TLDR
+> >>
+> >> I rebased the last patchset on 5.1-rc7 in hopes that we can get this in
+> >> 5.2.
 > >
 > > That might be rushing it, normally trees are already closed now for
 > > 5.2-rc1 if 5.1-final comes out this Sunday.
 > >
-> > > Shuah, I think you, Greg KH, and myself talked off thread, and we agreed
-> > > we would merge through your tree when the time came? Am I remembering
-> > > correctly?
+> >> Shuah, I think you, Greg KH, and myself talked off thread, and we agreed
+> >> we would merge through your tree when the time came? Am I remembering
+> >> correctly?
 > >
 > > No objection from me.
 > >
-> > Let me go review the latest round of patches now.
 >
-> Overall, looks good to me, and provides a framework we can build on.
-> I'm a bit annoyed at the reliance on uml at the moment, but we can work
-> on that in the future :)
+> Yes. I can take these through kselftest tree when the time comes.
 
-Eh, I mostly fixed that.
+Awesome.
 
-I removed the KUnit framework's reliance on UML i.e. the actual tests
-now run on any architecture.
+> Agree with Greg that 5.2 might be rushing it. 5.3 would be a good
+> target.
 
-The only UML dependent bit is the KUnit wrapper scripts, which could
-be made to work to support other architectures pretty trivially. The
-only limitation here is that it would be dependent on the actual
-workflow you are using.
-
-In anycase, if you are comfortable reading the results in the kernel
-logs, then there is no dependence on UML. (I should probably provide
-some documentation on that...)
-
->
-> Thanks for sticking with this, now the real work begins...
-
-I don't doubt it.
-
->
-> Reviewed-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-
-Does this cover all the patches in this set?
-
-Thanks!
+Whoops. I guess I should have sent this out a bit earlier. Oh well, as
+long as we are on our way!
 
 _______________________________________________
 linux-um mailing list
