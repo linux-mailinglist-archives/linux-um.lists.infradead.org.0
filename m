@@ -2,59 +2,53 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D3CA813088
-	for <lists+linux-um@lfdr.de>; Fri,  3 May 2019 16:38:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 26247131C9
+	for <lists+linux-um@lfdr.de>; Fri,  3 May 2019 18:04:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=PnRo6XI9shz2qK0FUoXaGlWKf1cGQ4mgCHN12SSWPTY=; b=EFkCXJ1Vfjfz0rGKz/psofOxu
-	afAxmRKRWlL5GNTWN9ke9WJ+QarqZmlBmFzBfqPTraNFQ5KPkpgugjOwy+Ku75+KjVq3P2/ViYxZ8
-	RpZb8i7x8NG67JCTFklLaUHbEqWH7HaiUJanM1erLMKWcIhX9mZpWRbdZwn8OQaaPQdUDrwO87rly
-	iGcp2fOC+Pxn+y3+1/zWQpTAbfz2+f+gSmaCq5SRRPOCZjY6Iuko3wwh8i5pO9JDzZg4ehFVdgF/s
-	2CW34Nbce9ScNcV68jAC246zjML2cxB+2mW5iPjC8RCxEvtlhN+Tju64fcNhb2ajPH212r1hUtRb+
-	8i27XVFMQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=nfsmIBdeWXXHXWpfY7Mbxcd9/qOwhw3Zc8fV/F2ZttY=; b=pwn27rY2Fno7NT
+	XeW8ssrnsVztaq5Vwxg/8oa9YKu9r6kI++75TGAUVo2C+PHDtVZ1OXTErwpZ8WsTH7uBBPCGyvnzr
+	t7bzRsKg4DN99aR8KsKEQK9eMJHjIIUO0YMmfQY6NlpKwtivL15/xYgXkwKC1hMoKun1wHQhGkzGt
+	wWmX36YRJ4jgbOYOMsCC7jOkcuzYJYJgFRJIeuDDmz+wT2s3CREuEJ5DYIg6AmrhEpZFsRTMYfYoK
+	q2U682KJ2RZNiLvdhT+KOR4hfBSAltnJaBkmGs4G7o0qufBnfHnL9iNP44QDdB2xuokDpYQQlHTst
+	XLy8MidJET1SaGH5Xagg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMZKV-0006Qz-AL; Fri, 03 May 2019 14:38:27 +0000
+	id 1hMafd-00012u-4h; Fri, 03 May 2019 16:04:21 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMZKS-0006QU-G8
- for linux-um@lists.infradead.org; Fri, 03 May 2019 14:38:25 +0000
-Received: from [192.168.1.112] (c-24-9-64-241.hsd1.co.comcast.net
- [24.9.64.241])
+ id 1hMafR-0000ne-6T; Fri, 03 May 2019 16:04:11 +0000
+Received: from guoren-Inspiron-7460 (23.83.240.247.16clouds.com
+ [23.83.240.247])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2B53A2075E;
- Fri,  3 May 2019 14:38:22 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id B79282075C;
+ Fri,  3 May 2019 16:03:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1556894304;
- bh=h8oxhzJgMjKsgFLL1fTeERSR9DIUHSDvIGx4NtqrSk8=;
- h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
- b=pk4OHvvgJJmv9SPnB6LKIN4E7kYPSd9V9fKtqN0iU5EoavNPnLPHQKTqci0zx2sOe
- OUW21wB7Vx2wMWr8UJHS7PkPhgYKYCStUAReyHvN/DZti58bKEgvn8G7m+LgdKLl+q
- 2Iy1KJC7agYFgVsnqcKMjl9uBxuQgNZuMkNlyvD4=
-Subject: Re: [PATCH v2 15/17] MAINTAINERS: add entry for KUnit the unit
- testing framework
-To: Brendan Higgins <brendanhiggins@google.com>, frowand.list@gmail.com,
- gregkh@linuxfoundation.org, keescook@google.com,
- kieran.bingham@ideasonboard.com, mcgrof@kernel.org, robh@kernel.org,
- sboyd@kernel.org
-References: <20190501230126.229218-1-brendanhiggins@google.com>
- <20190501230126.229218-16-brendanhiggins@google.com>
-From: shuah <shuah@kernel.org>
-Message-ID: <68f88e1c-d40f-9dad-7296-ab2b2303c575@kernel.org>
-Date: Fri, 3 May 2019 08:38:21 -0600
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ s=default; t=1556899448;
+ bh=9K26hWqGMesApQFdaAhFuNyta2kJgrhs2hDdmQ00qcY=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=HpZWwg5gL0lVYH9xXr2lFjIs4Hr4EFxgLMU0fvIEmuLFdJqilQ6jQYN4Ocb6SStWw
+ iJWfiG66zAQYSvJeB8l3sHAhW93+kPdDD0sZUeypbCGK/KXfyMm98BkvfNuimDaaPM
+ OT2y75fIlpEILXIObpyUg29WsNXovSO+5g+0/f6w=
+Date: Sat, 4 May 2019 00:03:48 +0800
+From: Guo Ren <guoren@kernel.org>
+To: Mike Rapoport <rppt@linux.ibm.com>
+Subject: Re: [PATCH 05/15] csky: switch to generic version of pte allocation
+Message-ID: <20190503160348.GA9526@guoren-Inspiron-7460>
+References: <1556810922-20248-1-git-send-email-rppt@linux.ibm.com>
+ <1556810922-20248-6-git-send-email-rppt@linux.ibm.com>
 MIME-Version: 1.0
-In-Reply-To: <20190501230126.229218-16-brendanhiggins@google.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <1556810922-20248-6-git-send-email-rppt@linux.ibm.com>
+User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190503_073824_558604_604F51E9 
-X-CRM114-Status: GOOD (  13.48  )
+X-CRM114-CacheID: sfid-20190503_090409_284191_FFED4FC0 
+X-CRM114-Status: GOOD (  18.36  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -82,56 +76,113 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: pmladek@suse.com, linux-doc@vger.kernel.org, amir73il@gmail.com,
- dri-devel@lists.freedesktop.org, Alexander.Levin@microsoft.com,
- linux-kselftest@vger.kernel.org, shuah <shuah@kernel.org>,
- linux-nvdimm@lists.01.org, khilman@baylibre.com, knut.omang@oracle.com,
- wfg@linux.intel.com, joel@jms.id.au, rientjes@google.com, jdike@addtoit.com,
- dan.carpenter@oracle.com, devicetree@vger.kernel.org,
- linux-kbuild@vger.kernel.org, Tim.Bird@sony.com, linux-um@lists.infradead.org,
- rostedt@goodmis.org, julia.lawall@lip6.fr,
- Shuah Khan <skhan@linuxfoundation.org>, dan.j.williams@intel.com,
- kunit-dev@googlegroups.com, richard@nod.at, linux-kernel@vger.kernel.org,
- daniel@ffwll.ch, mpe@ellerman.id.au, linux-fsdevel@vger.kernel.org,
- logang@deltatee.com
+Cc: Michal Hocko <mhocko@suse.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ Palmer Dabbelt <palmer@sifive.com>, linux-mips@vger.kernel.org,
+ Michael Ellerman <mpe@ellerman.id.au>, linux-hexagon@vger.kernel.org,
+ linux-riscv@lists.infradead.org, linux-arch@vger.kernel.org,
+ Richard Weinberger <richard@nod.at>, Helge Deller <deller@gmx.de>,
+ x86@kernel.org, Russell King <linux@armlinux.org.uk>,
+ Matthew Wilcox <willy@infradead.org>,
+ Geert Uytterhoeven <geert@linux-m68k.org>, Matt Turner <mattst88@gmail.com>,
+ Sam Creasey <sammy@sammy.net>, Arnd Bergmann <arnd@arndb.de>,
+ linux-um@lists.infradead.org, linux-m68k@lists.linux-m68k.org,
+ Greentime Hu <green.hu@gmail.com>, nios2-dev@lists.rocketboards.org,
+ Guan Xuetao <gxt@pku.edu.cn>, linux-arm-kernel@lists.infradead.org,
+ linux-parisc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Richard Kuo <rkuo@codeaurora.org>, Paul Burton <paul.burton@mips.com>,
+ linux-alpha@vger.kernel.org, Ley Foon Tan <lftan@altera.com>,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On 5/1/19 5:01 PM, Brendan Higgins wrote:
-> Add myself as maintainer of KUnit, the Linux kernel's unit testing
-> framework.
+Hi Mike,
+
+Acked-by: Guo Ren <ren_guo@c-sky.com>
+
+On Thu, May 02, 2019 at 06:28:32PM +0300, Mike Rapoport wrote:
+> The csky implementation pte_alloc_one(), pte_free_kernel() and pte_free()
+> is identical to the generic except of lack of __GFP_ACCOUNT for the user
+> PTEs allocation.
 > 
-> Signed-off-by: Brendan Higgins <brendanhiggins@google.com>
+> Switch csky to use generic version of these functions.
+Ok.
+
+> 
+> The csky implementation of pte_alloc_one_kernel() is not replaced because
+> it does not clear the allocated page but rather sets each PTE in it to a
+> non-zero value.
+Yes, we must set each PTE to _PAGE_GLOBAL because hardware refill the
+MMU TLB entry with two PTEs and it use the result of pte0.global | pte1.global.
+If pte0 is valid and pte1 is invalid, we must set _PAGE_GLOBAL in
+invalid pte entry. Fortunately, there is no performance issue.
+
+> 
+> The pte_free_kernel() and pte_free() versions on csky are identical to the
+> generic ones and can be simply dropped.
+Ok.
+
+Best Regards
+ Guo Ren
+
+> 
+> Signed-off-by: Mike Rapoport <rppt@linux.ibm.com>
 > ---
->   MAINTAINERS | 10 ++++++++++
->   1 file changed, 10 insertions(+)
+>  arch/csky/include/asm/pgalloc.h | 30 +++---------------------------
+>  1 file changed, 3 insertions(+), 27 deletions(-)
 > 
-> diff --git a/MAINTAINERS b/MAINTAINERS
-> index 5c38f21aee787..c78ae95c56b80 100644
-> --- a/MAINTAINERS
-> +++ b/MAINTAINERS
-> @@ -8448,6 +8448,16 @@ S:	Maintained
->   F:	tools/testing/selftests/
->   F:	Documentation/dev-tools/kselftest*
->   
-> +KERNEL UNIT TESTING FRAMEWORK (KUnit)
-> +M:	Brendan Higgins <brendanhiggins@google.com>
-> +L:	kunit-dev@googlegroups.com
-> +W:	https://google.github.io/kunit-docs/third_party/kernel/docs/
-> +S:	Maintained
-> +F:	Documentation/kunit/
-> +F:	include/kunit/
-> +F:	kunit/
-> +F:	tools/testing/kunit/
+> diff --git a/arch/csky/include/asm/pgalloc.h b/arch/csky/include/asm/pgalloc.h
+> index d213bb4..98c571670 100644
+> --- a/arch/csky/include/asm/pgalloc.h
+> +++ b/arch/csky/include/asm/pgalloc.h
+> @@ -8,6 +8,9 @@
+>  #include <linux/mm.h>
+>  #include <linux/sched.h>
+>  
+> +#define __HAVE_ARCH_PTE_ALLOC_ONE_KERNEL
+> +#include <asm-generic/pgalloc.h>	/* for pte_{alloc,free}_one */
 > +
-
-Please add kselftest mailing list to this entry, based on our
-conversation on taking these patches through kselftest tree.
-
-thanks,
--- Shuah
+>  static inline void pmd_populate_kernel(struct mm_struct *mm, pmd_t *pmd,
+>  					pte_t *pte)
+>  {
+> @@ -39,33 +42,6 @@ static inline pte_t *pte_alloc_one_kernel(struct mm_struct *mm)
+>  	return pte;
+>  }
+>  
+> -static inline struct page *pte_alloc_one(struct mm_struct *mm)
+> -{
+> -	struct page *pte;
+> -
+> -	pte = alloc_pages(GFP_KERNEL | __GFP_ZERO, 0);
+> -	if (!pte)
+> -		return NULL;
+> -
+> -	if (!pgtable_page_ctor(pte)) {
+> -		__free_page(pte);
+> -		return NULL;
+> -	}
+> -
+> -	return pte;
+> -}
+> -
+> -static inline void pte_free_kernel(struct mm_struct *mm, pte_t *pte)
+> -{
+> -	free_pages((unsigned long)pte, PTE_ORDER);
+> -}
+> -
+> -static inline void pte_free(struct mm_struct *mm, pgtable_t pte)
+> -{
+> -	pgtable_page_dtor(pte);
+> -	__free_pages(pte, PTE_ORDER);
+> -}
+> -
+>  static inline void pgd_free(struct mm_struct *mm, pgd_t *pgd)
+>  {
+>  	free_pages((unsigned long)pgd, PGD_ORDER);
+> -- 
+> 2.7.4
+> 
 
 _______________________________________________
 linux-um mailing list
