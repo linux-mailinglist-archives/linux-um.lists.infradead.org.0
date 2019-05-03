@@ -2,90 +2,71 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4EEBD12742
-	for <lists+linux-um@lfdr.de>; Fri,  3 May 2019 07:48:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C16F3127E6
+	for <lists+linux-um@lfdr.de>; Fri,  3 May 2019 08:42:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=O5It0geurClmXQgqjGKSFqPPnV3gGND8x1M4td/iw5U=; b=ZCbwWiRyBNae++
-	cGKTAJaR2TBrVq0DHf4VFhbZ93BZ5iSh+z8ZxGUQqDU0wvaUFfG194iprQUA3W5Nvxc6O8NbZFMTj
-	nrpus4Cgdr6Y9SMRVZckMHzzjnbA3HyCDe/spNmpZ6UUeah3dZFyI3KWqCP6404Auq0rc3ch5kqYh
-	YMcFi7xlcchD6WZ+IqBJMtF0bpiPtLKa5f9FA859BgN41fT7Us1WIl1U/gj6z3Mk4Sh6M+Z1icMmy
-	sqWRPGlN63IZnrc0/F0GVbCb54VHe1FEwz6Er3PkFitMfhCbupzhZpwT9JF0dk43rEczMJhHxqbmH
-	YqRsrug9dL0BVi/IxlJQ==;
+	List-Owner; bh=HLwjoh8X1OIRlVtYaWDO8tvy6bJp4lHPzqj8Ygk2/54=; b=gu2i9kc1YmeJJo
+	16VFbYJe6DRuAbv6zFz03IkAwdQSt+W0zT09swcX9+k4ghUlflQsm05nqebTJIm7ZHwbMI5zn54jS
+	xXcnGw1q8HrB0KnroEXhmWFNo4m5sADhwUUT1tWF+uogwRtYjrMe+NZwlZNTFKTz2Q427UJWUlQc7
+	b9VK5QEbxSggvrIvk1b+rxMFko7HKczU/V+eMwtpuTSDuKz91QvHobr9fmwCflwMVa4qHrR1yd3Lr
+	ShRmj200CFYAM5MYf136cbPN0t1l7TmEPBRptR2WrBQlYiuE5gHlgGTyqnIgZVn9akd/43z/yW3x3
+	swCryhgf67ujdMBfgKlw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMR3h-0007kk-Cd; Fri, 03 May 2019 05:48:33 +0000
-Received: from mail-ot1-x341.google.com ([2607:f8b0:4864:20::341])
+	id 1hMRtL-0007Pp-Oy; Fri, 03 May 2019 06:41:55 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMR3e-0007kN-Ar
- for linux-um@lists.infradead.org; Fri, 03 May 2019 05:48:31 +0000
-Received: by mail-ot1-x341.google.com with SMTP id s11so4330561otp.0
- for <linux-um@lists.infradead.org>; Thu, 02 May 2019 22:48:29 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=yJk8vxgxnyREeORp3ZGYiUe4W63+mvTYx011g+D2w9I=;
- b=gVy2A/3xGfxoPlL5Ko9/iS3jo2EDVupQVAr70qs6RZrFHNgUtzEok56tjyUqT06FB0
- N61EUVCJQSGnIGYHynH3drr29YDViWxqPU9Sza34pLTsoxVh0uUM8E5CV1L0C/mIM9w0
- WGa5tKq18lnS81IMo5BcR1Ykh3Nl7b9ExnnVx27s6jE5lyDFV5nm2p2xr1/VPFBW2Ah2
- kgZSCZQGbf96we5F6/cwHf89KEU3jBrsGd1WH/gd1lUYccvZTH42q4V6uaQ3GXtHhroy
- 5qgEL+EjcYwXRo906ivSwsvihl3a7m9bzISXOlTNYJMfYhl7JWVTEbNxfJuRwSUQRKBU
- kRfw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=yJk8vxgxnyREeORp3ZGYiUe4W63+mvTYx011g+D2w9I=;
- b=Bf2Rp26XQLjWhCn8oMHbdD9+khsF7664NAFt+6QxgE0O9VDvmkrk2giuaCuPfEVkeP
- f/13oaEodqWfOGEF3UgKrmNnpuZczAAz6ovHeR7dl2R8buKVIXtz4nV36OalCk14SPw5
- nkGfNBa2wZ8Cr9rl5nSbROhvw9FekHom77jF8a433+aG+qxfq0GJ7hB0eNu/MFLozM4x
- bwykG+6oflK6VEqtWyavSPpp5IyjRmgG8+X5JfADtvHOQZHGuzVCTyqsYzjaifvfvYQI
- 56qZVvAv2QQM6Tio2zMoCXkyCvafD2OCJhW10yFVOgDCt3Ywp3Fkca+YnrDPuKVDmvia
- 4bbw==
-X-Gm-Message-State: APjAAAV+EQNFg7utSbV0CtP+7Zyr1dLey2Hn7EC+e9g5WNuQlUDWmgCp
- 7xGmIyGgzkZ/VfK58r6xvNEGkAmO9wo8tyhtFMpm/Q==
-X-Google-Smtp-Source: APXvYqwsEAlSz/eNFlgajgo4Kt8DHISJN+MfNVQqCm9syohvOOWU5/fOAXzlAO0OoVTlNR0j/l6/cH2CfoUTavBQdJA=
-X-Received: by 2002:a9d:3621:: with SMTP id w30mr5187084otb.98.1556862507760; 
- Thu, 02 May 2019 22:48:27 -0700 (PDT)
-MIME-Version: 1.0
+ id 1hMRtJ-0007P4-AX
+ for linux-um@lists.infradead.org; Fri, 03 May 2019 06:41:54 +0000
+Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
+ [83.86.89.107])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 8CC3D2075E;
+ Fri,  3 May 2019 06:41:51 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1556865712;
+ bh=qAxjj5uiF5zEnzRbrg8NBWm/r/MITYyDqVpA7K94d04=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=T/xHj6l6GTULrzqty/QE9n+V3E7brgc1EE3YPacTpehUKVBEwYEB8Kjpj6eaNywET
+ vOVTIu5pClz9D1ixUfyq2wi+fG23/JAt0fEXA4iWbz4fYGFM70dWGs3kIuIpiDPLE5
+ z1ZErmGEyIuJkJ4kZlIVEyXnanSfyuAg225XdKNg=
+Date: Fri, 3 May 2019 08:41:49 +0200
+From: Greg KH <gregkh@linuxfoundation.org>
+To: Brendan Higgins <brendanhiggins@google.com>
+Subject: Re: [PATCH v2 12/17] kunit: tool: add Python wrappers for running
+ KUnit tests
+Message-ID: <20190503064149.GB20723@kroah.com>
 References: <20190501230126.229218-1-brendanhiggins@google.com>
- <20190501230126.229218-5-brendanhiggins@google.com>
- <ead23600-eecd-cf74-bdd1-94a6964e29b2@kernel.org>
-In-Reply-To: <ead23600-eecd-cf74-bdd1-94a6964e29b2@kernel.org>
-From: Brendan Higgins <brendanhiggins@google.com>
-Date: Thu, 2 May 2019 22:48:16 -0700
-Message-ID: <CAFd5g463PQGn3618Vo2Spu81zzL40jM6Skr1gSWtJqMx7Faj5A@mail.gmail.com>
-Subject: Re: [PATCH v2 04/17] kunit: test: add kunit_stream a std::stream like
- logger
-To: shuah <shuah@kernel.org>
+ <20190501230126.229218-13-brendanhiggins@google.com>
+ <20190502110220.GD12416@kroah.com>
+ <CAFd5g47t=EdLKFCT=CnPkrM2z0nDVo24Gz4j0VxFOJbARP37Lg@mail.gmail.com>
+ <a49c5088-a821-210c-66de-f422536f5b01@gmail.com>
+ <CAFd5g44iWRchQKdJYtjRtPY6e-6e0eXpKXXsx5Ooi6sWE474KA@mail.gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CAFd5g44iWRchQKdJYtjRtPY6e-6e0eXpKXXsx5Ooi6sWE474KA@mail.gmail.com>
+User-Agent: Mutt/1.11.4 (2019-03-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190502_224830_395164_303F6E28 
-X-CRM114-Status: GOOD (  11.82  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20190502_234153_404108_50434DAF 
+X-CRM114-Status: GOOD (  16.37  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 T_DKIMWL_WL_MED        DKIMwl.org - Medium sender
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -102,10 +83,11 @@ Cc: Petr Mladek <pmladek@suse.com>, linux-doc@vger.kernel.org,
  dri-devel <dri-devel@lists.freedesktop.org>,
  Sasha Levin <Alexander.Levin@microsoft.com>,
  Michael Ellerman <mpe@ellerman.id.au>, linux-kselftest@vger.kernel.org,
- Frank Rowand <frowand.list@gmail.com>, Rob Herring <robh@kernel.org>,
- linux-nvdimm <linux-nvdimm@lists.01.org>, Kevin Hilman <khilman@baylibre.com>,
- Knut Omang <knut.omang@oracle.com>,
- Kieran Bingham <kieran.bingham@ideasonboard.com>, wfg@linux.intel.com,
+ shuah@kernel.org, Rob Herring <robh@kernel.org>,
+ linux-nvdimm <linux-nvdimm@lists.01.org>,
+ Frank Rowand <frowand.list@gmail.com>, Knut Omang <knut.omang@oracle.com>,
+ Kieran Bingham <kieran.bingham@ideasonboard.com>,
+ Felix Guo <felixguoxiuping@gmail.com>, wfg@linux.intel.com,
  Joel Stanley <joel@jms.id.au>, David Rientjes <rientjes@google.com>,
  Jeff Dike <jdike@addtoit.com>, Dan Carpenter <dan.carpenter@oracle.com>,
  devicetree <devicetree@vger.kernel.org>, linux-kbuild@vger.kernel.org, "Bird,
@@ -113,54 +95,64 @@ Cc: Petr Mladek <pmladek@suse.com>, linux-doc@vger.kernel.org,
  Steven Rostedt <rostedt@goodmis.org>, Julia Lawall <julia.lawall@lip6.fr>,
  Dan Williams <dan.j.williams@intel.com>, kunit-dev@googlegroups.com,
  Richard Weinberger <richard@nod.at>, Stephen Boyd <sboyd@kernel.org>,
- Greg KH <gregkh@linuxfoundation.org>,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
  Luis Chamberlain <mcgrof@kernel.org>, Daniel Vetter <daniel@ffwll.ch>,
  Kees Cook <keescook@google.com>, linux-fsdevel@vger.kernel.org,
- Logan Gunthorpe <logang@deltatee.com>
+ Logan Gunthorpe <logang@deltatee.com>, Kevin Hilman <khilman@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Thu, May 2, 2019 at 6:50 PM shuah <shuah@kernel.org> wrote:
->
-> On 5/1/19 5:01 PM, Brendan Higgins wrote:
+On Thu, May 02, 2019 at 04:45:29PM -0700, Brendan Higgins wrote:
+> On Thu, May 2, 2019 at 2:16 PM Frank Rowand <frowand.list@gmail.com> wrote:
+> >
+> > On 5/2/19 11:07 AM, Brendan Higgins wrote:
+> > > On Thu, May 2, 2019 at 4:02 AM Greg KH <gregkh@linuxfoundation.org> wrote:
+> > >>
+> > >> On Wed, May 01, 2019 at 04:01:21PM -0700, Brendan Higgins wrote:
+> > >>> From: Felix Guo <felixguoxiuping@gmail.com>
+> > >>>
+> > >>> The ultimate goal is to create minimal isolated test binaries; in the
+> > >>> meantime we are using UML to provide the infrastructure to run tests, so
+> > >>> define an abstract way to configure and run tests that allow us to
+> > >>> change the context in which tests are built without affecting the user.
+> > >>> This also makes pretty and dynamic error reporting, and a lot of other
+> > >>> nice features easier.
+> > >>>
+> > >>> kunit_config.py:
+> > >>>   - parse .config and Kconfig files.
+> > >>>
+> > >>> kunit_kernel.py: provides helper functions to:
+> > >>>   - configure the kernel using kunitconfig.
+> > >>>   - build the kernel with the appropriate configuration.
+> > >>>   - provide function to invoke the kernel and stream the output back.
+> > >>>
+> > >>> Signed-off-by: Felix Guo <felixguoxiuping@gmail.com>
+> > >>> Signed-off-by: Brendan Higgins <brendanhiggins@google.com>
+> > >>
+> > >> Ah, here's probably my answer to my previous logging format question,
+> > >> right?  What's the chance that these wrappers output stuff in a standard
+> > >> format that test-framework-tools can already parse?  :)
+> 
+> To be clear, the test-framework-tools format we are talking about is
+> TAP13[1], correct?
 
-< snip >
+Yes.
 
-> > diff --git a/kunit/kunit-stream.c b/kunit/kunit-stream.c
-> > new file mode 100644
-> > index 0000000000000..93c14eec03844
-> > --- /dev/null
-> > +++ b/kunit/kunit-stream.c
-> > @@ -0,0 +1,149 @@
+> My understanding is that is what kselftest is being converted to use.
 
-< snip >
+Yes, and I think it's almost done.  The core of kselftest provides
+functions that all tests can use to log messages in the correct format.
 
-> > +static int kunit_stream_init(struct kunit_resource *res, void *context)
-> > +{
-> > +     struct kunit *test = context;
-> > +     struct kunit_stream *stream;
-> > +
-> > +     stream = kzalloc(sizeof(*stream), GFP_KERNEL);
-> > +     if (!stream)
-> > +             return -ENOMEM;
-> > +     res->allocation = stream;
-> > +     stream->test = test;
-> > +     spin_lock_init(&stream->lock);
-> > +     stream->internal_stream = new_string_stream();
-> > +
-> > +     if (!stream->internal_stream)
-> > +             return -ENOMEM;
->
-> What happens to stream? Don't you want to free that?
+The core of kunit should also log the messages in this format as well,
+and not rely on the helper scripts as Frank points out, not everyone
+will use/want them.  Might as well make it easy for everyone to always
+do the right thing and not force it to always be added in later.
 
-Good catch. Will fix in next revision.
+thanks,
 
-< snip >
-
-Cheers
+greg k-h
 
 _______________________________________________
 linux-um mailing list
