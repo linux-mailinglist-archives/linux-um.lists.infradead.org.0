@@ -2,53 +2,95 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2B69B13C20
-	for <lists+linux-um@lfdr.de>; Sat,  4 May 2019 22:50:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9B21E13DB3
+	for <lists+linux-um@lfdr.de>; Sun,  5 May 2019 08:16:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:In-Reply-To:MIME-Version:
+	References:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aZyih0lZuO8QQdT2x15GtViMIfoew6Lh0z+9nwDLqO8=; b=haBztBx7AIy0nO
-	YPQNXQD0EU9hAijC8582Nnj85H+Goa6MzIQU/sKdmMePH4a6X2Flewv3LC1n/OrupnKKdvxgUpEmJ
-	b8BGzZZ7BxBCQljwNqyHbVMqzPFXuoSXuxWKpNci4oqXj1S+M6R4EJ09ZPWwoRMMwXs5T+QmCuHy7
-	Izv7ChX65vHzht3N2qn4US1eVZX45pQWnYZ9GxXRP2mV1mv35CxUP2Nh+O4VfX6Pf3hU4DXA4Ax8z
-	+yPP4b03LTklH7PMXVy5P/9SRXqs2Pw1tqARKCvQ7Tn3rVhObNLXZPI+zQwvwakcL1y1J0wPSt6Po
-	wAITlv2zhDdq4RmJZnyA==;
+	List-Owner; bh=rCiXOjH8wGC0qE3cR9hwL8wncQW3J35O1MUDvQLfpr4=; b=Sn2ZuraniZS9/K
+	pcWmGpOC6y3sfJ1bJnZBjL/WbnRGlyKm5CW8jVKkpWfWg6TxNlcUVu4Q/tZwvshTwOzC1sgbGs6cJ
+	ujfV/3Ym2Oz9cJzmCmF/66puydVakM/8vcH7PNzKCYy0piA+MtR4XyPXDni5Isp1uZbT7CPNtdT0k
+	pBG3GfN0Oz0zHeeZwynuQe4a9qVrmqkkQ5EA5JGZZRdvVdBu1nUVTm22FzmPQ69pjiPTdW9rkJJwT
+	xhetDVabzXUcg2UduhAoBKvtEFu0eh/PeRHSz/4ADzDXmIlcHmYkqe4ev0290y9vLvAOt1/B0/2S1
+	IcqIlQFX81i5qswdYYeQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hN1bq-00065u-2z; Sat, 04 May 2019 20:50:14 +0000
-Received: from s3.sipsolutions.net ([2a01:4f8:191:4433::2]
- helo=sipsolutions.net)
+	id 1hNARQ-0004ye-68; Sun, 05 May 2019 06:16:04 +0000
+Received: from mx0a-001b2d01.pphosted.com ([148.163.156.1])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hN1bm-00065I-5A
- for linux-um@lists.infradead.org; Sat, 04 May 2019 20:50:12 +0000
-Received: by sipsolutions.net with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <johannes@sipsolutions.net>)
- id 1hN1bg-0002Fi-JZ; Sat, 04 May 2019 22:50:04 +0200
-Message-ID: <9bb89d42730d87f7fe155c8ca9fc8e252ad2a135.camel@sipsolutions.net>
-Subject: Re: [PATCH 3/3] arch: um: support virtual time
-From: Johannes Berg <johannes@sipsolutions.net>
-To: Anton Ivanov <anton.ivanov@cambridgegreys.com>, 
- "linux-um@lists.infradead.org" <linux-um@lists.infradead.org>
-Date: Sat, 04 May 2019 22:50:01 +0200
-In-Reply-To: <9f844312-dca3-d20e-485b-13c1f249edb0@cambridgegreys.com>
-References: <20190503213249.30008-1-johannes@sipsolutions.net>
- <20190503213249.30008-3-johannes@sipsolutions.net>
- <95430ca975e73addc7f65e331488bc280974fd72.camel@sipsolutions.net>
- <9f844312-dca3-d20e-485b-13c1f249edb0@cambridgegreys.com>
-X-Mailer: Evolution 3.28.5 (3.28.5-2.fc28) 
-Mime-Version: 1.0
+ id 1hNARB-0004lB-2r
+ for linux-um@lists.infradead.org; Sun, 05 May 2019 06:15:51 +0000
+Received: from pps.filterd (m0098409.ppops.net [127.0.0.1])
+ by mx0a-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x4566OY1038648
+ for <linux-um@lists.infradead.org>; Sun, 5 May 2019 02:15:41 -0400
+Received: from e06smtp07.uk.ibm.com (e06smtp07.uk.ibm.com [195.75.94.103])
+ by mx0a-001b2d01.pphosted.com with ESMTP id 2s9qmnmmdx-1
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
+ for <linux-um@lists.infradead.org>; Sun, 05 May 2019 02:15:41 -0400
+Received: from localhost
+ by e06smtp07.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
+ Violators will be prosecuted
+ for <linux-um@lists.infradead.org> from <rppt@linux.ibm.com>;
+ Sun, 5 May 2019 07:15:38 +0100
+Received: from b06cxnps3074.portsmouth.uk.ibm.com (9.149.109.194)
+ by e06smtp07.uk.ibm.com (192.168.101.137) with IBM ESMTP SMTP Gateway:
+ Authorized Use Only! Violators will be prosecuted; 
+ (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
+ Sun, 5 May 2019 07:15:31 +0100
+Received: from d06av24.portsmouth.uk.ibm.com (mk.ibm.com [9.149.105.60])
+ by b06cxnps3074.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
+ x456FUUd61079648
+ (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Sun, 5 May 2019 06:15:30 GMT
+Received: from d06av24.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id EB15F42042;
+ Sun,  5 May 2019 06:15:29 +0000 (GMT)
+Received: from d06av24.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id BE8ED42047;
+ Sun,  5 May 2019 06:15:27 +0000 (GMT)
+Received: from rapoport-lnx (unknown [9.148.8.112])
+ by d06av24.portsmouth.uk.ibm.com (Postfix) with ESMTPS;
+ Sun,  5 May 2019 06:15:27 +0000 (GMT)
+Date: Sun, 5 May 2019 09:15:26 +0300
+From: Mike Rapoport <rppt@linux.ibm.com>
+To: Paul Burton <paul.burton@mips.com>
+Subject: Re: [PATCH 01/15] asm-generic, x86: introduce generic
+ pte_{alloc,free}_one[_kernel]
+References: <1556810922-20248-1-git-send-email-rppt@linux.ibm.com>
+ <1556810922-20248-2-git-send-email-rppt@linux.ibm.com>
+ <20190502190310.voenw3pwgpelmdgw@pburton-laptop>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190502190310.voenw3pwgpelmdgw@pburton-laptop>
+User-Agent: Mutt/1.5.24 (2015-08-30)
+X-TM-AS-GCONF: 00
+x-cbid: 19050506-0028-0000-0000-0000036A7624
+X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
+x-cbparentid: 19050506-0029-0000-0000-00002429E811
+Message-Id: <20190505061525.GC15755@rapoport-lnx>
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-05-05_04:, , signatures=0
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ priorityscore=1501
+ malwarescore=0 suspectscore=2 phishscore=0 bulkscore=0 spamscore=0
+ clxscore=1015 lowpriorityscore=0 mlxscore=0 impostorscore=0
+ mlxlogscore=835 adultscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.0.1-1810050000 definitions=main-1905050056
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190504_135010_199284_F958E9E2 
-X-CRM114-Status: GOOD (  14.79  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190504_231549_245545_0E0072B3 
+X-CRM114-Status: GOOD (  18.53  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [148.163.156.1 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -60,68 +102,62 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: Richard Weinberger <richard@nod.at>, Jeff Dike <jdike@addtoit.com>
+Cc: Michal Hocko <mhocko@suse.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ Palmer Dabbelt <palmer@sifive.com>,
+ "linux-mips@vger.kernel.org" <linux-mips@vger.kernel.org>,
+ Guo Ren <guoren@kernel.org>,
+ "linux-hexagon@vger.kernel.org" <linux-hexagon@vger.kernel.org>,
+ "linux-riscv@lists.infradead.org" <linux-riscv@lists.infradead.org>,
+ "linux-arch@vger.kernel.org" <linux-arch@vger.kernel.org>,
+ Michael Ellerman <mpe@ellerman.id.au>, Helge Deller <deller@gmx.de>,
+ "x86@kernel.org" <x86@kernel.org>, Russell King <linux@armlinux.org.uk>,
+ Matthew Wilcox <willy@infradead.org>,
+ Geert Uytterhoeven <geert@linux-m68k.org>, Matt Turner <mattst88@gmail.com>,
+ Sam Creasey <sammy@sammy.net>, Arnd Bergmann <arnd@arndb.de>,
+ "linux-alpha@vger.kernel.org" <linux-alpha@vger.kernel.org>,
+ "linux-um@lists.infradead.org" <linux-um@lists.infradead.org>,
+ "linux-m68k@lists.linux-m68k.org" <linux-m68k@lists.linux-m68k.org>,
+ Greentime Hu <green.hu@gmail.com>,
+ "nios2-dev@lists.rocketboards.org" <nios2-dev@lists.rocketboards.org>,
+ Guan Xuetao <gxt@pku.edu.cn>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "linux-parisc@vger.kernel.org" <linux-parisc@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Richard Kuo <rkuo@codeaurora.org>, Richard Weinberger <richard@nod.at>,
+ Ley Foon Tan <lftan@altera.com>, Andrew Morton <akpm@linux-foundation.org>,
+ "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Sat, 2019-05-04 at 21:42 +0100, Anton Ivanov wrote:
+On Thu, May 02, 2019 at 07:03:11PM +0000, Paul Burton wrote:
+> Hi Mike,
 > 
-> I had a quick look at them.
+> On Thu, May 02, 2019 at 06:28:28PM +0300, Mike Rapoport wrote:
+> > +/**
+> > + * pte_free_kernel - free PTE-level user page table page
+> > + * @mm: the mm_struct of the current context
+> > + * @pte_page: the `struct page` representing the page table
+> > + */
+> > +static inline void pte_free(struct mm_struct *mm, struct page *pte_page)
+> > +{
+> > +	pgtable_page_dtor(pte_page);
+> > +	__free_page(pte_page);
+> > +}
+> 
+> Nit: the comment names the wrong function (s/pte_free_kernel/pte_free/).
 
-Thanks.
-
-> 1 and 2 are clear and I will most likely ack them once you have a final 
-> version.
-
-I think those two are OK now really. I think I'll put another small bit
-into patch 2:
-
- int os_timer_one_shot(unsigned long ticks)
- {
--       struct itimerspec its;
--       unsigned long long nsec;
--       unsigned long sec;
-+       unsigned long long nsec = ticks + 1;
-+       struct itimerspec its = {
-+               .it_value.tv_sec = nsec / UM_NSEC_PER_SEC,
-+               .it_value.tv_nsec = nsec % UM_NSEC_PER_SEC,
+Argh, evil copy-paste :)
+Thanks!
  
--       nsec = (ticks + 1);
--       sec = nsec / UM_NSEC_PER_SEC;
--       nsec = nsec % UM_NSEC_PER_SEC;
--
--       its.it_value.tv_sec = nsec / UM_NSEC_PER_SEC;
--       its.it_value.tv_nsec = nsec;
--
--       its.it_interval.tv_sec = 0;
--       its.it_interval.tv_nsec = 0; // we cheat here
-+               .it_interval.tv_sec = 0,
-+               .it_interval.tv_nsec = 0, // we cheat here
-+       };
- 
+> Thanks,
+>     Paul
+> 
 
-which almost seems like a bugfix too - note how the computed value "sec"
-is never used in the original code?
-
-
-FYI, I also sent a patch to netdev for a fix, just in case you run into
-that:
-https://patchwork.ozlabs.org/patch/1095009/
-(compilation of this is broken right now)
-
-> I can understand your use case for patch 3. What I am not clear is where 
-> should that config option live. It should be somewhere under 
-> debug/kernel hacking with a sufficient number of big fat warnings so 
-> people do not enable it accidentally by mistake.
-
-Yeah, good question. No real objection to moving it there.
-
-There are some quirks with UML still, so I'm trying to figure out if I
-can do the same in KVM, but it's kinda cool I can do it at all :-)
-
-johannes
+-- 
+Sincerely yours,
+Mike.
 
 
 _______________________________________________
