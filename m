@@ -2,75 +2,75 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E261714723
-	for <lists+linux-um@lfdr.de>; Mon,  6 May 2019 11:04:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A974014777
+	for <lists+linux-um@lfdr.de>; Mon,  6 May 2019 11:18:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=F7Msq5bh/R9ATQXalOqOAx8EkXJZR6Fc5nE0od9wzow=; b=o4KxO1tKprsnT3
-	X5a5Ra/V1dIWp8ky/KyZpN/Jbz3RoiwEhBbgMlbDqNkXJ9IZf2K+uxniQeQNlLSVCfsqmcGRc2c2L
-	Y9T+y39d3F+KPyOBySTtOpDKU7GUfnMCQNazAshzyUbrrcvFUa4kA7dFE+zHfqvw1juBatZkcG1nW
-	Qn0LxkU3OL7nzZeadIaum+uHr3EbyjSKuN/sI5OoIM7PT+Qe1l0RcXq8q3ygbfw7pJ0/mrkDrCGfZ
-	Izagdw6rVeXILoB020IUNXlm+p0BaGnM/gcQjVzS0A8ziV4YydFx96KqG2Bn/QxUjCGwP2dqvIrYx
-	BtHkk66JJ1kIfO5V0fWw==;
+	List-Owner; bh=q+vdSE+h8cmE/AhkGQJqtYETyWVw8k0ZkM3aYTllPIw=; b=kXN3h2q5SbShnc
+	ozNchp7mqIfg05FsVLQJ72KRgCdQanA6io58DlemcQPVZd1cUz9/3uQmZ8ja7PlLQjT+LBkBoO5be
+	0E8gFwJ+tw8m9miY03Kjyn3pfjlRtqY0vrpyFSKVQNvR5g/lhiZ3ZRh4mQJeAlafSSCHfOOIAAx5f
+	xM9Nx8Fyit8cuuvZ9/9iVjR/fy7YIpYXS1Rtw09/mqxd7T30H62N1rq9Om+5l9mbFuNotnqls5p7o
+	SMw8opvbtnuHizZvT2Dj7ylzyAbd++73wKhYJKGkjaAET/RdZ1++7drjpc3o1AQaXql7WHQhnAFfU
+	N3HYaTz3V/VqsbpfzNzw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNZXq-0004wf-1w; Mon, 06 May 2019 09:04:22 +0000
-Received: from mail-oi1-x242.google.com ([2607:f8b0:4864:20::242])
+	id 1hNZlS-0003uy-B5; Mon, 06 May 2019 09:18:26 +0000
+Received: from mail-ot1-x342.google.com ([2607:f8b0:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNZXX-0004XB-Ft
- for linux-um@lists.infradead.org; Mon, 06 May 2019 09:04:05 +0000
-Received: by mail-oi1-x242.google.com with SMTP id v10so9020150oib.1
- for <linux-um@lists.infradead.org>; Mon, 06 May 2019 02:04:02 -0700 (PDT)
+ id 1hNZlG-0003iH-GX
+ for linux-um@lists.infradead.org; Mon, 06 May 2019 09:18:16 +0000
+Received: by mail-ot1-x342.google.com with SMTP id b18so10833815otq.3
+ for <linux-um@lists.infradead.org>; Mon, 06 May 2019 02:18:14 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=w3CwerUbOgOXXiCSnS9RlnGeZVnQdj5otMQLyftCR5U=;
- b=e+nL3WusVlSphHxBUuOnwpeLcTbcxkM3d0tJwFVnHeQxPP67ruHIlvq20gXdKZhu2H
- bB9lDEUqhP1wiSu91mOioGKtT4ycBoUxoh4FC+hVoBp2F1BbODAaUF2mKyUrYhOAKqit
- T2YBO051njEtXYukqn8B+THQu9IDpG8A3FVKKTOi4pDJ7oz0d7KTjVHPE8z2o4ACwsE9
- ykptic7rc2BJziW9//fZQROuPUNapGoh5nZURetTsM9RFF/vX1CnGbAUdl8YpJIBiHYh
- HGrZrCbs8q8pyJ0vRF0MLBvicTMU2fCeAXdJWGTYB+VAAWlNl7nlXw7CpLz/tNO1+YWN
- PWrQ==
+ :cc; bh=EuMXXHqqPef2GwgL+nQvKY3dmYnxYLGClh5z++gsDCE=;
+ b=sqUiKiFkHuS/zMcsXJp/YVQ9Xvsj9z1z6Qymcl2DruVbxk25BEUbeggocvbWAnhm5w
+ zafVtoeptdhmkmQVySQB3JwkXQHS6fLm2/wWTVMXU2RAbc2imQQv9+YkBVvD6ic2JuMI
+ 1ikTcpdlA9VrSJ94GFL5FOP0BgugrA521QHxv3MHfGRZERmqFxPksbw8JgkSiOXb5kCz
+ NhICHik7i/u7iBVQPDnR6rVT2h+P/BC3GpK/7XThzUVtCWPANcl0bPo/9Evg9oejZRXN
+ F/kwBaILmSEdHFapwIeGtAxrGfQ7g/4sN7rpo+FU+AipihP/fGSchFlx5sCt7F6gjQZJ
+ akeQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=w3CwerUbOgOXXiCSnS9RlnGeZVnQdj5otMQLyftCR5U=;
- b=h0o8tngKA3fJoSiNiZjoE+q02n76w4M5tgrOvhsHuGfjNO9zwjuo00EjAfhr+jzm95
- ssqbWlM7eBJ76g3w1H9vObLa31wSpnPn9aLR6IfC8rqiQF91JC4/fjWIoTIvZREAA8E2
- 4Vi3zElB6Xusq6btjg1OVR5HphFb2F8O9UqbGrQvfzueFRIp1//SHPJ3z6EWikzV7foZ
- vO0RrBObPxcH5SpNvy9cVd1qUMQ3B96YJWWIGY23J66q59JMd1mU8sAi83L137mBHT1R
- DzBHAPiLdo6Ez2/7GAzVDiS8069Hg20Wwlr6TbAdKbOgPOeRH1b3/aJsANIBt7lr7VsI
- Xi8g==
-X-Gm-Message-State: APjAAAVe+t4Wob3dXCmwgyTXYNH3iJpj2byqfaaxeus78YPN/MLlm2t1
- 4y4/bM1NhYbR1i6gp7cAA+YSKz/9wCZff/xcWboKYA==
-X-Google-Smtp-Source: APXvYqwEoyQ/+gdbpiq96mf1vlv5hUoY2bhtp6ecuZwu3ufRDNiX4lPMqoN7zAZpCfyk7yZAb5CAmenmXz4Vrtgwk5I=
-X-Received: by 2002:aca:d4cf:: with SMTP id l198mr457112oig.137.1557133441163; 
- Mon, 06 May 2019 02:04:01 -0700 (PDT)
+ bh=EuMXXHqqPef2GwgL+nQvKY3dmYnxYLGClh5z++gsDCE=;
+ b=T4H3OA5f/9YFEFNNLvvUmWujji8HM3QeD2sR6hfUD+I4qxL6kPeRB+mMG7EsfOKSTj
+ vrdhsRdmSAT2hPiX9HvNqC3qMZiFW6F223ulxpUja+SEB/Hvo2+HJwX3KbpZJCw4mNcm
+ 7nGIMSdiamLA51FVxILpFjhf7JpHkj6rDZekSfR4HqDwta19l2BqsSkrcPE160DZTMWv
+ iM69YQZV6BVKPghtEaj1ay6ufpPuUqedX576stqDGBh8U1YfwSoEThuDNLMsQM+WlAjj
+ 8UW/ImXnOVRanyesC1udZnoaEaFqkzrt7I0VRbivI2rD3VzO5PkzdFeuIdQvtAaXJVD7
+ KfmA==
+X-Gm-Message-State: APjAAAVLrWXZx/z6URecLHBfJZhTN1w0MQC7NDeF6kHNKrILjb26kNJ8
+ nueVX3Uw0fA2EMLgf488Hevofc83SGSEWtbuLrjhvA==
+X-Google-Smtp-Source: APXvYqwJ3xWdH/Lcmkx6YRG/BMIY9WxqPyKwUn5ZqoX3PeD8nyMheiZI5T1OFI6UXxsrrwGRwMbiUWxrFpDFumPm0yg=
+X-Received: by 2002:a9d:71de:: with SMTP id z30mr15637896otj.113.1557134293178; 
+ Mon, 06 May 2019 02:18:13 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190501230126.229218-1-brendanhiggins@google.com>
- <20190501230126.229218-12-brendanhiggins@google.com>
- <8c37fd20-859c-9c34-4465-8adfcfdaab09@kernel.org>
-In-Reply-To: <8c37fd20-859c-9c34-4465-8adfcfdaab09@kernel.org>
+ <20190501230126.229218-16-brendanhiggins@google.com>
+ <68f88e1c-d40f-9dad-7296-ab2b2303c575@kernel.org>
+In-Reply-To: <68f88e1c-d40f-9dad-7296-ab2b2303c575@kernel.org>
 From: Brendan Higgins <brendanhiggins@google.com>
-Date: Mon, 6 May 2019 02:03:49 -0700
-Message-ID: <CAFd5g44q3qyahykujDzOoO01DwGMUm+Kce-tOAzSW90U4mQM7w@mail.gmail.com>
-Subject: Re: [PATCH v2 11/17] kunit: test: add test managed resource tests
+Date: Mon, 6 May 2019 02:18:01 -0700
+Message-ID: <CAFd5g456XwQV2+iy=0K7AwBc5wbQDRL2DAJgMEsJBLtFdZ5erQ@mail.gmail.com>
+Subject: Re: [PATCH v2 15/17] MAINTAINERS: add entry for KUnit the unit
+ testing framework
 To: shuah <shuah@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190506_020403_768660_975AE8EC 
-X-CRM114-Status: UNSURE (   9.68  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190506_021814_571010_000D1103 
+X-CRM114-Status: GOOD (  13.19  )
 X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:242 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
@@ -109,11 +109,12 @@ Cc: Petr Mladek <pmladek@suse.com>, linux-doc@vger.kernel.org,
  Joel Stanley <joel@jms.id.au>, David Rientjes <rientjes@google.com>,
  Jeff Dike <jdike@addtoit.com>, Dan Carpenter <dan.carpenter@oracle.com>,
  devicetree <devicetree@vger.kernel.org>, linux-kbuild@vger.kernel.org, "Bird,
- Timothy" <Tim.Bird@sony.com>, Avinash Kondareddy <akndr41@gmail.com>,
- linux-um@lists.infradead.org, Steven Rostedt <rostedt@goodmis.org>,
- Julia Lawall <julia.lawall@lip6.fr>, Dan Williams <dan.j.williams@intel.com>,
- kunit-dev@googlegroups.com, Richard Weinberger <richard@nod.at>,
- Stephen Boyd <sboyd@kernel.org>, Greg KH <gregkh@linuxfoundation.org>,
+ Timothy" <Tim.Bird@sony.com>, linux-um@lists.infradead.org,
+ Steven Rostedt <rostedt@goodmis.org>, Julia Lawall <julia.lawall@lip6.fr>,
+ Shuah Khan <skhan@linuxfoundation.org>,
+ Dan Williams <dan.j.williams@intel.com>, kunit-dev@googlegroups.com,
+ Richard Weinberger <richard@nod.at>, Stephen Boyd <sboyd@kernel.org>,
+ Greg KH <gregkh@linuxfoundation.org>,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
  Luis Chamberlain <mcgrof@kernel.org>, Daniel Vetter <daniel@ffwll.ch>,
  Kees Cook <keescook@google.com>, linux-fsdevel@vger.kernel.org,
@@ -123,21 +124,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Fri, May 3, 2019 at 7:34 AM shuah <shuah@kernel.org> wrote:
+On Fri, May 3, 2019 at 7:38 AM shuah <shuah@kernel.org> wrote:
 >
 > On 5/1/19 5:01 PM, Brendan Higgins wrote:
-> > From: Avinash Kondareddy <akndr41@gmail.com>
+> > Add myself as maintainer of KUnit, the Linux kernel's unit testing
+> > framework.
 > >
-> > Tests how tests interact with test managed resources in their lifetime.
-> >
-> > Signed-off-by: Avinash Kondareddy <akndr41@gmail.com>
 > > Signed-off-by: Brendan Higgins <brendanhiggins@google.com>
 > > ---
+> >   MAINTAINERS | 10 ++++++++++
+> >   1 file changed, 10 insertions(+)
+> >
+> > diff --git a/MAINTAINERS b/MAINTAINERS
+> > index 5c38f21aee787..c78ae95c56b80 100644
+> > --- a/MAINTAINERS
+> > +++ b/MAINTAINERS
+> > @@ -8448,6 +8448,16 @@ S:     Maintained
+> >   F:  tools/testing/selftests/
+> >   F:  Documentation/dev-tools/kselftest*
+> >
+> > +KERNEL UNIT TESTING FRAMEWORK (KUnit)
+> > +M:   Brendan Higgins <brendanhiggins@google.com>
+> > +L:   kunit-dev@googlegroups.com
+> > +W:   https://google.github.io/kunit-docs/third_party/kernel/docs/
+> > +S:   Maintained
+> > +F:   Documentation/kunit/
+> > +F:   include/kunit/
+> > +F:   kunit/
+> > +F:   tools/testing/kunit/
+> > +
 >
-> I think this change log could use more details. It is vague on what it
-> does.
+> Please add kselftest mailing list to this entry, based on our
+> conversation on taking these patches through kselftest tree.
 
-Agreed. Will fix in next revision.
+Will do.
+
+Thanks!
 
 _______________________________________________
 linux-um mailing list
