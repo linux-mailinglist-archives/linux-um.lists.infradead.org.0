@@ -2,8 +2,8 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E966D149EF
-	for <lists+linux-um@lfdr.de>; Mon,  6 May 2019 14:39:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0125B149F0
+	for <lists+linux-um@lfdr.de>; Mon,  6 May 2019 14:40:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,35 +11,35 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=HamRNsN0TQe/xHwUVvoD81kNdtQlc9b4niCEg26/s1A=; b=phH+3bBaq1xYdn1iOiPXWyfONn
-	7LCbVkor2baM/5cOaLdBHGNVpc0lOcLiroKrPM9ITfDRh1n5wqh6/mEj9/J3/vqFzWb/p5lluTX6Z
-	QCFCBJRE7MVKGshRLw1en21SMLWZAkW3ckONWMKp6fku+0A+/2PgeajapOlMfg8fpaJuY9ddrXsAr
-	aNox6TPWUKa+tHYzRF1mEW9zlVIP1ZQDO/kgA01smrkK4gYXfqsuR5Dj/3oLtZzAiGRPxiSKB+ovR
-	GceAtlUcFVbapvI5D4hX/9YhvMLQMm2xcmJgg1IItqcVj/m0rTK7WQqrofXtY2xTvOmF8SG+42jLB
-	81V1QwoA==;
+	bh=ukElA6tVXPrNeRA0lvuKkyKLF3GYyDy8xoceT4sUFhI=; b=Ymriow88XDsYDsqZwmn+rUGRIn
+	RG6eFlQYmCt8vlwYYAQT6A/cz7Z/8JnSA9P6AHuCiU2K9CYIkD4Lr5GcRHL+P9GWbRE7QMkQlD5B+
+	nCHgixeiz/9oDi1Ip8pv5c8awGoaN1Ed4cyH8AGq5G3TyPnNKbEimr7g8NykQySB3knF6ko74JQSL
+	ZlEEYVOFxfi2jjIiKRWjDYSnZAZ80FObtkwa4n/YMTLewx5PA5XLGpsgVF41R9GL/cwYrT/OFJXSt
+	c8EX8z2QgpDgL1TTw/wC4ihtaaLNWOsALum6uNRrHgO7Xoq3meLcQi4PFw68kZ0x7iKjJLew2FXr2
+	Q2PUiRYA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNcuS-0002hw-2m; Mon, 06 May 2019 12:39:56 +0000
+	id 1hNcuR-0002hd-T3; Mon, 06 May 2019 12:39:55 +0000
 Received: from s3.sipsolutions.net ([2a01:4f8:191:4433::2]
  helo=sipsolutions.net)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNcuL-0002ed-7K
+ id 1hNcuL-0002ee-7I
  for linux-um@lists.infradead.org; Mon, 06 May 2019 12:39:52 +0000
 Received: by sipsolutions.net with esmtpsa
  (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <johannes@sipsolutions.net>)
- id 1hNcuG-00058d-P7; Mon, 06 May 2019 14:39:44 +0200
+ id 1hNcuH-00058d-4Q; Mon, 06 May 2019 14:39:45 +0200
 From: Johannes Berg <johannes@sipsolutions.net>
 To: linux-um@lists.infradead.org
-Subject: [PATCH v2 4/5] arch: um: timer code cleanup
-Date: Mon,  6 May 2019 14:39:38 +0200
-Message-Id: <20190506123939.21091-5-johannes@sipsolutions.net>
+Subject: [PATCH v2 5/5] arch: um: support virtual time
+Date: Mon,  6 May 2019 14:39:39 +0200
+Message-Id: <20190506123939.21091-6-johannes@sipsolutions.net>
 X-Mailer: git-send-email 2.17.2
 In-Reply-To: <20190506123939.21091-1-johannes@sipsolutions.net>
 References: <20190506123939.21091-1-johannes@sipsolutions.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190506_053949_284749_3C8F372A 
-X-CRM114-Status: GOOD (  16.56  )
+X-CRM114-CacheID: sfid-20190506_053949_290718_BDDA11F2 
+X-CRM114-Status: GOOD (  18.03  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -65,244 +65,237 @@ Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
 From: Johannes Berg <johannes.berg@intel.com>
 
-There are some unused functions, and some others that have
-unused arguments; clean up the timer code a bit.
+Sometimes it can be useful to run with virtual time inside the
+UML instance, for example for testing. For example, some tests
+for the wireless subsystem and userspace are based on hwsim, a
+virtual wireless adapter. Some tests can take a long time to
+run because they e.g. wait for 120 seconds to elapse for some
+regulatory checks. This obviously goes faster if it need not
+actually wait that long, but time inside the test environment
+just "bumps up" when there's nothing to do.
+
+Add a mode - CONFIG_UML_VIRTUAL_TIME_SUPPORT - to support such
+behavior; it needs to be enabled with the "virtual-time" option
+passed to the UML invocation.
+
+With this enabled, the test mentioned above goes from a runtime
+of about 130 seconds (with startup overhead and all) to being
+CPU bound and finishing in 16 seconds (on my slow laptop).
 
 Signed-off-by: Johannes Berg <johannes.berg@intel.com>
 ---
- arch/um/include/shared/os.h |   8 +--
- arch/um/kernel/time.c       |   4 +-
- arch/um/os-Linux/time.c     | 119 ++++++++----------------------------
- 3 files changed, 31 insertions(+), 100 deletions(-)
+ arch/um/Kconfig             | 17 ++++++++++
+ arch/um/include/shared/os.h | 14 ++++++++
+ arch/um/kernel/time.c       | 13 +++++++
+ arch/um/os-Linux/time.c     | 68 ++++++++++++++++++++++++++++++++++++-
+ 4 files changed, 111 insertions(+), 1 deletion(-)
 
+diff --git a/arch/um/Kconfig b/arch/um/Kconfig
+index ec9711d068b7..71ff7ef3aa0c 100644
+--- a/arch/um/Kconfig
++++ b/arch/um/Kconfig
+@@ -180,6 +180,23 @@ config SECCOMP
+ 
+ 	  If unsure, say Y.
+ 
++config UML_VIRTUAL_TIME_SUPPORT
++	bool
++	prompt "Support virtual time (e.g. for test execution)"
++	help
++	  Enable this option to support virtual time inside the UML instance,
++	  which means that whenever there's nothing to do it just skips time
++	  forward rather than waiting for any real time to elapse.
++
++	  Note that this changes behaviour a bit - used CPU time may not always
++	  cause the virtual time to increase unless enough CPU was consumed to
++	  advance the tick (HZ).
++
++	  Note that to enable the virtual time, you also need to pass
++	  "virtual-time" on the command-line.
++
++	  It is safe to say Y, but you probably don't need this, so say N.
++
+ endmenu
+ 
+ source "arch/um/drivers/Kconfig"
 diff --git a/arch/um/include/shared/os.h b/arch/um/include/shared/os.h
-index d579adcb2690..449e71edefaa 100644
+index 449e71edefaa..a891a5665704 100644
 --- a/arch/um/include/shared/os.h
 +++ b/arch/um/include/shared/os.h
-@@ -250,15 +250,13 @@ extern void os_warn(const char *fmt, ...)
- 
- /* time.c */
- extern void os_idle_sleep(unsigned long long nsecs);
--extern int os_timer_create(void* timer);
--extern int os_timer_set_interval(void* timer, void* its);
-+extern int os_timer_create(void);
-+extern int os_timer_set_interval(void);
- extern int os_timer_one_shot(unsigned long ticks);
--extern long long os_timer_disable(void);
--extern long os_timer_remain(void* timer);
-+extern void os_timer_disable(void);
+@@ -257,6 +257,20 @@ extern void os_timer_disable(void);
  extern void uml_idle_timer(void);
  extern long long os_persistent_clock_emulation(void);
  extern long long os_nsecs(void);
--extern long long os_vnsecs(void);
++#ifdef CONFIG_UML_VIRTUAL_TIME_SUPPORT
++extern unsigned long long virtual_time;
++extern unsigned long long timer_expiry;
++int os_setup_virtual_time(char *str);
++static inline void os_set_virtual_time_to_timer(void)
++{
++	/* ignored if virtual time isn't enabled */
++	virtual_time = timer_expiry;
++}
++#else
++static inline void os_set_virtual_time_to_timer(void)
++{
++}
++#endif
  
  /* skas/mem.c */
  extern long run_syscall_stub(struct mm_id * mm_idp,
 diff --git a/arch/um/kernel/time.c b/arch/um/kernel/time.c
-index 0c572a48158e..3898119f773e 100644
+index 3898119f773e..0ceb7c540d60 100644
 --- a/arch/um/kernel/time.c
 +++ b/arch/um/kernel/time.c
-@@ -37,7 +37,7 @@ static int itimer_shutdown(struct clock_event_device *evt)
+@@ -19,11 +19,14 @@
+ #include <kern_util.h>
+ #include <os.h>
+ #include <timer-internal.h>
++#include <shared/init.h>
  
- static int itimer_set_periodic(struct clock_event_device *evt)
+ void timer_handler(int sig, struct siginfo *unused_si, struct uml_pt_regs *regs)
  {
--	os_timer_set_interval(NULL, NULL);
-+	os_timer_set_interval();
- 	return 0;
+ 	unsigned long flags;
+ 
++	os_set_virtual_time_to_timer();
++
+ 	local_irq_save(flags);
+ 	do_IRQ(TIMER_IRQ, regs);
+ 	local_irq_restore(flags);
+@@ -134,3 +137,13 @@ void __init time_init(void)
+ 	timer_set_signal_handler();
+ 	late_time_init = um_timer_setup;
  }
- 
-@@ -107,7 +107,7 @@ static void __init um_timer_setup(void)
- 		printk(KERN_ERR "register_timer : request_irq failed - "
- 		       "errno = %d\n", -err);
- 
--	err = os_timer_create(NULL);
-+	err = os_timer_create();
- 	if (err != 0) {
- 		printk(KERN_ERR "creation of timer failed - errno = %d\n", -err);
- 		return;
++
++#ifdef CONFIG_UML_VIRTUAL_TIME_SUPPORT
++__setup("virtual-time", os_setup_virtual_time);
++__uml_help(os_setup_virtual_time,
++"virtual-time\n"
++"    Run the system in virtual time mode, i.e. bump time\n"
++"    forward when there's nothing to do, rather than waiting\n"
++"    for real time to elapse. Useful for test execution.\n\n"
++);
++#endif
 diff --git a/arch/um/os-Linux/time.c b/arch/um/os-Linux/time.c
-index b28cc35da21f..ea720149f5b8 100644
+index ea720149f5b8..d37ee59cb936 100644
 --- a/arch/um/os-Linux/time.c
 +++ b/arch/um/os-Linux/time.c
-@@ -26,11 +26,11 @@ static inline long long timeval_to_ns(const struct timeval *tv)
+@@ -15,8 +15,27 @@
+ #include <os.h>
+ #include <string.h>
+ #include <timer-internal.h>
++#include <generated/autoconf.h>
  
- static inline long long timespec_to_ns(const struct timespec *ts)
+ static timer_t event_high_res_timer = 0;
++#ifdef CONFIG_UML_VIRTUAL_TIME_SUPPORT
++unsigned long long virtual_time;
++unsigned long long timer_expiry;
++static enum {
++	TMR_DIS,
++	TMR_ONE,
++	TMR_INT,
++} timer_mode;
++static bool virtual_time_enabled;
++
++int os_setup_virtual_time(char *str)
++{
++	virtual_time_enabled = true;
++	return 1;
++}
++#else
++#define virtual_time_enabled false
++#endif
+ 
+ static inline long long timeval_to_ns(const struct timeval *tv)
  {
--	return ((long long) ts->tv_sec * UM_NSEC_PER_SEC) +
--		ts->tv_nsec;
-+	return ((long long) ts->tv_sec * UM_NSEC_PER_SEC) + ts->tv_nsec;
- }
+@@ -66,6 +85,11 @@ int os_timer_set_interval(void)
+ 	if (timer_settime(event_high_res_timer, 0, &its, NULL) == -1)
+ 		return -errno;
  
--long long os_persistent_clock_emulation (void) {
-+long long os_persistent_clock_emulation(void)
-+{
- 	struct timespec realtime_tp;
- 
- 	clock_gettime(CLOCK_REALTIME, &realtime_tp);
-@@ -40,94 +40,45 @@ long long os_persistent_clock_emulation (void) {
- /**
-  * os_timer_create() - create an new posix (interval) timer
-  */
--int os_timer_create(void* timer) {
--
--	timer_t* t = timer;
--
--	if(t == NULL) {
--		t = &event_high_res_timer;
--	}
-+int os_timer_create(void)
-+{
-+	timer_t *t = &event_high_res_timer;
- 
--	if (timer_create(
--		CLOCK_MONOTONIC,
--		NULL,
--		t) == -1) {
-+	if (timer_create(CLOCK_MONOTONIC, NULL, t) == -1)
- 		return -1;
--	}
++#ifdef CONFIG_UML_VIRTUAL_TIME_SUPPORT
++	timer_mode = TMR_INT;
++	timer_expiry = virtual_time + nsec;
++#endif
 +
  	return 0;
  }
  
--int os_timer_set_interval(void* timer, void* i)
-+int os_timer_set_interval(void)
- {
- 	struct itimerspec its;
- 	unsigned long long nsec;
--	timer_t* t = timer;
--	struct itimerspec* its_in = i;
--
--	if(t == NULL) {
--		t = &event_high_res_timer;
--	}
+@@ -81,6 +105,10 @@ int os_timer_one_shot(unsigned long ticks)
+ 	};
  
- 	nsec = UM_NSEC_PER_SEC / UM_HZ;
- 
--	if(its_in != NULL) {
--		its.it_value.tv_sec = its_in->it_value.tv_sec;
--		its.it_value.tv_nsec = its_in->it_value.tv_nsec;
--	} else {
--		its.it_value.tv_sec = 0;
--		its.it_value.tv_nsec = nsec;
--	}
-+	its.it_value.tv_sec = 0;
-+	its.it_value.tv_nsec = nsec;
- 
- 	its.it_interval.tv_sec = 0;
- 	its.it_interval.tv_nsec = nsec;
- 
--	if(timer_settime(*t, 0, &its, NULL) == -1) {
-+	if (timer_settime(event_high_res_timer, 0, &its, NULL) == -1)
- 		return -errno;
--	}
- 
+ 	timer_settime(event_high_res_timer, 0, &its, NULL);
++#ifdef CONFIG_UML_VIRTUAL_TIME_SUPPORT
++	timer_mode = TMR_ONE;
++	timer_expiry = virtual_time + nsec;
++#endif
  	return 0;
  }
  
--/**
-- * os_timer_remain() - returns the remaining nano seconds of the given interval
-- *                     timer
-- * Because this is the remaining time of an interval timer, which correspondends
-- * to HZ, this value can never be bigger than one second. Just
-- * the nanosecond part of the timer is returned.
-- * The returned time is relative to the start time of the interval timer.
-- * Return an negative value in an error case.
-- */
--long os_timer_remain(void* timer)
--{
--	struct itimerspec its;
--	timer_t* t = timer;
--
--	if(t == NULL) {
--		t = &event_high_res_timer;
--	}
--
--	if(timer_gettime(t, &its) == -1) {
--		return -errno;
--	}
--
--	return its.it_value.tv_nsec;
--}
--
- int os_timer_one_shot(unsigned long ticks)
- {
--	struct itimerspec its;
--	unsigned long long nsec;
--	unsigned long sec;
-+	unsigned long long nsec = ticks + 1;
-+	struct itimerspec its = {
-+		.it_value.tv_sec = nsec / UM_NSEC_PER_SEC,
-+		.it_value.tv_nsec = nsec % UM_NSEC_PER_SEC,
- 
--    nsec = (ticks + 1);
--    sec = nsec / UM_NSEC_PER_SEC;
--	nsec = nsec % UM_NSEC_PER_SEC;
--
--	its.it_value.tv_sec = nsec / UM_NSEC_PER_SEC;
--	its.it_value.tv_nsec = nsec;
--
--	its.it_interval.tv_sec = 0;
--	its.it_interval.tv_nsec = 0; // we cheat here
-+		.it_interval.tv_sec = 0,
-+		.it_interval.tv_nsec = 0, // we cheat here
-+	};
- 
- 	timer_settime(event_high_res_timer, 0, &its, NULL);
- 	return 0;
-@@ -135,24 +86,13 @@ int os_timer_one_shot(unsigned long ticks)
- 
- /**
-  * os_timer_disable() - disable the posix (interval) timer
-- * Returns the remaining interval timer time in nanoseconds
-  */
--long long os_timer_disable(void)
-+void os_timer_disable(void)
- {
- 	struct itimerspec its;
+@@ -93,12 +121,20 @@ void os_timer_disable(void)
  
  	memset(&its, 0, sizeof(struct itimerspec));
--	timer_settime(event_high_res_timer, 0, &its, &its);
--
--	return its.it_value.tv_sec * UM_NSEC_PER_SEC + its.it_value.tv_nsec;
--}
--
--long long os_vnsecs(void)
--{
--	struct timespec ts;
--
--	clock_gettime(CLOCK_PROCESS_CPUTIME_ID,&ts);
--	return timespec_to_ns(&ts);
-+	timer_settime(event_high_res_timer, 0, &its, NULL);
+ 	timer_settime(event_high_res_timer, 0, &its, NULL);
++#ifdef CONFIG_UML_VIRTUAL_TIME_SUPPORT
++	timer_mode = TMR_DIS;
++#endif
  }
  
  long long os_nsecs(void)
-@@ -169,21 +109,14 @@ long long os_nsecs(void)
+ {
+ 	struct timespec ts;
+ 
++#ifdef CONFIG_UML_VIRTUAL_TIME_SUPPORT
++	if (virtual_time_enabled)
++		return virtual_time;
++#endif
++
+ 	clock_gettime(CLOCK_MONOTONIC,&ts);
+ 	return timespec_to_ns(&ts);
+ }
+@@ -109,6 +145,10 @@ long long os_nsecs(void)
   */
  void os_idle_sleep(unsigned long long nsecs)
  {
--	struct timespec ts;
--
--	if (nsecs <= 0) {
--		return;
--	}
--
--	ts = ((struct timespec) {
--			.tv_sec  = nsecs / UM_NSEC_PER_SEC,
--			.tv_nsec = nsecs % UM_NSEC_PER_SEC
--	});
-+	struct timespec ts = {
-+		.tv_sec  = nsecs / UM_NSEC_PER_SEC,
-+		.tv_nsec = nsecs % UM_NSEC_PER_SEC
-+	};
- 
++#ifdef CONFIG_UML_VIRTUAL_TIME_SUPPORT
++	unsigned long long next = virtual_time + nsecs;
++	struct itimerspec stop = {}, cfg;
++#endif
+ 	struct timespec ts = {
+ 		.tv_sec  = nsecs / UM_NSEC_PER_SEC,
+ 		.tv_nsec = nsecs % UM_NSEC_PER_SEC
+@@ -117,6 +157,32 @@ void os_idle_sleep(unsigned long long nsecs)
  	/*
  	 * Relay the signal if clock_nanosleep is interrupted.
  	 */
--	if (clock_nanosleep(CLOCK_MONOTONIC, 0, &ts, NULL)) {
-+	if (clock_nanosleep(CLOCK_MONOTONIC, 0, &ts, NULL))
+-	if (clock_nanosleep(CLOCK_MONOTONIC, 0, &ts, NULL))
++	if (!virtual_time_enabled) {
++		if (clock_nanosleep(CLOCK_MONOTONIC, 0, &ts, NULL))
++			deliver_alarm();
++		return;
++	}
++
++#ifdef CONFIG_UML_VIRTUAL_TIME_SUPPORT
++	timer_settime(event_high_res_timer, 0, &stop, &cfg);
++
++	if (timer_mode != TMR_DIS && timer_expiry < next) {
++		if (timer_mode == TMR_ONE)
++			timer_mode = TMR_DIS;
++		/* virtual_time will be adjusted in timer_handler() */
  		deliver_alarm();
--	}
++		return;
++	}
++
++	virtual_time = next;
++
++	if (timer_mode != TMR_DIS) {
++		unsigned long long remaining = timer_expiry - virtual_time;
++
++		cfg.it_value.tv_sec = remaining / UM_NSEC_PER_SEC;
++		cfg.it_value.tv_nsec = remaining % UM_NSEC_PER_SEC;
++
++		timer_settime(event_high_res_timer, 0, &cfg, NULL);
++	}
++#endif
  }
 -- 
 2.17.2
