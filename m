@@ -2,75 +2,56 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8C65F1457F
-	for <lists+linux-um@lfdr.de>; Mon,  6 May 2019 09:45:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4CE74145EC
+	for <lists+linux-um@lfdr.de>; Mon,  6 May 2019 10:19:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=38liawdVcEeB6hZY2wHONhSuau1iqcsWBB3aw4zRWIU=; b=SnZmhEyDHlxDsq
-	SKIz0JCtblcpj9y3GCj7bGnngQn9eyb274JLNxHyz3qWASgJ16/x/IQrezUC/VuPWXZS7a0imiwVY
-	SuxCuY3JR4dLTDaPhkkofzBTzSB21LM1JXUoCDEQKxtWjAp7bJw2frFPictBgUSZXvrpUN4//mRMC
-	vOh1e6uPK0p5KD1gvnlmMgJXhly6DdwCi/OicAQj918GHC7TgBk6T63m1buXD04hKjqrtaAKGj6Bz
-	eCJ/EJ1VOYIfOnqWctn4FM1ZtffJyxIU8WnHLqSvBqWd+tB9yy5qEvgyUCXseADJDIm5i9w1OJ5Vn
-	54ZXv2bMTIkAX2XNk6cw==;
+	List-Owner; bh=B0OJfMLcH8jxppJZIY76UA0tN67/+Il7AqMCt8O+25c=; b=ZOhCUbBO3SdYwT
+	ruJblSdG+g/M14qwqmaeYz0QVtBW1tWXA66bIi9YRQOuXqNrOlguUC3VTfK0pWD6w0oH/FxO3zrXN
+	ubWUEjjzvqOgJplCDLuWpY5aznfSRqg2XRjbUtbJI0tDQwPNkhZQG0BiOWLNOyN+ddsIcrlihm+QV
+	RAh7kaZDI0z/rj0naWHTKSmiEpXTU2Z/O+BYydzXjmCo0aieU5TWNDxQok2p/LIWO9Znpnpm4GmaT
+	amy3PcKMJjV42ifr0lPIGAJad7r6PuCnBiNVPbOuRv/3XzUAAbHwP8HcLr7yN8p8S3kZHRFOdVKsw
+	dUuFEtst8PlFLgjOtCvw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hNYJN-0007EV-9Q; Mon, 06 May 2019 07:45:21 +0000
-Received: from mail-ua1-f65.google.com ([209.85.222.65])
+	id 1hNYqj-00036K-5C; Mon, 06 May 2019 08:19:49 +0000
+Received: from s3.sipsolutions.net ([2a01:4f8:191:4433::2]
+ helo=sipsolutions.net)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hNYJK-0007Dt-ID
- for linux-um@lists.infradead.org; Mon, 06 May 2019 07:45:20 +0000
-Received: by mail-ua1-f65.google.com with SMTP id z17so4317012uar.3
- for <linux-um@lists.infradead.org>; Mon, 06 May 2019 00:45:17 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=av0FlZovhSdaUEw7TuM0HQ/p2wX7I62iPnqyU0AsC/8=;
- b=o91HgEySnSu4oAHhAwz1pXgSTJg7WjrqZugKzanUG3MiksCQh78MVBxlNM0Y6moydQ
- R0KmXete5vU3orTDqsKMcTrNJrev0FS+KjYGM8sSIXQ7itiH24PAFoyatO15RkCdOLmm
- S7dj016fAj37eBH+x1NvzR4IgoWktQSxaPnE7A7NBhNXkGz8Z1ZhHY4RFGx57lLQ/Vhq
- 9NrpqEpY1U+WcztPrfPd43ao7wH+tdAIgF+zb/ZroTSC86E4H4XhRQ2tWivi+KXztTxg
- Oz36hnS0ws4Wr853l/CGB4ds807c2xQE2CpuAgBJXFG6ppQwt3iubH0D+HBU3sJvmP9C
- keMg==
-X-Gm-Message-State: APjAAAWR9/1pUeXwt8nGIQ8EcPmyCDQcY0unpllMNVmpFO79Zmani2m1
- DxhzsMttpX5Z7fqZSH8f0Ot0O4A635KARIFAsTSubg==
-X-Google-Smtp-Source: APXvYqwMOfjG0RKZzTr02FIFIWw2fqS7WTpz2nKMXNhhaoBK7ehrXtWH1A1FCJ+vcWPouVqUCq0LTQ5Z4O3M0F0lRcE=
-X-Received: by 2002:a9f:352a:: with SMTP id o39mr12119476uao.78.1557128716938; 
- Mon, 06 May 2019 00:45:16 -0700 (PDT)
-MIME-Version: 1.0
+ id 1hNYqe-0002x7-To
+ for linux-um@lists.infradead.org; Mon, 06 May 2019 08:19:47 +0000
+Received: by sipsolutions.net with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <johannes@sipsolutions.net>)
+ id 1hNYqW-0007RA-BZ; Mon, 06 May 2019 10:19:36 +0200
+Message-ID: <87441c0a5114f7a1ed904cefc8c4219a3f823779.camel@sipsolutions.net>
+Subject: Re: [PATCH 3/3] arch: um: support virtual time
+From: Johannes Berg <johannes@sipsolutions.net>
+To: Geert Uytterhoeven <geert@linux-m68k.org>, Anton Ivanov
+ <anton.ivanov@cambridgegreys.com>
+Date: Mon, 06 May 2019 10:19:35 +0200
+In-Reply-To: <CAMuHMdXi7Yd9p8dahixBbH=kuY1Zmyz3OHCxrH9tKDo23cGHhw@mail.gmail.com>
+ (sfid-20190506_094518_502940_F26CF509)
 References: <20190503213249.30008-1-johannes@sipsolutions.net>
  <20190503213249.30008-3-johannes@sipsolutions.net>
  <95430ca975e73addc7f65e331488bc280974fd72.camel@sipsolutions.net>
  <9f844312-dca3-d20e-485b-13c1f249edb0@cambridgegreys.com>
-In-Reply-To: <9f844312-dca3-d20e-485b-13c1f249edb0@cambridgegreys.com>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Mon, 6 May 2019 09:45:04 +0200
-Message-ID: <CAMuHMdXi7Yd9p8dahixBbH=kuY1Zmyz3OHCxrH9tKDo23cGHhw@mail.gmail.com>
-Subject: Re: [PATCH 3/3] arch: um: support virtual time
-To: Anton Ivanov <anton.ivanov@cambridgegreys.com>
+ <CAMuHMdXi7Yd9p8dahixBbH=kuY1Zmyz3OHCxrH9tKDo23cGHhw@mail.gmail.com>
+ (sfid-20190506_094518_502940_F26CF509)
+X-Mailer: Evolution 3.28.5 (3.28.5-2.fc28) 
+Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190506_004518_600864_E4B7F7CD 
-X-CRM114-Status: GOOD (  11.33  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20190506_011945_397642_57F0DBCB 
+X-CRM114-Status: GOOD (  14.72  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.222.65 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (geert.uytterhoeven[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.222.65 listed in wl.mailspike.net]
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -82,38 +63,36 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: Richard Weinberger <richard@nod.at>,
- Johannes Berg <johannes@sipsolutions.net>,
- "linux-um@lists.infradead.org" <linux-um@lists.infradead.org>,
- Jeff Dike <jdike@addtoit.com>
+Cc: Richard Weinberger <richard@nod.at>, Jeff Dike <jdike@addtoit.com>,
+ "linux-um@lists.infradead.org" <linux-um@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Sat, May 4, 2019 at 10:43 PM Anton Ivanov
-<anton.ivanov@cambridgegreys.com> wrote:
-> On 04/05/2019 20:05, Johannes Berg wrote:
-> > On Fri, 2019-05-03 at 21:32 +0000, Johannes Berg wrote:
-> I can understand your use case for patch 3. What I am not clear is where
-> should that config option live. It should be somewhere under
-> debug/kernel hacking with a sufficient number of big fat warnings so
-> people do not enable it accidentally by mistake.
+On Mon, 2019-05-06 at 09:45 +0200, Geert Uytterhoeven wrote:
+> On Sat, May 4, 2019 at 10:43 PM Anton Ivanov
+> <anton.ivanov@cambridgegreys.com> wrote:
+> > On 04/05/2019 20:05, Johannes Berg wrote:
+> > > On Fri, 2019-05-03 at 21:32 +0000, Johannes Berg wrote:
+> > 
+> > I can understand your use case for patch 3. What I am not clear is where
+> > should that config option live. It should be somewhere under
+> > debug/kernel hacking with a sufficient number of big fat warnings so
+> > people do not enable it accidentally by mistake.
+> 
+> I think enabling the config option should not also enable the feature, but
+> just add code that allows to enable the feature by a kernel command line
+> option, and/or by a special file in debugfs.
 
-I think enabling the config option should not also enable the feature, but
-just add code that allows to enable the feature by a kernel command line
-option, and/or by a special file in debugfs.
+Hmm. Might be doable with a command line argument, I don't think having
+the kernel boot in "real time" and then continue running at some point
+from "virtual time" when enabled via debugfs makes sense, and I also
+don't see how you could really switch back and forth without a lot of
+effort in the code.
 
-Gr{oetje,eeting}s,
+johannes
 
-                        Geert
-
--- 
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
-
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
 
 _______________________________________________
 linux-um mailing list
