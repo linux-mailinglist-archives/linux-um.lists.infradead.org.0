@@ -2,133 +2,84 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7537316AEF
-	for <lists+linux-um@lfdr.de>; Tue,  7 May 2019 21:13:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 09DAF16D27
+	for <lists+linux-um@lfdr.de>; Tue,  7 May 2019 23:27:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/b1O3qzBelcF13oIOg4+JAS+mL6IE9/pl1rgj9RUUDM=; b=by8dnJ3ou2TTSL
-	NQghGEojthyqr8nSXkO5QTXZ//vM/TV1BsMTVgYKpTtwJ3gWm3G4zhpa9UNpBaTpUadXZ8yvH6vpT
-	5n8i9Bo2Glu4U4DtmxKPEWA7dl5r3slV85fR/HhSJw8BvYTb9Vn9kN6Sx4y9K1xgXQjXoX5W/GvRo
-	xi0g8wbdnllgTey7DUkoArUmKhTaPuRS2HE8o/KB4UH5aeCV8+myJsDip8ZIuM5gEYrRGv88jqqLf
-	3YnO/QEVvrVjMQSiRA9q7zwS3FmrVFO3o8kOtBS2vXsFQz40Im5Dr9MJNdyx+5y7oEsVCp1Vg4MIt
-	N1jHMyu17yat5idVA9hA==;
+	List-Owner; bh=uLiFI3acEcJjZF3cD71gGeCuX9XZ77JLODtDidhTM6Q=; b=sQEyysTv41gEKD
+	dpElrjRUCw/fDzR+9RJn/fYSnQzaDsWlCNa+IKG0UnXnxcd9ew5V00LsYghb4Ee66vGKGByvJEpbm
+	iJiSq+FZXCwc+hyVm4CQ9DFWCiw9pmyHGattYOfl5wP/8yN9ShLaoRcwaF1fJx03dFZ+E5+9q1fsH
+	IdBpkK1pE9mt8Gu2EtFyhni7zubCGxDDvC3m7TmVpZ0YImKdT+8fYkqMNgDnCYYVY0EvEubD3P4mN
+	3l5kKXgskqgstpxXu5Ega7pBtDt3v9N0SH/QcVPfk6o1PHSeSTAx//kkzD3XfeRwh1dBWtkkob2zk
+	/Hc+gum/l/xO4OdcDSuw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hO5XE-0004lE-2a; Tue, 07 May 2019 19:13:52 +0000
-Received: from mail-dm3nam03on0707.outbound.protection.outlook.com
- ([2a01:111:f400:fe49::707]
- helo=NAM03-DM3-obe.outbound.protection.outlook.com)
+	id 1hO7by-0007h4-RM; Tue, 07 May 2019 21:26:54 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hO5XA-0004kQ-AZ
- for linux-um@lists.infradead.org; Tue, 07 May 2019 19:13:50 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Sony.onmicrosoft.com; 
- s=selector1-Sony-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=OETcERvdxEccn4uxMv/L2c7hJBriL+YRSBY062rstiU=;
- b=OWMlIy5Bfxy8+2fxU1Hi/v6r8c1ChBdI3sL4uPdCZDUiMyG5nyH3FyfJJuioEWDWvT/fcJNrS+d4jwtNXNMmWKu2CBmk1Qw0vb4DD/BCtoe0MbtfFItEdR/w3H/yNKnPF34SlEVDFdIEtwQ8o300lpGgCQ0TbsqDoJo4dPtwPTk=
-Received: from MWHPR13CA0016.namprd13.prod.outlook.com (2603:10b6:300:16::26)
- by DM5PR13MB1401.namprd13.prod.outlook.com (2603:10b6:3:11c::13) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.1878.15; Tue, 7 May
- 2019 19:13:35 +0000
-Received: from BL2NAM02FT048.eop-nam02.prod.protection.outlook.com
- (2a01:111:f400:7e46::206) by MWHPR13CA0016.outlook.office365.com
- (2603:10b6:300:16::26) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.20.1878.18 via Frontend
- Transport; Tue, 7 May 2019 19:13:34 +0000
-Authentication-Results: spf=permerror (sender IP is 160.33.194.229)
- smtp.mailfrom=sony.com; google.com; dkim=none (message not signed)
- header.d=none;google.com; dmarc=none action=none header.from=sony.com;
-Received-SPF: PermError (protection.outlook.com: domain of sony.com used an
- invalid SPF mechanism)
-Received: from usculsndmail02v.am.sony.com (160.33.194.229) by
- BL2NAM02FT048.mail.protection.outlook.com (10.152.76.109) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id
- 15.20.1856.11 via Frontend Transport; Tue, 7 May 2019 19:13:34 +0000
-Received: from usculsndmail12v.am.sony.com (usculsndmail12v.am.sony.com
- [146.215.230.103])
- by usculsndmail02v.am.sony.com (Sentrion-MTA-4.3.2/Sentrion-MTA-4.3.2) with
- ESMTP id x47JDWsZ024534; Tue, 7 May 2019 19:13:32 GMT
-Received: from USCULXHUB01V.am.sony.com (usculxhub01v.am.sony.com
- [146.215.231.15])
- by usculsndmail12v.am.sony.com (Sentrion-MTA-4.3.2/Sentrion-MTA-4.3.2) with
- ESMTP id x47JDU9f012737; Tue, 7 May 2019 19:13:30 GMT
-Received: from USCULXMSG01.am.sony.com ([fe80::b09d:6cb6:665e:d1b5]) by
- USCULXHUB01V.am.sony.com ([146.215.231.15]) with mapi id 14.03.0439.000; Tue,
- 7 May 2019 15:13:30 -0400
-From: <Tim.Bird@sony.com>
-To: <brendanhiggins@google.com>, <frowand.list@gmail.com>
-Subject: RE: [PATCH v2 12/17] kunit: tool: add Python wrappers for running
- KUnit tests
-Thread-Topic: [PATCH v2 12/17] kunit: tool: add Python wrappers for running
- KUnit tests
-Thread-Index: AQHVAHJhoNqUCvrlqkWNVYoBnpR0L6ZX7y8AgAB264CAADSlgIAAKamAgAAhmQCAAEBZgIAA4H+AgABHUoCAAzbVgIABZW4AgAEcg3A=
-Date: Tue, 7 May 2019 19:13:14 +0000
-Message-ID: <ECADFF3FD767C149AD96A924E7EA6EAF9770AE37@USCULXMSG01.am.sony.com>
-References: <20190501230126.229218-1-brendanhiggins@google.com>
- <20190501230126.229218-13-brendanhiggins@google.com>
- <20190502110220.GD12416@kroah.com>
- <CAFd5g47t=EdLKFCT=CnPkrM2z0nDVo24Gz4j0VxFOJbARP37Lg@mail.gmail.com>
- <a49c5088-a821-210c-66de-f422536f5b01@gmail.com>
- <CAFd5g44iWRchQKdJYtjRtPY6e-6e0eXpKXXsx5Ooi6sWE474KA@mail.gmail.com>
- <1a5f3c44-9fa9-d423-66bf-45255a90c468@gmail.com>
- <CAFd5g45RYm+zfdJXnyp2KZZH5ojfOzy++aq+4zBeE5VDu6WgEw@mail.gmail.com>
- <052fa196-4ea9-8384-79b7-fe6bacc0ee82@gmail.com>
- <CAFd5g47aY-CL+d7DfiyTidY4aAVY+eg1TM1UJ4nYqKSfHOi-0w@mail.gmail.com>
- <63f63c7c-6185-5e64-b338-6a5e7fb9e27c@gmail.com>
- <CAFd5g46=ZU58uJ=Qhs3soBzJjzJKJFY0_uzZ7fe1CxPfJioNOA@mail.gmail.com>
-In-Reply-To: <CAFd5g46=ZU58uJ=Qhs3soBzJjzJKJFY0_uzZ7fe1CxPfJioNOA@mail.gmail.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [146.215.228.6]
+ id 1hO7bv-0007gO-Eq
+ for linux-um@lists.infradead.org; Tue, 07 May 2019 21:26:52 +0000
+Received: by mail-wm1-x344.google.com with SMTP id m20so458767wmg.1
+ for <linux-um@lists.infradead.org>; Tue, 07 May 2019 14:26:50 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=CpS0acp3uuHexCCxmfsBcp2LVHuqUmGr+AfC8n1/nG8=;
+ b=LeeclIpSD2O+PfBGCoM+AsjKIueYP8u5J7Mh2a3qOtWoBkv9uMFrZ9g62I5pKh5ZvB
+ f7UQJ/g7mzm6UqS/+zBGs6H1CK+HLlO8U6el1hOzltMHIlUOHo4f1xM3fPvAum4D5J5i
+ 6q8toThV1tjYHsb0Tb3P3jCrftHIuN9Kj7+Jq8IVTjv4efgoxhHdvGOsgbLkqa+Jl8YK
+ P6olw2AF91FiaKGxzHpMdwSJzBNChaEFUnKAcPQagIZrkATn4rVAqwIlea7wjq7l1/WJ
+ 4/3YqmZW16fTi5J+PaDqIk3XiHmIe4X6Ba/zSkGGv+o7QcFoYjZmWxhb3moGMO5GmjSZ
+ 44bw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=CpS0acp3uuHexCCxmfsBcp2LVHuqUmGr+AfC8n1/nG8=;
+ b=ujmvLDREOcWYyEMUZzLGFfFIdbc2UmK99FlKBk6bAZYYnsoxUKC+776dBnvA0QSbvg
+ RRU1KQgNKvXhAm/G7xR6Hw2jhhjaRGcEDtKNo2IbYu8iCt9bupzRoV4aSsBdCtTi8K7O
+ 9SMaL3WNPreE0TmoWTEBMIX1fUXVE0oF7PRWwHbQxY0a/rGBlUxNH5C/xSYHTR7iG+sd
+ hE0cHJFn5QwaocXcDudGXvurx1lk7TAJ6MmOeAqggJBtl1MkVdof4T9WsD1wgtebOm6h
+ 8BW4+HuwFKJDoe86VjYtfSBBOU3OANOwjJRegnjHhyc111F3v70cpblqdROHYJG+jlL3
+ zdoA==
+X-Gm-Message-State: APjAAAW+uuhw95Lk+AFfosCJlVNtKgGWQ+2sNipX2pCe8EMl22ggGjBl
+ WldcJaytghX1+F0zpBKtr0ywTRAdjZIRdQ3ZEjI=
+X-Google-Smtp-Source: APXvYqybBltjIktuaOWmGdahqcOnGayFyfWkyFiOAnKhh4NUIe41ZYMKvyCKjLJoxum3IrCr+iks53pYmOrWFbj/oEo=
+X-Received: by 2002:a1c:2dd2:: with SMTP id t201mr381826wmt.10.1557264409469; 
+ Tue, 07 May 2019 14:26:49 -0700 (PDT)
 MIME-Version: 1.0
-X-EOPAttributedMessage: 0
-X-MS-Office365-Filtering-HT: Tenant
-X-Forefront-Antispam-Report: CIP:160.33.194.229; IPV:NLI; CTRY:US; EFV:NLI;
- SFV:NSPM;
- SFS:(10019020)(1496009)(136003)(396003)(39860400002)(376002)(346002)(2980300002)(448002)(51444003)(189003)(199004)(13464003)(55674003)(126002)(356004)(336012)(50466002)(7736002)(37786003)(246002)(6666004)(305945005)(55846006)(486006)(186003)(316002)(426003)(72206003)(8676002)(436003)(54906003)(33656002)(966005)(229853002)(476003)(2876002)(4326008)(14444005)(446003)(11346002)(110136005)(6246003)(3846002)(102836004)(6116002)(86152003)(55016002)(6306002)(2906002)(5660300002)(53546011)(7406005)(85326001)(7416002)(23676004)(7696005)(26005)(8936002)(47776003)(478600001)(76176011)(70586007)(86362001)(70206006)(66066001)(2486003)(5001870100001);
- DIR:OUT; SFP:1102; SCL:1; SRVR:DM5PR13MB1401; H:usculsndmail02v.am.sony.com;
- FPR:; SPF:PermError; LANG:en; PTR:mail.sonyusa.com,mail02.sonyusa.com; MX:1;
- A:1; 
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 4a588ed9-b19c-4f12-e016-08d6d32019ba
-X-Microsoft-Antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600141)(711020)(4605104)(2017052603328)(7193020);
- SRVR:DM5PR13MB1401; 
-X-MS-TrafficTypeDiagnostic: DM5PR13MB1401:
-X-MS-Exchange-PUrlCount: 3
-X-Microsoft-Antispam-PRVS: <DM5PR13MB14015E8F3E30EFCCFDD970A9FD310@DM5PR13MB1401.namprd13.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:10000;
-X-Forefront-PRVS: 0030839EEE
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam-Message-Info: vSzy8IZrS9bO85wOMSB0Lev7xvGIqUpuDKE1CToyQILnnoycswVpzKBL+9JssNF6pU9sOEJlcJMYQlEJ1ahZ5bwkGP/IRwVh+Jm60ql/CM0DfwovFcS3RPkV/6pRAZxXjMY0ktCgXxHIIcdNiytKWO5IkyZT7ABXlVS6fU+pqovKZ1GUMgk6KZZPwaY9pUQr7JYVM1aazjZAGhBlssA0JCtkC3Rk64yqRSsqMDck2jn5wc7ulTeCcVyuZBq+HQ2laU6Pu4NymV+1bqCAzWhK2WjeRA5QOsAXA6HNMpQKFX/bEVU1xu+9X//I3FwP9lay+aVgvzAgCWuZrd9rcYOZPcJ56Cx9B0kegb4u6jej498ZFMsJuhjA5FY+rySc5ahZXcox3HnMajbxI5Rz5/XuIziYMHsnGbSLmHA5Et+drBE=
-X-OriginatorOrg: sony.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 07 May 2019 19:13:34.2144 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 4a588ed9-b19c-4f12-e016-08d6d32019ba
-X-MS-Exchange-CrossTenant-Id: 66c65d8a-9158-4521-a2d8-664963db48e4
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=66c65d8a-9158-4521-a2d8-664963db48e4; Ip=[160.33.194.229];
- Helo=[usculsndmail02v.am.sony.com]
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM5PR13MB1401
+References: <20190411094944.12245-1-brgl@bgdev.pl>
+ <20190411094944.12245-5-brgl@bgdev.pl>
+In-Reply-To: <20190411094944.12245-5-brgl@bgdev.pl>
+From: Richard Weinberger <richard.weinberger@gmail.com>
+Date: Tue, 7 May 2019 23:26:38 +0200
+Message-ID: <CAFLxGvwb8YzNiXCXru8Tw9pxH9qoc7gAO4sk0MXK1Xmp7fm-2g@mail.gmail.com>
+Subject: Re: [RESEND PATCH 4/4] um: irq: don't set the chip for all irqs
+To: Bartosz Golaszewski <brgl@bgdev.pl>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190507_121348_420289_E84ACCA0 
-X-CRM114-Status: GOOD (  35.55  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190507_142651_499260_F4B923A0 
+X-CRM114-Status: GOOD (  10.00  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (richard.weinberger[at]gmail.com)
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -140,211 +91,43 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: pmladek@suse.com, linux-doc@vger.kernel.org, amir73il@gmail.com,
- dri-devel@lists.freedesktop.org, Alexander.Levin@microsoft.com,
- mpe@ellerman.id.au, linux-kselftest@vger.kernel.org, shuah@kernel.org,
- robh@kernel.org, linux-nvdimm@lists.01.org, khilman@baylibre.com,
- knut.omang@oracle.com, kieran.bingham@ideasonboard.com,
- felixguoxiuping@gmail.com, wfg@linux.intel.com, joel@jms.id.au,
- rientjes@google.com, dan.carpenter@oracle.com, devicetree@vger.kernel.org,
- linux-kbuild@vger.kernel.org, jdike@addtoit.com, linux-um@lists.infradead.org,
- rostedt@goodmis.org, julia.lawall@lip6.fr, dan.j.williams@intel.com,
- kunit-dev@googlegroups.com, richard@nod.at, sboyd@kernel.org,
- gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org, mcgrof@kernel.org,
- daniel@ffwll.ch, keescook@google.com, linux-fsdevel@vger.kernel.org,
- logang@deltatee.com
+Cc: Richard Weinberger <richard@nod.at>, Jeff Dike <jdike@addtoit.com>,
+ linux-um@lists.infradead.org, LKML <linux-kernel@vger.kernel.org>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Geert Uytterhoeven <geert@linux-m68k.org>,
+ Anton Ivanov <anton.ivanov@cambridgegreys.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-Here is a bit of inline commentary on the TAP13/TAP14 discussion.
+On Thu, Apr 11, 2019 at 11:50 AM Bartosz Golaszewski <brgl@bgdev.pl> wrote:
+>
+> From: Bartosz Golaszewski <bgolaszewski@baylibre.com>
+>
+> Setting a chip for an interrupt marks it as allocated. Since UM doesn't
+> support dynamic interrupt numbers (yet), it means we cannot simply
+> increase NR_IRQS and then use the free irqs between LAST_IRQ and NR_IRQS
+> with gpio-mockup or iio testing drivers as irq_alloc_descs() will fail
+> after not being able to neither find an unallocated range of interrupts
+> nor expand the range.
+>
+> Only call irq_set_chip_and_handler() for irqs until LAST_IRQ.
+>
+> Signed-off-by: Bartosz Golaszewski <bgolaszewski@baylibre.com>
+> Reviewed-by: Anton Ivanov <anton.ivanov@cambridgegreys.com>
+> Acked-by: Anton Ivanov <anton.ivanov@cambridgegreys.com>
 
-> -----Original Message-----
-> From: Brendan Higgins 
-> 
-> > On 5/3/19 4:14 PM, Brendan Higgins wrote:
-> > >> On 5/2/19 10:36 PM, Brendan Higgins wrote:
-> > > In any case, it sounds like you and Greg are in agreement on the core
-> > > libraries generating the output in TAP13, so I won't argue that point
-> > > further.
-> > >
-> > > ## Analysis of using TAP13
-> >
-> > I have never looked at TAP version 13 in any depth at all, so do not consider
-> > me to be any sort of expert.
-> >
-> > My entire TAP knowledge is based on:
-> >
-> >   https://testanything.org/tap-version-13-specification.html
-> >
-> > and the pull request to create the TAP version 14 specification:
-> >
-> >    https://github.com/TestAnything/testanything.github.io/pull/36/files
-> >
-> > You can see the full version 14 document in the submitter's repo:
-> >
-> >   $ git clone https://github.com/isaacs/testanything.github.io.git
-> >   $ cd testanything.github.io
-> >   $ git checkout tap14
-> >   $ ls tap-version-14-specification.md
-> >
-> > My understanding is the the version 14 specification is not trying to
-> > add new features, but instead capture what is already implemented in
-> > the wild.
-> >
-> >
-> > > One of my earlier concerns was that TAP13 is a bit over constrained
-> > > for what I would like to output from the KUnit core. It only allows
-> > > data to be output as either:
-> > >  - test number
-> > >  - ok/not ok with single line description
-> > >  - directive
-> > >  - diagnostics
-> > >  - YAML block
-> > >
-> > > The test number must become before a set of ok/not ok lines, and does
-> > > not contain any additional information. One annoying thing about this
-> > > is it doesn't provide any kind of nesting or grouping.
-> >
-> > Greg's response mentions ktest (?) already does nesting.
-> 
-> I think we are talking about kselftest.
-> 
-> > Version 14 allows nesting through subtests.  I have not looked at what
-> > ktest does, so I do not know if it uses subtest, or something else.
-> 
-> Oh nice! That is new in version 14. I can use that.
+Just noticed that this triggers the following errors while bootup:
+Trying to reregister IRQ 11 FD 8 TYPE 0 ID           (null)
+write_sigio_irq : um_request_irq failed, err = -16
+Trying to reregister IRQ 11 FD 8 TYPE 0 ID           (null)
+write_sigio_irq : um_request_irq failed, err = -16
+VFS: Mounted root (hostfs filesystem) readonly on
 
-We have run into the problem of subtests (or nested tests, both using
-TAP13) in Fuego.  I recall that this issue came up in kselftest, and I believe
-we discussed a solution, but I don't recall what it was.
-
-Can someone remind me what kselftest does to handle nested tests
-(in terms of TAP13 output)?
-
-> 
-> > > There is one ok/not ok line per test and it may have a short
-> > > description of the test immediately after 'ok' or 'not ok'; this is
-> > > problematic because it wants the first thing you say about a test to
-> > > be after you know whether it passes or not.
-> >
-> > I think you could output a diagnostic line that says a test is starting.
-> > This is important to me because printk() errors and warnings that are
-> > related to a test can be output by a subsystem other than the subsystem
-> > that I am testing.  If there is no marker at the start of the test
-> > then there is no way to attribute the printk()s to the test.
-> 
-> I agree.
-
-This is a significant problem.  In Fuego we output each line with a test id prefix,
-which goes against the spec, but helps solve this.  Test output should be
-kept separate from system output, but if I understand correctly, there are no
-channels in prinkt to use to keep different data streams separate.
-
-How does kselftest deal with this now?
-
-> 
-> Technically conforms with the spec, and kselftest does that, but is
-> also not part of the spec. Well, it *is* specified if you use
-> subtests. I think the right approach is to make each
-> "kunit_module/test suite" a test, and all the test cases will be
-> subtests.
-> 
-> > > Directives are just a way to specify skipped tests and TODOs.
-> > >
-> > > Diagnostics seem useful, it looks like you can put whatever
-> > > information in them and print them out at anytime. It looks like a lot
-> > > of kselftests emit a lot of data this way.
-> > >
-> > > The YAML block seems to be the way that they prefer users to emit data
-> > > beyond number of tests run and whether a test passed or failed. I
-> > > could express most things I want to express in terms of YAML, but it
-> > > is not the nicest format for displaying a lot of data like
-> > > expectations, missed function calls, and other things which have a
-> > > natural concise representation. Nevertheless, YAML readability is
-> > > mostly a problem who won't be using the wrapper scripts.
-> >
-> > The examples in specification V13 and V14 look very simple and very
-> > readable to me.  (And I am not a fan of YAML.)
-> >
-> >
-> > > My biggest
-> > > problem with the YAML block is that you can only have one, and TAP
-> > > specifies that it must come after the corresponding ok/not ok line,
-> > > which again has the issue that you have to hold on to a lot of
-> > > diagnostic data longer than you ideally would. Another downside is
-> > > that I now have to write a YAML serializer for the kernel.
-> >
-> > If a test generates diagnostic data, then I would expect that to be
-> > the direct result of a test failure.  So the test can output the
-> > "not ok" line, then immediately output the YAML block.  I do not
-> > see a need for stashing YAML output ahead of time.
-> >
-> > If diagnostic data is generated before the test can determine
-> > success or failure, then it can be output as diagnostic data
-> > instead of stashing it for later.
-> 
-> Cool, that's what I am thinking I am going to do - I just wanted to
-> make sure people were okay with this approach. I mean, I think that is
-> what kselftest does.
-
-IMHO the diagnostic data does not have to be in YAML.  That's only
-if there's a well-known schema for the diagnostic data, to make the
-data machine-readable.   TAP13 specifically avoided defining such a
-schema.  I need to look at TAP14 and see if they have defined something.
-(Thanks for bringing that to my attention.)
-
-The important part, since there are no start and end delimiters for each
-testcase, is to structure output (including from unrelated sub-systems
-affected by the test) to either occur all before or all after the test line.
-Otherwise it's impossible to sensibly parse the diagnostic data and associate it
-with a test.  (That is, the TAP lines become the delimiters between each testcase's
-output and data).  This is a pretty big weakness of TAP13.  Since the TAP line
-has the test result, it usually means that the subsystem output for the test
-is emitted *before* the TAP line.  It's preferable, in order to keep the
-data together, that the diagnostic data also be emitted before the TAP
-line.
-
-> 
-> We can hold off on the YAML stuff for now then.
-> 
-> > > ## Here is what I propose for this patchset:
-> > >
-> > >  - Print out test number range at the beginning of each test suite.
-> > >  - Print out log lines as soon as they happen as diagnostics.
-> > >  - Print out the lines that state whether a test passes or fails as a
-> > > ok/not ok line.
-> > >
-> > > This would be technically conforming with TAP13 and is consistent with
-> > > what some kselftests have done.
-> > >
-> > > ## To be done in a future patchset:
-> > >
-> > > Add a YAML serializer and print out some logs containing structured
-> > > data (like expectation failures, unexpected function calls, etc) in
-> > > YAML blocks.
-> >
-> > YAML serializer sounds like not needed complexity.
-I agree, for now.
-
-I think if we start to see some patterns for some data that many tests
-output, we might want (as a kernel community) to define a YAML
-schema for the kselftest output.  But I think that's biting off too much
-right now.  IMHO we would want any YAML schema we define to
-cover more than just unit tests, so the job of defining that would be
-pretty big.
-
-This would be a good discussion to have at a testing micro-conference
-or summit. :-)
-
-> >
-> > >
-> > > Does this sound reasonable? I will go ahead and start working on this,
-> > > but feel free to give me feedback on the overall idea in the meantime.
-
-Sounds good.  Thanks for working on this.
- -- Tim
+Can you please check?
+This patch is already queued in -next. So we need to decide whether to
+revert or fix it now.
 
 _______________________________________________
 linux-um mailing list
