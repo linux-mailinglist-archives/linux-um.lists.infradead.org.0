@@ -2,109 +2,63 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4FBFA17299
-	for <lists+linux-um@lfdr.de>; Wed,  8 May 2019 09:31:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D187D1724D
+	for <lists+linux-um@lfdr.de>; Wed,  8 May 2019 09:09:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:
-	References:In-Reply-To:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=yOMDbeYUL24eBsmduGSlhZeTgf9Zl2/wBQkGCy1pAOU=; b=E9YHLTWrLgYSjWIv0wWitJyTCr
-	8EMAgcu6Czo7++UhkrFCYe23sN+PPrZ563m+0GJSghEUccH8XVxXnjqhU3fG9ymqNO4NM+ph8BoT+
-	jxa+SU9MyET9CaBEAknpl0Jx+Xnaq3nYXPKeVCtRirWJlg5YzaHrm0jDEj3Tr7knM9G2nAqCnP5Cy
-	4P69ZYgiiCfM9hEDCJeKm4g+tDba4S0Q8N5/ZiAXw7LeBPmScNsJk8ZlyWSO0Ky3CLbYiCqkoeP3l
-	eNi2voFx5UZOUvC8QfoN0DwDG5343NLafNnAgEqFghR6C0qqeife76O1WYBUWFdZYXs4QeL34O2gJ
-	uhGL73ww==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=ORp5Vn6ohsbN6fGHLiRGr0/Bn1mCyKAgCPbsuPMXsfM=; b=dJfAAxSlv9/pZG8Cj3TNBC4vV
+	H+C1hk7t21slEETmABLsvDE92dee2gBsjQbTQHFEN8OkYcI16aHi4tqrsvd5R9OCyaAl9FktEuXUy
+	gaZMqvCj5HcU14TjOi3ElCSDby1YC7kJfC9YoefqTUkO8XAnIKgqtQXJEpocGGak3oaazz59OtxVP
+	wnNbmmvPAsLKG9Ep+w1XbEpcwD4nQNuqbUJxeGFV/KVeUEskjkKDEwqNJLRao7YWsdDNMuy/+pa4t
+	HkVZE3T88M6Xmi0VqRI9/iS4hZgqi/yeBmIKJRAMfEh1AQFMr6hgN8qtoH77LGG1Cd1Cq15YYNtxy
+	k8JRyExyw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOH2a-00019h-8C; Wed, 08 May 2019 07:31:00 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1hOGhj-0008LJ-CF; Wed, 08 May 2019 07:09:27 +0000
+Received: from ivanoab6.miniserver.com ([5.153.251.140]
+ helo=www.kot-begemot.co.uk)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOH2X-00019S-PQ
- for linux-um@bombadil.infradead.org; Wed, 08 May 2019 07:30:58 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=Message-Id:References:In-Reply-To:Date:
- Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=bKEkXuUB0aT6OqT4IPvc1dAm0vfoKxIg4G5OqzwkthI=; b=RPAIkVL8iH3V8TsM8HC+oniux
- +cZzNAesyOHzlhWkpJiIbWx9DhOV5RMqq6U7XL9Q9fUThz1bqAu40+/sAmwVxjmfN29xbHY8l+8xc
- EmYrpxjjPOGM4VOIwVUg1BK7XB6nJVRKwnMTFjb/w4RJiGK1Zfkc08JvZmBEoQbRrvjIITQPSbgMm
- 0V/wt5UadzUN348HYBRG9SrgvZ2LpsagEY1NEtOYvvV/d+EE6DN1/VSYpPvQfxaCRZSqw4pLlv+7a
- S3XC+Vo37nBnqJ73kxw8+ikIAdr3m9OoWFygMKSYm65xHkQQh394pZ/Wgh+Phd3lQxW828Zqy4ijB
- TVj1hmU+w==;
-Received: from mx0b-001b2d01.pphosted.com ([148.163.158.5]
- helo=mx0a-001b2d01.pphosted.com)
- by merlin.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOFuM-0002f6-6n
- for linux-um@lists.infradead.org; Wed, 08 May 2019 06:18:26 +0000
-Received: from pps.filterd (m0098417.ppops.net [127.0.0.1])
- by mx0a-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x486GcaZ072840
- for <linux-um@lists.infradead.org>; Wed, 8 May 2019 02:18:25 -0400
-Received: from e06smtp07.uk.ibm.com (e06smtp07.uk.ibm.com [195.75.94.103])
- by mx0a-001b2d01.pphosted.com with ESMTP id 2sbp870e1f-1
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
- for <linux-um@lists.infradead.org>; Wed, 08 May 2019 02:18:25 -0400
-Received: from localhost
- by e06smtp07.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
- Violators will be prosecuted
- for <linux-um@lists.infradead.org> from <rppt@linux.ibm.com>;
- Wed, 8 May 2019 07:18:22 +0100
-Received: from b06cxnps4074.portsmouth.uk.ibm.com (9.149.109.196)
- by e06smtp07.uk.ibm.com (192.168.101.137) with IBM ESMTP SMTP Gateway:
- Authorized Use Only! Violators will be prosecuted; 
- (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
- Wed, 8 May 2019 07:18:13 +0100
-Received: from d06av21.portsmouth.uk.ibm.com (d06av21.portsmouth.uk.ibm.com
- [9.149.105.232])
- by b06cxnps4074.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
- x486ICnC48693404
- (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Wed, 8 May 2019 06:18:12 GMT
-Received: from d06av21.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 0FC5252051;
- Wed,  8 May 2019 06:18:12 +0000 (GMT)
-Received: from rapoport-lnx (unknown [9.148.8.112])
- by d06av21.portsmouth.uk.ibm.com (Postfix) with ESMTPS id C2D5252057;
- Wed,  8 May 2019 06:18:08 +0000 (GMT)
-Received: by rapoport-lnx (sSMTP sendmail emulation);
- Wed, 08 May 2019 09:18:08 +0300
-From: Mike Rapoport <rppt@linux.ibm.com>
-To: Andrew Morton <akpm@linux-foundation.org>
-Subject: [PATCH v2 14/14] unicore32: switch to generic version of pte
- allocation
-Date: Wed,  8 May 2019 09:17:11 +0300
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1557296232-15361-1-git-send-email-rppt@linux.ibm.com>
-References: <1557296232-15361-1-git-send-email-rppt@linux.ibm.com>
-X-TM-AS-GCONF: 00
-x-cbid: 19050806-0028-0000-0000-0000036B6E67
-X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
-x-cbparentid: 19050806-0029-0000-0000-0000242AEA29
-Message-Id: <1557296232-15361-15-git-send-email-rppt@linux.ibm.com>
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-05-08_05:, , signatures=0
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501
- malwarescore=0 suspectscore=2 phishscore=0 bulkscore=0 spamscore=0
- clxscore=1015 lowpriorityscore=0 mlxscore=0 impostorscore=0
- mlxlogscore=758 adultscore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.0.1-1810050000 definitions=main-1905080040
+ id 1hOGhf-0008KC-TA
+ for linux-um@lists.infradead.org; Wed, 08 May 2019 07:09:25 +0000
+Received: from [192.168.17.6] (helo=jain.kot-begemot.co.uk)
+ by www.kot-begemot.co.uk with esmtps (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <anton.ivanov@cambridgegreys.com>)
+ id 1hOGhU-0004P0-0x; Wed, 08 May 2019 07:09:12 +0000
+Received: from erebus.kot-begemot.co.uk ([192.168.3.72])
+ by jain.kot-begemot.co.uk with esmtps
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.89)
+ (envelope-from <anton.ivanov@cambridgegreys.com>)
+ id 1hOGhM-00080l-AJ; Wed, 08 May 2019 08:09:09 +0100
+Subject: Re: [RESEND PATCH 4/4] um: irq: don't set the chip for all irqs
+To: Richard Weinberger <richard.weinberger@gmail.com>,
+ Bartosz Golaszewski <brgl@bgdev.pl>
+References: <20190411094944.12245-1-brgl@bgdev.pl>
+ <20190411094944.12245-5-brgl@bgdev.pl>
+ <CAFLxGvwb8YzNiXCXru8Tw9pxH9qoc7gAO4sk0MXK1Xmp7fm-2g@mail.gmail.com>
+From: Anton Ivanov <anton.ivanov@cambridgegreys.com>
+Organization: Cambridge Greys
+Message-ID: <0e8fbdf3-c40d-e4e8-6235-c744ec7317c3@cambridgegreys.com>
+Date: Wed, 8 May 2019 08:09:04 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
+MIME-Version: 1.0
+In-Reply-To: <CAFLxGvwb8YzNiXCXru8Tw9pxH9qoc7gAO4sk0MXK1Xmp7fm-2g@mail.gmail.com>
+Content-Language: en-US
+X-Spam-Score: -1.0
+X-Spam-Score: -1.0
+X-Clacks-Overhead: GNU Terry Pratchett
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190508_021826_306144_C5CDE3C0 
-X-CRM114-Status: GOOD (  27.74  )
-X-Spam-Score: -0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
- Content analysis details:   (-0.7 points)
+X-CRM114-CacheID: sfid-20190508_000924_075162_32A2206F 
+X-CRM114-Status: GOOD (  15.08  )
+X-Spam-Score: 0.0 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [148.163.158.5 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -116,122 +70,50 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: Michal Hocko <mhocko@suse.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Palmer Dabbelt <palmer@sifive.com>, linux-mips@vger.kernel.org,
- linux-mm@kvack.org, Guo Ren <guoren@kernel.org>, linux-hexagon@vger.kernel.org,
- linux-riscv@lists.infradead.org, linux-arch@vger.kernel.org,
- Michael Ellerman <mpe@ellerman.id.au>, Helge Deller <deller@gmx.de>,
- x86@kernel.org, Russell King <linux@armlinux.org.uk>,
- Matthew Wilcox <willy@infradead.org>, Mike Rapoport <rppt@linux.ibm.com>,
- Geert Uytterhoeven <geert@linux-m68k.org>, Matt Turner <mattst88@gmail.com>,
- Sam Creasey <sammy@sammy.net>, Arnd Bergmann <arnd@arndb.de>,
- Anshuman Khandual <anshuman.khandual@arm.com>, linux-um@lists.infradead.org,
- Richard Weinberger <richard@nod.at>, linux-m68k@lists.linux-m68k.org,
- Greentime Hu <green.hu@gmail.com>, nios2-dev@lists.rocketboards.org,
- Guan Xuetao <gxt@pku.edu.cn>, linux-arm-kernel@lists.infradead.org,
- linux-parisc@vger.kernel.org, linux-kernel@vger.kernel.org,
- Richard Kuo <rkuo@codeaurora.org>, Paul Burton <paul.burton@mips.com>,
- linux-alpha@vger.kernel.org, Ley Foon Tan <lftan@altera.com>,
- linuxppc-dev@lists.ozlabs.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
+Cc: Richard Weinberger <richard@nod.at>, Jeff Dike <jdike@addtoit.com>,
+ linux-um@lists.infradead.org, LKML <linux-kernel@vger.kernel.org>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Geert Uytterhoeven <geert@linux-m68k.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-Replace __get_free_page() and alloc_pages() calls with the generic
-__pte_alloc_one_kernel() and __pte_alloc_one().
+On 07/05/2019 22:26, Richard Weinberger wrote:
+> On Thu, Apr 11, 2019 at 11:50 AM Bartosz Golaszewski <brgl@bgdev.pl> wrote:
+>>
+>> From: Bartosz Golaszewski <bgolaszewski@baylibre.com>
+>>
+>> Setting a chip for an interrupt marks it as allocated. Since UM doesn't
+>> support dynamic interrupt numbers (yet), it means we cannot simply
+>> increase NR_IRQS and then use the free irqs between LAST_IRQ and NR_IRQS
+>> with gpio-mockup or iio testing drivers as irq_alloc_descs() will fail
+>> after not being able to neither find an unallocated range of interrupts
+>> nor expand the range.
+>>
+>> Only call irq_set_chip_and_handler() for irqs until LAST_IRQ.
+>>
+>> Signed-off-by: Bartosz Golaszewski <bgolaszewski@baylibre.com>
+>> Reviewed-by: Anton Ivanov <anton.ivanov@cambridgegreys.com>
+>> Acked-by: Anton Ivanov <anton.ivanov@cambridgegreys.com>
+> 
+> Just noticed that this triggers the following errors while bootup:
+> Trying to reregister IRQ 11 FD 8 TYPE 0 ID           (null)
+> write_sigio_irq : um_request_irq failed, err = -16
+> Trying to reregister IRQ 11 FD 8 TYPE 0 ID           (null)
+> write_sigio_irq : um_request_irq failed, err = -16
+> VFS: Mounted root (hostfs filesystem) readonly on
+> 
+> Can you please check?
+> This patch is already queued in -next. So we need to decide whether to
+> revert or fix it now.
+> 
+I am looking at it. It passed tests in my case (I did the usual round).
 
-There is no functional change for the kernel PTE allocation.
-
-The difference for the user PTEs, is that the clear_pte_table() is now
-called after pgtable_page_ctor() and the addition of __GFP_ACCOUNT to the
-GFP flags.
-
-The pte_free() and pte_free_kernel() versions are identical to the generic
-ones and can be simply dropped.
-
-Signed-off-by: Mike Rapoport <rppt@linux.ibm.com>
----
- arch/unicore32/include/asm/pgalloc.h | 36 ++++++++----------------------------
- 1 file changed, 8 insertions(+), 28 deletions(-)
-
-diff --git a/arch/unicore32/include/asm/pgalloc.h b/arch/unicore32/include/asm/pgalloc.h
-index 7cceabe..dd09af6 100644
---- a/arch/unicore32/include/asm/pgalloc.h
-+++ b/arch/unicore32/include/asm/pgalloc.h
-@@ -17,6 +17,10 @@
- #include <asm/cacheflush.h>
- #include <asm/tlbflush.h>
- 
-+#define __HAVE_ARCH_PTE_ALLOC_ONE_KERNEL
-+#define __HAVE_ARCH_PTE_ALLOC_ONE
-+#include <asm-generic/pgalloc.h>
-+
- #define check_pgt_cache()		do { } while (0)
- 
- #define _PAGE_USER_TABLE	(PMD_TYPE_TABLE | PMD_PRESENT)
-@@ -28,17 +32,14 @@ extern void free_pgd_slow(struct mm_struct *mm, pgd_t *pgd);
- #define pgd_alloc(mm)			get_pgd_slow(mm)
- #define pgd_free(mm, pgd)		free_pgd_slow(mm, pgd)
- 
--#define PGALLOC_GFP	(GFP_KERNEL | __GFP_ZERO)
--
- /*
-  * Allocate one PTE table.
-  */
- static inline pte_t *
- pte_alloc_one_kernel(struct mm_struct *mm)
- {
--	pte_t *pte;
-+	pte_t *pte = __pte_alloc_one_kernel(mm);
- 
--	pte = (pte_t *)__get_free_page(PGALLOC_GFP);
- 	if (pte)
- 		clean_dcache_area(pte, PTRS_PER_PTE * sizeof(pte_t));
- 
-@@ -50,35 +51,14 @@ pte_alloc_one(struct mm_struct *mm)
- {
- 	struct page *pte;
- 
--	pte = alloc_pages(PGALLOC_GFP, 0);
-+	pte = __pte_alloc_one(mm, GFP_PGTABLE_USER);
- 	if (!pte)
- 		return NULL;
--	if (!PageHighMem(pte)) {
--		void *page = page_address(pte);
--		clean_dcache_area(page, PTRS_PER_PTE * sizeof(pte_t));
--	}
--	if (!pgtable_page_ctor(pte)) {
--		__free_page(pte);
--	}
--
-+	if (!PageHighMem(pte))
-+		clean_pte_table(page_address(pte));
- 	return pte;
- }
- 
--/*
-- * Free one PTE table.
-- */
--static inline void pte_free_kernel(struct mm_struct *mm, pte_t *pte)
--{
--	if (pte)
--		free_page((unsigned long)pte);
--}
--
--static inline void pte_free(struct mm_struct *mm, pgtable_t pte)
--{
--	pgtable_page_dtor(pte);
--	__free_page(pte);
--}
--
- static inline void __pmd_populate(pmd_t *pmdp, unsigned long pmdval)
- {
- 	set_pmd(pmdp, __pmd(pmdval));
 -- 
-2.7.4
-
+Anton R. Ivanov
+Cambridgegreys Limited. Registered in England. Company Number 10273661
+https://www.cambridgegreys.com/
 
 _______________________________________________
 linux-um mailing list
