@@ -2,40 +2,40 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 29F5618357
-	for <lists+linux-um@lfdr.de>; Thu,  9 May 2019 03:45:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2A47E1836F
+	for <lists+linux-um@lfdr.de>; Thu,  9 May 2019 04:00:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5HlUdy6Glu7+nULRcvSFhEzMcj9dJ0+HytC0VSdfNqA=; b=I283otNXdBF681
-	4zbS1s9WPbTm7PnaPaBDz52fUm/bsZIckYIALs8l8TYDf/PiVA1PxOY1YIhqCqXxMBfx2nf8NNLxP
-	Fv4EGgzEIprB18RtzlatzHc4cXtIsRQSEpjRahJzm/HN/qCFXJ+R53/4PcAl8xQVtPMGyIkoGB6/J
-	cR35yTbK4eimdO7uJx8luRNJCM/Pwn3hwPKPi4YLlJyRnBsHdaKkUqArVInaxQlrc2FwMitEsBYsO
-	MCw50MT1U6k3gkOuQ/UMlb6DhRLQStJP3kQG7YWakANg7gzGrrStQnyxBQZ8VD6w0R8wj2lbCUQN9
-	XBDbcY+kzcH4sZS4oZ9A==;
+	List-Owner; bh=VdsmpUnT3UY/TDt9MO6Qo1DIAGnNd+A3t4kaHFOLdDM=; b=Mw/m6ftDfb2IoT
+	q2kKYrFyT2+2+GSMggg1ZgxNMnk5LbXunhoP6XTIoZEUnmF/bU480KXAyg4OaREWRci7lMVpZZrgG
+	K1PJPa2qHjRNkiCbP04ofRgbbjHeIZFI+3I80o5Xnif0ywoO37+PnmS33L1Yux8/DXWG2Eu1joTU3
+	psOhszFu0z1faqaxKDblJLVHSGYdBBWm6U14VhRyJU2xvlR7WMKkxS6GccDlGJ/3FQY6L88n7vISh
+	CiI2EqBNs2g+ETCtth/17FN5F4BEs/YgYFLjNW9JU6OlmvQLiZAIP7QpXxha9AAGlcMEpaWqsdidA
+	UGvva/1/ZX5DlwyUOjuw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOY7c-0001gA-No; Thu, 09 May 2019 01:45:20 +0000
+	id 1hOYLk-0004zs-Kv; Thu, 09 May 2019 01:59:56 +0000
 Received: from outgoing-auth-1.mit.edu ([18.9.28.11] helo=outgoing.mit.edu)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOY7V-0001Cf-WF
- for linux-um@lists.infradead.org; Thu, 09 May 2019 01:45:18 +0000
+ id 1hOYLh-0004z4-07
+ for linux-um@lists.infradead.org; Thu, 09 May 2019 01:59:55 +0000
 Received: from callcc.thunk.org ([66.31.38.53]) (authenticated bits=0)
  (User authenticated as tytso@ATHENA.MIT.EDU)
- by outgoing.mit.edu (8.14.7/8.12.4) with ESMTP id x491i7RW019749
+ by outgoing.mit.edu (8.14.7/8.12.4) with ESMTP id x491wvb2023686
  (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Wed, 8 May 2019 21:44:09 -0400
+ Wed, 8 May 2019 21:58:57 -0400
 Received: by callcc.thunk.org (Postfix, from userid 15806)
- id 9759E420024; Wed,  8 May 2019 21:44:07 -0400 (EDT)
-Date: Wed, 8 May 2019 21:44:07 -0400
+ id D504A420024; Wed,  8 May 2019 21:58:56 -0400 (EDT)
+Date: Wed, 8 May 2019 21:58:56 -0400
 From: "Theodore Ts'o" <tytso@mit.edu>
 To: Frank Rowand <frowand.list@gmail.com>
 Subject: Re: [PATCH v2 00/17] kunit: introduce KUnit, the Linux kernel unit
  testing framework
-Message-ID: <20190509014407.GA7031@mit.edu>
+Message-ID: <20190509015856.GB7031@mit.edu>
 Mail-Followup-To: Theodore Ts'o <tytso@mit.edu>,
  Frank Rowand <frowand.list@gmail.com>,
  Greg KH <gregkh@linuxfoundation.org>,
@@ -55,15 +55,16 @@ Mail-Followup-To: Theodore Ts'o <tytso@mit.edu>,
  rostedt@goodmis.org, wfg@linux.intel.com
 References: <20190501230126.229218-1-brendanhiggins@google.com>
  <54940124-50df-16ec-1a32-ad794ee05da7@gmail.com>
- <20190507080119.GB28121@kroah.com> <20190507172256.GB5900@mit.edu>
- <4d963cdc-1cbb-35a3-292c-552f865ed1f7@gmail.com>
+ <20190507080119.GB28121@kroah.com>
+ <a09a7e0e-9894-8c1a-34eb-fc482b1759d0@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <4d963cdc-1cbb-35a3-292c-552f865ed1f7@gmail.com>
+In-Reply-To: <a09a7e0e-9894-8c1a-34eb-fc482b1759d0@gmail.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190508_184514_473447_424CC800 
-X-CRM114-Status: GOOD (  12.14  )
+X-CRM114-CacheID: sfid-20190508_185953_481945_52D6F66E 
+X-CRM114-Status: UNSURE (   9.47  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -101,37 +102,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Wed, May 08, 2019 at 05:58:49PM -0700, Frank Rowand wrote:
+On Wed, May 08, 2019 at 05:43:35PM -0700, Frank Rowand wrote:
+> kselftest provides a mechanism for in-kernel tests via modules.  For
+> example, see:
 > 
-> If KUnit is added to the kernel, and a subsystem that I am submitting
-> code for has chosen to use KUnit instead of kselftest, then yes, I do
-> *have* to use KUnit if my submission needs to contain a test for the
-> code unless I want to convince the maintainer that somehow my case
-> is special and I prefer to use kselftest instead of KUnittest.
+>   tools/testing/selftests/vm/run_vmtests invokes:
+>     tools/testing/selftests/vm/test_vmalloc.sh
+>       loads module:
+>         test_vmalloc
+>         (which is built from lib/test_vmalloc.c if CONFIG_TEST_VMALLOC)
 
-That's going to be between you and the maintainer.  Today, if you want
-to submit a substantive change to xfs or ext4, you're going to be
-asked to create test for that new feature using xfstests.  It doesn't
-matter that xfstests isn't in the kernel --- if that's what is
-required by the maintainer.
+The majority of the kselftests are implemented as userspace programs.
 
-> > supposed to be a simple way to run a large number of small tests that
-> > for specific small components in a system.
-> 
-> kselftest also supports running a subset of tests.  That subset of tests
-> can also be a large number of small tests.  There is nothing inherent
-> in KUnit vs kselftest in this regard, as far as I am aware.
+You *can* run in-kernel test using modules; but there is no framework
+for the in-kernel code found in the test modules, which means each of
+the in-kernel code has to create their own in-kernel test
+infrastructure.  
 
-The big difference is that kselftests are driven by a C program that
-runs in userspace.  Take a look at tools/testing/selftests/filesystem/dnotify_test.c
-it has a main(int argc, char *argv) function.
+That's much like saying you can use vice grips to turn a nut or
+bolt-head.  You *can*, but it might be that using a monkey wrench
+would be a much better tool that is much easier.
 
-In contrast, KUnit are fragments of C code which run in the kernel;
-not in userspace.  This allows us to test internal functions inside
-complex file system (such as the block allocator in ext4) directly.
-This makes it *fundamentally* different from kselftest.
+What would you say to a wood worker objecting that a toolbox should
+contain a monkey wrench because he already knows how to use vise
+grips, and his tiny brain shouldn't be forced to learn how to use a
+wrench when he knows how to use a vise grip, which is a perfectly good
+tool?
 
-Cheers,
+If you want to use vice grips as a hammer, screwdriver, monkey wrench,
+etc.  there's nothing stopping you from doing that.  But it's not fair
+to object to other people who might want to use better tools.
+
+The reality is that we have a lot of testing tools.  It's not just
+kselftests.  There is xfstests for file system code, blktests for
+block layer tests, etc.   We use the right tool for the right job.
 
 						- Ted
 
