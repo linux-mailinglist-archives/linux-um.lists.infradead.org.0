@@ -2,64 +2,58 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1C37118951
-	for <lists+linux-um@lfdr.de>; Thu,  9 May 2019 13:55:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C984918AD0
+	for <lists+linux-um@lfdr.de>; Thu,  9 May 2019 15:37:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7WZl5PRxwI6929Np7nllwfQDoPNh9VxT7q7bnI9//iQ=; b=DqNrywgaMYe5EX
-	DypN9mAYWHPi7w2fjM09aa7gpwDayRLsq7s/2vqXfFr6i2a8y/+uY2AnKrkWWopEcTFOSSsrVJoPH
-	id1Fn4VZSlVGEvY1y1MbAMIJ08SJuacyJ5Gffnws8SgXn4cWOmv8uHTLKOFmM012YwsgPhmi9BjnR
-	m6RTb+dFI8+wqNRHPzge7g3+nRUmPE8XYGsiGnd76EePO6dMuSNAi85DFp2tFERp/Swu+Fw0hP7U4
-	b83vjMiJ6H3beiBZmGYjU1S7nDLclN8Y1Lneq3PVNL1EHm3GdMldAK6f+tCEHFnoEARTt8wQ00T6Y
-	1BFNyQMEV0hME9TYPVvQ==;
+	List-Owner; bh=bGeVzgw5NVXGf6e0DKUGMIzLM/QWXRb2QY1cpBsL4YI=; b=YxeLXY3vIsAQzf
+	xaDdJngenyWWTNtZdhrezgTi1eqGl+vM9rG+8iSaC31FFTcL9cnoWeAzNhn22x6ELT+wq3r2mu72S
+	kIJnYLS8oDCx+Wkv8iW1PJnyLScCtaPeG5L5POcBlPiss7j8WRYQ2tEW19a8htY932hseB5wEZVYN
+	16///STnlIho0eZ/Py8hMGT3yZJNDuI2NSQhEpcH9Y30Fy8WmzDArxytEbiM79MwyLQCDJ1U4K9BI
+	rSVoeG421pjwpj3R0AHt/wbUbmLMCnaIzp0JN7TMlKDtvlzpSrI/VAUfcJHgs2SqNK2uW1NsllKeg
+	KE5Ks6SNJ3XoChD9pOEg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hOhe2-00080h-Db; Thu, 09 May 2019 11:55:26 +0000
-Received: from userp2130.oracle.com ([156.151.31.86])
+	id 1hOjER-0004nd-Gs; Thu, 09 May 2019 13:37:07 +0000
+Received: from outgoing-auth-1.mit.edu ([18.9.28.11] helo=outgoing.mit.edu)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hOhdz-000805-Az
- for linux-um@lists.infradead.org; Thu, 09 May 2019 11:55:25 +0000
-Received: from pps.filterd (userp2130.oracle.com [127.0.0.1])
- by userp2130.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x49BhXiK035955;
- Thu, 9 May 2019 11:52:38 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=message-id : subject
- : from : to : cc : date : in-reply-to : references : content-type :
- mime-version : content-transfer-encoding; s=corp-2018-07-02;
- bh=gg3Y5VCySPKtxUHkrDHjoNwU5vy2eC4csPWWlbbJ8cU=;
- b=Tci6MOI4XpYQJJX3nkl5kQckg2JxLZKQinmSowqBukGIWd/P3Vtb/l1zYSHK5OrtneqM
- 5/8tuqi9CYCxs9dhrTIyYhznJk6vkCml3NKYxKS/tLDkVJb7w+aSqNrTJ5fLNz0hLA9O
- d/I7sf8g4h472ilMMxO/jUq/gx1+rqYgoUr0oYssfbAt4xOVGZOEbkbuM3OIWNSk6NMJ
- S4ZWcUKVVG5pkz+FoKUqZ9pYDcND8rmQGOubwvUGvnH7TMrBL6+qhVwa1r2ojA5QgRKT
- ocFo45GNdn4G3RuQsBv55FhXD+jA2l7UjkL+BbHilSWKm2m+lPFr06S1LXYPAvfT0LHU 6A== 
-Received: from aserp3030.oracle.com (aserp3030.oracle.com [141.146.126.71])
- by userp2130.oracle.com with ESMTP id 2s94bga7hw-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Thu, 09 May 2019 11:52:38 +0000
-Received: from pps.filterd (aserp3030.oracle.com [127.0.0.1])
- by aserp3030.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x49Bp6Qq194507;
- Thu, 9 May 2019 11:52:37 GMT
-Received: from aserv0121.oracle.com (aserv0121.oracle.com [141.146.126.235])
- by aserp3030.oracle.com with ESMTP id 2s94bar2sv-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Thu, 09 May 2019 11:52:37 +0000
-Received: from abhmp0016.oracle.com (abhmp0016.oracle.com [141.146.116.22])
- by aserv0121.oracle.com (8.14.4/8.13.8) with ESMTP id x49BqMD5002325;
- Thu, 9 May 2019 11:52:22 GMT
-Received: from abi.no.oracle.com (/141.143.213.42)
- by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Thu, 09 May 2019 04:52:22 -0700
-Message-ID: <7fd35df81c06f6eb319223a22e7b93f29926edb9.camel@oracle.com>
+ id 1hOjEO-0004nH-2m
+ for linux-um@lists.infradead.org; Thu, 09 May 2019 13:37:06 +0000
+Received: from callcc.thunk.org ([66.31.38.53]) (authenticated bits=0)
+ (User authenticated as tytso@ATHENA.MIT.EDU)
+ by outgoing.mit.edu (8.14.7/8.12.4) with ESMTP id x49DZpAW030412
+ (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Thu, 9 May 2019 09:35:52 -0400
+Received: by callcc.thunk.org (Postfix, from userid 15806)
+ id 6AC26420024; Thu,  9 May 2019 09:35:51 -0400 (EDT)
+Date: Thu, 9 May 2019 09:35:51 -0400
+From: "Theodore Ts'o" <tytso@mit.edu>
+To: Knut Omang <knut.omang@oracle.com>
 Subject: Re: [PATCH v2 00/17] kunit: introduce KUnit, the Linux kernel unit
  testing framework
-From: Knut Omang <knut.omang@oracle.com>
-To: "Theodore Ts'o" <tytso@mit.edu>, Frank Rowand <frowand.list@gmail.com>
-Date: Thu, 09 May 2019 13:52:15 +0200
-In-Reply-To: <20190509032017.GA29703@mit.edu>
+Message-ID: <20190509133551.GD29703@mit.edu>
+Mail-Followup-To: Theodore Ts'o <tytso@mit.edu>,
+ Knut Omang <knut.omang@oracle.com>,
+ Frank Rowand <frowand.list@gmail.com>,
+ Greg KH <gregkh@linuxfoundation.org>,
+ Brendan Higgins <brendanhiggins@google.com>, keescook@google.com,
+ kieran.bingham@ideasonboard.com, mcgrof@kernel.org, robh@kernel.org,
+ sboyd@kernel.org, shuah@kernel.org, devicetree@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, kunit-dev@googlegroups.com,
+ linux-doc@vger.kernel.org, linux-fsdevel@vger.kernel.org,
+ linux-kbuild@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-kselftest@vger.kernel.org, linux-nvdimm@lists.01.org,
+ linux-um@lists.infradead.org, Alexander.Levin@microsoft.com,
+ Tim.Bird@sony.com, amir73il@gmail.com, dan.carpenter@oracle.com,
+ dan.j.williams@intel.com, daniel@ffwll.ch, jdike@addtoit.com,
+ joel@jms.id.au, julia.lawall@lip6.fr, khilman@baylibre.com,
+ logang@deltatee.com, mpe@ellerman.id.au, pmladek@suse.com,
+ richard@nod.at, rientjes@google.com, rostedt@goodmis.org,
+ wfg@linux.intel.com
 References: <20190501230126.229218-1-brendanhiggins@google.com>
  <54940124-50df-16ec-1a32-ad794ee05da7@gmail.com>
  <20190507080119.GB28121@kroah.com>
@@ -67,45 +61,22 @@ References: <20190501230126.229218-1-brendanhiggins@google.com>
  <20190509015856.GB7031@mit.edu>
  <580e092f-fa4e-eedc-9e9a-a57dd085f0a6@gmail.com>
  <20190509032017.GA29703@mit.edu>
-User-Agent: Evolution 3.30.5 (3.30.5-1.fc29) 
+ <7fd35df81c06f6eb319223a22e7b93f29926edb9.camel@oracle.com>
 MIME-Version: 1.0
-X-Proofpoint-Virus-Version: vendor=nai engine=5900 definitions=9251
- signatures=668686
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
- malwarescore=0
- phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=999
- adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.0.1-1810050000 definitions=main-1905090072
-X-Proofpoint-Virus-Version: vendor=nai engine=5900 definitions=9251
- signatures=668686
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
- priorityscore=1501 malwarescore=0
- suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1011
- lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1810050000
- definitions=main-1905090072
+Content-Disposition: inline
+In-Reply-To: <7fd35df81c06f6eb319223a22e7b93f29926edb9.camel@oracle.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190509_045523_469469_3A25F7F1 
-X-CRM114-Status: GOOD (  25.48  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190509_063704_378180_9DE88D1D 
+X-CRM114-Status: GOOD (  26.92  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [156.151.31.86 listed in list.dnswl.org]
+ medium trust [18.9.28.11 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
- -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -121,7 +92,7 @@ Cc: pmladek@suse.com, linux-doc@vger.kernel.org, amir73il@gmail.com,
  Brendan Higgins <brendanhiggins@google.com>, dri-devel@lists.freedesktop.org,
  Alexander.Levin@microsoft.com, mpe@ellerman.id.au,
  linux-kselftest@vger.kernel.org, shuah@kernel.org, robh@kernel.org,
- linux-nvdimm@lists.01.org, khilman@baylibre.com,
+ linux-nvdimm@lists.01.org, Frank Rowand <frowand.list@gmail.com>,
  kieran.bingham@ideasonboard.com, wfg@linux.intel.com, joel@jms.id.au,
  rientjes@google.com, jdike@addtoit.com, dan.carpenter@oracle.com,
  devicetree@vger.kernel.org, linux-kbuild@vger.kernel.org, Tim.Bird@sony.com,
@@ -129,110 +100,164 @@ Cc: pmladek@suse.com, linux-doc@vger.kernel.org, amir73il@gmail.com,
  dan.j.williams@intel.com, kunit-dev@googlegroups.com, richard@nod.at,
  sboyd@kernel.org, Greg KH <gregkh@linuxfoundation.org>,
  linux-kernel@vger.kernel.org, mcgrof@kernel.org, daniel@ffwll.ch,
- keescook@google.com, linux-fsdevel@vger.kernel.org, logang@deltatee.com
+ keescook@google.com, linux-fsdevel@vger.kernel.org, logang@deltatee.com,
+ khilman@baylibre.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Wed, 2019-05-08 at 23:20 -0400, Theodore Ts'o wrote:
-> On Wed, May 08, 2019 at 07:13:59PM -0700, Frank Rowand wrote:
-> > > If you want to use vice grips as a hammer, screwdriver, monkey wrench,
-> > > etc.  there's nothing stopping you from doing that.  But it's not fair
-> > > to object to other people who might want to use better tools.
-> > > 
-> > > The reality is that we have a lot of testing tools.  It's not just
-> > > kselftests.  There is xfstests for file system code, blktests for
-> > > block layer tests, etc.   We use the right tool for the right job.
-> > 
-> > More specious arguments.
-> 
-> Well, *I* don't think they are specious; so I think we're going to
-> have to agree to disagree.
+On Thu, May 09, 2019 at 01:52:15PM +0200, Knut Omang wrote:
+> 1) Tests that exercises typically algorithmic or intricate, complex
+>    code with relatively few outside dependencies, or where the dependencies 
+>    are considered worth mocking, such as the basics of container data 
+>    structures or page table code. If I get you right, Ted, the tests 
+>    you refer to in this thread are such tests. I believe covering this space 
+>    is the goal Brendan has in mind for KUnit.
 
-Looking at both Frank's and Ted's arguments here, I don't think you 
-really disagree, I just think you are having different classes of tests in mind.
+Yes, that's correct.  I'd also add that one of the key differences is
+that it sounds like Frank and you are coming from the perspective of
+testing *device drivers* where in general there aren't a lot of
+complex code which is hardware independent.  After all, the vast
+majority of device drivers are primarily interface code to hardware,
+with as much as possible abstracted away to common code.  (Take, for
+example, the model of the SCSI layer; or all of the kobject code.)
 
-In my view it's useful to think in terms of two main categories of 
-interesting unit tests for kernel code (using the term "unit test" pragmatically):
+> 2) Tests that exercises interaction between a module under test and other 
+>    parts of the kernel, such as testing intricacies of the interaction of 
+>    a driver or file system with the rest of the kernel, and with hardware, 
+>    whether that is real hardware or a model/emulation. 
+>    Using your testing needs as example again, Ted, from my shallow understanding,
+>    you have such needs within the context of xfstests (https://github.com/tytso/xfstests)
 
-1) Tests that exercises typically algorithmic or intricate, complex
-   code with relatively few outside dependencies, or where the dependencies 
-   are considered worth mocking, such as the basics of container data 
-   structures or page table code. If I get you right, Ted, the tests 
-   you refer to in this thread are such tests. I believe covering this space 
-   is the goal Brendan has in mind for KUnit.
+Well, upstream is for xfstests is git://git.kernel.org/pub/scm/fs/xfs/xfstests-dev.git
 
-2) Tests that exercises interaction between a module under test and other 
-   parts of the kernel, such as testing intricacies of the interaction of 
-   a driver or file system with the rest of the kernel, and with hardware, 
-   whether that is real hardware or a model/emulation. 
-   Using your testing needs as example again, Ted, from my shallow understanding,
-   you have such needs within the context of xfstests (https://github.com/tytso/xfstests)
+The test framework where I can run 20 hours worth of xfstests
+(multiple file system features enabled, multiple mount options, etc.)
+in 3 hours of wall clock time using multiple cloud VM is something
+called gce-xfstests.
 
-To 1) I agree with Frank in that the problem with using UML is that you still have to
-relate to the complexity of a kernel run time system, while what you really want for these
-types of tests is just to compile a couple of kernel source files in a normal user land
-context, to allow the use of Valgrind and other user space tools on the code. The
-challenge is to get the code compiled in such an environment as it usually relies on
-subtle kernel macros and definitions, which is why UML seems like such an attractive
-solution. Like Frank I really see no big difference from a testing and debugging 
-perspective of UML versus running inside a Qemu/KVM process, and I think I have an idea 
-for a better solution: 
+I also have kvm-xfstests, which optimizes low test latency, where I
+want to run a one or a small number of tests with a minimum of
+overhead --- gce startup and shutdown is around 2 minutes, where as
+kvm startup and shutdown is about 7 seconds.  As far as I'm concerned,
+7 seconds is still too slow, but that's the best I've been able to do
+given all of the other things I want a test framework to do, including
+archiving test results, parsing the test results so it's easy to
+interpret, etc.  Both kvm-xfstests and gce-xfstests are located at:
 
-In the early phases of the SIF project which mention below, I did a lot of experimentation around this. My biggest challenge then was to test the driver
-implementation of the pages table handling of an Intel page table compatible on-device 
-MMU, using a mix of page sizes, but with a few subtle limitations in the hardware. With some efforts of code generation and heavy automated use of
-compiler feedback, I was able 
-to do that to great satisfaction, as it probably saved the project a lot of time in 
-debugging, and myself a lot of pain :)
+	git://git.kernel.org/pub/scm/fs/xfs/xfstests-dev.git
 
-To 2) most of the current xfstests (if not all?) are user space tests that do not use 
-extra test specific kernel code, or test specific changes to the modules under test (am I 
-right, Ted?) and I believe that's just as it should be: if something can be exercised well enough from user space, then that's the easier approach. 
+So if Frank's primary argument is "too many frameworks", it's already
+too late.  The block layer has blktests has a seprate framework,
+called blktests --- and yeah, it's a bit painful to launch or learn
+how to set things up.
 
-However sometimes the test cannot be made easily without interacting directly 
-with internal kernel interfaces, or having such interaction would greatly simplify or
-increase the precision of the test. This need was the initial motivation for us to make 
-KTF (https://github.com/oracle/ktf, http://heim.ifi.uio.no/~knuto/ktf/index.html) which we are working on to adapt to fit naturally and in the right way
-as a kernel patch set.
+That's why I added support to run blktests using gce-xfstests and
+kvm-xfstests, so that "gce-xfstests --blktests" or "kvm-xfstests
+--xfstests" will pluck a kernel from your build tree, and launch at
+test appliance VM using that kernel and run the block layer tests.
 
-We developed the SIF infiniband HCA driver
-(https://github.com/oracle/linux-uek/tree/uek4/qu7/drivers/infiniband/hw/sif)
-and associated user level libraries in what I like to call a "pragmatically test driven" 
-way. At the end of the project we had quite a few unit tests, but only a small fraction of them were KTF tests, most of the testing needs were covered
-by user land unit tests, 
-and higher level application testing.
+The point is we *already* have multiple test frameworks, which are
+optimized for testing different parts of the kernel.  And if you plan
+to do a lot of work in these parts of the kernel, you're going to have
+to learn how to use some other test framework other than kselftest.
+Sorry, that's just the way it goes.
 
-To you Frank, and your concern about having to learn yet another tool with it's own set of syntax, I completely agree with you. We definitely would want
-to minimize the need to 
-learn new ways, which is why I think it is important to see the whole complex of unit
-testing together, and at least make sure it works in a unified and efficient way from a
-syntax and operational way. 
+Of course, I'll accept trivial patches that haven't been tested using
+xfstests --- but that's because I can trivially run the smoke test for
+you.  Of course, if I get a lot of patches from a contributor which
+cause test regressions, I'll treat them much like someone who
+contribute patches which fail to build.  I'll apply pressure to the
+contributor to actually build test, or run a ten minute kvm-xfstests
+smoke test.  Part of the reason why I feel comfortable to do this is
+it's really easy to run the smoke test.  There are pre-compiled test
+appliances, and a lot of documentation:
 
-With KTF we focus on trying to make kernel testing as similar and integrated with user
-space tests as possible, using similar test macros, and also to not reinvent more wheels than necessary by basing reporting and test execution on
-existing user land tools.
-KTF integrates with Googletest for this functionality. This also makes the reporting format discussion here irrelevant for KTF, as KTF supports whatever
-reporting format the user land tool supports - Googletest for instance naturally supports pluggable reporting implementations, and there already seems
-to be a TAP reporting extension out there (I haven't tried it yet though)
+https://github.com/tytso/xfstests-bld/blob/master/Documentation/kvm-quickstart.md
 
-Using and relating to an existing user land framework allows us to have a set of 
-tests that works the same way from a user/developer perspective, 
-but some of them are kernel only tests, some are ordinary user land 
-tests, exercising system call boundaries and other kernel
-interfaces, and some are what we call "hybrid", where parts of 
-the test run in user mode and parts in kernel mode.
+This is why I have close to zero sympathy to Frank's complaint that
+extra test frameworks are a bad thing.  To me, that's whining.  I've
+done a huge amount of work to meet contributors more than half-way.
+The insistence that "There Must Be One", ala the Highlander movie, is
+IMHO so wrong that it's not even close.  Is it really that hard to do
+a "git pull", download a test appliance, set up a config file to tell
+kvm-xfstests where to find your build tree, and then run "kvm-xfstests
+--smoke" or "gce-xfstests --smoke"?  Cry me a river.
 
-I hope we can discuss this complex in more detail, for instance at the testing 
-and fuzzing workshop at LPC later this year, where I have proposed a topic for it.
+There are already multiple test frameworks, and if you expect to do a
+lot of work in a particular subsystem, you'll be expected to use the
+Maintainer's choice of tests.  Deal with it.  We do this so we can
+scale to the number of contributors we have in our subsystem.
 
-Thanks,
-Knut
+> To 1) I agree with Frank in that the problem with using UML is that you still have to
+> relate to the complexity of a kernel run time system, while what you really want for these
+> types of tests is just to compile a couple of kernel source files in a normal user land
+> context, to allow the use of Valgrind and other user space tools on the code.
 
+"Just compiling a couple of kernel source files in a normal user land"
+is much harder than you think.  It requires writing vast numbers of
+mocking functions --- for a file system I would have to simulate the
+block device layer, large portions of the VFS layer, the scheduler and
+the locking layer if I want to test locking bugs, etc., etc.  In
+practice, UML itself is serving as mocking layer, by its mere
+existence.  So when Frank says that KUnit doesn't provide any mocking
+functions, I don't at all agree.  Using KUnit and UML makes testing
+internal interfaces *far* simpler, especially if the comparison is
+"just compile some kernel source files as part of a userspace test
+program".
 
+Perhaps your and Frank's experience is different --- perhaps that can
+be explained by your past experience and interest in testing device
+drivers as opposed to file systems.
 
+The other thing I'd add is that at least for me, a really important
+consideration is how quickly we can run tests.  I consider
+minimization of developer friction (e.g., all you need to do is
+running "make ; kvm-xfstests --smoke" to run tests), and maximizing
+developer velocity to be high priority goals.  Developer velocity is
+how quickly can you run the tests; ideally, less than 5-10 seconds.
 
+And that's the other reason why I consider unit tests to be a
+complement to integration tests.  "gce-xfstests --smoke" takes 10-15
+minutes.  If I can have unit tests which takes 5-15 seconds for a
+smoke test of the specific part of ext4 that I am modifying (and often
+with much better coverage than integration tests from userspace),
+that's at really big deal.  I can do this for e2fsprogs; but if I have
+to launch a VM, the VM overhead pretty much eats all or most of that
+time budget right there.
+
+From looking at your documentation of KTF, you are targetting the use
+case of continuous testing.  That's a different testing scenario than
+what I'm describing; with continuous testing, overhead measured in
+minutes or even tens of minutes is not a big deal.  But if you are
+trying to do real-time testing as part of your development process ---
+*real* Test Driven Development, then test latency is a really big
+deal.
+
+I'll grant that for people who are working on device drivers where
+architecture dependencies are a big deal, building for an architecture
+where you can run in a virtual environment or using test hardware is
+going to be a better way to go.  And Brendan has said he's willing to
+look at adapting KUnit so it can be built for use in a virtual
+environment to accomodate your requirements.
+
+As far as I'm concerned, however, I would *not* be interested in KTF
+unless you could demonstrate to me that launching at test VM, somehow
+getting the kernel modules copied into the VM, and running the tests
+as kernel modules, has zero overhead compared to using UML.
+
+Ultimately, I'm a pragmatist.  If KTF serves your needs best, good for
+you.  If other approaches are better for other parts of the kernel,
+let's not try to impose a strict "There Must Be Only One" religion.
+That's already not true today, and for good reason.  There are many
+different kinds of kernel code, and many different types of test
+philosophies.  Trying to force all kernel testing into a single
+Procrustean Bed is simply not productive.
+
+Regards,
+
+						- Ted
 
 _______________________________________________
 linux-um mailing list
