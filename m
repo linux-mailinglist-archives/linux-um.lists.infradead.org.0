@@ -2,80 +2,67 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 904C919B87
-	for <lists+linux-um@lfdr.de>; Fri, 10 May 2019 12:24:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1FFAD19B90
+	for <lists+linux-um@lfdr.de>; Fri, 10 May 2019 12:25:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+Wldmaq2u3+fCGth4QU5MxVbGFFiGQWw2lg8GNmqBs8=; b=S9hzXN/Y3RHEmQ
-	7FZFx4DkYSHsYKKD9WeDYiH7KthNiVDHXBRtjw+bLTs26NKGd9M+wa8MWKDBmhvPryUNra82Ii6GE
-	/HXwQlb3uh22TFnRehiWvtRSNjaMquO2ZJlcWKmI5g4eKPbp05aRJaOdYro0cgGvckKLsSTryh19V
-	4boDek05WLlg3AQLAgdruI1cnJa40/fb4vP3xZTDWCExUuIxWkraph/JeERh8HBOgSz90dt/QtBEV
-	lATJYKbaINR7kIC97TVH6UAmoJ07ESJIwN6DvLqRgxPdwSms+hU8TXETkwbKnHDUEvNJfGttPK8MI
-	5PZLBpHsDh2wREE1cO6Q==;
+	List-Owner; bh=LSey1L5MiBAWK4LPVN+XencnjiYu+QW0T2KzNWxuCmE=; b=YIMsnixDD9K5Ck
+	ZIGMEVkCJf7nNnVrETI6g4wgqUfa2ERKmju6FDyHLChBX3HJXDpgOz5Ff04on4r9y7GEXb7h6vzKD
+	TVO02rT7gVUn6gdokmRWZBETDDznEkkj2vQ7d/u/MsrlrLtibaP/UTkqtcOh7XNXDTY0UEY/uQD8V
+	UhvTsKTjHoke0Bu/QX8mWxoTLe6YADKI4bM5NljpgRn+vBjrgpreAGrhhZjk/aXs9F5uTiE/lYYf+
+	1+x3AhFKdd7oNwNR+UDHuAuNj5SHrVPOhMcXBzTOajV4g+zkat4KnG4JThHNTJ9hWcL44FAftFrwp
+	NkLKX7hX658lvb2eWnmw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hP2hD-0002as-Ty; Fri, 10 May 2019 10:24:07 +0000
+	id 1hP2iR-000406-BN; Fri, 10 May 2019 10:25:23 +0000
 Received: from mail-ot1-x343.google.com ([2607:f8b0:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hP2go-0001x6-IS
- for linux-um@lists.infradead.org; Fri, 10 May 2019 10:23:53 +0000
-Received: by mail-ot1-x343.google.com with SMTP id g24so558837otq.2
- for <linux-um@lists.infradead.org>; Fri, 10 May 2019 03:23:39 -0700 (PDT)
+ id 1hP2iN-0003zL-SO
+ for linux-um@lists.infradead.org; Fri, 10 May 2019 10:25:21 +0000
+Received: by mail-ot1-x343.google.com with SMTP id r10so4374230otd.4
+ for <linux-um@lists.infradead.org>; Fri, 10 May 2019 03:25:19 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=UHZYQrU2k5/EmOsBUpLtRRAaPrXBX3oybz/yjY48P7E=;
- b=mUoEymcb6cW/ydz7Iyie0dwZ+NVLPbtI06YvlAIyAo0qEMmXbIXsBm02Wb6XedhbeS
- NtsEinZHqp2mICIzcuc3v7HkE2cu4v8XAHbmhFvE5oc4iSYD3quuD3/f9XeWQqWjA8PX
- 4ch+alAHSa7l+AantV05f+cM4GfuoFANXK6LWouAB4zg/LXsPHDaqHYxV0wzMhLip7Qy
- avCBDHinoX4lMPC9byXFSFYphBHisRSJIehBaUCJimb+UyOuv12o3ArJlKv+Mq6D1b2p
- 80OBMvpb9Hc8BL/1jAp1kZ+sk5DlNzRdsXTQ61TPj2or2Uz3h4BIOavZhzMjkXLR7QfO
- XZ0A==
+ :cc; bh=iI9UjzWLOTz9GmvdS5N+dD4tpC8SGzYvR6XlaJd6X3w=;
+ b=RWz50WjGVhE778RI5E/gnmwHtyGZ0gaAmZ0iZ0plK5kWhBoeeKOWqyMXplH8fTtUsP
+ YFZpCe51wfH5rpKYyGn5ULLWDdnHqiz/qOEV7NBjxq+KfO41fJG4qhtbH5TVMqmlTXuD
+ b5rf6YzechDPYqaa7IxCgG1hq1vCZ1jw2HsD3qL0n5got4d9IQUHA7ngtw1jru23KETZ
+ S2a1Yzky70EiE/cKvmqv3j36xHYkNkJZpgW2MH+/MVDg0jSJzsPJ2n3uuvsMbcTdrYqq
+ lTHYE5RDq+PIvvcx+UdbW+CJ6Tf73MUjggBvl433KWXT2rTGYfdgh08GkTh9dkD5qrWP
+ Kl5w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=UHZYQrU2k5/EmOsBUpLtRRAaPrXBX3oybz/yjY48P7E=;
- b=CQFao2YC2zJUT1TY+k2YHzz12+dsI1LhWjzmM7YcDCj+tXAqMbGoqV6V455wsz4HVy
- eeiKQ+3ZhP1pGu8GmplLqaMG9syBc3Am1EBRUGIlo4jiKYgGAsQa9J1sTsSHL1BNCVT+
- K9XfHSP4YF1u4iNDn7g+H4zZeMc/aYze9gXHSs/hrGe2BYliBvKbZ1ONZcyQ4iz9/ftS
- eh6NawSESgEgOCoqoRPvLFYn5aqAxtnefly6nVRnrdnNU85EmT477/OCTFOMKUNtXxog
- mj8HBe/TYA66uhoeCtYDKEH1kezUeNpmRCVFUc3Yf0s1yeX+DPwZnKhLag0yLAgyTdut
- CaHw==
-X-Gm-Message-State: APjAAAV1YutzodDvmS0d9tP6Kj0gLDxnrHiOS40VrATZZvRiEiv1VPH9
- XWg9sFNxXrMYGWcL+JYwYBJ36EQCPD3ilUtbUauagA==
-X-Google-Smtp-Source: APXvYqxyQguW/ut/M65VYn2cEyGSrBlsl9R9jDYGIHFrZ64T6ZIbe+20m1MzAOYQ8+zaL7BJr7rJs9TKrOuqlNGOpGY=
-X-Received: by 2002:a9d:640f:: with SMTP id h15mr618394otl.338.1557483818281; 
- Fri, 10 May 2019 03:23:38 -0700 (PDT)
+ bh=iI9UjzWLOTz9GmvdS5N+dD4tpC8SGzYvR6XlaJd6X3w=;
+ b=rZRO9YjkpI5tQZ4QMri65QHRhemoyflGGr5lwNyj95Wm9EVz05t3lpxalDTFDPWE2P
+ rXLCMK5fbtZektlV6HaC12Fgi83CKBPTfJX6PXVMNx/Jo0pTzFMu40p3ORvGhyRdyRoB
+ okGTCGQ9qa3Y3pIPZfpyGLEEYNlFCk99ORe57ARNwIoGlihU9J5rRcKBORASDF+CKJsw
+ /AISJb+FoRPsIJBGzKPnUedB2cLdDJtkdemI9XjQG1grEvHhqOBxgaf25ZB0bVZ5bjYK
+ sDjynDU3YVkcorB/l+bk8VFdOmkm35XMd4cskX5VL1RuUAPN0gIjPnR7SVg2pjtP9GYV
+ R7Yg==
+X-Gm-Message-State: APjAAAX6XmyACvWQvTnqf6F3jYUAN6IWmldZVOK8TkRVM/fNiGNE6Q1h
+ GmYeGaSYEYaMHlvQ4JA4NDkwqVWqSo3qphdTIX0l1A==
+X-Google-Smtp-Source: APXvYqxXdPfUlpaL4uIAwV7G2qrVEfAWWo/p1axPqhCLsuZp8oSxIViDaU9/ZJAkWQ8RAXvu3wGakIwT/norp7EOSwY=
+X-Received: by 2002:a9d:640f:: with SMTP id h15mr622694otl.338.1557483918605; 
+ Fri, 10 May 2019 03:25:18 -0700 (PDT)
 MIME-Version: 1.0
-References: <a09a7e0e-9894-8c1a-34eb-fc482b1759d0@gmail.com>
- <20190509015856.GB7031@mit.edu>
- <580e092f-fa4e-eedc-9e9a-a57dd085f0a6@gmail.com>
- <20190509032017.GA29703@mit.edu>
- <7fd35df81c06f6eb319223a22e7b93f29926edb9.camel@oracle.com>
- <20190509133551.GD29703@mit.edu>
- <ECADFF3FD767C149AD96A924E7EA6EAF9770D591@USCULXMSG01.am.sony.com>
- <875c546d-9713-bb59-47e4-77a1d2c69a6d@gmail.com>
- <20190509214233.GA20877@mit.edu>
- <b09ba170-229b-fde4-3e9a-e50d6ab4c1b5@deltatee.com>
- <20190509233043.GC20877@mit.edu>
- <8914afef-1e66-e6e3-f891-5855768d3018@deltatee.com>
- <6d6e91ec-33d3-830b-4895-4d7a20ba7d45@gmail.com>
- <a1b88d5add15d43de0468c32d9a2427629337abb.camel@oracle.com>
- <CAKMK7uFd1xUx8u3xWLwifVSq4OEnMO4S-m0hESe68UzONXnMFg@mail.gmail.com>
-In-Reply-To: <CAKMK7uFd1xUx8u3xWLwifVSq4OEnMO4S-m0hESe68UzONXnMFg@mail.gmail.com>
+References: <20190501230126.229218-1-brendanhiggins@google.com>
+ <CAK7LNARzaeZ+ZNbDSii2cpFkk4bUqOu3keNq4qX0LhftuK8+MQ@mail.gmail.com>
+In-Reply-To: <CAK7LNARzaeZ+ZNbDSii2cpFkk4bUqOu3keNq4qX0LhftuK8+MQ@mail.gmail.com>
 From: Brendan Higgins <brendanhiggins@google.com>
-Date: Fri, 10 May 2019 03:23:26 -0700
-Message-ID: <CAFd5g47Fvafwgh15JNfxSBRf5qqG2z+V+XGAB2cJtNnHFTiFfQ@mail.gmail.com>
+Date: Fri, 10 May 2019 03:25:06 -0700
+Message-ID: <CAFd5g47iaxW5Nk+sELxgasnbpNX7O6kwUTT7gMWoN3gA=_we6Q@mail.gmail.com>
 Subject: Re: [PATCH v2 00/17] kunit: introduce KUnit, the Linux kernel unit
  testing framework
-To: Daniel Vetter <daniel@ffwll.ch>
+To: Masahiro Yamada <yamada.masahiro@socionext.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190510_032343_526510_6DB87E02 
-X-CRM114-Status: GOOD (  33.12  )
+X-CRM114-CacheID: sfid-20190510_032519_957393_1243B99D 
+X-CRM114-Status: GOOD (  29.18  )
 X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-15.7 points)
@@ -110,166 +97,154 @@ List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
 Cc: Petr Mladek <pmladek@suse.com>,
- Linux Doc Mailing List <linux-doc@vger.kernel.org>,
+ "open list:DOCUMENTATION" <linux-doc@vger.kernel.org>,
  Amir Goldstein <amir73il@gmail.com>,
  dri-devel <dri-devel@lists.freedesktop.org>,
  Sasha Levin <Alexander.Levin@microsoft.com>,
  Michael Ellerman <mpe@ellerman.id.au>,
  "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
- Shuah Khan <shuah@kernel.org>, Rob Herring <robh@kernel.org>,
+ "Cc: Shuah Khan" <shuah@kernel.org>, Rob Herring <robh@kernel.org>,
  linux-nvdimm <linux-nvdimm@lists.01.org>,
  Frank Rowand <frowand.list@gmail.com>, Knut Omang <knut.omang@oracle.com>,
  Kieran Bingham <kieran.bingham@ideasonboard.com>, wfg@linux.intel.com,
  Joel Stanley <joel@jms.id.au>, David Rientjes <rientjes@google.com>,
  Jeff Dike <jdike@addtoit.com>, Dan Carpenter <dan.carpenter@oracle.com>,
- devicetree <devicetree@vger.kernel.org>,
- linux-kbuild <linux-kbuild@vger.kernel.org>, "Bird,
- Timothy" <Tim.Bird@sony.com>, linux-um@lists.infradead.org,
+ DTML <devicetree@vger.kernel.org>,
+ Linux Kbuild mailing list <linux-kbuild@vger.kernel.org>,
+ Tim Bird <Tim.Bird@sony.com>, linux-um@lists.infradead.org,
  Steven Rostedt <rostedt@goodmis.org>, Julia Lawall <julia.lawall@lip6.fr>,
  Dan Williams <dan.j.williams@intel.com>, kunit-dev@googlegroups.com,
- Theodore Ts'o <tytso@mit.edu>, Richard Weinberger <richard@nod.at>,
- Stephen Boyd <sboyd@kernel.org>, Greg KH <gregkh@linuxfoundation.org>,
+ Richard Weinberger <richard@nod.at>, Stephen Boyd <sboyd@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- "Luis R. Rodriguez" <mcgrof@kernel.org>, Kees Cook <keescook@google.com>,
- linux-fsdevel@vger.kernel.org, Logan Gunthorpe <logang@deltatee.com>,
- Kevin Hilman <khilman@baylibre.com>
+ "Luis R. Rodriguez" <mcgrof@kernel.org>, Daniel Vetter <daniel@ffwll.ch>,
+ Kees Cook <keescook@google.com>, linux-fsdevel@vger.kernel.org,
+ Logan Gunthorpe <logang@deltatee.com>, Kevin Hilman <khilman@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-> On Fri, May 10, 2019 at 7:49 AM Knut Omang <knut.omang@oracle.com> wrote:
+> On Thu, May 2, 2019 at 8:02 AM Brendan Higgins
+> <brendanhiggins@google.com> wrote:
 > >
-> > On Thu, 2019-05-09 at 22:18 -0700, Frank Rowand wrote:
-> > > On 5/9/19 4:40 PM, Logan Gunthorpe wrote:
-> > > >
-> > > >
-> > > > On 2019-05-09 5:30 p.m., Theodore Ts'o wrote:
-> > > >> On Thu, May 09, 2019 at 04:20:05PM -0600, Logan Gunthorpe wrote:
-> > > >>>
-> > > >>> The second item, arguably, does have significant overlap with kselftest.
-> > > >>> Whether you are running short tests in a light weight UML environment or
-> > > >>> higher level tests in an heavier VM the two could be using the same
-> > > >>> framework for writing or defining in-kernel tests. It *may* also be valuable
-> > > >>> for some people to be able to run all the UML tests in the heavy VM
-> > > >>> environment along side other higher level tests.
-> > > >>>
-> > > >>> Looking at the selftests tree in the repo, we already have similar items to
-> > > >>> what Kunit is adding as I described in point (2) above. kselftest_harness.h
-> > > >>> contains macros like EXPECT_* and ASSERT_* with very similar intentions to
-> > > >>> the new KUNIT_EXECPT_* and KUNIT_ASSERT_* macros.
-> > > >>>
-> > > >>> However, the number of users of this harness appears to be quite small. Most
-> > > >>> of the code in the selftests tree seems to be a random mismash of scripts
-> > > >>> and userspace code so it's not hard to see it as something completely
-> > > >>> different from the new Kunit:
-> > > >>>
-> > > >>> $ git grep --files-with-matches kselftest_harness.h *
-> > > >>
-> > > >> To the extent that we can unify how tests are written, I agree that
-> > > >> this would be a good thing.  However, you should note that
-> > > >> kselftest_harness.h is currently assums that it will be included in
-> > > >> userspace programs.  This is most obviously seen if you look closely
-> > > >> at the functions defined in the header files which makes calls to
-> > > >> fork(), abort() and fprintf().
-> > > >
-> > > > Ah, yes. I obviously did not dig deep enough. Using kunit for
-> > > > in-kernel tests and kselftest_harness for userspace tests seems like
-> > > > a sensible line to draw to me. Trying to unify kernel and userspace
-> > > > here sounds like it could be difficult so it's probably not worth
-> > > > forcing the issue unless someone wants to do some really fancy work
-> > > > to get it done.
-> > > >
-> > > > Based on some of the other commenters, I was under the impression
-> > > > that kselftests had in-kernel tests but I'm not sure where or if they
-> > > > exist.
-> > >
-> > > YES, kselftest has in-kernel tests.  (Excuse the shouting...)
-> > >
-> > > Here is a likely list of them in the kernel source tree:
-> > >
-> > > $ grep module_init lib/test_*.c
-> > > lib/test_bitfield.c:module_init(test_bitfields)
-> > > lib/test_bitmap.c:module_init(test_bitmap_init);
-> > > lib/test_bpf.c:module_init(test_bpf_init);
-> > > lib/test_debug_virtual.c:module_init(test_debug_virtual_init);
-> > > lib/test_firmware.c:module_init(test_firmware_init);
-> > > lib/test_hash.c:module_init(test_hash_init);  /* Does everything */
-> > > lib/test_hexdump.c:module_init(test_hexdump_init);
-> > > lib/test_ida.c:module_init(ida_checks);
-> > > lib/test_kasan.c:module_init(kmalloc_tests_init);
-> > > lib/test_list_sort.c:module_init(list_sort_test);
-> > > lib/test_memcat_p.c:module_init(test_memcat_p_init);
-> > > lib/test_module.c:static int __init test_module_init(void)
-> > > lib/test_module.c:module_init(test_module_init);
-> > > lib/test_objagg.c:module_init(test_objagg_init);
-> > > lib/test_overflow.c:static int __init test_module_init(void)
-> > > lib/test_overflow.c:module_init(test_module_init);
-> > > lib/test_parman.c:module_init(test_parman_init);
-> > > lib/test_printf.c:module_init(test_printf_init);
-> > > lib/test_rhashtable.c:module_init(test_rht_init);
-> > > lib/test_siphash.c:module_init(siphash_test_init);
-> > > lib/test_sort.c:module_init(test_sort_init);
-> > > lib/test_stackinit.c:module_init(test_stackinit_init);
-> > > lib/test_static_key_base.c:module_init(test_static_key_base_init);
-> > > lib/test_static_keys.c:module_init(test_static_key_init);
-> > > lib/test_string.c:module_init(string_selftest_init);
-> > > lib/test_ubsan.c:module_init(test_ubsan_init);
-> > > lib/test_user_copy.c:module_init(test_user_copy_init);
-> > > lib/test_uuid.c:module_init(test_uuid_init);
-> > > lib/test_vmalloc.c:module_init(vmalloc_test_init)
-> > > lib/test_xarray.c:module_init(xarray_checks);
-> > >
-> > >
-> > > > If they do exists, it seems like it would make sense to
-> > > > convert those to kunit and have Kunit tests run-able in a VM or
-> > > > baremetal instance.
-> > >
-> > > They already run in a VM.
-> > >
-> > > They already run on bare metal.
-> > >
-> > > They already run in UML.
-> > >
-> > > This is not to say that KUnit does not make sense.  But I'm still trying
-> > > to get a better description of the KUnit features (and there are
-> > > some).
+> > ## TLDR
 > >
-> > FYI, I have a master student who looks at converting some of these to KTF, such as for
-> > instance the XArray tests, which lended themselves quite good to a semi-automated
-> > conversion.
+> > I rebased the last patchset on 5.1-rc7 in hopes that we can get this in
+> > 5.2.
 > >
-> > The result is also a somewhat more compact code as well as the flexibility
-> > provided by the Googletest executor and the KTF frameworks, such as running selected
-> > tests, output formatting, debugging features etc.
+> > Shuah, I think you, Greg KH, and myself talked off thread, and we agreed
+> > we would merge through your tree when the time came? Am I remembering
+> > correctly?
+> >
+> > ## Background
+> >
+> > This patch set proposes KUnit, a lightweight unit testing and mocking
+> > framework for the Linux kernel.
+> >
+> > Unlike Autotest and kselftest, KUnit is a true unit testing framework;
+> > it does not require installing the kernel on a test machine or in a VM
+> > and does not require tests to be written in userspace running on a host
+> > kernel. Additionally, KUnit is fast: From invocation to completion KUnit
+> > can run several dozen tests in under a second. Currently, the entire
+> > KUnit test suite for KUnit runs in under a second from the initial
+> > invocation (build time excluded).
+> >
+> > KUnit is heavily inspired by JUnit, Python's unittest.mock, and
+> > Googletest/Googlemock for C++. KUnit provides facilities for defining
+> > unit test cases, grouping related test cases into test suites, providing
+> > common infrastructure for running tests, mocking, spying, and much more.
+> >
+> > ## What's so special about unit testing?
+> >
+> > A unit test is supposed to test a single unit of code in isolation,
+> > hence the name. There should be no dependencies outside the control of
+> > the test; this means no external dependencies, which makes tests orders
+> > of magnitudes faster. Likewise, since there are no external dependencies,
+> > there are no hoops to jump through to run the tests. Additionally, this
+> > makes unit tests deterministic: a failing unit test always indicates a
+> > problem. Finally, because unit tests necessarily have finer granularity,
+> > they are able to test all code paths easily solving the classic problem
+> > of difficulty in exercising error handling code.
+> >
+> > ## Is KUnit trying to replace other testing frameworks for the kernel?
+> >
+> > No. Most existing tests for the Linux kernel are end-to-end tests, which
+> > have their place. A well tested system has lots of unit tests, a
+> > reasonable number of integration tests, and some end-to-end tests. KUnit
+> > is just trying to address the unit test space which is currently not
+> > being addressed.
+> >
+> > ## More information on KUnit
+> >
+> > There is a bunch of documentation near the end of this patch set that
+> > describes how to use KUnit and best practices for writing unit tests.
+> > For convenience I am hosting the compiled docs here:
+> > https://google.github.io/kunit-docs/third_party/kernel/docs/
+> > Additionally for convenience, I have applied these patches to a branch:
+> > https://kunit.googlesource.com/linux/+/kunit/rfc/v5.1-rc7/v1
+> > The repo may be cloned with:
+> > git clone https://kunit.googlesource.com/linux
+> > This patchset is on the kunit/rfc/v5.1-rc7/v1 branch.
+> >
+> > ## Changes Since Last Version
+> >
+> > None. I just rebased the last patchset on v5.1-rc7.
+> >
+> > --
+> > 2.21.0.593.g511ec345e18-goog
+> >
 >
-> So is KTF already in upstream? Or is the plan to unify the KTF and
+> The following is the log of 'git am' of this series.
+> I see several 'new blank line at EOF' warnings.
+>
+>
+>
+> masahiro@pug:~/workspace/bsp/linux$ git am ~/Downloads/*.patch
+> Applying: kunit: test: add KUnit test runner core
+> Applying: kunit: test: add test resource management API
+> Applying: kunit: test: add string_stream a std::stream like string builder
+> .git/rebase-apply/patch:223: new blank line at EOF.
+> +
+> warning: 1 line adds whitespace errors.
+> Applying: kunit: test: add kunit_stream a std::stream like logger
+> Applying: kunit: test: add the concept of expectations
+> .git/rebase-apply/patch:475: new blank line at EOF.
+> +
+> warning: 1 line adds whitespace errors.
+> Applying: kbuild: enable building KUnit
+> Applying: kunit: test: add initial tests
+> .git/rebase-apply/patch:203: new blank line at EOF.
+> +
+> warning: 1 line adds whitespace errors.
+> Applying: kunit: test: add support for test abort
+> .git/rebase-apply/patch:453: new blank line at EOF.
+> +
+> warning: 1 line adds whitespace errors.
+> Applying: kunit: test: add tests for kunit test abort
+> Applying: kunit: test: add the concept of assertions
+> .git/rebase-apply/patch:518: new blank line at EOF.
+> +
+> warning: 1 line adds whitespace errors.
+> Applying: kunit: test: add test managed resource tests
+> Applying: kunit: tool: add Python wrappers for running KUnit tests
+> .git/rebase-apply/patch:457: new blank line at EOF.
+> +
+> warning: 1 line adds whitespace errors.
+> Applying: kunit: defconfig: add defconfigs for building KUnit tests
+> Applying: Documentation: kunit: add documentation for KUnit
+> .git/rebase-apply/patch:71: new blank line at EOF.
+> +
+> .git/rebase-apply/patch:209: new blank line at EOF.
+> +
+> .git/rebase-apply/patch:848: new blank line at EOF.
+> +
+> warning: 3 lines add whitespace errors.
+> Applying: MAINTAINERS: add entry for KUnit the unit testing framework
+> Applying: kernel/sysctl-test: Add null pointer test for sysctl.c:proc_dointvec()
+> Applying: MAINTAINERS: add proc sysctl KUnit test to PROC SYSCTL section
 
-I am not certain about KTF's upstream plans, but I assume that Knut
-would have CC'ed me on the thread if he had started working on it.
-
-> Kunit in-kernel test harnesses? Because there's tons of these
-
-No, no plan. Knut and I talked about this a good while ago and it
-seemed that we had pretty fundamentally different approaches both in
-terms of implementation and end goal. Combining them seemed pretty
-infeasible, at least from a technical perspective. Anyway, I am sure
-Knut would like to give him perspective on the matter and I don't want
-to say too much without first giving him a chance to chime in on the
-matter.
-
-Nevertheless, I hope you don't see resolving this as a condition for
-accepting this patchset. I had several rounds of RFC on KUnit, and no
-one had previously brought this up.
-
-> in-kernel unit tests already, and every merge we get more (Frank's
-> list didn't even look into drivers or anywhere else, e.g. it's missing
-> the locking self tests I worked on in the past), and a more structured
-> approach would really be good.
-
-Well, that's what I am trying to do. I hope you like it!
-
-Cheers!
+Sorry about this! I will have it fixed on the next revision.
 
 _______________________________________________
 linux-um mailing list
