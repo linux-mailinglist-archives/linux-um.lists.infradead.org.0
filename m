@@ -2,102 +2,83 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 147451A12A
-	for <lists+linux-um@lfdr.de>; Fri, 10 May 2019 18:18:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 55CFD1A149
+	for <lists+linux-um@lfdr.de>; Fri, 10 May 2019 18:20:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Reply-To:Cc:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xbE8syc/FWPAkwkBYEWUq4uVeCW0ZdbU/gybzyfkq2k=; b=Mks08uCwV7agHb
-	6TvR8PzuLqQ8N65lgUiQQ/ospYOIBOfNAos6LbqtISyTOAuoaDoGnfoQn1JX19fO5zgpRx7te7w+h
-	EaUi+pJsFqV0bzCLt2cXcFey3x9Cd9C1A8+svDBPfYFXrJ2DvSHMAnatx/U3lWaSnaZQ0pxOjJikc
-	0LG3BzWx/srT1WphhyKZ+mZ+AgqH4WM22ziK+PMoCH58kKY/6iuM7FyCoMDsBAWYrwITYNfY+OWWX
-	CMt1KlY2uGixYWiEaUzECLwMGjC/q7Fi1oGoepCEUXh9qxhECDSIhEh05Bw5UzBwuVHgjcN8PNlrs
-	QJyaJzoZXfA1076sQsCA==;
+	List-Owner; bh=zagPnU9V+1UBKSoDulIBcsL1Y0Umxe6WV8x3q7FBcns=; b=Dl3XFctaLklNrs
+	kpqEiy1x2/Wrdo9BQsfUuN/Qng3343Cuq2Tw1e61YQs37tT6TlX1QJ5ghFSeGDxx9aJGdo1aYFnMw
+	IeQh6mwV2D49wrouJn3S3UCTbwmKjs2uSpiDlvLEllfXux8QtnlpaupyQj4D6FToJgksrLlx/sccr
+	rnAf5LBqdfU9CYiyq9j+rWM43AQTMluZuXEHQygbroLkTBHB6ZCrgUjtnQDnwUWgTnnTzPvPRYDOX
+	EEc1xsZpCfK70x1YBNQEp1IhUAOuTRAELk4irNtBDgNtl+TdR5k28CvG+80tWZlPVh3JXuKlFlj7a
+	Vz1IBiKwqx6aUm2h/AEw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hP8EG-0000hj-Ly; Fri, 10 May 2019 16:18:36 +0000
-Received: from ale.deltatee.com ([207.54.116.67])
+	id 1hP8GJ-0002D3-BT; Fri, 10 May 2019 16:20:43 +0000
+Received: from mail-it1-x12e.google.com ([2607:f8b0:4864:20::12e])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hP8EC-0000h4-QH
- for linux-um@lists.infradead.org; Fri, 10 May 2019 16:18:34 +0000
-Received: from guinness.priv.deltatee.com ([172.16.1.162])
- by ale.deltatee.com with esmtp (Exim 4.89)
- (envelope-from <logang@deltatee.com>)
- id 1hP8Dm-0006xr-3M; Fri, 10 May 2019 10:18:07 -0600
-To: Frank Rowand <frowand.list@gmail.com>, Theodore Ts'o <tytso@mit.edu>,
- Tim.Bird@sony.com, knut.omang@oracle.com, gregkh@linuxfoundation.org,
- brendanhiggins@google.com, keescook@google.com,
- kieran.bingham@ideasonboard.com, mcgrof@kernel.org, robh@kernel.org,
- sboyd@kernel.org, shuah@kernel.org, devicetree@vger.kernel.org,
- dri-devel@lists.freedesktop.org, kunit-dev@googlegroups.com,
- linux-doc@vger.kernel.org, linux-fsdevel@vger.kernel.org,
- linux-kbuild@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-kselftest@vger.kernel.org, linux-nvdimm@lists.01.org,
- linux-um@lists.infradead.org, Alexander.Levin@microsoft.com,
- amir73il@gmail.com, dan.carpenter@oracle.com, dan.j.williams@intel.com,
- daniel@ffwll.ch, jdike@addtoit.com, joel@jms.id.au, julia.lawall@lip6.fr,
- khilman@baylibre.com, mpe@ellerman.id.au, pmladek@suse.com, richard@nod.at,
- rientjes@google.com, rostedt@goodmis.org, wfg@linux.intel.com
-References: <a09a7e0e-9894-8c1a-34eb-fc482b1759d0@gmail.com>
- <20190509015856.GB7031@mit.edu>
- <580e092f-fa4e-eedc-9e9a-a57dd085f0a6@gmail.com>
- <20190509032017.GA29703@mit.edu>
- <7fd35df81c06f6eb319223a22e7b93f29926edb9.camel@oracle.com>
- <20190509133551.GD29703@mit.edu>
- <ECADFF3FD767C149AD96A924E7EA6EAF9770D591@USCULXMSG01.am.sony.com>
- <875c546d-9713-bb59-47e4-77a1d2c69a6d@gmail.com>
- <20190509214233.GA20877@mit.edu>
- <b09ba170-229b-fde4-3e9a-e50d6ab4c1b5@deltatee.com>
- <20190509233043.GC20877@mit.edu>
- <8914afef-1e66-e6e3-f891-5855768d3018@deltatee.com>
- <6d6e91ec-33d3-830b-4895-4d7a20ba7d45@gmail.com>
-From: Logan Gunthorpe <logang@deltatee.com>
-Message-ID: <3faa022b-0b70-0375-aa6d-12ea83a2671f@deltatee.com>
-Date: Fri, 10 May 2019 10:17:56 -0600
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ id 1hP8GF-0002Ce-Tg
+ for linux-um@lists.infradead.org; Fri, 10 May 2019 16:20:41 +0000
+Received: by mail-it1-x12e.google.com with SMTP id p18so7995811itm.1
+ for <linux-um@lists.infradead.org>; Fri, 10 May 2019 09:20:39 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=bgdev-pl.20150623.gappssmtp.com; s=20150623;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=12k3jWQ0JutayB4pYTFiifF3qbZAFod36oxGbGWYTL4=;
+ b=DM1MD4xkQL6qZVNRbFsqulgRFd7kcuZeaaF1otjmrfxY6P35bMMGBmFNpP7uuyqu59
+ LCrtr60OPM+MIvJ8mTs8SDvfWBzsNDFJkN0t+7jXf5pF4Q/7jCXHV7iCb9Gc8R++k5Ch
+ SIdl8H6o5ZUlkE7RC3C0sQ1cBXoitSI+t9w/ai3+C3OMG3+fs5pfuAoww4+2ksl/M41i
+ qLbdVqhmFcQjYCBgmOy9FOBJHwNt31GzIddfg6oQ/36kLgUabQWBdKqFnUcdknD5am9E
+ LHTd1oRI+8T58ABXPcrSQOXM6RUm28+CIQW1I3EaH0LLwMmJEGtdEwVxmGjIPTXzz760
+ 2JEA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=12k3jWQ0JutayB4pYTFiifF3qbZAFod36oxGbGWYTL4=;
+ b=dKyQf8mkCCk1RR4DpDSD1/uXTZHwmr+G/oVzw+AmsvoW3cCOTuXqoQLUjXUhUWuO3d
+ rd96U8N36GWGwOGXifTHk9j5cZUFBh6AqbiFd2Cd6avRbLHzTMbApDGSQ5TED2xpqB61
+ XtmkS+6qn05bAcZ92lkljjkFroJCnAlg/BZN4RILwRzEPZB6Edsrx3rvgMEpyK/+gA5y
+ oQX3xYjhnbPkaRfPVqbuR9Qqqj1TqEg6VfCxyD2SaJDxY0cOLQ+L+0Wb0xEml1lYxpDy
+ x+x/bKfp6Q0JoXqsMg7GiDcqlLt7CADeUKRI9C/Y6VJxomrrR7MGTUAOe1jnoSsXdRPl
+ Vb+A==
+X-Gm-Message-State: APjAAAWtDKguvmSif2d7/imqAsNT3R272Q/Umu7U/5rcq3C8mfkmwmeC
+ YublIHwIxmMMLcVpmwDS/IYANm9wR2rQ7hjmP6CVnQ==
+X-Google-Smtp-Source: APXvYqy6r4u/9FxZ/sqXyVZnJLhaLccKOai9l9fDW51iJ7io13Qgg+/BFMRaQhJVVdqUgo52HfdHzZtLHjbIJcT/gz0=
+X-Received: by 2002:a02:1986:: with SMTP id b128mr8973936jab.136.1557505238682; 
+ Fri, 10 May 2019 09:20:38 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <6d6e91ec-33d3-830b-4895-4d7a20ba7d45@gmail.com>
-Content-Language: en-CA
-X-SA-Exim-Connect-IP: 172.16.1.162
-X-SA-Exim-Rcpt-To: wfg@linux.intel.com, rostedt@goodmis.org,
- rientjes@google.com, richard@nod.at, pmladek@suse.com, mpe@ellerman.id.au,
- khilman@baylibre.com, julia.lawall@lip6.fr, joel@jms.id.au, jdike@addtoit.com,
- daniel@ffwll.ch, dan.j.williams@intel.com, dan.carpenter@oracle.com,
- amir73il@gmail.com, Alexander.Levin@microsoft.com,
- linux-um@lists.infradead.org, linux-nvdimm@lists.01.org,
- linux-kselftest@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-kbuild@vger.kernel.org, linux-fsdevel@vger.kernel.org,
- linux-doc@vger.kernel.org, kunit-dev@googlegroups.com,
- dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org, shuah@kernel.org,
- sboyd@kernel.org, robh@kernel.org, mcgrof@kernel.org,
- kieran.bingham@ideasonboard.com, keescook@google.com,
- brendanhiggins@google.com, gregkh@linuxfoundation.org, knut.omang@oracle.com,
- Tim.Bird@sony.com, tytso@mit.edu, frowand.list@gmail.com
-X-SA-Exim-Mail-From: logang@deltatee.com
-X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on ale.deltatee.com
-X-Spam-Level: 
-X-Spam-Status: No, score=-6.9 required=5.0 tests=ALL_TRUSTED,BAYES_00
- autolearn=ham autolearn_force=no version=3.4.2
-Subject: Re: [PATCH v2 00/17] kunit: introduce KUnit, the Linux kernel unit
- testing framework
-X-SA-Exim-Version: 4.2.1 (built Tue, 02 Aug 2016 21:08:31 +0000)
-X-SA-Exim-Scanned: Yes (on ale.deltatee.com)
+References: <20190411094944.12245-1-brgl@bgdev.pl>
+ <20190411094944.12245-5-brgl@bgdev.pl>
+ <CAFLxGvwb8YzNiXCXru8Tw9pxH9qoc7gAO4sk0MXK1Xmp7fm-2g@mail.gmail.com>
+ <0e8fbdf3-c40d-e4e8-6235-c744ec7317c3@cambridgegreys.com>
+ <684874198.48863.1557299587958.JavaMail.zimbra@nod.at>
+ <CAMRc=MdsA7A1DdS1ZJ8NS8xtuCjgc_7WZD1797H3oZ=2w+fOBA@mail.gmail.com>
+In-Reply-To: <CAMRc=MdsA7A1DdS1ZJ8NS8xtuCjgc_7WZD1797H3oZ=2w+fOBA@mail.gmail.com>
+From: Bartosz Golaszewski <brgl@bgdev.pl>
+Date: Fri, 10 May 2019 18:20:27 +0200
+Message-ID: <CAMRc=McCxvwHgk-3wYE0e+qxJNoHK0AmpJWjNsOZBmGF2yFT6Q@mail.gmail.com>
+Subject: Re: [RESEND PATCH 4/4] um: irq: don't set the chip for all irqs
+To: Richard Weinberger <richard@nod.at>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190510_091833_185464_03528FF5 
-X-CRM114-Status: GOOD (  11.66  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190510_092040_003169_52E3F890 
+X-CRM114-Status: GOOD (  13.12  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.54.116.67 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [2607:f8b0:4864:20:0:0:0:12e listed in]
+ [list.dnswl.org]
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -109,52 +90,34 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Richard Weinberger <richard.weinberger@gmail.com>,
+ Jeff Dike <jdike@addtoit.com>, linux-um@lists.infradead.org,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Geert Uytterhoeven <geert@linux-m68k.org>,
+ anton ivanov <anton.ivanov@cambridgegreys.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-
-
-On 2019-05-09 11:18 p.m., Frank Rowand wrote:
-
-> YES, kselftest has in-kernel tests.  (Excuse the shouting...)
-
-Cool. From my cursory look, in my opinion, these would be greatly
-improved by converting them to the framework Brendan is proposing for Kunit.
-
->> If they do exists, it seems like it would make sense to
->> convert those to kunit and have Kunit tests run-able in a VM or
->> baremetal instance.
-> 
-> They already run in a VM.
-> 
-> They already run on bare metal.
-> 
-> They already run in UML.
-
-Simply being able to run in UML is not the only thing here. Kunit
-provides the infrastructure to quickly build, run and report results for
-all the tests from userspace without needing to worry about the details
-of building and running a UML kernel, then parsing dmesg to figure out
-what tests were run or not.
-
-> This is not to say that KUnit does not make sense.  But I'm still trying
-> to get a better description of the KUnit features (and there are
-> some).
-
-So read the patches, or the documentation[1] or the LWN article[2]. It's
-pretty well described in a lot of places -- that's one of the big
-advantages of it. In contrast, few people seems to have any concept of
-what kselftests are or where they are or how to run them (I was
-surprised to find the in-kernel tests in the lib tree).
-
-Logan
-
-[1] https://google.github.io/kunit-docs/third_party/kernel/docs/
-[2] https://lwn.net/Articles/780985/
-
-_______________________________________________
-linux-um mailing list
-linux-um@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-um
+cHQuLCAxMCBtYWogMjAxOSBvIDExOjE2IEJhcnRvc3ogR29sYXN6ZXdza2kgPGJyZ2xAYmdkZXYu
+cGw+IG5hcGlzYcWCKGEpOgo+Cj4gxZtyLiwgOCBtYWogMjAxOSBvIDA5OjEzIFJpY2hhcmQgV2Vp
+bmJlcmdlciA8cmljaGFyZEBub2QuYXQ+IG5hcGlzYcWCKGEpOgo+ID4KPiA+IC0tLS0tIFVyc3By
+w7xuZ2xpY2hlIE1haWwgLS0tLS0KPiA+ID4+IENhbiB5b3UgcGxlYXNlIGNoZWNrPwo+ID4gPj4g
+VGhpcyBwYXRjaCBpcyBhbHJlYWR5IHF1ZXVlZCBpbiAtbmV4dC4gU28gd2UgbmVlZCB0byBkZWNp
+ZGUgd2hldGhlciB0bwo+ID4gPj4gcmV2ZXJ0IG9yIGZpeCBpdCBub3cuCj4gPiA+Pgo+ID4gPiBJ
+IGFtIGxvb2tpbmcgYXQgaXQuIEl0IHBhc3NlZCB0ZXN0cyBpbiBteSBjYXNlIChJIGRpZCB0aGUg
+dXN1YWwgcm91bmQpLgo+ID4KPiA+IEl0IHdvcmtzIGhlcmUgdG9vLiBUaGF0J3Mgd2h5IEkgbmV2
+ZXIgbm90aWNlZC4KPiA+IFllc3RlcmRheSBJIG5vdGljZWQganVzdCBiZWNhdXNlIEkgbG9va2Vk
+IGZvciBzb21ldGhpbmcgZWxzZSBpbiB0aGUga2VybmVsIGxvZ3MuCj4gPgo+ID4gVGhhbmtzLAo+
+ID4gLy9yaWNoYXJkCj4KPiBIaSwKPgo+IHNvcnJ5IGZvciB0aGUgbGF0ZSByZXBseSAtIEkganVz
+dCBjYW1lIGJhY2sgZnJvbSB2YWNhdGlvbi4KPgo+IEkgc2VlIGl0IGhlcmUgdG9vLCBJJ2xsIGNo
+ZWNrIGlmIEkgY2FuIGZpbmQgdGhlIGN1bHByaXQgYW5kIGZpeCBpdCB0b2RheS4KPgo+IEJhcnQK
+CkhpIFJpY2hhcmQsIEFudG9uLAoKSSdtIG5vdCBzdXJlIHlldCB3aGF0IHRoaXMgaXMgY2F1c2Vk
+IGJ5LiBJdCBkb2Vzbid0IHNlZW0gdG8gYnJlYWsKYW55dGhpbmcgZm9yIG1lIGJ1dCBzaW5jZSBp
+dCdzIGEgbmV3IGVycm9yIG1lc3NhZ2UgSSBndWVzcyBpdCdzIGJlc3QKdG8gcmV2ZXJ0IHRoaXMg
+cGF0Y2ggKG90aGVycyBhcmUgZ29vZCkgYW5kIHJldmlzaXQgaXQgZm9yIHY1LjMuCgpCYXJ0Cgpf
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC11bSBt
+YWlsaW5nIGxpc3QKbGludXgtdW1AbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5m
+cmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXVtCg==
