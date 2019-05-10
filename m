@@ -2,91 +2,79 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7C82719BB6
-	for <lists+linux-um@lfdr.de>; Fri, 10 May 2019 12:34:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 56A2219BCF
+	for <lists+linux-um@lfdr.de>; Fri, 10 May 2019 12:44:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SPj1EP7S+eiyqE3miMdfw86Tt+f0dFzkGp2u3DI+TDc=; b=K+WFoVUH3zOMD5
-	WOJ11GOrL+8R9rXRF7Riy/kDm9aTwlEKqCEaXoddoN6j35RaY2oaZLOuz4zDD0k0/XA9TH2EMLfyw
-	ogbx1HQL4EMxGN0kfKj33xsf25i63/uc+NcQPAi6SM6gd7ygajgaoJQ693zhsd8Ly1aIJid9IFwje
-	JWcrVIeLXyZHLzr+azW5ZJAXEV5m9SrkYkTdL1O80muq4mT4QRUeG+zNN0HryJw5KuUL4TvlPYEal
-	IBOnGAJiYie23yC8SX+S49fteOf35EEPTE8KidqGDGUTV8xxmuUWLvt1sER9zqo88eTKihKsnjYfl
-	g+Bnxtt8ppVPkNj1J+5Q==;
+	List-Owner; bh=Ypi/PSARHWf3Sc9SuX2qGy/J+HoF4n59GGfGhfI7pdo=; b=V8rVma+keH4Xr5
+	UShDq+ofFhF2XDHPpbMs0xggvs2eJYVdoKi6vYkiJzZ6fMg6o3JqiHzeqPHBM2v0jUhs4Uyoo6o2A
+	cOR7q8oKjtHZmGFEV2YW74c143/WYEURNj7Bv0iZ94cuNq1gHwhbx19YGbO8i2kBCqVfMlzY/X37i
+	i/EPwgqwzrpLkraqSW5bPgJhkPLv9CackX7SOZ1Zke1kpwSRiNvK+vJDc3QGwss7ipv1ZaibGiMbj
+	WCLVpXYt6HaRG6diNFsWdF1RX2mtYYMK90LBoPrEECjhd0MDVOu1r++8Z6n+UI0VwKnGjhLxXIvyI
+	+gWpEbvAQdVTQIgi7d/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hP2qt-0006F2-E7; Fri, 10 May 2019 10:34:07 +0000
-Received: from mail-oi1-x241.google.com ([2607:f8b0:4864:20::241])
+	id 1hP31E-0001P8-E7; Fri, 10 May 2019 10:44:48 +0000
+Received: from outgoing-auth-1.mit.edu ([18.9.28.11] helo=outgoing.mit.edu)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hP2qq-0006EN-Fj
- for linux-um@lists.infradead.org; Fri, 10 May 2019 10:34:05 +0000
-Received: by mail-oi1-x241.google.com with SMTP id l203so4186230oia.3
- for <linux-um@lists.infradead.org>; Fri, 10 May 2019 03:34:04 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=v5i4JvNF6NE98fRMKxmZ6W6+U1GIOfAXdGdvVU9jpjk=;
- b=nGd+cWkGzEXpGtZkuP9oYYd4GvoVDkXbYEKFNyvJGe431T1PPUpkS/xcdVyU93/oC+
- iOY/sgkoPSzzreHzKz9kgEHxhJHg1jJT8nh/GBB77UaWYZ2cmcii9Cf0IBR0PkuXrFU2
- X2zcaWr/4tLTgZ0RLrGMyhMI1p7cfpR2FessPvThJmqe71Qb5xQZDjgKunaL0C5W2w2E
- x4thQ7WxDuTbLul4U5kX4SSYFL36trckMOrHWRhsmbpzjo17LECFKM9VLEYLBlSkUN9W
- WbwCW0njc6inKI9wGkqJbW4iWV889QBYK+bjWkcnAcu6ZIOkfieUOoCuotJ9MJZnAWKM
- Rhpw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=v5i4JvNF6NE98fRMKxmZ6W6+U1GIOfAXdGdvVU9jpjk=;
- b=E+V2av0jXZaNZLvpHYp7V0FPrw4sAw0ICFaelbSUhvF7xFc220wyyxuRNspNKeuo74
- RsrZ3nwEXAlTV+K9/hCVk/EFXNOYe1cGqLYd/KiFWK9AqnpbNpke4yVaqkOrel3O+gDg
- wlUMVAMqiN2KdAMV1UFXunaBGOzCSTEMRRUwE6Exv761/AP8hFaQXuLbAMB2N4Zwrbf5
- Wi+3DKWqZIRSy58UkSI58mnOwyk3ogbb5HqX3v51BVMAg2IDZ8Roy+otgsr5PbFztdYt
- fdOK7VBBnVnGiLrjIJ5dBa7y1S7aGyq1Fs72JQV7WTsay0Zeq1SOi1IlcuQJLPCNGZs5
- pMwg==
-X-Gm-Message-State: APjAAAWoi0jJ8b9Yk34A3vhQH1xnSRl2OAFR5skEtP8/0UNDrVIaMw0o
- jyJbOmulES9Pv4DRkJs5mIQRRfdaADKnWB9xTgujfw==
-X-Google-Smtp-Source: APXvYqw3UEwomNcXxGCJaZ//T6xFRuS5gGaGa2izLjE212DrWEolETcTjMzpUq+WB1E+1p0WPdjF9j5Z9zciCUj1NAM=
-X-Received: by 2002:aca:43d5:: with SMTP id q204mr4754067oia.100.1557484443394; 
- Fri, 10 May 2019 03:34:03 -0700 (PDT)
-MIME-Version: 1.0
+ id 1hP31B-0001Og-JM
+ for linux-um@lists.infradead.org; Fri, 10 May 2019 10:44:47 +0000
+Received: from callcc.thunk.org ([66.31.38.53]) (authenticated bits=0)
+ (User authenticated as tytso@ATHENA.MIT.EDU)
+ by outgoing.mit.edu (8.14.7/8.12.4) with ESMTP id x4AAhcGQ005268
+ (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Fri, 10 May 2019 06:43:39 -0400
+Received: by callcc.thunk.org (Postfix, from userid 15806)
+ id 8AE2E420024; Fri, 10 May 2019 06:43:38 -0400 (EDT)
+Date: Fri, 10 May 2019 06:43:38 -0400
+From: "Theodore Ts'o" <tytso@mit.edu>
+To: Frank Rowand <frowand.list@gmail.com>
+Subject: Re: [PATCH v2 00/17] kunit: introduce KUnit, the Linux kernel unit
+ testing framework
+Message-ID: <20190510104338.GB6889@mit.edu>
+Mail-Followup-To: Theodore Ts'o <tytso@mit.edu>,
+ Frank Rowand <frowand.list@gmail.com>,
+ Greg KH <gregkh@linuxfoundation.org>,
+ Brendan Higgins <brendanhiggins@google.com>, keescook@google.com,
+ kieran.bingham@ideasonboard.com, mcgrof@kernel.org, robh@kernel.org,
+ sboyd@kernel.org, shuah@kernel.org, devicetree@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, kunit-dev@googlegroups.com,
+ linux-doc@vger.kernel.org, linux-fsdevel@vger.kernel.org,
+ linux-kbuild@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-kselftest@vger.kernel.org, linux-nvdimm@lists.01.org,
+ linux-um@lists.infradead.org, Alexander.Levin@microsoft.com,
+ Tim.Bird@sony.com, amir73il@gmail.com, dan.carpenter@oracle.com,
+ dan.j.williams@intel.com, daniel@ffwll.ch, jdike@addtoit.com,
+ joel@jms.id.au, julia.lawall@lip6.fr, khilman@baylibre.com,
+ knut.omang@oracle.com, logang@deltatee.com, mpe@ellerman.id.au,
+ pmladek@suse.com, richard@nod.at, rientjes@google.com,
+ rostedt@goodmis.org, wfg@linux.intel.com
 References: <20190501230126.229218-1-brendanhiggins@google.com>
- <20190501230126.229218-7-brendanhiggins@google.com>
- <CAK7LNAQ+SRMn8UFjW1dZv_TrL0qjD2v2S=rXgtUpiA-urr1DDA@mail.gmail.com>
- <CAFd5g47BNZ0gRz4SXb37XjyXF_LyNZrSmoqDbzaaCUrTg3O7Yg@mail.gmail.com>
- <CAK7LNAR3DW5UxtsTNtW6mtQic8cukJwJ18=KitC2HX+jO5eo4g@mail.gmail.com>
-In-Reply-To: <CAK7LNAR3DW5UxtsTNtW6mtQic8cukJwJ18=KitC2HX+jO5eo4g@mail.gmail.com>
-From: Brendan Higgins <brendanhiggins@google.com>
-Date: Fri, 10 May 2019 03:33:52 -0700
-Message-ID: <CAFd5g46dE78f3bx33Sv-CPNx9i8VV=v0Ezwytp8eiQU1MzWbbQ@mail.gmail.com>
-Subject: Re: [PATCH v2 06/17] kbuild: enable building KUnit
-To: Masahiro Yamada <yamada.masahiro@socionext.com>
+ <54940124-50df-16ec-1a32-ad794ee05da7@gmail.com>
+ <20190507080119.GB28121@kroah.com>
+ <a09a7e0e-9894-8c1a-34eb-fc482b1759d0@gmail.com>
+ <20190509015856.GB7031@mit.edu>
+ <580e092f-fa4e-eedc-9e9a-a57dd085f0a6@gmail.com>
+ <78e4d46e-6212-9871-51d6-dd2126f39d45@gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <78e4d46e-6212-9871-51d6-dd2126f39d45@gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190510_033404_544535_5B09D57E 
-X-CRM114-Status: GOOD (  14.40  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20190510_034445_808855_780020F1 
+X-CRM114-Status: GOOD (  15.38  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:241 listed in]
- [list.dnswl.org]
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [18.9.28.11 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match 0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -98,76 +86,81 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: Petr Mladek <pmladek@suse.com>,
- "open list:DOCUMENTATION" <linux-doc@vger.kernel.org>,
- Amir Goldstein <amir73il@gmail.com>,
- dri-devel <dri-devel@lists.freedesktop.org>,
- Sasha Levin <Alexander.Levin@microsoft.com>,
- Michael Ellerman <mpe@ellerman.id.au>,
- "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
- "Cc: Shuah Khan" <shuah@kernel.org>, Rob Herring <robh@kernel.org>,
- linux-nvdimm <linux-nvdimm@lists.01.org>,
- Frank Rowand <frowand.list@gmail.com>, Knut Omang <knut.omang@oracle.com>,
- Kieran Bingham <kieran.bingham@ideasonboard.com>, wfg@linux.intel.com,
- Joel Stanley <joel@jms.id.au>, David Rientjes <rientjes@google.com>,
- Jeff Dike <jdike@addtoit.com>, Dan Carpenter <dan.carpenter@oracle.com>,
- DTML <devicetree@vger.kernel.org>,
- Linux Kbuild mailing list <linux-kbuild@vger.kernel.org>,
- Tim Bird <Tim.Bird@sony.com>, linux-um@lists.infradead.org,
- Steven Rostedt <rostedt@goodmis.org>, Julia Lawall <julia.lawall@lip6.fr>,
- Dan Williams <dan.j.williams@intel.com>, kunit-dev@googlegroups.com,
- Richard Weinberger <richard@nod.at>, Stephen Boyd <sboyd@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- "Luis R. Rodriguez" <mcgrof@kernel.org>, Daniel Vetter <daniel@ffwll.ch>,
- Kees Cook <keescook@google.com>, linux-fsdevel@vger.kernel.org,
- Logan Gunthorpe <logang@deltatee.com>, Kevin Hilman <khilman@baylibre.com>
+Cc: pmladek@suse.com, linux-doc@vger.kernel.org, amir73il@gmail.com,
+ Brendan Higgins <brendanhiggins@google.com>, dri-devel@lists.freedesktop.org,
+ Alexander.Levin@microsoft.com, mpe@ellerman.id.au,
+ linux-kselftest@vger.kernel.org, shuah@kernel.org, robh@kernel.org,
+ linux-nvdimm@lists.01.org, khilman@baylibre.com, knut.omang@oracle.com,
+ kieran.bingham@ideasonboard.com, wfg@linux.intel.com, joel@jms.id.au,
+ rientjes@google.com, jdike@addtoit.com, dan.carpenter@oracle.com,
+ devicetree@vger.kernel.org, linux-kbuild@vger.kernel.org, Tim.Bird@sony.com,
+ linux-um@lists.infradead.org, rostedt@goodmis.org, julia.lawall@lip6.fr,
+ dan.j.williams@intel.com, kunit-dev@googlegroups.com, richard@nod.at,
+ sboyd@kernel.org, Greg KH <gregkh@linuxfoundation.org>,
+ linux-kernel@vger.kernel.org, mcgrof@kernel.org, daniel@ffwll.ch,
+ keescook@google.com, linux-fsdevel@vger.kernel.org, logang@deltatee.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-> On Fri, May 10, 2019 at 7:27 PM Brendan Higgins
-> <brendanhiggins@google.com> wrote:
-> >
-> > > On Thu, May 2, 2019 at 8:03 AM Brendan Higgins
-> > > <brendanhiggins@google.com> wrote:
-> > > >
-> > > > Add KUnit to root Kconfig and Makefile allowing it to actually be built.
-> > > >
-> > > > Signed-off-by: Brendan Higgins <brendanhiggins@google.com>
-> > >
-> > > You need to make sure
-> > > to not break git-bisect'abililty.
-> > >
-> > >
-> > > With this commit, I see build error.
-> > >
-> > >   CC      kunit/test.o
-> > > kunit/test.c:11:10: fatal error: os.h: No such file or directory
-> > >  #include <os.h>
-> > >           ^~~~~~
-> > > compilation terminated.
-> > > make[1]: *** [scripts/Makefile.build;279: kunit/test.o] Error 1
-> > > make: *** [Makefile;1763: kunit/] Error 2
-> >
-> > Nice catch! That header shouldn't even be in there.
-> >
-> > Sorry about that. I will have it fixed in the next revision.
->
->
-> BTW, I applied whole of this series
-> to my kernel.org repository.
->
-> 0day bot started to report issues.
-> I hope several reports reached you,
-> and they are useful to fix your code.
+On Thu, May 09, 2019 at 10:11:01PM -0700, Frank Rowand wrote:
+> >> You *can* run in-kernel test using modules; but there is no framework
+> >> for the in-kernel code found in the test modules, which means each of
+> >> the in-kernel code has to create their own in-kernel test
+> >> infrastructure.
+> 
+> The kselftest in-kernel tests follow a common pattern.  As such, there
+> is a framework.
 
-Yep, I have received several. They are very helpful.
+So we may have different definitions of "framework".  In my book, code
+reuse by "cut and paste" does not make a framework.  Could they be
+rewritten to *use* a framework, whether it be KTF or KUnit?  Sure!
+But they are not using a framework *today*.
 
-I greatly appreciate it.
+> This next two paragraphs you ignored entirely in your reply:
+> 
+> > Why create an entire new subsystem (KUnit) when you can add a header
+> > file (and .c code as appropriate) that outputs the proper TAP formatted
+> > results from kselftest kernel test modules?
 
-Thanks!
+And you keep ignoring my main observation, which is that spinning up a
+VM, letting systemd start, mounting a root file system, etc., is all
+unnecessary overhead which takes time.  This is important to me,
+because developer velocity is extremely important if you are doing
+test driven development.
+
+Yes, you can manually unload a module, recompile the module, somehow
+get the module back into the VM (perhaps by using virtio-9p), and then
+reloading the module with the in-kernel test code, and the restart the
+test.  BUT: (a) even if it is faster, it requires a lot of manual
+steps, and would be very hard to automate, and (b) if the test code
+ever OOPS or triggers a lockdep warning, you will need to restart the
+VM, and so this involves all of the VM restart overhead, plus trying
+to automate determining when you actually do need to restart the VM
+versus unloading and reloading the module.   It's clunky.
+
+Being able to do the equivalent of "make && make check" is a really
+big deal.  And "make check" needs to go fast.
+
+You keep ignore this point, perhaps because you don't care about this
+issue?  Which is fine, and why we may just need to agree to disagree.
+
+Cheers,
+
+						- Ted
+
+P.S.  Running scripts is Turing-equivalent, so it's self-evident that
+*anything* you can do with other test frameworks you can somehow do in
+kselftests.  That argument doesn't impress me, and why I do consider
+it quite flippant.  (Heck, /bin/vi is Turing equivalent so we could
+use vi to as a kernel test framework.  Or we could use emacs.  Let's
+not.  :-)
+
+The question is whether it is the most best and most efficient way to
+do that testing.  And developer velocity is a really big part of my
+evaluation function when judging whether or a test framework is fit
+for that purpose.
 
 _______________________________________________
 linux-um mailing list
