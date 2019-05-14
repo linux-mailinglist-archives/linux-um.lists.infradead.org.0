@@ -2,96 +2,77 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B72C71D0E9
-	for <lists+linux-um@lfdr.de>; Tue, 14 May 2019 22:54:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2DAE51E465
+	for <lists+linux-um@lfdr.de>; Wed, 15 May 2019 00:17:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0Lm5Xv0Nu2Io2tk2ELZr2f368hKzX+daQOqRBfSu/Os=; b=IWe15kZBAy2bfU
-	0eYNbuqyLW6cd0JV9iUNzeQJFZMOeXNCmO5u+EpdX12pcXKeB71o1Xz3bFZIgx4EeZ6DurF+C/3Li
-	u57DoE3KDh4qKrnapgmbLHu8jdp6iBzb8kZFv8QRFpa2HRZXqrzOzHr+mZ4vBvDgilvXalPKSennj
-	v4tP0dq2xtQTx4PmWOX+ih74/mCn+tiNt4drTwY0J4BXGZjXqcw0xauKVV1FAA3sTWy3ZFlGRM1Yc
-	buNks7sThtMIwaecJAKBChwrqBk0yZGECHD4FT6QfRtpsx+edPjwb1vWfCJ/ihpEH6nurojpJbtqJ
-	qMFIWNrfo8LFD1ZmLIyA==;
+	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:Mime-Version:Message-Id
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=zshvS/W5gUkiH074g9B/qL3IJlJ9Xl9s0DujCMGA+HU=; b=hn4cyLpj5Lz1zo
+	FSAezU2mkk7VAaF7wNf3Ml9YNAVkuH6PWz+1YwVOHba9E88mE0LQcmsc2Wzag72XQHSG5pQfNitky
+	qWQGBPlzckiiGEmBEftm4/CT0D/aLpevaI9ffwlzIe7Mb4Wcq/3buQFMxc8U4wGgLyyDqsiswcIXn
+	yUmKbsCmjsc7P9ZgpnhgrdBlRHVVMqkhjPLrqX7B1TewkGivfxXzYbudQE5OVhEH6zGbPfTXyZiuI
+	MJrNznjHCkuOUePxQf7pPTjKbl8eO3zTeU0WDL7qFzegSkxCd2OV9oI0L1eIykQpXU24OhoDXL/Ij
+	vKJqmbTSmI+9RQS+qdKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQeRK-0000Qv-DM; Tue, 14 May 2019 20:54:22 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1hQfk0-0000dm-Fl; Tue, 14 May 2019 22:17:44 +0000
+Received: from mail-yw1-xc49.google.com ([2607:f8b0:4864:20::c49])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQeRG-0000QP-OH
- for linux-um@lists.infradead.org; Tue, 14 May 2019 20:54:20 +0000
-Received: by mail-pg1-x542.google.com with SMTP id z16so150410pgv.11
- for <linux-um@lists.infradead.org>; Tue, 14 May 2019 13:54:18 -0700 (PDT)
+ id 1hQfjx-0000dH-Bd
+ for linux-um@lists.infradead.org; Tue, 14 May 2019 22:17:43 +0000
+Received: by mail-yw1-xc49.google.com with SMTP id j62so712680ywe.3
+ for <linux-um@lists.infradead.org>; Tue, 14 May 2019 15:17:40 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to
- :user-agent; bh=XygOuwoFm7gzQhhUOvWTZyqOBt7ptJW7nbpWmuwFcVs=;
- b=g4qKFaFE7Yh7H28KycQARZrVqeKj92RMFbA+a72bVGE1wixE+szHEVqZsfsCy/c0sr
- gvMzBI+cl1YducKsOuGaRhPvvo8n9HH5M0xOHiViD5KfsMxdIS9cpguok8JG7ChAcHGU
- RDtXuaLArDabdyJmiJY2aa5NeS+f1bjEcUhBO2Nz+HSP3Ovqxtt5GPMBfcfs+VgkRthb
- iHpOF/lPVIIEEAHwrrk7Ay8SQKzd0mL+GynkKMuKDNpOieChw+I5hnv++0884h7Mmiym
- YC6Zi5Hm6rVagGpO5c910E3PjbiUk/DNb9WUv3huqAImMMW6T6uHIgzQDEXt/Q47cqIt
- jnTw==
+ h=date:message-id:mime-version:subject:from:to:cc;
+ bh=Wtv/g4YDlWnregZkMuB6vGhT6mZK0s7Z+NfaxgtLekE=;
+ b=Q5HMOrwbJNM89YqHu+vD+8sRwSzKie4sE8pkjwQqXKbmvl8uUCrm4SpuFW4UU8JhnY
+ XeejyhCTCS9puS98uTFx8EFmIo2ivhwCloJ/U0p1hceMXJW+JMLxh7E0E2tQeOq2UuzA
+ uZxI0Ym2j+bs+4rerFEZdMmaFjvrOGk6StJ+TQn+bqsoaYxZ80ISDElTpKf5y0SFPk8h
+ VcJ7yADl/NR3VI+Ila1czReqJ0pnzAfR3bA5HRbf56qnKlhiN8U8YpErBnLxR7gClHqR
+ Qbxvzr+zfsgs5Z9UI/MeioiOkmyTPiLUIyzAE8HdShxJSC99+danDDMnvJhADTYyrN5z
+ MBUg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to:user-agent;
- bh=XygOuwoFm7gzQhhUOvWTZyqOBt7ptJW7nbpWmuwFcVs=;
- b=hvvCwB4a2L52T9Gpbdw/0yD5MO4ynb5W1OylBtAcQuukokdaWldsaEjhxPJ6D08xTR
- IJgsYR/f5npXHoLDJrkpXqLha3NfKrLWjqqmrotGmlPfT4x24KYWhLd0g1h4gIYU0c1S
- TzOhrziO5uqI6G9iyrJSJRLl9UMu92YWncsivPaIBQkQUi80rRW53bA0mdY3TqBtZAaq
- u5uI12niqAcubfMKkZvr03IRbnB1j8manS0SHRBLMtaZaJR1vJHEU3meQ9rLmxdwoXRX
- QIazFgzDdaLdEVApcWLxCGlW1gKNhbQSI0ZIy0cQ3suWvi7pIgEwu6HtGA1KUAZz78fe
- mGvA==
-X-Gm-Message-State: APjAAAV6G+DEAEZSHgrnMk9eBSNTATJeEPfShfugzo99nls6zgb8FWqP
- ovFCnMN/ldiUY9Xrr5ZoeZ1APg==
-X-Google-Smtp-Source: APXvYqwd+Jkh7md+hSBxZPhzl0i1uY2dXHZTreHilHxyWOiiHKFUut9EjRbN0xnr1SmnWhFYXdyBgA==
-X-Received: by 2002:a63:2943:: with SMTP id p64mr40698957pgp.151.1557867257289; 
- Tue, 14 May 2019 13:54:17 -0700 (PDT)
-Received: from google.com ([2620:15c:2cd:2:d714:29b4:a56b:b23b])
- by smtp.gmail.com with ESMTPSA id j184sm2017pge.83.2019.05.14.13.54.15
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Tue, 14 May 2019 13:54:16 -0700 (PDT)
-Date: Tue, 14 May 2019 13:54:09 -0700
-From: Brendan Higgins <brendanhiggins@google.com>
-To: Frank Rowand <frowand.list@gmail.com>
-Subject: Re: [PATCH v2 00/17] kunit: introduce KUnit, the Linux kernel unit
+ h=x-gm-message-state:date:message-id:mime-version:subject:from:to:cc;
+ bh=Wtv/g4YDlWnregZkMuB6vGhT6mZK0s7Z+NfaxgtLekE=;
+ b=RPPD+u6ct4DZP7VTtSRKl+hvwm7nom61q9FFGF0E6BrfgKyggtvaPwKCVETpWPQfBi
+ lCEsGmDwLjLj12Ijrr4yOgf/DvkrP16MLJBkZSZ+c4FnRmRx3lxRZcYNgqkIQoLKEBe/
+ dtBOJdTo9QepdyQsA5pJwdyYS1GMSwxqmKW/7wNWt1cVzTOizeZKNktHRjQu+bj2XNec
+ TvO091Wih81z/zCE8Chkx3meHZ2MDsuMM4l9tywJFqvmTZIpdnGEQ/gIjWP58VVMksXN
+ eGW9kO3OzDjtDItNIwE5INR6h3Fvh1hr/4nDfNtaAJrkQcbcvM3oHgDJep2IXO4MSy9/
+ funQ==
+X-Gm-Message-State: APjAAAWIjTO2v/mPYHh5Ayt0IcWn/mdihShTPRKw0D1p2jH5IkN8bk64
+ i1o6IEYNUiSFNzWZyvwdyHMKOlHhUuEiT7v9HQrvaQ==
+X-Google-Smtp-Source: APXvYqzLw2GNR1CD/N7FU0EOf+vQnR8bF44lpYMHhbVCeioD/fNqnQCXEG9eHOkDZWuQz7kMqOBLBdCDFgs1RbGB1Bb/ig==
+X-Received: by 2002:a25:690d:: with SMTP id e13mr18821319ybc.178.1557872259260; 
+ Tue, 14 May 2019 15:17:39 -0700 (PDT)
+Date: Tue, 14 May 2019 15:16:53 -0700
+Message-Id: <20190514221711.248228-1-brendanhiggins@google.com>
+Mime-Version: 1.0
+X-Mailer: git-send-email 2.21.0.1020.gf2820cf01a-goog
+Subject: [PATCH v4 00/18] kunit: introduce KUnit, the Linux kernel unit
  testing framework
-Message-ID: <20190514205409.GA154649@google.com>
-References: <20190509015856.GB7031@mit.edu>
- <580e092f-fa4e-eedc-9e9a-a57dd085f0a6@gmail.com>
- <20190509032017.GA29703@mit.edu>
- <7fd35df81c06f6eb319223a22e7b93f29926edb9.camel@oracle.com>
- <20190509133551.GD29703@mit.edu>
- <ECADFF3FD767C149AD96A924E7EA6EAF9770D591@USCULXMSG01.am.sony.com>
- <875c546d-9713-bb59-47e4-77a1d2c69a6d@gmail.com>
- <20190509214233.GA20877@mit.edu>
- <b09ba170-229b-fde4-3e9a-e50d6ab4c1b5@deltatee.com>
- <2aed675e-0408-c812-3e1a-b90710c528f2@gmail.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <2aed675e-0408-c812-3e1a-b90710c528f2@gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+From: Brendan Higgins <brendanhiggins@google.com>
+To: frowand.list@gmail.com, gregkh@linuxfoundation.org, jpoimboe@redhat.com, 
+ keescook@google.com, kieran.bingham@ideasonboard.com, mcgrof@kernel.org, 
+ peterz@infradead.org, robh@kernel.org, sboyd@kernel.org, shuah@kernel.org, 
+ tytso@mit.edu, yamada.masahiro@socionext.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190514_135418_818982_3D9926E7 
-X-CRM114-Status: GOOD (  33.71  )
-X-Spam-Score: -13.1 (-------------)
+X-CRM114-CacheID: sfid-20190514_151741_427518_95D76D23 
+X-CRM114-Status: GOOD (  14.35  )
+X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-13.1 points)
+ Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 2.6 FSL_HELO_FAKE          No description available.
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:c49 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
  white-list
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -100,8 +81,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -114,197 +94,123 @@ List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
 Cc: pmladek@suse.com, linux-doc@vger.kernel.org, amir73il@gmail.com,
- dri-devel@lists.freedesktop.org, Alexander.Levin@microsoft.com,
- mpe@ellerman.id.au, linux-kselftest@vger.kernel.org, shuah@kernel.org,
- robh@kernel.org, linux-nvdimm@lists.01.org, khilman@baylibre.com,
- knut.omang@oracle.com, kieran.bingham@ideasonboard.com, wfg@linux.intel.com,
- joel@jms.id.au, rientjes@google.com, jdike@addtoit.com,
+ Brendan Higgins <brendanhiggins@google.com>, dri-devel@lists.freedesktop.org,
+ Alexander.Levin@microsoft.com, linux-kselftest@vger.kernel.org,
+ linux-nvdimm@lists.01.org, khilman@baylibre.com, knut.omang@oracle.com,
+ wfg@linux.intel.com, joel@jms.id.au, rientjes@google.com, jdike@addtoit.com,
  dan.carpenter@oracle.com, devicetree@vger.kernel.org,
  linux-kbuild@vger.kernel.org, Tim.Bird@sony.com, linux-um@lists.infradead.org,
  rostedt@goodmis.org, julia.lawall@lip6.fr, kunit-dev@googlegroups.com,
- Theodore Ts'o <tytso@mit.edu>, richard@nod.at, sboyd@kernel.org,
- gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org, mcgrof@kernel.org,
- daniel@ffwll.ch, keescook@google.com, linux-fsdevel@vger.kernel.org,
- Logan Gunthorpe <logang@deltatee.com>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+ richard@nod.at, rdunlap@infradead.org, linux-kernel@vger.kernel.org,
+ daniel@ffwll.ch, mpe@ellerman.id.au, linux-fsdevel@vger.kernel.org,
+ logang@deltatee.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Fri, May 10, 2019 at 02:52:59PM -0700, Frank Rowand wrote:
+## TLDR
 
-Sorry, I forgot to get back to this thread.
+A quick follow up to yesterday's revision. I got some feedback that I
+wanted to incorporate before anyone else read the update. For this
+reason, I will leave a TLDR of the biggest changes since v2.
 
-> On 5/9/19 3:20 PM, Logan Gunthorpe wrote:
-> > =
+Biggest things to look out for (since v2):
 
-> > =
+- KUnit core now outputs results in TAP14.
+- Heavily reworked tools/testing/kunit/kunit.py
+  - Changed how parsing works.
+  - Added testing.
+  - Greg, Logan, you might want to re-review this.
+- Added documentation on how to use KUnit on non-UML kernels. You can
+  see the docs rendered here[1].
 
-> > On 2019-05-09 3:42 p.m., Theodore Ts'o wrote:
-> >> On Thu, May 09, 2019 at 11:12:12AM -0700, Frank Rowand wrote:
-> >>>
-> >>> =A0=A0=A0 "My understanding is that the intent of KUnit is to avoid b=
-ooting a kernel on
-> >>> =A0=A0=A0 real hardware or in a virtual machine.=A0 That seems to be =
-a matter of semantics
-> >>> =A0=A0=A0 to me because isn't invoking a UML Linux just running the L=
-inux kernel in
-> >>> =A0=A0=A0 a different form of virtualization?
-> >>>
-> >>> =A0=A0=A0 So I do not understand why KUnit is an improvement over kse=
-lftest.
-> >>>
-> >>> =A0=A0  ...
-> >>> =
+There is still some discussion going on on the [PATCH v2 00/17] thread,
+but I wanted to get some of these updates out before they got too stale
+(and too difficult for me to keep track of). I hope no one minds.
 
-> >>> What am I missing?"
-> >> =
+## Background
 
-> >> One major difference: kselftest requires a userspace environment;
-> >> it starts systemd, requires a root file system from which you can
-> >> load modules, etc.  Kunit doesn't require a root file system;
-> >> doesn't require that you start systemd; doesn't allow you to run
-> >> arbitrary perl, python, bash, etc. scripts.  As such, it's much
-> >> lighter weight than kselftest, and will have much less overhead
-> >> before you can start running tests.  So it's not really the same
-> >> kind of virtualization.
-> =
+This patch set proposes KUnit, a lightweight unit testing and mocking
+framework for the Linux kernel.
 
-> I'm back to reply to this subthread, after a delay, as promised.
-> =
+Unlike Autotest and kselftest, KUnit is a true unit testing framework;
+it does not require installing the kernel on a test machine or in a VM
+(however, KUnit still allows you to run tests on test machines or in VMs
+if you want) and does not require tests to be written in userspace
+running on a host kernel. Additionally, KUnit is fast: From invocation
+to completion KUnit can run several dozen tests in under a second.
+Currently, the entire KUnit test suite for KUnit runs in under a second
+from the initial invocation (build time excluded).
 
-> =
+KUnit is heavily inspired by JUnit, Python's unittest.mock, and
+Googletest/Googlemock for C++. KUnit provides facilities for defining
+unit test cases, grouping related test cases into test suites, providing
+common infrastructure for running tests, mocking, spying, and much more.
 
-> > I largely agree with everything Ted has said in this thread, but I
-> > wonder if we are conflating two different ideas that is causing an
-> > impasse. From what I see, Kunit actually provides two different
-> > things:
-> =
+## What's so special about unit testing?
 
-> > 1) An execution environment that can be run very quickly in userspace
-> > on tests in the kernel source. This speeds up the tests and gives a
-> > lot of benefit to developers using those tests because they can get
-> > feedback on their code changes a *lot* quicker.
-> =
+A unit test is supposed to test a single unit of code in isolation,
+hence the name. There should be no dependencies outside the control of
+the test; this means no external dependencies, which makes tests orders
+of magnitudes faster. Likewise, since there are no external dependencies,
+there are no hoops to jump through to run the tests. Additionally, this
+makes unit tests deterministic: a failing unit test always indicates a
+problem. Finally, because unit tests necessarily have finer granularity,
+they are able to test all code paths easily solving the classic problem
+of difficulty in exercising error handling code.
 
-> kselftest in-kernel tests provide exactly the same when the tests are
-> configured as "built-in" code instead of as modules.
-> =
+## Is KUnit trying to replace other testing frameworks for the kernel?
 
-> =
+No. Most existing tests for the Linux kernel are end-to-end tests, which
+have their place. A well tested system has lots of unit tests, a
+reasonable number of integration tests, and some end-to-end tests. KUnit
+is just trying to address the unit test space which is currently not
+being addressed.
 
-> > 2) A framework to write unit tests that provides a lot of the same
-> > facilities as other common unit testing frameworks from userspace
-> > (ie. a runner that runs a list of tests and a bunch of helpers such
-> > as KUNIT_EXPECT_* to simplify test passes and failures).
-> =
+## More information on KUnit
 
-> > The first item from Kunit is novel and I see absolutely no overlap
-> > with anything kselftest does. It's also the valuable thing I'd like
-> > to see merged and grow.
-> =
+There is a bunch of documentation near the end of this patch set that
+describes how to use KUnit and best practices for writing unit tests.
+For convenience I am hosting the compiled docs here[2].
 
-> The first item exists in kselftest.
-> =
+Additionally for convenience, I have applied these patches to a
+branch[3].
+The repo may be cloned with:
+git clone https://kunit.googlesource.com/linux
+This patchset is on the kunit/rfc/v5.1/v4 branch.
 
-> =
+## Changes Since Last Version
 
-> > The second item, arguably, does have significant overlap with
-> > kselftest. Whether you are running short tests in a light weight UML
-> > environment or higher level tests in an heavier VM the two could be
-> > using the same framework for writing or defining in-kernel tests. It
-> > *may* also be valuable for some people to be able to run all the UML
-> > tests in the heavy VM environment along side other higher level
-> > tests.
-> > =
+As I mentioned above, there are a significant number of updates since
+v2:
+- Converted KUnit core to print test results in TAP14 format as
+  suggested by Greg and Frank.
+- Heavily reworked tools/testing/kunit/kunit.py
+  - Changed how parsing works.
+  - Added testing.
+- Added documentation on how to use KUnit on non-UML kernels. You can
+  see the docs rendered here[1].
+- Added a new set of EXPECTs and ASSERTs for pointer comparison.
+- Removed more function indirection as suggested by Logan.
+- Added a new patch that adds `kunit_try_catch_throw` to objtool's
+  noreturn list.
+- Fixed a number of minorish issues pointed out by Shuah, Masahiro, and
+  kbuild bot.
 
-> > Looking at the selftests tree in the repo, we already have similar
-> > items to what Kunit is adding as I described in point (2) above.
-> > kselftest_harness.h contains macros like EXPECT_* and ASSERT_* with
-> > very similar intentions to the new KUNIT_EXECPT_* and KUNIT_ASSERT_*
-> > macros.
-> =
+Nevertheless, there are only a couple of minor updates since v3:
+- Added more context to the changelog on the objtool patch, as per
+  Peter's request.
+- Moved all KUnit documentation under the Documentation/dev-tools/
+  directory as per Jonathan's suggestion.
 
-> I might be wrong here because I have not dug deeply enough into the
-> code!!!  Does this framework apply to the userspace tests, the
-> in-kernel tests, or both?  My "not having dug enough GUESS" is that
-> these are for the user space tests (although if so, they could be
-> extended for in-kernel use also).
-> =
+[1] https://google.github.io/kunit-docs/third_party/kernel/docs/usage.html#kunit-on-non-uml-architectures
+[2] https://google.github.io/kunit-docs/third_party/kernel/docs/
+[3] https://kunit.googlesource.com/linux/+/kunit/rfc/v5.1/v4
 
-> So I think this one maybe does not have an overlap between KUnit
-> and kselftest.
+-- 
+2.21.0.1020.gf2820cf01a-goog
 
-You are right, Frank: the EXPECT_* and ASSERT_* in kselftest_harness.h
-is for userspace only. kselftest_harness.h provides it's own main method
-for running the tests[1]. It also makes assumptions around having access
-to this main method[2].
-
-There actually isn't that much infrastructure that that I can reuse
-there. I can't even reuse the API definitions because they only pass the
-context object (for me it is struct kunit, for them it is their fixture)
-that they use to their test cases.
-
-> > However, the number of users of this harness appears to be quite
-> > small. Most of the code in the selftests tree seems to be a random
-> > mismash of scripts and userspace code so it's not hard to see it as
-> > something completely different from the new Kunit:
-> > $ git grep --files-with-matches kselftest_harness.h *
-> > Documentation/dev-tools/kselftest.rst
-> > MAINTAINERS
-> > tools/testing/selftests/kselftest_harness.h
-> > tools/testing/selftests/net/tls.c
-> > tools/testing/selftests/rtc/rtctest.c
-> > tools/testing/selftests/seccomp/Makefile
-> > tools/testing/selftests/seccomp/seccomp_bpf.c
-> > tools/testing/selftests/uevent/Makefile
-> > tools/testing/selftests/uevent/uevent_filtering.c
-> =
-
-> =
-
-> > Thus, I can personally see a lot of value in integrating the kunit
-> > test framework with this kselftest harness. There's only a small
-> > number of users of the kselftest harness today, so one way or another
-> > it seems like getting this integrated early would be a good idea.
-> > Letting Kunit and Kselftests progress independently for a few years
-> > will only make this worse and may become something we end up
-> > regretting.
-> =
-
-> Yes, this I agree with.
-
-I think I agree with this point. I cannot see any reason not to have
-KUnit tests able to be run from the kselftest harness.
-
-Conceptually, I think we are mostly in agreement that kselftest and
-KUnit are distinct things. Like Shuah said, kselftest is a black box
-regression test framework, KUnit is a white box unit testing framework.
-So making kselftest the only interface to use KUnit would be a mistake
-in my opinion (and I think others on this thread would agree).
-
-That being said, when you go to run kselftest, I think there is an
-expectation that you run all your tests. Or at least that kselftest
-should make that possible. From my experience, usually when someone
-wants to run all the end-to-end tests, *they really just want to run all
-the tests*. This would imply that all your KUnit tests get run too.
-
-Another added benefit of making it possible for the kselftest harness to
-run KUnit tests would be that it would somewhat guarantee that the
-interfaces between the two would remain compatible meaning that test
-automation tools like CI and presubmit systems are more likely to be
-easy to integrate in each and less likely to break for either.
-
-Would anyone object if I explore this in a follow-up patchset? I have an
-idea of how I might start, but I think it would be easiest to explore in
-it's own patchset. I don't expect it to be a trivial amount of work.
-
-Cheers!
-
-[1] https://elixir.bootlin.com/linux/v5.1.2/source/tools/testing/selftests/=
-kselftest_harness.h#L329
-[2] https://elixir.bootlin.com/linux/v5.1.2/source/tools/testing/selftests/=
-kselftest_harness.h#L681
 
 _______________________________________________
 linux-um mailing list
