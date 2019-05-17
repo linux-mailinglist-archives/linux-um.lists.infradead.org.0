@@ -2,45 +2,45 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CA4E521CF6
-	for <lists+linux-um@lfdr.de>; Fri, 17 May 2019 19:58:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BB76621D3F
+	for <lists+linux-um@lfdr.de>; Fri, 17 May 2019 20:23:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:To:From:Subject:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=f8/P6+f4bsl7tQnKGQCWtjHFdC3oNaxvDlycmMSWdn4=; b=Aqg9ayKTP38i9Y
-	r5ZccgrrX3U4dJ1Wcn3twcy6o3LOj9SLu2isDf1gpdgotJ3B+yYu1i8Zp9xeN1uC8HDtcFKQ0pRUC
-	xtLhQZyiqBZlCPSWZQUdQbKjtLzS0QI1/NIiGIVwWuHIwGAbCoSzXt7KkhRy1zmYY4fxg/316V6wN
-	i9Evnh/9hL5Ejwz8XN7xG0lCjhfq1sDIopPaItqMm4HCw+OKq2eFtZxOFU65DPFek0t0bOAlJd8lr
-	XRybuJtxQ4Ua/0ik/DsZGaQppufQ6tJ3Ij/Xj3QAc2HeDqqPELT2hf+qTLGN3GgtJocM6aLC2s6OP
-	VFioxcLNni47D5lipF3Q==;
+	List-Owner; bh=zI4TqOprS8c+OqJuFvN+7hxzE1VZxzOOwxoT/rPtXB0=; b=INpc+PslK3e+0o
+	PNOJZlj5SR+GppoeqRWgtYgFKqxMB6JdRnDbHWtYmQG9u2qFEAMeaxK3nU1kA145e443wbNhs9Pq7
+	KddjCzpY89Lh2qobQEAlJYGaTEqUddvwtk99oZtJJuv6qgKW1LY76fUJ/iMaJ1VI4TKdkAjz5mRYY
+	HfFZ0DnlPIjn5Zv73vXyelTrCudNJPRmD5/469i9vXcsAaTTg58iX1HHgAxprgNsQ9RLV2bBsKqk1
+	016s1b6WvUP9GlZKzZTpZ3TMvr4yzjFuzFaWTZpTxciQLQ0wdAiv/m18nf4Vt5MHUhfIPqlaLjqjW
+	Flphav24aJY0EwEM5WmA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hRh81-0004vw-Jq; Fri, 17 May 2019 17:58:45 +0000
+	id 1hRhVS-0004e0-4c; Fri, 17 May 2019 18:22:58 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hRh7y-0004vY-Ix
- for linux-um@lists.infradead.org; Fri, 17 May 2019 17:58:44 +0000
+ id 1hRhVO-0004dg-UO
+ for linux-um@lists.infradead.org; Fri, 17 May 2019 18:22:56 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id F3396216FD;
- Fri, 17 May 2019 17:58:41 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 548EA20815;
+ Fri, 17 May 2019 18:22:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1558115922;
- bh=6wuDO6C2j5ISFUHqCZvEZgXgmSk5Y1yp2LQuMtU2X3c=;
+ s=default; t=1558117374;
+ bh=KK9QKyeHXGNZS14JEvoS56XPdr9dX51Q2wnzy9zhzdw=;
  h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
- b=sDtAwiFiKEC7wD2Ufzw/udB7/5BWIyScyUaJXH5U6VCsDwlqQoDM/P4m+X1+94VzN
- UMN8BtoINRqIUVkug6vKVri3xHvdA3/CbFFhbNpR4pZcBbxJrTK6xZUmI6Dk+l/a4V
- 1dq1lsjIu2TctOk9kzXv+Q2ILY/h6f897iZjhR+M=
+ b=cFxMk9+pv8gbeXxX98UnM9NZlslsE37dec0L6/dd6ESCHIfh2/n5NwmR4frW+1Ldi
+ L533sROPmjbe4JZK53rnXRHbfG4VAZSkK4NvHlBa84pxKlXjoDa8zo/LSKIOOfi+AG
+ +c1M6CBnPpDCrODbxfe8K/TVPbtYLqh+vrEYEL18=
 MIME-Version: 1.0
-In-Reply-To: <20190514221711.248228-5-brendanhiggins@google.com>
+In-Reply-To: <20190514221711.248228-18-brendanhiggins@google.com>
 References: <20190514221711.248228-1-brendanhiggins@google.com>
- <20190514221711.248228-5-brendanhiggins@google.com>
-Subject: Re: [PATCH v4 04/18] kunit: test: add kunit_stream a std::stream like
- logger
+ <20190514221711.248228-18-brendanhiggins@google.com>
+Subject: Re: [PATCH v4 17/18] kernel/sysctl-test: Add null pointer test for
+ sysctl.c:proc_dointvec()
 From: Stephen Boyd <sboyd@kernel.org>
 To: Brendan Higgins <brendanhiggins@google.com>, frowand.list@gmail.com,
  gregkh@linuxfoundation.org, jpoimboe@redhat.com, keescook@google.com,
@@ -48,11 +48,11 @@ To: Brendan Higgins <brendanhiggins@google.com>, frowand.list@gmail.com,
  robh@kernel.org, shuah@kernel.org, tytso@mit.edu,
  yamada.masahiro@socionext.com
 User-Agent: alot/0.8.1
-Date: Fri, 17 May 2019 10:58:41 -0700
-Message-Id: <20190517175841.F3396216FD@mail.kernel.org>
+Date: Fri, 17 May 2019 11:22:53 -0700
+Message-Id: <20190517182254.548EA20815@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190517_105842_665528_3A9514C0 
-X-CRM114-Status: GOOD (  16.65  )
+X-CRM114-CacheID: sfid-20190517_112255_019566_AB66C605 
+X-CRM114-Status: GOOD (  19.64  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -85,217 +85,221 @@ Cc: pmladek@suse.com, linux-doc@vger.kernel.org, amir73il@gmail.com,
  Brendan Higgins <brendanhiggins@google.com>, dri-devel@lists.freedesktop.org,
  Alexander.Levin@microsoft.com, linux-kselftest@vger.kernel.org,
  linux-nvdimm@lists.01.org, khilman@baylibre.com, knut.omang@oracle.com,
- wfg@linux.intel.com, joel@jms.id.au, rientjes@google.com, jdike@addtoit.com,
- dan.carpenter@oracle.com, devicetree@vger.kernel.org,
- linux-kbuild@vger.kernel.org, Tim.Bird@sony.com, linux-um@lists.infradead.org,
- rostedt@goodmis.org, julia.lawall@lip6.fr, kunit-dev@googlegroups.com,
- richard@nod.at, rdunlap@infradead.org, linux-kernel@vger.kernel.org,
- daniel@ffwll.ch, mpe@ellerman.id.au, linux-fsdevel@vger.kernel.org,
- logang@deltatee.com
+ wfg@linux.intel.com, joel@jms.id.au, rientjes@google.com,
+ Iurii Zaikin <yzaikin@google.com>, jdike@addtoit.com, dan.carpenter@oracle.com,
+ devicetree@vger.kernel.org, linux-kbuild@vger.kernel.org, Tim.Bird@sony.com,
+ linux-um@lists.infradead.org, rostedt@goodmis.org, julia.lawall@lip6.fr,
+ kunit-dev@googlegroups.com, richard@nod.at, rdunlap@infradead.org,
+ linux-kernel@vger.kernel.org, daniel@ffwll.ch, mpe@ellerman.id.au,
+ linux-fsdevel@vger.kernel.org, logang@deltatee.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-Quoting Brendan Higgins (2019-05-14 15:16:57)
-> diff --git a/kunit/kunit-stream.c b/kunit/kunit-stream.c
+Quoting Brendan Higgins (2019-05-14 15:17:10)
+> diff --git a/kernel/sysctl-test.c b/kernel/sysctl-test.c
 > new file mode 100644
-> index 0000000000000..1884f1b550888
+> index 0000000000000..fe0f2bae66085
 > --- /dev/null
-> +++ b/kunit/kunit-stream.c
-> @@ -0,0 +1,152 @@
+> +++ b/kernel/sysctl-test.c
+> @@ -0,0 +1,293 @@
 > +// SPDX-License-Identifier: GPL-2.0
 > +/*
-> + * C++ stream style string formatter and printer used in KUnit for outputting
-> + * KUnit messages.
-> + *
-> + * Copyright (C) 2019, Google LLC.
-> + * Author: Brendan Higgins <brendanhiggins@google.com>
+> + * KUnit test of proc sysctl.
 > + */
 > +
 > +#include <kunit/test.h>
-> +#include <kunit/kunit-stream.h>
-> +#include <kunit/string-stream.h>
-> +
-> +static const char *kunit_stream_get_level(struct kunit_stream *this)
-> +{
-> +       unsigned long flags;
-> +       const char *level;
-> +
-> +       spin_lock_irqsave(&this->lock, flags);
-> +       level = this->level;
-> +       spin_unlock_irqrestore(&this->lock, flags);
-> +
-> +       return level;
+> +#include <linux/printk.h>
 
-Please remove this whole function and inline it to the one call-site.
+Is this include used?
+
+> +#include <linux/sysctl.h>
+> +#include <linux/uaccess.h>
+
+Is this include used?
+
+> +
+> +
+> +static void sysctl_test_dointvec_happy_single_negative(struct kunit *test)
+> +{
+> +       struct ctl_table table = {
+> +               .procname = "foo",
+> +               .data           = &test_data.int_0001,
+> +               .maxlen         = sizeof(int),
+> +               .mode           = 0644,
+> +               .proc_handler   = proc_dointvec,
+> +               .extra1         = &i_zero,
+> +               .extra2         = &i_one_hundred,
+> +       };
+> +       char input[] = "-9";
+> +       size_t len = sizeof(input) - 1;
+> +       loff_t pos = 0;
+> +
+> +       table.data = kunit_kzalloc(test, sizeof(int), GFP_USER);
+> +       KUNIT_EXPECT_EQ(test, 0, proc_dointvec(&table, 1, input, &len, &pos));
+> +       KUNIT_EXPECT_EQ(test, sizeof(input) - 1, len);
+> +       KUNIT_EXPECT_EQ(test, sizeof(input) - 1, pos);
+> +       KUNIT_EXPECT_EQ(test, -9, *(int *)table.data);
+
+Is the casting necessary? Or can the macro do a type coercion of the
+second parameter based on the first type?
 
 > +}
 > +
-> +void kunit_stream_set_level(struct kunit_stream *this, const char *level)
+> +static void sysctl_test_dointvec_single_less_int_min(struct kunit *test)
 > +{
-> +       unsigned long flags;
+> +       struct ctl_table table = {
+> +               .procname = "foo",
+> +               .data           = &test_data.int_0001,
+> +               .maxlen         = sizeof(int),
+> +               .mode           = 0644,
+> +               .proc_handler   = proc_dointvec,
+> +               .extra1         = &i_zero,
+> +               .extra2         = &i_one_hundred,
+> +       };
+> +       char input[32];
+> +       size_t len = sizeof(input) - 1;
+> +       loff_t pos = 0;
+> +       unsigned long abs_of_less_than_min = (unsigned long)INT_MAX
+> +                                            - (INT_MAX + INT_MIN) + 1;
 > +
-> +       spin_lock_irqsave(&this->lock, flags);
-> +       this->level = level;
-> +       spin_unlock_irqrestore(&this->lock, flags);
-
-I don't get the locking here. What are we protecting against? Are tests
-running in parallel using the same kunit_stream? If so, why is the level
-changeable in one call and then adding strings is done in a different
-function call? It would make sense to combine the level setting and
-string adding so that it's one atomic operation if it's truly a parallel
-operation, or remove the locking entirely.
-
+> +       KUNIT_EXPECT_LT(test,
+> +                       snprintf(input, sizeof(input), "-%lu",
+> +                                abs_of_less_than_min),
+> +                       sizeof(input));
+> +
+> +       table.data = kunit_kzalloc(test, sizeof(int), GFP_USER);
+> +       KUNIT_EXPECT_EQ(test, -EINVAL,
+> +                       proc_dointvec(&table, 1, input, &len, &pos));
+> +       KUNIT_EXPECT_EQ(test, sizeof(input) - 1, len);
+> +       KUNIT_EXPECT_EQ(test, 0, *(int *)table.data);
 > +}
 > +
-> +void kunit_stream_add(struct kunit_stream *this, const char *fmt, ...)
+> +static void sysctl_test_dointvec_single_greater_int_max(struct kunit *test)
 > +{
-> +       va_list args;
-> +       struct string_stream *stream = this->internal_stream;
+> +       struct ctl_table table = {
+> +               .procname = "foo",
+> +               .data           = &test_data.int_0001,
+> +               .maxlen         = sizeof(int),
+> +               .mode           = 0644,
+> +               .proc_handler   = proc_dointvec,
+> +               .extra1         = &i_zero,
+> +               .extra2         = &i_one_hundred,
+> +       };
+> +       char input[32];
+> +       size_t len = sizeof(input) - 1;
+> +       loff_t pos = 0;
+> +       unsigned long greater_than_max = (unsigned long)INT_MAX + 1;
 > +
-> +       va_start(args, fmt);
-> +
-> +       if (string_stream_vadd(stream, fmt, args) < 0)
-> +               kunit_err(this->test, "Failed to allocate fragment: %s\n", fmt);
-> +
-> +       va_end(args);
+> +       KUNIT_EXPECT_GT(test, greater_than_max, INT_MAX);
+> +       KUNIT_EXPECT_LT(test, snprintf(input, sizeof(input), "%lu",
+> +                                      greater_than_max),
+> +                       sizeof(input));
+> +       table.data = kunit_kzalloc(test, sizeof(int), GFP_USER);
+> +       KUNIT_EXPECT_EQ(test, -EINVAL,
+> +                       proc_dointvec(&table, 1, input, &len, &pos));
+> +       KUNIT_EXPECT_EQ(test, sizeof(input) - 1, len);
+> +       KUNIT_EXPECT_EQ(test, 0, *(int *)table.data);
 > +}
 > +
-> +void kunit_stream_append(struct kunit_stream *this,
-> +                               struct kunit_stream *other)
+> +static int sysctl_test_init(struct kunit *test)
 > +{
-> +       struct string_stream *other_stream = other->internal_stream;
-> +       const char *other_content;
-> +
-> +       other_content = string_stream_get_string(other_stream);
-> +
-> +       if (!other_content) {
-> +               kunit_err(this->test,
-> +                         "Failed to get string from second argument for appending.\n");
-> +               return;
-> +       }
-> +
-> +       kunit_stream_add(this, other_content);
-> +}
-> +
-> +void kunit_stream_clear(struct kunit_stream *this)
-> +{
-> +       string_stream_clear(this->internal_stream);
-> +}
-> +
-> +void kunit_stream_commit(struct kunit_stream *this)
-
-Should this be rather called kunit_stream_flush()?
-
-> +{
-> +       struct string_stream *stream = this->internal_stream;
-> +       struct string_stream_fragment *fragment;
-> +       const char *level;
-> +       char *buf;
-> +
-> +       level = kunit_stream_get_level(this);
-> +       if (!level) {
-> +               kunit_err(this->test,
-> +                         "Stream was committed without a specified log level.\n");
-
-Drop the full-stop?
-
-> +               level = KERN_ERR;
-> +               kunit_stream_set_level(this, level);
-> +       }
-> +
-> +       buf = string_stream_get_string(stream);
-> +       if (!buf) {
-> +               kunit_err(this->test,
-
-Can you grow a local variable for 'this->test'? It's used many times.
-
-Also, 'this' is not very kernel idiomatic. We usually name variables by
-their type instead of 'this' which is a keyword in other languages.
-Perhaps it could be named 'kstream'?
-
-> +                        "Could not allocate buffer, dumping stream:\n");
-> +               list_for_each_entry(fragment, &stream->fragments, node) {
-> +                       kunit_err(this->test, fragment->fragment);
-> +               }
-> +               kunit_err(this->test, "\n");
-> +               goto cleanup;
-> +       }
-> +
-> +       kunit_printk(level, this->test, buf);
-> +       kfree(buf);
-> +
-> +cleanup:
-> +       kunit_stream_clear(this);
-> +}
-> +
-> +static int kunit_stream_init(struct kunit_resource *res, void *context)
-> +{
-> +       struct kunit *test = context;
-> +       struct kunit_stream *stream;
-> +
-> +       stream = kzalloc(sizeof(*stream), GFP_KERNEL);
-
-Of course, here it's called 'stream', so maybe it should be 'kstream'
-here too.
-
-> +       if (!stream)
-> +               return -ENOMEM;
-> +
-> +       res->allocation = stream;
-> +       stream->test = test;
-> +       spin_lock_init(&stream->lock);
-> +       stream->internal_stream = new_string_stream();
-
-Can new_string_stream() be renamed to alloc_string_stream()? Sorry, I
-just see so much C++ isms in here it's hard to read from the kernel
-developer perspective.
-
-> +
-> +       if (!stream->internal_stream) {
-
-Nitpick: Please join this to the "allocation" event above instead of
-keeping it separated.
-
-> +               kfree(stream);
-> +               return -ENOMEM;
-> +       }
-> +
 > +       return 0;
 > +}
 > +
-> +static void kunit_stream_free(struct kunit_resource *res)
+> +/*
+> + * This is run once after each test case, see the comment on example_test_module
+> + * for more information.
+> + */
+> +static void sysctl_test_exit(struct kunit *test)
 > +{
-> +       struct kunit_stream *stream = res->allocation;
-> +
-> +       if (!string_stream_is_empty(stream->internal_stream)) {
-> +               kunit_err(stream->test,
-> +                        "End of test case reached with uncommitted stream entries.\n");
-> +               kunit_stream_commit(stream);
-> +       }
-> +
-> +       destroy_string_stream(stream->internal_stream);
-> +       kfree(stream);
 > +}
-> +
-> +struct kunit_stream *kunit_new_stream(struct kunit *test)
-> +{
-> +       struct kunit_resource *res;
-> +
-> +       res = kunit_alloc_resource(test,
-> +                                  kunit_stream_init,
-> +                                  kunit_stream_free,
-> +                                  test);
-> +
-> +       if (res)
-> +               return res->allocation;
-> +       else
-> +               return NULL;
 
-Don't have if (...) return ...; else return ..., just return instead of
-else.
+Can the above two be omitted? If they can be empty sometimes it would be
+nice to avoid the extra symbols and code by letting them be assigned to
+NULL in the kunit_module.
 
+> +
+> +/*
+> + * Here we make a list of all the test cases we want to add to the test module
+> + * below.
+> + */
+> +static struct kunit_case sysctl_test_cases[] = {
+> +       /*
+> +        * This is a helper to create a test case object from a test case
+> +        * function; its exact function is not important to understand how to
+> +        * use KUnit, just know that this is how you associate test cases with a
+> +        * test module.
+> +        */
+> +       KUNIT_CASE(sysctl_test_dointvec_null_tbl_data),
+> +       KUNIT_CASE(sysctl_test_dointvec_table_maxlen_unset),
+> +       KUNIT_CASE(sysctl_test_dointvec_table_len_is_zero),
+> +       KUNIT_CASE(sysctl_test_dointvec_table_read_but_position_set),
+> +       KUNIT_CASE(sysctl_test_dointvec_happy_single_positive),
+> +       KUNIT_CASE(sysctl_test_dointvec_happy_single_negative),
+> +       KUNIT_CASE(sysctl_test_dointvec_single_less_int_min),
+> +       KUNIT_CASE(sysctl_test_dointvec_single_greater_int_max),
+> +       {},
+> +};
+> +
+> +/*
+> + * This defines a suite or grouping of tests.
+> + *
+> + * Test cases are defined as belonging to the suite by adding them to
+> + * `test_cases`.
+> + *
+> + * Often it is desirable to run some function which will set up things which
+> + * will be used by every test; this is accomplished with an `init` function
+> + * which runs before each test case is invoked. Similarly, an `exit` function
+> + * may be specified which runs after every test case and can be used to for
+> + * cleanup. For clarity, running tests in a test module would behave as follows:
+> + *
+> + * module.init(test);
+> + * module.test_case[0](test);
+> + * module.exit(test);
+> + * module.init(test);
+> + * module.test_case[1](test);
+> + * module.exit(test);
+> + * ...;
+
+This comment (and the one above for "this is a helper") looks generic
+and should probably only be in some documentation somewhere and not for
+a sysctl test?
+
+> + */
+> +static struct kunit_module sysctl_test_module = {
+> +       .name = "sysctl_test",
+> +       .init = sysctl_test_init,
+> +       .exit = sysctl_test_exit,
+> +       .test_cases = sysctl_test_cases,
+> +};
+> +
+> +/*
+> + * This registers the above test module telling KUnit that this is a suite of
+> + * tests that need to be run.
+> + */
+
+Same comment about generic comment.
+
+> +module_test(sysctl_test_module);
+> diff --git a/lib/Kconfig.debug b/lib/Kconfig.debug
+> index d5a4a4036d2f8..772af4ec70111 100644
+> --- a/lib/Kconfig.debug
+> +++ b/lib/Kconfig.debug
+> @@ -1908,6 +1908,12 @@ config TEST_SYSCTL
+>  
+>           If unsure, say N.
+>  
+> +config SYSCTL_KUNIT_TEST
+> +       bool "KUnit test for sysctl"
+
+Why not tristate?
+
+> +       depends on KUNIT
+> +       help
+> +         Enables KUnit sysctl test.
+> +
 
 _______________________________________________
 linux-um mailing list
