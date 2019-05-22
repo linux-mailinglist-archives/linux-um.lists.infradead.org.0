@@ -2,61 +2,54 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D791D264B6
-	for <lists+linux-um@lfdr.de>; Wed, 22 May 2019 15:28:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3145F264F5
+	for <lists+linux-um@lfdr.de>; Wed, 22 May 2019 15:47:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=a2A/CxFs3M3bn/hgllc4vZ5gb4VOXCbIBjP6qX76yAA=; b=YQ5/0tb9aFJ9Lu+hKGHm/cYw4
-	t6G0YOkXVx0yEMGxOUOoRpq9Jb1kcCu1REm8f+qubtMXlMm6OnLtDx8qLdNdLvkTNX8tMB7C9GJPi
-	9AkTFw1w9SboF0OxUopz9wZibqFthR6bOBFtkGy6FzMg2Bt3A/+pij24OhQ7WQKMrVK2Id582Pa5H
-	dlwPSRcTxFQTCfQjnzH9pI8Usbdb3DGlgSvHygf0qVh8hogYJtO0c9E6oY5X0Ffr1CNQdWxIsF/LD
-	0Pf8jP/sWWjFGu0b2CVBpx3TolNpzc4Dz3FHEiZ7Buy0dTd1X7IXLaLkjuNYMiPV1ISbeJVHvcMvL
-	hxjGjH9Sw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/CyfXaL28pc9eETuoZKyZXGwVgQc0J74ZPGkpYJIOOU=; b=hyXnG9SsvfcRvF
+	ZBGP0qT195M38ROd5xH9wIZo6ewzeBAA9WrQ/LHrY18TBzjN6+Rjb/DAhJUb8iMp6loQf5yr/R8ru
+	AZXfms5OLVonxCFJlN8Mq6/1ZkLRDBoy3BCbV2U8DWwmmHj6We4PDigHQ+0btzUBlLv4mwIvEQvho
+	7zAgfjBgx8Agwxw6lDi+407mybsn2svmrIaf6gcakh7iWCxLxW+iz5DlohIaqOjMlPQq3ZeidlORR
+	Um2MOju7ur9gB/NoiEF8RxRVetAON/jfEGMOORkwQLd74KYgaphHQ3rC/wcUATEbmUTLtu6pZVo6t
+	LlbU+GES3MoEROe0b69Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTRIR-0000IJ-Iz; Wed, 22 May 2019 13:28:43 +0000
-Received: from ivanoab6.miniserver.com ([5.153.251.140]
- helo=www.kot-begemot.co.uk)
+	id 1hTRa6-00077q-8r; Wed, 22 May 2019 13:46:58 +0000
+Received: from s3.sipsolutions.net ([2a01:4f8:191:4433::2]
+ helo=sipsolutions.net)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTRIO-0000HP-Hv
- for linux-um@lists.infradead.org; Wed, 22 May 2019 13:28:42 +0000
-Received: from [192.168.17.6] (helo=jain.kot-begemot.co.uk)
- by www.kot-begemot.co.uk with esmtps (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <anton.ivanov@kot-begemot.co.uk>)
- id 1hTRIH-00045N-3j; Wed, 22 May 2019 13:28:33 +0000
-Received: from jain.kot-begemot.co.uk ([192.168.3.3])
- by jain.kot-begemot.co.uk with esmtp (Exim 4.89)
- (envelope-from <anton.ivanov@kot-begemot.co.uk>)
- id 1hTRIE-0003iF-IX; Wed, 22 May 2019 14:28:32 +0100
+ id 1hTRZy-00076V-J1
+ for linux-um@lists.infradead.org; Wed, 22 May 2019 13:46:56 +0000
+Received: by sipsolutions.net with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <johannes@sipsolutions.net>)
+ id 1hTRZw-0004Ak-Sb; Wed, 22 May 2019 15:46:48 +0200
+Message-ID: <8b30e5cea2692d62fd7f486fc98effdb589a1412.camel@sipsolutions.net>
 Subject: Re: custom virt-io support (in user-mode-linux)
-To: Johannes Berg <johannes@sipsolutions.net>, linux-um@lists.infradead.org,
- virtualization@lists.linux-foundation.org, qemu-devel@nongnu.org
+From: Johannes Berg <johannes@sipsolutions.net>
+To: Anton Ivanov <anton.ivanov@kot-begemot.co.uk>, 
+ linux-um@lists.infradead.org, virtualization@lists.linux-foundation.org, 
+ qemu-devel@nongnu.org
+Date: Wed, 22 May 2019 15:46:47 +0200
+In-Reply-To: <ddeee710-d546-ff05-5c53-991a7d807067@kot-begemot.co.uk>
 References: <0952696452f5ff4e38d2417029243fc60efa33d6.camel@sipsolutions.net>
-From: Anton Ivanov <anton.ivanov@kot-begemot.co.uk>
-Message-ID: <ddeee710-d546-ff05-5c53-991a7d807067@kot-begemot.co.uk>
-Date: Wed, 22 May 2019 14:28:30 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
-MIME-Version: 1.0
-In-Reply-To: <0952696452f5ff4e38d2417029243fc60efa33d6.camel@sipsolutions.net>
-Content-Language: en-US
-X-Spam-Score: -1.0
-X-Spam-Score: -1.0
-X-Clacks-Overhead: GNU Terry Pratchett
+ <ddeee710-d546-ff05-5c53-991a7d807067@kot-begemot.co.uk>
+X-Mailer: Evolution 3.28.5 (3.28.5-2.fc28) 
+Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190522_062840_728391_BCE4E698 
-X-CRM114-Status: GOOD (  24.18  )
+X-CRM114-CacheID: sfid-20190522_064655_033957_9200A432 
+X-CRM114-Status: GOOD (  15.02  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -68,78 +61,55 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
+Hi Anton,
 
+> > I'm thinking about adding virt-io support to UML, but the tricky part is
+> > that while I want to use the virt-io basics (because it's a nice
+> > interface from the 'inside'), I don't actually want the stock drivers
+> > that are part of the kernel now (like virtio-net etc.) but rather
+> > something that integrates with wifi (probably building on hwsim).
 
-On 22/05/2019 14:02, Johannes Berg wrote:
-> Hi,
+> I have looked at using virtio semantics in UML in the past around the 
+> point when I wanted to make the recvmmsg/sendmmsg vector drivers common 
+> in UML and QEMU. It is certainly possible,
 > 
-> While my main interest is mostly in UML right now [1] I've CC'ed the
-> qemu and virtualization lists because something similar might actually
-> apply to other types of virtualization.
-> 
-> I'm thinking about adding virt-io support to UML, but the tricky part is
-> that while I want to use the virt-io basics (because it's a nice
-> interface from the 'inside'), I don't actually want the stock drivers
-> that are part of the kernel now (like virtio-net etc.) but rather
-> something that integrates with wifi (probably building on hwsim).
-> 
-> The 'inside' interfaces aren't really a problem - just have a specific
-> device ID for this, and then write a normal virtio kernel driver for it.
-> 
-> The 'outside' interfaces are where my thinking breaks down right now.
-> 
-> Looking at lkl, the outside is just all implemented in lkl as code that
-> gets linked to the library, so in UML terms it'd just be extra 'outside'
-> code like the timer handling or other netdev stuff we have today.
-> Looking at qemu, it's of course also implemented there, and then
-> interfaces with the real network, console abstraction, etc.
-> 
-> However, like I said above, I really need something very custom and not
-> likely to make it upstream to any project (because what point is that if
-> you cannot connect to the rest of the environment I'm building), so I'm
-> thinking that perhaps it should be possible to write an abstract
-> 'outside' that lets you interact with it really from out-of-process?
-> Perhaps through some kind of shared memory segment? I think that gets
-> tricky with virt-io doing DMA (I think it does?) though, so that part
-> would have to be implemented directly and not out-of-process?
-> 
-> But really that's why I'm asking - is there a better way than to just
-> link the device-side virt-io code into the same binary (be it lkl lib,
-> uml binary, qemu binary)?
-> 
-> Thanks,
-> johannes
-> 
-> [1] Actually, I've considered using qemu, but it doesn't have
-> virtualized time and doesn't seem to support TSC virtualization. I guess
-> I could remove TSC from the guest CPU and add a virtualized HPET, but
-> I've yet to convince myself this works - on UML I made virtual time as a
-> prototype already:
-> https://patchwork.ozlabs.org/patch/1095814/
-> (though my real goal isn't to just skip time forward when the host goes
-> idle, it's to sync with other simulated components)
-> 
-> 
-> _______________________________________________
-> linux-um mailing list
-> linux-um@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-um
-> 
+> I went for the native approach at the end though.
 
-I have looked at using virtio semantics in UML in the past around the 
-point when I wanted to make the recvmmsg/sendmmsg vector drivers common 
-in UML and QEMU. It is certainly possible,
+Hmm. I'm not sure what you mean by either :-)
 
-I went for the native approach at the end though.
+Is there any commonality between the vector drivers? I can't see how
+that'd work without a bus abstraction (like virtio) in qemu? I mean, the
+kernel driver just calls uml_vector_sendmmsg(), which I'd say belongs
+more to the 'outside world', but that can't really be done in qemu?
 
--- 
-Anton R. Ivanov
-https://www.kot-begemot.co.uk/
+Ok, I guess then I see what you mean by 'native' though.
+
+Similarly, of course, I can implement arbitrary virt-io devices - just
+the kernel side doesn't call a function like uml_vector_sendmmsg()
+directly, but instead the virt-io model, and the model calls the
+function, which essentially is the same just with a (convenient)
+abstraction layer.
+
+But this leaves the fundamental fact the model code ("vector_user.c" or
+a similar "virtio_user.c") is still part of the build.
+
+I guess what I'm thinking is have something like "virtio_user_rpc.c"
+that uses some appropriate RPC to interact with the real model. IOW,
+rather than having all the model-specific logic actually be here (like
+vector_user.c actually knows how to send network packets over a real
+socket fd), try to call out to some RPC that contains the real model.
+
+Now that I thought about it further, I guess my question boils down to
+"did anyone ever think about doing RPC for Virt-IO instead of putting
+the entire device model into the hypervisor/emulator/...".
+
+johannes
+
 
 _______________________________________________
 linux-um mailing list
