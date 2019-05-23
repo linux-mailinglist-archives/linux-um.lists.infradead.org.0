@@ -2,54 +2,54 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C18A42872A
-	for <lists+linux-um@lfdr.de>; Thu, 23 May 2019 21:23:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BBCC12880F
+	for <lists+linux-um@lfdr.de>; Thu, 23 May 2019 21:30:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0G5G2Yef2TZUNsAAMuhmIELIrRTgOX11tAmB+zEBuYc=; b=XASLoyl/g6jCtF
-	NqnBbe2q5zScuQbicGY0ZU5l7yUmpBelgCHg0iJuIyJkyDqIBj9d1iHiW+RDgG3fsykGaagomGWb/
-	FNeCPMsvC1EX0MZCTjh72eZxOAiNQFrBDMT8Uh6BVDGmXy+FB2MV0p+nZkHyqAqrimZeiTeIABC+Z
-	sX+aFjSLlEvkaj8UtUyO54P0gmlhTVKMA99eAenyC4U9sASp/yoYjai56BOCCNNObWkw/pdXXLyx4
-	u4yEUK+YoFBpoT100q/5SgNEP0c6OKOdoWwiiv4CXVWcDiltC5UYhYfLiErevXY51VoN6pnIz1DiS
-	z0K9GJweNJL3C1sbB9tg==;
+	List-Owner; bh=jY8QCCSJJh3uEW1G+XaV32mxXuT8guN8L0w/ixLBztE=; b=TTHjv7B04AovMp
+	w4HOLoerw8i1tpW0PyciLLW0B1UvzrofTuNCTRuPbNSHt5UJoWHXBkdilQtbRjzRMObdSo7Fe+NMS
+	ZZ3n3Hfz3sk+3xZPE7IMfkfkHShIb2enxVmYNg1MXudAxrmGjhlqgtlbelZqrgyREiIzwm1AaxJOh
+	NrFDXizheaHfP9gA/w3LPu7uAQDBJfYvqN652STITLPPZrftAqxq1bZzB5iHeptfrJVaRhIMeB8ji
+	8VGOp7cOkAFA9rQZFVyj2Dd+jKslczViUDs1fYJ1Gz793r8VQyKLmgqJWemreVQntmxHdypsaUgFl
+	W1afXYo9FnowQm/NPBjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTtJF-0004o1-Fw; Thu, 23 May 2019 19:23:25 +0000
+	id 1hTtPq-00005g-Dr; Thu, 23 May 2019 19:30:14 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTtJB-0004mu-8K
- for linux-um@lists.infradead.org; Thu, 23 May 2019 19:23:23 +0000
+ id 1hTtPm-0008WL-2W
+ for linux-um@lists.infradead.org; Thu, 23 May 2019 19:30:12 +0000
 Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
  [83.86.89.107])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 3E1E220868;
- Thu, 23 May 2019 19:23:20 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2C6D62184E;
+ Thu, 23 May 2019 19:30:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1558639400;
- bh=2RbjxuETqCYHxBeM3B7PFPrflHs91gMsDYPlQQFhKMg=;
+ s=default; t=1558639809;
+ bh=CEjSQKcQX8NSHi1TNZ+5ZjFl4c/v4c2fuPv/tZD9tFQ=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=ge58KPWrSV7wz9R7P10QsrfSe3YNnb7FpLhxrd1Swv1TGFKciuI98TEXWm0Q6rwxu
- uqGxp0l30P5U+a9nNodBxNMjBF54FESz2ZUynQsQR7wZAulLB/COMMtCPm1QgPYbOu
- ut+tG+iAZ4wpDslT0s6oXhU0rI0HR8HmA+TVqPvk=
+ b=iKWtBtV5S+Nm27ABAq95oyWEZPS02Rb/dbx++GYXJ1Q8Pit8SZQRJZNcZy0hrzlc3
+ kQ9PcPsiOw9Nvbfg28V4sz253SeX8aUbV5Oy0OQZn4tkEufnI1HILNFGNEI4S8aTjq
+ 0qpUHl2CyqUYt/5/mXiy9MpCFbt1nLEuhXv3Iv8w=
 From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH 5.0 075/139] x86/mpx,
+Subject: [PATCH 5.1 084/122] x86/mpx,
  mm/core: Fix recursive munmap() corruption
-Date: Thu, 23 May 2019 21:06:03 +0200
-Message-Id: <20190523181730.571246299@linuxfoundation.org>
+Date: Thu, 23 May 2019 21:06:46 +0200
+Message-Id: <20190523181716.017288615@linuxfoundation.org>
 X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20190523181720.120897565@linuxfoundation.org>
-References: <20190523181720.120897565@linuxfoundation.org>
+In-Reply-To: <20190523181705.091418060@linuxfoundation.org>
+References: <20190523181705.091418060@linuxfoundation.org>
 User-Agent: quilt/0.66
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190523_122321_327783_938DB02F 
-X-CRM114-Status: GOOD (  25.71  )
+X-CRM114-CacheID: sfid-20190523_123010_155253_4CABE3C1 
+X-CRM114-Status: GOOD (  25.69  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -406,7 +406,7 @@ Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
  }
 --- a/mm/mmap.c
 +++ b/mm/mmap.c
-@@ -2736,9 +2736,17 @@ int __do_munmap(struct mm_struct *mm, un
+@@ -2735,9 +2735,17 @@ int __do_munmap(struct mm_struct *mm, un
  		return -EINVAL;
  
  	len = PAGE_ALIGN(len);
@@ -424,7 +424,7 @@ Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
  	/* Find the first overlapping VMA */
  	vma = find_vma(mm, start);
  	if (!vma)
-@@ -2747,7 +2755,6 @@ int __do_munmap(struct mm_struct *mm, un
+@@ -2746,7 +2754,6 @@ int __do_munmap(struct mm_struct *mm, un
  	/* we have  start < vma->vm_end  */
  
  	/* if it doesn't overlap, we have nothing.. */
@@ -432,7 +432,7 @@ Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
  	if (vma->vm_start >= end)
  		return 0;
  
-@@ -2817,12 +2824,6 @@ int __do_munmap(struct mm_struct *mm, un
+@@ -2816,12 +2823,6 @@ int __do_munmap(struct mm_struct *mm, un
  	/* Detach vmas from rbtree */
  	detach_vmas_to_be_unmapped(mm, vma, prev, end);
  
