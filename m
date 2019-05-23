@@ -2,43 +2,43 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1DF7827BC3
-	for <lists+linux-um@lfdr.de>; Thu, 23 May 2019 13:29:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 18E0B27BC8
+	for <lists+linux-um@lfdr.de>; Thu, 23 May 2019 13:30:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:From:To:
 	Subject:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=qBaWCKfl/l0KMKtUDNMHV6ba0nZHdbzVlSOkxOYVVLo=; b=aMsd9kpKWSsdG3
-	MitWArVxKRB/EPwsXaG3mvIrvyxvs4H5Gyazd6JUWgIZLJlwujd61nZIWIfxDb5CvxccufYrm3e0C
-	PP7G853NNQIGT7xqY+vAB5r4tle3REcGlZDf3tilrqNV0hFNyAaqSmQJtT4X4at1JbsuTrVZOTkyU
-	vK5+tBiClu4RwY0F5Ol6DcvSrKk4507CtEmAed6LHcZS4XlkxZcoS7CTT5MrYUjfvym7ubRQIl0RQ
-	Pa976+hCobj+t1KCg/rhUubtlVOnaDbPeAXrJH684nQrkNlBcGp2PA4evOr7gosgb85iaFYAAdoLP
-	1jTd4pH2SuKaTCuoyhxA==;
+	List-Owner; bh=ctT+Cfs1ueDNv/n/hZXL8kX2B/CHImKMRbe20U82las=; b=t9iwspFWz7AfKB
+	wxopu6ZS1eHSUp2tmbDE0vcOlxoOmi2i1BUu/TAAI55gzlcw+Axl3IM+08eEB46gV9D8kr94a1vat
+	Ec3zF7u1hsvwHQZ2Qu7b/AtXGVAKRlmc9VjQtitPALQ9cXrf00FPuBbpj0CgbZiD1w8aUcS1OHpQb
+	S97+QLjA6DAIDdBhuBgOJCeQgamFVg4DMRYxouvVV/6SxtjhibBN0LqWMBtNOW1k1d0iWwVFW0uA9
+	RPpLSCWmm5sq3ZFjGaRni5sh2my/0GsLkHOYvXcbsBx71lZLLdzCqaB9EPWjOwcCU/Aep63AJS79M
+	4u/qUdn2aTERW3eBHpNA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTlue-0005bt-PF; Thu, 23 May 2019 11:29:32 +0000
+	id 1hTlvm-0006yT-1f; Thu, 23 May 2019 11:30:42 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTlua-0005bT-15
- for linux-um@lists.infradead.org; Thu, 23 May 2019 11:29:30 +0000
+ id 1hTlvj-0006y5-1d
+ for linux-um@lists.infradead.org; Thu, 23 May 2019 11:30:41 +0000
 Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
  [83.86.89.107])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 15FF621871;
- Thu, 23 May 2019 11:29:26 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4461A21873;
+ Thu, 23 May 2019 11:30:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1558610966;
- bh=LRQ74B2rYPwMQlOWa99wSe0znTiX8FTGrc5uKOZNdto=;
+ s=default; t=1558611038;
+ bh=iqSuTD7PVtjRi6mKaicsjbueODzhC9YF2RHYYjQezXc=;
  h=Subject:To:Cc:From:Date:From;
- b=Jfhvi61p9TrhJ4eor1tqhz4eNdHL8/8DwZdDkS393WkKmGU2/SyiSKfiDe8Pxqpss
- QkoQumh8yyZpqw4BICELpWlcZnBJYI8GLXMUrgxuBqlgw7X75/Vk24i1m7kI0R0VBO
- 60XPoMTwLFKqQ3kMzHBUbw7ZzWpvLKWK1FZM9Lek=
+ b=e14TSiAKol5YPgz8qbyTOmVxUN3dibzJXd4G3qeAjfnKXBnrSE3MoThjgBKbLlZJo
+ n4fz46EE9gLdx1syZk2fNgzco+76pslVL6sLaaODPd0kfwWSARnmt4wCIcYBeU3YY6
+ 1M1RSvi0BDe5UCBQuANwP4zP0DwiHNTT5qFeqzH8=
 Subject: Patch "x86/mpx,
  mm/core: Fix recursive munmap() corruption" has been added to the
- 5.0-stable tree
+ 5.1-stable tree
 To: 20190419194747.5E1AD6DC@viggo.jf.intel.com, akpm@linux-foundation.org,
  anton.ivanov@cambridgegreys.com, benh@kernel.crashing.org, bp@alien8.de,
  dave.hansen@linux.intel.com, gregkh@linuxfoundation.org, gxt@pku.edu.cn,
@@ -49,13 +49,13 @@ To: 20190419194747.5E1AD6DC@viggo.jf.intel.com, akpm@linux-foundation.org,
  tglx@linutronix.de, torvalds@linux-foundation.org, vbabka@suse.cz,
  yang.shi@linux.alibaba.com
 From: <gregkh@linuxfoundation.org>
-Date: Thu, 23 May 2019 13:26:17 +0200
-Message-ID: <155861077763253@kroah.com>
+Date: Thu, 23 May 2019 13:26:35 +0200
+Message-ID: <155861079524166@kroah.com>
 MIME-Version: 1.0
 X-stable: commit
 X-Patchwork-Hint: ignore 
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190523_042928_107428_3DCE1621 
+X-CRM114-CacheID: sfid-20190523_043039_124323_9F83E5D3 
 X-CRM114-Status: GOOD (  26.14  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -92,12 +92,12 @@ This is a note to let you know that I've just added the patch titled
 
     x86/mpx, mm/core: Fix recursive munmap() corruption
 
-to the 5.0-stable tree which can be found at:
+to the 5.1-stable tree which can be found at:
     http://www.kernel.org/git/?p=linux/kernel/git/stable/stable-queue.git;a=summary
 
 The filename of the patch is:
      x86-mpx-mm-core-fix-recursive-munmap-corruption.patch
-and it can be found in the queue-5.0 subdirectory.
+and it can be found in the queue-5.1 subdirectory.
 
 If you, or anyone else, feels it should not be added to the stable tree,
 please let <stable@vger.kernel.org> know about it.
@@ -419,7 +419,7 @@ Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
  }
 --- a/mm/mmap.c
 +++ b/mm/mmap.c
-@@ -2736,9 +2736,17 @@ int __do_munmap(struct mm_struct *mm, un
+@@ -2735,9 +2735,17 @@ int __do_munmap(struct mm_struct *mm, un
  		return -EINVAL;
  
  	len = PAGE_ALIGN(len);
@@ -437,7 +437,7 @@ Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
  	/* Find the first overlapping VMA */
  	vma = find_vma(mm, start);
  	if (!vma)
-@@ -2747,7 +2755,6 @@ int __do_munmap(struct mm_struct *mm, un
+@@ -2746,7 +2754,6 @@ int __do_munmap(struct mm_struct *mm, un
  	/* we have  start < vma->vm_end  */
  
  	/* if it doesn't overlap, we have nothing.. */
@@ -445,7 +445,7 @@ Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
  	if (vma->vm_start >= end)
  		return 0;
  
-@@ -2817,12 +2824,6 @@ int __do_munmap(struct mm_struct *mm, un
+@@ -2816,12 +2823,6 @@ int __do_munmap(struct mm_struct *mm, un
  	/* Detach vmas from rbtree */
  	detach_vmas_to_be_unmapped(mm, vma, prev, end);
  
@@ -462,7 +462,7 @@ Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 
 Patches currently in stable-queue which might be from dave.hansen@linux.intel.com are
 
-queue-5.0/x86-mpx-mm-core-fix-recursive-munmap-corruption.patch
+queue-5.1/x86-mpx-mm-core-fix-recursive-munmap-corruption.patch
 
 _______________________________________________
 linux-um mailing list
