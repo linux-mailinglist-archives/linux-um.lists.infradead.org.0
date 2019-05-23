@@ -2,133 +2,74 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 200722783A
-	for <lists+linux-um@lfdr.de>; Thu, 23 May 2019 10:40:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1DF7827BC3
+	for <lists+linux-um@lfdr.de>; Thu, 23 May 2019 13:29:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZtLit7IWyCf8DSpe3jG3FvJ59W4M5cS1njSjOrdam7c=; b=PLT6sLzSAgJW5D
-	LK9OsB5lUnGZVqm7xYvmedBC/FiBadS7XG058Yd1wZxYb0mdy9ewgmx835U4Ez3HD3RG4rKscCO4c
-	at8pDs865ukn6wrkqec4ye+ES96xWH6sK0I1aQ/u4otjTLyyZ5MlxN7EriuH0CEz86DCAAZe7HNGi
-	0IiVIXsonnOXrjDwuNfaGe1+QyLMMNMXIR+H/LAPt9z2JyBnzja2a072g6cYaWEz9WZkHtO4lWAlY
-	6WoFALOkL8alx9PXf5rwWTVXoFz0zTAB9GXuuGk2WzTh3BXZhfqPqlxzt81KVzslm4j45RZgOK+lv
-	HDEKyU0sabtI7uvi7lwA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:From:To:
+	Subject:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=qBaWCKfl/l0KMKtUDNMHV6ba0nZHdbzVlSOkxOYVVLo=; b=aMsd9kpKWSsdG3
+	MitWArVxKRB/EPwsXaG3mvIrvyxvs4H5Gyazd6JUWgIZLJlwujd61nZIWIfxDb5CvxccufYrm3e0C
+	PP7G853NNQIGT7xqY+vAB5r4tle3REcGlZDf3tilrqNV0hFNyAaqSmQJtT4X4at1JbsuTrVZOTkyU
+	vK5+tBiClu4RwY0F5Ol6DcvSrKk4507CtEmAed6LHcZS4XlkxZcoS7CTT5MrYUjfvym7ubRQIl0RQ
+	Pa976+hCobj+t1KCg/rhUubtlVOnaDbPeAXrJH684nQrkNlBcGp2PA4evOr7gosgb85iaFYAAdoLP
+	1jTd4pH2SuKaTCuoyhxA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTjGu-000703-2y; Thu, 23 May 2019 08:40:20 +0000
-Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
+	id 1hTlue-0005bt-PF; Thu, 23 May 2019 11:29:32 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTjGn-0006sK-4P
- for linux-um@lists.infradead.org; Thu, 23 May 2019 08:40:15 +0000
-Received: by mail-ed1-x543.google.com with SMTP id w37so8089850edw.4
- for <linux-um@lists.infradead.org>; Thu, 23 May 2019 01:40:12 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ffwll.ch; s=google;
- h=sender:date:from:to:cc:subject:message-id:mail-followup-to
- :references:mime-version:content-disposition:in-reply-to:user-agent;
- bh=OtO3pn3g+W5AJ1zDc3bZ1Gi7BUopJKS5bXtOM69PFV0=;
- b=lq0MyFEeRcjMOqOeV3+f0i+TJjbwdAlfr6V7mYhQGHiFiyqULL6S2+Syj4bf4Ap+X1
- LTiy/HFPl8cYz36rVJ8eFk1gpYRLbr8SuDawjh76uT+RILl5tWpijdVhlyN7ntHtzA3K
- PNyVHRqlLgXqxpA59M9A3TUICNOzB/ZluRNqA=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
- :mail-followup-to:references:mime-version:content-disposition
- :in-reply-to:user-agent;
- bh=OtO3pn3g+W5AJ1zDc3bZ1Gi7BUopJKS5bXtOM69PFV0=;
- b=hycNyUUwTp8uocg4RD51qZw1qV0x8Ev4vNfC61se+dIBgQdncmgkoDgj8vGoqNXJ6d
- 8wVclxqvOR50o/DIbhdu848Ca0YrtmKBg2FLUvTEFNK54S9/i/jm7pXtic8GNdXmO1au
- Lymol4uVlXclpFU4eaRAA166G7EsQK2QY8CJp8J1idFHkvN3M3tm9j3l/Kv6IqSZb79D
- 2f7wmq/cp92kGZBHzkmz3fKoTTQGEWlDpstNjAEIx1M17MWuzMpwQUvuh9rI2JzdiZ6w
- ezEOxX7u7wgDySNEfX6O7oFU26kwBVHLc03qmICvNB3rkP7hYDh38kQvl7Igv0MD74AZ
- Cw6w==
-X-Gm-Message-State: APjAAAX1+ezmo22pCyub+dIKsavbWwrKrkqGXDLmdrFhXzft5Q4tHiQy
- Y26wrn2NuBNDUxwnRXcKK1AKug==
-X-Google-Smtp-Source: APXvYqz8Y+bfkGbAgCjaoic1YwZ2Mzn/1QL4hnOd08WL9imIzBVyErPfVOS7r/O39NeU8f+1ffyFzw==
-X-Received: by 2002:a17:906:4995:: with SMTP id
- p21mr47837157eju.140.1558600810787; 
- Thu, 23 May 2019 01:40:10 -0700 (PDT)
-Received: from phenom.ffwll.local ([2a02:168:569e:0:3106:d637:d723:e855])
- by smtp.gmail.com with ESMTPSA id a40sm7754430edd.1.2019.05.23.01.40.08
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 23 May 2019 01:40:09 -0700 (PDT)
-Date: Thu, 23 May 2019 10:40:06 +0200
-From: Daniel Vetter <daniel@ffwll.ch>
-To: Brendan Higgins <brendanhiggins@google.com>
-Subject: Re: [PATCH v2 00/17] kunit: introduce KUnit, the Linux kernel unit
- testing framework
-Message-ID: <20190523084006.GW21222@phenom.ffwll.local>
-Mail-Followup-To: Brendan Higgins <brendanhiggins@google.com>,
- Theodore Ts'o <tytso@mit.edu>,
- Frank Rowand <frowand.list@gmail.com>,
- "Bird, Timothy" <Tim.Bird@sony.com>,
- Knut Omang <knut.omang@oracle.com>,
- Greg KH <gregkh@linuxfoundation.org>,
- Kees Cook <keescook@google.com>,
- Kieran Bingham <kieran.bingham@ideasonboard.com>,
- "Luis R. Rodriguez" <mcgrof@kernel.org>,
- Rob Herring <robh@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
- Shuah Khan <shuah@kernel.org>,
- devicetree <devicetree@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>,
- kunit-dev@googlegroups.com,
- Linux Doc Mailing List <linux-doc@vger.kernel.org>,
- linux-fsdevel@vger.kernel.org,
- linux-kbuild <linux-kbuild@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
- linux-nvdimm <linux-nvdimm@lists.01.org>,
- linux-um@lists.infradead.org,
- Sasha Levin <Alexander.Levin@microsoft.com>,
- Amir Goldstein <amir73il@gmail.com>,
- Dan Carpenter <dan.carpenter@oracle.com>,
- Dan Williams <dan.j.williams@intel.com>,
- Jeff Dike <jdike@addtoit.com>, Joel Stanley <joel@jms.id.au>,
- Julia Lawall <julia.lawall@lip6.fr>,
- Kevin Hilman <khilman@baylibre.com>,
- Logan Gunthorpe <logang@deltatee.com>,
- Michael Ellerman <mpe@ellerman.id.au>,
- Petr Mladek <pmladek@suse.com>, Richard Weinberger <richard@nod.at>,
- David Rientjes <rientjes@google.com>,
- Steven Rostedt <rostedt@goodmis.org>, wfg@linux.intel.com,
- Bjorn Helgaas <bhelgaas@google.com>
-References: <875c546d-9713-bb59-47e4-77a1d2c69a6d@gmail.com>
- <20190509214233.GA20877@mit.edu>
- <80c72e64-2665-bd51-f78c-97f50f9a53ba@gmail.com>
- <20190511173344.GA8507@mit.edu>
- <20190513144451.GQ17751@phenom.ffwll.local>
- <20190514060433.GA181462@google.com>
- <CAKMK7uHqtSF_sazJTbFL+xmQJRk4iwukCKZHoDHhsKkLXk=ECQ@mail.gmail.com>
- <20190514183618.GC109557@google.com>
- <20190515074141.GY17751@phenom.ffwll.local>
- <CAFd5g476Hc+6jL5sV=VJamXCbqGebwHqqN9N9RppQYMCoo052Q@mail.gmail.com>
+ id 1hTlua-0005bT-15
+ for linux-um@lists.infradead.org; Thu, 23 May 2019 11:29:30 +0000
+Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
+ [83.86.89.107])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 15FF621871;
+ Thu, 23 May 2019 11:29:26 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1558610966;
+ bh=LRQ74B2rYPwMQlOWa99wSe0znTiX8FTGrc5uKOZNdto=;
+ h=Subject:To:Cc:From:Date:From;
+ b=Jfhvi61p9TrhJ4eor1tqhz4eNdHL8/8DwZdDkS393WkKmGU2/SyiSKfiDe8Pxqpss
+ QkoQumh8yyZpqw4BICELpWlcZnBJYI8GLXMUrgxuBqlgw7X75/Vk24i1m7kI0R0VBO
+ 60XPoMTwLFKqQ3kMzHBUbw7ZzWpvLKWK1FZM9Lek=
+Subject: Patch "x86/mpx,
+ mm/core: Fix recursive munmap() corruption" has been added to the
+ 5.0-stable tree
+To: 20190419194747.5E1AD6DC@viggo.jf.intel.com, akpm@linux-foundation.org,
+ anton.ivanov@cambridgegreys.com, benh@kernel.crashing.org, bp@alien8.de,
+ dave.hansen@linux.intel.com, gregkh@linuxfoundation.org, gxt@pku.edu.cn,
+ hjl.tools@gmail.com, hpa@zytor.com, jdike@addtoit.com, linux-mm@kvack.org,
+ linux-um@lists.infradead.org, linuxppc-dev@lists.ozlabs.org, luto@kernel.org,
+ mhocko@suse.com, mingo@kernel.org, mpe@ellerman.id.au, paulus@samba.org,
+ peterz@infradead.org, rguenther@suse.de, richard@nod.at, riel@surriel.com,
+ tglx@linutronix.de, torvalds@linux-foundation.org, vbabka@suse.cz,
+ yang.shi@linux.alibaba.com
+From: <gregkh@linuxfoundation.org>
+Date: Thu, 23 May 2019 13:26:17 +0200
+Message-ID: <155861077763253@kroah.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAFd5g476Hc+6jL5sV=VJamXCbqGebwHqqN9N9RppQYMCoo052Q@mail.gmail.com>
-X-Operating-System: Linux phenom 4.14.0-3-amd64 
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-stable: commit
+X-Patchwork-Hint: ignore 
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190523_014013_233142_FE7C0CFE 
-X-CRM114-Status: GOOD (  43.00  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190523_042928_107428_3DCE1621 
+X-CRM114-Status: GOOD (  26.14  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 T_DKIMWL_WL_HIGH       DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -140,222 +81,388 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: Petr Mladek <pmladek@suse.com>,
- Linux Doc Mailing List <linux-doc@vger.kernel.org>,
- Amir Goldstein <amir73il@gmail.com>,
- dri-devel <dri-devel@lists.freedesktop.org>,
- Sasha Levin <Alexander.Levin@microsoft.com>,
- Michael Ellerman <mpe@ellerman.id.au>,
- "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
- Shuah Khan <shuah@kernel.org>, Rob Herring <robh@kernel.org>,
- linux-nvdimm <linux-nvdimm@lists.01.org>,
- Frank Rowand <frowand.list@gmail.com>, Knut Omang <knut.omang@oracle.com>,
- Kieran Bingham <kieran.bingham@ideasonboard.com>, wfg@linux.intel.com,
- Joel Stanley <joel@jms.id.au>, David Rientjes <rientjes@google.com>,
- Jeff Dike <jdike@addtoit.com>, Dan Carpenter <dan.carpenter@oracle.com>,
- devicetree <devicetree@vger.kernel.org>,
- linux-kbuild <linux-kbuild@vger.kernel.org>, "Bird,
- Timothy" <Tim.Bird@sony.com>, linux-um@lists.infradead.org,
- Steven Rostedt <rostedt@goodmis.org>, Julia Lawall <julia.lawall@lip6.fr>,
- Bjorn Helgaas <bhelgaas@google.com>, Dan Williams <dan.j.williams@intel.com>,
- kunit-dev@googlegroups.com, Theodore Ts'o <tytso@mit.edu>,
- Richard Weinberger <richard@nod.at>, Stephen Boyd <sboyd@kernel.org>,
- Greg KH <gregkh@linuxfoundation.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- "Luis R. Rodriguez" <mcgrof@kernel.org>, Daniel Vetter <daniel@ffwll.ch>,
- Kees Cook <keescook@google.com>, linux-fsdevel@vger.kernel.org,
- Logan Gunthorpe <logang@deltatee.com>, Kevin Hilman <khilman@baylibre.com>
+Cc: stable-commits@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Wed, May 22, 2019 at 02:38:48PM -0700, Brendan Higgins wrote:
-> +Bjorn Helgaas
-> 
-> On Wed, May 15, 2019 at 12:41 AM Daniel Vetter <daniel@ffwll.ch> wrote:
-> >
-> > On Tue, May 14, 2019 at 11:36:18AM -0700, Brendan Higgins wrote:
-> > > On Tue, May 14, 2019 at 02:05:05PM +0200, Daniel Vetter wrote:
-> > > > On Tue, May 14, 2019 at 8:04 AM Brendan Higgins
-> > > > <brendanhiggins@google.com> wrote:
-> > > > >
-> > > > > On Mon, May 13, 2019 at 04:44:51PM +0200, Daniel Vetter wrote:
-> > > > > > On Sat, May 11, 2019 at 01:33:44PM -0400, Theodore Ts'o wrote:
-> > > > > > > On Fri, May 10, 2019 at 02:12:40PM -0700, Frank Rowand wrote:
-> > > > > > > > However, the reply is incorrect.  Kselftest in-kernel tests (which
-> > > > > > > > is the context here) can be configured as built in instead of as
-> > > > > > > > a module, and built in a UML kernel.  The UML kernel can boot,
-> > > > > > > > running the in-kernel tests before UML attempts to invoke the
-> > > > > > > > init process.
-> > > > > > >
-> > > > > > > Um, Citation needed?
-> > > > > > >
-> > > > > > > I don't see any evidence for this in the kselftest documentation, nor
-> > > > > > > do I see any evidence of this in the kselftest Makefiles.
-> > > > > > >
-> > > > > > > There exists test modules in the kernel that run before the init
-> > > > > > > scripts run --- but that's not strictly speaking part of kselftests,
-> > > > > > > and do not have any kind of infrastructure.  As noted, the
-> > > > > > > kselftests_harness header file fundamentally assumes that you are
-> > > > > > > running test code in userspace.
-> > > > > >
-> > > > > > Yeah I really like the "no userspace required at all" design of kunit,
-> > > > > > while still collecting results in a well-defined way (unless the current
-> > > > > > self-test that just run when you load the module, with maybe some
-> > > > > > kselftest ad-hoc wrapper around to collect the results).
-> > > > > >
-> > > > > > What I want to do long-term is to run these kernel unit tests as part of
-> > > > > > the build-testing, most likely in gitlab (sooner or later, for drm.git
-> > > > >
-> > > > > Totally! This is part of the reason I have been insisting on a minimum
-> > > > > of UML compatibility for all unit tests. If you can suffiently constrain
-> > > > > the environment that is required for tests to run in, it makes it much
-> > > > > easier not only for a human to run your tests, but it also makes it a
-> > > > > lot easier for an automated service to be able to run your tests.
-> > > > >
-> > > > > I actually have a prototype presubmit already working on my
-> > > > > "stable/non-upstream" branch. You can checkout what presubmit results
-> > > > > look like here[1][2].
-> > > >
-> > > > ug gerrit :-)
-> > >
-> > > Yeah, yeah, I know, but it is a lot easier for me to get a project set
-> > > up here using Gerrit, when we already use that for a lot of other
-> > > projects.
-> > >
-> > > Also, Gerrit has gotten a lot better over the last two years or so. Two
-> > > years ago, I wouldn't touch it with a ten foot pole. It's not so bad
-> > > anymore, at least if you are used to using a web UI to review code.
-> >
-> > I was somewhat joking, I'm just not used to gerrit ... And seems to indeed
-> > be a lot more polished than last time I looked at it seriously.
-> 
-> I mean, it is still not perfect, but I think it has finally gotten to
-> the point where I prefer it over reviewing by email for high context
-> patches where you don't expect a lot of deep discussion.
-> 
-> Still not great for patches where you want to have a lot of discussion.
-> 
-> > > > > > only ofc). So that people get their pull requests (and patch series, we
-> > > > > > have some ideas to tie this into patchwork) automatically tested for this
-> > > > >
-> > > > > Might that be Snowpatch[3]? I talked to Russell, the creator of Snowpatch,
-> > > > > and he seemed pretty open to collaboration.
-> > > > >
-> > > > > Before I heard about Snowpatch, I had an intern write a translation
-> > > > > layer that made Prow (the presubmit service that I used in the prototype
-> > > > > above) work with LKML[4].
-> > > >
-> > > > There's about 3-4 forks/clones of patchwork. snowpatch is one, we have
-> > > > a different one on freedesktop.org. It's a bit a mess :-/
-> 
-> I think Snowpatch is an ozlabs project; at least the maintainer works at IBM.
-> 
-> Patchwork originally was a ozlabs project, right?
 
-So there's two patchworks (snowpatch makes the 3rd): the one on
-freedesktop is another fork.
+This is a note to let you know that I've just added the patch titled
 
-> Has any discussion taken place trying to consolidate some of the forks?
+    x86/mpx, mm/core: Fix recursive munmap() corruption
 
-Yup, but didn't lead anywhere unfortunately :-/ At least between patchwork
-and patchwork-fdo, I think snowpatch happened in parallel and once it was
-done it's kinda too late. The trouble is that they all have slightly
-different REST api and functionality, so for CI integration you can't just
-switch one for the other.
+to the 5.0-stable tree which can be found at:
+    http://www.kernel.org/git/?p=linux/kernel/git/stable/stable-queue.git;a=summary
 
-> Presubmit clearly seems like a feature that a number of people want.
-> 
-> > > Oh, I didn't realize that. I found your patchwork instance here[5], but
-> > > do you have a place where I can see the changes you have added to
-> > > support presubmit?
-> >
-> > Ok here's a few links. Aside from the usual patch view we've also added a
-> > series view:
-> >
-> > https://patchwork.freedesktop.org/project/intel-gfx/series/?ordering=-last_updated
-> >
-> > This ties the patches + cover letter together, and it even (tries to at
-> > least) track revisions. Here's an example which is currently at revision
-> > 9:
-> >
-> > https://patchwork.freedesktop.org/series/57232/
-> 
-> Oooh, nice! That looks awesome! Looks like you have a number of presubmits too.
+The filename of the patch is:
+     x86-mpx-mm-core-fix-recursive-munmap-corruption.patch
+and it can be found in the queue-5.0 subdirectory.
 
-We have a pretty big farm of machines that mostly just crunch through
-premerge patch series. postmerge is mostly just for statistics (so we can
-find the sporadic failures and better characterize them).
+If you, or anyone else, feels it should not be added to the stable tree,
+please let <stable@vger.kernel.org> know about it.
 
-> > Below the patch list for each revision we also have the test result list.
-> > If you click on the grey bar it'll expand with the summary from CI, the
-> > "See full logs" is link to the full results from our CI. This is driven
-> > with some REST api from our jenkins.
-> >
-> > Patchwork also sends out mails for these results.
-> 
-> Nice! There are obviously a lot of other bots on various kernel
-> mailing lists. Do you think people would object to sending presubmit
-> results to the mailing lists by default?
-> 
-> > Source is on gitlab: https://gitlab.freedesktop.org/patchwork-fdo
-> 
-> Err, looks like you forked from the ozlab's repo a good while ago.
 
-Yeah see above, it's a bit a complicated story. I think there's a total of
-3 patchworks now :-/
+From 5a28fc94c9143db766d1ba5480cae82d856ad080 Mon Sep 17 00:00:00 2001
+From: Dave Hansen <dave.hansen@linux.intel.com>
+Date: Fri, 19 Apr 2019 12:47:47 -0700
+Subject: x86/mpx, mm/core: Fix recursive munmap() corruption
 
-> Still, this all looks great!
+From: Dave Hansen <dave.hansen@linux.intel.com>
 
-Cheers, Daniel
+commit 5a28fc94c9143db766d1ba5480cae82d856ad080 upstream.
 
-> 
-> > > > > I am not married to either approach, but I think between the two of
-> > > > > them, most of the initial legwork has been done to make presubmit on
-> > > > > LKML a reality.
-> > > >
-> > > > We do have presubmit CI working already with our freedesktop.org
-> > > > patchwork. The missing glue is just tying that into gitlab CI somehow
-> > > > (since we want to unify build testing more and make it easier for
-> > > > contributors to adjust things).
-> > >
-> > > I checked out a couple of your projects on your patchwork instance: AMD
-> > > X.Org drivers, DRI devel, and Wayland. I saw the tab you added for
-> > > tests, but none of them actually had any test results. Can you point me
-> > > at one that does?
-> >
-> > Atm we use the CI stuff only on intel-gfx, with the our gpu CI farm, see
-> > links above.
-> >
-> > Cheers, Daniel
-> >
-> > >
-> > > Cheers!
-> > >
-> > > [5] https://patchwork.freedesktop.org/
-> > >
-> > > > > > super basic stuff.
-> > > > >
-> > > > > I am really excited to hear back on what you think!
-> > > > >
-> > > > > Cheers!
-> > > > >
-> > > > > [1] https://kunit-review.googlesource.com/c/linux/+/1509/10#message-7bfa40efb132e15c8388755c273837559911425c
-> > > > > [2] https://kunit-review.googlesource.com/c/linux/+/1509/10#message-a6784496eafff442ac98fb068bf1a0f36ee73509
-> > > > > [3] https://developer.ibm.com/open/projects/snowpatch/
-> > > > > [4] https://kunit.googlesource.com/prow-lkml/
-> > > > > _______________________________________________
-> > > > > dri-devel mailing list
-> > > > > dri-devel@lists.freedesktop.org
-> > > > > https://lists.freedesktop.org/mailman/listinfo/dri-devel
-> 
-> Cheers!
+This is a bit of a mess, to put it mildly.  But, it's a bug
+that only seems to have showed up in 4.20 but wasn't noticed
+until now, because nobody uses MPX.
 
--- 
-Daniel Vetter
-Software Engineer, Intel Corporation
-http://blog.ffwll.ch
+MPX has the arch_unmap() hook inside of munmap() because MPX
+uses bounds tables that protect other areas of memory.  When
+memory is unmapped, there is also a need to unmap the MPX
+bounds tables.  Barring this, unused bounds tables can eat 80%
+of the address space.
+
+But, the recursive do_munmap() that gets called vi arch_unmap()
+wreaks havoc with __do_munmap()'s state.  It can result in
+freeing populated page tables, accessing bogus VMA state,
+double-freed VMAs and more.
+
+See the "long story" further below for the gory details.
+
+To fix this, call arch_unmap() before __do_unmap() has a chance
+to do anything meaningful.  Also, remove the 'vma' argument
+and force the MPX code to do its own, independent VMA lookup.
+
+== UML / unicore32 impact ==
+
+Remove unused 'vma' argument to arch_unmap().  No functional
+change.
+
+I compile tested this on UML but not unicore32.
+
+== powerpc impact ==
+
+powerpc uses arch_unmap() well to watch for munmap() on the
+VDSO and zeroes out 'current->mm->context.vdso_base'.  Moving
+arch_unmap() makes this happen earlier in __do_munmap().  But,
+'vdso_base' seems to only be used in perf and in the signal
+delivery that happens near the return to userspace.  I can not
+find any likely impact to powerpc, other than the zeroing
+happening a little earlier.
+
+powerpc does not use the 'vma' argument and is unaffected by
+its removal.
+
+I compile-tested a 64-bit powerpc defconfig.
+
+== x86 impact ==
+
+For the common success case this is functionally identical to
+what was there before.  For the munmap() failure case, it's
+possible that some MPX tables will be zapped for memory that
+continues to be in use.  But, this is an extraordinarily
+unlikely scenario and the harm would be that MPX provides no
+protection since the bounds table got reset (zeroed).
+
+I can't imagine anyone doing this:
+
+	ptr = mmap();
+	// use ptr
+	ret = munmap(ptr);
+	if (ret)
+		// oh, there was an error, I'll
+		// keep using ptr.
+
+Because if you're doing munmap(), you are *done* with the
+memory.  There's probably no good data in there _anyway_.
+
+This passes the original reproducer from Richard Biener as
+well as the existing mpx selftests/.
+
+The long story:
+
+munmap() has a couple of pieces:
+
+ 1. Find the affected VMA(s)
+ 2. Split the start/end one(s) if neceesary
+ 3. Pull the VMAs out of the rbtree
+ 4. Actually zap the memory via unmap_region(), including
+    freeing page tables (or queueing them to be freed).
+ 5. Fix up some of the accounting (like fput()) and actually
+    free the VMA itself.
+
+This specific ordering was actually introduced by:
+
+  dd2283f2605e ("mm: mmap: zap pages with read mmap_sem in munmap")
+
+during the 4.20 merge window.  The previous __do_munmap() code
+was actually safe because the only thing after arch_unmap() was
+remove_vma_list().  arch_unmap() could not see 'vma' in the
+rbtree because it was detached, so it is not even capable of
+doing operations unsafe for remove_vma_list()'s use of 'vma'.
+
+Richard Biener reported a test that shows this in dmesg:
+
+  [1216548.787498] BUG: Bad rss-counter state mm:0000000017ce560b idx:1 val:551
+  [1216548.787500] BUG: non-zero pgtables_bytes on freeing mm: 24576
+
+What triggered this was the recursive do_munmap() called via
+arch_unmap().  It was freeing page tables that has not been
+properly zapped.
+
+But, the problem was bigger than this.  For one, arch_unmap()
+can free VMAs.  But, the calling __do_munmap() has variables
+that *point* to VMAs and obviously can't handle them just
+getting freed while the pointer is still in use.
+
+I tried a couple of things here.  First, I tried to fix the page
+table freeing problem in isolation, but I then found the VMA
+issue.  I also tried having the MPX code return a flag if it
+modified the rbtree which would force __do_munmap() to re-walk
+to restart.  That spiralled out of control in complexity pretty
+fast.
+
+Just moving arch_unmap() and accepting that the bonkers failure
+case might eat some bounds tables seems like the simplest viable
+fix.
+
+This was also reported in the following kernel bugzilla entry:
+
+  https://bugzilla.kernel.org/show_bug.cgi?id=203123
+
+There are some reports that this commit triggered this bug:
+
+  dd2283f2605 ("mm: mmap: zap pages with read mmap_sem in munmap")
+
+While that commit certainly made the issues easier to hit, I believe
+the fundamental issue has been with us as long as MPX itself, thus
+the Fixes: tag below is for one of the original MPX commits.
+
+[ mingo: Minor edits to the changelog and the patch. ]
+
+Reported-by: Richard Biener <rguenther@suse.de>
+Reported-by: H.J. Lu <hjl.tools@gmail.com>
+Signed-off-by: Dave Hansen <dave.hansen@linux.intel.com>
+Reviewed-by Thomas Gleixner <tglx@linutronix.de>
+Reviewed-by: Yang Shi <yang.shi@linux.alibaba.com>
+Acked-by: Michael Ellerman <mpe@ellerman.id.au>
+Cc: Andrew Morton <akpm@linux-foundation.org>
+Cc: Andy Lutomirski <luto@kernel.org>
+Cc: Anton Ivanov <anton.ivanov@cambridgegreys.com>
+Cc: Benjamin Herrenschmidt <benh@kernel.crashing.org>
+Cc: Borislav Petkov <bp@alien8.de>
+Cc: Guan Xuetao <gxt@pku.edu.cn>
+Cc: H. Peter Anvin <hpa@zytor.com>
+Cc: Jeff Dike <jdike@addtoit.com>
+Cc: Linus Torvalds <torvalds@linux-foundation.org>
+Cc: Michal Hocko <mhocko@suse.com>
+Cc: Paul Mackerras <paulus@samba.org>
+Cc: Peter Zijlstra <peterz@infradead.org>
+Cc: Richard Weinberger <richard@nod.at>
+Cc: Rik van Riel <riel@surriel.com>
+Cc: Vlastimil Babka <vbabka@suse.cz>
+Cc: linux-arch@vger.kernel.org
+Cc: linux-mm@kvack.org
+Cc: linux-um@lists.infradead.org
+Cc: linuxppc-dev@lists.ozlabs.org
+Cc: stable@vger.kernel.org
+Fixes: dd2283f2605e ("mm: mmap: zap pages with read mmap_sem in munmap")
+Link: http://lkml.kernel.org/r/20190419194747.5E1AD6DC@viggo.jf.intel.com
+Signed-off-by: Ingo Molnar <mingo@kernel.org>
+Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+
+---
+ arch/powerpc/include/asm/mmu_context.h   |    1 -
+ arch/um/include/asm/mmu_context.h        |    1 -
+ arch/unicore32/include/asm/mmu_context.h |    1 -
+ arch/x86/include/asm/mmu_context.h       |    6 +++---
+ arch/x86/include/asm/mpx.h               |   15 ++++++++-------
+ arch/x86/mm/mpx.c                        |   10 ++++++----
+ include/asm-generic/mm_hooks.h           |    1 -
+ mm/mmap.c                                |   15 ++++++++-------
+ 8 files changed, 25 insertions(+), 25 deletions(-)
+
+--- a/arch/powerpc/include/asm/mmu_context.h
++++ b/arch/powerpc/include/asm/mmu_context.h
+@@ -237,7 +237,6 @@ extern void arch_exit_mmap(struct mm_str
+ #endif
+ 
+ static inline void arch_unmap(struct mm_struct *mm,
+-			      struct vm_area_struct *vma,
+ 			      unsigned long start, unsigned long end)
+ {
+ 	if (start <= mm->context.vdso_base && mm->context.vdso_base < end)
+--- a/arch/um/include/asm/mmu_context.h
++++ b/arch/um/include/asm/mmu_context.h
+@@ -22,7 +22,6 @@ static inline int arch_dup_mmap(struct m
+ }
+ extern void arch_exit_mmap(struct mm_struct *mm);
+ static inline void arch_unmap(struct mm_struct *mm,
+-			struct vm_area_struct *vma,
+ 			unsigned long start, unsigned long end)
+ {
+ }
+--- a/arch/unicore32/include/asm/mmu_context.h
++++ b/arch/unicore32/include/asm/mmu_context.h
+@@ -88,7 +88,6 @@ static inline int arch_dup_mmap(struct m
+ }
+ 
+ static inline void arch_unmap(struct mm_struct *mm,
+-			struct vm_area_struct *vma,
+ 			unsigned long start, unsigned long end)
+ {
+ }
+--- a/arch/x86/include/asm/mmu_context.h
++++ b/arch/x86/include/asm/mmu_context.h
+@@ -277,8 +277,8 @@ static inline void arch_bprm_mm_init(str
+ 	mpx_mm_init(mm);
+ }
+ 
+-static inline void arch_unmap(struct mm_struct *mm, struct vm_area_struct *vma,
+-			      unsigned long start, unsigned long end)
++static inline void arch_unmap(struct mm_struct *mm, unsigned long start,
++			      unsigned long end)
+ {
+ 	/*
+ 	 * mpx_notify_unmap() goes and reads a rarely-hot
+@@ -298,7 +298,7 @@ static inline void arch_unmap(struct mm_
+ 	 * consistently wrong.
+ 	 */
+ 	if (unlikely(cpu_feature_enabled(X86_FEATURE_MPX)))
+-		mpx_notify_unmap(mm, vma, start, end);
++		mpx_notify_unmap(mm, start, end);
+ }
+ 
+ /*
+--- a/arch/x86/include/asm/mpx.h
++++ b/arch/x86/include/asm/mpx.h
+@@ -64,12 +64,15 @@ struct mpx_fault_info {
+ };
+ 
+ #ifdef CONFIG_X86_INTEL_MPX
+-int mpx_fault_info(struct mpx_fault_info *info, struct pt_regs *regs);
+-int mpx_handle_bd_fault(void);
++
++extern int mpx_fault_info(struct mpx_fault_info *info, struct pt_regs *regs);
++extern int mpx_handle_bd_fault(void);
++
+ static inline int kernel_managing_mpx_tables(struct mm_struct *mm)
+ {
+ 	return (mm->context.bd_addr != MPX_INVALID_BOUNDS_DIR);
+ }
++
+ static inline void mpx_mm_init(struct mm_struct *mm)
+ {
+ 	/*
+@@ -78,11 +81,10 @@ static inline void mpx_mm_init(struct mm
+ 	 */
+ 	mm->context.bd_addr = MPX_INVALID_BOUNDS_DIR;
+ }
+-void mpx_notify_unmap(struct mm_struct *mm, struct vm_area_struct *vma,
+-		      unsigned long start, unsigned long end);
+ 
+-unsigned long mpx_unmapped_area_check(unsigned long addr, unsigned long len,
+-		unsigned long flags);
++extern void mpx_notify_unmap(struct mm_struct *mm, unsigned long start, unsigned long end);
++extern unsigned long mpx_unmapped_area_check(unsigned long addr, unsigned long len, unsigned long flags);
++
+ #else
+ static inline int mpx_fault_info(struct mpx_fault_info *info, struct pt_regs *regs)
+ {
+@@ -100,7 +102,6 @@ static inline void mpx_mm_init(struct mm
+ {
+ }
+ static inline void mpx_notify_unmap(struct mm_struct *mm,
+-				    struct vm_area_struct *vma,
+ 				    unsigned long start, unsigned long end)
+ {
+ }
+--- a/arch/x86/mm/mpx.c
++++ b/arch/x86/mm/mpx.c
+@@ -881,9 +881,10 @@ static int mpx_unmap_tables(struct mm_st
+  * the virtual address region start...end have already been split if
+  * necessary, and the 'vma' is the first vma in this range (start -> end).
+  */
+-void mpx_notify_unmap(struct mm_struct *mm, struct vm_area_struct *vma,
+-		unsigned long start, unsigned long end)
++void mpx_notify_unmap(struct mm_struct *mm, unsigned long start,
++		      unsigned long end)
+ {
++	struct vm_area_struct *vma;
+ 	int ret;
+ 
+ 	/*
+@@ -902,11 +903,12 @@ void mpx_notify_unmap(struct mm_struct *
+ 	 * which should not occur normally. Being strict about it here
+ 	 * helps ensure that we do not have an exploitable stack overflow.
+ 	 */
+-	do {
++	vma = find_vma(mm, start);
++	while (vma && vma->vm_start < end) {
+ 		if (vma->vm_flags & VM_MPX)
+ 			return;
+ 		vma = vma->vm_next;
+-	} while (vma && vma->vm_start < end);
++	}
+ 
+ 	ret = mpx_unmap_tables(mm, start, end);
+ 	if (ret)
+--- a/include/asm-generic/mm_hooks.h
++++ b/include/asm-generic/mm_hooks.h
+@@ -18,7 +18,6 @@ static inline void arch_exit_mmap(struct
+ }
+ 
+ static inline void arch_unmap(struct mm_struct *mm,
+-			struct vm_area_struct *vma,
+ 			unsigned long start, unsigned long end)
+ {
+ }
+--- a/mm/mmap.c
++++ b/mm/mmap.c
+@@ -2736,9 +2736,17 @@ int __do_munmap(struct mm_struct *mm, un
+ 		return -EINVAL;
+ 
+ 	len = PAGE_ALIGN(len);
++	end = start + len;
+ 	if (len == 0)
+ 		return -EINVAL;
+ 
++	/*
++	 * arch_unmap() might do unmaps itself.  It must be called
++	 * and finish any rbtree manipulation before this code
++	 * runs and also starts to manipulate the rbtree.
++	 */
++	arch_unmap(mm, start, end);
++
+ 	/* Find the first overlapping VMA */
+ 	vma = find_vma(mm, start);
+ 	if (!vma)
+@@ -2747,7 +2755,6 @@ int __do_munmap(struct mm_struct *mm, un
+ 	/* we have  start < vma->vm_end  */
+ 
+ 	/* if it doesn't overlap, we have nothing.. */
+-	end = start + len;
+ 	if (vma->vm_start >= end)
+ 		return 0;
+ 
+@@ -2817,12 +2824,6 @@ int __do_munmap(struct mm_struct *mm, un
+ 	/* Detach vmas from rbtree */
+ 	detach_vmas_to_be_unmapped(mm, vma, prev, end);
+ 
+-	/*
+-	 * mpx unmap needs to be called with mmap_sem held for write.
+-	 * It is safe to call it before unmap_region().
+-	 */
+-	arch_unmap(mm, vma, start, end);
+-
+ 	if (downgrade)
+ 		downgrade_write(&mm->mmap_sem);
+ 
+
+
+Patches currently in stable-queue which might be from dave.hansen@linux.intel.com are
+
+queue-5.0/x86-mpx-mm-core-fix-recursive-munmap-corruption.patch
 
 _______________________________________________
 linux-um mailing list
