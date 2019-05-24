@@ -2,41 +2,41 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 33BDD2A0F9
-	for <lists+linux-um@lfdr.de>; Sat, 25 May 2019 00:07:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BA3372A0FC
+	for <lists+linux-um@lfdr.de>; Sat, 25 May 2019 00:08:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
 	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=hlp9aQ6kUUlr1+Ld87i7m6DTVDnqzATeS2OUkvVj/Ak=; b=cDA
-	muECw4WWV6U1QUzqZbWVQJ5LqtSaGOh4h51SpaHMZDOxkfO4LlQQxaPqEwJDFII6UbdIhD/83lokc
-	8YLZVpHoMM6W0KuNdVIpbi/LD5nbbBQSC/cxDy0ZLuIsMXRcuShAW+WDSqj2pjdUUXwvcKaGcCeTO
-	Myg1Pu2eQy4x0vR3kAyrgksXbQRuFFHEke+hQDghjvZ+UV/nHRd8MFhLMxnAa4WRk4s2LKkWBi03z
-	TXo8zcOL2cm1DGg03Mdfp0WXv9k03SkQnvzfYPRZ6iaEOb6+1Po6GMEEpgnS0AGmyPGsKe5wFGsO1
-	ImSkzV524CZHPeCvkmeqsy/ZtegRZVA==;
+	References:List-Owner; bh=hlp9aQ6kUUlr1+Ld87i7m6DTVDnqzATeS2OUkvVj/Ak=; b=c8j
+	mJtBz4ttG9Rvhb1bEJrBZy3ndTHSa85LF399Kan9VN/IwhRIoWqz4zo2xLlxj0NZOB/bAhUYCazzp
+	5h/9SZaTAV8haO6aD6wWqZULVRFiUo3caYdgw436Go01FeMSJaYEYGRvKXA12P9dThwqHi9T1lotl
+	opNFyywOzVnc+PHH505sMDZiYpnaRWkURytraIdoem1lYEcIN3cHDlLux/Xo2NDH/J58FjGfIS153
+	mfmg8Z7Q6jJxCcRAA7AC759etQ4MiajrJ0jDInKZWsb8X+Qyms4pGKHIsNNRMkoNoaezp8BlU+QEl
+	spNxqE9NPrCP5eAOkgXKVaq0Q4bKPCw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hUILY-0008Ew-19; Fri, 24 May 2019 22:07:28 +0000
+	id 1hUIMt-0000ak-E5; Fri, 24 May 2019 22:08:51 +0000
 Received: from s3.sipsolutions.net ([2a01:4f8:191:4433::2]
  helo=sipsolutions.net)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hUILV-0008ED-JG
- for linux-um@lists.infradead.org; Fri, 24 May 2019 22:07:26 +0000
+ id 1hUIMr-0000aN-5Q
+ for linux-um@lists.infradead.org; Fri, 24 May 2019 22:08:50 +0000
 Received: by sipsolutions.net with esmtpsa
  (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <johannes@sipsolutions.net>)
- id 1hUILR-000399-02; Sat, 25 May 2019 00:07:21 +0200
+ id 1hUIMo-0003B1-9R; Sat, 25 May 2019 00:08:46 +0200
 From: Johannes Berg <johannes@sipsolutions.net>
 To: linux-um@lists.infradead.org
-Subject: [PATCH] arch: um: add a non-raw serial line driver
-Date: Sat, 25 May 2019 00:07:18 +0200
-Message-Id: <20190524220718.25984-1-johannes@sipsolutions.net>
+Subject: [PATCH v2] arch: um: add an option to make serial driver non-raw
+Date: Sat, 25 May 2019 00:08:43 +0200
+Message-Id: <20190524220843.27623-1-johannes@sipsolutions.net>
 X-Mailer: git-send-email 2.17.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190524_150725_634091_5A7BBE0D 
-X-CRM114-Status: GOOD (  10.97  )
+X-CRM114-CacheID: sfid-20190524_150849_207876_11372A70 
+X-CRM114-Status: GOOD (  10.92  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
