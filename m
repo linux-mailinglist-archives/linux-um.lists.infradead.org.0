@@ -2,42 +2,41 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0E4F729F2A
-	for <lists+linux-um@lfdr.de>; Fri, 24 May 2019 21:37:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 59C7D29F6A
+	for <lists+linux-um@lfdr.de>; Fri, 24 May 2019 21:54:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
 	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=iD23wUEzGz0UAHFvDeqnGOo9Whe7D69l9J0UvvLvWcE=; b=ma8
-	zPNNBQNyYXysyklw1TmX5XcD30ReSmOMm4M7LgAl43pzjRobRajzRX4pxoYVDahsJ2RQSSsGXO4yd
-	kmqkCLXWMIH1ulRVazEzVKjxrvtQOnJfi76U8A+kInr50m3TzYylDmsfzNwwHgJMintJzO6B/Xx3O
-	sh2+jbJz+SWDBAx4/PvWVQoLcjFioyzyGwzfWwptZx2laBJKNxbEp+vtLm2b3gxArRiyPl41HvCe+
-	H/G7UJ78rcin/DatUQSnRy+EAHzcFd29HuBHpJoA9h9VilAMnqrZsPLJmsNKB4ifA+XzCuWW7CZM1
-	k9p8Cz6qO9YNd6AbCYl2crEOrZVKqlg==;
+	References:List-Owner; bh=vV01Vot21zlPDx2RJzMifVNJOcmb+XtrPtES+16v3Bg=; b=uAl
+	zoRDhbLIn6jirUXxf0k8XSjQT01FnPsDqzqbRfpO+AgcRga+TDa/qeyLt/fOwAEtJ6I3kWCxAh/v6
+	ZEp3DgPtpPIKny9pMLov/RH0LMFCKRXqSpMnq8d+kL+08ACBvo9zMfomlyavad7jeOXbzt0kbkL8p
+	K9n4HodiQjyalNb+t73Haa14rC3tyJ7UI+iqA8IXW/HkSHrmWl4tf/Rx1zezFR+VAbrijZ1uK1+rj
+	BUuvTIcgjDbJ7bRW8akb6B6nJFTR3nrVLFrcqRpWoBsDLE38nDE0x7ZN7V5/o1x9PfCDL+X7cgqK0
+	crHzwtgHSAVaIsd0RHiihrNa0IHCLmQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hUG0P-0006m9-92; Fri, 24 May 2019 19:37:29 +0000
+	id 1hUGGm-0003pp-GM; Fri, 24 May 2019 19:54:24 +0000
 Received: from s3.sipsolutions.net ([2a01:4f8:191:4433::2]
  helo=sipsolutions.net)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hUG0L-0006lX-QY
- for linux-um@lists.infradead.org; Fri, 24 May 2019 19:37:27 +0000
+ id 1hUGGj-0003pI-JP
+ for linux-um@lists.infradead.org; Fri, 24 May 2019 19:54:22 +0000
 Received: by sipsolutions.net with esmtpsa
  (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <johannes@sipsolutions.net>)
- id 1hUG0C-0007jV-5P; Fri, 24 May 2019 21:37:16 +0200
+ id 1hUGGe-00005e-SV; Fri, 24 May 2019 21:54:17 +0200
 From: Johannes Berg <johannes@sipsolutions.net>
 To: linux-um@lists.infradead.org
-Subject: [PATCH] arch: um: remove locking in deactivate_all_fds()
-Date: Fri, 24 May 2019 21:37:00 +0200
-Message-Id: <20190524193700.13500-1-johannes@sipsolutions.net>
+Subject: [PATCH] arch: um: silence lockdep complaint about mmap_sem
+Date: Fri, 24 May 2019 21:54:14 +0200
+Message-Id: <20190524195414.22391-1-johannes@sipsolutions.net>
 X-Mailer: git-send-email 2.17.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190524_123725_852382_DA7F4710 
-X-CRM114-Status: UNSURE (   6.10  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190524_125421_642402_4C25EC28 
+X-CRM114-Status: GOOD (  12.84  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -67,43 +66,104 @@ Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
 From: Johannes Berg <johannes.berg@intel.com>
 
-Not only does the locking contradict the comment, and as
-the comment says is pointless and actually harmful (all
-the actual OS threads have exited already), but it also
-causes crashes when lockdep is enabled, because calling
-into the spinlock calls into lockdep, which then tries
-to determine the current task, which no longer exists.
+When we get into activate_mm(), lockdep complains that we're doing
+something strange:
 
-Remove the locking to let UML shut down cleanly in case
-lockdep is enabled.
+    WARNING: possible circular locking dependency detected
+    5.1.0-10252-gb00152307319-dirty #121 Not tainted
+    ------------------------------------------------------
+    inside.sh/366 is trying to acquire lock:
+    (____ptrval____) (&(&p->alloc_lock)->rlock){+.+.}, at: flush_old_exec+0x703/0x8d7
+
+    but task is already holding lock:
+    (____ptrval____) (&mm->mmap_sem){++++}, at: flush_old_exec+0x6c5/0x8d7
+
+    which lock already depends on the new lock.
+
+    the existing dependency chain (in reverse order) is:
+
+    -> #1 (&mm->mmap_sem){++++}:
+           [...]
+           __lock_acquire+0x12ab/0x139f
+           lock_acquire+0x155/0x18e
+           down_write+0x3f/0x98
+           flush_old_exec+0x748/0x8d7
+           load_elf_binary+0x2ca/0xddb
+           [...]
+
+    -> #0 (&(&p->alloc_lock)->rlock){+.+.}:
+           [...]
+           __lock_acquire+0x12ab/0x139f
+           lock_acquire+0x155/0x18e
+           _raw_spin_lock+0x30/0x83
+           flush_old_exec+0x703/0x8d7
+           load_elf_binary+0x2ca/0xddb
+           [...]
+
+    other info that might help us debug this:
+
+     Possible unsafe locking scenario:
+
+           CPU0                    CPU1
+           ----                    ----
+      lock(&mm->mmap_sem);
+                                   lock(&(&p->alloc_lock)->rlock);
+                                   lock(&mm->mmap_sem);
+      lock(&(&p->alloc_lock)->rlock);
+
+     *** DEADLOCK ***
+
+    2 locks held by inside.sh/366:
+     #0: (____ptrval____) (&sig->cred_guard_mutex){+.+.}, at: __do_execve_file+0x12d/0x869
+     #1: (____ptrval____) (&mm->mmap_sem){++++}, at: flush_old_exec+0x6c5/0x8d7
+
+    stack backtrace:
+    CPU: 0 PID: 366 Comm: inside.sh Not tainted 5.1.0-10252-gb00152307319-dirty #121
+    Stack:
+     [...]
+    Call Trace:
+     [<600420de>] show_stack+0x13b/0x155
+     [<6048906b>] dump_stack+0x2a/0x2c
+     [<6009ae64>] print_circular_bug+0x332/0x343
+     [<6009c5c6>] check_prev_add+0x669/0xdad
+     [<600a06b4>] __lock_acquire+0x12ab/0x139f
+     [<6009f3d0>] lock_acquire+0x155/0x18e
+     [<604a07e0>] _raw_spin_lock+0x30/0x83
+     [<60151e6a>] flush_old_exec+0x703/0x8d7
+     [<601a8eb8>] load_elf_binary+0x2ca/0xddb
+     [...]
+
+I think it's because in exec_mmap() we have
+
+	down_read(&old_mm->mmap_sem);
+...
+        task_lock(tsk);
+...
+	activate_mm(active_mm, mm);
+	(which does down_write(&mm->mmap_sem))
+
+I'm not really sure why lockdep throws in the whole knowledge
+about the task lock, but it seems that old_mm and mm shouldn't
+ever be the same (and it doesn't deadlock) so tell lockdep that
+they're different.
 
 Signed-off-by: Johannes Berg <johannes.berg@intel.com>
 ---
- arch/um/kernel/irq.c | 3 ---
- 1 file changed, 3 deletions(-)
+ arch/um/include/asm/mmu_context.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/um/kernel/irq.c b/arch/um/kernel/irq.c
-index b40dac71e25b..d532377f5808 100644
---- a/arch/um/kernel/irq.c
-+++ b/arch/um/kernel/irq.c
-@@ -384,10 +384,8 @@ EXPORT_SYMBOL(deactivate_fd);
-  */
- int deactivate_all_fds(void)
- {
--	unsigned long flags;
- 	struct irq_entry *to_free;
- 
--	spin_lock_irqsave(&irq_lock, flags);
- 	/* Stop IO. The IRQ loop has no lock so this is our
- 	 * only way of making sure we are safe to dispose
- 	 * of all IRQ handlers
-@@ -404,7 +402,6 @@ int deactivate_all_fds(void)
- 		to_free = to_free->next;
- 	}
- 	garbage_collect_irq_entries();
--	spin_unlock_irqrestore(&irq_lock, flags);
- 	os_close_epoll_fd();
- 	return 0;
+diff --git a/arch/um/include/asm/mmu_context.h b/arch/um/include/asm/mmu_context.h
+index fca34b2177e2..129fb1d1f1c5 100644
+--- a/arch/um/include/asm/mmu_context.h
++++ b/arch/um/include/asm/mmu_context.h
+@@ -53,7 +53,7 @@ static inline void activate_mm(struct mm_struct *old, struct mm_struct *new)
+ 	 * when the new ->mm is used for the first time.
+ 	 */
+ 	__switch_mm(&new->context.id);
+-	down_write(&new->mmap_sem);
++	down_write_nested(&new->mmap_sem, 1);
+ 	uml_setup_stubs(new);
+ 	up_write(&new->mmap_sem);
  }
 -- 
 2.17.2
