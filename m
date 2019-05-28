@@ -2,44 +2,44 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 602062B04C
-	for <lists+linux-um@lfdr.de>; Mon, 27 May 2019 10:34:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CC2502D0C4
+	for <lists+linux-um@lfdr.de>; Tue, 28 May 2019 23:00:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=SuvAm69fgq+CNAJALyeVbDIWYIlFRxgMzh7JwK2bkYA=; b=J4GnWs93+49w32Fq2GkRrlN1tI
-	I8xYQes6DCYTxulAkTRnXpwjS4oNHy3fF8Z1XUY9gZxDWLVrV/qki3597EsJ/QlUNzPVKotFkV5mD
-	P/Jw88xKcyZ5UeDud6slnwqDKkaG1kl44GCqu31JHG3kRAWdx7CvGRLjvJmqOeWWRV9Gq7hqeux31
-	wEfq3yoJRNLqMqOenHX8D4rPQLLaUxYoldtRHYyeXgUwKbDJEOFa82AvS9xNBFcNxeszYSV6X8dUY
-	ZDpdb9ygsIIx1BqJfhvRUP440J3Yqq9ndLWb+bmsUGPbu1J5SNRArFkQGBVWBaPrSnLH3cD+eW6Qc
-	9r4bZb3w==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:Date:To:From:Subject:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ykrXUrlrktALCLcBBnjWyMnYDoGo9rPu2zBsTjwKiUI=; b=bNBctMKbWxyNQ1
+	yPpT7i7I/ths0SrETsBl0Y8VkuYQc54WnepEtYq7zsMUZY2t/0PvAVNRfn7BqB9CUEXGWX6Omr2pz
+	2h49NuZrEajd1PsCf5pQicR1Rjsg+dk3KG2ggfwvqbsRPvZOfzevxk9CzBfK4QBvyzcODNX6mEYfc
+	Zrzh3jQQ+tl2Cpba60bC0ysj9QuRTpNgFmaj07b8RVOQH0/YT91yycM/vwV/mPnuFKtg20Hrm/IRB
+	gENgrCOqE4eCU65ZGZgvZ+vudjinYF/LWIohLgGcbu4YJScWM6dY2gLSLLo1zpoE230SoDobMssHS
+	i9nDwqt0mXYNrDtHu9bw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hVB5k-00073Q-Dw; Mon, 27 May 2019 08:34:48 +0000
+	id 1hVjCy-0004Uj-IT; Tue, 28 May 2019 21:00:32 +0000
 Received: from s3.sipsolutions.net ([2a01:4f8:191:4433::2]
  helo=sipsolutions.net)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVB5f-00072b-Ii
- for linux-um@lists.infradead.org; Mon, 27 May 2019 08:34:47 +0000
+ id 1hVjCv-0004UR-3g
+ for linux-um@lists.infradead.org; Tue, 28 May 2019 21:00:30 +0000
 Received: by sipsolutions.net with esmtpsa
  (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <johannes@sipsolutions.net>)
- id 1hVB5Z-0001ol-QS; Mon, 27 May 2019 10:34:37 +0200
+ id 1hVjCp-0000pK-BS; Tue, 28 May 2019 23:00:23 +0200
+Message-ID: <a5611c91d4883c7ef91dc14a72946e18bf5809b6.camel@sipsolutions.net>
+Subject: TRACE_IRQFLAGS_SUPPORT seems incomplete
 From: Johannes Berg <johannes@sipsolutions.net>
-To: linux-um@lists.infradead.org
-Subject: [PATCH v3 2/2] arch: um: support time travel mode
-Date: Mon, 27 May 2019 10:34:27 +0200
-Message-Id: <20190527083427.6293-2-johannes@sipsolutions.net>
-X-Mailer: git-send-email 2.17.2
-In-Reply-To: <20190527083427.6293-1-johannes@sipsolutions.net>
-References: <20190527083427.6293-1-johannes@sipsolutions.net>
+To: linux-um@lists.infradead.org, Richard Weinberger
+ <richard.weinberger@gmail.com>
+Date: Tue, 28 May 2019 23:00:21 +0200
+X-Mailer: Evolution 3.28.5 (3.28.5-2.fc28) 
+Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190527_013443_775051_A3491197 
-X-CRM114-Status: GOOD (  22.37  )
+X-CRM114-CacheID: sfid-20190528_140029_144914_A35861B9 
+X-CRM114-Status: UNSURE (   6.32  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -58,401 +58,49 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: j@w1.fi, Richard Weinberger <richard@nod.at>, Jeff Dike <jdike@addtoit.com>,
- Johannes Berg <johannes.berg@intel.com>,
- Anton Ivanov <anton.ivanov@cambridgegreys.com>
-MIME-Version: 1.0
+Cc: j@w1.fi
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-From: Johannes Berg <johannes.berg@intel.com>
+Hi,
 
-Sometimes it can be useful to run with "time travel" inside the
-UML instance, for example for testing. For example, some tests
-for the wireless subsystem and userspace are based on hwsim, a
-virtual wireless adapter. Some tests can take a long time to
-run because they e.g. wait for 120 seconds to elapse for some
-regulatory checks. This obviously goes faster if it need not
-actually wait that long, but time inside the test environment
-just "bumps up" when there's nothing to do.
+Now I've tried for a while ... but can't figure it out.
 
-Add CONFIG_UML_TIME_TRAVEL_SUPPORT to enable code to support
-such modes at runtime, selected on the command line:
- * just "time-travel", in which time inside the UML instance
-   can move faster than real time, if there's nothing to do
- * "time-travel=inf-cpu" in which time also moves slower and
-   any CPU processing takes no time at all, which allows to
-   implement consistent behaviour regardless of host CPU load
-   (or speed) or debug overhead.
+It looks like TRACE_IRQFLAGS_SUPPORT is incomplete, we're getting lots
+of warnings like
 
-An additional "time-travel-start=<seconds>" parameter is also
-supported in this case to start the wall clock at this time
-(in unix epoch).
+[    0.000000] ------------[ cut here ]------------
+[    0.000000] WARNING: CPU: 0 PID: 1 at kernel/locking/lockdep.c:4220 check_flags+0xa4/0x255
+[    0.000000] DEBUG_LOCKS_WARN_ON(current->hardirqs_enabled)
+[    0.000000] Call Trace:
+[    0.000000]  [<60047243>] show_stack+0x13b/0x155
+[    0.000000]  [<60521206>] dump_stack+0x2a/0x2c
+[    0.000000]  [<600652af>] __warn+0x10c/0x151
+[    0.000000]  [<6006538b>] warn_slowpath_fmt+0x97/0x99
+[    0.000000]  [<600a3355>] check_flags+0xa4/0x255
+[    0.000000]  [<600a554e>] lock_acquire+0x6c/0x1a0
+[    0.000000]  [<60539298>] _raw_spin_lock+0x30/0x83
+[    0.000000]  [<600b6d41>] handle_edge_irq+0x23/0x13d
+[    0.000000]  [<600b2b17>] generic_handle_irq+0x23/0x27
+[    0.000000]  [<600454ab>] do_IRQ+0x39/0x54
+[    0.000000]  [<6004556d>] sigio_handler+0xa7/0x111
+[    0.000000]  [<6005badf>] sig_handler_common+0xa9/0xbf
+[...]
+[    0.000000] possible reason: unannotated irqs-off.
 
-With this enabled, the test mentioned above goes from a runtime
-of about 140 seconds (with startup overhead and all) to being
-CPU bound and finishing in 15 seconds (on my slow laptop).
 
-Signed-off-by: Johannes Berg <johannes.berg@intel.com>
----
- arch/um/Kconfig                         |  12 +++
- arch/um/include/shared/timer-internal.h |  46 +++++++++
- arch/um/kernel/process.c                |  42 +++++++-
- arch/um/kernel/skas/syscall.c           |  11 ++
- arch/um/kernel/time.c                   | 129 ++++++++++++++++++++++--
- 5 files changed, 233 insertions(+), 7 deletions(-)
+I've tried to put the right trace_irqflags_{on,off} calls in places like
+sig_handler_common(), but I can only seem to shift the warning around.
 
-diff --git a/arch/um/Kconfig b/arch/um/Kconfig
-index 07da2b284e46..14bb99c8039d 100644
---- a/arch/um/Kconfig
-+++ b/arch/um/Kconfig
-@@ -179,6 +179,18 @@ config SECCOMP
- 
- 	  If unsure, say Y.
- 
-+config UML_TIME_TRAVEL_SUPPORT
-+	bool
-+	prompt "Support time-travel mode (e.g. for test execution)"
-+	help
-+	  Enable this option to support time travel inside the UML instance.
-+
-+	  After enabling this option, two modes are accessible at runtime
-+	  (selected by the kernel command line), see the kernel's command-
-+	  line help for more details.
-+
-+	  It is safe to say Y, but you probably don't need this.
-+
- endmenu
- 
- source "arch/um/drivers/Kconfig"
-diff --git a/arch/um/include/shared/timer-internal.h b/arch/um/include/shared/timer-internal.h
-index 03e6f217f807..5ca74f415d52 100644
---- a/arch/um/include/shared/timer-internal.h
-+++ b/arch/um/include/shared/timer-internal.h
-@@ -10,4 +10,50 @@
- #define TIMER_MULTIPLIER 256
- #define TIMER_MIN_DELTA  500
- 
-+enum time_travel_mode {
-+	TT_MODE_OFF,
-+	TT_MODE_BASIC,
-+	TT_MODE_INFCPU,
-+};
-+
-+enum time_travel_timer_mode {
-+	TT_TMR_DISABLED,
-+	TT_TMR_ONESHOT,
-+	TT_TMR_PERIODIC,
-+};
-+
-+#ifdef CONFIG_UML_TIME_TRAVEL_SUPPORT
-+extern enum time_travel_mode time_travel_mode;
-+extern unsigned long long time_travel_time;
-+extern enum time_travel_timer_mode time_travel_timer_mode;
-+extern unsigned long long time_travel_timer_expiry;
-+extern unsigned long long time_travel_timer_interval;
-+
-+static inline void time_travel_set_time(unsigned long long ns)
-+{
-+	time_travel_time = ns;
-+}
-+
-+static inline void time_travel_set_timer(enum time_travel_timer_mode mode,
-+					 unsigned long long expiry)
-+{
-+	time_travel_timer_mode = mode;
-+	time_travel_timer_expiry = expiry;
-+}
-+#else
-+#define time_travel_mode TT_MODE_OFF
-+#define time_travel_time 0
-+#define time_travel_timer_expiry 0
-+#define time_travel_timer_interval 0
-+
-+static inline void time_travel_set_time(unsigned long long ns)
-+{
-+}
-+
-+static inline void time_travel_set_timer(enum time_travel_timer_mode mode,
-+					 unsigned long long expiry)
-+{
-+}
-+#endif
-+
- #endif
-diff --git a/arch/um/kernel/process.c b/arch/um/kernel/process.c
-index 691b83b10649..def2091697ca 100644
---- a/arch/um/kernel/process.c
-+++ b/arch/um/kernel/process.c
-@@ -203,10 +203,50 @@ void initial_thread_cb(void (*proc)(void *), void *arg)
- 	kmalloc_ok = save_kmalloc_ok;
- }
- 
-+static void time_travel_sleep(unsigned long long duration)
-+{
-+	unsigned long long next = time_travel_time + duration;
-+
-+	if (time_travel_mode != TT_MODE_INFCPU)
-+		os_timer_disable();
-+
-+	if (time_travel_timer_mode != TT_TMR_DISABLED ||
-+	    time_travel_timer_expiry < next) {
-+		if (time_travel_timer_mode == TT_TMR_ONESHOT)
-+			time_travel_timer_mode = TT_TMR_DISABLED;
-+		/*
-+		 * time_travel_time will be adjusted in the timer
-+		 * IRQ handler so it works even when the signal
-+		 * comes from the OS timer
-+		 */
-+		deliver_alarm();
-+	} else {
-+		time_travel_set_time(next);
-+	}
-+
-+	if (time_travel_mode != TT_MODE_INFCPU) {
-+		if (time_travel_timer_mode == TT_TMR_PERIODIC)
-+			os_timer_set_interval(time_travel_timer_interval);
-+		else if (time_travel_timer_mode == TT_TMR_ONESHOT)
-+			os_timer_one_shot(time_travel_timer_expiry - next);
-+	}
-+}
-+
-+static void um_idle_sleep(void)
-+{
-+	unsigned long long duration = UM_NSEC_PER_SEC;
-+
-+	if (time_travel_mode != TT_MODE_OFF) {
-+		time_travel_sleep(duration);
-+	} else {
-+		os_idle_sleep(duration);
-+	}
-+}
-+
- void arch_cpu_idle(void)
- {
- 	cpu_tasks[current_thread_info()->cpu].pid = os_getpid();
--	os_idle_sleep(UM_NSEC_PER_SEC);
-+	um_idle_sleep();
- 	local_irq_enable();
- }
- 
-diff --git a/arch/um/kernel/skas/syscall.c b/arch/um/kernel/skas/syscall.c
-index b783ac87d98a..44bb10785075 100644
---- a/arch/um/kernel/skas/syscall.c
-+++ b/arch/um/kernel/skas/syscall.c
-@@ -10,12 +10,23 @@
- #include <sysdep/ptrace.h>
- #include <sysdep/ptrace_user.h>
- #include <sysdep/syscalls.h>
-+#include <shared/timer-internal.h>
- 
- void handle_syscall(struct uml_pt_regs *r)
- {
- 	struct pt_regs *regs = container_of(r, struct pt_regs, regs);
- 	int syscall;
- 
-+	/*
-+	 * If we have infinite CPU resources, then make every syscall also a
-+	 * preemption point, since we don't have any other preemption in this
-+	 * case, and kernel threads would basically never run until userspace
-+	 * went to sleep, even if said userspace interacts with the kernel in
-+	 * various ways.
-+	 */
-+	if (time_travel_mode == TT_MODE_INFCPU)
-+		schedule();
-+
- 	/* Initialize the syscall number and default return value. */
- 	UPT_SYSCALL_NR(r) = PT_SYSCALL_NR(r->gp);
- 	PT_REGS_SET_SYSCALL_RETURN(regs, -ENOSYS);
-diff --git a/arch/um/kernel/time.c b/arch/um/kernel/time.c
-index 3a2fe54bef65..6a051b078359 100644
---- a/arch/um/kernel/time.c
-+++ b/arch/um/kernel/time.c
-@@ -19,11 +19,29 @@
- #include <kern_util.h>
- #include <os.h>
- #include <timer-internal.h>
-+#include <shared/init.h>
-+
-+#ifdef CONFIG_UML_TIME_TRAVEL_SUPPORT
-+enum time_travel_mode time_travel_mode;
-+unsigned long long time_travel_time;
-+enum time_travel_timer_mode time_travel_timer_mode;
-+unsigned long long time_travel_timer_expiry;
-+unsigned long long time_travel_timer_interval;
-+
-+static bool time_travel_start_set;
-+static unsigned long long time_travel_start;
-+#else
-+#define time_travel_start_set 0
-+#define time_travel_start 0
-+#endif
- 
- void timer_handler(int sig, struct siginfo *unused_si, struct uml_pt_regs *regs)
- {
- 	unsigned long flags;
- 
-+	if (time_travel_mode != TT_MODE_OFF)
-+		time_travel_set_time(time_travel_timer_expiry);
-+
- 	local_irq_save(flags);
- 	do_IRQ(TIMER_IRQ, regs);
- 	local_irq_restore(flags);
-@@ -31,26 +49,47 @@ void timer_handler(int sig, struct siginfo *unused_si, struct uml_pt_regs *regs)
- 
- static int itimer_shutdown(struct clock_event_device *evt)
- {
--	os_timer_disable();
-+	if (time_travel_mode != TT_MODE_OFF)
-+		time_travel_set_timer(TT_TMR_DISABLED, 0);
-+
-+	if (time_travel_mode != TT_MODE_INFCPU)
-+		os_timer_disable();
-+
- 	return 0;
- }
- 
- static int itimer_set_periodic(struct clock_event_device *evt)
- {
--	os_timer_set_interval(NSEC_PER_SEC / HZ);
-+	unsigned long long interval = NSEC_PER_SEC / HZ;
-+
-+	if (time_travel_mode != TT_MODE_OFF)
-+		time_travel_set_timer(TT_TMR_PERIODIC,
-+				      time_travel_time + interval);
-+
-+	if (time_travel_mode != TT_MODE_INFCPU)
-+		os_timer_set_interval(interval);
-+
- 	return 0;
- }
- 
- static int itimer_next_event(unsigned long delta,
- 			     struct clock_event_device *evt)
- {
--	return os_timer_one_shot(delta + 1);
-+	delta += 1;
-+
-+	if (time_travel_mode != TT_MODE_OFF)
-+		time_travel_set_timer(TT_TMR_ONESHOT,
-+				      time_travel_time + delta);
-+
-+	if (time_travel_mode != TT_MODE_INFCPU)
-+		return os_timer_one_shot(delta);
-+
-+	return 0;
- }
- 
- static int itimer_one_shot(struct clock_event_device *evt)
- {
--	os_timer_one_shot(1);
--	return 0;
-+	return itimer_next_event(0, evt);
- }
- 
- static struct clock_event_device timer_clockevent = {
-@@ -87,6 +126,17 @@ static irqreturn_t um_timer(int irq, void *dev)
- 
- static u64 timer_read(struct clocksource *cs)
- {
-+	if (time_travel_mode != TT_MODE_OFF) {
-+		/*
-+		 * We make reading the timer cost a bit so that we don't get
-+		 * stuck in loops that expect time to move more than the
-+		 * exact requested sleep amount, e.g. python's socket server,
-+		 * see https://bugs.python.org/issue37026.
-+		 */
-+		time_travel_set_time(time_travel_time + TIMER_MULTIPLIER);
-+		return time_travel_time / TIMER_MULTIPLIER;
-+	}
-+
- 	return os_nsecs() / TIMER_MULTIPLIER;
- }
- 
-@@ -123,7 +173,12 @@ static void __init um_timer_setup(void)
- 
- void read_persistent_clock64(struct timespec64 *ts)
- {
--	long long nsecs = os_persistent_clock_emulation();
-+	long long nsecs;
-+
-+	if (time_travel_start_set)
-+		nsecs = time_travel_start + time_travel_time;
-+	else
-+		nsecs = os_persistent_clock_emulation();
- 
- 	set_normalized_timespec64(ts, nsecs / NSEC_PER_SEC,
- 				  nsecs % NSEC_PER_SEC);
-@@ -134,3 +189,65 @@ void __init time_init(void)
- 	timer_set_signal_handler();
- 	late_time_init = um_timer_setup;
- }
-+
-+#ifdef CONFIG_UML_TIME_TRAVEL_SUPPORT
-+unsigned long calibrate_delay_is_known(void)
-+{
-+	if (time_travel_mode == TT_MODE_INFCPU)
-+		return 1;
-+	return 0;
-+}
-+
-+int setup_time_travel(char *str)
-+{
-+	if (strcmp(str, "=inf-cpu") == 0) {
-+		time_travel_mode = TT_MODE_INFCPU;
-+		timer_clockevent.name = "time-travel-timer-infcpu";
-+		timer_clocksource.name = "time-travel-clock";
-+		return 1;
-+	}
-+
-+	if (!*str) {
-+		time_travel_mode = TT_MODE_BASIC;
-+		timer_clockevent.name = "time-travel-timer";
-+		timer_clocksource.name = "time-travel-clock";
-+		return 1;
-+	}
-+
-+	return -EINVAL;
-+}
-+
-+__setup("time-travel", setup_time_travel);
-+__uml_help(setup_time_travel,
-+"time-travel\n"
-+"This option just enables basic time travel mode, in which the clock/timers\n"
-+"inside the UML instance skip forward when there's nothing to do, rather than\n"
-+"waiting for real time to elapse. However, instance CPU speed is limited by\n"
-+"the real CPU speed, so e.g. a 10ms timer will always fire after ~10ms wall\n"
-+"clock (but quicker when there's nothing to do).\n"
-+"\n"
-+"time-travel=inf-cpu\n"
-+"This enables time travel mode with infinite processing power, in which there\n"
-+"are no wall clock timers, and any CPU processing happens - as seen from the\n"
-+"guest - instantly. This can be useful for accurate simulation regardless of\n"
-+"debug overhead, physical CPU speed, etc. but is somewhat dangerous as it can\n"
-+"easily lead to getting stuck (e.g. if anything in the system busy loops).\n");
-+
-+int setup_time_travel_start(char *str)
-+{
-+	int err;
-+
-+	err = kstrtoull(str, 0, &time_travel_start);
-+	if (err)
-+		return err;
-+
-+	time_travel_start_set = 1;
-+	return 1;
-+}
-+
-+__setup("time-travel-start", setup_time_travel_start);
-+__uml_help(setup_time_travel_start,
-+"time-travel-start=<seconds>\n"
-+"Configure the UML instance's wall clock to start at this value rather than\n"
-+"the host's wall clock at the time of UML boot.\n");
-+#endif
--- 
-2.17.2
+Has anyone looked at this? You need to enable CONFIG_PROVE_LOCKING,
+CONFIG_DEBUG_LOCKDEP and CONFIG_TRACE_IRQFLAGS for this to show up, but
+I think Jouni had some others that might be related, without having
+enabled CONFIG_DEBUG_LOCKDEP.
+
+Thanks,
+johannes
 
 
 _______________________________________________
