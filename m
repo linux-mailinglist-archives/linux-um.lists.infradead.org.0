@@ -2,77 +2,74 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 69F2E35263
-	for <lists+linux-um@lfdr.de>; Tue,  4 Jun 2019 23:57:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 823583546D
+	for <lists+linux-um@lfdr.de>; Wed,  5 Jun 2019 01:35:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7Gpo0IRS2QUM3HcfOY08WylVBOpeZHSg3D+S8UgiAA8=; b=nzUGeEoS73vvUq
-	oPLO8SVOa8fBl0o94/WVAmh2ulfPBAaOyMcmQUeXo9BtiuuHk9/4wxMIij1aNyhRQeQyKSwjuZUe+
-	SI25JqqPD7RDy6/ThyrGU5CV1w0TT+o4VCvFsxj41G5VRfTIiWaCVw6n8lVvwnkkKkv5b1nQbkihe
-	in7f2vjnHJRueJvtSVaUu3PxBypTLHAnhYnrGErBQVBCbHfZGnBEHloYsEkVR9Xq8/VYBmkFJnCCM
-	Vh3yaaZiw66Ms62deRcI6KcQfBUS2UEpX0RZRl905mESrvgpOISIjQ5X1/yV9tO13qjM2f1o+3b4L
-	2GN23GhhnjVynsrp2CVw==;
+	List-Owner; bh=yl5AYvchwCW+hGi2U9/Kp9FDWrWGQQ7oTq8KR2yyeyI=; b=g/fob44K3Eux5s
+	DHD3COU4NzkLPVFDcW0CLyXEa8xH7kxcvhHIRfME99TbwMltsoS85LnRhKxM+ezGeaYMsbA7cdh8r
+	XbBYIb81ZMQRXCwQabHDqxx+ftRjMf8H8bohsqylUWayARyimUmi7yEO6q0+WxOxMUGSI/k74/AAs
+	xxfgKYOG5m9llrKfa6inPEtl8h7A6HzjeW2HqNlYvFnLN6xqrnsq/GtOEySbyqLXcn3FuwY3PqtKg
+	XcRhEuwAu9kf1zpEoqk/OV99nUBL4poDjQAuqpG1IGvtZCpB2TcbUr7fsvltUX6Tki7EZOWjkN7t3
+	SlAogytuI8Pwfm5Ws9YQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYHQi-0000U3-3s; Tue, 04 Jun 2019 21:57:16 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1hYIxY-0007OQ-43; Tue, 04 Jun 2019 23:35:16 +0000
+Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYHQf-0000Tb-D5
- for linux-um@lists.infradead.org; Tue, 04 Jun 2019 21:57:14 +0000
-Received: by mail-lj1-x241.google.com with SMTP id 131so8668315ljf.4
- for <linux-um@lists.infradead.org>; Tue, 04 Jun 2019 14:57:10 -0700 (PDT)
+ id 1hYIxV-0007Nj-JC
+ for linux-um@lists.infradead.org; Tue, 04 Jun 2019 23:35:14 +0000
+Received: by mail-lf1-x142.google.com with SMTP id m15so17709257lfh.4
+ for <linux-um@lists.infradead.org>; Tue, 04 Jun 2019 16:35:12 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=nm6nxsfvdF1NlydS0vPcNG8Czdz9QMNoM/DaRUKeru8=;
- b=nLRStuQzBAP59j/hKQNMV8C2AGPtk1eCG2pVy9YzYyeSjd5qJhpZEFP4EeezoVeUTW
- jCVxFCEslDbIYQBvl1fiWZwQgMWKrBfYmhsQbY0FOyfRCagOJrBrYjrjVYnfRKEkWBk3
- 6ocN8V2mwExKGi+I0etI2k6Ni8hGVyzZ0e9VpFO0N23q3SvM0zXQkqkIxHDnQrOWEsbB
- 6dEDi7PBY/pmmPrtXyvpaYGxcVTNutTpomS6BWz/12hpgG8D/gC5FYBWpRRzRM5m5zt8
- WdpVD7qsXc2+NJj9mv+e1rum3ydGcI/lFQo5HIg7f8lqXChuKP/uhCGMxzROQ+8FUS+v
- VZnw==
+ :cc; bh=yUmGpFNz6fygF8JqTGIH7xCmXTGijTn5zshzVeIRyeU=;
+ b=n7729tdVd3jiiQzxyuAeBqRs5Gxta2lFj3c+5zHccv1uoJt2AmyWyIDUmg3JxWlagm
+ M7C85QUZ1yXvYp4uRNAObTU5YeMqh3a1wo5N9AJPUoMbdbPZFo/1bO/N1rShEEWiWI/v
+ Q5BI60V/NuZ52yrsR6VbaGcuc0c695fmqthfBEC0S0U3y4gF1Q08eneEUDigrRf9hMyB
+ iQhbHsK661Yo5QjuEON5MQg+g2Pkp/H8jIb/fz9zGMrFKEuNEFNEvKupY/jJ8Vu91CzS
+ 9bZX4E1E7GESuDjTm/u2NlMe8YNUYbmht0QRBeMkkioK7eHniavWPW592kDJkctLp/+R
+ YphA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=nm6nxsfvdF1NlydS0vPcNG8Czdz9QMNoM/DaRUKeru8=;
- b=ZgIWDmHpXYau7BtRjDFeXkofPgGRFeafOyqRz4/yml2CxzeUuH6T+1pJTWkUbe8aDl
- 7GBQQQkQDDUoXSoQNZAMseY7QyLYpf2iJAftaJbgqGe0WeQl+HgumObW2kT8IglghdBS
- rQjt9uyk34d6t1+q009euNAtpwL14aatgS52ypHinqMmsbz7luRwl/rK1c8TD1ZLwjWn
- kgC3odjYxFaZAFRzl3jsYjzgL2yGDL0QpQArLBtHYyXGUC+gXZzMR7ZzmYDEKMhl321v
- 3bIJN+j7y5OkGcKZTR6d+2I6BhsHI5v8jYeiMCHgJIkxjInjuY5bgPYakYQaQdZrzNfB
- sRGQ==
-X-Gm-Message-State: APjAAAWWhv3BimcGWE1lQrz6tMg+PTT9NBuKOrqZ6eCGyb66uZtOJ584
- T4Fal0Dpk3Dvk/X3x2k42ZX8772VRRm5vdTF71nzJA==
-X-Google-Smtp-Source: APXvYqwE1CV5WfOBv8U7SSbJEQLGVSNIIKxmFZ1p4N1xuuO/XMklmNvMFn5XfSsxTekMg8/K0WDmZz2xlx1whsztp4E=
-X-Received: by 2002:a2e:a318:: with SMTP id l24mr6354112lje.36.1559685428378; 
- Tue, 04 Jun 2019 14:57:08 -0700 (PDT)
+ :message-id:subject:to:cc;
+ bh=yUmGpFNz6fygF8JqTGIH7xCmXTGijTn5zshzVeIRyeU=;
+ b=capbyZ2LewQkQYNYRe9MEtTX/kgYmdUpqx7ufLeQfZcRpLZ12feDGSpnwENc2m39rh
+ KvDfSZYrifygX5l+nfyF0wi9ex31HWE+uUX7s9j21TqQxj4mXS1f+QifgDOv0uoK/zjn
+ mvbQ16t2TnPpCE87qxzSuHqkCUUc+fYu62aNKDOOlwj/WLtDTmF70SWICsZ2E4gaK2RI
+ vXTK4ue4aRioHCCOzcmXf2NdD63l5NPB0Ryj6/BMsdUX0GNvP/mlN/HscWVW0H5cBou4
+ tROAIjJ/0A4kEwrzcx+BPS9S4MF3TmYcswyq/9BzVHqLFK5ktBNXBonEvjQxGGCckyCD
+ iE2g==
+X-Gm-Message-State: APjAAAWow/MUqxmQID1d9h21LpR/CIgdf8Y1bAu5OD3x7NcoTi0YPZj4
+ ueQhlfRj7abtUI8s+rUYLDYWWYdyLt3CtpDeiQpSXA==
+X-Google-Smtp-Source: APXvYqxFVfsY2uUyOvHDHQWsWPz6JVCPCIp44WWY+H6aJDJ/TaoNNgHz4dGto/MoXWH1ptk3ODVootrUgExaXb/yDLQ=
+X-Received: by 2002:a19:7110:: with SMTP id m16mr18059760lfc.4.1559691310771; 
+ Tue, 04 Jun 2019 16:35:10 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190514054251.186196-1-brendanhiggins@google.com>
- <20190514054251.186196-16-brendanhiggins@google.com>
- <20190514073422.4287267c@lwn.net>
- <20190514180810.GA109557@google.com> <20190514121623.0314bf07@lwn.net>
- <20190514231902.GA12893@google.com> <20190515074546.07700142@lwn.net>
-In-Reply-To: <20190515074546.07700142@lwn.net>
+References: <20190514221711.248228-1-brendanhiggins@google.com>
+ <20190514221711.248228-3-brendanhiggins@google.com>
+ <20190517003847.0962F2082E@mail.kernel.org>
+In-Reply-To: <20190517003847.0962F2082E@mail.kernel.org>
 From: Brendan Higgins <brendanhiggins@google.com>
-Date: Tue, 4 Jun 2019 14:56:57 -0700
-Message-ID: <CAFd5g44XatHJnNvRdqBGLnwcvOxTUAKM-tjKH94NGbyXGVVatQ@mail.gmail.com>
-Subject: Re: [PATCH v3 15/18] Documentation: kunit: add documentation for KUnit
-To: Jonathan Corbet <corbet@lwn.net>
+Date: Tue, 4 Jun 2019 16:34:58 -0700
+Message-ID: <CAFd5g45taSVNXSQJrXnHLG_Rtum650vFw1zccqv1Tyru5A5d8w@mail.gmail.com>
+Subject: Re: [PATCH v4 02/18] kunit: test: add test resource management API
+To: Stephen Boyd <sboyd@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_145713_468352_2AA40DB3 
-X-CRM114-Status: GOOD (  23.44  )
+X-CRM114-CacheID: sfid-20190604_163513_667088_5295C993 
+X-CRM114-Status: GOOD (  14.40  )
 X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:142 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -100,104 +97,100 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: songliubraving@fb.com, Petr Mladek <pmladek@suse.com>,
- "open list:DOCUMENTATION" <linux-doc@vger.kernel.org>, catalin.marinas@arm.com,
- Amir Goldstein <amir73il@gmail.com>, ast@kernel.org,
- dri-devel <dri-devel@lists.freedesktop.org>, oberpar@linux.ibm.com,
+Cc: Petr Mladek <pmladek@suse.com>,
+ "open list:DOCUMENTATION" <linux-doc@vger.kernel.org>,
+ Peter Zijlstra <peterz@infradead.org>, Amir Goldstein <amir73il@gmail.com>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
  Sasha Levin <Alexander.Levin@microsoft.com>,
- Masahiro Yamada <yamada.masahiro@socionext.com>, netdev@vger.kernel.org,
- glider@google.com, Michael Ellerman <mpe@ellerman.id.au>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Michael Ellerman <mpe@ellerman.id.au>,
  "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
- kgdb-bugreport@lists.sourceforge.net, shuah <shuah@kernel.org>,
- cocci@systeme.lip6.fr, Rob Herring <robh@kernel.org>,
- daniel.thompson@linaro.org, daniel@iogearbox.net,
+ shuah <shuah@kernel.org>, Rob Herring <robh@kernel.org>,
  linux-nvdimm <linux-nvdimm@lists.01.org>,
- Frank Rowand <frowand.list@gmail.com>, Gilles.Muller@lip6.fr,
- Knut Omang <knut.omang@oracle.com>,
- Kieran Bingham <kieran.bingham@ideasonboard.com>, kasan-dev@googlegroups.com,
- Felix Guo <felixguoxiuping@gmail.com>, wfg@linux.intel.com,
+ Frank Rowand <frowand.list@gmail.com>, Knut Omang <knut.omang@oracle.com>,
+ Kieran Bingham <kieran.bingham@ideasonboard.com>, wfg@linux.intel.com,
  Joel Stanley <joel@jms.id.au>, David Rientjes <rientjes@google.com>,
- aryabinin@virtuozzo.com, Jeff Dike <jdike@addtoit.com>,
- Dan Carpenter <dan.carpenter@oracle.com>,
+ Jeff Dike <jdike@addtoit.com>, Dan Carpenter <dan.carpenter@oracle.com>,
  devicetree <devicetree@vger.kernel.org>,
- linux-kbuild <linux-kbuild@vger.kernel.org>, nicolas.palix@imag.fr, "Bird,
- Timothy" <Tim.Bird@sony.com>, jason.wessel@windriver.com,
- linux-um@lists.infradead.org, Steven Rostedt <rostedt@goodmis.org>,
- Julia Lawall <julia.lawall@lip6.fr>, yhs@fb.com,
- Dan Williams <dan.j.williams@intel.com>, Dmitry Vyukov <dvyukov@google.com>,
- kunit-dev@googlegroups.com, michal.lkml@markovi.net,
+ linux-kbuild <linux-kbuild@vger.kernel.org>, "Bird,
+ Timothy" <Tim.Bird@sony.com>, linux-um@lists.infradead.org,
+ Steven Rostedt <rostedt@goodmis.org>, Julia Lawall <julia.lawall@lip6.fr>,
+ Josh Poimboeuf <jpoimboe@redhat.com>, kunit-dev@googlegroups.com,
  Theodore Ts'o <tytso@mit.edu>, Richard Weinberger <richard@nod.at>,
- Stephen Boyd <sboyd@kernel.org>, Greg KH <gregkh@linuxfoundation.org>,
- Randy Dunlap <rdunlap@infradead.org>,
+ Greg KH <gregkh@linuxfoundation.org>, Randy Dunlap <rdunlap@infradead.org>,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
  Luis Chamberlain <mcgrof@kernel.org>, Daniel Vetter <daniel@ffwll.ch>,
  Kees Cook <keescook@google.com>, linux-fsdevel@vger.kernel.org,
- bpf@vger.kernel.org, Logan Gunthorpe <logang@deltatee.com>, kafai@fb.com,
- Kevin Hilman <khilman@baylibre.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+ Logan Gunthorpe <logang@deltatee.com>, Kevin Hilman <khilman@baylibre.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-U29ycnksIHRvIGVtYWlsIHNvIG1hbnkgcGVvcGxlLCBidXQgdGhlcmUgYXJlIGEgbG90IG9mIG1h
-aW50YWluZXJzIGluCnRoaXMgZGlyZWN0b3J5LgoKT24gV2VkLCBNYXkgMTUsIDIwMTkgYXQgNjo0
-NSBBTSBKb25hdGhhbiBDb3JiZXQgPGNvcmJldEBsd24ubmV0PiB3cm90ZToKPgo+IE9uIFR1ZSwg
-MTQgTWF5IDIwMTkgMTY6MTk6MDIgLTA3MDAKPiBCcmVuZGFuIEhpZ2dpbnMgPGJyZW5kYW5oaWdn
-aW5zQGdvb2dsZS5jb20+IHdyb3RlOgo+Cj4gPiBIbW1tLi4ucHJvYmFibHkgcHJlbWF0dXJlIHRv
-IGJyaW5nIHRoaXMgdXAsIGJ1dCBEb2N1bWVudGF0aW9uL2Rldi10b29scy8KPiA+IGlzIGtpbmQg
-b2YgdGhyb3duIHRvZ2V0aGVyLgo+Cj4gV2FpdCBhIG1pbnV0ZSwgbWFuLi4uICpJKiBjcmVhdGVk
-IHRoYXQgZGlyZWN0b3J5LCBhcmUgeW91IGltcHVnbmluZyBteQo+IHdvcms/IDopCgpXaGF0PyEg
-SSB3b3VsZCBuZXZlciEgOy0pCgpDb250ZXh0IGZvciB0aGUgcGVvcGxlIEkganVzdCBhZGRlZDog
-SSBwcm9wb3NlZCBkb2N1bWVudGF0aW9uIGZvciBhCm5ldyBkZXZlbG9wbWVudCB0b29sLiBKb24g
-dmVyeSByZWFzb25hYmx5IHN1Z2dlc3RlZCBpdCBzaG91bGQgZ28gaW4KRG9jdW1lbnRhdGlvbi9k
-ZXYtdG9vbHMvLCB3aGljaCBpcyBub3QgdmVyeSB3ZWxsIG9yZ2FuaXplZC4gVGhpcyBpbgp0dXJu
-IHByb21wdGVkIGEgZGlzY3Vzc2lvbiBhYm91dCBjbGVhbmluZyBpdCB1cC4KCj4gQnV0IHllcywg
-ImtpbmQgb2YgdGhyb3duIHRvZ2V0aGVyIiBpcyBhIGdvb2QgZGVzY3JpcHRpb24gb2YgbXVjaCBv
-Zgo+IERvY3VtZW50YXRpb24vLiAgQSBudW1iZXIgb2YgcGVvcGxlIGhhdmUgYmVlbiB3b3JraW5n
-IGZvciB5ZWFycyB0byBtYWtlCj4gdGhhdCBiZXR0ZXIsIHdpdGggc29tZSBzdWNjZXNzLCBidXQg
-dGhlcmUgaXMgYSBsb25nIHdheSB0byBnbyB5ZXQuICBUaGUKPiBkZXYtdG9vbHMgZGlyZWN0b3J5
-IGlzIGFuIGltcHJvdmVtZW50IG92ZXIgaGF2aW5nIHRoYXQgc3R1ZmYgc2NhdHRlcmVkIGFsbAo+
-IG92ZXIgdGhlIHBsYWNlIOKAlCBhdCBsZWFzdCBpdCdzIGFjdHVhbGx5IHRocm93biB0b2dldGhl
-ciDigJQgYnV0IGl0J3Mgbm90IHRoZQo+IGVuZCBwb2ludC4KPgo+ID4gSXQgd291bGQgYmUgbmlj
-ZSB0byBwcm92aWRlIGEgY29oZXJlbnQgb3ZlcnZpZXcsIG1heWJlIHByb3ZpZGUgc29tZQo+ID4g
-YmFzaWMgZ3JvdXBpbmcgYXMgd2VsbC4KPiA+Cj4gPiBJdCB3b3VsZCBiZSBuaWNlIGlmIHRoZXJl
-IHdhcyBraW5kIG9mIGEgZ2VudGxlIGludHJvZHVjdGlvbiB0byB0aGUKPiA+IHRvb2xzLCB3aGlj
-aCBvbmVzIHlvdSBzaG91bGQgYmUgbG9va2luZyBhdCwgd2hlbiwgd2h5LCBldGMuCj4KPiBUb3Rh
-bCBhZ3JlZW1lbnQuICBBbGwgd2UgbmVlZCBpcyBzb21lYm9keSB0byB3cml0ZSBpdCEgIDopCgpJ
-IHdvdWxkbid0IG1pbmQgdGFraW5nIGEgc3RhYiBhdCBpdCBpbiBhIGxhdGVyIHBhdGNoc2V0LgoK
-TXkgaW5pdGlhbCBpZGVhOiB0aGVyZSBpcyBhIGJ1bmNoIG1vcmUgc3R1ZmYgdGhhdCBuZWVkcyB0
-byBiZSBhZGRlZApoZXJlLCBzbyBwcm9iYWJseSBkb24ndCB3YW50IHRvIGRvIGl0IGFsbCBhdCBv
-bmNlLgoKSSBhbSB0aGlua2luZyB0aGUgZmlyc3Qgc3RlcCBpcyBqdXN0IHRvIGNhdGVnb3JpemUg
-dGhpbmdzIGluIGEKc2Vuc2libGUgbWFubmVyIHNvIHNvbWVib2R5IGRvZXNuJ3QgbG9vayBhdCB0
-aGUgaW5kZXggYW5kIHNlZSAqYWxsIHRoZQp0b29scyogaW1tZWRpYXRlbHkgY2F1c2luZyB0aGVp
-ciBleWVzIHRvIGdsYXplIG92ZXIuIEZyb20gZmlyc3QKZ2xhbmNlcyBpdCBsb29rcyBsaWtlIHRo
-ZSB1c2VycyBvZiB0aGVzZSB0b29scyBpcyBnb2luZyB0byBiZSBzb21ld2hhdApkaXNqb2ludC4K
-Ck1heWJlIGJyZWFrIHRoaW5ncyBhcGFydCBieSB3aG8gYW5kIGhvdyBzb21lb25lIHdvdWxkIHVz
-ZSB0aGUgdG9vbC4gRm9yIGV4YW1wbGUsCgpJdCBsb29rcyBsaWtlIENvY2NpbmVsbGUgaXMgZ29p
-bmcgdG8gYmUgdXNlZCBwcmltYXJpbHkgYnkgcGVvcGxlIGRvaW5nCmNvZGUgamFuaXRvciB3b3Jr
-IGFuZCBsYXJnZSBzY2FsZSBjaGFuZ2VzLgoKU3BhcnNlIHNlZW1zIGxpa2UgYSBwcmVzdWJtaXQg
-dG9vbC4KCmdkYiBhbmQga2RiIGFyZSBsaWtlbHkgdXNlZCBieSBldmVyeW9uZSBmb3IgZGVidWdn
-aW5nLgoKa3NlbGZ0ZXN0IChhbmQsIGlmIEkgZ2V0IG15IHdheSwgS1VuaXQpIGFyZSB1c2VkIHBy
-aW1hcmlseSBwZW9wbGUKY29udHJpYnV0aW5nIG5ldyBmZWF0dXJlcyAodGhpcyBpcyBvbmUgSSBo
-YXZlIG1vcmUgb2YgYSB2ZXN0ZWQKaW50ZXJlc3QgaW4sIHNvIEkgd2lsbCBsZWF2ZSBpdCBhdCB0
-aGF0LCBidXQgdGhlIHBvaW50IGlzOiBJIHRoaW5rCnRoZXkgd291bGQgZ28gdG9nZXRoZXIpLgoK
-TW9zdCBvZiB0aGUgcmVtYWluaW5nIHRvb2xzIChleGNlcHQgZ2NvdikgbG9vayBsaWtlIHRoZSBr
-aW5kIG9mIGxvbmcKcnVubmluZyB0ZXN0cyB0aGF0IHlvdSBwb2ludCBhdCBhIHN0YWJsZSB0cmVl
-IGFuZCBsZXQgaXQgc2l0IGFuZCBjYXRjaApidWdzLiBTdXBlciB1c2VmdWwsIGJ1dCBJIGRvbid0
-IHRoaW5rIHlvdXIgYXZlcmFnZSBrZXJuZWwgZGV2IGlzIGdvaW5nCnRvIGJlIHRyeWluZyB0byBz
-ZXQgaXQgdXAgb3IgcnVuIGl0LiBQbGVhc2UgY29ycmVjdCBtZSBpZiBJIGFtIHdyb25nLgoKU28g
-dGhhdCBsZWF2ZXMgZ2Nvdi4gSSB0aGluayBpdCBpcyBhd2Vzb21lLCBidXQgSSBhbSBub3Qgc3Vy
-ZSBob3cgdG8KY2F0ZWdvcml6ZSBpdC4gRGVmaW5pdGVseSB3YW50IHNvbWUgYWR2aWNlIGhlcmUu
-CgpPbmNlIGV2ZXJ5dGhpbmcgaXMgYXBwcm9wcmlhdGVseSBjYXRlZ29yaXplZCBieSBzaGFwZSwg
-aW4gKGEpCnN1YnNlcXVlbnQgcGF0Y2hzZXQocykgd2UgY2FuIHRpZSBlYWNoIG9uZSBpbiB3aXRo
-IGEgZ3VpZGUsIG5vdCBqdXN0Cm9uIGhvdyB0byB1c2UgdGhlIHRvb2wsIGJ1dCBob3cgdGhlIHdv
-cmtmbG93IGxvb2tzIGZvciBzb21lb25lIHdobwp1c2VzIHRoYXQgdG9vbC4gRm9yIGV4YW1wbGUs
-IHdlIG1pZ2h0IHdhbnQgdG8gYSBndWlkZSBvbiBob3cgdG8gZG8KbGFyZ2Ugc2NhbGUgY2hhbmdl
-cyBpbiB0aGUgTGludXgga2VybmVsIGFuZCBoYXZlIHRoYXQgdGllIGluIHdpdGgKQ29jY2luZWxs
-ZS4gRm9yIGtzZWxmdGVzdCBhbmQgS1VuaXQsIHdlIG1pZ2h0IHdhbnQgdG8gcHJvdmlkZSBhIGd1
-aWRlCm9uIGhvdyB0byB0ZXN0IExpbnV4IGtlcm5lbCBjb2RlLCB3aGljaCB3b3VsZCBjb3ZlciB3
-aGVuIGFuZCBob3cgdG8KdXNlIGVhY2guCgpBbnl3YXksIGp1c3QgYSB2YWd1ZSBza2V0Y2guIExv
-b2tpbmcgZm9yd2FyZCB0byBoZWFyIHdoYXQgZXZlcnlvbmUgdGhpbmtzIQoKX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtdW0gbWFpbGluZyBsaXN0
-CmxpbnV4LXVtQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcv
-bWFpbG1hbi9saXN0aW5mby9saW51eC11bQo=
+On Thu, May 16, 2019 at 5:38 PM Stephen Boyd <sboyd@kernel.org> wrote:
+>
+> Quoting Brendan Higgins (2019-05-14 15:16:55)
+> > diff --git a/kunit/test.c b/kunit/test.c
+> > index 86f65ba2bcf92..a15e6f8c41582 100644
+> > --- a/kunit/test.c
+> > +++ b/kunit/test.c
+> [..]
+> > +
+> > +void *kunit_kmalloc(struct kunit *test, size_t size, gfp_t gfp)
+> > +{
+> > +       struct kunit_kmalloc_params params;
+> > +       struct kunit_resource *res;
+> > +
+> > +       params.size = size;
+> > +       params.gfp = gfp;
+> > +
+> > +       res = kunit_alloc_resource(test,
+> > +                                  kunit_kmalloc_init,
+> > +                                  kunit_kmalloc_free,
+> > +                                  &params);
+> > +
+> > +       if (res)
+> > +               return res->allocation;
+> > +       else
+> > +               return NULL;
+>
+> Can be written as
+>
+>         if (res)
+>                 return ....
+>         return
+>
+> and some static analysis tools prefer this.
+
+Sounds reasonable, will fix in next revision.
+
+> > +}
+> > +
+> > +void kunit_cleanup(struct kunit *test)
+> > +{
+> > +       struct kunit_resource *resource, *resource_safe;
+> > +       unsigned long flags;
+> > +
+> > +       spin_lock_irqsave(&test->lock, flags);
+>
+> Ah ok, test->lock is protecting everything now? Does it need to be a
+> spinlock, or can it be a mutex?
+
+No it needs to be a spin lock. There are some conceivable
+circumstances where the test object can be accessed by code in which
+it isn't safe to sleep.
+
+> > +       list_for_each_entry_safe(resource,
+> > +                                resource_safe,
+> > +                                &test->resources,
+> > +                                node) {
+> > +               kunit_free_resource(test, resource);
+> > +       }
+> > +       spin_unlock_irqrestore(&test->lock, flags);
+> > +}
+> > +
+
+_______________________________________________
+linux-um mailing list
+linux-um@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-um
