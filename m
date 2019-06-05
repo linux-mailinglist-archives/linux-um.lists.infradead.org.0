@@ -2,74 +2,75 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 823583546D
-	for <lists+linux-um@lfdr.de>; Wed,  5 Jun 2019 01:35:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 08700354B6
+	for <lists+linux-um@lfdr.de>; Wed,  5 Jun 2019 02:19:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yl5AYvchwCW+hGi2U9/Kp9FDWrWGQQ7oTq8KR2yyeyI=; b=g/fob44K3Eux5s
-	DHD3COU4NzkLPVFDcW0CLyXEa8xH7kxcvhHIRfME99TbwMltsoS85LnRhKxM+ezGeaYMsbA7cdh8r
-	XbBYIb81ZMQRXCwQabHDqxx+ftRjMf8H8bohsqylUWayARyimUmi7yEO6q0+WxOxMUGSI/k74/AAs
-	xxfgKYOG5m9llrKfa6inPEtl8h7A6HzjeW2HqNlYvFnLN6xqrnsq/GtOEySbyqLXcn3FuwY3PqtKg
-	XcRhEuwAu9kf1zpEoqk/OV99nUBL4poDjQAuqpG1IGvtZCpB2TcbUr7fsvltUX6Tki7EZOWjkN7t3
-	SlAogytuI8Pwfm5Ws9YQ==;
+	List-Owner; bh=vCuCO8hwD7k+17oANpSyC5wSJ76GrtZ8iHYJBcAiPlI=; b=P9URRPTsirQpwT
+	9j+XiH3+LCjTuxGkzbXa6pfW2x/Ob8Yh24w4mVw9I8MIYbRzFZuoq4qJElH1UY9Z4HnyNqaZPnbVn
+	p2qCA/ZECXXw9g4l7CpO8vIS1pxnz/3uPcmTXvO2cbAuGSozFzrN5gvBMAgZjOYj1EYgA9vRcv/Cr
+	7ahHB3u2cKHg6oS8xdorIquYsCCty3Bfh/X+KBwsy7S2pAGvZESOIh7cdImUrJJoEu9k6OcMQI2zU
+	aruON2SvbHRSFYWu4Iu2SEF77nvGp0NXA02D51j1yi2TpbhofXADRHAwH0bBzKMqHXs95GCcSe+kk
+	BUJRcMmn0O+1qCS8cK0Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYIxY-0007OQ-43; Tue, 04 Jun 2019 23:35:16 +0000
-Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
+	id 1hYJeb-0003vJ-9c; Wed, 05 Jun 2019 00:19:45 +0000
+Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYIxV-0007Nj-JC
- for linux-um@lists.infradead.org; Tue, 04 Jun 2019 23:35:14 +0000
-Received: by mail-lf1-x142.google.com with SMTP id m15so17709257lfh.4
- for <linux-um@lists.infradead.org>; Tue, 04 Jun 2019 16:35:12 -0700 (PDT)
+ id 1hYJeY-0003uv-IY
+ for linux-um@lists.infradead.org; Wed, 05 Jun 2019 00:19:43 +0000
+Received: by mail-lj1-x242.google.com with SMTP id v18so342794ljh.6
+ for <linux-um@lists.infradead.org>; Tue, 04 Jun 2019 17:19:42 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=yUmGpFNz6fygF8JqTGIH7xCmXTGijTn5zshzVeIRyeU=;
- b=n7729tdVd3jiiQzxyuAeBqRs5Gxta2lFj3c+5zHccv1uoJt2AmyWyIDUmg3JxWlagm
- M7C85QUZ1yXvYp4uRNAObTU5YeMqh3a1wo5N9AJPUoMbdbPZFo/1bO/N1rShEEWiWI/v
- Q5BI60V/NuZ52yrsR6VbaGcuc0c695fmqthfBEC0S0U3y4gF1Q08eneEUDigrRf9hMyB
- iQhbHsK661Yo5QjuEON5MQg+g2Pkp/H8jIb/fz9zGMrFKEuNEFNEvKupY/jJ8Vu91CzS
- 9bZX4E1E7GESuDjTm/u2NlMe8YNUYbmht0QRBeMkkioK7eHniavWPW592kDJkctLp/+R
- YphA==
+ :cc; bh=wdmJ9l6dKN/M8KJKaReWlFRx3EElIyLoR59kmGQ0ajY=;
+ b=mWp51IFY9ldz1n3pj1fKrjbn8ZSGPWgwyelkcW6/s7v+y0e0DR/V8GR1ZxM1BsBeAX
+ mqVaa/tfXDd/6MEO1OGM22zX0t4jPSi2d71oCngZuhbWkZxio6+sFzeQvWqDrIYIpJuw
+ nH2s7y3MrUSzM3dAVIORTn4j8f2hTE4FKXFXiB6vbyOyWM+8sm7qnuJAdZe0dYu2FmQB
+ G/4Hd50+HcTF52V70z6ii5Z+BoWQp+0M49tLLSAs+EJ/ROKxeK9GHDSjTGCoNxZTB406
+ eMV8PQsiA3EH2MFRRpS50GYwQWxdJ7xN9x1Gd1qekPsZCFSmXsLb0mvz92xMWF6zHTLn
+ it2A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=yUmGpFNz6fygF8JqTGIH7xCmXTGijTn5zshzVeIRyeU=;
- b=capbyZ2LewQkQYNYRe9MEtTX/kgYmdUpqx7ufLeQfZcRpLZ12feDGSpnwENc2m39rh
- KvDfSZYrifygX5l+nfyF0wi9ex31HWE+uUX7s9j21TqQxj4mXS1f+QifgDOv0uoK/zjn
- mvbQ16t2TnPpCE87qxzSuHqkCUUc+fYu62aNKDOOlwj/WLtDTmF70SWICsZ2E4gaK2RI
- vXTK4ue4aRioHCCOzcmXf2NdD63l5NPB0Ryj6/BMsdUX0GNvP/mlN/HscWVW0H5cBou4
- tROAIjJ/0A4kEwrzcx+BPS9S4MF3TmYcswyq/9BzVHqLFK5ktBNXBonEvjQxGGCckyCD
- iE2g==
-X-Gm-Message-State: APjAAAWow/MUqxmQID1d9h21LpR/CIgdf8Y1bAu5OD3x7NcoTi0YPZj4
- ueQhlfRj7abtUI8s+rUYLDYWWYdyLt3CtpDeiQpSXA==
-X-Google-Smtp-Source: APXvYqxFVfsY2uUyOvHDHQWsWPz6JVCPCIp44WWY+H6aJDJ/TaoNNgHz4dGto/MoXWH1ptk3ODVootrUgExaXb/yDLQ=
-X-Received: by 2002:a19:7110:: with SMTP id m16mr18059760lfc.4.1559691310771; 
- Tue, 04 Jun 2019 16:35:10 -0700 (PDT)
+ bh=wdmJ9l6dKN/M8KJKaReWlFRx3EElIyLoR59kmGQ0ajY=;
+ b=EQcO1QxCk5dnIxf7qPz8JDxyb1itVT/NwchEq50RT2EK8LjxFV9JOAGZVqoKNcwe74
+ aKaxOwSb+PzDGI9rDwcmoKml0IiCKVVcgm1dzR+cRo6r97tFVb7NJf65JrqwjI2pNnAP
+ DMjVY7RQ2/loBULVySIG+UtOcy7uaJnT6Y3Cim/MfRfeLrM3C2VinLD2x4poCaq8+rIA
+ 0GtjLWywdZZk+m7ztPiG4QgF9VT8UM1PyhyvD/CGTfNLvtyNUbofUK/61LbMEYlt2p6h
+ NpAtQtYZdy1g3Xq1EzXHyP4BVZTrPHkeTxN9Uphc3E9Y3plpccjmaD7kiMfbdfMP61zs
+ NGyQ==
+X-Gm-Message-State: APjAAAW5ys3ECvX0KQszuDsR0KQluucoQ/oMSbIqWhjkB3IXHrvaEk+J
+ +G0i/jAphqtP0WqA5PP4xkZn5UaqeRsjCSNJJHlnzg==
+X-Google-Smtp-Source: APXvYqz12ZqA7QhRnSs7NCGRounbiJim0N2d6mvCnGBaDXvxAiRpIwE1RpZWUzCT4YdYhAmjp6wliW9IQj3YJNSuaRI=
+X-Received: by 2002:a2e:9e8e:: with SMTP id f14mr3500ljk.120.1559693980056;
+ Tue, 04 Jun 2019 17:19:40 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190514221711.248228-1-brendanhiggins@google.com>
- <20190514221711.248228-3-brendanhiggins@google.com>
- <20190517003847.0962F2082E@mail.kernel.org>
-In-Reply-To: <20190517003847.0962F2082E@mail.kernel.org>
+ <20190514221711.248228-4-brendanhiggins@google.com>
+ <20190517174300.7949F20848@mail.kernel.org>
+In-Reply-To: <20190517174300.7949F20848@mail.kernel.org>
 From: Brendan Higgins <brendanhiggins@google.com>
-Date: Tue, 4 Jun 2019 16:34:58 -0700
-Message-ID: <CAFd5g45taSVNXSQJrXnHLG_Rtum650vFw1zccqv1Tyru5A5d8w@mail.gmail.com>
-Subject: Re: [PATCH v4 02/18] kunit: test: add test resource management API
+Date: Tue, 4 Jun 2019 17:19:28 -0700
+Message-ID: <CAFd5g45WrARi7eXsVKyq2eJH5j+wSrCCaHHSHrMptG7+MnNiTg@mail.gmail.com>
+Subject: Re: [PATCH v4 03/18] kunit: test: add string_stream a std::stream
+ like string builder
 To: Stephen Boyd <sboyd@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190604_163513_667088_5295C993 
-X-CRM114-Status: GOOD (  14.40  )
+X-CRM114-CacheID: sfid-20190604_171942_632981_66566783 
+X-CRM114-Status: GOOD (  15.14  )
 X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:142 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:242 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -127,68 +128,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Thu, May 16, 2019 at 5:38 PM Stephen Boyd <sboyd@kernel.org> wrote:
+On Fri, May 17, 2019 at 10:43 AM Stephen Boyd <sboyd@kernel.org> wrote:
 >
-> Quoting Brendan Higgins (2019-05-14 15:16:55)
-> > diff --git a/kunit/test.c b/kunit/test.c
-> > index 86f65ba2bcf92..a15e6f8c41582 100644
-> > --- a/kunit/test.c
-> > +++ b/kunit/test.c
-> [..]
-> > +
-> > +void *kunit_kmalloc(struct kunit *test, size_t size, gfp_t gfp)
-> > +{
-> > +       struct kunit_kmalloc_params params;
-> > +       struct kunit_resource *res;
-> > +
-> > +       params.size = size;
-> > +       params.gfp = gfp;
-> > +
-> > +       res = kunit_alloc_resource(test,
-> > +                                  kunit_kmalloc_init,
-> > +                                  kunit_kmalloc_free,
-> > +                                  &params);
-> > +
-> > +       if (res)
-> > +               return res->allocation;
-> > +       else
-> > +               return NULL;
+> Quoting Brendan Higgins (2019-05-14 15:16:56)
+> > A number of test features need to do pretty complicated string printing
+> > where it may not be possible to rely on a single preallocated string
+> > with parameters.
+> >
+> > So provide a library for constructing the string as you go similar to
+> > C++'s std::string.
+> >
+> > Signed-off-by: Brendan Higgins <brendanhiggins@google.com>
+> > Reviewed-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+> > Reviewed-by: Logan Gunthorpe <logang@deltatee.com>
 >
-> Can be written as
->
->         if (res)
->                 return ....
->         return
->
-> and some static analysis tools prefer this.
+> Is there any reason why we can't use the seqfile API for this? These
+> both share a similar goal, formatting strings into a buffer to be read
+> later. Maybe some new APIs would be needed to extract the buffer
+> differently, but I hope we could share the code.
 
-Sounds reasonable, will fix in next revision.
+I can see why you are asking. It seems as though they are trying to do
+*similar* things, and it seems possible that we might be able to
+extract some common functionality out of seq_file that could replace
+this; however, it looks like it would be require a significant
+refactoring of seq_file to separate out the file system specific bits
+from the more general stringbuilder functionality.
 
-> > +}
-> > +
-> > +void kunit_cleanup(struct kunit *test)
-> > +{
-> > +       struct kunit_resource *resource, *resource_safe;
-> > +       unsigned long flags;
-> > +
-> > +       spin_lock_irqsave(&test->lock, flags);
->
-> Ah ok, test->lock is protecting everything now? Does it need to be a
-> spinlock, or can it be a mutex?
+In my opinion, a refactoring like this makes no sense in this
+patchset; it probably belongs in its own patchset (preferably as a
+follow on). I also am not sure if the FS people would appreciate
+indirection that serves them no benefit, but I can ask if you like.
 
-No it needs to be a spin lock. There are some conceivable
-circumstances where the test object can be accessed by code in which
-it isn't safe to sleep.
+> If it can't be used, can you please add the reasoning to the commit text
+> here?
 
-> > +       list_for_each_entry_safe(resource,
-> > +                                resource_safe,
-> > +                                &test->resources,
-> > +                                node) {
-> > +               kunit_free_resource(test, resource);
-> > +       }
-> > +       spin_unlock_irqrestore(&test->lock, flags);
-> > +}
-> > +
+Will do.
+
+Thanks!
 
 _______________________________________________
 linux-um mailing list
