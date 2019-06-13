@@ -2,67 +2,66 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F0BF341ACB
-	for <lists+linux-um@lfdr.de>; Wed, 12 Jun 2019 05:38:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F2E9143453
+	for <lists+linux-um@lfdr.de>; Thu, 13 Jun 2019 10:46:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Date:Message-Id:Subject:Mime-Version
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=ASHag1OM2we7GpaxLeuIcar/vV4SAbTdhbe6vi94tkk=; b=m4vTCKM5P560VA
-	agOM75u3H6pf5vjc2jmeEP4cevf9Gk29bhcA4r1Owj+rD6Nz5F9cKXMg+tc0CoMqu4oBVhLoOTPAb
-	ENbfrHvzGjqhi1R01Jjn4zhIFKh2ndwSMa7fI9P2wRAGki9D07mGaEMamoZHkhkbjzD5FGY2bC3F7
-	gYwICmCr0pXb366F5xDzxZdr4VbWCV/kYfz+s1gKZC0Gns/sv2dQiVyKrKpX6n/PA+kDYdTrvDwOw
-	sS4tl6B/X9K04DRa1Dbx/teiUwlAlUBZbu1wWWX5+XSGm8Xbws/7+fA1yA+TgyASAsKZxVJGjzYQz
-	Xx7NuBLUeawyYgcLevug==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=kKlGJk23eCvYupCkNON0ppjNHvabp5arZP3CgnVkq84=; b=kkM0PnlJeKdt/O
+	xVS29ChsLbrW6AIozrrMq3+qKejCaBmpBvbvBzmpRtfxtTGmpTobx9pU0wntg1SDJGH0U6zQFbm+9
+	QDYVcFvlsFIdtbHdiHBAksD+NwgKMOQf0iJ7Sys0V/0yKs//KagG43J5w5sniuthCBPNpEoTXzUs7
+	7zruurF+bJmpSSwsn/67i63xbIJoRnqyKqI1HxEGKPBgVP5Vg1FXP55oUZVg85Z5m0d52xuf2KeC3
+	+qsRCmtSQENAtgLYcpjihxwMOIJK9npwQJNNmKHYgibkLE26MRsD+sWvP3MEiJXwlElsXM2VTG+ps
+	6390mVcnS+QxxN/oauwg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hau5t-0000PD-1C; Wed, 12 Jun 2019 03:38:37 +0000
-Received: from smtpcmd04142.aruba.it ([62.149.158.142])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hau5p-0000No-9Q
- for linux-um@lists.infradead.org; Wed, 12 Jun 2019 03:38:36 +0000
-Received: from [127.0.0.1] ([168.205.111.182])
- by smtpcmd04.ad.aruba.it with bizsmtp
- id PfdY2000J3wAGnc01feNhH; Wed, 12 Jun 2019 05:38:24 +0200
-From: info@barbettasrl.it
-Mime-Version: 1.0 (1.0)
-Subject: Security Notice. Someone have access to your system.
-Message-Id: <54017416-407E-6CA8-2E7F-44F9663F49D6@barbettasrl.it>
-Date: Wed, 12 Jun 2019 06:37:12 +0300
-To: linux-um@lists.infradead.org
-X-Mailer: iPad Mail (13E238)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aruba.it; s=a1;
- t=1560310704; bh=WWPzzONnzevTYv6eh4shmic5Ixy3v/C+H/udYTZ5eCw=;
- h=From:Content-Type:Mime-Version:Subject:Date:To;
- b=noAMZE2l7xbJvsu7v3lBdNY1japIKusvY5pIi+Xe4yuAHKXQMC8Bc0xLK7FM0qALR
- fAmW7PdjmdTWoISkphBSZTONwuyNZSLCfQfcCCqDfUdP6TlGPIKaDjwH7G6Nama53G
- 9kIWQYec7SOR66ZafO0g2+upGx39wGd0+V9UL1Sc2BVboGwra/GNEzj8Masjj1UaSr
- Sug3c/XervXPqrlQQG5RQg2GWoGHriMeNB8sUWFxZts93C+DZY3YoXo6vROrEQcXy0
- aVqZ68nm9ddL3GytDr5QKjCd0YSG8KyBe9DPg9gRCNhXCa0W1GK2woamXhSKkgInuN
- QsOECkT6EmwdA==
+	id 1hbLNY-0007JD-Vy; Thu, 13 Jun 2019 08:46:40 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hbLNW-0007IC-Fd
+ for linux-um@lists.infradead.org; Thu, 13 Jun 2019 08:46:39 +0000
+Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
+ [83.86.89.107])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id A027F2147A;
+ Thu, 13 Jun 2019 08:46:37 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1560415598;
+ bh=61GBweix5UTf8kAg2xGTzl6CpAUhZk7wGiUDyCDQ2sA=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=u1JKSl7KlOvZvAq0kfIJ0y2kyKzlNPLEAI23ly7lvAGQNutVLPxbHy6u0eU1aNQqj
+ KhIR4LAneK87dhHYFpBwEeCvmR1LH1KqrUktwiN9apvTYpincylifu+j7Vc9VE7DMc
+ mVSfdHixZ1j+YD5hn6DT2rQciDbqaZoFPjURtTVc=
+From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+To: linux-kernel@vger.kernel.org
+Subject: [PATCH 5.1 058/155] uml: fix a boot splat wrt use of cpu_all_mask
+Date: Thu, 13 Jun 2019 10:32:50 +0200
+Message-Id: <20190613075656.336802452@linuxfoundation.org>
+X-Mailer: git-send-email 2.22.0
+In-Reply-To: <20190613075652.691765927@linuxfoundation.org>
+References: <20190613075652.691765927@linuxfoundation.org>
+User-Agent: quilt/0.66
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_203833_829710_A629B858 
-X-CRM114-Status: UNSURE (   3.13  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 2.5 (++)
+X-CRM114-CacheID: sfid-20190613_014638_550716_2C013809 
+X-CRM114-Status: GOOD (  12.16  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (2.5 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [62.149.158.142 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [62.149.158.142 listed in wl.mailspike.net]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 2.5 BITCOIN_DEADLINE       BitCoin with a deadline
- 0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ 0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,49 +73,71 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Sasha Levin <sashal@kernel.org>,
+ =?UTF-8?q?Maciej=20=C5=BBenczykowski?= <maze@google.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Jeff Dike <jdike@addtoit.com>,
+ linux-um@lists.infradead.org, stable@vger.kernel.org,
+ Richard Weinberger <richard@nod.at>,
+ Anton Ivanov <anton.ivanov@cambridgegreys.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-Hello!
-
-I am a hacker who has access to your operating system.
-I also have full access to your account.
-
-I've been watching you for a few months now.
-The fact is that you were infected with malware through an adult site that you visited.
-
-If you are not familiar with this, I will explain.
-Trojan Virus gives me full access and control over a computer or other device.
-This means that I can see everything on your screen, turn on the camera and microphone, but you do not know about it.
-
-I also have access to all your contacts and all your correspondence.
-
-Why your antivirus did not detect malware?
-Answer: My malware uses the driver, I update its signatures every 4 hours so that your antivirus is silent.
-
-I made a video showing how you satisfy yourself in the left half of the screen, and in the right half you see the video that you watched.
-With one click of the mouse, I can send this video to all your emails and contacts on social networks.
-I can also post access to all your e-mail correspondence and messengers that you use.
-
-If you want to prevent this,
-transfer the amount of $500 to my bitcoin address (if you do not know how to do this, write to Google: "Buy Bitcoin").
-
-My bitcoin address (BTC Wallet) is:  35T3S5UwefDbA6uaFGDwEzBL2AL8LEbB2v
-
-After receiving the payment, I will delete the video and you will never hear me again.
-I give you 50 hours (more than 2 days) to pay.
-I have a notice reading this letter, and the timer will work when you see this letter.
-
-Filing a complaint somewhere does not make sense because this email cannot be tracked like my bitcoin address.
-I do not make any mistakes.
-
-If I find that you have shared this message with someone else, the video will be immediately distributed.
-
-Best regards!
-
-_______________________________________________
-linux-um mailing list
-linux-um@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-um
+WyBVcHN0cmVhbSBjb21taXQgNjg5YTU4NjA1YjYzMTczYWNiMGE4Y2Y5NTRhZjZhOGY2MDQ0MGM5
+MyBdCgpNZW1vcnk6IDUwOTEwOEsvNTQyNjEySyBhdmFpbGFibGUgKDM4MzVLIGtlcm5lbCBjb2Rl
+LCA5MTlLIHJ3ZGF0YSwgMTAyOEsgcm9kYXRhLCAxMjlLIGluaXQsIDIxMUsgYnNzLCAzMzUwNEsg
+cmVzZXJ2ZWQsIDBLIGNtYS1yZXNlcnZlZCkKTlJfSVJRUzogMTUKY2xvY2tzb3VyY2U6IHRpbWVy
+OiBtYXNrOiAweGZmZmZmZmZmZmZmZmZmZmYgbWF4X2N5Y2xlczogMHgxY2Q0MmUyMDUsIG1heF9p
+ZGxlX25zOiA4ODE1OTA0MDQ0MjYgbnMKLS0tLS0tLS0tLS0tWyBjdXQgaGVyZSBdLS0tLS0tLS0t
+LS0tCldBUk5JTkc6IENQVTogMCBQSUQ6IDAgYXQga2VybmVsL3RpbWUvY2xvY2tldmVudHMuYzo0
+NTggY2xvY2tldmVudHNfcmVnaXN0ZXJfZGV2aWNlKzB4NzIvMHgxNDAKcG9zaXgtdGltZXIgY3B1
+bWFzayA9PSBjcHVfYWxsX21hc2ssIHVzaW5nIGNwdV9wb3NzaWJsZV9tYXNrIGluc3RlYWQKTW9k
+dWxlcyBsaW5rZWQgaW46CkNQVTogMCBQSUQ6IDAgQ29tbTogc3dhcHBlciBOb3QgdGFpbnRlZCA1
+LjEuMC1yYzQtMDAwNDgtZ2VkNzljYzg3MzAyYiAjNApTdGFjazoKIDYwNGViZGEwIDYwM2M1Mzcw
+IDYwNGViZTIwIDYwNDZmZDE3CiAwMDAwMDAwMCA2MDA2ZmNiYiA2MDRlYmRiMCA2MDNjNTNiNQog
+NjA0ZWJlMTAgNjAwM2JmYzQgNjA0ZWJkZDAgOTAwMDAwMWNhCkNhbGwgVHJhY2U6CiBbPDYwMDZm
+Y2JiPl0gPyBwcmludGsrMHgwLzB4OTQKIFs8NjAwODMxNjA+XSA/IGNsb2NrZXZlbnRzX3JlZ2lz
+dGVyX2RldmljZSsweDcyLzB4MTQwCiBbPDYwMDFmMTZlPl0gc2hvd19zdGFjaysweDEzYi8weDE1
+NQogWzw2MDNjNTM3MD5dID8gZHVtcF9zdGFja19wcmludF9pbmZvKzB4ZTIvMHhlYgogWzw2MDA2
+ZmNiYj5dID8gcHJpbnRrKzB4MC8weDk0CiBbPDYwM2M1M2I1Pl0gZHVtcF9zdGFjaysweDJhLzB4
+MmMKIFs8NjAwM2JmYzQ+XSBfX3dhcm4rMHgxMGUvMHgxM2UKIFs8NjAwNzAzMjA+XSA/IHZwcmlu
+dGtfZnVuYysweGM4LzB4Y2YKIFs8NjAwMzBmZDY+XSA/IGJsb2NrX3NpZ25hbHMrMHgwLzB4MTYK
+IFs8NjAwNmZjYmI+XSA/IHByaW50aysweDAvMHg5NAogWzw2MDAzYzA4Yj5dIHdhcm5fc2xvd3Bh
+dGhfZm10KzB4OTcvMHg5OQogWzw2MDAzMTFhMT5dID8gc2V0X3NpZ25hbHMrMHgwLzB4M2YKIFs8
+NjAwM2JmZjQ+XSA/IHdhcm5fc2xvd3BhdGhfZm10KzB4MC8weDk5CiBbPDYwMDg0MmNiPl0gPyB0
+aWNrX29uZXNob3RfbW9kZV9hY3RpdmUrMHg0NC8weDRmCiBbPDYwMDMwZmQ2Pl0gPyBibG9ja19z
+aWduYWxzKzB4MC8weDE2CiBbPDYwMDZmY2JiPl0gPyBwcmludGsrMHgwLzB4OTQKIFs8NjAwN2Qy
+ZDU+XSA/IF9fY2xvY2tzb3VyY2Vfc2VsZWN0KzB4MjAvMHgxYjEKIFs8NjAwMzBmZDY+XSA/IGJs
+b2NrX3NpZ25hbHMrMHgwLzB4MTYKIFs8NjAwNmZjYmI+XSA/IHByaW50aysweDAvMHg5NAogWzw2
+MDA4MzE2MD5dIGNsb2NrZXZlbnRzX3JlZ2lzdGVyX2RldmljZSsweDcyLzB4MTQwCiBbPDYwMDMx
+MTkyPl0gPyBnZXRfc2lnbmFscysweDAvMHhmCiBbPDYwMDMwZmQ2Pl0gPyBibG9ja19zaWduYWxz
+KzB4MC8weDE2CiBbPDYwMDZmY2JiPl0gPyBwcmludGsrMHgwLzB4OTQKIFs8NjAwMDJlZWM+XSB1
+bV90aW1lcl9zZXR1cCsweGM4LzB4Y2EKIFs8NjAwMDFiNTk+XSBzdGFydF9rZXJuZWwrMHg0N2Yv
+MHg1N2UKIFs8NjAwMDM1YmM+XSBzdGFydF9rZXJuZWxfcHJvYysweDQ5LzB4NGQKIFs8NjAwNmM0
+ODM+XSA/IGttc2dfZHVtcF9yZWdpc3RlcisweDgyLzB4OGEKIFs8NjAwMWRlNjI+XSBuZXdfdGhy
+ZWFkX2hhbmRsZXIrMHg4MS8weGIyCiBbPDYwMDAzNTcxPl0gPyBrbXNnX2R1bXBlcl9zdGRvdXRf
+aW5pdCsweDFhLzB4MWMKIFs8NjAwMjBjNzU+XSB1bWxfZmluaXNoc2V0dXArMHg1NC8weDU5Cgpy
+YW5kb206IGdldF9yYW5kb21fYnl0ZXMgY2FsbGVkIGZyb20gaW5pdF9vb3BzX2lkKzB4MjcvMHgz
+NCB3aXRoIGNybmdfaW5pdD0wCi0tLVsgZW5kIHRyYWNlIDAwMTczZDAxMTdhODhhY2IgXS0tLQpD
+YWxpYnJhdGluZyBkZWxheSBsb29wLi4uIDY5NDEuOTAgQm9nb01JUFMgKGxwaj0zNDcwOTUwNCkK
+ClNpZ25lZC1vZmYtYnk6IE1hY2llaiDFu2VuY3p5a293c2tpIDxtYXplQGdvb2dsZS5jb20+CkNj
+OiBKZWZmIERpa2UgPGpkaWtlQGFkZHRvaXQuY29tPgpDYzogUmljaGFyZCBXZWluYmVyZ2VyIDxy
+aWNoYXJkQG5vZC5hdD4KQ2M6IEFudG9uIEl2YW5vdiA8YW50b24uaXZhbm92QGNhbWJyaWRnZWdy
+ZXlzLmNvbT4KQ2M6IGxpbnV4LXVtQGxpc3RzLmluZnJhZGVhZC5vcmcKQ2M6IGxpbnV4LWtlcm5l
+bEB2Z2VyLmtlcm5lbC5vcmcKClNpZ25lZC1vZmYtYnk6IFJpY2hhcmQgV2VpbmJlcmdlciA8cmlj
+aGFyZEBub2QuYXQ+ClNpZ25lZC1vZmYtYnk6IFNhc2hhIExldmluIDxzYXNoYWxAa2VybmVsLm9y
+Zz4KLS0tCiBhcmNoL3VtL2tlcm5lbC90aW1lLmMgfCAyICstCiAxIGZpbGUgY2hhbmdlZCwgMSBp
+bnNlcnRpb24oKyksIDEgZGVsZXRpb24oLSkKCmRpZmYgLS1naXQgYS9hcmNoL3VtL2tlcm5lbC90
+aW1lLmMgYi9hcmNoL3VtL2tlcm5lbC90aW1lLmMKaW5kZXggMDUyZGU0YzhhY2IyLi4wYzU3MmE0
+ODE1OGUgMTAwNjQ0Ci0tLSBhL2FyY2gvdW0va2VybmVsL3RpbWUuYworKysgYi9hcmNoL3VtL2tl
+cm5lbC90aW1lLmMKQEAgLTU2LDcgKzU2LDcgQEAgc3RhdGljIGludCBpdGltZXJfb25lX3Nob3Qo
+c3RydWN0IGNsb2NrX2V2ZW50X2RldmljZSAqZXZ0KQogc3RhdGljIHN0cnVjdCBjbG9ja19ldmVu
+dF9kZXZpY2UgdGltZXJfY2xvY2tldmVudCA9IHsKIAkubmFtZQkJCT0gInBvc2l4LXRpbWVyIiwK
+IAkucmF0aW5nCQkJPSAyNTAsCi0JLmNwdW1hc2sJCT0gY3B1X2FsbF9tYXNrLAorCS5jcHVtYXNr
+CQk9IGNwdV9wb3NzaWJsZV9tYXNrLAogCS5mZWF0dXJlcwkJPSBDTE9DS19FVlRfRkVBVF9QRVJJ
+T0RJQyB8CiAJCQkJICBDTE9DS19FVlRfRkVBVF9PTkVTSE9ULAogCS5zZXRfc3RhdGVfc2h1dGRv
+d24JPSBpdGltZXJfc2h1dGRvd24sCi0tIAoyLjIwLjEKCgoKCl9fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LXVtIG1haWxpbmcgbGlzdApsaW51eC11
+bUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4v
+bGlzdGluZm8vbGludXgtdW0K
