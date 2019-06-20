@@ -2,91 +2,73 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 88D3247CBE
-	for <lists+linux-um@lfdr.de>; Mon, 17 Jun 2019 10:28:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DFB3D4C465
+	for <lists+linux-um@lfdr.de>; Thu, 20 Jun 2019 02:15:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
-	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:From:To:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ClbPSfSHql+5rc7E/3+kvsQxSKBIV3uhm8H+jtaWGxs=; b=DRDIbmznIAEB4C
-	DqkoX7lqJUoOm42Fe63FT3w/salOFEaT4i+ljFRMUUcRhT0nQ+9HBkUZv+tuRS78cW/uFK7FEST+v
-	qcTrPRZpf6vcE1MVQyazX28y8DiusN89JUnV/Xskby3ku6ZNEf3ea8YP34d7yAEpQFMKpRnaM1Z+e
-	QzNwZxzIUcpyt8ZhTgpYkQO6kb5lANJM+TX+pXBz+gHuUMXLl7fVpOwm3+HIC7NS5+kZsqQBLl4qC
-	0FeLcEc4EK6UFjwv3+SZs9tqdEKOYvo1f6slKhKoalHQktm0w4HNbXr54gJHX8k9x/xlrX3MMehQf
-	GFR7+Fdyf63VadAWvl9w==;
+	List-Owner; bh=SkPFrGBfs3LGr7W2lLMfMbY1Fpj9nBNu7voC5XmNv/I=; b=rizs15Fe6JCp9w
+	yxuqI6nLOX/JV+SjujtzaWwYjweBrhipzhRpoej5wGpk3TuqJDkLzfelULnYrSq7fKQNUYDQYNFzf
+	1pY48dTvY7pQtcyWUlJhwDjINkMqIvqkWrZEohQ9bqMAFAcse08kXOLenfq5jYf4VJ4sYiEfrJ8/0
+	+8RyILgpr+Sx3NiXyMMRzcafSlZrFOvA6DfRGXNin+DrIYzscf4K3lJMp8DmaBDdbFFK/zcvziHQx
+	/0RY8cHpqAkd7vUgcrdk1XxBytwmqthmtL8pJlXpYh7itad8kK0KI023EhYAcbNBOcvDsOuslprxC
+	G8eLIMoA0ikU/yM94gCw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hcmzt-0007gz-OC; Mon, 17 Jun 2019 08:28:13 +0000
-Received: from mail-yw1-xc4a.google.com ([2607:f8b0:4864:20::c4a])
+	id 1hdkjj-0004FI-R5; Thu, 20 Jun 2019 00:15:31 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hcmzr-0007dU-N4
- for linux-um@lists.infradead.org; Mon, 17 Jun 2019 08:28:12 +0000
-Received: by mail-yw1-xc4a.google.com with SMTP id b63so11515321ywc.12
- for <linux-um@lists.infradead.org>; Mon, 17 Jun 2019 01:28:07 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=date:in-reply-to:message-id:mime-version:references:subject:from:to
- :cc; bh=EsSBOAivkaHwi6D12Cv8eKMrxsdP+T6KPHsvwbMQYm0=;
- b=C7EmzIa5t1p3To0eH+Btt+UKnk2zWoDCRcHlxDDez+EJGzuX5/OCX+VtE4f/+IBxBU
- mGEeX0YKVsmTpTHqWxwdvH8hqIG3FELhUYhSlXikfd0094SnjH2SPp0dcm0R005htjts
- 6D/xP0jMwTBwY1jE9/ZxkY0+RYLVqYuSTLbgUEKmyJPUnfix1cU3MelrOVMNgQTKcGe9
- cFGgfxb8WDzOX4wGL98vqfITN9oZvAZ6ZQuIixRxb8VtiucW8A40EeqqX9/1t6jRhzWX
- B1r5Tw0xfFTV6bdsPqlvoEcQ0Y0C9kM0VAB1WtVyge15d2r4CngkCHzpB/WflMNr6YDF
- mQ0Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:in-reply-to:message-id:mime-version
- :references:subject:from:to:cc;
- bh=EsSBOAivkaHwi6D12Cv8eKMrxsdP+T6KPHsvwbMQYm0=;
- b=szKax5/xPkkxQsIMuki2jvrfjgKx9yid467eVaKT48jty2BUUfDIwQBjlwq75snfmr
- Ft6n3MZ7oq9MY25DXnxPjxtwTvphAdTuQWhnDs9H3AlwawId4+4sOS2sCmR/7gY9e/K/
- +1x9WzeojsuIUbhxY28LI89CqYV8FMCidV9kjArqMOF27HBSufd4QyyqR5kGao0+RxZM
- pwehm3ec2simmGlfX3xi7YJtR2rWfdd+DOMibNhkX5nop56ybW86AwcBXXBAD0Qkc7NV
- Yu6As83vBR/1Q7QRBzVScl3349011S0yI4UHPyOSAXS5TCd+2ylUYV8HzxRGEi09XN9E
- iM0Q==
-X-Gm-Message-State: APjAAAW9aHL46KEzasDoVCQyza4SFci/eIKJ1ahA67Y0x6E/xaLpu1oT
- Dye+vKlo+yn+ZQx2cHBLw/AalCZS+W+C0Q+iqulhzg==
-X-Google-Smtp-Source: APXvYqygaxiZVfos+CJ+dORKXgXbsd4xQo+Oa0IXMYwFW3jHO/QMUCpEYOoJXhDPIYS8TyQgU0luKfcb92R2UWUxnJ1x6Q==
-X-Received: by 2002:a25:7642:: with SMTP id r63mr57620375ybc.253.1560760086697; 
- Mon, 17 Jun 2019 01:28:06 -0700 (PDT)
-Date: Mon, 17 Jun 2019 01:26:13 -0700
-In-Reply-To: <20190617082613.109131-1-brendanhiggins@google.com>
-Message-Id: <20190617082613.109131-19-brendanhiggins@google.com>
-Mime-Version: 1.0
+ id 1hdkjg-0004Eg-6L
+ for linux-um@lists.infradead.org; Thu, 20 Jun 2019 00:15:29 +0000
+Received: from kernel.org (unknown [104.132.0.74])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 93426218BE;
+ Thu, 20 Jun 2019 00:15:26 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1560989726;
+ bh=Cyw3CS4Us7cHDynulRLePwpLSsuY8ho08g4vXgTjDFM=;
+ h=In-Reply-To:References:To:From:Subject:Cc:Date:From;
+ b=uxkDxyYpF7laGQMQdbheNapqj0FQjS0o/hFsG69mDV7yMnicTh9sX+q1GYO8mfbwg
+ E1z69sHUGBcQdsi2WlYDYbSc4B2+s17Nz6qJQoCAMJgUsjAbryk7FV2ai2kP081uXc
+ 0hRlrWl2NbES9/L1UjKNP/E97FgjeS8RMgUcodoM=
+MIME-Version: 1.0
+In-Reply-To: <20190617082613.109131-2-brendanhiggins@google.com>
 References: <20190617082613.109131-1-brendanhiggins@google.com>
-X-Mailer: git-send-email 2.22.0.410.gd8fdbe21b5-goog
-Subject: [PATCH v5 18/18] MAINTAINERS: add proc sysctl KUnit test to PROC
- SYSCTL section
-From: Brendan Higgins <brendanhiggins@google.com>
-To: frowand.list@gmail.com, gregkh@linuxfoundation.org, jpoimboe@redhat.com, 
- keescook@google.com, kieran.bingham@ideasonboard.com, mcgrof@kernel.org, 
- peterz@infradead.org, robh@kernel.org, sboyd@kernel.org, shuah@kernel.org, 
- tytso@mit.edu, yamada.masahiro@socionext.com
+ <20190617082613.109131-2-brendanhiggins@google.com>
+To: Brendan Higgins <brendanhiggins@google.com>, frowand.list@gmail.com,
+ gregkh@linuxfoundation.org, jpoimboe@redhat.com, keescook@google.com,
+ kieran.bingham@ideasonboard.com, mcgrof@kernel.org, peterz@infradead.org,
+ robh@kernel.org, shuah@kernel.org, tytso@mit.edu,
+ yamada.masahiro@socionext.com
+From: Stephen Boyd <sboyd@kernel.org>
+Subject: Re: [PATCH v5 01/18] kunit: test: add KUnit test runner core
+User-Agent: alot/0.8.1
+Date: Wed, 19 Jun 2019 17:15:25 -0700
+Message-Id: <20190620001526.93426218BE@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190617_012811_777423_F5E9AEE8 
-X-CRM114-Status: UNSURE (   7.35  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -7.7 (-------)
+X-CRM114-CacheID: sfid-20190619_171528_270766_3C24553D 
+X-CRM114-Status: GOOD (  14.35  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-7.7 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:c4a listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -114,30 +96,176 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-Add entry for the new proc sysctl KUnit test to the PROC SYSCTL section.
+Quoting Brendan Higgins (2019-06-17 01:25:56)
+> diff --git a/kunit/test.c b/kunit/test.c
+> new file mode 100644
+> index 0000000000000..d05d254f1521f
+> --- /dev/null
+> +++ b/kunit/test.c
+> @@ -0,0 +1,210 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +/*
+> + * Base unit test (KUnit) API.
+> + *
+> + * Copyright (C) 2019, Google LLC.
+> + * Author: Brendan Higgins <brendanhiggins@google.com>
+> + */
+> +
+> +#include <linux/sched/debug.h>
+> +#include <kunit/test.h>
+> +
+> +static bool kunit_get_success(struct kunit *test)
+> +{
+> +       unsigned long flags;
+> +       bool success;
+> +
+> +       spin_lock_irqsave(&test->lock, flags);
+> +       success = test->success;
+> +       spin_unlock_irqrestore(&test->lock, flags);
 
-Signed-off-by: Brendan Higgins <brendanhiggins@google.com>
-Reviewed-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Reviewed-by: Logan Gunthorpe <logang@deltatee.com>
----
- MAINTAINERS | 1 +
- 1 file changed, 1 insertion(+)
+I still don't understand the locking scheme in this code. Is the
+intention to make getter and setter APIs that are "safe" by adding in a
+spinlock that is held around getting and setting various members in the
+kunit structure?
 
-diff --git a/MAINTAINERS b/MAINTAINERS
-index f3fb3fc30853e..05cd8ffd33c8f 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -12718,6 +12718,7 @@ S:	Maintained
- F:	fs/proc/proc_sysctl.c
- F:	include/linux/sysctl.h
- F:	kernel/sysctl.c
-+F:	kernel/sysctl-test.c
- F:	tools/testing/selftests/sysctl/
- 
- PS3 NETWORK SUPPORT
--- 
-2.22.0.410.gd8fdbe21b5-goog
+In what situation is there more than one thread reading or writing the
+kunit struct? Isn't it only a single process that is going to be
+operating on this structure? And why do we need to disable irqs? Are we
+expecting to be modifying the unit tests from irq contexts?
 
+> +
+> +       return success;
+> +}
+> +
+> +static void kunit_set_success(struct kunit *test, bool success)
+> +{
+> +       unsigned long flags;
+> +
+> +       spin_lock_irqsave(&test->lock, flags);
+> +       test->success = success;
+> +       spin_unlock_irqrestore(&test->lock, flags);
+> +}
+> +
+> +static int kunit_vprintk_emit(int level, const char *fmt, va_list args)
+> +{
+> +       return vprintk_emit(0, level, NULL, 0, fmt, args);
+> +}
+> +
+> +static int kunit_printk_emit(int level, const char *fmt, ...)
+> +{
+> +       va_list args;
+> +       int ret;
+> +
+> +       va_start(args, fmt);
+> +       ret = kunit_vprintk_emit(level, fmt, args);
+> +       va_end(args);
+> +
+> +       return ret;
+> +}
+> +
+> +static void kunit_vprintk(const struct kunit *test,
+> +                         const char *level,
+> +                         struct va_format *vaf)
+> +{
+> +       kunit_printk_emit(level[1] - '0', "\t# %s: %pV", test->name, vaf);
+> +}
+> +
+> +static bool kunit_has_printed_tap_version;
+
+Can you please move this into function local scope in the function
+below?
+
+> +
+> +static void kunit_print_tap_version(void)
+> +{
+> +       if (!kunit_has_printed_tap_version) {
+> +               kunit_printk_emit(LOGLEVEL_INFO, "TAP version 14\n");
+> +               kunit_has_printed_tap_version = true;
+> +       }
+> +}
+> +
+[...]
+> +
+> +static bool kunit_module_has_succeeded(struct kunit_module *module)
+> +{
+> +       const struct kunit_case *test_case;
+> +       bool success = true;
+> +
+> +       for (test_case = module->test_cases; test_case->run_case; test_case++)
+> +               if (!test_case->success) {
+> +                       success = false;
+> +                       break;
+
+Why not 'return false'?
+
+> +               }
+> +
+> +       return success;
+
+And 'return true'?
+
+> +}
+> +
+> +static size_t kunit_module_counter = 1;
+> +
+> +static void kunit_print_subtest_end(struct kunit_module *module)
+> +{
+> +       kunit_print_ok_not_ok(false,
+> +                             kunit_module_has_succeeded(module),
+> +                             kunit_module_counter++,
+> +                             module->name);
+> +}
+> +
+> +static void kunit_print_test_case_ok_not_ok(struct kunit_case *test_case,
+> +                                           size_t test_number)
+> +{
+> +       kunit_print_ok_not_ok(true,
+> +                             test_case->success,
+> +                             test_number,
+> +                             test_case->name);
+> +}
+> +
+> +void kunit_init_test(struct kunit *test, const char *name)
+> +{
+> +       spin_lock_init(&test->lock);
+> +       test->name = name;
+> +       test->success = true;
+> +}
+> +
+> +/*
+> + * Performs all logic to run a test case.
+> + */
+> +static void kunit_run_case(struct kunit_module *module,
+> +                          struct kunit_case *test_case)
+> +{
+> +       struct kunit test;
+> +       int ret = 0;
+> +
+> +       kunit_init_test(&test, test_case->name);
+> +
+> +       if (module->init) {
+> +               ret = module->init(&test);
+> +               if (ret) {
+> +                       kunit_err(&test, "failed to initialize: %d\n", ret);
+> +                       kunit_set_success(&test, false);
+> +                       return;
+> +               }
+> +       }
+> +
+> +       if (!ret)
+> +               test_case->run_case(&test);
+
+Do we need this if condition? ret can only be set to non-zero above but
+then we'll exit the function early so it seems unnecessary. Given that,
+ret should probably be moved into the module->init path.
+
+> +
+> +       if (module->exit)
+> +               module->exit(&test);
+> +
+> +       test_case->success = kunit_get_success(&test);
+> +}
+> +
 
 _______________________________________________
 linux-um mailing list
