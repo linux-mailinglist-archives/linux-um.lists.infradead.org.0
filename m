@@ -2,91 +2,82 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 543A6558D6
-	for <lists+linux-um@lfdr.de>; Tue, 25 Jun 2019 22:28:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9E26155A27
+	for <lists+linux-um@lfdr.de>; Tue, 25 Jun 2019 23:44:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mJ/SSaXYpy6WqVkA9mx6b09dgrKyH7NEmusyF16QO4A=; b=HJVcfPjv4UQTS5
-	MXQ97fnP5ErRpeL0fRH3T4Ro7GkP1rrEXKhhTYXMzx5o9iP1IBb2gqx4hFsaBIXs7GBPw6bldSIj3
-	SG3MxLJ7ctMVMSz/Kpnjfb3tFVk9dfCx9VwzfT36bnD+2vHIDkGiRXsW8iyZsUuZ+ybk0lzrAIYpc
-	ZD0mww3PrLnx7OT/hGWr1E8a+P4yGa1ne3epSZ8G4ol46Nda9hrm5XXkNB8nuNdDMtuuNY+wuNpfz
-	rZNbcvK3HP5OLsrWdogHyw68vqJDptLpNEI0SWpU6mS1SAvD89wwvkiQK16TdAcYjk1oW9M6yX4p8
-	dFOafJ9ppisosUIp+VPg==;
+	List-Owner; bh=F9o3ZsnIwQHWXoEcH7T1kkgPS+sJpFHJzBcEzjd5Qag=; b=ksbD5O1YcvwDkf
+	zcDSAVHnD86D4g+OhAz/XsSparJJStDM+PdierHoZrOYUvCIka7/VlW/GQumIIu6sYI1GCaJbc/uk
+	QDfQrBuZJRoGOXj7tfaB2M3lZIMLAqCSs/tHj70k83NHzV6NIt6JPa9Q+vYG2v6YyFjjNzVUL48AM
+	8h5rAWhJ+sX88GWPgeRwdEpb+2qbGhYraAbejAkOT0D9k0eHcPpEqBfPkqpBBK4wjNMVAfGrmBWdL
+	puQ5MJUiWV8F+bb7oBqsrzpK43EXQrRnalKSb26qwVsexRuKYJXOqqMB/G0Jn9BnKiEcAyGMPbXhk
+	lmryrLxXVP2UFEKQaCrg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfs3X-0002OJ-Vn; Tue, 25 Jun 2019 20:28:43 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1hftEz-00062u-TD; Tue, 25 Jun 2019 21:44:37 +0000
+Received: from mail-pg1-f195.google.com ([209.85.215.195])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfs3U-0002My-Fx
- for linux-um@lists.infradead.org; Tue, 25 Jun 2019 20:28:42 +0000
-Received: by mail-pg1-x542.google.com with SMTP id y72so9505753pgd.8
- for <linux-um@lists.infradead.org>; Tue, 25 Jun 2019 13:28:37 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=qq39ykktkvFBpmzRtbgM4tstWpOedFNE8kr26lh/InM=;
- b=ni94OwioZx/gzf2szVloCDZTFFpJCo2YKSFZ2X9qr6bxYnBeEpnnagfszyXnnz51L8
- DkJXaethFUsoHnz8KOQVG2ZSAlP6R4YiehiVV+cY7fw97Xus3XNQzLPLdgQULmgYaWnL
- GEAS55DRith5+cQIVd4nDD9PnOpK5SEC0mcAjXyMYNE83XKQ2Jfbx9GzYoD6pnR9q88y
- VjAnVY+gy9KsY/4+Tbda/+4DRlDyvSks4s9chgBxuZrKHnC3t/s2Oqm9eCfJpWO+nPcJ
- ixgXgEVA9P9D5QKdeUq3VIirHZ16lxLB0iDdlrfqM9fruDTYYR+l+8zODcodp3flRnlv
- dArA==
+ id 1hftEx-00061j-NY
+ for linux-um@lists.infradead.org; Tue, 25 Jun 2019 21:44:37 +0000
+Received: by mail-pg1-f195.google.com with SMTP id 196so90854pgc.6
+ for <linux-um@lists.infradead.org>; Tue, 25 Jun 2019 14:44:30 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=qq39ykktkvFBpmzRtbgM4tstWpOedFNE8kr26lh/InM=;
- b=r551W9QrwYk3DLfzq8IR3EVCwhz75bDLsF21lN9hEMHRoLZwTyoWL/fYbtoZzORUby
- 4XdmejTzgHubFw4khLnosLyB7dYPz0+BGvKrquC/H5Ri1bOljU/H4VkOPDMJi+GE8Djb
- tzgVPaCj7n05SekBw4VRTqL4YsmZPGGRZC+lz3rr1Wavn6E1VntOlx17askWUsNAhEG5
- t4o2zK3h+TCivM1IltmslsjEVMxDtISLTyGtV42omFpv6V4r5hkJDqjWyb3x6I20hola
- 6tRQC/d1Hw6CN9XVnJV6f/XN9pttp/bUZoqzJEPBLamrQr9QSl2viYCQsuXBQo1uK2CR
- gfJg==
-X-Gm-Message-State: APjAAAV2eD3NvTT3AR5fh+K/K0PaFC2dyeoMCvHXK3CZ2y2PQDH4zR6B
- UAJgmtYEEoOudqfhjAh2ASz8sNM2IBCI+YqCpfikqw==
-X-Google-Smtp-Source: APXvYqzvk20XXdVFtm6zl0X1nrjaH0TttItfcdP9iwaQ+JKQIeNhKF1pa7VSVvlXNPpMAUzP/tv1oR2JBEXuSnWnLw4=
-X-Received: by 2002:a17:90b:f0e:: with SMTP id
- br14mr754020pjb.117.1561494516332; 
- Tue, 25 Jun 2019 13:28:36 -0700 (PDT)
-MIME-Version: 1.0
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=9dxyIPqcP8jDSy0GUtYumC+DRq05muFlYTTdqsbRigE=;
+ b=OFEDRkXAEBKdM/PlvY5CiOc3Wo4lroDDddCe9XllkCWWmu88qHba62KUEHR1hIJBzn
+ plxCkNTIFqG4qOR/UfqCgdpJqciqigeDmd/MJgbBQ6cunsz0IBktvKnVo2z1Ye88Kp7P
+ /LMisB2lk8sjZK90hedg49S3gYlFJeo56Uu/sssYrBxslIqe31JVJoehfRGV0pi7kaCw
+ 7pHxykPIB2fOwpLg04GDmjb4748k0K1RENu51YvCRLyIIUIJD2hU7lJLNPYmc7/xx9mB
+ NIcArGCa2DJUN4RY5GBJq7n4e8C6YktIVcgu++OxzhoOAvK4RF4S5WhfYzunx023jiXV
+ JQuQ==
+X-Gm-Message-State: APjAAAUWvzts5fF18lHhgbxXMtht7d0wATsng8NCKtC1TygDn/vFPXpS
+ TWpvRvP6Z7NkNt2SK81Mc1s=
+X-Google-Smtp-Source: APXvYqz8MfGhRhi/dlXuLkoaF1E80HXc/ju/CwZ7//TYZw6Vnsx8tuHl88GSOvVc/go3GBogDeg5Ig==
+X-Received: by 2002:a63:7d18:: with SMTP id y24mr36133502pgc.438.1561499069415; 
+ Tue, 25 Jun 2019 14:44:29 -0700 (PDT)
+Received: from 42.do-not-panic.com (42.do-not-panic.com. [157.230.128.187])
+ by smtp.gmail.com with ESMTPSA id a20sm13423142pgb.72.2019.06.25.14.44.27
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Tue, 25 Jun 2019 14:44:27 -0700 (PDT)
+Received: by 42.do-not-panic.com (Postfix, from userid 1000)
+ id 3C710401EB; Tue, 25 Jun 2019 21:44:27 +0000 (UTC)
+Date: Tue, 25 Jun 2019 21:44:27 +0000
+From: Luis Chamberlain <mcgrof@kernel.org>
+To: Brendan Higgins <brendanhiggins@google.com>
+Subject: Re: [PATCH v5 01/18] kunit: test: add KUnit test runner core
+Message-ID: <20190625214427.GN19023@42.do-not-panic.com>
 References: <20190617082613.109131-1-brendanhiggins@google.com>
  <20190617082613.109131-2-brendanhiggins@google.com>
  <20190620001526.93426218BE@mail.kernel.org>
-In-Reply-To: <20190620001526.93426218BE@mail.kernel.org>
-From: Brendan Higgins <brendanhiggins@google.com>
-Date: Tue, 25 Jun 2019 13:28:25 -0700
-Message-ID: <CAFd5g46Jhxsz6_VXHEVYvTeDRwwzgKpr=aUWLL5b3S4kUukb8g@mail.gmail.com>
-Subject: Re: [PATCH v5 01/18] kunit: test: add KUnit test runner core
-To: Stephen Boyd <sboyd@kernel.org>
+ <CAFd5g46Jhxsz6_VXHEVYvTeDRwwzgKpr=aUWLL5b3S4kUukb8g@mail.gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CAFd5g46Jhxsz6_VXHEVYvTeDRwwzgKpr=aUWLL5b3S4kUukb8g@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190625_132840_564272_519053E5 
-X-CRM114-Status: GOOD (  28.72  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20190625_144435_771626_2CA8C3C7 
+X-CRM114-Status: GOOD (  31.13  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
- [list.dnswl.org]
+ no trust [209.85.215.195 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (mcgrof[at]gmail.com)
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -118,223 +109,96 @@ Cc: Petr Mladek <pmladek@suse.com>,
  Steven Rostedt <rostedt@goodmis.org>, Julia Lawall <julia.lawall@lip6.fr>,
  Josh Poimboeuf <jpoimboe@redhat.com>, kunit-dev@googlegroups.com,
  Theodore Ts'o <tytso@mit.edu>, Richard Weinberger <richard@nod.at>,
- Greg KH <gregkh@linuxfoundation.org>, Randy Dunlap <rdunlap@infradead.org>,
+ Stephen Boyd <sboyd@kernel.org>, Greg KH <gregkh@linuxfoundation.org>,
+ Randy Dunlap <rdunlap@infradead.org>,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Luis Chamberlain <mcgrof@kernel.org>, Daniel Vetter <daniel@ffwll.ch>,
- Kees Cook <keescook@google.com>, linux-fsdevel@vger.kernel.org,
- Logan Gunthorpe <logang@deltatee.com>, Kevin Hilman <khilman@baylibre.com>
+ Daniel Vetter <daniel@ffwll.ch>, Kees Cook <keescook@google.com>,
+ linux-fsdevel@vger.kernel.org, Logan Gunthorpe <logang@deltatee.com>,
+ Kevin Hilman <khilman@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Wed, Jun 19, 2019 at 5:15 PM Stephen Boyd <sboyd@kernel.org> wrote:
->
-> Quoting Brendan Higgins (2019-06-17 01:25:56)
-> > diff --git a/kunit/test.c b/kunit/test.c
-> > new file mode 100644
-> > index 0000000000000..d05d254f1521f
-> > --- /dev/null
-> > +++ b/kunit/test.c
-> > @@ -0,0 +1,210 @@
-> > +// SPDX-License-Identifier: GPL-2.0
-> > +/*
-> > + * Base unit test (KUnit) API.
-> > + *
-> > + * Copyright (C) 2019, Google LLC.
-> > + * Author: Brendan Higgins <brendanhiggins@google.com>
-> > + */
-> > +
-> > +#include <linux/sched/debug.h>
-> > +#include <kunit/test.h>
-> > +
-> > +static bool kunit_get_success(struct kunit *test)
-> > +{
-> > +       unsigned long flags;
-> > +       bool success;
-> > +
-> > +       spin_lock_irqsave(&test->lock, flags);
-> > +       success = test->success;
-> > +       spin_unlock_irqrestore(&test->lock, flags);
->
-> I still don't understand the locking scheme in this code. Is the
-> intention to make getter and setter APIs that are "safe" by adding in a
-> spinlock that is held around getting and setting various members in the
-> kunit structure?
+On Tue, Jun 25, 2019 at 01:28:25PM -0700, Brendan Higgins wrote:
+> On Wed, Jun 19, 2019 at 5:15 PM Stephen Boyd <sboyd@kernel.org> wrote:
+> >
+> > Quoting Brendan Higgins (2019-06-17 01:25:56)
+> > > diff --git a/kunit/test.c b/kunit/test.c
+> > > new file mode 100644
+> > > index 0000000000000..d05d254f1521f
+> > > --- /dev/null
+> > > +++ b/kunit/test.c
+> > > @@ -0,0 +1,210 @@
+> > > +// SPDX-License-Identifier: GPL-2.0
+> > > +/*
+> > > + * Base unit test (KUnit) API.
+> > > + *
+> > > + * Copyright (C) 2019, Google LLC.
+> > > + * Author: Brendan Higgins <brendanhiggins@google.com>
+> > > + */
+> > > +
+> > > +#include <linux/sched/debug.h>
+> > > +#include <kunit/test.h>
+> > > +
+> > > +static bool kunit_get_success(struct kunit *test)
+> > > +{
+> > > +       unsigned long flags;
+> > > +       bool success;
+> > > +
+> > > +       spin_lock_irqsave(&test->lock, flags);
+> > > +       success = test->success;
+> > > +       spin_unlock_irqrestore(&test->lock, flags);
+> >
+> > I still don't understand the locking scheme in this code. Is the
+> > intention to make getter and setter APIs that are "safe" by adding in a
+> > spinlock that is held around getting and setting various members in the
+> > kunit structure?
+> 
+> Yes, your understanding is correct. It is possible for a user to write
+> a test such that certain elements may be updated in different threads;
+> this would most likely happen in the case where someone wants to make
+> an assertion or an expectation in a thread created by a piece of code
+> under test. Although this should generally be avoided, it is possible,
+> and there are occasionally good reasons to do so, so it is
+> functionality that we should support.
+> 
+> Do you think I should add a comment to this effect?
+> 
+> > In what situation is there more than one thread reading or writing the
+> > kunit struct? Isn't it only a single process that is going to be
+> 
+> As I said above, it is possible that the code under test may spawn a
+> new thread that may make an expectation or an assertion. It is not a
+> super common use case, but it is possible.
 
-Yes, your understanding is correct. It is possible for a user to write
-a test such that certain elements may be updated in different threads;
-this would most likely happen in the case where someone wants to make
-an assertion or an expectation in a thread created by a piece of code
-under test. Although this should generally be avoided, it is possible,
-and there are occasionally good reasons to do so, so it is
-functionality that we should support.
+I wonder if it is worth to have then different types of tests based on
+locking requirements. One with no locking, since it seems you imply
+most tests would fall under this category, then locking, and another
+with IRQ context.
 
-Do you think I should add a comment to this effect?
+If no locking is done at all for all tests which do not require locking,
+is there any gains at run time? I'm sure it might be minimum but
+curious.
 
-> In what situation is there more than one thread reading or writing the
-> kunit struct? Isn't it only a single process that is going to be
+> > operating on this structure? And why do we need to disable irqs? Are we
+> > expecting to be modifying the unit tests from irq contexts?
+> 
+> There are instances where someone may want to test a driver which has
+> an interrupt handler in it. I actually have (not the greatest) example
+> here. Now in these cases, I expect someone to use a mock irqchip or
+> some other fake mechanism to trigger the interrupt handler and not
+> actual hardware; technically speaking in this case, it is not going to
+> be accessed from a "real" irq context; however, the code under test
+> should think that it is in an irq context; given that, I figured it is
+> best to just treat it as a real irq context. Does that make sense?
 
-As I said above, it is possible that the code under test may spawn a
-new thread that may make an expectation or an assertion. It is not a
-super common use case, but it is possible.
+Since its a new architecture and since you seem to imply most tests
+don't require locking or even IRQs disabled, I think its worth to
+consider the impact of adding such extreme locking requirements for
+an initial ramp up.
 
-> operating on this structure? And why do we need to disable irqs? Are we
-> expecting to be modifying the unit tests from irq contexts?
-
-There are instances where someone may want to test a driver which has
-an interrupt handler in it. I actually have (not the greatest) example
-here. Now in these cases, I expect someone to use a mock irqchip or
-some other fake mechanism to trigger the interrupt handler and not
-actual hardware; technically speaking in this case, it is not going to
-be accessed from a "real" irq context; however, the code under test
-should think that it is in an irq context; given that, I figured it is
-best to just treat it as a real irq context. Does that make sense?
-
-> > +
-> > +       return success;
-> > +}
-> > +
-> > +static void kunit_set_success(struct kunit *test, bool success)
-> > +{
-> > +       unsigned long flags;
-> > +
-> > +       spin_lock_irqsave(&test->lock, flags);
-> > +       test->success = success;
-> > +       spin_unlock_irqrestore(&test->lock, flags);
-> > +}
-> > +
-> > +static int kunit_vprintk_emit(int level, const char *fmt, va_list args)
-> > +{
-> > +       return vprintk_emit(0, level, NULL, 0, fmt, args);
-> > +}
-> > +
-> > +static int kunit_printk_emit(int level, const char *fmt, ...)
-> > +{
-> > +       va_list args;
-> > +       int ret;
-> > +
-> > +       va_start(args, fmt);
-> > +       ret = kunit_vprintk_emit(level, fmt, args);
-> > +       va_end(args);
-> > +
-> > +       return ret;
-> > +}
-> > +
-> > +static void kunit_vprintk(const struct kunit *test,
-> > +                         const char *level,
-> > +                         struct va_format *vaf)
-> > +{
-> > +       kunit_printk_emit(level[1] - '0', "\t# %s: %pV", test->name, vaf);
-> > +}
-> > +
-> > +static bool kunit_has_printed_tap_version;
->
-> Can you please move this into function local scope in the function
-> below?
-
-Sure, that makes sense.
-
-> > +
-> > +static void kunit_print_tap_version(void)
-> > +{
-> > +       if (!kunit_has_printed_tap_version) {
-> > +               kunit_printk_emit(LOGLEVEL_INFO, "TAP version 14\n");
-> > +               kunit_has_printed_tap_version = true;
-> > +       }
-> > +}
-> > +
-> [...]
-> > +
-> > +static bool kunit_module_has_succeeded(struct kunit_module *module)
-> > +{
-> > +       const struct kunit_case *test_case;
-> > +       bool success = true;
-> > +
-> > +       for (test_case = module->test_cases; test_case->run_case; test_case++)
-> > +               if (!test_case->success) {
-> > +                       success = false;
-> > +                       break;
->
-> Why not 'return false'?
-
-Also a good point. Will fix.
-
-> > +               }
-> > +
-> > +       return success;
->
-> And 'return true'?
-
-Will fix.
-
-> > +}
-> > +
-> > +static size_t kunit_module_counter = 1;
-> > +
-> > +static void kunit_print_subtest_end(struct kunit_module *module)
-> > +{
-> > +       kunit_print_ok_not_ok(false,
-> > +                             kunit_module_has_succeeded(module),
-> > +                             kunit_module_counter++,
-> > +                             module->name);
-> > +}
-> > +
-> > +static void kunit_print_test_case_ok_not_ok(struct kunit_case *test_case,
-> > +                                           size_t test_number)
-> > +{
-> > +       kunit_print_ok_not_ok(true,
-> > +                             test_case->success,
-> > +                             test_number,
-> > +                             test_case->name);
-> > +}
-> > +
-> > +void kunit_init_test(struct kunit *test, const char *name)
-> > +{
-> > +       spin_lock_init(&test->lock);
-> > +       test->name = name;
-> > +       test->success = true;
-> > +}
-> > +
-> > +/*
-> > + * Performs all logic to run a test case.
-> > + */
-> > +static void kunit_run_case(struct kunit_module *module,
-> > +                          struct kunit_case *test_case)
-> > +{
-> > +       struct kunit test;
-> > +       int ret = 0;
-> > +
-> > +       kunit_init_test(&test, test_case->name);
-> > +
-> > +       if (module->init) {
-> > +               ret = module->init(&test);
-> > +               if (ret) {
-> > +                       kunit_err(&test, "failed to initialize: %d\n", ret);
-> > +                       kunit_set_success(&test, false);
-> > +                       return;
-> > +               }
-> > +       }
-> > +
-> > +       if (!ret)
-> > +               test_case->run_case(&test);
->
-> Do we need this if condition? ret can only be set to non-zero above but
-> then we'll exit the function early so it seems unnecessary. Given that,
-> ret should probably be moved into the module->init path.
-
-Whoops. Sorry, another instance of how it evolved over time and I
-forgot why I did the check. Will fix.
-
-> > +
-> > +       if (module->exit)
-> > +               module->exit(&test);
-> > +
-> > +       test_case->success = kunit_get_success(&test);
-> > +}
-> > +
-
-Thanks!
+  Luis
 
 _______________________________________________
 linux-um mailing list
