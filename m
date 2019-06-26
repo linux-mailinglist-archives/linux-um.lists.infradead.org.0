@@ -2,85 +2,91 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5D5DE55CB6
-	for <lists+linux-um@lfdr.de>; Wed, 26 Jun 2019 02:02:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 321DF55CD3
+	for <lists+linux-um@lfdr.de>; Wed, 26 Jun 2019 02:07:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2Hg5FmLL9tyMBJlLXsFvkVBwkJzeIP+T8GQA59QsplE=; b=Rhjb/DlI5VHixD
-	9X4oUeHMzCrSYKq+ZGKAY21pHEVER3cUVJOglxexltmRWXdCJtHmA+1ZaPJ/O8/3d++XZ00KnmROK
-	1DTzaIIcY5D5zi3F9MVxTbAiB5svwKvpjhMqdnfYi9IrfO/760Nms62I4B8QWP6SOzR/m+1XsznT3
-	4dRSEnHFabKPr++yInJAGD8dCfh/262QYvoSayrTxy3VNRkZjv/3u5nzXj0HAr1VjD6A0ZmeKwIlN
-	m7ZNwfQMvSEIHPGE+OmWh3XBYSa7E5JL8e8jvk8Z4G4fdTzUmmhRnPzunDoPSKyAAGNbr7zW/GUUk
-	SRXoP2apkib5o/gOrrFA==;
+	List-Owner; bh=dbsGE9LL0o6qADCKb9k4bzPTLAugGvtHiizfCwFgZBU=; b=HwE438M1ezKbJP
+	uzzw6JPzy9Ds3NNWciPv7mIPD8cpMADtYtZKx3EnDSYh7zT+BIjSQMY2hLJnTudyQSylWkXQZM2U4
+	i4e7TKapIXNAt6bUtN1zd3gRQwOO1H1qlShsgACcEy34vVAVTwkuyegK5RykJ7SuNweBNhO3g6OdK
+	OxznJ/yUHfoDzVmfpD+AueB3oZUMmRNJCNt7U/Esrc9CwxY5wI0Oy/6p3/A+AN1L3iBXXCMfwaWvM
+	rl13V9aq1zi574PTj1gm5mRy9mWYJQW2upQKqnaEcC/T6pZ3jI4GJF+Uh02gGROYOeZRaoWOl7izQ
+	opdH9ihnqBg6EaMZ5CGA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfvNt-0000Qu-5Y; Wed, 26 Jun 2019 00:01:57 +0000
-Received: from mail-pf1-f196.google.com ([209.85.210.196])
+	id 1hfvTZ-0002Fm-Dp; Wed, 26 Jun 2019 00:07:49 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfvNq-0000QL-1C
- for linux-um@lists.infradead.org; Wed, 26 Jun 2019 00:01:55 +0000
-Received: by mail-pf1-f196.google.com with SMTP id 19so258172pfa.4
- for <linux-um@lists.infradead.org>; Tue, 25 Jun 2019 17:01:53 -0700 (PDT)
+ id 1hfvTW-0002FF-EF
+ for linux-um@lists.infradead.org; Wed, 26 Jun 2019 00:07:47 +0000
+Received: by mail-pf1-x444.google.com with SMTP id r7so269070pfl.3
+ for <linux-um@lists.infradead.org>; Tue, 25 Jun 2019 17:07:45 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=0CKSZbZdZTCXDsFevmx6xy0jVDdxhx+j1rEEB3vl63s=;
+ b=Udp0DSI1eicbAQ93CL5kbvi8Xp/6zCCrOWD+4my5+Z2KobfpntEZptXwNDN+m1HYdl
+ aWzrSvRzjBSRt+1Ke5gfgolTpuldTSDWCwjjFSm2u0fallCYK2AWnGnpndlL89sFN0Zl
+ GTwNluZIxE+q2xxZzY/SPhBF2gsVikHJ199bU9KJdjOqqrHUctG5Or1EMQYsJztcsOoC
+ DiYGphxIA91H14nI8J5aNbvthpK6V9fOCpd2OHMJOcinqK81dIeXjiZaAKjLmKAP2Jwx
+ 0nEa6ArcVSNjpUjZHNws6GQlmspmdwUJ/ZxXDeWnV3qF6zllsbtRDaXwGrbAJh9mZIai
+ k2MA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=8jiVaE2JFBMfd+G3WCzNTPAlyBMExhnepJubp+vEbhM=;
- b=HPF7RZEzGtjy/VLXWn05yDlFZ1rUAMwZ2d3hRfxGLVrIOUhg/S5itX2JYEQS+Dg3ud
- XYnFM6ysb8SWoFhQvsIFok+AapmcysQaEyuqcq5rIGypjyzzR3HAuny3+9WAJ/mv+R4z
- cElTqMV3KzFhCyYYcvbtJownLDPrQnfETobXxUiIJf3v0/QQaQBHUBVpRMFVAVSZD4+m
- hy/XMVwB3FgN2XoWAUroLL1aUvgi9Ki1rTFVuoJSOOBfccVAPqAD+2mGnyDUMa/g3TA8
- jdZKI+lrJsvNPHxHHm3Z1S95zNiQhpXZVgtIUw58p2guUjmBOV5j798bhDhiNh+yAkT2
- F7fA==
-X-Gm-Message-State: APjAAAX9bSqx3RUfGS7j8MEUE31yXZYvgdFSubg8X9AgA3+KZ6dcdnZ7
- ovSIXBq0R3QKd199jOKSQTY=
-X-Google-Smtp-Source: APXvYqzNTUiSwWdZ3UgJYHzcAJb5xsbwt8eGmi7SJjyzu5XA3lIGVxbDEngQABiwrdIPUAy8M4OQFg==
-X-Received: by 2002:a63:d756:: with SMTP id w22mr33935466pgi.156.1561507312844; 
- Tue, 25 Jun 2019 17:01:52 -0700 (PDT)
-Received: from 42.do-not-panic.com (42.do-not-panic.com. [157.230.128.187])
- by smtp.gmail.com with ESMTPSA id z22sm14694045pgu.28.2019.06.25.17.01.51
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Tue, 25 Jun 2019 17:01:51 -0700 (PDT)
-Received: by 42.do-not-panic.com (Postfix, from userid 1000)
- id 0674940336; Wed, 26 Jun 2019 00:01:50 +0000 (UTC)
-Date: Wed, 26 Jun 2019 00:01:50 +0000
-From: Luis Chamberlain <mcgrof@kernel.org>
-To: Brendan Higgins <brendanhiggins@google.com>
-Subject: Re: [PATCH v5 13/18] kunit: tool: add Python wrappers for running
- KUnit tests
-Message-ID: <20190626000150.GT19023@42.do-not-panic.com>
-References: <20190617082613.109131-1-brendanhiggins@google.com>
- <20190617082613.109131-14-brendanhiggins@google.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=0CKSZbZdZTCXDsFevmx6xy0jVDdxhx+j1rEEB3vl63s=;
+ b=M+rr4SuqYclZi3fs0YbmT8P59mJY2C/a43ICoQ5iqMrde/xyyEvSJWnlNsZlNayiYb
+ 8UQeYBFI3x0fMxvsFy33kTYqORzk2zUGSUt1enWhoNXD6+uMX1z8gbQapOZTulPfGYyZ
+ KiGEPYTPaj4MdUfu3ki5JVa5Bh90QyN79eirJdw4waoz+Gj5ahGuSJN6991ETI7ngO5M
+ gan/AsKd+z03wpyZyu9ix+FenR8v8KB250LvIYNEl+abjB0nS+KJfbbuOKMCUh7T/GUu
+ vjx3JH8DfV9a0D5L0qrlpcS7j0hOHOLG7WYGpgjoCnAydGMSmXpn85hpc63kZbpAkbet
+ sx5w==
+X-Gm-Message-State: APjAAAUbjU0NZDY5L4sXQiFM/JO+Zsk+u3AIeXZlJ9NVPtnBez/dSqhR
+ dSKdIt4DIzGOuTawDJvdAkB3yLQz+dFpWrt3wDk+nQ==
+X-Google-Smtp-Source: APXvYqwFUlf+fXcTuEW4suwRhf8sO2Hw8q7BLLIj3tSrVcwKVl/cK8K/AXXabwkRnwCip/wX7DtGYsxR83H1S/Y9Z64=
+X-Received: by 2002:a17:90a:be0d:: with SMTP id
+ a13mr657604pjs.84.1561507663974; 
+ Tue, 25 Jun 2019 17:07:43 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190617082613.109131-14-brendanhiggins@google.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20190617082613.109131-1-brendanhiggins@google.com>
+ <20190617082613.109131-2-brendanhiggins@google.com>
+ <20190625223312.GP19023@42.do-not-panic.com>
+In-Reply-To: <20190625223312.GP19023@42.do-not-panic.com>
+From: Brendan Higgins <brendanhiggins@google.com>
+Date: Tue, 25 Jun 2019 17:07:32 -0700
+Message-ID: <CAFd5g46TLAONgXiZkFM98BPd-sariMTwhmYG9hSJ+M9=r-ixeg@mail.gmail.com>
+Subject: Re: [PATCH v5 01/18] kunit: test: add KUnit test runner core
+To: Luis Chamberlain <mcgrof@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190625_170154_078769_69248C96 
-X-CRM114-Status: UNSURE (   6.02  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20190625_170746_509034_F17150D7 
+X-CRM114-Status: GOOD (  20.20  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.196 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (mcgrof[at]gmail.com)
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.196 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,37 +98,140 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: pmladek@suse.com, linux-doc@vger.kernel.org, peterz@infradead.org,
- amir73il@gmail.com, dri-devel@lists.freedesktop.org,
- Alexander.Levin@microsoft.com, yamada.masahiro@socionext.com,
- mpe@ellerman.id.au, linux-kselftest@vger.kernel.org, shuah@kernel.org,
- robh@kernel.org, linux-nvdimm@lists.01.org, frowand.list@gmail.com,
- knut.omang@oracle.com, kieran.bingham@ideasonboard.com,
- Felix Guo <felixguoxiuping@gmail.com>, wfg@linux.intel.com, joel@jms.id.au,
- rientjes@google.com, jdike@addtoit.com, dan.carpenter@oracle.com,
- devicetree@vger.kernel.org, linux-kbuild@vger.kernel.org, Tim.Bird@sony.com,
- linux-um@lists.infradead.org, rostedt@goodmis.org, julia.lawall@lip6.fr,
- jpoimboe@redhat.com, kunit-dev@googlegroups.com, tytso@mit.edu, richard@nod.at,
- sboyd@kernel.org, gregkh@linuxfoundation.org, rdunlap@infradead.org,
- linux-kernel@vger.kernel.org, daniel@ffwll.ch, keescook@google.com,
- linux-fsdevel@vger.kernel.org, logang@deltatee.com, khilman@baylibre.com
+Cc: Petr Mladek <pmladek@suse.com>,
+ "open list:DOCUMENTATION" <linux-doc@vger.kernel.org>,
+ Peter Zijlstra <peterz@infradead.org>, Amir Goldstein <amir73il@gmail.com>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
+ Sasha Levin <Alexander.Levin@microsoft.com>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Michael Ellerman <mpe@ellerman.id.au>,
+ "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
+ shuah <shuah@kernel.org>, Rob Herring <robh@kernel.org>,
+ linux-nvdimm <linux-nvdimm@lists.01.org>,
+ Frank Rowand <frowand.list@gmail.com>, Knut Omang <knut.omang@oracle.com>,
+ Kieran Bingham <kieran.bingham@ideasonboard.com>, wfg@linux.intel.com,
+ Joel Stanley <joel@jms.id.au>, David Rientjes <rientjes@google.com>,
+ Jeff Dike <jdike@addtoit.com>, Dan Carpenter <dan.carpenter@oracle.com>,
+ devicetree <devicetree@vger.kernel.org>,
+ linux-kbuild <linux-kbuild@vger.kernel.org>, "Bird,
+ Timothy" <Tim.Bird@sony.com>, linux-um@lists.infradead.org,
+ Steven Rostedt <rostedt@goodmis.org>, Julia Lawall <julia.lawall@lip6.fr>,
+ Josh Poimboeuf <jpoimboe@redhat.com>, kunit-dev@googlegroups.com,
+ Theodore Ts'o <tytso@mit.edu>, Richard Weinberger <richard@nod.at>,
+ Stephen Boyd <sboyd@kernel.org>, Greg KH <gregkh@linuxfoundation.org>,
+ Randy Dunlap <rdunlap@infradead.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Daniel Vetter <daniel@ffwll.ch>, Kees Cook <keescook@google.com>,
+ linux-fsdevel@vger.kernel.org, Logan Gunthorpe <logang@deltatee.com>,
+ Kevin Hilman <khilman@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Mon, Jun 17, 2019 at 01:26:08AM -0700, Brendan Higgins wrote:
->  create mode 100644 tools/testing/kunit/test_data/test_is_test_passed-all_passed.log
->  create mode 100644 tools/testing/kunit/test_data/test_is_test_passed-crash.log
->  create mode 100644 tools/testing/kunit/test_data/test_is_test_passed-failure.log
->  create mode 100644 tools/testing/kunit/test_data/test_is_test_passed-no_tests_run.log
->  create mode 100644 tools/testing/kunit/test_data/test_output_isolated_correctly.log
->  create mode 100644 tools/testing/kunit/test_data/test_read_from_file.kconfig
+On Tue, Jun 25, 2019 at 3:33 PM Luis Chamberlain <mcgrof@kernel.org> wrote:
+>
+> On Mon, Jun 17, 2019 at 01:25:56AM -0700, Brendan Higgins wrote:
+> > +/**
+> > + * module_test() - used to register a &struct kunit_module with KUnit.
+> > + * @module: a statically allocated &struct kunit_module.
+> > + *
+> > + * Registers @module with the test framework. See &struct kunit_module for more
+> > + * information.
+> > + */
+> > +#define module_test(module) \
+> > +             static int module_kunit_init##module(void) \
+> > +             { \
+> > +                     return kunit_run_tests(&module); \
+> > +             } \
+> > +             late_initcall(module_kunit_init##module)
+>
+> Becuase late_initcall() is used, if these modules are built-in, this
+> would preclude the ability to test things prior to this part of the
+> kernel under UML or whatever architecture runs the tests. So, this
+> limits the scope of testing. Small detail but the scope whould be
+> documented.
 
-Why are these being added upstream? The commit log does not explain
-this.
+You aren't the first person to complain about this (and I am not sure
+it is the first time you have complained about it). Anyway, I have
+some follow on patches that will improve the late_initcall thing, and
+people seemed okay with discussing the follow on patches as part of a
+subsequent patchset after this gets merged.
 
-  Luis
+I will nevertheless document the restriction until then.
+
+> > +static void kunit_print_tap_version(void)
+> > +{
+> > +     if (!kunit_has_printed_tap_version) {
+> > +             kunit_printk_emit(LOGLEVEL_INFO, "TAP version 14\n");
+>
+> What is this TAP thing? Why should we care what version it is on?
+> Why are we printing this?
+
+It's part of the TAP specification[1]. Greg and Frank asked me to make
+the intermediate format conform to TAP. Seems like something else I
+should probable document...
+
+> > +             kunit_has_printed_tap_version = true;
+> > +     }
+> > +}
+> > +
+> > +static size_t kunit_test_cases_len(struct kunit_case *test_cases)
+> > +{
+> > +     struct kunit_case *test_case;
+> > +     size_t len = 0;
+> > +
+> > +     for (test_case = test_cases; test_case->run_case; test_case++)
+>
+> If we make the last test case NULL, we'd just check for test_case here,
+> and save ourselves an extra few bytes per test module. Any reason why
+> the last test case cannot be NULL?
+
+Is there anyway to make that work with a statically defined array?
+
+Basically, I want to be able to do something like:
+
+static struct kunit_case example_test_cases[] = {
+        KUNIT_CASE(example_simple_test),
+        KUNIT_CASE(example_mock_test),
+        {}
+};
+
+FYI,
+#define KUNIT_CASE(test_name) { .run_case = test_name, .name = #test_name }
+
+In order to do what you are proposing, I think I need an array of
+pointers to test cases, which is not ideal.
+
+> > +void kunit_init_test(struct kunit *test, const char *name)
+> > +{
+> > +     spin_lock_init(&test->lock);
+> > +     test->name = name;
+> > +     test->success = true;
+> > +}
+> > +
+> > +/*
+> > + * Performs all logic to run a test case.
+> > + */
+> > +static void kunit_run_case(struct kunit_module *module,
+> > +                        struct kunit_case *test_case)
+> > +{
+> > +     struct kunit test;
+> > +     int ret = 0;
+> > +
+> > +     kunit_init_test(&test, test_case->name);
+> > +
+> > +     if (module->init) {
+> > +             ret = module->init(&test);
+>
+> I believe if we used struct kunit_module *kmodule it would be much
+> clearer who's init this is.
+
+That's reasonable. I will fix in next revision.
+
+Cheers!
+
+[1] https://github.com/TestAnything/Specification/blob/tap-14-specification/specification.md
 
 _______________________________________________
 linux-um mailing list
