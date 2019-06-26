@@ -2,75 +2,77 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9CFE0563C6
-	for <lists+linux-um@lfdr.de>; Wed, 26 Jun 2019 09:53:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2EDF8563F4
+	for <lists+linux-um@lfdr.de>; Wed, 26 Jun 2019 10:03:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Lk73v6ZxAwjKQiVkPsQiE0m1i7KopCoLGSZBA76t3qo=; b=TnqvDpFEFpC0zf
-	WJbgUTtY5oWLYtH8wl8vH11SURNw45+sdc4rz7YeOIPpvwlbK1hGeRtFNBzWm4jwpswBIvdzIvGqq
-	3bFwyFtmLZqFsNPxPzNyBpd61iIlU5tdsVPJKewH5mmTGIrAtY+w1gxTWTekJb5Q0TZKu2QF4CU44
-	8suqSmtbgU3qtA7wln5L8hIxBciWckxbJ3GrzQ+r6f7MslXAZtscGRodR5EFq4FDvIy32jUJZ3A30
-	DUNTZ9tmFn4PtyQohBrwi6w00B/ci7hcx1Gl9Xxti1oLJneuOuiXejMmYmEc+Q6HZ/eYxN7W5+bqp
-	I5ALuwxO2EJ7TZeMNtcA==;
+	List-Owner; bh=ydaIo3CeCWM4GY1DG5UDSf89vd/Xec4N2Si9u2PiFsM=; b=q6nMywPCUf65OB
+	3tEi0HZNwGPejfNiYXAf4pcQ57AWGbe3hazDyH6mieaf3NOuy1XNaGCCcBQjCuT5a+5R/nqb6l6yM
+	pt7ep1a2c1aKoqgFwTfq5ntoCY+PHuw9bCIvBXy3qPzfRYbC4ELJ54h1pfgzG4zJcVJ9GypIogNxZ
+	Mku4dwWN+gwy2UN+3gukB3O4OD4p+tvV+kGD/YntJ3AX4HyZOzEtrhS5Gdvg7D/BmeIC3b+wlrbur
+	GbHdvE+EnecPtv13tjEHTKS5cQVxziBAQHmeBZ3i4+07K4wHLikS+8xYW+yuNRPDeYLFCucihma0D
+	YjI433FZ2Vpywrya1uBw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hg2kI-0004ua-CQ; Wed, 26 Jun 2019 07:53:34 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1hg2ta-00005Q-OE; Wed, 26 Jun 2019 08:03:10 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hg2kF-0004tp-3t
- for linux-um@lists.infradead.org; Wed, 26 Jun 2019 07:53:32 +0000
-Received: by mail-pl1-x643.google.com with SMTP id ay6so962713plb.9
- for <linux-um@lists.infradead.org>; Wed, 26 Jun 2019 00:53:30 -0700 (PDT)
+ id 1hg2tY-0008WG-6K
+ for linux-um@lists.infradead.org; Wed, 26 Jun 2019 08:03:09 +0000
+Received: by mail-pf1-x441.google.com with SMTP id y15so924430pfn.5
+ for <linux-um@lists.infradead.org>; Wed, 26 Jun 2019 01:03:07 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=JHqsYYLzLAosbxbz1ZkSkQroLN+I/zt1AzacawmONrY=;
- b=WyqM1jV2u/kxM67gNNChMCD/srWLt8UFxif+PHuGpzbgE3LpTJrt7rEbevH6EDg7EA
- xF8tH7Jbh3PLlZYXRvyhQyTIN9G45hD9SE3+nPI4rxVnH9lZ6Wb6PT2UPR9Z7e8qw5Vo
- j4hYPGbTDYxJLGb6+arVCfAloAtiPanpPW4Xadwr7qterJdRgNGgoWGT+JtgLvBc9l+M
- DYSnM5SC1DrNcCapOU3OT8L/UFesJC+ezl51GMqT04qGxB9qB/8ifxdT+misqvwEisfJ
- +/kivnaJfyaOnnN1uM1pke3PaHrKRWJDezKNt97NibKS5p1mAANOOVhiidQQgXRP+WeK
- EcUQ==
+ :cc; bh=nwcdyZlVJNYhzqAX8drYdwwlincSCC0RlYdtVUa7uAU=;
+ b=IkHW2/q5zYf/AiFOwOUn62sZGCukGK93pV5qaXaFIqAD6rVurvvvVguZ0CQNqSK004
+ PUW6XYRD1tpIvu/H8uK2xdNaMWkc3s+ZreXHoEsItZgP1H729MJ8nowT1aehVpl1AnJq
+ rAPmVbRpyeOR+0aKXV1iywesPypOO3F4fwUcKnHNHDKkSlnXU9KrB33bQAymKu7tZx6G
+ yt/Ix8apmwB+zPUY0f7g7GrCvvhKCA2B8FFf68JI9BW8d/snEU6oOmLqSE4EOwMnXWLP
+ uFddQ1SWm8yfpnKxzglfseoQZZbmazxOSGTrgVrxfJIOk1+YhP4zhoDMctTsB330F1Sn
+ /4dA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=JHqsYYLzLAosbxbz1ZkSkQroLN+I/zt1AzacawmONrY=;
- b=M5qpCfNopjPN9KoHAzC6h59+d5L/aeR5plj6WATRvq9UaqXTnsE3We6nmzsJfAPR2y
- fIYOwunOi7EiacxEVCDqf1qhs70QnIpg3kRCIXCM2gun+pfIMXXP5dd6wvDnUEkwalNQ
- tbVMgU/oHAY9UUgn79Cgxu1n+cmZjlLra8V3GaSo4KOMd/jEpD+UbUHoCupIDFD6AcUu
- X2PalD7G/s3tVodTtebk5/ntC9ra+rveteRqsqbDLUrQZUKMLEuZO6+kTS170Td3vZP2
- dLu/3p8gWWPMe0lPb6rFEQmQq5bTQ9Yn/VXrUKIiqQw2O/JVOoZxq2umpRTSD9YWkWvb
- BoNA==
-X-Gm-Message-State: APjAAAW1arp+CNfT4fOeA6Lyjb2Xh3YVQDrCWB1HvOLtOKgz1HD0Gyyb
- KkKqeLkKOVRDOFWINHsUMzT5wRVP4r/W3UIOo+pahQ==
-X-Google-Smtp-Source: APXvYqx0OC49B+0u9fYvW2+xXIuYcGfgocchgfhlK03aaHz2u6I5PoagyCc52QVITc8deDrbZKlEXXtykOtZNEDzro4=
-X-Received: by 2002:a17:902:1004:: with SMTP id
- b4mr3862082pla.325.1561535609164; 
- Wed, 26 Jun 2019 00:53:29 -0700 (PDT)
+ bh=nwcdyZlVJNYhzqAX8drYdwwlincSCC0RlYdtVUa7uAU=;
+ b=lJ49oZr4J1UvvkrMya3J4f7LCkyzj1i80/CGNqRSk479/2jtag7eTfJJ+DvrcdMrYm
+ q30TXyO6DZyhA4GGpCkl1NvyJ4p0j3XlmB7mpaP7eIcXOUmtoyqaKlchRMi8dnGmgSbA
+ XbijsnhEprt94QZCcDU6bxCSJlz6ke/30JYRoiHoxKn0iVpSRt2cO3E13ArGuz7xkowl
+ tPSLb4/mbmTYya6RE53sciFbIHxGE8tO42vDo/lRzVFG3UYir32dg4VuTrqgyRKkYbcg
+ 9096PJx0D91Z+YJcL9qgP8hhcg0fNZnsuoml55eass4GiAjl9FHqCt1khjKAecjyvDFL
+ UhCQ==
+X-Gm-Message-State: APjAAAVYitN6PoC0ci1X5kyjhKi/ObtGXab3FmKyNNTlutmaNPzaNprX
+ W9Xi6HX97dtpgAkbMSwu4AMFQEqqs+g0YmQMomCMSQ==
+X-Google-Smtp-Source: APXvYqzSvFzyXqC4mv+sYfABQnmt0YNMhvFTkgdzLZZeovItyFY3wThgA7+iWx0YSEf5WS6vtdXjsfVxGyJkZN8WaD8=
+X-Received: by 2002:a17:90a:9382:: with SMTP id
+ q2mr3140021pjo.131.1561536186861; 
+ Wed, 26 Jun 2019 01:03:06 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190617082613.109131-1-brendanhiggins@google.com>
- <20190617082613.109131-8-brendanhiggins@google.com>
- <20190625232249.GS19023@42.do-not-panic.com>
-In-Reply-To: <20190625232249.GS19023@42.do-not-panic.com>
+ <20190617082613.109131-14-brendanhiggins@google.com>
+ <20190626000150.GT19023@42.do-not-panic.com>
+In-Reply-To: <20190626000150.GT19023@42.do-not-panic.com>
 From: Brendan Higgins <brendanhiggins@google.com>
-Date: Wed, 26 Jun 2019 00:53:18 -0700
-Message-ID: <CAFd5g46mnd=a0OqFCx0hOHX+DxW+5yA2LXH5Q0gEg8yUZK=4FA@mail.gmail.com>
-Subject: Re: [PATCH v5 07/18] kunit: test: add initial tests
+Date: Wed, 26 Jun 2019 01:02:55 -0700
+Message-ID: <CAFd5g44kkepB2hZcpYL-NB5ZHYE5tP7W-0yducGCX7Khd9gd9w@mail.gmail.com>
+Subject: Re: [PATCH v5 13/18] kunit: tool: add Python wrappers for running
+ KUnit tests
 To: Luis Chamberlain <mcgrof@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190626_005331_188161_046E1169 
-X-CRM114-Status: GOOD (  15.87  )
+X-CRM114-CacheID: sfid-20190626_010308_262565_62D92D38 
+X-CRM114-Status: UNSURE (   9.02  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -109,7 +111,8 @@ Cc: Petr Mladek <pmladek@suse.com>,
  shuah <shuah@kernel.org>, Rob Herring <robh@kernel.org>,
  linux-nvdimm <linux-nvdimm@lists.01.org>,
  Frank Rowand <frowand.list@gmail.com>, Knut Omang <knut.omang@oracle.com>,
- Kieran Bingham <kieran.bingham@ideasonboard.com>, wfg@linux.intel.com,
+ Kieran Bingham <kieran.bingham@ideasonboard.com>,
+ Felix Guo <felixguoxiuping@gmail.com>, wfg@linux.intel.com,
  Joel Stanley <joel@jms.id.au>, David Rientjes <rientjes@google.com>,
  Jeff Dike <jdike@addtoit.com>, Dan Carpenter <dan.carpenter@oracle.com>,
  devicetree <devicetree@vger.kernel.org>,
@@ -129,45 +132,22 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Tue, Jun 25, 2019 at 4:22 PM Luis Chamberlain <mcgrof@kernel.org> wrote:
+On Tue, Jun 25, 2019 at 5:01 PM Luis Chamberlain <mcgrof@kernel.org> wrote:
 >
-> On Mon, Jun 17, 2019 at 01:26:02AM -0700, Brendan Higgins wrote:
-> > diff --git a/kunit/example-test.c b/kunit/example-test.c
-> > new file mode 100644
-> > index 0000000000000..f44b8ece488bb
-> > --- /dev/null
-> > +++ b/kunit/example-test.c
+> On Mon, Jun 17, 2019 at 01:26:08AM -0700, Brendan Higgins wrote:
+> >  create mode 100644 tools/testing/kunit/test_data/test_is_test_passed-all_passed.log
+> >  create mode 100644 tools/testing/kunit/test_data/test_is_test_passed-crash.log
+> >  create mode 100644 tools/testing/kunit/test_data/test_is_test_passed-failure.log
+> >  create mode 100644 tools/testing/kunit/test_data/test_is_test_passed-no_tests_run.log
+> >  create mode 100644 tools/testing/kunit/test_data/test_output_isolated_correctly.log
+> >  create mode 100644 tools/testing/kunit/test_data/test_read_from_file.kconfig
 >
-> <-- snip -->
->
-> > +/*
-> > + * This defines a suite or grouping of tests.
-> > + *
-> > + * Test cases are defined as belonging to the suite by adding them to
-> > + * `kunit_cases`.
-> > + *
-> > + * Often it is desirable to run some function which will set up things which
-> > + * will be used by every test; this is accomplished with an `init` function
-> > + * which runs before each test case is invoked. Similarly, an `exit` function
-> > + * may be specified which runs after every test case and can be used to for
-> > + * cleanup. For clarity, running tests in a test module would behave as follows:
-> > + *
->
-> To be clear this is not the kernel module init, but rather the kunit
-> module init. I think using kmodule would make this clearer to a reader.
+> Why are these being added upstream? The commit log does not explain
+> this.
 
-Seems reasonable. Will fix in next revision.
-
-> > + * module.init(test);
-> > + * module.test_case[0](test);
-> > + * module.exit(test);
-> > + * module.init(test);
-> > + * module.test_case[1](test);
-> > + * module.exit(test);
-> > + * ...;
-> > + */
->
->   Luis
+Oh sorry, those are for testing purposes. I thought that was clear
+from being in the test_data directory. I will reference it in the
+commit log in the next revision.
 
 _______________________________________________
 linux-um mailing list
