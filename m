@@ -2,95 +2,90 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 51E74595C7
-	for <lists+linux-um@lfdr.de>; Fri, 28 Jun 2019 10:10:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 833DF5A664
+	for <lists+linux-um@lfdr.de>; Fri, 28 Jun 2019 23:37:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VBxYeQ7EBX5OrdN1EVKDh4EBNoDMgNMCyoKAuEj/sS4=; b=cazSwdsy4maIRY
-	UZB/ZagtrgJrshdKNBzxMsWePsyvdcBSXx7BfzTLPaQIfnmzvXwfPMN9b+KhXUPTTD7WVo5fWSUZc
-	u3FOtp0GtA57rUdR1h999PcdAnujj5v/eIpznkwr5ItuA7iZJmzn3OGXLpjMx7Apd4kcdU62yBcSh
-	A9R0l7Z4nJrXgjRP5b2FugIRLdBRaHjinZZCC8Edf9mQzxd8yYi33XTUnTJcJUfv/aH5n8sV9f9Zq
-	uirq/wq7+p2SJBdGe+9kKa01ZMMz/9C7kKGC+KKLr1LKiTIqW4NChos2wz5/zjgKQI8s+40O6PMF0
-	PAJjC+S4k4vhFCj25JTw==;
+	List-Owner; bh=LjhZ58ie5M5opOkfOrMXwaTUkRcAvpy7KLSvnGaANlw=; b=RSIT2VTLKun+9S
+	nCZXN6qiMgIKcVr0qmwyuUJy+n/CwmH2Wvb/nVhLFr/7jruJKRNiUwEu10B/KmD+lKmQYeF3HqCjV
+	bn+TMxLCOXnju0tn4TLz15H+JD/BVcxtsOxahUx36nS2rX7lr69QPCaapTkWMzKqXALnmwVDWOUFl
+	Flsklk38QhkyBbXJphSVvvJRAAcJuYBKQmVgkqzwxBlbHnJPcpIsmVAsFMhpLeeOi/r1H06WvuVsw
+	phHlaM2hMDKPR3hsxySPkW2eemUXug2Xvmz4zUrhAyIQjSB3W3IIP4QEvJqDim0TD7UqhvjyZOCAf
+	P8g3QmuXASVfVZ9jmrJg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hglxW-0007zS-HX; Fri, 28 Jun 2019 08:10:14 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1hgyYs-0005sg-0R; Fri, 28 Jun 2019 21:37:38 +0000
+Received: from mail-pl1-f193.google.com ([209.85.214.193])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hglxE-0006bO-Ri
- for linux-um@lists.infradead.org; Fri, 28 Jun 2019 08:09:59 +0000
-Received: by mail-pg1-x544.google.com with SMTP id g15so341921pgi.4
- for <linux-um@lists.infradead.org>; Fri, 28 Jun 2019 01:09:56 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=yibP/Iv6ps2Lbs4MfioQUnaQ1X0MZgCBiZaerRAAUs0=;
- b=e5kLlPi61UOlg3aWbm3hyHJ6zEvPrbJg4WaMTgr5J7N6beCFHbvMVMWvXm34zFIMK6
- sy+TCthgNvl6QKdGAvF199JWgLSzY0riL7Qema9Z8eQSMrEVD7QmDgObmKA9VnGm6jQk
- Qk9Vw4tG1NS/Rsaor+MwqJJtzbW9NLCCg64qdKIwo/lqdLjqjD0HoEJZR2UkGwIQNQU7
- B8LVi8olEdiEG1gQQPAGB3QH7tntl/R65/A9R5rItsLpolqg+IRJEp1Du/WH5LqoOfL3
- I3l8I0kuDspWHSG/V5vI+q5UJh9nND3VlxUlk753w0GhWsuvm1nMSIm2VqKl1wq8mbGo
- 9uhw==
+ id 1hgyYp-0005s7-1m
+ for linux-um@lists.infradead.org; Fri, 28 Jun 2019 21:37:36 +0000
+Received: by mail-pl1-f193.google.com with SMTP id bh12so3937637plb.4
+ for <linux-um@lists.infradead.org>; Fri, 28 Jun 2019 14:37:34 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=yibP/Iv6ps2Lbs4MfioQUnaQ1X0MZgCBiZaerRAAUs0=;
- b=l8n56Apj+/1euCGz1iWg5lxTzkgLgvGJuLNpFvGJw+z48q4IFPpNu6aoHwxUmwy4Rd
- 2+HGIzlrQTVU/GLAUcLDoJkw4QkjZwa75Ltdr4PbbXPDeddtQ7OezDqN5SfqjAzOOn+L
- yur4is21LLcJg5+X3M2Q3WRTqHGFdEj1iBVqY5v3bdhhAdQHOrZHndQ4A8MJPn+C+Lhy
- Tb6gKKrjNhWPRXkzkUpEI6HXGfzIzMiKQ0p8nhDtYF2YSz8VIgBoQtcCOcwUT2doUPiR
- tpAyqj9fIFgFk3HHj6dh8/rKWpnVRWtXzDNhCFK93SukEL3t9DFM8hYnJA8gudqmzjYk
- dstg==
-X-Gm-Message-State: APjAAAWkA4A1FWaRvC3tgZn5ToHXrRFVh5dTn3z3GJNAve9l/lTXmYuv
- yFS4aOxzwUGmW1NM8PxVvYjHnTM0L3RTyzYWxbM1Qg==
-X-Google-Smtp-Source: APXvYqwa5Gi43WdeQYYulM3cScojWTt0/MI+kDN9NbNdt1CeW4jxKTFR3Algm98Jmh+XvwAADJqdAi9a1c1dDVA05Ew=
-X-Received: by 2002:a17:90a:be0d:: with SMTP id
- a13mr11033056pjs.84.1561709395368; 
- Fri, 28 Jun 2019 01:09:55 -0700 (PDT)
-MIME-Version: 1.0
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=JgAuNdeYgPOaJAXJWPitQxb9O77ltQQoo3H5OkHlS/c=;
+ b=mfxYcANAYSSziPlIgddoKhknLgTon4Pe9fr45kizYpNqAORuyNZNPQbB+ZX/7KC36r
+ NTLbgYvRfiilV48fJHHYy6cVR4awlebwmo8AL+XNRWMwB+rxoca+PhaQqnftSznPtAjU
+ oLqWNFkVdMP0Xq7ncMIdPK3MEbbSOxNI1MP55tFlp7+pyVbhfcuzatcUtldd7Oxl2rrC
+ lMUnDBziDtpDYiwo/x09ZOFo6yq9xGlZvMZkxZA9kqjFWOkTWZxlAeMmzpdBEaNkfIiY
+ 5tL5SSMzH2MCNqfmzwjddKA5EDQ1t9QWRZxfCRHCFSy9LPPOqtokfqSlN2GcNymd3F6T
+ rXyw==
+X-Gm-Message-State: APjAAAWvO3Y64bZ1LTQ7Fw9Lrae6WoxbbIo5jgoBJaKrpXwvf4b3MWzW
+ 6gDgdhCSjogqHG1vAXqVtGORrUspbBE=
+X-Google-Smtp-Source: APXvYqy5ELfDL2fyyn/y9lJ8x6ZZyU+/eE48fR92CyznGhgcBuNDCxdNuVcUesc0a2YsMUSVisIbkg==
+X-Received: by 2002:a17:902:a60d:: with SMTP id
+ u13mr6000172plq.144.1561757853454; 
+ Fri, 28 Jun 2019 14:37:33 -0700 (PDT)
+Received: from 42.do-not-panic.com (42.do-not-panic.com. [157.230.128.187])
+ by smtp.gmail.com with ESMTPSA id b15sm3215119pfi.141.2019.06.28.14.37.31
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Fri, 28 Jun 2019 14:37:32 -0700 (PDT)
+Received: by 42.do-not-panic.com (Postfix, from userid 1000)
+ id 8049D402AC; Fri, 28 Jun 2019 21:37:31 +0000 (UTC)
+Date: Fri, 28 Jun 2019 21:37:31 +0000
+From: Luis Chamberlain <mcgrof@kernel.org>
+To: Brendan Higgins <brendanhiggins@google.com>,
+ Dominik Brodowski <linux@dominikbrodowski.net>
+Subject: Re: [PATCH v5 17/18] kernel/sysctl-test: Add null pointer test for
+ sysctl.c:proc_dointvec()
+Message-ID: <20190628213731.GJ19023@42.do-not-panic.com>
 References: <20190617082613.109131-1-brendanhiggins@google.com>
- <20190617082613.109131-2-brendanhiggins@google.com>
- <20190620001526.93426218BE@mail.kernel.org>
- <CAFd5g46Jhxsz6_VXHEVYvTeDRwwzgKpr=aUWLL5b3S4kUukb8g@mail.gmail.com>
- <20190626034100.B238520883@mail.kernel.org>
- <CAFd5g46zHAupdUh3wDuqPJti2M+_=oje_5weFe7AVLQfkDDM6A@mail.gmail.com>
- <20190627181636.5EA752064A@mail.kernel.org>
-In-Reply-To: <20190627181636.5EA752064A@mail.kernel.org>
-From: Brendan Higgins <brendanhiggins@google.com>
-Date: Fri, 28 Jun 2019 01:09:44 -0700
-Message-ID: <CAFd5g44V3ZLNazUOgOo2sFR3zzbNnTkH4e9uxGX4iHi7G73Mzw@mail.gmail.com>
-Subject: Re: [PATCH v5 01/18] kunit: test: add KUnit test runner core
-To: Stephen Boyd <sboyd@kernel.org>
+ <20190617082613.109131-18-brendanhiggins@google.com>
+ <20190626021744.GU19023@42.do-not-panic.com>
+ <CAAXuY3p+kVhjQ4LYtzormqVcH2vKu1abc_K9Z0XY=JX=bp8NcQ@mail.gmail.com>
+ <20190627061021.GE19023@42.do-not-panic.com>
+ <CAFd5g45VJ9yfuESUc=E0ydJyN+mk1b1kyHSCYvO2x9KPC7+3GQ@mail.gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CAFd5g45VJ9yfuESUc=E0ydJyN+mk1b1kyHSCYvO2x9KPC7+3GQ@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190628_010957_138945_6F385AC4 
-X-CRM114-Status: GOOD (  22.67  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20190628_143735_100328_E8CD067A 
+X-CRM114-Status: GOOD (  33.07  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
- [list.dnswl.org]
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
+ no trust [209.85.214.193 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (mcgrof[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.214.193 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -114,104 +109,125 @@ Cc: Petr Mladek <pmladek@suse.com>,
  linux-nvdimm <linux-nvdimm@lists.01.org>,
  Frank Rowand <frowand.list@gmail.com>, Knut Omang <knut.omang@oracle.com>,
  Kieran Bingham <kieran.bingham@ideasonboard.com>, wfg@linux.intel.com,
- Joel Stanley <joel@jms.id.au>, David Rientjes <rientjes@google.com>,
+ "Michael Kerrisk \(man-pages\)" <mtk.manpages@gmail.com>,
+ David Rientjes <rientjes@google.com>, Iurii Zaikin <yzaikin@google.com>,
  Jeff Dike <jdike@addtoit.com>, Dan Carpenter <dan.carpenter@oracle.com>,
- devicetree <devicetree@vger.kernel.org>,
+ Joel Stanley <joel@jms.id.au>, devicetree <devicetree@vger.kernel.org>,
  linux-kbuild <linux-kbuild@vger.kernel.org>, "Bird,
- Timothy" <Tim.Bird@sony.com>, linux-um@lists.infradead.org,
- Steven Rostedt <rostedt@goodmis.org>, Julia Lawall <julia.lawall@lip6.fr>,
- Josh Poimboeuf <jpoimboe@redhat.com>, kunit-dev@googlegroups.com,
- Theodore Ts'o <tytso@mit.edu>, Richard Weinberger <richard@nod.at>,
+ Timothy" <Tim.Bird@sony.com>, Kees Cook <keescook@google.com>,
+ linux-um@lists.infradead.org, Steven Rostedt <rostedt@goodmis.org>,
+ Julia Lawall <julia.lawall@lip6.fr>, Josh Poimboeuf <jpoimboe@redhat.com>,
+ kunit-dev@googlegroups.com, Theodore Ts'o <tytso@mit.edu>,
+ Richard Weinberger <richard@nod.at>, Stephen Boyd <sboyd@kernel.org>,
  Greg KH <gregkh@linuxfoundation.org>, Randy Dunlap <rdunlap@infradead.org>,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Luis Chamberlain <mcgrof@kernel.org>, Daniel Vetter <daniel@ffwll.ch>,
- Kees Cook <keescook@google.com>, linux-fsdevel@vger.kernel.org,
- Logan Gunthorpe <logang@deltatee.com>, Kevin Hilman <khilman@baylibre.com>
+ Daniel Vetter <daniel@ffwll.ch>, linux-api@vger.kernel.org,
+ linux-fsdevel@vger.kernel.org, Logan Gunthorpe <logang@deltatee.com>,
+ Kevin Hilman <khilman@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Thu, Jun 27, 2019 at 11:16 AM Stephen Boyd <sboyd@kernel.org> wrote:
->
-> Quoting Brendan Higgins (2019-06-26 16:00:40)
-> > On Tue, Jun 25, 2019 at 8:41 PM Stephen Boyd <sboyd@kernel.org> wrote:
+On Fri, Jun 28, 2019 at 01:01:54AM -0700, Brendan Higgins wrote:
+> On Wed, Jun 26, 2019 at 11:10 PM Luis Chamberlain <mcgrof@kernel.org> wrote:
 > >
-> > > scenario like below, but where it is a problem. There could be three
-> > > CPUs, or even one CPU and three threads if you want to describe the
-> > > extra thread scenario.
+> > On Wed, Jun 26, 2019 at 09:07:43PM -0700, Iurii Zaikin wrote:
+> > > On Tue, Jun 25, 2019 at 7:17 PM Luis Chamberlain <mcgrof@kernel.org> wrote:
+> > > > > +static void sysctl_test_dointvec_table_maxlen_unset(struct kunit *test)
+> > > > > +{
+> > > > > +     struct ctl_table table = {
+> > > > > +             .procname = "foo",
+> > > > > +             .data           = &test_data.int_0001,
+> > > > > +             .maxlen         = 0,
+> > > > > +             .mode           = 0644,
+> > > > > +             .proc_handler   = proc_dointvec,
+> > > > > +             .extra1         = &i_zero,
+> > > > > +             .extra2         = &i_one_hundred,
+> > > > > +     };
+> > > > > +     void  *buffer = kunit_kzalloc(test, sizeof(int), GFP_USER);
+> > > > > +     size_t len;
+> > > > > +     loff_t pos;
+> > > > > +
+> > > > > +     len = 1234;
+> > > > > +     KUNIT_EXPECT_EQ(test, 0, proc_dointvec(&table, 0, buffer, &len, &pos));
+> > > > > +     KUNIT_EXPECT_EQ(test, (size_t)0, len);
+> > > > > +     len = 1234;
+> > > > > +     KUNIT_EXPECT_EQ(test, 0, proc_dointvec(&table, 1, buffer, &len, &pos));
+> > > > > +     KUNIT_EXPECT_EQ(test, (size_t)0, len);
+> > > > > +}
+> > > >
+> > > > In a way this is also testing for general kernel API changes. This is and the
+> > > > last one were good examples. So this is not just testing functionality
+> > > > here. There is no wrong or write answer if 0 or -EINVAL was returned
+> > > > other than the fact that we have been doing this for years.
+> > > >
+> > > > Its a perhaps small but important difference for some of these tests.  I
+> > > > *do* think its worth clarifying through documentation which ones are
+> > > > testing for API consistency Vs proper correctness.
 > > >
-> > > Here's my scenario where it isn't needed:
-> > >
-> > >     CPU0                                      CPU1
-> > >     ----                                      ----
-> > >     kunit_run_test(&test)
-> > >                                               test_case_func()
-> > >                                                 ....
-> > >                                               [mock hardirq]
-> > >                                                 kunit_set_success(&test)
-> > >                                               [hardirq ends]
-> > >                                                 ...
-> > >                                                 complete(&test_done)
-> > >       wait_for_completion(&test_done)
-> > >       kunit_get_success(&test)
-> > >
-> > > We don't need to care about having locking here because success or
-> > > failure only happens in one place and it's synchronized with the
-> > > completion.
+> > > You make a good point that the test codifies the existing behavior of
+> > > the function in lieu of formal documentation.  However, the test cases
+> > > were derived from examining the source code of the function under test
+> > > and attempting to cover all branches. The assertions were added only
+> > > for the values that appeared to be set deliberately in the
+> > > implementation. And it makes sense to me to test that the code does
+> > > exactly what the implementation author intended.
 > >
-> > Here is the scenario I am concerned about:
+> > I'm not arguing against adding them. I'm suggesting that it is different
+> > to test for API than for correctness of intended functionality, and
+> > it would be wise to make it clear which test cases are for API and which
+> > for correctness.
+> 
+> I see later on that some of the API stuff you are talking about is
+> public APIs from the standpoint of user (outside of LInux) visible.
+
+Right, UAPI.
+
+> To
+> be clear, is that what you mean by public APIs throughout, or would
+> you distinguish between correctness tests, internal API tests, and
+> external API tests?
+
+I would definitely recommend distingishing between all of these.
+Kernel API (or just call it API), UAPI, and correctness.
+
+> > This will come up later for other kunit tests and it would be great
+> > to set precendent so that other kunit tests can follow similar
+> > practices to ensure its clear what is API realted Vs correctness of
+> > intended functionality.
 > >
-> > CPU0                      CPU1                       CPU2
-> > ----                      ----                       ----
-> > kunit_run_test(&test)
-> >                           test_case_func()
-> >                             ....
-> >                             schedule_work(foo_func)
-> >                           [mock hardirq]             foo_func()
-> >                             ...                        ...
-> >                             kunit_set_success(false)   kunit_set_success(false)
-> >                           [hardirq ends]               ...
-> >                             ...
-> >                             complete(&test_done)
-> >   wait_for_completion(...)
-> >   kunit_get_success(&test)
+> > In fact, I'm not yet sure if its possible to test public kernel API to
+> > userspace with kunit, but if it is possible... well, that could make
+> > linux-api folks happy as they could enable us to codify interpreation of
+> > what is expected into kunit test cases, and we'd ensure that the
+> > codified interpretation is not only documented in man pages but also
+> > through formal kunit test cases.
 > >
-> > In my scenario, since both CPU1 and CPU2 update the success status of
-> > the test simultaneously, even though they are setting it to the same
-> > value. If my understanding is correct, this could result in a
-> > write-tear on some architectures in some circumstances. I suppose we
-> > could just make it an atomic boolean, but I figured locking is also
-> > fine, and generally preferred.
->
-> This is what we have WRITE_ONCE() and READ_ONCE() for. Maybe you could
-> just use that in the getter and setters and remove the lock if it isn't
-> used for anything else.
->
-> It may also be a good idea to have a kunit_fail_test() API that fails
-> the test passed in with a WRITE_ONCE(false). Otherwise, the test is
-> assumed successful and it isn't even possible for a test to change the
-> state from failure to success due to a logical error because the API
-> isn't available. Then we don't really need to have a generic
-> kunit_set_success() function at all. We could have a kunit_test_failed()
-> function too that replaces the kunit_get_success() function. That would
-> read better in an if condition.
+> > A regression in linux-api then could be formalized through a proper
+> > kunit tests case. And if an API evolves, it would force developers to
+> > update the respective kunit which codifies that contract.
+> 
+> Yep, I think that is long term hope. Some of the file system interface
+> stuff that requires a filesystem to be mounted somewhere might get a
+> little weird/difficult, but I suspect we should be able to do it
+> eventually. I mean it's all just C code right? Should mostly boil down
+> to someone figuring out how to do it the first time.
 
-You know what, I think you are right.
+There used to be hacks in the kernel the call syscalls in a few places.
+This was cleaned up and addressed via Dominik Brodowski's series last
+year in March:
 
-Sorry, for not realizing this earlier, I think you mentioned something
-along these lines a long time ago.
+http://lkml.kernel.org/r/20180325162527.GA17492@light.dominikbrodowski.net
 
-Thanks for your patience!
+An example commit: d300b610812f3 ("kernel: use kernel_wait4() instead of
+sys_wait4()").
 
-> >
-> > Also, to be clear, I am onboard with dropping then IRQ stuff for now.
-> > I am fine moving to a mutex for the time being.
-> >
->
-> Ok.
+So it would seem the work is done, and you'd just have to use the
+respective exposed kernel_syscallname() calls, or add some if you
+want to test a specific syscall in kernel space.
 
-Thanks!
+  Luis
 
 _______________________________________________
 linux-um mailing list
