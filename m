@@ -2,76 +2,78 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 406BF5F055
-	for <lists+linux-um@lfdr.de>; Thu,  4 Jul 2019 02:37:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 55D305F05E
+	for <lists+linux-um@lfdr.de>; Thu,  4 Jul 2019 02:38:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
 	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sAuJk6kXsZdI1WMf/byOG2q+dB4Tc2g3fkE8g6tCAGQ=; b=Fxk3RPGDtkv4dz
-	Ti+GVseSNk4TCS1bXP0t3djbpUBdEvZ1JhoxzCdDEf5/PCILJmikOkfUwwtPJRlTEr5Jqkth/DuXH
-	gazh7qsUA3Ud8getQVzdoPJD6PZ1gR4bGz/FaolkV2snZJ/fb4IWkrU4n68XwRoWdlXlqBj4hldhk
-	qSbYuaCL2QbA2s/6lgLR/2g31PNJh37JCmftQJC7XZRsDBUO1NSvIUJkxPSirNtBvwjTZS8kyNayt
-	CA9T9AW9LUcu0o6WD1/DcTOZAi7bp0UnjLIdPaNU4PxQcnq5DcfFrqt+LMkYD3P2lnua4Okz1jVQP
-	13wwVGbCnYHozcb3DSfA==;
+	List-Owner; bh=Oz/Mu0/MOI+pzwBnH6xIUAv3LeGORN4nuNXXjScjnfk=; b=oW/Z2RWM/Ia8j4
+	rkbrxGeGgb/dSpqPNlz+yvc0lV0eWxrEnUZH6po6Yvcl0ixR0WZYRcHbb8czAgzvbs2Hs4MvUiaTC
+	onxzkBABIAFJyHvqT7HLlaC5TgtTplsnTuRN+lnBnibKEcb/G4UGjWknzVQRQR819QUAZag+B1U45
+	c0zZmXVa5cF5r/lJC+2AH76BMJYhAdXegfLGthkgeh0Ed/oinMntmglN2EnHkTHvrArou19pxl9xs
+	27XiNYSqHQFdOm6qePMoJ+6UNJSHtNNOXSnnD7njBtysxaT0yIjc0T5QyDDA7Yd4uGEpxEbWYE7c9
+	LgI5oNadJkZYl+ve+6eA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hipl4-0007JW-NW; Thu, 04 Jul 2019 00:37:54 +0000
-Received: from mail-pl1-x649.google.com ([2607:f8b0:4864:20::649])
+	id 1hiplC-0007MK-1G; Thu, 04 Jul 2019 00:38:02 +0000
+Received: from mail-qt1-x849.google.com ([2607:f8b0:4864:20::849])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hipl2-0007HW-Bc
- for linux-um@lists.infradead.org; Thu, 04 Jul 2019 00:37:53 +0000
-Received: by mail-pl1-x649.google.com with SMTP id n1so2262150plk.11
- for <linux-um@lists.infradead.org>; Wed, 03 Jul 2019 17:37:51 -0700 (PDT)
+ id 1hipl9-0007LA-4o
+ for linux-um@lists.infradead.org; Thu, 04 Jul 2019 00:38:00 +0000
+Received: by mail-qt1-x849.google.com with SMTP id o16so5248224qtj.6
+ for <linux-um@lists.infradead.org>; Wed, 03 Jul 2019 17:37:58 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=date:in-reply-to:message-id:mime-version:references:subject:from:to
- :cc; bh=lgb7c0kk4AIlDFKq2h34ExMTr7WoEQbcibudQeY2BwQ=;
- b=bJ2B8In3BYK2xzAP0aCf1pWz++CGQglPJSQerpYPHi4eE94VKaoZahLuBupljJ2Q3Z
- crGhzgFMJ3XKGJ3uYM2IqZlFN/A8U1j6M+NnmE7LKn+CFBDVOaT9od38VqFxuxXaStSi
- yYU2R9POF0QN/sWYrlHPa8x2jYfrWARBuKcqozHQAVN8HN51eGiAU9wVRGFqodKfxCpo
- GehNdkXD8U5atn4idR3tE+xubwWy8NdpEoQLrHcCJil9w06mTynEAN+kjaInKOsiPlOq
- BJUruUTaDs2rhIF9AhbHO7WoFNkUDX1cWz5r10rYDg8xf2rl7ljUJn65OecOFhCXuaWa
- Ip5w==
+ :cc; bh=P7qQxupR077m/rPxlenNGlU3U4VVv+id9WBQp+CCiSA=;
+ b=eX6g8UJwZVNX+4r+AShnzJta6FGseuE/5NG3bFT5qUZ29kjG3eSigy79cygGRMy3wG
+ OlNuhPBgbypVjqEcuiDHgE8ZRW8TX/6T/BgVy+sLlM5y+9VJjnZhvIDMlYZBOk2ci75G
+ h9xN0mf0vc5siI3tGh96t9saSuC00p9xuUwaUPkUcu6P9gaKRQ9QK0tgT0c83lmxhbU3
+ 2FMuBJqZmiDCRtom/5lZVTemVzcNLahTde7XIKJINA6n2Xld/6QvzyMORAoQ1D2is3wV
+ ghoNX0qf/AFPDEbC7dn7jjJOxJsOmrsv/J4evI99aFvqYr9hJhmbq+e2Zzdo3qYeS+O3
+ 59sA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:in-reply-to:message-id:mime-version
  :references:subject:from:to:cc;
- bh=lgb7c0kk4AIlDFKq2h34ExMTr7WoEQbcibudQeY2BwQ=;
- b=JLU48r3ilvtweWVoGNOM+54ht8CgGhaJ9w5SRpMDP9XphsV8pHXswjihuyc9MR+qZd
- DSlr00b8Wgnjw1MwGGrIpwTFq1advBlMjdc7kThp0w/ncI1NqHUUM0LmylLU13cdecl0
- 8gg3S/vNOsZGubKkAvwJSUZ8/YnyD/TRhy46PBX66gxfw1MnzAuzbb4EzkN9BF2X6VaO
- y6VxFU5BC9C/LEJED5r4lx0fks2Uf+y9KhlZTd8NULqdAaXrCdmoqSLD1uMDlEKtTPpq
- dc6AfRIbaHfu0B14njF1eZGKVax1dSxJ8gBb6aybbmFGOHz3ZZ8rZIJ/CA/To/3BcgvD
- Jq4A==
-X-Gm-Message-State: APjAAAVAum4RxLLa5awNXrRyWiUNcjw65/e+EFp6t7Lv7Mtg6XWV+URR
- slqzPtXwEn27ss7DpjNxmsLuV3jR+hN7uRvWtB0nBg==
-X-Google-Smtp-Source: APXvYqz7F+G8hUIBCTSQDlIfqajYD26eMP+irgR2HNN6cYO7HU5ebFd0Z1l8yAtbgyOUP1e8ZKinVoWXBdMwtwNc57o6og==
-X-Received: by 2002:a63:d002:: with SMTP id z2mr6770352pgf.364.1562200670093; 
- Wed, 03 Jul 2019 17:37:50 -0700 (PDT)
-Date: Wed,  3 Jul 2019 17:36:04 -0700
+ bh=P7qQxupR077m/rPxlenNGlU3U4VVv+id9WBQp+CCiSA=;
+ b=iLaA6bzKHHczDubVfVvofXcbs2yXcYaUXVrIFt7qG1lPdAqGGqrTez1cFUDPWUaRoM
+ HdRbqhFNW2E6T+ngVxpKBE9g+YHf82Yg8mOCELCixupGTHdB8M37oE6qdfUdGDmjOV7S
+ fO8SNcqsdY1+hRvnveTM3bBZkvPkLWjtY6hbEr5BDXZ/VJNfCs9jgg/HLal/hEpIZdaZ
+ uGZqPgCcAhgf5ZpIPljS9b9iqpvj2y/lNX3LTMJ5szjwjailNFC5T3/cM9dJUt2AWO73
+ mtKnwk71qPN36n1aQJyTvUFBDXE+N7jYSdHo+e6PMnnJDAQLIyAGBle4PcQucNLLe1GC
+ SwjA==
+X-Gm-Message-State: APjAAAWpuNNA6Nxx+j9dYJm/0945YUnGJlFItHolHzDyxz0GTKjtMZsT
+ rzqL9RET7iwE6wX5brQ++tL9JyessqgLBYU2AVj5Lw==
+X-Google-Smtp-Source: APXvYqytggehTlSFZvjf2aviCQRPatILKKaUGgr20IkSkXU2ITJH43rWfM0KxJCOSm3yMfSZQ3zYRWZoJDKAEm/SDyDtaQ==
+X-Received: by 2002:ac8:7b99:: with SMTP id p25mr3074172qtu.243.1562200677358; 
+ Wed, 03 Jul 2019 17:37:57 -0700 (PDT)
+Date: Wed,  3 Jul 2019 17:36:05 -0700
 In-Reply-To: <20190704003615.204860-1-brendanhiggins@google.com>
-Message-Id: <20190704003615.204860-8-brendanhiggins@google.com>
+Message-Id: <20190704003615.204860-9-brendanhiggins@google.com>
 Mime-Version: 1.0
 References: <20190704003615.204860-1-brendanhiggins@google.com>
 X-Mailer: git-send-email 2.22.0.410.gd8fdbe21b5-goog
-Subject: [PATCH v6 07/18] kunit: test: add initial tests
+Subject: [PATCH v6 08/18] objtool: add kunit_try_catch_throw to the noreturn
+ list
 From: Brendan Higgins <brendanhiggins@google.com>
 To: frowand.list@gmail.com, gregkh@linuxfoundation.org, jpoimboe@redhat.com, 
  keescook@google.com, kieran.bingham@ideasonboard.com, mcgrof@kernel.org, 
  peterz@infradead.org, robh@kernel.org, sboyd@kernel.org, shuah@kernel.org, 
  tytso@mit.edu, yamada.masahiro@socionext.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190703_173752_397912_F05426E5 
-X-CRM114-Status: GOOD (  20.59  )
+X-CRM114-CacheID: sfid-20190703_173759_188878_0EC9EEE7 
+X-CRM114-Status: UNSURE (   8.68  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:649 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:849 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
@@ -100,8 +102,9 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
 Cc: pmladek@suse.com, linux-doc@vger.kernel.org, amir73il@gmail.com,
  Brendan Higgins <brendanhiggins@google.com>, dri-devel@lists.freedesktop.org,
  Alexander.Levin@microsoft.com, linux-kselftest@vger.kernel.org,
- linux-nvdimm@lists.01.org, khilman@baylibre.com, knut.omang@oracle.com,
- wfg@linux.intel.com, joel@jms.id.au, rientjes@google.com, jdike@addtoit.com,
+ kbuild test robot <lkp@intel.com>, linux-nvdimm@lists.01.org,
+ khilman@baylibre.com, knut.omang@oracle.com, wfg@linux.intel.com,
+ joel@jms.id.au, rientjes@google.com, jdike@addtoit.com,
  dan.carpenter@oracle.com, devicetree@vger.kernel.org,
  linux-kbuild@vger.kernel.org, Tim.Bird@sony.com, linux-um@lists.infradead.org,
  rostedt@goodmis.org, julia.lawall@lip6.fr, kunit-dev@googlegroups.com,
@@ -113,237 +116,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-Add a test for string stream along with a simpler example.
+Fix the following warning seen on GCC 7.3:
+  kunit/test-test.o: warning: objtool: kunit_test_unsuccessful_try() falls through to next function kunit_test_catch()
 
+kunit_try_catch_throw is a function added in the following patch in this
+series; it allows KUnit, a unit testing framework for the kernel, to
+bail out of a broken test. As a consequence, it is a new __noreturn
+function that objtool thinks is broken (as seen above). So fix this
+warning by adding kunit_try_catch_throw to objtool's noreturn list.
+
+Reported-by: kbuild test robot <lkp@intel.com>
 Signed-off-by: Brendan Higgins <brendanhiggins@google.com>
-Reviewed-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Reviewed-by: Logan Gunthorpe <logang@deltatee.com>
+Link: https://www.spinics.net/lists/linux-kbuild/msg21708.html
 ---
- kunit/Kconfig              | 21 +++++++++
- kunit/Makefile             |  4 ++
- kunit/example-test.c       | 88 ++++++++++++++++++++++++++++++++++++++
- kunit/string-stream-test.c | 75 ++++++++++++++++++++++++++++++++
- 4 files changed, 188 insertions(+)
- create mode 100644 kunit/example-test.c
- create mode 100644 kunit/string-stream-test.c
+ tools/objtool/check.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/kunit/Kconfig b/kunit/Kconfig
-index 330ae83527c23..8541ef95b65ad 100644
---- a/kunit/Kconfig
-+++ b/kunit/Kconfig
-@@ -14,4 +14,25 @@ config KUNIT
- 	  architectures. For more information, please see
- 	  Documentation/dev-tools/kunit/.
+diff --git a/tools/objtool/check.c b/tools/objtool/check.c
+index 172f991957269..98db5fe85c797 100644
+--- a/tools/objtool/check.c
++++ b/tools/objtool/check.c
+@@ -134,6 +134,7 @@ static int __dead_end_function(struct objtool_file *file, struct symbol *func,
+ 		"usercopy_abort",
+ 		"machine_real_restart",
+ 		"rewind_stack_do_exit",
++		"kunit_try_catch_throw",
+ 	};
  
-+config KUNIT_TEST
-+	bool "KUnit test for KUnit"
-+	depends on KUNIT
-+	help
-+	  Enables the unit tests for the KUnit test framework. These tests test
-+	  the KUnit test framework itself; the tests are both written using
-+	  KUnit and test KUnit. This option should only be enabled for testing
-+	  purposes by developers interested in testing that KUnit works as
-+	  expected.
-+
-+config KUNIT_EXAMPLE_TEST
-+	bool "Example test for KUnit"
-+	depends on KUNIT
-+	help
-+	  Enables an example unit test that illustrates some of the basic
-+	  features of KUnit. This test only exists to help new users understand
-+	  what KUnit is and how it is used. Please refer to the example test
-+	  itself, kunit/example-test.c, for more information. This option is
-+	  intended for curious hackers who would like to understand how to use
-+	  KUnit for kernel development.
-+
- endmenu
-diff --git a/kunit/Makefile b/kunit/Makefile
-index 6ddc622ee6b1c..60a9ea6cb4697 100644
---- a/kunit/Makefile
-+++ b/kunit/Makefile
-@@ -1,3 +1,7 @@
- obj-$(CONFIG_KUNIT) +=			test.o \
- 					string-stream.o \
- 					kunit-stream.o
-+
-+obj-$(CONFIG_KUNIT_TEST) +=		string-stream-test.o
-+
-+obj-$(CONFIG_KUNIT_EXAMPLE_TEST) +=	example-test.o
-diff --git a/kunit/example-test.c b/kunit/example-test.c
-new file mode 100644
-index 0000000000000..f64a829aa441f
---- /dev/null
-+++ b/kunit/example-test.c
-@@ -0,0 +1,88 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Example KUnit test to show how to use KUnit.
-+ *
-+ * Copyright (C) 2019, Google LLC.
-+ * Author: Brendan Higgins <brendanhiggins@google.com>
-+ */
-+
-+#include <kunit/test.h>
-+
-+/*
-+ * This is the most fundamental element of KUnit, the test case. A test case
-+ * makes a set EXPECTATIONs and ASSERTIONs about the behavior of some code; if
-+ * any expectations or assertions are not met, the test fails; otherwise, the
-+ * test passes.
-+ *
-+ * In KUnit, a test case is just a function with the signature
-+ * `void (*)(struct kunit *)`. `struct kunit` is a context object that stores
-+ * information about the current test.
-+ */
-+static void example_simple_test(struct kunit *test)
-+{
-+	/*
-+	 * This is an EXPECTATION; it is how KUnit tests things. When you want
-+	 * to test a piece of code, you set some expectations about what the
-+	 * code should do. KUnit then runs the test and verifies that the code's
-+	 * behavior matched what was expected.
-+	 */
-+	KUNIT_EXPECT_EQ(test, 1 + 1, 2);
-+}
-+
-+/*
-+ * This is run once before each test case, see the comment on
-+ * example_test_suite for more information.
-+ */
-+static int example_test_init(struct kunit *test)
-+{
-+	kunit_info(test, "initializing\n");
-+
-+	return 0;
-+}
-+
-+/*
-+ * Here we make a list of all the test cases we want to add to the test suite
-+ * below.
-+ */
-+static struct kunit_case example_test_cases[] = {
-+	/*
-+	 * This is a helper to create a test case object from a test case
-+	 * function; its exact function is not important to understand how to
-+	 * use KUnit, just know that this is how you associate test cases with a
-+	 * test suite.
-+	 */
-+	KUNIT_CASE(example_simple_test),
-+	{}
-+};
-+
-+/*
-+ * This defines a suite or grouping of tests.
-+ *
-+ * Test cases are defined as belonging to the suite by adding them to
-+ * `kunit_cases`.
-+ *
-+ * Often it is desirable to run some function which will set up things which
-+ * will be used by every test; this is accomplished with an `init` function
-+ * which runs before each test case is invoked. Similarly, an `exit` function
-+ * may be specified which runs after every test case and can be used to for
-+ * cleanup. For clarity, running tests in a test suite would behave as follows:
-+ *
-+ * suite.init(test);
-+ * suite.test_case[0](test);
-+ * suite.exit(test);
-+ * suite.init(test);
-+ * suite.test_case[1](test);
-+ * suite.exit(test);
-+ * ...;
-+ */
-+static struct kunit_suite example_test_suite = {
-+	.name = "example",
-+	.init = example_test_init,
-+	.test_cases = example_test_cases,
-+};
-+
-+/*
-+ * This registers the above test suite telling KUnit that this is a suite of
-+ * tests that need to be run.
-+ */
-+kunit_test_suite(example_test_suite);
-diff --git a/kunit/string-stream-test.c b/kunit/string-stream-test.c
-new file mode 100644
-index 0000000000000..b5641b078b8f6
---- /dev/null
-+++ b/kunit/string-stream-test.c
-@@ -0,0 +1,75 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * KUnit test for struct string_stream.
-+ *
-+ * Copyright (C) 2019, Google LLC.
-+ * Author: Brendan Higgins <brendanhiggins@google.com>
-+ */
-+
-+#include <linux/slab.h>
-+#include <kunit/test.h>
-+#include <kunit/string-stream.h>
-+
-+static void string_stream_test_empty_on_creation(struct kunit *test)
-+{
-+	struct string_stream *stream = alloc_string_stream(test);
-+
-+	KUNIT_EXPECT_TRUE(test, string_stream_is_empty(stream));
-+}
-+
-+static void string_stream_test_not_empty_after_add(struct kunit *test)
-+{
-+	struct string_stream *stream = alloc_string_stream(test);
-+
-+	string_stream_add(stream, "Foo");
-+
-+	KUNIT_EXPECT_FALSE(test, string_stream_is_empty(stream));
-+}
-+static void string_stream_test_get_string(struct kunit *test)
-+{
-+	struct string_stream *stream = alloc_string_stream(test);
-+	char *output;
-+
-+	string_stream_add(stream, "Foo");
-+	string_stream_add(stream, " %s", "bar");
-+
-+	output = string_stream_get_string(stream);
-+	KUNIT_EXPECT_STREQ(test, output, "Foo bar");
-+	kfree(output);
-+}
-+
-+static void string_stream_test_add_and_clear(struct kunit *test)
-+{
-+	struct string_stream *stream = alloc_string_stream(test);
-+	char *output;
-+	int i;
-+
-+	for (i = 0; i < 10; i++)
-+		string_stream_add(stream, "A");
-+
-+	output = string_stream_get_string(stream);
-+	KUNIT_EXPECT_STREQ(test, output, "AAAAAAAAAA");
-+	KUNIT_EXPECT_EQ(test, stream->length, (size_t)10);
-+	KUNIT_EXPECT_FALSE(test, string_stream_is_empty(stream));
-+	kfree(output);
-+
-+	string_stream_clear(stream);
-+
-+	output = string_stream_get_string(stream);
-+	KUNIT_EXPECT_STREQ(test, output, "");
-+	KUNIT_EXPECT_TRUE(test, string_stream_is_empty(stream));
-+}
-+
-+static struct kunit_case string_stream_test_cases[] = {
-+	KUNIT_CASE(string_stream_test_empty_on_creation),
-+	KUNIT_CASE(string_stream_test_not_empty_after_add),
-+	KUNIT_CASE(string_stream_test_get_string),
-+	KUNIT_CASE(string_stream_test_add_and_clear),
-+	{}
-+};
-+
-+static struct kunit_suite string_stream_test_suite = {
-+	.name = "string-stream-test",
-+	.test_cases = string_stream_test_cases
-+};
-+kunit_test_suite(string_stream_test_suite);
+ 	if (func->bind == STB_WEAK)
 -- 
 2.22.0.410.gd8fdbe21b5-goog
 
