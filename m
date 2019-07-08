@@ -2,74 +2,75 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AAFD8627F6
-	for <lists+linux-um@lfdr.de>; Mon,  8 Jul 2019 20:08:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ECDC262819
+	for <lists+linux-um@lfdr.de>; Mon,  8 Jul 2019 20:13:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FZjTPH0R1WORllF1kw98dMgab53iJNPG4/2R+rUTads=; b=Q0FsEvyu+bR1bB
-	lc385zbELRsK8R5k9iJXAtteisPnvnGu5oIm8oHu8X9BYEFwCfmmtLt+ziSKc22Cfdws2GHxaD1+U
-	K3NvimA5qKaMIe4EBVd2ea6xQSv3KCkMXvZedtW3dCgKd2jLSD8AWXAarrYfLEZwxJenOqIC9fWja
-	E88YbHu2GCkVkpe/bAC52O62jYHjwDDZeC16SGi0PoPcZNwWQSNH4sDWtqTgewBiLkL8ntTC9gBRu
-	ZCKkuj4vgLAYGeYxzwqrSzdbKoD3xQMBom/toezBDWDh66dGi09M4w40JVIokm3dxmigmY9LGyf4x
-	Zldz57aDKtMm28SUqlcg==;
+	List-Owner; bh=wULs/1y5PtFBxa8aemdMLbN8McFLXWTsjhPz/ug1LaU=; b=UvvYXxvYQmDWuK
+	jbv1ch1QnnnqX3wmcrU30zDi2/rMUNudksgT/zW4lLjMLdg+TT5/tbW2xjCwWLt8bJMc+pxuSzSRM
+	sJwZVoh/5VBVkP21SSKz2kt57c+fngfvO3IJ5NLEkQxDUAOkLzbW5FCRt0GELHDsKk28c225RX5gJ
+	JuTfRopUE0i1fvdsK8IYgd7+NOBrynyAGmEMsKqRzF7qBCz2wPB88J1lTQXNy/LjslHV9xmBKO6qE
+	Fw+xJOahYtAUFVVek/PrgNl3ktK6tqh91XFPD1oHkzm1Pyo6b9CoC5CykrPb5zGQgo5x3mwFyaKxT
+	dI8V27/mg+TJOPB79XQQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkY4D-00017U-Ia; Mon, 08 Jul 2019 18:08:45 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1hkY8U-0003LD-Cx; Mon, 08 Jul 2019 18:13:10 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hkY4A-00015w-IG
- for linux-um@lists.infradead.org; Mon, 08 Jul 2019 18:08:44 +0000
-Received: by mail-pf1-x444.google.com with SMTP id t16so7965108pfe.11
- for <linux-um@lists.infradead.org>; Mon, 08 Jul 2019 11:08:39 -0700 (PDT)
+ id 1hkY8S-0003Kh-3g
+ for linux-um@lists.infradead.org; Mon, 08 Jul 2019 18:13:09 +0000
+Received: by mail-pg1-x543.google.com with SMTP id i18so8079346pgl.11
+ for <linux-um@lists.infradead.org>; Mon, 08 Jul 2019 11:13:07 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=pl4l3gaXCZ0Civm5i1pNfvFYe/9qjH5f6pxejgr6AT8=;
- b=SmOjZWgQtja4PiBSvkc/DsaRuuY8KuEdsMMIKFu//v+ppa1NV5GwqJ4JU08u4uuqXU
- KBGOdoVwwU+z3nPB5Yc7Nj2ei2N1Y2sszCQi7aydqX+v1bs0R5WVY9VfrLuAxD0X22yO
- et4/wVXqTEuA8XKb8I+GG2Cy0aB5wgbYiiI9zkmmG0P1bXmqCbs0GEYAywdf8m69uDNv
- i3LNyALK0qO5EHrEqLLK7h1Y4PRr0CfVpj56uFuOU19A9ib63eiTFseAJoBv3geF+XdI
- Ex1jzjCOgerKv5XAy3Zhbk2qyoHk/ecWgRcxMQ7auZjG3EZDzZIqKZ+9SL7kyLXtMMIf
- MRgA==
+ :cc; bh=JCk1WdM0E6nhQWvL7vJ1kxAIGG56jCba8QRd4SGiDCA=;
+ b=OgF8cL2jlYPassQya/5LPanMn4rdt4wOzgmrqwzZxEQPZIqKVwIc/cbAKjQaKs4FzI
+ MO+lSWFVjE1BjbNrUM+omMAeEVXWMjykV41krvzt8AWSDOTa5viWTuQtJ9ep0X0LXNYj
+ OdiZ626za04Q5e0ee0vw+VtEjSvuMHfSSgdE6F33EKsPb+2cKBbfbxgMScj9OazVWVAS
+ RUi9fLCfATh+IjCkIXVEG9DerSHN7LKc7YsX4AxnaewNdUelqDZmIgeZ0zeSR0DCe4sE
+ eOaHDJj5UB+8gGaq9GRuZY4qOho86pU0SRPsJdJUsDSn1VzYLTJqJx6RyW6gChbKWFWj
+ 8y+g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=pl4l3gaXCZ0Civm5i1pNfvFYe/9qjH5f6pxejgr6AT8=;
- b=eyGbMiMpTHTzz4DUfiSTPEAVr1r5WJ2Z92orTMUEluzJzIGoSWR0k7hnOoNnlraMmD
- nwL+H3HevXus79YpUoDNAo30tlzYjA7OuIUg/HsC1FWjYAwyzwvV/Iw6JPxO3Z+X4Xl8
- a7a8K/ZkaVChBSUFSpgCipPXywvcYZlCTtUpAGbOURFDi188zSbeYijDNNCvkLS9Da1W
- tT8t1eRB5x4KssYaj+G6oOlkXQpGwghM+qS56SfbI8udvdZz+4lXv2ReYkwiKX7mM/eH
- qRc0vAS7M6BfkOZebFnd89y4fheeziCeSoRrlQsO1yWpfFER8hh0eLgEi+UKsRQjxdfG
- Ozow==
-X-Gm-Message-State: APjAAAWtp/A7Ddxn2SAqCjnFjIaj5GYFO2mXRm0tD0IzsYkWywVEpIUV
- nsJEZ5hlZWe8O+C5ilWej9iOQPHItoQhRCvxplOxjQ==
-X-Google-Smtp-Source: APXvYqwoLoh11AGLeVf5uSZhLWgN1V0Lf0IPFYJElvqds2Mjg+FKGEtSZZdm1FCZKhiAeE2kYC6jZBxFraVmnG074HI=
-X-Received: by 2002:a63:b919:: with SMTP id z25mr25337810pge.201.1562609318390; 
- Mon, 08 Jul 2019 11:08:38 -0700 (PDT)
+ bh=JCk1WdM0E6nhQWvL7vJ1kxAIGG56jCba8QRd4SGiDCA=;
+ b=eva7VCzvR6IdluWC82e8zcO825nb+nSlUrc6o13WpQSCe9nA2nZZS0S7GWfXer6e/q
+ CDiTWm5AWK6BmZ5KPTc0ZlnHzW4zhXeglW8z+lJfiEuyeLZIW++xeK14vQCw/Hpg4Ow6
+ 6g7/dYSARC6lTA11CYEBJG8TJSUMOK2b1qGv+4fW6d4NZOsg2e7YJU0LZxRCJVYn3zFl
+ 0DUTgad3ihkMll4yIRfFXdFrIUQWofQ2z31ELoCfYNUJna06OGutb5GXalUIQ0V4W+Gn
+ 7jpCS6boT9U8bCdTKriYRJkCKPjMxIUElK4El9D2HzuPBgG4NDsdA4FUmESKCCnAmfbo
+ LIJg==
+X-Gm-Message-State: APjAAAVtPyHyiu1ms0Gxrulh4ITtnerERWR6ZUiTofVGNjmt10Mk20KO
+ O+RgIIF52cOumoiRv04oqITiuE7O/pwRh2SWTrFf+A==
+X-Google-Smtp-Source: APXvYqwC0igtuHeVBLKgctH3AD+JJSF1DFvHIy3IKlb3b8t5WGygrYUkxCrtO7R9CSN2ItDaerVKeb0U4IrWm5FTm44=
+X-Received: by 2002:a17:90b:f0e:: with SMTP id
+ br14mr27407161pjb.117.1562609586818; 
+ Mon, 08 Jul 2019 11:13:06 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190704003615.204860-1-brendanhiggins@google.com>
  <20190704003615.204860-2-brendanhiggins@google.com>
- <20190705201505.GA19023@42.do-not-panic.com>
-In-Reply-To: <20190705201505.GA19023@42.do-not-panic.com>
+ <20190705202051.GB19023@42.do-not-panic.com>
+In-Reply-To: <20190705202051.GB19023@42.do-not-panic.com>
 From: Brendan Higgins <brendanhiggins@google.com>
-Date: Mon, 8 Jul 2019 11:08:27 -0700
-Message-ID: <CAFd5g45cF9rYc8YupnCgd=7xz_yW+_TMp_L+cSFUBW7d9njnVQ@mail.gmail.com>
+Date: Mon, 8 Jul 2019 11:12:55 -0700
+Message-ID: <CAFd5g44_NoGHsMRfZJ-V42=8U6QYOYZV7zUmEdx-6V4xGarxHg@mail.gmail.com>
 Subject: Re: [PATCH v6 01/18] kunit: test: add KUnit test runner core
 To: Luis Chamberlain <mcgrof@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190708_110842_610708_7138F57A 
-X-CRM114-Status: GOOD (  23.00  )
+X-CRM114-CacheID: sfid-20190708_111308_185653_9EBB418A 
+X-CRM114-Status: GOOD (  10.54  )
 X-Spam-Score: -14.4 (--------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-14.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -129,83 +130,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Fri, Jul 5, 2019 at 1:15 PM Luis Chamberlain <mcgrof@kernel.org> wrote:
+On Fri, Jul 5, 2019 at 1:20 PM Luis Chamberlain <mcgrof@kernel.org> wrote:
 >
 > On Wed, Jul 03, 2019 at 05:35:58PM -0700, Brendan Higgins wrote:
-> > Add core facilities for defining unit tests; this provides a common way
-> > to define test cases, functions that execute code which is under test
-> > and determine whether the code under test behaves as expected; this also
-> > provides a way to group together related test cases in test suites (here
-> > we call them test_modules).
-> >
-> > Just define test cases and how to execute them for now; setting
-> > expectations on code will be defined later.
-> >
-> > Signed-off-by: Brendan Higgins <brendanhiggins@google.com>
-> > Reviewed-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-> > Reviewed-by: Logan Gunthorpe <logang@deltatee.com>
+> > +struct kunit {
+> > +     void *priv;
+> > +
+> > +     /* private: internal use only. */
+> > +     const char *name; /* Read only after initialization! */
+> > +     bool success; /* Read only after test_case finishes! */
+> > +};
 >
-> Reviewed-by: Luis Chamberlain <mcgrof@kernel.org>
+> No lock attribute above.
 >
-> But a nitpick below, I think that can be fixed later with a follow up
-> patch.
+> > +void kunit_init_test(struct kunit *test, const char *name)
+> > +{
+> > +     spin_lock_init(&test->lock);
+> > +     test->name = name;
+> > +     test->success = true;
+> > +}
 >
-> > +/**
-> > + * struct kunit - represents a running instance of a test.
-> > + * @priv: for user to store arbitrary data. Commonly used to pass data created
-> > + * in the init function (see &struct kunit_suite).
-> > + *
-> > + * Used to store information about the current context under which the test is
-> > + * running. Most of this data is private and should only be accessed indirectly
-> > + * via public functions; the one exception is @priv which can be used by the
-> > + * test writer to store arbitrary data.
-> > + *
-> > + * A brief note on locking:
-> > + *
-> > + * First off, we need to lock because in certain cases a user may want to use an
-> > + * expectation in a thread other than the thread that the test case is running
-> > + * in.
->
-> This as a prefix to the struct without a lock seems odd. It would be
-> clearer I think if you'd explain here what locking mechanism we decided
-> to use and why it suffices today.
+> And yet here you initialize a spin lock... This won't compile. Seems
+> you forgot to remove this line. So I guess a re-spin is better.
 
-Whoops, sorry this should have been in the next patch. Will fix.
-
-> > +/**
-> > + * suite_test() - used to register a &struct kunit_suite with KUnit.
->
-> You mean kunit_test_suite()?
-
-Yep, sorry about that. Will fix.
-
-> > + * @suite: a statically allocated &struct kunit_suite.
-> > + *
-> > + * Registers @suite with the test framework. See &struct kunit_suite for more
-> > + * information.
-> > + *
-> > + * NOTE: Currently KUnit tests are all run as late_initcalls; this means that
-> > + * they cannot test anything where tests must run at a different init phase. One
-> > + * significant restriction resulting from this is that KUnit cannot reliably
-> > + * test anything that is initialize in the late_init phase.
->                             initialize prior to the late init phase.
->
->
-> That is, this is useless to test things running early.
-
-Yeah, I can add that phrasing in.
-
-> > + *
-> > + * TODO(brendanhiggins@google.com): Don't run all KUnit tests as late_initcalls.
-> > + * I have some future work planned to dispatch all KUnit tests from the same
-> > + * place, and at the very least to do so after everything else is definitely
-> > + * initialized.
->
-> TODOs are odd to be adding to documentation, this is just not common
-> place practice. The NOTE should suffice for you.
-
-Because it is a kernel doc? Would you usually make a separate
-non-kernel doc comment for a TODO? I guess that makes sense.
+Oh crap, sorry about that. You can't compile these patches until the
+kbuild patch. I will fix this and make sure I didn't make any similar
+mistakes on these early patches.
 
 Thanks!
 
