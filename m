@@ -2,75 +2,77 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5815762A80
-	for <lists+linux-um@lfdr.de>; Mon,  8 Jul 2019 22:40:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3E7C962C77
+	for <lists+linux-um@lfdr.de>; Tue,  9 Jul 2019 01:16:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OKpxUE+TGXGHTI2hqBwwKLmQ766iAu4mZlgZ+JpKT+g=; b=BwAoK5YdY/1mqK
-	lIqp8LEGVS3B5QyaToMEjWR+sfvoQb9CjMObYLhL1PuaNGQxD220U7iwlY7tt8WU29vcKDDLz2nXH
-	efcQ7fuQBZdcmtY3d8h3lZg4UkLXIxifkmgX3qA9pjOP8dTdW0M/zPa7iUPiXGWQxIU4G/56PVfDJ
-	vFW+IiCqJx2UYuB7pgmEyGja1GC2npmGLrdnEC63WnTh4lfGC5o7kfm8pCgJ2/47nQ9fBpZlDphgM
-	snhMld9gyO42ttqwx9bVmZltmtw17Kss9eJHGxXBb1XKuCVnx+mI7YtfHcDxarSmBlWqMuXXKh/Iy
-	6ZgcrLG0079qaQnX4/hA==;
+	List-Owner; bh=HcNTqLXQlCwU5Z6ghojKxBK8FAoxqTMuEcrmTWbxwlo=; b=cS54G1dda3Sgh2
+	UttdS6nuqvGTB4QHcorEIZbpxQvNJGTHkbngRM83pd7cRhjYeaap4Sk3BAJ6Y3ftNjJec8A1ZitDc
+	FVYfmFiC39K6x6gyHcnofZeX5wHNI1IDgBPn8SIUqnmtbqedQA9svLM7MqQ80/i+XmrbjVyg3ApsH
+	iEOVF0RlhOgSc++hilx5wXTYpMrHUYDFfNjMMFSU5AZkrdNaq5UXX8MdTTOCziv0eC7rzwq6uKclO
+	L8xJprkhm49L7I4hKRMoong29Fg/R/9vVJcqNNeyxQXDy/E4a1hNIGD3arCFG+6/Nyhc+g7AyglSl
+	RyFGQfIP1ydOrkhS5gAw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkaRH-0007Nl-SH; Mon, 08 Jul 2019 20:40:43 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1hkcrd-0006lU-DQ; Mon, 08 Jul 2019 23:16:05 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hkaRF-0007M9-Eu
- for linux-um@lists.infradead.org; Mon, 08 Jul 2019 20:40:43 +0000
-Received: by mail-pf1-x443.google.com with SMTP id i189so8146170pfg.10
- for <linux-um@lists.infradead.org>; Mon, 08 Jul 2019 13:40:39 -0700 (PDT)
+ id 1hkcra-0006ky-OJ
+ for linux-um@lists.infradead.org; Mon, 08 Jul 2019 23:16:04 +0000
+Received: by mail-pl1-x642.google.com with SMTP id m9so5363427pls.8
+ for <linux-um@lists.infradead.org>; Mon, 08 Jul 2019 16:16:02 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=/EH/dsB4RqvQOyHG8BqAIo5WKk7GQxacBNIaWqTFNQk=;
- b=Cdb6f6dII91+peQ4OxFhgsypxNIcC8Z96r5C/ePNEUz85za5Vbi9Ob9WFL7Wp+O6qA
- s2FU4elMc5PHawGRh4mEgei2UKYeL/Om110iQOt9EZjbTGZ35yhM+QknG6GV4EILqbGV
- fSE/mjTDSVLrTvE9E8XjufRwxMYJiGpgmnm9Gj+28y8fI57C27MrUrxnEuTgssOH22rV
- X2wra0aYtt04uPd5Nd5e58e/ejOR/kNGkFgfkF6uBhS0Gc+UnNjzMr5rpGuXODaRO3/6
- S/LEDw4EBPf512R+tktyLb6BY2Kbd/uedF4s+xPbNcfpXnjQo8TaENBYjaBvCticdcKk
- s+NQ==
+ :cc; bh=oGZm1g5vtwwYit0yoo3SBX6Ei/KDlijim8AwfezWq5Q=;
+ b=lFUSTt8nxcpQ1geusJZ3lspP7XQwyYNu3KMayNoosCV6UA30ZuMzOWUPZfCjTUzeKM
+ iYW2yITMtWXzol7/+legnfgPOBGwjXoEFw7yce+7btcdg0htf2Hg4YfxND5u9apalxJL
+ B3QYi+HDYUWlIIkNVozIYrBRfW/Zk/Qz4dosV0rI2mUxb16C62VVRSPlRILHQVx/6UE4
+ RshFiQlSNd9CkGW5eoiTTfauBDsWytWT+kOLzVSwNCWkeJDN/HkdAIqfFvOi2TKYEg+r
+ l8O7ss1ZZdrzfcN3z+0quxvvwbfum43KpVYwwtrEJTbglIXZty13qrEB3TCpWKeCVLSU
+ fZ/A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=/EH/dsB4RqvQOyHG8BqAIo5WKk7GQxacBNIaWqTFNQk=;
- b=SSFubU9fcFXHZLGHQcxs28+A1WIqkMcOTNZguVj8oA113NXm5GKF5ZqTNW+BOZ8ZQE
- 8sOerDiaL/eutGaoyF2/5x5QUTeDil8zXN6DiRR5TFQkljGIOCXV3q5k5hfhcmQhI588
- oLm+mImwfREhS/FdK2A2g4zm0OOys/Mfi8+x9asoUq6/BR/C8e42U+FE3MfrOG6MjOBT
- LBSxskUY1LhQJIZCaEYnwGSlbzF7um8HUELdZGRmBCcMqxxbvwFj4ccFwOEUH0PS6IcT
- EPrDF6OSiuLUtxCeDmp7PKND+6qBDgEsTWjnoSX9lk842SFrDNyMSex0O8oqdjg9Knul
- 4hNg==
-X-Gm-Message-State: APjAAAVJnZrnEX6K3AdrbTBT+sS4jJIt6EtGUuA3Ee0C2kxv4mc96oyA
- qQqcEk1ZP/WcVajkbfZoYQ9BPUHaIu+TJ5qkAcrM6A==
-X-Google-Smtp-Source: APXvYqxcFK88vAm0YlECpUDpB3imcSno03RwL+0jyEa5ghv7TUPzQiwa16nbo1CO7XiLvpWqedp7ntBebsLNBqTl9bk=
-X-Received: by 2002:a63:205f:: with SMTP id r31mr26169271pgm.159.1562618438201; 
- Mon, 08 Jul 2019 13:40:38 -0700 (PDT)
+ bh=oGZm1g5vtwwYit0yoo3SBX6Ei/KDlijim8AwfezWq5Q=;
+ b=nyTKSoRmtjUzuTm7OwNYbiKnMvtvJeLihTEeK5OqWQK4KhHAjEMrT0cTa79sZSkwN1
+ 8NJQ2hr5TMkdqcq5v1p0OrWPFNYWgMsiAm8TGExY+17AtMPeK8xLBJifszqJffspNCoB
+ XRsc/rIVsoK3j0Z6SnlZAEDFZ/8PDuwPi6pXfy/ymeSPffbZxIQMApGwoAf2UHD8jkQJ
+ rJYLIQoYJiOqwjTRTjAWgru/yiNduPDhM0iqMB9WSTv3lBtF4FIcWwbRo+zW12Z+nsrZ
+ hbSts6icNY72g/fs3t88ZVHQuq9P2DteXn9kHvMlU9lQb2fjHX0jMLLSa7OxBBQdxQJr
+ jAsg==
+X-Gm-Message-State: APjAAAUsz/jxOaUKxIRJgH7PtiKMKpBqO06M8ZqLu8f6rOGxT+0hnfzc
+ WPnJVbBL7cpdE6mHs3idwzYY/HIb8JLw7OsCfHDAgg==
+X-Google-Smtp-Source: APXvYqxLj9lV04W3pazbpY/qgg7ti1gSJwsPPAdwKpyGKBI70/LFOjfevFPZPMucLfnGO+AW10E2yFZhfTdlozEZOjY=
+X-Received: by 2002:a17:902:29e6:: with SMTP id
+ h93mr26754760plb.297.1562627761245; 
+ Mon, 08 Jul 2019 16:16:01 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190704003615.204860-1-brendanhiggins@google.com>
- <20190704003615.204860-2-brendanhiggins@google.com>
- <20190705201505.GA19023@42.do-not-panic.com>
- <CAFd5g45cF9rYc8YupnCgd=7xz_yW+_TMp_L+cSFUBW7d9njnVQ@mail.gmail.com>
-In-Reply-To: <CAFd5g45cF9rYc8YupnCgd=7xz_yW+_TMp_L+cSFUBW7d9njnVQ@mail.gmail.com>
+ <20190704003615.204860-19-brendanhiggins@google.com>
+ <20190705204810.GE19023@42.do-not-panic.com>
+In-Reply-To: <20190705204810.GE19023@42.do-not-panic.com>
 From: Brendan Higgins <brendanhiggins@google.com>
-Date: Mon, 8 Jul 2019 13:40:26 -0700
-Message-ID: <CAFd5g44XV0zDpNgyDPSFMq86kSvwGb_WjhxzK=AoDMjwXD5CgQ@mail.gmail.com>
-Subject: Re: [PATCH v6 01/18] kunit: test: add KUnit test runner core
-To: Luis Chamberlain <mcgrof@kernel.org>
+Date: Mon, 8 Jul 2019 16:15:49 -0700
+Message-ID: <CAFd5g44j7ECQorYLnDQadAaj+yBki98kFjmjejn+3W4eHtqGDA@mail.gmail.com>
+Subject: Re: [PATCH v6 18/18] MAINTAINERS: add proc sysctl KUnit test to PROC
+ SYSCTL section
+To: Luis Chamberlain <mcgrof@kernel.org>, Iurii Zaikin <yzaikin@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190708_134041_528755_B863E9B3 
-X-CRM114-Status: GOOD (  25.04  )
+X-CRM114-CacheID: sfid-20190708_161602_823104_340398F4 
+X-CRM114-Status: UNSURE (   9.85  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -14.4 (--------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-14.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -130,91 +132,24 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Mon, Jul 8, 2019 at 11:08 AM Brendan Higgins
-<brendanhiggins@google.com> wrote:
->
-> On Fri, Jul 5, 2019 at 1:15 PM Luis Chamberlain <mcgrof@kernel.org> wrote:
-> >
-> > On Wed, Jul 03, 2019 at 05:35:58PM -0700, Brendan Higgins wrote:
-> > > Add core facilities for defining unit tests; this provides a common way
-> > > to define test cases, functions that execute code which is under test
-> > > and determine whether the code under test behaves as expected; this also
-> > > provides a way to group together related test cases in test suites (here
-> > > we call them test_modules).
-> > >
-> > > Just define test cases and how to execute them for now; setting
-> > > expectations on code will be defined later.
-> > >
-> > > Signed-off-by: Brendan Higgins <brendanhiggins@google.com>
-> > > Reviewed-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-> > > Reviewed-by: Logan Gunthorpe <logang@deltatee.com>
-> >
-> > Reviewed-by: Luis Chamberlain <mcgrof@kernel.org>
-> >
-> > But a nitpick below, I think that can be fixed later with a follow up
-> > patch.
-> >
-> > > +/**
-> > > + * struct kunit - represents a running instance of a test.
-> > > + * @priv: for user to store arbitrary data. Commonly used to pass data created
-> > > + * in the init function (see &struct kunit_suite).
-> > > + *
-> > > + * Used to store information about the current context under which the test is
-> > > + * running. Most of this data is private and should only be accessed indirectly
-> > > + * via public functions; the one exception is @priv which can be used by the
-> > > + * test writer to store arbitrary data.
-> > > + *
-> > > + * A brief note on locking:
-> > > + *
-> > > + * First off, we need to lock because in certain cases a user may want to use an
-> > > + * expectation in a thread other than the thread that the test case is running
-> > > + * in.
-> >
-> > This as a prefix to the struct without a lock seems odd. It would be
-> > clearer I think if you'd explain here what locking mechanism we decided
-> > to use and why it suffices today.
->
-> Whoops, sorry this should have been in the next patch. Will fix.
+CC'ing Iurii Zaikin
 
-Err..no, this shouldn't be here at all. Sorry about that. I just need
-to rewrite the comment.
+On Fri, Jul 5, 2019 at 1:48 PM Luis Chamberlain <mcgrof@kernel.org> wrote:
+>
+> On Wed, Jul 03, 2019 at 05:36:15PM -0700, Brendan Higgins wrote:
+> > Add entry for the new proc sysctl KUnit test to the PROC SYSCTL section.
+> >
+> > Signed-off-by: Brendan Higgins <brendanhiggins@google.com>
+> > Reviewed-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+> > Reviewed-by: Logan Gunthorpe <logang@deltatee.com>
+> > Acked-by: Luis Chamberlain <mcgrof@kernel.org>
+>
+> Come to think of it, I'd welcome Iurii to be added as a maintainer,
+> with the hope Iurii would be up to review only the kunit changes. Of
+> course if Iurii would be up to also help review future proc changes,
+> even better. 3 pair of eyeballs is better than 2 pairs.
 
-> > > +/**
-> > > + * suite_test() - used to register a &struct kunit_suite with KUnit.
-> >
-> > You mean kunit_test_suite()?
->
-> Yep, sorry about that. Will fix.
->
-> > > + * @suite: a statically allocated &struct kunit_suite.
-> > > + *
-> > > + * Registers @suite with the test framework. See &struct kunit_suite for more
-> > > + * information.
-> > > + *
-> > > + * NOTE: Currently KUnit tests are all run as late_initcalls; this means that
-> > > + * they cannot test anything where tests must run at a different init phase. One
-> > > + * significant restriction resulting from this is that KUnit cannot reliably
-> > > + * test anything that is initialize in the late_init phase.
-> >                             initialize prior to the late init phase.
-> >
-> >
-> > That is, this is useless to test things running early.
->
-> Yeah, I can add that phrasing in.
->
-> > > + *
-> > > + * TODO(brendanhiggins@google.com): Don't run all KUnit tests as late_initcalls.
-> > > + * I have some future work planned to dispatch all KUnit tests from the same
-> > > + * place, and at the very least to do so after everything else is definitely
-> > > + * initialized.
-> >
-> > TODOs are odd to be adding to documentation, this is just not common
-> > place practice. The NOTE should suffice for you.
->
-> Because it is a kernel doc? Would you usually make a separate
-> non-kernel doc comment for a TODO? I guess that makes sense.
->
-> Thanks!
+What do you think, Iurii?
 
 _______________________________________________
 linux-um mailing list
