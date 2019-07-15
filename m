@@ -2,90 +2,67 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 10E8D69E52
-	for <lists+linux-um@lfdr.de>; Mon, 15 Jul 2019 23:26:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2D40B69EA7
+	for <lists+linux-um@lfdr.de>; Tue, 16 Jul 2019 00:04:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:To:From:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kfxUQhNyI/Rfgybvw49NCOISPo0/c2GkycGG60uMh4I=; b=PTHNhD3eGkfCFI
-	imHCw1UZ/ZoC2vRsMOt4eZ5tYYYZXIQbze1PdPb1FZGN10jP1MfIK7xaNIUwzSxuUAhmQsYaTB/NT
-	txtqRPrz6Wv/CUKijqA8SropvKL9FBhJrxOWsGKeoO3rxbGNli79Z0Eb1zt68d9wHECPit2Efw5AO
-	HpINfsAqy5Z6FewGbxYKmZLrAthZ/K8uYor/NKyd/pQ21m4EnbnJ+MTvlmaQd/jm56o0mNWNowlL0
-	86StG/npb5Y/gRNM4G5i1yYbgpAGLbzvRQUP+QcDtwSNWjiDtVQ7sLFskJCqtAFAa31ypyCg2DUfb
-	x2Nc5jRdoh0HWOVXz8hQ==;
+	List-Owner; bh=oRP7TYnnadrCZhLVYwk5EJgCV/5PLjokVa2Tog4x95g=; b=Z0S7ChoXbq9QgT
+	ry9IeYBbNNXktZvqJPLxrVcZKP0u2gJi4dGV6Ok2R5fERrd8Y5DZodQDJO72S1kDpuf6tcEqw+zF6
+	1vL0EQosB95AQ3ImQUJhce8jdkKTJw7hGt9zWm2S8Y7N9krU2WI69YSD95gEXOpuMHSYdqHy8/+oD
+	EpOlmRtPNI5xl6r6EaHuaWXyOsFz6v2wKZCwj8xxjdG7ZX2+aq2YlDpazi1ZjbLItL7Zmd0zQxrlI
+	z5hy+zzjDEFYz3spnWSxsc/Ut6TP7zYiscq1F73rqsWd3zx66f93B/V/JiAgUyulQ+Zp3JrCNCJNk
+	BR1TuSZZfAuWAOp9xjdQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hn8Tx-0006cw-Bt; Mon, 15 Jul 2019 21:26:01 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1hn94s-0004tb-1P; Mon, 15 Jul 2019 22:04:10 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hn8Tu-0006cF-3i
- for linux-um@lists.infradead.org; Mon, 15 Jul 2019 21:25:59 +0000
-Received: by mail-pf1-x441.google.com with SMTP id g2so8029192pfq.0
- for <linux-um@lists.infradead.org>; Mon, 15 Jul 2019 14:25:57 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=L1iVnKb9KyH2VdRaa+1X1AxuS2MqitxfIlVlkn/kOv8=;
- b=OKadg9adfR8FnEoQT6HdGl96SBZxASHai1a3d6JJ7kS2KeuZ1gp/Sww0dZ4FNnRfmX
- dsWE9zqYktoShjIU+eYZsCRcFIJfFws6QoK2qlbR+qOq4rr/hOZP2M3LcnN2q482/I73
- uk9eNSjzCb/KkfhP4BJ2nmSyKV5xwGPcSeH7IrIsnT+SSVepNWQYB1x9JIyW2ECp5yWy
- v4jcSyoBZJSrmeWQFBgJn1mNjyDuuQcjVCEz7vy2pTS+5CwXEpnaX+c+7wd+NdqiTuWs
- jLfiDc8e4oMqUtNtGi1qAx20ReiWP9Qgxngtq/5EbA2D41xPwKDuHWOLS0EUq/G9lFRU
- uKpQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=L1iVnKb9KyH2VdRaa+1X1AxuS2MqitxfIlVlkn/kOv8=;
- b=nSZlXDBEEwQj09NvpTvWoV1gTzd4Z/8pRU2su6YG32xKjsvIIXzbroIWMzHQQCgCjP
- nv6UXqUMi5d9g1uba+rElA5JrpfcBagTiC7T4T0zusO1MOwyMstE11iMHIHLSG/dnsNs
- eyZms+daYoB8LwAhItW+DbtPzEoFtg87KzguN3SflbXeubOdZsODFbP1HzQl03VkJUlK
- XnDJ3ybhLaZ2VPsrM83PB2FX2DXawaEX3/9j80VjyvrTWiYzKoR63TqTJDjKRzHmLsyk
- +Y3/VjmQyHTplp2HFMuV7il87aMIotmhjJ4f5fPUgijwwwB/bPQQtT3yUD8klMP5+HwL
- ATDw==
-X-Gm-Message-State: APjAAAXwKLwWgQBCIqbSmIvlUlAWurYPsa4Rkq4o9xWlJoCMZG3Oy39C
- GjqKfhljSQpFME8dPauuFGrmUqr2BdNDmh9NTvioTg==
-X-Google-Smtp-Source: APXvYqxYpwH7M9Tn69WNYt23pvYEmwOFSLt2yT+zRsvwVW6B093wD7DIpVEsyGIo3whwBHoCVELofo1GZGIk7QmjTys=
-X-Received: by 2002:a63:205f:: with SMTP id r31mr29138784pgm.159.1563225956600; 
- Mon, 15 Jul 2019 14:25:56 -0700 (PDT)
+ id 1hn94p-0004tF-M6
+ for linux-um@lists.infradead.org; Mon, 15 Jul 2019 22:04:08 +0000
+Received: from kernel.org (unknown [104.132.0.74])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 0030420665;
+ Mon, 15 Jul 2019 22:04:06 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1563228247;
+ bh=lzmzGxC84ycn5YPcgrlTTZCsaQHNzr70lnAMErLcD6E=;
+ h=In-Reply-To:References:From:To:Subject:Cc:Date:From;
+ b=yjILvyTeOyRdWTjel54BWNGgZ1ntKYib3gQKxCNMZGijJY1OIFiN5Q/Cq5W/Sq65r
+ OjyZGX9OeeT3oFA8a4sDcYrXowZlMFMynYaGOGbEAJsQkEWD3FqBmHRAOOmQwn1vSW
+ sbrWnUD7cVteQcJnCcGYDIxrhTqiEX8IEogTyyrs=
 MIME-Version: 1.0
+In-Reply-To: <CAFd5g47481sRaez=yEJN4_ghiXZbxayk1Y04tAZpuzPLsmnhKg@mail.gmail.com>
 References: <20190712081744.87097-1-brendanhiggins@google.com>
- <20190712081744.87097-2-brendanhiggins@google.com>
- <20190715201054.C69AA2086C@mail.kernel.org>
-In-Reply-To: <20190715201054.C69AA2086C@mail.kernel.org>
-From: Brendan Higgins <brendanhiggins@google.com>
-Date: Mon, 15 Jul 2019 14:25:45 -0700
-Message-ID: <CAFd5g44kWHYceo85qxL98JKH2FYBwVLFuLzqNR+APpMC1aKWUQ@mail.gmail.com>
-Subject: Re: [PATCH v9 01/18] kunit: test: add KUnit test runner core
-To: Stephen Boyd <sboyd@kernel.org>
+ <20190712081744.87097-4-brendanhiggins@google.com>
+ <20190715204356.4E3F92145D@mail.kernel.org>
+ <CAFd5g47481sRaez=yEJN4_ghiXZbxayk1Y04tAZpuzPLsmnhKg@mail.gmail.com>
+From: Stephen Boyd <sboyd@kernel.org>
+To: Brendan Higgins <brendanhiggins@google.com>
+Subject: Re: [PATCH v9 03/18] kunit: test: add string_stream a std::stream
+ like string builder
+User-Agent: alot/0.8.1
+Date: Mon, 15 Jul 2019 15:04:06 -0700
+Message-Id: <20190715220407.0030420665@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190715_142558_180844_02054AE5 
-X-CRM114-Status: GOOD (  18.83  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20190715_150407_740186_31D86148 
+X-CRM114-Status: GOOD (  10.09  )
+X-Spam-Score: -4.8 (----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-4.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ 0.1 DKIM_INVALID           DKIM or DK signature exists, but is not valid
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -127,98 +104,23 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Mon, Jul 15, 2019 at 1:10 PM Stephen Boyd <sboyd@kernel.org> wrote:
->
-> Quoting Brendan Higgins (2019-07-12 01:17:27)
-> > Add core facilities for defining unit tests; this provides a common way
-> > to define test cases, functions that execute code which is under test
-> > and determine whether the code under test behaves as expected; this also
-> > provides a way to group together related test cases in test suites (here
-> > we call them test_modules).
+Quoting Brendan Higgins (2019-07-15 14:11:50)
+> On Mon, Jul 15, 2019 at 1:43 PM Stephen Boyd <sboyd@kernel.org> wrote:
 > >
-> > Just define test cases and how to execute them for now; setting
-> > expectations on code will be defined later.
-> >
-> > Signed-off-by: Brendan Higgins <brendanhiggins@google.com>
-> > Reviewed-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-> > Reviewed-by: Logan Gunthorpe <logang@deltatee.com>
-> > Reviewed-by: Luis Chamberlain <mcgrof@kernel.org>
->
-> Reviewed-by: Stephen Boyd <sboyd@kernel.org>
->
-> Minor nits below.
->
-> > diff --git a/kunit/test.c b/kunit/test.c
-> > new file mode 100644
-> > index 0000000000000..571e4c65deb5c
-> > --- /dev/null
-> > +++ b/kunit/test.c
-> > @@ -0,0 +1,189 @@
-> > +// SPDX-License-Identifier: GPL-2.0
-> > +/*
-> > + * Base unit test (KUnit) API.
-> > + *
-> > + * Copyright (C) 2019, Google LLC.
-> > + * Author: Brendan Higgins <brendanhiggins@google.com>
-> > + */
-> > +
-> > +#include <linux/kernel.h>
-> > +#include <kunit/test.h>
-> > +
-> > +static void kunit_set_failure(struct kunit *test)
-> > +{
-> > +       WRITE_ONCE(test->success, false);
-> > +}
-> > +
-> [...]
-> > +
-> > +void kunit_init_test(struct kunit *test, const char *name)
-> > +{
-> > +       test->name = name;
-> > +       test->success = true;
-> > +}
-> > +
-> > +/*
-> > + * Performs all logic to run a test case.
-> > + */
-> > +static void kunit_run_case(struct kunit_suite *suite,
-> > +                          struct kunit_case *test_case)
-> > +{
-> > +       struct kunit test;
-> > +       int ret = 0;
-> > +
-> > +       kunit_init_test(&test, test_case->name);
-> > +
-> > +       if (suite->init) {
-> > +               ret = suite->init(&test);
->
-> Can you push the ret definition into this if scope? That way we can
-> avoid default initialize to 0 for it.
+> > I also wonder if it would be better to just have a big slop buffer of a
+> > 4K page or something so that we almost never have to allocate anything
+> > with a string_stream and we can just rely on a reader consuming data
+> > while writers are writing. That might work out better, but I don't quite
+> > understand the use case for the string stream.
+> 
+> That makes sense, but might that also waste memory since we will
+> almost never need that much memory?
 
-Sure! I would actually prefer that from a cosmetic standpoint. I just
-thought that mixing declarations and code was against the style guide.
+Why do we care? These are unit tests. Having allocations in here makes
+things more complicated, whereas it would be simpler to have a pointer
+and a spinlock operating on a chunk of memory that gets flushed out
+periodically.
 
-> > +               if (ret) {
-> > +                       kunit_err(&test, "failed to initialize: %d\n", ret);
-> > +                       kunit_set_failure(&test);
->
-> Do we need to 'test_case->success = test.success' here too? Or is the
-> test failure extracted somewhere else?
-
-Er, yes. That's kind of embarrassing. Good catch.
-
-> > +                       return;
-> > +               }
-> > +       }
-> > +
-> > +       test_case->run_case(&test);
-> > +
-> > +       if (suite->exit)
-> > +               suite->exit(&test);
-> > +
-> > +       test_case->success = test.success;
-
-Thanks!
 
 _______________________________________________
 linux-um mailing list
