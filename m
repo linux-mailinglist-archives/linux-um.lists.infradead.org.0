@@ -2,81 +2,66 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F2D2569CD1
-	for <lists+linux-um@lfdr.de>; Mon, 15 Jul 2019 22:30:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C5A1669CFB
+	for <lists+linux-um@lfdr.de>; Mon, 15 Jul 2019 22:44:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:To:From:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=D1blq0pw7Zr5bbR599jl5UZjGadrWHa31lkMzJHTz98=; b=iWVO1uBNUye2Rj
-	KgGFNiZ5jfX2fDFX7/FTfuyeCPG0+9H/Q+idduOmlGNNo3qezThHpJqa4PIiHmjvOKQs0EAbR8+CM
-	4TX4MrhkJax9HoLEU5emkFfcVy9mpXgxXFEWY18cfNnk/MlJZQCV2SVhfvCLagSGHHpI2D0zD2gM3
-	oKL+hmPxuV8r8WrZq90y9ZlktDGTP7xEmF0+330qVpjJSJnMXEmIMKSFteaeuEK66FthF7xj6gDNq
-	8oWRA+j2hACs0EI6FRBqlAi/TLqxVg7WiNsz37eW53A1ri4QOoN8lYHNsPX7yFUvTRyI1AgQp8C4H
-	4RcyDzspl/j2AiGW2tzQ==;
+	List-Owner; bh=xjP0IyMtxop3OWe5Qf9t/hyKWx2wAJZtAIC36ZO5tho=; b=cyJ7AjsOM/Jbuw
+	6tqUk3itoLHOsyOKJ7P67WO0pfIpvA80nXJXWvG3+erYp+7gDZaWZQY6TljL2sbsPt3aCA13X06oX
+	HA/Hda/nH5FtdLfzq0M2gYecvMfd7jfnzzvAHMDw7iyHcnJGIOkxqSUyzarWQrq2OeN3KknP4bdxm
+	6MKJ6En619duyiudpY1BInj6evg3JIID9mJUDOsa+39WisuL7jFNlXa2J0kW0xHsjYOQiObF91squ
+	NUBFOCf33+BY3PHKxKQYPVETfu8opIfjspyXnLaabSLhnmZbS2zeD8MKMfco1UjzY8gNjdgE7JSv4
+	tXb5hR1h/ZAOjglLqbOw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hn7cP-00048n-Dm; Mon, 15 Jul 2019 20:30:41 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1hn7pI-0007lK-0z; Mon, 15 Jul 2019 20:44:00 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hn7cM-0003wA-JD
- for linux-um@lists.infradead.org; Mon, 15 Jul 2019 20:30:40 +0000
-Received: by mail-pg1-x542.google.com with SMTP id z75so8261028pgz.5
- for <linux-um@lists.infradead.org>; Mon, 15 Jul 2019 13:30:34 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Guk3L6+8PLdqP7pYPvzhoPuDjq05e+2mmqgYxycfTpo=;
- b=nmdIrQ2ZG9zLY+uPnHaC+zU9b/FYlCcJUklqPlgIEvxvjrncOHXB+C4uonVCMPNT5U
- RDlsPPFfFHanzQy12v9LKBzsgYs//6dy4qqJq9wWWyI4pDK3aCgJ1J/JgmQXwTE7LK3E
- iw5kJfsnm+yh+B2qKZbTQBSYW2yNi7ZyoDweAfKbzMv3dfSuT0useTynnAjypl5lf7/d
- jTEh9cq2DJ6lxhwAR1P3fF5Tm12yriac2Lepz1S6WLSn9ipeqXXdzi8KqMKw91pnk6DG
- ICc14afUNRCpD25tMKIn+kqhek6winXiVWbGXLe13YMzt6iQrEchkA/y8vKWAxCaJIaL
- ulxg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=Guk3L6+8PLdqP7pYPvzhoPuDjq05e+2mmqgYxycfTpo=;
- b=eHYJCYxdN62+zafQKaw43amY/BqAPSmN3wj7wxsLVeBdJGsJeIYKUyd2TSCuN7N9/X
- t/Legs6QZcMZ1wa+Tah3HQrd7U44DHvQl6ejmwemC4MYQbDtxOJbsme7BEfBOh25BJkh
- lndhIBnBTiQ9VAWkW+CKSwkB8vfFAF0V9a4fRVrTeJGE9otg7BS5ckBfU/lD+8nIWgft
- xHu02eAWHQ495U/jRHd5xaOURxvGklg1+teG7dEuz8B7XqZjnNytrxOteKfiXmtPyQIx
- eXTVujUK8xhgkMRXlxJwKpV7SsMF6TUVbCXvWjEFPJUmzqRPO+WnO7E/fott9Ok5/4S3
- idAA==
-X-Gm-Message-State: APjAAAU0RZTBWs7kiDgUaRcvE24yPwECdZskGBMxAr9QhNRoqwkgZUsg
- Pr3woYflfXz/DC6VcnbShjNUkM/gv8lSooKupDPUWg==
-X-Google-Smtp-Source: APXvYqzKQuaXpGEOS+dMEmBo8FPFiuVIjj5hhYTkizz5+oKRzaBKQU1vUVyuyXBWxZXEb/U0Rw/0GC/2FiD36LZR+90=
-X-Received: by 2002:a63:b919:: with SMTP id z25mr28642556pge.201.1563222633591; 
- Mon, 15 Jul 2019 13:30:33 -0700 (PDT)
+ id 1hn7pE-0007kg-Uv
+ for linux-um@lists.infradead.org; Mon, 15 Jul 2019 20:43:58 +0000
+Received: from kernel.org (unknown [104.132.0.74])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4E3F92145D;
+ Mon, 15 Jul 2019 20:43:56 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1563223436;
+ bh=+IIfFnKIOjWTmwaRJEChc9l3CevcKSbzmFOtE/evOAU=;
+ h=In-Reply-To:References:From:To:Cc:Subject:Date:From;
+ b=2D/DWnjPJfNBG7NYPEoSnof8ifxB1rawCM7/CUbrnZIPW3Zi2YWorHQGF6/z75/6L
+ RKAXw2zM/5nEvZ1RkvkBKTg0FcUf6B9HpAvuQUUd25YVNCdUqRP/ramxo68k4WPlMp
+ cJg+sqLS8pPS0/aDekjj4QIsITQLRDIGfdmOTsao=
 MIME-Version: 1.0
+In-Reply-To: <20190712081744.87097-4-brendanhiggins@google.com>
 References: <20190712081744.87097-1-brendanhiggins@google.com>
- <20190712081744.87097-3-brendanhiggins@google.com>
- <20190715202425.CE64C20665@mail.kernel.org>
-In-Reply-To: <20190715202425.CE64C20665@mail.kernel.org>
-From: Brendan Higgins <brendanhiggins@google.com>
-Date: Mon, 15 Jul 2019 13:30:22 -0700
-Message-ID: <CAFd5g45iHnMLOGQbXwzX6F74pkQGKBCSufkpYPOcw_iNSeiQKg@mail.gmail.com>
-Subject: Re: [PATCH v9 02/18] kunit: test: add test resource management API
-To: Stephen Boyd <sboyd@kernel.org>
+ <20190712081744.87097-4-brendanhiggins@google.com>
+From: Stephen Boyd <sboyd@kernel.org>
+To: Brendan Higgins <brendanhiggins@google.com>, frowand.list@gmail.com,
+ gregkh@linuxfoundation.org, jpoimboe@redhat.com, keescook@google.com,
+ kieran.bingham@ideasonboard.com, mcgrof@kernel.org, peterz@infradead.org,
+ robh@kernel.org, shuah@kernel.org, tytso@mit.edu,
+ yamada.masahiro@socionext.com
+Subject: Re: [PATCH v9 03/18] kunit: test: add string_stream a std::stream
+ like string builder
+User-Agent: alot/0.8.1
+Date: Mon, 15 Jul 2019 13:43:55 -0700
+Message-Id: <20190715204356.4E3F92145D@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190715_133038_640867_45A4974B 
-X-CRM114-Status: GOOD (  18.21  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20190715_134357_035940_E474EF7B 
+X-CRM114-Status: GOOD (  15.74  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
- [list.dnswl.org]
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -84,8 +69,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,153 +81,190 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: Petr Mladek <pmladek@suse.com>,
- "open list:DOCUMENTATION" <linux-doc@vger.kernel.org>,
- Peter Zijlstra <peterz@infradead.org>, Amir Goldstein <amir73il@gmail.com>,
- dri-devel <dri-devel@lists.freedesktop.org>,
- Sasha Levin <Alexander.Levin@microsoft.com>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Michael Ellerman <mpe@ellerman.id.au>,
- "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
- shuah <shuah@kernel.org>, Rob Herring <robh@kernel.org>,
- linux-nvdimm <linux-nvdimm@lists.01.org>,
- Frank Rowand <frowand.list@gmail.com>, Knut Omang <knut.omang@oracle.com>,
- Kieran Bingham <kieran.bingham@ideasonboard.com>, wfg@linux.intel.com,
- Joel Stanley <joel@jms.id.au>, David Rientjes <rientjes@google.com>,
- Jeff Dike <jdike@addtoit.com>, Dan Carpenter <dan.carpenter@oracle.com>,
- devicetree <devicetree@vger.kernel.org>,
- linux-kbuild <linux-kbuild@vger.kernel.org>, "Bird,
- Timothy" <Tim.Bird@sony.com>, linux-um@lists.infradead.org,
- Steven Rostedt <rostedt@goodmis.org>, Julia Lawall <julia.lawall@lip6.fr>,
- Josh Poimboeuf <jpoimboe@redhat.com>, kunit-dev@googlegroups.com,
- Theodore Ts'o <tytso@mit.edu>, Richard Weinberger <richard@nod.at>,
- Greg KH <gregkh@linuxfoundation.org>, Randy Dunlap <rdunlap@infradead.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Luis Chamberlain <mcgrof@kernel.org>, Daniel Vetter <daniel@ffwll.ch>,
- Kees Cook <keescook@google.com>, linux-fsdevel@vger.kernel.org,
- Logan Gunthorpe <logang@deltatee.com>, Kevin Hilman <khilman@baylibre.com>
+Cc: pmladek@suse.com, linux-doc@vger.kernel.org, amir73il@gmail.com,
+ Brendan Higgins <brendanhiggins@google.com>, dri-devel@lists.freedesktop.org,
+ Alexander.Levin@microsoft.com, linux-kselftest@vger.kernel.org,
+ linux-nvdimm@lists.01.org, khilman@baylibre.com, knut.omang@oracle.com,
+ wfg@linux.intel.com, joel@jms.id.au, rientjes@google.com, jdike@addtoit.com,
+ dan.carpenter@oracle.com, devicetree@vger.kernel.org,
+ linux-kbuild@vger.kernel.org, Tim.Bird@sony.com, linux-um@lists.infradead.org,
+ rostedt@goodmis.org, julia.lawall@lip6.fr, kunit-dev@googlegroups.com,
+ richard@nod.at, rdunlap@infradead.org, linux-kernel@vger.kernel.org,
+ daniel@ffwll.ch, mpe@ellerman.id.au, linux-fsdevel@vger.kernel.org,
+ logang@deltatee.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Mon, Jul 15, 2019 at 1:24 PM Stephen Boyd <sboyd@kernel.org> wrote:
->
-> Quoting Brendan Higgins (2019-07-12 01:17:28)
-> > diff --git a/kunit/test.c b/kunit/test.c
-> > index 571e4c65deb5c..f165c9d8e10b0 100644
-> > --- a/kunit/test.c
-> > +++ b/kunit/test.c
-> > @@ -171,6 +175,96 @@ int kunit_run_tests(struct kunit_suite *suite)
-> >         return 0;
-> >  }
-> >
-> > +struct kunit_resource *kunit_alloc_resource(struct kunit *test,
-> > +                                           kunit_resource_init_t init,
-> > +                                           kunit_resource_free_t free,
-> > +                                           void *context)
-> > +{
-> > +       struct kunit_resource *res;
-> > +       int ret;
-> > +
-> > +       res = kzalloc(sizeof(*res), GFP_KERNEL);
->
-> This uses GFP_KERNEL.
->
-> > +       if (!res)
-> > +               return NULL;
-> > +
-> > +       ret = init(res, context);
-> > +       if (ret)
-> > +               return NULL;
-> > +
-> > +       res->free = free;
-> > +       mutex_lock(&test->lock);
->
-> And this can sleep.
->
-> > +       list_add_tail(&res->node, &test->resources);
-> > +       mutex_unlock(&test->lock);
-> > +
-> > +       return res;
-> > +}
-> > +
-> > +void kunit_free_resource(struct kunit *test, struct kunit_resource *res)
->
-> Should probably add a note that we assume the test lock is held here, or
-> even add a lockdep_assert_held(&test->lock) into the function to
-> document that and assert it at the same time.
+Quoting Brendan Higgins (2019-07-12 01:17:29)
+> diff --git a/include/kunit/string-stream.h b/include/kunit/string-stream.h
+> new file mode 100644
+> index 0000000000000..0552a05781afe
+> --- /dev/null
+> +++ b/include/kunit/string-stream.h
+> @@ -0,0 +1,49 @@
+> +/* SPDX-License-Identifier: GPL-2.0 */
+> +/*
+> + * C++ stream style string builder used in KUnit for building messages.
+> + *
+> + * Copyright (C) 2019, Google LLC.
+> + * Author: Brendan Higgins <brendanhiggins@google.com>
+> + */
+> +
+> +#ifndef _KUNIT_STRING_STREAM_H
+> +#define _KUNIT_STRING_STREAM_H
+> +
+> +#include <linux/types.h>
+> +#include <linux/spinlock.h>
+> +#include <linux/kref.h>
 
-Seems reasonable.
+What is this include for? I'd expect to see linux/list.h instead.
 
-> > +{
-> > +       res->free(res);
-> > +       list_del(&res->node);
-> > +       kfree(res);
-> > +}
-> > +
-> > +struct kunit_kmalloc_params {
-> > +       size_t size;
-> > +       gfp_t gfp;
-> > +};
-> > +
-> > +static int kunit_kmalloc_init(struct kunit_resource *res, void *context)
-> > +{
-> > +       struct kunit_kmalloc_params *params = context;
-> > +
-> > +       res->allocation = kmalloc(params->size, params->gfp);
-> > +       if (!res->allocation)
-> > +               return -ENOMEM;
-> > +
-> > +       return 0;
-> > +}
-> > +
-> > +static void kunit_kmalloc_free(struct kunit_resource *res)
-> > +{
-> > +       kfree(res->allocation);
-> > +}
-> > +
-> > +void *kunit_kmalloc(struct kunit *test, size_t size, gfp_t gfp)
-> > +{
-> > +       struct kunit_kmalloc_params params;
-> > +       struct kunit_resource *res;
-> > +
-> > +       params.size = size;
-> > +       params.gfp = gfp;
-> > +
-> > +       res = kunit_alloc_resource(test,
->
-> This calls that sleeping function above...
->
-> > +                                  kunit_kmalloc_init,
-> > +                                  kunit_kmalloc_free,
-> > +                                  &params);
->
-> but this passes a GFP flags parameter through to the
-> kunit_kmalloc_init() function. How is this going to work if some code
-> uses GFP_ATOMIC, but then we try to allocate and sleep in
-> kunit_alloc_resource() with GFP_KERNEL?
+> +#include <stdarg.h>
+> +
+> +struct string_stream_fragment {
+> +       struct list_head node;
+> +       char *fragment;
+> +};
+> +
+> +struct string_stream {
+> +       size_t length;
+> +       struct list_head fragments;
+> +       /* length and fragments are protected by this lock */
+> +       spinlock_t lock;
+> +};
+> +
+> diff --git a/kunit/string-stream.c b/kunit/string-stream.c
+> new file mode 100644
+> index 0000000000000..0463a92dad74b
+> --- /dev/null
+> +++ b/kunit/string-stream.c
+> @@ -0,0 +1,147 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +/*
+> + * C++ stream style string builder used in KUnit for building messages.
+> + *
+> + * Copyright (C) 2019, Google LLC.
+> + * Author: Brendan Higgins <brendanhiggins@google.com>
+> + */
+> +
+> +#include <linux/list.h>
+> +#include <linux/slab.h>
+> +#include <kunit/string-stream.h>
+> +#include <kunit/test.h>
+> +
+> +int string_stream_vadd(struct string_stream *stream,
+> +                      const char *fmt,
+> +                      va_list args)
+> +{
+> +       struct string_stream_fragment *frag_container;
+> +       int len;
+> +       va_list args_for_counting;
+> +       unsigned long flags;
+> +
+> +       /* Make a copy because `vsnprintf` could change it */
+> +       va_copy(args_for_counting, args);
+> +
+> +       /* Need space for null byte. */
+> +       len = vsnprintf(NULL, 0, fmt, args_for_counting) + 1;
+> +
+> +       va_end(args_for_counting);
+> +
+> +       frag_container = kmalloc(sizeof(*frag_container), GFP_KERNEL);
 
-Yeah, that's an inconsistency. I need to fix that.
+This is confusing in that it allocates with GFP_KERNEL but then grabs a
+spinlock to add and remove from the fragment list. Is it ever going to
+be called from a place where it can't sleep? If so, the GFP_KERNEL needs
+to be changed. Otherwise, maybe a mutex would work better to protect
+access to the fragment list.
 
-> One solution would be to piggyback on all the existing devres allocation
-> logic we already have and make each struct kunit a device that we pass
-> into the devres functions. A far simpler solution would be to just
-> copy/paste what devres does and use a spinlock and an allocation
-> function that takes GFP flags.
+I also wonder if it would be better to just have a big slop buffer of a
+4K page or something so that we almost never have to allocate anything
+with a string_stream and we can just rely on a reader consuming data
+while writers are writing. That might work out better, but I don't quite
+understand the use case for the string stream.
 
-Yeah, that's what I did originally, but I thought from the discussion
-on patch 01 that you thought a spinlock was overkill for struct kunit.
-I take it you only meant in that initial patch?
+> +       if (!frag_container)
+> +               return -ENOMEM;
+> +
+> +       frag_container->fragment = kmalloc(len, GFP_KERNEL);
+> +       if (!frag_container->fragment) {
+> +               kfree(frag_container);
+> +               return -ENOMEM;
+> +       }
+> +
+> +       len = vsnprintf(frag_container->fragment, len, fmt, args);
+> +       spin_lock_irqsave(&stream->lock, flags);
+> +       stream->length += len;
+> +       list_add_tail(&frag_container->node, &stream->fragments);
+> +       spin_unlock_irqrestore(&stream->lock, flags);
+> +
+> +       return 0;
+> +}
+> +
+[...]
+> +
+> +bool string_stream_is_empty(struct string_stream *stream)
+> +{
+> +       bool is_empty;
+> +       unsigned long flags;
+> +
+> +       spin_lock_irqsave(&stream->lock, flags);
 
-> > +
-> > +       if (res)
-> > +               return res->allocation;
-> > +
-> > +       return NULL;
-> > +}
+I'm not sure what benefit grabbing the lock is having here. If the list
+isn't empty after this is called then the race isn't resolved by
+grabbing and releasing the lock. The function is returning stale data in
+that case.
 
-Cheers
+> +       is_empty = list_empty(&stream->fragments);
+> +       spin_unlock_irqrestore(&stream->lock, flags);
+> +
+> +       return is_empty;
+> +}
+> +
+> +static int string_stream_init(struct kunit_resource *res, void *context)
+> +{
+> +       struct string_stream *stream;
+> +
+> +       stream = kzalloc(sizeof(*stream), GFP_KERNEL);
+> +       if (!stream)
+> +               return -ENOMEM;
+> +
+> +       res->allocation = stream;
+> +       INIT_LIST_HEAD(&stream->fragments);
+> +       spin_lock_init(&stream->lock);
+> +
+> +       return 0;
+> +}
+> +
+> +static void string_stream_free(struct kunit_resource *res)
+> +{
+> +       struct string_stream *stream = res->allocation;
+> +
+> +       string_stream_clear(stream);
+> +       kfree(stream);
+> +}
+> +
+> +struct string_stream *alloc_string_stream(struct kunit *test)
+> +{
+> +       struct kunit_resource *res;
+> +
+> +       res = kunit_alloc_resource(test,
+> +                                  string_stream_init,
+> +                                  string_stream_free,
+> +                                  NULL);
+> +
+> +       if (!res)
+> +               return NULL;
+> +
+> +       return res->allocation;
+
+Maybe kunit_alloc_resource() should just return res->allocation, or
+NULL, so that these functions can be simplified to 'return
+kunit_alloc_resource()'? Does the caller ever care to do anything with
+struct kunit_resource anyway?
+
 
 _______________________________________________
 linux-um mailing list
