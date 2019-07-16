@@ -2,58 +2,86 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4FD496A46E
-	for <lists+linux-um@lfdr.de>; Tue, 16 Jul 2019 11:00:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 593A36A51B
+	for <lists+linux-um@lfdr.de>; Tue, 16 Jul 2019 11:43:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=Jt7Li8ZpIAOpx4t8DtLN88dH14+uW/8H/fIZxlEm+O8=; b=EWEJOpCXcZWPXJLWUCOKqLw3cD
-	h8VxDMaP70vVOj6zDNcFNG9w3vCRD05CRr/mPypCL8kF/Qb8p6R0tc80gXeskFZuwQVXNSOHwqN6Z
-	KPqPmoARzIyabKhoe3R/hbOy/Q/VgTbLQG9HqlwADiHgMPne93IdzlpWCfTFME3nSMmFuQPayLk9K
-	Ind3DFNe0y4e91HX1W8GaY/A36GA4avi4+k8sMa4VgNg4gDFPJA096eeUxqh7tK8cC+r8v2LWeTr7
-	tu3cN59t8athjX1jbvSNeEkdQyG7rLGrEM2DrEToQIAlqbxLf/1zYiG/dl9vsmGQwVmKi4YYH6GlW
-	SDItMe9w==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:Mime-Version:Message-Id
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=bdXxkv9Orp69G5vNihBq8WD9f8DGSYPSwfb9f6UBbdM=; b=hIJma2U4mIe53I
+	xfdMiZZEIcu7mmd7GpnSPzUX8zgOcn98a/dHc84S6Fw7WTnmMMYksVFtqoQ+jL85gfQSIjj31i1Rf
+	kDQwIt4hLTBuoT/acvOtK1lqv7mkJ82qLY04ZWRoGgSeHofIMNJrdPwqCD6tmAcWVGKgHtxbHowQx
+	rYeQV7iDztQQvcUaroN5PmfuzzogjggJ4nOgl25hCgQ0jvwEq/n/69vznegCqWIQytosfzNe02mKo
+	TIVSvshECj+6DYSeagEqDtO+Gn1qac5ENsisMMCAx9KnHPayN04j+3hCErz4gGb/InsDiGqAzrloA
+	1eFPZ//jAhx7nSqeBZwA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnJJY-0006FC-Og; Tue, 16 Jul 2019 09:00:00 +0000
-Received: from ivanoab6.miniserver.com ([5.153.251.140]
- helo=www.kot-begemot.co.uk)
+	id 1hnJzO-0005cy-NK; Tue, 16 Jul 2019 09:43:14 +0000
+Received: from mail-vs1-xe4a.google.com ([2607:f8b0:4864:20::e4a])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnJJV-0006DU-IB
- for linux-um@lists.infradead.org; Tue, 16 Jul 2019 08:59:59 +0000
-Received: from [192.168.17.6] (helo=jain.kot-begemot.co.uk)
- by www.kot-begemot.co.uk with esmtps (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <anton.ivanov@cambridgegreys.com>)
- id 1hnJJU-0000mb-9Y; Tue, 16 Jul 2019 08:59:56 +0000
-Received: from jain.kot-begemot.co.uk ([192.168.3.3])
- by jain.kot-begemot.co.uk with esmtp (Exim 4.89)
- (envelope-from <anton.ivanov@cambridgegreys.com>)
- id 1hnJJR-0005Z2-CA; Tue, 16 Jul 2019 09:59:55 +0100
-From: anton.ivanov@cambridgegreys.com
-To: linux-um@lists.infradead.org
-Subject: [PATCHv3 5/5] um: Error handling fixes in vector drivers
-Date: Tue, 16 Jul 2019 09:59:39 +0100
-Message-Id: <20190716085939.21297-5-anton.ivanov@cambridgegreys.com>
-X-Mailer: git-send-email 2.11.0
-In-Reply-To: <20190716085939.21297-1-anton.ivanov@cambridgegreys.com>
-References: <20190716085939.21297-1-anton.ivanov@cambridgegreys.com>
-X-Spam-Score: -1.0
-X-Spam-Score: -1.0
-X-Clacks-Overhead: GNU Terry Pratchett
+ id 1hnJzL-0005bj-87
+ for linux-um@lists.infradead.org; Tue, 16 Jul 2019 09:43:12 +0000
+Received: by mail-vs1-xe4a.google.com with SMTP id d139so4213415vsc.14
+ for <linux-um@lists.infradead.org>; Tue, 16 Jul 2019 02:43:09 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=date:message-id:mime-version:subject:from:to:cc;
+ bh=pGdEsik+1M6jb/HINg07WI5yjzJ1jMxME0W4+2uDrMc=;
+ b=eAEOpY1OH/FnKVljQodIm2gUsxEwhjJezpJfsDh5+L9jGMf2prsNq4n5iGGl8lhFcy
+ 3GIJYBh3yNP4rG6hnKRTyj90mHYFk0BHKtIgiGVyRA9kF/uIcjPZdmXbW8ZEQW4EZ5IH
+ SXn4qORJzI5ksZoYb5wqvx7hlnvhT2sxT5FgtaGJr+HG+NjnhSJ69g9xxveqLaNBs89a
+ ktkggSKnDQEOXJdhLHX3eRSCy+Xqa76qSYaf55Id0NRKz4na4h3mnh2/MOGZbY4WN6E8
+ fCBR1frwWPhwmOtJudmJgXI/JrEuT7i8sdsJFK8HYCxGVYzU3slHOExwB171GfmM6DRJ
+ 5ZCQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:message-id:mime-version:subject:from:to:cc;
+ bh=pGdEsik+1M6jb/HINg07WI5yjzJ1jMxME0W4+2uDrMc=;
+ b=mrp4Pi2lzMm1OmwKVWsnW600X3tqsCwYKhCMJYraTFSaC/F98eQWHNNrESz8/PiQxa
+ xtjn/YPuoAmc78n7QbipjJTCsPo2FUvO61X9a/v3OFYnGL6ka15bq7TbdorXX6Ju2epH
+ dmJ/CPknjh/W9J3eS3iS3umlWVLT9eXocoLA2XXieF/T+p9Z+vbLc46qXCGmeJ5VIoBt
+ rDdI/KSOfgTfKokD+UFKCXAsJRqGvTR1uGhe3cADzUW3VRv6Lf3jJQy39cflyG+Q7YNQ
+ /vZ8e5wbDsRqHaDljCFzMUPHiGOnsVZmJvzK7YAIoU+/J0MTSfEAsppbsLwxVkET5Pp9
+ MyIA==
+X-Gm-Message-State: APjAAAUZUfqVyIAl2BeOdjFR+R0XqacfvON7Wd7GD91bn7AR3UyA61S0
+ obvb7YsPYHe7HM++/kXJdOGa2z+7/OhMjbGoQtYgQA==
+X-Google-Smtp-Source: APXvYqw3wlXdIHgaqyGI3Fkb5EoQvIKrYD7PYJZvCXqueiq4LTaNvNX4mlOb1gL0HCxxqPqMgE7qX6kvoBg4NaGW2/1i8w==
+X-Received: by 2002:a9f:230c:: with SMTP id 12mr15226541uae.85.1563270188644; 
+ Tue, 16 Jul 2019 02:43:08 -0700 (PDT)
+Date: Tue, 16 Jul 2019 02:42:44 -0700
+Message-Id: <20190716094302.180360-1-brendanhiggins@google.com>
+Mime-Version: 1.0
+X-Mailer: git-send-email 2.22.0.510.g264f2c817a-goog
+Subject: [PATCH v10 00/18] kunit: introduce KUnit, the Linux kernel unit
+ testing framework
+From: Brendan Higgins <brendanhiggins@google.com>
+To: frowand.list@gmail.com, gregkh@linuxfoundation.org, jpoimboe@redhat.com, 
+ keescook@google.com, kieran.bingham@ideasonboard.com, mcgrof@kernel.org, 
+ peterz@infradead.org, robh@kernel.org, sboyd@kernel.org, shuah@kernel.org, 
+ tytso@mit.edu, yamada.masahiro@socionext.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190716_015957_909612_7E8DE5EA 
-X-CRM114-Status: GOOD (  16.58  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190716_024311_317995_881A290F 
+X-CRM114-Status: GOOD (  10.86  )
+X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:e4a listed in]
+ [list.dnswl.org]
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,191 +93,97 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: richard@nod.at, Anton Ivanov <anton.ivanov@cambridgegreys.com>
-MIME-Version: 1.0
+Cc: pmladek@suse.com, linux-doc@vger.kernel.org, amir73il@gmail.com,
+ Brendan Higgins <brendanhiggins@google.com>, dri-devel@lists.freedesktop.org,
+ Alexander.Levin@microsoft.com, linux-kselftest@vger.kernel.org,
+ Jonathan Corbet <corbet@lwn.net>, linux-nvdimm@lists.01.org,
+ khilman@baylibre.com, knut.omang@oracle.com, wfg@linux.intel.com,
+ joel@jms.id.au, rientjes@google.com, Iurii Zaikin <yzaikin@google.com>,
+ jdike@addtoit.com, dan.carpenter@oracle.com, devicetree@vger.kernel.org,
+ linux-kbuild@vger.kernel.org, Tim.Bird@sony.com, linux-um@lists.infradead.org,
+ rostedt@goodmis.org, julia.lawall@lip6.fr, kunit-dev@googlegroups.com,
+ Michal Marek <michal.lkml@markovi.net>, richard@nod.at, rdunlap@infradead.org,
+ linux-kernel@vger.kernel.org, daniel@ffwll.ch, mpe@ellerman.id.au,
+ linux-fsdevel@vger.kernel.org, logang@deltatee.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-From: Anton Ivanov <anton.ivanov@cambridgegreys.com>
+## TL;DR
 
-With the addition of bess support which uses connection
-oriented SEQPACKET sockets the vector routines can now
-encounter a "remote end closed the connection" scenario.
+This patchset addresses comments from Stephen Boyd. Most changes are
+pretty minor, but this does fix a couple of bugs pointed out by Stephen.
 
-This adds handling code to detect it in the TX path and
-the legacy RX path. There is no way to detect it in the
-vector RX path because that can legitimately return 0
-even if the remote end has not closed the connection. As
-a result the detection is delayed until the first TX
-event after the close.
+I imagine that Stephen will probably have some more comments, but I
+wanted to get this out for him to look at as soon as possible.
 
-Signed-off-by: Anton Ivanov <anton.ivanov@cambridgegreys.com>
----
- arch/um/drivers/vector_kern.c | 37 ++++++++++++++++++++++++++++++++-----
- arch/um/drivers/vector_kern.h |  1 +
- arch/um/drivers/vector_user.c |  4 ++--
- 3 files changed, 35 insertions(+), 7 deletions(-)
+## Background
 
-diff --git a/arch/um/drivers/vector_kern.c b/arch/um/drivers/vector_kern.c
-index e79cd1dcb018..165ee1636598 100644
---- a/arch/um/drivers/vector_kern.c
-+++ b/arch/um/drivers/vector_kern.c
-@@ -76,6 +76,7 @@ static void vector_eth_configure(int n, struct arglist *def);
- #define DEFAULT_VECTOR_SIZE 64
- #define TX_SMALL_PACKET 128
- #define MAX_IOV_SIZE (MAX_SKB_FRAGS + 1)
-+#define MAX_ITERATIONS 64
- 
- static const struct {
- 	const char string[ETH_GSTRING_LEN];
-@@ -418,6 +419,7 @@ static int vector_send(struct vector_queue *qi)
- 					if (net_ratelimit())
- 						netdev_err(vp->dev, "sendmmsg err=%i\n",
- 							result);
-+					vp->in_error = true;
- 					result = send_len;
- 				}
- 				if (result > 0) {
-@@ -845,6 +847,10 @@ static int vector_legacy_rx(struct vector_private *vp)
- 	}
- 
- 	pkt_len = uml_vector_recvmsg(vp->fds->rx_fd, &hdr, 0);
-+	if (pkt_len < 0) {
-+		vp->in_error = true;
-+		return pkt_len;
-+	}
- 
- 	if (skb != NULL) {
- 		if (pkt_len > vp->header_size) {
-@@ -891,12 +897,16 @@ static int writev_tx(struct vector_private *vp, struct sk_buff *skb)
- 
- 	if (iov_count < 1)
- 		goto drop;
-+
- 	pkt_len = uml_vector_writev(
- 		vp->fds->tx_fd,
- 		(struct iovec *) &iov,
- 		iov_count
- 	);
- 
-+	if (pkt_len < 0)
-+		goto drop;
-+
- 	netif_trans_update(vp->dev);
- 	netif_wake_queue(vp->dev);
- 
-@@ -911,6 +921,8 @@ static int writev_tx(struct vector_private *vp, struct sk_buff *skb)
- drop:
- 	vp->dev->stats.tx_dropped++;
- 	consume_skb(skb);
-+	if (pkt_len < 0)
-+		vp->in_error = true;
- 	return pkt_len;
- }
- 
-@@ -939,6 +951,9 @@ static int vector_mmsg_rx(struct vector_private *vp)
- 	packet_count = uml_vector_recvmmsg(
- 		vp->fds->rx_fd, qi->mmsg_vector, qi->max_depth, 0);
- 
-+	if (packet_count < 0)
-+		vp->in_error = true;
-+
- 	if (packet_count <= 0)
- 		return packet_count;
- 
-@@ -1008,15 +1023,18 @@ static int vector_mmsg_rx(struct vector_private *vp)
- static void vector_rx(struct vector_private *vp)
- {
- 	int err;
-+	int iter = 0;
- 
- 	if ((vp->options & VECTOR_RX) > 0)
--		while ((err = vector_mmsg_rx(vp)) > 0)
--			;
-+		while (((err = vector_mmsg_rx(vp)) > 0) && (iter < MAX_ITERATIONS))
-+			iter++;
- 	else
--		while ((err = vector_legacy_rx(vp)) > 0)
--			;
-+		while (((err = vector_legacy_rx(vp)) > 0) && (iter < MAX_ITERATIONS))
-+			iter++;
- 	if ((err != 0) && net_ratelimit())
- 		netdev_err(vp->dev, "vector_rx: error(%d)\n", err);
-+	if (iter == MAX_ITERATIONS)
-+		netdev_err(vp->dev, "vector_rx: device stuck, remote end may have closed the connection\n");
- }
- 
- static int vector_net_start_xmit(struct sk_buff *skb, struct net_device *dev)
-@@ -1024,6 +1042,13 @@ static int vector_net_start_xmit(struct sk_buff *skb, struct net_device *dev)
- 	struct vector_private *vp = netdev_priv(dev);
- 	int queue_depth = 0;
- 
-+	if (vp->in_error) {
-+		deactivate_fd(vp->fds->rx_fd, vp->rx_irq);
-+		if ((vp->fds->rx_fd != vp->fds->tx_fd) && (vp->tx_irq != 0))
-+			deactivate_fd(vp->fds->tx_fd, vp->tx_irq);
-+		return NETDEV_TX_BUSY;
-+	}
-+
- 	if ((vp->options & VECTOR_TX) == 0) {
- 		writev_tx(vp, skb);
- 		return NETDEV_TX_OK;
-@@ -1134,6 +1159,7 @@ static int vector_net_close(struct net_device *dev)
- 	vp->fds = NULL;
- 	spin_lock_irqsave(&vp->lock, flags);
- 	vp->opened = false;
-+	vp->in_error = false;
- 	spin_unlock_irqrestore(&vp->lock, flags);
- 	return 0;
- }
-@@ -1501,7 +1527,8 @@ static void vector_eth_configure(
- 		.transport_data		= NULL,
- 		.in_write_poll		= false,
- 		.coalesce		= 2,
--		.req_size		= get_req_size(def)
-+		.req_size		= get_req_size(def),
-+		.in_error		= false
- 		});
- 
- 	dev->features = dev->hw_features = (NETIF_F_SG | NETIF_F_FRAGLIST);
-diff --git a/arch/um/drivers/vector_kern.h b/arch/um/drivers/vector_kern.h
-index 0b0a767b9076..684d2e60ad86 100644
---- a/arch/um/drivers/vector_kern.h
-+++ b/arch/um/drivers/vector_kern.h
-@@ -116,6 +116,7 @@ struct vector_private {
- 	bool rexmit_scheduled;
- 	bool opened;
- 	bool in_write_poll;
-+	bool in_error;
- 
- 	/* ethtool stats */
- 
-diff --git a/arch/um/drivers/vector_user.c b/arch/um/drivers/vector_user.c
-index 6dd9b4379507..00c34ef31be5 100644
---- a/arch/um/drivers/vector_user.c
-+++ b/arch/um/drivers/vector_user.c
-@@ -619,7 +619,7 @@ int uml_vector_writev(int fd, void *hdr, int iovcount)
- 	int n;
- 
- 	CATCH_EINTR(n = writev(fd, (struct iovec *) hdr,  iovcount));
--	if ((n < 0) && (errno == EAGAIN))
-+	if ((n < 0) && (errno == EAGAIN) && (errno == ENOBUFS))
- 		return 0;
- 	if (n >= 0)
- 		return n;
-@@ -636,7 +636,7 @@ int uml_vector_sendmmsg(
- 	int n;
- 
- 	CATCH_EINTR(n = sendmmsg(fd, (struct mmsghdr *) msgvec, vlen, flags));
--	if ((n < 0) && (errno == EAGAIN))
-+	if ((n < 0) && (errno == EAGAIN) && (errno == ENOBUFS))
- 		return 0;
- 	if (n >= 0)
- 		return n;
+This patch set proposes KUnit, a lightweight unit testing and mocking
+framework for the Linux kernel.
+
+Unlike Autotest and kselftest, KUnit is a true unit testing framework;
+it does not require installing the kernel on a test machine or in a VM
+(however, KUnit still allows you to run tests on test machines or in VMs
+if you want[1]) and does not require tests to be written in userspace
+running on a host kernel. Additionally, KUnit is fast: From invocation
+to completion KUnit can run several dozen tests in about a second.
+Currently, the entire KUnit test suite for KUnit runs in under a second
+from the initial invocation (build time excluded).
+
+KUnit is heavily inspired by JUnit, Python's unittest.mock, and
+Googletest/Googlemock for C++. KUnit provides facilities for defining
+unit test cases, grouping related test cases into test suites, providing
+common infrastructure for running tests, mocking, spying, and much more.
+
+### What's so special about unit testing?
+
+A unit test is supposed to test a single unit of code in isolation,
+hence the name. There should be no dependencies outside the control of
+the test; this means no external dependencies, which makes tests orders
+of magnitudes faster. Likewise, since there are no external dependencies,
+there are no hoops to jump through to run the tests. Additionally, this
+makes unit tests deterministic: a failing unit test always indicates a
+problem. Finally, because unit tests necessarily have finer granularity,
+they are able to test all code paths easily solving the classic problem
+of difficulty in exercising error handling code.
+
+### Is KUnit trying to replace other testing frameworks for the kernel?
+
+No. Most existing tests for the Linux kernel are end-to-end tests, which
+have their place. A well tested system has lots of unit tests, a
+reasonable number of integration tests, and some end-to-end tests. KUnit
+is just trying to address the unit test space which is currently not
+being addressed.
+
+### More information on KUnit
+
+There is a bunch of documentation near the end of this patch set that
+describes how to use KUnit and best practices for writing unit tests.
+For convenience I am hosting the compiled docs here[2].
+
+Additionally for convenience, I have applied these patches to a
+branch[3]. The repo may be cloned with:
+git clone https://kunit.googlesource.com/linux
+This patchset is on the kunit/rfc/v5.2/v10 branch.
+
+## Changes Since Last Version
+
+- Went back to using spinlock in `struct kunit`. Needed for resource
+  management API. Thanks to Stephen for this change.
+- Fixed bug where an init failure may not be recorded as a failure in
+  patch 01/18.
+- Added append method to string_stream as suggested by Stephen.
+- Mostly pretty minor changes after that, which mostly pertain to
+  string_stream and kunit_stream.
+
+[1] https://google.github.io/kunit-docs/third_party/kernel/docs/usage.html#kunit-on-non-uml-architectures
+[2] https://google.github.io/kunit-docs/third_party/kernel/docs/
+[3] https://kunit.googlesource.com/linux/+/kunit/rfc/v5.2/v10
+
 -- 
-2.11.0
+2.22.0.510.g264f2c817a-goog
 
 
 _______________________________________________
