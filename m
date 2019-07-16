@@ -2,58 +2,56 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CC19A6ABD9
-	for <lists+linux-um@lfdr.de>; Tue, 16 Jul 2019 17:34:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 927936ADEA
+	for <lists+linux-um@lfdr.de>; Tue, 16 Jul 2019 19:50:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:To:From:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3+jvgh2BR//nsGcFsvheEjopBGKoXX9wC88llaUmQVY=; b=b88J0Wis+IK/RT
-	e4fYmQPkw+aqSKOw/lXKyjUHhXZ45DpJgx3a6IBFSjWUUvETdfT+X6GIiIIKBaKZEnB6Q4qTZoebZ
-	1yG2JF7F+rq9rjdQ3UnJOoQ4Ig7zQvl4ld67hF2ps6JJhLFSDKU2K7dLvS7KF2XgXTRJo7DYE5YNe
-	K1wIJw4tO+SxJ1sxjj1iJ7GV0xedrP2kyUooivANJfa4AsmEB67BfCV/C7pK62SDnQy/c7NdMbnzj
-	uTvpd3r1M4zDUZtIU4SQJfpq1Q7oGPd/Z7fyJwzS9raBsN/fvbpdlUoGudDbzg2yvd1Uq13+AC+ri
-	MRj+yx2v5SruT+UNiUBw==;
+	List-Owner; bh=BCrp9jl3EbBgTH8vgkdfuLSPlZgivpJAmF9hjjvHiNM=; b=L2zeDS6+lOMHmN
+	5WQ86yoaor8DhMmyhvIbXmpyJtNLRfPr4E6wNEj1/4vEagsZc24E0yyCk2f2G7mZ/i/YovwuvYtS6
+	bdwqEz5iIUDK4nm+thIbKRQn5O6MaVAimB4Wr6HY1uG+4vtlZ4pRKXnfOBjjs7JPnzSbr+WrMbTza
+	+I5he9VeywFEGWjAOwv3tnRa35QcADwqFGXyEgFXLXJ/9MjXufcRpTx/J3Mq50C+dCQjkiUXMO7gp
+	LlrPQ1MWUXXCtNlbVJGCp253OnRKUHCWwDRHZ+zjNfg9gYMVNQ6iqa1tDZWtvO04rfnkdMVfAhXob
+	ehzXEYy0oU92R3WoTpUA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnPSu-0003cN-Sx; Tue, 16 Jul 2019 15:34:05 +0000
+	id 1hnRas-0000ye-0x; Tue, 16 Jul 2019 17:50:26 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnPSq-0003bs-Vy
- for linux-um@lists.infradead.org; Tue, 16 Jul 2019 15:34:02 +0000
+ id 1hnRao-0000yC-CS
+ for linux-um@lists.infradead.org; Tue, 16 Jul 2019 17:50:23 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5CB182054F;
- Tue, 16 Jul 2019 15:34:00 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9CA412173C;
+ Tue, 16 Jul 2019 17:50:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1563291240;
- bh=V4ev/UU39RHvFkNjkPsY3SOAdIqI9PBECtJV0Q6gb5E=;
+ s=default; t=1563299421;
+ bh=G8HZaTkY2j5PHpLqA7tOHBlpXfS88fwdr/i1I0KvhMc=;
  h=In-Reply-To:References:From:To:Cc:Subject:Date:From;
- b=OI5X53OX1byrP6tlrUCjRpeJ1oQOTnBd5OqI0zkPlySCP8J7YdSPWzyzurB0yXcW5
- tojB8NLHwRsWz19d2LLzm7R0Y/GV+eoAx6B2iENKbOicQFlEaTQrErT0xo7BH5fqoh
- gpLKApR/IyGssgFicaQIy6L8qsIKeBP/gh0ZNKpo=
+ b=SnmjZaJScqEkihvVKGQqkSTD5onJWfK+cHhQQBbW17pnjC+nIb+4uWvnjgWV9lKVf
+ RdeeDLVXiDN2OyNKReRvzCItePqhEAfh7wbGzPcKWhCodyowk7MK4OaaP5GrxgXHmA
+ SzXYxjU8ExAf2vD0GT0p9eiAqUSs49f1Guip83jU=
 MIME-Version: 1.0
-In-Reply-To: <CAFd5g47y4vDB2P=EsGN8305LGeQPCTveNs-Jd5-=6K-XKY==CA@mail.gmail.com>
+In-Reply-To: <CAFd5g44_axVHNMBzxSURQB_-R+Rif7cZcg7PyZ_SS+5hcy5jZA@mail.gmail.com>
 References: <20190712081744.87097-1-brendanhiggins@google.com>
- <20190712081744.87097-4-brendanhiggins@google.com>
- <20190715204356.4E3F92145D@mail.kernel.org>
- <CAFd5g47481sRaez=yEJN4_ghiXZbxayk1Y04tAZpuzPLsmnhKg@mail.gmail.com>
- <20190715220407.0030420665@mail.kernel.org>
- <CAFd5g44bE0F=wq_fOAnxFTtoOyx1dUshhDAkKWr5hX9ipJ4Sxw@mail.gmail.com>
- <CAFd5g47y4vDB2P=EsGN8305LGeQPCTveNs-Jd5-=6K-XKY==CA@mail.gmail.com>
+ <20190712081744.87097-5-brendanhiggins@google.com>
+ <20190715221554.8417320665@mail.kernel.org>
+ <CAFd5g47ikJmA0uGoavAFsh+hQvDmgsOi26tyii0612R=rt7iiw@mail.gmail.com>
+ <CAFd5g44_axVHNMBzxSURQB_-R+Rif7cZcg7PyZ_SS+5hcy5jZA@mail.gmail.com>
 From: Stephen Boyd <sboyd@kernel.org>
 To: Brendan Higgins <brendanhiggins@google.com>
-Subject: Re: [PATCH v9 03/18] kunit: test: add string_stream a std::stream
- like string builder
+Subject: Re: [PATCH v9 04/18] kunit: test: add kunit_stream a std::stream like
+ logger
 User-Agent: alot/0.8.1
-Date: Tue, 16 Jul 2019 08:33:59 -0700
-Message-Id: <20190716153400.5CB182054F@mail.kernel.org>
+Date: Tue, 16 Jul 2019 10:50:20 -0700
+Message-Id: <20190716175021.9CA412173C@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190716_083401_072843_B4A39418 
-X-CRM114-Status: GOOD (  16.23  )
+X-CRM114-CacheID: sfid-20190716_105022_463355_E10AA0E2 
+X-CRM114-Status: GOOD (  23.65  )
 X-Spam-Score: -4.8 (----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-4.8 points)
@@ -107,51 +105,88 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-Quoting Brendan Higgins (2019-07-15 15:43:20)
-> On Mon, Jul 15, 2019 at 3:11 PM Brendan Higgins
+Quoting Brendan Higgins (2019-07-16 01:37:34)
+> On Tue, Jul 16, 2019 at 12:57 AM Brendan Higgins
 > <brendanhiggins@google.com> wrote:
 > >
-> > On Mon, Jul 15, 2019 at 3:04 PM Stephen Boyd <sboyd@kernel.org> wrote:
-> > >
-> > > Quoting Brendan Higgins (2019-07-15 14:11:50)
-> > > > On Mon, Jul 15, 2019 at 1:43 PM Stephen Boyd <sboyd@kernel.org> wrote:
-> > > > >
-> > > > > I also wonder if it would be better to just have a big slop buffer of a
-> > > > > 4K page or something so that we almost never have to allocate anything
-> > > > > with a string_stream and we can just rely on a reader consuming data
-> > > > > while writers are writing. That might work out better, but I don't quite
-> > > > > understand the use case for the string stream.
-> > > >
-> > > > That makes sense, but might that also waste memory since we will
-> > > > almost never need that much memory?
-> > >
-> > > Why do we care? These are unit tests.
+> > A `struct kunit_stream` is usually associated with a message that is
+> > being built up over time like maybe an expectation; it is meant to
+> > capture the idea that we might want to send some information out to
+> > the user pertaining to some thing 'X', but we aren't sure that we
+> > actually want to send it until 'X' is complete, but do to the nature
+> > of 'X' it is easier to start constructing the message before 'X' is
+> > complete.
 > >
-> > Agreed.
+> > Consider a complicated expectation, there might be multiple conditions
+> > that satisfy it and multiple conditions which could make it fail. As
+> > we start exploring the input to the expectation we gain information
+> > that we might want to share back with the user if the expectation were
+> > to fail and we might get that information before we are actually sure
+> > that the expectation does indeed fail.
 > >
-> > > Having allocations in here makes
-> > > things more complicated, whereas it would be simpler to have a pointer
-> > > and a spinlock operating on a chunk of memory that gets flushed out
-> > > periodically.
+> > When we first step into the expectation we immediately know the
+> > function name, file name, and line number where we are called and
+> > would want to put that information into any message we would send to
+> > the user about this expectation. Next, we might want to check a
+> > property of the input, it may or may not be enough information on its
+> > own for the expectation to fail, but we want to share the result of
+> > the property check with the user regardless, BUT only if the
+> > expectation as a whole fails.
 > >
-> > I am not so sure. I have to have the logic to allocate memory in some
-> > case no matter what (what if I need more memory that my preallocated
-> > chuck?). I think it is simpler to always request an allocation than to
-> > only sometimes request an allocation.
-> 
-> Another even simpler alternative might be to just allocate memory
-> using kunit_kmalloc as we need it and just let the kunit_resource code
-> handle cleaning it all up when the test case finishes.
+> > Hence, we can have multiple `struct kunit_stream`s associated with a
+> > `struct kunit` active at any given time.
 
-Sure, sounds like a nice way to avoid duplicating similar logic to
-maintain a list of things to free later.
+I'm coming back to this now after reading the rest of the patches that
+deal with assertions and expectations. It looks like the string stream
+is there to hold a few different pieces of information:
 
-> 
-> What do you think?
+ - Line Number
+ - File Name
+ - Function Name
 
-If you go the allocation route then you'll need to have the flags to
-know what context you're in to allocate appropriately. Does that mean
-all the string operations will now take GFP flags?
+The above items could be stored in a structure on the stack that then
+gets printed and formatted when the expectation or assertion fails. That
+would make the whole string stream structure and code unnecessary.
+
+The only hypothetical case where this can't be done is a complicated
+assertion or expectation that does more than one check and can't be
+written as a function that dumps out what went wrong. Is this a real
+problem? Maybe such an assertion should just open code that logic so we
+don't have to build up a string for all the other simple cases.
+
+It seems far simpler to get rid of the string stream API and just have a
+struct for this.
+
+	struct kunit_fail_msg {
+		const char *line;
+		const char *file;
+		const char *func;
+		const char *msg;
+	};
+
+Then you can have the assertion macros create this on the stack (with
+another macro?).
+
+	#define DEFINE_KUNIT_FAIL_MSG(name, _msg) \
+		struct kunit_fail_msg name = { \
+			.line =  __LINE__, \
+			.file = __FILE__, \
+			.func = __func__, \
+			.msg = _msg, \
+		}
+
+Note: I don't know if the __LINE__ above will use the macro location, so
+this probably needs another wrapper to put the right line number there.
+
+I don't want to derail this whole series on this topic, but it seems
+like a bunch of code is there to construct this same set of information
+over and over again into a buffer a little bit at a time and then throw
+it away when nothing fails just because we may want to support the case
+where we have some unstructured data to inform the user about.
+
+Why not build in the structured part into the framework (i.e. the struct
+above) so that it's always there and then add the string building part
+later when we have to?
 
 
 _______________________________________________
