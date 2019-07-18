@@ -2,95 +2,70 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D51E56C414
-	for <lists+linux-um@lfdr.de>; Thu, 18 Jul 2019 03:21:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 314B56D31B
+	for <lists+linux-um@lfdr.de>; Thu, 18 Jul 2019 19:50:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=NfCVkRyUdrkd76uo397zCJ8GhYRROPWooEA2uTIHVe0=; b=ECMh1xyxuLIvYX
-	wt9YTsiAcRsy3KF8rzZlddE15jZ0AD1iM5Af5fJ6sRsAKEFFdm2u0xGHJ2+Hb58QphihRJFaK8wzd
-	/O6XZ1/5jjAiQt1aRyEgkEEbNlnZsYqeWvaERqVzhVyobP9x+CZa+94AKErZ7cJmhhIrm5tI1BDDb
-	YC6addWTxs8c5kntrQ4uaZp9RVcSxzv2id3eVnXHY7oaLdIyBrjg/Cpe/y8fkwoUYzK5kRN5wxr2V
-	4DMyqvUVj1s//DcE2UJQ9CST/aq4EMUsLUSjH09mIXmaYEFXfSUNpt4JU0amF2I13w7V6U41SYXyJ
-	wiVLYE2qqOix8fA0Eyjg==;
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:From:To:Subject:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=jZrAE0xoHccB/lLFMeAKSHZtRodEciqns00vUTAR05E=; b=FGkmaxrgkkaJlP
+	zMbNgEANjOxiL+3sc22fC6R+w6UFbjb+qgSzxOkaQrBNVcdRcpQuE7Aj/MKGleqZ80+77FyxzDYsQ
+	FjRpzwG9dKWiZDuQBp/JoND5I1Wic4wkDYSnw+sYwYilec6IETA6wHrOp2/UR0+H0Ck15xDLT9387
+	FjaXBVDKThKhS57wkgTn4a6I5jImd8VvzSrMczeYcbBNgs7ohoyLKYnE4l+Ei5PSm57I3qWdt7tpU
+	HYmlc+toEt36QNBWLEHpiu4MRjMnhcX0LTh25uMYZ5aZ208yFVWaXK2XYGf80bTg77/M3syD8nrc5
+	m+VezuwRrXLHzmd9GoSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnv7F-0000Pa-3c; Thu, 18 Jul 2019 01:21:49 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1hoAY1-0006gZ-Us; Thu, 18 Jul 2019 17:50:29 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnv7B-0000PA-Tu
- for linux-um@lists.infradead.org; Thu, 18 Jul 2019 01:21:47 +0000
-Received: by mail-pg1-x543.google.com with SMTP id s1so5725344pgr.2
- for <linux-um@lists.infradead.org>; Wed, 17 Jul 2019 18:21:43 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=date:from:to:cc:subject:message-id:mime-version:content-disposition
- :user-agent; bh=UpZmj+TfLqIG1/P5vIqhgz5qoj21XZgNJ95JeFC7I20=;
- b=OWQ4lEQMxWEQoPaOZDI5n5MVo2Goh3TKkXVtl1o+AkKxzTfJRxY0n62n9/b22TIASs
- Ih7VAedJk/z+o1yDpo8z9plzPKZcuYWnU6DeR1aEJ3kCZQNTr2M1absxJB2yAVTU006O
- wDYWz2hUUMKhkwPLXgNH6+ExV0Dhw8lZmDhs5wQCW40SCK/P/CkvqXZP90rW8MHcIOMB
- hZr9Sa8GTWo+I6MmOhUk4jjuZPrKZEsixkG3CH5yUTeAKBafyVTpN8yQgMHYJyEJfnjw
- opbKXCGVqLpeQccwZVvuKepCYZmXpLujqhZR1052N14Y5kINSEJvywFUcfnef/2rgkoY
- /MEQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
- :content-disposition:user-agent;
- bh=UpZmj+TfLqIG1/P5vIqhgz5qoj21XZgNJ95JeFC7I20=;
- b=cn+rFX3NxhZOcpNX3RklrfFvrXIyTDa03gVoTJnFaX20D39QuaCTC45WkDSf64ovjs
- AXX9NoHyLab9vuAbzbZxu9JS01Cx/bHh2fZ8ZSabZE2ejznhaOWNgI8V9+7TJRYRbBQs
- 4N7KF30q4Us2oxfU7H4agIadEKQSjxbQ8lGnfI20r4K2m7rxNiDij1AB+W9QBv/nkZYi
- IyhmmglPKXNuTjeSDDjbbh5HDrExiv80JbGITtm4dSfJt3BdlBl2WQos7NQzh83x2kCT
- Tcz9aqAOo/yePaOCj8r93u7kqfcAasPFwRgxgdbrClpYaVVgnkATo42ozNyc7rncfTu8
- pxdQ==
-X-Gm-Message-State: APjAAAUhHJrxUWDherpjCgjHpkHPSzKEVi1BOX/1OKR/UvBUoOW2onVD
- Yv+IUx6z3TSYOOtmYTYIfEhTq4AfKQr3yA==
-X-Google-Smtp-Source: APXvYqzStLKqM14uM395j5rLznK/7Fsim1jCe+jRsqxUhAxj9i1mb9uZCVELm6fCBrkGxvZ5unMrYQ==
-X-Received: by 2002:a17:90a:898e:: with SMTP id
- v14mr47831835pjn.119.1563412901782; 
- Wed, 17 Jul 2019 18:21:41 -0700 (PDT)
-Received: from google.com ([2620:15c:2cb:1:e90c:8e54:c2b4:29e7])
- by smtp.gmail.com with ESMTPSA id m6sm25058668pfb.151.2019.07.17.18.21.40
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Wed, 17 Jul 2019 18:21:41 -0700 (PDT)
-Date: Wed, 17 Jul 2019 18:21:36 -0700
-From: Brendan Higgins <brendanhiggins@google.com>
-To: Jeff Dike <jdike@addtoit.com>, Richard Weinberger <richard@nod.at>,
- Anton Ivanov <anton.ivanov@cambridgegreys.com>
-Subject: UML GCOV fails to produce *.gcda files
-Message-ID: <20190718012136.GA135592@google.com>
+ id 1hoAXx-0006g3-KR
+ for linux-um@lists.infradead.org; Thu, 18 Jul 2019 17:50:27 +0000
+Received: from kernel.org (unknown [104.132.0.74])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id C3EC421019;
+ Thu, 18 Jul 2019 17:50:24 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1563472224;
+ bh=6tSD0Suq+WYw0e1Of1mjiPhBMB1Sm91MrrAFE36jpOc=;
+ h=In-Reply-To:References:Subject:To:Cc:From:Date:From;
+ b=qhh1Yzvu9wkDER9y45leq7ittg2ChvzEFbwwLVZc06ECTh2DoTQNSKaogbtmfkT68
+ 1l2DbFS/qt/oI4MDEM0RfDRSnGQfBEZtVR9UZ8zb3LGf5E0Nrh56Y4ypa4K4xT9cYG
+ u2MA/NXEj9SHiUe3C8HpY4EmJNMMPRP3PJB9AiWI=
 MIME-Version: 1.0
-Content-Disposition: inline
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <CAFd5g453vXeSUCZenCk_CzJ-8a1ym9RaPo0NVF=FujF9ac-5Ag@mail.gmail.com>
+References: <20190712081744.87097-1-brendanhiggins@google.com>
+ <20190712081744.87097-5-brendanhiggins@google.com>
+ <20190715221554.8417320665@mail.kernel.org>
+ <CAFd5g47ikJmA0uGoavAFsh+hQvDmgsOi26tyii0612R=rt7iiw@mail.gmail.com>
+ <CAFd5g44_axVHNMBzxSURQB_-R+Rif7cZcg7PyZ_SS+5hcy5jZA@mail.gmail.com>
+ <20190716175021.9CA412173C@mail.kernel.org>
+ <CAFd5g453vXeSUCZenCk_CzJ-8a1ym9RaPo0NVF=FujF9ac-5Ag@mail.gmail.com>
+Subject: Re: [PATCH v9 04/18] kunit: test: add kunit_stream a std::stream like
+ logger
+To: Brendan Higgins <brendanhiggins@google.com>
+From: Stephen Boyd <sboyd@kernel.org>
+User-Agent: alot/0.8.1
+Date: Thu, 18 Jul 2019 10:50:23 -0700
+Message-Id: <20190718175024.C3EC421019@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190717_182145_993755_53DBAF8A 
-X-CRM114-Status: GOOD (  13.83  )
-X-Spam-Score: -11.9 (-----------)
+X-CRM114-CacheID: sfid-20190718_105025_707626_39A08837 
+X-CRM114-Status: GOOD (  36.37  )
+X-Spam-Score: -4.8 (----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-11.9 points)
+ Content analysis details:   (-4.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
- 3.8 FSL_HELO_FAKE          No description available.
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ 0.1 DKIM_INVALID           DKIM or DK signature exists, but is not valid
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,95 +77,178 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: Darya Verzhbinsky <daryaver@google.com>,
- Daniel Latypov <dlatypov@google.com>, Maria Ignacio <mariaignacio@google.com>,
- linux-um@lists.infradead.org
+Cc: Petr Mladek <pmladek@suse.com>,
+ "open list:DOCUMENTATION" <linux-doc@vger.kernel.org>,
+ Peter Zijlstra <peterz@infradead.org>, Amir Goldstein <amir73il@gmail.com>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
+ Sasha Levin <Alexander.Levin@microsoft.com>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Michael Ellerman <mpe@ellerman.id.au>,
+ "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
+ shuah <shuah@kernel.org>, Rob Herring <robh@kernel.org>,
+ linux-nvdimm <linux-nvdimm@lists.01.org>,
+ Frank Rowand <frowand.list@gmail.com>, Knut Omang <knut.omang@oracle.com>,
+ Kieran Bingham <kieran.bingham@ideasonboard.com>, wfg@linux.intel.com,
+ Joel Stanley <joel@jms.id.au>, David Rientjes <rientjes@google.com>,
+ Jeff Dike <jdike@addtoit.com>, Dan Carpenter <dan.carpenter@oracle.com>,
+ devicetree <devicetree@vger.kernel.org>,
+ linux-kbuild <linux-kbuild@vger.kernel.org>, "Bird,
+ Timothy" <Tim.Bird@sony.com>, linux-um@lists.infradead.org,
+ Steven Rostedt <rostedt@goodmis.org>, Julia Lawall <julia.lawall@lip6.fr>,
+ Josh Poimboeuf <jpoimboe@redhat.com>, kunit-dev@googlegroups.com,
+ Theodore Ts'o <tytso@mit.edu>, Richard Weinberger <richard@nod.at>,
+ Greg KH <gregkh@linuxfoundation.org>, Randy Dunlap <rdunlap@infradead.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Luis Chamberlain <mcgrof@kernel.org>, Daniel Vetter <daniel@ffwll.ch>,
+ Kees Cook <keescook@google.com>, linux-fsdevel@vger.kernel.org,
+ Logan Gunthorpe <logang@deltatee.com>, Kevin Hilman <khilman@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-Following the instructions here[1], we have been trying to get gcov
-support working under UML. However, despite the fact that it seems to be
-configured correctly (I see it producing *.gcno files), it does not
-appear to be producing *.gcda files (or *.da) files when we run the UML
-kernel.
+Quoting Brendan Higgins (2019-07-16 11:52:01)
+> On Tue, Jul 16, 2019 at 10:50 AM Stephen Boyd <sboyd@kernel.org> wrote:
+> >
+> 
+> > The only hypothetical case where this can't be done is a complicated
+> > assertion or expectation that does more than one check and can't be
+> > written as a function that dumps out what went wrong. Is this a real
+> > problem? Maybe such an assertion should just open code that logic so we
+> > don't have to build up a string for all the other simple cases.
+> 
+> I have some expectations in follow up patchsets for which I created a
+> set of composable matchers for matching structures and function calls
+> that by their nature cannot be written as a single function. The
+> matcher thing is a bit speculative, I know, but for any kind of
+> function call matching, you need to store a record of functions you
+> are expecting to have called and then each one needs to have a set of
+> expectations defined by the user; I don't think there is a way to do
+> that that doesn't involve having multiple separate functions each
+> having some information useful to constructing the message.
+> 
+> I know the code in question isn't in this patchset; the function
+> matching code was in one of the earlier versions of the RFC, but I
+> dropped it to make this patchset smaller and more manageable. So I get
+> it if you would like me to drop it and add it back in when I try to
+> get the function and structure matching stuff in, but I would really
+> prefer to keep it as is if you don't care too much.
 
-Sor far we have mostly been working with v5.2.
+Do you have a link to those earlier patches?
 
-Running make with KBUILD_VERBOSE=1 we see that gcc is being called with
-the appropriate gcov flags: -fprofile-arcs -ftest-coverage
+> 
+> > It seems far simpler to get rid of the string stream API and just have a
+> > struct for this.
+> >
+> >         struct kunit_fail_msg {
+> >                 const char *line;
+> >                 const char *file;
+> >                 const char *func;
+> >                 const char *msg;
+> >         };
+> >
+> > Then you can have the assertion macros create this on the stack (with
+> > another macro?).
+> >
+> >         #define DEFINE_KUNIT_FAIL_MSG(name, _msg) \
+> >                 struct kunit_fail_msg name = { \
+> >                         .line =  __LINE__, \
+> >                         .file = __FILE__, \
+> >                         .func = __func__, \
+> >                         .msg = _msg, \
+> >                 }
+> >
+> > I don't want to derail this whole series on this topic, but it seems
+> > like a bunch of code is there to construct this same set of information
+> > over and over again into a buffer a little bit at a time and then throw
+> > it away when nothing fails just because we may want to support the case
+> > where we have some unstructured data to inform the user about.
+> 
+> Yeah, that's fair. I think there are a number of improvements to be
+> made with how the expectations are defined other than that, but I was
+> hoping I could do that after this patchset is merged. I just figured
+> with the kinds of things I would like to do, it would lead to a whole
+> new round of discussion.
+> 
+> In either case, I think I would still like to use the `struct
+> kunit_stream` as part of the interface to share the failure message
+> with the test case runner code in test.c, at least eventually, so that
+> I only have to have one way to receive data from expectations, but I
+> think I can do that and still do what you suggest by just constructing
+> the kunit_stream at the end of expectations where it is feasible.
+> 
+> All in all I agree with what you are saying, but I would rather do it
+> as a follow up possibly once we have some more code on the table. I
+> could just see this opening up a whole new can of worms where we
+> debate about exactly how expectations and assertions work for another
+> several months, only to rip it all out shortly there after. I know
+> that's how these things go, but that's my preference.
+> 
+> I can do what you suggest if you feel strongly about it, but I would
+> prefer to hold off until later. It's your call.
+> 
 
-As I mentioned above, we see that *.gcno files are being produced.
+The crux of my complaint is that the string stream API is too loosely
+defined to be usable. It allows tests to build up a string of
+unstructured information, but with certain calling constraints so we
+have to tread carefully. If there was more structure to the data that's
+being recorded then the test case runner could operate on the data
+without having to do string/stream operations, allocations, etc. This
+would make the assertion logic much more concrete and specific to kunit,
+instead of this small kunit wrapper that's been placed on top of string
+stream.
 
-We also see that libgcov is being linked into the linux binary:
+TL;DR: If we can get rid of the string stream API I'd view that as an
+improvement because building arbitrary strings in the kernel is complex,
+error prone and has calling context concerns.
 
-readelf -s linux | grep __gcov_init
- 29312: 000000006041d070   200 FUNC    GLOBAL HIDDEN    13 __gcov_init
+Is the intention that other code besides unit tests will use this string
+stream API to build up strings? Any targets in mind? This would be a
+good way to get the API merged upstream given that its 2019 and we
+haven't had such an API in the kernel so far.
 
-To ensure that __gcov_flush() is actually being called, we manually
-inserted it in the kernel's init (just to see if we get some coverage
-information). I copied the patch at the end of this email.
+An "object oriented" (strong quotes!) approach where kunit_fail_msg is
+the innermost struct in some assertion specific structure might work
+nicely and allow the test runner to call a generic 'format' function to
+print out the message based on the type of assertion/expectation it is.
+It probably would mean less code size too because the strings that are
+common will be in the common printing function instead of created twice,
+in the macros/code and then copied to the heap for the string stream.
 
-And yet we still see no *.gcda files being generated.
+	struct kunit_assert {
+		const char *line;
+		const char *file;
+		const char *func;
+		void (*format)(struct kunit_assert *assert);
+	};
 
-It looks like it has been a very long time since anyone has touched the
-UML gcov code, so I have started looking into building an older version
-of the kernel where it might have worked, but have not gotten any useful
-results back from that yet.
+	struct kunit_comparison_assert {
+		enum operator operator;
+		const char *left;
+		const char *right;
+		struct kunit_assert assert;
+	};
 
-We are aware that gcov has also been implemented for other architectures
-under separate Kconfigs (CONFIG_GCOV_KERNEL and friends); however, we
-are very keen to get gcov working with UML (where we don't have to
-scrape sysfs for the *.gcda files) as we are running tests in UML and it
-would be much easier to get coverage for these tests on UML as well.
+	struct kunit_bool_assert {
+		const char *truth;
+		const char *statement;
+		struct kunit_assert assert;
+	};
 
-Hope someone can help!
+	void kunit_format_comparison(struct kunit_assert *assert)
+	{
+		struct kunit_comparison_assert *comp = container_of(assert, ...)
 
-Thanks!
+		kunit_printk(...)
+	}
 
-[1]http://user-mode-linux.sourceforge.net/old/gprof.html
+Maybe other people have opinions here on if you should do it now or
+later. Future coding is not a great argument because it's hard to
+predict the future. On the other hand, this patchset is in good shape to
+merge and I'd like to use it to write unit tests for code I maintain so
+I don't want to see this stall out. Sorry if I'm opening the can of
+worms you're talking about.
 
-Our .config can be generated by running `make ARCH=um olddefconfig` on
-the following defconfig:
-
-CONFIG_DEBUG_INFO=y
-CONFIG_DEBUG_KERNEL=y
-CONFIG_GCOV=y
-
-The __gcov_flush() patch mentioned above is here:
-
-From e021b659b51670bc0a063b6817c31d30ab809be6 Mon Sep 17 00:00:00 2001
-From: Brendan Higgins <brendanhiggins@google.com>
-Date: Wed, 17 Jul 2019 18:11:29 -0700
-Subject: [PATCH v1] DO NOT MERGE: added __gcov_flush() to init to ensure it is
- called
-
----
- init/main.c | 4 ++++
- 1 file changed, 4 insertions(+)
-
-diff --git a/init/main.c b/init/main.c
-index 66a196c5e4c3c..70d7a6cb9ea0f 100644
---- a/init/main.c
-+++ b/init/main.c
-@@ -1080,10 +1080,14 @@ void __weak free_initmem(void)
- 	free_initmem_default(POISON_FREE_INITMEM);
- }
- 
-+extern void __gcov_flush(void);
-+
- static int __ref kernel_init(void *unused)
- {
- 	int ret;
- 
-+	__gcov_flush();
-+	printk("__gcov_flush\n");
- 	kernel_init_freeable();
- 	/* need to finish all async __init code before freeing the memory */
- 	async_synchronize_full();
--- 
-2.22.0.510.g264f2c817a-goog
 
 _______________________________________________
 linux-um mailing list
