@@ -2,55 +2,55 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5C6236DC29
-	for <lists+linux-um@lfdr.de>; Fri, 19 Jul 2019 06:14:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6E2C96DC2D
+	for <lists+linux-um@lfdr.de>; Fri, 19 Jul 2019 06:15:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=I0T5JDoSjOfI87DVLeVTOzmkelh0XFVtn0WGCyBM0AY=; b=BZMTWrROwbOqaV
-	3OWEs+PLo3rbWxECTUBm0yGLBHENOvJYytYUq6ePS6OoN1bk5nqBnKUaoS8ND71l2vNWg+i4bOGA0
-	eMCQxxnUP13xgGF1LXdprpWjN9dIWsgyjnXmnjMaPurcQCRjFNRGRHfaPzFly5soeT5DIl3MPjiA1
-	VoSEg6EinZybZFim1rMVTHqjNFAWWwOyZjkdiHFvjPLc50zNAVdLGP22817RaNSVoUODWaDYBNZYF
-	l1LVo5O0BfRgdMMkCR0b5oQG8EtyNJRuEaffBeyhp3GpdcCxff1K1a/dei6rlKDZYxNfjka7CiqOv
-	Oqu2qtcenC/PHBEnJeWw==;
+	List-Owner; bh=tssY1vPv3nQ1hjRAvoPVdse2xQq/g2f0fo+SUv5jWyg=; b=Y1YTmYIegvRF/e
+	kLMvTjghTm3fAITHnnoBQN1cRqb+TqwjFWZ2WIJGpLI3FyFX81OYcsNgq5gm/DS/y1AMWEAB0icaV
+	PqxqXD6W4RWuoO3zkYEM10x+585xiy1R0Scx1A0e8kpD7M1TzHpN0FtVSbGwh3jkU9w+NM7h51MIB
+	WvXz/gjyIyRHR6qgysSWM/H2ZioGWGOGp3yydq8wMhBmbxjruPpDdR4FqV3mET/e0xGeMXyPXwQ41
+	vwFHoDEg28v7rEX1ebQ7gVfsDEZC0nu/QWlFA4tVUrVCimR0QgixbulFFplQkk5F9HdYxtATI79BX
+	1jbxb444yww+tP+gNnww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hoKIG-0000w1-Vk; Fri, 19 Jul 2019 04:14:52 +0000
+	id 1hoKIX-0001uE-EI; Fri, 19 Jul 2019 04:15:09 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hoKHH-00007j-Gu
- for linux-um@lists.infradead.org; Fri, 19 Jul 2019 04:13:53 +0000
+ id 1hoKIT-0001RH-0w
+ for linux-um@lists.infradead.org; Fri, 19 Jul 2019 04:15:06 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 8B4B521851;
- Fri, 19 Jul 2019 04:13:50 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 14BCD2082F;
+ Fri, 19 Jul 2019 04:15:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1563509631;
- bh=CVtwTCLGPdKrlJ/UFSuA+mdkaxGnIx745tbHqGbPFJc=;
+ s=default; t=1563509704;
+ bh=LVACnhueORH3zjjmzg2nOz7b8qyI63+dh483PbP04vA=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=mJ3wsjxm7flGnqYCZZJG1a6xVozQibm07m+z4ojpy/IXRQ2fHmONkWC6FWZzoBTD8
- mKj3dZDUExHVKW3P/maKwefF4+kXMqWFgJQh/cuBDQ+6MqUm345xhQ0UwN9413jS0y
- Up48+CZX0qXn2kf0jqT6QQ+vq0kWVRD21kw2bDXo=
+ b=yAieML3ChzYXr75v2+v/0R+9Isblt90ELHjwXcYZc26nvRNUbV/aDcIhxHuAp5V1n
+ IXQlrRYTlJ4f+447D/W8vJiNY9eTzp1gSlGlMHH1VfkiDolK1vZcTX8vQNr0j5AxYB
+ HuMJcLHdEet9PLksAMAFRDf9UQMORG6qae1rQ35E=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.9 28/45] um: Silence lockdep complaint about mmap_sem
-Date: Fri, 19 Jul 2019 00:12:47 -0400
-Message-Id: <20190719041304.18849-28-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.4 22/35] um: Silence lockdep complaint about mmap_sem
+Date: Fri, 19 Jul 2019 00:14:10 -0400
+Message-Id: <20190719041423.19322-22-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190719041304.18849-1-sashal@kernel.org>
-References: <20190719041304.18849-1-sashal@kernel.org>
+In-Reply-To: <20190719041423.19322-1-sashal@kernel.org>
+References: <20190719041423.19322-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190718_211351_701988_48ECE71F 
-X-CRM114-Status: GOOD (  14.95  )
+X-CRM114-CacheID: sfid-20190718_211505_337665_CE10FBFE 
+X-CRM114-Status: GOOD (  15.02  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -179,10 +179,10 @@ Signed-off-by: Sasha Levin <sashal@kernel.org>
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/arch/um/include/asm/mmu_context.h b/arch/um/include/asm/mmu_context.h
-index 1a60e1328e2f..6aca4c90aa1a 100644
+index 941527e507f7..f618f45fc8e9 100644
 --- a/arch/um/include/asm/mmu_context.h
 +++ b/arch/um/include/asm/mmu_context.h
-@@ -56,7 +56,7 @@ static inline void activate_mm(struct mm_struct *old, struct mm_struct *new)
+@@ -42,7 +42,7 @@ static inline void activate_mm(struct mm_struct *old, struct mm_struct *new)
  	 * when the new ->mm is used for the first time.
  	 */
  	__switch_mm(&new->context.id);
