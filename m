@@ -2,42 +2,49 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 642B46FA19
-	for <lists+linux-um@lfdr.de>; Mon, 22 Jul 2019 09:13:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B8CEB6FA62
+	for <lists+linux-um@lfdr.de>; Mon, 22 Jul 2019 09:30:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=j9zRnLhE7jK86EQwKvtFPXu2fyk8oHZmSHPCGkCBoh4=; b=eTGVKyZv73dx+j
-	kqXmN+rRW0dX/GJs+OzB6wRe6RBsrhqdyo2NauPlNSaDj/H2BA3uP6gqOeTmHJuFs/1B3pNdJi3zK
-	lHaLY5nstxroftIYyb9ma7IXbDlR++Yl5VMQ4QQY4qfHpkVDjvhtwiDY/h8Fj7mGFx/r54gGss4h5
-	rdpF1IyOukJXWOQmVr9ubJukKza67JPsNnhqqipF8PgrRPvvQX3VsiQD/hj86scBSJv8n9gEM+u74
-	sZI4/TUmcRfNQV3fj5rrNuv25XdvzRymezlUwI6pY1wb2iGghWJcUgsQ8e++VgG6KmCDNS6jO+O4v
-	j7cBcAD4K7iNHqwkxBIw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=wPg2ZZK99KSgsW/N3xtBxfhpdVN9xwVlpK9NZcjR8MI=; b=X4/
+	y+9SQCPe1R4dd5jK3wHJs2/YHsiu6XugnH++vHH9tNaxYDsDo341BjG8TzMZt9HWuUS4wrNxhpGZs
+	VTCdvzv0qQCdfqu9oUc4LH8MB1tcmjtyrckpnvBbkOIV/8SZ0HQSeuBh7DYm2/ImGrhq/yUJXro17
+	DR8otREprPFs/tTn2tNt0B+eKZzqBg4kJ3X1Ks/sYQWz3RK/T8cE+CJGEyzHNj1tFenSZ7fHkN6XL
+	co+0FnAxaTx4FMNS6B8nzAxI5HVal0GMVEXxaWRG5GEwIUv3ccQechFOhsPp0QyyAYO9vl3pEontu
+	pBVCwAx48rP8t+H09y3IVaBFs6wvl7g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpSVV-0003Py-RZ; Mon, 22 Jul 2019 07:13:13 +0000
-Received: from s3.sipsolutions.net ([2a01:4f8:191:4433::2]
- helo=sipsolutions.net)
+	id 1hpSmP-0003P0-6A; Mon, 22 Jul 2019 07:30:41 +0000
+Received: from ivanoab6.miniserver.com ([5.153.251.140]
+ helo=www.kot-begemot.co.uk)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpSVS-0003PT-KJ
- for linux-um@lists.infradead.org; Mon, 22 Jul 2019 07:13:12 +0000
-Received: by sipsolutions.net with esmtpsa
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <johannes@sipsolutions.net>)
- id 1hpSVO-0003jq-Pd; Mon, 22 Jul 2019 09:13:06 +0200
-From: Johannes Berg <johannes@sipsolutions.net>
+ id 1hpSmK-0003Ms-TP
+ for linux-um@lists.infradead.org; Mon, 22 Jul 2019 07:30:39 +0000
+Received: from [192.168.17.6] (helo=jain.kot-begemot.co.uk)
+ by www.kot-begemot.co.uk with esmtps (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <anton.ivanov@cambridgegreys.com>)
+ id 1hpSmF-0001K7-Jq; Mon, 22 Jul 2019 07:30:31 +0000
+Received: from jain.kot-begemot.co.uk ([192.168.3.3])
+ by jain.kot-begemot.co.uk with esmtp (Exim 4.89)
+ (envelope-from <anton.ivanov@cambridgegreys.com>)
+ id 1hpSmC-0005V2-7D; Mon, 22 Jul 2019 08:30:30 +0100
+From: anton.ivanov@cambridgegreys.com
 To: linux-um@lists.infradead.org
-Subject: [PATCH v2] um: fix time travel mode
-Date: Mon, 22 Jul 2019 09:12:56 +0200
-Message-Id: <20190722071256.15360-1-johannes@sipsolutions.net>
-X-Mailer: git-send-email 2.20.1
-MIME-Version: 1.0
+Subject: [PATCHv3 1/5] um: Add legacy tap support and rename existing vector
+ to hybrid
+Date: Mon, 22 Jul 2019 08:30:21 +0100
+Message-Id: <20190722073025.20844-1-anton.ivanov@cambridgegreys.com>
+X-Mailer: git-send-email 2.11.0
+X-Spam-Score: -1.0
+X-Spam-Score: -1.0
+X-Clacks-Overhead: GNU Terry Pratchett
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190722_001310_672481_AA4B8F9F 
-X-CRM114-Status: GOOD (  11.06  )
+X-CRM114-CacheID: sfid-20190722_003037_080024_398FE052 
+X-CRM114-Status: GOOD (  16.81  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -56,123 +63,407 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: j@w1.fi, Richard Weinberger <richard@nod.at>,
- Johannes Berg <johannes.berg@intel.com>
+Cc: richard@nod.at, Anton Ivanov <anton.ivanov@cambridgegreys.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-From: Johannes Berg <johannes.berg@intel.com>
+From: Anton Ivanov <anton.ivanov@cambridgegreys.com>
 
-Unfortunately, my build fix for when time travel mode isn't
-enabled broke time travel mode, because I forgot that we need
-to use the timer time after the timer has been marked disabled,
-and thus need to leave the time stored instead of zeroing it.
+1. Adds legacy tap support
+2. Renames tap+raw as hybrid
 
-Fix that by splitting the inline into two, so we can call only
-the _mode() one in the relevant code path.
-
-Fixes: b482e48d29f1 ("um: fix build without CONFIG_UML_TIME_TRAVEL_SUPPORT")
-Signed-off-by: Johannes Berg <johannes.berg@intel.com>
+Signed-off-by: Anton Ivanov <anton.ivanov@cambridgegreys.com>
 ---
-v2: don't break non-TIME_TRAVEL build again
----
- arch/um/include/shared/timer-internal.h | 14 ++++++++++----
- arch/um/kernel/process.c                |  2 +-
- arch/um/kernel/time.c                   | 16 +++++++++-------
- 3 files changed, 20 insertions(+), 12 deletions(-)
+ arch/um/drivers/vector_kern.c       |   2 +
+ arch/um/drivers/vector_transports.c |  29 +++++-
+ arch/um/drivers/vector_user.c       | 203 +++++++++++++++++++++---------------
+ arch/um/drivers/vector_user.h       |   4 +-
+ 4 files changed, 151 insertions(+), 87 deletions(-)
 
-diff --git a/arch/um/include/shared/timer-internal.h b/arch/um/include/shared/timer-internal.h
-index 8574338bf23b..9991ec2371e4 100644
---- a/arch/um/include/shared/timer-internal.h
-+++ b/arch/um/include/shared/timer-internal.h
-@@ -34,10 +34,13 @@ static inline void time_travel_set_time(unsigned long long ns)
- 	time_travel_time = ns;
+diff --git a/arch/um/drivers/vector_kern.c b/arch/um/drivers/vector_kern.c
+index 046fa9ea0ccc..e314a60cdc98 100644
+--- a/arch/um/drivers/vector_kern.c
++++ b/arch/um/drivers/vector_kern.c
+@@ -186,6 +186,8 @@ static int get_transport_options(struct arglist *def)
+ 
+ 
+ 	if (strncmp(transport, TRANS_TAP, TRANS_TAP_LEN) == 0)
++		return 0;
++	if (strncmp(transport, TRANS_HYBRID, TRANS_HYBRID_LEN) == 0)
+ 		return (vec_rx | VECTOR_BPF);
+ 	if (strncmp(transport, TRANS_RAW, TRANS_RAW_LEN) == 0)
+ 		return (vec_rx | vec_tx | VECTOR_QDISC_BYPASS);
+diff --git a/arch/um/drivers/vector_transports.c b/arch/um/drivers/vector_transports.c
+index 77e4ebc206ae..2999f3bd1781 100644
+--- a/arch/um/drivers/vector_transports.c
++++ b/arch/um/drivers/vector_transports.c
+@@ -418,7 +418,7 @@ static int build_raw_transport_data(struct vector_private *vp)
+ 	return 0;
  }
  
--static inline void time_travel_set_timer(enum time_travel_timer_mode mode,
--					 unsigned long long expiry)
-+static inline void time_travel_set_timer_mode(enum time_travel_timer_mode mode)
+-static int build_tap_transport_data(struct vector_private *vp)
++static int build_hybrid_transport_data(struct vector_private *vp)
  {
- 	time_travel_timer_mode = mode;
+ 	if (uml_raw_enable_vnet_headers(vp->fds->rx_fd)) {
+ 		vp->form_header = &raw_form_header;
+@@ -432,7 +432,7 @@ static int build_tap_transport_data(struct vector_private *vp)
+ 				NETIF_F_TSO | NETIF_F_GSO | NETIF_F_GRO);
+ 		netdev_info(
+ 			vp->dev,
+-			"tap/raw: using vnet headers for tso and tx/rx checksum"
++			"tap/raw hybrid: using vnet headers for tso and tx/rx checksum"
+ 		);
+ 	} else {
+ 		return 0; /* do not try to enable tap too if raw failed */
+@@ -442,6 +442,29 @@ static int build_tap_transport_data(struct vector_private *vp)
+ 	return -1;
+ }
+ 
++static int build_tap_transport_data(struct vector_private *vp)
++{
++	/* "Pure" tap uses the same fd for rx and tx */
++	if (uml_tap_enable_vnet_headers(vp->fds->tx_fd)) {
++		vp->form_header = &raw_form_header;
++		vp->verify_header = &raw_verify_header;
++		vp->header_size = sizeof(struct virtio_net_hdr);
++		vp->rx_header_size = sizeof(struct virtio_net_hdr);
++		vp->dev->hw_features |=
++			(NETIF_F_TSO | NETIF_F_GSO | NETIF_F_GRO);
++		vp->dev->features |=
++			(NETIF_F_RXCSUM | NETIF_F_HW_CSUM |
++				NETIF_F_TSO | NETIF_F_GSO | NETIF_F_GRO);
++		netdev_info(
++			vp->dev,
++			"tap: using vnet headers for tso and tx/rx checksum"
++		);
++		return 0;
++	}
++	return -1;
 +}
 +
-+static inline void time_travel_set_timer_expiry(unsigned long long expiry)
-+{
- 	time_travel_timer_expiry = expiry;
- }
- #else
-@@ -50,8 +53,11 @@ static inline void time_travel_set_time(unsigned long long ns)
++
+ int build_transport_data(struct vector_private *vp)
  {
+ 	char *transport = uml_vector_fetch_arg(vp->parsed, "transport");
+@@ -454,6 +477,8 @@ int build_transport_data(struct vector_private *vp)
+ 		return build_raw_transport_data(vp);
+ 	if (strncmp(transport, TRANS_TAP, TRANS_TAP_LEN) == 0)
+ 		return build_tap_transport_data(vp);
++	if (strncmp(transport, TRANS_HYBRID, TRANS_HYBRID_LEN) == 0)
++		return build_hybrid_transport_data(vp);
+ 	return 0;
  }
  
--static inline void time_travel_set_timer(enum time_travel_timer_mode mode,
--					 unsigned long long expiry)
-+static inline void time_travel_set_timer_mode(enum time_travel_timer_mode mode)
-+{
+diff --git a/arch/um/drivers/vector_user.c b/arch/um/drivers/vector_user.c
+index 3d8cdbdb4e66..af1a1da432ca 100644
+--- a/arch/um/drivers/vector_user.c
++++ b/arch/um/drivers/vector_user.c
+@@ -115,12 +115,76 @@ struct arglist *uml_parse_vector_ifspec(char *arg)
+ 
+ #define PATH_NET_TUN "/dev/net/tun"
+ 
+-static struct vector_fds *user_init_tap_fds(struct arglist *ifspec)
++
++static int create_tap_fd(char *iface)
+ {
+ 	struct ifreq ifr;
+ 	int fd = -1;
+-	struct sockaddr_ll sock;
+ 	int err = -ENOMEM, offload;
++
++	fd = open(PATH_NET_TUN, O_RDWR);
++	if (fd < 0) {
++		printk(UM_KERN_ERR "uml_tap: failed to open tun device\n");
++		goto tap_fd_cleanup;
++	}
++	memset(&ifr, 0, sizeof(ifr));
++	ifr.ifr_flags = IFF_TAP | IFF_NO_PI | IFF_VNET_HDR;
++	strncpy((char *)&ifr.ifr_name, iface, sizeof(ifr.ifr_name) - 1);
++
++	err = ioctl(fd, TUNSETIFF, (void *) &ifr);
++	if (err != 0) {
++		printk(UM_KERN_ERR "uml_tap: failed to select tap interface\n");
++		goto tap_fd_cleanup;
++	}
++
++	offload = TUN_F_CSUM | TUN_F_TSO4 | TUN_F_TSO6;
++	ioctl(fd, TUNSETOFFLOAD, offload);
++	return fd;
++tap_fd_cleanup:
++	if (fd >= 0)
++		os_close_file(fd);
++	return err;
 +}
 +
-+static inline void time_travel_set_timer_expiry(unsigned long long expiry)
- {
++static int create_raw_fd(char *iface, int flags, int proto)
++{
++	struct ifreq ifr;
++	int fd = -1;
++	struct sockaddr_ll sock;
++	int err = -ENOMEM;
++
++	fd = socket(AF_PACKET, SOCK_RAW, flags);
++	if (fd == -1) {
++		err = -errno;
++		goto raw_fd_cleanup;
++	}
++	memset(&ifr, 0, sizeof(ifr));
++	strncpy((char *)&ifr.ifr_name, iface, sizeof(ifr.ifr_name) - 1);
++	if (ioctl(fd, SIOCGIFINDEX, (void *) &ifr) < 0) {
++		err = -errno;
++		goto raw_fd_cleanup;
++	}
++
++	sock.sll_family = AF_PACKET;
++	sock.sll_protocol = htons(proto);
++	sock.sll_ifindex = ifr.ifr_ifindex;
++
++	if (bind(fd,
++		(struct sockaddr *) &sock, sizeof(struct sockaddr_ll)) < 0) {
++		err = -errno;
++		goto raw_fd_cleanup;
++	}
++	return fd;
++raw_fd_cleanup:
++	printk(UM_KERN_ERR "user_init_raw: init failed, error %d", err);
++	if (fd >= 0)
++		os_close_file(fd);
++	return err;
++}
++
++static struct vector_fds *user_init_tap_fds(struct arglist *ifspec)
++{
++	int fd = -1;
+ 	char *iface;
+ 	struct vector_fds *result = NULL;
+ 
+@@ -142,117 +206,88 @@ static struct vector_fds *user_init_tap_fds(struct arglist *ifspec)
+ 
+ 	/* TAP */
+ 
+-	fd = open(PATH_NET_TUN, O_RDWR);
++	fd = create_tap_fd(iface);
+ 	if (fd < 0) {
+-		printk(UM_KERN_ERR "uml_tap: failed to open tun device\n");
++		printk(UM_KERN_ERR "uml_tap: failed to create tun interface\n");
+ 		goto tap_cleanup;
+ 	}
+ 	result->tx_fd = fd;
+-	memset(&ifr, 0, sizeof(ifr));
+-	ifr.ifr_flags = IFF_TAP | IFF_NO_PI | IFF_VNET_HDR;
+-	strncpy((char *)&ifr.ifr_name, iface, sizeof(ifr.ifr_name) - 1);
++	result->rx_fd = fd;
++	return result;
++tap_cleanup:
++	printk(UM_KERN_ERR "user_init_tap: init failed, error %d", fd);
++	if (result != NULL)
++		kfree(result);
++	return NULL;
++}
+ 
+-	err = ioctl(fd, TUNSETIFF, (void *) &ifr);
+-	if (err != 0) {
+-		printk(UM_KERN_ERR "uml_tap: failed to select tap interface\n");
+-		goto tap_cleanup;
++static struct vector_fds *user_init_hybrid_fds(struct arglist *ifspec)
++{
++	char *iface;
++	struct vector_fds *result = NULL;
++
++	iface = uml_vector_fetch_arg(ifspec, TOKEN_IFNAME);
++	if (iface == NULL) {
++		printk(UM_KERN_ERR "uml_tap: failed to parse interface spec\n");
++		goto hybrid_cleanup;
+ 	}
+ 
+-	offload = TUN_F_CSUM | TUN_F_TSO4 | TUN_F_TSO6;
+-	ioctl(fd, TUNSETOFFLOAD, offload);
++	result = uml_kmalloc(sizeof(struct vector_fds), UM_GFP_KERNEL);
++	if (result == NULL) {
++		printk(UM_KERN_ERR "uml_tap: failed to allocate file descriptors\n");
++		goto hybrid_cleanup;
++	}
++	result->rx_fd = -1;
++	result->tx_fd = -1;
++	result->remote_addr = NULL;
++	result->remote_addr_size = 0;
+ 
+-	/* RAW */
++	/* TAP */
+ 
+-	fd = socket(AF_PACKET, SOCK_RAW, htons(ETH_P_ALL));
+-	if (fd == -1) {
+-		printk(UM_KERN_ERR
+-			"uml_tap: failed to create socket: %i\n", -errno);
+-		goto tap_cleanup;
+-	}
+-	result->rx_fd = fd;
+-	memset(&ifr, 0, sizeof(ifr));
+-	strncpy((char *)&ifr.ifr_name, iface, sizeof(ifr.ifr_name) - 1);
+-	if (ioctl(fd, SIOCGIFINDEX, (void *) &ifr) < 0) {
+-		printk(UM_KERN_ERR
+-			"uml_tap: failed to set interface: %i\n", -errno);
+-		goto tap_cleanup;
++	result->tx_fd = create_tap_fd(iface);
++	if (result->tx_fd < 0) {
++		printk(UM_KERN_ERR "uml_tap: failed to create tun interface: %i\n", result->tx_fd);
++		goto hybrid_cleanup;
+ 	}
+ 
+-	sock.sll_family = AF_PACKET;
+-	sock.sll_protocol = htons(ETH_P_ALL);
+-	sock.sll_ifindex = ifr.ifr_ifindex;
++	/* RAW */
+ 
+-	if (bind(fd,
+-		(struct sockaddr *) &sock, sizeof(struct sockaddr_ll)) < 0) {
++	result->rx_fd = create_raw_fd(iface, ETH_P_ALL, ETH_P_ALL);
++	if (result->rx_fd == -1) {
+ 		printk(UM_KERN_ERR
+-			"user_init_tap: failed to bind raw pair, err %d\n",
+-				-errno);
+-		goto tap_cleanup;
++			"uml_tap: failed to create paired raw socket: %i\n", result->rx_fd);
++		goto hybrid_cleanup;
+ 	}
+ 	return result;
+-tap_cleanup:
+-	printk(UM_KERN_ERR "user_init_tap: init failed, error %d", err);
+-	if (result != NULL) {
+-		if (result->rx_fd >= 0)
+-			os_close_file(result->rx_fd);
+-		if (result->tx_fd >= 0)
+-			os_close_file(result->tx_fd);
++hybrid_cleanup:
++	printk(UM_KERN_ERR "user_init_hybrid: init failed");
++	if (result != NULL)
+ 		kfree(result);
+-	}
+ 	return NULL;
  }
  
-diff --git a/arch/um/kernel/process.c b/arch/um/kernel/process.c
-index 67c0d1a860e9..6bede7888fc2 100644
---- a/arch/um/kernel/process.c
-+++ b/arch/um/kernel/process.c
-@@ -213,7 +213,7 @@ static void time_travel_sleep(unsigned long long duration)
- 	if (time_travel_timer_mode != TT_TMR_DISABLED ||
- 	    time_travel_timer_expiry < next) {
- 		if (time_travel_timer_mode == TT_TMR_ONESHOT)
--			time_travel_set_timer(TT_TMR_DISABLED, 0);
-+			time_travel_set_timer_mode(TT_TMR_DISABLED);
- 		/*
- 		 * time_travel_time will be adjusted in the timer
- 		 * IRQ handler so it works even when the signal
-diff --git a/arch/um/kernel/time.c b/arch/um/kernel/time.c
-index 6a051b078359..234757233355 100644
---- a/arch/um/kernel/time.c
-+++ b/arch/um/kernel/time.c
-@@ -50,7 +50,7 @@ void timer_handler(int sig, struct siginfo *unused_si, struct uml_pt_regs *regs)
- static int itimer_shutdown(struct clock_event_device *evt)
+ 
+ static struct vector_fds *user_init_raw_fds(struct arglist *ifspec)
  {
- 	if (time_travel_mode != TT_MODE_OFF)
--		time_travel_set_timer(TT_TMR_DISABLED, 0);
-+		time_travel_set_timer_mode(TT_TMR_DISABLED);
+-	struct ifreq ifr;
+ 	int rxfd = -1, txfd = -1;
+-	struct sockaddr_ll sock;
+ 	int err = -ENOMEM;
+ 	char *iface;
+ 	struct vector_fds *result = NULL;
  
- 	if (time_travel_mode != TT_MODE_INFCPU)
- 		os_timer_disable();
-@@ -62,9 +62,10 @@ static int itimer_set_periodic(struct clock_event_device *evt)
+ 	iface = uml_vector_fetch_arg(ifspec, TOKEN_IFNAME);
+ 	if (iface == NULL)
+-		goto cleanup;
++		goto raw_cleanup;
+ 
+-	rxfd = socket(AF_PACKET, SOCK_RAW, ETH_P_ALL);
++	rxfd = create_raw_fd(iface, ETH_P_ALL, ETH_P_ALL);
+ 	if (rxfd == -1) {
+ 		err = -errno;
+-		goto cleanup;
++		goto raw_cleanup;
+ 	}
+-	txfd = socket(AF_PACKET, SOCK_RAW, 0); /* Turn off RX on this fd */
++	txfd = create_raw_fd(iface, 0, ETH_P_IP); /* Turn off RX on this fd */
+ 	if (txfd == -1) {
+ 		err = -errno;
+-		goto cleanup;
+-	}
+-	memset(&ifr, 0, sizeof(ifr));
+-	strncpy((char *)&ifr.ifr_name, iface, sizeof(ifr.ifr_name) - 1);
+-	if (ioctl(rxfd, SIOCGIFINDEX, (void *) &ifr) < 0) {
+-		err = -errno;
+-		goto cleanup;
+-	}
+-
+-	sock.sll_family = AF_PACKET;
+-	sock.sll_protocol = htons(ETH_P_ALL);
+-	sock.sll_ifindex = ifr.ifr_ifindex;
+-
+-	if (bind(rxfd,
+-		(struct sockaddr *) &sock, sizeof(struct sockaddr_ll)) < 0) {
+-		err = -errno;
+-		goto cleanup;
++		goto raw_cleanup;
+ 	}
+-
+-	sock.sll_family = AF_PACKET;
+-	sock.sll_protocol = htons(ETH_P_IP);
+-	sock.sll_ifindex = ifr.ifr_ifindex;
+-
+-	if (bind(txfd,
+-		(struct sockaddr *) &sock, sizeof(struct sockaddr_ll)) < 0) {
+-		err = -errno;
+-		goto cleanup;
+-	}
+-
+ 	result = uml_kmalloc(sizeof(struct vector_fds), UM_GFP_KERNEL);
+ 	if (result != NULL) {
+ 		result->rx_fd = rxfd;
+@@ -261,13 +296,10 @@ static struct vector_fds *user_init_raw_fds(struct arglist *ifspec)
+ 		result->remote_addr_size = 0;
+ 	}
+ 	return result;
+-cleanup:
++raw_cleanup:
+ 	printk(UM_KERN_ERR "user_init_raw: init failed, error %d", err);
+-	if (rxfd >= 0)
+-		os_close_file(rxfd);
+-	if (txfd >= 0)
+-		os_close_file(txfd);
+-	kfree(result);
++	if (result != NULL)
++		kfree(result);
+ 	return NULL;
+ }
+ 
+@@ -457,6 +489,8 @@ struct vector_fds *uml_vector_user_open(
+ 	}
+ 	if (strncmp(transport, TRANS_RAW, TRANS_RAW_LEN) == 0)
+ 		return user_init_raw_fds(parsed);
++	if (strncmp(transport, TRANS_HYBRID, TRANS_HYBRID_LEN) == 0)
++		return user_init_hybrid_fds(parsed);
+ 	if (strncmp(transport, TRANS_TAP, TRANS_TAP_LEN) == 0)
+ 		return user_init_tap_fds(parsed);
+ 	if (strncmp(transport, TRANS_GRE, TRANS_GRE_LEN) == 0)
+@@ -483,8 +517,9 @@ int uml_vector_sendmsg(int fd, void *hdr, int flags)
+ int uml_vector_recvmsg(int fd, void *hdr, int flags)
  {
- 	unsigned long long interval = NSEC_PER_SEC / HZ;
+ 	int n;
++	struct msghdr *msg = (struct msghdr *) hdr;
  
--	if (time_travel_mode != TT_MODE_OFF)
--		time_travel_set_timer(TT_TMR_PERIODIC,
--				      time_travel_time + interval);
-+	if (time_travel_mode != TT_MODE_OFF) {
-+		time_travel_set_timer_mode(TT_TMR_PERIODIC);
-+		time_travel_set_timer_expiry(time_travel_time + interval);
-+	}
+-	CATCH_EINTR(n = recvmsg(fd, (struct msghdr *) hdr,  flags));
++	CATCH_EINTR(n = readv(fd, msg->msg_iov, msg->msg_iovlen));
+ 	if ((n < 0) && (errno == EAGAIN))
+ 		return 0;
+ 	if (n >= 0)
+diff --git a/arch/um/drivers/vector_user.h b/arch/um/drivers/vector_user.h
+index d7cbff73b7ff..6bf50cf78ad0 100644
+--- a/arch/um/drivers/vector_user.h
++++ b/arch/um/drivers/vector_user.h
+@@ -16,13 +16,15 @@
+ #define TRANS_TAP "tap"
+ #define TRANS_TAP_LEN strlen(TRANS_TAP)
  
- 	if (time_travel_mode != TT_MODE_INFCPU)
- 		os_timer_set_interval(interval);
-@@ -77,9 +78,10 @@ static int itimer_next_event(unsigned long delta,
- {
- 	delta += 1;
+-
+ #define TRANS_GRE "gre"
+ #define TRANS_GRE_LEN strlen(TRANS_RAW)
  
--	if (time_travel_mode != TT_MODE_OFF)
--		time_travel_set_timer(TT_TMR_ONESHOT,
--				      time_travel_time + delta);
-+	if (time_travel_mode != TT_MODE_OFF) {
-+		time_travel_set_timer_mode(TT_TMR_ONESHOT);
-+		time_travel_set_timer_expiry(time_travel_time + delta);
-+	}
+ #define TRANS_L2TPV3 "l2tpv3"
+ #define TRANS_L2TPV3_LEN strlen(TRANS_L2TPV3)
  
- 	if (time_travel_mode != TT_MODE_INFCPU)
- 		return os_timer_one_shot(delta);
++#define TRANS_HYBRID "hybrid"
++#define TRANS_HYBRID_LEN strlen(TRANS_HYBRID)
++
+ #ifndef IPPROTO_GRE
+ #define IPPROTO_GRE 0x2F
+ #endif
 -- 
-2.20.1
+2.11.0
 
 
 _______________________________________________
