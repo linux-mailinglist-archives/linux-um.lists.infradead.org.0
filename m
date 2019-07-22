@@ -2,98 +2,73 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3D24370CA9
-	for <lists+linux-um@lfdr.de>; Tue, 23 Jul 2019 00:31:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 31F3270DB5
+	for <lists+linux-um@lfdr.de>; Tue, 23 Jul 2019 01:54:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:From:To:Subject:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CYXJ5TcDoQXdZkDeBUW1P8PXatANUBgAjP+NY6HBBsA=; b=uxhLwpE6m370fG
-	HdHLh5ZGb9xLjHZY49Q3vRoJ5JfG0YQKN+2cyZfPpjBC8AMOC4+DuuqiWHWyAs41legdVZQY5S/0Z
-	+H91XoMVq2TflpKCkrCQmb6AMVXU4zbQauQviP1Dn/vwVXUc7UnfrcUxjAi1FEEn4fEv6j3z1idhu
-	dQaWKku2gC2GHOFWASxxn9eA+TPBVDl1ko2koroSgmsunhkAKq1teyMCzZdQLzB8dtvMVXZwImapG
-	JhdXhNc3O8rJ45OMQmqU32uJi0npQS9P4ZKo67pY1XaAG0binTNm11MXJjXVhw2YKML4ZrSXbaopu
-	k4eVR+t8K7HxU0yrDLlg==;
+	List-Owner; bh=7yQCUfz3DXUNvyq/h24n5kES1KGgVal7X5etU67nvx4=; b=UqHtOA7+/bxVr8
+	WcV6M5wW1Jnrm35eHa5Y75FgcjZUx4i2eFnbsAD99RE4cnYmZDCJMEMk84R0fFnYmqSOcwKM2QOwD
+	X+zBcoFnEiXAOzOTRcRQe+vtkH2AB2ZpMZhvgasxdqyLX+Q0tX1JIOZK2V8Am+8XASeHf4bofHxF5
+	WYYqJmM5C4DagM2+mhmesIqC19jruSp/TpQOB0+upeTKVsPfgk+efpnfw2EifsBpXGlDH5jyY3N0/
+	zLF6+T9CRZ2VdQegzLzAsZudl0OHKcxVr/dNZaOKTF3ebMNOhNtqE7Pz8puM5ayEj0Wnel4C6jQC3
+	Lu+M5oMrznruRmBmH2XA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hpgpp-0004ev-I9; Mon, 22 Jul 2019 22:31:09 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1hpi8G-0006tp-UY; Mon, 22 Jul 2019 23:54:17 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hpgph-0004co-US
- for linux-um@lists.infradead.org; Mon, 22 Jul 2019 22:31:04 +0000
-Received: by mail-pf1-x442.google.com with SMTP id g2so18057790pfq.0
- for <linux-um@lists.infradead.org>; Mon, 22 Jul 2019 15:31:01 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=6t6Z8yaBFYoLHYTxv5eDMWvXoAnvu95Bt2xJR7LIXPM=;
- b=Pbqc45wUlOY+YQt8+tSNpR+Cy6b3vnFhYwUa9M0evgqUef7NsHugFBm+TCmFklkAQH
- /1lrgZc1GAgvI4D0R8SZOkah3X6ZV5+9yK4hR1+P74j8LxSFoEWTibbwplmZTPC/CN6J
- CYgHBM2VUAJ4iwonvfOrv7/nFN03R96MD9MhaJ7IY1fqBOMtGMDM4zDdufDEjOTvMaCY
- 7svj3GjmBdASH8FN7s+NOxJSOa/i5DqzWQUHmgUS274UJhAHDbRAGIXUC22gLI2OvU69
- zPfYScJFPjUqVHvxdjR/3qAKP+Pi6GaNPjDX3yguwdNPbSjWNDcNmixX7XdD79jAV0Q0
- oEUg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=6t6Z8yaBFYoLHYTxv5eDMWvXoAnvu95Bt2xJR7LIXPM=;
- b=idDuzZnmsWgfwLMba2d8qogiTZ6NWbdifH8S4MZlpQ8iABk5e+f9fcGa97uOGn3rwO
- LIyV0/+GEBXCUtGct75nGWKQFPsD6bqlSsBhYCpLVzIdhVQK0kkVH93ZEVSzvb0sLR7v
- Ceub7MoE975SBiZmQSUnVHYcPLovnQKdWrMMwR3khHfu+/9+3cP4VIr7J9uThyqNzyQo
- rKppJsj26qGD2qCwaUsSyHOBrFkri4NCp+kS0WTpx7nHfUAomrzDvVTi6nWI78qRr2VN
- kY3anP6PuVawEtsUrNN6rJfzxfVSM0TW2B2pF814pFaBJaZm2foE76QfgojtLvBJN0T1
- 1iCw==
-X-Gm-Message-State: APjAAAVlsmucjNCz2whztQf9ZkQLqztzfSpNESMGEfSeQzR5R6YPJECE
- lxWxCbhnn+Bb+ETqTddUjNB00qVm+JFROLxwfpG1nQ==
-X-Google-Smtp-Source: APXvYqyO0RsU5hJiKN1UBBMLEqs8dzVSGIuLzMYi1uVToZEbJ6XuzYxALmxwq0bVMsvtqwjv25P0M3jBSrq2d1nPCNQ=
-X-Received: by 2002:aa7:81ca:: with SMTP id c10mr2499024pfn.185.1563834660552; 
- Mon, 22 Jul 2019 15:31:00 -0700 (PDT)
+ id 1hpi8D-0006sv-J7
+ for linux-um@lists.infradead.org; Mon, 22 Jul 2019 23:54:14 +0000
+Received: from kernel.org (unknown [104.132.0.74])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 06C1320840;
+ Mon, 22 Jul 2019 23:54:11 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1563839651;
+ bh=7riE0sVQmQS5QgS4pP9ptPUvfmyCxgbuxcUzFNIX2L8=;
+ h=In-Reply-To:References:Subject:To:Cc:From:Date:From;
+ b=lMfzRRCskgjYJCyPlokQPKY6jX+VpgCrEwPkMIQvRxf8iOB5wgrS9PjXaN0wjtfWh
+ RiuaqfDlvSUHC1e16Pk0GMsnB1H5f28N5075BUdTFeSOe4/ZlQbTkjJF0oMcqI6dyP
+ T+b1BFHi89keU/CNeTzd05/B7YC7Rqku9pnyKVeY=
 MIME-Version: 1.0
+In-Reply-To: <CAFd5g45hdCxEavSxirr0un_uLzo5Z-J4gHRA06qjzcQrTzmjVg@mail.gmail.com>
 References: <20190712081744.87097-1-brendanhiggins@google.com>
- <20190712081744.87097-5-brendanhiggins@google.com>
- <20190715221554.8417320665@mail.kernel.org>
  <CAFd5g47ikJmA0uGoavAFsh+hQvDmgsOi26tyii0612R=rt7iiw@mail.gmail.com>
  <CAFd5g44_axVHNMBzxSURQB_-R+Rif7cZcg7PyZ_SS+5hcy5jZA@mail.gmail.com>
  <20190716175021.9CA412173C@mail.kernel.org>
  <CAFd5g453vXeSUCZenCk_CzJ-8a1ym9RaPo0NVF=FujF9ac-5Ag@mail.gmail.com>
  <20190718175024.C3EC421019@mail.kernel.org>
  <CAFd5g46a7C1+R6ZcE_SkqaYqgrH5Rx3M=X7orFyaMgFLDbeYYA@mail.gmail.com>
- <20190719000834.GA3228@google.com> <20190722200347.261D3218C9@mail.kernel.org>
-In-Reply-To: <20190722200347.261D3218C9@mail.kernel.org>
-From: Brendan Higgins <brendanhiggins@google.com>
-Date: Mon, 22 Jul 2019 15:30:49 -0700
-Message-ID: <CAFd5g45hdCxEavSxirr0un_uLzo5Z-J4gHRA06qjzcQrTzmjVg@mail.gmail.com>
+ <20190719000834.GA3228@google.com>
+ <20190722200347.261D3218C9@mail.kernel.org>
+ <CAFd5g45hdCxEavSxirr0un_uLzo5Z-J4gHRA06qjzcQrTzmjVg@mail.gmail.com>
 Subject: Re: [PATCH v9 04/18] kunit: test: add kunit_stream a std::stream like
  logger
-To: Stephen Boyd <sboyd@kernel.org>
+To: Brendan Higgins <brendanhiggins@google.com>
+From: Stephen Boyd <sboyd@kernel.org>
+User-Agent: alot/0.8.1
+Date: Mon, 22 Jul 2019 16:54:10 -0700
+Message-Id: <20190722235411.06C1320840@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190722_153102_135560_B4E1FE12 
-X-CRM114-Status: GOOD (  43.69  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20190722_165413_659468_E5A44C82 
+X-CRM114-Status: GOOD (  16.12  )
+X-Spam-Score: -4.8 (----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-4.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ 0.1 DKIM_INVALID           DKIM or DK signature exists, but is not valid
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -135,333 +110,54 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Mon, Jul 22, 2019 at 1:03 PM Stephen Boyd <sboyd@kernel.org> wrote:
->
-> Quoting Brendan Higgins (2019-07-18 17:08:34)
-> > On Thu, Jul 18, 2019 at 12:22:33PM -0700, Brendan Higgins wrote:
+Quoting Brendan Higgins (2019-07-22 15:30:49)
+> On Mon, Jul 22, 2019 at 1:03 PM Stephen Boyd <sboyd@kernel.org> wrote:
 > >
-> > I started poking around with your suggestion while we are waiting. A
-> > couple early observations:
 > >
-> > 1) It is actually easier to do than I previously thought and will probably
-> >    help with getting more of the planned TAP output stuff working.
-> >
-> >    That being said, this is still a pretty substantial undertaking and
-> >    will likely take *at least* a week to implement and properly review.
-> >    Assuming everything goes extremely well (no unexpected issues on my
-> >    end, very responsive reviewers, etc).
-> >
-> > 2) It *will* eliminate the need for kunit_stream.
-> >
-> > 3) ...but, it *will not* eliminate the need for string_stream.
-> >
-> > Based on my early observations, I do think it is worth doing, but I
-> > don't think it is worth trying to make it in this patchset (unless I
-> > have already missed the window, or it is going to be open for a while):
->
-> The merge window is over. Typically code needs to be settled a few weeks
-> before it opens (i.e. around -rc4 or -rc5) for most maintainers to pick
-> up patches for the next merge window.
+> > What's the calling context of the assertions and expectations? I still
+> > don't like the fact that string stream needs to allocate buffers and
+> > throw them into a list somewhere because the calling context matters
+> > there.
+> 
+> The calling context is the same as before, which is anywhere.
 
-Yeah, it closed on Sunday, right?
+Ok. That's concerning then.
 
-I thought we might be able to squeak in since it was *mostly* settled,
-and Shuah sent me an email two weeks ago which I interpreted to mean
-she was still willing to take it.
+> 
+> > I'd prefer we just wrote directly to the console/log via printk
+> > instead. That way things are simple because we use the existing
+> > buffering path of printk, but maybe there's some benefit to the string
+> > stream that I don't see? Right now it looks like it builds a string and
+> > then dumps it to printk so I'm sort of lost what the benefit is over
+> > just writing directly with printk.
+> 
+> It's just buffering it so the whole string gets printed uninterrupted.
+> If we were to print out piecemeal to printk, couldn't we have another
+> call to printk come in causing it to garble the KUnit message we are
+> in the middle of printing?
 
-In any case, it doesn't matter now.
+Yes, printing piecemeal by calling printk many times could lead to
+interleaving of messages if something else comes in such as an interrupt
+printing something. Printk has some support to hold "records" but I'm
+not sure how that would work here because KERN_CONT talks about only
+being used early on in boot code. I haven't looked at printk in detail
+though so maybe I'm all wrong and KERN_CONT just works?
 
-> > I do think it will make things much cleaner, but I don't think it will
-> > achieve your desired goal of getting rid of an unstructured
-> > {kunit|string}_stream style interface; it just adds a layer on top of it
-> > that makes it harder to misuse.
->
-> Ok.
->
-> >
-> > I attached a patch of what I have so far at the end of this email so you
-> > can see what I am talking about. And of course, if you agree with my
-> > assessment, so we can start working on it as a future patch.
-> >
-> > A couple things in regard to the patch I attached:
-> >
-> > 1) I wrote it pretty quickly so there are almost definitely mistakes.
-> >    You should consider it RFC. I did verify it compiles though.
-> >
-> > 2) Also, I did use kunit_stream in writing it: all occurences should be
-> >    pretty easy to replace with string_stream; nevertheless, the reason
-> >    for this is just to make it easier to play with the current APIs. I
-> >    wanted to have something working before I went through a big tedious
-> >    refactoring. So sorry if it causes any confusion.
-> >
-> > 3) I also based the patch on all the KUnit patches I have queued up
-> >    (includes things like mocking and such) since I want to see how this
-> >    serialization thing will work with mocks and matchers and things like
-> >    that.
->
-> Great!
->
-> >
-> > From 53d475d3d56afcf92b452c6d347dbedfa1a17d34 Mon Sep 17 00:00:00 2001
-> > From: Brendan Higgins <brendanhiggins@google.com>
-> > Date: Thu, 18 Jul 2019 16:08:52 -0700
-> > Subject: [PATCH v1] DO NOT MERGE: started playing around with the
-> >  serialization api
-> >
-> > ---
-> >  include/kunit/assert.h | 130 ++++++++++++++++++++++++++++++
-> >  include/kunit/mock.h   |   4 +
-> >  kunit/Makefile         |   3 +-
-> >  kunit/assert.c         | 179 +++++++++++++++++++++++++++++++++++++++++
-> >  kunit/mock.c           |   6 +-
-> >  5 files changed, 318 insertions(+), 4 deletions(-)
-> >  create mode 100644 include/kunit/assert.h
-> >  create mode 100644 kunit/assert.c
-> >
-> > diff --git a/include/kunit/assert.h b/include/kunit/assert.h
-> > new file mode 100644
-> > index 0000000000000..e054fdff4642f
-> > --- /dev/null
-> > +++ b/include/kunit/assert.h
-> > @@ -0,0 +1,130 @@
-> > +/* SPDX-License-Identifier: GPL-2.0 */
-> > +/*
-> > + * Assertion and expectation serialization API.
-> > + *
-> > + * Copyright (C) 2019, Google LLC.
-> > + * Author: Brendan Higgins <brendanhiggins@google.com>
-> > + */
-> > +
-> > +#ifndef _KUNIT_ASSERT_H
-> > +#define _KUNIT_ASSERT_H
-> > +
-> > +#include <kunit/test.h>
-> > +#include <kunit/mock.h>
-> > +
-> > +enum kunit_assert_type {
-> > +       KUNIT_ASSERTION,
-> > +       KUNIT_EXPECTATION,
-> > +};
-> > +
-> > +struct kunit_assert {
-> > +       enum kunit_assert_type type;
-> > +       const char *line;
-> > +       const char *file;
-> > +       struct va_format message;
-> > +       void (*format)(struct kunit_assert *assert,
-> > +                      struct kunit_stream *stream);
->
-> Would passing in the test help too?
+Can printk be called once with whatever is in the struct? Otherwise if
+this is about making printk into a structured log then maybe printk
+isn't the proper solution anyway. Maybe a dev interface should be used
+instead that can handle starting and stopping tests (via ioctl) in
+addition to reading test results, records, etc. with read() and a
+clearing of the records. Then the seqfile API works naturally. All of
+this is a bit premature, but it looks like you're going down the path of
+making something akin to ftrace that stores binary formatted
+assertion/expectation records in a lockless ring buffer that then
+formats those records when the user asks for them.
 
-Yeah, it would probably be good to put one in `struct kunit_assert`.
+I can imagine someone wanting to write unit tests that check conditions
+from a simulated hardirq context via irq works (a driver mock
+framework?), so this doesn't seem far off.
 
-> > +};
-> > +
-> > +void kunit_base_assert_format(struct kunit_assert *assert,
-> > +                             struct kunit_stream *stream);
-> > +
-> > +void kunit_assert_print_msg(struct kunit_assert *assert,
-> > +                           struct kunit_stream *stream);
-> > +
-> > +struct kunit_unary_assert {
-> > +       struct kunit_assert assert;
-> > +       const char *condition;
-> > +       bool expected_true;
-> > +};
-> > +
-> > +void kunit_unary_assert_format(struct kunit_assert *assert,
-> > +                              struct kunit_stream *stream);
-> > +
-> > +struct kunit_ptr_not_err_assert {
-> > +       struct kunit_assert assert;
-> > +       const char *text;
-> > +       void *value;
-> > +};
-> > +
-> > +void kunit_ptr_not_err_assert_format(struct kunit_assert *assert,
-> > +                                    struct kunit_stream *stream);
-> > +
-> > +struct kunit_binary_assert {
-> > +       struct kunit_assert assert;
-> > +       const char *operation;
-> > +       const char *left_text;
-> > +       long long left_value;
-> > +       const char *right_text;
-> > +       long long right_value;
-> > +};
-> > +
-> > +void kunit_binary_assert_format(struct kunit_assert *assert,
-> > +                               struct kunit_stream *stream);
-> > +
-> > +struct kunit_binary_ptr_assert {
-> > +       struct kunit_assert assert;
-> > +       const char *operation;
-> > +       const char *left_text;
-> > +       void *left_value;
-> > +       const char *right_text;
-> > +       void *right_value;
-> > +};
-> > +
-> > +void kunit_binary_ptr_assert_format(struct kunit_assert *assert,
-> > +                                   struct kunit_stream *stream);
-> > +
-> > +struct kunit_binary_str_assert {
-> > +       struct kunit_assert assert;
-> > +       const char *operation;
-> > +       const char *left_text;
-> > +       const char *left_value;
-> > +       const char *right_text;
-> > +       const char *right_value;
-> > +};
-> > +
-> > +void kunit_binary_str_assert_format(struct kunit_assert *assert,
-> > +                                   struct kunit_stream *stream);
-> > +
-> > +struct kunit_mock_assert {
-> > +       struct kunit_assert assert;
-> > +};
-> > +
-> > +struct kunit_mock_no_expectations {
-> > +       struct kunit_mock_assert assert;
-> > +};
->
-> What's the purpose of making a wrapper struct with no other members?
-> Just to make a different struct for some sort of type checking? I guess
-> it's OK but I don't think it will be very useful in practice.
-
-Yeah, just for typing purposes. I don't mind integrating this into the
-current patchset and then deciding if we want it or not.
-
-> > +
-> > +struct kunit_mock_declaration {
-> > +       const char *function_name;
-> > +       const char **type_names;
-> > +       const void **params;
-> > +       int len;
-> > +};
-> > +
-> > +void kunit_mock_declaration_format(struct kunit_mock_declaration *declaration,
-> > +                                  struct kunit_stream *stream);
-> > +
-> > +struct kunit_matcher_result {
-> > +       struct kunit_assert assert;
-> > +};
-> > +
-> > +struct kunit_mock_failed_match {
-> > +       struct list_head node;
-> > +       const char *expectation_text;
-> > +       struct kunit_matcher_result *matcher_list;
->
-> Minor nitpick: this code could use some const sprinkling.
-
-Will do.
-
-> > +       size_t matcher_list_len;
-> > +};
-> > +
-> > +void kunit_mock_failed_match_format(struct kunit_mock_failed_match *match,
-> > +                                   struct kunit_stream *stream);
-> > +
-> > +struct kunit_mock_no_match {
-> > +       struct kunit_mock_assert assert;
-> > +       struct kunit_mock_declaration declaration;
-> > +       struct list_head failed_match_list;
-> > +};
-> > +
-> > +void kunit_mock_no_match_format(struct kunit_assert *assert,
-> > +                               struct kunit_stream *stream);
-> > +
-> > +#endif /*  _KUNIT_ASSERT_H */
-> > diff --git a/kunit/assert.c b/kunit/assert.c
-> > new file mode 100644
-> > index 0000000000000..75bb6922a994e
-> > --- /dev/null
-> > +++ b/kunit/assert.c
-> > @@ -0,0 +1,179 @@
-> > +// SPDX-License-Identifier: GPL-2.0
-> > +/*
-> > + * Assertion and expectation serialization API.
-> > + *
-> > + * Copyright (C) 2019, Google LLC.
-> > + * Author: Brendan Higgins <brendanhiggins@google.com>
-> > + */
-> > +#include <kunit/assert.h>
-> > +
-> > +void kunit_base_assert_format(struct kunit_assert *assert,
-> > +                             struct kunit_stream *stream)
-> > +{
-> > +       const char *expect_or_assert;
-> > +
-> > +       if (assert->type == KUNIT_EXPECTATION)
-> > +               expect_or_assert = "EXPECTATION";
-> > +       else
-> > +               expect_or_assert = "ASSERTION";
->
-> Make this is a switch statement so we can have the compiler complain if
-> an enum is missing.
-
-Nice call! I didn't know the compiler warned about that. Will fix.
-
-> > +
-> > +       kunit_stream_add(stream, "%s FAILED at %s:%s\n",
-> > +                        expect_or_assert, assert->file, assert->line);
-> > +}
-> > +
-> > +void kunit_assert_print_msg(struct kunit_assert *assert,
-> > +                           struct kunit_stream *stream)
-> > +{
-> > +       if (assert->message.fmt)
-> > +               kunit_stream_add(stream, "\n%pV", &assert->message);
-> > +}
-> > +
-> [...]
-> > +
-> > +void kunit_mock_failed_match_format(struct kunit_mock_failed_match *match,
-> > +                                   struct kunit_stream *stream)
-> > +{
-> > +       struct kunit_matcher_result *result;
-> > +       size_t i;
-> > +
-> > +       kunit_stream_add(stream,
-> > +                        "Tried expectation: %s, but\n",
-> > +                        match->expectation_text);
-> > +       for (i = 0; i < match->matcher_list_len; i++) {
-> > +               result = &match->matcher_list[i];
-> > +               kunit_stream_add(stream, "\t");
-> > +               result->assert.format(&result->assert, stream);
-> > +               kunit_stream_add(stream, "\n");
-> > +       }
->
-> What's the calling context of the assertions and expectations? I still
-> don't like the fact that string stream needs to allocate buffers and
-> throw them into a list somewhere because the calling context matters
-> there.
-
-The calling context is the same as before, which is anywhere.
-
-> I'd prefer we just wrote directly to the console/log via printk
-> instead. That way things are simple because we use the existing
-> buffering path of printk, but maybe there's some benefit to the string
-> stream that I don't see? Right now it looks like it builds a string and
-> then dumps it to printk so I'm sort of lost what the benefit is over
-> just writing directly with printk.
-
-It's just buffering it so the whole string gets printed uninterrupted.
-If we were to print out piecemeal to printk, couldn't we have another
-call to printk come in causing it to garble the KUnit message we are
-in the middle of printing?
-
-> Maybe it's this part that you wrote up above?
->
-> > > Nevertheless, I think the debate over the usefulness of the
-> > > string_stream and kunit_stream are separate topics. Even if we made
-> > > kunit_stream more structured, I am pretty sure I would want to use
-> > > string_stream or some variation for constructing the message.
->
-> Why do we need string_stream to construct the message? Can't we just
-> print it as we process it?
-
-See preceding comment.
 
 _______________________________________________
 linux-um mailing list
