@@ -2,91 +2,35 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3D6907218B
-	for <lists+linux-um@lfdr.de>; Tue, 23 Jul 2019 23:30:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B9DDF728FB
+	for <lists+linux-um@lfdr.de>; Wed, 24 Jul 2019 09:25:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=AmsO9g4tWQj4C1XjPCukoiYPVCxMOI4mlWhzp/842ao=; b=ue7AkVMSTLAensjXaTWMUxdgW
-	CrRGFbHrukDEpUXNsWhDsNDbRW/dc3aVUqwP/okyHqRlYIgpyNP8ZjU7HeU1dvWQXGVTQ+D7pBhlB
-	wyoXkA1XmAkuP46Me7QkAYZFJB/6qpN7Q5FMViRZWvSmQKW6HNEvoaaYmXoOllGqZA66nPDo5HgMS
-	tId8l3kG70Kw9BFTdGtnzrfhyPpJpzfOdFUvmSxRsLoVcbzztBetnzNMooWblvl2DI6iK0SQemT4U
-	i5kWttB2wD571X4DtmNjOAiQYpoROYRh0nHc8Zo9yZv2MOqk0kGmuaTowjb+2MBSMbdI50v0Re+iy
-	X7GpGNUTg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=4X6m/M7ECqjc4VlNPUwQwgjQ4TMcJ5BCx7zrxJu/5yQ=; b=Trtlw9UIZrn6Dh
+	dOLmN7oFIuTeDeDJv4Vmz7eyg3mHPk2pYeMBVGmtCWosrgTN7JoV8bP9m+Nn/XGyOZJEt15EuXAf3
+	2ydmXBPdBcuLaA3vgpEM4HzkOo3qVFQyLu/68tbLvZIdnIqUqy8XU2rfAg7lGO4oc44miEAb9ZuF/
+	y6mysWSnln9cVsssT4VpCBGFsjieFFdkqR9oG9uP+jkpSPSucmbo36oP1nlrnqiFZwmuROA7tKPA1
+	9GypdEC4X1MOQxAyPGrTCNgTyzi41qlFii/zGlc0xpYYGMwvIkDtBlO7H9IX/ZCQE3b9DItSXQ9AM
+	mY1Gagbq94UC2oUmZbMQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hq2Mr-0001fy-HQ; Tue, 23 Jul 2019 21:30:41 +0000
-Received: from mout.gmx.net ([212.227.17.21])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hq2Mo-0001fW-7O
- for linux-um@lists.infradead.org; Tue, 23 Jul 2019 21:30:40 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1563917421;
- bh=ToULRC4irrsdH84boQnpkm5KiZJ47FZlgR9fRYxOddQ=;
- h=X-UI-Sender-Class:Subject:To:Cc:References:From:Date:In-Reply-To;
- b=Mw172/vXJLuMiXnhcNcxkFLc+1aKNWEZ8PiRunLmcf3dhaVRLy3tt6tEfy4Hy2XqC
- PyJ35c47qRSvmmSrJacGYW026ubBeNnkC3r0iI352l8MRe5TksbAyXXfEfq2ZaSc1L
- AXwOe3IbD6QKY7TOSbx6Apv6B+fCU/iCs06Tt8DM=
-X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
-Received: from [172.17.9.180] ([87.191.208.243]) by mail.gmx.com (mrgmx101
- [212.227.17.168]) with ESMTPSA (Nemesis) id 0LtVLE-1iWxrd16mq-010plk; Tue, 23
- Jul 2019 23:30:21 +0200
-Subject: Re: Build regressions/improvements in v5.3-rc1
-To: Geert Uytterhoeven <geert@linux-m68k.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
-References: <20190723080441.19110-1-geert@linux-m68k.org>
- <CAMuHMdVuVqXnW8SEnpcbvh8agYvPh775rv9tmV9kGUa6Q2wcwA@mail.gmail.com>
-From: Helge Deller <deller@gmx.de>
-Message-ID: <738c1891-6ef3-8cd1-d25e-b9a36255e3e7@gmx.de>
-Date: Tue, 23 Jul 2019 23:30:19 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+	id 1hqBdu-0000OY-Vk; Wed, 24 Jul 2019 07:24:55 +0000
+Received: from 089144207240.atnat0016.highway.bob.at ([89.144.207.240]
+ helo=localhost)
+ by bombadil.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
+ id 1hqBdr-0000OI-Ag; Wed, 24 Jul 2019 07:24:51 +0000
+From: Christoph Hellwig <hch@lst.de>
+To: corbet@lwn.net
+Subject: [PATCH] Documentation: move Documentation/virtual to
+ Documentation/virt
+Date: Wed, 24 Jul 2019 09:24:49 +0200
+Message-Id: <20190724072449.19599-1-hch@lst.de>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-In-Reply-To: <CAMuHMdVuVqXnW8SEnpcbvh8agYvPh775rv9tmV9kGUa6Q2wcwA@mail.gmail.com>
-Content-Language: en-US
-X-Provags-ID: V03:K1:T+b1tb8faTODi5y7+U6ZeYg349SPA/Fh6VMkO4Lv68DcHiqWs38
- yMSq6plB/gXOGf08wjD9XUjitvj8jKdC/8/JaMSNHP9vDAOO7Co7tl7rnvZFkj9FzwyC3he
- Osdq0XH55YVvzrSSpZfz5GyKiXcltMbOZz4gbER+z1VPvO52/fBz44TmPn60QnwkG/uiNZp
- Qd7uZwcF8lw5s0lW1uARg==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:SryDnYPWR3k=:YfaURXV31fWbWOLAGMHGGV
- Dmnik+n3qAhqkld+yRDUq/ad82uys9dQKsblccpGM1v+nWFWNXHRGjJnWpTHthVgl5MjKareW
- S8+A4ILBwxCub+9qb285MgdDuTPxS7dGZzzs1i1PXNIU4ej6gydgwM3z7ULTsFyJRl8wF1WoB
- Ciz5DIEkIBiRgLcXVj6nyJH3dJGRtqSPguFrXaPSrV/pmj04wTImaGupFmt+NfX1jhjZjXIcr
- DMhTnVxONS3fiOhWtR/1DjnBOcBw26ctyW1tDbpN2jcDeuXM9VjIYVRCYv75waepvsgzx6z+6
- Y+w+9q+vzUpjB64NgLoPSebj8q0PWxcv5LCm5+4zx+WmEhLPdPZBeZ3593O31bsHpcyWwRKlm
- zM8DeFk6vuhWjzB7chszUwcyxFIzn/PowsWGt7KTEenxppLvGxPwYXGj4xyFsBQoN3YhLxyIn
- 3VE0LcZj3lyD8jeXPQ1tQI2xy+8m1GNDoLpvwW310SEdE2L7UmtfHZ1C9mspC4HKXI4f5MuLX
- wLPTjfr/7eWbl51HcUY2Tozd1IZXhusmqwm+BOXN2AancGej6DJ9BFL+DQfuOaZBlhgugp4An
- UPf8cUynTng/Rs2/LqzKmQmFYtRBSwc37YTxiJO3cIayyLWJDbGidsCRXBjke2Yn2rQpG1vht
- huUmUsiUoIhg6pB0qZEQ6xIf/PdZc0yPvuesx1caABIUUpM3BECtj42ujta5WGmAhrZbK45az
- s0J9qGk2Pf2ZLZyzOGkrgEKjuYspigu8gz2zY93ySXrp/r3sKgUEhrYtc9ZmYkmwz1K2Z8I0m
- e+IcH6RAD5eBsI/TPmjBiBJnnIEpQ/D9j7EjFzCPIFvRKsU6q1kMfeD+1KecjIzSJo4APWbVM
- y2pUQKKW0TSl0QYD02OZ+XNA8gvg+sq9vXPt5e5ZEnthuujlO0Eeaj2TRtYqKx5yaWUkyjkuP
- G26mwOYKDQHdZnvffvqtvcy+HW7DI5GEwBhXj0VE5yPPHcWfD9FUXXe3KfDV/StdlSwan7SVK
- 1ZVRDKGDPYLYW7zOY4L6y0bPCt3UEF7Naw7mqyC7SZzElpiiuBTVJ0jUZNIrfQr6ybEOJqPYZ
- RapDmKg7odABSY=
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190723_143038_603287_15F0CAF0 
-X-CRM114-Status: GOOD (  10.51  )
-X-Spam-Score: 1.8 (+)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.8 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- 2.5 SUSPICIOUS_RECIPS      Similar addresses in recipient list
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (deller[at]gmx.de)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.227.17.21 listed in list.dnswl.org]
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,33 +42,443 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: linuxppc-dev <linuxppc-dev@lists.ozlabs.org>, linux-um@lists.infradead.org,
- linux-mips@vger.kernel.org, Parisc List <linux-parisc@vger.kernel.org>
+Cc: kvm@vger.kernel.org, linux-doc@vger.kernel.org, richard@nod.at,
+ jdike@addtoit.com, rkrcmar@redhat.com, linux-um@lists.infradead.org,
+ linux-kernel@vger.kernel.org, pbonzini@redhat.com,
+ anton.ivanov@cambridgegreys.com
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On 23.07.19 17:39, Geert Uytterhoeven wrote:
-> On Tue, Jul 23, 2019 at 5:22 PM Geert Uytterhoeven <geert@linux-m68k.org> wrote:
->> Below is the list of build error/warning regressions/improvements in
->> v5.3-rc1[1] compared to v5.2[2].
->
->> [1] http://kisskb.ellerman.id.au/kisskb/branch/linus/head/5f9e832c137075045d15cd6899ab0505cfb2ca4b/ (241 out of 242 configs)
->> [2] http://kisskb.ellerman.id.au/kisskb/branch/linus/head/0ecfebd2b52404ae0c54a878c872bb93363ada36/ (all 242 configs)
->>
->>
->> *** ERRORS ***
->> ...
->>    + /kisskb/src/include/linux/kprobes.h: error: implicit declaration of function 'kprobe_fault_handler'; did you mean 'kprobe_page_fault'? [-Werror=implicit-function-declaration]:  => 477:9
->
-> parisc-allmodconfig
+Renaming docs seems to be en vogue at the moment, so fix on of the
+grossly misnamed directories.  We usually never use "virtual" as
+a shortcut for virtualization in the kernel, but always virt,
+as seen in the virt/ top-level directory.  Fix up the documentation
+to match that.
 
-I've a patch queued up for the next pull request (in the parisc git tree) to fix this:
+Fixes: ed16648eb5b8 ("Move kvm, uml, and lguest subdirectories under a common "virtual" directory, I.E:")
+Signed-off-by: Christoph Hellwig <hch@lst.de>
+---
+ Documentation/admin-guide/kernel-parameters.txt             | 2 +-
+ Documentation/{virtual => virt}/index.rst                   | 0
+ .../{virtual => virt}/kvm/amd-memory-encryption.rst         | 0
+ Documentation/{virtual => virt}/kvm/api.txt                 | 2 +-
+ Documentation/{virtual => virt}/kvm/arm/hyp-abi.txt         | 0
+ Documentation/{virtual => virt}/kvm/arm/psci.txt            | 0
+ Documentation/{virtual => virt}/kvm/cpuid.rst               | 0
+ Documentation/{virtual => virt}/kvm/devices/README          | 0
+ .../{virtual => virt}/kvm/devices/arm-vgic-its.txt          | 0
+ Documentation/{virtual => virt}/kvm/devices/arm-vgic-v3.txt | 0
+ Documentation/{virtual => virt}/kvm/devices/arm-vgic.txt    | 0
+ Documentation/{virtual => virt}/kvm/devices/mpic.txt        | 0
+ Documentation/{virtual => virt}/kvm/devices/s390_flic.txt   | 0
+ Documentation/{virtual => virt}/kvm/devices/vcpu.txt        | 0
+ Documentation/{virtual => virt}/kvm/devices/vfio.txt        | 0
+ Documentation/{virtual => virt}/kvm/devices/vm.txt          | 0
+ Documentation/{virtual => virt}/kvm/devices/xics.txt        | 0
+ Documentation/{virtual => virt}/kvm/devices/xive.txt        | 0
+ Documentation/{virtual => virt}/kvm/halt-polling.txt        | 0
+ Documentation/{virtual => virt}/kvm/hypercalls.txt          | 4 ++--
+ Documentation/{virtual => virt}/kvm/index.rst               | 0
+ Documentation/{virtual => virt}/kvm/locking.txt             | 0
+ Documentation/{virtual => virt}/kvm/mmu.txt                 | 2 +-
+ Documentation/{virtual => virt}/kvm/msr.txt                 | 0
+ Documentation/{virtual => virt}/kvm/nested-vmx.txt          | 0
+ Documentation/{virtual => virt}/kvm/ppc-pv.txt              | 0
+ Documentation/{virtual => virt}/kvm/review-checklist.txt    | 2 +-
+ Documentation/{virtual => virt}/kvm/s390-diag.txt           | 0
+ Documentation/{virtual => virt}/kvm/timekeeping.txt         | 0
+ Documentation/{virtual => virt}/kvm/vcpu-requests.rst       | 0
+ Documentation/{virtual => virt}/paravirt_ops.rst            | 0
+ Documentation/{virtual => virt}/uml/UserModeLinux-HOWTO.txt | 0
+ MAINTAINERS                                                 | 6 +++---
+ arch/powerpc/include/uapi/asm/kvm_para.h                    | 2 +-
+ arch/x86/kvm/mmu.c                                          | 2 +-
+ include/uapi/linux/kvm.h                                    | 4 ++--
+ tools/include/uapi/linux/kvm.h                              | 4 ++--
+ virt/kvm/arm/arm.c                                          | 2 +-
+ virt/kvm/arm/vgic/vgic-mmio-v3.c                            | 2 +-
+ virt/kvm/arm/vgic/vgic.h                                    | 4 ++--
+ 40 files changed, 19 insertions(+), 19 deletions(-)
+ rename Documentation/{virtual => virt}/index.rst (100%)
+ rename Documentation/{virtual => virt}/kvm/amd-memory-encryption.rst (100%)
+ rename Documentation/{virtual => virt}/kvm/api.txt (99%)
+ rename Documentation/{virtual => virt}/kvm/arm/hyp-abi.txt (100%)
+ rename Documentation/{virtual => virt}/kvm/arm/psci.txt (100%)
+ rename Documentation/{virtual => virt}/kvm/cpuid.rst (100%)
+ rename Documentation/{virtual => virt}/kvm/devices/README (100%)
+ rename Documentation/{virtual => virt}/kvm/devices/arm-vgic-its.txt (100%)
+ rename Documentation/{virtual => virt}/kvm/devices/arm-vgic-v3.txt (100%)
+ rename Documentation/{virtual => virt}/kvm/devices/arm-vgic.txt (100%)
+ rename Documentation/{virtual => virt}/kvm/devices/mpic.txt (100%)
+ rename Documentation/{virtual => virt}/kvm/devices/s390_flic.txt (100%)
+ rename Documentation/{virtual => virt}/kvm/devices/vcpu.txt (100%)
+ rename Documentation/{virtual => virt}/kvm/devices/vfio.txt (100%)
+ rename Documentation/{virtual => virt}/kvm/devices/vm.txt (100%)
+ rename Documentation/{virtual => virt}/kvm/devices/xics.txt (100%)
+ rename Documentation/{virtual => virt}/kvm/devices/xive.txt (100%)
+ rename Documentation/{virtual => virt}/kvm/halt-polling.txt (100%)
+ rename Documentation/{virtual => virt}/kvm/hypercalls.txt (97%)
+ rename Documentation/{virtual => virt}/kvm/index.rst (100%)
+ rename Documentation/{virtual => virt}/kvm/locking.txt (100%)
+ rename Documentation/{virtual => virt}/kvm/mmu.txt (99%)
+ rename Documentation/{virtual => virt}/kvm/msr.txt (100%)
+ rename Documentation/{virtual => virt}/kvm/nested-vmx.txt (100%)
+ rename Documentation/{virtual => virt}/kvm/ppc-pv.txt (100%)
+ rename Documentation/{virtual => virt}/kvm/review-checklist.txt (95%)
+ rename Documentation/{virtual => virt}/kvm/s390-diag.txt (100%)
+ rename Documentation/{virtual => virt}/kvm/timekeeping.txt (100%)
+ rename Documentation/{virtual => virt}/kvm/vcpu-requests.rst (100%)
+ rename Documentation/{virtual => virt}/paravirt_ops.rst (100%)
+ rename Documentation/{virtual => virt}/uml/UserModeLinux-HOWTO.txt (100%)
 
-https://git.kernel.org/pub/scm/linux/kernel/git/deller/parisc-linux.git/commit/?h=for-next&id=f5e03d3a04978d2866f82cb11cc7a6b808c8ce07
+diff --git a/Documentation/admin-guide/kernel-parameters.txt b/Documentation/admin-guide/kernel-parameters.txt
+index 46b826fcb5ad..7ccd158b3894 100644
+--- a/Documentation/admin-guide/kernel-parameters.txt
++++ b/Documentation/admin-guide/kernel-parameters.txt
+@@ -2545,7 +2545,7 @@
+ 			mem_encrypt=on:		Activate SME
+ 			mem_encrypt=off:	Do not activate SME
+ 
+-			Refer to Documentation/virtual/kvm/amd-memory-encryption.rst
++			Refer to Documentation/virt/kvm/amd-memory-encryption.rst
+ 			for details on when memory encryption can be activated.
+ 
+ 	mem_sleep_default=	[SUSPEND] Default system suspend mode:
+diff --git a/Documentation/virtual/index.rst b/Documentation/virt/index.rst
+similarity index 100%
+rename from Documentation/virtual/index.rst
+rename to Documentation/virt/index.rst
+diff --git a/Documentation/virtual/kvm/amd-memory-encryption.rst b/Documentation/virt/kvm/amd-memory-encryption.rst
+similarity index 100%
+rename from Documentation/virtual/kvm/amd-memory-encryption.rst
+rename to Documentation/virt/kvm/amd-memory-encryption.rst
+diff --git a/Documentation/virtual/kvm/api.txt b/Documentation/virt/kvm/api.txt
+similarity index 99%
+rename from Documentation/virtual/kvm/api.txt
+rename to Documentation/virt/kvm/api.txt
+index e54a3f51ddc5..2d067767b617 100644
+--- a/Documentation/virtual/kvm/api.txt
++++ b/Documentation/virt/kvm/api.txt
+@@ -3781,7 +3781,7 @@ encrypted VMs.
+ 
+ Currently, this ioctl is used for issuing Secure Encrypted Virtualization
+ (SEV) commands on AMD Processors. The SEV commands are defined in
+-Documentation/virtual/kvm/amd-memory-encryption.rst.
++Documentation/virt/kvm/amd-memory-encryption.rst.
+ 
+ 4.111 KVM_MEMORY_ENCRYPT_REG_REGION
+ 
+diff --git a/Documentation/virtual/kvm/arm/hyp-abi.txt b/Documentation/virt/kvm/arm/hyp-abi.txt
+similarity index 100%
+rename from Documentation/virtual/kvm/arm/hyp-abi.txt
+rename to Documentation/virt/kvm/arm/hyp-abi.txt
+diff --git a/Documentation/virtual/kvm/arm/psci.txt b/Documentation/virt/kvm/arm/psci.txt
+similarity index 100%
+rename from Documentation/virtual/kvm/arm/psci.txt
+rename to Documentation/virt/kvm/arm/psci.txt
+diff --git a/Documentation/virtual/kvm/cpuid.rst b/Documentation/virt/kvm/cpuid.rst
+similarity index 100%
+rename from Documentation/virtual/kvm/cpuid.rst
+rename to Documentation/virt/kvm/cpuid.rst
+diff --git a/Documentation/virtual/kvm/devices/README b/Documentation/virt/kvm/devices/README
+similarity index 100%
+rename from Documentation/virtual/kvm/devices/README
+rename to Documentation/virt/kvm/devices/README
+diff --git a/Documentation/virtual/kvm/devices/arm-vgic-its.txt b/Documentation/virt/kvm/devices/arm-vgic-its.txt
+similarity index 100%
+rename from Documentation/virtual/kvm/devices/arm-vgic-its.txt
+rename to Documentation/virt/kvm/devices/arm-vgic-its.txt
+diff --git a/Documentation/virtual/kvm/devices/arm-vgic-v3.txt b/Documentation/virt/kvm/devices/arm-vgic-v3.txt
+similarity index 100%
+rename from Documentation/virtual/kvm/devices/arm-vgic-v3.txt
+rename to Documentation/virt/kvm/devices/arm-vgic-v3.txt
+diff --git a/Documentation/virtual/kvm/devices/arm-vgic.txt b/Documentation/virt/kvm/devices/arm-vgic.txt
+similarity index 100%
+rename from Documentation/virtual/kvm/devices/arm-vgic.txt
+rename to Documentation/virt/kvm/devices/arm-vgic.txt
+diff --git a/Documentation/virtual/kvm/devices/mpic.txt b/Documentation/virt/kvm/devices/mpic.txt
+similarity index 100%
+rename from Documentation/virtual/kvm/devices/mpic.txt
+rename to Documentation/virt/kvm/devices/mpic.txt
+diff --git a/Documentation/virtual/kvm/devices/s390_flic.txt b/Documentation/virt/kvm/devices/s390_flic.txt
+similarity index 100%
+rename from Documentation/virtual/kvm/devices/s390_flic.txt
+rename to Documentation/virt/kvm/devices/s390_flic.txt
+diff --git a/Documentation/virtual/kvm/devices/vcpu.txt b/Documentation/virt/kvm/devices/vcpu.txt
+similarity index 100%
+rename from Documentation/virtual/kvm/devices/vcpu.txt
+rename to Documentation/virt/kvm/devices/vcpu.txt
+diff --git a/Documentation/virtual/kvm/devices/vfio.txt b/Documentation/virt/kvm/devices/vfio.txt
+similarity index 100%
+rename from Documentation/virtual/kvm/devices/vfio.txt
+rename to Documentation/virt/kvm/devices/vfio.txt
+diff --git a/Documentation/virtual/kvm/devices/vm.txt b/Documentation/virt/kvm/devices/vm.txt
+similarity index 100%
+rename from Documentation/virtual/kvm/devices/vm.txt
+rename to Documentation/virt/kvm/devices/vm.txt
+diff --git a/Documentation/virtual/kvm/devices/xics.txt b/Documentation/virt/kvm/devices/xics.txt
+similarity index 100%
+rename from Documentation/virtual/kvm/devices/xics.txt
+rename to Documentation/virt/kvm/devices/xics.txt
+diff --git a/Documentation/virtual/kvm/devices/xive.txt b/Documentation/virt/kvm/devices/xive.txt
+similarity index 100%
+rename from Documentation/virtual/kvm/devices/xive.txt
+rename to Documentation/virt/kvm/devices/xive.txt
+diff --git a/Documentation/virtual/kvm/halt-polling.txt b/Documentation/virt/kvm/halt-polling.txt
+similarity index 100%
+rename from Documentation/virtual/kvm/halt-polling.txt
+rename to Documentation/virt/kvm/halt-polling.txt
+diff --git a/Documentation/virtual/kvm/hypercalls.txt b/Documentation/virt/kvm/hypercalls.txt
+similarity index 97%
+rename from Documentation/virtual/kvm/hypercalls.txt
+rename to Documentation/virt/kvm/hypercalls.txt
+index da210651f714..5f6d291bd004 100644
+--- a/Documentation/virtual/kvm/hypercalls.txt
++++ b/Documentation/virt/kvm/hypercalls.txt
+@@ -18,7 +18,7 @@ S390:
+   number in R1.
+ 
+   For further information on the S390 diagnose call as supported by KVM,
+-  refer to Documentation/virtual/kvm/s390-diag.txt.
++  refer to Documentation/virt/kvm/s390-diag.txt.
+ 
+  PowerPC:
+   It uses R3-R10 and hypercall number in R11. R4-R11 are used as output registers.
+@@ -26,7 +26,7 @@ S390:
+ 
+   KVM hypercalls uses 4 byte opcode, that are patched with 'hypercall-instructions'
+   property inside the device tree's /hypervisor node.
+-  For more information refer to Documentation/virtual/kvm/ppc-pv.txt
++  For more information refer to Documentation/virt/kvm/ppc-pv.txt
+ 
+ MIPS:
+   KVM hypercalls use the HYPCALL instruction with code 0 and the hypercall
+diff --git a/Documentation/virtual/kvm/index.rst b/Documentation/virt/kvm/index.rst
+similarity index 100%
+rename from Documentation/virtual/kvm/index.rst
+rename to Documentation/virt/kvm/index.rst
+diff --git a/Documentation/virtual/kvm/locking.txt b/Documentation/virt/kvm/locking.txt
+similarity index 100%
+rename from Documentation/virtual/kvm/locking.txt
+rename to Documentation/virt/kvm/locking.txt
+diff --git a/Documentation/virtual/kvm/mmu.txt b/Documentation/virt/kvm/mmu.txt
+similarity index 99%
+rename from Documentation/virtual/kvm/mmu.txt
+rename to Documentation/virt/kvm/mmu.txt
+index 2efe0efc516e..1b9880dfba0a 100644
+--- a/Documentation/virtual/kvm/mmu.txt
++++ b/Documentation/virt/kvm/mmu.txt
+@@ -298,7 +298,7 @@ Handling a page fault is performed as follows:
+      vcpu->arch.mmio_gfn, and call the emulator
+  - If both P bit and R/W bit of error code are set, this could possibly
+    be handled as a "fast page fault" (fixed without taking the MMU lock).  See
+-   the description in Documentation/virtual/kvm/locking.txt.
++   the description in Documentation/virt/kvm/locking.txt.
+  - if needed, walk the guest page tables to determine the guest translation
+    (gva->gpa or ngpa->gpa)
+    - if permissions are insufficient, reflect the fault back to the guest
+diff --git a/Documentation/virtual/kvm/msr.txt b/Documentation/virt/kvm/msr.txt
+similarity index 100%
+rename from Documentation/virtual/kvm/msr.txt
+rename to Documentation/virt/kvm/msr.txt
+diff --git a/Documentation/virtual/kvm/nested-vmx.txt b/Documentation/virt/kvm/nested-vmx.txt
+similarity index 100%
+rename from Documentation/virtual/kvm/nested-vmx.txt
+rename to Documentation/virt/kvm/nested-vmx.txt
+diff --git a/Documentation/virtual/kvm/ppc-pv.txt b/Documentation/virt/kvm/ppc-pv.txt
+similarity index 100%
+rename from Documentation/virtual/kvm/ppc-pv.txt
+rename to Documentation/virt/kvm/ppc-pv.txt
+diff --git a/Documentation/virtual/kvm/review-checklist.txt b/Documentation/virt/kvm/review-checklist.txt
+similarity index 95%
+rename from Documentation/virtual/kvm/review-checklist.txt
+rename to Documentation/virt/kvm/review-checklist.txt
+index a83b27635fdd..499af499e296 100644
+--- a/Documentation/virtual/kvm/review-checklist.txt
++++ b/Documentation/virt/kvm/review-checklist.txt
+@@ -7,7 +7,7 @@ Review checklist for kvm patches
+ 2.  Patches should be against kvm.git master branch.
+ 
+ 3.  If the patch introduces or modifies a new userspace API:
+-    - the API must be documented in Documentation/virtual/kvm/api.txt
++    - the API must be documented in Documentation/virt/kvm/api.txt
+     - the API must be discoverable using KVM_CHECK_EXTENSION
+ 
+ 4.  New state must include support for save/restore.
+diff --git a/Documentation/virtual/kvm/s390-diag.txt b/Documentation/virt/kvm/s390-diag.txt
+similarity index 100%
+rename from Documentation/virtual/kvm/s390-diag.txt
+rename to Documentation/virt/kvm/s390-diag.txt
+diff --git a/Documentation/virtual/kvm/timekeeping.txt b/Documentation/virt/kvm/timekeeping.txt
+similarity index 100%
+rename from Documentation/virtual/kvm/timekeeping.txt
+rename to Documentation/virt/kvm/timekeeping.txt
+diff --git a/Documentation/virtual/kvm/vcpu-requests.rst b/Documentation/virt/kvm/vcpu-requests.rst
+similarity index 100%
+rename from Documentation/virtual/kvm/vcpu-requests.rst
+rename to Documentation/virt/kvm/vcpu-requests.rst
+diff --git a/Documentation/virtual/paravirt_ops.rst b/Documentation/virt/paravirt_ops.rst
+similarity index 100%
+rename from Documentation/virtual/paravirt_ops.rst
+rename to Documentation/virt/paravirt_ops.rst
+diff --git a/Documentation/virtual/uml/UserModeLinux-HOWTO.txt b/Documentation/virt/uml/UserModeLinux-HOWTO.txt
+similarity index 100%
+rename from Documentation/virtual/uml/UserModeLinux-HOWTO.txt
+rename to Documentation/virt/uml/UserModeLinux-HOWTO.txt
+diff --git a/MAINTAINERS b/MAINTAINERS
+index 783569e3c4b4..5e1f9ee8f86f 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -8808,7 +8808,7 @@ L:	kvm@vger.kernel.org
+ W:	http://www.linux-kvm.org
+ T:	git git://git.kernel.org/pub/scm/virt/kvm/kvm.git
+ S:	Supported
+-F:	Documentation/virtual/kvm/
++F:	Documentation/virt/kvm/
+ F:	include/trace/events/kvm.h
+ F:	include/uapi/asm-generic/kvm*
+ F:	include/uapi/linux/kvm*
+@@ -12137,7 +12137,7 @@ M:	Thomas Hellstrom <thellstrom@vmware.com>
+ M:	"VMware, Inc." <pv-drivers@vmware.com>
+ L:	virtualization@lists.linux-foundation.org
+ S:	Supported
+-F:	Documentation/virtual/paravirt_ops.txt
++F:	Documentation/virt/paravirt_ops.txt
+ F:	arch/*/kernel/paravirt*
+ F:	arch/*/include/asm/paravirt*.h
+ F:	include/linux/hypervisor.h
+@@ -16854,7 +16854,7 @@ W:	http://user-mode-linux.sourceforge.net
+ Q:	https://patchwork.ozlabs.org/project/linux-um/list/
+ T:	git git://git.kernel.org/pub/scm/linux/kernel/git/rw/uml.git
+ S:	Maintained
+-F:	Documentation/virtual/uml/
++F:	Documentation/virt/uml/
+ F:	arch/um/
+ F:	arch/x86/um/
+ F:	fs/hostfs/
+diff --git a/arch/powerpc/include/uapi/asm/kvm_para.h b/arch/powerpc/include/uapi/asm/kvm_para.h
+index 01555c6ae0f5..be48c2215fa2 100644
+--- a/arch/powerpc/include/uapi/asm/kvm_para.h
++++ b/arch/powerpc/include/uapi/asm/kvm_para.h
+@@ -31,7 +31,7 @@
+  * Struct fields are always 32 or 64 bit aligned, depending on them being 32
+  * or 64 bit wide respectively.
+  *
+- * See Documentation/virtual/kvm/ppc-pv.txt
++ * See Documentation/virt/kvm/ppc-pv.txt
+  */
+ struct kvm_vcpu_arch_shared {
+ 	__u64 scratch1;
+diff --git a/arch/x86/kvm/mmu.c b/arch/x86/kvm/mmu.c
+index 8f72526e2f68..24843cf49579 100644
+--- a/arch/x86/kvm/mmu.c
++++ b/arch/x86/kvm/mmu.c
+@@ -3466,7 +3466,7 @@ static bool fast_page_fault(struct kvm_vcpu *vcpu, gva_t gva, int level,
+ 		/*
+ 		 * Currently, fast page fault only works for direct mapping
+ 		 * since the gfn is not stable for indirect shadow page. See
+-		 * Documentation/virtual/kvm/locking.txt to get more detail.
++		 * Documentation/virt/kvm/locking.txt to get more detail.
+ 		 */
+ 		fault_handled = fast_pf_fix_direct_spte(vcpu, sp,
+ 							iterator.sptep, spte,
+diff --git a/include/uapi/linux/kvm.h b/include/uapi/linux/kvm.h
+index a7c19540ce21..5e3f12d5359e 100644
+--- a/include/uapi/linux/kvm.h
++++ b/include/uapi/linux/kvm.h
+@@ -116,7 +116,7 @@ struct kvm_irq_level {
+ 	 * ACPI gsi notion of irq.
+ 	 * For IA-64 (APIC model) IOAPIC0: irq 0-23; IOAPIC1: irq 24-47..
+ 	 * For X86 (standard AT mode) PIC0/1: irq 0-15. IOAPIC0: 0-23..
+-	 * For ARM: See Documentation/virtual/kvm/api.txt
++	 * For ARM: See Documentation/virt/kvm/api.txt
+ 	 */
+ 	union {
+ 		__u32 irq;
+@@ -1086,7 +1086,7 @@ struct kvm_xen_hvm_config {
+  *
+  * KVM_IRQFD_FLAG_RESAMPLE indicates resamplefd is valid and specifies
+  * the irqfd to operate in resampling mode for level triggered interrupt
+- * emulation.  See Documentation/virtual/kvm/api.txt.
++ * emulation.  See Documentation/virt/kvm/api.txt.
+  */
+ #define KVM_IRQFD_FLAG_RESAMPLE (1 << 1)
+ 
+diff --git a/tools/include/uapi/linux/kvm.h b/tools/include/uapi/linux/kvm.h
+index c2152f3dd02d..e7c67be7c15f 100644
+--- a/tools/include/uapi/linux/kvm.h
++++ b/tools/include/uapi/linux/kvm.h
+@@ -116,7 +116,7 @@ struct kvm_irq_level {
+ 	 * ACPI gsi notion of irq.
+ 	 * For IA-64 (APIC model) IOAPIC0: irq 0-23; IOAPIC1: irq 24-47..
+ 	 * For X86 (standard AT mode) PIC0/1: irq 0-15. IOAPIC0: 0-23..
+-	 * For ARM: See Documentation/virtual/kvm/api.txt
++	 * For ARM: See Documentation/virt/kvm/api.txt
+ 	 */
+ 	union {
+ 		__u32 irq;
+@@ -1085,7 +1085,7 @@ struct kvm_xen_hvm_config {
+  *
+  * KVM_IRQFD_FLAG_RESAMPLE indicates resamplefd is valid and specifies
+  * the irqfd to operate in resampling mode for level triggered interrupt
+- * emulation.  See Documentation/virtual/kvm/api.txt.
++ * emulation.  See Documentation/virt/kvm/api.txt.
+  */
+ #define KVM_IRQFD_FLAG_RESAMPLE (1 << 1)
+ 
+diff --git a/virt/kvm/arm/arm.c b/virt/kvm/arm/arm.c
+index f645c0fbf7ec..acc43242a310 100644
+--- a/virt/kvm/arm/arm.c
++++ b/virt/kvm/arm/arm.c
+@@ -727,7 +727,7 @@ int kvm_arch_vcpu_ioctl_run(struct kvm_vcpu *vcpu, struct kvm_run *run)
+ 		 * Ensure we set mode to IN_GUEST_MODE after we disable
+ 		 * interrupts and before the final VCPU requests check.
+ 		 * See the comment in kvm_vcpu_exiting_guest_mode() and
+-		 * Documentation/virtual/kvm/vcpu-requests.rst
++		 * Documentation/virt/kvm/vcpu-requests.rst
+ 		 */
+ 		smp_store_mb(vcpu->mode, IN_GUEST_MODE);
+ 
+diff --git a/virt/kvm/arm/vgic/vgic-mmio-v3.c b/virt/kvm/arm/vgic/vgic-mmio-v3.c
+index 936962abc38d..c45e2d7e942f 100644
+--- a/virt/kvm/arm/vgic/vgic-mmio-v3.c
++++ b/virt/kvm/arm/vgic/vgic-mmio-v3.c
+@@ -250,7 +250,7 @@ static unsigned long vgic_v3_uaccess_read_pending(struct kvm_vcpu *vcpu,
+ 	 * pending state of interrupt is latched in pending_latch variable.
+ 	 * Userspace will save and restore pending state and line_level
+ 	 * separately.
+-	 * Refer to Documentation/virtual/kvm/devices/arm-vgic-v3.txt
++	 * Refer to Documentation/virt/kvm/devices/arm-vgic-v3.txt
+ 	 * for handling of ISPENDR and ICPENDR.
+ 	 */
+ 	for (i = 0; i < len * 8; i++) {
+diff --git a/virt/kvm/arm/vgic/vgic.h b/virt/kvm/arm/vgic/vgic.h
+index 57205beaa981..3b7525deec80 100644
+--- a/virt/kvm/arm/vgic/vgic.h
++++ b/virt/kvm/arm/vgic/vgic.h
+@@ -42,7 +42,7 @@
+ 			    VGIC_AFFINITY_LEVEL(val, 3))
+ 
+ /*
+- * As per Documentation/virtual/kvm/devices/arm-vgic-v3.txt,
++ * As per Documentation/virt/kvm/devices/arm-vgic-v3.txt,
+  * below macros are defined for CPUREG encoding.
+  */
+ #define KVM_REG_ARM_VGIC_SYSREG_OP0_MASK   0x000000000000c000
+@@ -63,7 +63,7 @@
+ 				      KVM_REG_ARM_VGIC_SYSREG_OP2_MASK)
+ 
+ /*
+- * As per Documentation/virtual/kvm/devices/arm-vgic-its.txt,
++ * As per Documentation/virt/kvm/devices/arm-vgic-its.txt,
+  * below macros are defined for ITS table entry encoding.
+  */
+ #define KVM_ITS_CTE_VALID_SHIFT		63
+-- 
+2.20.1
 
-Helge
 
 _______________________________________________
 linux-um mailing list
