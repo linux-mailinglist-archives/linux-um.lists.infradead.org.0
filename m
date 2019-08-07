@@ -2,64 +2,60 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8ED737EDAD
-	for <lists+linux-um@lfdr.de>; Fri,  2 Aug 2019 09:38:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6A6FF850D0
+	for <lists+linux-um@lfdr.de>; Wed,  7 Aug 2019 18:15:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
-	Date:References:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uLd2ppNTw8rG24HPXNR7p9kqrUfTOYHNzRfXFsP61b4=; b=PeY32yGXG6pntw
-	Jwv41LGC0zdcVb7nlmYNWxy1NSf3FTznw5UXN5og8ugAY9AmT4Oit4t1SIf3U9lzW4A5n1IdWKQaO
-	551A/Q2G73YtgRGSOsvKM4IZf7z0gD2o5S/4GoPlPj2b0ID2O+DoOzuDGo4HcpSlcuPZW7B0dORRO
-	0MK7OyFNjW7VTsUkm8zsP/sI6rluY2gh1CD1OLUSUAqZnmDizqrgrj0QSk60Wc4kr02GEgNWv70O4
-	i8eGNU6SpasEIivfy0Bl3dDWo6CAVqsePB5ubftZZeNT+RQWHWTPzvbFLaNxe4wMU6lDuogaphRZt
-	v9fcsEtJn9+qzXkbcl8w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=6aiT1ljjzRlS9DGitEx8rOowMviw/jsdsVDvh44iaC4=; b=a+BkYeze2N0Pg3DTvZcREAIro
+	bwHNPreGQGfRFK1+eE7BF95/l/Htc4hI8D620nQm+b+bVT3I8bjuBFFk4YAC65T84aup2Kmld2Kx5
+	oeZJRcmkWNu/tTiINbM8VlwsFA2HdKr+m2pXhN7KxTSyj3OYdkrQZEVRPEijHsHhwB3bIq8yEvozJ
+	CI6SDnyPIvHenNe8mzuh61mP1f/m9OIS8YWmk3D3AXeLFVZaRLapoEsQMa1gwEPLBmOfC/tFfEGOm
+	kNpbb5h5vsFevc14OD6Mq0A76FqTgPCCus7pWYSHk3iCWo+pzhbBbSlOA2RI4bCqqjZM9HFRkcKFT
+	SOJ5Nia7g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htS96-0007UN-Kf; Fri, 02 Aug 2019 07:38:36 +0000
-Received: from galois.linutronix.de ([2a0a:51c0:0:12e:550::1])
+	id 1hvOao-0002Ol-0t; Wed, 07 Aug 2019 16:15:14 +0000
+Received: from ivanoab6.miniserver.com ([5.153.251.140]
+ helo=www.kot-begemot.co.uk)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htS92-0007OR-Dp
- for linux-um@lists.infradead.org; Fri, 02 Aug 2019 07:38:34 +0000
-Received: from localhost ([127.0.0.1] helo=vostro.local)
- by Galois.linutronix.de with esmtp (Exim 4.80)
- (envelope-from <john.ogness@linutronix.de>)
- id 1htS8S-0005sF-R0; Fri, 02 Aug 2019 09:37:56 +0200
-From: John Ogness <john.ogness@linutronix.de>
-To: Brendan Higgins <brendanhiggins@google.com>
-Subject: Re: [PATCH v9 04/18] kunit: test: add kunit_stream a std::stream like
- logger
-References: <20190716175021.9CA412173C@mail.kernel.org>
- <CAFd5g453vXeSUCZenCk_CzJ-8a1ym9RaPo0NVF=FujF9ac-5Ag@mail.gmail.com>
- <20190718175024.C3EC421019@mail.kernel.org>
- <CAFd5g46a7C1+R6ZcE_SkqaYqgrH5Rx3M=X7orFyaMgFLDbeYYA@mail.gmail.com>
- <20190719000834.GA3228@google.com>
- <20190722200347.261D3218C9@mail.kernel.org>
- <CAFd5g45hdCxEavSxirr0un_uLzo5Z-J4gHRA06qjzcQrTzmjVg@mail.gmail.com>
- <20190722235411.06C1320840@mail.kernel.org>
- <20190724073125.xyzfywctrcvg6fmh@pathway.suse.cz>
- <CAFd5g47v3Mr4GEGOjqyYy9Jwwm+ow7ypbu9j88rxEN06QCzdxQ@mail.gmail.com>
- <20190726083148.d4gf57w2nt5k7t6n@pathway.suse.cz>
- <CAFd5g46iAhDZ5C_chi7oYLVOkwcoj6+0nw+kPWuXhqWwWKd9jA@mail.gmail.com>
-Date: Fri, 02 Aug 2019 09:37:53 +0200
-In-Reply-To: <CAFd5g46iAhDZ5C_chi7oYLVOkwcoj6+0nw+kPWuXhqWwWKd9jA@mail.gmail.com>
- (Brendan Higgins's message of "Thu, 1 Aug 2019 11:55:20 -0700")
-Message-ID: <871ry4yq3y.fsf@linutronix.de>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/23.4 (gnu/linux)
+ id 1hvOak-0001ny-Ca
+ for linux-um@lists.infradead.org; Wed, 07 Aug 2019 16:15:12 +0000
+Received: from [192.168.17.6] (helo=jain.kot-begemot.co.uk)
+ by www.kot-begemot.co.uk with esmtps (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <anton.ivanov@cambridgegreys.com>)
+ id 1hvOaX-0007mz-KZ; Wed, 07 Aug 2019 16:14:57 +0000
+Received: from [151.251.253.105] (helo=[192.168.65.83])
+ by jain.kot-begemot.co.uk with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.89)
+ (envelope-from <anton.ivanov@cambridgegreys.com>)
+ id 1hvOaU-000403-V4; Wed, 07 Aug 2019 17:14:57 +0100
+Subject: Re: [RFC] um: virtio: Workaround for using virtio_net with snabb
+To: Johannes Berg <johannes@sipsolutions.net>, linux-um@lists.infradead.org
+References: <20190731203030.29821-1-johannes@sipsolutions.net>
+From: Anton Ivanov <anton.ivanov@cambridgegreys.com>
+Organization: Cambridge Greys Limited
+Message-ID: <394f11ad-88e3-1d1f-8b8e-51fdc14aea8d@cambridgegreys.com>
+Date: Wed, 7 Aug 2019 17:14:45 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
+In-Reply-To: <20190731203030.29821-1-johannes@sipsolutions.net>
+Content-Language: en-US
+X-Spam-Score: -1.0
+X-Spam-Score: -1.0
+X-Clacks-Overhead: GNU Terry Pratchett
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190802_003832_691971_26A5EE6A 
-X-CRM114-Status: GOOD (  28.90  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190807_091510_620750_BF21C795 
+X-CRM114-Status: GOOD (  16.29  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2a0a:51c0:0:12e:550:0:0:1 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-um@lists.infradead.org
@@ -73,193 +69,66 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree <devicetree@vger.kernel.org>,
- Peter Zijlstra <peterz@infradead.org>, Amir Goldstein <amir73il@gmail.com>,
- dri-devel <dri-devel@lists.freedesktop.org>,
- Sasha Levin <Alexander.Levin@microsoft.com>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Michael Ellerman <mpe@ellerman.id.au>,
- "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
- shuah <shuah@kernel.org>, Rob Herring <robh@kernel.org>,
- linux-nvdimm <linux-nvdimm@lists.01.org>, Timothy Bird <Tim.Bird@sony.com>,
- Frank Rowand <frowand.list@gmail.com>,
- "open list:DOCUMENTATION" <linux-doc@vger.kernel.org>,
- Knut Omang <knut.omang@oracle.com>,
- Kieran Bingham <kieran.bingham@ideasonboard.com>, wfg@linux.intel.com,
- Joel Stanley <joel@jms.id.au>, David Rientjes <rientjes@google.com>,
- Kevin Hilman <khilman@baylibre.com>, Dan Carpenter <dan.carpenter@oracle.com>,
- Petr Mladek <pmladek@suse.com>, linux-kbuild <linux-kbuild@vger.kernel.org>,
- Jeff Dike <jdike@addtoit.com>, linux-um@lists.infradead.org,
- Steven Rostedt <rostedt@goodmis.org>, Julia Lawall <julia.lawall@lip6.fr>,
- Josh Poimboeuf <jpoimboe@redhat.com>, kunit-dev@googlegroups.com,
- Theodore Ts'o <tytso@mit.edu>, Richard Weinberger <richard@nod.at>,
- Stephen Boyd <sboyd@kernel.org>, Greg KH <gregkh@linuxfoundation.org>,
- Randy Dunlap <rdunlap@infradead.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Luis Chamberlain <mcgrof@kernel.org>, Daniel Vetter <daniel@ffwll.ch>,
- Kees Cook <keescook@google.com>, linux-fsdevel@vger.kernel.org,
- Logan Gunthorpe <logang@deltatee.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Richard Weinberger <richard@nod.at>, Jeff Dike <jdike@addtoit.com>,
+ Erel Geron <erelx.geron@intel.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On 2019-08-01, Brendan Higgins <brendanhiggins@google.com> wrote:
-> On Fri, Jul 26, 2019 at 1:31 AM Petr Mladek <pmladek@suse.com> wrote:
->> On Thu 2019-07-25 13:21:12, Brendan Higgins wrote:
->>> On Wed, Jul 24, 2019 at 12:31 AM Petr Mladek <pmladek@suse.com> wrote:
->>>> On Mon 2019-07-22 16:54:10, Stephen Boyd wrote:
->>>>> Quoting Brendan Higgins (2019-07-22 15:30:49)
->>>>>> On Mon, Jul 22, 2019 at 1:03 PM Stephen Boyd <sboyd@kernel.org> wrote:
->>>>>>> What's the calling context of the assertions and expectations? I
->>>>>>> still don't like the fact that string stream needs to allocate
->>>>>>> buffers and throw them into a list somewhere because the calling
->>>>>>> context matters there.
->>>>>>
->>>>>> The calling context is the same as before, which is anywhere.
->>>>>
->>>>> Ok. That's concerning then.
->>>>>
->>>>>>> I'd prefer we just wrote directly to the console/log via printk
->>>>>>> instead. That way things are simple because we use the existing
->>>>>>> buffering path of printk, but maybe there's some benefit to the
->>>>>>> string stream that I don't see? Right now it looks like it
->>>>>>> builds a string and then dumps it to printk so I'm sort of lost
->>>>>>> what the benefit is over just writing directly with printk.
->>>>>>
->>>>>> It's just buffering it so the whole string gets printed
->>>>>> uninterrupted.  If we were to print out piecemeal to printk,
->>>>>> couldn't we have another call to printk come in causing it to
->>>>>> garble the KUnit message we are in the middle of printing?
->>>>>
->>>>> Yes, printing piecemeal by calling printk many times could lead to
->>>>> interleaving of messages if something else comes in such as an
->>>>> interrupt printing something. Printk has some support to hold
->>>>> "records" but I'm not sure how that would work here because
->>>>> KERN_CONT talks about only being used early on in boot code. I
->>>>> haven't looked at printk in detail though so maybe I'm all wrong
->>>>> and KERN_CONT just works?
->>>>
->>>> KERN_CONT does not guarantee that the message will get printed
->>>> together. The pieces get interleaved with messages printed in
->>>> parallel.
->>>>
->>>> Note that KERN_CONT was originally really meant to be used only
->>>> during boot. It was later used more widely and ended in the best
->>>> effort category.
->>>>
->>>> There were several attempts to make it more reliable. But it was
->>>> always either too complicated or error prone or both.
->>>>
->>>> You need to use your own buffering if you rely want perfect output.
->>>> The question is if it is really worth the complexity. Also note
->>>> that any buffering reduces the chance that the messages will reach
->>>> the console.
->>>
->>> Seems like that settles it then. Thanks!
->>>
->>>> BTW: There is a work in progress on a lockless printk ring buffer.
->>>> It will make printk() more secure regarding deadlocks. But it might
->>>> make transparent handling of continuous lines even more tricky.
->>>>
->>>> I guess that local buffering, before calling printk(), will be
->>>> even more important then. Well, it might really force us to create
->>>> an API for it.
->>>
->>> Cool! Can you CC me on that discussion?
->>
->> Adding John Oggness into CC.
->>
->> John, please CC Brendan Higgins on the patchsets eventually switching
->> printk() into the lockless buffer. The test framework is going to
->> do its own buffering to keep the related messages together.
->>
->> The lockless ringbuffer might make handling of related (partial)
->> lines worse or better. It might justify KUnit's extra buffering
->> or it might allow to get rid of it.
->
-> Thanks for CC'ing me on the printk ringbuffer thread. It looks like it
-> actually probably won't affect my needs for KUnit logging. The biggest
-> reason I need some sort of buffering system is to be able to compose
-> messages piece meal into a single message that will be printed out to
-> the user as a single message with no messages from other printk
-> callers printed out in the middle of mine.
 
-printk has this same requirement for its CONT messages. You can read
-about how I propose to implement that here[0], using a separate prb
-ringbuffer for buffered storage until all the pieces are available.
 
-It is not my goal that multiple subsystems start making use of the prb
-ringbuffer. However, its features can be attractive if you don't want to
-worry about multiple writers/readers or context (including NMI). Before
-writing "yet another ringbuffer" [1] it might be worth the effort to at
-least see if one of the existing implementations can work (or be
-extended to work) for you.
+On 31/07/2019 21:30, Johannes Berg wrote:
+> From: Erel Geron <erelx.geron@intel.com>
+> 
+> Workaround a crash of snabb when using virtio_uml.
+> 
+> Signed-off-by: Erel Geron <erelx.geron@intel.com>
+> Signed-off-by: Johannes Berg <johannes.berg@intel.com>
+> ---
+>   arch/um/drivers/virtio_uml.c | 9 +++++++++
+>   1 file changed, 9 insertions(+)
+> 
+> diff --git a/arch/um/drivers/virtio_uml.c b/arch/um/drivers/virtio_uml.c
+> index 30eeb907f42a..9c1308f56b93 100644
+> --- a/arch/um/drivers/virtio_uml.c
+> +++ b/arch/um/drivers/virtio_uml.c
+> @@ -31,6 +31,10 @@
+>   #include <os.h>
+>   #include "vhost_user.h"
+>   
+> +/* TODO for the workaround in vhost_user_init */
+> +#include <linux/virtio_ids.h>
+> +#include <linux/virtio_net.h>
+> +
+>   /* Workaround due to a conflict between irq_user.h and irqreturn.h */
+>   #ifdef IRQ_NONE
+>   #undef IRQ_NONE
+> @@ -200,6 +204,11 @@ static int vhost_user_init(struct virtio_uml_device *vu_dev)
+>   	if (rc)
+>   		return rc;
+>   
+> +	/* TODO workaround for some implementations */
+> +	if (vu_dev->vdev.id.device == VIRTIO_ID_NET)
+> +		vu_dev->features &= ~BIT_ULL(VIRTIO_NET_F_CTRL_VQ) &
+> +				~BIT_ULL(VIRTIO_NET_F_MQ);
 
-John Ogness
+If it is needed only for some implementations, then it should be an option.
 
-[0] https://lkml.kernel.org/r/87imt2bl0k.fsf@linutronix.de
-[1] https://lwn.net/Articles/789603/
+Have you tried it vs let's say dpdk (IIRC it supports vhost_user as an 
+interface).
 
-> The prb does look interesting; however, it appears that to get the
-> semantics that I need, I would have to put my entire message in a
-> single data block and would consequently need to know the size of my
-> message a priori, which is problematic. Consequently, it seems as
-> though I will probably need to compose my entire message using my own
-> buffering system.
->
->>>> Note that stroring the messages into the printk log is basically
->>>> safe in any context. It uses temporary per-CPU buffers for
->>>> recursive messages and in NMI. The only problem is panic() when
->>>> some CPU gets stuck with the lock taken. This will get solved by
->>>> the lockless ringbuffer. Also the temporary buffers will not be
->>>> necessary any longer.
->>>
->>> Sure, I think Stephen's concern is all the supporting code that is
->>> involved. Not printk specifically. It just means a lot more of KUnit
->>> has to be IRQ safe.
->>
->> I see.
->>
->> BTW: I wonder if KUnit could reuse the existing seq_buf
->> implementation for buffering messages.
->>
->> I am sorry if it has already been proposed and rejected for some
->> reason. I might have missed it. Feel free to just point me to
->> same older mail.
->
-> Yeah, we discussed it briefly here:
->
-> https://lkml.org/lkml/2019/5/17/497
->
-> Looks like I forgot to include my reasoning in the commit text, sorry
-> about that.
->
->>>> Much bigger problems are with consoles. There are many of them. It
->>>> means a lot of code and more locks involved, including scheduler
->>>> locks. Note that console lock is a semaphore.
->>>
->>> That shouldn't affect us though, right? As long as we continue to
->>> use the printk interface?
->>
->> I guess that it should not affect KUnit.
->>
->> The only problem might be if the testing framework calls printk()
->> inside scheduler or console code. And only when the tested code
->> uses the same locks that will be used by the called printk().
->
-> Yeah, well printk will not be our only problem in those instances.
->
->> To be honest I do not fully understand KUnit design. I am not
->> completely sure how the tested code is isolated from the running
->> system. Namely, I do not know if the tested code shares
->> the same locks with the system running the test.
->
-> No worries, I don't expect printk to be the hang up in those cases. It
-> sounds like KUnit has a long way to evolve before printk is going to
-> be a limitation.
->
-> Thanks!
+> +
+>   	if (vu_dev->features & BIT_ULL(VHOST_USER_F_PROTOCOL_FEATURES)) {
+>   		rc = vhost_user_get_protocol_features(vu_dev,
+>   				&vu_dev->protocol_features);
+> 
+
+-- 
+Anton R. Ivanov
+
+Cambridge Greys Limited, England and Wales company No 10273661
+http://www.cambridgegreys.com/
 
 _______________________________________________
 linux-um mailing list
