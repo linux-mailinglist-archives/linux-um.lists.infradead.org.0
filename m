@@ -2,49 +2,52 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6C5A187347
-	for <lists+linux-um@lfdr.de>; Fri,  9 Aug 2019 09:40:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7066287348
+	for <lists+linux-um@lfdr.de>; Fri,  9 Aug 2019 09:40:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=cA2ZGi8u++tH6wrvHJfvp65/HSK5fEmJHbnJeHrtoag=; b=qK+
-	0ZE++NlvR64ZiXPV8OmNLmO9OnMwsQv5B2Q/bFBT8F3ojLXm/aQqmGptog2YygcGKrX/SaIQg0V2E
-	mg0qkAzWqqZrxhR7dP7NGZmvTz/j/oON5LBwfK+PfqoGYPj5eOBmmLQzqEBP/k1Cs3qZQRWNiOw+B
-	apZoFOW/LMqiLgAk3e9AunYe39wzdoM1ib/3g9SdPA4snwjPo+/WRsjvS/tb53yS7QvuTeToCWT6Y
-	wu73p2EqMlr497mPsZxIxTwv2zim1NhGe7+gyBq68sIIyF0Bx130tMjC9LE+73OhhaEbRAap/vgdh
-	nM3Xg6FjIvlR0VCXIvk8oQWPggl2B/A==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=VBKuNXOScN6wZsBof5JqzSR5FCkcqtJfAyTjmWUAhh0=; b=YX6MDwEGiVqiEk6jFmmlkh6aLb
+	FQrcDSda23t72S3PJLlLucDdFjtY3th6dZd3M+Y7qOlw2x8AfqcyksKrU5iDCNX6qKk2xnN0xokmM
+	tYdFaafCbk9MBUu+Sre4mpYmz1WElLdIr+4T/aQdKcCX7wYypMoyIQD5MqVT736HRDGzhGsgcj1ZA
+	t6+7xEwe+vGhs5OOVhwU31fjEaz+TCSyD+QCIUZuqxZNxWjr7iEKrCjo+mq7zTkHzoVItxX5ZJnPq
+	XRIYMLT8H6gX08YZPRyZ9v4XuhhkTPSGrPKgh6VgHHcpnIQCTPaFIni9ydMg53vyK+T9SbJ9GidJx
+	Rwm9oW5w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvzVl-0001zM-HQ; Fri, 09 Aug 2019 07:40:29 +0000
+	id 1hvzVo-00020O-PH; Fri, 09 Aug 2019 07:40:32 +0000
 Received: from ivanoab6.miniserver.com ([5.153.251.140]
  helo=www.kot-begemot.co.uk)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvzVi-0001z3-BH
- for linux-um@lists.infradead.org; Fri, 09 Aug 2019 07:40:27 +0000
+ id 1hvzVl-0001zL-9U
+ for linux-um@lists.infradead.org; Fri, 09 Aug 2019 07:40:31 +0000
 Received: from [192.168.17.6] (helo=jain.kot-begemot.co.uk)
  by www.kot-begemot.co.uk with esmtps (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
  (Exim 4.89) (envelope-from <anton.ivanov@cambridgegreys.com>)
- id 1hvzVh-0006oe-1p; Fri, 09 Aug 2019 07:40:25 +0000
+ id 1hvzVj-0006oj-Sw; Fri, 09 Aug 2019 07:40:28 +0000
 Received: from jain.kot-begemot.co.uk ([192.168.3.3])
  by jain.kot-begemot.co.uk with esmtp (Exim 4.89)
  (envelope-from <anton.ivanov@cambridgegreys.com>)
- id 1hvzVf-0003ns-1x; Fri, 09 Aug 2019 08:40:24 +0100
+ id 1hvzVg-0003ns-PL; Fri, 09 Aug 2019 08:40:26 +0100
 From: anton.ivanov@cambridgegreys.com
 To: linux-um@lists.infradead.org
-Subject: New Vector patch series 
-Date: Fri,  9 Aug 2019 08:40:16 +0100
-Message-Id: <20190809074020.14351-1-anton.ivanov@cambridgegreys.com>
+Subject: [PATCHv4 1/4] um: Add legacy tap support and rename existing vector
+ to hybrid
+Date: Fri,  9 Aug 2019 08:40:17 +0100
+Message-Id: <20190809074020.14351-2-anton.ivanov@cambridgegreys.com>
 X-Mailer: git-send-email 2.11.0
+In-Reply-To: <20190809074020.14351-1-anton.ivanov@cambridgegreys.com>
+References: <20190809074020.14351-1-anton.ivanov@cambridgegreys.com>
 X-Spam-Score: -1.0
 X-Spam-Score: -1.0
 X-Clacks-Overhead: GNU Terry Pratchett
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190809_004026_521940_65E7A061 
-X-CRM114-Status: UNSURE (   3.66  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190809_004029_494574_85B8DFD2 
+X-CRM114-Status: GOOD (  17.69  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -63,23 +66,407 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: richard@nod.at
+Cc: richard@nod.at, Anton Ivanov <anton.ivanov@cambridgegreys.com>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-Hi List, hi Richard,
+From: Anton Ivanov <anton.ivanov@cambridgegreys.com>
 
-I have updated the patchset to 5.3-rc4 
-The IRQ initialization patch has been abandoned in favour of the one
-which Johannes Berg has supplied as a part of the vhost-user patch
-series.
+1. Adds legacy tap support
+2. Renames tap+raw as hybrid
 
-Brgds,
+Signed-off-by: Anton Ivanov <anton.ivanov@cambridgegreys.com>
+---
+ arch/um/drivers/vector_kern.c       |   2 +
+ arch/um/drivers/vector_transports.c |  29 +++++-
+ arch/um/drivers/vector_user.c       | 203 +++++++++++++++++++++---------------
+ arch/um/drivers/vector_user.h       |   4 +-
+ 4 files changed, 151 insertions(+), 87 deletions(-)
 
-A.
+diff --git a/arch/um/drivers/vector_kern.c b/arch/um/drivers/vector_kern.c
+index e190e4ca52e1..8fa094770965 100644
+--- a/arch/um/drivers/vector_kern.c
++++ b/arch/um/drivers/vector_kern.c
+@@ -186,6 +186,8 @@ static int get_transport_options(struct arglist *def)
+ 
+ 
+ 	if (strncmp(transport, TRANS_TAP, TRANS_TAP_LEN) == 0)
++		return 0;
++	if (strncmp(transport, TRANS_HYBRID, TRANS_HYBRID_LEN) == 0)
+ 		return (vec_rx | VECTOR_BPF);
+ 	if (strncmp(transport, TRANS_RAW, TRANS_RAW_LEN) == 0)
+ 		return (vec_rx | vec_tx | VECTOR_QDISC_BYPASS);
+diff --git a/arch/um/drivers/vector_transports.c b/arch/um/drivers/vector_transports.c
+index 77e4ebc206ae..2999f3bd1781 100644
+--- a/arch/um/drivers/vector_transports.c
++++ b/arch/um/drivers/vector_transports.c
+@@ -418,7 +418,7 @@ static int build_raw_transport_data(struct vector_private *vp)
+ 	return 0;
+ }
+ 
+-static int build_tap_transport_data(struct vector_private *vp)
++static int build_hybrid_transport_data(struct vector_private *vp)
+ {
+ 	if (uml_raw_enable_vnet_headers(vp->fds->rx_fd)) {
+ 		vp->form_header = &raw_form_header;
+@@ -432,7 +432,7 @@ static int build_tap_transport_data(struct vector_private *vp)
+ 				NETIF_F_TSO | NETIF_F_GSO | NETIF_F_GRO);
+ 		netdev_info(
+ 			vp->dev,
+-			"tap/raw: using vnet headers for tso and tx/rx checksum"
++			"tap/raw hybrid: using vnet headers for tso and tx/rx checksum"
+ 		);
+ 	} else {
+ 		return 0; /* do not try to enable tap too if raw failed */
+@@ -442,6 +442,29 @@ static int build_tap_transport_data(struct vector_private *vp)
+ 	return -1;
+ }
+ 
++static int build_tap_transport_data(struct vector_private *vp)
++{
++	/* "Pure" tap uses the same fd for rx and tx */
++	if (uml_tap_enable_vnet_headers(vp->fds->tx_fd)) {
++		vp->form_header = &raw_form_header;
++		vp->verify_header = &raw_verify_header;
++		vp->header_size = sizeof(struct virtio_net_hdr);
++		vp->rx_header_size = sizeof(struct virtio_net_hdr);
++		vp->dev->hw_features |=
++			(NETIF_F_TSO | NETIF_F_GSO | NETIF_F_GRO);
++		vp->dev->features |=
++			(NETIF_F_RXCSUM | NETIF_F_HW_CSUM |
++				NETIF_F_TSO | NETIF_F_GSO | NETIF_F_GRO);
++		netdev_info(
++			vp->dev,
++			"tap: using vnet headers for tso and tx/rx checksum"
++		);
++		return 0;
++	}
++	return -1;
++}
++
++
+ int build_transport_data(struct vector_private *vp)
+ {
+ 	char *transport = uml_vector_fetch_arg(vp->parsed, "transport");
+@@ -454,6 +477,8 @@ int build_transport_data(struct vector_private *vp)
+ 		return build_raw_transport_data(vp);
+ 	if (strncmp(transport, TRANS_TAP, TRANS_TAP_LEN) == 0)
+ 		return build_tap_transport_data(vp);
++	if (strncmp(transport, TRANS_HYBRID, TRANS_HYBRID_LEN) == 0)
++		return build_hybrid_transport_data(vp);
+ 	return 0;
+ }
+ 
+diff --git a/arch/um/drivers/vector_user.c b/arch/um/drivers/vector_user.c
+index b3f7b3ca896d..0ada22f82965 100644
+--- a/arch/um/drivers/vector_user.c
++++ b/arch/um/drivers/vector_user.c
+@@ -114,12 +114,76 @@ struct arglist *uml_parse_vector_ifspec(char *arg)
+ 
+ #define PATH_NET_TUN "/dev/net/tun"
+ 
+-static struct vector_fds *user_init_tap_fds(struct arglist *ifspec)
++
++static int create_tap_fd(char *iface)
+ {
+ 	struct ifreq ifr;
+ 	int fd = -1;
+-	struct sockaddr_ll sock;
+ 	int err = -ENOMEM, offload;
++
++	fd = open(PATH_NET_TUN, O_RDWR);
++	if (fd < 0) {
++		printk(UM_KERN_ERR "uml_tap: failed to open tun device\n");
++		goto tap_fd_cleanup;
++	}
++	memset(&ifr, 0, sizeof(ifr));
++	ifr.ifr_flags = IFF_TAP | IFF_NO_PI | IFF_VNET_HDR;
++	strncpy((char *)&ifr.ifr_name, iface, sizeof(ifr.ifr_name) - 1);
++
++	err = ioctl(fd, TUNSETIFF, (void *) &ifr);
++	if (err != 0) {
++		printk(UM_KERN_ERR "uml_tap: failed to select tap interface\n");
++		goto tap_fd_cleanup;
++	}
++
++	offload = TUN_F_CSUM | TUN_F_TSO4 | TUN_F_TSO6;
++	ioctl(fd, TUNSETOFFLOAD, offload);
++	return fd;
++tap_fd_cleanup:
++	if (fd >= 0)
++		os_close_file(fd);
++	return err;
++}
++
++static int create_raw_fd(char *iface, int flags, int proto)
++{
++	struct ifreq ifr;
++	int fd = -1;
++	struct sockaddr_ll sock;
++	int err = -ENOMEM;
++
++	fd = socket(AF_PACKET, SOCK_RAW, flags);
++	if (fd == -1) {
++		err = -errno;
++		goto raw_fd_cleanup;
++	}
++	memset(&ifr, 0, sizeof(ifr));
++	strncpy((char *)&ifr.ifr_name, iface, sizeof(ifr.ifr_name) - 1);
++	if (ioctl(fd, SIOCGIFINDEX, (void *) &ifr) < 0) {
++		err = -errno;
++		goto raw_fd_cleanup;
++	}
++
++	sock.sll_family = AF_PACKET;
++	sock.sll_protocol = htons(proto);
++	sock.sll_ifindex = ifr.ifr_ifindex;
++
++	if (bind(fd,
++		(struct sockaddr *) &sock, sizeof(struct sockaddr_ll)) < 0) {
++		err = -errno;
++		goto raw_fd_cleanup;
++	}
++	return fd;
++raw_fd_cleanup:
++	printk(UM_KERN_ERR "user_init_raw: init failed, error %d", err);
++	if (fd >= 0)
++		os_close_file(fd);
++	return err;
++}
++
++static struct vector_fds *user_init_tap_fds(struct arglist *ifspec)
++{
++	int fd = -1;
+ 	char *iface;
+ 	struct vector_fds *result = NULL;
+ 
+@@ -141,117 +205,88 @@ static struct vector_fds *user_init_tap_fds(struct arglist *ifspec)
+ 
+ 	/* TAP */
+ 
+-	fd = open(PATH_NET_TUN, O_RDWR);
++	fd = create_tap_fd(iface);
+ 	if (fd < 0) {
+-		printk(UM_KERN_ERR "uml_tap: failed to open tun device\n");
++		printk(UM_KERN_ERR "uml_tap: failed to create tun interface\n");
+ 		goto tap_cleanup;
+ 	}
+ 	result->tx_fd = fd;
+-	memset(&ifr, 0, sizeof(ifr));
+-	ifr.ifr_flags = IFF_TAP | IFF_NO_PI | IFF_VNET_HDR;
+-	strncpy((char *)&ifr.ifr_name, iface, sizeof(ifr.ifr_name) - 1);
++	result->rx_fd = fd;
++	return result;
++tap_cleanup:
++	printk(UM_KERN_ERR "user_init_tap: init failed, error %d", fd);
++	if (result != NULL)
++		kfree(result);
++	return NULL;
++}
+ 
+-	err = ioctl(fd, TUNSETIFF, (void *) &ifr);
+-	if (err != 0) {
+-		printk(UM_KERN_ERR "uml_tap: failed to select tap interface\n");
+-		goto tap_cleanup;
++static struct vector_fds *user_init_hybrid_fds(struct arglist *ifspec)
++{
++	char *iface;
++	struct vector_fds *result = NULL;
++
++	iface = uml_vector_fetch_arg(ifspec, TOKEN_IFNAME);
++	if (iface == NULL) {
++		printk(UM_KERN_ERR "uml_tap: failed to parse interface spec\n");
++		goto hybrid_cleanup;
+ 	}
+ 
+-	offload = TUN_F_CSUM | TUN_F_TSO4 | TUN_F_TSO6;
+-	ioctl(fd, TUNSETOFFLOAD, offload);
++	result = uml_kmalloc(sizeof(struct vector_fds), UM_GFP_KERNEL);
++	if (result == NULL) {
++		printk(UM_KERN_ERR "uml_tap: failed to allocate file descriptors\n");
++		goto hybrid_cleanup;
++	}
++	result->rx_fd = -1;
++	result->tx_fd = -1;
++	result->remote_addr = NULL;
++	result->remote_addr_size = 0;
+ 
+-	/* RAW */
++	/* TAP */
+ 
+-	fd = socket(AF_PACKET, SOCK_RAW, htons(ETH_P_ALL));
+-	if (fd == -1) {
+-		printk(UM_KERN_ERR
+-			"uml_tap: failed to create socket: %i\n", -errno);
+-		goto tap_cleanup;
+-	}
+-	result->rx_fd = fd;
+-	memset(&ifr, 0, sizeof(ifr));
+-	strncpy((char *)&ifr.ifr_name, iface, sizeof(ifr.ifr_name) - 1);
+-	if (ioctl(fd, SIOCGIFINDEX, (void *) &ifr) < 0) {
+-		printk(UM_KERN_ERR
+-			"uml_tap: failed to set interface: %i\n", -errno);
+-		goto tap_cleanup;
++	result->tx_fd = create_tap_fd(iface);
++	if (result->tx_fd < 0) {
++		printk(UM_KERN_ERR "uml_tap: failed to create tun interface: %i\n", result->tx_fd);
++		goto hybrid_cleanup;
+ 	}
+ 
+-	sock.sll_family = AF_PACKET;
+-	sock.sll_protocol = htons(ETH_P_ALL);
+-	sock.sll_ifindex = ifr.ifr_ifindex;
++	/* RAW */
+ 
+-	if (bind(fd,
+-		(struct sockaddr *) &sock, sizeof(struct sockaddr_ll)) < 0) {
++	result->rx_fd = create_raw_fd(iface, ETH_P_ALL, ETH_P_ALL);
++	if (result->rx_fd == -1) {
+ 		printk(UM_KERN_ERR
+-			"user_init_tap: failed to bind raw pair, err %d\n",
+-				-errno);
+-		goto tap_cleanup;
++			"uml_tap: failed to create paired raw socket: %i\n", result->rx_fd);
++		goto hybrid_cleanup;
+ 	}
+ 	return result;
+-tap_cleanup:
+-	printk(UM_KERN_ERR "user_init_tap: init failed, error %d", err);
+-	if (result != NULL) {
+-		if (result->rx_fd >= 0)
+-			os_close_file(result->rx_fd);
+-		if (result->tx_fd >= 0)
+-			os_close_file(result->tx_fd);
++hybrid_cleanup:
++	printk(UM_KERN_ERR "user_init_hybrid: init failed");
++	if (result != NULL)
+ 		kfree(result);
+-	}
+ 	return NULL;
+ }
+ 
+ 
+ static struct vector_fds *user_init_raw_fds(struct arglist *ifspec)
+ {
+-	struct ifreq ifr;
+ 	int rxfd = -1, txfd = -1;
+-	struct sockaddr_ll sock;
+ 	int err = -ENOMEM;
+ 	char *iface;
+ 	struct vector_fds *result = NULL;
+ 
+ 	iface = uml_vector_fetch_arg(ifspec, TOKEN_IFNAME);
+ 	if (iface == NULL)
+-		goto cleanup;
++		goto raw_cleanup;
+ 
+-	rxfd = socket(AF_PACKET, SOCK_RAW, ETH_P_ALL);
++	rxfd = create_raw_fd(iface, ETH_P_ALL, ETH_P_ALL);
+ 	if (rxfd == -1) {
+ 		err = -errno;
+-		goto cleanup;
++		goto raw_cleanup;
+ 	}
+-	txfd = socket(AF_PACKET, SOCK_RAW, 0); /* Turn off RX on this fd */
++	txfd = create_raw_fd(iface, 0, ETH_P_IP); /* Turn off RX on this fd */
+ 	if (txfd == -1) {
+ 		err = -errno;
+-		goto cleanup;
+-	}
+-	memset(&ifr, 0, sizeof(ifr));
+-	strncpy((char *)&ifr.ifr_name, iface, sizeof(ifr.ifr_name) - 1);
+-	if (ioctl(rxfd, SIOCGIFINDEX, (void *) &ifr) < 0) {
+-		err = -errno;
+-		goto cleanup;
+-	}
+-
+-	sock.sll_family = AF_PACKET;
+-	sock.sll_protocol = htons(ETH_P_ALL);
+-	sock.sll_ifindex = ifr.ifr_ifindex;
+-
+-	if (bind(rxfd,
+-		(struct sockaddr *) &sock, sizeof(struct sockaddr_ll)) < 0) {
+-		err = -errno;
+-		goto cleanup;
++		goto raw_cleanup;
+ 	}
+-
+-	sock.sll_family = AF_PACKET;
+-	sock.sll_protocol = htons(ETH_P_IP);
+-	sock.sll_ifindex = ifr.ifr_ifindex;
+-
+-	if (bind(txfd,
+-		(struct sockaddr *) &sock, sizeof(struct sockaddr_ll)) < 0) {
+-		err = -errno;
+-		goto cleanup;
+-	}
+-
+ 	result = uml_kmalloc(sizeof(struct vector_fds), UM_GFP_KERNEL);
+ 	if (result != NULL) {
+ 		result->rx_fd = rxfd;
+@@ -260,13 +295,10 @@ static struct vector_fds *user_init_raw_fds(struct arglist *ifspec)
+ 		result->remote_addr_size = 0;
+ 	}
+ 	return result;
+-cleanup:
++raw_cleanup:
+ 	printk(UM_KERN_ERR "user_init_raw: init failed, error %d", err);
+-	if (rxfd >= 0)
+-		os_close_file(rxfd);
+-	if (txfd >= 0)
+-		os_close_file(txfd);
+-	kfree(result);
++	if (result != NULL)
++		kfree(result);
+ 	return NULL;
+ }
+ 
+@@ -456,6 +488,8 @@ struct vector_fds *uml_vector_user_open(
+ 	}
+ 	if (strncmp(transport, TRANS_RAW, TRANS_RAW_LEN) == 0)
+ 		return user_init_raw_fds(parsed);
++	if (strncmp(transport, TRANS_HYBRID, TRANS_HYBRID_LEN) == 0)
++		return user_init_hybrid_fds(parsed);
+ 	if (strncmp(transport, TRANS_TAP, TRANS_TAP_LEN) == 0)
+ 		return user_init_tap_fds(parsed);
+ 	if (strncmp(transport, TRANS_GRE, TRANS_GRE_LEN) == 0)
+@@ -482,8 +516,9 @@ int uml_vector_sendmsg(int fd, void *hdr, int flags)
+ int uml_vector_recvmsg(int fd, void *hdr, int flags)
+ {
+ 	int n;
++	struct msghdr *msg = (struct msghdr *) hdr;
+ 
+-	CATCH_EINTR(n = recvmsg(fd, (struct msghdr *) hdr,  flags));
++	CATCH_EINTR(n = readv(fd, msg->msg_iov, msg->msg_iovlen));
+ 	if ((n < 0) && (errno == EAGAIN))
+ 		return 0;
+ 	if (n >= 0)
+diff --git a/arch/um/drivers/vector_user.h b/arch/um/drivers/vector_user.h
+index d7cbff73b7ff..6bf50cf78ad0 100644
+--- a/arch/um/drivers/vector_user.h
++++ b/arch/um/drivers/vector_user.h
+@@ -16,13 +16,15 @@
+ #define TRANS_TAP "tap"
+ #define TRANS_TAP_LEN strlen(TRANS_TAP)
+ 
+-
+ #define TRANS_GRE "gre"
+ #define TRANS_GRE_LEN strlen(TRANS_RAW)
+ 
+ #define TRANS_L2TPV3 "l2tpv3"
+ #define TRANS_L2TPV3_LEN strlen(TRANS_L2TPV3)
+ 
++#define TRANS_HYBRID "hybrid"
++#define TRANS_HYBRID_LEN strlen(TRANS_HYBRID)
++
+ #ifndef IPPROTO_GRE
+ #define IPPROTO_GRE 0x2F
+ #endif
+-- 
+2.11.0
 
 
 _______________________________________________
