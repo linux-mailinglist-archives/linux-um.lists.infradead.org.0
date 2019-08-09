@@ -2,69 +2,55 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EB07486804
-	for <lists+linux-um@lfdr.de>; Thu,  8 Aug 2019 19:29:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B75C1872D1
+	for <lists+linux-um@lfdr.de>; Fri,  9 Aug 2019 09:19:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=RFYnYiEL9NcZTbnizM3Gpx1SKsmdpAoFmHG+G//KkKk=; b=R/t
-	m5pHzwNoZ7/ikS9cmfwzl97y4mz/kAMszogAIFGxcmPQ0QAwEnlLadKNiV+b/575y7DtI7YofmzNN
-	dPu4RKKGwyyVNdnOhxlXqJ3YIHkriyq7fjJQDAd49at5clIRGqPmiwjHS6t4/LBMiwTe8zuKA+fa6
-	eiRkifYDzcWg4xLOgx9FhhnlA97ZQEoEPqwRgMEMv6uWEA11FalT9ZSfB9XEdHNIbpQBmGl9qXo5P
-	2R+Maocd/DXTncmV6PCmOwLNA7pdPKLtpgrz7/suJFAdSZIXZPkKxrx6GQJq1fBMWIdxf71APD02B
-	dr3PozjXiyCVO3GPhSTqECyJtTlQ6kA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=kO+bvH27OI2bwojWVsqcvnnppl5XpHPkir42XWpxYNE=; b=qcCebOMIZyVXfD
+	WKB5SZHiAAW1HZ9HYqFJY3KWWN7G/DHWkBEj97h+uGIhMEKIs4hbEzQp0fQ5S1MSC/ATNb9evZGtK
+	KmATHJYChPm7eJg9IfTn77oKFVjhE0PO7I58yYoV+puh6QowUQqrWb9Qs2LvP6T4dC9aZhKCtnk4E
+	pBVwZwGykLE1SWpgc1NrALQOmg+mvBLsxToZsaiibdBN54LfkaFeTHdvctQMIwadmYW/VMS2G/RdA
+	L5bd3kRtJKIok7sxBC1pqJRHvIHUD5b4mQsPJlyK0jZxvKXAI2/PLcdh42Z+ha+mTfeNGGNubxq+a
+	4BMwKIii7Zj43WjLXSyA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvmEF-00047X-FV; Thu, 08 Aug 2019 17:29:31 +0000
-Received: from conuserg-11.nifty.com ([210.131.2.78])
+	id 1hvzBd-0000hq-5R; Fri, 09 Aug 2019 07:19:41 +0000
+Received: from s3.sipsolutions.net ([2a01:4f8:191:4433::2]
+ helo=sipsolutions.net)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvmEB-00046v-Sh
- for linux-um@lists.infradead.org; Thu, 08 Aug 2019 17:29:29 +0000
-Received: from grover.flets-west.jp (softbank126125143222.bbtec.net
- [126.125.143.222]) (authenticated)
- by conuserg-11.nifty.com with ESMTP id x78HSihL013374;
- Fri, 9 Aug 2019 02:28:45 +0900
-DKIM-Filter: OpenDKIM Filter v2.10.3 conuserg-11.nifty.com x78HSihL013374
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
- s=dec2015msa; t=1565285325;
- bh=ZXKGOGQbV1dII2jtvp/G7SZGpjYQxATkV4zvzvc+42Y=;
- h=From:To:Cc:Subject:Date:From;
- b=PX+490OrPVmLr92V97na/zJGYY1zwrnzhbkh4/10NTxSeQWMGWhxeAckWMIDlpl+5
- MsDx2yuQmGUkwqbl1S4SfKcn1d7sQ5os/wL2PEHtxvoKEri50kYMbe12qN9y0BSGI6
- raozvMs++pCGP6PIraeN0/y96eeIaxv4GgqLKXGpmAYvmAVP88cJucAwnfuYmxbBMs
- f/o8s76wNNeu51PJguAgtjotY3y0RMF1u+pYRwR7vGvsCDChU9khY4ARKyjDarSwMc
- Gjra9+McXY0gsXBNq07y9g/JWj4qEExsjzzB67/ai2/YHG9hFhx7gPG54NUCF0YnTC
- lzKDTj6bfgsmA==
-X-Nifty-SrcIP: [126.125.143.222]
-From: Masahiro Yamada <yamada.masahiro@socionext.com>
-To: Jeff Dike <jdike@addtoit.com>, Richard Weinberger <richard@nod.at>,
- Anton Ivanov <anton.ivanov@cambridgegreys.com>,
+ id 1hvzBa-0000hX-5i
+ for linux-um@lists.infradead.org; Fri, 09 Aug 2019 07:19:39 +0000
+Received: by sipsolutions.net with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <johannes@sipsolutions.net>)
+ id 1hvzBQ-0003If-Qg; Fri, 09 Aug 2019 09:19:28 +0200
+Message-ID: <1db90d466d11b5cb8b379c05efb885e0816195dc.camel@sipsolutions.net>
+Subject: Re: [RFC] um: virtio: Workaround for using virtio_net with snabb
+From: Johannes Berg <johannes@sipsolutions.net>
+To: Anton Ivanov <anton.ivanov@cambridgegreys.com>, 
  linux-um@lists.infradead.org
-Subject: [PATCH] um: remove meaningless clearing of clean-files
-Date: Fri,  9 Aug 2019 02:28:43 +0900
-Message-Id: <20190808172843.1568-1-yamada.masahiro@socionext.com>
-X-Mailer: git-send-email 2.17.1
+Date: Fri, 09 Aug 2019 09:19:27 +0200
+In-Reply-To: <36928187-8013-9e25-3ff8-a7a0962c8274@cambridgegreys.com>
+References: <20190731203030.29821-1-johannes@sipsolutions.net>
+ <394f11ad-88e3-1d1f-8b8e-51fdc14aea8d@cambridgegreys.com>
+ <1e988e1583b94761ba876827af24eede0c46ccf4.camel@sipsolutions.net>
+ <36928187-8013-9e25-3ff8-a7a0962c8274@cambridgegreys.com>
+User-Agent: Evolution 3.30.5 (3.30.5-1.fc29) 
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190808_102928_290209_B80720FB 
-X-CRM114-Status: UNSURE (   5.10  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20190809_001938_216645_5754BA0B 
+X-CRM114-Status: GOOD (  13.10  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [210.131.2.78 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [210.131.2.78 listed in wl.mailspike.net]
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,34 +62,56 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: Masahiro Yamada <yamada.masahiro@socionext.com>,
- linux-kernel@vger.kernel.org
-MIME-Version: 1.0
+Cc: Richard Weinberger <richard@nod.at>, Jeff Dike <jdike@addtoit.com>,
+ Erel Geron <erelx.geron@intel.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-Signed-off-by: Masahiro Yamada <yamada.masahiro@socionext.com>
----
+On Thu, 2019-08-08 at 08:56 +0100, Anton Ivanov wrote:
 
- arch/um/kernel/Makefile | 1 -
- 1 file changed, 1 deletion(-)
+> However, a cursory search shows these being turned off in a few other 
+> cases as well including vs some DPDK based software.
+> 
+> So snabb is not alone having issues with MQ and VQ flags.
 
-diff --git a/arch/um/kernel/Makefile b/arch/um/kernel/Makefile
-index 2f36d515762e..89afc54f8699 100644
---- a/arch/um/kernel/Makefile
-+++ b/arch/um/kernel/Makefile
-@@ -13,7 +13,6 @@ CPPFLAGS_vmlinux.lds := -DSTART=$(LDS_START)		\
-                         -DELF_FORMAT=$(LDS_ELF_FORMAT)	\
- 			$(LDS_EXTRA)
- extra-y := vmlinux.lds
--clean-files :=
- 
- obj-y = config.o exec.o exitcode.o irq.o ksyms.o mem.o \
- 	physmem.o process.o ptrace.o reboot.o sigio.o \
--- 
-2.17.1
+Oh. I hadn't really researched it much more.
+
+> > > Have you tried it vs let's say dpdk (IIRC it supports vhost_user as an
+> > > interface).
+> > 
+> > No, and we probably won't, we're not really particularly interested in
+> > the network aspect of it. Trying it out here with existing device
+> > implementations was really just for development, ultimately our plan is
+> > to have our own device implementation(s) and driver(s). 
+> 
+> Understood, however for it to be upstreamed it should work with 
+> something else which is publicly available. That is why I am going to 
+> try it vs Bess/DPDK (it is also lowest effort for me as I already have 
+> that set-up).
+
+True. Erel tried some of the samples from qemu contrib as well as snabb.
+But if you have a DPDK setup then that's certainly an interesting option
+to try, one that would likely also be useful for others to use this
+with.
+
+If needed, we can respin this as a real patch to add options to the
+command line, I suppose.
+
+> > I'm hoping to
+> > publish and upstream something that will let you run multiple UML
+> > machines in "synchronized time travel" mode over vhost-user though.
+> 
+> vhost-user clock? Interesting idea.
+
+I'm on vacation right now, but once I'm back I'll start looking into
+that. Not sure how to really tie that in though since it needs the idle
+hook too, and that's arch specific. So I guess it just has to be
+integrated with all the time-travel mode code, rather than being more
+generic/separate.
+
+johannes
 
 
 _______________________________________________
