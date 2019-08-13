@@ -2,75 +2,75 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 421DD8AE88
-	for <lists+linux-um@lfdr.de>; Tue, 13 Aug 2019 07:06:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 72EA38AE97
+	for <lists+linux-um@lfdr.de>; Tue, 13 Aug 2019 07:09:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nNQS2/WA6W7ugwKUCXtvcJ0wKpET0Fi/2T9dCXAGZUY=; b=mQy3ZBFrLYbSR9
-	xOS0kQoAdK8t3WAadPlTFIdcEvcGKked9FjVwBfqrdpvWK5rYxyg0DHXQNt9PvCX3N2Zc/2jvXu+W
-	LY54FNhcXS7uctvukOs1TEGQ/L9BaRfSOBgdcY/yFmC5vhfwOQwKIh9e5D+7k9aoRzEz3odl5X4hj
-	T0kAPcdWBWhMFJWEoB6qmfEEXJn9Z9DhO1k7dYXgAC73FqcfuABvpRODy8k5D0g3pw91OtpLeZVe0
-	UMRrqchTcH5/JxSfhD0WLkGkV6tuLFzccCaw/Pno5lNBS4OMdjv/c38po8z+qxR6ZO/DExIN6YlLW
-	cLoTwIY7FkpBQ2+3roWg==;
+	List-Owner; bh=fRicAYL30XXgOc0Spk9wXN8AqeFqoQnwHKDRMU9C13I=; b=DBe3y/XW84CS/X
+	RT5CGNf8F4U3ha917uAGr+nE4ZX4TXtGBS+6kRidRjzCH9GA0+lsoRWRZj+CQNf45LGd+2TeyXaQB
+	bYCuRSiJyyqCY7DrOVPdA+C75asVVNObxJ9hFU3cEhpCoTcqfgsiKPPYlBHR19yIl6Kh/uHznk05S
+	1IgZfJXV+td+g5/KEyMUnhKROUgE2PiK9Wgx4JyGpbGP+LoNJxsOoCIBbLoMABUl/3BrkWubr/QKt
+	J0UAecJc1pqGnpi3cS6NKgwS7KiClnv6jiRoc+bcoON5fKBAVvnuGzvHZLQhrmYXFR51l5k7wjhGb
+	xpTtHxJRecBf2oorNXxg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxP0n-0007IC-Ax; Tue, 13 Aug 2019 05:06:21 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1hxP42-0007bH-66; Tue, 13 Aug 2019 05:09:42 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxP0j-0007HB-9H
- for linux-um@lists.infradead.org; Tue, 13 Aug 2019 05:06:19 +0000
-Received: by mail-pf1-x444.google.com with SMTP id f17so46891235pfn.6
- for <linux-um@lists.infradead.org>; Mon, 12 Aug 2019 22:06:16 -0700 (PDT)
+ id 1hxP3z-0007as-DY
+ for linux-um@lists.infradead.org; Tue, 13 Aug 2019 05:09:40 +0000
+Received: by mail-pg1-x542.google.com with SMTP id n190so9806474pgn.0
+ for <linux-um@lists.infradead.org>; Mon, 12 Aug 2019 22:09:38 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Abf3cK9D+gRrRGwQh2kwak/YzDDkHOqgDtvVTIo4q7A=;
- b=Y+dmDbanwPRKrcGCv4/WQS9jtPyx6cpYSiNcTCluUKOVyeyn7wl8RZe0u1cf6FlML6
- wfRe3v8dcFvKIShJjXRgh8cEGNhzCFLCfZTUSJEGO2Ea0/S9/l8EIDzT2hfdmu4vYl3/
- XIR90pnuI3K4kV1d5Bm11Pn57c+GfE4dVDOOxOsnLShgWMYlA1pJcJoF7sOPZtexCwYP
- ELhxZQwrFnEmjZhgXx2mjuE3HiLK9TadecMdLzAo0eHIWgo1V1G1uOa5P7ZTv3NrW55Q
- IwxyHJePJisriyJmWo1d+yNh53aHnfmOSYFZCbC26Ph2JuMFkmU8c4wQttP2Gfux7zEx
- HKsA==
+ :cc; bh=uLkfmiy/QyxG+42Kpd1Hh2gG09JBSRi1kuJ0irEOT+Q=;
+ b=blOJdc2kt55ZqQDvPUZbAMrG0e9V6Lpz+glDC3wqeZ0WFkpdzH+BHVuWLKpOnhb42G
+ g/4gIqAUYUWwrSZVnoWlA0+3BTuFFHTn4QIkPhZ/yY/qHdFseTm5A1T8f5E1IwOIGPkQ
+ NjL2X3JkoAgV9wX66vJ01slCy0p6rnZ7bkyjxanoLsFcwNNC9ezGHFtGPQthuBsXEPdD
+ Vzi/25vZpUBOV4gIKVVTs3IY9Dq9AiSUtfWFy0iWSPQYG787ViekPjFY+1C9grp4yxiQ
+ WMAj2QOcebo3fC3yliGOOPA8v9/MAYuJN9q8LYDdlO8ROvEqJbK4dyCfU63RlOwjE9t3
+ XXgg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=Abf3cK9D+gRrRGwQh2kwak/YzDDkHOqgDtvVTIo4q7A=;
- b=VaPusrZRobn3UtrS+E1xGgALjV2Q5b72sp2a+lfUZlYpfaElq/IFvM/dEcQxif8psR
- FSU7ndGJPtv5Lf1Vqu5VVJ0BkzKChgWEg8RuwraF9u3kiAIYjHQfv7M5vOYMxfVhJALV
- cc+ywXORLOJHwKzyjqRqcA/g3nQHKYEqNHR1i+pA5RdtKS6EYWNdeSmIOGlmBDDe8Ish
- Q/kdEpdZASrU81WEt54iKEm8fBx76mL+Ac8TOTodoSc1gBLJ+GVQIMhr2zSP01sTaCeL
- GZ26WwYNgDc2rh73GtYCDDnob0HWTG88Z5UshRv+Po2OusMb7jCsOJOEMFebesp1a64Q
- +Yzw==
-X-Gm-Message-State: APjAAAVEjD5jqgb5Ox7glNzReK0YbiPSiGBcKT8B5rZ+G/h8+cQT5Lcn
- hfhfjifZY/9bJALZ3/NbVtU/vIsXz4eayHu8VixjAg==
-X-Google-Smtp-Source: APXvYqzlm/LZa7vLxmhuF4EQXYFyYKJYlrIat9BhnUUptmEmQR49KGysQZ4JhDoNNZWx7O5yEaH2e2yfA6hMO6s/qoE=
-X-Received: by 2002:a63:205f:: with SMTP id r31mr30781941pgm.159.1565672775425; 
- Mon, 12 Aug 2019 22:06:15 -0700 (PDT)
+ bh=uLkfmiy/QyxG+42Kpd1Hh2gG09JBSRi1kuJ0irEOT+Q=;
+ b=L4adLBW/FhXrQTcmIdvG5G+r2Msri+UThvfSaCoAFQPpeojeGUdSqBSFLCvdPVyXSp
+ SPPwkT8IzhaQF7ng8nwwW+3AXHvkeadzo4yMHN6Evc7OGYw/SD/h4txSqPThBKz5pncT
+ AMeHL6CLBBuqYhwcBubZGBNJM3YOKfJ4qndckuthcPrkRfoaWwkw2UN8QeC2xAFe6bRn
+ qwtUnMiPNQF4brfPvBLxENdOTfYs5GL/9EgAz0yuUIIuh+sp3e9Ml074r+jJ9k0LNa0w
+ 3y7C0tumzFIbl/SedKRrASsIyeKd5fmrmLf2OwMaFZRNDvI1Kmr49lh16apk7mQoiviK
+ RRnQ==
+X-Gm-Message-State: APjAAAUQ1Mt7LGFNLN/QRPby4HROvQ6PmG/bsO35RJoD8Iv5HMgPs/bF
+ ZE81LFnqwBTq3JPtz4DC9zZ4nGkUAyZxCz2ugIBpqw==
+X-Google-Smtp-Source: APXvYqwuRvdkQRBufOH1je8RsECuoe8PsScuGBBjY118Ufh882DHOjHaTVKhOCRIYEV6VNsZUpt68lWBTKVfNRYZXa8=
+X-Received: by 2002:a17:90a:c391:: with SMTP id
+ h17mr524990pjt.131.1565672978100; 
+ Mon, 12 Aug 2019 22:09:38 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190812182421.141150-1-brendanhiggins@google.com>
- <20190812182421.141150-11-brendanhiggins@google.com>
- <20190813042455.4A04320644@mail.kernel.org>
-In-Reply-To: <20190813042455.4A04320644@mail.kernel.org>
+ <20190812182421.141150-12-brendanhiggins@google.com>
+ <20190813045510.C1D6E206C2@mail.kernel.org>
+In-Reply-To: <20190813045510.C1D6E206C2@mail.kernel.org>
 From: Brendan Higgins <brendanhiggins@google.com>
-Date: Mon, 12 Aug 2019 22:06:04 -0700
-Message-ID: <CAFd5g46LHq1sQaio2Vj5jt54YN-Y2HuCT8FbALQhJoekkYJ-uQ@mail.gmail.com>
-Subject: Re: [PATCH v12 10/18] kunit: test: add tests for kunit test abort
+Date: Mon, 12 Aug 2019 22:09:26 -0700
+Message-ID: <CAFd5g47jrUd+ES4AaWsLDRCfsGiKDB-rOP6TR-NdymCeVAK3Kg@mail.gmail.com>
+Subject: Re: [PATCH v12 11/18] kunit: test: add the concept of assertions
 To: Stephen Boyd <sboyd@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190812_220618_766108_8106E202 
-X-CRM114-Status: UNSURE (   9.28  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190812_220939_548040_89D8BA3A 
+X-CRM114-Status: GOOD (  21.86  )
 X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
  -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
  white-list
@@ -128,25 +128,74 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Mon, Aug 12, 2019 at 9:24 PM Stephen Boyd <sboyd@kernel.org> wrote:
+On Mon, Aug 12, 2019 at 9:55 PM Stephen Boyd <sboyd@kernel.org> wrote:
 >
-> Quoting Brendan Higgins (2019-08-12 11:24:13)
-> > +
-> > +static int kunit_try_catch_test_init(struct kunit *test)
-> > +{
-> > +       struct kunit_try_catch_test_context *ctx;
-> > +
-> > +       ctx = kunit_kzalloc(test, sizeof(*ctx), GFP_KERNEL);
+> Quoting Brendan Higgins (2019-08-12 11:24:14)
+> > Add support for assertions which are like expectations except the test
+> > terminates if the assertion is not satisfied.
+> >
+> > The idea with assertions is that you use them to state all the
+> > preconditions for your test. Logically speaking, these are the premises
+> > of the test case, so if a premise isn't true, there is no point in
+> > continuing the test case because there are no conclusions that can be
+> > drawn without the premises. Whereas, the expectation is the thing you
+> > are trying to prove. It is not used universally in x-unit style test
+> > frameworks, but I really like it as a convention.  You could still
+> > express the idea of a premise using the above idiom, but I think
+> > KUNIT_ASSERT_* states the intended idea perfectly.
+> >
+> > Signed-off-by: Brendan Higgins <brendanhiggins@google.com>
+> > Reviewed-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+> > Reviewed-by: Logan Gunthorpe <logang@deltatee.com>
 >
-> Can this fail? Should return -ENOMEM in that case?
-
-Yes, I should do that.
-
-> > +       test->priv = ctx;
+> Reviewed-by: Stephen Boyd <sboyd@kernel.org>
+>
+> > + * Sets an expectation that the values that @left and @right evaluate to are
+> > + * not equal. This is semantically equivalent to
+> > + * KUNIT_ASSERT_TRUE(@test, strcmp((@left), (@right))). See KUNIT_ASSERT_TRUE()
+> > + * for more information.
+> > + */
+> > +#define KUNIT_ASSERT_STRNEQ(test, left, right)                                \
+> > +               KUNIT_BINARY_STR_NE_ASSERTION(test,                            \
+> > +                                             KUNIT_ASSERTION,                 \
+> > +                                             left,                            \
+> > +                                             right)
 > > +
-> > +       ctx->try_catch = kunit_kmalloc(test,
-> > +                                      sizeof(*ctx->try_catch),
-> > +                                      GFP_KERNEL);
+> > +#define KUNIT_ASSERT_STRNEQ_MSG(test, left, right, fmt, ...)                  \
+> > +               KUNIT_BINARY_STR_NE_MSG_ASSERTION(test,                        \
+> > +                                                 KUNIT_ASSERTION,             \
+> > +                                                 left,                        \
+> > +                                                 right,                       \
+> > +                                                 fmt,                         \
+>
+> Same question about tabbing too.
+
+Yep. WIll fix.
+
+> > diff --git a/kunit/test-test.c b/kunit/test-test.c
+> > index 88f4cdf03db2a..058f3fb37458a 100644
+> > --- a/kunit/test-test.c
+> > +++ b/kunit/test-test.c
+> > @@ -78,11 +78,13 @@ static int kunit_try_catch_test_init(struct kunit *test)
+> >         struct kunit_try_catch_test_context *ctx;
+> >
+> >         ctx = kunit_kzalloc(test, sizeof(*ctx), GFP_KERNEL);
+> > +       KUNIT_ASSERT_NOT_ERR_OR_NULL(test, ctx);
+>
+> Ah ok. Question still stands if kunit_kzalloc() should just have the
+> assertion on failure.
+
+Right. In the previous patch KUNIT_ASSERT_* doesn't exist yet, so I
+can't use it. And rather than fall back to return -ENOMEM like I
+should have, I evidently forgot to do that.
+
+> >         test->priv = ctx;
+> >
+> >         ctx->try_catch = kunit_kmalloc(test,
+> >                                        sizeof(*ctx->try_catch),
+> >                                        GFP_KERNEL);
+> > +       KUNIT_ASSERT_NOT_ERR_OR_NULL(test, ctx->try_catch);
+> >
 
 _______________________________________________
 linux-um mailing list
