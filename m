@@ -2,76 +2,75 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C0F1B8B17C
-	for <lists+linux-um@lfdr.de>; Tue, 13 Aug 2019 09:53:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 245B28B1CE
+	for <lists+linux-um@lfdr.de>; Tue, 13 Aug 2019 09:57:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HtEa0H3VRSrPPYCIYJfk1NQts/S54LunMTZXkWZhGuw=; b=e9VIyZa+VNPW39
-	ZSNvJn1J7PInd8BEvuGgSf+Y+knYZeobhm+1NWTYsYb9Mj8vPx1eTzfCQv/jnEzJgTUNww6AJ/uMy
-	DvmjewqYGih9yKbziyk9Z2COKjAa0G66ndPcHG1Jph3cGGQ6BdDs5poQYw9DOBfGSi8eHhvNk53sh
-	OIqLQRKNkPef/vAUgKDeiRbsoq2jsVwZo2AAWHaohYp1bG7dWRBwEU7E+wO7dIYJxqyJ3dLmNE+GL
-	T67DDFIyxcbBUVTGJ0SCwTJ2QUVZeDkIk3mY/xHv2DYxFGf4Hynd6dZYF1mCphkh25B7XUSpxEB/r
-	c0QDGXqf59lSMxIeCNfQ==;
+	List-Owner; bh=HxTUzCkzE/t5bixeG2RfwzkTRbQynSADNDcYNUPBBjQ=; b=X5Vqm/zy7Z7zPr
+	IfaXAB5KXB/FJ6/+Mcbt5rF6FaSWlUIFJvxqa0rtBv+OERK/cBqHC8RnWEfhouG+qIiZLYoA3aLoM
+	TeGWJsFeonHSF5b/H++2UaURBzVOxwmIJtKt94QkCq7OJ02ECM28kQuML/v6Dchvu4DSBD+7/+O+k
+	31J/xPV8WTeoneCHVAslV1KQOIha045ilyJGlreG/K+rSEfS4KX1n5ZWWfmGUN7CTE4Y9IWCpWMW+
+	wOAcmXbZVBGTd/c+zyEKtdzMhGhcQ3FAXQIeMRyB8uKjgH2+hx6sXz00DtrlhKU11kSsZh3TIM0JR
+	5fCnlhxGaWlv0bmmLZkQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxRcm-0000Ez-BA; Tue, 13 Aug 2019 07:53:44 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1hxRgi-0001kV-T0; Tue, 13 Aug 2019 07:57:48 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxRcj-0000EL-JZ
- for linux-um@lists.infradead.org; Tue, 13 Aug 2019 07:53:42 +0000
-Received: by mail-pg1-x544.google.com with SMTP id n190so10018925pgn.0
- for <linux-um@lists.infradead.org>; Tue, 13 Aug 2019 00:53:41 -0700 (PDT)
+ id 1hxRgf-0001jj-KY
+ for linux-um@lists.infradead.org; Tue, 13 Aug 2019 07:57:46 +0000
+Received: by mail-pg1-x543.google.com with SMTP id w3so13629593pgt.13
+ for <linux-um@lists.infradead.org>; Tue, 13 Aug 2019 00:57:45 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=1w6tEv+UsY5F/hdJoPjOc+8EZA8fHnLVH5Ee68+K+14=;
- b=nVz7SRzwhp+sIStWQOhdw7+eMounsWwWY4b9W+H2splMtvxXWG/v8uX0oyrPhi9Pc/
- DbYNbNpkCoegNiTUpPMiXg34BXPrPJrAjoIA7DyPnMkZHZfSastxpDXvu6zpEH76cIXz
- 2ipKiw0wJIDxWMLZyrA5y40OVaB5InZkV31euGDTlfUD9NGVPd2AdaFiZI2HUpl+1Z71
- eZE6OVlRYXpa7v0Ieb0+s2HPAU8hcA299XGRboiSsBb0Wz4QiBbaFXHTBKHp4dwxoDYm
- Lyn/gNUB2QMFaYgVWF7lBw/U70QsznbaxSpwZOVQK35ds3v4ks7lmHH71KHdUCsOoz7q
- RS4A==
+ :cc; bh=Qxe9OCB0IqyHnARJf+JfT+i9JEoP4MCbV860ULsGU5s=;
+ b=fWxvwQ8Jg+CWf05NnJCeSWeVicnOoXy6BXG5VhOfTHwJWFVTHFtRdcNqJwjLSDCsVu
+ jiiP3AZW2TJ9Y27gYXlQWYVFyW9cOeHAtkBDWUX3YWHKBu/HS+LKFfPpeMSX6W2l72tZ
+ BRhzYAO288V5DleisjNQBfRbcy/Mz40/cEOLiUMhsZ95Bxp04BvhX0q6796bywFqCBqp
+ NSnYasYkCLB4Txnd4bsLfaw/UOxBpmRM2L4ZKLjuNJtySeAykDmMbqKDwEkFdZmfV7CY
+ oOe6Xd9hvm7QvXiKG5lkjN3mPEgj0ajH3yxwTU51S77P9cnCG7u1CaWqpN7xPuHVgKBk
+ pF4g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=1w6tEv+UsY5F/hdJoPjOc+8EZA8fHnLVH5Ee68+K+14=;
- b=Sx6F0ANO5q9wL7qHJ8a3oecdH10fVQlL49SQuks2b+Pj26q9wXK6Ctmhj0+I/Gy4w4
- ytKGxX0R9ois1IMalkjEWVEieykarKV9DtUKXxX9r/9ajCNrMMPCNUNtAk/CU4cLzbSm
- FgHyjIZiOzqToIqpB7xe2C5f373FkolXCv6FC8Xm7IxsxJPqdOdY+UIwRxznWDvBmgfK
- RmY7PZzmK9LNGXzvqxHU2poRp2TzKJwDxKqStFxloRLX1rbxr+hJiMMSpl44g/D6AaYV
- DQbVu4b93qIL1mECLHrZjG3W0TppUOoJBPcFUPkD0P+3XZkFscSF2Kiy+d3HSs3QXNQG
- 863g==
-X-Gm-Message-State: APjAAAW3yfvgc72ly9jI8ze0/utngF7A78vb2q+SDnSlSx0e1XLcDTCV
- FWvy/icgDXxfISoyDRMsuKKoNGEBFH/sbkEG2eRNjg==
-X-Google-Smtp-Source: APXvYqwRt249N6Nnc3lDOtyH2RE286o2POCGTN4Y9Dd+KQhTUzxvnzvxmCpITQmOohY+Myh1tvYfqlbmJVebyc0CKlY=
-X-Received: by 2002:a63:b919:: with SMTP id z25mr33087981pge.201.1565682820534; 
- Tue, 13 Aug 2019 00:53:40 -0700 (PDT)
+ bh=Qxe9OCB0IqyHnARJf+JfT+i9JEoP4MCbV860ULsGU5s=;
+ b=kVLoJc8YQzL6BhPHT8FnXmNmymVOAcx3qk+YSWKxS7Ftf3VfxDeFj0sycDcwYDcBcF
+ cHr3Svaxj+tnfMtc9lWYfOIoDtUWMNRfP3/O7cXebQ0JJs8bf2r42nV7iVxrxAtZHoqP
+ uA5qlurok5N1chh0LgAlQA4FS6r3djgalf9PaDNuvBRq81SVOOPdjeloozojF9X5L+qN
+ El92/OzHQMF/f2XVIoW9FG+eBys+KTwfYNMzG/Hr9xgGRAsb2AL0xb53UW/rBwf57YSJ
+ 1J33UO8S7pTYyXTjql8/hAUMwmdTotRrn/QTMlDOmaOOUTXz2UlRw3J7uwNNlrZ0WeS2
+ pNQA==
+X-Gm-Message-State: APjAAAUJjnpgYrNouZTWgLiGZ44MCGkvUnZymIut97LxyWKuGTWyhVV/
+ 7dYWFhOjUuMCLgk/m3O84R/yGhH6zxyC7glSQsRvsw==
+X-Google-Smtp-Source: APXvYqzWk2rxD82fR19g3JsVNBllToOJJzR2xQFo11AJZitYxxxUqNbN9+PHkwurw7oZzFeN69t+CYdvTXIlmBWBICY=
+X-Received: by 2002:a63:205f:: with SMTP id r31mr31222917pgm.159.1565683064346; 
+ Tue, 13 Aug 2019 00:57:44 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190812182421.141150-1-brendanhiggins@google.com>
- <20190812182421.141150-11-brendanhiggins@google.com>
- <20190813042455.4A04320644@mail.kernel.org>
- <CAFd5g46LHq1sQaio2Vj5jt54YN-Y2HuCT8FbALQhJoekkYJ-uQ@mail.gmail.com>
- <20190813055707.8B2BB206C2@mail.kernel.org>
-In-Reply-To: <20190813055707.8B2BB206C2@mail.kernel.org>
+ <20190812182421.141150-13-brendanhiggins@google.com>
+ <20190813043140.67FF320644@mail.kernel.org>
+In-Reply-To: <20190813043140.67FF320644@mail.kernel.org>
 From: Brendan Higgins <brendanhiggins@google.com>
-Date: Tue, 13 Aug 2019 00:53:28 -0700
-Message-ID: <CAFd5g45rLTB965BX24DKFauumbdbn=m4kxtzgwr_4uj66Vmzmw@mail.gmail.com>
-Subject: Re: [PATCH v12 10/18] kunit: test: add tests for kunit test abort
+Date: Tue, 13 Aug 2019 00:57:33 -0700
+Message-ID: <CAFd5g44Es4emKyQSxUkqckGJ02_o3sAcDLwUCW8ZFGX14j5=xg@mail.gmail.com>
+Subject: Re: [PATCH v12 12/18] kunit: test: add tests for KUnit managed
+ resources
 To: Stephen Boyd <sboyd@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190813_005341_674363_2560AA74 
-X-CRM114-Status: GOOD (  12.08  )
+X-CRM114-CacheID: sfid-20190813_005745_697906_00A68F79 
+X-CRM114-Status: GOOD (  12.46  )
 X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
  white-list
@@ -115,11 +114,12 @@ Cc: Petr Mladek <pmladek@suse.com>,
  Jeff Dike <jdike@addtoit.com>, Dan Carpenter <dan.carpenter@oracle.com>,
  devicetree <devicetree@vger.kernel.org>,
  linux-kbuild <linux-kbuild@vger.kernel.org>, "Bird,
- Timothy" <Tim.Bird@sony.com>, linux-um@lists.infradead.org,
- Steven Rostedt <rostedt@goodmis.org>, Julia Lawall <julia.lawall@lip6.fr>,
- Josh Poimboeuf <jpoimboe@redhat.com>, kunit-dev@googlegroups.com,
- Theodore Ts'o <tytso@mit.edu>, Richard Weinberger <richard@nod.at>,
- Greg KH <gregkh@linuxfoundation.org>, Randy Dunlap <rdunlap@infradead.org>,
+ Timothy" <Tim.Bird@sony.com>, Avinash Kondareddy <akndr41@gmail.com>,
+ linux-um@lists.infradead.org, Steven Rostedt <rostedt@goodmis.org>,
+ Julia Lawall <julia.lawall@lip6.fr>, Josh Poimboeuf <jpoimboe@redhat.com>,
+ kunit-dev@googlegroups.com, Theodore Ts'o <tytso@mit.edu>,
+ Richard Weinberger <richard@nod.at>, Greg KH <gregkh@linuxfoundation.org>,
+ Randy Dunlap <rdunlap@infradead.org>,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
  Luis Chamberlain <mcgrof@kernel.org>, Daniel Vetter <daniel@ffwll.ch>,
  Kees Cook <keescook@google.com>, linux-fsdevel@vger.kernel.org,
@@ -129,30 +129,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Mon, Aug 12, 2019 at 10:57 PM Stephen Boyd <sboyd@kernel.org> wrote:
+On Mon, Aug 12, 2019 at 9:31 PM Stephen Boyd <sboyd@kernel.org> wrote:
 >
-> Quoting Brendan Higgins (2019-08-12 22:06:04)
-> > On Mon, Aug 12, 2019 at 9:24 PM Stephen Boyd <sboyd@kernel.org> wrote:
-> > >
-> > > Quoting Brendan Higgins (2019-08-12 11:24:13)
-> > > > +
-> > > > +static int kunit_try_catch_test_init(struct kunit *test)
-> > > > +{
-> > > > +       struct kunit_try_catch_test_context *ctx;
-> > > > +
-> > > > +       ctx = kunit_kzalloc(test, sizeof(*ctx), GFP_KERNEL);
-> > >
-> > > Can this fail? Should return -ENOMEM in that case?
-> >
-> > Yes, I should do that.
+> Quoting Brendan Higgins (2019-08-12 11:24:15)
+> > +
+> > +static int kunit_resource_test_init(struct kunit *test)
+> > +{
+> > +       struct kunit_test_resource_context *ctx =
+> > +                       kzalloc(sizeof(*ctx), GFP_KERNEL);
+> > +
+> > +       if (!ctx)
+> > +               return -ENOMEM;
 >
-> Looks like it's asserted to not be an error. If it's pushed into the API
-> then there's nothing to do here, and you can have my reviewed-by on this
-> patch.
->
-> Reviewed-by: Stephen Boyd <sboyd@kernel.org>
+> Should this use the test assertion logic to make sure that it's not
+> failing allocations during init?
 
-Cool, thanks!
+Yep. Will fix.
+
+> BTW, maybe kunit allocation APIs should
+> fail the test if they fail to allocate in general. Unless we're unit
+> testing failure to allocate problems.
+
+Yeah, I thought about that. I wasn't sure how people would feel about
+it, and I thought it would be a pain to tease out all the issues
+arising from aborting in different contexts when someone might not
+expect it.
+
+I am thinking later we can have kunit_kmalloc_or_abort variants? And
+then we can punt this issue to a later time?
+
+> > +
+> > +       test->priv = ctx;
+> > +
+> > +       kunit_init_test(&ctx->test, "test_test_context");
+> > +
+> > +       return 0;
 
 _______________________________________________
 linux-um mailing list
