@@ -2,78 +2,76 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8D3248AE73
-	for <lists+linux-um@lfdr.de>; Tue, 13 Aug 2019 07:04:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D51188AE7C
+	for <lists+linux-um@lfdr.de>; Tue, 13 Aug 2019 07:04:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MQQkqVA/dg2OssFCxav1PKjRNdYjeHr/SsS/GMEScAE=; b=CTWAz8pDDk+QbA
-	HxKrOIMyxkOsdzKV3xKk75EZAUuPFuLFDrDISmLyKhKAOZ7tzjnufZ7088dj8wngbIH8wpPf6/cOV
-	OXYNV7zmzVsu5DWgGqsCJkWrBWW1n+fXw1PvHbRw5iin9wG2DarE5vZeDSAr+4xLKMVpfFqUy+UjB
-	DaGkl6zjwFcaNLKvEcU+zJM6NHSIdOFH1wkZDAnAnle3n0Aiffy3jj3vWp0FRjL4uW++sKXGDxJgk
-	lopldCU0Y9MmjQl1OWqCxXgN/q1+/WDxbajFRRl/ditXTWoGOU+bDy7UKvGemxYeIEARuzWRPyMwN
-	VWWjvWd8MKA2T7EINBOA==;
+	List-Owner; bh=SC2RqoR1bblTuXxyfAb/EQf/MXLAgdSut/4HKO0abkQ=; b=ld/XQWE3nBU/nG
+	y+QaNho75Vt763sMrCenIG9kSYtYBCFUAmvnksRZjMkEgw6soQK1xlpTfC9sSPldtKYpyn3LVUnAE
+	bfimomf1ESQ6zSY57UA9nqT+PCE59Icoxoz5nbKg36qSqNQqZ6Pk2V2LdyXB8Oa2vpiN5yyDUGClZ
+	ZdCWYECs2Gec/VfzOroOZFRSrVzbfFvfbYqBlkNuUb7tBes3AHRTMKGxoQ9eLLlJ1XnJATTKG0w15
+	Z4QN+9t3kTzpKKX5x9YG77+ffWCVaAzAMftZqCrKnbEaVdL3po9yL+O6H7jbD6DiIA7yWZErQDj7D
+	MTc3rWY9R5CXf3OGNTjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxOyW-0005zO-Os; Tue, 13 Aug 2019 05:04:00 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1hxOzG-000627-0p; Tue, 13 Aug 2019 05:04:46 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxOyT-0005yD-6W
- for linux-um@lists.infradead.org; Tue, 13 Aug 2019 05:03:59 +0000
-Received: by mail-pl1-x642.google.com with SMTP id c14so48681928plo.0
- for <linux-um@lists.infradead.org>; Mon, 12 Aug 2019 22:03:55 -0700 (PDT)
+ id 1hxOzC-00061T-Qh
+ for linux-um@lists.infradead.org; Tue, 13 Aug 2019 05:04:44 +0000
+Received: by mail-pf1-x442.google.com with SMTP id 196so3713221pfz.8
+ for <linux-um@lists.infradead.org>; Mon, 12 Aug 2019 22:04:42 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=aKOfFTV6VGP5BNUB1Vnarc/F0DL+26vq0829FAbZrqo=;
- b=svgoSdNRxSLsCnnIOc7xbQg9GgF9oKMJ1Zy9kd11vWwaKXoOnKpb4m3E5VD5iVlgYD
- +Q8GW61vmO7pSODND/EU3ySpZFU6zBm/nnzXrEdbXjYeyp0z5HZ4MlPGEFDVamV7AnNt
- YxSzN7MGuqE5YtmeQLv8pM8cwjVoHM11Q7HgFuNs7NBSHTrEDEHtBfVlPMX1tM122Zoh
- /lJWbiyvCy294xIaxGNy1x0QeVRdkekMXrwW6vrlb0zY+yiiNnJIqQVHv78TipzeF0fL
- lbgrIbrBSmtQjgptdFMq0Sq8pSiArBm+sF/Wu+BeNyqHXo/vQXv7UP+JqfWMmgemFjSH
- IU5Q==
+ :cc; bh=Yw2VPeqxmsRoQHPYiMspo9WSTIZItOOYPkJzlzz97sQ=;
+ b=R+xjVFNBTOKx66Ip6R2LUuGGTv9eRVrdSycmzhhLqv6ShkSGz9R0iiaQlwquO7BkEU
+ x0+Ib4JO36b96tMczjZmXSHPyXXgXTGAWZTVVhOp2T/QIbWWY9V/IwNi6o7K3rnqxKD6
+ ziqRin5+uEzkBO92V/m+9MKxmbzCf0EpwYeh574LKHHRRabDjwTHNTwZWhEFkvfuCrXM
+ uElR/9bIqUIPxCl1QveNg860hXAYpRf6f2BJRo4B5oKRtiCThZ4ssb+YGhqyKYj3MwTn
+ 75s7SvppXdJK7apvtGoXkIluns/j2aGIDRd+g49iLbsgOZ5chYru9qT65dM05aT4eQAY
+ d3gA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=aKOfFTV6VGP5BNUB1Vnarc/F0DL+26vq0829FAbZrqo=;
- b=GVlrkDQE8jY1Bw1a1VRYOMI6Y9aQjFVfY3OnMQAmX+vGqc34M41i6i5oxPuV4/wM1A
- pY8cLM2H1Jos6MUsXr62yMsWKm0JNsyHdhdjfUqO57xPQg0oVIh3YLahrzstG1kwfeEF
- /F+FcE9G81jZAm13FzppLz1kjv1GeViCx1B8ptheLrhHw7m1G6g9FFd9U2NvQX6btYma
- UO6uOYSxVsvCq2GhUFQUEtfjosPtMn46HlKF7ZGhQtpMOlCoCahtSHfB1hMRY9DxBvS/
- SmMKdidDFaIe5AtBLc57EU7RQZxYoi+HWjtpEjHh9JrlYXEqS2Xy5tUMPrn6fVa0OkDV
- Z/VQ==
-X-Gm-Message-State: APjAAAUWFRDewtF6YiCYONIoV7NlIYWuEmE8mgmL/ylc2oj826a8T6K3
- GYb2UBFiGt3PK41fCYjGDwY+3T2ibunvBwZR8v1hKg==
-X-Google-Smtp-Source: APXvYqwgOw9EQ70Umy0oEnQ5G5LCL6qyMyWjnNbSVpHRs20m04I8HxLTnoiIjpuTiP19er8DvO/pyE/cwQSXqDyWk+Y=
-X-Received: by 2002:a17:902:5983:: with SMTP id
- p3mr26758654pli.232.1565672634067; 
- Mon, 12 Aug 2019 22:03:54 -0700 (PDT)
+ bh=Yw2VPeqxmsRoQHPYiMspo9WSTIZItOOYPkJzlzz97sQ=;
+ b=q+tJFXls5I+20zD8/SiqFhQWdra8wHKlxoZKcDk2fhjiQDOU1Eh1uJ7BUfQjhn53rJ
+ 14DloR1nAKnvIHvgeG411BZSbB8WqqT/svdqqhhQu9IF9H02HPk7x7+ER3iMqXtVC8nn
+ auAhc1z05xsOd0CDzOanYyOHLzy9DeIRouI2+SZuvuOnPVScTPxKGHZH3slTaJrgDOqC
+ Mjd+jg4V1w7w5wNdtoygm0nPjmiArU+0aiMXjHSQpMyM7mwnBc5yDGKFOE36K76SifP+
+ cCMX1IBroUuSyrLAnJkvZi1h9/Z9Lmee0FUQIRHtZvsah/sAGSX/kWZ7V5s9shqN90ie
+ gwLA==
+X-Gm-Message-State: APjAAAXSPZ+D/k8Ou/L3fCH3CQdGrAx0VLDCqnQHrJJhTzswboAxlOr/
+ 7bQVXCeFdmKBdSSG1LvsnqjtW9X93KOnvakkc0uEWQ==
+X-Google-Smtp-Source: APXvYqzY7+RzhfN0PwrRrz6X4tFGzeJErvdkB+WMoL53BHH2m/gFw2SJjgYuiLuK2/VE++6KBxdxNTyzwKrq+P1ZkEU=
+X-Received: by 2002:a63:eb51:: with SMTP id b17mr32062966pgk.384.1565672681626; 
+ Mon, 12 Aug 2019 22:04:41 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190812182421.141150-1-brendanhiggins@google.com>
- <20190812182421.141150-5-brendanhiggins@google.com>
- <20190812234644.E054D20679@mail.kernel.org>
- <CAFd5g44huOiR9B0H1C2TtiPy63BDuwi_Qpb_exF3zmT3ttV8eg@mail.gmail.com>
- <CAFd5g44GxE-p+Jk_46GYA-WWVHLW7w=yE+K_tbbdiniDfrk-2w@mail.gmail.com>
- <20190813045747.3AF0A206C2@mail.kernel.org>
-In-Reply-To: <20190813045747.3AF0A206C2@mail.kernel.org>
+ <20190812182421.141150-6-brendanhiggins@google.com>
+ <20190812235701.533E82063F@mail.kernel.org>
+ <20190813003352.GA235915@google.com>
+ <20190813050206.2A49C206C2@mail.kernel.org>
+In-Reply-To: <20190813050206.2A49C206C2@mail.kernel.org>
 From: Brendan Higgins <brendanhiggins@google.com>
-Date: Mon, 12 Aug 2019 22:03:42 -0700
-Message-ID: <CAFd5g47OUymztYcWngDUd10WswVOrO-PTmX+KNF_T=cg_OcJNg@mail.gmail.com>
-Subject: Re: [PATCH v12 04/18] kunit: test: add assertion printing library
+Date: Mon, 12 Aug 2019 22:04:30 -0700
+Message-ID: <CAFd5g44VBzDSjxHGUZ=8A9hempQ0_3Ym_8qzj0ETEJ8AzM6poA@mail.gmail.com>
+Subject: Re: [PATCH v12 05/18] kunit: test: add the concept of expectations
 To: Stephen Boyd <sboyd@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190812_220357_579926_FF607655 
-X-CRM114-Status: GOOD (  12.74  )
+X-CRM114-CacheID: sfid-20190812_220442_892757_25BB8A0F 
+X-CRM114-Status: GOOD (  22.17  )
 X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
  white-list
@@ -131,36 +129,72 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Mon, Aug 12, 2019 at 9:57 PM Stephen Boyd <sboyd@kernel.org> wrote:
+On Mon, Aug 12, 2019 at 10:02 PM Stephen Boyd <sboyd@kernel.org> wrote:
 >
-> Quoting Brendan Higgins (2019-08-12 21:27:05)
-> > On Mon, Aug 12, 2019 at 4:56 PM Brendan Higgins
-> > <brendanhiggins@google.com> wrote:
+> Quoting Brendan Higgins (2019-08-12 17:33:52)
+> > On Mon, Aug 12, 2019 at 04:57:00PM -0700, Stephen Boyd wrote:
+> > > Quoting Brendan Higgins (2019-08-12 11:24:08)
+> > > > + */
+> > > > +#define KUNIT_EXPECT_TRUE(test, condition) \
+> > > > +               KUNIT_TRUE_ASSERTION(test, KUNIT_EXPECTATION, condition)
 > > >
-> > > On Mon, Aug 12, 2019 at 4:46 PM Stephen Boyd <sboyd@kernel.org> wrote:
-> > > >
-> > > > Quoting Brendan Higgins (2019-08-12 11:24:07)
-> > > > > +#define KUNIT_INIT_FAIL_ASSERT_STRUCT(test, type) {                           \
-> > > > > +               .assert = KUNIT_INIT_ASSERT_STRUCT(test,                       \
-> > > > > +                                                  type,                       \
-> > > > > +                                                  kunit_fail_assert_format)   \
-> > > >
-> > > > This one got indented one too many times?
-> > >
-> > > Not unless I have been using the wrong formatting for multiline
-> > > macros. You can see this commit applied here:
-> > > https://kunit.googlesource.com/linux/+/870964da2990920030990dd1ffb647ef408e52df/include/kunit/assert.h#59
-> > >
-> > > I have test, type, and kunit_fail_assert_format all column aligned (it
-> > > just doesn't render nicely in the patch format).
+> > > A lot of these macros seem double indented.
 > >
-> > Disregard that last comment. I just looked at the line immediately
-> > above your comment and thought it looked correct. Sorry about that
-> > (you were pointing out that the .assert line looked wrong, correct?).
+> > In a case you pointed out in the preceding patch, I was just keeping the
+> > arguments column aligned.
+> >
+> > In this case I am just indenting two tabs for a line continuation. I
+> > thought I found other instances in the kernel that did this early on
+> > (and that's also what the Linux kernel vim plugin wanted me to do).
+> > After a couple of spot checks, it seems like one tab for this kind of
+> > line continuation seems more common. I personally don't feel strongly
+> > about any particular version. I just want to know now what the correct
+> > indentation is for macros before I go through and change them all.
+> >
+> > I think there are three cases:
+> >
+> > #define macro0(param0, param1) \
+> >                 a_really_long_macro(...)
+> >
+> > In this first case, I use two tabs for the first indent, I think you are
+> > telling me this should be one tab.
 >
-> Yes. .assert is double tabbed?
+> Yes. Should be one.
+>
+> >
+> > #define macro1(param0, param1) {                                               \
+> >         statement_in_a_block0;                                                 \
+> >         statement_in_a_block1;                                                 \
+> >         ...                                                                    \
+> > }
+> >
+> > In this case, every line is in a block and is indented as it would be in
+> > a function body. I think you are okay with this, and now that I am
+> > thinking about it, what I think you are proposing for macro0 will make
+> > these two cases more consistent.
+> >
+> > #define macro2(param0,                                                         \
+> >                param1,                                                         \
+> >                param2,                                                         \
+> >                param3,                                                         \
+> >                ...,                                                            \
+> >                paramn) ...                                                     \
+> >
+> > In this last case, the body would be indented as in macro0, or macro1,
+> > but the parameters passed into the macro are column aligned, consistent
+> > with one of the acceptable ways of formatting function parameters that
+> > don't fit on a single line.
+> >
+> > In all cases, I put 1 space in between the closing parameter paren and
+> > the line continuation `\`, if only one `\` is needed. Otherwise, I align
+> > all the `\s` to the 80th column. Is this okay, or would you prefer that
+> > I align them all to the 80th column, or something else?
+> >
+>
+> This all sounds fine and I'm not nitpicking this style. Just the double
+> tabs making lines longer than required.
 
-Yes it is. Sorry about the confusion. Will fix.
+Sounds good. Will do.
 
 _______________________________________________
 linux-um mailing list
