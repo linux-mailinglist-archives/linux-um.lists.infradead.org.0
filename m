@@ -2,55 +2,54 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8B48A8B356
-	for <lists+linux-um@lfdr.de>; Tue, 13 Aug 2019 11:05:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0361C8B37F
+	for <lists+linux-um@lfdr.de>; Tue, 13 Aug 2019 11:13:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=b9Svs1vA06tdgrj1WGg07yeHsl6G7WFc+/146NMkCpc=; b=e/igU8JErlpPja
-	2Qzs/aQgtJhrxI4c10K4y2Lk48v0ETv7eeWTh4J0O55jrVQ8pBliz6RyuNOBMSQzUzr9I23DXKNLR
-	dhQR8Xuz5TcM6gN/eAvq2UwOIsz+GtVRipuxRthbj454FJoeM2oxHimfNHoPBpsC8np3zS6rD+Xrp
-	FqTXR0jBFk9mzOtO6kiZ8YjNotyh7i7NohH/FwCfuF/4yaDkIdrx/T4wlrDh12/zp0OQBCrBvFjZF
-	FaEbofkTILlE5ERPeAYjCGRii+1QANRxWjKS054wbA7QJwDMN1yLacxZ4A7nw3hXn/gUG9ErQWowy
-	YQk5jVsvpc85owhVMYvg==;
+	List-Owner; bh=2tQ8B6j5l3P4TYpEiIK/tgzMMei6lJw/lJT2liXRIts=; b=tvEqTF1Sg7mrFJ
+	iwbt9CJR6454xPIGFlVBaDcf+Edo55mR4S6lz5VyazAeBiDJYqkYLZDKGjehu1mPLzfkKKqoFGMhf
+	akTJVs6Uv9FblppVoTBuiV0EgIm/BKn45bC8TBFOlkn6y7pwQi5iSDTc/7Bra5FVFZADBbD3QO6Vw
+	xgEnyd53mm6TGDYAaoCAfCk3w86RUUmPUYS7w2p2VKPcHggxlenpvDEfASBkRrF7PvBrYDKOuS3cg
+	J8YCRAE56nEAO8tikf7aD8CDk+VoObIP7UpQa8OJjJPrQF5VBsNCD/3GFMkClwpmnxZrjtA1b+kf7
+	2xrPm78u3ZOjDej6ggPg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxSjz-0000sU-N1; Tue, 13 Aug 2019 09:05:16 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1hxSrh-0004So-Q1; Tue, 13 Aug 2019 09:13:13 +0000
+Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxSjh-0008V9-W7
- for linux-um@lists.infradead.org; Tue, 13 Aug 2019 09:05:01 +0000
-Received: by mail-pl1-x641.google.com with SMTP id y8so6908991plr.12
- for <linux-um@lists.infradead.org>; Tue, 13 Aug 2019 02:04:57 -0700 (PDT)
+ id 1hxSrf-0004RQ-5P
+ for linux-um@lists.infradead.org; Tue, 13 Aug 2019 09:13:12 +0000
+Received: by mail-lf1-x144.google.com with SMTP id x3so22488864lfn.6
+ for <linux-um@lists.infradead.org>; Tue, 13 Aug 2019 02:13:08 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=QiUXy9T56EDLZHgM/ghmiZZKu3jldBkP3AywgOf7WrE=;
- b=MLD0OBKrmLSIMOt648B9mPAmsjWuHn6T9ywV6kHk53m2QAcx/5//33wzzGap97ISgd
- 1n1dPQTH2aqoshjF311lPPF9RyircKfegESJ2xxxn2TBZss5XJTQKDNllI8Lep9L/7SF
- MM7idIRhDooM4kA4MSv9ueRH5hrjDJGGg0AgX0HqE87hvGQZOuRQRmqZQqIXAW5zi2XY
- qx3rKtyNkDR1tJcjwneeXBeG+UkkSb8i3ocoTOXfuDYPqL5L4LUf+dq11gIkuMFV1by4
- yd/+IqmaOAJsJPYvSatGT0S67lif/DCk+kAwLjTl1ZQp1oSabKWPVnDpLlDJM1jY/AYp
- VtUg==
+ :cc; bh=b9ILhd2aCjQh4oMSFsJoowCjN4C8D/s8MJgq4YAEBLc=;
+ b=W2oxF32qcEgwvRN+TzYXAddY5GIfE0TU07ZZEMjsnTdZHws8iAZ2t8Ultvl9YT7B9l
+ FcqQcsJALGn/N6C5ZuExhftHA8ZS8MNOrSUeIrQu3gBXXLe4ixyR8Oo5hmg4UUGyabxo
+ uWv09COtEGpqAdax3WCg5P2ubO3WE1ftRGYMB38Ed3fgj3xpruF/YDRjA5s4U1SsywTz
+ raOTZO3u1j8iOcpslIka2xJ8bkvq+QSToLsxoCLDTz8ppRJhCuL8ltvK/wB/IXN51+OA
+ Tmzcrff2zT5F1o2XfVqbtXnT9QaUbGOA7cZQ4WzLX6NEXNn++uTMldyauztGbKy/kIWW
+ PdfQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=QiUXy9T56EDLZHgM/ghmiZZKu3jldBkP3AywgOf7WrE=;
- b=IihGXkpsYZab4u3cLKVaa1nQMu0eIzgJAM6y+qpfqd6EtuZNWxD/63Ge678R1JVks1
- JcVvlS5ix8lr0ZjBoMlKN+1o7e9NDJo6P3PR427JIfFWwVkjlPcn4xmRFqXSc6rH/BCc
- +XvSNcUbH8VaYUQ4gqS3QXC5614+tx0F/tEc82u3cmsrXeywO2Q8XFHcdkJUog9Ca2qA
- OI2pvyA4Dwn1rsJfQXqGbXFrQDY1w/VIPGonfSOexVBYGkAe7FLWtVejyP0SjSHHgWT8
- MfW9bURjPaZqfFz2aJ4tiPToC+9lai80KnGxy+f6lPl7hDMQy5XXwcgfsGP+IlPp5km6
- IY+w==
-X-Gm-Message-State: APjAAAVCiK5IpkU4vllYv2EaLe7sq3xtyE8OKBtKX+/PZCCMy3ai6zz+
- PjYCa+7q3RGvKDAclqiPuU0jZLUqdOThuNR+5oVAyg==
-X-Google-Smtp-Source: APXvYqwG2gN8zpP7bhFAP1u+fXAsfwR8jNJUVHpIzT9G6iZ0jAKs6Cy6kBh6Os478yKmPUZiHWGohGqW0T9u2YI3MZY=
-X-Received: by 2002:a17:902:1024:: with SMTP id
- b33mr27760446pla.325.1565687095973; 
- Tue, 13 Aug 2019 02:04:55 -0700 (PDT)
+ bh=b9ILhd2aCjQh4oMSFsJoowCjN4C8D/s8MJgq4YAEBLc=;
+ b=CaG8XSG4dlL6dc5XDHY1wW7rgb51Bt7bpLM9yHssfDhTVpTO19FVqo3XoUqux8a92N
+ GmcHsMj7aVRFKesqfHy6NPOJMvBH7vIeDUFcIlmJsXtaKDzvEs1jPlGG94O+qBr8sLnD
+ Ct6/5c6iPBbXxeI2RQRBsL3fsBAnheqAULJPgzzhOhSiX+Yho0AZGYhITc/nF49OCsBd
+ 3n69aCze/xfYgOHXaTC1HfZc/p+0c2iyeiRaLrp/QMyzrtHUCQkeGHru1Vp/ztiHOY+R
+ EA68wvzFH2riPBSkgvUkeibdlIxkLcV7a9pVsFfcbpsZVB+WHTtc6lBiIVFzIVJfAIJ2
+ +4rA==
+X-Gm-Message-State: APjAAAW/emRGkKNJDdx8uDxjg7sPYUx7st4jOpHjE3FFQgejWW6Z7+ih
+ /0F3/S+uv12EQvheeUuT9eOPUXTSneY3NYUIb8f4+w==
+X-Google-Smtp-Source: APXvYqwLnkbduPeN9fnl3i+lRRTsMYZatTj1IuJmhpqxnMiio1q0JfaKumMLZmtQt11+bQEG/iQwBN5AGKfhGyCW+Rs=
+X-Received: by 2002:ac2:5dd6:: with SMTP id x22mr21614482lfq.92.1565687586809; 
+ Tue, 13 Aug 2019 02:13:06 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190812182421.141150-1-brendanhiggins@google.com>
  <20190812182421.141150-4-brendanhiggins@google.com>
@@ -61,23 +60,24 @@ References: <20190812182421.141150-1-brendanhiggins@google.com>
  <20190813045623.F3D9520842@mail.kernel.org>
  <CAFd5g46PJNTOUAA4GOOrW==74Zy7u1sRESTanL_BXBn6QykscA@mail.gmail.com>
  <20190813053023.CC86120651@mail.kernel.org>
-In-Reply-To: <20190813053023.CC86120651@mail.kernel.org>
+ <CAFd5g47v7410QRAizPV8zaHrKrc95-Sk-GNzRRVngN741OKnvg@mail.gmail.com>
+In-Reply-To: <CAFd5g47v7410QRAizPV8zaHrKrc95-Sk-GNzRRVngN741OKnvg@mail.gmail.com>
 From: Brendan Higgins <brendanhiggins@google.com>
-Date: Tue, 13 Aug 2019 02:04:44 -0700
-Message-ID: <CAFd5g47v7410QRAizPV8zaHrKrc95-Sk-GNzRRVngN741OKnvg@mail.gmail.com>
+Date: Tue, 13 Aug 2019 02:12:54 -0700
+Message-ID: <CAFd5g452+-6m1eiVK0ccTDkJ2wH8GBwxRDw5owwC8h3NscE1ag@mail.gmail.com>
 Subject: Re: [PATCH v12 03/18] kunit: test: add string_stream a std::stream
  like string builder
 To: Stephen Boyd <sboyd@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190813_020458_511657_45D420DC 
-X-CRM114-Status: GOOD (  16.88  )
+X-CRM114-CacheID: sfid-20190813_021311_209838_CD01D97C 
+X-CRM114-Status: GOOD (  18.03  )
 X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:144 listed in]
  [list.dnswl.org]
  -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
  white-list
@@ -135,40 +135,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Mon, Aug 12, 2019 at 10:30 PM Stephen Boyd <sboyd@kernel.org> wrote:
+On Tue, Aug 13, 2019 at 2:04 AM Brendan Higgins
+<brendanhiggins@google.com> wrote:
 >
-> Quoting Brendan Higgins (2019-08-12 22:02:59)
-> > On Mon, Aug 12, 2019 at 9:56 PM Stephen Boyd <sboyd@kernel.org> wrote:
-> > >
-> > > Quoting Brendan Higgins (2019-08-12 17:41:05)
-> > > > On Mon, Aug 12, 2019 at 4:59 PM Stephen Boyd <sboyd@kernel.org> wrote:
-> > > > >
-> > > > > > kunit_resource_destroy (respective equivalents to devm_kfree, and
-> > > > > > devres_destroy) and use kunit_kfree here?
-> > > > > >
-> > > > >
-> > > > > Yes, or drop the API entirely? Does anything need this functionality?
+> On Mon, Aug 12, 2019 at 10:30 PM Stephen Boyd <sboyd@kernel.org> wrote:
+> >
+> > Quoting Brendan Higgins (2019-08-12 22:02:59)
+> > > On Mon, Aug 12, 2019 at 9:56 PM Stephen Boyd <sboyd@kernel.org> wrote:
 > > > >
-> > > > Drop the kunit_resource API? I would strongly prefer not to.
+> > > > Quoting Brendan Higgins (2019-08-12 17:41:05)
+> > > > > On Mon, Aug 12, 2019 at 4:59 PM Stephen Boyd <sboyd@kernel.org> wrote:
+> > > > > >
+> > > > > > > kunit_resource_destroy (respective equivalents to devm_kfree, and
+> > > > > > > devres_destroy) and use kunit_kfree here?
+> > > > > > >
+> > > > > >
+> > > > > > Yes, or drop the API entirely? Does anything need this functionality?
+> > > > >
+> > > > > Drop the kunit_resource API? I would strongly prefer not to.
+> > > >
+> > > > No. I mean this API, string_stream_clear(). Does anything use it?
 > > >
-> > > No. I mean this API, string_stream_clear(). Does anything use it?
+> > > Oh, right. No.
+> > >
+> > > However, now that I added the kunit_resource_destroy, I thought it
+> > > might be good to free the string_stream after I use it in each call to
+> > > kunit_assert->format(...) in which case I will be using this logic.
+> > >
+> > > So I think the right thing to do is to expose string_stream_destroy so
+> > > kunit_do_assert can clean up when it's done, and then demote
+> > > string_stream_clear to static. Sound good?
 > >
-> > Oh, right. No.
-> >
-> > However, now that I added the kunit_resource_destroy, I thought it
-> > might be good to free the string_stream after I use it in each call to
-> > kunit_assert->format(...) in which case I will be using this logic.
-> >
-> > So I think the right thing to do is to expose string_stream_destroy so
-> > kunit_do_assert can clean up when it's done, and then demote
-> > string_stream_clear to static. Sound good?
+> > Ok, sure. I don't really see how clearing it explicitly when the
+> > assertion prints vs. never allocating it to begin with is really any
+> > different. Maybe I've missed something though.
 >
-> Ok, sure. I don't really see how clearing it explicitly when the
-> assertion prints vs. never allocating it to begin with is really any
-> different. Maybe I've missed something though.
+> It's for the case that we *do* print something out. Once we are doing
+> printing, we don't want the fragments anymore.
 
-It's for the case that we *do* print something out. Once we are doing
-printing, we don't want the fragments anymore.
+Oops, sorry fat fingered: s/doing/done
 
 _______________________________________________
 linux-um mailing list
