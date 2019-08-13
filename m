@@ -2,45 +2,45 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D882B8AE04
-	for <lists+linux-um@lfdr.de>; Tue, 13 Aug 2019 06:46:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 69E2F8AE13
+	for <lists+linux-um@lfdr.de>; Tue, 13 Aug 2019 06:48:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:To:From:Subject:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yqTZSrQpsbktBFj4jkVRnZRgHekrUXHSBv1PiDYvlOk=; b=np6umJwJachcw1
-	/8cvJhsrbOP6H2M4rvV0kXvMMZfYwm5z4DEtBrKS5sH+wbu8KbV0ZaQo6MYGxgmi6YpD5LI49gYhm
-	INxyZNs+AifajCwsfNirgqvbgys1F0TlTxNiq1w+K5TqaDIXtYxm5lLRPbNLgH6hNTbH4MjKpK6Pn
-	H9YUISxCmo1XgAqw2/XeuRTWkwC++GwcOEUydvP/2PyKnVbWF/czpy5AfwQ6enWr+bVuYlR1uXnRv
-	+kZu56+CXneSV+R1lgu6Tyv07TWh7O/pkaZsrQjHHOG5wjRvTbDQVYtuPLYmO+jI0Vgvs6ZmT3xY0
-	CUs9u7XzYaenY8auhRFg==;
+	List-Owner; bh=AYS64u8RyjRMLJv4KSc5UQla4EmLMPDueP/Cn7qNusg=; b=kwSSKZMeX6fY0j
+	9ea917EHKHjOioAi7ifImwGyHlnhSDJDTmlelPSS+1iNaY+F6nOM+AFOoFA5iKCUwQQQ5BuGQ7EtU
+	Sn3q7Ev/7EGeoK3kh93AsRvHg/HEkK1DBGOV1beFFv+IJriCq6CPiqIebY/MDS5UbsgesewP3Nnz+
+	LDfBlFjh44fh78wro+RYiwlbIEHP4F6i/q2IV/wfEXvlGUoh7K9d6C9+ZFhjRGmU4IjKBaYD1XNUM
+	nHmwoAt6KyJo259h002KWtl/wDYysbhYYHeRrdkB/uXIqZqaKTT8mf7lsJT0kWPdXUw/XaR84dyZk
+	/yTvNEVs9hA05yeSyAbg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxOhm-0001fR-KP; Tue, 13 Aug 2019 04:46:42 +0000
+	id 1hxOjd-0001kn-V1; Tue, 13 Aug 2019 04:48:37 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxOhj-0001ex-Cr
- for linux-um@lists.infradead.org; Tue, 13 Aug 2019 04:46:40 +0000
+ id 1hxOjb-0001kV-KV
+ for linux-um@lists.infradead.org; Tue, 13 Aug 2019 04:48:36 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7FE742063F;
- Tue, 13 Aug 2019 04:46:38 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 39CA02063F;
+ Tue, 13 Aug 2019 04:48:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1565671598;
- bh=Z0Svjt3Fo8yC4rslfkTmnZfxHx3ViQG+m+g6HFA41bY=;
+ s=default; t=1565671715;
+ bh=QXx95JHQavFYmhBtK1amQ05YmO13U6KK6dWrKZHkLVg=;
  h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
- b=p83RZOpoKeUNPUd+BdLuIegfK0mpL5tQfiQzpBv6UO83yoxyp6adRidjeuhcOC4wC
- s338nTaCM7+3P21nyMlcXltcWN54xO5KBDwL0hp97UL6MvRD39sidLzFl/y7TD+7lb
- qRCWhAmLlx4CTBKgLcjNqWOK/XK9pEWO4ut/NKQY=
+ b=HqHG6DVdhoJuM67UdsQm4CKi7hZ76pLPnud+IQ9JNeG+t8SspwZa69JSEK0WhP2jx
+ MB6WQ6phReCL9+EDNtamsG4EDw0rkn3WsdfnKLG2XauGMgWk9vTSsf0wDQ3tqxtnUv
+ rFaB41ZSUHZ1K3scmbrjGVepNYJ05Vx4fNyYgqI0=
 MIME-Version: 1.0
-In-Reply-To: <20190812182421.141150-16-brendanhiggins@google.com>
+In-Reply-To: <20190812182421.141150-18-brendanhiggins@google.com>
 References: <20190812182421.141150-1-brendanhiggins@google.com>
- <20190812182421.141150-16-brendanhiggins@google.com>
-Subject: Re: [PATCH v12 15/18] Documentation: kunit: add documentation for
- KUnit
+ <20190812182421.141150-18-brendanhiggins@google.com>
+Subject: Re: [PATCH v12 17/18] kernel/sysctl-test: Add null pointer test for
+ sysctl.c:proc_dointvec()
 From: Stephen Boyd <sboyd@kernel.org>
 To: Brendan Higgins <brendanhiggins@google.com>, frowand.list@gmail.com,
  gregkh@linuxfoundation.org, jpoimboe@redhat.com, keescook@google.com,
@@ -48,11 +48,11 @@ To: Brendan Higgins <brendanhiggins@google.com>, frowand.list@gmail.com,
  robh@kernel.org, shuah@kernel.org, tytso@mit.edu,
  yamada.masahiro@socionext.com
 User-Agent: alot/0.8.1
-Date: Mon, 12 Aug 2019 21:46:37 -0700
-Message-Id: <20190813044638.7FE742063F@mail.kernel.org>
+Date: Mon, 12 Aug 2019 21:48:34 -0700
+Message-Id: <20190813044835.39CA02063F@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190812_214639_461191_F901E863 
-X-CRM114-Status: UNSURE (   5.34  )
+X-CRM114-CacheID: sfid-20190812_214835_691555_462A754B 
+X-CRM114-Status: UNSURE (   5.31  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -85,10 +85,9 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
 Cc: pmladek@suse.com, linux-doc@vger.kernel.org, amir73il@gmail.com,
  Brendan Higgins <brendanhiggins@google.com>, dri-devel@lists.freedesktop.org,
  Alexander.Levin@microsoft.com, linux-kselftest@vger.kernel.org,
- Jonathan Corbet <corbet@lwn.net>, linux-nvdimm@lists.01.org,
- khilman@baylibre.com, knut.omang@oracle.com,
- Felix Guo <felixguoxiuping@gmail.com>, wfg@linux.intel.com, joel@jms.id.au,
- rientjes@google.com, jdike@addtoit.com, dan.carpenter@oracle.com,
+ linux-nvdimm@lists.01.org, khilman@baylibre.com, knut.omang@oracle.com,
+ wfg@linux.intel.com, joel@jms.id.au, rientjes@google.com,
+ Iurii Zaikin <yzaikin@google.com>, jdike@addtoit.com, dan.carpenter@oracle.com,
  devicetree@vger.kernel.org, linux-kbuild@vger.kernel.org, Tim.Bird@sony.com,
  linux-um@lists.infradead.org, rostedt@goodmis.org, julia.lawall@lip6.fr,
  kunit-dev@googlegroups.com, richard@nod.at, rdunlap@infradead.org,
@@ -99,16 +98,18 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-Quoting Brendan Higgins (2019-08-12 11:24:18)
-> Add documentation for KUnit, the Linux kernel unit testing framework.
-> - Add intro and usage guide for KUnit
-> - Add API reference
+Quoting Brendan Higgins (2019-08-12 11:24:20)
+> From: Iurii Zaikin <yzaikin@google.com>
 > 
-> Signed-off-by: Felix Guo <felixguoxiuping@gmail.com>
+> KUnit tests for initialized data behavior of proc_dointvec that is
+> explicitly checked in the code. Includes basic parsing tests including
+> int min/max overflow.
+> 
+> Signed-off-by: Iurii Zaikin <yzaikin@google.com>
 > Signed-off-by: Brendan Higgins <brendanhiggins@google.com>
-> Cc: Jonathan Corbet <corbet@lwn.net>
 > Reviewed-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 > Reviewed-by: Logan Gunthorpe <logang@deltatee.com>
+> Acked-by: Luis Chamberlain <mcgrof@kernel.org>
 > ---
 
 Reviewed-by: Stephen Boyd <sboyd@kernel.org>
