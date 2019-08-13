@@ -2,76 +2,75 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D51188AE7C
-	for <lists+linux-um@lfdr.de>; Tue, 13 Aug 2019 07:04:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 421DD8AE88
+	for <lists+linux-um@lfdr.de>; Tue, 13 Aug 2019 07:06:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SC2RqoR1bblTuXxyfAb/EQf/MXLAgdSut/4HKO0abkQ=; b=ld/XQWE3nBU/nG
-	y+QaNho75Vt763sMrCenIG9kSYtYBCFUAmvnksRZjMkEgw6soQK1xlpTfC9sSPldtKYpyn3LVUnAE
-	bfimomf1ESQ6zSY57UA9nqT+PCE59Icoxoz5nbKg36qSqNQqZ6Pk2V2LdyXB8Oa2vpiN5yyDUGClZ
-	ZdCWYECs2Gec/VfzOroOZFRSrVzbfFvfbYqBlkNuUb7tBes3AHRTMKGxoQ9eLLlJ1XnJATTKG0w15
-	Z4QN+9t3kTzpKKX5x9YG77+ffWCVaAzAMftZqCrKnbEaVdL3po9yL+O6H7jbD6DiIA7yWZErQDj7D
-	MTc3rWY9R5CXf3OGNTjA==;
+	List-Owner; bh=nNQS2/WA6W7ugwKUCXtvcJ0wKpET0Fi/2T9dCXAGZUY=; b=mQy3ZBFrLYbSR9
+	xOS0kQoAdK8t3WAadPlTFIdcEvcGKked9FjVwBfqrdpvWK5rYxyg0DHXQNt9PvCX3N2Zc/2jvXu+W
+	LY54FNhcXS7uctvukOs1TEGQ/L9BaRfSOBgdcY/yFmC5vhfwOQwKIh9e5D+7k9aoRzEz3odl5X4hj
+	T0kAPcdWBWhMFJWEoB6qmfEEXJn9Z9DhO1k7dYXgAC73FqcfuABvpRODy8k5D0g3pw91OtpLeZVe0
+	UMRrqchTcH5/JxSfhD0WLkGkV6tuLFzccCaw/Pno5lNBS4OMdjv/c38po8z+qxR6ZO/DExIN6YlLW
+	cLoTwIY7FkpBQ2+3roWg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxOzG-000627-0p; Tue, 13 Aug 2019 05:04:46 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1hxP0n-0007IC-Ax; Tue, 13 Aug 2019 05:06:21 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxOzC-00061T-Qh
- for linux-um@lists.infradead.org; Tue, 13 Aug 2019 05:04:44 +0000
-Received: by mail-pf1-x442.google.com with SMTP id 196so3713221pfz.8
- for <linux-um@lists.infradead.org>; Mon, 12 Aug 2019 22:04:42 -0700 (PDT)
+ id 1hxP0j-0007HB-9H
+ for linux-um@lists.infradead.org; Tue, 13 Aug 2019 05:06:19 +0000
+Received: by mail-pf1-x444.google.com with SMTP id f17so46891235pfn.6
+ for <linux-um@lists.infradead.org>; Mon, 12 Aug 2019 22:06:16 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Yw2VPeqxmsRoQHPYiMspo9WSTIZItOOYPkJzlzz97sQ=;
- b=R+xjVFNBTOKx66Ip6R2LUuGGTv9eRVrdSycmzhhLqv6ShkSGz9R0iiaQlwquO7BkEU
- x0+Ib4JO36b96tMczjZmXSHPyXXgXTGAWZTVVhOp2T/QIbWWY9V/IwNi6o7K3rnqxKD6
- ziqRin5+uEzkBO92V/m+9MKxmbzCf0EpwYeh574LKHHRRabDjwTHNTwZWhEFkvfuCrXM
- uElR/9bIqUIPxCl1QveNg860hXAYpRf6f2BJRo4B5oKRtiCThZ4ssb+YGhqyKYj3MwTn
- 75s7SvppXdJK7apvtGoXkIluns/j2aGIDRd+g49iLbsgOZ5chYru9qT65dM05aT4eQAY
- d3gA==
+ :cc; bh=Abf3cK9D+gRrRGwQh2kwak/YzDDkHOqgDtvVTIo4q7A=;
+ b=Y+dmDbanwPRKrcGCv4/WQS9jtPyx6cpYSiNcTCluUKOVyeyn7wl8RZe0u1cf6FlML6
+ wfRe3v8dcFvKIShJjXRgh8cEGNhzCFLCfZTUSJEGO2Ea0/S9/l8EIDzT2hfdmu4vYl3/
+ XIR90pnuI3K4kV1d5Bm11Pn57c+GfE4dVDOOxOsnLShgWMYlA1pJcJoF7sOPZtexCwYP
+ ELhxZQwrFnEmjZhgXx2mjuE3HiLK9TadecMdLzAo0eHIWgo1V1G1uOa5P7ZTv3NrW55Q
+ IwxyHJePJisriyJmWo1d+yNh53aHnfmOSYFZCbC26Ph2JuMFkmU8c4wQttP2Gfux7zEx
+ HKsA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=Yw2VPeqxmsRoQHPYiMspo9WSTIZItOOYPkJzlzz97sQ=;
- b=q+tJFXls5I+20zD8/SiqFhQWdra8wHKlxoZKcDk2fhjiQDOU1Eh1uJ7BUfQjhn53rJ
- 14DloR1nAKnvIHvgeG411BZSbB8WqqT/svdqqhhQu9IF9H02HPk7x7+ER3iMqXtVC8nn
- auAhc1z05xsOd0CDzOanYyOHLzy9DeIRouI2+SZuvuOnPVScTPxKGHZH3slTaJrgDOqC
- Mjd+jg4V1w7w5wNdtoygm0nPjmiArU+0aiMXjHSQpMyM7mwnBc5yDGKFOE36K76SifP+
- cCMX1IBroUuSyrLAnJkvZi1h9/Z9Lmee0FUQIRHtZvsah/sAGSX/kWZ7V5s9shqN90ie
- gwLA==
-X-Gm-Message-State: APjAAAXSPZ+D/k8Ou/L3fCH3CQdGrAx0VLDCqnQHrJJhTzswboAxlOr/
- 7bQVXCeFdmKBdSSG1LvsnqjtW9X93KOnvakkc0uEWQ==
-X-Google-Smtp-Source: APXvYqzY7+RzhfN0PwrRrz6X4tFGzeJErvdkB+WMoL53BHH2m/gFw2SJjgYuiLuK2/VE++6KBxdxNTyzwKrq+P1ZkEU=
-X-Received: by 2002:a63:eb51:: with SMTP id b17mr32062966pgk.384.1565672681626; 
- Mon, 12 Aug 2019 22:04:41 -0700 (PDT)
+ bh=Abf3cK9D+gRrRGwQh2kwak/YzDDkHOqgDtvVTIo4q7A=;
+ b=VaPusrZRobn3UtrS+E1xGgALjV2Q5b72sp2a+lfUZlYpfaElq/IFvM/dEcQxif8psR
+ FSU7ndGJPtv5Lf1Vqu5VVJ0BkzKChgWEg8RuwraF9u3kiAIYjHQfv7M5vOYMxfVhJALV
+ cc+ywXORLOJHwKzyjqRqcA/g3nQHKYEqNHR1i+pA5RdtKS6EYWNdeSmIOGlmBDDe8Ish
+ Q/kdEpdZASrU81WEt54iKEm8fBx76mL+Ac8TOTodoSc1gBLJ+GVQIMhr2zSP01sTaCeL
+ GZ26WwYNgDc2rh73GtYCDDnob0HWTG88Z5UshRv+Po2OusMb7jCsOJOEMFebesp1a64Q
+ +Yzw==
+X-Gm-Message-State: APjAAAVEjD5jqgb5Ox7glNzReK0YbiPSiGBcKT8B5rZ+G/h8+cQT5Lcn
+ hfhfjifZY/9bJALZ3/NbVtU/vIsXz4eayHu8VixjAg==
+X-Google-Smtp-Source: APXvYqzlm/LZa7vLxmhuF4EQXYFyYKJYlrIat9BhnUUptmEmQR49KGysQZ4JhDoNNZWx7O5yEaH2e2yfA6hMO6s/qoE=
+X-Received: by 2002:a63:205f:: with SMTP id r31mr30781941pgm.159.1565672775425; 
+ Mon, 12 Aug 2019 22:06:15 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190812182421.141150-1-brendanhiggins@google.com>
- <20190812182421.141150-6-brendanhiggins@google.com>
- <20190812235701.533E82063F@mail.kernel.org>
- <20190813003352.GA235915@google.com>
- <20190813050206.2A49C206C2@mail.kernel.org>
-In-Reply-To: <20190813050206.2A49C206C2@mail.kernel.org>
+ <20190812182421.141150-11-brendanhiggins@google.com>
+ <20190813042455.4A04320644@mail.kernel.org>
+In-Reply-To: <20190813042455.4A04320644@mail.kernel.org>
 From: Brendan Higgins <brendanhiggins@google.com>
-Date: Mon, 12 Aug 2019 22:04:30 -0700
-Message-ID: <CAFd5g44VBzDSjxHGUZ=8A9hempQ0_3Ym_8qzj0ETEJ8AzM6poA@mail.gmail.com>
-Subject: Re: [PATCH v12 05/18] kunit: test: add the concept of expectations
+Date: Mon, 12 Aug 2019 22:06:04 -0700
+Message-ID: <CAFd5g46LHq1sQaio2Vj5jt54YN-Y2HuCT8FbALQhJoekkYJ-uQ@mail.gmail.com>
+Subject: Re: [PATCH v12 10/18] kunit: test: add tests for kunit test abort
 To: Stephen Boyd <sboyd@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190812_220442_892757_25BB8A0F 
-X-CRM114-Status: GOOD (  22.17  )
+X-CRM114-CacheID: sfid-20190812_220618_766108_8106E202 
+X-CRM114-Status: UNSURE (   9.28  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
  white-list
@@ -129,72 +128,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Mon, Aug 12, 2019 at 10:02 PM Stephen Boyd <sboyd@kernel.org> wrote:
+On Mon, Aug 12, 2019 at 9:24 PM Stephen Boyd <sboyd@kernel.org> wrote:
 >
-> Quoting Brendan Higgins (2019-08-12 17:33:52)
-> > On Mon, Aug 12, 2019 at 04:57:00PM -0700, Stephen Boyd wrote:
-> > > Quoting Brendan Higgins (2019-08-12 11:24:08)
-> > > > + */
-> > > > +#define KUNIT_EXPECT_TRUE(test, condition) \
-> > > > +               KUNIT_TRUE_ASSERTION(test, KUNIT_EXPECTATION, condition)
-> > >
-> > > A lot of these macros seem double indented.
-> >
-> > In a case you pointed out in the preceding patch, I was just keeping the
-> > arguments column aligned.
-> >
-> > In this case I am just indenting two tabs for a line continuation. I
-> > thought I found other instances in the kernel that did this early on
-> > (and that's also what the Linux kernel vim plugin wanted me to do).
-> > After a couple of spot checks, it seems like one tab for this kind of
-> > line continuation seems more common. I personally don't feel strongly
-> > about any particular version. I just want to know now what the correct
-> > indentation is for macros before I go through and change them all.
-> >
-> > I think there are three cases:
-> >
-> > #define macro0(param0, param1) \
-> >                 a_really_long_macro(...)
-> >
-> > In this first case, I use two tabs for the first indent, I think you are
-> > telling me this should be one tab.
+> Quoting Brendan Higgins (2019-08-12 11:24:13)
+> > +
+> > +static int kunit_try_catch_test_init(struct kunit *test)
+> > +{
+> > +       struct kunit_try_catch_test_context *ctx;
+> > +
+> > +       ctx = kunit_kzalloc(test, sizeof(*ctx), GFP_KERNEL);
 >
-> Yes. Should be one.
->
-> >
-> > #define macro1(param0, param1) {                                               \
-> >         statement_in_a_block0;                                                 \
-> >         statement_in_a_block1;                                                 \
-> >         ...                                                                    \
-> > }
-> >
-> > In this case, every line is in a block and is indented as it would be in
-> > a function body. I think you are okay with this, and now that I am
-> > thinking about it, what I think you are proposing for macro0 will make
-> > these two cases more consistent.
-> >
-> > #define macro2(param0,                                                         \
-> >                param1,                                                         \
-> >                param2,                                                         \
-> >                param3,                                                         \
-> >                ...,                                                            \
-> >                paramn) ...                                                     \
-> >
-> > In this last case, the body would be indented as in macro0, or macro1,
-> > but the parameters passed into the macro are column aligned, consistent
-> > with one of the acceptable ways of formatting function parameters that
-> > don't fit on a single line.
-> >
-> > In all cases, I put 1 space in between the closing parameter paren and
-> > the line continuation `\`, if only one `\` is needed. Otherwise, I align
-> > all the `\s` to the 80th column. Is this okay, or would you prefer that
-> > I align them all to the 80th column, or something else?
-> >
->
-> This all sounds fine and I'm not nitpicking this style. Just the double
-> tabs making lines longer than required.
+> Can this fail? Should return -ENOMEM in that case?
 
-Sounds good. Will do.
+Yes, I should do that.
+
+> > +       test->priv = ctx;
+> > +
+> > +       ctx->try_catch = kunit_kmalloc(test,
+> > +                                      sizeof(*ctx->try_catch),
+> > +                                      GFP_KERNEL);
 
 _______________________________________________
 linux-um mailing list
