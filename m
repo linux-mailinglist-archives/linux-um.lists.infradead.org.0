@@ -2,44 +2,45 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5D5728CC62
-	for <lists+linux-um@lfdr.de>; Wed, 14 Aug 2019 09:17:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2570D8CC7B
+	for <lists+linux-um@lfdr.de>; Wed, 14 Aug 2019 09:18:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:To:From:Subject:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KoeQTjUWepVSze7wwSxYhd0Tm06Y5pY13TcapSyORxY=; b=qiKc1rxDcNs0gZ
-	HajJTpCiQvixVETAyFefukGQ89alqDH0j2VX2HsTu/ouWFSSHcU+shAuAsY/iN0f4vBpf0R6E8ziS
-	4YHnIE0uikpjhVFYk3HmNXu+0aqoHQ5DkHobqVXHbC+5WdfcQw1HZZK6n0ObEZ+OhF+m02GFHD89h
-	kvGFIBPFrWXzRTuFwEY10IyqiTGekFfETUUNjpi86/mTrWrAl3RZcbAVSBp08c+Ze22DDyLW/YjPd
-	lKZ2e5ykkywM+IA7IFFg6hMvVId2W1iq0iv/uj7Kwh3y/jMtMbfCD573Uzm6rdnser+N9zOsJ/33r
-	DQW+bdFFLTUPKnwUiLng==;
+	List-Owner; bh=3v5j/T8uCZh258zdMwtMSF1RhsgZX7gz0V/Qfcpq1OI=; b=fBlWb1nt+pXEj5
+	kZd76K2TyAUohNw02mJ63wR882hSStV2gatmiU0mkqjCY18Z3KaGwlpbOtrO4b1W9Kv5puL+SL0XI
+	fiqkA8s3nYsa6itMT1Xuw2D2PvH8G/SWDRoLY7LI08qzBEzFdEVVLSADKDxrl/DD0RqLB4QNN7wHv
+	Djs5s+8KJIwMMf57LcLoym8KtOQVMl8WMgvZrtJVxizqa/nGdYaQttOFJ21MaMfisM0GSiC6PX4Ni
+	q1c5D/VL5JqOwr0ofpr26yANP+e/gsdboUaBqrAgvFADLvpM+yXi2ko7YtdbW+hHnfZbyrm+/bOW5
+	/wMUjyTzNAf6ZnbsVvgQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxnWn-0001SK-Vb; Wed, 14 Aug 2019 07:17:01 +0000
+	id 1hxnXg-0001Yn-MW; Wed, 14 Aug 2019 07:17:56 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxnWl-0001Rv-13
- for linux-um@lists.infradead.org; Wed, 14 Aug 2019 07:17:00 +0000
+ id 1hxnXc-0001YF-Nc
+ for linux-um@lists.infradead.org; Wed, 14 Aug 2019 07:17:55 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 066412054F;
- Wed, 14 Aug 2019 07:16:58 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1CF0F2054F;
+ Wed, 14 Aug 2019 07:17:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1565767018;
- bh=XDAYAIHKx15cbm4MLaeL2uyl4aIQnIOMeL1b9sGwwNE=;
+ s=default; t=1565767072;
+ bh=fFSODLNozIGjhPTZNb2HDDCi9OpfDQhPl8bfSqvMcsU=;
  h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
- b=BivEU2xIZL82EeTgEkm0YeMoEaLJDpoEO7a2zS5hiA9cs3kvwHPeOwoR5hLAFoCSs
- QN7vT/TulxQAdD2w0+cnf1mdxQEv+C8FQSllITsMUv0YH0f9tH2JKqFwShfbEex0li
- PW40DSG+Nh81h9qArVWE/xPTvIfUmbeV1PbKJ/WE=
+ b=Tig6bqO+uLutcqoP8F96ocG1Zw8W4tfd0g/H7BQWrNvKiL9x7S1IaLUnEFmD/GI5B
+ 3SZl55sPYQvUA5FzyIIn/HDJC+7sZkqtLbaf9LMihXQ+w5Rq1lRJj6TTVrLTSzMJ6b
+ Y6Dgtp5Id7PoxZl5W+jvWsXN4ST7X/w3KSvEKsMI=
 MIME-Version: 1.0
-In-Reply-To: <20190814055108.214253-10-brendanhiggins@google.com>
+In-Reply-To: <20190814055108.214253-4-brendanhiggins@google.com>
 References: <20190814055108.214253-1-brendanhiggins@google.com>
- <20190814055108.214253-10-brendanhiggins@google.com>
-Subject: Re: [PATCH v13 09/18] kunit: test: add support for test abort
+ <20190814055108.214253-4-brendanhiggins@google.com>
+Subject: Re: [PATCH v13 03/18] kunit: test: add string_stream a std::stream
+ like string builder
 From: Stephen Boyd <sboyd@kernel.org>
 To: Brendan Higgins <brendanhiggins@google.com>, frowand.list@gmail.com,
  gregkh@linuxfoundation.org, jpoimboe@redhat.com, keescook@google.com,
@@ -47,11 +48,11 @@ To: Brendan Higgins <brendanhiggins@google.com>, frowand.list@gmail.com,
  robh@kernel.org, shuah@kernel.org, tytso@mit.edu,
  yamada.masahiro@socionext.com
 User-Agent: alot/0.8.1
-Date: Wed, 14 Aug 2019 00:16:57 -0700
-Message-Id: <20190814071658.066412054F@mail.kernel.org>
+Date: Wed, 14 Aug 2019 00:17:51 -0700
+Message-Id: <20190814071752.1CF0F2054F@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_001659_094567_C09DBC52 
-X-CRM114-Status: UNSURE (   8.57  )
+X-CRM114-CacheID: sfid-20190814_001752_794651_04095C23 
+X-CRM114-Status: UNSURE (   7.03  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -97,24 +98,24 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-Quoting Brendan Higgins (2019-08-13 22:50:59)
-> Add support for aborting/bailing out of test cases, which is needed for
-> implementing assertions.
+Quoting Brendan Higgins (2019-08-13 22:50:53)
+> A number of test features need to do pretty complicated string printing
+> where it may not be possible to rely on a single preallocated string
+> with parameters.
 > 
-> An assertion is like an expectation, but bails out of the test case
-> early if the assertion is not met. The idea with assertions is that you
-> use them to state all the preconditions for your test. Logically
-> speaking, these are the premises of the test case, so if a premise isn't
-> true, there is no point in continuing the test case because there are no
-> conclusions that can be drawn without the premises. Whereas, the
-> expectation is the thing you are trying to prove.
+> So provide a library for constructing the string as you go similar to
+> C++'s std::string. string_stream is really just a string builder,
+> nothing more.
 > 
 > Signed-off-by: Brendan Higgins <brendanhiggins@google.com>
 > Reviewed-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 > Reviewed-by: Logan Gunthorpe <logang@deltatee.com>
 > ---
 
-Reviewed-by: Stephen Boyd <sboyd@kernel.org>
+Reviewed-by: Stephen Boyd <swboyd@chromium.org>
+
+The spinlocks will probably need to change to be irqsaves in the future,
+but I guess we can cross that bridge when we come to it.
 
 
 _______________________________________________
