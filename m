@@ -2,69 +2,96 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 251558E475
-	for <lists+linux-um@lfdr.de>; Thu, 15 Aug 2019 07:34:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 000738F2E0
+	for <lists+linux-um@lfdr.de>; Thu, 15 Aug 2019 20:10:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=S/C1eJe3ZcwlXzhmS4ZaW4WujJ6V2jZgt4Ajjmyqkn4=; b=ro2JKWdO906KrfFmsYe+TejFe
-	7HdR3LInEQO2RbXOQ5v89lumCmpxbYAK0ydC36+/HLhnlL14bo/q8Hx6MxkdOz2meJpaETSWKPKTx
-	poYVcQXxwyYbo+fmQ7egfj2Pkhsycoy9xXYRRr78/wG0LbuTjQPilGNJoRBriSzw4d8+jkTw/gS4f
-	fPTgfrkWhKazAPpM9XgUjp2kSKMLaAeO25APCr1s/gWx1ZtBo/W3+eREnTqiU+zjNAnDncYiTot7N
-	XpGHiTnKT6aIJPyvNfw9PUmLCOQfcAqg5+1yUrR7nK9YsciHswS+Yns8CLwKBk3x+LziszETPmC/m
-	uJYtn95TA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=jlNJ+V5MA37rzCxcbBJo+nZ4yEUx/NlhUuKkLUTPs90=; b=mOw/22ku5rs1iy
+	eCC3lwxhG4zsNwyLbKr5mNWXLDbeXxiYN66AftIMDAdiKcZ6qrd/V43W7Cww2COrGUWWgxUwxHQhq
+	AF4BA3BV/JR4g4SzJVRkhIqDPVo2xxfwmg3NEBt+MbctHl4TIJW15Vmu33nJtWow6XbQIFJ6Uu6MZ
+	uK8mI+78m4+E6ivGV6QKZ/NB14p37gID5s2KmpRjDLJyfbrlx1k33Ulq436esgJYJeRBzUwvedb1Y
+	TZZqT7qAGQYSwaiPVY5JJyS8BOH6VtasHY1fHVUG70KnOV8YjnVSfvnYYaS98ggH6ATchyEp/Bz76
+	pc5hgDB5k9jt1QqePSIw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hy8Oc-0003Ej-Cr; Thu, 15 Aug 2019 05:33:58 +0000
-Received: from ivanoab6.miniserver.com ([5.153.251.140]
- helo=www.kot-begemot.co.uk)
+	id 1hyKCa-0001Q3-Ud; Thu, 15 Aug 2019 18:10:20 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hy8OY-0003EM-U9
- for linux-um@lists.infradead.org; Thu, 15 Aug 2019 05:33:56 +0000
-Received: from [192.168.17.6] (helo=jain.kot-begemot.co.uk)
- by www.kot-begemot.co.uk with esmtps (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <anton.ivanov@cambridgegreys.com>)
- id 1hy7vV-0008Qn-3E; Thu, 15 Aug 2019 05:03:53 +0000
-Received: from [151.251.252.245] (helo=[192.168.65.83])
- by jain.kot-begemot.co.uk with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.89)
- (envelope-from <anton.ivanov@cambridgegreys.com>)
- id 1hy7vS-0004VV-8V; Thu, 15 Aug 2019 06:03:52 +0100
-Subject: Re: [PATCH 2/2] um: drivers: Add virtio vhost-user driver
-To: "Geron, ErelX" <erelx.geron@intel.com>,
- Johannes Berg <johannes@sipsolutions.net>,
- "linux-um@lists.infradead.org" <linux-um@lists.infradead.org>
-References: <20190731202942.29630-1-johannes@sipsolutions.net>
- <20190731202942.29630-2-johannes@sipsolutions.net>
- <aa0e9645-add5-0169-95d0-e11dc36dcfaa@cambridgegreys.com>
- <57a7df50-0a87-a8a6-7cd7-e4aa2ef35f1d@cambridgegreys.com>
- <3ffcf614-ce0e-949c-b0dd-49551866f7cf@cambridgegreys.com>
- <55F06090E0044C4F985D9B415677B33F4E42700B@HASMSX110.ger.corp.intel.com>
-From: Anton Ivanov <anton.ivanov@cambridgegreys.com>
-Organization: Cambridge Greys Limited
-Message-ID: <fcf30eb6-b26c-f9d8-eb3f-c2475b8a298d@cambridgegreys.com>
-Date: Thu, 15 Aug 2019 06:03:47 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1hyKCX-0001ON-JK; Thu, 15 Aug 2019 18:10:19 +0000
+Received: by mail-pg1-x544.google.com with SMTP id d1so1038485pgp.4;
+ Thu, 15 Aug 2019 11:10:12 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=sender:date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=YGZciRmFKywos7phtHka3BMLOjJ5GD0teHhlJqhmVkk=;
+ b=refM5sSMD7XaWN2cBYtXuBqQL++UFaQwWAlfDTzJPByqFlruWjmG6Yh089jW7TdpbD
+ NrxNm0s2FZstcIYgXU/1OVsLWK+FGl/oYQP7+rTaMZkVBgGR23anbQo8oXgra9wTo9FE
+ j2SPBqMOEPNcKZuxqfPe/Pg1VNQm0EO34QutZQTrQlKL2cYjCOVrLe8Oxo+zJZteOQlu
+ B8hMLNBQEAo1UHIr3ABYn9iPuYxpRN+b0Z+J5xpbw/J0aCqSamjWusXlwPIWC+3YINI7
+ nT835bJJdCLvSjcjCqTDzc+ntlidStA5Dl6+CgzdON8g1MYQ6qhhFDs0HvmQv88M+BJb
+ dCaw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
+ :references:mime-version:content-disposition:in-reply-to:user-agent;
+ bh=YGZciRmFKywos7phtHka3BMLOjJ5GD0teHhlJqhmVkk=;
+ b=BwwduqDcx67ROSj6ASXZHQyl0rWxkrgHy+KdJWXMUxyTtScdfs0mHFEIiZ5FdrV6my
+ qRsx225SSrKv2aqWrJkpVD5dgYts1+1CD72OzE5c6ikbKkEIrL7huDJh/0jvYOip/XaJ
+ pc8MVrn0MteFZGynbRSawBztVtwe/h2BsEUeeEbtI9UqIVA/uhpgJ3DEmxk+mrQ/dZPX
+ 4kpmkMILQAJn7glG8PCVvKWtYWIWSpqNqR9fj919Uvhj1FwSrsbVnjUq65OVxvKRx89F
+ I4mRR57fY1Wpy/HPXAIoI1ffPjVFbGx2N3banKlwnX0eYga+S+YhHl/Bo6YAgKJ5kbiy
+ 9R9g==
+X-Gm-Message-State: APjAAAWkSGtQZp2h4DO9o4ufqXg4JLNipLk1VP4mJT/qPiIEoQaHKFln
+ Zp8kRC3vi9jBOFcnH+8VUJY=
+X-Google-Smtp-Source: APXvYqxIDdyy6by/HwcLogs24nzI99cv+AM8Nkc5yJYlPuae0cwXsF1pvVTorAHFvjBOwQbrOwQiZw==
+X-Received: by 2002:a62:38d7:: with SMTP id f206mr6797850pfa.102.1565892612133; 
+ Thu, 15 Aug 2019 11:10:12 -0700 (PDT)
+Received: from localhost ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
+ by smtp.gmail.com with ESMTPSA id n98sm1927437pjc.26.2019.08.15.11.10.11
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Thu, 15 Aug 2019 11:10:11 -0700 (PDT)
+Date: Thu, 15 Aug 2019 11:10:10 -0700
+From: Guenter Roeck <linux@roeck-us.net>
+To: Arnd Bergmann <arnd@arndb.de>
+Subject: Re: [PATCH v5 06/18] compat_ioctl: move WDIOC handling into wdt
+ drivers
+Message-ID: <20190815181010.GA28580@roeck-us.net>
+References: <20190814204259.120942-1-arnd@arndb.de>
+ <20190814205245.121691-1-arnd@arndb.de>
 MIME-Version: 1.0
-In-Reply-To: <55F06090E0044C4F985D9B415677B33F4E42700B@HASMSX110.ger.corp.intel.com>
-Content-Language: en-US
-X-Spam-Score: -1.0
-X-Spam-Score: -1.0
-X-Clacks-Overhead: GNU Terry Pratchett
+Content-Disposition: inline
+In-Reply-To: <20190814205245.121691-1-arnd@arndb.de>
+User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190814_223355_106606_9CC1ADE5 
-X-CRM114-Status: GOOD (  16.43  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190815_111017_638478_B7F28675 
+X-CRM114-Status: GOOD (  13.49  )
+X-Spam-Score: 0.6 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (groeck7[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (groeck7[at]gmail.com)
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,87 +103,48 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: Richard Weinberger <richard@nod.at>, Jeff Dike <jdike@addtoit.com>
+Cc: linux-hwmon@vger.kernel.org, linux-rtc@vger.kernel.org,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Jean Delvare <jdelvare@suse.com>, Anatolij Gustschin <agust@denx.de>,
+ linux-um@lists.infradead.org, linux-kernel@vger.kernel.org,
+ Nicolas Ferre <nicolas.ferre@microchip.com>,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ Florian Fainelli <f.fainelli@gmail.com>, bcm-kernel-feedback-list@broadcom.com,
+ viro@zeniv.linux.org.uk, linux-fsdevel@vger.kernel.org,
+ openipmi-developer@lists.sourceforge.net,
+ Wim Van Sebroeck <wim@linux-watchdog.org>, linuxppc-dev@lists.ozlabs.org,
+ linux-arm-kernel@lists.infradead.org, linux-watchdog@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-
-
-On 14/08/2019 14:38, Geron, ErelX wrote:
-> Our config is based on defconfig.
-> Added CONFIG_VIRTIO_UML, CONFIG_VIRTIO_BLK and CONFIG_VIRTIO_NET.
+On Wed, Aug 14, 2019 at 10:49:18PM +0200, Arnd Bergmann wrote:
+> All watchdog drivers implement the same set of ioctl commands, and
+> fortunately all of them are compatible between 32-bit and 64-bit
+> architectures.
 > 
-> Please note that we have two working examples:
+> Modern drivers always go through drivers/watchdog/wdt.c as an abstraction
+> layer, but older ones implement their own file_operations on a character
+> device for this.
 > 
-> One example is with qemu/contrib/vhost-user-blk:
+> Move the handling from fs/compat_ioctl.c into the individual drivers.
 > 
-> # Prepare disk file
-> truncate -s 5120 my_file
-> # Run server
-> ./vhost-user-blk -b my_file -s /tmp/my_blk
-> # Run uml
-> ./linux ... virtio_uml.device=/tmp/my_blk:2
+> Note that most of the legacy drivers will never be used on 64-bit
+> hardware, because they are for an old 32-bit SoC implementation, but
+> doing them all at once is safer than trying to guess which ones do
+> or do not need the compat_ioctl handling.
 > 
-> And another example is with snabb:
-> 
-> # Run server with two interconnected interfaces
-> # (need to add a vm2vm program, as shown at: https://github.com/snabbco/snabb/issues/1119)
-> ./snabb vm2vm /tmp/first /tmp/second
-> # Run uml
-> ./linux ... virtio_uml.device=/tmp/first:1
-> ./linux ... virtio_uml.device=/tmp/second:1
+> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
 
-I tried with BESS which for vhost-user is more or less DPDK "as is".
+Reviewed-by: Guenter Roeck <linux@roeck-us.net>
 
-The config used was:
+This patch doesn't seem to have a useful base (or at least git says so).
+It does not apply to mainline nor to my own watchdog-next branch.
+I assume you plan to apply the entire series together. Please not
+that there will be conflicts against watchdog-next when you do so.
 
-PMDPort(name="in0", pci="01:00.1")
-PMDPort(name='u0', vdev="eth_vhost0,iface=/tmp/uml-test-vhost.sock")
-PortInc(port="in0") -> PortOut(port="u0")
-PortInc(port="u0") -> PortOut(port="in0")
-
-This wires back to back a port on an e1000e and vhost-user instance.
-
-Something in the vhost-user negotiation fails and the way the code is 
-written at present the nature of the error is lost.
-
-For example, in vu_get()
-
-It does WARN_ON(vhost_user_get_config(vu_dev, offset, buf, len));
-
-It should be something along the lines of
-
-rc = vhost_user_get_config(vu_dev, offset, buf, len)
-
-if (unlikely(rc)) {
-	printk(KERN_ERR "vu get returned error %i", rc);
-	WARN();
-}
-
-There are other places where IMO it will need a similar substitution.
-
-Brgds,
-
-A.
-
-
-> 
-> ---------------------------------------------------------------------
-> A member of the Intel Corporation group of companies
-> 
-> This e-mail and any attachments may contain confidential material for
-> the sole use of the intended recipient(s). Any review or distribution
-> by others is strictly prohibited. If you are not the intended
-> recipient, please contact the sender and delete all copies.
-> 
-
--- 
-Anton R. Ivanov
-
-Cambridge Greys Limited, England and Wales company No 10273661
-http://www.cambridgegreys.com/
+Guenter
 
 _______________________________________________
 linux-um mailing list
