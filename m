@@ -2,44 +2,42 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 98CFB9AD8B
-	for <lists+linux-um@lfdr.de>; Fri, 23 Aug 2019 12:46:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 94D189ADD5
+	for <lists+linux-um@lfdr.de>; Fri, 23 Aug 2019 13:06:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jW/jErXDOerTfTmCAxKA6szslsZLeg190k9wrKDCGWs=; b=B4sNQmRPed4a2n
-	yFaE6wOZYm2K4pmbuu8mbOKf/NcppdG0qp+7/nZ9eI7H697OZXTjdXQI4mugIHpCIBj9sRHF8M4Zh
-	2J0Y1Sufoa6zJnrISgRW2Ex5FkPZDkUoFKOOGuVlkPuf8o3cLTwXQIm0i3bTNeb6+L02mf6PLsRfq
-	Cesiu4PG2noFqDzjZQ/cxT9m1N38oyfHS3ia1uynP1Anjn1H6kbfVnOIzUbs3whrVlA/UM0q3EP6P
-	FvZCaPSk+g2omEopvXQSVnvXMwv+6v9tMalbc7YFZeEdMFxO8/YU9o9OmQLIxMxgAP8oOiFHT5Pp1
-	DMH6aECKtgcjA6piZFrA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=4MzNt3IpzotORYdbyS0QhusOWtDwlmmDXTe7oL47vVI=; b=dDm+XjJf+YiIVR
+	dB8auqIGVm4N4klbfBVWu0q5tBE3oHSrmymxYeFz3LHR/r1FA9nJwVINg3XyPVoskKZAjdyy6/HvL
+	PArHU7Wq28IswLjOTM8WSwkpvcBHbCYSpArbopn+IclTg8thMz+c/tNnezlo7AQN2d63OYX9hDzSG
+	qbGDRxXI5QcNu4FOwmG65L7sWmFzrCribJgPepsPzFeH2I3f7lDNviAKVr6APohcZMDevJzGn3hVi
+	UMDBcYMFZCFKZjwztik5iJhl7XTnTBV3maoZjj06wGBTfIXdEa1/+lr1aLWNz4zLZz/alRsvswIVG
+	mC8wk5lHdHqJNusBhsBQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i174z-00055c-UM; Fri, 23 Aug 2019 10:46:01 +0000
+	id 1i17P5-0004Zb-QT; Fri, 23 Aug 2019 11:06:47 +0000
 Received: from s3.sipsolutions.net ([2a01:4f8:191:4433::2]
  helo=sipsolutions.net)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i174u-00053Y-2G
- for linux-um@lists.infradead.org; Fri, 23 Aug 2019 10:45:59 +0000
+ id 1i17P3-0004SP-4D
+ for linux-um@lists.infradead.org; Fri, 23 Aug 2019 11:06:46 +0000
 Received: by sipsolutions.net with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <johannes@sipsolutions.net>)
- id 1i174q-0001vM-DF; Fri, 23 Aug 2019 12:45:52 +0200
+ id 1i17P0-0002Fb-H2; Fri, 23 Aug 2019 13:06:42 +0200
 From: Johannes Berg <johannes@sipsolutions.net>
 To: linux-um@lists.infradead.org
-Subject: [PATCH 4/4] arch: um: implement TRACE_IRQFLAGS_SUPPORT
-Date: Fri, 23 Aug 2019 12:44:29 +0200
-Message-Id: <20190823104429.11047-4-johannes@sipsolutions.net>
+Subject: [PATCH v2] arch: um: implement TRACE_IRQFLAGS_SUPPORT
+Date: Fri, 23 Aug 2019 13:06:38 +0200
+Message-Id: <20190823110638.12220-1-johannes@sipsolutions.net>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190823104429.11047-1-johannes@sipsolutions.net>
-References: <20190823104429.11047-1-johannes@sipsolutions.net>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190823_034556_265824_E28D7E08 
-X-CRM114-Status: GOOD (  16.35  )
+X-CRM114-CacheID: sfid-20190823_040645_332809_B10006FA 
+X-CRM114-Status: GOOD (  15.08  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -76,17 +74,19 @@ Implement it now.
 Fixes: 711553efa5b8 ("[PATCH] uml: declare in Kconfig our partial LOCKDEP support")
 Signed-off-by: Johannes Berg <johannes.berg@intel.com>
 ---
+v2: remove some erroneous/superfluous um_trace_signals_on()/off() calls,
+    we only need this for the adjustment during pending signal handling.
+---
  arch/um/include/shared/longjmp.h |  2 +-
  arch/um/include/shared/os.h      |  7 +++++
- arch/um/kernel/process.c         |  2 ++
- arch/um/kernel/signal.c          | 30 +++++++++++++++++++--
+ arch/um/kernel/signal.c          | 30 ++++++++++++++++++++--
  arch/um/kernel/skas/mmu.c        |  4 +--
  arch/um/kernel/skas/process.c    |  2 +-
  arch/um/os-Linux/main.c          |  2 +-
  arch/um/os-Linux/sigio.c         |  6 ++---
- arch/um/os-Linux/signal.c        | 46 +++++++++++++++++++++++---------
+ arch/um/os-Linux/signal.c        | 44 +++++++++++++++++++++++---------
  arch/um/os-Linux/skas/process.c  | 12 ++++-----
- 10 files changed, 85 insertions(+), 28 deletions(-)
+ 9 files changed, 81 insertions(+), 28 deletions(-)
 
 diff --git a/arch/um/include/shared/longjmp.h b/arch/um/include/shared/longjmp.h
 index b3315c1f198b..85a1cc290ecb 100644
@@ -124,19 +124,6 @@ index da7ebbe4ebb3..72c22843ac9f 100644
 +extern void um_trace_signals_off(void);
 +
  #endif
-diff --git a/arch/um/kernel/process.c b/arch/um/kernel/process.c
-index 6bede7888fc2..30f8516eb2aa 100644
---- a/arch/um/kernel/process.c
-+++ b/arch/um/kernel/process.c
-@@ -127,6 +127,8 @@ void new_thread_handler(void)
- 	fn = current->thread.request.u.thread.proc;
- 	arg = current->thread.request.u.thread.arg;
- 
-+	um_trace_signals_on();
-+
- 	/*
- 	 * callback returns only if the kernel thread execs a process
- 	 */
 diff --git a/arch/um/kernel/signal.c b/arch/um/kernel/signal.c
 index 57acbd67d85d..1a8050bcd168 100644
 --- a/arch/um/kernel/signal.c
@@ -261,19 +248,10 @@ index 46e762f926eb..21b226aa1041 100644
  
  int add_sigio_fd(int fd)
 diff --git a/arch/um/os-Linux/signal.c b/arch/um/os-Linux/signal.c
-index 4cd88b5b9006..d8c52ee3eb3a 100644
+index 4cd88b5b9006..bde54c4a27da 100644
 --- a/arch/um/os-Linux/signal.c
 +++ b/arch/um/os-Linux/signal.c
-@@ -34,6 +34,8 @@ static void sig_handler_common(int sig, struct siginfo *si, mcontext_t *mc)
- 	struct uml_pt_regs r;
- 	int save_errno = errno;
- 
-+	um_trace_signals_off();
-+
- 	r.is_user = 0;
- 	if (sig == SIGSEGV) {
- 		/* For segfaults, we want the data from the sigcontext. */
-@@ -43,7 +45,7 @@ static void sig_handler_common(int sig, struct siginfo *si, mcontext_t *mc)
+@@ -43,7 +43,7 @@ static void sig_handler_common(int sig, struct siginfo *si, mcontext_t *mc)
  
  	/* enable signals if sig isn't IRQ signal */
  	if ((sig != SIGIO) && (sig != SIGWINCH))
@@ -282,7 +260,7 @@ index 4cd88b5b9006..d8c52ee3eb3a 100644
  
  	(*sig_info[sig])(sig, si, &r);
  
-@@ -76,11 +78,11 @@ void sig_handler(int sig, struct siginfo *si, mcontext_t *mc)
+@@ -76,11 +76,11 @@ void sig_handler(int sig, struct siginfo *si, mcontext_t *mc)
  		return;
  	}
  
@@ -296,7 +274,7 @@ index 4cd88b5b9006..d8c52ee3eb3a 100644
  }
  
  static void timer_real_alarm_handler(mcontext_t *mc)
-@@ -104,7 +106,7 @@ void timer_alarm_handler(int sig, struct siginfo *unused_si, mcontext_t *mc)
+@@ -104,7 +104,7 @@ void timer_alarm_handler(int sig, struct siginfo *unused_si, mcontext_t *mc)
  		return;
  	}
  
@@ -305,7 +283,7 @@ index 4cd88b5b9006..d8c52ee3eb3a 100644
  
  	signals_active |= SIGALRM_MASK;
  
-@@ -112,7 +114,7 @@ void timer_alarm_handler(int sig, struct siginfo *unused_si, mcontext_t *mc)
+@@ -112,7 +112,7 @@ void timer_alarm_handler(int sig, struct siginfo *unused_si, mcontext_t *mc)
  
  	signals_active &= ~SIGALRM_MASK;
  
@@ -314,7 +292,7 @@ index 4cd88b5b9006..d8c52ee3eb3a 100644
  }
  
  void deliver_alarm(void) {
-@@ -253,6 +255,8 @@ void unblock_signals(void)
+@@ -253,6 +253,8 @@ void unblock_signals(void)
  	if (signals_enabled == 1)
  		return;
  
@@ -323,7 +301,7 @@ index 4cd88b5b9006..d8c52ee3eb3a 100644
  	/*
  	 * We loop because the IRQ handler returns with interrupts off.  So,
  	 * interrupts may have arrived and we need to re-enable them and
-@@ -262,12 +266,9 @@ void unblock_signals(void)
+@@ -262,12 +264,9 @@ void unblock_signals(void)
  		/*
  		 * Save and reset save_pending after enabling signals.  This
  		 * way, signals_pending won't be changed while we're reading it.
@@ -338,7 +316,7 @@ index 4cd88b5b9006..d8c52ee3eb3a 100644
  		 */
  		barrier();
  
-@@ -280,10 +281,13 @@ void unblock_signals(void)
+@@ -280,10 +279,13 @@ void unblock_signals(void)
  		/*
  		 * We have pending interrupts, so disable signals, as the
  		 * handlers expect them off when they are called.  They will
@@ -354,7 +332,7 @@ index 4cd88b5b9006..d8c52ee3eb3a 100644
  
  		/*
  		 * Deal with SIGIO first because the alarm handler might
-@@ -306,6 +310,9 @@ void unblock_signals(void)
+@@ -306,6 +308,9 @@ void unblock_signals(void)
  		if (!(signals_pending & SIGIO_MASK) && (signals_active & SIGALRM_MASK))
  			return;
  
@@ -364,7 +342,7 @@ index 4cd88b5b9006..d8c52ee3eb3a 100644
  	}
  }
  
-@@ -328,6 +335,21 @@ int set_signals(int enable)
+@@ -328,6 +333,21 @@ int set_signals(int enable)
  	return ret;
  }
  
