@@ -2,42 +2,42 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CCD1A9B04C
-	for <lists+linux-um@lfdr.de>; Fri, 23 Aug 2019 15:06:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EF0659B050
+	for <lists+linux-um@lfdr.de>; Fri, 23 Aug 2019 15:06:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=gfjtXFj4+29OIXif/obry/CCnLVg1BOohAnaxa6dfVg=; b=QOwG5ojxjTbXtJ
-	vpAX/LVNwvaliaL+FRTHggOMQb1hEol+f1u1R8iTwdH4K764PSOs3+qlTw51t+uvP+ZdpsD3e3teJ
-	XbK+xn2OP54qb1J67BVdf6PAPCmRJNQbhca/cs8jrwY/xODW6Y6scoWGXXGAWO2yZJrdIvVfDWK9Q
-	29NnJ9Ock2HjZRuaQSkB8mw4U/ieFq6hbfrgaOYcVvkUrskq7oGlVY0yXqI5Qx7W0Lm38ZcwR4N3p
-	xVo9tpc5z8xJMVCmSBHZr2oH5xYNSEOen6PMRyTITysAxMcKqn/Unid+AsJUb+OTGbqDERhFk0FqY
-	gkgqaNgxtAKphFQ0LFag==;
+	List-Owner; bh=6FgsL12S9BAO4SC76AdUbGMxJWXGZdCJOlI629VqrtQ=; b=uxc+8eSCgBWqcy
+	25e/rtrYPpXDmRMl+oedpkmfcAWOkCZqaI21ZgkiMsBVozC4a7MQB6hC9L7F951LB8P9v/LFQ0RuJ
+	BwHZiPpURCIB5d3jJhaD+PDKSw8aJqWsvsr01QVLXC+QpiZO89HagQSbfT5f770q2ntjNYEKQfVWd
+	SKGHtBIyiMCOYNqRWWgCdITA/l6zXmLpeL7Hy1v7nMjZcWNnmNm/wkyH8ka5p/XukyKg5i0rAQscL
+	rj/euqnsYiDp1vWBflMDoNk0W7HVLj5/KnIhheqLzj5vH3Z/jzx9BWxuzsfk5g+VGcNNlwtx0Xv2Y
+	EjGEvwmaM4jSRVNFFm5Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i19GX-0004r5-GB; Fri, 23 Aug 2019 13:06:05 +0000
+	id 1i19Gg-0004ue-LA; Fri, 23 Aug 2019 13:06:14 +0000
 Received: from s3.sipsolutions.net ([2a01:4f8:191:4433::2]
  helo=sipsolutions.net)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i19GU-0004qW-G0
- for linux-um@lists.infradead.org; Fri, 23 Aug 2019 13:06:03 +0000
+ id 1i19Gd-0004uH-KJ
+ for linux-um@lists.infradead.org; Fri, 23 Aug 2019 13:06:12 +0000
 Received: by sipsolutions.net with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <johannes@sipsolutions.net>)
- id 1i19GT-0004Ww-37; Fri, 23 Aug 2019 15:06:01 +0200
+ id 1i19Gc-0004XD-Aq; Fri, 23 Aug 2019 15:06:10 +0200
 From: Johannes Berg <johannes@sipsolutions.net>
 To: linux-um@lists.infradead.org
-Subject: [PATCH] arch: um: enable CONFIG_CONSTRUCTORS
-Date: Fri, 23 Aug 2019 15:05:57 +0200
-Message-Id: <20190823130557.15870-1-johannes@sipsolutions.net>
+Subject: [PATCH] arch: um: place (soft)irq text with macros
+Date: Fri, 23 Aug 2019 15:06:06 +0200
+Message-Id: <20190823130606.15951-1-johannes@sipsolutions.net>
 X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190823_060602_532111_5AA4AF80 
-X-CRM114-Status: UNSURE (   9.68  )
+X-CRM114-CacheID: sfid-20190823_060611_662309_8D1F52FE 
+X-CRM114-Status: UNSURE (   4.78  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -65,60 +65,40 @@ Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
 From: Johannes Berg <johannes.berg@intel.com>
 
-We do need to call the constructors for *modules*, even
-if libc calls the ones for the kernel binary itself, so
-allow enabling CONFIG_CONSTRUCTORS but skip the kernel.
-
-Tested that it indeed doesn't work in modules, and does
-work after the fixes in both, with a few functions with
-__attribute__((constructor)) in both dynamic and static
-builds.
+Otherwise it gets placed without the start/end markers.
 
 Signed-off-by: Johannes Berg <johannes.berg@intel.com>
 ---
- init/Kconfig        | 1 -
- init/main.c         | 2 +-
- kernel/gcov/Kconfig | 2 +-
- 3 files changed, 2 insertions(+), 3 deletions(-)
+ arch/um/kernel/dyn.lds.S | 2 ++
+ arch/um/kernel/uml.lds.S | 2 ++
+ 2 files changed, 4 insertions(+)
 
-diff --git a/init/Kconfig b/init/Kconfig
-index bd7d650d4a99..81293d78a6ad 100644
---- a/init/Kconfig
-+++ b/init/Kconfig
-@@ -48,7 +48,6 @@ config CC_DISABLE_WARN_MAYBE_UNINITIALIZED
- 
- config CONSTRUCTORS
- 	bool
--	depends on !UML
- 
- config IRQ_WORK
- 	bool
-diff --git a/init/main.c b/init/main.c
-index 96f8d5af52d6..1e670be141c8 100644
---- a/init/main.c
-+++ b/init/main.c
-@@ -788,7 +788,7 @@ asmlinkage __visible void __init start_kernel(void)
- /* Call all constructor functions linked into the kernel. */
- static void __init do_ctors(void)
- {
--#ifdef CONFIG_CONSTRUCTORS
-+#if defined(CONFIG_CONSTRUCTORS) && !defined(CONFIG_UML)
- 	ctor_fn_t *fn = (ctor_fn_t *) __ctors_start;
- 
- 	for (; fn < (ctor_fn_t *) __ctors_end; fn++)
-diff --git a/kernel/gcov/Kconfig b/kernel/gcov/Kconfig
-index 3941a9c48f83..060e8e726755 100644
---- a/kernel/gcov/Kconfig
-+++ b/kernel/gcov/Kconfig
-@@ -4,7 +4,7 @@ menu "GCOV-based kernel profiling"
- config GCOV_KERNEL
- 	bool "Enable gcov-based kernel profiling"
- 	depends on DEBUG_FS
--	select CONSTRUCTORS if !UML
-+	select CONSTRUCTORS
- 	default n
- 	---help---
- 	This option enables gcov-based code profiling (e.g. for code coverage
+diff --git a/arch/um/kernel/dyn.lds.S b/arch/um/kernel/dyn.lds.S
+index 5568cf882371..f5001481010c 100644
+--- a/arch/um/kernel/dyn.lds.S
++++ b/arch/um/kernel/dyn.lds.S
+@@ -70,6 +70,8 @@ SECTIONS
+     SCHED_TEXT
+     CPUIDLE_TEXT
+     LOCK_TEXT
++    IRQENTRY_TEXT
++    SOFTIRQENTRY_TEXT
+     *(.fixup)
+     *(.stub .text.* .gnu.linkonce.t.*)
+     /* .gnu.warning sections are handled specially by elf32.em.  */
+diff --git a/arch/um/kernel/uml.lds.S b/arch/um/kernel/uml.lds.S
+index 36b07ec09742..9f21443be2c9 100644
+--- a/arch/um/kernel/uml.lds.S
++++ b/arch/um/kernel/uml.lds.S
+@@ -31,6 +31,8 @@ SECTIONS
+     SCHED_TEXT
+     CPUIDLE_TEXT
+     LOCK_TEXT
++    IRQENTRY_TEXT
++    SOFTIRQENTRY_TEXT
+     *(.fixup)
+     /* .gnu.warning sections are handled specially by elf32.em.  */
+     *(.gnu.warning)
 -- 
 2.20.1
 
