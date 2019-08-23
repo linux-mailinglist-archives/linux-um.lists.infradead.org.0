@@ -2,41 +2,41 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 94D189ADD5
-	for <lists+linux-um@lfdr.de>; Fri, 23 Aug 2019 13:06:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4974E9ADED
+	for <lists+linux-um@lfdr.de>; Fri, 23 Aug 2019 13:16:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=4MzNt3IpzotORYdbyS0QhusOWtDwlmmDXTe7oL47vVI=; b=dDm+XjJf+YiIVR
-	dB8auqIGVm4N4klbfBVWu0q5tBE3oHSrmymxYeFz3LHR/r1FA9nJwVINg3XyPVoskKZAjdyy6/HvL
-	PArHU7Wq28IswLjOTM8WSwkpvcBHbCYSpArbopn+IclTg8thMz+c/tNnezlo7AQN2d63OYX9hDzSG
-	qbGDRxXI5QcNu4FOwmG65L7sWmFzrCribJgPepsPzFeH2I3f7lDNviAKVr6APohcZMDevJzGn3hVi
-	UMDBcYMFZCFKZjwztik5iJhl7XTnTBV3maoZjj06wGBTfIXdEa1/+lr1aLWNz4zLZz/alRsvswIVG
-	mC8wk5lHdHqJNusBhsBQ==;
+	List-Owner; bh=+/wJqvBI7f9VyxpYwidJoIJjPXuvsXX1b3QRaHfOKu8=; b=WEjxhyMWqA472X
+	fxQv8vcxP1APsiodygIZNa6Mpvg+W6i79Mi6ymfRHV5y6gpXrm3tiTOJJH0XsAUOk+neS+eVT3mzM
+	4uP9bGVG+XjMHl6YT1FaSqJy2RGjDls6q2OhD/j9yZaJk6u7WhT2RUMT3mLRuDQ69sRZjSczLpSvS
+	XIMr21FXgdUAWl0AXuGt8sln42vpgPuBA9w6x2tFcvqky/ZRzL9bgVyqPOk125miXW6CfnIOECdxK
+	z2LBk+jgxTn/TmmggZVszVEikUXeP5xgIoDr5xwesv8dpy/WG/aXArbdZVR3wLO6s8DLQZyYuGqdX
+	eNyMs1bDmhDP0KvRPm2Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i17P5-0004Zb-QT; Fri, 23 Aug 2019 11:06:47 +0000
+	id 1i17YV-0001UH-Od; Fri, 23 Aug 2019 11:16:31 +0000
 Received: from s3.sipsolutions.net ([2a01:4f8:191:4433::2]
  helo=sipsolutions.net)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i17P3-0004SP-4D
- for linux-um@lists.infradead.org; Fri, 23 Aug 2019 11:06:46 +0000
+ id 1i17YS-0001Ts-LR
+ for linux-um@lists.infradead.org; Fri, 23 Aug 2019 11:16:30 +0000
 Received: by sipsolutions.net with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <johannes@sipsolutions.net>)
- id 1i17P0-0002Fb-H2; Fri, 23 Aug 2019 13:06:42 +0200
+ id 1i17YQ-0002TC-Dz; Fri, 23 Aug 2019 13:16:26 +0200
 From: Johannes Berg <johannes@sipsolutions.net>
 To: linux-um@lists.infradead.org
-Subject: [PATCH v2] arch: um: implement TRACE_IRQFLAGS_SUPPORT
-Date: Fri, 23 Aug 2019 13:06:38 +0200
-Message-Id: <20190823110638.12220-1-johannes@sipsolutions.net>
+Subject: [PATCH v3] arch: um: implement TRACE_IRQFLAGS_SUPPORT
+Date: Fri, 23 Aug 2019 13:16:23 +0200
+Message-Id: <20190823111623.13312-1-johannes@sipsolutions.net>
 X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190823_040645_332809_B10006FA 
+X-CRM114-CacheID: sfid-20190823_041628_867124_EE8B0128 
 X-CRM114-Status: GOOD (  15.08  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -76,17 +76,18 @@ Signed-off-by: Johannes Berg <johannes.berg@intel.com>
 ---
 v2: remove some erroneous/superfluous um_trace_signals_on()/off() calls,
     we only need this for the adjustment during pending signal handling.
+v3: add back erroneously removed EXPORT_SYMBOLs
 ---
  arch/um/include/shared/longjmp.h |  2 +-
  arch/um/include/shared/os.h      |  7 +++++
- arch/um/kernel/signal.c          | 30 ++++++++++++++++++++--
+ arch/um/kernel/signal.c          | 28 ++++++++++++++++++++
  arch/um/kernel/skas/mmu.c        |  4 +--
  arch/um/kernel/skas/process.c    |  2 +-
  arch/um/os-Linux/main.c          |  2 +-
  arch/um/os-Linux/sigio.c         |  6 ++---
  arch/um/os-Linux/signal.c        | 44 +++++++++++++++++++++++---------
  arch/um/os-Linux/skas/process.c  | 12 ++++-----
- 9 files changed, 81 insertions(+), 28 deletions(-)
+ 9 files changed, 81 insertions(+), 26 deletions(-)
 
 diff --git a/arch/um/include/shared/longjmp.h b/arch/um/include/shared/longjmp.h
 index b3315c1f198b..85a1cc290ecb 100644
@@ -125,10 +126,10 @@ index da7ebbe4ebb3..72c22843ac9f 100644
 +
  #endif
 diff --git a/arch/um/kernel/signal.c b/arch/um/kernel/signal.c
-index 57acbd67d85d..1a8050bcd168 100644
+index 57acbd67d85d..3a8012520e22 100644
 --- a/arch/um/kernel/signal.c
 +++ b/arch/um/kernel/signal.c
-@@ -6,14 +6,40 @@
+@@ -6,15 +6,43 @@
  #include <linux/module.h>
  #include <linux/ptrace.h>
  #include <linux/sched.h>
@@ -140,9 +141,9 @@ index 57acbd67d85d..1a8050bcd168 100644
  #include <kern_util.h>
 +#include <os.h>
  
--EXPORT_SYMBOL(block_signals);
--EXPORT_SYMBOL(unblock_signals);
-+
+ EXPORT_SYMBOL(block_signals);
+ EXPORT_SYMBOL(unblock_signals);
+ 
 +void block_signals_trace(void)
 +{
 +	block_signals();
@@ -168,9 +169,10 @@ index 57acbd67d85d..1a8050bcd168 100644
 +	if (current_thread_info())
 +		trace_hardirqs_off();
 +}
- 
++
  /*
   * OK, we're invoking a handler
+  */
 diff --git a/arch/um/kernel/skas/mmu.c b/arch/um/kernel/skas/mmu.c
 index 29e7f5f9f188..ace71f805700 100644
 --- a/arch/um/kernel/skas/mmu.c
