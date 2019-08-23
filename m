@@ -2,67 +2,81 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B8EC59B37C
-	for <lists+linux-um@lfdr.de>; Fri, 23 Aug 2019 17:36:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 822E59B4DE
+	for <lists+linux-um@lfdr.de>; Fri, 23 Aug 2019 18:48:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Iit9TCJWezps5lbZPQaSUYlzgUl94C50bUJJ60X4T8I=; b=PsT29dAzFFJt51Vfd2EqnU4+7
-	bM9bR9xXBGsMegj49FX9pMml+75ulHrYA4i7eqaXlLJw2S1yHmhJcb0uzk0X6S9EdjCUKdGsaW+sq
-	cAd5Cst1gsBU2tpalltZhjh+lbRPvrnikMXKSREwi8tWiygGBq99N4V9n0sABkpSBoSpqq4MqAboc
-	E4OAEsTZK4NM6F40T81/wJNgtDLgJbTXEH3Rf5w7MOTfFJa8sz5vdWM9XVQogquJ53/9Stb00KGaJ
-	TaL41mYHGxzqAQ7KLS9aiUzHBewYs/EIDN/iSp+vxtCsU8gX+SA+vvzlt1jlCMz8kTT4J22zLQN4h
-	Z5SKX05VQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=KDKg0Jr7cVtGhc7Bab9k54kPCOmKIgrOBfg5xGRyxuA=; b=uJTTOiXRFUB1Hm
+	AVz57wE5bNQnn37lbXDzTDw/trIBmniAszljiN929wDZHsoomZVC3RZRdc/Ox74EZf9peUWGLXEba
+	ZRxzCG9BYhXQqRY2NaauRZrLo8EaXE2oWW1j3hdlfxMRSSrYokYsPMWlGYUsieamRUXYo9SGTDu5v
+	zL5ds7s8SYxeW1fD4hkUS2IWd0JVBflpGB46Mmm1Bzro9tATiW52j3nSaN/r7qVO4vL2WKOkVkx6B
+	7YnOboG9s0Z/sbX+KrUczVjOM2uyX5GoShbiyhoHq1JhWG2A/ZvGujF04DU8RYI2Z5stDUG0Ovvic
+	UA6TMuqiYqi5ZfXi7QJA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i1BcH-0003gl-6G; Fri, 23 Aug 2019 15:36:41 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1i1Cjl-0008UB-Bu; Fri, 23 Aug 2019 16:48:29 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i1BcE-0003gR-Aw
- for linux-um@lists.infradead.org; Fri, 23 Aug 2019 15:36:40 +0000
-Received: from [192.168.1.112] (c-24-9-64-241.hsd1.co.comcast.net
- [24.9.64.241])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5980F21019;
- Fri, 23 Aug 2019 15:36:35 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566574598;
- bh=yuc+RQyGDwgr4ar3Efa07bBn5QNb2SFfeGZoF5sR6mc=;
- h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
- b=CgqE5j2w5x1qnpbwYyuq0KO+Bvp9qlLy0jEoewMKJabt5dLP+3X1KL4fk8QIL0qJ7
- 7F+aKuDys1iShbgJRta6Vhx1b8JWc8nX40jluL3iDGV+69E1L5TOMNLxNVpKhocirk
- uUwxDfjYESEjI7iuOUgDNmFHtydMqmnnTGJYP/Xk=
-Subject: Re: [PATCH v14 09/18] kunit: test: add support for test abort
-To: Brendan Higgins <brendanhiggins@google.com>, frowand.list@gmail.com,
- gregkh@linuxfoundation.org, jpoimboe@redhat.com, keescook@google.com,
- kieran.bingham@ideasonboard.com, mcgrof@kernel.org, peterz@infradead.org,
- robh@kernel.org, sboyd@kernel.org, tytso@mit.edu,
- yamada.masahiro@socionext.com
-References: <20190820232046.50175-1-brendanhiggins@google.com>
- <20190820232046.50175-10-brendanhiggins@google.com>
-From: shuah <shuah@kernel.org>
-Message-ID: <ae6722ce-80ac-5840-5c4b-6f6726e4239d@kernel.org>
-Date: Fri, 23 Aug 2019 09:36:34 -0600
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1i1Cji-0008Sk-Ec
+ for linux-um@lists.infradead.org; Fri, 23 Aug 2019 16:48:27 +0000
+Received: by mail-pl1-x643.google.com with SMTP id 4so5863425pld.10
+ for <linux-um@lists.infradead.org>; Fri, 23 Aug 2019 09:48:21 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=shB6SKOCWrivD7S412WveV0DXQGCOHDXUApJqsM/wlA=;
+ b=Ompr7qYsU3e4pxkTUvcGDfd4ML8vgFjnLheqC9j82bJxX2WMtGNPBrUA1tpfZZ7kkl
+ 2MlcYLnijPbPInvIsR6zoBG80ArVaqo/qH8Nz2C1fLluKeQqMKpdn1Isx73kDPRrmtfA
+ uzlQbv8SAmt8wmBgLzDRa1pCbkLXVUC7pw3IzF7X6tCUWtvjtpbvC0Rxd012AHX4+phE
+ 8vFfpItPxvkt5HF2AluYoxPT8xW+p0eqWdqhZxhn3iXjphBqdQMERaOSG3vodu0lrJ5X
+ dliaDAtQHPNKh2+Qm2AedTz/hBlaONpPrX2iSmH0iODNpBCdBlLEBbRkV7kNpmjj1hL+
+ ogpQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=shB6SKOCWrivD7S412WveV0DXQGCOHDXUApJqsM/wlA=;
+ b=hqQO2x9gZneXsBsKs6fD16Te2Xm21Xea6+XBPDF1hPwBnGVQR27N/chhngTLUvTPz0
+ fTgU/GZZJqK4VkymTUHhruacCOiCzLOQvq4PE+ZjH3/L3d/SNLiLVG7lrL14CT79U6ia
+ MpyaN6/k+GCtbB3hNSYYuNdLvymOg0xcskrAE6vHWiN+AqHhtHIFq5SsuYFRg/LdPQet
+ tTMmISnipD3xsAFie9vwvjr4nNOpE9qJq+GR8AVitaWYhlmwb1u/0Adw9aQMzA6SwcVm
+ sjBc6g9OyQsUrpT6rrW8QlA6Qdy5rGsAqIiAxk49kLACb8Kf5bw/NQqSLdleKerSPo8a
+ F7sw==
+X-Gm-Message-State: APjAAAXgCk8n5ncEAe76oH3fdQxQuR1nRxsodFhmFlBTb/nsMXYjQk7/
+ 8+ncxCH5peeocdcHLrT2xEfoMqS8YXVrGcmxSg/KKQ==
+X-Google-Smtp-Source: APXvYqyVqeK74/JWJUZ7pW5UAwhfOe02PTG6GeE5ufM2yWENnaiC/3vIkdv/0Gau1b+w32MpN7Tbr1pv4cTuRxiXwSc=
+X-Received: by 2002:a17:902:169:: with SMTP id
+ 96mr5617305plb.297.1566578900191; 
+ Fri, 23 Aug 2019 09:48:20 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20190820232046.50175-10-brendanhiggins@google.com>
-Content-Language: en-US
+References: <20190820232046.50175-1-brendanhiggins@google.com>
+ <20190820232046.50175-2-brendanhiggins@google.com>
+ <7f2c8908-75f6-b793-7113-ad57c51777ce@kernel.org>
+In-Reply-To: <7f2c8908-75f6-b793-7113-ad57c51777ce@kernel.org>
+From: Brendan Higgins <brendanhiggins@google.com>
+Date: Fri, 23 Aug 2019 09:48:08 -0700
+Message-ID: <CAFd5g44mRK9t4f58i_YMEt=e9RTxwrrhFY_V2LW_E7bUwR3cdg@mail.gmail.com>
+Subject: Re: [PATCH v14 01/18] kunit: test: add KUnit test runner core
+To: shuah <shuah@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190823_083638_415692_E176511A 
-X-CRM114-Status: GOOD (  32.33  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190823_094826_495429_6A12E83E 
+X-CRM114-Status: GOOD (  23.33  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -71,7 +85,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,201 +98,125 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: pmladek@suse.com, linux-doc@vger.kernel.org, amir73il@gmail.com,
- dri-devel@lists.freedesktop.org, Alexander.Levin@microsoft.com,
- linux-kselftest@vger.kernel.org, shuah <shuah@kernel.org>,
- linux-nvdimm@lists.01.org, khilman@baylibre.com, knut.omang@oracle.com,
- wfg@linux.intel.com, joel@jms.id.au, rientjes@google.com, jdike@addtoit.com,
- dan.carpenter@oracle.com, devicetree@vger.kernel.org,
- linux-kbuild@vger.kernel.org, Tim.Bird@sony.com, linux-um@lists.infradead.org,
- rostedt@goodmis.org, julia.lawall@lip6.fr, kunit-dev@googlegroups.com,
- richard@nod.at, rdunlap@infradead.org, linux-kernel@vger.kernel.org,
- daniel@ffwll.ch, mpe@ellerman.id.au, linux-fsdevel@vger.kernel.org,
- logang@deltatee.com
+Cc: Petr Mladek <pmladek@suse.com>,
+ "open list:DOCUMENTATION" <linux-doc@vger.kernel.org>,
+ Peter Zijlstra <peterz@infradead.org>, Amir Goldstein <amir73il@gmail.com>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
+ Sasha Levin <Alexander.Levin@microsoft.com>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
+ Frank Rowand <frowand.list@gmail.com>, Rob Herring <robh@kernel.org>,
+ linux-nvdimm <linux-nvdimm@lists.01.org>, Kevin Hilman <khilman@baylibre.com>,
+ Knut Omang <knut.omang@oracle.com>,
+ Kieran Bingham <kieran.bingham@ideasonboard.com>, wfg@linux.intel.com,
+ Joel Stanley <joel@jms.id.au>, David Rientjes <rientjes@google.com>,
+ Jeff Dike <jdike@addtoit.com>, Dan Carpenter <dan.carpenter@oracle.com>,
+ devicetree <devicetree@vger.kernel.org>,
+ linux-kbuild <linux-kbuild@vger.kernel.org>, "Bird,
+ Timothy" <Tim.Bird@sony.com>, linux-um@lists.infradead.org,
+ Steven Rostedt <rostedt@goodmis.org>, Julia Lawall <julia.lawall@lip6.fr>,
+ Josh Poimboeuf <jpoimboe@redhat.com>, kunit-dev@googlegroups.com,
+ Theodore Ts'o <tytso@mit.edu>, Richard Weinberger <richard@nod.at>,
+ Stephen Boyd <sboyd@kernel.org>, Greg KH <gregkh@linuxfoundation.org>,
+ Randy Dunlap <rdunlap@infradead.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Luis Chamberlain <mcgrof@kernel.org>, Daniel Vetter <daniel@ffwll.ch>,
+ Kees Cook <keescook@google.com>, linux-fsdevel@vger.kernel.org,
+ Logan Gunthorpe <logang@deltatee.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-Hi Brendan,
+On Fri, Aug 23, 2019 at 8:33 AM shuah <shuah@kernel.org> wrote:
+>
+> Hi Brendan,
+>
+> On 8/20/19 5:20 PM, Brendan Higgins wrote:
+> > Add core facilities for defining unit tests; this provides a common way
+> > to define test cases, functions that execute code which is under test
+> > and determine whether the code under test behaves as expected; this also
+> > provides a way to group together related test cases in test suites (here
+> > we call them test_modules).
+> >
+> > Just define test cases and how to execute them for now; setting
+> > expectations on code will be defined later.
+> >
+> > Signed-off-by: Brendan Higgins <brendanhiggins@google.com>
+> > Reviewed-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+> > Reviewed-by: Logan Gunthorpe <logang@deltatee.com>
+> > Reviewed-by: Luis Chamberlain <mcgrof@kernel.org>
+> > Reviewed-by: Stephen Boyd <sboyd@kernel.org>
+> > ---
+> >   include/kunit/test.h | 179 ++++++++++++++++++++++++++++++++++++++++
+> >   kunit/Kconfig        |  17 ++++
+> >   kunit/Makefile       |   1 +
+> >   kunit/test.c         | 191 +++++++++++++++++++++++++++++++++++++++++++
+> >   4 files changed, 388 insertions(+)
+> >   create mode 100644 include/kunit/test.h
+> >   create mode 100644 kunit/Kconfig
+> >   create mode 100644 kunit/Makefile
+> >   create mode 100644 kunit/test.c
+> >
+> > diff --git a/include/kunit/test.h b/include/kunit/test.h
+> > new file mode 100644
+> > index 0000000000000..e0b34acb9ee4e
+> > --- /dev/null
+> > +++ b/include/kunit/test.h
+> > @@ -0,0 +1,179 @@
+> > +/* SPDX-License-Identifier: GPL-2.0 */
+> > +/*
+> > + * Base unit test (KUnit) API.
+> > + *
+> > + * Copyright (C) 2019, Google LLC.
+> > + * Author: Brendan Higgins <brendanhiggins@google.com>
+> > + */
+> > +
+> > +#ifndef _KUNIT_TEST_H
+> > +#define _KUNIT_TEST_H
+> > +
+> > +#include <linux/types.h>
+> > +
+> > +struct kunit;
+> > +
+> > +/**
+> > + * struct kunit_case - represents an individual test case.
+> > + * @run_case: the function representing the actual test case.
+> > + * @name: the name of the test case.
+> > + *
+> > + * A test case is a function with the signature, ``void (*)(struct kunit *)``
+> > + * that makes expectations (see KUNIT_EXPECT_TRUE()) about code under test. Each
+> > + * test case is associated with a &struct kunit_suite and will be run after the
+> > + * suite's init function and followed by the suite's exit function.
+> > + *
+> > + * A test case should be static and should only be created with the KUNIT_CASE()
+> > + * macro; additionally, every array of test cases should be terminated with an
+> > + * empty test case.
+> > + *
+> > + * Example:
+>
+> Can you fix these line continuations. It makes it very hard to read.
+> Sorry for this late comment. These comments lines are longer than 80
+> and wrap.
 
-On 8/20/19 5:20 PM, Brendan Higgins wrote:
-> Add support for aborting/bailing out of test cases, which is needed for
-> implementing assertions.
-> 
-> An assertion is like an expectation, but bails out of the test case
-> early if the assertion is not met. The idea with assertions is that you
-> use them to state all the preconditions for your test. Logically
-> speaking, these are the premises of the test case, so if a premise isn't
-> true, there is no point in continuing the test case because there are no
-> conclusions that can be drawn without the premises. Whereas, the
-> expectation is the thing you are trying to prove.
-> 
-> Signed-off-by: Brendan Higgins <brendanhiggins@google.com>
-> Reviewed-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-> Reviewed-by: Logan Gunthorpe <logang@deltatee.com>
-> Reviewed-by: Stephen Boyd <sboyd@kernel.org>
-> ---
->   include/kunit/test.h      |   2 +
->   include/kunit/try-catch.h |  75 +++++++++++++++++++++
->   kunit/Makefile            |   3 +-
->   kunit/test.c              | 137 +++++++++++++++++++++++++++++++++-----
->   kunit/try-catch.c         | 118 ++++++++++++++++++++++++++++++++
->   5 files changed, 319 insertions(+), 16 deletions(-)
->   create mode 100644 include/kunit/try-catch.h
->   create mode 100644 kunit/try-catch.c
-> 
-> diff --git a/include/kunit/test.h b/include/kunit/test.h
-> index 6917b186b737a..390ce02f717b6 100644
-> --- a/include/kunit/test.h
-> +++ b/include/kunit/test.h
-> @@ -10,6 +10,7 @@
->   #define _KUNIT_TEST_H
->   
->   #include <kunit/assert.h>
-> +#include <kunit/try-catch.h>
->   #include <linux/kernel.h>
->   #include <linux/slab.h>
->   #include <linux/types.h>
-> @@ -167,6 +168,7 @@ struct kunit {
->   
->   	/* private: internal use only. */
->   	const char *name; /* Read only after initialization! */
-> +	struct kunit_try_catch try_catch;
->   	/*
->   	 * success starts as true, and may only be set to false during a test
->   	 * case; thus, it is safe to update this across multiple threads using
-> diff --git a/include/kunit/try-catch.h b/include/kunit/try-catch.h
-> new file mode 100644
-> index 0000000000000..404f336cbdc85
-> --- /dev/null
-> +++ b/include/kunit/try-catch.h
-> @@ -0,0 +1,75 @@
-> +/* SPDX-License-Identifier: GPL-2.0 */
-> +/*
-> + * An API to allow a function, that may fail, to be executed, and recover in a
-> + * controlled manner.
-> + *
-> + * Copyright (C) 2019, Google LLC.
-> + * Author: Brendan Higgins <brendanhiggins@google.com>
-> + */
-> +
-> +#ifndef _KUNIT_TRY_CATCH_H
-> +#define _KUNIT_TRY_CATCH_H
-> +
-> +#include <linux/types.h>
-> +
-> +typedef void (*kunit_try_catch_func_t)(void *);
-> +
-> +struct completion;
-> +struct kunit;
-> +
-> +/**
-> + * struct kunit_try_catch - provides a generic way to run code which might fail.
-> + * @test: The test case that is currently being executed.
-> + * @try_completion: Completion that the control thread waits on while test runs.
-> + * @try_result: Contains any errno obtained while running test case.
-> + * @try: The function, the test case, to attempt to run.
-> + * @catch: The function called if @try bails out.
-> + * @context: used to pass user data to the try and catch functions.
-> + *
-> + * kunit_try_catch provides a generic, architecture independent way to execute
-> + * an arbitrary function of type kunit_try_catch_func_t which may bail out by
-> + * calling kunit_try_catch_throw(). If kunit_try_catch_throw() is called, @try
-> + * is stopped at the site of invocation and @catch is called.
-> + *
-> + * struct kunit_try_catch provides a generic interface for the functionality
-> + * needed to implement kunit->abort() which in turn is needed for implementing
-> + * assertions. Assertions allow stating a precondition for a test simplifying
-> + * how test cases are written and presented.
-> + *
-> + * Assertions are like expectations, except they abort (call
-> + * kunit_try_catch_throw()) when the specified condition is not met. This is
-> + * useful when you look at a test case as a logical statement about some piece
-> + * of code, where assertions are the premises for the test case, and the
-> + * conclusion is a set of predicates, rather expectations, that must all be
-> + * true. If your premises are violated, it does not makes sense to continue.
-> + */
-> +struct kunit_try_catch {
-> +	/* private: internal use only. */
-> +	struct kunit *test;
-> +	struct completion *try_completion;
-> +	int try_result;
-> +	kunit_try_catch_func_t try;
-> +	kunit_try_catch_func_t catch;
-> +	void *context;
-> +};
-> +
-> +void kunit_try_catch_init(struct kunit_try_catch *try_catch,
-> +			  struct kunit *test,
-> +			  kunit_try_catch_func_t try,
-> +			  kunit_try_catch_func_t catch);
-> +
-> +void kunit_try_catch_run(struct kunit_try_catch *try_catch, void *context);
-> +
-> +void __noreturn kunit_try_catch_throw(struct kunit_try_catch *try_catch);
-> +
-> +static inline int kunit_try_catch_get_result(struct kunit_try_catch *try_catch)
-> +{
-> +	return try_catch->try_result;
-> +}
-> +
-> +/*
-> + * Exposed for testing only.
-> + */
-> +void kunit_generic_try_catch_init(struct kunit_try_catch *try_catch);
-> +
-> +#endif /* _KUNIT_TRY_CATCH_H */
-> diff --git a/kunit/Makefile b/kunit/Makefile
-> index 4e46450bcb3a8..c9176c9c578c6 100644
-> --- a/kunit/Makefile
-> +++ b/kunit/Makefile
-> @@ -1,6 +1,7 @@
->   obj-$(CONFIG_KUNIT) +=			test.o \
->   					string-stream.o \
-> -					assert.o
-> +					assert.o \
-> +					try-catch.o
->   
->   obj-$(CONFIG_KUNIT_TEST) +=		string-stream-test.o
->   
-> diff --git a/kunit/test.c b/kunit/test.c
-> index 3cbceb34b3b36..ded9895143209 100644
-> --- a/kunit/test.c
-> +++ b/kunit/test.c
-> @@ -7,7 +7,9 @@
->    */
->   
->   #include <kunit/test.h>
-> +#include <kunit/try-catch.h>
->   #include <linux/kernel.h>
-> +#include <linux/sched/debug.h>
->   
->   static void kunit_set_failure(struct kunit *test)
->   {
-> @@ -162,6 +164,19 @@ static void kunit_fail(struct kunit *test, struct kunit_assert *assert)
->   	WARN_ON(string_stream_destroy(stream));
->   }
->   
-> +static void __noreturn kunit_abort(struct kunit *test)
-> +{
-> +	kunit_try_catch_throw(&test->try_catch); /* Does not return. */
-> +
-> +	/*
-> +	 * Throw could not abort from test.
-> +	 *
-> +	 * XXX: we should never reach this line! As kunit_try_catch_throw is
-> +	 * marked __noreturn.
-> +	 */
-> +	BUG();
+None of the lines in this commit are over 80 characters in column
+width. Some are exactly 80 characters (like above).
 
+My guess is that you are seeing the diff added text (+ ), which when
+you add that to a line which is exactly 80 char in length ends up
+being over 80 char in email. If you apply the patch you will see that
+they are only 80 chars.
 
-I recall discussion on this. What's the point in keeping thie
-BUG() around when it doesn't even reach? It can even be a
-WARN_ON() in that case right?
+>
+> There are several comment lines in the file that are way too long.
 
-thanks,
--- Shuah
+Note that checkpatch also does not complain about any over 80 char
+lines in this file.
+
+Sorry if I am misunderstanding what you are trying to tell me. Please
+confirm either way.
+
+Thanks
 
 _______________________________________________
 linux-um mailing list
