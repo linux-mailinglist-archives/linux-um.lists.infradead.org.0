@@ -2,42 +2,42 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 784549B8A7
-	for <lists+linux-um@lfdr.de>; Sat, 24 Aug 2019 00:58:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AB0B19B8B3
+	for <lists+linux-um@lfdr.de>; Sat, 24 Aug 2019 01:02:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=OyvcsDMuz8HC9YKY+o2gSKZnFkHGi1CbskxJWXB1MUM=; b=g3MnI/M2n7HIU/
-	gz9sMB2UEi2aYezbkshrMWIuIs0WOuR+iwmzktJy5nykuBVpyaPEvPOTVle/4EYp/D+LqkIk0WpdZ
-	3NA4wYn6cit3fonkNfDQXGC7y/inwMEhiBQfGQirmdI6ckUBVvW+rTSpPzbiOmUgID/7U8WutYdNx
-	OyzC5+UCNaXcnoUBV1UlxBab/BBriFBv3MBlceOKcLXkQ/iK+IU54i92gxI75/tXFaqu3R412fRqz
-	YgMF6o4mLYYo+i2EA1HCoXimi6ysB5crzBK2BRpzV+h1In37wDNoSNqkV9pEm1DociaK+HTdOXCrN
-	YjlR1Og16/aLvXQm+sOg==;
+	List-Owner; bh=n0ndbBZKDiEFpB4YVRVCn0BbkLyuvbDUgCX/Q8Nv2z0=; b=sG5TIhmHhy/tvL
+	Bry4LVcvU4sgqRKSvRYS5/jihxJuSBmAC9bTY5CMr1/jMwBTgKizVTAA533m9gU2OD5cr/+/hMykh
+	AAgkL7UBiY8YyZE/8H+7HJfqgW1+jgflJ440IcKF5g4f+xFYoOU0DXQu7akXvIz7WzHy3CXL0uGX3
+	3NHqEWuuHlRfH3aVvagFotScVK4OnxNJNiKhIcW2e6bKRq/G2cMgC6fFF8Q9Zxsn+2io+Pez+3nI5
+	5+JPtJDRKB6ODp7XVT7dnlj+bWq2pDYoPkk31kwOyVUa9Mfzsr2rwEHKt21Y4zK7trPscLvm0hfYz
+	wzz0aUaRHbMO5kW5MiLQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i1IW9-00056o-QR; Fri, 23 Aug 2019 22:58:49 +0000
+	id 1i1IZX-0006Td-4d; Fri, 23 Aug 2019 23:02:19 +0000
 Received: from s3.sipsolutions.net ([2a01:4f8:191:4433::2]
  helo=sipsolutions.net)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i1IW6-00056S-4s
- for linux-um@lists.infradead.org; Fri, 23 Aug 2019 22:58:48 +0000
+ id 1i1IZU-0006TF-Ib
+ for linux-um@lists.infradead.org; Fri, 23 Aug 2019 23:02:17 +0000
 Received: by sipsolutions.net with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <johannes@sipsolutions.net>)
- id 1i1IW0-0008UI-Hb; Sat, 24 Aug 2019 00:58:40 +0200
+ id 1i1IZS-000072-Sg; Sat, 24 Aug 2019 01:02:15 +0200
 From: Johannes Berg <johannes@sipsolutions.net>
 To: linux-um@lists.infradead.org
-Subject: [PATCH] arch: um: implement memory protection
-Date: Sat, 24 Aug 2019 00:58:31 +0200
-Message-Id: <20190823225831.23517-1-johannes@sipsolutions.net>
+Subject: [PATCH v2] arch: um: implement memory protection
+Date: Sat, 24 Aug 2019 01:02:11 +0200
+Message-Id: <20190823230211.23870-1-johannes@sipsolutions.net>
 X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190823_155846_193231_FBE65088 
-X-CRM114-Status: GOOD (  12.52  )
+X-CRM114-CacheID: sfid-20190823_160216_616252_A016F2C4 
+X-CRM114-Status: GOOD (  14.79  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -83,11 +83,15 @@ crash with
 
 Signed-off-by: Johannes Berg <johannes.berg@intel.com>
 ---
- arch/um/Kconfig               |  3 ++
- arch/um/include/asm/pgtable.h |  2 +
- arch/um/kernel/dyn.lds.S      |  4 +-
- arch/um/kernel/mem.c          | 76 +++++++++++++++++++++++++++++++++++
- 4 files changed, 83 insertions(+), 2 deletions(-)
+v2: include forgotten file
+---
+ arch/um/Kconfig                  |  3 ++
+ arch/um/include/asm/pgtable.h    |  2 +
+ arch/um/include/asm/set_memory.h |  1 +
+ arch/um/kernel/dyn.lds.S         |  4 +-
+ arch/um/kernel/mem.c             | 76 ++++++++++++++++++++++++++++++++
+ 5 files changed, 84 insertions(+), 2 deletions(-)
+ create mode 100644 arch/um/include/asm/set_memory.h
 
 diff --git a/arch/um/Kconfig b/arch/um/Kconfig
 index 3c3adfc486f2..e84264be26c9 100644
@@ -116,6 +120,13 @@ index b377df76cc28..0e6cda3516c6 100644
  /* If _PAGE_PRESENT is clear, we use these: */
  #define _PAGE_PROTNONE	0x010	/* if the user mapped it with PROT_NONE;
  				   pte_present gives true */
+diff --git a/arch/um/include/asm/set_memory.h b/arch/um/include/asm/set_memory.h
+new file mode 100644
+index 000000000000..24266c63720d
+--- /dev/null
++++ b/arch/um/include/asm/set_memory.h
+@@ -0,0 +1 @@
++#include <asm-generic/set_memory.h>
 diff --git a/arch/um/kernel/dyn.lds.S b/arch/um/kernel/dyn.lds.S
 index c69d69ee96be..da6b42793e0a 100644
 --- a/arch/um/kernel/dyn.lds.S
