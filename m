@@ -2,76 +2,61 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2482F9BEFD
-	for <lists+linux-um@lfdr.de>; Sat, 24 Aug 2019 19:29:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 209119C253
+	for <lists+linux-um@lfdr.de>; Sun, 25 Aug 2019 08:30:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Q1IDvp8xTio4wyJMRibDJAEEBHixSEm9DY57RrCMyhg=; b=T+9mJU37OJ5dDvfX4cvPiDgwA
-	Mdrf7MlTyw9UnQM0xIKy0bmUBk9BM9cLPUOEMriWeG6c/u2E/ybc3yGlm08n4hh7pLdYYZ5h09Uw5
-	4G2QcgkmG5JwIUy+rcfIRmOAaP9GvFzB/LPbXvJ1XMpKeIWxP1Ryuogsl8rsNjamB5ROExl/QX2HR
-	3To0MOvzR02UCavRfxRPNGBYGu0tlbvHQpaSMWvY6hBS6cqBTN7Z7bwvyswzPFORZGdIdg31wOK4b
-	2/ijQUKAwqejQDzWrD+TMtJPy9febMOyW8rCo5WNM0YUTBHRem0R4qrLUAqCXcIbSEteqKdCal8rD
-	cxLGiVDaw==;
+	 bh=uuG1wqeh/gOPAwts/EOxvhhM5AKkyOsHtqNhiETidNQ=; b=X+FAeL37KZzzIVXnNzhlywvcO
+	jN1TVt1DIur9Yml8aKH86+ZJAQAZdn2Anl/CaOalz3+WfodIV84Kxa9sm0yqowjh6SgPTYcQcvvJ5
+	BSIgUQf1GzRH77ZfsXdFx9Bwe9d0ZQQngwKXNq8e7G6hWJXOj8YinRND2nfcFN+HZsW32B7P+9yGn
+	nLArnA/aNuNYMRSzSZE1+HgyPWBCI4i4U41iHVN3iT8+U0mOsamljfdY5fNTJcmZV6Oeh8Q/OV5XY
+	v3vuIA7wNy8LN9p/gkkHrxEw1+9znou49u7VO1b2A4vX1Krbkuwp06QqEm8PtvGBW71cjMW6ZNNWq
+	OReF2G58w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i1Zqy-00068e-Gt; Sat, 24 Aug 2019 17:29:28 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1i1m38-00072c-6l; Sun, 25 Aug 2019 06:30:50 +0000
+Received: from ivanoab6.miniserver.com ([5.153.251.140]
+ helo=www.kot-begemot.co.uk)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i1Zqv-00067b-NC
- for linux-um@lists.infradead.org; Sat, 24 Aug 2019 17:29:27 +0000
-Received: from [192.168.1.112] (c-24-9-64-241.hsd1.co.comcast.net
- [24.9.64.241])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6F9F020870;
- Sat, 24 Aug 2019 17:29:17 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566667760;
- bh=D3nLnnNPLuL/zFk4MNDUmFGzPOfuIQGc/sSLWQeMJCo=;
- h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
- b=qQvJssVcUppRZfxWiCWZqD4orXYOwW51Do+MjiJOlXvIE1EasomxA6H/BjQg/l+0v
- fa5vfHkA/8e+t+mj1UEi7/X+/xak2vcoK3eKYd2CcRnPgYkX6N9X5nDioWKtJGCcNl
- sMf76jjgFYGDYB4WceIHBLhFl/0T9P84t2fquPsY=
-Subject: Re: [PATCH v15 00/18] kunit: introduce KUnit, the Linux kernel unit
- testing framework
-To: Brendan Higgins <brendanhiggins@google.com>, frowand.list@gmail.com,
- gregkh@linuxfoundation.org, jpoimboe@redhat.com, keescook@google.com,
- kieran.bingham@ideasonboard.com, mcgrof@kernel.org, peterz@infradead.org,
- robh@kernel.org, sboyd@kernel.org, tytso@mit.edu,
- yamada.masahiro@socionext.com
-References: <20190824013425.175645-1-brendanhiggins@google.com>
-From: shuah <shuah@kernel.org>
-Message-ID: <a657b995-32b3-3352-bc10-834547e44dd4@kernel.org>
-Date: Sat, 24 Aug 2019 11:29:16 -0600
+ id 1i1m34-00072E-LI
+ for linux-um@lists.infradead.org; Sun, 25 Aug 2019 06:30:48 +0000
+Received: from [192.168.17.6] (helo=jain.kot-begemot.co.uk)
+ by www.kot-begemot.co.uk with esmtps (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <anton.ivanov@kot-begemot.co.uk>)
+ id 1i1m2z-0007Yc-Ae; Sun, 25 Aug 2019 06:30:41 +0000
+Received: from [151.251.252.137] (helo=[192.168.65.83])
+ by jain.kot-begemot.co.uk with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.89)
+ (envelope-from <anton.ivanov@kot-begemot.co.uk>)
+ id 1i1m2w-0005tU-LI; Sun, 25 Aug 2019 07:30:40 +0100
+Subject: Re: [PATCH] arch: um: implement memory protection
+To: Johannes Berg <johannes@sipsolutions.net>, linux-um@lists.infradead.org
+References: <20190823225831.23517-1-johannes@sipsolutions.net>
+From: Anton Ivanov <anton.ivanov@kot-begemot.co.uk>
+Message-ID: <f45888ce-24e3-e671-28b2-c9a7d03befb6@kot-begemot.co.uk>
+Date: Sun, 25 Aug 2019 07:30:35 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <20190824013425.175645-1-brendanhiggins@google.com>
+In-Reply-To: <20190823225831.23517-1-johannes@sipsolutions.net>
 Content-Language: en-US
+X-Spam-Score: -1.0
+X-Spam-Score: -1.0
+X-Clacks-Overhead: GNU Terry Pratchett
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190824_102925_800967_49CD4C6E 
-X-CRM114-Status: GOOD (  21.88  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190824_233046_836446_2636496C 
+X-CRM114-Status: GOOD (  22.84  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,103 +68,195 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: pmladek@suse.com, linux-doc@vger.kernel.org, amir73il@gmail.com,
- dri-devel@lists.freedesktop.org, Alexander.Levin@microsoft.com,
- linux-kselftest@vger.kernel.org, shuah <shuah@kernel.org>,
- linux-nvdimm@lists.01.org, khilman@baylibre.com, knut.omang@oracle.com,
- wfg@linux.intel.com, joel@jms.id.au, rientjes@google.com, jdike@addtoit.com,
- dan.carpenter@oracle.com, devicetree@vger.kernel.org,
- linux-kbuild@vger.kernel.org, Tim.Bird@sony.com, linux-um@lists.infradead.org,
- rostedt@goodmis.org, julia.lawall@lip6.fr, kunit-dev@googlegroups.com,
- richard@nod.at, rdunlap@infradead.org, linux-kernel@vger.kernel.org,
- daniel@ffwll.ch, mpe@ellerman.id.au, linux-fsdevel@vger.kernel.org,
- logang@deltatee.com
+Cc: Johannes Berg <johannes.berg@intel.com>
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On 8/23/19 7:34 PM, Brendan Higgins wrote:
-> ## TL;DR
+
+
+On 23/08/2019 23:58, Johannes Berg wrote:
+> From: Johannes Berg <johannes.berg@intel.com>
 > 
-> This revision addresses comments from Shuah by fixing a couple
-> checkpatch warnings and fixing some comment readability issues. No API
-> or major structual changes have been made since v13.
+> Implement memory protection, namely
+>   * ARCH_HAS_SET_MEMORY
+>   * ARCH_HAS_STRICT_KERNEL_RWX
+>   * ARCH_HAS_STRICT_MODULE_RWX
 > 
-> ## Background
+> The .text section is marked as RO.
+> The rodata is marked as RO & NX.
+> The remaining data is marked NX.
 > 
-> This patch set proposes KUnit, a lightweight unit testing and mocking
-> framework for the Linux kernel.
+> Move the .kstrtab to be covered by the NX.
 > 
-> Unlike Autotest and kselftest, KUnit is a true unit testing framework;
-> it does not require installing the kernel on a test machine or in a VM
-> (however, KUnit still allows you to run tests on test machines or in VMs
-> if you want[1]) and does not require tests to be written in userspace
-> running on a host kernel. Additionally, KUnit is fast: From invocation
-> to completion KUnit can run several dozen tests in about a second.
-> Currently, the entire KUnit test suite for KUnit runs in under a second
-> from the initial invocation (build time excluded).
+> Note that you can now enable CONFIG_DEBUG_RODATA_TEST,
+> but it's broken as the fixup is broken - it'll just
+> crash with
 > 
-> KUnit is heavily inspired by JUnit, Python's unittest.mock, and
-> Googletest/Googlemock for C++. KUnit provides facilities for defining
-> unit test cases, grouping related test cases into test suites, providing
-> common infrastructure for running tests, mocking, spying, and much more.
+>   Kernel panic - not syncing: Segfault with no mm
 > 
-> ### What's so special about unit testing?
+> Signed-off-by: Johannes Berg <johannes.berg@intel.com>
+> ---
+>   arch/um/Kconfig               |  3 ++
+>   arch/um/include/asm/pgtable.h |  2 +
+>   arch/um/kernel/dyn.lds.S      |  4 +-
+>   arch/um/kernel/mem.c          | 76 +++++++++++++++++++++++++++++++++++
+>   4 files changed, 83 insertions(+), 2 deletions(-)
 > 
-> A unit test is supposed to test a single unit of code in isolation,
-> hence the name. There should be no dependencies outside the control of
-> the test; this means no external dependencies, which makes tests orders
-> of magnitudes faster. Likewise, since there are no external dependencies,
-> there are no hoops to jump through to run the tests. Additionally, this
-> makes unit tests deterministic: a failing unit test always indicates a
-> problem. Finally, because unit tests necessarily have finer granularity,
-> they are able to test all code paths easily solving the classic problem
-> of difficulty in exercising error handling code.
-> 
-> ### Is KUnit trying to replace other testing frameworks for the kernel?
-> 
-> No. Most existing tests for the Linux kernel are end-to-end tests, which
-> have their place. A well tested system has lots of unit tests, a
-> reasonable number of integration tests, and some end-to-end tests. KUnit
-> is just trying to address the unit test space which is currently not
-> being addressed.
-> 
-> ### More information on KUnit
-> 
-> There is a bunch of documentation near the end of this patch set that
-> describes how to use KUnit and best practices for writing unit tests.
-> For convenience I am hosting the compiled docs here[2].
-> 
-> Additionally for convenience, I have applied these patches to a
-> branch[3]. The repo may be cloned with:
-> git clone https://kunit.googlesource.com/linux
-> This patchset is on the kunit/rfc/v5.3/v15 branch.
-> 
-> ## Changes Since Last Version
-> 
-> - Moved comment from inline in macro to kernel-doc to address checkpatch
->    warning.
-> - Demoted BUG() to WARN_ON.
-> - Formatted some kernel-doc comments to make them more readible.
-> 
-> [1] https://google.github.io/kunit-docs/third_party/kernel/docs/usage.html#kunit-on-non-uml-architectures
-> [2] https://google.github.io/kunit-docs/third_party/kernel/docs/
-> [3] https://kunit.googlesource.com/linux/+/kunit/rfc/v5.3/v15
+> diff --git a/arch/um/Kconfig b/arch/um/Kconfig
+> index 3c3adfc486f2..e84264be26c9 100644
+> --- a/arch/um/Kconfig
+> +++ b/arch/um/Kconfig
+> @@ -18,6 +18,9 @@ config UML
+>   	select GENERIC_CLOCKEVENTS
+>   	select HAVE_GCC_PLUGINS
+>   	select TTY # Needed for line.c
+> +	select ARCH_HAS_SET_MEMORY
+> +	select ARCH_HAS_STRICT_KERNEL_RWX
+> +	select ARCH_HAS_STRICT_MODULE_RWX
+>   
+>   config MMU
+>   	bool
+> diff --git a/arch/um/include/asm/pgtable.h b/arch/um/include/asm/pgtable.h
+> index b377df76cc28..0e6cda3516c6 100644
+> --- a/arch/um/include/asm/pgtable.h
+> +++ b/arch/um/include/asm/pgtable.h
+> @@ -17,6 +17,8 @@
+>   #define _PAGE_USER	0x040
+>   #define _PAGE_ACCESSED	0x080
+>   #define _PAGE_DIRTY	0x100
+> +#define _PAGE_RO	0x200
+> +#define _PAGE_NX	0x400
+>   /* If _PAGE_PRESENT is clear, we use these: */
+>   #define _PAGE_PROTNONE	0x010	/* if the user mapped it with PROT_NONE;
+>   				   pte_present gives true */
+> diff --git a/arch/um/kernel/dyn.lds.S b/arch/um/kernel/dyn.lds.S
+> index c69d69ee96be..da6b42793e0a 100644
+> --- a/arch/um/kernel/dyn.lds.S
+> +++ b/arch/um/kernel/dyn.lds.S
+> @@ -89,10 +89,10 @@ SECTIONS
+>       KEEP (*(.fini))
+>     } =0x90909090
+>   
+> -  .kstrtab : { *(.kstrtab) }
+> -
+>     #include <asm/common.lds.S>
+>   
+> +  .kstrtab : { *(.kstrtab) }
+> +
+>     __init_begin = .;
+>     init.data : { INIT_DATA }
+>     __init_end = .;
+> diff --git a/arch/um/kernel/mem.c b/arch/um/kernel/mem.c
+> index f256be1d77bd..7ce445bfa58f 100644
+> --- a/arch/um/kernel/mem.c
+> +++ b/arch/um/kernel/mem.c
+> @@ -10,6 +10,7 @@
+>   #include <linux/mm.h>
+>   #include <linux/swap.h>
+>   #include <linux/slab.h>
+> +#include <asm/set_memory.h>
+>   #include <asm/fixmap.h>
+>   #include <asm/page.h>
+>   #include <as-layout.h>
+> @@ -37,6 +38,22 @@ int kmalloc_ok = 0;
+>   /* Used during early boot */
+>   static unsigned long brk_end;
+>   
+> +void mark_rodata_ro(void)
+> +{
+> +	unsigned long text_start = PFN_ALIGN(_text);
+> +	unsigned long rodata_start = PFN_ALIGN(__start_rodata);
+> +	unsigned long rodata_end = PFN_ALIGN(&__end_rodata);
+> +	unsigned long all_end = PFN_ALIGN(&__bss_stop);
+> +
+> +	printk(KERN_INFO "Write protecting the kernel read-only data: %luk\n",
+> +	       (rodata_end - text_start) >> 10);
+> +
+> +	set_memory_ro(text_start,
+> +		      (rodata_end - text_start) >> PAGE_SHIFT);
+> +	set_memory_nx(rodata_start,
+> +		      (all_end - rodata_start) >> PAGE_SHIFT);
+> +}
+> +
+>   void __init mem_init(void)
+>   {
+>   	/* clear the zero-page */
+> @@ -225,3 +242,62 @@ void *uml_kmalloc(int size, int flags)
+>   {
+>   	return kmalloc(size, flags);
+>   }
+> +
+> +struct page_change_data {
+> +	u32 set, clear;
+> +};
+> +
+> +static int change_page_range(pte_t *ptep, unsigned long addr, void *data)
+> +{
+> +	struct page_change_data *cdata = data;
+> +	pte_t pte = READ_ONCE(*ptep);
+> +
+> +	pte_clear_bits(pte, cdata->clear);
+> +	pte_set_bits(pte, cdata->set);
+> +
+> +	set_pte(ptep, pte);
+> +
+> +	os_protect_memory((void *)addr, PAGE_SIZE,
+> +			  1, !(pte.pte & _PAGE_RO), !(pte.pte & _PAGE_NX));
+> +	return 0;
+> +}
+> +
+> +static int change_memory_common(unsigned long addr, int numpages,
+> +				u32 set, u32 clear)
+> +{
+> +	unsigned long start = addr & PAGE_MASK;
+> +	unsigned long end = PAGE_ALIGN(addr) + numpages * PAGE_SIZE;
+> +	unsigned long size = end - start;
+> +	struct page_change_data data;
+> +
+> +	WARN_ON_ONCE(start != addr);
+> +
+> +	if (!size)
+> +		return 0;
+> +
+> +	data.set = set;
+> +	data.clear = clear;
+> +
+> +	return apply_to_page_range(&init_mm, start, size, change_page_range,
+> +				   &data);
+> +}
+> +
+> +int set_memory_ro(unsigned long addr, int numpages)
+> +{
+> +	return change_memory_common(addr, numpages, _PAGE_RO, 0);
+> +}
+> +
+> +int set_memory_rw(unsigned long addr, int numpages)
+> +{
+> +	return change_memory_common(addr, numpages, 0, _PAGE_RO);
+> +}
+> +
+> +int set_memory_nx(unsigned long addr, int numpages)
+> +{
+> +	return change_memory_common(addr, numpages, _PAGE_NX, 0);
+> +}
+> +
+> +int set_memory_x(unsigned long addr, int numpages)
+> +{
+> +	return change_memory_common(addr, numpages, 0, _PAGE_NX);
+> +}
 > 
 
-Hi Brendan,
+I will try to have a look at this one and the other patches in the 
+coming week.
 
-Thanks for doing this work.
+Brgds,
 
-Thanks for accommodating my request to improve the document/comment
-blocks in patch 01 and removing BUG() from patch 09. The comment block
-reads well now.
+-- 
+Anton R Ivanov
 
-Applied the series to linux-kselftest next for 5.4-rc1.
-
-thanks,
--- Shuah
+http://www.kot-begemot.co.uk
 
 _______________________________________________
 linux-um mailing list
