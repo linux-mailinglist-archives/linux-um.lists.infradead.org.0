@@ -2,55 +2,54 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 20D519DD0D
-	for <lists+linux-um@lfdr.de>; Tue, 27 Aug 2019 07:16:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5203E9DD25
+	for <lists+linux-um@lfdr.de>; Tue, 27 Aug 2019 07:27:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=uJTnTbGiUc8jAqKv4hziLtem2BYv2piktBJb4DKRJyo=; b=WtmHlwsV1jCcl93sRL+77Wy/a
-	N2k6KNTmTju7QKhB9taRFw9EE43Q5EO8HHH9Wc3VsD+Nv15FJ26/UoYVnntVw72+Mw1WbkGGTiUZY
-	FEsJXi8r5xIa78TQKsFfrqYfqz8RwkYOw32RmIWoiAB/O5m8SbmSCaR3Fmxz2ene6geoxoUKl0xDY
-	UiWa3qc07kEJgvHV/5pUY1WqNtQHeS/5js52aP8JMqLFUl7GhHS8d44e498TM6DDNqLWM1KIlxvFL
-	fdZYUGoZKb69Ga4o56Uy32+IcnZr0ohlspcAFZsO6wv3qjY/LcM6fJCAnrhhvWwPnx0OSyCcD3D9Q
-	JHa7sq7qQ==;
+	 bh=yM+I7qF7egzPRnauyd7BiX/GKu2j1b7bfFS2jdu0afE=; b=rPnpkXUD5575s9rxtUmdmlOIO
+	+BT9/xSrb8s2BGq0sV38FKweSeYh3SvxLTJLnWEFA2Os/NSMh1Cgp74d9gKjdtQArTDBfP9rCsMmE
+	dTIjN0pqILgnLby50khjQExvsyt9Tf4aQT1cdBTgUeyB6CpH5lodi7qfyBNPGTVl25QPu4y/dju9I
+	wk1b6KeJW/KqUalhx+MeYjb2WvC5zJAG9eOoxVR2NPlmeZNjIN5gyIIDFxfdq+X3jpoyykGVo3BHF
+	8tjvsOKm6LUUa+74dEKaE5D0/UmY8OnKmrD8lkYe5tA36QJn5QmhxKJTUTZFBVcrA00JimTnRIdFk
+	w570zGwIw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2Tq0-00025Q-On; Tue, 27 Aug 2019 05:16:12 +0000
+	id 1i2U1E-0005W2-6D; Tue, 27 Aug 2019 05:27:48 +0000
 Received: from ivanoab6.miniserver.com ([5.153.251.140]
  helo=www.kot-begemot.co.uk)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2Tpw-00021s-NN
- for linux-um@lists.infradead.org; Tue, 27 Aug 2019 05:16:10 +0000
+ id 1i2U1B-0005V1-Q9
+ for linux-um@lists.infradead.org; Tue, 27 Aug 2019 05:27:47 +0000
 Received: from [192.168.17.6] (helo=jain.kot-begemot.co.uk)
  by www.kot-begemot.co.uk with esmtps (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
  (Exim 4.89) (envelope-from <anton.ivanov@kot-begemot.co.uk>)
- id 1i2Tpq-0000fb-FQ; Tue, 27 Aug 2019 05:16:02 +0000
+ id 1i2U19-0000hH-C3; Tue, 27 Aug 2019 05:27:43 +0000
 Received: from [151.251.252.137] (helo=[192.168.65.83])
  by jain.kot-begemot.co.uk with esmtpsa
  (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.89)
  (envelope-from <anton.ivanov@kot-begemot.co.uk>)
- id 1i2Tpn-0008CW-Tw; Tue, 27 Aug 2019 06:16:02 +0100
-Subject: Re: [PATCH] arch: um: implement memory protection
+ id 1i2U16-0008Ov-QO; Tue, 27 Aug 2019 06:27:43 +0100
+Subject: Re: [PATCH 1/4] arch: um: remove sig_info[SIGALRM]
 To: Johannes Berg <johannes@sipsolutions.net>, linux-um@lists.infradead.org
-References: <20190823225831.23517-1-johannes@sipsolutions.net>
- <d929dc9c60b46ac222ca847fe8df7c0640713e4a.camel@sipsolutions.net>
+References: <20190823104429.11047-1-johannes@sipsolutions.net>
 From: Anton Ivanov <anton.ivanov@kot-begemot.co.uk>
-Message-ID: <7d0c1f45-e245-fbab-1335-5d978c4f255b@kot-begemot.co.uk>
-Date: Tue, 27 Aug 2019 06:15:58 +0100
+Message-ID: <4c9cd570-5036-73b5-f23d-3ce67e6f04c6@kot-begemot.co.uk>
+Date: Tue, 27 Aug 2019 06:27:38 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <d929dc9c60b46ac222ca847fe8df7c0640713e4a.camel@sipsolutions.net>
+In-Reply-To: <20190823104429.11047-1-johannes@sipsolutions.net>
 Content-Language: en-US
 X-Spam-Score: -1.0
 X-Spam-Score: -1.0
 X-Clacks-Overhead: GNU Terry Pratchett
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190826_221608_912422_1CF9E80B 
-X-CRM114-Status: GOOD (  17.29  )
+X-CRM114-CacheID: sfid-20190826_222745_978953_EC070A22 
+X-CRM114-Status: GOOD (  15.50  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -69,6 +68,7 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
+Cc: Johannes Berg <johannes.berg@intel.com>
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
@@ -76,48 +76,45 @@ Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
 
 
-On 25/08/2019 08:41, Johannes Berg wrote:
-> On Sat, 2019-08-24 at 00:58 +0200, Johannes Berg wrote:
->>
->> Note that you can now enable CONFIG_DEBUG_RODATA_TEST,
->> but it's broken as the fixup is broken - it'll just
->> crash with
->>
->>   Kernel panic - not syncing: Segfault with no mm
+On 23/08/2019 11:44, Johannes Berg wrote:
+> From: Johannes Berg <johannes.berg@intel.com>
 > 
-> It just occurred to me that I need to check what happens if it's
-> actually userspace talking the fault or something, maybe if it
-> erroneously tries to copy_o_user() with a read-only kernel address or
-> so.
+> This entry is misleading, the actual signal handler is
+> another one that never uses sig_info.
 > 
-> Don't want to cause a panic() in that case, after all.
+> Also remove the SIGALRM if inside sig_handler() for the
+> same reason.
 > 
-> IOW, I'd feel much happier about this if I could make
-> CONFIG_DEBUG_RODATA_TEST work after all, but I gave up after an hour or
-> so of poking the exception handlers and trying to figure out how I could
-> make fixup tables work on UML. It might mean doing copy_from_user() in
+> Signed-off-by: Johannes Berg <johannes.berg@intel.com>
+> ---
+>   arch/um/os-Linux/signal.c | 3 +--
+>   1 file changed, 1 insertion(+), 2 deletions(-)
+> 
+> diff --git a/arch/um/os-Linux/signal.c b/arch/um/os-Linux/signal.c
+> index 75b10235d369..35d1b2bc00cb 100644
+> --- a/arch/um/os-Linux/signal.c
+> +++ b/arch/um/os-Linux/signal.c
+> @@ -26,7 +26,6 @@ void (*sig_info[NSIG])(int, struct siginfo *, struct uml_pt_regs *) = {
+>   	[SIGBUS]	= bus_handler,
+>   	[SIGSEGV]	= segv_handler,
+>   	[SIGIO]		= sigio_handler,
+> -	[SIGALRM]	= timer_handler
+>   };
+>   
+>   static void sig_handler_common(int sig, struct siginfo *si, mcontext_t *mc)
+> @@ -42,7 +41,7 @@ static void sig_handler_common(int sig, struct siginfo *si, mcontext_t *mc)
+>   	}
+>   
+>   	/* enable signals if sig isn't IRQ signal */
+> -	if ((sig != SIGIO) && (sig != SIGWINCH) && (sig != SIGALRM))
+> +	if ((sig != SIGIO) && (sig != SIGWINCH))
+>   		unblock_signals();
+>   
+>   	(*sig_info[sig])(sig, si, &r);
+>
 
-Copy from/to user in UML have embedded tlb lookups. I did a couple of 
-tweaks on them earlier in the year. I do not think they are a feasible 
-target for a rewrite in asm without redoing once more the actual tlb.
+Acked-by: Anton Ivanov <anton.ivanov@cambridgegreys.co.uk>
 
-That one is tough, in fact very tough. I think I have squeezed nearly 
-everything that could be squeezed out of the current design, any further 
-improvements can come only from a redesign from the whole uml mm and/or 
-trying to integrate host ksm by default.
-
-A.
-
-> assembly, which would be annoying.
-> 
-> johannes
-> 
-> 
-> _______________________________________________
-> linux-um mailing list
-> linux-um@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-um
-> 
 
 -- 
 Anton R Ivanov
