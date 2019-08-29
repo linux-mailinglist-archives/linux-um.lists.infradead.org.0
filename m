@@ -2,54 +2,66 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 269549DEB2
-	for <lists+linux-um@lfdr.de>; Tue, 27 Aug 2019 09:28:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0004AA0F02
+	for <lists+linux-um@lfdr.de>; Thu, 29 Aug 2019 03:45:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QTFXoXHVKqLa+kRd3oY3gUAM+AieP7tulCuN06Ss34k=; b=jp46Y31e4TNrqP
-	TAExy5gCilOrLtPfLw8Girj4y4CSq4S/h10MPGzuBC+FHmqfpzyyRUWYDJPJR1WmUpXI+pfJH3Kxq
-	eqp+4XsLB1MIsoM157MAHjYuALfP0Pte9jbvPY0aPN4nkyZZ++enJTztH2Ki5N5cSeYUmErH3ODH3
-	jspiCCkAcEnhq6BU+u2aj0r6IUqYPOiyWFR475UHd690HBX8e6BfYAPYF8Gr/iqRAvT1Dh0yCJ3YZ
-	jMoKDAtndRpM4sv5PgmpjWMif3FowSP8fzctkh85IpQV4+tuk2dIUZ1RujdZoZ4Dt6iXzgDPxxmfs
-	T6DxF5L+BHrNUJjL2ZuQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=+ueDRAgO+9xNqkWVVADXY1QF3uwk7NX3aVjYOZabwlg=; b=qSZS1ECZAczSrR
+	33hoCJv+AkJv0KxShJMt7fSUIKxCAyIRnKeOtOz77id/hTWS5IVBo3L/ISggqjP534R4OTJrlvKQU
+	IfPuYfKHaQWbo2JFpuExoYeJOUs9x9WLNt1K/LK5ZLr4Z1kxBk3UB+O0kdMGOw3Z0mlAdMr4I8Ii3
+	VOP3S6iglQbUkneLNsNWyIKmot7AQuui92W082lAZuUTkNlwaVtoot7h1M9wF3GtlWQ0oD5UV+AKo
+	f3QqqCKw2Uzg6FQWvV1aWFcaoYLFgfL6j4Ke0bUuO6DW31htVcvTZhFi0GHPI5hKdQNYYl8xRscL5
+	W/IWdUqTCXblMZ5gF7OQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2VtU-0008L5-9D; Tue, 27 Aug 2019 07:27:56 +0000
-Received: from s3.sipsolutions.net ([2a01:4f8:191:4433::2]
- helo=sipsolutions.net)
+	id 1i39Uw-0007h7-BR; Thu, 29 Aug 2019 01:45:14 +0000
+Received: from mx1.volatile.bz ([185.163.46.97])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2VtQ-0008KU-EF
- for linux-um@lists.infradead.org; Tue, 27 Aug 2019 07:27:53 +0000
-Received: by sipsolutions.net with esmtpsa
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <johannes@sipsolutions.net>)
- id 1i2VtJ-000187-9D; Tue, 27 Aug 2019 09:27:47 +0200
-Message-ID: <88e1e997cda7e03917823335b4ee9e7faf0580bd.camel@sipsolutions.net>
-Subject: Re: [PATCH] arch: um: implement memory protection
-From: Johannes Berg <johannes@sipsolutions.net>
-To: Anton Ivanov <anton.ivanov@kot-begemot.co.uk>, 
- linux-um@lists.infradead.org
-Date: Tue, 27 Aug 2019 09:27:44 +0200
-In-Reply-To: <7d0c1f45-e245-fbab-1335-5d978c4f255b@kot-begemot.co.uk>
-References: <20190823225831.23517-1-johannes@sipsolutions.net>
- <d929dc9c60b46ac222ca847fe8df7c0640713e4a.camel@sipsolutions.net>
- <7d0c1f45-e245-fbab-1335-5d978c4f255b@kot-begemot.co.uk>
-User-Agent: Evolution 3.30.5 (3.30.5-1.fc29) 
+ id 1i39Us-0006yp-IC
+ for linux-um@lists.infradead.org; Thu, 29 Aug 2019 01:45:12 +0000
+Received: from thedarkness.local (unknown
+ [IPv6:2600:6c5d:4200:1e2a:5ae6:e27c:4008:d85e])
+ by mx1.volatile.bz (Postfix) with ESMTPSA id 98A1659E;
+ Thu, 29 Aug 2019 01:44:54 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=volatile.bz;
+ s=default; t=1567043095;
+ bh=XF5ep0RSxhs2O+Ubui44MzrRwO3yQMVktN3z00o66U8=;
+ h=Date:From:To:Subject;
+ b=LXWLVOfxsFLDu0KF2gYdo8ZKgbrqbPe3wEEGQGwxA2kZGgVkF369NkFzjhl5TLXfP
+ 4uB4MasuzjPmJFNNlCEJD5L9AowaNZhZWDcAwL0jINCit9Qu3DfQc8/6cShOnc2eO1
+ cYKLAP/cdHRAdx44S2HL4lGENljWxKwtE8DJbWgg=
+Date: Wed, 28 Aug 2019 21:44:50 -0400
+From: Alexander Neville <dark@volatile.bz>
+To: Richard Weinberger <richard@nod.at>, Anton Ivanov
+ <anton.ivanov@cambridgegreys.com>, linux-um@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Subject: [PATCH] um: Rewrite host RNG driver.
+Message-ID: <20190828204609.02a7ff70@TheDarkness>
+X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_002752_483065_8CB65BB5 
-X-CRM114-Status: GOOD (  12.36  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190828_184510_988381_874457EC 
+X-CRM114-Status: GOOD (  18.82  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [185.163.46.97 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,41 +78,319 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Tue, 2019-08-27 at 06:15 +0100, Anton Ivanov wrote:
+The old driver had a bug that would cause it to outright stop working if
+the host's /dev/random were to block. Instead of trying to track down
+the cause of said bug, rewriting it from scratch turned out to be a much
+better option as it came with a few benefits:
 
-> > IOW, I'd feel much happier about this if I could make
-> > CONFIG_DEBUG_RODATA_TEST work after all, but I gave up after an hour or
-> > so of poking the exception handlers and trying to figure out how I could
-> > make fixup tables work on UML. It might mean doing copy_from_user() in
-> 
-> Copy from/to user in UML have embedded tlb lookups. I did a couple of 
-> tweaks on them earlier in the year. I do not think they are a feasible 
-> target for a rewrite in asm without redoing once more the actual tlb.
-> 
-> 
-> That one is tough, in fact very tough. I think I have squeezed nearly 
-> everything that could be squeezed out of the current design, any further 
-> improvements can come only from a redesign from the whole uml mm and/or 
-> trying to integrate host ksm by default.
+ - The new driver properly registers itself as an hardware RNG.
 
-OK.
+ - The code is simpler and therefore easier to maintain.
 
-So strictly speaking, obviously it doesn't need to be implemented in
-assembly. However, it'd be the most obvious way of inserting exception
-handling.
+ - It serves as a minimal example of writing a hardware RNG driver.
 
-Note that also, it really would only need for copy_chunk_from_user() to
-be done in assembly. All the other stuff around it will not take an
-exception.
+I also edited the Kconfig symbol to bring it up to more modern
+standards.
 
-So I suppose we just need to allow copy_chunk_from_user() to return
--EFAULT, and then we can do exception fixup in just that little portion.
+Signed-off-by: Alexander Neville <dark@volatile.bz>
+---
+ arch/um/drivers/Makefile       |   3 +-
+ arch/um/drivers/random.c       | 192 ++++++++-------------------------
+ drivers/char/hw_random/Kconfig |  21 ++--
+ 3 files changed, 59 insertions(+), 157 deletions(-)
 
-I'm not really sure how to do even that though - I'm not sure I see how
-setting UPT_IP() in arch/x86/um/fault.c has any effect?
+diff --git a/arch/um/drivers/Makefile b/arch/um/drivers/Makefile
+index 693319839f69..29b0364f267d 100644
+--- a/arch/um/drivers/Makefile
++++ b/arch/um/drivers/Makefile
+@@ -17,6 +17,7 @@ hostaudio-objs := hostaudio_kern.o
+ ubd-objs := ubd_kern.o ubd_user.o
+ port-objs := port_kern.o port_user.o
+ harddog-objs := harddog_kern.o harddog_user.o
++uml-rng-objs := random.o
+ 
+ LDFLAGS_pcap.o := -r $(shell $(CC) $(KBUILD_CFLAGS) -print-file-name=libpcap.a)
+ 
+@@ -60,7 +61,7 @@ obj-$(CONFIG_TTY_CHAN) += tty.o
+ obj-$(CONFIG_XTERM_CHAN) += xterm.o xterm_kern.o
+ obj-$(CONFIG_UML_WATCHDOG) += harddog.o
+ obj-$(CONFIG_BLK_DEV_COW_COMMON) += cow_user.o
+-obj-$(CONFIG_UML_RANDOM) += random.o
++obj-$(CONFIG_UML_RANDOM) += uml-rng.o
+ 
+ # pcap_user.o must be added explicitly.
+ USER_OBJS := fd.o null.o pty.o tty.o xterm.o slip_common.o pcap_user.o vde_user.o vector_user.o
+diff --git a/arch/um/drivers/random.c b/arch/um/drivers/random.c
+index 1d5d3057e6f1..7a3099277ebd 100644
+--- a/arch/um/drivers/random.c
++++ b/arch/um/drivers/random.c
+@@ -1,175 +1,75 @@
+-/* Copyright (C) 2005 - 2008 Jeff Dike <jdike@{linux.intel,addtoit}.com> */
+-
+-/* Much of this ripped from drivers/char/hw_random.c, see there for other
+- * copyright.
++// SPDX-License-Identifier: GPL-2.0
++/*
++ * UML Host RNG Driver
++ *
++ * (c) Copright 2019 Alexander Neville <dark@volatile.bz>
+  *
+- * This software may be used and distributed according to the terms
+- * of the GNU General Public License, incorporated herein by reference.
++ * This file is licensed under the terms of the GNU General Public
++ * License version 2. This program is licensed "as is" without any
++ * warranty of any kind, whether express or implied.
+  */
+-#include <linux/sched/signal.h>
++
++#include <linux/kernel.h>
++#include <linux/types.h>
+ #include <linux/module.h>
+-#include <linux/fs.h>
+-#include <linux/interrupt.h>
+-#include <linux/miscdevice.h>
+-#include <linux/delay.h>
+-#include <linux/uaccess.h>
+-#include <init.h>
+-#include <irq_kern.h>
++#include <linux/hw_random.h>
++#include <linux/fcntl.h>
+ #include <os.h>
+ 
+-/*
+- * core module and version information
+- */
+-#define RNG_VERSION "1.0.0"
+-#define RNG_MODULE_NAME "hw_random"
+-
+-#define RNG_MISCDEV_MINOR		183 /* official */
+-
+-/* Changed at init time, in the non-modular case, and at module load
+- * time, in the module case.  Presumably, the module subsystem
+- * protects against a module being loaded twice at the same time.
+- */
+-static int random_fd = -1;
+-static DECLARE_WAIT_QUEUE_HEAD(host_read_wait);
+-
+-static int rng_dev_open (struct inode *inode, struct file *filp)
++static int uml_rng_read(struct hwrng *rng, void *data, size_t bufsize,
++			bool wait)
+ {
+-	/* enforce read-only access to this chrdev */
+-	if ((filp->f_mode & FMODE_READ) == 0)
+-		return -EINVAL;
+-	if ((filp->f_mode & FMODE_WRITE) != 0)
+-		return -EINVAL;
+-
+-	return 0;
++	return os_read_file(rng->priv, data, bufsize);
+ }
+ 
+-static atomic_t host_sleep_count = ATOMIC_INIT(0);
+-
+-static ssize_t rng_dev_read (struct file *filp, char __user *buf, size_t size,
+-			     loff_t *offp)
++static int uml_rng_init(struct hwrng *rng)
+ {
+-	u32 data;
+-	int n, ret = 0, have_data;
+-
+-	while (size) {
+-		n = os_read_file(random_fd, &data, sizeof(data));
+-		if (n > 0) {
+-			have_data = n;
+-			while (have_data && size) {
+-				if (put_user((u8) data, buf++)) {
+-					ret = ret ? : -EFAULT;
+-					break;
+-				}
+-				size--;
+-				ret++;
+-				have_data--;
+-				data >>= 8;
+-			}
+-		}
+-		else if (n == -EAGAIN) {
+-			DECLARE_WAITQUEUE(wait, current);
+-
+-			if (filp->f_flags & O_NONBLOCK)
+-				return ret ? : -EAGAIN;
+-
+-			atomic_inc(&host_sleep_count);
+-			add_sigio_fd(random_fd);
+-
+-			add_wait_queue(&host_read_wait, &wait);
+-			set_current_state(TASK_INTERRUPTIBLE);
+-
+-			schedule();
+-			remove_wait_queue(&host_read_wait, &wait);
+-
+-			if (atomic_dec_and_test(&host_sleep_count)) {
+-				ignore_sigio_fd(random_fd);
+-				deactivate_fd(random_fd, RANDOM_IRQ);
+-			}
+-		}
+-		else
+-			return n;
++	int fd = os_open_file("/dev/random", of_read(OPENFLAGS()), O_NONBLOCK);
+ 
+-		if (signal_pending (current))
+-			return ret ? : -ERESTARTSYS;
++	if (fd < 0) {
++		pr_debug("uml-rng: failed to open /dev/random");
++		return fd;
+ 	}
+-	return ret;
+-}
+ 
+-static const struct file_operations rng_chrdev_ops = {
+-	.owner		= THIS_MODULE,
+-	.open		= rng_dev_open,
+-	.read		= rng_dev_read,
+-	.llseek		= noop_llseek,
+-};
++	int err = os_set_fd_async(fd);
+ 
+-/* rng_init shouldn't be called more than once at boot time */
+-static struct miscdevice rng_miscdev = {
+-	RNG_MISCDEV_MINOR,
+-	RNG_MODULE_NAME,
+-	&rng_chrdev_ops,
+-};
++	if (err < 0) {
++		os_close_file(fd);
++		return err;
++	}
+ 
+-static irqreturn_t random_interrupt(int irq, void *data)
+-{
+-	wake_up(&host_read_wait);
++	rng->priv = fd;
+ 
+-	return IRQ_HANDLED;
++	return 0;
+ }
+ 
+-/*
+- * rng_init - initialize RNG module
+- */
+-static int __init rng_init (void)
++static void uml_rng_cleanup(struct hwrng *rng)
+ {
+-	int err;
+-
+-	err = os_open_file("/dev/random", of_read(OPENFLAGS()), 0);
+-	if (err < 0)
+-		goto out;
+-
+-	random_fd = err;
+-
+-	err = um_request_irq(RANDOM_IRQ, random_fd, IRQ_READ, random_interrupt,
+-			     0, "random", NULL);
+-	if (err)
+-		goto err_out_cleanup_hw;
+-
+-	sigio_broken(random_fd, 1);
+-
+-	err = misc_register (&rng_miscdev);
+-	if (err) {
+-		printk (KERN_ERR RNG_MODULE_NAME ": misc device register "
+-			"failed\n");
+-		goto err_out_cleanup_hw;
+-	}
+-out:
+-	return err;
+-
+-err_out_cleanup_hw:
+-	os_close_file(random_fd);
+-	random_fd = -1;
+-	goto out;
++	os_close_file(rng->priv);
+ }
+ 
+-/*
+- * rng_cleanup - shutdown RNG module
+- */
+ 
+-static void cleanup(void)
++static struct hwrng uml_rng_ops = {
++	.name		= "uml-rng",
++	.init		= uml_rng_init,
++	.cleanup	= uml_rng_cleanup,
++	.read		= uml_rng_read,
++	.quality	= 1024
++};
++
++static int __init uml_rng_mod_init(void)
+ {
+-	free_irq_by_fd(random_fd);
+-	os_close_file(random_fd);
++	return hwrng_register(&uml_rng_ops);
+ }
+ 
+-static void __exit rng_cleanup(void)
++static void __exit uml_rng_mod_exit(void)
+ {
+-	os_close_file(random_fd);
+-	misc_deregister (&rng_miscdev);
++	hwrng_unregister(&uml_rng_ops);
+ }
+ 
+-module_init (rng_init);
+-module_exit (rng_cleanup);
+-__uml_exitcall(cleanup);
++module_init(uml_rng_mod_init);
++module_exit(uml_rng_mod_exit);
+ 
+-MODULE_DESCRIPTION("UML Host Random Number Generator (RNG) driver");
++MODULE_AUTHOR("Alexander Neville <dark@volatile.bz>");
++MODULE_DESCRIPTION("UML Host RNG Driver");
+ MODULE_LICENSE("GPL");
+diff --git a/drivers/char/hw_random/Kconfig b/drivers/char/hw_random/Kconfig
+index 59f25286befe..762acbdd52ce 100644
+--- a/drivers/char/hw_random/Kconfig
++++ b/drivers/char/hw_random/Kconfig
+@@ -440,22 +440,23 @@ config HW_RANDOM_OPTEE
+ 
+ 	  If unsure, say Y.
+ 
+-endif # HW_RANDOM
+-
+ config UML_RANDOM
++	tristate "UML Host Random Number Generator Support"
+ 	depends on UML
+-	tristate "Hardware random number generator"
++	default HW_RANDOM
+ 	help
+ 	  This option enables UML's "hardware" random number generator.  It
+ 	  attaches itself to the host's /dev/random, supplying as much entropy
+ 	  as the host has, rather than the small amount the UML gets from its
+-	  own drivers.  It registers itself as a standard hardware random number
+-	  generator, major 10, minor 183, and the canonical device name is
+-	  /dev/hwrng.
+-	  The way to make use of this is to install the rng-tools package
+-	  (check your distro, or download from
+-	  http://sourceforge.net/projects/gkernel/).  rngd periodically reads
+-	  /dev/hwrng and injects the entropy into /dev/random.
++	  own drivers.
++
++	  To compile this driver as a moudle, choose M here: the module
++	  will be called uml-rng
++
++	  If unsure, say Y.
++
++endif # HW_RANDOM
++
+ 
+ config HW_RANDOM_KEYSTONE
+ 	depends on ARCH_KEYSTONE
+-- 
+2.23.0
 
-johannes
+Sorry about the diff being a bit messy. If desired, I can manually fix
+the diff.
 
+Also, please let me know if my mail client decided to mangle my patch.
 
 _______________________________________________
 linux-um mailing list
