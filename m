@@ -2,69 +2,67 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C7DBCA287B
-	for <lists+linux-um@lfdr.de>; Thu, 29 Aug 2019 22:57:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C8DB3A2897
+	for <lists+linux-um@lfdr.de>; Thu, 29 Aug 2019 23:03:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Subject:References:
+	In-Reply-To:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sB1a0FE1GoHylM99A9qK3bkryzBkjbxdzMZF1/aGk2k=; b=D2vIUSBqVaa+qt
-	H/rcH1LvPg0RaGB36FV6FuSJ1B4gJQEsap/cflAx6vaAX+mEUAe95CmShomiqtvmrjrjZiH7hYi9M
-	nupV8+/NTmovsznCoXltZjgVVbxqBRR8GTBbj3NCL7QZI+2gTos/bajsNTSX6zS8pmDSTeqFsfDmH
-	AsEhTUvx9BeruWak0YU4rxf3KvavhMa107e7pFFHCOJFdWhGKnYG9cWeIHKSoyE7gUvs5fPPJF8kN
-	g236te2SJJyV0T8Klaw7y4SYR82PWGnMzRmJGhEJhJ5cifDpUMiEGWwa9HulZCsQJ8bEhQjP6Ugsn
-	nCyd3/Qvkb97o745mxww==;
+	List-Owner; bh=J5DjeIXpYKHgBw6hiF6J7Yd3a3VgUZUvMxEMKxLAvGw=; b=u/SP/8p9cSPRjp
+	tH/EXsYrdriYmhgk6OSOScOKIOirgaMzbTg1V4R19U1u0vCCg/hP4+3z2rQGwMW+98B2v6nJy7en/
+	wUsSnQVkCFEI/aN+uqHpnBn+1VhV48UzoMs2diqub2yN6a5J9KrKSw8zwVs0evZ0h4KiUtF3Wtvzb
+	KGr/FWiBSbs+CmTqdmHMttkX2uNltxFqhRVhtb6IYq0BWTShFHQmmvgRp69VWGtdDsYUfA4dwlcA4
+	3JOvoTOrNwPqjWOLjxPdeC/Z2u/D5vzR3QwvK6leprJCdliI0PzlblhaByz++83LfX9te6D9544Bw
+	NV+hHc6kWH5wFBPOtlHA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3RTS-0000qQ-2M; Thu, 29 Aug 2019 20:56:54 +0000
-Received: from mx1.volatile.bz ([2001:67c:2db8:301:138:0:101:1])
+	id 1i3RZs-0002Sq-Ds; Thu, 29 Aug 2019 21:03:32 +0000
+Received: from lithops.sigma-star.at ([195.201.40.130])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3RTO-0000q1-T0
- for linux-um@lists.infradead.org; Thu, 29 Aug 2019 20:56:52 +0000
-Received: from TheDarkness (unknown
- [IPv6:2600:6c5d:4200:1e2a:5ae6:e27c:4008:d85e])
- by mx1.volatile.bz (Postfix) with ESMTPSA id 203A82F34;
- Thu, 29 Aug 2019 20:56:38 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=volatile.bz;
- s=default; t=1567112200;
- bh=2Cld8ITONmQhx82iPM0yzzpBzpBAbtt/czPoBPirKMI=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References;
- b=aFzze3ptOfzWszyUPz+6uGkAVoHyMSUavzNLXeh1pd4LmEMBUIpFn9xHO2c2gOyOn
- sF3vk6HyTrqXS65SOVum52FbkHZv/3in+Ru0AElUUaPb6IButNawbwpsxSNTBa6eSp
- KYvA+A2ErD3rpOjyMuVQREIwtU6Wzg+/ynioCNx0=
-Date: Thu, 29 Aug 2019 16:56:35 -0400
-From: Alexander Neville <dark@volatile.bz>
-To: Richard Weinberger <richard@nod.at>
-Subject: Re: [PATCH v2] um: Rewrite host RNG driver.
-Message-ID: <20190829165442.3a3425ad@TheDarkness>
-In-Reply-To: <899887272.76523.1567104513068.JavaMail.zimbra@nod.at>
+ id 1i3RZp-0002SU-Uj
+ for linux-um@lists.infradead.org; Thu, 29 Aug 2019 21:03:31 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by lithops.sigma-star.at (Postfix) with ESMTP id BFE666083139;
+ Thu, 29 Aug 2019 23:03:27 +0200 (CEST)
+Received: from lithops.sigma-star.at ([127.0.0.1])
+ by localhost (lithops.sigma-star.at [127.0.0.1]) (amavisd-new, port 10032)
+ with ESMTP id UvgXmJNLFfTl; Thu, 29 Aug 2019 23:03:27 +0200 (CEST)
+Received: from localhost (localhost [127.0.0.1])
+ by lithops.sigma-star.at (Postfix) with ESMTP id 80C88608313E;
+ Thu, 29 Aug 2019 23:03:27 +0200 (CEST)
+Received: from lithops.sigma-star.at ([127.0.0.1])
+ by localhost (lithops.sigma-star.at [127.0.0.1]) (amavisd-new, port 10026)
+ with ESMTP id 0-XjAj7s1amn; Thu, 29 Aug 2019 23:03:27 +0200 (CEST)
+Received: from lithops.sigma-star.at (lithops.sigma-star.at [195.201.40.130])
+ by lithops.sigma-star.at (Postfix) with ESMTP id 56B0F6083139;
+ Thu, 29 Aug 2019 23:03:27 +0200 (CEST)
+Date: Thu, 29 Aug 2019 23:03:27 +0200 (CEST)
+From: Richard Weinberger <richard@nod.at>
+To: Dark <dark@volatile.bz>
+Message-ID: <1408538854.76578.1567112607283.JavaMail.zimbra@nod.at>
+In-Reply-To: <20190829165442.3a3425ad@TheDarkness>
 References: <20190829135001.6a5ff940@TheDarkness.local>
  <899887272.76523.1567104513068.JavaMail.zimbra@nod.at>
-X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ <20190829165442.3a3425ad@TheDarkness>
+Subject: Re: [PATCH v2] um: Rewrite host RNG driver.
 MIME-Version: 1.0
+X-Originating-IP: [195.201.40.130]
+X-Mailer: Zimbra 8.8.12_GA_3807 (ZimbraWebClient - FF60 (Linux)/8.8.12_GA_3809)
+Thread-Topic: Rewrite host RNG driver.
+Thread-Index: Oma/16tRMf5Dqk+nSnu/JJtVBEaoAw==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_135651_115429_8050931C 
-X-CRM114-Status: UNSURE (   7.68  )
+X-CRM114-CacheID: sfid-20190829_140330_139409_0F58C3C8 
+X-CRM114-Status: UNSURE (   5.50  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.5 (--)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2001:67c:2db8:301:138:0:101:1 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,17 +83,18 @@ Content-Transfer-Encoding: base64
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-T24gVGh1LCAyOSBBdWcgMjAxOSAyMDo0ODozMyArMDIwMCAoQ0VTVCksIFJpY2hhcmQgV2VpbmJl
-cmdlciA8cmljaGFyZEBub2QuYXQ+IHdyb3RlOgoKPiAtLS0tLSBVcnNwcsO8bmdsaWNoZSBNYWls
-IC0tLS0tCj4gPiBWb246ICJEYXJrIiA8ZGFya0B2b2xhdGlsZS5iej4KPiA+ICsJLy8gUmV0dXJu
-aW5nIC1FQUdBSU4gdG8gdXNlcnNwYWNlIGlzIG5vdCBuaWNlLgo+ID4gKwlpZiAoZXJyID09IC1F
-QUdBSU4pCj4gPiArCQlyZXR1cm4gMDsgIAo+IAo+IEhtbSwgZG9lc24ndCB0aGlzIHJlc3VsdCBp
-biBhIHNob3J0IHJlYWQ/Cj4gVGhlIGN1cnJlbnQgZHJpdmVzIHNldHMgdGhlIGNhbGxpbmcgdGFz
-ayB0byBzbGVlcCBhbmQgd2FrZXMKPiBpdCB1cCBhcyBzb29uIGRhdGEgaXMgYXZhaWxhYmxlIGFn
-YWluLiBJJ2QgYXNzdW1lcyB0aSBoYXZlIHRoZQo+IHNhbWUgYmVoYXZpb3IgZm9yIHRoZSBuZXcg
-ZHJpdmVyLgo+IAo+IFRoYW5rcywKPiAvL3JpY2hhcmQKCkNsZWFybHkgdGhpcyBwYXRjaCBuZWVk
-cyBhIGxvdCBtb3JlIHdvcmsgYmVmb3JlIEkgc3VibWl0IGl0LiBJJ2xsIAp0YWtlIHNvbWUgdGlt
-ZSB0byBwb2xpc2ggaXQgdXAgYW5kIHRoZW4gcmVzdWJtaXQgaXQgaWYgdGhhdCdzIGZpbmUuCgpf
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC11bSBt
-YWlsaW5nIGxpc3QKbGludXgtdW1AbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5m
-cmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXVtCg==
+LS0tLS0gVXJzcHLDvG5nbGljaGUgTWFpbCAtLS0tLQo+PiAtLS0tLSBVcnNwcsO8bmdsaWNoZSBN
+YWlsIC0tLS0tCj4+ID4gVm9uOiAiRGFyayIgPGRhcmtAdm9sYXRpbGUuYno+Cj4+ID4gKwkvLyBS
+ZXR1cm5pbmcgLUVBR0FJTiB0byB1c2Vyc3BhY2UgaXMgbm90IG5pY2UuCj4+ID4gKwlpZiAoZXJy
+ID09IC1FQUdBSU4pCj4+ID4gKwkJcmV0dXJuIDA7Cj4+IAo+PiBIbW0sIGRvZXNuJ3QgdGhpcyBy
+ZXN1bHQgaW4gYSBzaG9ydCByZWFkPwo+PiBUaGUgY3VycmVudCBkcml2ZXMgc2V0cyB0aGUgY2Fs
+bGluZyB0YXNrIHRvIHNsZWVwIGFuZCB3YWtlcwo+PiBpdCB1cCBhcyBzb29uIGRhdGEgaXMgYXZh
+aWxhYmxlIGFnYWluLiBJJ2QgYXNzdW1lcyB0aSBoYXZlIHRoZQo+PiBzYW1lIGJlaGF2aW9yIGZv
+ciB0aGUgbmV3IGRyaXZlci4KPj4gCj4+IFRoYW5rcywKPj4gLy9yaWNoYXJkCj4gCj4gQ2xlYXJs
+eSB0aGlzIHBhdGNoIG5lZWRzIGEgbG90IG1vcmUgd29yayBiZWZvcmUgSSBzdWJtaXQgaXQuIEkn
+bGwKPiB0YWtlIHNvbWUgdGltZSB0byBwb2xpc2ggaXQgdXAgYW5kIHRoZW4gcmVzdWJtaXQgaXQg
+aWYgdGhhdCdzIGZpbmUuCgpObyBuZWVkIHRvIHdvcnJ5LCB0YWtlIHlvdXIgdGltZS4gVGhhbmtz
+IGEgbG90IGZvciB3b3JraW5nIG9uIHRoaXMgZHJpdmVyIQoKVGhhbmtzLAovL3JpY2hhcmQKCl9f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LXVtIG1h
+aWxpbmcgbGlzdApsaW51eC11bUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZy
+YWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtdW0K
