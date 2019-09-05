@@ -2,46 +2,42 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A90FDA834E
-	for <lists+linux-um@lfdr.de>; Wed,  4 Sep 2019 15:00:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F2F3BAAC5F
+	for <lists+linux-um@lfdr.de>; Thu,  5 Sep 2019 21:50:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=V7z86AO7mWTmKaB7ILTHjgnfhcUsLEV3aIWI6/7B9L0=; b=Uq+x6/xHLIDpq4
-	JsrQ5VseIb0Tt/t5K+9slZO4Du730qomw4J31/hHeMbFVP8SJdjmKMtQzXUY1yapU3cRFPBHDI9A9
-	rUmARYd9V65S2NB/2QxxKr86QzoZS0Kmz6CoZZy8ornVF7L6WDJdZIV+Q2WIoQ8bw1KNMhUvjT6xb
-	jJYNQLq1+f22gDh6eErt5WFnQMMSupi8fxc/iE/CPU5B7ZoWWw9L0kIVR54P4Io47JITyhld8PXTr
-	2AqbkBANiBMdDevFvQ/FOxYn7AGyjRinb/Dlp68nTu25bEeqkSVBSNWzfkKAbp/zN5yLeQkrq88yI
-	Sbf1nTHnYhyuuguZEQNQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=1KBgh/5Q3CQQhfvnmovMbGU8Of3SZb4x9jLwRkfgW94=; b=WV3AUKCpVIrRlw
+	CFh8qE0md3DsMqCEGl7qkNkt/pLoaclJkcFI4JXSDDwmVKRT3AIw01qG0hP1LlnjBmCf0Pg1lSKn6
+	XG2CqiTTtimTZhv456Y3RhvokGqwQRPedWwX0bnWuP64/AsW0ZNfeKQlij9tpbuCA7UEf7JI6B+pL
+	iHSQr7HlQ4x4ynWXrKjdHvpMEzgY92QeA4XA7OQScnmwNYcqzamMLd5v2WU7fKS9G44fMdXDK3Efe
+	PQ7Rsbgcdp/V0blgMYNy+iIMy5WgkNgzkgHZCWZue87vGdw1nWOJPthCiEzrY+l01m1uaAkDJW72Q
+	MJH/xWCvubyO2oCJhh3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5UtP-0002Wj-TB; Wed, 04 Sep 2019 13:00:12 +0000
+	id 1i5xmM-0006xx-Ss; Thu, 05 Sep 2019 19:50:50 +0000
 Received: from s3.sipsolutions.net ([2a01:4f8:191:4433::2]
  helo=sipsolutions.net)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5UtN-00020c-IC
- for linux-um@lists.infradead.org; Wed, 04 Sep 2019 13:00:10 +0000
+ id 1i5xmI-0006wE-I7
+ for linux-um@lists.infradead.org; Thu, 05 Sep 2019 19:50:48 +0000
 Received: by sipsolutions.net with esmtpsa
- (TLS1.3:ECDHE_SECP256R1__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
+ (TLS1.3:ECDHE_X25519__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
  (Exim 4.92.1) (envelope-from <johannes@sipsolutions.net>)
- id 1i5UtI-0008V5-Ka
- for linux-um@lists.infradead.org; Wed, 04 Sep 2019 15:00:05 +0200
-Message-ID: <e759728af3b0e8a1188cd8956bc4ee2d3b66a68c.camel@sipsolutions.net>
-Subject: Re: [PATCH 1/2] um: virtio: implement VHOST_USER_PROTOCOL_F_SLAVE_REQ
+ id 1i5xmF-0003HG-OE; Thu, 05 Sep 2019 21:50:43 +0200
 From: Johannes Berg <johannes@sipsolutions.net>
 To: linux-um@lists.infradead.org
-Date: Wed, 04 Sep 2019 15:00:02 +0200
-In-Reply-To: <20190904071116.8204-1-johannes@sipsolutions.net>
-References: <20190904071116.8204-1-johannes@sipsolutions.net>
-User-Agent: Evolution 3.30.5 (3.30.5-1.fc29) 
+Subject: [PATCH v2 1/2] um: virtio: implement VHOST_USER_PROTOCOL_F_SLAVE_REQ
+Date: Thu,  5 Sep 2019 21:50:37 +0200
+Message-Id: <1567713038-I2fd1049a09368398124caa2a4e132f0b6ebde347@changeid>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190904_060009_597787_C0310496 
-X-CRM114-Status: UNSURE (   6.27  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190905_125046_771168_5E5A8F91 
+X-CRM114-Status: GOOD (  15.55  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -61,22 +57,313 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
+Cc: Johannes Berg <johannes.berg@intel.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Wed, 2019-09-04 at 09:11 +0200, Johannes Berg wrote:
-> From: Johannes Berg <johannes.berg@intel.com>
-> 
-> Implement the communication channel for the device to notify
-> us of some events, and notably implement the handling of the
-> config updates needed for the combination of this feature
-> and VHOST_USER_PROTOCOL_F_CONFIG.
+From: Johannes Berg <johannes.berg@intel.com>
 
-This has some error path issues, I'll resend later.
+Implement the communication channel for the device to notify
+us of some events, and notably implement the handling of the
+config updates needed for the combination of this feature
+and VHOST_USER_PROTOCOL_F_CONFIG.
 
-johannes
+Signed-off-by: Johannes Berg <johannes.berg@intel.com>
+---
+ arch/um/drivers/vhost_user.h |  18 ++++-
+ arch/um/drivers/virtio_uml.c | 150 ++++++++++++++++++++++++++++++-----
+ 2 files changed, 145 insertions(+), 23 deletions(-)
+
+diff --git a/arch/um/drivers/vhost_user.h b/arch/um/drivers/vhost_user.h
+index 2a9829b0782b..8aee9919581e 100644
+--- a/arch/um/drivers/vhost_user.h
++++ b/arch/um/drivers/vhost_user.h
+@@ -9,7 +9,8 @@
+ /* Feature bits */
+ #define VHOST_USER_F_PROTOCOL_FEATURES	30
+ /* Protocol feature bits */
+-#define VHOST_USER_PROTOCOL_F_CONFIG	9
++#define VHOST_USER_PROTOCOL_F_SLAVE_REQ		5
++#define VHOST_USER_PROTOCOL_F_CONFIG		9
+ /* Vring state index masks */
+ #define VHOST_USER_VRING_INDEX_MASK	0xff
+ #define VHOST_USER_VRING_POLL_MASK	BIT(8)
+@@ -19,7 +20,8 @@
+ /* Supported transport features */
+ #define VHOST_USER_SUPPORTED_F		BIT_ULL(VHOST_USER_F_PROTOCOL_FEATURES)
+ /* Supported protocol features */
+-#define VHOST_USER_SUPPORTED_PROTOCOL_F	BIT_ULL(VHOST_USER_PROTOCOL_F_CONFIG)
++#define VHOST_USER_SUPPORTED_PROTOCOL_F	(BIT_ULL(VHOST_USER_PROTOCOL_F_SLAVE_REQ) | \
++					 BIT_ULL(VHOST_USER_PROTOCOL_F_CONFIG))
+ 
+ enum vhost_user_request {
+ 	VHOST_USER_GET_FEATURES = 1,
+@@ -49,8 +51,18 @@ enum vhost_user_request {
+ 	VHOST_USER_SET_CONFIG = 25,
+ };
+ 
++enum vhost_user_slave_request {
++	VHOST_USER_SLAVE_IOTLB_MSG = 1,
++	VHOST_USER_SLAVE_CONFIG_CHANGE_MSG = 2,
++	VHOST_USER_SLAVE_VRING_HOST_NOTIFIER_MSG = 3,
++};
++
+ struct vhost_user_header {
+-	u32 request; /* Use enum vhost_user_request */
++	/*
++	 * Use enum vhost_user_request for outgoing messages,
++	 * uses enum vhost_user_slave_request for incoming ones.
++	 */
++	u32 request;
+ 	u32 flags;
+ 	u32 size;
+ } __packed;
+diff --git a/arch/um/drivers/virtio_uml.c b/arch/um/drivers/virtio_uml.c
+index 2651d27c4fba..a12c36520cbe 100644
+--- a/arch/um/drivers/virtio_uml.c
++++ b/arch/um/drivers/virtio_uml.c
+@@ -49,7 +49,7 @@ struct virtio_uml_device {
+ 	struct virtio_device vdev;
+ 	struct platform_device *pdev;
+ 
+-	int sock;
++	int sock, req_fd;
+ 	u64 features;
+ 	u64 protocol_features;
+ 	u8 status;
+@@ -105,40 +105,46 @@ static int full_read(int fd, void *buf, int len)
+ 	return 0;
+ }
+ 
+-static int vhost_user_recv_header(struct virtio_uml_device *vu_dev,
+-				  struct vhost_user_msg *msg)
++static int vhost_user_recv_header(int fd, struct vhost_user_msg *msg)
+ {
+-	size_t size = sizeof(msg->header);
+-	int rc;
+-
+-	rc = full_read(vu_dev->sock, (void *) msg, size);
+-	if (rc)
+-		return rc;
+-	if (msg->header.flags != (VHOST_USER_FLAG_REPLY | VHOST_USER_VERSION))
+-		return -EPROTO;
+-	return 0;
++	return full_read(fd, msg, sizeof(msg->header));
+ }
+ 
+-static int vhost_user_recv(struct virtio_uml_device *vu_dev,
+-			   struct vhost_user_msg *msg,
++static int vhost_user_recv(int fd, struct vhost_user_msg *msg,
+ 			   size_t max_payload_size)
+ {
+ 	size_t size;
+-	int rc = vhost_user_recv_header(vu_dev, msg);
++	int rc = vhost_user_recv_header(fd, msg);
+ 
+ 	if (rc)
+ 		return rc;
+ 	size = msg->header.size;
+ 	if (size > max_payload_size)
+ 		return -EPROTO;
+-	return full_read(vu_dev->sock, (void *) &msg->payload, size);
++	return full_read(fd, &msg->payload, size);
++}
++
++static int vhost_user_recv_resp(struct virtio_uml_device *vu_dev,
++				struct vhost_user_msg *msg,
++				size_t max_payload_size)
++{
++	int rc = vhost_user_recv(vu_dev->sock, msg, max_payload_size);
++
++	if (rc)
++		return rc;
++
++	if (msg->header.flags != (VHOST_USER_FLAG_REPLY | VHOST_USER_VERSION))
++		return -EPROTO;
++
++	return 0;
+ }
+ 
+ static int vhost_user_recv_u64(struct virtio_uml_device *vu_dev,
+ 			       u64 *value)
+ {
+ 	struct vhost_user_msg msg;
+-	int rc = vhost_user_recv(vu_dev, &msg, sizeof(msg.payload.integer));
++	int rc = vhost_user_recv_resp(vu_dev, &msg,
++				      sizeof(msg.payload.integer));
+ 
+ 	if (rc)
+ 		return rc;
+@@ -148,6 +154,21 @@ static int vhost_user_recv_u64(struct virtio_uml_device *vu_dev,
+ 	return 0;
+ }
+ 
++static int vhost_user_recv_req(struct virtio_uml_device *vu_dev,
++			       struct vhost_user_msg *msg,
++			       size_t max_payload_size)
++{
++	int rc = vhost_user_recv(vu_dev->req_fd, msg, max_payload_size);
++
++	if (rc)
++		return rc;
++
++	if (msg->header.flags != VHOST_USER_VERSION)
++		return -EPROTO;
++
++	return 0;
++}
++
+ static int vhost_user_send(struct virtio_uml_device *vu_dev,
+ 			   struct vhost_user_msg *msg,
+ 			   int *fds, size_t num_fds)
+@@ -168,6 +189,16 @@ static int vhost_user_send_no_payload(struct virtio_uml_device *vu_dev,
+ 	return vhost_user_send(vu_dev, &msg, NULL, 0);
+ }
+ 
++static int vhost_user_send_no_payload_fd(struct virtio_uml_device *vu_dev,
++					 u32 request, int fd)
++{
++	struct vhost_user_msg msg = {
++		.header.request = request,
++	};
++
++	return vhost_user_send(vu_dev, &msg, &fd, 1);
++}
++
+ static int vhost_user_send_u64(struct virtio_uml_device *vu_dev,
+ 			       u32 request, u64 value)
+ {
+@@ -219,6 +250,70 @@ static int vhost_user_set_protocol_features(struct virtio_uml_device *vu_dev,
+ 				   protocol_features);
+ }
+ 
++static irqreturn_t vu_req_interrupt(int irq, void *data)
++{
++	struct virtio_uml_device *vu_dev = data;
++	struct {
++		struct vhost_user_msg msg;
++		u8 extra_payload[512];
++	} msg;
++	int rc;
++
++	rc = vhost_user_recv_req(vu_dev, &msg.msg,
++				 sizeof(msg.msg.payload) +
++				 sizeof(msg.extra_payload));
++
++	if (rc == -EAGAIN)
++		return IRQ_NONE;
++
++	switch (msg.msg.header.request) {
++	case VHOST_USER_SLAVE_CONFIG_CHANGE_MSG:
++		virtio_config_changed(&vu_dev->vdev);
++		break;
++	case VHOST_USER_SLAVE_IOTLB_MSG:
++		/* not supported - VIRTIO_F_IOMMU_PLATFORM */
++	case VHOST_USER_SLAVE_VRING_HOST_NOTIFIER_MSG:
++		/* not supported - VHOST_USER_PROTOCOL_F_HOST_NOTIFIER */
++	default:
++		vu_err(vu_dev, "unexpected slave request %d\n",
++		       msg.msg.header.request);
++	}
++
++	return IRQ_HANDLED;
++}
++
++static int vhost_user_init_slave_req(struct virtio_uml_device *vu_dev)
++{
++	int rc, req_fds[2];
++
++	rc = os_pipe(req_fds, true, true);
++	if (rc < 0)
++		return rc;
++	vu_dev->req_fd = req_fds[0];
++
++	rc = um_request_irq(VIRTIO_IRQ, vu_dev->req_fd, IRQ_READ,
++			    vu_req_interrupt, IRQF_SHARED,
++			    vu_dev->pdev->name, vu_dev);
++	if (rc)
++		goto err_close;
++
++	rc = vhost_user_send_no_payload_fd(vu_dev, VHOST_USER_SET_SLAVE_REQ_FD,
++					   req_fds[1]);
++	if (rc)
++		goto err_free_irq;
++
++	goto out;
++
++err_free_irq:
++	um_free_irq(vu_dev->req_fd, vu_dev);
++err_close:
++	os_close_file(req_fds[0]);
++out:
++	/* Close unused write end of request fds */
++	os_close_file(req_fds[1]);
++	return rc;
++}
++
+ static int vhost_user_init(struct virtio_uml_device *vu_dev)
+ {
+ 	int rc = vhost_user_set_owner(vu_dev);
+@@ -242,8 +337,17 @@ static int vhost_user_init(struct virtio_uml_device *vu_dev)
+ 		vu_dev->protocol_features &= VHOST_USER_SUPPORTED_PROTOCOL_F;
+ 		rc = vhost_user_set_protocol_features(vu_dev,
+ 				vu_dev->protocol_features);
++		if (rc)
++			return rc;
+ 	}
+-	return rc;
++
++	if (vu_dev->protocol_features & VHOST_USER_PROTOCOL_F_SLAVE_REQ) {
++		rc = vhost_user_init_slave_req(vu_dev);
++		if (rc)
++			return rc;
++	}
++
++	return 0;
+ }
+ 
+ static void vhost_user_get_config(struct virtio_uml_device *vu_dev,
+@@ -274,7 +378,7 @@ static void vhost_user_get_config(struct virtio_uml_device *vu_dev,
+ 		goto free;
+ 	}
+ 
+-	rc = vhost_user_recv(vu_dev, msg, msg_size);
++	rc = vhost_user_recv_resp(vu_dev, msg, msg_size);
+ 	if (rc) {
+ 		vu_err(vu_dev,
+ 		       "receiving VHOST_USER_GET_CONFIG response failed: %d\n",
+@@ -728,13 +832,18 @@ static const struct virtio_config_ops virtio_uml_config_ops = {
+ 	.bus_name = vu_bus_name,
+ };
+ 
+-
+ static void virtio_uml_release_dev(struct device *d)
+ {
+ 	struct virtio_device *vdev =
+ 			container_of(d, struct virtio_device, dev);
+ 	struct virtio_uml_device *vu_dev = to_virtio_uml_device(vdev);
+ 
++	/* might not have been opened due to not negotiating the feature */
++	if (vu_dev->req_fd >= 0) {
++		um_free_irq(VIRTIO_IRQ, vu_dev);
++		os_close_file(vu_dev->req_fd);
++	}
++
+ 	os_close_file(vu_dev->sock);
+ }
+ 
+@@ -764,6 +873,7 @@ static int virtio_uml_probe(struct platform_device *pdev)
+ 	vu_dev->vdev.id.device = pdata->virtio_device_id;
+ 	vu_dev->vdev.id.vendor = VIRTIO_DEV_ANY_ID;
+ 	vu_dev->pdev = pdev;
++	vu_dev->req_fd = -1;
+ 
+ 	do {
+ 		rc = os_connect_socket(pdata->socket_path);
+-- 
+2.20.1
 
 
 _______________________________________________
