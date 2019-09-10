@@ -2,49 +2,43 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8DE9BAD3E1
-	for <lists+linux-um@lfdr.de>; Mon,  9 Sep 2019 09:30:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C3FC6AEBF4
+	for <lists+linux-um@lfdr.de>; Tue, 10 Sep 2019 15:48:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iohMj1WA9fba/7EVEg2RcVvjI6rfXjom/L3gnsqPLnU=; b=GGvRluILm4tTkM
-	I4SRLJfPJgY6BPVKSV+cqXouXaaNMbz5+Q7UIIdgRzxacDvyXDBxNlQZEkcvEUzNAMYiZwo9fNQYw
-	OY0R3EHHiJJyl+yPFhbUwpRIG0lwp2iOscxYTAtJg0OVuBuXQcP/BZKZpa7SO/TcMFK4ZtQQBPNGv
-	6OThGLIFLORQvDISjlvQUaxMLzXWnEnAyh4jnU9haJ9U08zwq08hzF63vCbyF/uRAOBr3ADhNlU78
-	s4IYBL2Uv9klDdS/KEF6RDO/FhkhBj/ZGS6Wmp8B7k+4T6lvtXIkqqAaHax6Rbu/S3Vudl+wqhWNc
-	Ld+yXSpx0xDYs0YYFsCA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ogFmIV4Cyqb/loeaxJi2MAhHTwoJuy4A720ANKbYbxg=; b=bqzkmudrCot3Cc
+	npl2s5DzK5vMzQe17soPM4zke67g7JQTlpqiLdwYq8gA4s7DK/HcdIl+1hNLty4nAxH0ocQEoNiAF
+	6o+UnwiAz+K0olYoypxBVeeM8jOP2kcYshsf8QxoQJzEBrtu+g1qqnn21gSeawg9z5XvcNXoTVV5H
+	weXeaUPoDUuqYQGvvD85tGlyTf6aATpPpqlazFINtH+ecPtbVqbAYQ29MC0KxhK0fZo2MXMIrMXId
+	cxLTpwRCO5hcMOWs8wrkHvWxGuh9B99kGioRdAor0YlUl62selc/sSRsvSrk7BznJtIlNhzreORBn
+	UjC04TeyyB7W6pMRE1yA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7E83-000729-Q2; Mon, 09 Sep 2019 07:30:27 +0000
+	id 1i7gVH-0006Lt-85; Tue, 10 Sep 2019 13:48:19 +0000
 Received: from s3.sipsolutions.net ([2a01:4f8:191:4433::2]
  helo=sipsolutions.net)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7E81-00071m-Fx
- for linux-um@lists.infradead.org; Mon, 09 Sep 2019 07:30:26 +0000
+ id 1i7gVC-0006F3-As
+ for linux-um@lists.infradead.org; Tue, 10 Sep 2019 13:48:16 +0000
 Received: by sipsolutions.net with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <johannes@sipsolutions.net>)
- id 1i7E80-0004UL-0E; Mon, 09 Sep 2019 09:30:24 +0200
-Message-ID: <3d9298b447ca662da4475169896e767ad89b5146.camel@sipsolutions.net>
-Subject: Re: [RFC] um: have real DMA barriers with virtio
+ id 1i7gV7-0006bX-Ke; Tue, 10 Sep 2019 15:48:09 +0200
 From: Johannes Berg <johannes@sipsolutions.net>
-To: Anton Ivanov <anton.ivanov@kot-begemot.co.uk>, 
- linux-um@lists.infradead.org
-Date: Mon, 09 Sep 2019 09:30:23 +0200
-In-Reply-To: <58f4cdd7-6601-f0e1-2d0b-58b62cbc1020@kot-begemot.co.uk>
-References: <1567807353-Ieca0b50a173f8a587d412db861c7ae4d6bae97c4@changeid>
- <a5415671bfe700f197a72e25351d13207f86641e.camel@sipsolutions.net>
- <02eb6880-1e7b-1921-2057-008737ee8d48@kot-begemot.co.uk>
- <300774e43e0a755a9e57c587ece7bb44537f1d22.camel@sipsolutions.net>
- <58f4cdd7-6601-f0e1-2d0b-58b62cbc1020@kot-begemot.co.uk>
-User-Agent: Evolution 3.30.5 (3.30.5-1.fc29) 
+To: linux-um@lists.infradead.org
+Subject: [PATCH 1/2] um: time-travel: fix periodic timers
+Date: Tue, 10 Sep 2019 15:47:55 +0200
+Message-Id: <1568123276-I40b0f15a0fdd0f17e6636fbfe661e0d3d52e5ef7@changeid>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190909_003025_535522_6D2A9F55 
-X-CRM114-Status: GOOD (  15.94  )
+X-CRM114-CacheID: sfid-20190910_064814_790513_8E5AC40A 
+X-CRM114-Status: UNSURE (   9.53  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.4 points)
@@ -64,52 +58,80 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
+Cc: Johannes Berg <johannes.berg@intel.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Mon, 2019-09-09 at 08:27 +0100, Anton Ivanov wrote:
+From: Johannes Berg <johannes.berg@intel.com>
 
-> I would like at some point to convert the "helper thread" semantics of 
-> ubd, etc to look like DMA and use DMA barrier as well as have the 
-> relevant DMA infrastructure.
+Signed-off-by: Johannes Berg <johannes.berg@intel.com>
+---
+ arch/um/include/shared/timer-internal.h | 9 +++++++++
+ arch/um/kernel/process.c                | 7 ++++++-
+ arch/um/kernel/time.c                   | 1 +
+ 3 files changed, 16 insertions(+), 1 deletion(-)
 
-Right, I got that part, makes sense.
-
-> At present they work only because the IPC forces the host kernel to 
-> invoke a barrier. If I remember correctly, the actual place where the 
-> barrier is invoked is the IPC socket enqueue/dequeue in the host kernel.
-> 
-> If, for some reason the host kernel does not invoke the barrier (f.e., 
-> if someone optimizes the queue operations so there is no need) they will 
-> break.
-
-Sure, also makes sense.
-
-> IMHO adding DMA emulation will have benefits for both existing and 
-> future drivers.
-
-Well, in a sense virtio is emulating DMA. We could even just add another
-virtio transport (not the vhost-user backed one we have now) and just
-rely on virtio-blk, and implement just the device side like qemu already
-would. I suppose it might be easy to even copy that.
-
-But anyway - sorry for being dense, maybe it's too early morning :-) But
-I still don't understand what that means for this patch...
-
-> > That said, I did find a few other issues still, so I'll be reposting.
-> > I'll also try to open /proc/self/mem as the file descriptor to pass to
-> > the virtio device instead of using physmem_fd, because our .bss isn't
-> > actually part of physmem_fd, and that cost me a few hours debugging
-> > already ;-)
-> 
-> I will retest vs BESS/DPDK when it is ready.
-
-Thanks. I'll repost in the next couple of days, want to experiment with
-the /proc/self/mem first, and if that works better use it.
-
-johannes
+diff --git a/arch/um/include/shared/timer-internal.h b/arch/um/include/shared/timer-internal.h
+index 9991ec2371e4..a4d79389b223 100644
+--- a/arch/um/include/shared/timer-internal.h
++++ b/arch/um/include/shared/timer-internal.h
+@@ -43,6 +43,11 @@ static inline void time_travel_set_timer_expiry(unsigned long long expiry)
+ {
+ 	time_travel_timer_expiry = expiry;
+ }
++
++static inline void time_travel_set_timer_interval(unsigned long long interval)
++{
++	time_travel_timer_interval = interval;
++}
+ #else
+ #define time_travel_mode TT_MODE_OFF
+ #define time_travel_time 0
+@@ -61,6 +66,10 @@ static inline void time_travel_set_timer_expiry(unsigned long long expiry)
+ {
+ }
+ 
++static inline void time_travel_set_timer_interval(unsigned long long interval)
++{
++}
++
+ #define time_travel_timer_mode TT_TMR_DISABLED
+ #endif
+ 
+diff --git a/arch/um/kernel/process.c b/arch/um/kernel/process.c
+index 6bede7888fc2..cf242fc5fe94 100644
+--- a/arch/um/kernel/process.c
++++ b/arch/um/kernel/process.c
+@@ -210,7 +210,12 @@ static void time_travel_sleep(unsigned long long duration)
+ 	if (time_travel_mode != TT_MODE_INFCPU)
+ 		os_timer_disable();
+ 
+-	if (time_travel_timer_mode != TT_TMR_DISABLED ||
++	while (time_travel_timer_mode == TT_TMR_PERIODIC &&
++	       time_travel_timer_expiry < time_travel_time)
++		time_travel_set_timer_expiry(time_travel_timer_expiry +
++					     time_travel_timer_interval);
++
++	if (time_travel_timer_mode != TT_TMR_DISABLED &&
+ 	    time_travel_timer_expiry < next) {
+ 		if (time_travel_timer_mode == TT_TMR_ONESHOT)
+ 			time_travel_set_timer_mode(TT_TMR_DISABLED);
+diff --git a/arch/um/kernel/time.c b/arch/um/kernel/time.c
+index 234757233355..4ecabf7e54c9 100644
+--- a/arch/um/kernel/time.c
++++ b/arch/um/kernel/time.c
+@@ -65,6 +65,7 @@ static int itimer_set_periodic(struct clock_event_device *evt)
+ 	if (time_travel_mode != TT_MODE_OFF) {
+ 		time_travel_set_timer_mode(TT_TMR_PERIODIC);
+ 		time_travel_set_timer_expiry(time_travel_time + interval);
++		time_travel_set_timer_interval(interval);
+ 	}
+ 
+ 	if (time_travel_mode != TT_MODE_INFCPU)
+-- 
+2.20.1
 
 
 _______________________________________________
