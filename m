@@ -2,44 +2,44 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 70F6EAFD19
-	for <lists+linux-um@lfdr.de>; Wed, 11 Sep 2019 14:51:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 42008AFD1C
+	for <lists+linux-um@lfdr.de>; Wed, 11 Sep 2019 14:51:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zWb76zU6sajHgpFej7fjVyoPS4FzccKBfIEywK8UY6M=; b=VRiTgKMaWqPLwD
-	vvdKSYlz/Eu6hyJe/JTw57agUbbMBNv9Wzi0loXx0042q7qpX+aejMsotWR+DTSM+RwYnGR/UeIxR
-	UtadlHo+D+dCWpfccWMfqF6J0ShpIAm4MylDUkK/Wgxbu95rluR4yHRXoVGnpY/cOxRncpkmSCQbH
-	npvHGsrinJ138sNFkbDb6nbMXBl+cNu3AtWi71PovRWkNEnDitm5a6j51ycddAe2qefhV+tsq3j7d
-	USw2XwQDu9Yre2kQHh+ypQvn/Wi1Bkl+ZSiETF/Zq3NjNft2xDbx5J3UyNwdolUyL81/ea+d8PEW9
-	KceIwy3mweTuNqeu6I7Q==;
+	List-Owner; bh=Pi9Bh6aoljwMdlGM6cA9mCOw9fXbcJ+hrdEAaEZ3wUY=; b=ScZ7H9Kl0Tl0M8
+	rxXX++Cszpf1FJMo6/h13fL2sbETmMbPcVpqL+4rCL2LuyjeKwG1D6iMPQ+N2YRuU+nklVfwd4sSL
+	/IBpOXap0080B5UwggTQdcGxXobFehZSzwxtpQ+o2Q5MtiBQBjjpRVKPRvqANdmCfM1sBD9ooXKsx
+	M158IBRyCDLJOzj/GoAPYAjnhPYhJJ1dPnmaCd75m6agNhHENZX/Ky178QHf0Sc6gFRUkHaD/IXT6
+	PtaMb5aNwuxwXfIdGhs1rTwUfupbOsfuEOrF4cc0TUoQWYb1XxMsyrR3gXdLPR7f3Xql4mE0DGvF2
+	TfxzvFaligmMQKR//WfA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i825t-0003Kw-S0; Wed, 11 Sep 2019 12:51:33 +0000
+	id 1i825s-0003KU-F7; Wed, 11 Sep 2019 12:51:32 +0000
 Received: from s3.sipsolutions.net ([2a01:4f8:191:4433::2]
  helo=sipsolutions.net)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i825n-0003HX-Si
- for linux-um@lists.infradead.org; Wed, 11 Sep 2019 12:51:31 +0000
+ id 1i825n-0003Hi-V4
+ for linux-um@lists.infradead.org; Wed, 11 Sep 2019 12:51:29 +0000
 Received: by sipsolutions.net with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <johannes@sipsolutions.net>)
- id 1i825l-0007ON-PP; Wed, 11 Sep 2019 14:51:25 +0200
+ id 1i825m-0007ON-47; Wed, 11 Sep 2019 14:51:26 +0200
 From: Johannes Berg <johannes@sipsolutions.net>
 To: linux-um@lists.infradead.org
-Subject: [PATCH v5 1/5] um: don't use generic barrier.h
-Date: Wed, 11 Sep 2019 14:51:18 +0200
-Message-Id: <1568206252-I95235a4f9e6929241afd5150f1ceceb45f5e28af@changeid>
+Subject: [PATCH v5 2/5] um: use real DMA barriers
+Date: Wed, 11 Sep 2019 14:51:19 +0200
+Message-Id: <1568206252-Ieca0b50a173f8a587d412db861c7ae4d6bae97c4@changeid>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190911125122.20772-1-johannes@sipsolutions.net>
 References: <20190911125122.20772-1-johannes@sipsolutions.net>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190911_055128_101720_48F6A5AA 
-X-CRM114-Status: UNSURE (   7.63  )
+X-CRM114-CacheID: sfid-20190911_055128_101721_46F6DEE3 
+X-CRM114-Status: UNSURE (   6.52  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -68,46 +68,33 @@ Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
 From: Johannes Berg <johannes.berg@intel.com>
 
-UML has its own platform-specific barrier.h under arch/x86/um/,
-which should get used. Fix the build system to use it, and then
-fix the barrier.h to actually compile.
+When we have virtio enabled, we must have real barriers since we
+may be running on an SMP machine (quite likely are, in fact), so
+the other process can be on another CPU.
+
+Since in any other case we don't really use DMA barriers, remove
+their override completely so real barriers will get used. In the
+future we might need them for other cases as well.
 
 Signed-off-by: Johannes Berg <johannes.berg@intel.com>
 ---
- arch/um/include/asm/Kbuild | 1 -
- arch/x86/um/asm/barrier.h  | 9 +--------
- 2 files changed, 1 insertion(+), 9 deletions(-)
+ arch/x86/um/asm/barrier.h | 3 ---
+ 1 file changed, 3 deletions(-)
 
-diff --git a/arch/um/include/asm/Kbuild b/arch/um/include/asm/Kbuild
-index b352ed09260e..398006d27e40 100644
---- a/arch/um/include/asm/Kbuild
-+++ b/arch/um/include/asm/Kbuild
-@@ -1,5 +1,4 @@
- # SPDX-License-Identifier: GPL-2.0
--generic-y += barrier.h
- generic-y += bpf_perf_event.h
- generic-y += bug.h
- generic-y += compat.h
 diff --git a/arch/x86/um/asm/barrier.h b/arch/x86/um/asm/barrier.h
-index f31e5d903161..eb0654f39fd2 100644
+index eb0654f39fd2..165be7f9a964 100644
 --- a/arch/x86/um/asm/barrier.h
 +++ b/arch/x86/um/asm/barrier.h
-@@ -2,14 +2,7 @@
- #ifndef _ASM_UM_BARRIER_H_
- #define _ASM_UM_BARRIER_H_
+@@ -23,9 +23,6 @@
  
--#include <asm/asm.h>
--#include <asm/segment.h>
--#include <asm/cpufeatures.h>
--#include <asm/cmpxchg.h>
--#include <asm/nops.h>
+ #endif /* CONFIG_X86_32 */
+ 
+-#define dma_rmb()	barrier()
+-#define dma_wmb()	barrier()
 -
--#include <linux/kernel.h>
--#include <linux/irqflags.h>
-+#include <asm/alternative.h>
+ #include <asm-generic/barrier.h>
  
- /*
-  * Force strict CPU ordering.
+ #endif
 -- 
 2.20.1
 
