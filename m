@@ -2,43 +2,42 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0320AB3AF5
-	for <lists+linux-um@lfdr.de>; Mon, 16 Sep 2019 15:06:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 74C72B3AF7
+	for <lists+linux-um@lfdr.de>; Mon, 16 Sep 2019 15:06:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=0bc91JXN9ybKOPccEl26GJPoAM9f18CgLS94K/qqQ+U=; b=Ob0wgmNhDV6KnG
-	UqaR9bP2AHUs4oWLqIkY5psRuAPYqjRZT0+EeKNdzTzgp07WGLmm7vx6f2EbVLIVcu5i+zbuocgMu
-	/bWzrkn49n504Mch5JsOKOsigtYzNlWdf5S2Sex6y1SKFzxU/1pMg0PBhdWb4Cp8D6eJ9ghg797s2
-	p0caABxzvph5sLbc9BDiFgZ5D6bIg/ZepuzpdvHc+A1SmO7ZSmIwKyW9bKdPovo3ZAk+i09JBlayA
-	08O2hHVbrll9H8Xy1UctEgQuYNq/ko7yln7RCdfZtIowxC5qdbno5iRy9d3QIUBvq8i4J+TTGppTW
-	jo8DT6HLE33merSuRDPQ==;
+	List-Owner; bh=wr7x82+NTKDCIhDNzpGRYKKJCy+ux3UA9+N2Q5XVuh8=; b=G7xId5CKl8PMTt
+	IVmgQPWeKPYAnfqrST+RpUKL06bGekO0qS2u2HAnN+EQH6pizAuwR0KxAisRFBgiURi6xYM9xxbLu
+	eU0hTZ24Ni9E4gjKSS/HIffsfTAUgti13fC2FM1KGcKRGNq1HRavCtHRMZfdW7xvc6DmdwXXtE/HK
+	viJKowIczrEtF+7G1lEBYuwkwlH28by3q2dJ9KXpzMN7XCuyq2cPTbQ5/rZ+j4jf5VSEuPKua6bD+
+	XARVNQsnyOl4uAH3A8uRMUV3wWdsp/QsP5mbl/I+HWNOwXsuxpQFl+lA0MMFhBdFDRHPkgkn/DskM
+	xQoQ71yHBBpYTVQtN0/A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i9qi6-0002tJ-Aa; Mon, 16 Sep 2019 13:06:30 +0000
+	id 1i9qiA-0002wS-S8; Mon, 16 Sep 2019 13:06:34 +0000
 Received: from s3.sipsolutions.net ([2a01:4f8:191:4433::2]
  helo=sipsolutions.net)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i9qhv-0002nG-IQ
- for linux-um@lists.infradead.org; Mon, 16 Sep 2019 13:06:20 +0000
+ id 1i9qi7-0002uh-2U
+ for linux-um@lists.infradead.org; Mon, 16 Sep 2019 13:06:32 +0000
 Received: by sipsolutions.net with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <johannes@sipsolutions.net>)
- id 1i9qhu-0002pm-6q; Mon, 16 Sep 2019 15:06:18 +0200
+ id 1i9qi5-0002qG-Od; Mon, 16 Sep 2019 15:06:29 +0200
 From: Johannes Berg <johannes@sipsolutions.net>
 To: linux-um@lists.infradead.org
-Subject: [PATCH] um: export uml_reserved
-Date: Mon, 16 Sep 2019 15:06:14 +0200
-Message-Id: <1568639174-I89491153563c5836b17475c319aeeb3582a7b5e3@changeid>
+Subject: [PATCH] um: virtio: remove device on disconnect
+Date: Mon, 16 Sep 2019 15:06:26 +0200
+Message-Id: <1568639186-I0f2810aee05af27171c2dcd9a495f70397da8b35@changeid>
 X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190916_060619_698306_00463054 
-X-CRM114-Status: UNSURE (   7.28  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190916_060631_113729_387F5161 
+X-CRM114-Status: GOOD (  11.61  )
 X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.4 points)
@@ -66,28 +65,135 @@ Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
 From: Johannes Berg <johannes.berg@intel.com>
 
-We need this symbol now, in case the virtio_uml driver
-is a module, as it needs to know how much memory was
-reserved to not advertise that to the device.
+If the connection drops, just remove the device, we don't try
+to recover from this right now.
 
-Fixes: 5d38f324993f ("um: drivers: Add virtio vhost-user driver")
 Signed-off-by: Johannes Berg <johannes.berg@intel.com>
 ---
- arch/um/kernel/um_arch.c | 1 +
- 1 file changed, 1 insertion(+)
+ arch/um/drivers/virtio_uml.c | 57 +++++++++++++++++++++++++++---------
+ 1 file changed, 43 insertions(+), 14 deletions(-)
 
-diff --git a/arch/um/kernel/um_arch.c b/arch/um/kernel/um_arch.c
-index 0f40eccbd759..474790b146c3 100644
---- a/arch/um/kernel/um_arch.c
-+++ b/arch/um/kernel/um_arch.c
-@@ -102,6 +102,7 @@ unsigned long uml_physmem;
- EXPORT_SYMBOL(uml_physmem);
+diff --git a/arch/um/drivers/virtio_uml.c b/arch/um/drivers/virtio_uml.c
+index fc8c52cff5aa..1705fad4ad8f 100644
+--- a/arch/um/drivers/virtio_uml.c
++++ b/arch/um/drivers/virtio_uml.c
+@@ -42,6 +42,13 @@
+ #define to_virtio_uml_device(_vdev) \
+ 	container_of(_vdev, struct virtio_uml_device, vdev)
  
- unsigned long uml_reserved; /* Also modified in mem_init */
-+EXPORT_SYMBOL(uml_reserved);
- unsigned long start_vm;
- unsigned long end_vm;
++struct virtio_uml_platform_data {
++	u32 virtio_device_id;
++	const char *socket_path;
++	struct work_struct conn_broken_wk;
++	struct platform_device *pdev;
++};
++
+ struct virtio_uml_device {
+ 	struct virtio_device vdev;
+ 	struct platform_device *pdev;
+@@ -107,12 +114,21 @@ static int vhost_user_recv_header(int fd, struct vhost_user_msg *msg)
+ 	return full_read(fd, msg, sizeof(msg->header));
+ }
  
+-static int vhost_user_recv(int fd, struct vhost_user_msg *msg,
++static int vhost_user_recv(struct virtio_uml_device *vu_dev,
++			   int fd, struct vhost_user_msg *msg,
+ 			   size_t max_payload_size)
+ {
+ 	size_t size;
+ 	int rc = vhost_user_recv_header(fd, msg);
+ 
++	if (rc == -ECONNRESET) {
++		struct virtio_uml_platform_data *pdata;
++
++		pdata = vu_dev->pdev->dev.platform_data;
++
++		virtio_break_device(&vu_dev->vdev);
++		schedule_work(&pdata->conn_broken_wk);
++	}
+ 	if (rc)
+ 		return rc;
+ 	size = msg->header.size;
+@@ -125,7 +141,7 @@ static int vhost_user_recv_resp(struct virtio_uml_device *vu_dev,
+ 				struct vhost_user_msg *msg,
+ 				size_t max_payload_size)
+ {
+-	int rc = vhost_user_recv(vu_dev->sock, msg, max_payload_size);
++	int rc = vhost_user_recv(vu_dev, vu_dev->sock, msg, max_payload_size);
+ 
+ 	if (rc)
+ 		return rc;
+@@ -155,7 +171,7 @@ static int vhost_user_recv_req(struct virtio_uml_device *vu_dev,
+ 			       struct vhost_user_msg *msg,
+ 			       size_t max_payload_size)
+ {
+-	int rc = vhost_user_recv(vu_dev->req_fd, msg, max_payload_size);
++	int rc = vhost_user_recv(vu_dev, vu_dev->req_fd, msg, max_payload_size);
+ 
+ 	if (rc)
+ 		return rc;
+@@ -1034,13 +1050,31 @@ static struct device vu_cmdline_parent = {
+ static bool vu_cmdline_parent_registered;
+ static int vu_cmdline_id;
+ 
++static int vu_unregister_cmdline_device(struct device *dev, void *data)
++{
++	struct platform_device *pdev = to_platform_device(dev);
++	struct virtio_uml_platform_data *pdata = pdev->dev.platform_data;
++
++	kfree(pdata->socket_path);
++	platform_device_unregister(pdev);
++	return 0;
++}
++
++static void vu_conn_broken(struct work_struct *wk)
++{
++	struct virtio_uml_platform_data *pdata;
++
++	pdata = container_of(wk, struct virtio_uml_platform_data, conn_broken_wk);
++	vu_unregister_cmdline_device(&pdata->pdev->dev, NULL);
++}
++
+ static int vu_cmdline_set(const char *device, const struct kernel_param *kp)
+ {
+ 	const char *ids = strchr(device, ':');
+ 	unsigned int virtio_device_id;
+ 	int processed, consumed, err;
+ 	char *socket_path;
+-	struct virtio_uml_platform_data pdata;
++	struct virtio_uml_platform_data pdata, *ppdata;
+ 	struct platform_device *pdev;
+ 
+ 	if (!ids || ids == device)
+@@ -1079,6 +1113,11 @@ static int vu_cmdline_set(const char *device, const struct kernel_param *kp)
+ 	err = PTR_ERR_OR_ZERO(pdev);
+ 	if (err)
+ 		goto free;
++
++	ppdata = pdev->dev.platform_data;
++	ppdata->pdev = pdev;
++	INIT_WORK(&ppdata->conn_broken_wk, vu_conn_broken);
++
+ 	return 0;
+ 
+ free:
+@@ -1121,16 +1160,6 @@ __uml_help(vu_cmdline_param_ops,
+ );
+ 
+ 
+-static int vu_unregister_cmdline_device(struct device *dev, void *data)
+-{
+-	struct platform_device *pdev = to_platform_device(dev);
+-	struct virtio_uml_platform_data *pdata = pdev->dev.platform_data;
+-
+-	kfree(pdata->socket_path);
+-	platform_device_unregister(pdev);
+-	return 0;
+-}
+-
+ static void vu_unregister_cmdline_devices(void)
+ {
+ 	if (vu_cmdline_parent_registered) {
 -- 
 2.20.1
 
