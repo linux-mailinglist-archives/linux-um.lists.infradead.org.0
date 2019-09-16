@@ -2,44 +2,42 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 83397B3AE3
-	for <lists+linux-um@lfdr.de>; Mon, 16 Sep 2019 15:02:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D5669B3AF3
+	for <lists+linux-um@lfdr.de>; Mon, 16 Sep 2019 15:06:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Mn2ae9tZzfaqX7zNzJ/iMIR/+hF1Lf1n3oRS88umWrI=; b=hnhFqxUGY6pfJ+
-	SHC5n9CJ4b9WiEPHyZBBn5jn4poy7+/dJ2kYuzWsmwGZOqhkxb+lkU4n5uWMsjzIx3j8C9ciP1z/e
-	Ymc95Ss3kZTFRkwl3QuVJit7LrUBvQGy4Ou0o4zScykgL0M+KF8lK5hc9itG1JvEZ171h6jJSS+i3
-	P7gmMf+Wtovl2Pe2s351Ok7y4FfrYyimWKyodvFziqw2DCZAselMskcwQfWuAk0stdGfFG1lcMHI4
-	n/+ubrARdYLkYCDjCMoXUFeFoQrp1/mJBR7JM6Js5T9UCA027QMgI2rt0KqzYfAdZiUNd1LM0d0kB
-	xM4KDnEQyoUwaO0ofqCg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ggTkz1xfWZI6Q3KOgrpgrXAWuOZPfxwl+72EHQqywqo=; b=DAVy//8FqvgtSr
+	0128/fsnypToI6DRLbaj6cfgN3gq4eMNxRFPCQAq7K8PMlI99e3O/rGeVpsCkBn4zomsHbV2/LseP
+	ur2CMWpGbWpHjkzRZiZBR/fTi9Jd8Yvtn+pcBlpWivr1B5qonk+DEYAwW4t5jd7R0c676mmV982aA
+	/WzpYZiizbskyt6d6bJkwItkEBpVdejcRwB77AbwRmALWdXQS1iQRoVHClifr7HLESvj0UcR/aybi
+	JWR0KAoaFvYqvB8ctKc9gViDLvMZVXVsQJ0FH1dddIaromOj4k/yyIEM6lrFP3vPqnVz5Ae5EKHZo
+	qLI++IyofszlCHkdht4Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i9qds-0000hq-Ix; Mon, 16 Sep 2019 13:02:08 +0000
+	id 1i9qhn-0002gA-40; Mon, 16 Sep 2019 13:06:11 +0000
 Received: from s3.sipsolutions.net ([2a01:4f8:191:4433::2]
  helo=sipsolutions.net)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i9qdp-0000cz-7J
- for linux-um@lists.infradead.org; Mon, 16 Sep 2019 13:02:06 +0000
+ id 1i9qhk-0002fA-JC
+ for linux-um@lists.infradead.org; Mon, 16 Sep 2019 13:06:09 +0000
 Received: by sipsolutions.net with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <johannes@sipsolutions.net>) id 1i9qdk-0002kE-Ta
- for linux-um@lists.infradead.org; Mon, 16 Sep 2019 15:02:01 +0200
-Message-ID: <b183e530c14aa709dd7a67fe0681bfb50d0cb5f4.camel@sipsolutions.net>
-Subject: Re: [RFC] synchronised multi-machine time-travel APIs
+ (envelope-from <johannes@sipsolutions.net>)
+ id 1i9qhj-0002pX-8d; Mon, 16 Sep 2019 15:06:07 +0200
 From: Johannes Berg <johannes@sipsolutions.net>
 To: linux-um@lists.infradead.org
-Date: Mon, 16 Sep 2019 15:01:59 +0200
-In-Reply-To: <a216fef2119146de27168d0cf91ffa2f2b970e77.camel@sipsolutions.net>
-References: <a216fef2119146de27168d0cf91ffa2f2b970e77.camel@sipsolutions.net>
-User-Agent: Evolution 3.30.5 (3.30.5-1.fc29) 
+Subject: [PATCH] um: move timer-internal.h to non-shared
+Date: Mon, 16 Sep 2019 15:05:59 +0200
+Message-Id: <1568639159-Iae380466e34ef64cede349e6bd6eeb7854230d1a@changeid>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190916_060205_273929_25D2DA45 
-X-CRM114-Status: UNSURE (   9.49  )
+X-CRM114-CacheID: sfid-20190916_060608_629912_87A5BDB0 
+X-CRM114-Status: UNSURE (   7.84  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -60,42 +58,88 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
+Cc: Johannes Berg <johannes.berg@intel.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Mon, 2019-09-16 at 11:27 +0200, Johannes Berg wrote:
-> 
-> 3) There are some virtio hooks for general devices like virtio_net to
->    make the simulation work (e.g. IRQs need to be deferred to the
->    simulation time, not be done when signalled), and we want to use
->    poll() instead of SIGIO in this case etc. This is all necessary,
->    *however*, the "simtime" device that is responsible for the time
->    synchronization needs to be *exempted* from all this handling, which
->    again makes the code more complex than needed.
+From: Johannes Berg <johannes.berg@intel.com>
 
-Thinking about this some more ...
+This file isn't really shared, it's only used on the kernel side,
+not on the user side. Remove the include from the user-side and
+move the file to a better place.
 
-We currently can handle only one IRQ at a time, of course, but e.g. with
-simulated network we basically end up doing
+While at it, rename it to time-internal.h, it's not really just
+timers but all kinds of things related to timekeeping.
 
-virtio_net RX interrupt
--> request runtime for IRQ handling via simtime device
+Signed-off-by: Johannes Berg <johannes.berg@intel.com>
+---
+ .../include/{shared/timer-internal.h => linux/time-internal.h}  | 0
+ arch/um/kernel/process.c                                        | 2 +-
+ arch/um/kernel/skas/syscall.c                                   | 2 +-
+ arch/um/kernel/time.c                                           | 2 +-
+ arch/um/os-Linux/time.c                                         | 1 -
+ 5 files changed, 3 insertions(+), 4 deletions(-)
+ rename arch/um/include/{shared/timer-internal.h => linux/time-internal.h} (100%)
 
-However, to request runtime we send a message out on the simtime device,
-but then we have to also handle incoming messages while we wait for a
-response to this, since the request might change things around ... all
-while in interrupt context, so the normal message handling doesn't work.
-
-This required adding a whole new poll() abstraction to UML, which I
-never really liked.
-
-I'll try this a bit, but it seems if we make this all go back down to
-the existing epoll abstraction, we just have to tag the "time" irq/fd as
-having special treatment, not everything else.
-
-johannes
+diff --git a/arch/um/include/shared/timer-internal.h b/arch/um/include/linux/time-internal.h
+similarity index 100%
+rename from arch/um/include/shared/timer-internal.h
+rename to arch/um/include/linux/time-internal.h
+diff --git a/arch/um/kernel/process.c b/arch/um/kernel/process.c
+index 263a8f069133..201ca2b4c758 100644
+--- a/arch/um/kernel/process.c
++++ b/arch/um/kernel/process.c
+@@ -32,7 +32,7 @@
+ #include <kern_util.h>
+ #include <os.h>
+ #include <skas.h>
+-#include <timer-internal.h>
++#include <linux/time-internal.h>
+ 
+ /*
+  * This is a per-cpu array.  A processor only modifies its entry and it only
+diff --git a/arch/um/kernel/skas/syscall.c b/arch/um/kernel/skas/syscall.c
+index f574b1856bc6..58d40fe4f1aa 100644
+--- a/arch/um/kernel/skas/syscall.c
++++ b/arch/um/kernel/skas/syscall.c
+@@ -10,7 +10,7 @@
+ #include <sysdep/ptrace.h>
+ #include <sysdep/ptrace_user.h>
+ #include <sysdep/syscalls.h>
+-#include <shared/timer-internal.h>
++#include <linux/time-internal.h>
+ 
+ void handle_syscall(struct uml_pt_regs *r)
+ {
+diff --git a/arch/um/kernel/time.c b/arch/um/kernel/time.c
+index 94ea87bd231c..a849d391e909 100644
+--- a/arch/um/kernel/time.c
++++ b/arch/um/kernel/time.c
+@@ -18,7 +18,7 @@
+ #include <asm/param.h>
+ #include <kern_util.h>
+ #include <os.h>
+-#include <timer-internal.h>
++#include <linux/time-internal.h>
+ #include <shared/init.h>
+ 
+ #ifdef CONFIG_UML_TIME_TRAVEL_SUPPORT
+diff --git a/arch/um/os-Linux/time.c b/arch/um/os-Linux/time.c
+index 432f8e1f55c2..90f6de224c70 100644
+--- a/arch/um/os-Linux/time.c
++++ b/arch/um/os-Linux/time.c
+@@ -14,7 +14,6 @@
+ #include <kern_util.h>
+ #include <os.h>
+ #include <string.h>
+-#include <timer-internal.h>
+ 
+ static timer_t event_high_res_timer = 0;
+ 
+-- 
+2.20.1
 
 
 _______________________________________________
