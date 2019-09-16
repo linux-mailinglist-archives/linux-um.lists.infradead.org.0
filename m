@@ -2,54 +2,44 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7B7DBB3DE1
-	for <lists+linux-um@lfdr.de>; Mon, 16 Sep 2019 17:45:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 936B8B40DE
+	for <lists+linux-um@lfdr.de>; Mon, 16 Sep 2019 21:12:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=B1cmmMgWyhuoz/ShfpugRzNrpVsvLX2SZg2QYwLkwyc=; b=nnTEdqnahSEKQfCQGEfah6lLS
-	3rX8cHS3UdEpW8kv5TKs0dsE8eKr3ilvUaq5pAhzd1Ukq9n89yo959YiKvIodRnELaVuCD4uyJlau
-	GAUH+WkpxVEuXDxE4h93vciq/Dooh+DI43K40Hs5gXnVmoGaPh5TK0AeaYAsAbkMx6SYxvlqbFlh6
-	xok3Y+pyL7meOVpyDxHo01tM4PhlMG+z/simJqAphwgmEs8EI7BFAb8q8EmifeSegDmO6hRLCwKih
-	tPUeXlQNkMJCyX4EIB5gGejSILJSL8E8yF5lY3tBm6IorOhnqvqkdl6XM9gdHb7E7l7zTkPcRmOZo
-	JJM/WIJ6w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5vddhQZIiBnqEDCE2irX1YPGj7Qk2Bx44DPHZq0SAPY=; b=ZsyLY7Oxs6Z8ci
+	HTFHHuFlrv5x7hHFGzPJyH7DEFxK7Liyr0cAOJGS/XgksjTnYS8xY1g3otvg9TfwZ2uXsBpJRxGOn
+	a+29dCe239i9Q5GAc6ljG6S5tJqB6/xm/ZKge5REqkrIVXaT3Levlw8MDqceEitGkbwm41We5Fo37
+	JNOqoRT3Iv31JWOAj+p1qbw4g9+WToDaoPWxE4zc5MgzuwBVQHCBdovZFBXvVAHpx2xykHcNCYpuu
+	yo95XQk7pKd7rNT3gBvf6T9ev5i/NXPYq9kakrFKdO/wbkZAjf01ZCkidON8/OTg922fp1ks5ahZv
+	GirbA3ET+QrRd4rqMZTg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i9tBe-0005xB-V6; Mon, 16 Sep 2019 15:45:11 +0000
-Received: from ivanoab7.miniserver.com ([37.128.132.42]
- helo=www.kot-begemot.co.uk)
+	id 1i9wQX-0008H5-8l; Mon, 16 Sep 2019 19:12:45 +0000
+Received: from s3.sipsolutions.net ([2a01:4f8:191:4433::2]
+ helo=sipsolutions.net)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i9tBP-00053L-Pd
- for linux-um@lists.infradead.org; Mon, 16 Sep 2019 15:44:58 +0000
-Received: from tun252.jain.kot-begemot.co.uk ([192.168.18.6]
- helo=jain.kot-begemot.co.uk)
- by www.kot-begemot.co.uk with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.92) (envelope-from <anton.ivanov@cambridgegreys.com>)
- id 1i9slo-0003cm-3b; Mon, 16 Sep 2019 15:18:28 +0000
-Received: from jain.kot-begemot.co.uk ([192.168.3.3])
- by jain.kot-begemot.co.uk with esmtp (Exim 4.92)
- (envelope-from <anton.ivanov@cambridgegreys.com>)
- id 1i9sll-00043V-Ul; Mon, 16 Sep 2019 16:18:27 +0100
-Subject: Re: [PATCH] um: move timer-internal.h to non-shared
-To: Johannes Berg <johannes@sipsolutions.net>, linux-um@lists.infradead.org
-References: <1568639159-Iae380466e34ef64cede349e6bd6eeb7854230d1a@changeid>
-From: Anton Ivanov <anton.ivanov@cambridgegreys.com>
-Message-ID: <1c9746dd-7425-1619-37f2-49490b3ca521@cambridgegreys.com>
-Date: Mon, 16 Sep 2019 16:18:25 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1i9wQP-0008Ga-55
+ for linux-um@lists.infradead.org; Mon, 16 Sep 2019 19:12:43 +0000
+Received: by sipsolutions.net with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <johannes@sipsolutions.net>) id 1i9wQJ-0003mi-Kg
+ for linux-um@lists.infradead.org; Mon, 16 Sep 2019 21:12:31 +0200
+Message-ID: <d960106777e366f5598150b5aaa30c95e600f32b.camel@sipsolutions.net>
+Subject: Re: [PATCH] um: virtio: remove device on disconnect
+From: Johannes Berg <johannes@sipsolutions.net>
+To: linux-um@lists.infradead.org
+Date: Mon, 16 Sep 2019 21:12:30 +0200
+In-Reply-To: <1568639186-I0f2810aee05af27171c2dcd9a495f70397da8b35@changeid>
+References: <1568639186-I0f2810aee05af27171c2dcd9a495f70397da8b35@changeid>
+User-Agent: Evolution 3.30.5 (3.30.5-1.fc29) 
 MIME-Version: 1.0
-In-Reply-To: <1568639159-Iae380466e34ef64cede349e6bd6eeb7854230d1a@changeid>
-Content-Language: en-US
-X-Spam-Score: -1.0
-X-Spam-Score: -1.0
-X-Clacks-Overhead: GNU Terry Pratchett
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190916_084455_843985_57DABB8E 
-X-CRM114-Status: GOOD (  15.27  )
+X-CRM114-CacheID: sfid-20190916_121237_199783_D8946426 
+X-CRM114-Status: GOOD (  11.34  )
 X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.4 points)
@@ -69,96 +59,37 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: Johannes Berg <johannes.berg@intel.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-
-
-On 16/09/2019 14:05, Johannes Berg wrote:
+On Mon, 2019-09-16 at 15:06 +0200, Johannes Berg wrote:
 > From: Johannes Berg <johannes.berg@intel.com>
 > 
-> This file isn't really shared, it's only used on the kernel side,
-> not on the user side. Remove the include from the user-side and
-> move the file to a better place.
-> 
-> While at it, rename it to time-internal.h, it's not really just
-> timers but all kinds of things related to timekeeping.
+> If the connection drops, just remove the device, we don't try
+> to recover from this right now.
 > 
 > Signed-off-by: Johannes Berg <johannes.berg@intel.com>
 > ---
->   .../include/{shared/timer-internal.h => linux/time-internal.h}  | 0
->   arch/um/kernel/process.c                                        | 2 +-
->   arch/um/kernel/skas/syscall.c                                   | 2 +-
->   arch/um/kernel/time.c                                           | 2 +-
->   arch/um/os-Linux/time.c                                         | 1 -
->   5 files changed, 3 insertions(+), 4 deletions(-)
->   rename arch/um/include/{shared/timer-internal.h => linux/time-internal.h} (100%)
+>  arch/um/drivers/virtio_uml.c | 57 +++++++++++++++++++++++++++---------
+>  1 file changed, 43 insertions(+), 14 deletions(-)
 > 
-> diff --git a/arch/um/include/shared/timer-internal.h b/arch/um/include/linux/time-internal.h
-> similarity index 100%
-> rename from arch/um/include/shared/timer-internal.h
-> rename to arch/um/include/linux/time-internal.h
-> diff --git a/arch/um/kernel/process.c b/arch/um/kernel/process.c
-> index 263a8f069133..201ca2b4c758 100644
-> --- a/arch/um/kernel/process.c
-> +++ b/arch/um/kernel/process.c
-> @@ -32,7 +32,7 @@
->   #include <kern_util.h>
->   #include <os.h>
->   #include <skas.h>
-> -#include <timer-internal.h>
-> +#include <linux/time-internal.h>
->   
->   /*
->    * This is a per-cpu array.  A processor only modifies its entry and it only
-> diff --git a/arch/um/kernel/skas/syscall.c b/arch/um/kernel/skas/syscall.c
-> index f574b1856bc6..58d40fe4f1aa 100644
-> --- a/arch/um/kernel/skas/syscall.c
-> +++ b/arch/um/kernel/skas/syscall.c
-> @@ -10,7 +10,7 @@
->   #include <sysdep/ptrace.h>
->   #include <sysdep/ptrace_user.h>
->   #include <sysdep/syscalls.h>
-> -#include <shared/timer-internal.h>
-> +#include <linux/time-internal.h>
->   
->   void handle_syscall(struct uml_pt_regs *r)
->   {
-> diff --git a/arch/um/kernel/time.c b/arch/um/kernel/time.c
-> index 94ea87bd231c..a849d391e909 100644
-> --- a/arch/um/kernel/time.c
-> +++ b/arch/um/kernel/time.c
-> @@ -18,7 +18,7 @@
->   #include <asm/param.h>
->   #include <kern_util.h>
->   #include <os.h>
-> -#include <timer-internal.h>
-> +#include <linux/time-internal.h>
->   #include <shared/init.h>
->   
->   #ifdef CONFIG_UML_TIME_TRAVEL_SUPPORT
-> diff --git a/arch/um/os-Linux/time.c b/arch/um/os-Linux/time.c
-> index 432f8e1f55c2..90f6de224c70 100644
-> --- a/arch/um/os-Linux/time.c
-> +++ b/arch/um/os-Linux/time.c
-> @@ -14,7 +14,6 @@
->   #include <kern_util.h>
->   #include <os.h>
->   #include <string.h>
-> -#include <timer-internal.h>
->   
->   static timer_t event_high_res_timer = 0;
->   
-> 
-Acked-by: Anton Ivanov <anton.ivanov@cambridgegreys.co.uk>
+> diff --git a/arch/um/drivers/virtio_uml.c b/arch/um/drivers/virtio_uml.c
+> index fc8c52cff5aa..1705fad4ad8f 100644
+> --- a/arch/um/drivers/virtio_uml.c
+> +++ b/arch/um/drivers/virtio_uml.c
+> @@ -42,6 +42,13 @@
+>  #define to_virtio_uml_device(_vdev) \
+>  	container_of(_vdev, struct virtio_uml_device, vdev)
+>  
+> +struct virtio_uml_platform_data {
 
--- 
-Anton R. Ivanov
-Cambridgegreys Limited. Registered in England. Company Number 10273661
-https://www.cambridgegreys.com/
+Looks like I messed up the rebase and this patch is missing the removal
+of the old definition of this struct...
+
+johannes
+
 
 _______________________________________________
 linux-um mailing list
