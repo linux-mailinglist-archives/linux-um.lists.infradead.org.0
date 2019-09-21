@@ -2,77 +2,76 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EB074B9B35
-	for <lists+linux-um@lfdr.de>; Sat, 21 Sep 2019 02:19:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 35D3BB9B3E
+	for <lists+linux-um@lfdr.de>; Sat, 21 Sep 2019 02:19:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
 	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3w+K9YB0x9Yas9799bheWnaWIhE9zuY4dsuyY6HBNQc=; b=hBpaZ/MqXPEhiL
-	0o9mKhxgQil3Nob87LcpZcIYt0D0p1m72yaUzS5ZywtV3zezAIWhYH3G73Sjo74rgRcWfwqiLtMUJ
-	cCAjGDQbuab68euo7DDm0Ey21gSs9SggqOUfQpUzvPVFQmWca9UdQNdcjX3PAmvQf7pBH5lu58+2r
-	RtGVBmNsOkFUBTuhtfCfVchGKxFpJW+N9JxLUGzvtR3xKmyc6FTbi54b5sxvaGaWf5DoN/FaYw7mj
-	FbYdh8S4KvFsKXgZpWZ/a2yCnPza1kYZgYH8H5R7H51ikAD4dX45qAj/ljm7Pqa8XXiCg7Grg9vLF
-	FOfqJIMoLRPMxkXJpJwA==;
+	List-Owner; bh=KK3fRc75NDeJFAef8bGE8bASbqbzGM+aI77kcvB6ZyQ=; b=qiWMoIs1V5HAJt
+	/JFh6CKcX5xh+hS/PjsIU6TBJqBI6D9+Ag9EWQrlKVgMjYCwI4+42KJzNeW2CCfgpJ2NQ7C+JlmMh
+	nd+hBSsVMYDHptpFE+6tCs7QhFMMFWEy4c+Qexyk1GYuYyiv2aKNh1QcjNl1FN0sC/VG9zvbKOMOX
+	L/DiFtFgphBY6pQm+T5r1rdmjN18Dzx/w7RiuILXFxRjCP+vUnNC1okDeBIeeuC0UMjuftnZrcGo+
+	nidflo2Il6pPebOa7jSJ4EeK1NHF5/n2bN5Mx0kE7N0IRxAn3CR1QdKKQfbTli+deskZ0+aeSUPZp
+	my7GHYZtx34nuWjf2/dg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iBT7h-0005V6-Pq; Sat, 21 Sep 2019 00:19:37 +0000
-Received: from mail-pf1-x449.google.com ([2607:f8b0:4864:20::449])
+	id 1iBT7l-0005YT-1d; Sat, 21 Sep 2019 00:19:41 +0000
+Received: from mail-pl1-x64a.google.com ([2607:f8b0:4864:20::64a])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iBT7f-0005Qr-1H
- for linux-um@lists.infradead.org; Sat, 21 Sep 2019 00:19:36 +0000
-Received: by mail-pf1-x449.google.com with SMTP id v6so5861600pfm.1
- for <linux-um@lists.infradead.org>; Fri, 20 Sep 2019 17:19:33 -0700 (PDT)
+ id 1iBT7g-0005Tt-LW
+ for linux-um@lists.infradead.org; Sat, 21 Sep 2019 00:19:38 +0000
+Received: by mail-pl1-x64a.google.com with SMTP id v4so5445608plp.23
+ for <linux-um@lists.infradead.org>; Fri, 20 Sep 2019 17:19:36 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=date:in-reply-to:message-id:mime-version:references:subject:from:to
- :cc; bh=XEXF0aWtRP7hmX6yjkpnHC7BrzYVm/zOhA0NZRgvhNA=;
- b=Dra6iRlZbj4Rqx8BK5ci6GvPBA4YGhBJ6RMnCfqDC1Er0WhfonE4FgeNIqw1ZwuYHr
- 2X/ff9rVqAivCTJkTEKyzDOHA9JyV+0IwGpKPzm3MIbV2G/fkld4uhJCgjwHET99xcxH
- fd2E5eVNVyo+FopmL4QsuAsP3jzbiXXUI3sugKiKTx2EsfLbt0yjShGCcnwWBp9GK8/R
- fyBJsgh2xa6GsMdCHoOEfxHFhnDogpkfUGhW3C2gDOA6Doowd/I8MiLnc2ivYmgcwTkO
- q7FDjqFAKdKJV0RBPHZK9Au3y5d5gtEzeR1VLV1ZWOSYGvztNB6q/aqOsUXOICUatjAE
- 1Taw==
+ :cc; bh=V+e6Sk3SdH6RDyqe735Wb6nHpwM2/KCwKA8BXrg2X1g=;
+ b=EL9E0aGWGlYFhRl782uDZmL7KmDfagNyc2mcU+WUagYr0iFn5pdPBmWiRVpFoQzd1H
+ 8jkekJfjsclpqGwFbGAPdj+tj5/0gZrOFUk/aHXBEBknDHxbVfBh1Q0vkH2er1L8CimY
+ Yq7GZjB/OG9fHAR9BPDG/PCFDeProSnICztWgVUvq3GAKUxB4FjZ7J+SP0KG20Vr2KSz
+ 4Dlvs+XW3P8rqraZWCFKFj/PFX3gvWi1SbocPXVL1Nmx1pokLT/EGPSKhPsccerwMpLa
+ 8S17KgafTC1G+aLj2yReKsVTUipW1Ty5FfiqXM1Xrq/pUiGB7q6lNm+A04SqO6rLzPRo
+ 5M5Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:in-reply-to:message-id:mime-version
  :references:subject:from:to:cc;
- bh=XEXF0aWtRP7hmX6yjkpnHC7BrzYVm/zOhA0NZRgvhNA=;
- b=Sc2okMejhk6wretwNwhqhukOzrQ8qTDHRGHI5G3RqaDy+KW7kyeq9jYMIr1E5QCIbp
- x1kzVsoEEjD8JzJacVtOzHzFRSIc8wseO3mj6IfVkwWa79Lzb0Mj1JXg/QR0hQZ3EA9i
- Mgx3HIRFiexXyf9Q48pfrgBh46lmQLg2ShgfdMcab53+HC4/pD8MUWSt16Gb2SGKN1og
- kt7wpWcWhaYYRHYEHk9oP1eX500kt95RJoPbWtLuVur6SnoXqle3c6rQkaVgLKKLzl00
- QLZcoYzM4SGYKMhPRZw/VsiFn8u97VAxJxuWWtkbEeaaOIESb/+70Htxut3XsUwtRPPB
- QftA==
-X-Gm-Message-State: APjAAAUhajg6DGxzBpsE7vhAvBIkOppBazmGwViWTDafRwQzIrtB3Qtl
- +3XFSZ5A4P/tnn4S57V516LTU4Cywv2ORoihX54iSA==
-X-Google-Smtp-Source: APXvYqxlNiTiVDoLGm7gicBAQJqK6SEUb3uB1fEZiMQB7IRA2E+sdg+0+05mefYUZ9i4sFC+aICY+qZzL1Y5G4LZgbHmxQ==
-X-Received: by 2002:a63:2f44:: with SMTP id v65mr17507270pgv.380.1569025172132; 
- Fri, 20 Sep 2019 17:19:32 -0700 (PDT)
-Date: Fri, 20 Sep 2019 17:18:46 -0700
+ bh=V+e6Sk3SdH6RDyqe735Wb6nHpwM2/KCwKA8BXrg2X1g=;
+ b=Vkz4i7LaWSjtAIuFealkfCQ5co0weounlbHtfIKIE9qb1Varsm3klcUDPwf4ZGHD/5
+ ddXPYOoU5tTEfLzkmUNpky6+EKzLCXA6BB604nAa7r1yQSc6kbcATrubsgfMMvB7//6w
+ w2mYxpZm95SlFOshXoapMofU6JeBwHcG8mri8plH8Rb2/vxRQ5N+dyIy/iblTYjoFaj4
+ e/xulsq9//ys+sVhuMZTYao84TArlstMKoBmrUfT+ccA66HgwJ9gHhOIOShNYx90Y1X8
+ qhyNJ9lrIwsoX84JHR57kLvg1XYcY7NvgpkJwDQFJDF2FFuJ7Lh+rMzKjvkg60UYnp+N
+ 1M1Q==
+X-Gm-Message-State: APjAAAX9BO4b9yqHNBCNqBTVrB17MspO4Xsi5owt7udlpDZVPBg7l2LO
+ OHuiBvGDRBKBK9IoAKLg4fB2OUfkemZGERnG93oPgg==
+X-Google-Smtp-Source: APXvYqwJ0hCWtWuBhSP1A5imO8bDnHn/YlRWYbHhziu0OIEZSoc6DwRhlg6lW9/m211ny/N+uAyj3lWfXjWHSxv4V+eJwQ==
+X-Received: by 2002:a63:161b:: with SMTP id w27mr17380001pgl.38.1569025175151; 
+ Fri, 20 Sep 2019 17:19:35 -0700 (PDT)
+Date: Fri, 20 Sep 2019 17:18:47 -0700
 In-Reply-To: <20190921001855.200947-1-brendanhiggins@google.com>
-Message-Id: <20190921001855.200947-11-brendanhiggins@google.com>
+Message-Id: <20190921001855.200947-12-brendanhiggins@google.com>
 Mime-Version: 1.0
 References: <20190921001855.200947-1-brendanhiggins@google.com>
 X-Mailer: git-send-email 2.23.0.351.gc4317032e6-goog
-Subject: [PATCH v17 10/19] kunit: test: add tests for kunit test abort
+Subject: [PATCH v17 11/19] kunit: test: add the concept of assertions
 From: Brendan Higgins <brendanhiggins@google.com>
 To: frowand.list@gmail.com, gregkh@linuxfoundation.org, jpoimboe@redhat.com, 
  keescook@google.com, kieran.bingham@ideasonboard.com, mcgrof@kernel.org, 
  peterz@infradead.org, robh@kernel.org, sboyd@kernel.org, shuah@kernel.org, 
  tytso@mit.edu, yamada.masahiro@socionext.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190920_171935_078239_19E93F1D 
-X-CRM114-Status: UNSURE (   9.80  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190920_171936_732877_CF6DD403 
+X-CRM114-Status: GOOD (  14.66  )
 X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:449 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:64a listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -113,145 +112,363 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-Add KUnit tests for the KUnit test abort mechanism (see preceding
-commit). Add tests both for general try catch mechanism as well as
-non-architecture specific mechanism.
+Add support for assertions which are like expectations except the test
+terminates if the assertion is not satisfied.
+
+The idea with assertions is that you use them to state all the
+preconditions for your test. Logically speaking, these are the premises
+of the test case, so if a premise isn't true, there is no point in
+continuing the test case because there are no conclusions that can be
+drawn without the premises. Whereas, the expectation is the thing you
+are trying to prove. It is not used universally in x-unit style test
+frameworks, but I really like it as a convention.  You could still
+express the idea of a premise using the above idiom, but I think
+KUNIT_ASSERT_* states the intended idea perfectly.
 
 Signed-off-by: Brendan Higgins <brendanhiggins@google.com>
 Reviewed-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 Reviewed-by: Logan Gunthorpe <logang@deltatee.com>
 Reviewed-by: Stephen Boyd <sboyd@kernel.org>
 ---
- lib/kunit/Makefile    |   3 +-
- lib/kunit/test-test.c | 106 ++++++++++++++++++++++++++++++++++++++++++
- 2 files changed, 108 insertions(+), 1 deletion(-)
- create mode 100644 lib/kunit/test-test.c
+ include/kunit/test.h           | 282 ++++++++++++++++++++++++++++++++-
+ lib/kunit/string-stream-test.c |   2 +-
+ lib/kunit/test-test.c          |   7 +-
+ 3 files changed, 283 insertions(+), 8 deletions(-)
 
-diff --git a/lib/kunit/Makefile b/lib/kunit/Makefile
-index c9176c9c578c..769d9402b5d3 100644
---- a/lib/kunit/Makefile
-+++ b/lib/kunit/Makefile
-@@ -3,6 +3,7 @@ obj-$(CONFIG_KUNIT) +=			test.o \
- 					assert.o \
- 					try-catch.o
+diff --git a/include/kunit/test.h b/include/kunit/test.h
+index 3d554d7c1c79..8b7eb03d4971 100644
+--- a/include/kunit/test.h
++++ b/include/kunit/test.h
+@@ -87,8 +87,9 @@ struct kunit;
+  * @name:     the name of the test case.
+  *
+  * A test case is a function with the signature,
+- * ``void (*)(struct kunit *)`` that makes expectations (see
+- * KUNIT_EXPECT_TRUE()) about code under test. Each test case is associated
++ * ``void (*)(struct kunit *)``
++ * that makes expectations and assertions (see KUNIT_EXPECT_TRUE() and
++ * KUNIT_ASSERT_TRUE()) about code under test. Each test case is associated
+  * with a &struct kunit_suite and will be run after the suite's init
+  * function and followed by the suite's exit function.
+  *
+@@ -1210,4 +1211,281 @@ do {									       \
+ 						fmt,			       \
+ 						##__VA_ARGS__)
  
--obj-$(CONFIG_KUNIT_TEST) +=		string-stream-test.o
-+obj-$(CONFIG_KUNIT_TEST) +=		test-test.o \
-+					string-stream-test.o
- 
- obj-$(CONFIG_KUNIT_EXAMPLE_TEST) +=	example-test.o
-diff --git a/lib/kunit/test-test.c b/lib/kunit/test-test.c
-new file mode 100644
-index 000000000000..06d34d36b103
---- /dev/null
-+++ b/lib/kunit/test-test.c
-@@ -0,0 +1,106 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * KUnit test for core test infrastructure.
++#define KUNIT_ASSERT_FAILURE(test, fmt, ...) \
++	KUNIT_FAIL_ASSERTION(test, KUNIT_ASSERTION, fmt, ##__VA_ARGS__)
++
++/**
++ * KUNIT_ASSERT_TRUE() - Sets an assertion that @condition is true.
++ * @test: The test context object.
++ * @condition: an arbitrary boolean expression. The test fails and aborts when
++ * this does not evaluate to true.
 + *
-+ * Copyright (C) 2019, Google LLC.
-+ * Author: Brendan Higgins <brendanhiggins@google.com>
++ * This and assertions of the form `KUNIT_ASSERT_*` will cause the test case to
++ * fail *and immediately abort* when the specified condition is not met. Unlike
++ * an expectation failure, it will prevent the test case from continuing to run;
++ * this is otherwise known as an *assertion failure*.
 + */
-+#include <kunit/test.h>
++#define KUNIT_ASSERT_TRUE(test, condition) \
++	KUNIT_TRUE_ASSERTION(test, KUNIT_ASSERTION, condition)
 +
-+struct kunit_try_catch_test_context {
-+	struct kunit_try_catch *try_catch;
-+	bool function_called;
-+};
++#define KUNIT_ASSERT_TRUE_MSG(test, condition, fmt, ...)		       \
++	KUNIT_TRUE_MSG_ASSERTION(test,					       \
++				 KUNIT_ASSERTION,			       \
++				 condition,				       \
++				 fmt,					       \
++				 ##__VA_ARGS__)
 +
-+static void kunit_test_successful_try(void *data)
-+{
-+	struct kunit *test = data;
-+	struct kunit_try_catch_test_context *ctx = test->priv;
++/**
++ * KUNIT_ASSERT_FALSE() - Sets an assertion that @condition is false.
++ * @test: The test context object.
++ * @condition: an arbitrary boolean expression.
++ *
++ * Sets an assertion that the value that @condition evaluates to is false. This
++ * is the same as KUNIT_EXPECT_FALSE(), except it causes an assertion failure
++ * (see KUNIT_ASSERT_TRUE()) when the assertion is not met.
++ */
++#define KUNIT_ASSERT_FALSE(test, condition) \
++	KUNIT_FALSE_ASSERTION(test, KUNIT_ASSERTION, condition)
 +
-+	ctx->function_called = true;
-+}
++#define KUNIT_ASSERT_FALSE_MSG(test, condition, fmt, ...)		       \
++	KUNIT_FALSE_MSG_ASSERTION(test,					       \
++				  KUNIT_ASSERTION,			       \
++				  condition,				       \
++				  fmt,					       \
++				  ##__VA_ARGS__)
 +
-+static void kunit_test_no_catch(void *data)
-+{
-+	struct kunit *test = data;
++/**
++ * KUNIT_ASSERT_EQ() - Sets an assertion that @left and @right are equal.
++ * @test: The test context object.
++ * @left: an arbitrary expression that evaluates to a primitive C type.
++ * @right: an arbitrary expression that evaluates to a primitive C type.
++ *
++ * Sets an assertion that the values that @left and @right evaluate to are
++ * equal. This is the same as KUNIT_EXPECT_EQ(), except it causes an assertion
++ * failure (see KUNIT_ASSERT_TRUE()) when the assertion is not met.
++ */
++#define KUNIT_ASSERT_EQ(test, left, right) \
++	KUNIT_BINARY_EQ_ASSERTION(test, KUNIT_ASSERTION, left, right)
 +
-+	KUNIT_FAIL(test, "Catch should not be called\n");
-+}
++#define KUNIT_ASSERT_EQ_MSG(test, left, right, fmt, ...)		       \
++	KUNIT_BINARY_EQ_MSG_ASSERTION(test,				       \
++				      KUNIT_ASSERTION,			       \
++				      left,				       \
++				      right,				       \
++				      fmt,				       \
++				      ##__VA_ARGS__)
 +
-+static void kunit_test_try_catch_successful_try_no_catch(struct kunit *test)
-+{
-+	struct kunit_try_catch_test_context *ctx = test->priv;
-+	struct kunit_try_catch *try_catch = ctx->try_catch;
++/**
++ * KUNIT_ASSERT_PTR_EQ() - Asserts that pointers @left and @right are equal.
++ * @test: The test context object.
++ * @left: an arbitrary expression that evaluates to a pointer.
++ * @right: an arbitrary expression that evaluates to a pointer.
++ *
++ * Sets an assertion that the values that @left and @right evaluate to are
++ * equal. This is the same as KUNIT_EXPECT_EQ(), except it causes an assertion
++ * failure (see KUNIT_ASSERT_TRUE()) when the assertion is not met.
++ */
++#define KUNIT_ASSERT_PTR_EQ(test, left, right) \
++	KUNIT_BINARY_PTR_EQ_ASSERTION(test, KUNIT_ASSERTION, left, right)
 +
-+	kunit_try_catch_init(try_catch,
-+			     test,
-+			     kunit_test_successful_try,
-+			     kunit_test_no_catch);
-+	kunit_try_catch_run(try_catch, test);
++#define KUNIT_ASSERT_PTR_EQ_MSG(test, left, right, fmt, ...)		       \
++	KUNIT_BINARY_PTR_EQ_MSG_ASSERTION(test,				       \
++					  KUNIT_ASSERTION,		       \
++					  left,				       \
++					  right,			       \
++					  fmt,				       \
++					  ##__VA_ARGS__)
 +
-+	KUNIT_EXPECT_TRUE(test, ctx->function_called);
-+}
++/**
++ * KUNIT_ASSERT_NE() - An assertion that @left and @right are not equal.
++ * @test: The test context object.
++ * @left: an arbitrary expression that evaluates to a primitive C type.
++ * @right: an arbitrary expression that evaluates to a primitive C type.
++ *
++ * Sets an assertion that the values that @left and @right evaluate to are not
++ * equal. This is the same as KUNIT_EXPECT_NE(), except it causes an assertion
++ * failure (see KUNIT_ASSERT_TRUE()) when the assertion is not met.
++ */
++#define KUNIT_ASSERT_NE(test, left, right) \
++	KUNIT_BINARY_NE_ASSERTION(test, KUNIT_ASSERTION, left, right)
 +
-+static void kunit_test_unsuccessful_try(void *data)
-+{
-+	struct kunit *test = data;
-+	struct kunit_try_catch_test_context *ctx = test->priv;
-+	struct kunit_try_catch *try_catch = ctx->try_catch;
++#define KUNIT_ASSERT_NE_MSG(test, left, right, fmt, ...)		       \
++	KUNIT_BINARY_NE_MSG_ASSERTION(test,				       \
++				      KUNIT_ASSERTION,			       \
++				      left,				       \
++				      right,				       \
++				      fmt,				       \
++				      ##__VA_ARGS__)
 +
-+	kunit_try_catch_throw(try_catch);
-+	KUNIT_FAIL(test, "This line should never be reached\n");
-+}
++/**
++ * KUNIT_ASSERT_PTR_NE() - Asserts that pointers @left and @right are not equal.
++ * KUNIT_ASSERT_PTR_EQ() - Asserts that pointers @left and @right are equal.
++ * @test: The test context object.
++ * @left: an arbitrary expression that evaluates to a pointer.
++ * @right: an arbitrary expression that evaluates to a pointer.
++ *
++ * Sets an assertion that the values that @left and @right evaluate to are not
++ * equal. This is the same as KUNIT_EXPECT_NE(), except it causes an assertion
++ * failure (see KUNIT_ASSERT_TRUE()) when the assertion is not met.
++ */
++#define KUNIT_ASSERT_PTR_NE(test, left, right) \
++	KUNIT_BINARY_PTR_NE_ASSERTION(test, KUNIT_ASSERTION, left, right)
 +
-+static void kunit_test_catch(void *data)
-+{
-+	struct kunit *test = data;
-+	struct kunit_try_catch_test_context *ctx = test->priv;
++#define KUNIT_ASSERT_PTR_NE_MSG(test, left, right, fmt, ...)		       \
++	KUNIT_BINARY_PTR_NE_MSG_ASSERTION(test,				       \
++					  KUNIT_ASSERTION,		       \
++					  left,				       \
++					  right,			       \
++					  fmt,				       \
++					  ##__VA_ARGS__)
++/**
++ * KUNIT_ASSERT_LT() - An assertion that @left is less than @right.
++ * @test: The test context object.
++ * @left: an arbitrary expression that evaluates to a primitive C type.
++ * @right: an arbitrary expression that evaluates to a primitive C type.
++ *
++ * Sets an assertion that the value that @left evaluates to is less than the
++ * value that @right evaluates to. This is the same as KUNIT_EXPECT_LT(), except
++ * it causes an assertion failure (see KUNIT_ASSERT_TRUE()) when the assertion
++ * is not met.
++ */
++#define KUNIT_ASSERT_LT(test, left, right) \
++	KUNIT_BINARY_LT_ASSERTION(test, KUNIT_ASSERTION, left, right)
 +
-+	ctx->function_called = true;
-+}
++#define KUNIT_ASSERT_LT_MSG(test, left, right, fmt, ...)		       \
++	KUNIT_BINARY_LT_MSG_ASSERTION(test,				       \
++				      KUNIT_ASSERTION,			       \
++				      left,				       \
++				      right,				       \
++				      fmt,				       \
++				      ##__VA_ARGS__)
++/**
++ * KUNIT_ASSERT_LE() - An assertion that @left is less than or equal to @right.
++ * @test: The test context object.
++ * @left: an arbitrary expression that evaluates to a primitive C type.
++ * @right: an arbitrary expression that evaluates to a primitive C type.
++ *
++ * Sets an assertion that the value that @left evaluates to is less than or
++ * equal to the value that @right evaluates to. This is the same as
++ * KUNIT_EXPECT_LE(), except it causes an assertion failure (see
++ * KUNIT_ASSERT_TRUE()) when the assertion is not met.
++ */
++#define KUNIT_ASSERT_LE(test, left, right) \
++	KUNIT_BINARY_LE_ASSERTION(test, KUNIT_ASSERTION, left, right)
 +
-+static void kunit_test_try_catch_unsuccessful_try_does_catch(struct kunit *test)
-+{
-+	struct kunit_try_catch_test_context *ctx = test->priv;
-+	struct kunit_try_catch *try_catch = ctx->try_catch;
++#define KUNIT_ASSERT_LE_MSG(test, left, right, fmt, ...)		       \
++	KUNIT_BINARY_LE_MSG_ASSERTION(test,				       \
++				      KUNIT_ASSERTION,			       \
++				      left,				       \
++				      right,				       \
++				      fmt,				       \
++				      ##__VA_ARGS__)
 +
-+	kunit_try_catch_init(try_catch,
-+			     test,
-+			     kunit_test_unsuccessful_try,
-+			     kunit_test_catch);
-+	kunit_try_catch_run(try_catch, test);
++/**
++ * KUNIT_ASSERT_GT() - An assertion that @left is greater than @right.
++ * @test: The test context object.
++ * @left: an arbitrary expression that evaluates to a primitive C type.
++ * @right: an arbitrary expression that evaluates to a primitive C type.
++ *
++ * Sets an assertion that the value that @left evaluates to is greater than the
++ * value that @right evaluates to. This is the same as KUNIT_EXPECT_GT(), except
++ * it causes an assertion failure (see KUNIT_ASSERT_TRUE()) when the assertion
++ * is not met.
++ */
++#define KUNIT_ASSERT_GT(test, left, right) \
++	KUNIT_BINARY_GT_ASSERTION(test, KUNIT_ASSERTION, left, right)
 +
-+	KUNIT_EXPECT_TRUE(test, ctx->function_called);
-+}
++#define KUNIT_ASSERT_GT_MSG(test, left, right, fmt, ...)		       \
++	KUNIT_BINARY_GT_MSG_ASSERTION(test,				       \
++				      KUNIT_ASSERTION,			       \
++				      left,				       \
++				      right,				       \
++				      fmt,				       \
++				      ##__VA_ARGS__)
 +
-+static int kunit_try_catch_test_init(struct kunit *test)
-+{
-+	struct kunit_try_catch_test_context *ctx;
++/**
++ * KUNIT_ASSERT_GE() - Assertion that @left is greater than or equal to @right.
++ * @test: The test context object.
++ * @left: an arbitrary expression that evaluates to a primitive C type.
++ * @right: an arbitrary expression that evaluates to a primitive C type.
++ *
++ * Sets an assertion that the value that @left evaluates to is greater than the
++ * value that @right evaluates to. This is the same as KUNIT_EXPECT_GE(), except
++ * it causes an assertion failure (see KUNIT_ASSERT_TRUE()) when the assertion
++ * is not met.
++ */
++#define KUNIT_ASSERT_GE(test, left, right) \
++	KUNIT_BINARY_GE_ASSERTION(test, KUNIT_ASSERTION, left, right)
 +
-+	ctx = kunit_kzalloc(test, sizeof(*ctx), GFP_KERNEL);
-+	if (!ctx)
-+		return -ENOMEM;
++#define KUNIT_ASSERT_GE_MSG(test, left, right, fmt, ...)		       \
++	KUNIT_BINARY_GE_MSG_ASSERTION(test,				       \
++				      KUNIT_ASSERTION,			       \
++				      left,				       \
++				      right,				       \
++				      fmt,				       \
++				      ##__VA_ARGS__)
 +
-+	test->priv = ctx;
++/**
++ * KUNIT_ASSERT_STREQ() - An assertion that strings @left and @right are equal.
++ * @test: The test context object.
++ * @left: an arbitrary expression that evaluates to a null terminated string.
++ * @right: an arbitrary expression that evaluates to a null terminated string.
++ *
++ * Sets an assertion that the values that @left and @right evaluate to are
++ * equal. This is the same as KUNIT_EXPECT_STREQ(), except it causes an
++ * assertion failure (see KUNIT_ASSERT_TRUE()) when the assertion is not met.
++ */
++#define KUNIT_ASSERT_STREQ(test, left, right) \
++	KUNIT_BINARY_STR_EQ_ASSERTION(test, KUNIT_ASSERTION, left, right)
 +
-+	ctx->try_catch = kunit_kmalloc(test,
-+				       sizeof(*ctx->try_catch),
-+				       GFP_KERNEL);
-+	if (!ctx->try_catch)
-+		return -ENOMEM;
++#define KUNIT_ASSERT_STREQ_MSG(test, left, right, fmt, ...)		       \
++	KUNIT_BINARY_STR_EQ_MSG_ASSERTION(test,				       \
++					  KUNIT_ASSERTION,		       \
++					  left,				       \
++					  right,			       \
++					  fmt,				       \
++					  ##__VA_ARGS__)
 +
-+	return 0;
-+}
++/**
++ * KUNIT_ASSERT_STRNEQ() - Expects that strings @left and @right are not equal.
++ * @test: The test context object.
++ * @left: an arbitrary expression that evaluates to a null terminated string.
++ * @right: an arbitrary expression that evaluates to a null terminated string.
++ *
++ * Sets an expectation that the values that @left and @right evaluate to are
++ * not equal. This is semantically equivalent to
++ * KUNIT_ASSERT_TRUE(@test, strcmp((@left), (@right))). See KUNIT_ASSERT_TRUE()
++ * for more information.
++ */
++#define KUNIT_ASSERT_STRNEQ(test, left, right) \
++	KUNIT_BINARY_STR_NE_ASSERTION(test, KUNIT_ASSERTION, left, right)
 +
-+static struct kunit_case kunit_try_catch_test_cases[] = {
-+	KUNIT_CASE(kunit_test_try_catch_successful_try_no_catch),
-+	KUNIT_CASE(kunit_test_try_catch_unsuccessful_try_does_catch),
-+	{}
-+};
++#define KUNIT_ASSERT_STRNEQ_MSG(test, left, right, fmt, ...)		       \
++	KUNIT_BINARY_STR_NE_MSG_ASSERTION(test,				       \
++					  KUNIT_ASSERTION,		       \
++					  left,				       \
++					  right,			       \
++					  fmt,				       \
++					  ##__VA_ARGS__)
 +
-+static struct kunit_suite kunit_try_catch_test_suite = {
-+	.name = "kunit-try-catch-test",
-+	.init = kunit_try_catch_test_init,
-+	.test_cases = kunit_try_catch_test_cases,
-+};
-+kunit_test_suite(kunit_try_catch_test_suite);
++/**
++ * KUNIT_ASSERT_NOT_ERR_OR_NULL() - Assertion that @ptr is not null and not err.
++ * @test: The test context object.
++ * @ptr: an arbitrary pointer.
++ *
++ * Sets an assertion that the value that @ptr evaluates to is not null and not
++ * an errno stored in a pointer. This is the same as
++ * KUNIT_EXPECT_NOT_ERR_OR_NULL(), except it causes an assertion failure (see
++ * KUNIT_ASSERT_TRUE()) when the assertion is not met.
++ */
++#define KUNIT_ASSERT_NOT_ERR_OR_NULL(test, ptr) \
++	KUNIT_PTR_NOT_ERR_OR_NULL_ASSERTION(test, KUNIT_ASSERTION, ptr)
++
++#define KUNIT_ASSERT_NOT_ERR_OR_NULL_MSG(test, ptr, fmt, ...)		       \
++	KUNIT_PTR_NOT_ERR_OR_NULL_MSG_ASSERTION(test,			       \
++						KUNIT_ASSERTION,	       \
++						ptr,			       \
++						fmt,			       \
++						##__VA_ARGS__)
++
+ #endif /* _KUNIT_TEST_H */
+diff --git a/lib/kunit/string-stream-test.c b/lib/kunit/string-stream-test.c
+index 75229e267c32..76cc05eb00ed 100644
+--- a/lib/kunit/string-stream-test.c
++++ b/lib/kunit/string-stream-test.c
+@@ -35,7 +35,7 @@ static void string_stream_test_get_string(struct kunit *test)
+ 	string_stream_add(stream, " %s", "bar");
+ 
+ 	output = string_stream_get_string(stream);
+-	KUNIT_EXPECT_STREQ(test, output, "Foo bar");
++	KUNIT_ASSERT_STREQ(test, output, "Foo bar");
+ }
+ 
+ static struct kunit_case string_stream_test_cases[] = {
+diff --git a/lib/kunit/test-test.c b/lib/kunit/test-test.c
+index 06d34d36b103..e0ab4bd546ea 100644
+--- a/lib/kunit/test-test.c
++++ b/lib/kunit/test-test.c
+@@ -78,16 +78,13 @@ static int kunit_try_catch_test_init(struct kunit *test)
+ 	struct kunit_try_catch_test_context *ctx;
+ 
+ 	ctx = kunit_kzalloc(test, sizeof(*ctx), GFP_KERNEL);
+-	if (!ctx)
+-		return -ENOMEM;
+-
++	KUNIT_ASSERT_NOT_ERR_OR_NULL(test, ctx);
+ 	test->priv = ctx;
+ 
+ 	ctx->try_catch = kunit_kmalloc(test,
+ 				       sizeof(*ctx->try_catch),
+ 				       GFP_KERNEL);
+-	if (!ctx->try_catch)
+-		return -ENOMEM;
++	KUNIT_ASSERT_NOT_ERR_OR_NULL(test, ctx->try_catch);
+ 
+ 	return 0;
+ }
 -- 
 2.23.0.351.gc4317032e6-goog
 
