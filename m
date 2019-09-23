@@ -2,78 +2,79 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1075ABB094
-	for <lists+linux-um@lfdr.de>; Mon, 23 Sep 2019 11:03:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C3A1CBB0DE
+	for <lists+linux-um@lfdr.de>; Mon, 23 Sep 2019 11:05:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
-	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=a2fFbjSFo57SAQV/ZirBtNx53Oycf6j6Tk0KycKWpjY=; b=jlGgnhD/Olk/Oy
-	z8vFKljyMNjhD/FLnGrhbaq34M5X+ZyDe3OGQ9zjEu+mG3MFwW2XHOp2WnvpSLv5VoBnnb/oBim0M
-	uIlwHx4inmPDJArhptWoDudXl0W6b64CvRnAw9orAMGgqDfMKoVXjeZhfn1vDWII4AOu99b2w6+yZ
-	9A/woHPYPKx4w1BB7oUZ+EvA+RmMMneRdZyxVSYB2JJ5Md7uSlq3HGaNDxGLucOke/uTrkYTOiHI5
-	yHgy9Aia1wxstrA24+os0834QH1mwCTQf3Uq7RLapJSFa/Ysil7CjingYsX//QZWfaz4wvshxDNnP
-	LOYCSX1SNcBxAMt0JCSQ==;
+	List-Owner; bh=2Vx1RsochmB8WIvPcNeEQq1H6jRFXS2viKln1nhh7oY=; b=NyWaHhix6O/xAf
+	Zl4BFS1blF52d5JCDkdnvOZsHcegcHcXdRXD2rUVi/uz8tytOHJfNs9XEgbPbXUZbvHUYbdobEagW
+	wYPa8ipZPc7S7SYwaEi10rL46QvXSEkg6a7rYS+TxxnSJse9mfrwiUTBAwXZV1koGM3mtrHg061cG
+	EzvvAHfiAYpwLa7EstCQl/0n29yiw8bi7ZjkLLW76wmHDloDYsJtXCkL0p+8k/wzvSiyJQpaUI69f
+	uuCE7q3QccnGXNfBf4Na3xgwSqF9hhxTd0E5mgsuOPhiLqCxq+QNP020B3ACXqlCdMXIu0BSOAzpG
+	Jk03CA99eLpiEbLErOdQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iCKG9-0003Lp-4W; Mon, 23 Sep 2019 09:03:53 +0000
-Received: from mail-pl1-x64a.google.com ([2607:f8b0:4864:20::64a])
+	id 1iCKHg-00055z-HZ; Mon, 23 Sep 2019 09:05:28 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iCKG5-0003HL-3b
- for linux-um@lists.infradead.org; Mon, 23 Sep 2019 09:03:51 +0000
-Received: by mail-pl1-x64a.google.com with SMTP id y2so8218839plk.19
- for <linux-um@lists.infradead.org>; Mon, 23 Sep 2019 02:03:47 -0700 (PDT)
+ id 1iCKHV-00053o-Hh
+ for linux-um@lists.infradead.org; Mon, 23 Sep 2019 09:05:19 +0000
+Received: by mail-pf1-x443.google.com with SMTP id y5so8756906pfo.4
+ for <linux-um@lists.infradead.org>; Mon, 23 Sep 2019 02:05:14 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=date:in-reply-to:message-id:mime-version:references:subject:from:to
- :cc; bh=kn+0r7CDFmPHQws2Z+HRgp03O+EE7Nh4RU07v5olnXQ=;
- b=UK2H4JmD8+WOv9z4GP6oT90ytRiYGqA9wmrSBgp1lmkE4yPq9fuWTFQdmCDgaSLE4l
- wDivaV1U6LtFrkmdGn6ORQYQ5HVpoxo5hPmoR+FeL+5Basjmi+x0YzDwxA2xcgAUmhaI
- UD5i7tVqHFJpGFHzAs1Dd6EIZuvrDir7LW3lqR/PDwodVPJ5xqDrieqBkoFDUJ4BTnYP
- uaA66laKrNgQQaFQM4NUTL88ry/C3A1uVhjLdCx3D/46BxJWwIVaJiO+tUiHFX32BOo3
- 7VLcLLMzz4I+8g83fPbp5FlEHzqzwNskQwe0epD31reK5c2ZJNy4NfNWvZwmBlOIU66r
- 9oFw==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=v8pa0Tk6FlMlkzD8bXA6NA6bMdvmrzwl4PAFIDbVMYM=;
+ b=NvXQgh6IW3soN2kC6YtQSTm4nJDtjH7T1g1wwUk4J2MMTXgFeWqE4zDVwCvgvthfAE
+ WGgMCY+3F8tX2ulk7a71LHHwNjjj6szslWqQDPwjwKZALkV5YkTouU1UbPdDScjYS1A3
+ tU4aEIFZK99BR3XOVeaN/cSOFn3rfi7yObVLV3PWs+NfL5qPlxMyeRQLXGH1oSX1DcR+
+ Y00Kq9GxGhG7rrAxC5FyQBB+KSDkFMah1k7qmSzRXBnClfBw0q/Abrxnd2xhD8r5qEtT
+ Tri2HbzI2Jc1bPenj4gaZNMu/v3ap/CxdJdQ2lrX7Qpp+yqg86whqYHZk9TgPcLogoid
+ i1DA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:in-reply-to:message-id:mime-version
- :references:subject:from:to:cc;
- bh=kn+0r7CDFmPHQws2Z+HRgp03O+EE7Nh4RU07v5olnXQ=;
- b=WqqXsQYOcrdsfgoXLRn/em5/v8MXIpkGXxG3B7fhNpqqqtfXbAkJ4/Lc9uQ2YzeSNh
- ezKQmBpQ9ItZJ3v3BDL4Ck3h6oTr7Qw43Gi5Mr1lIb6f6wtf83fOIQVVJ/90Mx8xX58y
- 9CogYgmfe+qIXn5cTek3cD+BgqdC7xxCqfyRvtIdh/4iUm+3dkZoDXdVVNuu49mV3jgU
- KwoItXUrzdiE1EryBGjAgHpGstgzGIc3jIihu5Y1e+dCwDGAZI27WqPA/yxrIbjt5z+5
- hlIZ4Dl1r8nbaYfSfCTfCAnlqyN+8VHXLmlXZiFpBvT7jRIZLPQfdk+Tq47Mcmbg3wM4
- /sjg==
-X-Gm-Message-State: APjAAAWn7PlepsMi1luYwx+1PbxDQaV44H0wTJVeG2y/7XmpyILj5i5X
- 8EWKcOzOruVetdW/eruGExj5R2uvNqbFdcJXr+NQ7g==
-X-Google-Smtp-Source: APXvYqw5hkGZ6d7ns2sOz8UJ01PHxqogvA1kzw2ON/JL9yOn7dOS+xz1Wch3S41MY3LBCY2PXLG83fwtsfvUctx2eoT1Lw==
-X-Received: by 2002:a65:620a:: with SMTP id d10mr27851195pgv.8.1569229427015; 
- Mon, 23 Sep 2019 02:03:47 -0700 (PDT)
-Date: Mon, 23 Sep 2019 02:02:49 -0700
-In-Reply-To: <20190923090249.127984-1-brendanhiggins@google.com>
-Message-Id: <20190923090249.127984-20-brendanhiggins@google.com>
-Mime-Version: 1.0
-References: <20190923090249.127984-1-brendanhiggins@google.com>
-X-Mailer: git-send-email 2.23.0.351.gc4317032e6-goog
-Subject: [PATCH v18 19/19] kunit: fix failure to build without printk
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=v8pa0Tk6FlMlkzD8bXA6NA6bMdvmrzwl4PAFIDbVMYM=;
+ b=HO+c2QGxdBSUTvU1HJn71R2+KEXTUonOHCsniL0iQClTPOY5VKfJ8XxzMkJfz24O+M
+ iLQtFHwI6Kd/jGaz860R5l3Z8mGowlE5t8nIiuW6UFYQxm2aM4+n5EcylkLHAuWBkLs0
+ v0ZGmL2VkbPSbLYptD0OmkSt24njz250XaA4s3w/T+gvIUPB1+emghIhjv0EdmRaUvSh
+ N7hNbCpexIHONMbFMwtUEDHl8ClIJZXmfAfekxzsgM4WW0t/eUB88Xa2ENs+DUSv8s0E
+ yaePTfPUIANQGK+wHeUHCUPKKjbpgXRh3b17dI60OaZNyfnmyJUQHPI6KCd9kyE6OnzL
+ 7+jg==
+X-Gm-Message-State: APjAAAWzDDBLdNvE36D0gCgr/TlDckLom5Mn0nyGVds8havF6GolYgvz
+ hfI3liawg7EmWe2Ve7Vwlfh3Pe1ZRvcl2AzcQwMebg==
+X-Google-Smtp-Source: APXvYqwcsKtiLcxSzZRbvj/9c2PAwvr8gZTaDk07lPhILKUwjb/s/yL4yzfAO84TT2ZemaVLn8TDzTeRlveY2nu9F6o=
+X-Received: by 2002:a17:90a:1746:: with SMTP id
+ 6mr5388129pjm.117.1569229513429; 
+ Mon, 23 Sep 2019 02:05:13 -0700 (PDT)
+MIME-Version: 1.0
+References: <20190921001855.200947-1-brendanhiggins@google.com>
+ <20190921001855.200947-8-brendanhiggins@google.com>
+ <944ac47d-1411-9ebd-d0d4-a616c88c9c20@infradead.org>
+In-Reply-To: <944ac47d-1411-9ebd-d0d4-a616c88c9c20@infradead.org>
 From: Brendan Higgins <brendanhiggins@google.com>
-To: frowand.list@gmail.com, gregkh@linuxfoundation.org, jpoimboe@redhat.com, 
- keescook@google.com, kieran.bingham@ideasonboard.com, mcgrof@kernel.org, 
- peterz@infradead.org, robh@kernel.org, sboyd@kernel.org, shuah@kernel.org, 
- tytso@mit.edu, yamada.masahiro@socionext.com
+Date: Mon, 23 Sep 2019 02:05:02 -0700
+Message-ID: <CAFd5g44e9bdK8h5+U1MkqPNuf2k9vnu-iPFLTzGajEHPEcRpHQ@mail.gmail.com>
+Subject: Re: [PATCH v17 07/19] kunit: test: add initial tests
+To: Randy Dunlap <rdunlap@infradead.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190923_020349_154943_84AE38F4 
-X-CRM114-Status: GOOD (  11.83  )
-X-Spam-Score: -7.7 (-------)
+X-CRM114-CacheID: sfid-20190923_020517_792581_6C79678B 
+X-CRM114-Status: GOOD (  21.20  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-7.7 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:64a listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
  -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
  white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -83,7 +84,9 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ valid
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,187 +98,96 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: Sergey Senozhatsky <sergey.senozhatsky.work@gmail.com>, pmladek@suse.com,
- linux-doc@vger.kernel.org, amir73il@gmail.com,
- Brendan Higgins <brendanhiggins@google.com>, dri-devel@lists.freedesktop.org,
- Alexander.Levin@microsoft.com, linux-kselftest@vger.kernel.org,
- Stephen Rothwell <sfr@canb.auug.org.au>, linux-nvdimm@lists.01.org,
- khilman@baylibre.com, knut.omang@oracle.com, wfg@linux.intel.com,
- joel@jms.id.au, rientjes@google.com, jdike@addtoit.com,
- dan.carpenter@oracle.com, devicetree@vger.kernel.org,
- linux-kbuild@vger.kernel.org, Tim.Bird@sony.com, linux-um@lists.infradead.org,
- rostedt@goodmis.org, julia.lawall@lip6.fr, kunit-dev@googlegroups.com,
- richard@nod.at, torvalds@linux-foundation.org, rdunlap@infradead.org,
- linux-kernel@vger.kernel.org, daniel@ffwll.ch, mpe@ellerman.id.au,
- linux-fsdevel@vger.kernel.org, Joe Perches <joe@perches.com>,
- logang@deltatee.com
+Cc: Petr Mladek <pmladek@suse.com>,
+ "open list:DOCUMENTATION" <linux-doc@vger.kernel.org>,
+ Peter Zijlstra <peterz@infradead.org>, Amir Goldstein <amir73il@gmail.com>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
+ Sasha Levin <Alexander.Levin@microsoft.com>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Michael Ellerman <mpe@ellerman.id.au>,
+ "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
+ shuah <shuah@kernel.org>, Rob Herring <robh@kernel.org>,
+ linux-nvdimm <linux-nvdimm@lists.01.org>,
+ Frank Rowand <frowand.list@gmail.com>, Knut Omang <knut.omang@oracle.com>,
+ Kieran Bingham <kieran.bingham@ideasonboard.com>,
+ Linus Torvalds <torvalds@linux-foundation.org>, wfg@linux.intel.com,
+ Joel Stanley <joel@jms.id.au>, David Rientjes <rientjes@google.com>,
+ Jeff Dike <jdike@addtoit.com>, Dan Carpenter <dan.carpenter@oracle.com>,
+ devicetree <devicetree@vger.kernel.org>,
+ linux-kbuild <linux-kbuild@vger.kernel.org>, "Bird,
+ Timothy" <Tim.Bird@sony.com>, linux-um@lists.infradead.org,
+ Steven Rostedt <rostedt@goodmis.org>, Julia Lawall <julia.lawall@lip6.fr>,
+ Josh Poimboeuf <jpoimboe@redhat.com>, kunit-dev@googlegroups.com,
+ Theodore Ts'o <tytso@mit.edu>, Richard Weinberger <richard@nod.at>,
+ Stephen Boyd <sboyd@kernel.org>, Greg KH <gregkh@linuxfoundation.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Luis Chamberlain <mcgrof@kernel.org>, Daniel Vetter <daniel@ffwll.ch>,
+ Kees Cook <keescook@google.com>, linux-fsdevel@vger.kernel.org,
+ Logan Gunthorpe <logang@deltatee.com>, Kevin Hilman <khilman@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-Previously KUnit assumed that printk would always be present, which is
-not a valid assumption to make. Fix that by removing call to
-vprintk_emit, and calling printk directly.
+On Sun, Sep 22, 2019 at 9:28 AM Randy Dunlap <rdunlap@infradead.org> wrote:
+>
+> On 9/20/19 5:18 PM, Brendan Higgins wrote:
+> > Add a test for string stream along with a simpler example.
+> >
+> > Signed-off-by: Brendan Higgins <brendanhiggins@google.com>
+> > Reviewed-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+> > Reviewed-by: Logan Gunthorpe <logang@deltatee.com>
+> > Reviewed-by: Stephen Boyd <sboyd@kernel.org>
+> > ---
+> >  lib/kunit/Kconfig              | 25 ++++++++++
+> >  lib/kunit/Makefile             |  4 ++
+> >  lib/kunit/example-test.c       | 88 ++++++++++++++++++++++++++++++++++
+> >  lib/kunit/string-stream-test.c | 52 ++++++++++++++++++++
+> >  4 files changed, 169 insertions(+)
+> >  create mode 100644 lib/kunit/example-test.c
+> >  create mode 100644 lib/kunit/string-stream-test.c
+> >
+> > diff --git a/lib/kunit/Kconfig b/lib/kunit/Kconfig
+> > index 666b9cb67a74..3868c226cf31 100644
+> > --- a/lib/kunit/Kconfig
+> > +++ b/lib/kunit/Kconfig
+> > @@ -11,3 +11,28 @@ menuconfig KUNIT
+> >         special hardware when using UML. Can also be used on most other
+> >         architectures. For more information, please see
+> >         Documentation/dev-tools/kunit/.
+> > +
+> > +if KUNIT
+>
+> The 'if' above provides the dependency clause, so the 2 'depends on KUNIT'
+> below are not needed.  They are redundant.
 
-This fixes a build error[1] reported by Randy.
+Thanks for catching that. I fixed it in the new revision I just sent out.
 
-For context this change comes after much discussion. My first stab[2] at
-this was just to make the KUnit logging code compile out; however, it
-was agreed that if we were going to use vprintk_emit, then vprintk_emit
-should provide a no-op stub, which lead to my second attempt[3]. In
-response to me trying to stub out vprintk_emit, Sergey Senozhatsky
-suggested a way for me to remove our usage of vprintk_emit, which led to
-my third attempt at solving this[4].
+> > +
+> > +config KUNIT_TEST
+> > +     bool "KUnit test for KUnit"
+> > +     depends on KUNIT
+> > +     help
+> > +       Enables the unit tests for the KUnit test framework. These tests test
+> > +       the KUnit test framework itself; the tests are both written using
+> > +       KUnit and test KUnit. This option should only be enabled for testing
+> > +       purposes by developers interested in testing that KUnit works as
+> > +       expected.
+> > +
+> > +config KUNIT_EXAMPLE_TEST
+> > +     bool "Example test for KUnit"
+> > +     depends on KUNIT
+> > +     help
+> > +       Enables an example unit test that illustrates some of the basic
+> > +       features of KUnit. This test only exists to help new users understand
+> > +       what KUnit is and how it is used. Please refer to the example test
+> > +       itself, lib/kunit/example-test.c, for more information. This option
+> > +       is intended for curious hackers who would like to understand how to
+> > +       use KUnit for kernel development.
+> > +
+> > +endif # KUNIT
 
-In my third version of this patch[4], I completely removed vprintk_emit,
-as suggested by Sergey; however, there was a bit of debate over whether
-Sergey's solution was the best. The debate arose due to Sergey's version
-resulting in a checkpatch warning, which resulted in a debate over
-correct printk usage. Joe Perches offered an alternative fix which was
-somewhat less far reaching than what Sergey had suggested and
-importantly relied on continuing to use %pV. Much of the debated
-centered around whether %pV should be widely used, and whether Sergey's
-version would result in object size bloat. Ultimately, we decided to go
-with Sergey's version.
-
-Reported-by: Randy Dunlap <rdunlap@infradead.org>
-Link[1]: https://lore.kernel.org/linux-kselftest/c7229254-0d90-d90e-f3df-5b6d6fc0b51f@infradead.org/
-Link[2]: https://lore.kernel.org/linux-kselftest/20190827174932.44177-1-brendanhiggins@google.com/
-Link[3]: https://lore.kernel.org/linux-kselftest/20190827234835.234473-1-brendanhiggins@google.com/
-Link[4]: https://lore.kernel.org/linux-kselftest/20190828093143.163302-1-brendanhiggins@google.com/
-Cc: Stephen Rothwell <sfr@canb.auug.org.au>
-Cc: Sergey Senozhatsky <sergey.senozhatsky.work@gmail.com>
-Cc: Joe Perches <joe@perches.com>
-Cc: Tim.Bird@sony.com
-Signed-off-by: Brendan Higgins <brendanhiggins@google.com>
-Acked-by: Randy Dunlap <rdunlap@infradead.org> # build-tested
-Reviewed-by: Petr Mladek <pmladek@suse.com>
----
- include/kunit/test.h |  5 ++--
- lib/kunit/test.c     | 57 +++++---------------------------------------
- 2 files changed, 8 insertions(+), 54 deletions(-)
-
-diff --git a/include/kunit/test.h b/include/kunit/test.h
-index 8b7eb03d4971..dba48304b3bd 100644
---- a/include/kunit/test.h
-+++ b/include/kunit/test.h
-@@ -339,9 +339,8 @@ static inline void *kunit_kzalloc(struct kunit *test, size_t size, gfp_t gfp)
- 
- void kunit_cleanup(struct kunit *test);
- 
--void __printf(3, 4) kunit_printk(const char *level,
--				 const struct kunit *test,
--				 const char *fmt, ...);
-+#define kunit_printk(lvl, test, fmt, ...) \
-+	printk(lvl "\t# %s: " fmt, (test)->name, ##__VA_ARGS__)
- 
- /**
-  * kunit_info() - Prints an INFO level message associated with @test.
-diff --git a/lib/kunit/test.c b/lib/kunit/test.c
-index b2ca9b94c353..c83c0fa59cbd 100644
---- a/lib/kunit/test.c
-+++ b/lib/kunit/test.c
-@@ -16,36 +16,12 @@ static void kunit_set_failure(struct kunit *test)
- 	WRITE_ONCE(test->success, false);
- }
- 
--static int kunit_vprintk_emit(int level, const char *fmt, va_list args)
--{
--	return vprintk_emit(0, level, NULL, 0, fmt, args);
--}
--
--static int kunit_printk_emit(int level, const char *fmt, ...)
--{
--	va_list args;
--	int ret;
--
--	va_start(args, fmt);
--	ret = kunit_vprintk_emit(level, fmt, args);
--	va_end(args);
--
--	return ret;
--}
--
--static void kunit_vprintk(const struct kunit *test,
--			  const char *level,
--			  struct va_format *vaf)
--{
--	kunit_printk_emit(level[1] - '0', "\t# %s: %pV", test->name, vaf);
--}
--
- static void kunit_print_tap_version(void)
- {
- 	static bool kunit_has_printed_tap_version;
- 
- 	if (!kunit_has_printed_tap_version) {
--		kunit_printk_emit(LOGLEVEL_INFO, "TAP version 14\n");
-+		pr_info("TAP version 14\n");
- 		kunit_has_printed_tap_version = true;
- 	}
- }
-@@ -64,10 +40,8 @@ static size_t kunit_test_cases_len(struct kunit_case *test_cases)
- static void kunit_print_subtest_start(struct kunit_suite *suite)
- {
- 	kunit_print_tap_version();
--	kunit_printk_emit(LOGLEVEL_INFO, "\t# Subtest: %s\n", suite->name);
--	kunit_printk_emit(LOGLEVEL_INFO,
--			  "\t1..%zd\n",
--			  kunit_test_cases_len(suite->test_cases));
-+	pr_info("\t# Subtest: %s\n", suite->name);
-+	pr_info("\t1..%zd\n", kunit_test_cases_len(suite->test_cases));
- }
- 
- static void kunit_print_ok_not_ok(bool should_indent,
-@@ -87,9 +61,7 @@ static void kunit_print_ok_not_ok(bool should_indent,
- 	else
- 		ok_not_ok = "not ok";
- 
--	kunit_printk_emit(LOGLEVEL_INFO,
--			  "%s%s %zd - %s\n",
--			  indent, ok_not_ok, test_number, description);
-+	pr_info("%s%s %zd - %s\n", indent, ok_not_ok, test_number, description);
- }
- 
- static bool kunit_suite_has_succeeded(struct kunit_suite *suite)
-@@ -133,11 +105,11 @@ static void kunit_print_string_stream(struct kunit *test,
- 		kunit_err(test,
- 			  "Could not allocate buffer, dumping stream:\n");
- 		list_for_each_entry(fragment, &stream->fragments, node) {
--			kunit_err(test, fragment->fragment);
-+			kunit_err(test, "%s", fragment->fragment);
- 		}
- 		kunit_err(test, "\n");
- 	} else {
--		kunit_err(test, buf);
-+		kunit_err(test, "%s", buf);
- 		kunit_kfree(test, buf);
- 	}
- }
-@@ -504,20 +476,3 @@ void kunit_cleanup(struct kunit *test)
- 		kunit_resource_free(test, resource);
- 	}
- }
--
--void kunit_printk(const char *level,
--		  const struct kunit *test,
--		  const char *fmt, ...)
--{
--	struct va_format vaf;
--	va_list args;
--
--	va_start(args, fmt);
--
--	vaf.fmt = fmt;
--	vaf.va = &args;
--
--	kunit_vprintk(test, level, &vaf);
--
--	va_end(args);
--}
--- 
-2.23.0.351.gc4317032e6-goog
-
+Cheers
 
 _______________________________________________
 linux-um mailing list
