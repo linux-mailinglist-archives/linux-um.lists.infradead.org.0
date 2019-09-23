@@ -2,72 +2,41 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 34C48BBC4C
-	for <lists+linux-um@lfdr.de>; Mon, 23 Sep 2019 21:35:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 81D69BBC6E
+	for <lists+linux-um@lfdr.de>; Mon, 23 Sep 2019 21:50:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SUyvvytSKqoAwryryBDSekHU/51o08HeYg/JLNrNEAY=; b=WnuOzwZHAc/HV1
-	c4XP9cYaK/ipRZCPiWGo4SbYQWBchwZoIw1VcwQcK7WUmi3k6KR+MMIratWPNImfHF8RSugtT3ZWv
-	e6xAcqIXQvXDMIJwRs2/5NSdVuqVqSgqxzjiDVb2GN4Ql53NeHS4AgG2Ne7Sboj6kTpSetBffZc1S
-	CLk3I3zedihpag1Pt96a+xJTrJj8fjKwUbacS2LUaeXFWnIUK7o4IdPMU0VSXjxOKzpdwVUS8Idzr
-	auWANnA7yrUPUMVC3uULPkph2CKUhTu2SpdsKhPDr3Gr1A0JMNI/1w0kcs71boDP7UKWuKimUQrcA
-	8DyILJJYlVy0IQNi1L5A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=pKgFps3a4+gphy86a8gBcPqY1wg+jsarT0j3DHj1a1I=; b=bpsrngXaYX4vn8
+	8xliX1BEXMKMEnw/HoN47Sd9hQQBjS0sRy2XeDgzQsIJshVP8+vbTcfEY5xQAugV17OaporJvk/6i
+	CH6eXUGmOiLCJ+nvU40TTY3kigSBujt6H3jD66eh8NAFM3Mze5YEI9ei9MWmwxfqfC1lrb2C83iSn
+	AjZKTXYudI5x5C7MyL+CfRHHTIScbMyPBTvI/DBdXWBuN9Js27oAzs3IEmQ3iAT421n3FKZSAoId3
+	bCQTdY9gvu7p+fFVqoGQSp6IVBhiEIohoB5OKRH/mqj3ByqPecuVMgovg56KIEaHd+Kc/JHeUiU1k
+	PDxkuvqh9Nhdtn0YYFCw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iCU6s-0007zY-Ej; Mon, 23 Sep 2019 19:34:58 +0000
-Received: from mail.skyhub.de ([5.9.137.197])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iCU6g-0007qu-J3; Mon, 23 Sep 2019 19:34:48 +0000
-Received: from zn.tnic (p200300EC2F060400F036B51F4D309BFC.dip0.t-ipconnect.de
- [IPv6:2003:ec:2f06:400:f036:b51f:4d30:9bfc])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.skyhub.de (SuperMail on ZX Spectrum 128k) with ESMTPSA id 743B11EC06F3;
- Mon, 23 Sep 2019 21:34:41 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=alien8.de; s=dkim;
- t=1569267281;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:in-reply-to:in-reply-to:  references:references;
- bh=cOtIH+ThVHQpxFENK80/GDkwsFcGH4JpmGhb1RD1kuE=;
- b=sXcWlOo1Cf6BR+lWrajtGnsDDTS9hIUvKwljeKpj+Nm0t85WnvDMx+6rvJziYTomTou4ZU
- KJLHPsr3OayePY/9EaXJutOEAxwUyYEMBQhiKuIXOj1m1wxS4/oVgmW1g7TaW7gHxxULSV
- 12ky9HQnuiXhbMI4N6FQqTBFzrVrbF0=
-Date: Mon, 23 Sep 2019 21:34:46 +0200
-From: Borislav Petkov <bp@alien8.de>
-To: Andy Lutomirski <luto@kernel.org>
-Subject: Re: [PATCH] seccomp: remove unused arg from secure_computing()
-Message-ID: <20190923193446.GL15355@zn.tnic>
-References: <20190920131907.6886-1-christian.brauner@ubuntu.com>
- <20190923094916.GB15355@zn.tnic>
- <CALCETrU_fs_At-hTpr231kpaAd0z7xJN4ku-DvzhRU6cvcJA_w@mail.gmail.com>
+	id 1iCULS-0004pF-Om; Mon, 23 Sep 2019 19:50:02 +0000
+Received: from [2601:1c0:6280:3f0::9a1f]
+ by bombadil.infradead.org with esmtpsa (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iCULM-0004hv-CB; Mon, 23 Sep 2019 19:49:56 +0000
+Subject: Re: [PATCH v18 15/19] Documentation: kunit: add documentation for
+ KUnit
+To: Brendan Higgins <brendanhiggins@google.com>
+References: <20190923090249.127984-1-brendanhiggins@google.com>
+ <20190923090249.127984-16-brendanhiggins@google.com>
+ <d87eba35-ae09-0c53-bbbe-51ee9dc9531f@infradead.org>
+ <CAFd5g45y-NWzbn8E8hUg=n4U5E+N6_4D8eCXhQ74Y0N4zqVW=w@mail.gmail.com>
+From: Randy Dunlap <rdunlap@infradead.org>
+Message-ID: <d7a61045-8fe6-a104-ece9-67b69c379425@infradead.org>
+Date: Mon, 23 Sep 2019 12:49:54 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CALCETrU_fs_At-hTpr231kpaAd0z7xJN4ku-DvzhRU6cvcJA_w@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190923_123446_779609_0E19FC1C 
-X-CRM114-Status: GOOD (  11.81  )
-X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [5.9.137.197 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+In-Reply-To: <CAFd5g45y-NWzbn8E8hUg=n4U5E+N6_4D8eCXhQ74Y0N4zqVW=w@mail.gmail.com>
+Content-Language: en-US
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,47 +48,171 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: linux-s390 <linux-s390@vger.kernel.org>, Will Drewry <wad@chromium.org>,
- Kees Cook <keescook@chromium.org>, Parisc List <linux-parisc@vger.kernel.org>,
- X86 ML <x86@kernel.org>, linux-um@lists.infradead.org,
- LKML <linux-kernel@vger.kernel.org>, Oleg Nesterov <oleg@redhat.com>,
- Christian Brauner <christian.brauner@ubuntu.com>,
- Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Petr Mladek <pmladek@suse.com>,
+ "open list:DOCUMENTATION" <linux-doc@vger.kernel.org>,
+ Peter Zijlstra <peterz@infradead.org>, Amir Goldstein <amir73il@gmail.com>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
+ Sasha Levin <Alexander.Levin@microsoft.com>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Michael Ellerman <mpe@ellerman.id.au>,
+ "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
+ shuah <shuah@kernel.org>, Rob Herring <robh@kernel.org>,
+ linux-nvdimm <linux-nvdimm@lists.01.org>,
+ Frank Rowand <frowand.list@gmail.com>, Knut Omang <knut.omang@oracle.com>,
+ Kieran Bingham <kieran.bingham@ideasonboard.com>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ Felix Guo <felixguoxiuping@gmail.com>, wfg@linux.intel.com,
+ Joel Stanley <joel@jms.id.au>, David Rientjes <rientjes@google.com>,
+ Jeff Dike <jdike@addtoit.com>, Dan Carpenter <dan.carpenter@oracle.com>,
+ devicetree <devicetree@vger.kernel.org>,
+ linux-kbuild <linux-kbuild@vger.kernel.org>, "Bird,
+ Timothy" <Tim.Bird@sony.com>, linux-um@lists.infradead.org,
+ Steven Rostedt <rostedt@goodmis.org>, Julia Lawall <julia.lawall@lip6.fr>,
+ Josh Poimboeuf <jpoimboe@redhat.com>, kunit-dev@googlegroups.com,
+ Theodore Ts'o <tytso@mit.edu>, Richard Weinberger <richard@nod.at>,
+ Stephen Boyd <sboyd@kernel.org>, Greg KH <gregkh@linuxfoundation.org>,
+ Jonathan Corbet <corbet@lwn.net>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Luis Chamberlain <mcgrof@kernel.org>, Daniel Vetter <daniel@ffwll.ch>,
+ Kees Cook <keescook@google.com>, linux-fsdevel@vger.kernel.org,
+ Logan Gunthorpe <logang@deltatee.com>, Kevin Hilman <khilman@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Mon, Sep 23, 2019 at 11:41:59AM -0700, Andy Lutomirski wrote:
-> On Mon, Sep 23, 2019 at 2:49 AM Borislav Petkov <bp@alien8.de> wrote:
-> >
-> > On Fri, Sep 20, 2019 at 03:19:09PM +0200, Christian Brauner wrote:
-> > > While touching seccomp code I realized that the struct seccomp_data
-> > > argument to secure_computing() seems to be unused by all current
-> > > callers. So let's remove it unless there is some subtlety I missed.
-> > > Note, I only tested this on x86.
-> >
-> > What was amluto thinking in
-> >
-> > 2f275de5d1ed ("seccomp: Add a seccomp_data parameter secure_computing()")
+On 9/23/19 11:06 AM, Brendan Higgins wrote:
+> On Mon, Sep 23, 2019 at 8:48 AM Randy Dunlap <rdunlap@infradead.org> wrote:
+>>
+>> On 9/23/19 2:02 AM, Brendan Higgins wrote:
+>>> Add documentation for KUnit, the Linux kernel unit testing framework.
+>>> - Add intro and usage guide for KUnit
+>>> - Add API reference
+>>>
+>>> Signed-off-by: Felix Guo <felixguoxiuping@gmail.com>
+>>> Signed-off-by: Brendan Higgins <brendanhiggins@google.com>
+>>> Cc: Jonathan Corbet <corbet@lwn.net>
+>>> Reviewed-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+>>> Reviewed-by: Logan Gunthorpe <logang@deltatee.com>
+>>> Reviewed-by: Stephen Boyd <sboyd@kernel.org>
+>>> ---
+>>>  Documentation/dev-tools/index.rst           |   1 +
+>>>  Documentation/dev-tools/kunit/api/index.rst |  16 +
+>>>  Documentation/dev-tools/kunit/api/test.rst  |  11 +
+>>>  Documentation/dev-tools/kunit/faq.rst       |  62 +++
+>>>  Documentation/dev-tools/kunit/index.rst     |  79 +++
+>>>  Documentation/dev-tools/kunit/start.rst     | 180 ++++++
+>>>  Documentation/dev-tools/kunit/usage.rst     | 576 ++++++++++++++++++++
+>>>  7 files changed, 925 insertions(+)
+>>>  create mode 100644 Documentation/dev-tools/kunit/api/index.rst
+>>>  create mode 100644 Documentation/dev-tools/kunit/api/test.rst
+>>>  create mode 100644 Documentation/dev-tools/kunit/faq.rst
+>>>  create mode 100644 Documentation/dev-tools/kunit/index.rst
+>>>  create mode 100644 Documentation/dev-tools/kunit/start.rst
+>>>  create mode 100644 Documentation/dev-tools/kunit/usage.rst
+>>
+>>
+>>> diff --git a/Documentation/dev-tools/kunit/start.rst b/Documentation/dev-tools/kunit/start.rst
+>>> new file mode 100644
+>>> index 000000000000..6dc229e46bb3
+>>> --- /dev/null
+>>> +++ b/Documentation/dev-tools/kunit/start.rst
+>>> @@ -0,0 +1,180 @@
+>>> +.. SPDX-License-Identifier: GPL-2.0
+>>> +
+>>> +===============
+>>> +Getting Started
+>>> +===============
+>>> +
+>>> +Installing dependencies
+>>> +=======================
+>>> +KUnit has the same dependencies as the Linux kernel. As long as you can build
+>>> +the kernel, you can run KUnit.
+>>> +
+>>> +KUnit Wrapper
+>>> +=============
+>>> +Included with KUnit is a simple Python wrapper that helps format the output to
+>>> +easily use and read KUnit output. It handles building and running the kernel, as
+>>> +well as formatting the output.
+>>> +
+>>> +The wrapper can be run with:
+>>> +
+>>> +.. code-block:: bash
+>>> +
+>>> +   ./tools/testing/kunit/kunit.py run
+>>> +
+>>> +Creating a kunitconfig
+>>> +======================
+>>> +The Python script is a thin wrapper around Kbuild as such, it needs to be
+>>
+>>                                        around Kbuild. As such,
 > 
-> IIRC there was a period of time in which x86 used secure_computing()
-> for normal syscalls, and it was a good deal faster to have the arch
-> code supply seccomp_data.  x86 no longer works like this, and syscalls
-> aren't fast anymore ayway :(
+> Thanks for pointing this out.
+> 
+>>
+>>> +configured with a ``kunitconfig`` file. This file essentially contains the
+>>> +regular Kernel config, with the specific test targets as well.
+>>> +
+>>> +.. code-block:: bash
+>>> +
+>>> +     git clone -b master https://kunit.googlesource.com/kunitconfig $PATH_TO_KUNITCONFIG_REPO
+>>> +     cd $PATH_TO_LINUX_REPO
+>>> +     ln -s $PATH_TO_KUNIT_CONFIG_REPO/kunitconfig kunitconfig
+>>> +
+>>> +You may want to add kunitconfig to your local gitignore.
+>>> +
+>>> +Verifying KUnit Works
+>>> +---------------------
+>>> +
+>>> +To make sure that everything is set up correctly, simply invoke the Python
+>>> +wrapper from your kernel repo:
+>>> +
+>>> +.. code-block:: bash
+>>> +
+>>> +     ./tools/testing/kunit/kunit.py
+>>> +
+>>> +.. note::
+>>> +   You may want to run ``make mrproper`` first.
+>>
+>> I normally use O=builddir when building kernels.
+>> Does this support using O=builddir ?
+> 
+> Yep, it supports specifying a separate build directory.
+> 
+>>> +
+>>> +If everything worked correctly, you should see the following:
+>>> +
+>>> +.. code-block:: bash
+>>> +
+>>> +     Generating .config ...
+>>> +     Building KUnit Kernel ...
+>>> +     Starting KUnit Kernel ...
+>>> +
+>>> +followed by a list of tests that are run. All of them should be passing.
+>>> +
+>>> +.. note::
+>>> +   Because it is building a lot of sources for the first time, the ``Building
+>>> +   kunit kernel`` step may take a while.
+>>> +
+>>> +Writing your first test
+>>> +=======================
+>>
+>> [snip]
+>>
+>>> diff --git a/Documentation/dev-tools/kunit/usage.rst b/Documentation/dev-tools/kunit/usage.rst
+>>> new file mode 100644
+>>> index 000000000000..c6e69634e274
+>>> --- /dev/null
+>>> +++ b/Documentation/dev-tools/kunit/usage.rst
+>>
+>> TBD...
+> 
+> What did you mean by this comment?
 
-Uhuh, thanks Andy.
-
-Christian, pls add that piece of history to the commit message.
-
-Thx.
+I plan to review usage.rst soon... (To Be Done :)
 
 -- 
-Regards/Gruss,
-    Boris.
-
-https://people.kernel.org/tglx/notes-about-netiquette
+~Randy
 
 _______________________________________________
 linux-um mailing list
