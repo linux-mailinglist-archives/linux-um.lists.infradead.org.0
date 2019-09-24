@@ -2,52 +2,50 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8D8D0BC1F9
-	for <lists+linux-um@lfdr.de>; Tue, 24 Sep 2019 08:44:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 664A1BC278
+	for <lists+linux-um@lfdr.de>; Tue, 24 Sep 2019 09:22:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DoZfYrPDT8njDT5vh0cJSObB1ajat3hUWIo9GTGlrLs=; b=SxlHrM9VbXYpe2
-	Yf/yQFRkIAedpYLzCsRaCK50fP+is5+QaoORA1nUp5SIhobRP9iKlfxCH+wBwNLoQsUbo+qIPzlFD
-	VDp7wqqymgl9dRGjttNPUl51LVN7tv7SA8lGVf9D/xyg5uukjZE+zjBTBPSuXY+Z6BDcjXaYFnmtS
-	2N7Hatp7xSILx0M9KyspJJutvAp5iMY7banbiGNxfDuB9b6i0sx+aCsiCEvl5EgnTTLLol+z6cgG8
-	ZPVTEmBOvjwvphWz9tjPRb3NiewECMAuf2sCrl81RY//ryKpmqz79BmCgYnCuwsYXr3H28V5BVIss
-	f4J7dSc/X051hmxlp85A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=NajFIu2kO3KWddXk+k6fPiGwseloHpR7D6fEUoVKat0=; b=bpBncCIS+fJLe8
+	P29B9ufv8VBpAFIwLWxwDemeusiaZDP4WpjHCuHK7vtvsc2F8VyzFEn4/zT+o3vMF8Nlk18IROAnX
+	FJeIVjLVvYLz6Tydas+/OgXBYKATRzW23sDwk9vu/UqnNE2apqXyZW127XsM3Ot4VHDvgn1W5mmsg
+	W8aDaGk5If0iliJ8VafAalTfe5qTMym4zbjyo5XgLHYA0i8e1QP2wiVn55qQu64ayM/2oseJX9Ip+
+	SHPgXGfLDdyc1HokNDZjY0MNuG6pjVS/FqCi1sOkZSnTfwfMtxum3gTcje8PSViYnEH5foG4tPPsJ
+	Xqi8D4AtKLZodDXzYvyg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iCeZB-000271-EI; Tue, 24 Sep 2019 06:44:53 +0000
-Received: from youngberry.canonical.com ([91.189.89.112])
+	id 1iCf9L-0001BT-Kc; Tue, 24 Sep 2019 07:22:15 +0000
+Received: from s3.sipsolutions.net ([2a01:4f8:191:4433::2]
+ helo=sipsolutions.net)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iCeYl-0001u8-7L; Tue, 24 Sep 2019 06:44:29 +0000
-Received: from [89.27.154.14] (helo=localhost.localdomain)
- by youngberry.canonical.com with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.86_2)
- (envelope-from <christian.brauner@ubuntu.com>)
- id 1iCeYj-0000tF-CA; Tue, 24 Sep 2019 06:44:25 +0000
-From: Christian Brauner <christian.brauner@ubuntu.com>
-To: christian.brauner@ubuntu.com
-Subject: [PATCH v1] seccomp: simplify secure_computing()
-Date: Tue, 24 Sep 2019 08:44:20 +0200
-Message-Id: <20190924064420.6353-1-christian.brauner@ubuntu.com>
-X-Mailer: git-send-email 2.23.0
-In-Reply-To: <20190920131907.6886-1-christian.brauner@ubuntu.com>
-References: <20190920131907.6886-1-christian.brauner@ubuntu.com>
+ id 1iCf8g-00012S-2f
+ for linux-um@lists.infradead.org; Tue, 24 Sep 2019 07:21:36 +0000
+Received: by sipsolutions.net with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <johannes@sipsolutions.net>)
+ id 1iCf8a-00078t-Gh; Tue, 24 Sep 2019 09:21:28 +0200
+From: Johannes Berg <johannes@sipsolutions.net>
+To: linux-um@lists.infradead.org
+Subject: [PATCH v2] um: virtio: keep reading on -EAGAIN
+Date: Tue, 24 Sep 2019 09:21:17 +0200
+Message-Id: <1569309677-I2734f0a83b4b28ea237050d5def17b4529b8b446@changeid>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190923_234427_474231_15620A57 
-X-CRM114-Status: GOOD (  14.48  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190924_002134_588044_1D99CE55 
+X-CRM114-Status: GOOD (  10.34  )
+X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [91.189.89.112 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.4 KHOP_HELO_FCRDNS       Relay HELO differs from its IP's reverse DNS
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,171 +57,100 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: linux-s390@vger.kernel.org, wad@chromium.org, keescook@chromium.org,
- linux-parisc@vger.kernel.org, x86@kernel.org, linux-um@lists.infradead.org,
- linux-kernel@vger.kernel.org, oleg@redhat.com, Borislav Petkov <bp@alien8.de>,
- luto@kernel.org, tglx@linutronix.de, linux-arm-kernel@lists.infradead.org
+Cc: Johannes Berg <johannes.berg@intel.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-Afaict, the struct seccomp_data argument to secure_computing() is unused
-by all current callers. So let's remove it.
-The argument was added in [1]. It was added because having the arch
-supply the syscall arguments used to be faster than having it done by
-secure_computing() (cf. Andy's comment in [2]). This is not true anymore
-though.
+From: Johannes Berg <johannes.berg@intel.com>
 
-/* References */
-[1]: 2f275de5d1ed ("seccomp: Add a seccomp_data parameter secure_computing()")
-[2]: https://lore.kernel.org/r/CALCETrU_fs_At-hTpr231kpaAd0z7xJN4ku-DvzhRU6cvcJA_w@mail.gmail.com
+When we get an interrupt from the socket getting readable,
+and start reading, there's a possibility for a race. This
+depends on the implementation of the device, but e.g. with
+qemu's libvhost-user, we can see:
 
-Signed-off-by: Christian Brauner <christian.brauner@ubuntu.com>
-Cc: Andy Lutomirski <luto@kernel.org>
-Cc: Thomas Gleixner <tglx@linutronix.de>
-Cc: Kees Cook <keescook@chromium.org>
-Cc: Will Drewry <wad@chromium.org>
-Cc: Oleg Nesterov <oleg@redhat.com>
-Cc: Borislav Petkov <bp@alien8.de>
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: linux-parisc@vger.kernel.org
-Cc: linux-s390@vger.kernel.org
-Cc: linux-um@lists.infradead.org
-Cc: x86@kernel.org
+ device                 virtio_uml
+---------------------------------------
+  write header
+                         get interrupt
+                         read header
+                         read body -> returns -EAGAIN
+  write body
+
+The -EAGAIN return is because the socket is non-blocking,
+and then this leads us to abandon this message.
+
+In fact, we've already read the header, so when the get
+another signal/interrupt for the body, we again read it
+as though it's a new message header, and also abandon it
+for the same reason (wrong size etc.)
+
+This essentially breaks things, and if that message was
+one that required a response, it leads to a deadlock as
+the device is waiting for the response but we'll never
+reply.
+
+Fix this by spinning on -EAGAIN as well when we read the
+message body. We need to handle -EAGAIN as "no message"
+while reading the header, since we share an interrupt.
+
+Note that this situation is highly unlikely to occur in
+normal usage, since there will be very few messages and
+only in the startup phase. With the inband call feature
+this does tend to happen (eventually) though.
+
+Signed-off-by: Johannes Berg <johannes.berg@intel.com>
 ---
-/* v1 */
-- Borislav Petkov <bp@alien8.de>:
-  - provide context for the arg addition to secure_computing() in the
-    commit message
-
-/* v0 */
-Link: https://lore.kernel.org/r/20190920131907.6886-1-christian.brauner@ubuntu.com
+v2:
+ * spin on -EAGAIN only on the body, not the header,
+   otherwise we deadlock with shared interrupts
 ---
- arch/arm/kernel/ptrace.c              | 2 +-
- arch/arm64/kernel/ptrace.c            | 2 +-
- arch/parisc/kernel/ptrace.c           | 2 +-
- arch/s390/kernel/ptrace.c             | 4 ++--
- arch/um/kernel/skas/syscall.c         | 2 +-
- arch/x86/entry/vsyscall/vsyscall_64.c | 2 +-
- include/linux/seccomp.h               | 6 +++---
- 7 files changed, 10 insertions(+), 10 deletions(-)
+ arch/um/drivers/virtio_uml.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
-diff --git a/arch/arm/kernel/ptrace.c b/arch/arm/kernel/ptrace.c
-index 324352787aea..b606cded90cd 100644
---- a/arch/arm/kernel/ptrace.c
-+++ b/arch/arm/kernel/ptrace.c
-@@ -923,7 +923,7 @@ asmlinkage int syscall_trace_enter(struct pt_regs *regs, int scno)
- 
- 	/* Do seccomp after ptrace; syscall may have changed. */
- #ifdef CONFIG_HAVE_ARCH_SECCOMP_FILTER
--	if (secure_computing(NULL) == -1)
-+	if (secure_computing() == -1)
- 		return -1;
- #else
- 	/* XXX: remove this once OABI gets fixed */
-diff --git a/arch/arm64/kernel/ptrace.c b/arch/arm64/kernel/ptrace.c
-index 3cf3b135027e..010a835302d3 100644
---- a/arch/arm64/kernel/ptrace.c
-+++ b/arch/arm64/kernel/ptrace.c
-@@ -1816,7 +1816,7 @@ int syscall_trace_enter(struct pt_regs *regs)
- 	}
- 
- 	/* Do the secure computing after ptrace; failures should be fast. */
--	if (secure_computing(NULL) == -1)
-+	if (secure_computing() == -1)
- 		return -1;
- 
- 	if (test_thread_flag(TIF_SYSCALL_TRACEPOINT))
-diff --git a/arch/parisc/kernel/ptrace.c b/arch/parisc/kernel/ptrace.c
-index 9f6ff7bc06f9..f8c07dcbfb49 100644
---- a/arch/parisc/kernel/ptrace.c
-+++ b/arch/parisc/kernel/ptrace.c
-@@ -342,7 +342,7 @@ long do_syscall_trace_enter(struct pt_regs *regs)
- 	}
- 
- 	/* Do the secure computing check after ptrace. */
--	if (secure_computing(NULL) == -1)
-+	if (secure_computing() == -1)
- 		return -1;
- 
- #ifdef CONFIG_HAVE_SYSCALL_TRACEPOINTS
-diff --git a/arch/s390/kernel/ptrace.c b/arch/s390/kernel/ptrace.c
-index ad71132374f0..ed80bdfbf5fe 100644
---- a/arch/s390/kernel/ptrace.c
-+++ b/arch/s390/kernel/ptrace.c
-@@ -439,7 +439,7 @@ static int poke_user(struct task_struct *child, addr_t addr, addr_t data)
- long arch_ptrace(struct task_struct *child, long request,
- 		 unsigned long addr, unsigned long data)
- {
--	ptrace_area parea; 
-+	ptrace_area parea;
- 	int copied, ret;
- 
- 	switch (request) {
-@@ -856,7 +856,7 @@ asmlinkage long do_syscall_trace_enter(struct pt_regs *regs)
- 	}
- 
- 	/* Do the secure computing check after ptrace. */
--	if (secure_computing(NULL)) {
-+	if (secure_computing()) {
- 		/* seccomp failures shouldn't expose any additional code. */
- 		return -1;
- 	}
-diff --git a/arch/um/kernel/skas/syscall.c b/arch/um/kernel/skas/syscall.c
-index 44bb10785075..fc37259d5971 100644
---- a/arch/um/kernel/skas/syscall.c
-+++ b/arch/um/kernel/skas/syscall.c
-@@ -35,7 +35,7 @@ void handle_syscall(struct uml_pt_regs *r)
- 		goto out;
- 
- 	/* Do the seccomp check after ptrace; failures should be fast. */
--	if (secure_computing(NULL) == -1)
-+	if (secure_computing() == -1)
- 		goto out;
- 
- 	syscall = UPT_SYSCALL_NR(r);
-diff --git a/arch/x86/entry/vsyscall/vsyscall_64.c b/arch/x86/entry/vsyscall/vsyscall_64.c
-index e7c596dea947..b10cbf71a8cc 100644
---- a/arch/x86/entry/vsyscall/vsyscall_64.c
-+++ b/arch/x86/entry/vsyscall/vsyscall_64.c
-@@ -222,7 +222,7 @@ bool emulate_vsyscall(unsigned long error_code,
- 	 */
- 	regs->orig_ax = syscall_nr;
- 	regs->ax = -ENOSYS;
--	tmp = secure_computing(NULL);
-+	tmp = secure_computing();
- 	if ((!tmp && regs->orig_ax != syscall_nr) || regs->ip != address) {
- 		warn_bad_vsyscall(KERN_DEBUG, regs,
- 				  "seccomp tried to change syscall nr or ip");
-diff --git a/include/linux/seccomp.h b/include/linux/seccomp.h
-index 84868d37b35d..03583b6d1416 100644
---- a/include/linux/seccomp.h
-+++ b/include/linux/seccomp.h
-@@ -33,10 +33,10 @@ struct seccomp {
- 
- #ifdef CONFIG_HAVE_ARCH_SECCOMP_FILTER
- extern int __secure_computing(const struct seccomp_data *sd);
--static inline int secure_computing(const struct seccomp_data *sd)
-+static inline int secure_computing(void)
- {
- 	if (unlikely(test_thread_flag(TIF_SECCOMP)))
--		return  __secure_computing(sd);
-+		return  __secure_computing(NULL);
+diff --git a/arch/um/drivers/virtio_uml.c b/arch/um/drivers/virtio_uml.c
+index a2d9b3347945..31ffb27be172 100644
+--- a/arch/um/drivers/virtio_uml.c
++++ b/arch/um/drivers/virtio_uml.c
+@@ -87,7 +87,7 @@ static int full_sendmsg_fds(int fd, const void *buf, unsigned int len,
  	return 0;
  }
- #else
-@@ -59,7 +59,7 @@ struct seccomp { };
- struct seccomp_filter { };
  
- #ifdef CONFIG_HAVE_ARCH_SECCOMP_FILTER
--static inline int secure_computing(struct seccomp_data *sd) { return 0; }
-+static inline int secure_computing(void) { return 0; }
- #else
- static inline void secure_computing_strict(int this_syscall) { return; }
- #endif
+-static int full_read(int fd, void *buf, int len)
++static int full_read(int fd, void *buf, int len, bool abortable)
+ {
+ 	int rc;
+ 
+@@ -97,7 +97,7 @@ static int full_read(int fd, void *buf, int len)
+ 			buf += rc;
+ 			len -= rc;
+ 		}
+-	} while (len && (rc > 0 || rc == -EINTR));
++	} while (len && (rc > 0 || rc == -EINTR || (!abortable && rc == -EAGAIN)));
+ 
+ 	if (rc < 0)
+ 		return rc;
+@@ -108,7 +108,7 @@ static int full_read(int fd, void *buf, int len)
+ 
+ static int vhost_user_recv_header(int fd, struct vhost_user_msg *msg)
+ {
+-	return full_read(fd, msg, sizeof(msg->header));
++	return full_read(fd, msg, sizeof(msg->header), true);
+ }
+ 
+ static int vhost_user_recv(int fd, struct vhost_user_msg *msg,
+@@ -122,7 +122,7 @@ static int vhost_user_recv(int fd, struct vhost_user_msg *msg,
+ 	size = msg->header.size;
+ 	if (size > max_payload_size)
+ 		return -EPROTO;
+-	return full_read(fd, &msg->payload, size);
++	return full_read(fd, &msg->payload, size, false);
+ }
+ 
+ static int vhost_user_recv_resp(struct virtio_uml_device *vu_dev,
 -- 
-2.23.0
+2.20.1
 
 
 _______________________________________________
