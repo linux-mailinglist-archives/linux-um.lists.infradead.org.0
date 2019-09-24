@@ -2,53 +2,72 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9A0FFBC3F5
-	for <lists+linux-um@lfdr.de>; Tue, 24 Sep 2019 10:17:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4B5B7BC53E
+	for <lists+linux-um@lfdr.de>; Tue, 24 Sep 2019 11:51:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:To:From:Subject:
-	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=+fJWv/bsOvhxitJlvFpHWKqodmcQl4XRJ4QgvGECbBQ=; b=NQXeCszwDc7Hbs
-	YXApdQLCahztx/SmaDKa5zb6e4IFk9LC7Zt4YuI7vvXg5W4Vj4VdDH6FGEXe3mXipYbnxt3FITCCP
-	ddy3RJZTLr5SlV6rJbGrgBAysTl3Dq1WE+clMVxxM9AAn8w2aeUiqni0ltBSACyYno/J4wbQ9tL/X
-	R/t+wY08Z/kZQQkLuQXjHaiUx3p8znrNQ+zzQ9agUuWB7kQ79+J0L34KzwVdiIciXowR3t4of820Y
-	0Yz/cElxgwMJ22TVOffn4x4weLoA7/BQA9v0HS9TlYQTVrgWHT6b7YKndsfpFbRtqHLbK2I2lk4Cd
-	pQJ8ZrzlxZN0QOcyCTpA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=t2V14LgF+7QtWiM6BLW/xsaox65H/O3YML6+WMfRZMo=; b=AAmp2xmxloitL2
+	Bgc7pcvIe3sHtJ5LQK9XLSwLGuYwsZPbetQa3WJ3E1ktkSKbhtk1eMsYskDToUCKFJAe9TlwdlwcS
+	47w/K+Jhr5wzdQYGg4Gpe1qeX1y/HsgWGoBw10SsUiKO5Eht9/EQQEoM7rb7l1VnxwpQ7Q/z29ioK
+	HZtWllyEaN0f2heMeOtFT+D8j6JV5uMo+sT9EwZWHd0GW0TzWwAavxUtIU7Kz2Y+iYfxD3uJBiRLh
+	wFgJwkFP0y/6TCzfPXc05lksEJhGFMZMFCWlf6/PUXd18mnRbIoL84igEy7Gwo6DimFCmCz/Dfs+7
+	Sld3vtzBOrtPU+2v6mBA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iCg16-0002Qe-3z; Tue, 24 Sep 2019 08:17:48 +0000
-Received: from s3.sipsolutions.net ([2a01:4f8:191:4433::2]
- helo=sipsolutions.net)
+	id 1iChU4-0004bR-CY; Tue, 24 Sep 2019 09:51:48 +0000
+Received: from mail.skyhub.de ([5.9.137.197])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iCg12-0002Ov-2O
- for linux-um@lists.infradead.org; Tue, 24 Sep 2019 08:17:45 +0000
-Received: by sipsolutions.net with esmtpsa
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <johannes@sipsolutions.net>)
- id 1iCg0z-00008t-OU; Tue, 24 Sep 2019 10:17:41 +0200
-Message-ID: <c8cbee753dc0306fd7597f43a45e05d99d404b29.camel@sipsolutions.net>
-Subject: static EXPORT_SYMBOL checker causes false positives on ARCH=um
-From: Johannes Berg <johannes@sipsolutions.net>
-To: linux-kernel@vger.kernel.org, linux-um@lists.infradead.org, Denis
- Efremov <efremov@linux.com>, Masahiro Yamada
- <yamada.masahiro@socionext.com>, Emil Velikov <emil.l.velikov@gmail.com>
-Date: Tue, 24 Sep 2019 10:17:40 +0200
-User-Agent: Evolution 3.30.5 (3.30.5-1.fc29) 
+ id 1iChTl-0004Fp-6m; Tue, 24 Sep 2019 09:51:31 +0000
+Received: from zn.tnic (p200300EC2F0DB70045CA8E18EABF8C40.dip0.t-ipconnect.de
+ [IPv6:2003:ec:2f0d:b700:45ca:8e18:eabf:8c40])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.skyhub.de (SuperMail on ZX Spectrum 128k) with ESMTPSA id 19F401EC03F6;
+ Tue, 24 Sep 2019 11:51:23 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=alien8.de; s=dkim;
+ t=1569318683;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:in-reply-to:in-reply-to:  references:references;
+ bh=CLiBj8APfucHnx376AS0quJvXHMKstRAZp2sMymzyI0=;
+ b=ljdx59zSyPJ6nMhH3ITKYKXxTI+vYfAGEtqUk+g2gxHpBIa1KB/eHDC9gk6dgQiSOXRpo7
+ /ZKMI11kGei/OrcJ8Sk31OFpA1yEsttSchB0eMQ6ncQ2KzbIM3isN/diR7FuUtzFm3n0J8
+ sTVmffANuWERrQE7QW4lP2jKL1M7irY=
+Date: Tue, 24 Sep 2019 11:51:27 +0200
+From: Borislav Petkov <bp@alien8.de>
+To: Christian Brauner <christian.brauner@ubuntu.com>
+Subject: Re: [PATCH v1] seccomp: simplify secure_computing()
+Message-ID: <20190924095127.GE19317@zn.tnic>
+References: <20190920131907.6886-1-christian.brauner@ubuntu.com>
+ <20190924064420.6353-1-christian.brauner@ubuntu.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190924064420.6353-1-christian.brauner@ubuntu.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190924_011744_226512_3EAC1EA7 
-X-CRM114-Status: UNSURE (   6.79  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.4 (/)
+X-CRM114-CacheID: sfid-20190924_025129_399516_EFEAB84E 
+X-CRM114-Status: GOOD (  11.57  )
+X-Spam-Score: 2.3 (++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.4 points)
+ Content analysis details:   (2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [5.9.137.197 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.4 KHOP_HELO_FCRDNS       Relay HELO differs from its IP's reverse DNS
+ 2.5 SORTED_RECIPS          Recipient list is sorted by address
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,67 +79,64 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kbuild@vger.kernel.org
+Cc: linux-s390@vger.kernel.org, wad@chromium.org, keescook@chromium.org,
+ linux-parisc@vger.kernel.org, x86@kernel.org, linux-um@lists.infradead.org,
+ linux-kernel@vger.kernel.org, oleg@redhat.com, luto@kernel.org,
+ tglx@linutronix.de, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-Hi,
+On Tue, Sep 24, 2019 at 08:44:20AM +0200, Christian Brauner wrote:
+> Afaict, the struct seccomp_data argument to secure_computing() is unused
+> by all current callers. So let's remove it.
+> The argument was added in [1]. It was added because having the arch
+> supply the syscall arguments used to be faster than having it done by
+> secure_computing() (cf. Andy's comment in [2]). This is not true anymore
+> though.
+> 
+> /* References */
+> [1]: 2f275de5d1ed ("seccomp: Add a seccomp_data parameter secure_computing()")
+> [2]: https://lore.kernel.org/r/CALCETrU_fs_At-hTpr231kpaAd0z7xJN4ku-DvzhRU6cvcJA_w@mail.gmail.com
+> 
+> Signed-off-by: Christian Brauner <christian.brauner@ubuntu.com>
+> Cc: Andy Lutomirski <luto@kernel.org>
+> Cc: Thomas Gleixner <tglx@linutronix.de>
+> Cc: Kees Cook <keescook@chromium.org>
+> Cc: Will Drewry <wad@chromium.org>
+> Cc: Oleg Nesterov <oleg@redhat.com>
+> Cc: Borislav Petkov <bp@alien8.de>
+> Cc: linux-arm-kernel@lists.infradead.org
+> Cc: linux-parisc@vger.kernel.org
+> Cc: linux-s390@vger.kernel.org
+> Cc: linux-um@lists.infradead.org
+> Cc: x86@kernel.org
+> ---
+> /* v1 */
+> - Borislav Petkov <bp@alien8.de>:
+>   - provide context for the arg addition to secure_computing() in the
+>     commit message
+> 
+> /* v0 */
+> Link: https://lore.kernel.org/r/20190920131907.6886-1-christian.brauner@ubuntu.com
+> ---
+>  arch/arm/kernel/ptrace.c              | 2 +-
+>  arch/arm64/kernel/ptrace.c            | 2 +-
+>  arch/parisc/kernel/ptrace.c           | 2 +-
+>  arch/s390/kernel/ptrace.c             | 4 ++--
+>  arch/um/kernel/skas/syscall.c         | 2 +-
+>  arch/x86/entry/vsyscall/vsyscall_64.c | 2 +-
+>  include/linux/seccomp.h               | 6 +++---
+>  7 files changed, 10 insertions(+), 10 deletions(-)
 
-With the new commit 15bfc2348d54 ("modpost: check for static
-EXPORT_SYMBOL* functions") we get a lot of warnings on ARCH=um builds:
+Acked-by: Borislav Petkov <bp@suse.de>
 
-WARNING: "rename" [vmlinux] is a static EXPORT_SYMBOL
-WARNING: "lseek" [vmlinux] is a static EXPORT_SYMBOL
-WARNING: "ftruncate64" [vmlinux] is a static EXPORT_SYMBOL
-[...]
-see https://p.sipsolutions.net/7232995f34907b9d.txt
+-- 
+Regards/Gruss,
+    Boris.
 
-
-This hack fixes *most* of them:
-
-diff --git a/scripts/mod/modpost.c b/scripts/mod/modpost.c
-index 820eed87fb43..3e443563ebea 100644
---- a/scripts/mod/modpost.c
-+++ b/scripts/mod/modpost.c
-@@ -1931,12 +1931,18 @@ static void check_sec_ref(struct module *mod, const char *modname,
- static char *remove_dot(char *s)
- {
- 	size_t n = strcspn(s, ".");
-+	char *at;
- 
- 	if (n && s[n]) {
- 		size_t m = strspn(s + n + 1, "0123456789");
- 		if (m && (s[n + m] == '.' || s[n + m] == 0))
- 			s[n] = 0;
- 	}
-+
-+	at = strchr(s, '@');
-+	if (at)
-+		*at = 0;
-+
- 	return s;
- }
- 
-
-(but obviously just serves to give you an idea of what's going on).
-
-
-With that, only two remain for me:
-
-WARNING: "__guard" [vmlinux] is a static EXPORT_SYMBOL
-WARNING: "__stack_smash_handler" [vmlinux] is a static EXPORT_SYMBOL
-
-and I think that's because they don't even exist at all, so arguably the
-code shouldn't export them, but I didn't find a way to detect at build
-time if -fstack-protector was enabled or not?
-
-Any thoughts?
-
-Thanks,
-johannes
-
+https://people.kernel.org/tglx/notes-about-netiquette
 
 _______________________________________________
 linux-um mailing list
