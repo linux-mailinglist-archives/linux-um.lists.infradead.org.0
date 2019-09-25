@@ -2,77 +2,80 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7221EBDDD3
-	for <lists+linux-um@lfdr.de>; Wed, 25 Sep 2019 14:12:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5317FBDDFD
+	for <lists+linux-um@lfdr.de>; Wed, 25 Sep 2019 14:17:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=41zzRwIU1NtiKlt/9WvRSSFMKlDLsmEmk3k6TAOq9IM=; b=LdmjlnPqieS9n5
-	cCU4e29422meP1zaFa6wwPhGFWS+pESJU5HjxHiZUqxDygdJwy7Rf5E6ZLTLb+OipGPsj1+1Zk/y0
-	VWj3pLoc3l4CehrFIyVZ+2W8mvpUskr7G+KjyCBlNLu3iKo/2iFuuPsWmyEYGhzhYxo9RsCmCBCTs
-	u22cAQnNU4yU6OMVAsQemu4XhBg0/9w+rAdW9N4gjzBj6CgEZHGY6lT4zHWaKXADbO2DiKW4bBG+r
-	XhIG+hM1DqiELCopQyqZmpyXV6tGislJTJ3rpGModu9dvTBp/gW0yilABhyZ3vKYMCvc4WrUKyzcH
-	ctOBHAyqqcernLv5l9qQ==;
+	List-Owner; bh=VuR8fODhzZU7xfImgBuwulSqT0TxVmSLKHj2XDNDKIg=; b=VrMxM5lRECAmc0
+	/i+VMdxVo7ULMgGWXMx7a8NcojIWGU0zRZx/jeSe8tjGqEYnDC1t0jOy42vndqDzvq1GlYXL/CT6D
+	l7E21zSmH9cyL3SwM4s21bxuOrj7+9JlNxQFWbcM/rg+zw7gcgMZ0pAt4ZbON5OSESuezhg4GW/Af
+	JO2e7ee31t5psRWeICyvEAsEEBQvg4ApVrRRrTq5kTaExOHAV6cf+EQOY5AaWthTLsUPkKUsL2XG+
+	xjpu/vakvQu+NnlzGYQxn+Lr1Itb+SwFe9+c0E73mQA5apBHVqs1uD912zRYH1yO7LmYJSp7bxfDw
+	0pYhBeE7Ss+QfHCAt8XA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iD69Y-0001cc-Fr; Wed, 25 Sep 2019 12:12:16 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1iD6EP-00036O-GL; Wed, 25 Sep 2019 12:17:17 +0000
+Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iD69T-0001bt-Vp; Wed, 25 Sep 2019 12:12:13 +0000
-Received: by mail-lj1-x241.google.com with SMTP id m13so5356881ljj.11;
- Wed, 25 Sep 2019 05:12:11 -0700 (PDT)
+ id 1iD6EM-00035m-J8; Wed, 25 Sep 2019 12:17:16 +0000
+Received: by mail-io1-xd44.google.com with SMTP id v2so13160586iob.10;
+ Wed, 25 Sep 2019 05:17:14 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=hUmVUwvSY/aeCErtOWtkiU7kxhgjU/DkZwXUVKfeXYI=;
- b=e0naPQpnh4JE/4pzdBeJlRoIgqUi6C/PmOHgsKHfsCSmwrfN9C/j9k46bbLakdQgtK
- NzyyALh2M4uqHkB4On8gEHIrvbwKUNNiu3zZ2lOeoXUiFudrKwoaCTbU97PgilT1l5iG
- BNvpNxJ3L2WwmKsrub8I/gHS221tUzLfviv94tbG+vMGMDoFLa5u8CB7VOGTEKPYce1l
- Cf3u6sYzxHRkaIjp/6i4jUz79T0kliSiD1RIQYnsEdRcWu0lLuAcfKmvxGsweCWvJ0nX
- 0eOjvMQ1r+HHshdYbA3cDvsghoueNpOxeniug7pMPTULgl1lMmy+tRc55+GZxrbOt31A
- IWMQ==
+ :cc; bh=Y4RvotBfrNK4XtLNNLx8Pazo7kMyOm8WMNbLFH6FEEU=;
+ b=iUVK92GEmBGCZJyRo/Zd1KGKYtVYyBQQZ/qadZsMHtgdBqOIEJTGes/jFXUJbsxPYf
+ arbgI67CVRtjqzv9KbtoPjbnRd+NNaoZROuAK65Afp+qrjeu4taq1FiOikitUOgqwDx8
+ fioo5IrGYuhVH0YvNqEwrFk0OelIti4ramwaMIdGU4NyJep+562IHM+KmC8sSycW/lGl
+ 6hw22I7QH199NqTHihVI1jILF/7aomQpGPobiyR3J6OdLD8RebyLMuWN2U0+NXMFCX56
+ jcF4Oyc8LIMBAV7TynSwH8rI44zROllFOPxhK0YNDBYQo27LHn7/o72CQFX3jXNFDaC5
+ kGHQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=hUmVUwvSY/aeCErtOWtkiU7kxhgjU/DkZwXUVKfeXYI=;
- b=YJvfFLQl8H38BFBxH8FlucNGP61CEGz07qicVNfLCiE0bNwya0v7VmfxQXZC9XZ8JT
- uP1uGFsKtS+cqUOe5v+xp3J+ePC+XINXFhv+P/JaOLfLJWyWLDmCMZj93ova+lew8cMB
- NHHqlQBpXp6VDOwjWcqYR10NDYpyYlfrliJ66Uy0pjEnD066RNxuYEmAaKFODfansz52
- JiRa6fKX4OMLjrZjfDYHijtfrbSd2s534qkHLW1JvtKMfvwXh6QwIT+SzLZYI7CqRE/A
- U500erYCsgW1ZEnfx+nsWqKseZzQjQBpZON3HdWiF1YIm5l/wP4NfzoM0fYsUqZg1UjG
- niHw==
-X-Gm-Message-State: APjAAAUP96PKqSX5pOdvoT0xGUpeIRz/fUfP2PqZsOYvI6JbHei3DzfW
- khD0etDa4LlyF50DrsSTbKOCpH192Ll+RoRM8dg=
-X-Google-Smtp-Source: APXvYqyQ9DDK1T7Dnq+bpI71Ik4P0Io7FbZdAq9brFueaElkRY2A7GJR4saQwrvMTiDWN1ujjgcBluE//8NebHfr57o=
-X-Received: by 2002:a2e:a316:: with SMTP id l22mr6207823lje.211.1569413529490; 
- Wed, 25 Sep 2019 05:12:09 -0700 (PDT)
+ bh=Y4RvotBfrNK4XtLNNLx8Pazo7kMyOm8WMNbLFH6FEEU=;
+ b=ps9ueuS0vR9fKl0JtU+4kNBQUyMRGdtZHDNnkFIpuj8MsqUNtyKyB38/ZUvhTEjEvg
+ CYCCkU6zjNB4MLOG8gTygdDr/x2rFnA7VoaKodr/3ZqEgH/qmAYHukdxX2/wMYNFMaV4
+ 2QZ+WUSa/oKNVoyVykdkEDP4NRujKY2n57bZf7ma+WuPFZNcB7bqMUJeDizeWcWDmyZ8
+ DTHfoYXXhd9tjELji/r4qWNfjtW480o++8Te8wDv3zZwol91YdLg2lbOa97JezavHaKO
+ /M+Kaq1zHJAl9WG+IRf6YIMlnr878/1E5KEF9VuGdUzqBH5wVHPe+38AXx/t8D61HekX
+ hPAw==
+X-Gm-Message-State: APjAAAUy0IGPW7Jp9Qxg29yc8OZ5MluO+Bl7ZtvTSpUZn9vdu+DyWQJT
+ 3ZuQGGj9OHdOOOqnLPemLbUEXwMtlpoE8JpKEbg=
+X-Google-Smtp-Source: APXvYqxS45l3zihhw3tYCzgwBmyCEU+INEqloepYzMma/aNO63dr/UcHcVyi8UcvHnJD8dRs3xdWT6wqG8jXwm/qXD0=
+X-Received: by 2002:a02:65cd:: with SMTP id u196mr4900191jab.3.1569413832794; 
+ Wed, 25 Sep 2019 05:17:12 -0700 (PDT)
 MIME-Version: 1.0
 References: <1548057848-15136-1-git-send-email-rppt@linux.ibm.com>
  <CAHCN7x+Jv7yGPoB0Gm=TJ30ObLJduw2XomHkd++KqFEURYQcGg@mail.gmail.com>
-In-Reply-To: <CAHCN7x+Jv7yGPoB0Gm=TJ30ObLJduw2XomHkd++KqFEURYQcGg@mail.gmail.com>
-From: Fabio Estevam <festevam@gmail.com>
-Date: Wed, 25 Sep 2019 09:12:18 -0300
-Message-ID: <CAOMZO5A_U4aYC4XZXK1r9JaLg-eRdXy8m6z4GatQp62rK4HZ6A@mail.gmail.com>
+ <CAOMZO5A_U4aYC4XZXK1r9JaLg-eRdXy8m6z4GatQp62rK4HZ6A@mail.gmail.com>
+In-Reply-To: <CAOMZO5A_U4aYC4XZXK1r9JaLg-eRdXy8m6z4GatQp62rK4HZ6A@mail.gmail.com>
+From: Adam Ford <aford173@gmail.com>
+Date: Wed, 25 Sep 2019 07:17:02 -0500
+Message-ID: <CAHCN7xJdzEppn8-74SvzACsA25bUHGdV7v=CfS08xzSi59Z2uw@mail.gmail.com>
 Subject: Re: [PATCH v2 00/21] Refine memblock API
-To: Adam Ford <aford173@gmail.com>
+To: Fabio Estevam <festevam@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190925_051212_050582_C2135C29 
-X-CRM114-Status: GOOD (  11.66  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190925_051714_658331_A36599C3 
+X-CRM114-Status: GOOD (  14.31  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (festevam[at]gmail.com)
+ provider (aford173[at]gmail.com)
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (aford173[at]gmail.com)
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -125,30 +128,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-Hi Adam,
-
-On Wed, Sep 25, 2019 at 6:38 AM Adam Ford <aford173@gmail.com> wrote:
-
-> I know it's rather late, but this patch broke the Etnaviv 3D graphics
-> in my i.MX6Q.
+On Wed, Sep 25, 2019 at 7:12 AM Fabio Estevam <festevam@gmail.com> wrote:
 >
-> When I try to use the 3D, it returns some errors and the dmesg log
-> shows some memory allocation errors too:
-> [    3.682347] etnaviv etnaviv: bound 130000.gpu (ops gpu_ops)
-> [    3.688669] etnaviv etnaviv: bound 134000.gpu (ops gpu_ops)
-> [    3.695099] etnaviv etnaviv: bound 2204000.gpu (ops gpu_ops)
-> [    3.700800] etnaviv-gpu 130000.gpu: model: GC2000, revision: 5108
-> [    3.723013] etnaviv-gpu 130000.gpu: command buffer outside valid
-> memory window
-> [    3.731308] etnaviv-gpu 134000.gpu: model: GC320, revision: 5007
-> [    3.752437] etnaviv-gpu 134000.gpu: command buffer outside valid
-> memory window
+> Hi Adam,
+>
+> On Wed, Sep 25, 2019 at 6:38 AM Adam Ford <aford173@gmail.com> wrote:
+>
+> > I know it's rather late, but this patch broke the Etnaviv 3D graphics
+> > in my i.MX6Q.
+> >
+> > When I try to use the 3D, it returns some errors and the dmesg log
+> > shows some memory allocation errors too:
+> > [    3.682347] etnaviv etnaviv: bound 130000.gpu (ops gpu_ops)
+> > [    3.688669] etnaviv etnaviv: bound 134000.gpu (ops gpu_ops)
+> > [    3.695099] etnaviv etnaviv: bound 2204000.gpu (ops gpu_ops)
+> > [    3.700800] etnaviv-gpu 130000.gpu: model: GC2000, revision: 5108
+> > [    3.723013] etnaviv-gpu 130000.gpu: command buffer outside valid
+> > memory window
+> > [    3.731308] etnaviv-gpu 134000.gpu: model: GC320, revision: 5007
+> > [    3.752437] etnaviv-gpu 134000.gpu: command buffer outside valid
+> > memory window
+>
+> This looks similar to what was reported at:
+> https://bugs.freedesktop.org/show_bug.cgi?id=111789
+>
+> Does it help if you use the same suggestion and pass cma=256M in your
+> kernel command line?
 
-This looks similar to what was reported at:
-https://bugs.freedesktop.org/show_bug.cgi?id=111789
+I tried cma=256M and noticed the cma dump at the beginning didn't
+change.  Do we need to setup a reserved-memory node like
+imx6ul-ccimx6ulsom.dtsi did?
 
-Does it help if you use the same suggestion and pass cma=256M in your
-kernel command line?
+adam
 
 _______________________________________________
 linux-um mailing list
