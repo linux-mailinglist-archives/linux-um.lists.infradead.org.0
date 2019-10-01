@@ -2,45 +2,45 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D0E29C3EA2
-	for <lists+linux-um@lfdr.de>; Tue,  1 Oct 2019 19:33:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 48CEFC3EA7
+	for <lists+linux-um@lfdr.de>; Tue,  1 Oct 2019 19:34:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YhJe35w/Y6Gpk+Bvw6iDpRaty2UdlpapbDnKTNudBzo=; b=Rlnt9eH8au2bQ7
-	/uDLewFf+UQ3Ke/U6/BrArYLtJVsx5c4EoZe+AH6fihXCrk2/EAnY06gqAh8jzo66qvgd+2dpn19E
-	7o5W7w8amd411fNSgYSMzIOl2eqaXXoSayWPZQC9lRNzfVCaHeC6+sWYpmF+yet9l5HZijAr7oab/
-	9BU+1TTL6FgxOHazyTQwxeSoAhJD52+Ipv264qWOIV/r4RaGxwSWtCCjKyXL9syDkQ88F1vNFUyhU
-	Gskqdc171X9Vqf+BRDCirHmS6LUclDJzMUUovqKDXyl27Bgp0ThAXYEOhsckYV/N2Jf+XUh2DlfTR
-	sWRTtNNJrm9VlntUMzyw==;
+	List-Owner; bh=pjo2MjLEVWhwMJS3XN18suS0qX6I+aHENjVG18TyMPw=; b=pWTxnztoCepEyZ
+	aY4F/zNpOCnxPs4OfKacW13/DqfgHVhiKrC2t++GoQhSyBQtydUmrHHI9yg/Dn+jD6ha7uNQYnTWo
+	4DzvPlXQfpROu5h42ONeH+3BERxgLCGP/9O0sG/6DqRxVUGdxpANyxuo7HkaRXKuyyByuPFWfuTya
+	tLhwjWdsh4sz1cjoSYjTDgti2M7tyIrlhyhflvyknrH3tLqX2MgM8ONJ9ZNgEby3wG0TbkC6BBCm8
+	DtkCClGTaTtSHWzEbNuHZfDBj4OZ5UvzOaDMKcB/yThdrBQ6vALdlO6ZlM4N3O2IyfkajlbufgPkK
+	B+O3MRDmI2eXZAiDfnqw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iFM1A-0006C3-F6; Tue, 01 Oct 2019 17:32:56 +0000
+	id 1iFM2E-0006H0-O4; Tue, 01 Oct 2019 17:34:02 +0000
 Received: from s3.sipsolutions.net ([2a01:4f8:191:4433::2]
  helo=sipsolutions.net)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iFM17-0006BC-OU
- for linux-um@lists.infradead.org; Tue, 01 Oct 2019 17:32:55 +0000
+ id 1iFM2C-0006GZ-Np
+ for linux-um@lists.infradead.org; Tue, 01 Oct 2019 17:34:01 +0000
 Received: by sipsolutions.net with esmtpsa
  (TLS1.3:ECDHE_SECP256R1__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
  (Exim 4.92.2) (envelope-from <johannes@sipsolutions.net>)
- id 1iFM14-0007D8-4X; Tue, 01 Oct 2019 19:32:50 +0200
-Message-ID: <6e5e87abcf0fa6453239678524be6049598dc080.camel@sipsolutions.net>
+ id 1iFM2B-0007Er-EH; Tue, 01 Oct 2019 19:33:59 +0200
+Message-ID: <0c6503e6b74ed1f25457d9919552fbfe48b68f37.camel@sipsolutions.net>
 Subject: Re: [PATCH v2] um: Loadable BPF "Firmware" for vector drivers
 From: Johannes Berg <johannes@sipsolutions.net>
 To: Anton Ivanov <anton.ivanov@cambridgegreys.com>, 
  linux-um@lists.infradead.org
-Date: Tue, 01 Oct 2019 19:32:48 +0200
+Date: Tue, 01 Oct 2019 19:33:58 +0200
 In-Reply-To: <20191001165537.3386-1-anton.ivanov@cambridgegreys.com>
 References: <20191001165537.3386-1-anton.ivanov@cambridgegreys.com>
 User-Agent: Evolution 3.30.5 (3.30.5-1.fc29) 
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191001_103253_795322_5BEB6560 
-X-CRM114-Status: UNSURE (   7.29  )
+X-CRM114-CacheID: sfid-20191001_103400_777766_0994F49F 
+X-CRM114-Status: UNSURE (   6.95  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -67,23 +67,24 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
+On Tue, 2019-10-01 at 17:55 +0100, Anton Ivanov wrote:
+> 
+> +	vp->bpf->filter = kmalloc(fw->size, GFP_KERNEL);
+> +	if (!vp->bpf->filter)
+> +		goto free_buffer;
+> +
+> +	memcpy(vp->bpf->filter, fw->data, fw->size);
 
-> +/*
-> + * We cannot use the firmware.c loader API here because this is not a module
-> + *  and we do not have a proper device structure to pass to it as required
-> + *  by the firmware API
-> + */
+Also, that's really just kmemdup().
 
-I think you should delete the comment now :)
+> +	release_firmware(fw);
+> +
+> +	vp->bpf->len = fw->size / sizeof(struct sock_filter);
 
-[...]
-
-> +	if (request_firmware(&fw, efl->data, &vdevice->pdev.dev))
-> +		goto flash_fail;
-
-That is the standard firmware loader now after all.
+and that's a use-after-free, afaict?
 
 johannes
+
 
 
 _______________________________________________
