@@ -2,49 +2,43 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E7FFDCFCC6
-	for <lists+linux-um@lfdr.de>; Tue,  8 Oct 2019 16:49:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 69B3FCFE01
+	for <lists+linux-um@lfdr.de>; Tue,  8 Oct 2019 17:45:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4lnZ6xYDYovEVOutcDJ1UM8Eo+RK2rZG8lzmYzN0Sp4=; b=atLVegO447giw0
-	BZF3RP33HoODJ05wJtK4zfdaaA04M99g4mdmQS3Pj5xXyKReDoHibPX5Un6wcueFQIUD8UG6TiyiQ
-	yJUigRYSJumO8zX5P7i3psaddTavi5Zj0OaFvrUVosBFhA2EjnGDr/T0rtirlepxw8hmof53Bdvxa
-	oX8gi4h8a+6gfQgzIhfFhq0cNB/Z+BKbx2NozCQi4nQT/QG6V13SFY+0mhqcIyBTP4Zacf8QI514v
-	AE+VgV+4H23NBUZasNpdae0XQPnxP5LQlbE5PSRGyJpdJb+knB0Dvdkhy+ndD6cH2YaU5wVWWu27a
-	9u6aFGiEQob5gPbqTelQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=HfAnXVPPdOUmdG1eeqgY4JBQrGCJGdO0EPP32VpQYO8=; b=S9ZuO/EA1+Cy1W
+	v+Br/aKuB7ky3NVTqsL/zTaMvKwTY2eQNzARi2SmXZDzZlcyn548stKdQEpOGXyMz9KBkrBuGgZuS
+	UOQbL3GQvAE2lsETNefqw0mqQh6CDPePYQLSDhg1fj5qG8fFh9pRCFZzNW1zO4GqMCxOCmYCDrhPe
+	+RJO9ggR3X04pHTd7KKI5sBEEBzA67MJFDBnlK0WyrLSWglDKre6FgEA7KXwlXZPHRR16ib2/wvx3
+	MsGjRWsGsY+8ONdNUNWBv0W454fge98U8C2fqC+zWf0eZXJ8JcI0xvLkMfN5ENbNPg7SpxBYLVG3/
+	Dui3+hYMMEJUVak765Og==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHqoF-0002uS-F6; Tue, 08 Oct 2019 14:49:55 +0000
+	id 1iHrfq-000405-Nc; Tue, 08 Oct 2019 15:45:18 +0000
 Received: from s3.sipsolutions.net ([2a01:4f8:191:4433::2]
  helo=sipsolutions.net)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHqoB-0002tm-JP
- for linux-um@lists.infradead.org; Tue, 08 Oct 2019 14:49:53 +0000
+ id 1iHre7-0001Jk-BZ
+ for linux-um@lists.infradead.org; Tue, 08 Oct 2019 15:43:33 +0000
 Received: by sipsolutions.net with esmtpsa
- (TLS1.3:ECDHE_SECP256R1__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
+ (TLS1.3:ECDHE_X25519__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
  (Exim 4.92.2) (envelope-from <johannes@sipsolutions.net>)
- id 1iHqo3-0001Uh-H1; Tue, 08 Oct 2019 16:49:43 +0200
-Message-ID: <d967492b4d8f815b9cef806691c021a67f295efd.camel@sipsolutions.net>
-Subject: Re: [PATCH 2/2] um: drivers: Add virtio vhost-user driver
+ id 1iHre5-00030X-7B; Tue, 08 Oct 2019 17:43:29 +0200
 From: Johannes Berg <johannes@sipsolutions.net>
-To: Anton Ivanov <anton.ivanov@cambridgegreys.com>, 
- linux-um@lists.infradead.org
-Date: Tue, 08 Oct 2019 16:49:41 +0200
-In-Reply-To: <3cb5a05b-1b63-24e0-be1b-383c7b9230e0@cambridgegreys.com>
-References: <20190731202942.29630-1-johannes@sipsolutions.net>
- <20190731202942.29630-2-johannes@sipsolutions.net>
- <50395b43-5952-0df5-b753-b3de4c246ed4@cambridgegreys.com>
- <8718663842671e3d825ccc8eef6f9669a5a85884.camel@sipsolutions.net>
- <3cb5a05b-1b63-24e0-be1b-383c7b9230e0@cambridgegreys.com>
-User-Agent: Evolution 3.30.5 (3.30.5-1.fc29) 
+To: linux-um@lists.infradead.org
+Subject: [PATCH] um: virtio_uml: disallow modular build
+Date: Tue,  8 Oct 2019 17:43:21 +0200
+Message-Id: <1570549401-Ia2c524a2c48a33cecd9d956898cebe358a37563d@changeid>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191008_074951_639347_B7367016 
-X-CRM114-Status: GOOD (  10.86  )
+X-CRM114-CacheID: sfid-20191008_084331_440108_83041EE2 
+X-CRM114-Status: UNSURE (   9.70  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.4 points)
@@ -64,33 +58,59 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: Richard Weinberger <richard@nod.at>, Jeff Dike <jdike@addtoit.com>,
- Erel Geron <erelx.geron@intel.com>
+Cc: Johannes Berg <johannes.berg@intel.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Tue, 2019-10-08 at 15:17 +0100, Anton Ivanov wrote:
+From: Johannes Berg <johannes.berg@intel.com>
 
-> > Or maybe just not allow this to be a module? Then it cannot be loaded
-> > from inside, and the command-line must be given from outside, I think?
-> > We could change it to use __uml_setup() too.
-> 
-> That would do it.
+This driver *can* be a module, but then its parameters (socket path)
+are untrusted data from inside the VM, and that isn't allowed. Allow
+the code to only be built-in to avoid that.
 
-I think that's probably easiest then.
+Fixes: 5d38f324993f ("um: drivers: Add virtio vhost-user driver")
+Signed-off-by: Johannes Berg <johannes.berg@intel.com>
+---
+ arch/um/drivers/Kconfig      | 2 +-
+ arch/um/drivers/virtio_uml.c | 4 ++--
+ 2 files changed, 3 insertions(+), 3 deletions(-)
 
-> > Perhaps with kexec() it's possible to influence the next kernel's
-> > command line though, but that might already be an issue then?
-> 
-> It is an issue, if kexec works.
-
-I was misremembering the code in main() - it does an exec() of itself
-(with unchanged parameters) for a *reboot*. Somehow I associated that
-with kexec().
-
-johannes
+diff --git a/arch/um/drivers/Kconfig b/arch/um/drivers/Kconfig
+index fea5a0d522dc..388096fb45a2 100644
+--- a/arch/um/drivers/Kconfig
++++ b/arch/um/drivers/Kconfig
+@@ -337,7 +337,7 @@ config UML_NET_SLIRP
+ endmenu
+ 
+ config VIRTIO_UML
+-	tristate "UML driver for virtio devices"
++	bool "UML driver for virtio devices"
+ 	select VIRTIO
+ 	help
+ 	  This driver provides support for virtio based paravirtual device
+diff --git a/arch/um/drivers/virtio_uml.c b/arch/um/drivers/virtio_uml.c
+index fc8c52cff5aa..511f595a3c3d 100644
+--- a/arch/um/drivers/virtio_uml.c
++++ b/arch/um/drivers/virtio_uml.c
+@@ -4,12 +4,12 @@
+  *
+  * Copyright(c) 2019 Intel Corporation
+  *
+- * This module allows virtio devices to be used over a vhost-user socket.
++ * This driver allows virtio devices to be used over a vhost-user socket.
+  *
+  * Guest devices can be instantiated by kernel module or command line
+  * parameters. One device will be created for each parameter. Syntax:
+  *
+- *		[virtio_uml.]device=<socket>:<virtio_id>[:<platform_id>]
++ *		virtio_uml.device=<socket>:<virtio_id>[:<platform_id>]
+  * where:
+  *		<socket>	:= vhost-user socket path to connect
+  *		<virtio_id>	:= virtio device id (as in virtio_ids.h)
+-- 
+2.20.1
 
 
 _______________________________________________
