@@ -2,62 +2,62 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ED523CFEC4
-	for <lists+linux-um@lfdr.de>; Tue,  8 Oct 2019 18:16:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B8B24D1038
+	for <lists+linux-um@lfdr.de>; Wed,  9 Oct 2019 15:34:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=IKLEPJsNrgcYkHJZR8CMeSDP94PKfiMHH8YtctxbNyk=; b=QGmzvHTPzhn+hnfQ20rrVLQEB
-	enS6I3hCwQ3L/nerNi/QaMu3mdYqlFtIeB+A4Qu9HvIooVmbqBPo8nDlD6Bgsw78RAoZ3sp+0aH4j
-	pSB2g4QoFI5aEqq0rVL7SZ34E9pu0eNEbRqpEvcKyMRFei1nHaXE+dO75t6TvysRrWkjY/1YtqiHx
-	ZKTijc4F97Q2yBykToe6s/fkuCPkWr7EwJcfMMXudKdAC/BNhHOXNAjzbJlG/gh70qcvpdY3UfaYM
-	1XkSsKI4FQrCHYK8dO9decpArl+SDrnY5CNOMaTVfEOMXO1gD/tLX2n3WXEVE4bxAUTa4c6ZTU8Zg
-	P91kU9Tew==;
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:Subject:From:To:
+	Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=SyM0aLC7n0eLtJ8ca17ajl4QkWVRH3qwr3zzf1JXDoU=; b=aLG1u3odGe7Ho+
+	BBU8GobL27gOwURHp3pwmASf21vBDN6nAcxf740fOMD25clex+VnA7NwMFyOD1RsG3A59q8Y6xD+P
+	UZloW3IjujK8rH5MrHKBi1aJ3PAsHRpnuGqlZB5QEQDrsDsnNuVjPHwpJlHiixCbqZZBNYbBgKBt3
+	Yk3tRnUjaegKppLgQCZOhU6X3Tr9hDIAc45RHA1z42NHHcDrdC1paSpUBFNy2yHVPTtVz8MYlk7x7
+	P7tOQrepF2pGXa4MJeSOIdSvxEzRrdSvlvieIchGz4VTHEDS3XOh3R0rqThrVZeU68A0KcgnGNcid
+	dHaAo+fEY9ouMvbHqXmQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHsAL-0002rM-Hq; Tue, 08 Oct 2019 16:16:49 +0000
+	id 1iIC6z-0005ID-Na; Wed, 09 Oct 2019 13:34:41 +0000
 Received: from ivanoab7.miniserver.com ([37.128.132.42]
  helo=www.kot-begemot.co.uk)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHsAI-0002qX-3q
- for linux-um@lists.infradead.org; Tue, 08 Oct 2019 16:16:47 +0000
+ id 1iIC6w-0005GO-OU
+ for linux-um@lists.infradead.org; Wed, 09 Oct 2019 13:34:40 +0000
 Received: from tun252.jain.kot-begemot.co.uk ([192.168.18.6]
  helo=jain.kot-begemot.co.uk)
  by www.kot-begemot.co.uk with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.92) (envelope-from <anton.ivanov@kot-begemot.co.uk>)
- id 1iHsAC-0004GC-01; Tue, 08 Oct 2019 16:16:40 +0000
-Received: from sleer.kot-begemot.co.uk ([192.168.3.72])
- by jain.kot-begemot.co.uk with esmtps
- (TLS1.3:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
- (envelope-from <anton.ivanov@kot-begemot.co.uk>)
- id 1iHsA9-0005rK-Pv; Tue, 08 Oct 2019 17:16:39 +0100
-Subject: Re: [PATCH] um: virtio_uml: disallow modular build
-To: Johannes Berg <johannes@sipsolutions.net>, linux-um@lists.infradead.org
-References: <1570549401-Ia2c524a2c48a33cecd9d956898cebe358a37563d@changeid>
-From: Anton Ivanov <anton.ivanov@kot-begemot.co.uk>
-Message-ID: <63d60527-1bc0-cb76-75e2-3d051f583c1b@kot-begemot.co.uk>
-Date: Tue, 8 Oct 2019 17:16:37 +0100
+ (Exim 4.92) (envelope-from <anton.ivanov@cambridgegreys.com>)
+ id 1iIC6n-0008D0-R5
+ for linux-um@lists.infradead.org; Wed, 09 Oct 2019 13:34:30 +0000
+Received: from jain.kot-begemot.co.uk ([192.168.3.3])
+ by jain.kot-begemot.co.uk with esmtp (Exim 4.92)
+ (envelope-from <anton.ivanov@cambridgegreys.com>) id 1iIC6l-0000aj-FC
+ for linux-um@lists.infradead.org; Wed, 09 Oct 2019 14:34:29 +0100
+To: linux-um@lists.infradead.org
+From: Anton Ivanov <anton.ivanov@cambridgegreys.com>
+Subject: RFC - make it possible to add iomem at runtime.
+Message-ID: <841ebee1-8ef3-b4d8-ba60-925461ad6ee9@cambridgegreys.com>
+Date: Wed, 9 Oct 2019 14:34:27 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <1570549401-Ia2c524a2c48a33cecd9d956898cebe358a37563d@changeid>
 Content-Language: en-US
 X-Spam-Score: -1.0
 X-Spam-Score: -1.0
 X-Clacks-Overhead: GNU Terry Pratchett
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191008_091646_154448_C90CF751 
-X-CRM114-Status: GOOD (  17.04  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191009_063438_797292_A7E19C7B 
+X-CRM114-Status: UNSURE (   7.12  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.4 KHOP_HELO_FCRDNS       Relay HELO differs from its IP's reverse DNS
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,66 +69,33 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: Richard Weinberger <richard@nod.at>,
- Johannes Berg <johannes.berg@intel.com>
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On 08/10/2019 16:43, Johannes Berg wrote:
-> From: Johannes Berg <johannes.berg@intel.com>
-> 
-> This driver *can* be a module, but then its parameters (socket path)
-> are untrusted data from inside the VM, and that isn't allowed. Allow
-> the code to only be built-in to avoid that.
-> 
-> Fixes: 5d38f324993f ("um: drivers: Add virtio vhost-user driver")
-> Signed-off-by: Johannes Berg <johannes.berg@intel.com>
-> ---
->   arch/um/drivers/Kconfig      | 2 +-
->   arch/um/drivers/virtio_uml.c | 4 ++--
->   2 files changed, 3 insertions(+), 3 deletions(-)
-> 
-> diff --git a/arch/um/drivers/Kconfig b/arch/um/drivers/Kconfig
-> index fea5a0d522dc..388096fb45a2 100644
-> --- a/arch/um/drivers/Kconfig
-> +++ b/arch/um/drivers/Kconfig
-> @@ -337,7 +337,7 @@ config UML_NET_SLIRP
->   endmenu
->   
->   config VIRTIO_UML
-> -	tristate "UML driver for virtio devices"
-> +	bool "UML driver for virtio devices"
->   	select VIRTIO
->   	help
->   	  This driver provides support for virtio based paravirtual device
-> diff --git a/arch/um/drivers/virtio_uml.c b/arch/um/drivers/virtio_uml.c
-> index fc8c52cff5aa..511f595a3c3d 100644
-> --- a/arch/um/drivers/virtio_uml.c
-> +++ b/arch/um/drivers/virtio_uml.c
-> @@ -4,12 +4,12 @@
->    *
->    * Copyright(c) 2019 Intel Corporation
->    *
-> - * This module allows virtio devices to be used over a vhost-user socket.
-> + * This driver allows virtio devices to be used over a vhost-user socket.
->    *
->    * Guest devices can be instantiated by kernel module or command line
->    * parameters. One device will be created for each parameter. Syntax:
->    *
-> - *		[virtio_uml.]device=<socket>:<virtio_id>[:<platform_id>]
-> + *		virtio_uml.device=<socket>:<virtio_id>[:<platform_id>]
->    * where:
->    *		<socket>	:= vhost-user socket path to connect
->    *		<virtio_id>	:= virtio device id (as in virtio_ids.h)
-> 
+Hi all,
 
-Acked-by: Anton Ivanov <anton.ivanov@cambridgegreys.co.uk>
+I am looking at adding an af_xdp network transport. As a part of its 
+initialization it needs to allocate a memory area to be shared for tx/rx 
+buffers. I would like to do that without dipping into the "normal" UML 
+memory pool if possible.
+
+The only way to allocate this at present is to pass it as an iomem 
+"region". This, however, is a bit dated and limited - it assumes an 
+existing file on a block device which is added at boot and not changed 
+after that. I cannot for example allocate at runtime and map that as iomem.
+
+I was wondering if we can relax the "on-boot" only requirement and allow 
+allocations to happen during runtime as the drivers get initialized. 
+This will make implementing af_xdp and/or tpacket as well as various 
+memifs as network transports much easier.
 
 -- 
 Anton R. Ivanov
-https://www.kot-begemot.co.uk/
+Cambridgegreys Limited. Registered in England. Company Number 10273661
+https://www.cambridgegreys.com/
+
 
 _______________________________________________
 linux-um mailing list
