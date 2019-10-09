@@ -2,94 +2,63 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CA989D1211
-	for <lists+linux-um@lfdr.de>; Wed,  9 Oct 2019 17:07:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E8023D134E
+	for <lists+linux-um@lfdr.de>; Wed,  9 Oct 2019 17:55:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Subject:To:From:Message-ID:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=b6epixGQsB4OmbDYjdaB5NGMsuz6KFD/rqR9SbujH7E=; b=Nra+7YmnoiEY8j
-	xKS6uKQGyCaXc4XhloefkCsN/If64uW/Gl4zoUJQPxfyzK6g5OK2eS05lRB7f41EC0fij47NLfq2s
-	4nKt4RRdJB+q/Zw1xCmxRyN5/xz+6ZdTNFcn4snlMUhUMJPRObz1zbRLP8m9LmM3WAkAD3GGHtK8J
-	n3wl5BF9rraPyGAETpC38mhBgMH7NL2LhOGUK7V82obZM8FwkByS+6Bw+il4NuOfvnua68ki0TX6A
-	Jzw6DKB47OyncyTYDNMksq5ty9bTobDLq9hfUr1dYz8E8wI/ItXMwvWo/eCMpgpSTilRiSdFIj4KE
-	+aB6i3mDsrTFk3I1vbNQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=gJAHG3EMuSxkVeZqdai08g03YpWteft+pXG1Q2UmjF4=; b=Q+7MgwNmeJyLaCN+9POVRmUA7
+	00MGiYxEp76ErUF1+GxZbjkeKt+2mPsqh8cVf9vVOaP9ClqvVgYvVEs3kouABfu/yRjzt3Pxr1sNY
+	pvDmECcnRmvKtOY//zwLTSJLNKbLwdG/Poe0lW1WOP34H4LOt6CU3U4GLk4qWtqm23n+WbRqhc6Ky
+	UrUhaSl+uHs/dt8wjTjBLgUwJIHHKWANengMM63QAvRkgOsoJGvlQ/94BFYu2EkqdMNy8dtfR3JU+
+	UIbkWZDyQRM5UFEZSQQAFUKITwn48vwyz6GQijRnn9XUwL6LQsDTVmpOcDuFITFwP7FamEnEyAvhB
+	1OyaoXOaQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iIDYh-0001Xn-NG; Wed, 09 Oct 2019 15:07:23 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1iIEJb-0007c2-LW; Wed, 09 Oct 2019 15:55:51 +0000
+Received: from ivanoab7.miniserver.com ([37.128.132.42]
+ helo=www.kot-begemot.co.uk)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iIDYf-0001XH-Hi
- for linux-um@lists.infradead.org; Wed, 09 Oct 2019 15:07:23 +0000
-Received: by mail-pg1-x542.google.com with SMTP id e1so1598623pgj.6
- for <linux-um@lists.infradead.org>; Wed, 09 Oct 2019 08:07:21 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:message-id:from:to:cc:subject:in-reply-to:references
- :user-agent:mime-version;
- bh=2b9GUl9pgq8TbjVQuOudGMyeF9L95QLzpDsb0UKBA/k=;
- b=Tjt0n38pR0EKMJ0bVbmDUFS6tRKhYqvwPXWXpBQdnGWwuQhDTfLzZ8zBKuJzDAceep
- alcgshMcScYN1+MSK/hlDHPe45IJDKAorvxheRp007kHvfqWqY3Z/+wfeao7XZKAukSc
- 2JBt1+8eAULIG29KvSRz2suW5gucIkHasZY1/A1bqadSeOLhIagQBtmveUjquLmpAlHG
- BkeP9KwkLQrZAZw1tLlUEoI9jmJbJ0sezvV/sVcke1n37DMLeiTCR3hOej4oWmgo5/2Q
- ZWdP9Kb/MjboNeuyKRyWMvsrua+tdbTwzxoZWlqKj5BJQsshoZA0rpHk5DV05JOFapDB
- ghIg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:message-id:from:to:cc:subject:in-reply-to
- :references:user-agent:mime-version;
- bh=2b9GUl9pgq8TbjVQuOudGMyeF9L95QLzpDsb0UKBA/k=;
- b=QBybJlW8BGn0VXfeUt3TiSzPCwiy+/xUjUj8yL6X+pZRWaYR3+1r7KIrX9hs/lHm+/
- tADgPJfAvhgL4uuIb+A36m5LsZHt57TR9rMOs9wguQ1+ooEOVY3uXjufJk8ShnT3GpS1
- URlbfTPbXFCqP+0xzw0WRsv18D3cpJk4h08Ul6gnry6xTAZAVeTStZQWGRKN804i6/55
- /QfHx63Vy03bBUNJO6/hbAa076/ELkhdGV4RKHURFeeVstdaVXbVebA/U2auTq1t513y
- pw/VJcHDhizj+l/P2ltx1s/sp7e+FSEH9GaLpXhGLnMk9jIgquJQonzQJhvCVSmh4OqA
- uuhQ==
-X-Gm-Message-State: APjAAAWyWYh8dKgH1LwLZtf0aLkP7oJugZtso53Zf8HM2ih/wE53KAOe
- Gw8twW9tIOwk3WY/Kv/TBbc=
-X-Google-Smtp-Source: APXvYqxbKt2Ts1ew64KFVwNMJizKNkBXf2RAWaR4Pz6RuLwPvA0I7sEKMyMFlFm+56BpUd5hJGXM/g==
-X-Received: by 2002:a65:6651:: with SMTP id z17mr4781815pgv.288.1570633640470; 
- Wed, 09 Oct 2019 08:07:20 -0700 (PDT)
-Received: from earth-mac.local.gmail.com
- (219x123x138x129.ap219.ftth.ucom.ne.jp. [219.123.138.129])
- by smtp.gmail.com with ESMTPSA id e3sm2104586pjs.15.2019.10.09.08.07.18
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 09 Oct 2019 08:07:19 -0700 (PDT)
-Date: Thu, 10 Oct 2019 00:07:16 +0900
-Message-ID: <m2tv8i6jq3.wl-thehajime@gmail.com>
-From: Hajime Tazaki<thehajime@gmail.com>
-To: anton.ivanov@cambridgegreys.com
+ id 1iIEJY-0007bV-Uf
+ for linux-um@lists.infradead.org; Wed, 09 Oct 2019 15:55:50 +0000
+Received: from tun252.jain.kot-begemot.co.uk ([192.168.18.6]
+ helo=jain.kot-begemot.co.uk)
+ by www.kot-begemot.co.uk with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.92) (envelope-from <anton.ivanov@cambridgegreys.com>)
+ id 1iIEJR-0000Cq-DL; Wed, 09 Oct 2019 15:55:42 +0000
+Received: from jain.kot-begemot.co.uk ([192.168.3.3])
+ by jain.kot-begemot.co.uk with esmtp (Exim 4.92)
+ (envelope-from <anton.ivanov@cambridgegreys.com>)
+ id 1iIEJP-0005PX-8J; Wed, 09 Oct 2019 16:55:41 +0100
 Subject: Re: RFC - make it possible to add iomem at runtime.
-In-Reply-To: <841ebee1-8ef3-b4d8-ba60-925461ad6ee9@cambridgegreys.com>
+To: Hajime Tazaki <thehajime@gmail.com>
 References: <841ebee1-8ef3-b4d8-ba60-925461ad6ee9@cambridgegreys.com>
-User-Agent: Wanderlust/2.15.9 (Almost Unreal) Emacs/25.3 Mule/6.0
- (HANACHIRUSATO)
-MIME-Version: 1.0 (generated by SEMI-EPG 1.14.7 - "Harue")
+ <m2tv8i6jq3.wl-thehajime@gmail.com>
+From: Anton Ivanov <anton.ivanov@cambridgegreys.com>
+Message-ID: <0633ee21-de74-accf-78aa-5b005da31572@cambridgegreys.com>
+Date: Wed, 9 Oct 2019 16:55:39 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
+MIME-Version: 1.0
+In-Reply-To: <m2tv8i6jq3.wl-thehajime@gmail.com>
+Content-Language: en-US
+X-Spam-Score: -1.0
+X-Spam-Score: -1.0
+X-Clacks-Overhead: GNU Terry Pratchett
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_080721_587270_51D36C25 
-X-CRM114-Status: GOOD (  13.90  )
-X-Spam-Score: 4.0 (++++)
+X-CRM114-CacheID: sfid-20191009_085548_983225_D34BBA59 
+X-CRM114-Status: GOOD (  17.88  )
+X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (4.0 points)
+ Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (thehajime[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 2.5 TO_NO_BRKTS_FROM_MSSP  Multiple header formatting problems
- 1.7 FROM_MISSP_FREEMAIL    From misspaced + freemail provider
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.4 KHOP_HELO_FCRDNS       Relay HELO differs from its IP's reverse DNS
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,56 +71,80 @@ List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
 Cc: linux-um@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
 
-Hello,
 
-On Wed, 09 Oct 2019 22:34:27 +0900,
-Anton Ivanov wrote:
+On 09/10/2019 16:07, Hajime Tazaki wrote:
 > 
-> Hi all,
+> Hello,
 > 
-> I am looking at adding an af_xdp network transport. As a part of its
-> initialization it needs to allocate a memory area to be shared for
-> tx/rx buffers. I would like to do that without dipping into the
-> "normal" UML memory pool if possible.
+> On Wed, 09 Oct 2019 22:34:27 +0900,
+> Anton Ivanov wrote:
+>>
+>> Hi all,
+>>
+>> I am looking at adding an af_xdp network transport. As a part of its
+>> initialization it needs to allocate a memory area to be shared for
+>> tx/rx buffers. I would like to do that without dipping into the
+>> "normal" UML memory pool if possible.
+>>
+>> The only way to allocate this at present is to pass it as an iomem
+>> "region". This, however, is a bit dated and limited - it assumes an
+>> existing file on a block device which is added at boot and not changed
+>> after that. I cannot for example allocate at runtime and map that as
+>> iomem.
+>>
+>> I was wondering if we can relax the "on-boot" only requirement and
+>> allow allocations to happen during runtime as the drivers get
+>> initialized. This will make implementing af_xdp and/or tpacket as well
+>> as various memifs as network transports much easier.
 > 
-> The only way to allocate this at present is to pass it as an iomem
-> "region". This, however, is a bit dated and limited - it assumes an
-> existing file on a block device which is added at boot and not changed
-> after that. I cannot for example allocate at runtime and map that as
-> iomem.
+> I'm quite not sure if this is relevant to what you proposed,
+> but we're recently trying to integrate LKL (Linux Kernel
+> Library) to UML.
 > 
-> I was wondering if we can relax the "on-boot" only requirement and
-> allow allocations to happen during runtime as the drivers get
-> initialized. This will make implementing af_xdp and/or tpacket as well
-> as various memifs as network transports much easier.
+> Though the internals of LKL and UML are different, we could
+> use devices created by LKL (host) and use it in UML via
+> virtio-mmio driver (below).  This was done by a dynamically
+> created iomem region, which I think it's relevant to your idea.
+> 
+> Here is nasty code which I have experimented.
+> In this code we use __uml_setup() to create a region, but it
+> should be possible to trigger via a command invoked by users.
+> 
+> https://github.com/thehajime/linux/commit/e7dca9fced709ad015b69bf0c49c2afee1db45be
+> 
+> Apologize if this is out of topic.
 
-I'm quite not sure if this is relevant to what you proposed,
-but we're recently trying to integrate LKL (Linux Kernel
-Library) to UML.
+It's on topic. I have read that commit and it gave me some food for 
+thought.
 
-Though the internals of LKL and UML are different, we could
-use devices created by LKL (host) and use it in UML via
-virtio-mmio driver (below).  This was done by a dynamically
-created iomem region, which I think it's relevant to your idea.
+Specifically - I need to look again at the platform device interface and 
+reservation of "resources" this way.
 
-Here is nasty code which I have experimented.
-In this code we use __uml_setup() to create a region, but it
-should be possible to trigger via a command invoked by users.
+Best Regards and thanks,
 
-https://github.com/thehajime/linux/commit/e7dca9fced709ad015b69bf0c49c2afee1db45be
 
-Apologize if this is out of topic.
+> 
+> # We still need more time to fit in a shape, but we wish to
+>    propose another RFC on this integration later.
+> 
+> -- Hajime
+> 
+> _______________________________________________
+> linux-um mailing list
+> linux-um@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-um
+> 
 
-# We still need more time to fit in a shape, but we wish to
-  propose another RFC on this integration later.
-
--- Hajime
+-- 
+Anton R. Ivanov
+Cambridgegreys Limited. Registered in England. Company Number 10273661
+https://www.cambridgegreys.com/
 
 _______________________________________________
 linux-um mailing list
