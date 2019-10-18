@@ -2,73 +2,68 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 98969ECAA1
-	for <lists+linux-um@lfdr.de>; Fri,  1 Nov 2019 22:59:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8790EED50F
+	for <lists+linux-um@lfdr.de>; Sun,  3 Nov 2019 22:15:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:MIME-Version:
+	References:In-Reply-To:Subject:To:From:Date:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TnTskxWpUsAX14HICHW7iJ1YFtNWHOdPhi8bnWCyelY=; b=CjbHefYeMAIRhQ
-	fnKiZzV7nwV8vxjQ8ct00QYl5XqfkMPGQRUcmLFHLpytEngAuMY4vy10Wv7QbHKXj3DesLnH14Id0
-	XX1RHJJacLTYmBoruKQx8YMtdJNdjDg4i6bwuWM2/EHtldR/v2KZRJA9wqN1ME/e68IhRF+Jd4oww
-	wAYYVs3klsR/xWEI24c5o3hCURVEj13zrsg0NMBhDP4mR1ldzC9LXfO/rpwBKI7KngTPGxqGBmStv
-	JnVZvGfzJhLS0lsB40J4IDq41SKkYlrWisKYoRq38NP5FUZjG+GRT9CtSfJW5KWrsCEcTExzr84EI
-	/bFbvFFd2rWhqSuNKiJw==;
+	List-Owner; bh=EF/L8T2EC0NAHa4ovVUg1gliCImnvZkfIJFNY5KBfDs=; b=ZrwhvDE6s8FvNI
+	ZFMARXaju5z2Nc27LrN7jkNuLllkS9ZOUGuzn8ytOaXSfqJxh+DJQ9m3oxpFBjyECOzP2FjYAOQWr
+	i01jejQDcaYhrucu8BcZJSoi7OjJhkjaH5dkgpgb2JJdHXrCj2nXS7/awM+fetdDkQZ4yLppTr5Wy
+	ziMYUiLxBNjL6WNYo1xFcsbjlxlu7oIppIshRN3uad2xWcOkYi3IscMg8PHp2zroPfGW8Kg4wlaLR
+	e5BEwAK55sdEAPdWtvsYZkLXAgOZfBCKHJb0Bd1Pa1K4fpiKkPdTheVGgodVWAwiAEMvcP4T+HPJh
+	DG3jTdWoXQeOOaevFiXQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQex9-0002gM-DM; Fri, 01 Nov 2019 21:59:31 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iRNDY-0005kg-NN; Sun, 03 Nov 2019 21:15:24 +0000
+Received: from galois.linutronix.de ([2a0a:51c0:0:12e:550::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQex2-0002ZC-9V; Fri, 01 Nov 2019 21:59:25 +0000
-Received: from rapoport-lnx (190.228.71.37.rev.sfr.net [37.71.228.190])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E6ED020679;
- Fri,  1 Nov 2019 21:59:14 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572645563;
- bh=QiZm9ub4TObxGGKcca2WTm6kN/XMUXB/j0wvSJ5M3eA=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=IHcZXPG5aOVX7THF5w1BhXuPpEAFbXmlm1YNYoLN1/wia+WcGzRCfkdX1Ruwcf8B0
- 7VsDchfB2H1tc1VfaQdn38Nf40YHULbzg3WrgWUI8RNC8o7I6dxUJNNV8Ww/2Gbls9
- tJJ3TSp8O0lGrXdZetQvfatdTrJJjGLz2VuJU/Ck=
-Date: Fri, 1 Nov 2019 22:59:11 +0100
-From: Mike Rapoport <rppt@kernel.org>
-To: "Kirill A. Shutemov" <kirill@shutemov.name>
-Subject: Re: [PATCH v2 01/13] alpha: use pgtable-nop4d instead of 4level-fixup
-Message-ID: <20191101215905.GB20065@rapoport-lnx>
-References: <1572597584-6390-1-git-send-email-rppt@kernel.org>
- <1572597584-6390-2-git-send-email-rppt@kernel.org>
- <20191101091157.q4cesn6vsiy5qj2j@box>
+ id 1iLV9K-0008Dj-5B
+ for linux-um@lists.infradead.org; Fri, 18 Oct 2019 16:30:48 +0000
+Received: from [5.158.153.53] (helo=tip-bot2.lab.linutronix.de)
+ by Galois.linutronix.de with esmtpsa (TLS1.2:DHE_RSA_AES_256_CBC_SHA256:256)
+ (Exim 4.80) (envelope-from <tip-bot2@linutronix.de>)
+ id 1iLV98-0002uF-Rd; Fri, 18 Oct 2019 18:30:34 +0200
+Received: from [127.0.1.1] (localhost [IPv6:::1])
+ by tip-bot2.lab.linutronix.de (Postfix) with ESMTP id E56B31C04C9;
+ Fri, 18 Oct 2019 18:30:30 +0200 (CEST)
+Date: Fri, 18 Oct 2019 16:30:30 -0000
+From: "tip-bot2 for Jiri Slaby" <tip-bot2@linutronix.de>
+To: linux-tip-commits@vger.kernel.org
+Subject: [tip: x86/asm] x86/um: Annotate data appropriately
+In-Reply-To: <20191011115108.12392-14-jslaby@suse.cz>
+References: <20191011115108.12392-14-jslaby@suse.cz>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191101091157.q4cesn6vsiy5qj2j@box>
-User-Agent: Mutt/1.5.24 (2015-08-30)
+Message-ID: <157141623074.29376.16125324643950283172.tip-bot2@tip-bot2>
+X-Mailer: tip-git-log-daemon
+Robot-ID: <tip-bot2.linutronix.de>
+Robot-Unsubscribe: Contact <mailto:tglx@linutronix.de> to get blacklisted from
+ these emails
+Precedence: bulk
+X-Linutronix-Spam-Score: -1.0
+X-Linutronix-Spam-Level: -
+X-Linutronix-Spam-Status: No , -1.0 points, 5.0 required, ALL_TRUSTED=-1,
+ SHORTCIRCUIT=-0.0001
+X-Bad-Reply: References and In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191101_145924_352379_C225ED7E 
-X-CRM114-Status: GOOD (  10.52  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191018_093046_336586_5071BA72 
+X-CRM114-Status: GOOD (  10.14  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2a0a:51c0:0:12e:550:0:0:1 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+X-Mailman-Approved-At: Sun, 03 Nov 2019 13:15:23 -0800
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
-Precedence: list
 List-Id: <linux-um.lists.infradead.org>
 List-Unsubscribe: <http://lists.infradead.org/mailman/options/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=unsubscribe>
@@ -77,48 +72,74 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>,
- linux-mm@kvack.org, sparclinux@vger.kernel.org,
- Rolf Eike Beer <eike-kernel@sf-tec.de>, Vincent Chen <deanbo422@gmail.com>,
- Greg Ungerer <gerg@linux-m68k.org>,
- Anton Ivanov <anton.ivanov@cambridgegreys.com>, linux-arch@vger.kernel.org,
- linux-c6x-dev@linux-c6x.org, Richard Weinberger <richard@nod.at>,
- Helge Deller <deller@gmx.de>, Russell King <linux@armlinux.org.uk>,
- Mike Rapoport <rppt@linux.ibm.com>, Geert Uytterhoeven <geert@linux-m68k.org>,
- Mark Salter <msalter@redhat.com>, Matt Turner <mattst88@gmail.com>,
- Jeff Dike <jdike@addtoit.com>, Sam Creasey <sammy@sammy.net>,
- Arnd Bergmann <arnd@arndb.de>, Vineet Gupta <Vineet.Gupta1@synopsys.com>,
- linux-um@lists.infradead.org, linux-m68k@lists.linux-m68k.org,
- Greentime Hu <green.hu@gmail.com>, linux-arm-kernel@lists.infradead.org,
- Michal Simek <monstr@monstr.eu>, linux-parisc@vger.kernel.org,
- linux-kernel@vger.kernel.org, "David S. Miller" <davem@davemloft.net>,
- linux-alpha@vger.kernel.org, Andrew Morton <akpm@linux-foundation.org>,
- Linus Torvalds <torvalds@linux-foundation.org>, Peter Rosin <peda@axentia.se>
+Reply-To: linux-kernel@vger.kernel.org
+Cc: linux-arch@vger.kernel.org, user-mode-linux-devel@lists.sourceforge.net,
+ Richard Weinberger <richard@nod.at>, Jeff Dike <jdike@addtoit.com>,
+ x86-ml <x86@kernel.org>, linux-um@lists.infradead.org,
+ linux-kernel@vger.kernel.org, Ingo Molnar <mingo@redhat.com>,
+ Borislav Petkov <bp@alien8.de>, user-mode-linux-user@lists.sourceforge.net,
+ "H. Peter Anvin" <hpa@zytor.com>, Thomas Gleixner <tglx@linutronix.de>,
+ Borislav Petkov <bp@suse.de>, Jiri Slaby <jslaby@suse.cz>,
+ Ingo Molnar <mingo@kernel.org>, Anton Ivanov <anton.ivanov@cambridgegreys.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Fri, Nov 01, 2019 at 12:11:57PM +0300, Kirill A. Shutemov wrote:
-> On Fri, Nov 01, 2019 at 10:39:32AM +0200, Mike Rapoport wrote:
-> > From: Mike Rapoport <rppt@linux.ibm.com>
-> > 
-> > It is not likely alpha will have 5-level page tables.
-> > 
-> > Replace usage of include/asm-generic/4level-fixup.h and implied
-> > __ARCH_HAS_4LEVEL_HACK with include/asm-generic/pgtable-nop4d.h and adjust
-> > page table manipulation macros and functions accordingly.
-> 
-> Not pgtable-nop4d.h, but pgtable-nopud.h. Also in subject.
+The following commit has been merged into the x86/asm branch of tip:
 
-Ouch, of course.
+Commit-ID:     773a37b182259f5e0cdb928112431b119a6e4500
+Gitweb:        https://git.kernel.org/tip/773a37b182259f5e0cdb928112431b119a6e4500
+Author:        Jiri Slaby <jslaby@suse.cz>
+AuthorDate:    Fri, 11 Oct 2019 13:50:53 +02:00
+Committer:     Borislav Petkov <bp@suse.de>
+CommitterDate: Fri, 18 Oct 2019 10:45:03 +02:00
+
+x86/um: Annotate data appropriately
+
+Use the new SYM_DATA_START and SYM_DATA_END_LABEL macros for vdso_start.
+
+Result is:
+  0000  2376 OBJECT  GLOBAL DEFAULT    4 vdso_start
+  0948     0 OBJECT  GLOBAL DEFAULT    4 vdso_end
+
+Signed-off-by: Jiri Slaby <jslaby@suse.cz>
+Signed-off-by: Borislav Petkov <bp@suse.de>
+Acked-by: Richard Weinberger <richard@nod.at>
+Cc: Anton Ivanov <anton.ivanov@cambridgegreys.com>
+Cc: "H. Peter Anvin" <hpa@zytor.com>
+Cc: Ingo Molnar <mingo@redhat.com>
+Cc: Jeff Dike <jdike@addtoit.com>
+Cc: linux-arch@vger.kernel.org
+Cc: linux-um@lists.infradead.org
+Cc: Thomas Gleixner <tglx@linutronix.de>
+Cc: user-mode-linux-devel@lists.sourceforge.net
+Cc: user-mode-linux-user@lists.sourceforge.net
+Cc: x86-ml <x86@kernel.org>
+Link: https://lkml.kernel.org/r/20191011115108.12392-14-jslaby@suse.cz
+---
+ arch/x86/um/vdso/vdso.S | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/arch/x86/um/vdso/vdso.S b/arch/x86/um/vdso/vdso.S
+index a4a3870..a6eaf29 100644
+--- a/arch/x86/um/vdso/vdso.S
++++ b/arch/x86/um/vdso/vdso.S
+@@ -1,11 +1,11 @@
+ /* SPDX-License-Identifier: GPL-2.0 */
+ #include <linux/init.h>
++#include <linux/linkage.h>
  
-> -- 
->  Kirill A. Shutemov
-
--- 
-Sincerely yours,
-Mike.
+ __INITDATA
+ 
+-	.globl vdso_start, vdso_end
+-vdso_start:
++SYM_DATA_START(vdso_start)
+ 	.incbin "arch/x86/um/vdso/vdso.so"
+-vdso_end:
++SYM_DATA_END_LABEL(vdso_start, SYM_L_GLOBAL, vdso_end)
+ 
+ __FINIT
 
 _______________________________________________
 linux-um mailing list
