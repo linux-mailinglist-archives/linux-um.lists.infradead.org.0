@@ -2,60 +2,73 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8E9CDE164D
-	for <lists+linux-um@lfdr.de>; Wed, 23 Oct 2019 11:36:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 838C0E167C
+	for <lists+linux-um@lfdr.de>; Wed, 23 Oct 2019 11:44:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=0fNDyaETW75CyPtHI1L8rCGNWHKZxi22aAJmucs6114=; b=ap/C9Zl9/q6c2EyCqa03DCmfVI
-	InPodQS19EbH74rEOZ8offv5+fxXMWFPy+jlLf5lKUsNBRk0S2AwmqZLxnu9Qi4BH1cTHFc4RyLgg
-	aaK/cdyJorBHREWipWfChFP2CxkdEKgvIqJLwjpRHwVTE6tzJVmf+ubZjMDJcYOBishO82zef4B/8
-	MSfLjG/1oWr6tuL0wUeq2wHZoOSXhaH/zT8R+6EqV3So21C0brimh4VCXWAilvlKMDVP9LeoIm3OS
-	We+qIGxRRLa4d+yRb1uTciEdsDGGQ4HmB9hZ6YI36tmBJukXEbGuosP4QUJCO7FvTvf5SG3WY4d2V
-	JtmATo6A==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=uT5q43o/jUlko9iWj4L5qj6ewSCRP6Q7zd1qroUuri8=; b=mdJ/dygVvMjq6b
+	C5hIbCge/qMT1Ru1B7qgYFXx0FIfywzqQfHQ5Dco+5CUsa7FiwWWTmMaDdLQ1tyEkdzHwg/kUPjpW
+	Jg0uYYzcQT6g24sBdncqExGqD8/vTPYV6tqN3krMeeW/94v/7X8kMtSpCZcG1iqRnvJQJUn/uL2RE
+	0jcmja0/ZDkXVXyZZdb6N6hwpN+FYtxVUKO3ek/U8kEfDOdCqFkEDERLWv7bSoJ1pkP4ZScOep1H6
+	NWdzcE7/NIb+SEdBMr/Nx5RNXWh4LzAxCuec+FtShRvDLUB7rZqF4Zkk45V9Hpf9tOA9eiUJK5DO8
+	Gdk9q0qXnUUzx9YAgSmQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iND4P-0007uv-Bp; Wed, 23 Oct 2019 09:36:45 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iNDBX-000352-5e; Wed, 23 Oct 2019 09:44:07 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNCyr-0001p1-Lt; Wed, 23 Oct 2019 09:31:03 +0000
-Received: from aquarius.haifa.ibm.com (nesher1.haifa.il.ibm.com [195.110.40.7])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E0100222CB;
- Wed, 23 Oct 2019 09:30:52 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1571823060;
- bh=0lGj0AI/IfAJbVTLRfdK6fD/lMA7GlT+qoua/5oNwys=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=EjUWcHhaP2sY6M7iSvI0Jbl1Ez9p8dy7j+rXbPiK3x3k56SUTr6+26wiIbhOZtRTs
- 7x10sNHdnhY1fgiPV/WKGg2ad1iHee2yn3F+nojVOr9cbI8eq1Be6yk1gXldcBLygS
- awUGZgZZUyye0gMhU1R5yvaiagYotNs4cg/MLlQk=
-From: Mike Rapoport <rppt@kernel.org>
-To: linux-mm@kvack.org
-Subject: [PATCH 12/12] mm: remove __ARCH_HAS_4LEVEL_HACK and
- include/asm-generic/4level-fixup.h
-Date: Wed, 23 Oct 2019 12:29:01 +0300
-Message-Id: <1571822941-29776-13-git-send-email-rppt@kernel.org>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1571822941-29776-1-git-send-email-rppt@kernel.org>
+ id 1iNDBH-0002RL-En; Wed, 23 Oct 2019 09:43:55 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=Zj5XfgeeJGpKuLcZ9xIMs7v8y6wlyVmuVne2tYjeW1M=; b=tSh0TWsLv0zTB/+cgvenf9Alp
+ bJ97VOL1Q4Q/wIuvnA12UaDMLRf78wnJjHpbggLuo4iMGeNglZ1as6l8RASl1TDll+uOHTPG25/pR
+ acvy9GNDVqZ7KfBh47xSWs+PI5asIdAhm13tXE6BItpl+2VzngNhBvzuj+zOzsXjQrFsNNJCGjnRC
+ AbTb9a1MpJm1fedkHTRfoEwRE0vhBKPst8jQpneLESyhJ64OYxELIPZrr0oJy1xuGi9RVf/xLwxxe
+ lNgreE5Mr25YZDU0qQD3g4xFyjZHQ8a3w8RDULX7AAdieMMMEEubl0LuajXBuQGADa2mAfoNErhWi
+ 9nNtjsKOg==;
+Received: from shell.armlinux.org.uk
+ ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:46362)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1iND8K-00047D-6h; Wed, 23 Oct 2019 10:40:48 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1iND7x-0005NN-6r; Wed, 23 Oct 2019 10:40:25 +0100
+Date: Wed, 23 Oct 2019 10:40:25 +0100
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Mike Rapoport <rppt@kernel.org>
+Subject: Re: [PATCH 02/12] arm: nommu: use pgtable-nopud instead of
+ 4level-fixup
+Message-ID: <20191023094025.GY25745@shell.armlinux.org.uk>
 References: <1571822941-29776-1-git-send-email-rppt@kernel.org>
+ <1571822941-29776-3-git-send-email-rppt@kernel.org>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1571822941-29776-3-git-send-email-rppt@kernel.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191023_023101_814713_66007012 
-X-CRM114-Status: GOOD (  12.24  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191023_024353_496691_192C0D3E 
+X-CRM114-Status: GOOD (  14.44  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -63,7 +76,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,165 +88,68 @@ List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
 Cc: "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>,
- sparclinux@vger.kernel.org, Vincent Chen <deanbo422@gmail.com>,
- Greg Ungerer <gerg@linux-m68k.org>,
+ linux-mm@kvack.org, sparclinux@vger.kernel.org,
+ Vincent Chen <deanbo422@gmail.com>, Greg Ungerer <gerg@linux-m68k.org>,
  Anton Ivanov <anton.ivanov@cambridgegreys.com>, linux-arch@vger.kernel.org,
  linux-c6x-dev@linux-c6x.org, Richard Weinberger <richard@nod.at>,
- Helge Deller <deller@gmx.de>, Russell King <linux@armlinux.org.uk>,
- Mike Rapoport <rppt@linux.ibm.com>, Geert Uytterhoeven <geert@linux-m68k.org>,
- Mark Salter <msalter@redhat.com>, Matt Turner <mattst88@gmail.com>,
- Jeff Dike <jdike@addtoit.com>, Sam Creasey <sammy@sammy.net>,
- Arnd Bergmann <arnd@arndb.de>, Vineet Gupta <Vineet.Gupta1@synopsys.com>,
- linux-um@lists.infradead.org, linux-m68k@lists.linux-m68k.org,
- Greentime Hu <green.hu@gmail.com>, "Kirill A. Shutemov" <kirill@shutemov.name>,
+ Helge Deller <deller@gmx.de>, Mike Rapoport <rppt@linux.ibm.com>,
+ Geert Uytterhoeven <geert@linux-m68k.org>, Mark Salter <msalter@redhat.com>,
+ Matt Turner <mattst88@gmail.com>, Jeff Dike <jdike@addtoit.com>,
+ Sam Creasey <sammy@sammy.net>, Arnd Bergmann <arnd@arndb.de>,
+ Vineet Gupta <Vineet.Gupta1@synopsys.com>, linux-um@lists.infradead.org,
+ linux-m68k@lists.linux-m68k.org, Greentime Hu <green.hu@gmail.com>,
+ "Kirill A. Shutemov" <kirill@shutemov.name>,
  linux-arm-kernel@lists.infradead.org, Michal Simek <monstr@monstr.eu>,
  linux-parisc@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-alpha@vger.kernel.org, Andrew Morton <akpm@linux-foundation.org>,
  Linus Torvalds <torvalds@linux-foundation.org>,
- "David S. Miller" <davem@davemloft.net>, Mike Rapoport <rppt@kernel.org>
-MIME-Version: 1.0
+ "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-From: Mike Rapoport <rppt@linux.ibm.com>
+On Wed, Oct 23, 2019 at 12:28:51PM +0300, Mike Rapoport wrote:
+> From: Mike Rapoport <rppt@linux.ibm.com>
+> 
+> The generic nommu implementation of page table manipulation takes care of
+> folding of the upper levels and does not require fixups.
+> 
+> Simply replace of include/asm-generic/4level-fixup.h with
+> include/asm-generic/pgtable-nopud.h.
+> 
+> Signed-off-by: Mike Rapoport <rppt@linux.ibm.com>
 
-There are no architectures that use include/asm-generic/4level-fixup.h
-therefore it can be removed along with __ARCH_HAS_4LEVEL_HACK define.
+Acked-by: Russell King <rmk+kernel@armlinux.org.uk>
 
-Signed-off-by: Mike Rapoport <rppt@linux.ibm.com>
----
- include/asm-generic/4level-fixup.h | 40 --------------------------------------
- include/asm-generic/tlb.h          |  2 --
- include/linux/mm.h                 | 10 +++++-----
- mm/memory.c                        |  8 --------
- 4 files changed, 5 insertions(+), 55 deletions(-)
- delete mode 100644 include/asm-generic/4level-fixup.h
+Thanks.
 
-diff --git a/include/asm-generic/4level-fixup.h b/include/asm-generic/4level-fixup.h
-deleted file mode 100644
-index e3667c9..0000000
---- a/include/asm-generic/4level-fixup.h
-+++ /dev/null
-@@ -1,40 +0,0 @@
--/* SPDX-License-Identifier: GPL-2.0 */
--#ifndef _4LEVEL_FIXUP_H
--#define _4LEVEL_FIXUP_H
--
--#define __ARCH_HAS_4LEVEL_HACK
--#define __PAGETABLE_PUD_FOLDED 1
--
--#define PUD_SHIFT			PGDIR_SHIFT
--#define PUD_SIZE			PGDIR_SIZE
--#define PUD_MASK			PGDIR_MASK
--#define PTRS_PER_PUD			1
--
--#define pud_t				pgd_t
--
--#define pmd_alloc(mm, pud, address) \
--	((unlikely(pgd_none(*(pud))) && __pmd_alloc(mm, pud, address))? \
-- 		NULL: pmd_offset(pud, address))
--
--#define pud_offset(pgd, start)		(pgd)
--#define pud_none(pud)			0
--#define pud_bad(pud)			0
--#define pud_present(pud)		1
--#define pud_ERROR(pud)			do { } while (0)
--#define pud_clear(pud)			pgd_clear(pud)
--#define pud_val(pud)			pgd_val(pud)
--#define pud_populate(mm, pud, pmd)	pgd_populate(mm, pud, pmd)
--#define pud_page(pud)			pgd_page(pud)
--#define pud_page_vaddr(pud)		pgd_page_vaddr(pud)
--
--#undef pud_free_tlb
--#define pud_free_tlb(tlb, x, addr)	do { } while (0)
--#define pud_free(mm, x)			do { } while (0)
--#define __pud_free_tlb(tlb, x, addr)	do { } while (0)
--
--#undef  pud_addr_end
--#define pud_addr_end(addr, end)		(end)
--
--#include <asm-generic/5level-fixup.h>
--
--#endif
-diff --git a/include/asm-generic/tlb.h b/include/asm-generic/tlb.h
-index 04c0644..5e0c2d0 100644
---- a/include/asm-generic/tlb.h
-+++ b/include/asm-generic/tlb.h
-@@ -584,7 +584,6 @@ static inline void tlb_end_vma(struct mmu_gather *tlb, struct vm_area_struct *vm
- 	} while (0)
- #endif
- 
--#ifndef __ARCH_HAS_4LEVEL_HACK
- #ifndef pud_free_tlb
- #define pud_free_tlb(tlb, pudp, address)			\
- 	do {							\
-@@ -594,7 +593,6 @@ static inline void tlb_end_vma(struct mmu_gather *tlb, struct vm_area_struct *vm
- 		__pud_free_tlb(tlb, pudp, address);		\
- 	} while (0)
- #endif
--#endif
- 
- #ifndef __ARCH_HAS_5LEVEL_HACK
- #ifndef p4d_free_tlb
-diff --git a/include/linux/mm.h b/include/linux/mm.h
-index cc29227..477b52a 100644
---- a/include/linux/mm.h
-+++ b/include/linux/mm.h
-@@ -1850,12 +1850,12 @@ static inline void mm_dec_nr_ptes(struct mm_struct *mm) {}
- int __pte_alloc(struct mm_struct *mm, pmd_t *pmd);
- int __pte_alloc_kernel(pmd_t *pmd);
- 
-+#if defined(CONFIG_MMU)
-+
- /*
-- * The following ifdef needed to get the 4level-fixup.h header to work.
-- * Remove it when 4level-fixup.h has been removed.
-+ * The following ifdef needed to get the 5level-fixup.h header to work.
-+ * Remove it when 5level-fixup.h has been removed.
-  */
--#if defined(CONFIG_MMU) && !defined(__ARCH_HAS_4LEVEL_HACK)
--
- #ifndef __ARCH_HAS_5LEVEL_HACK
- static inline p4d_t *p4d_alloc(struct mm_struct *mm, pgd_t *pgd,
- 		unsigned long address)
-@@ -1877,7 +1877,7 @@ static inline pmd_t *pmd_alloc(struct mm_struct *mm, pud_t *pud, unsigned long a
- 	return (unlikely(pud_none(*pud)) && __pmd_alloc(mm, pud, address))?
- 		NULL: pmd_offset(pud, address);
- }
--#endif /* CONFIG_MMU && !__ARCH_HAS_4LEVEL_HACK */
-+#endif /* CONFIG_MMU */
- 
- #if USE_SPLIT_PTE_PTLOCKS
- #if ALLOC_SPLIT_PTLOCKS
-diff --git a/mm/memory.c b/mm/memory.c
-index b1ca51a..50300f0 100644
---- a/mm/memory.c
-+++ b/mm/memory.c
-@@ -4095,19 +4095,11 @@ int __pmd_alloc(struct mm_struct *mm, pud_t *pud, unsigned long address)
- 	smp_wmb(); /* See comment in __pte_alloc */
- 
- 	ptl = pud_lock(mm, pud);
--#ifndef __ARCH_HAS_4LEVEL_HACK
- 	if (!pud_present(*pud)) {
- 		mm_inc_nr_pmds(mm);
- 		pud_populate(mm, pud, new);
- 	} else	/* Another has populated it */
- 		pmd_free(mm, new);
--#else
--	if (!pgd_present(*pud)) {
--		mm_inc_nr_pmds(mm);
--		pgd_populate(mm, pud, new);
--	} else /* Another has populated it */
--		pmd_free(mm, new);
--#endif /* __ARCH_HAS_4LEVEL_HACK */
- 	spin_unlock(ptl);
- 	return 0;
- }
+> ---
+>  arch/arm/include/asm/pgtable.h | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/arch/arm/include/asm/pgtable.h b/arch/arm/include/asm/pgtable.h
+> index 3ae120c..eabcb48 100644
+> --- a/arch/arm/include/asm/pgtable.h
+> +++ b/arch/arm/include/asm/pgtable.h
+> @@ -12,7 +12,7 @@
+>  
+>  #ifndef CONFIG_MMU
+>  
+> -#include <asm-generic/4level-fixup.h>
+> +#include <asm-generic/pgtable-nopud.h>
+>  #include <asm/pgtable-nommu.h>
+>  
+>  #else
+> -- 
+> 2.7.4
+> 
+> 
+
 -- 
-2.7.4
-
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
 linux-um mailing list
