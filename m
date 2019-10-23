@@ -2,81 +2,80 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CE7E4E1119
-	for <lists+linux-um@lfdr.de>; Wed, 23 Oct 2019 06:39:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 43382E111D
+	for <lists+linux-um@lfdr.de>; Wed, 23 Oct 2019 06:39:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sFjp7Jm3LjiBK33B/k//GvgU9LBchdqeSN+2MY7tfUY=; b=GsJggkHVHbeSCL
-	oAGfCzi3DLVBPhUwyDOwZALCo1bRlPdWNWWxmTbp6ggjxNXfe13zqBUmlKN2ukYDQithFfM5SbVrk
-	lPZuOczpQFKo/AHOv6pnaTdMtppcK7Iu1fZ4IDElK7HaV3QGwKYJV8LUJJ0b+wYm/qH3PpULhmyTH
-	IX4wJ3RjLO2/2Mrs+3nRLd0vWFwgK3EqrTbKEPtdpcKRiqBoHZ2UBJssWCGdbLOSEezJHf/pFIS0n
-	QI3csu/CezoMDCUjqpdFSWm8aF98tvdQQiK0tnr9aU1Q52vc5GY57dP+LgXEBW5h0xk2ScSyPugjD
-	ybUdKlg0D3yDBRqGRq9g==;
+	List-Owner; bh=XuY8O/Gxr1PLnFPYWTGt/pFq44SmcMzRVlie4iM8UWc=; b=X80v27mwe3gLhe
+	q8tVDS5bSpMlexnIgByqSp7GXht68buLyzE0vDtW5znQmbEUxnhW8ADAlU64rw9Wb8+GRk1c2yCfa
+	c0rS6cqSJz7Z5ZaHALeAqwdgW9bfrZ2mgtltrFy6IfVSuO1KpaHdcAV0fCnq2tH927AGPG+KLeJgB
+	w5SoHFk+WyjaSpJ9ypaXZbfKhU2ykPs8P9gf/wOWKPH/B7ANg97gmiZ5TF10lMEYyKI+gUegAMhR1
+	PAZkAOesDuGVZAJrl4Ucuzu78P5Oq5KkOasuAts0mrPBbbefbkCstHN3LEhgVP7frtt7jkzgzi7rj
+	QKEAVqZItW6CoJhamDew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iN8Qc-00024d-4O; Wed, 23 Oct 2019 04:39:22 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1iN8Qf-00029f-Eb; Wed, 23 Oct 2019 04:39:25 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iN8QN-0001rn-6B
- for linux-um@lists.infradead.org; Wed, 23 Oct 2019 04:39:18 +0000
-Received: by mail-pg1-x543.google.com with SMTP id c8so6538851pgb.2
- for <linux-um@lists.infradead.org>; Tue, 22 Oct 2019 21:39:07 -0700 (PDT)
+ id 1iN8QQ-0001vh-Rx
+ for linux-um@lists.infradead.org; Wed, 23 Oct 2019 04:39:23 +0000
+Received: by mail-pf1-x441.google.com with SMTP id 21so828338pfj.9
+ for <linux-um@lists.infradead.org>; Tue, 22 Oct 2019 21:39:10 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=+gHzXqYAVaQ1x2qwChj9LgcOMtcG5AUeOmx6iKsRGTA=;
- b=AXLpH56tSps9RygiIHMpvRfhRvRCPbELsVyYtgXt7Y3TWMyy1YfOdQM95KoNZ9SKjl
- wsGX6Ys7eot88qj7bzRF4jZeVMimnxF/XykB3XezJGznOcmTTF5YT+2uuDa3UiZSvZ6o
- Hzs0D1EXgtnTY1PD5rXSIHgk2XaFPEVYgCrJ8ed0QofQ7Ndo32XOrzvtl84qlJPl4jcf
- xDYJx/bvnejxP2ApLDT+EdUSy/mbvqJbw1tXMLSmVjTRz2bn9pQns1+yys589gpw3S6T
- ug8GyR/sW/XgNCHYXkYryzD4NBURPCbiLc4IlFTdKIlEcnTqSdmGJmH3uqIdfWG6Vz4Q
- 3r2Q==
+ bh=UN1vCfXXoEDlJQF3G5guWjPvX8+k6XEtixsw9nqiOug=;
+ b=DR6QxaadGMHCa4QX/nlDw1tAmO7AS/6rp60DHg1M21QdwKbq8lrZEb1L7UV+WfSAEK
+ qzpiQwiWWD3MGazQh7Tvz4BwiA0UkkCWyl5qwOVpxBD67Yv+NNEMYdfSIgGcvlnCBNl9
+ tuNCvD+S+pK1NCkYSjTFxgu8Ol3dqVIE7Svdk+iu7Cf55OYtTLhLvpMevEL03tQtWIYW
+ U07jtkstq3G5FMKzJQmOI6EVnY0PCwYG1KDBBv5PfZ0uFTTFxl9kA4lhD22Mtq3txftd
+ fhbGUDneTOIyar5oG7D7deV/NPcaSDO1XY4Id23CFChcJV9WrMi0xVwUzyvqgpgQoeX6
+ nHzg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=+gHzXqYAVaQ1x2qwChj9LgcOMtcG5AUeOmx6iKsRGTA=;
- b=h+r2HSJsSTp3pu23MZxtrIbfPLReUi4f8EopEkHMgRrJqX6UD1hXQI5tUtvsPBnnyP
- Ys1kLsbym0EkQRhtrRXLI23nhvkej+nMmhhfJBL3RxgnWcsD68El4MseLUd1BLLLjxFk
- BmiP56E7svUauPHd4/Rk5KVRM+GvgEpejrecSz/oFrVjnBh1NHorkFRmD1/j0FvpK5Up
- AyVHQCVpCXVXLpQgbEveUsh4MVVcHZXw646hAR3p6crde2TLypzzpxR71OJvLWotP7Z6
- eyicHSS8NUiVAvab/L8uS7J6VddiYGQU5gWqT5LFQC6ZunwqN8iSHt/2UmPN9d0Ohxcc
- 2wbw==
-X-Gm-Message-State: APjAAAWrP3nLa16IUT1o86rgzMiZuJgns/9nQ+M3dAZwB9L2Sl5+Uvgd
- WBjQNPhrYXOVJtRVcH4AXlQ=
-X-Google-Smtp-Source: APXvYqxkiMbWJdJLvZpGs5g/L+5vNlQc1sb4S/d1c/idYtzHLxmCuxG7N23a8pBTx/fph02FAxuh/A==
-X-Received: by 2002:a63:3441:: with SMTP id b62mr8051779pga.274.1571805545423; 
- Tue, 22 Oct 2019 21:39:05 -0700 (PDT)
+ bh=UN1vCfXXoEDlJQF3G5guWjPvX8+k6XEtixsw9nqiOug=;
+ b=RwvtyJRa51uEN5oGQnWtapCR1IQHn152zifLc1rTDp/zO3aQBHvI9fKHkl86lQ5gUV
+ 7NDgV2odS86HchMxn2AAJ9wOvi59hAbVoS2qsCn5LRCJSSqlrGzTwVauA3Vw5/ofaHm6
+ 7LgiyTUfN/73z8gnoIAqtpGTUuAzTMsGZomrKVpOcZCr4El5cdptLCfUQiZVRWSevsxL
+ xGvrwuGMOoUX3orPIZ07tg4/2hsjx/TwLZo/frt/go7MvvysokAZaZzoM9+Ad4aUubEL
+ Ic18jNghXcWPfP07tF3jUPOjTUHnVKIqJaj/BxZOvmu4cg2OFWlr/isuBApy8fB4Wrkk
+ WaNw==
+X-Gm-Message-State: APjAAAVchRRk0IZY3vEa6qMWnPEIQRDbtP3YZ4Q/vlvMCrhgjd3I6vX+
+ eBEqlV8lZG0DU+tEjPRqupQ=
+X-Google-Smtp-Source: APXvYqyYK5tl8wIkYLu/XOlFOGYRmY8ZM5DEXIuk2WlmlQ7p3BD+G2jtgVNv1e7IHndsbfH3/s8HmQ==
+X-Received: by 2002:a63:305:: with SMTP id 5mr5031743pgd.175.1571805549232;
+ Tue, 22 Oct 2019 21:39:09 -0700 (PDT)
 Received: from earth-mac.local ([202.214.86.179])
- by smtp.gmail.com with ESMTPSA id m12sm23414146pff.66.2019.10.22.21.38.58
+ by smtp.gmail.com with ESMTPSA id k32sm559679pje.10.2019.10.22.21.39.06
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 22 Oct 2019 21:39:02 -0700 (PDT)
+ Tue, 22 Oct 2019 21:39:08 -0700 (PDT)
 Received: by earth-mac.local (Postfix, from userid 501)
- id 944EC20199580E; Wed, 23 Oct 2019 13:38:53 +0900 (JST)
+ id 9D3C9201995810; Wed, 23 Oct 2019 13:38:53 +0900 (JST)
 From: Hajime Tazaki <thehajime@gmail.com>
 To: linux-um@lists.infradead.org
-Subject: [RFC PATCH 14/47] lkl tools: skeleton for host side library,
- tests and tools
-Date: Wed, 23 Oct 2019 13:37:48 +0900
-Message-Id: <06adaf7e2d1344fa60f8466d5e269cf4c131e015.1571798507.git.thehajime@gmail.com>
+Subject: [RFC PATCH 15/47] lkl tools: host lib: add utilities functions
+Date: Wed, 23 Oct 2019 13:37:49 +0900
+Message-Id: <d55991521a4f97a0e1b15d4f3520b3bb85ac6d04.1571798507.git.thehajime@gmail.com>
 X-Mailer: git-send-email 2.20.1 (Apple Git-117)
 In-Reply-To: <cover.1571798507.git.thehajime@gmail.com>
 References: <cover.1571798507.git.thehajime@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191022_213907_347104_81A04F46 
-X-CRM114-Status: GOOD (  12.45  )
+X-CRM114-CacheID: sfid-20191022_213911_075262_CAEE7095 
+X-CRM114-Status: GOOD (  18.95  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -100,15 +99,10 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: "H . K . Jerry Chu" <hkchu@google.com>, Xiao Jia <xiaoj@google.com>,
- Conrad Meyer <cem@FreeBSD.org>, Octavian Purdila <tavi.purdila@gmail.com>,
- Motomu Utsumi <motomuman@gmail.com>, Akira Moroo <retrage01@gmail.com>,
- Petros Angelatos <petrosagg@gmail.com>, Yuan Liu <liuyuan@google.com>,
- Thomas Liebetraut <thomas@tommie-lie.de>, Mark Stillwell <mark@stillwell.me>,
- Patrick Collins <pscollins@google.com>,
- Ben Wolsieffer <benwolsieffer@gmail.com>,
- Michael Zimmermann <sigmaepsilon92@gmail.com>,
- Luca Dariz <luca.dariz@gmail.com>, Hajime Tazaki <thehajime@gmail.com>
+Cc: Conrad Meyer <cem@FreeBSD.org>, Octavian Purdila <tavi.purdila@gmail.com>,
+ Motomu Utsumi <motomuman@gmail.com>, Hajime Tazaki <thehajime@gmail.com>,
+ Patrick Collins <pscollins@google.com>, Akira Moroo <retrage01@gmail.com>,
+ Yuan Liu <liuyuan@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
@@ -116,1519 +110,1603 @@ Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
 From: Octavian Purdila <tavi.purdila@gmail.com>
 
-This patch adds the skeleton for the host library, tests and
-application examples.
+Add basic utility functions for getting a string from a kernel error
+code and a fprintf like function that uses the host print
+operation. The latter is useful for informing the user about errors
+that occur in the host library.
 
-The host library is implementing the host operations needed by LKL and
-is split into host dependent (depends on a specific host, e.g. POSIX
-hosts) and host independent parts (will work on all supported hosts).
+Other configuration and debug utilities are also added.
 
-Signed-off-by: Ben Wolsieffer <benwolsieffer@gmail.com>
 Signed-off-by: Conrad Meyer <cem@FreeBSD.org>
-Signed-off-by: H.K. Jerry Chu <hkchu@google.com>
 Signed-off-by: Hajime Tazaki <thehajime@gmail.com>
-Signed-off-by: Luca Dariz <luca.dariz@gmail.com>
-Signed-off-by: Mark Stillwell <mark@stillwell.me>
-Signed-off-by: Michael Zimmermann <sigmaepsilon92@gmail.com>
-Signed-off-by: Motomu Utsumi <motomuman@gmail.com>
 Signed-off-by: Patrick Collins <pscollins@google.com>
-Signed-off-by: Petros Angelatos <petrosagg@gmail.com>
-Signed-off-by: Thomas Liebetraut <thomas@tommie-lie.de>
-Signed-off-by: Xiao Jia <xiaoj@google.com>
 Signed-off-by: Yuan Liu <liuyuan@google.com>
+Signed-off-by: Motomu Utsumi <motomuman@gmail.com>
 Signed-off-by: Octavian Purdila <tavi.purdila@gmail.com>
 ---
- tools/lkl/.gitignore         |  14 +
- tools/lkl/Build              |   6 +
- tools/lkl/Makefile           | 130 +++++
- tools/lkl/Makefile.autoconf  | 114 +++++
- tools/lkl/Targets            |  27 +
- tools/lkl/include/.gitignore |   1 +
- tools/lkl/include/lkl.h      | 928 +++++++++++++++++++++++++++++++++++
- tools/lkl/include/lkl_host.h | 160 ++++++
- tools/lkl/lib/.gitignore     |   3 +
- tools/lkl/lib/Build          |  25 +
- 10 files changed, 1408 insertions(+)
- create mode 100644 tools/lkl/.gitignore
- create mode 100644 tools/lkl/Build
- create mode 100644 tools/lkl/Makefile
- create mode 100644 tools/lkl/Makefile.autoconf
- create mode 100644 tools/lkl/Targets
- create mode 100644 tools/lkl/include/.gitignore
- create mode 100644 tools/lkl/include/lkl.h
- create mode 100644 tools/lkl/include/lkl_host.h
- create mode 100644 tools/lkl/lib/.gitignore
- create mode 100644 tools/lkl/lib/Build
+ tools/lkl/include/lkl_config.h |  61 +++
+ tools/lkl/lib/config.c         | 793 +++++++++++++++++++++++++++++++++
+ tools/lkl/lib/dbg.c            | 300 +++++++++++++
+ tools/lkl/lib/dbg_handler.c    |  44 ++
+ tools/lkl/lib/endian.h         |  31 ++
+ tools/lkl/lib/jmp_buf.c        |  14 +
+ tools/lkl/lib/jmp_buf.h        |   8 +
+ tools/lkl/lib/utils.c          | 266 +++++++++++
+ 8 files changed, 1517 insertions(+)
+ create mode 100644 tools/lkl/include/lkl_config.h
+ create mode 100644 tools/lkl/lib/config.c
+ create mode 100644 tools/lkl/lib/dbg.c
+ create mode 100644 tools/lkl/lib/dbg_handler.c
+ create mode 100644 tools/lkl/lib/endian.h
+ create mode 100644 tools/lkl/lib/jmp_buf.c
+ create mode 100644 tools/lkl/lib/jmp_buf.h
+ create mode 100644 tools/lkl/lib/utils.c
 
-diff --git a/tools/lkl/.gitignore b/tools/lkl/.gitignore
+diff --git a/tools/lkl/include/lkl_config.h b/tools/lkl/include/lkl_config.h
 new file mode 100644
-index 000000000000..796785986336
+index 000000000000..d3edf8b414cf
 --- /dev/null
-+++ b/tools/lkl/.gitignore
-@@ -0,0 +1,14 @@
-+tests/boot
-+fs2tar
-+cptofs
-+cpfromfs
-+lklfuse
-+tests/valgrind*.xml
-+*.exe
-+*.dll
-+tests/net-test
-+tests/disk
-+Makefile.conf
-+include/lkl_autoconf.h
-+tests/autoconf.sh
-+*.pyc
-diff --git a/tools/lkl/Build b/tools/lkl/Build
-new file mode 100644
-index 000000000000..6048440d0e1b
---- /dev/null
-+++ b/tools/lkl/Build
-@@ -0,0 +1,6 @@
-+CFLAGS_lklfuse.o += -D_FILE_OFFSET_BITS=64
-+
-+cptofs-$(LKL_HOST_CONFIG_ARCHIVE) += cptofs.o
-+fs2tar-$(LKL_HOST_CONFIG_ARCHIVE) += fs2tar.o
-+lklfuse-$(LKL_HOST_CONFIG_FUSE) += lklfuse.o
-+
-diff --git a/tools/lkl/Makefile b/tools/lkl/Makefile
-new file mode 100644
-index 000000000000..7e0cb0d01bf2
---- /dev/null
-+++ b/tools/lkl/Makefile
-@@ -0,0 +1,130 @@
-+# Do not use make's built-in rules
-+# (this improves performance and avoids hard-to-debug behaviour);
-+# also do not print "Entering directory..." messages from make
-+.SUFFIXES:
-+MAKEFLAGS += -r --no-print-directory
-+
-+KCONFIG?=defconfig
-+
-+ifneq ($(silent),1)
-+  ifneq ($(V),1)
-+	QUIET_AUTOCONF       = @echo '  AUTOCONF '$@;
-+	Q = @
-+  endif
-+endif
-+
-+PREFIX   := /usr
-+
-+ifeq (,$(srctree))
-+  srctree := $(patsubst %/,%,$(dir $(shell pwd)))
-+  srctree := $(patsubst %/,%,$(dir $(srctree)))
-+endif
-+export srctree
-+
-+-include ../scripts/Makefile.include
-+
-+# OUTPUT fixup should be *after* include ../scripts/Makefile.include
-+ifneq ($(OUTPUT),)
-+  OUTPUT := $(OUTPUT)/tools/lkl/
-+else
-+  OUTPUT := $(CURDIR)/
-+endif
-+export OUTPUT
-+
-+
-+all:
-+
-+conf: $(OUTPUT)Makefile.conf
-+
-+$(OUTPUT)Makefile.conf: Makefile.autoconf
-+	$(call QUIET_AUTOCONF, headers)$(MAKE) -f Makefile.autoconf -s
-+
-+-include $(OUTPUT)Makefile.conf
-+
-+export CFLAGS += -I$(OUTPUT)/include -Iinclude -Wall -g -O2 -Wextra \
-+	 -Wno-unused-parameter \
-+	 -Wno-missing-field-initializers -fno-strict-aliasing
-+
-+-include Targets
-+
-+TARGETS := $(progs-y:%=$(OUTPUT)%$(EXESUF))
-+TARGETS += $(libs-y:%=$(OUTPUT)%$(SOSUF))
-+all: $(TARGETS)
-+
-+# this workaround is for FreeBSD
-+bin/stat:
-+ifeq ($(LKL_HOST_CONFIG_BSD),y)
-+	$(Q)ln -sf `which gnustat` bin/stat
-+	$(Q)ln -sf `which gsed` bin/sed
-+else
-+	$(Q)touch bin/stat
-+endif
-+
-+# rule to build lkl.o
-+$(OUTPUT)lib/lkl.o: bin/stat
-+	$(Q)$(MAKE) -C ../.. ARCH=um SUBARCH=lkl $(KOPT) $(KCONFIG)
-+# this workaround is for arm32 linker (ld.gold)
-+	$(Q)export PATH=$(srctree)/tools/lkl/bin/:${PATH} ;\
-+	$(MAKE) -C ../.. ARCH=um SUBARCH=lkl $(KOPT) install INSTALL_PATH=$(OUTPUT)
-+
-+# rules to link libs
-+$(OUTPUT)%$(SOSUF): LDFLAGS += -shared
-+$(OUTPUT)%$(SOSUF): $(OUTPUT)%-in.o $(OUTPUT)liblkl.a
-+	$(QUIET_LINK)$(CC) $(LDFLAGS) $(LDFLAGS_$*-y) -o $@ $^ $(LDLIBS) $(LDLIBS_$*-y)
-+
-+# liblkl is special
-+$(OUTPUT)liblkl$(SOSUF): $(OUTPUT)%-in.o $(OUTPUT)lib/lkl.o
-+$(OUTPUT)liblkl.a: $(OUTPUT)lib/liblkl-in.o $(OUTPUT)lib/lkl.o
-+	$(QUIET_AR)$(AR) -rc $@ $^
-+
-+# rule to link programs
-+$(OUTPUT)%$(EXESUF): $(OUTPUT)%-in.o $(OUTPUT)liblkl.a
-+	$(QUIET_LINK)$(CC) $(LDFLAGS) $(LDFLAGS_$*-y) -o $@ $^ $(LDLIBS) $(LDLIBS_$*-y)
-+
-+# rule to build objects
-+$(OUTPUT)%-in.o: $(OUTPUT)lib/lkl.o FORCE
-+	$(Q)$(MAKE) -f $(srctree)/tools/build/Makefile.build dir=$(patsubst %/,%,$(dir $*)) obj=$(notdir $*)
-+
-+
-+$(OUTPUT)cpfromfs$(EXESUF): cptofs$(EXESUF)
-+	$(Q)if ! [ -e $@ ]; then ln -s $< $@; fi
-+
-+clean:
-+	$(call QUIET_CLEAN, objects)find $(OUTPUT) -name '*.o' -delete -o -name '\.*.cmd'\
-+	 -delete -o -name '\.*.d' -delete
-+	$(call QUIET_CLEAN, headers)$(RM) -r $(OUTPUT)/include/lkl/
-+	$(call QUIET_CLEAN, liblkl.a)$(RM) $(OUTPUT)/liblkl.a
-+	$(call QUIET_CLEAN, targets)$(RM) $(TARGETS) bin/stat
-+
-+clean-conf: clean
-+	$(call QUIET_CLEAN, Makefile.conf)$(RM) $(OUTPUT)/Makefile.conf
-+
-+headers_install: $(TARGETS)
-+	$(call QUIET_INSTALL, headers) \
-+	    install -d $(DESTDIR)$(PREFIX)/include ; \
-+	    install -m 644 include/lkl.h include/lkl_host.h $(OUTPUT)include/lkl_autoconf.h \
-+	      include/lkl_config.h $(DESTDIR)$(PREFIX)/include ; \
-+	    cp -r $(OUTPUT)include/lkl $(DESTDIR)$(PREFIX)/include
-+
-+libraries_install: $(libs-y:%=$(OUTPUT)%$(SOSUF)) $(OUTPUT)liblkl.a
-+	$(call QUIET_INSTALL, libraries) \
-+	    install -d $(DESTDIR)$(PREFIX)/lib ; \
-+	    install -m 644 $^ $(DESTDIR)$(PREFIX)/lib
-+
-+programs_install: $(progs-y:%=$(OUTPUT)%$(EXESUF))
-+	$(call QUIET_INSTALL, programs) \
-+	    install -d $(DESTDIR)$(PREFIX)/bin ; \
-+	    install -m 755 $^ $(DESTDIR)$(PREFIX)/bin
-+
-+install: headers_install libraries_install programs_install
-+
-+
-+run-tests:
-+	./tests/run.py $(tests)
-+
-+FORCE: ;
-+.PHONY: all clean FORCE run-tests
-+.PHONY: headers_install libraries_install programs_install install
-+.NOTPARALLEL : lib/lkl.o
-+.SECONDARY:
-+
-diff --git a/tools/lkl/Makefile.autoconf b/tools/lkl/Makefile.autoconf
-new file mode 100644
-index 000000000000..1c3a053a8e94
---- /dev/null
-+++ b/tools/lkl/Makefile.autoconf
-@@ -0,0 +1,114 @@
-+POSIX_HOSTS=elf64-x86-64 elf32-i386 elf64-x86-64-freebsd elf32-littlearm elf64-littleaarch64
-+NT_HOSTS=pe-i386 pe-x86-64
-+
-+define set_autoconf_var
-+  $(shell echo "#define LKL_HOST_CONFIG_$(1) $(2)" \
-+	  >> $(OUTPUT)/include/lkl_autoconf.h)
-+  $(shell echo "LKL_HOST_CONFIG_$(1)=$(2)" >> $(OUTPUT)/tests/autoconf.sh)
-+  export LKL_HOST_CONFIG_$(1)=$(2)
-+endef
-+
-+define find_include
-+  $(eval include_paths=$(shell $(CC) -E -Wp,-v -xc /dev/null 2>&1 | grep '^ '))
-+  $(foreach f, $(include_paths), $(wildcard $(f)/$(1)))
-+endef
-+
-+define is_defined
-+$(shell $(CC) -dM -E - </dev/null | grep $(1))
-+endef
-+
-+define android_host
-+  $(call set_autoconf_var,ANDROID,y)
-+endef
-+
-+define bsd_host
-+  $(call set_autoconf_var,BSD,y)
-+endef
-+
-+define arm_host
-+  $(call set_autoconf_var,ARM,y)
-+endef
-+
-+define aarch64_host
-+  $(call set_autoconf_var,AARCH64,y)
-+endef
-+
-+define virtio_net_dpdk
-+  $(call set_autoconf_var,VIRTIO_NET_DPDK,y)
-+  RTE_SDK ?= $(OUTPUT)/dpdk-17.02
-+  RTE_TARGET ?= build
-+  DPDK_LIBS = -lrte_pmd_vmxnet3_uio -lrte_pmd_ixgbe -lrte_pmd_e1000
-+  DPDK_LIBS += -lrte_pmd_virtio
-+  DPDK_LIBS += -lrte_timer -lrte_hash -lrte_mbuf -lrte_ethdev -lrte_eal
-+  DPDK_LIBS += -lrte_mempool -lrte_ring -lrte_pmd_ring
-+  DPDK_LIBS += -lrte_kvargs -lrte_net
-+  CFLAGS += -I$$(RTE_SDK)/$$(RTE_TARGET)/include -msse4.2 -mpopcnt
-+  LDFLAGS +=-L$$(RTE_SDK)/$$(RTE_TARGET)/lib
-+  LDFLAGS +=-Wl,--whole-archive $$(DPDK_LIBS) -Wl,--no-whole-archive -lm -ldl
-+endef
-+
-+define virtio_net_vde
-+  $(call set_autoconf_var,VIRTIO_NET_VDE,y)
-+  LDLIBS += $(shell pkg-config --libs vdeplug)
-+endef
-+
-+define posix_host
-+  $(call set_autoconf_var,POSIX,y)
-+  $(call set_autoconf_var,VIRTIO_NET,y)
-+  LDFLAGS += -pie
-+  CFLAGS += -fPIC -pthread
-+  SOSUF := .so
-+  $(if $(call is_defined,__ANDROID__),$(call android_host),LDLIBS += -lrt -lpthread)
-+  $(if $(filter $(1),elf64-x86-64-freebsd),$(call bsd_host))
-+  $(if $(filter $(1),elf32-littlearm),$(call arm_host))
-+  $(if $(filter $(1),elf64-littleaarch64),$(call aarch64_host))
-+  $(if $(filter yes,$(dpdk)),$(call virtio_net_dpdk))
-+  $(if $(filter yes,$(vde)),$(call virtio_net_vde))
-+  $(if $(strip $(call find_include,fuse.h)),$(call set_autoconf_var,FUSE,y))
-+  $(if $(strip $(call find_include,archive.h)),$(call set_autoconf_var,ARCHIVE,y))
-+  $(if $(strip $(call find_include,linux/if_tun.h)),$(call set_autoconf_var,VIRTIO_NET_MACVTAP,y))
-+  $(if $(filter $(1),elf64-x86-64-freebsd),$(call set_autoconf_var,NEEDS_LARGP,y))
-+  $(if $(filter $(1),elf32-i386),$(call set_autoconf_var,I386,y))
-+endef
-+
-+define nt64_host
-+  $(call set_autoconf_var,NEEDS_LARGP,y)
-+  CFLAGS += -Wl,--enable-auto-image-base -Wl,--image-base -Wl,0x10000000 \
-+  	 -Wl,--out-implib=$(OUTPUT)liblkl.dll.a -Wl,--export-all-symbols \
-+	 -Wl,--enable-auto-import
-+  LDFLAGS +=-Wl,--image-base -Wl,0x10000000 -Wl,--enable-auto-image-base \
-+   	   -Wl,--out-implib=$(OUTPUT)liblkl.dll.a -Wl,--export-all-symbols \
-+	   -Wl,--enable-auto-import
-+endef
-+
-+define nt_host
-+  $(call set_autoconf_var,NT,y)
-+  KOPT = "KALLSYMS_EXTRA_PASS=1"
-+  LDLIBS += -lws2_32
-+  EXESUF := .exe
-+  SOSUF := .dll
-+  CFLAGS += -Iinclude/mingw32
-+  $(if $(filter $(1),pe-x86-64),$(call nt64_host))
-+endef
-+
-+define do_autoconf
-+  export CROSS_COMPILE := $(CROSS_COMPILE)
-+  export CC := $(CROSS_COMPILE)gcc
-+  export LD := $(CROSS_COMPILE)ld
-+  export AR := $(CROSS_COMPILE)ar
-+  $(eval LD := $(CROSS_COMPILE)ld)
-+  $(eval CC := $(CROSS_COMPILE)gcc)
-+  $(eval LD_FMT := $(shell $(LD) -r -print-output-format))
-+  $(if $(filter $(LD_FMT),$(POSIX_HOSTS)),$(call posix_host,$(LD_FMT)))
-+  $(if $(filter $(LD_FMT),$(NT_HOSTS)),$(call nt_host,$(LD_FMT)))
-+endef
-+
-+export do_autoconf
-+
-+
-+$(OUTPUT)Makefile.conf: Makefile.autoconf
-+	$(shell mkdir -p $(OUTPUT)/include)
-+	$(shell mkdir -p $(OUTPUT)/tests)
-+	$(shell echo -n "" > $(OUTPUT)/include/lkl_autoconf.h)
-+	$(shell echo -n "" > $(OUTPUT)/tests/autoconf.sh)
-+	@echo "$$do_autoconf" > $(OUTPUT)/Makefile.conf
-diff --git a/tools/lkl/Targets b/tools/lkl/Targets
-new file mode 100644
-index 000000000000..e6394fae4526
---- /dev/null
-+++ b/tools/lkl/Targets
-@@ -0,0 +1,27 @@
-+libs-y += lib/liblkl
-+
-+ifneq ($(LKL_HOST_CONFIG_BSD),y)
-+libs-$(LKL_HOST_CONFIG_POSIX) += lib/hijack/liblkl-hijack
-+endif
-+LDFLAGS_lib/hijack/liblkl-hijack-y += -shared -nodefaultlibs
-+LDLIBS_lib/hijack/liblkl-hijack-y += -ldl
-+LDLIBS_lib/hijack/liblkl-hijack-$(LKL_HOST_CONFIG_ARM) += -lgcc -lc
-+LDLIBS_lib/hijack/liblkl-hijack-$(LKL_HOST_CONFIG_AARCH64) += -lc
-+LDLIBS_lib/hijack/liblkl-hijack-$(LKL_HOST_CONFIG_I386) += -lc_nonshared
-+
-+progs-$(LKL_HOST_CONFIG_FUSE) += lklfuse
-+LDLIBS_lklfuse-y := -lfuse
-+
-+progs-$(LKL_HOST_CONFIG_ARCHIVE) += fs2tar
-+LDLIBS_fs2tar-y := -larchive
-+LDLIBS_fs2tar-$(LKL_HOST_CONFIG_NEEDS_LARGP) += -largp
-+
-+
-+progs-$(LKL_HOST_CONFIG_ARCHIVE) += cptofs
-+LDLIBS_cptofs-y := -larchive
-+LDLIBS_cptofs-$(LKL_HOST_CONFIG_NEEDS_LARGP) += -largp
-+
-+progs-y += tests/boot
-+progs-y += tests/disk
-+progs-y += tests/net-test
-+
-diff --git a/tools/lkl/include/.gitignore b/tools/lkl/include/.gitignore
-new file mode 100644
-index 000000000000..c41a463c898d
---- /dev/null
-+++ b/tools/lkl/include/.gitignore
-@@ -0,0 +1 @@
-+lkl/
-\ No newline at end of file
-diff --git a/tools/lkl/include/lkl.h b/tools/lkl/include/lkl.h
-new file mode 100644
-index 000000000000..65f151f9c047
---- /dev/null
-+++ b/tools/lkl/include/lkl.h
-@@ -0,0 +1,928 @@
++++ b/tools/lkl/include/lkl_config.h
+@@ -0,0 +1,61 @@
 +/* SPDX-License-Identifier: GPL-2.0 */
-+#ifndef _LKL_H
-+#define _LKL_H
++#ifndef _LKL_LIB_CONFIG_H
++#define _LKL_LIB_CONFIG_H
 +
-+#include "lkl_autoconf.h"
++#define LKL_CONFIG_JSON_TOKEN_MAX 300
 +
-+#ifdef __cplusplus
-+extern "C" {
-+#endif
++struct lkl_config_iface {
++	struct lkl_config_iface *next;
++	struct lkl_netdev *nd;
 +
-+#define _LKL_LIBC_COMPAT_H
++	/* OBSOLETE: should use IFTYPE and IFPARAMS */
++	char *iftap;
++	char *iftype;
++	char *ifparams;
++	char *ifmtu_str;
++	char *ifip;
++	char *ifipv6;
++	char *ifgateway;
++	char *ifgateway6;
++	char *ifmac_str;
++	char *ifnetmask_len;
++	char *ifnetmask6_len;
++	char *ifoffload_str;
++	char *ifneigh_entries;
++	char *ifqdisc_entries;
++};
 +
-+#ifdef __cplusplus
-+#define class __lkl__class
-+#endif
++struct lkl_config {
++	int ifnum;
++	struct lkl_config_iface *ifaces;
 +
-+/*
-+ * Avoid collisions between Android which defines __unused and
-+ * linux/icmp.h which uses __unused as a structure field.
-+ */
-+#pragma push_macro("__unused")
-+#undef __unused
++	char *gateway;
++	char *gateway6;
++	char *debug;
++	char *mount;
++	/* single_cpu mode:
++	 * 0: Don't pin to single CPU (default).
++	 * 1: Pin only LKL kernel threads to single CPU.
++	 * 2: Pin all LKL threads to single CPU including all LKL kernel threads
++	 * and device polling threads. Avoid this mode if having busy polling
++	 * threads.
++	 *
++	 * mode 2 can achieve better TCP_RR but worse TCP_STREAM than mode 1.
++	 * You should choose the best for your application and virtio device
++	 * type.
++	 */
++	char *single_cpu;
++	char *sysctls;
++	char *boot_cmdline;
++	char *dump;
++	char *delay_main;
++};
 +
-+#include <lkl/asm/syscalls.h>
++int lkl_load_config_json(struct lkl_config *cfg, char *jstr);
++int lkl_load_config_env(struct lkl_config *cfg);
++void lkl_show_config(struct lkl_config *cfg);
++int lkl_load_config_pre(struct lkl_config *cfg);
++int lkl_load_config_post(struct lkl_config *cfg);
++int lkl_unload_config(struct lkl_config *cfg);
 +
-+#pragma pop_macro("__unused")
++#endif /* _LKL_LIB_CONFIG_H */
+diff --git a/tools/lkl/lib/config.c b/tools/lkl/lib/config.c
+new file mode 100644
+index 000000000000..76fccd598db9
+--- /dev/null
++++ b/tools/lkl/lib/config.c
+@@ -0,0 +1,793 @@
++// SPDX-License-Identifier: GPL-2.0
++#include <stdlib.h>
++#define _HAVE_STRING_ARCH_strtok_r
++#include <string.h>
++#include <lkl_host.h>
++#include <lkl_config.h>
 +
-+#ifdef __cplusplus
-+#undef class
-+#endif
++#include "../../perf/pmu-events/jsmn.h"
 +
-+#if defined(__MINGW32__)
-+#define strtok_r strtok_s
-+#define inet_pton lkl_inet_pton
-+
-+int inet_pton(int af, const char *src, void *dst);
-+#endif
-+
-+#if __LKL__BITS_PER_LONG == 64
-+#define lkl_sys_fstatat lkl_sys_newfstatat
-+#define lkl_sys_fstat lkl_sys_newfstat
-+
-+#else
-+#define __lkl__NR_fcntl __lkl__NR_fcntl64
-+
-+#define lkl_stat lkl_stat64
-+#define lkl_sys_stat lkl_sys_stat64
-+#define lkl_sys_lstat lkl_sys_lstat64
-+#define lkl_sys_truncate lkl_sys_truncate64
-+#define lkl_sys_ftruncate lkl_sys_ftruncate64
-+#define lkl_sys_sendfile lkl_sys_sendfile64
-+#define lkl_sys_fstatat lkl_sys_fstatat64
-+#define lkl_sys_fstat lkl_sys_fstat64
-+#define lkl_sys_fcntl lkl_sys_fcntl64
-+
-+#define lkl_statfs lkl_statfs64
-+
-+static inline int lkl_sys_statfs(const char *path, struct lkl_statfs *buf)
++static int jsoneq(const char *json, jsmntok_t *tok, const char *s)
 +{
-+	return lkl_sys_statfs64(path, sizeof(*buf), buf);
-+}
-+
-+static inline int lkl_sys_fstatfs(unsigned int fd, struct lkl_statfs *buf)
-+{
-+	return lkl_sys_fstatfs64(fd, sizeof(*buf), buf);
-+}
-+
-+#define lkl_sys_nanosleep lkl_sys_nanosleep_time32
-+static inline int lkl_sys_nanosleep_time32(struct lkl_timespec *rqtp,
-+					   struct lkl_timespec *rmtp)
-+{
-+	long p[6] = {(long)rqtp, (long)rmtp, 0, 0, 0, 0};
-+
-+	return lkl_syscall(__lkl__NR_nanosleep, p);
-+}
-+
-+#endif
-+
-+static inline int lkl_sys_stat(const char *path, struct lkl_stat *buf)
-+{
-+	return lkl_sys_fstatat(LKL_AT_FDCWD, path, buf, 0);
-+}
-+
-+static inline int lkl_sys_lstat(const char *path, struct lkl_stat *buf)
-+{
-+	return lkl_sys_fstatat(LKL_AT_FDCWD, path, buf,
-+			       LKL_AT_SYMLINK_NOFOLLOW);
-+}
-+
-+#ifdef __lkl__NR_llseek
-+/**
-+ * lkl_sys_lseek - wrapper for lkl_sys_llseek
-+ */
-+static inline long long lkl_sys_lseek(unsigned int fd, __lkl__kernel_loff_t off,
-+				      unsigned int whence)
-+{
-+	long long res;
-+	long ret = lkl_sys_llseek(fd, off >> 32, off & 0xffffffff, &res,
-+				  whence);
-+
-+	return ret < 0 ? ret : res;
-+}
-+#endif
-+
-+static inline void *lkl_sys_mmap(void *addr, size_t length, int prot, int flags,
-+				 int fd, off_t offset)
-+{
-+	return (void *)lkl_sys_mmap_pgoff((long)addr, length, prot, flags, fd,
-+					  offset >> 12);
-+}
-+
-+#define lkl_sys_mmap2 lkl_sys_mmap_pgoff
-+
-+#ifdef __lkl__NR_openat
-+/**
-+ * lkl_sys_open - wrapper for lkl_sys_openat
-+ */
-+static inline long lkl_sys_open(const char *file, int flags, int mode)
-+{
-+	return lkl_sys_openat(LKL_AT_FDCWD, file, flags, mode);
-+}
-+
-+/**
-+ * lkl_sys_creat - wrapper for lkl_sys_openat
-+ */
-+static inline long lkl_sys_creat(const char *file, int mode)
-+{
-+	return lkl_sys_openat(LKL_AT_FDCWD, file,
-+			      LKL_O_CREAT|LKL_O_WRONLY|LKL_O_TRUNC, mode);
-+}
-+#endif
-+
-+
-+#ifdef __lkl__NR_faccessat
-+/**
-+ * lkl_sys_access - wrapper for lkl_sys_faccessat
-+ */
-+static inline long lkl_sys_access(const char *file, int mode)
-+{
-+	return lkl_sys_faccessat(LKL_AT_FDCWD, file, mode);
-+}
-+#endif
-+
-+#ifdef __lkl__NR_fchownat
-+/**
-+ * lkl_sys_chown - wrapper for lkl_sys_fchownat
-+ */
-+static inline long lkl_sys_chown(const char *path, lkl_uid_t uid, lkl_gid_t gid)
-+{
-+	return lkl_sys_fchownat(LKL_AT_FDCWD, path, uid, gid, 0);
-+}
-+#endif
-+
-+#ifdef __lkl__NR_fchmodat
-+/**
-+ * lkl_sys_chmod - wrapper for lkl_sys_fchmodat
-+ */
-+static inline long lkl_sys_chmod(const char *path, mode_t mode)
-+{
-+	return lkl_sys_fchmodat(LKL_AT_FDCWD, path, mode);
-+}
-+#endif
-+
-+#ifdef __lkl__NR_linkat
-+/**
-+ * lkl_sys_link - wrapper for lkl_sys_linkat
-+ */
-+static inline long lkl_sys_link(const char *existing, const char *new)
-+{
-+	return lkl_sys_linkat(LKL_AT_FDCWD, existing, LKL_AT_FDCWD, new, 0);
-+}
-+#endif
-+
-+#ifdef __lkl__NR_unlinkat
-+/**
-+ * lkl_sys_unlink - wrapper for lkl_sys_unlinkat
-+ */
-+static inline long lkl_sys_unlink(const char *path)
-+{
-+	return lkl_sys_unlinkat(LKL_AT_FDCWD, path, 0);
-+}
-+#endif
-+
-+#ifdef __lkl__NR_symlinkat
-+/**
-+ * lkl_sys_symlink - wrapper for lkl_sys_symlinkat
-+ */
-+static inline long lkl_sys_symlink(const char *existing, const char *new)
-+{
-+	return lkl_sys_symlinkat(existing, LKL_AT_FDCWD, new);
-+}
-+#endif
-+
-+#ifdef __lkl__NR_readlinkat
-+/**
-+ * lkl_sys_readlink - wrapper for lkl_sys_readlinkat
-+ */
-+static inline long lkl_sys_readlink(const char *path, char *buf, size_t bufsize)
-+{
-+	return lkl_sys_readlinkat(LKL_AT_FDCWD, path, buf, bufsize);
-+}
-+#endif
-+
-+#ifdef __lkl__NR_renameat
-+/**
-+ * lkl_sys_rename - wrapper for lkl_sys_renameat
-+ */
-+static inline long lkl_sys_rename(const char *old, const char *new)
-+{
-+	return lkl_sys_renameat(LKL_AT_FDCWD, old, LKL_AT_FDCWD, new);
-+}
-+#endif
-+
-+#ifdef __lkl__NR_mkdirat
-+/**
-+ * lkl_sys_mkdir - wrapper for lkl_sys_mkdirat
-+ */
-+static inline long lkl_sys_mkdir(const char *path, mode_t mode)
-+{
-+	return lkl_sys_mkdirat(LKL_AT_FDCWD, path, mode);
-+}
-+#endif
-+
-+#ifdef __lkl__NR_unlinkat
-+/**
-+ * lkl_sys_rmdir - wrapper for lkl_sys_unlinkrat
-+ */
-+static inline long lkl_sys_rmdir(const char *path)
-+{
-+	return lkl_sys_unlinkat(LKL_AT_FDCWD, path, LKL_AT_REMOVEDIR);
-+}
-+#endif
-+
-+#ifdef __lkl__NR_mknodat
-+/**
-+ * lkl_sys_mknod - wrapper for lkl_sys_mknodat
-+ */
-+static inline long lkl_sys_mknod(const char *path, mode_t mode, dev_t dev)
-+{
-+	return lkl_sys_mknodat(LKL_AT_FDCWD, path, mode, dev);
-+}
-+#endif
-+
-+#ifdef __lkl__NR_pipe2
-+/**
-+ * lkl_sys_pipe - wrapper for lkl_sys_pipe2
-+ */
-+static inline long lkl_sys_pipe(int fd[2])
-+{
-+	return lkl_sys_pipe2(fd, 0);
-+}
-+#endif
-+
-+#ifdef __lkl__NR_sendto
-+/**
-+ * lkl_sys_send - wrapper for lkl_sys_sendto
-+ */
-+static inline long lkl_sys_send(int fd, void *buf, size_t len, int flags)
-+{
-+	return lkl_sys_sendto(fd, buf, len, flags, 0, 0);
-+}
-+#endif
-+
-+#ifdef __lkl__NR_recvfrom
-+/**
-+ * lkl_sys_recv - wrapper for lkl_sys_recvfrom
-+ */
-+static inline long lkl_sys_recv(int fd, void *buf, size_t len, int flags)
-+{
-+	return lkl_sys_recvfrom(fd, buf, len, flags, 0, 0);
-+}
-+#endif
-+
-+#ifdef __lkl__NR_pselect6
-+/**
-+ * lkl_sys_select - wrapper for lkl_sys_pselect
-+ */
-+static inline long lkl_sys_select(int n, lkl_fd_set *rfds, lkl_fd_set *wfds,
-+				  lkl_fd_set *efds, struct lkl_timeval *tv)
-+{
-+	long data[2] = { 0, _LKL_NSIG/8 };
-+	struct lkl_timespec ts;
-+	lkl_time_t extra_secs;
-+	const lkl_time_t max_time = ((1ULL<<8)*sizeof(time_t)-1)-1;
-+
-+	if (tv) {
-+		if (tv->tv_sec < 0 || tv->tv_usec < 0)
-+			return -LKL_EINVAL;
-+
-+		extra_secs = tv->tv_usec / 1000000;
-+		ts.tv_nsec = tv->tv_usec % 1000000 * 1000;
-+		ts.tv_sec = extra_secs > max_time - tv->tv_sec ?
-+			max_time : tv->tv_sec + extra_secs;
++	if (tok->type == JSMN_STRING &&
++		(int) strlen(s) == tok->end - tok->start &&
++		strncmp(json + tok->start, s, tok->end - tok->start) == 0) {
++		return 0;
 +	}
-+	return lkl_sys_pselect6(n, rfds, wfds, efds, tv ?
-+				(struct __lkl__kernel_timespec *)&ts : 0, data);
++	return -1;
 +}
-+#endif
 +
-+#ifdef __lkl__NR_ppoll
-+/**
-+ * lkl_sys_poll - wrapper for lkl_sys_ppoll
-+ */
-+static inline long lkl_sys_poll(struct lkl_pollfd *fds, int n, int timeout)
++static int cfgcpy(char **to, char *from)
 +{
-+	return lkl_sys_ppoll(fds, n, timeout >= 0 ?
-+			     (struct __lkl__kernel_timespec *)
-+			     &((struct lkl_timespec){ .tv_sec = timeout/1000,
-+				   .tv_nsec = timeout%1000*1000000 }) : 0,
-+			     0, _LKL_NSIG/8);
++	if (!from)
++		return 0;
++	if (*to)
++		free(*to);
++	*to = (char *)malloc((strlen(from) + 1) * sizeof(char));
++	if (*to == NULL) {
++		lkl_printf("malloc failed\n");
++		return -1;
++	}
++	strcpy(*to, from);
++	return 0;
 +}
-+#endif
 +
-+#ifdef __lkl__NR_epoll_create1
-+/**
-+ * lkl_sys_epoll_create - wrapper for lkl_sys_epoll_create1
-+ */
-+static inline long lkl_sys_epoll_create(int size)
++static int cfgncpy(char **to, char *from, int len)
 +{
-+	return lkl_sys_epoll_create1(0);
++	if (!from)
++		return 0;
++	if (*to)
++		free(*to);
++	*to = (char *)malloc((len + 1) * sizeof(char));
++	if (*to == NULL) {
++		lkl_printf("malloc failed\n");
++		return -1;
++	}
++	strncpy(*to, from, len + 1);
++	(*to)[len] = '\0';
++	return 0;
 +}
-+#endif
 +
-+#ifdef __lkl__NR_epoll_pwait
-+/**
-+ * lkl_sys_epoll_wait - wrapper for lkl_sys_epoll_pwait
-+ */
-+static inline long lkl_sys_epoll_wait(int fd, struct lkl_epoll_event *ev,
-+				      int cnt, int to)
++static int parse_ifarr(struct lkl_config *cfg,
++		jsmntok_t *toks, char *jstr, int startpos)
 +{
-+	return lkl_sys_epoll_pwait(fd, ev, cnt, to, 0, _LKL_NSIG/8);
++	int ifidx, pos, posend, ret;
++	char **cfgptr;
++	struct lkl_config_iface *iface, *prev = NULL;
++
++	if (!cfg || !toks || !jstr)
++		return -1;
++	pos = startpos;
++	pos++;
++	if (toks[pos].type != JSMN_ARRAY) {
++		lkl_printf("unexpected json type, json array expected\n");
++		return -1;
++	}
++
++	cfg->ifnum = toks[pos].size;
++	pos++;
++	iface = cfg->ifaces;
++
++	for (ifidx = 0; ifidx < cfg->ifnum; ifidx++) {
++		if (toks[pos].type != JSMN_OBJECT) {
++			lkl_printf("object json type expected\n");
++			return -1;
++		}
++
++		posend = pos + toks[pos].size;
++		pos++;
++		iface = malloc(sizeof(struct lkl_config_iface));
++		memset(iface, 0, sizeof(struct lkl_config_iface));
++
++		if (prev)
++			prev->next = iface;
++		else
++			cfg->ifaces = iface;
++		prev = iface;
++
++		for (; pos < posend; pos += 2) {
++			if (toks[pos].type != JSMN_STRING) {
++				lkl_printf("object json type expected\n");
++				return -1;
++			}
++			if (jsoneq(jstr, &toks[pos], "type") == 0) {
++				cfgptr = &iface->iftype;
++			} else if (jsoneq(jstr, &toks[pos], "param") == 0) {
++				cfgptr = &iface->ifparams;
++			} else if (jsoneq(jstr, &toks[pos], "mtu") == 0) {
++				cfgptr = &iface->ifmtu_str;
++			} else if (jsoneq(jstr, &toks[pos], "ip") == 0) {
++				cfgptr = &iface->ifip;
++			} else if (jsoneq(jstr, &toks[pos], "ipv6") == 0) {
++				cfgptr = &iface->ifipv6;
++			} else if (jsoneq(jstr, &toks[pos], "ifgateway") == 0) {
++				cfgptr = &iface->ifgateway;
++			} else if (jsoneq(jstr, &toks[pos],
++							"ifgateway6") == 0) {
++				cfgptr = &iface->ifgateway6;
++			} else if (jsoneq(jstr, &toks[pos], "mac") == 0) {
++				cfgptr = &iface->ifmac_str;
++			} else if (jsoneq(jstr, &toks[pos], "masklen") == 0) {
++				cfgptr = &iface->ifnetmask_len;
++			} else if (jsoneq(jstr, &toks[pos], "masklen6") == 0) {
++				cfgptr = &iface->ifnetmask6_len;
++			} else if (jsoneq(jstr, &toks[pos], "neigh") == 0) {
++				cfgptr = &iface->ifneigh_entries;
++			} else if (jsoneq(jstr, &toks[pos], "qdisc") == 0) {
++				cfgptr = &iface->ifqdisc_entries;
++			} else if (jsoneq(jstr, &toks[pos], "offload") == 0) {
++				cfgptr = &iface->ifoffload_str;
++			} else {
++				lkl_printf("unexpected key: %.*s\n",
++						toks[pos].end-toks[pos].start,
++						jstr + toks[pos].start);
++				return -1;
++			}
++			ret = cfgncpy(cfgptr, jstr + toks[pos+1].start,
++					toks[pos+1].end-toks[pos+1].start);
++			if (ret < 0)
++				return ret;
++		}
++	}
++	return pos - startpos;
 +}
-+#endif
 +
++#define ARRAY_SIZE(arr) (sizeof(arr) / sizeof((arr)[0]))
 +
-+
-+/**
-+ * lkl_strerror - returns a string describing the given error code
-+ *
-+ * @err - error code
-+ * @returns - string for the given error code
-+ */
-+const char *lkl_strerror(int err);
-+
-+/**
-+ * lkl_perror - prints a string describing the given error code
-+ *
-+ * @msg - prefix for the error message
-+ * @err - error code
-+ */
-+void lkl_perror(char *msg, int err);
-+
-+/**
-+ * struct lkl_dev_blk_ops - block device host operations, defined in lkl_host.h.
-+ */
-+struct lkl_dev_blk_ops;
-+
-+/**
-+ * lkl_disk - host disk handle
-+ *
-+ * @dev - a pointer to 'virtio_blk_dev' structure for this disk
-+ * @fd - a POSIX file descriptor that can be used by preadv/pwritev
-+ * @handle - an NT file handle that can be used by ReadFile/WriteFile
-+ */
-+struct lkl_disk {
-+	void *dev;
-+	union {
-+		int fd;
-+		void *handle;
-+	};
-+	struct lkl_dev_blk_ops *ops;
-+};
-+
-+/**
-+ * lkl_disk_add - add a new disk
-+ *
-+ * @disk - the host disk handle
-+ * @returns a disk id (0 is valid) or a strictly negative value in case of error
-+ */
-+int lkl_disk_add(struct lkl_disk *disk);
-+
-+/**
-+ * lkl_disk_remove - remove a disk
-+ *
-+ * This function makes a cleanup of the @disk's virtio_dev structure
-+ * that was initialized by lkl_disk_add before.
-+ *
-+ * @disk - the host disk handle
-+ */
-+int lkl_disk_remove(struct lkl_disk disk);
-+
-+/**
-+ * lkl_get_virtiolkl_encode_dev_from_sysfs_blkdev - extract device id from sysfs
-+ *
-+ * This function returns the device id for the given sysfs dev node.
-+ * The content of the node has to be in the form 'MAJOR:MINOR'.
-+ * Also, this function expects an absolute path which means that sysfs
-+ * already has to be mounted at the given path
-+ *
-+ * @sysfs_path - absolute path to the sysfs dev node
-+ * @pdevid - pointer to memory where dev id will be returned
-+ * @returns - 0 on success, a negative value on error
-+ */
-+int lkl_encode_dev_from_sysfs(const char *sysfs_path, uint32_t *pdevid);
-+
-+/**
-+ * lkl_get_virtio_blkdev - get device id of a disk (partition)
-+ *
-+ * This function returns the device id for the given disk.
-+ *
-+ * @disk_id - the disk id identifying the disk
-+ * @part - disk partition or zero for full disk
-+ * @pdevid - pointer to memory where dev id will be returned
-+ * @returns - 0 on success, a negative value on error
-+ */
-+int lkl_get_virtio_blkdev(int disk_id, unsigned int part, uint32_t *pdevid);
-+
-+
-+/**
-+ * lkl_mount_dev - mount a disk
-+ *
-+ * This functions creates a device file for the given disk, creates a mount
-+ * point and mounts the device over the mount point.
-+ *
-+ * @disk_id - the disk id identifying the disk to be mounted
-+ * @part - disk partition or zero for full disk
-+ * @fs_type - filesystem type
-+ * @flags - mount flags
-+ * @opts - additional filesystem specific mount options
-+ * @mnt_str - a string that will be filled by this function with the path where
-+ * the filesystem has been mounted
-+ * @mnt_str_len - size of mnt_str
-+ * @returns - 0 on success, a negative value on error
-+ */
-+long lkl_mount_dev(unsigned int disk_id, unsigned int part, const char *fs_type,
-+		   int flags, const char *opts,
-+		   char *mnt_str, unsigned int mnt_str_len);
-+
-+/**
-+ * lkl_umount_dev - umount a disk
-+ *
-+ * This functions umounts the given disks and removes the device file and the
-+ * mount point.
-+ *
-+ * @disk_id - the disk id identifying the disk to be mounted
-+ * @part - disk partition or zero for full disk
-+ * @flags - umount flags
-+ * @timeout_ms - timeout to wait for the kernel to flush closed files so that
-+ * umount can succeed
-+ * @returns - 0 on success, a negative value on error
-+ */
-+long lkl_umount_dev(unsigned int disk_id, unsigned int part, int flags,
-+		    long timeout_ms);
-+
-+/**
-+ * lkl_umount_timeout - umount filesystem with timeout
-+ *
-+ * @path - the path to unmount
-+ * @flags - umount flags
-+ * @timeout_ms - timeout to wait for the kernel to flush closed files so that
-+ * umount can succeed
-+ * @returns - 0 on success, a negative value on error
-+ */
-+long lkl_umount_timeout(char *path, int flags, long timeout_ms);
-+
-+/**
-+ * lkl_opendir - open a directory
-+ *
-+ * @path - directory path
-+ * @err - pointer to store the error in case of failure
-+ * @returns - a handle to be used when calling lkl_readdir
-+ */
-+struct lkl_dir *lkl_opendir(const char *path, int *err);
-+
-+/**
-+ * lkl_fdopendir - open a directory
-+ *
-+ * @fd - file descriptor
-+ * @err - pointer to store the error in case of failure
-+ * @returns - a handle to be used when calling lkl_readdir
-+ */
-+struct lkl_dir *lkl_fdopendir(int fd, int *err);
-+
-+/**
-+ * lkl_rewinddir - reset directory stream
-+ *
-+ * @dir - the directory handler as returned by lkl_opendir
-+ */
-+void lkl_rewinddir(struct lkl_dir *dir);
-+
-+/**
-+ * lkl_closedir - close the directory
-+ *
-+ * @dir - the directory handler as returned by lkl_opendir
-+ */
-+int lkl_closedir(struct lkl_dir *dir);
-+
-+/**
-+ * lkl_readdir - get the next available entry of the directory
-+ *
-+ * @dir - the directory handler as returned by lkl_opendir
-+ * @returns - a lkl_dirent64 entry or NULL if the end of the directory stream is
-+ * reached or if an error occurred; check lkl_errdir() to distinguish between
-+ * errors or end of the directory stream
-+ */
-+struct lkl_linux_dirent64 *lkl_readdir(struct lkl_dir *dir);
-+
-+/**
-+ * lkl_errdir - checks if an error occurred during the last lkl_readdir call
-+ *
-+ * @dir - the directory handler as returned by lkl_opendir
-+ * @returns - 0 if no error occurred, or a negative value otherwise
-+ */
-+int lkl_errdir(struct lkl_dir *dir);
-+
-+/**
-+ * lkl_dirfd - gets the file descriptor associated with the directory handle
-+ *
-+ * @dir - the directory handle as returned by lkl_opendir
-+ * @returns - a positive value,which is the LKL file descriptor associated with
-+ * the directory handle, or a negative value otherwise
-+ */
-+int lkl_dirfd(struct lkl_dir *dir);
-+
-+/**
-+ * lkl_if_up - activate network interface
-+ *
-+ * @ifindex - the ifindex of the interface
-+ * @returns - return 0 if no error: otherwise negative value returns
-+ */
-+int lkl_if_up(int ifindex);
-+
-+/**
-+ * lkl_if_down - deactivate network interface
-+ *
-+ * @ifindex - the ifindex of the interface
-+ * @returns - return 0 if no error: otherwise negative value returns
-+ */
-+int lkl_if_down(int ifindex);
-+
-+/**
-+ * lkl_if_set_mtu - set MTU on interface
-+ *
-+ * @ifindex - the ifindex of the interface
-+ * @mtu - the requested MTU size
-+ * @returns - return 0 if no error: otherwise negative value returns
-+ */
-+int lkl_if_set_mtu(int ifindex, int mtu);
-+
-+/**
-+ * lkl_if_set_ipv4 - set IPv4 address on interface
-+ *
-+ * @ifindex - the ifindex of the interface
-+ * @addr - 4-byte IP address (i.e., struct in_addr)
-+ * @netmask_len - prefix length of the @addr
-+ * @returns - return 0 if no error: otherwise negative value returns
-+ */
-+int lkl_if_set_ipv4(int ifindex, unsigned int addr, unsigned int netmask_len);
-+
-+/**
-+ * lkl_set_ipv4_gateway - add an IPv4 default route
-+ *
-+ * @addr - 4-byte IP address of the gateway (i.e., struct in_addr)
-+ * @returns - return 0 if no error: otherwise negative value returns
-+ */
-+int lkl_set_ipv4_gateway(unsigned int addr);
-+
-+/**
-+ * lkl_if_set_ipv4_gateway - add an IPv4 default route in rule table
-+ *
-+ * @ifindex - the ifindex of the interface, used for tableid calculation
-+ * @addr - 4-byte IP address of the interface
-+ * @netmask_len - prefix length of the @addr
-+ * @gw_addr - 4-byte IP address of the gateway
-+ * @returns - return 0 if no error: otherwise negative value returns
-+ */
-+int lkl_if_set_ipv4_gateway(int ifindex, unsigned int addr,
-+		unsigned int netmask_len, unsigned int gw_addr);
-+
-+/**
-+ * lkl_if_set_ipv6 - set IPv6 address on interface
-+ * must be called after interface is up.
-+ *
-+ * @ifindex - the ifindex of the interface
-+ * @addr - 16-byte IPv6 address (i.e., struct in6_addr)
-+ * @netprefix_len - prefix length of the @addr
-+ * @returns - return 0 if no error: otherwise negative value returns
-+ */
-+int lkl_if_set_ipv6(int ifindex, void *addr, unsigned int netprefix_len);
-+
-+/**
-+ * lkl_set_ipv6_gateway - add an IPv6 default route
-+ *
-+ * @addr - 16-byte IPv6 address of the gateway (i.e., struct in6_addr)
-+ * @returns - return 0 if no error: otherwise negative value returns
-+ */
-+int lkl_set_ipv6_gateway(void *addr);
-+
-+/**
-+ * lkl_if_set_ipv6_gateway - add an IPv6 default route in rule table
-+ *
-+ * @ifindex - the ifindex of the interface, used for tableid calculation
-+ * @addr - 16-byte IP address of the interface
-+ * @netmask_len - prefix length of the @addr
-+ * @gw_addr - 16-byte IP address of the gateway (i.e., struct in_addr)
-+ * @returns - return 0 if no error: otherwise negative value returns
-+ */
-+int lkl_if_set_ipv6_gateway(int ifindex, void *addr,
-+		unsigned int netmask_len, void *gw_addr);
-+
-+/**
-+ * lkl_ifname_to_ifindex - obtain ifindex of an interface by name
-+ *
-+ * @name - string of an interface
-+ * @returns - return an integer of ifindex if no error
-+ */
-+int lkl_ifname_to_ifindex(const char *name);
-+
-+/**
-+ * lkl_netdev - host network device handle, defined in lkl_host.h.
-+ */
-+struct lkl_netdev;
-+
-+/**
-+ * lkl_netdev_args - arguments to lkl_netdev_add
-+ * @mac - optional MAC address for the device
-+ * @offload - offload bits for the device
-+ */
-+struct lkl_netdev_args {
-+	void *mac;
-+	unsigned int offload;
-+};
-+
-+/**
-+ * lkl_netdev_add - add a new network device
-+ *
-+ * Must be called before calling lkl_start_kernel.
-+ *
-+ * @nd - the network device host handle
-+ * @args - arguments that configs the netdev. Can be NULL
-+ * @returns a network device id (0 is valid) or a strictly negative value in
-+ * case of error
-+ */
-+#ifdef LKL_HOST_CONFIG_VIRTIO_NET
-+int lkl_netdev_add(struct lkl_netdev *nd, struct lkl_netdev_args *args);
-+#else
-+static inline int lkl_netdev_add(struct lkl_netdev *nd,
-+				 struct lkl_netdev_args *args)
++int lkl_load_config_json(struct lkl_config *cfg, char *jstr)
 +{
-+	return -LKL_ENOSYS;
-+}
-+#endif
++	int pos, ret;
++	char **cfgptr;
++	jsmn_parser jp;
++	jsmntok_t toks[LKL_CONFIG_JSON_TOKEN_MAX];
 +
-+/**
-+ * lkl_netdev_remove - remove a previously added network device
-+ *
-+ * Attempts to release all resources held by a network device created
-+ * via lkl_netdev_add.
-+ *
-+ * @id - the network device id, as return by @lkl_netdev_add
-+ */
-+#ifdef LKL_HOST_CONFIG_VIRTIO_NET
-+void lkl_netdev_remove(int id);
-+#else
-+static inline void lkl_netdev_remove(int id)
++	if (!cfg || !jstr)
++		return -1;
++	jsmn_init(&jp);
++	ret = jsmn_parse(&jp, jstr, strlen(jstr), toks, ARRAY_SIZE(toks));
++	if (ret != JSMN_SUCCESS) {
++		lkl_printf("failed to parse json\n");
++		return -1;
++	}
++	if (toks[0].type != JSMN_OBJECT) {
++		lkl_printf("object json type expected\n");
++		return -1;
++	}
++	for (pos = 1; pos < jp.toknext; pos++) {
++		if (toks[pos].type != JSMN_STRING) {
++			lkl_printf("string json type expected\n");
++			return -1;
++		}
++		if (jsoneq(jstr, &toks[pos], "interfaces") == 0) {
++			ret = parse_ifarr(cfg, toks, jstr, pos);
++			if (ret < 0)
++				return ret;
++			pos += ret;
++			pos--;
++			continue;
++		}
++		if (jsoneq(jstr, &toks[pos], "gateway") == 0) {
++			cfgptr = &cfg->gateway;
++		} else if (jsoneq(jstr, &toks[pos], "gateway6") == 0) {
++			cfgptr = &cfg->gateway6;
++		} else if (jsoneq(jstr, &toks[pos], "debug") == 0) {
++			cfgptr = &cfg->debug;
++		} else if (jsoneq(jstr, &toks[pos], "mount") == 0) {
++			cfgptr = &cfg->mount;
++		} else if (jsoneq(jstr, &toks[pos], "singlecpu") == 0) {
++			cfgptr = &cfg->single_cpu;
++		} else if (jsoneq(jstr, &toks[pos], "sysctl") == 0) {
++			cfgptr = &cfg->sysctls;
++		} else if (jsoneq(jstr, &toks[pos], "boot_cmdline") == 0) {
++			cfgptr = &cfg->boot_cmdline;
++		} else if (jsoneq(jstr, &toks[pos], "dump") == 0) {
++			cfgptr = &cfg->dump;
++		} else if (jsoneq(jstr, &toks[pos], "delay_main") == 0) {
++			cfgptr = &cfg->delay_main;
++		} else {
++			lkl_printf("unexpected key in json %.*s\n",
++					toks[pos].end-toks[pos].start,
++					jstr + toks[pos].start);
++			return -1;
++		}
++		pos++;
++		ret = cfgncpy(cfgptr, jstr + toks[pos].start,
++				toks[pos].end-toks[pos].start);
++		if (ret < 0)
++			return ret;
++	}
++	return 0;
++}
++
++void lkl_show_config(struct lkl_config *cfg)
 +{
-+}
-+#endif
++	struct lkl_config_iface *iface;
++	int i = 0;
 +
-+/**
-+ * lkl_netdev_free - frees a network device
-+ *
-+ * @nd - the network device to free
-+ */
-+#ifdef LKL_HOST_CONFIG_VIRTIO_NET
-+void lkl_netdev_free(struct lkl_netdev *nd);
-+#else
-+static inline void lkl_netdev_free(struct lkl_netdev *nd)
++	if (!cfg)
++		return;
++	lkl_printf("gateway: %s\n", cfg->gateway);
++	lkl_printf("gateway6: %s\n", cfg->gateway6);
++	lkl_printf("debug: %s\n", cfg->debug);
++	lkl_printf("mount: %s\n", cfg->mount);
++	lkl_printf("singlecpu: %s\n", cfg->single_cpu);
++	lkl_printf("sysctl: %s\n", cfg->sysctls);
++	lkl_printf("cmdline: %s\n", cfg->boot_cmdline);
++	lkl_printf("dump: %s\n", cfg->dump);
++	lkl_printf("delay: %s\n", cfg->delay_main);
++
++	for (iface = cfg->ifaces; iface; iface = iface->next, i++) {
++		lkl_printf("ifmac[%d] = %s\n", i, iface->ifmac_str);
++		lkl_printf("ifmtu[%d] = %s\n", i, iface->ifmtu_str);
++		lkl_printf("iftype[%d] = %s\n", i, iface->iftype);
++		lkl_printf("ifparam[%d] = %s\n", i, iface->ifparams);
++		lkl_printf("ifip[%d] = %s\n", i, iface->ifip);
++		lkl_printf("ifmasklen[%d] = %s\n", i, iface->ifnetmask_len);
++		lkl_printf("ifgateway[%d] = %s\n", i, iface->ifgateway);
++		lkl_printf("ifip6[%d] = %s\n", i, iface->ifipv6);
++		lkl_printf("ifmasklen6[%d] = %s\n", i, iface->ifnetmask6_len);
++		lkl_printf("ifgateway6[%d] = %s\n", i, iface->ifgateway6);
++		lkl_printf("ifoffload[%d] = %s\n", i, iface->ifoffload_str);
++		lkl_printf("ifneigh[%d] = %s\n", i, iface->ifneigh_entries);
++		lkl_printf("ifqdisk[%d] = %s\n", i, iface->ifqdisc_entries);
++	}
++}
++
++int lkl_load_config_env(struct lkl_config *cfg)
 +{
++	int ret;
++	char *envtap = getenv("LKL_HIJACK_NET_TAP");
++	char *enviftype = getenv("LKL_HIJACK_NET_IFTYPE");
++	char *envifparams = getenv("LKL_HIJACK_NET_IFPARAMS");
++	char *envmtu_str = getenv("LKL_HIJACK_NET_MTU");
++	char *envip = getenv("LKL_HIJACK_NET_IP");
++	char *envipv6 = getenv("LKL_HIJACK_NET_IPV6");
++	char *envifgateway = getenv("LKL_HIJACK_NET_IFGATEWAY");
++	char *envifgateway6 = getenv("LKL_HIJACK_NET_IFGATEWAY6");
++	char *envmac_str = getenv("LKL_HIJACK_NET_MAC");
++	char *envnetmask_len = getenv("LKL_HIJACK_NET_NETMASK_LEN");
++	char *envnetmask6_len = getenv("LKL_HIJACK_NET_NETMASK6_LEN");
++	char *envgateway = getenv("LKL_HIJACK_NET_GATEWAY");
++	char *envgateway6 = getenv("LKL_HIJACK_NET_GATEWAY6");
++	char *envdebug = getenv("LKL_HIJACK_DEBUG");
++	char *envmount = getenv("LKL_HIJACK_MOUNT");
++	char *envneigh_entries = getenv("LKL_HIJACK_NET_NEIGHBOR");
++	char *envqdisc_entries = getenv("LKL_HIJACK_NET_QDISC");
++	char *envsingle_cpu = getenv("LKL_HIJACK_SINGLE_CPU");
++	char *envoffload_str = getenv("LKL_HIJACK_OFFLOAD");
++	char *envsysctls = getenv("LKL_HIJACK_SYSCTL");
++	char *envboot_cmdline = getenv("LKL_HIJACK_BOOT_CMDLINE") ? : "";
++	char *envdump = getenv("LKL_HIJACK_DUMP");
++	struct lkl_config_iface *iface;
++
++	if (!cfg)
++		return -1;
++	if (envtap || enviftype)
++		cfg->ifnum = 1;
++
++	iface = malloc(sizeof(struct lkl_config_iface));
++	memset(iface, 0, sizeof(struct lkl_config_iface));
++
++	ret = cfgcpy(&iface->iftap, envtap);
++	if (ret < 0)
++		return ret;
++	ret = cfgcpy(&iface->iftype, enviftype);
++	if (ret < 0)
++		return ret;
++	ret = cfgcpy(&iface->ifparams, envifparams);
++	if (ret < 0)
++		return ret;
++	ret = cfgcpy(&iface->ifmtu_str, envmtu_str);
++	if (ret < 0)
++		return ret;
++	ret = cfgcpy(&iface->ifip, envip);
++	if (ret < 0)
++		return ret;
++	ret = cfgcpy(&iface->ifipv6, envipv6);
++	if (ret < 0)
++		return ret;
++	ret = cfgcpy(&iface->ifgateway, envifgateway);
++	if (ret < 0)
++		return ret;
++	ret = cfgcpy(&iface->ifgateway6, envifgateway6);
++	if (ret < 0)
++		return ret;
++	ret = cfgcpy(&iface->ifmac_str, envmac_str);
++	if (ret < 0)
++		return ret;
++	ret = cfgcpy(&iface->ifnetmask_len, envnetmask_len);
++	if (ret < 0)
++		return ret;
++	ret = cfgcpy(&iface->ifnetmask6_len, envnetmask6_len);
++	if (ret < 0)
++		return ret;
++	ret = cfgcpy(&iface->ifoffload_str, envoffload_str);
++	if (ret < 0)
++		return ret;
++	ret = cfgcpy(&iface->ifneigh_entries, envneigh_entries);
++	if (ret < 0)
++		return ret;
++	ret = cfgcpy(&iface->ifqdisc_entries, envqdisc_entries);
++	if (ret < 0)
++		return ret;
++	ret = cfgcpy(&cfg->gateway, envgateway);
++	if (ret < 0)
++		return ret;
++	ret = cfgcpy(&cfg->gateway6, envgateway6);
++	if (ret < 0)
++		return ret;
++	ret = cfgcpy(&cfg->debug, envdebug);
++	if (ret < 0)
++		return ret;
++	ret = cfgcpy(&cfg->mount, envmount);
++	if (ret < 0)
++		return ret;
++	ret = cfgcpy(&cfg->single_cpu, envsingle_cpu);
++	if (ret < 0)
++		return ret;
++	ret = cfgcpy(&cfg->sysctls, envsysctls);
++	if (ret < 0)
++		return ret;
++	ret = cfgcpy(&cfg->boot_cmdline, envboot_cmdline);
++	if (ret < 0)
++		return ret;
++	ret = cfgcpy(&cfg->dump, envdump);
++	if (ret < 0)
++		return ret;
++	return 0;
 +}
-+#endif
 +
-+/**
-+ * lkl_netdev_get_ifindex - retrieve the interface index for a given network
-+ * device id
-+ *
-+ * @id - the network device id
-+ * @returns the interface index or a stricly negative value in case of error
-+ */
-+int lkl_netdev_get_ifindex(int id);
-+
-+/**
-+ * lkl_netdev_tap_create - create TAP net_device for the virtio net backend
-+ *
-+ * @ifname - interface name for the TAP device. need to be configured
-+ * on host in advance
-+ * @offload - offload bits for the device
-+ */
-+#ifdef LKL_HOST_CONFIG_VIRTIO_NET
-+struct lkl_netdev *lkl_netdev_tap_create(const char *ifname, int offload);
-+#else
-+static inline struct lkl_netdev *
-+lkl_netdev_tap_create(const char *ifname, int offload)
++static int parse_mac_str(char *mac_str, __lkl__u8 mac[LKL_ETH_ALEN])
 +{
-+	return NULL;
-+}
-+#endif
++	char delim[] = ":";
++	char *saveptr = NULL, *token = NULL;
++	int i = 0;
 +
-+/**
-+ * lkl_netdev_dpdk_create - create DPDK net_device for the virtio net backend
-+ *
-+ * @ifname - interface name for the DPDK device. The name for DPDK device is
-+ * only used for an internal use.
-+ * @offload - offload bits for the device
-+ * @mac - mac address pointer of dpdk-ed device
-+ */
-+#ifdef LKL_HOST_CONFIG_VIRTIO_NET_DPDK
-+struct lkl_netdev *lkl_netdev_dpdk_create(const char *ifname, int offload,
-+					unsigned char *mac);
-+#else
-+static inline struct lkl_netdev *
-+lkl_netdev_dpdk_create(const char *ifname, int offload, unsigned char *mac)
++	if (!mac_str)
++		return 0;
++
++	for (token = strtok_r(mac_str, delim, &saveptr);
++	     i < LKL_ETH_ALEN; i++) {
++		if (!token) {
++			/* The address is too short */
++			return -1;
++		}
++
++		mac[i] = (__lkl__u8) strtol(token, NULL, 16);
++		token = strtok_r(NULL, delim, &saveptr);
++	}
++
++	if (strtok_r(NULL, delim, &saveptr)) {
++		/* The address is too long */
++		return -1;
++	}
++
++	return 1;
++}
++
++/* Add permanent neighbor entries in the form of "ip|mac;ip|mac;..." */
++static void add_neighbor(int ifindex, char *entries)
 +{
-+	return NULL;
-+}
-+#endif
++	char *saveptr = NULL, *token = NULL;
++	char *ip = NULL, *mac_str = NULL;
++	int ret = 0;
++	__lkl__u8 mac[LKL_ETH_ALEN];
++	char ip_addr[16];
++	int af;
 +
-+/**
-+ * lkl_netdev_vde_create - create VDE net_device for the virtio net backend
-+ *
-+ * @switch_path - path to the VDE switch directory. Needs to be started on host
-+ * in advance.
++	for (token = strtok_r(entries, ";", &saveptr); token;
++	     token = strtok_r(NULL, ";", &saveptr)) {
++		ip = strtok(token, "|");
++		mac_str = strtok(NULL, "|");
++		if (ip == NULL || mac_str == NULL || strtok(NULL, "|") != NULL)
++			return;
++
++		af = LKL_AF_INET;
++		ret = inet_pton(LKL_AF_INET, ip, ip_addr);
++		if (ret == 0) {
++			ret = inet_pton(LKL_AF_INET6, ip, ip_addr);
++			af = LKL_AF_INET6;
++		}
++		if (ret != 1) {
++			lkl_printf("Bad ip address: %s\n", ip);
++			return;
++		}
++
++		ret = parse_mac_str(mac_str, mac);
++		if (ret != 1) {
++			lkl_printf("Failed to parse mac: %s\n", mac_str);
++			return;
++		}
++		ret = lkl_add_neighbor(ifindex, af, ip_addr, mac);
++		if (ret) {
++			lkl_printf("Failed to add neighbor entry: %s\n",
++				   lkl_strerror(ret));
++			return;
++		}
++	}
++}
++
++/* We don't have an easy way to make FILE*s out of our fds, so we
++ * can't use e.g. fgets
 + */
-+#ifdef LKL_HOST_CONFIG_VIRTIO_NET_VDE
-+struct lkl_netdev *lkl_netdev_vde_create(const char *switch_path);
-+#else
-+static inline struct lkl_netdev *lkl_netdev_vde_create(const char *switch_path)
++static int dump_file(char *path)
 +{
-+	return NULL;
-+}
-+#endif
++	int ret = -1, bytes_read = 0;
++	char str[1024] = { 0 };
++	int fd;
 +
-+/**
-+ * lkl_netdev_raw_create - create raw socket net_device for the virtio net
-+ *                         backend
-+ *
-+ * @ifname - interface name for the snoop device.
-+ */
-+#ifdef LKL_HOST_CONFIG_VIRTIO_NET
-+struct lkl_netdev *lkl_netdev_raw_create(const char *ifname);
-+#else
-+static inline struct lkl_netdev *lkl_netdev_raw_create(const char *ifname)
++	fd = lkl_sys_open(path, LKL_O_RDONLY, 0);
++
++	if (fd < 0) {
++		lkl_printf("%s lkl_sys_open %s: %s\n",
++			   __func__, path, lkl_strerror(fd));
++		return -1;
++	}
++
++	/* Need to print this out in order to make sense of the output */
++	lkl_printf("Reading from %s:\n==========\n", path);
++	while ((ret = lkl_sys_read(fd, str, sizeof(str) - 1)) > 0)
++		bytes_read += lkl_printf("%s", str);
++	lkl_printf("==========\n");
++
++	if (ret) {
++		lkl_printf("%s lkl_sys_read %s: %s\n",
++			   __func__, path, lkl_strerror(ret));
++		return -1;
++	}
++
++	return 0;
++}
++
++static void mount_cmds_exec(char *_cmds, int (*callback)(char *))
 +{
-+	return NULL;
-+}
-+#endif
++	char *saveptr = NULL, *token;
++	int ret = 0;
++	char *cmds = strdup(_cmds);
 +
-+/**
-+ * lkl_netdev_macvtap_create - create macvtap net_device for the virtio
-+ * net backend
-+ *
-+ * @path - a file name for the macvtap device. need to be configured
-+ * on host in advance
-+ * @offload - offload bits for the device
-+ */
-+#ifdef LKL_HOST_CONFIG_VIRTIO_NET_MACVTAP
-+struct lkl_netdev *lkl_netdev_macvtap_create(const char *path, int offload);
-+#else
-+static inline struct lkl_netdev *
-+lkl_netdev_macvtap_create(const char *path, int offload)
++	token = strtok_r(cmds, ",", &saveptr);
++
++	while (token && ret >= 0) {
++		ret = callback(token);
++		token = strtok_r(NULL, ",", &saveptr);
++	}
++
++	if (ret < 0)
++		lkl_printf("%s: failed parsing %s\n", __func__, _cmds);
++
++	free(cmds);
++}
++
++static int lkl_config_netdev_create(struct lkl_config *cfg,
++				    struct lkl_config_iface *iface)
 +{
-+	return NULL;
-+}
-+#endif
++	int ret, offload = 0;
++	struct lkl_netdev_args nd_args;
++	__lkl__u8 mac[LKL_ETH_ALEN] = {0};
++	struct lkl_netdev *nd = NULL;
 +
-+/**
-+ * lkl_netdev_pipe_create - create pipe net_device for the virtio
-+ * net backend
-+ *
-+ * @ifname - a file name for the rx and tx pipe device. need to be configured
-+ * on host in advance. delimiter is "|". e.g. "rx_name|tx_name".
-+ * @offload - offload bits for the device
-+ */
-+#ifdef LKL_HOST_CONFIG_VIRTIO_NET
-+struct lkl_netdev *lkl_netdev_pipe_create(const char *ifname, int offload);
-+#else
-+static inline struct lkl_netdev *
-+lkl_netdev_pipe_create(const char *ifname, int offload)
++	if (iface->ifoffload_str)
++		offload = strtol(iface->ifoffload_str, NULL, 0);
++	memset(&nd_args, 0, sizeof(struct lkl_netdev_args));
++
++	if (iface->iftap) {
++		lkl_printf("WARN: LKL_HIJACK_NET_TAP is now obsoleted.\n");
++		lkl_printf("use LKL_HIJACK_NET_IFTYPE and PARAMS\n");
++		nd = lkl_netdev_tap_create(iface->iftap, offload);
++	}
++
++	if (!nd && iface->iftype && iface->ifparams) {
++		if ((strcmp(iface->iftype, "tap") == 0)) {
++			nd = lkl_netdev_tap_create(iface->ifparams, offload);
++		} else if ((strcmp(iface->iftype, "macvtap") == 0)) {
++			nd = lkl_netdev_macvtap_create(iface->ifparams,
++						       offload);
++		} else if ((strcmp(iface->iftype, "dpdk") == 0)) {
++			nd = lkl_netdev_dpdk_create(iface->ifparams, offload,
++						    mac);
++		} else if ((strcmp(iface->iftype, "pipe") == 0)) {
++			nd = lkl_netdev_pipe_create(iface->ifparams, offload);
++		} else {
++			if (offload) {
++				lkl_printf("WARN: %s isn't supported on %s\n",
++					   "LKL_HIJACK_OFFLOAD",
++					   iface->iftype);
++				lkl_printf(
++					"WARN: Disabling offload features.\n");
++			}
++			offload = 0;
++		}
++		if (strcmp(iface->iftype, "vde") == 0)
++			nd = lkl_netdev_vde_create(iface->ifparams);
++		if (strcmp(iface->iftype, "raw") == 0)
++			nd = lkl_netdev_raw_create(iface->ifparams);
++	}
++
++	if (nd) {
++		if ((mac[0] != 0) || (mac[1] != 0) ||
++				(mac[2] != 0) || (mac[3] != 0) ||
++				(mac[4] != 0) || (mac[5] != 0)) {
++			nd_args.mac = mac;
++		} else {
++			ret = parse_mac_str(iface->ifmac_str, mac);
++
++			if (ret < 0) {
++				lkl_printf("failed to parse mac\n");
++				return -1;
++			} else if (ret > 0) {
++				nd_args.mac = mac;
++			} else {
++				nd_args.mac = NULL;
++			}
++		}
++
++		nd_args.offload = offload;
++		ret = lkl_netdev_add(nd, &nd_args);
++		if (ret < 0) {
++			lkl_printf("failed to add netdev: %s\n",
++				   lkl_strerror(ret));
++			return -1;
++		}
++		nd->id = ret;
++		iface->nd = nd;
++	}
++	return 0;
++}
++
++static int lkl_config_netdev_configure(struct lkl_config *cfg,
++				       struct lkl_config_iface *iface)
 +{
-+	return NULL;
++	int ret, nd_ifindex = -1;
++	struct lkl_netdev *nd = iface->nd;
++
++	if (!nd) {
++		lkl_printf("no netdev available %s\n", iface ? iface->ifparams
++			   : "(null)");
++		return -1;
++	}
++
++	if (nd->id >= 0) {
++		nd_ifindex = lkl_netdev_get_ifindex(nd->id);
++		if (nd_ifindex > 0)
++			lkl_if_up(nd_ifindex);
++		else
++			lkl_printf(
++				"failed to get ifindex for netdev id %d: %s\n",
++				nd->id, lkl_strerror(nd_ifindex));
++	}
++
++	if (nd_ifindex >= 0 && iface->ifmtu_str) {
++		int mtu = atoi(iface->ifmtu_str);
++
++		ret = lkl_if_set_mtu(nd_ifindex, mtu);
++		if (ret < 0)
++			lkl_printf("failed to set MTU: %s\n",
++				   lkl_strerror(ret));
++	}
++
++	if (nd_ifindex >= 0 && iface->ifip && iface->ifnetmask_len) {
++		unsigned int addr;
++
++		if (inet_pton(LKL_AF_INET, iface->ifip,
++			      (struct lkl_in_addr *)&addr) != 1)
++			lkl_printf("Invalid ipv4 address: %s\n", iface->ifip);
++
++		int nmlen = atoi(iface->ifnetmask_len);
++
++		if (addr != LKL_INADDR_NONE && nmlen > 0 && nmlen < 32) {
++			ret = lkl_if_set_ipv4(nd_ifindex, addr, nmlen);
++			if (ret < 0)
++				lkl_printf("failed to set IPv4 address: %s\n",
++					   lkl_strerror(ret));
++		}
++		if (iface->ifgateway) {
++			unsigned int gwaddr;
++
++			if (inet_pton(LKL_AF_INET, iface->ifgateway,
++				      (struct lkl_in_addr *)&gwaddr) != 1)
++				lkl_printf("Invalid ipv4 gateway: %s\n",
++					   iface->ifgateway);
++
++			if (gwaddr != LKL_INADDR_NONE) {
++				ret = lkl_if_set_ipv4_gateway(nd_ifindex,
++						addr, nmlen, gwaddr);
++				if (ret < 0)
++					lkl_printf(
++						"failed to set v4 if gw: %s\n",
++						lkl_strerror(ret));
++			}
++		}
++	}
++
++	if (nd_ifindex >= 0 && iface->ifipv6 &&
++			iface->ifnetmask6_len) {
++		struct lkl_in6_addr addr;
++		unsigned int pflen = atoi(iface->ifnetmask6_len);
++
++		if (inet_pton(LKL_AF_INET6, iface->ifipv6,
++			      (struct lkl_in6_addr *)&addr) != 1) {
++			lkl_printf("Invalid ipv6 addr: %s\n",
++				   iface->ifipv6);
++		}  else {
++			ret = lkl_if_set_ipv6(nd_ifindex, &addr, pflen);
++			if (ret < 0)
++				lkl_printf("failed to set IPv6 address: %s\n",
++					   lkl_strerror(ret));
++		}
++		if (iface->ifgateway6) {
++			char gwaddr[16];
++
++			if (inet_pton(LKL_AF_INET6, iface->ifgateway6,
++								gwaddr) != 1) {
++				lkl_printf("Invalid ipv6 gateway: %s\n",
++					   iface->ifgateway6);
++			} else {
++				ret = lkl_if_set_ipv6_gateway(nd_ifindex,
++						&addr, pflen, gwaddr);
++				if (ret < 0)
++					lkl_printf(
++						"failed to set v6 if gw: %s\n",
++						lkl_strerror(ret));
++			}
++		}
++	}
++
++	if (nd_ifindex >= 0 && iface->ifneigh_entries)
++		add_neighbor(nd_ifindex, iface->ifneigh_entries);
++
++	if (nd_ifindex >= 0 && iface->ifqdisc_entries)
++		lkl_qdisc_parse_add(nd_ifindex, iface->ifqdisc_entries);
++
++	return 0;
 +}
-+#endif
 +
-+/*
-+ * lkl_register_dbg_handler- register a signal handler that loads a debug lib.
-+ *
-+ * The signal handler is triggered by Ctrl-Z. It creates a new pthread which
-+ * call dbg_entrance().
-+ *
-+ * If you run the program from shell script, make sure you ignore SIGTSTP by
-+ * "trap '' TSTP" in the shell script.
-+ */
-+void lkl_register_dbg_handler(void);
-+
-+/**
-+ * lkl_add_neighbor - add a permanent arp entry
-+ * @ifindex - the ifindex of the interface
-+ * @af - address family of the ip address. Must be LKL_AF_INET or LKL_AF_INET6
-+ * @ip - ip address of the entry in network byte order
-+ * @mac - mac address of the entry
-+ */
-+int lkl_add_neighbor(int ifindex, int af, void *addr, void *mac);
-+
-+/**
-+ * lkl_mount_fs - mount a file system type like proc, sys
-+ * @fstype - file system type. e.g. proc, sys
-+ * @returns - 0 on success. 1 if it's already mounted. negative on failure.
-+ */
-+int lkl_mount_fs(char *fstype);
-+
-+/**
-+ * lkl_if_add_ip - add an ip address
-+ * @ifindex - the ifindex of the interface
-+ * @af - address family of the ip address. Must be LKL_AF_INET or LKL_AF_INET6
-+ * @addr - ip address of the entry in network byte order
-+ * @netprefix_len - prefix length of the @addr
-+ */
-+int lkl_if_add_ip(int ifindex, int af, void *addr, unsigned int netprefix_len);
-+
-+/**
-+ * lkl_if_del_ip - add an ip address
-+ * @ifindex - the ifindex of the interface
-+ * @af - address family of the ip address. Must be LKL_AF_INET or LKL_AF_INET6
-+ * @addr - ip address of the entry in network byte order
-+ * @netprefix_len - prefix length of the @addr
-+ */
-+int lkl_if_del_ip(int ifindex, int af, void *addr, unsigned int netprefix_len);
-+
-+/**
-+ * lkl_add_gateway - add a gateway
-+ * @af - address family of the ip address. Must be LKL_AF_INET or LKL_AF_INET6
-+ * @gwaddr - 4-byte IP address of the gateway (i.e., struct in_addr)
-+ */
-+int lkl_add_gateway(int af, void *gwaddr);
-+
-+/**
-+ * XXX Should I use OIF selector?
-+ * temporary table idx = ifindex * 2 + 0 <- ipv4
-+ * temporary table idx = ifindex * 2 + 1 <- ipv6
-+ */
-+/**
-+ * lkl_if_add_rule_from_addr - create an ip rule table with "from" selector
-+ * @ifindex - the ifindex of the interface, used for table id calculation
-+ * @af - address family of the ip address. Must be LKL_AF_INET or LKL_AF_INET6
-+ * @saddr - network byte order ip address, "from" selector address of this rule
-+ */
-+int lkl_if_add_rule_from_saddr(int ifindex, int af, void *saddr);
-+
-+/**
-+ * lkl_if_add_gateway - add gateway to rule table
-+ * @ifindex - the ifindex of the interface, used for table id calculation
-+ * @af - address family of the ip address. Must be LKL_AF_INET or LKL_AF_INET6
-+ * @gwaddr - 4-byte IP address of the gateway (i.e., struct in_addr)
-+ */
-+int lkl_if_add_gateway(int ifindex, int af, void *gwaddr);
-+
-+/**
-+ * lkl_if_add_linklocal - add linklocal route to rule table
-+ * @ifindex - the ifindex of the interface, used for table id calculation
-+ * @af - address family of the ip address. Must be LKL_AF_INET or LKL_AF_INET6
-+ * @addr - ip address of the entry in network byte order
-+ * @netprefix_len - prefix length of the @addr
-+ */
-+int lkl_if_add_linklocal(int ifindex, int af,  void *addr, int netprefix_len);
-+
-+/**
-+ * lkl_if_wait_ipv6_dad - wait for DAD to be done for a ipv6 address
-+ * must be called after interface is up
-+ *
-+ * @ifindex - the ifindex of the interface
-+ * @addr - ip address of the entry in network byte order
-+ */
-+int lkl_if_wait_ipv6_dad(int ifindex, void *addr);
-+
-+/**
-+ * lkl_set_fd_limit - set the maximum number of file descriptors allowed
-+ * @fd_limit - fd max limit
-+ */
-+int lkl_set_fd_limit(unsigned int fd_limit);
-+
-+/**
-+ * lkl_qdisc_add - set qdisc rule onto an interface
-+ *
-+ * @ifindex - the ifindex of the interface
-+ * @root - the name of root class (e.g., "root");
-+ * @type - the type of qdisc (e.g., "fq")
-+ */
-+int lkl_qdisc_add(int ifindex, const char *root, const char *type);
-+
-+/**
-+ * lkl_qdisc_parse_add - Add a qdisc entry for an interface with strings
-+ *
-+ * @ifindex - the ifindex of the interface
-+ * @entries - strings of qdisc configurations in the form of
-+ *            "root|type;root|type;..."
-+ */
-+void lkl_qdisc_parse_add(int ifindex, const char *entries);
-+
-+/**
-+ * lkl_sysctl - write a sysctl value
-+ *
-+ * @path - the path to an sysctl entry (e.g., "net.ipv4.tcp_wmem");
-+ * @value - the value of the sysctl (e.g., "4096 87380 2147483647")
-+ */
-+int lkl_sysctl(const char *path, const char *value);
-+
-+/**
-+ * lkl_sysctl_parse_write - Configure sysctl parameters with strings
-+ *
-+ * @sysctls - Configure sysctl parameters as the form of "key=value;..."
-+ */
-+void lkl_sysctl_parse_write(const char *sysctls);
-+
-+#ifdef __cplusplus
++static void free_cfgparam(char *cfgparam)
++{
++	if (cfgparam)
++		free(cfgparam);
 +}
-+#endif
 +
-+#endif
-diff --git a/tools/lkl/include/lkl_host.h b/tools/lkl/include/lkl_host.h
++static int lkl_clean_config(struct lkl_config *cfg)
++{
++	struct lkl_config_iface *iface;
++
++	if (!cfg)
++		return -1;
++
++	for (iface = cfg->ifaces; iface; iface = iface->next) {
++		free_cfgparam(iface->iftap);
++		free_cfgparam(iface->iftype);
++		free_cfgparam(iface->ifparams);
++		free_cfgparam(iface->ifmtu_str);
++		free_cfgparam(iface->ifip);
++		free_cfgparam(iface->ifipv6);
++		free_cfgparam(iface->ifgateway);
++		free_cfgparam(iface->ifgateway6);
++		free_cfgparam(iface->ifmac_str);
++		free_cfgparam(iface->ifnetmask_len);
++		free_cfgparam(iface->ifnetmask6_len);
++		free_cfgparam(iface->ifoffload_str);
++		free_cfgparam(iface->ifneigh_entries);
++		free_cfgparam(iface->ifqdisc_entries);
++	}
++	free_cfgparam(cfg->gateway);
++	free_cfgparam(cfg->gateway6);
++	free_cfgparam(cfg->debug);
++	free_cfgparam(cfg->mount);
++	free_cfgparam(cfg->single_cpu);
++	free_cfgparam(cfg->sysctls);
++	free_cfgparam(cfg->boot_cmdline);
++	free_cfgparam(cfg->dump);
++	free_cfgparam(cfg->delay_main);
++	return 0;
++}
++
++
++int lkl_load_config_pre(struct lkl_config *cfg)
++{
++	int lkl_debug, ret;
++	struct lkl_config_iface *iface;
++
++	if (!cfg)
++		return 0;
++
++	if (cfg->debug)
++		lkl_debug = strtol(cfg->debug, NULL, 0);
++
++	if (!cfg->debug || (lkl_debug == 0))
++		lkl_host_ops.print = NULL;
++
++	for (iface = cfg->ifaces; iface; iface = iface->next) {
++		ret = lkl_config_netdev_create(cfg, iface);
++		if (ret < 0)
++			return -1;
++	}
++
++	return 0;
++}
++
++int lkl_load_config_post(struct lkl_config *cfg)
++{
++	int ret;
++	struct lkl_config_iface *iface;
++
++	if (!cfg)
++		return 0;
++
++	if (cfg->mount)
++		mount_cmds_exec(cfg->mount, lkl_mount_fs);
++
++	for (iface = cfg->ifaces; iface; iface = iface->next) {
++		ret = lkl_config_netdev_configure(cfg, iface);
++		if (ret < 0)
++			break;
++	}
++
++	if (cfg->gateway) {
++		unsigned int gwaddr;
++
++		if (inet_pton(LKL_AF_INET, cfg->gateway,
++			      (struct lkl_in_addr *)&gwaddr) != 1)
++			lkl_printf("Invalid ipv4 gateway: %s\n", cfg->gateway);
++
++		if (gwaddr != LKL_INADDR_NONE) {
++			ret = lkl_set_ipv4_gateway(gwaddr);
++			if (ret < 0)
++				lkl_printf("failed to set IPv4 gateway: %s\n",
++					   lkl_strerror(ret));
++		}
++	}
++
++	if (cfg->gateway6) {
++		char gw[16];
++
++		if (inet_pton(LKL_AF_INET6, cfg->gateway6, gw) != 1) {
++			lkl_printf("Invalid ipv6 gateway: %s\n", cfg->gateway6);
++		} else {
++			ret = lkl_set_ipv6_gateway(gw);
++			if (ret < 0)
++				lkl_printf("failed to set IPv6 gateway: %s\n",
++					   lkl_strerror(ret));
++		}
++	}
++
++	if (cfg->sysctls)
++		lkl_sysctl_parse_write(cfg->sysctls);
++
++	/* put a delay before calling main() */
++	if (cfg->delay_main) {
++		unsigned long delay = strtoul(cfg->delay_main, NULL, 10);
++
++		if (delay == ~0UL)
++			lkl_printf("got invalid delay_main value (%s)\n",
++				   cfg->delay_main);
++		else {
++			lkl_printf("sleeping %lu usec\n", delay);
++			usleep(delay);
++		}
++	}
++
++	return 0;
++}
++
++int lkl_unload_config(struct lkl_config *cfg)
++{
++	struct lkl_config_iface *iface;
++
++	if (cfg) {
++		if (cfg->dump)
++			mount_cmds_exec(cfg->dump, dump_file);
++
++		for (iface = cfg->ifaces; iface; iface = iface->next) {
++			if (iface->nd) {
++				if (iface->nd->id >= 0)
++					lkl_netdev_remove(iface->nd->id);
++				lkl_netdev_free(iface->nd);
++			}
++		}
++
++		lkl_clean_config(cfg);
++	}
++
++	return 0;
++}
+diff --git a/tools/lkl/lib/dbg.c b/tools/lkl/lib/dbg.c
 new file mode 100644
-index 000000000000..ab9c3f2a69fb
+index 000000000000..b613353bce5c
 --- /dev/null
-+++ b/tools/lkl/include/lkl_host.h
-@@ -0,0 +1,160 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+#ifndef _LKL_HOST_H
-+#define _LKL_HOST_H
-+
-+#ifdef __cplusplus
-+extern "C" {
-+#endif
-+
-+#include <lkl/asm/host_ops.h>
++++ b/tools/lkl/lib/dbg.c
+@@ -0,0 +1,300 @@
++// SPDX-License-Identifier: GPL-2.0
++#include <errno.h>
 +#include <lkl.h>
++#include <limits.h>
++#include <string.h>
++#include <stdio.h>
++#include <stdlib.h>
 +
-+extern struct lkl_host_operations lkl_host_ops;
++static const char *PROMOTE = "$";
++#define str(x) #x
++#define xstr(s) str(s)
++#define MAX_BUF 100
++static char cmd[MAX_BUF];
++static char argv[10][MAX_BUF];
++static int argc;
++static char cur_dir[MAX_BUF] = "/";
 +
-+/**
-+ * lkl_printf - print a message via the host print operation
-+ *
-+ * @fmt: printf like format string
-+ */
-+int lkl_printf(const char *fmt, ...);
++static char *normalize_path(const char *src, size_t src_len)
++{
++	char *res;
++	unsigned int res_len;
++	const char *ptr = src;
++	const char *end = &src[src_len];
++	const char *next;
 +
-+extern char lkl_virtio_devs[4096];
++	res = malloc((src_len > 0 ? src_len : 1) + 1);
++	res_len = 0;
 +
-+#ifdef LKL_HOST_CONFIG_POSIX
-+#include <sys/uio.h>
++	for (ptr = src; ptr < end; ptr = next+1) {
++		size_t len;
++
++		next = memchr(ptr, '/', end-ptr);
++		if (next == NULL)
++			next = end;
++
++		len = next-ptr;
++		switch (len) {
++		case 2:
++			if (ptr[0] == '.' && ptr[1] == '.') {
++				const char *slash = strrchr(res, '/');
++
++				if (slash != NULL)
++					res_len = slash - res;
++				continue;
++			}
++			break;
++		case 1:
++			if (ptr[0] == '.')
++				continue;
++			break;
++		case 0:
++			continue;
++		}
++		res[res_len++] = '/';
++		memcpy(&res[res_len], ptr, len);
++		res_len += len;
++	}
++	if (res_len == 0)
++		res[res_len++] = '/';
++	res[res_len] = '\0';
++	return res;
++}
++
++static void build_path(char *path)
++{
++	char *npath;
++
++	strcpy(path, cur_dir);
++	if (argc >= 1) {
++		if (argv[0][0] == '/')
++			strncpy(path, argv[0], LKL_PATH_MAX);
++		else {
++			strncat(path, "/", LKL_PATH_MAX - strlen(path) - 1);
++			strncat(path, argv[0], LKL_PATH_MAX - strlen(path) - 1);
++		}
++	}
++	npath = normalize_path(path, strlen(path));
++	strcpy(path, npath);
++	free(npath);
++}
++
++static void help(void)
++{
++	const char *msg =
++		"cat FILE\n"
++		"\tShow content of FILE\n"
++		"cd [DIR]\n"
++		"\tChange directory to DIR\n"
++		"exit\n"
++		"\tExit the debug session\n"
++		"help\n"
++		"\tShow this message\n"
++		"ls [DIR]\n"
++		"\tList files in DIR\n"
++		"mount FSTYPE\n"
++		"\tMount FSTYPE as /FSTYPE\n"
++		"overwrite FILE\n"
++		"\tOverwrite content of FILE from stdin\n"
++		"pwd\n"
++		"\tShow current directory\n"
++		;
++	printf("%s", msg);
++}
++
++static void ls(void)
++{
++	char path[LKL_PATH_MAX];
++	struct lkl_dir *dir;
++	struct lkl_linux_dirent64 *de;
++	int err;
++
++	build_path(path);
++	dir = lkl_opendir(path, &err);
++	if (dir) {
++		do {
++			de = lkl_readdir(dir);
++			if (de) {
++				printf("%s\n", de->d_name);
++			} else {
++				err = lkl_errdir(dir);
++				if (err != 0) {
++					fprintf(stderr, "%s\n",
++						lkl_strerror(err));
++				}
++				break;
++			}
++		} while (1);
++		lkl_closedir(dir);
++	} else {
++		fprintf(stderr, "%s: %s\n", path, lkl_strerror(err));
++	}
++}
++
++static void cd(void)
++{
++	char path[LKL_PATH_MAX];
++	struct lkl_dir *dir;
++	int err;
++
++	build_path(path);
++	dir = lkl_opendir(path, &err);
++	if (dir) {
++		strcpy(cur_dir, path);
++		lkl_closedir(dir);
++	} else {
++		fprintf(stderr, "%s: %s\n", path, lkl_strerror(err));
++	}
++}
++
++static void mount(void)
++{
++	char *fstype;
++	int ret = 0;
++
++	if (argc != 1) {
++		fprintf(stderr, "%s\n", "One argument is needed.");
++		return;
++	}
++
++	fstype = argv[0];
++	ret = lkl_mount_fs(fstype);
++	if (ret == 1)
++		fprintf(stderr, "%s is already mounted.\n", fstype);
++}
++
++static void cat(void)
++{
++	char path[LKL_PATH_MAX];
++	int ret;
++	char buf[1024];
++	int fd;
++
++	if (argc != 1) {
++		fprintf(stderr, "%s\n", "One argument is needed.");
++		return;
++	}
++
++	build_path(path);
++	fd = lkl_sys_open(path, LKL_O_RDONLY, 0);
++
++	if (fd < 0) {
++		fprintf(stderr, "lkl_sys_open %s: %s\n",
++			path, lkl_strerror(fd));
++		return;
++	}
++
++	while ((ret = lkl_sys_read(fd, buf, sizeof(buf) - 1)) > 0) {
++		buf[ret] = '\0';
++		printf("%s", buf);
++	}
++
++	if (ret) {
++		fprintf(stderr, "lkl_sys_read %s: %s\n",
++			path, lkl_strerror(ret));
++	}
++	lkl_sys_close(fd);
++}
++
++static void overwrite(void)
++{
++	char path[LKL_PATH_MAX];
++	int ret;
++	int fd;
++	char buf[1024];
++
++	build_path(path);
++	fd = lkl_sys_open(path, LKL_O_WRONLY | LKL_O_CREAT, 0);
++	if (fd < 0) {
++		fprintf(stderr, "lkl_sys_open %s: %s\n",
++			path, lkl_strerror(fd));
++		return;
++	}
++	printf("Input the content and stop by hitting Ctrl-D:\n");
++	while (fgets(buf, 1023, stdin)) {
++		ret = lkl_sys_write(fd, buf, strlen(buf));
++		if (ret < 0) {
++			fprintf(stderr, "lkl_sys_write %s: %s\n",
++				path, lkl_strerror(fd));
++		}
++	}
++	lkl_sys_close(fd);
++}
++
++static void pwd(void)
++{
++	printf("%s\n", cur_dir);
++}
++
++static int parse_cmd(char *input)
++{
++	char *token;
++
++	token = strtok(input, " ");
++	if (token)
++		strcpy(cmd, token);
++	else
++		return -1;
++
++	argc = 0;
++	token = strtok(NULL, " ");
++	while (token) {
++		if (argc >= 10) {
++			fprintf(stderr, "To many args > 10\n");
++			return -1;
++		}
++		strcpy(argv[argc++], token);
++		token = strtok(NULL, " ");
++	}
++	return 0;
++}
++
++static void run_cmd(void)
++{
++	if (strcmp(cmd, "cat") == 0)
++		cat();
++	else if (strcmp(cmd, "cd") == 0)
++		cd();
++	else if (strcmp(cmd, "help") == 0)
++		help();
++	else if (strcmp(cmd, "ls") == 0)
++		ls();
++	else if (strcmp(cmd, "mount") == 0)
++		mount();
++	else if (strcmp(cmd, "overwrite") == 0)
++		overwrite();
++	else if (strcmp(cmd, "pwd") == 0)
++		pwd();
++	else
++		fprintf(stderr, "Unknown command: %s\n", cmd);
++}
++
++void dbg_entrance(void)
++{
++	char input[MAX_BUF + 1];
++	int ret;
++	int c;
++
++	printf("Type help to see a list of commands\n");
++	do {
++		printf("%s ", PROMOTE);
++		ret = scanf("%" xstr(MAX_BUF) "[^\n]s", input);
++		while ((c = getchar()) != '\n' && c != EOF)
++			;
++		if (ret == 0)
++			continue;
++		if (ret != 1 && errno != EINTR) {
++			perror("scanf");
++			continue;
++		}
++		if (strlen(input) == MAX_BUF) {
++			fprintf(stderr, "Too long input > %d\n", MAX_BUF - 1);
++			continue;
++		}
++		if (parse_cmd(input))
++			continue;
++		if (strcmp(cmd, "exit") == 0)
++			break;
++		run_cmd();
++	} while (1);
++}
+diff --git a/tools/lkl/lib/dbg_handler.c b/tools/lkl/lib/dbg_handler.c
+new file mode 100644
+index 000000000000..01d165a5fc1e
+--- /dev/null
++++ b/tools/lkl/lib/dbg_handler.c
+@@ -0,0 +1,44 @@
++// SPDX-License-Identifier: GPL-2.0
++#include <stdio.h>
++#include <lkl_host.h>
++
++extern void dbg_entrance(void);
++static int dbg_running;
++
++static void dbg_thread(void *arg)
++{
++	lkl_host_ops.thread_detach();
++	printf("======Enter Debug======\n");
++	dbg_entrance();
++	printf("======Exit Debug======\n");
++	dbg_running = 0;
++}
++
++void dbg_handler(int signum)
++{
++	/* We don't care about the possible race on dbg_running. */
++	if (dbg_running) {
++		fprintf(stderr, "A debug lib is running\n");
++		return;
++	}
++	dbg_running = 1;
++	lkl_host_ops.thread_create(&dbg_thread, NULL);
++}
++
++#ifndef __MINGW32__
++#include <signal.h>
++void lkl_register_dbg_handler(void)
++{
++	struct sigaction sa;
++
++	sigemptyset(&sa.sa_mask);
++	sa.sa_handler = dbg_handler;
++	if (sigaction(SIGTSTP, &sa, NULL) == -1)
++		perror("sigaction");
++}
 +#else
-+struct iovec {
-+	void *iov_base;
-+	size_t iov_len;
-+};
-+#endif
-+
-+extern struct lkl_dev_blk_ops lkl_dev_blk_ops;
-+
-+/**
-+ * struct lkl_blk_req - block device request
-+ *
-+ * @type: type of request
-+ * @prio: priority of request - currently unused
-+ * @sector: offset in units 512 bytes for read / write requests
-+ * @buf: an array of buffers to be used for read / write requests
-+ * @count: the number of buffers
-+ */
-+struct lkl_blk_req {
-+#define LKL_DEV_BLK_TYPE_READ		0
-+#define LKL_DEV_BLK_TYPE_WRITE		1
-+#define LKL_DEV_BLK_TYPE_FLUSH		4
-+#define LKL_DEV_BLK_TYPE_FLUSH_OUT	5
-+	unsigned int type;
-+	unsigned int prio;
-+	unsigned long long sector;
-+	struct iovec *buf;
-+	int count;
-+};
-+
-+/**
-+ * struct lkl_dev_blk_ops - block device host operations
-+ */
-+struct lkl_dev_blk_ops {
-+	/**
-+	 * @get_capacity: returns the disk capacity in bytes
-+	 *
-+	 * @disk - the disk for which the capacity is requested;
-+	 * @res - pointer to receive the capacity, in bytes;
-+	 * @returns - 0 in case of success, negative value in case of error
-+	 */
-+	int (*get_capacity)(struct lkl_disk disk, unsigned long long *res);
-+#define LKL_DEV_BLK_STATUS_OK		0
-+#define LKL_DEV_BLK_STATUS_IOERR	1
-+#define LKL_DEV_BLK_STATUS_UNSUP	2
-+	/**
-+	 * @request: issue a block request
-+	 *
-+	 * @disk - the disk the request is issued to;
-+	 * @req - a request described by &struct lkl_blk_req
-+	 */
-+	int (*request)(struct lkl_disk disk, struct lkl_blk_req *req);
-+};
-+
-+struct lkl_netdev {
-+	struct lkl_dev_net_ops *ops;
-+	int id;
-+	uint8_t has_vnet_hdr: 1;
-+};
-+
-+/**
-+ * struct lkl_dev_net_ops - network device host operations
-+ */
-+struct lkl_dev_net_ops {
-+	/**
-+	 * @tx: writes a L2 packet into the net device
-+	 *
-+	 * The data buffer can only hold 0 or 1 complete packets.
-+	 *
-+	 * @nd - pointer to the network device;
-+	 * @iov - pointer to the buffer vector;
-+	 * @cnt - # of vectors in iov.
-+	 *
-+	 * @returns number of bytes transmitted
-+	 */
-+	int (*tx)(struct lkl_netdev *nd, struct iovec *iov, int cnt);
-+
-+	/**
-+	 * @rx: reads a packet from the net device.
-+	 *
-+	 * It must only read one complete packet if present.
-+	 *
-+	 * If the buffer is too small for the packet, the implementation may
-+	 * decide to drop it or trim it.
-+	 *
-+	 * @nd - pointer to the network device
-+	 * @iov - pointer to the buffer vector to store the packet
-+	 * @cnt - # of vectors in iov.
-+	 *
-+	 * @returns number of bytes read for success or < 0 if error
-+	 */
-+	int (*rx)(struct lkl_netdev *nd, struct iovec *iov, int cnt);
-+
-+#define LKL_DEV_NET_POLL_RX		1
-+#define LKL_DEV_NET_POLL_TX		2
-+#define LKL_DEV_NET_POLL_HUP		4
-+
-+	/**
-+	 * @poll: polls a net device
-+	 *
-+	 * Supports the following events: LKL_DEV_NET_POLL_RX
-+	 * (readable), LKL_DEV_NET_POLL_TX (writable) or
-+	 * LKL_DEV_NET_POLL_HUP (the close operations has been issued
-+	 * and we need to clean up). Blocks until one event is
-+	 * available.
-+	 *
-+	 * @nd - pointer to the network device
-+	 *
-+	 * @returns - LKL_DEV_NET_POLL_RX, LKL_DEV_NET_POLL_TX,
-+	 * LKL_DEV_NET_POLL_HUP or a negative value for errors
-+	 */
-+	int (*poll)(struct lkl_netdev *nd);
-+
-+	/**
-+	 * @poll_hup: make poll wakeup and return LKL_DEV_NET_POLL_HUP
-+	 *
-+	 * @nd - pointer to the network device
-+	 */
-+	void (*poll_hup)(struct lkl_netdev *nd);
-+
-+	/**
-+	 * @free: frees a network device
-+	 *
-+	 * Implementation must release its resources and free the network device
-+	 * structure.
-+	 *
-+	 * @nd - pointer to the network device
-+	 */
-+	void (*free)(struct lkl_netdev *nd);
-+};
-+
-+#ifdef __cplusplus
++void lkl_register_dbg_handler(void)
++{
++	fprintf(stderr, "%s is not implemented.\n", __func__);
 +}
 +#endif
+diff --git a/tools/lkl/lib/endian.h b/tools/lkl/lib/endian.h
+new file mode 100644
+index 000000000000..aaccfa0edb65
+--- /dev/null
++++ b/tools/lkl/lib/endian.h
+@@ -0,0 +1,31 @@
++/* SPDX-License-Identifier: GPL-2.0 */
++#ifndef _LKL_LIB_ENDIAN_H
++#define _LKL_LIB_ENDIAN_H
++
++#if defined(__FreeBSD__)
++#include <sys/endian.h>
++#elif defined(__ANDROID__)
++#include <sys/endian.h>
++#elif defined(__MINGW32__)
++#include <winsock.h>
++#define le32toh(x) (x)
++#define le16toh(x) (x)
++#define htole32(x) (x)
++#define htole16(x) (x)
++#define le64toh(x) (x)
++#define htobe32(x) htonl(x)
++#define htobe16(x) htons(x)
++#define be32toh(x) ntohl(x)
++#define be16toh(x) ntohs(x)
++#else
++#include <endian.h>
++#endif
++
++#ifndef htonl
++#define htonl(x) htobe32(x)
++#define htons(x) htobe16(x)
++#define ntohl(x) be32toh(x)
++#define ntohs(x) be16toh(x)
++#endif
++
++#endif /* _LKL_LIB_ENDIAN_H */
+diff --git a/tools/lkl/lib/jmp_buf.c b/tools/lkl/lib/jmp_buf.c
+new file mode 100644
+index 000000000000..f6bdd7e4bd83
+--- /dev/null
++++ b/tools/lkl/lib/jmp_buf.c
+@@ -0,0 +1,14 @@
++// SPDX-License-Identifier: GPL-2.0
++#include <setjmp.h>
++#include <lkl_host.h>
++
++void jmp_buf_set(struct lkl_jmp_buf *jmpb, void (*f)(void))
++{
++	if (!setjmp(*((jmp_buf *)jmpb->buf)))
++		f();
++}
++
++void jmp_buf_longjmp(struct lkl_jmp_buf *jmpb, int val)
++{
++	longjmp(*((jmp_buf *)jmpb->buf), val);
++}
+diff --git a/tools/lkl/lib/jmp_buf.h b/tools/lkl/lib/jmp_buf.h
+new file mode 100644
+index 000000000000..8782cbaaf51f
+--- /dev/null
++++ b/tools/lkl/lib/jmp_buf.h
+@@ -0,0 +1,8 @@
++/* SPDX-License-Identifier: GPL-2.0 */
++#ifndef _LKL_LIB_JMP_BUF_H
++#define _LKL_LIB_JMP_BUF_H
++
++void jmp_buf_set(struct lkl_jmp_buf *jmpb, void (*f)(void));
++void jmp_buf_longjmp(struct lkl_jmp_buf *jmpb, int val);
 +
 +#endif
-diff --git a/tools/lkl/lib/.gitignore b/tools/lkl/lib/.gitignore
+diff --git a/tools/lkl/lib/utils.c b/tools/lkl/lib/utils.c
 new file mode 100644
-index 000000000000..427ae0273fdd
+index 000000000000..7de92bbe5475
 --- /dev/null
-+++ b/tools/lkl/lib/.gitignore
-@@ -0,0 +1,3 @@
-+lkl.o
-+liblkl.a
++++ b/tools/lkl/lib/utils.c
+@@ -0,0 +1,266 @@
++// SPDX-License-Identifier: GPL-2.0
++#include <stdarg.h>
++#include <stdio.h>
++#include <string.h>
++#include <lkl_host.h>
 +
-diff --git a/tools/lkl/lib/Build b/tools/lkl/lib/Build
-new file mode 100644
-index 000000000000..719c7308c830
---- /dev/null
-+++ b/tools/lkl/lib/Build
-@@ -0,0 +1,25 @@
-+CFLAGS_posix-host.o += -D_FILE_OFFSET_BITS=64
-+CFLAGS_virtio_net_vde.o += $(pkg-config --cflags vdeplug 2>/dev/null)
-+CFLAGS_nt-host.o += -D_WIN32_WINNT=0x0600
++static const char * const lkl_err_strings[] = {
++	"Success",
++	"Operation not permitted",
++	"No such file or directory",
++	"No such process",
++	"Interrupted system call",
++	"I/O error",
++	"No such device or address",
++	"Argument list too long",
++	"Exec format error",
++	"Bad file number",
++	"No child processes",
++	"Try again",
++	"Out of memory",
++	"Permission denied",
++	"Bad address",
++	"Block device required",
++	"Device or resource busy",
++	"File exists",
++	"Cross-device link",
++	"No such device",
++	"Not a directory",
++	"Is a directory",
++	"Invalid argument",
++	"File table overflow",
++	"Too many open files",
++	"Not a typewriter",
++	"Text file busy",
++	"File too large",
++	"No space left on device",
++	"Illegal seek",
++	"Read-only file system",
++	"Too many links",
++	"Broken pipe",
++	"Math argument out of domain of func",
++	"Math result not representable",
++	"Resource deadlock would occur",
++	"File name too long",
++	"No record locks available",
++	"Invalid system call number",
++	"Directory not empty",
++	"Too many symbolic links encountered",
++	"Bad error code", /* EWOULDBLOCK is EAGAIN */
++	"No message of desired type",
++	"Identifier removed",
++	"Channel number out of range",
++	"Level 2 not synchronized",
++	"Level 3 halted",
++	"Level 3 reset",
++	"Link number out of range",
++	"Protocol driver not attached",
++	"No CSI structure available",
++	"Level 2 halted",
++	"Invalid exchange",
++	"Invalid request descriptor",
++	"Exchange full",
++	"No anode",
++	"Invalid request code",
++	"Invalid slot",
++	"Bad error code", /* EDEADLOCK is EDEADLK */
++	"Bad font file format",
++	"Device not a stream",
++	"No data available",
++	"Timer expired",
++	"Out of streams resources",
++	"Machine is not on the network",
++	"Package not installed",
++	"Object is remote",
++	"Link has been severed",
++	"Advertise error",
++	"Srmount error",
++	"Communication error on send",
++	"Protocol error",
++	"Multihop attempted",
++	"RFS specific error",
++	"Not a data message",
++	"Value too large for defined data type",
++	"Name not unique on network",
++	"File descriptor in bad state",
++	"Remote address changed",
++	"Can not access a needed shared library",
++	"Accessing a corrupted shared library",
++	".lib section in a.out corrupted",
++	"Attempting to link in too many shared libraries",
++	"Cannot exec a shared library directly",
++	"Illegal byte sequence",
++	"Interrupted system call should be restarted",
++	"Streams pipe error",
++	"Too many users",
++	"Socket operation on non-socket",
++	"Destination address required",
++	"Message too long",
++	"Protocol wrong type for socket",
++	"Protocol not available",
++	"Protocol not supported",
++	"Socket type not supported",
++	"Operation not supported on transport endpoint",
++	"Protocol family not supported",
++	"Address family not supported by protocol",
++	"Address already in use",
++	"Cannot assign requested address",
++	"Network is down",
++	"Network is unreachable",
++	"Network dropped connection because of reset",
++	"Software caused connection abort",
++	"Connection reset by peer",
++	"No buffer space available",
++	"Transport endpoint is already connected",
++	"Transport endpoint is not connected",
++	"Cannot send after transport endpoint shutdown",
++	"Too many references: cannot splice",
++	"Connection timed out",
++	"Connection refused",
++	"Host is down",
++	"No route to host",
++	"Operation already in progress",
++	"Operation now in progress",
++	"Stale file handle",
++	"Structure needs cleaning",
++	"Not a XENIX named type file",
++	"No XENIX semaphores available",
++	"Is a named type file",
++	"Remote I/O error",
++	"Quota exceeded",
++	"No medium found",
++	"Wrong medium type",
++	"Operation Canceled",
++	"Required key not available",
++	"Key has expired",
++	"Key has been revoked",
++	"Key was rejected by service",
++	"Owner died",
++	"State not recoverable",
++	"Operation not possible due to RF-kill",
++	"Memory page has hardware error",
++};
 +
-+liblkl-y += fs.o
-+liblkl-y += iomem.o
-+liblkl-y += net.o
-+liblkl-y += jmp_buf.o
-+liblkl-$(LKL_HOST_CONFIG_POSIX) += posix-host.o
-+liblkl-$(LKL_HOST_CONFIG_NT) += nt-host.o
-+liblkl-y += utils.o
-+liblkl-y += virtio_blk.o
-+liblkl-y += virtio.o
-+liblkl-y += dbg.o
-+liblkl-y += dbg_handler.o
-+liblkl-$(LKL_HOST_CONFIG_VIRTIO_NET) += virtio_net.o
-+liblkl-$(LKL_HOST_CONFIG_VIRTIO_NET) += virtio_net_fd.o
-+liblkl-$(LKL_HOST_CONFIG_VIRTIO_NET) += virtio_net_tap.o
-+liblkl-$(LKL_HOST_CONFIG_VIRTIO_NET) += virtio_net_raw.o
-+liblkl-$(LKL_HOST_CONFIG_VIRTIO_NET_MACVTAP) += virtio_net_macvtap.o
-+liblkl-$(LKL_HOST_CONFIG_VIRTIO_NET_DPDK) += virtio_net_dpdk.o
-+liblkl-$(LKL_HOST_CONFIG_VIRTIO_NET_VDE) += virtio_net_vde.o
-+liblkl-$(LKL_HOST_CONFIG_VIRTIO_NET) += virtio_net_pipe.o
-+liblkl-y += ../../perf/pmu-events/jsmn.o
-+liblkl-y += config.o
++const char *lkl_strerror(int err)
++{
++	if (err < 0)
++		err = -err;
++
++	if ((size_t)err >= sizeof(lkl_err_strings) / sizeof(const char *))
++		return "Bad error code";
++
++	return lkl_err_strings[err];
++}
++
++void lkl_perror(char *msg, int err)
++{
++	const char *err_msg = lkl_strerror(err);
++	/* We need to use 'real' printf because lkl_host_ops.print can
++	 * be turned off when debugging is off.
++	 */
++	lkl_printf("%s: %s\n", msg, err_msg);
++}
++
++static int lkl_vprintf(const char *fmt, va_list args)
++{
++	int n;
++	char *buffer;
++	va_list copy;
++
++	if (!lkl_host_ops.print)
++		return 0;
++
++	va_copy(copy, args);
++	n = vsnprintf(NULL, 0, fmt, copy);
++	va_end(copy);
++
++	buffer = lkl_host_ops.mem_alloc(n + 1);
++	if (!buffer)
++		return -1;
++
++	vsnprintf(buffer, n + 1, fmt, args);
++
++	lkl_host_ops.print(buffer, n);
++	lkl_host_ops.mem_free(buffer);
++
++	return n;
++}
++
++int lkl_printf(const char *fmt, ...)
++{
++	int n;
++	va_list args;
++
++	va_start(args, fmt);
++	n = lkl_vprintf(fmt, args);
++	va_end(args);
++
++	return n;
++}
++
++void lkl_bug(const char *fmt, ...)
++{
++	va_list args;
++
++	va_start(args, fmt);
++	lkl_vprintf(fmt, args);
++	va_end(args);
++
++	lkl_host_ops.panic();
++}
++#ifndef __arch_um__
++int lkl_sysctl(const char *path, const char *value)
++{
++	int ret;
++	int fd;
++	char *delim, *p;
++	char full_path[256];
++
++	lkl_mount_fs("proc");
++
++	snprintf(full_path, sizeof(full_path), "/proc/sys/%s", path);
++	p = full_path;
++	while ((delim = strstr(p, "."))) {
++		*delim = '/';
++		p = delim + 1;
++	}
++
++	fd = lkl_sys_open(full_path, LKL_O_WRONLY | LKL_O_CREAT, 0);
++	if (fd < 0) {
++		lkl_printf("lkl_sys_open %s: %s\n",
++			   full_path, lkl_strerror(fd));
++		return -1;
++	}
++	ret = lkl_sys_write(fd, value, strlen(value));
++	if (ret < 0) {
++		lkl_printf("lkl_sys_write %s: %s\n",
++			full_path, lkl_strerror(fd));
++	}
++
++	lkl_sys_close(fd);
++
++	return 0;
++}
++
++/* Configure sysctl parameters as the form of "key=value;key=value;..." */
++void lkl_sysctl_parse_write(const char *sysctls)
++{
++	char *saveptr = NULL, *token = NULL;
++	char *key = NULL, *value = NULL;
++	char strings[256];
++	int ret = 0;
++
++	strcpy(strings, sysctls);
++	for (token = strtok_r(strings, ";", &saveptr); token;
++	     token = strtok_r(NULL, ";", &saveptr)) {
++		key = strtok(token, "=");
++		value = strtok(NULL, "=");
++		ret = lkl_sysctl(key, value);
++		if (ret) {
++			lkl_printf("Failed to configure sysctl entries: %s\n",
++				   lkl_strerror(ret));
++			return;
++		}
++	}
++}
++#endif
 -- 
 2.20.1 (Apple Git-117)
 
