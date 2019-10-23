@@ -2,80 +2,82 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6D1A5E1168
-	for <lists+linux-um@lfdr.de>; Wed, 23 Oct 2019 07:00:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 00FA7E1165
+	for <lists+linux-um@lfdr.de>; Wed, 23 Oct 2019 07:00:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2FciAju4yAaUfGCirNRC82s7Ivy+vDGZAmZZISAhfYc=; b=pqrzlPOTV0J8bC
-	7yb/tHtvhWKhRoDtUXZdlCZ2bihqLomsaCByt/EsRWdnNrTQqIimgymPPX4FgRel5QOxzXf1EPoBn
-	gt7PeutgMdQeok7LwOCi1EN9bDdPtOFAfBLpXVhjxpSc+HUJ5sAc/uWkYAa4VPhgC5Whlp0hxqqrQ
-	scGSBzwUTIFpCqqKzRFJX7pVbeZWNkBBk7Tp58plLbevy83FmvB/Vj9XIuHNa4Eb6a5HstsBQCjCW
-	ni/T/oZis6XX9zH4dyIMPnKvjkBRmJCjYedgbSPuP7VR+wj8Ie4F+ZcTU4QHOhN1TVcIhzVQ4pZpm
-	3n8egb8VBNDXaWDL9ZRA==;
+	List-Owner; bh=sFurc9JTQkTT5G1HkULe9BJ7hQe1f4y/pXnCZsgggW4=; b=Hz2xUw9tRvVtxD
+	6G4mlIFUCmXplLDYNBmgdmdmgSvSnsE/mbvYIt+BucL+9tdAn+JD2LBMz9hwMgTgDCruliFgWDaGu
+	VsdsyydTruzX/DyPaqftAhlX+V/PEMOX7ObOK8HTp+f16yKc0ACktoftmlLFuILDFAzzhLjCjEqej
+	d5AsVhiOqL2yCQWpCTmsgY/9QGYJ4/ayr2vSPuhx21OzSSJDl03KKyqzdDfwqhMCuLiqWTZMs3zIJ
+	DRTrcfT9+tfn/tgvIYiFk7hgM7bKymmVPiL6ro6joT1KIHiJnf4Tol2Fo/Eh9xAvQIdDjBhuL/j6X
+	pVl28gzROUTX14nkNZcQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iN8ku-0002FA-Lg; Wed, 23 Oct 2019 05:00:20 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1iN8ks-0002Do-53; Wed, 23 Oct 2019 05:00:18 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iN8kk-0001wO-Dg
- for linux-um@lists.infradead.org; Wed, 23 Oct 2019 05:00:15 +0000
-Received: by mail-pg1-x543.google.com with SMTP id p1so11386930pgi.4
- for <linux-um@lists.infradead.org>; Tue, 22 Oct 2019 22:00:10 -0700 (PDT)
+ id 1iN8ki-0001in-Lc
+ for linux-um@lists.infradead.org; Wed, 23 Oct 2019 05:00:14 +0000
+Received: by mail-pg1-x544.google.com with SMTP id u23so697023pgo.0
+ for <linux-um@lists.infradead.org>; Tue, 22 Oct 2019 22:00:08 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=o/vcaNCShvwx/nWkPTVkN4EPtN7zpQtfSY7FqoWbkb8=;
- b=kKOjKFk8MLKEzoDiTj4s00sR7GX8J0xkjIGzZTAqfPw2c7vTBd9bYBzuAESmw7zbOR
- C7JWzm8z2Tag0I2ze+pljfGKRsmsqWCjjGqMP/qktrxoc5a58iLBuFHAxSlXMCV+kESS
- tFEVOKZVFRD3UoA14a4lGyNU3yTZVPRfNrWqdX6yoVfZFlVxJoLAp/2mqfw2hIVm+EOX
- HbldJt79qZ06d435qS3yYs+yF72hN8QYTimjyd4ktSOfqvw0akv8z2VeMRXDMlb2aL7V
- 7HvcJ0qxplnM38njCMP0uMU6q2OkvCHsm1mosg7WZCFG+rXVgPz3Mfqc6wEZNgQcJs06
- uAwQ==
+ bh=MfOcPrkTvXxSk28ocUdJi8Bn695Asfy/OSpPDBKVX5E=;
+ b=RH8VGzdGRzQcpMn7ZF2filrPGEtI3aaHnKGg32k+PCcM/ige+jTo5fVXZLag//zT1F
+ 41J6/D3q8lzOV7FNA3l5qsK/DI7TdJOsTkViCBgCdbqZnc/W/muEbHXBUehJZggKVOvX
+ iEqf7qCGOfmuI6u9MxqBDGW+IhwzbhI2Ed0ixtjz2i5t81arYzzQyH2yYDFY65ttng9O
+ kr0teh2lTGk0+A5lTpeaW35MuN1o3oampwr6UVgmBc/YVaDbUAEriVqHN/djWsUG53PS
+ nfrv9xFQutCsS2s6jcIJRyx/aqNgNnHVU6cJRmFf9ttKYK67vkh1wQgd8XVjS+WwwhR3
+ G74w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=o/vcaNCShvwx/nWkPTVkN4EPtN7zpQtfSY7FqoWbkb8=;
- b=Zv6xAlysksvjmOTzrgMUkHfbK0E302aV4crT9MjHXks5MA33GW6I3rXENWNru1vXzB
- sL1JXqIwCQMG1RMExqKcH4TFp+Y44/xC7XFePe4IJTB3Oqd4sxP5esi/pdQI4kY16Amm
- oi6E8o/Cndoie0jkMcIKdw2SJVtKsLXveoS6dzJTCDVwEy4CNuRMTqAHZj4svala3iQs
- Op3JJtHdt7wdSLvq12eKT1qa27dvoGxRTVEA2pWNIBCDx3PUzNA4F/J4BWxJSy+9dRA3
- lw1iKKu3IqANjcczLLVp7UvayB3pRuEEpcG9vcJpRCVIvHxK9uwFQIuC8aceaF3YQmJp
- NCNQ==
-X-Gm-Message-State: APjAAAVcZ4h3x2w2wTNWn6V7myZT+Uc83EeOKdrrTUikfnKq8HUSl4DZ
- itz0Lrpww+6ttDXHupH9wrA=
-X-Google-Smtp-Source: APXvYqyUqHx56+0XmCSIZ+1bYWJ1NtB7KO0+TV7xPumM0d4SVC+fRXwyVyNXy0C5iANcgj12tVo+tw==
-X-Received: by 2002:aa7:8583:: with SMTP id w3mr404438pfn.138.1571806809550;
- Tue, 22 Oct 2019 22:00:09 -0700 (PDT)
+ bh=MfOcPrkTvXxSk28ocUdJi8Bn695Asfy/OSpPDBKVX5E=;
+ b=jnkWZzavU48KQoZGFKPMY5ZFOGY/KKa8r84zOMpot+4Y/KXI8vaVGJGlgMxBu0nDTn
+ wOXkEarIhPtA1wwwFwp/CyelKsc+iznHvVCr30c80nodayIxQYMAZ7GVWhIrkpb26LVN
+ meoZBjJxvh5k00cDkA/pliEnwUqPBou0VRXkUk6fobuM86oYPdiQbCu9ghmtxQfGSYnT
+ 1v3MO4lY0HB09axDEi+B7hxisyoNrQbuZDofjsEWRS4tJzpQibXPF9ZkUFASF9sNHMBD
+ /8g3ks28T0V7bfMgz3a5/ZcpfeupC+3K3vFmZF0bvoJNsGvJiLCpYMLziKoh8Od9iima
+ /ASg==
+X-Gm-Message-State: APjAAAWWFAU25GzKIZ45zyFP/tSn+VHovJaIJQcZzbt2+LUyJe0spYQT
+ bSxGeYWSVrIFiLrSVMsYVVA=
+X-Google-Smtp-Source: APXvYqxRDz28eva4iNOfEsnXpXYAbgi7aFzlGpibjGVmnoA4opImxsuxHspIZzv+n2L4q3ZQXMWknQ==
+X-Received: by 2002:a17:90a:34c1:: with SMTP id
+ m1mr9063888pjf.89.1571806807843; 
+ Tue, 22 Oct 2019 22:00:07 -0700 (PDT)
 Received: from earth-mac.local ([202.214.86.179])
- by smtp.gmail.com with ESMTPSA id f17sm29804574pgd.8.2019.10.22.22.00.05
+ by smtp.gmail.com with ESMTPSA id e7sm4347788pgr.25.2019.10.22.22.00.04
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 22 Oct 2019 22:00:06 -0700 (PDT)
+ Tue, 22 Oct 2019 22:00:05 -0700 (PDT)
 Received: by earth-mac.local (Postfix, from userid 501)
- id 8376A201995846; Wed, 23 Oct 2019 13:38:54 +0900 (JST)
+ id 8B151201995848; Wed, 23 Oct 2019 13:38:54 +0900 (JST)
 From: Hajime Tazaki <thehajime@gmail.com>
 To: linux-um@lists.infradead.org
-Subject: [RFC PATCH 42/47] Revert "kallsyms: remove symbol prefix support"
-Date: Wed, 23 Oct 2019 13:38:16 +0900
-Message-Id: <69d18908bbc2bd8548be61889f69a1884bed659a.1571798507.git.thehajime@gmail.com>
+Subject: [RFC PATCH 43/47] kallsyms: Add a config option to select section for
+ kallsyms
+Date: Wed, 23 Oct 2019 13:38:17 +0900
+Message-Id: <b56063cbad6bc3c09d4c5edd6e34c3793ed4cb5d.1571798507.git.thehajime@gmail.com>
 X-Mailer: git-send-email 2.20.1 (Apple Git-117)
 In-Reply-To: <cover.1571798507.git.thehajime@gmail.com>
 References: <cover.1571798507.git.thehajime@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191022_220010_505032_08662A73 
-X-CRM114-Status: GOOD (  16.22  )
+X-CRM114-CacheID: sfid-20191022_220008_740079_8951FBE8 
+X-CRM114-Status: GOOD (  16.82  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -99,164 +101,123 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: Octavian Purdila <tavi.purdila@gmail.com>,
- Hajime Tazaki <thehajime@gmail.com>, Akira Moroo <retrage01@gmail.com>
+Cc: Octavian Purdila <tavi.purdila@gmail.com>, Andreas Abel <aabel@google.com>,
+ Akira Moroo <retrage01@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-This reverts commit 534c9f2ec4c92adbe8791125e7ba66d5023ad51f.
+From: Andreas Abel <aabel@google.com>
 
-for lkl, mingw32 requires underscore-ed symbols.
+This commit adds a kernel config option to select whether the
+kallsyms data should be in the .rodata section (the default for
+non-LKL builds), or in the .data section (the default for LKL).
 
-Signed-off-by: Hajime Tazaki <thehajime@gmail.com>
+This is to avoid relocations in the text segment (TEXTRELs) that
+would otherwise occur with LKL when the .rodata and the .text
+section end up in the same segment.
+
+Having TEXTRELs can lead to a number of issues:
+
+1. If a shared library contains a TEXTREL, the corresponding memory
+pages cannot be shared.
+
+2. Android >=6 and SELinux do not support binaries with TEXTRELs
+(http://android-developers.blogspot.com/2016/06/android-changes-for-ndk-developers.html).
+
+3. If a program has a TEXTREL, uses an ifunc, and is compiled with
+early binding, this can lead to a segmentation fault when processing
+the relocation for the ifunc during dynamic linking because the text
+segment is made temporarily non-executable to process the TEXTREL
+(line 248 in dl_reloc.c).
+
+Signed-off-by: Andreas Abel <aabel@google.com>
 ---
- scripts/kallsyms.c      | 49 +++++++++++++++++++++++++++++++----------
+ init/Kconfig            | 12 ++++++++++++
+ scripts/kallsyms.c      |  9 ++++++++-
  scripts/link-vmlinux.sh |  4 ++++
- 2 files changed, 41 insertions(+), 12 deletions(-)
+ 3 files changed, 24 insertions(+), 1 deletion(-)
 
+diff --git a/init/Kconfig b/init/Kconfig
+index 81293d78a6ad..bd1a846e0ee0 100644
+--- a/init/Kconfig
++++ b/init/Kconfig
+@@ -1385,6 +1385,18 @@ config POSIX_TIMERS
+ 
+ 	  If unsure say y.
+ 
++config KALLSYMS_USE_DATA_SECTION
++	bool "Use .data instead of .rodata section for kallsyms"
++	depends on KALLSYMS
++	default n
++	help
++	  Enabling this option will put the kallsyms data in the .data section
++	  instead of the .rodata section.
++
++	  This is useful when building the kernel as a library, as it avoids
++	  relocations in the text segment that could otherwise occur if the
++	  .rodata section is in the same segment as the .text section.
++
+ config PRINTK
+ 	default y
+ 	bool "Enable support for printk" if EXPERT
 diff --git a/scripts/kallsyms.c b/scripts/kallsyms.c
-index ae6504d07fd6..8a62e1b6cf22 100644
+index 8a62e1b6cf22..11d01516e1c8 100644
 --- a/scripts/kallsyms.c
 +++ b/scripts/kallsyms.c
-@@ -60,6 +60,7 @@ static struct sym_entry *table;
+@@ -59,6 +59,7 @@ static struct addr_range percpu_range = {
+ static struct sym_entry *table;
  static unsigned int table_size, table_cnt;
  static int all_symbols = 0;
++static int use_data_section;
  static int absolute_percpu = 0;
-+static char symbol_prefix_char = '\0';
+ static char symbol_prefix_char = '\0';
  static int base_relative = 0;
- 
- static int token_profit[0x10000];
-@@ -72,6 +73,7 @@ static unsigned char best_table_len[256];
+@@ -73,6 +74,7 @@ static unsigned char best_table_len[256];
  static void usage(void)
  {
  	fprintf(stderr, "Usage: kallsyms [--all-symbols] "
-+			"[--symbol-prefix=<prefix char>] "
++			"[--use-data-section] "
+ 			"[--symbol-prefix=<prefix char>] "
  			"[--base-relative] < in.map > out.S\n");
  	exit(1);
- }
-@@ -109,22 +111,28 @@ static int check_symbol_range(const char *sym, unsigned long long addr,
+@@ -362,7 +364,10 @@ static void write_src(void)
+ 	printf("#define ALGN .balign 4\n");
+ 	printf("#endif\n");
  
- static int read_symbol(FILE *in, struct sym_entry *s)
- {
--	char sym[500], stype;
-+	char str[500];
-+	char *sym, stype;
- 	int rc;
- 
--	rc = fscanf(in, "%llx %c %499s\n", &s->addr, &stype, sym);
-+	rc = fscanf(in, "%llx %c %499s\n", &s->addr, &stype, str);
- 	if (rc != 3) {
--		if (rc != EOF && fgets(sym, 500, in) == NULL)
-+		if (rc != EOF && fgets(str, 500, in) == NULL)
- 			fprintf(stderr, "Read error or end of file.\n");
- 		return -1;
- 	}
--	if (strlen(sym) >= KSYM_NAME_LEN) {
--		fprintf(stderr, "Symbol %s too long for kallsyms (%zu >= %d).\n"
-+	if (strlen(str) > KSYM_NAME_LEN) {
-+		fprintf(stderr, "Symbol %s too long for kallsyms (%zu vs %d).\n"
- 				"Please increase KSYM_NAME_LEN both in kernel and kallsyms.c\n",
--			sym, strlen(sym), KSYM_NAME_LEN);
-+			str, strlen(str), KSYM_NAME_LEN);
- 		return -1;
- 	}
- 
-+	sym = str;
-+	/* skip prefix char */
-+	if (symbol_prefix_char && str[0] == symbol_prefix_char)
-+		sym++;
-+
- 	/* Ignore most absolute/undefined (?) symbols. */
- 	if (strcmp(sym, "_text") == 0)
- 		_text = s->addr;
-@@ -145,7 +153,7 @@ static int read_symbol(FILE *in, struct sym_entry *s)
- 		 is_arm_mapping_symbol(sym))
- 		return -1;
- 	/* exclude also MIPS ELF local symbols ($L123 instead of .L123) */
--	else if (sym[0] == '$')
-+	else if (str[0] == '$')
- 		return -1;
- 	/* exclude debugging symbols */
- 	else if (stype == 'N' || stype == 'n')
-@@ -156,14 +164,14 @@ static int read_symbol(FILE *in, struct sym_entry *s)
- 
- 	/* include the type field in the symbol name, so that it gets
- 	 * compressed together */
--	s->len = strlen(sym) + 1;
-+	s->len = strlen(str) + 1;
- 	s->sym = malloc(s->len + 1);
- 	if (!s->sym) {
- 		fprintf(stderr, "kallsyms failure: "
- 			"unable to allocate required amount of memory\n");
- 		exit(EXIT_FAILURE);
- 	}
--	strcpy((char *)s->sym + 1, sym);
-+	strcpy((char *)s->sym + 1, str);
- 	s->sym[0] = stype;
- 
- 	s->percpu_absolute = 0;
-@@ -226,6 +234,11 @@ static int symbol_valid(struct sym_entry *s)
- 	int i;
- 	char *sym_name = (char *)s->sym + 1;
- 
-+	/* skip prefix char */
-+	if (symbol_prefix_char && *sym_name == symbol_prefix_char)
-+		sym_name++;
-+
-+
- 	/* if --all-symbols is not specified, then symbols outside the text
- 	 * and inittext sections are discarded */
- 	if (!all_symbols) {
-@@ -290,9 +303,15 @@ static void read_map(FILE *in)
- 
- static void output_label(char *label)
- {
--	printf(".globl %s\n", label);
-+	if (symbol_prefix_char)
-+		printf(".globl %c%s\n", symbol_prefix_char, label);
+-	printf("\t.section .rodata, \"a\"\n");
++	if (use_data_section)
++		printf("\t.section .data\n");
 +	else
-+		printf(".globl %s\n", label);
- 	printf("\tALGN\n");
--	printf("%s:\n", label);
-+	if (symbol_prefix_char)
-+		printf("%c%s:\n", symbol_prefix_char, label);
-+	else
-+		printf("%s:\n", label);
- }
++		printf("\t.section .rodata, \"a\"\n");
  
- /* uncompress a compressed symbol. When this function is called, the best table
-@@ -749,7 +768,13 @@ int main(int argc, char **argv)
+ 	/* Provide proper symbols relocatability by their relativeness
+ 	 * to a fixed anchor point in the runtime image, either '_text'
+@@ -768,6 +773,8 @@ int main(int argc, char **argv)
  				absolute_percpu = 1;
  			else if (strcmp(argv[i], "--base-relative") == 0)
  				base_relative = 1;
--			else
-+			else if (strncmp(argv[i], "--symbol-prefix=", 16) == 0) {
-+				char *p = &argv[i][16];
-+				/* skip quote */
-+				if ((*p == '"' && *(p+2) == '"') || (*p == '\'' && *(p+2) == '\''))
-+					p++;
-+				symbol_prefix_char = *p;
-+			} else
- 				usage();
- 		}
- 	} else if (argc != 1)
++			else if (strcmp(argv[i], "--use-data-section") == 0)
++				use_data_section = 1;
+ 			else if (strncmp(argv[i], "--symbol-prefix=", 16) == 0) {
+ 				char *p = &argv[i][16];
+ 				/* skip quote */
 diff --git a/scripts/link-vmlinux.sh b/scripts/link-vmlinux.sh
-index 27d2066238c7..553d966a1986 100755
+index 553d966a1986..3fc1fc406b38 100755
 --- a/scripts/link-vmlinux.sh
 +++ b/scripts/link-vmlinux.sh
-@@ -117,6 +117,10 @@ kallsyms()
- 	info KSYM ${2}
- 	local kallsymopt;
+@@ -133,6 +133,10 @@ kallsyms()
+ 		kallsymopt="${kallsymopt} --base-relative"
+ 	fi
  
-+	if [ -n "${CONFIG_HAVE_UNDERSCORE_SYMBOL_PREFIX}" ]; then
-+		kallsymopt="${kallsymopt} --symbol-prefix=_"
++	if [ -n "${CONFIG_KALLSYMS_USE_DATA_SECTION}" ]; then
++		kallsymopt="${kallsymopt} --use-data-section"
 +	fi
 +
- 	if [ -n "${CONFIG_KALLSYMS_ALL}" ]; then
- 		kallsymopt="${kallsymopt} --all-symbols"
- 	fi
+ 	local aflags="${KBUILD_AFLAGS} ${KBUILD_AFLAGS_KERNEL}               \
+ 		      ${NOSTDINC_FLAGS} ${LINUXINCLUDE} ${KBUILD_CPPFLAGS}"
+ 
 -- 
 2.20.1 (Apple Git-117)
 
