@@ -2,81 +2,82 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 489B6E1110
-	for <lists+linux-um@lfdr.de>; Wed, 23 Oct 2019 06:39:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 21F24E111A
+	for <lists+linux-um@lfdr.de>; Wed, 23 Oct 2019 06:39:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+YcDuP97h2r/INKUSAb/27RgsitX1VznDgj5GlS59QQ=; b=PdDvN7zc1GcvcN
-	ldQPsJSGKEgXjUQk/+taMTIR0KGSWo4ULPIpwjKwPwoydqTnZQdfeT3iA3H1EA4otWoZOUwJfedtf
-	EF7+B8lvngo5uMoLfUE6kdLqe/HRvXvmz2TlTP6b3NaFi0N9VCQw18JGsDnf7kmg6ZLruzaIXX0pR
-	A2F6yWuaa9ht4p4Gll73+nIStQ+gykesYIoNAeoD+IId0UrTCuNxZBjptk73R3/2EE6HaN2ueKPz2
-	Jx5qxIiG3cbc9Cy2qJiWhiqfXC0IT9o0+y/VGUoKSBGKFE54DnRBiG5iVhqGLvknJPfJa2sZq+rIs
-	g9IqYeOCHyqNbM6Azfaw==;
+	List-Owner; bh=m7sOq3YlFWhrDgfr0SZgXWf6fOKxGbqxEKo+qYezL8w=; b=fSdcSyPoWek7g6
+	BeO4xjQTCMyNIVxvFygT5xd1v/nqYgYeK04h7gkxjZsbdFEA6MO/V/0ac1iAQpxM1kc/Oq52vYRTj
+	+gh+1oob4lfoE9jCnZYsouJhs8x1yhxNWtPiD3Z1nlYgtNpnA9u1yYn2Ms+9Lqq3jePAhtaoC4ZSO
+	5omDjiR49Lp2hh5QhAzC/4L0Sy2FWtOFTvAoH5/7KINiRJgbEOYtbALQU3tJNmi4MPNIk8t5Ou/Hs
+	DKln/VbGbc2KI0PpkPGGOAA5jhz1gYlJzaC+K5riId++DVpy9choJw+URV85jk7nv4Is8MhdNxwNB
+	+5LRMbsm1pIVUzqC9+0g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iN8QU-0001xl-5K; Wed, 23 Oct 2019 04:39:14 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1iN8Qc-00025D-HN; Wed, 23 Oct 2019 04:39:22 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iN8QK-0001oN-Jm
- for linux-um@lists.infradead.org; Wed, 23 Oct 2019 04:39:09 +0000
-Received: by mail-pl1-x644.google.com with SMTP id y24so5503651plr.12
- for <linux-um@lists.infradead.org>; Tue, 22 Oct 2019 21:39:04 -0700 (PDT)
+ id 1iN8QN-0001sW-NR
+ for linux-um@lists.infradead.org; Wed, 23 Oct 2019 04:39:17 +0000
+Received: by mail-pl1-x641.google.com with SMTP id c3so9460974plo.2
+ for <linux-um@lists.infradead.org>; Tue, 22 Oct 2019 21:39:07 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=h16ZZ7Z4xwY/UexZu2RXr2lyvulrwJc5FTrkGY93Md4=;
- b=mXbDNHrtcswUwZtgrPj1jEZfs8pGS2fj5vkxhtEBQlKTY0lQ6J9N1mTFWnsp2AJV4b
- CKVj3GbYMSvkwsoSSLXAJ8CHf+3x24Kt9d9mTLbfT4vgGelE+93JNyAjwLAnxj9sREWl
- ZBaMnk0fbeUHhFyruatHPQG/PqV3bnXTG6dvUqWIOCWj3UgimKcsLjVX0kEzVgaDCB58
- MZ5Vetf2d1clviZejOHYnNq5T8xv17HVOwXd6fcqlqqrs7+U5j95zFQTuKcHme48fVbK
- l1S9+J27o7aYOAYCN+zFdLkkVchblivzZVHBTaD98vl3mLQ+oGkO1NNPG65mHwEF4IgW
- Ob1w==
+ bh=888aB0obVPFkj9c0bpbsFcZnhPHeRL3Rgvn280K3u4E=;
+ b=g6Ck6vrrRZWMSG6431JJ/KPhBJ4kxd7bxkSk/20uYJApC/8C/1BXDcjmbk4njGC2+8
+ sq9MlSvRI/KxjfpBShH5sNJjPVP8LJjLy1Nm9x60zuz8HEpaU25C2uknVfqiVlwYCQpd
+ Kp1dbhTY39MBEo9Dh3YEe9LU2xqYZQJYjsa1Gkz/EBrJU3d/GmW+f7Ho/TAHN3Y6jy4e
+ lkeLQGwuboQ+PWaV4fR6NH/b8x9rw8g0iDvqEzn1rZLMOkVAsDVOauaVR2PSTMF8WMFK
+ h+P74M2VCb1adBX91oGeJ/+NMcvjIi0rF3+2FDJ1PthUd3eUj4OGDLny+E6JzhfkxM52
+ 7aVQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=h16ZZ7Z4xwY/UexZu2RXr2lyvulrwJc5FTrkGY93Md4=;
- b=ZUnDDZ4WuOjUfu9elfy6cWoAFU3yLM8CM+1MavAV27wOnzQ3SnnChhPTpRUHkoes1j
- t/Adg5Yh+nrXDq61aCrBGXG7HSIaLwKKx7kurzUoGZKqWhN4N58NRGXIs3niGR47Ninx
- a0oXQvttfpc1Ailo9764BZyT/95PVBplCx5zUnW7/cPArHswIoMYwOZ3CNnscDV00F2x
- 55UPd7QSkeQ0dWNu5J6YXcuXB5gkMqKT4o3qB6oLuVpm97Gi7+BldMuZ4icf3ld1vkFJ
- jevj5BQBHSp3H44/ghGi4YgMPQIij6MgcdmyX63UI6Bd1/Pb1nlBFzZaEEp/Tn+egYTv
- PjpA==
-X-Gm-Message-State: APjAAAUc/XPrt6E7GLmd+rquLjnNeuFp7Uugv+eJv+lpVeX/v+DXMaUJ
- vBd4+3MpW5VBEkFGN1TtkZY=
-X-Google-Smtp-Source: APXvYqybjISHW5nIs46zCHIwBi2BVhyng3Dq6fnRohONVy91yUiTTzM04sCan1ptbdtmW7bMivmhJg==
-X-Received: by 2002:a17:902:b116:: with SMTP id
- q22mr7406492plr.201.1571805543847; 
- Tue, 22 Oct 2019 21:39:03 -0700 (PDT)
+ bh=888aB0obVPFkj9c0bpbsFcZnhPHeRL3Rgvn280K3u4E=;
+ b=bIWkN90k1wWxZkqCZmtoZLzCMqQPDfIFunR29cv0b5MSWQN+kKDM3o5TPbVI4te3Ws
+ FI/GFLIYEeTAE4wZ2wDv8KsPlXY1hyo5VYshw+FXhTeGBLlXd03KdM9d3P8x0sZ4UeRS
+ KjKPrGDLuqbXgEY7v1ytMzgx7RqXz3ql4Izo7KXUplGc/me/qi4s0gz9sDaG+nwVEYn8
+ Qnww2/zjmvPYYotu7PZ6XWFVtD6h/J7aJR1I3GBtZAyFSjALxtjeH6nygL/pty9sBztA
+ swvb//6NJyW8Zwofkv0cVYO/t8xwweF2X/3S/YvA6iXZPtNMuQyBNJ6CTEYLX9XBYx2p
+ t+2A==
+X-Gm-Message-State: APjAAAWXIDI04kDB3+jBsgsJ4sOo/nAQdNeJesFL9+4ugfsUgXsZbFK0
+ kmoF6nfRcPAHbOMi8L3sk5A=
+X-Google-Smtp-Source: APXvYqzt+8dgNSW1Y7H4ggBiAQqpzlKfWfpUFd8ZfBr5kdRlL9XQvi09wW9yI8G6cinWIxGbLDoRBQ==
+X-Received: by 2002:a17:902:9f81:: with SMTP id
+ g1mr7594151plq.82.1571805546907; 
+ Tue, 22 Oct 2019 21:39:06 -0700 (PDT)
 Received: from earth-mac.local ([202.214.86.179])
- by smtp.gmail.com with ESMTPSA id k124sm19802461pga.83.2019.10.22.21.39.00
+ by smtp.gmail.com with ESMTPSA id q2sm904146pfh.34.2019.10.22.21.39.01
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 22 Oct 2019 21:39:01 -0700 (PDT)
+ Tue, 22 Oct 2019 21:39:02 -0700 (PDT)
 Received: by earth-mac.local (Postfix, from userid 501)
- id BE608201995818; Wed, 23 Oct 2019 13:38:53 +0900 (JST)
+ id D79D220199581E; Wed, 23 Oct 2019 13:38:53 +0900 (JST)
 From: Hajime Tazaki <thehajime@gmail.com>
 To: linux-um@lists.infradead.org
-Subject: [RFC PATCH 19/47] lkl tools: host lib: filesystem helpers
-Date: Wed, 23 Oct 2019 13:37:53 +0900
-Message-Id: <a3dcda24b9eda5d41b8cccb508c8e3646f1c8813.1571798507.git.thehajime@gmail.com>
+Subject: [RFC PATCH 22/47] lkl tools: tool that converts a filesystem image to
+ tar
+Date: Wed, 23 Oct 2019 13:37:56 +0900
+Message-Id: <b0c1509c930de8e87512f0621185a440f48cc85a.1571798507.git.thehajime@gmail.com>
 X-Mailer: git-send-email 2.20.1 (Apple Git-117)
 In-Reply-To: <cover.1571798507.git.thehajime@gmail.com>
 References: <cover.1571798507.git.thehajime@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191022_213904_663324_D31E491D 
-X-CRM114-Status: GOOD (  17.73  )
+X-CRM114-CacheID: sfid-20191022_213907_806699_D9B15381 
+X-CRM114-Status: GOOD (  16.60  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -100,10 +101,9 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: Conrad Meyer <cem@FreeBSD.org>, Octavian Purdila <tavi.purdila@gmail.com>,
- Hajime Tazaki <thehajime@gmail.com>,
- Michael Zimmermann <sigmaepsilon92@gmail.com>,
- Akira Moroo <retrage01@gmail.com>, Yuan Liu <liuyuan@google.com>
+Cc: Octavian Purdila <tavi.purdila@gmail.com>,
+ Petros Angelatos <petrosagg@gmail.com>, Conrad Meyer <cem@FreeBSD.org>,
+ Hajime Tazaki <thehajime@gmail.com>, Akira Moroo <retrage01@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
@@ -111,460 +111,433 @@ Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
 From: Octavian Purdila <tavi.purdila@gmail.com>
 
-Add LKL applications APIs to mount and unmount a filesystem from a
-disk added via lkl_disk_add().
-
-Also add open/close/read directory wrappers on top of
-lkl_sys_getdents64.
+Simple utility that converts a filesystem image to a tar file,
+preserving file rights and extended attributes.
 
 Signed-off-by: Conrad Meyer <cem@FreeBSD.org>
 Signed-off-by: Hajime Tazaki <thehajime@gmail.com>
-Signed-off-by: Michael Zimmermann <sigmaepsilon92@gmail.com>
-Signed-off-by: Yuan Liu <liuyuan@google.com>
+Signed-off-by: Petros Angelatos <petrosagg@gmail.com>
 Signed-off-by: Octavian Purdila <tavi.purdila@gmail.com>
 ---
- tools/lkl/lib/fs.c | 433 +++++++++++++++++++++++++++++++++++++++++++++
- 1 file changed, 433 insertions(+)
- create mode 100644 tools/lkl/lib/fs.c
+ tools/lkl/fs2tar.c | 410 +++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 410 insertions(+)
+ create mode 100644 tools/lkl/fs2tar.c
 
-diff --git a/tools/lkl/lib/fs.c b/tools/lkl/lib/fs.c
+diff --git a/tools/lkl/fs2tar.c b/tools/lkl/fs2tar.c
 new file mode 100644
-index 000000000000..c6f197aec3fb
+index 000000000000..d2834afcce93
 --- /dev/null
-+++ b/tools/lkl/lib/fs.c
-@@ -0,0 +1,433 @@
++++ b/tools/lkl/fs2tar.c
+@@ -0,0 +1,410 @@
 +// SPDX-License-Identifier: GPL-2.0
-+#include <stdarg.h>
++#ifdef __FreeBSD__
++#include <sys/param.h>
++#endif
++
 +#include <stdio.h>
++#include <time.h>
++#include <argp.h>
++#include <unistd.h>
 +#include <string.h>
 +#include <stdlib.h>
++#include <libgen.h>
++#include <sys/stat.h>
++#include <fcntl.h>
++#include <archive.h>
++#include <archive_entry.h>
++#include <lkl.h>
 +#include <lkl_host.h>
 +
-+#include "virtio.h"
-+
-+#define MAX_FSTYPE_LEN 50
-+int lkl_mount_fs(char *fstype)
-+{
-+	char dir[MAX_FSTYPE_LEN+2] = "/";
-+	int flags = 0, ret = 0;
-+
-+	strncat(dir, fstype, MAX_FSTYPE_LEN);
-+
-+	/* Create with regular umask */
-+	ret = lkl_sys_mkdir(dir, 0xff);
-+	if (ret && ret != -LKL_EEXIST) {
-+		lkl_perror("mount_fs mkdir", ret);
-+		return ret;
-+	}
-+
-+	/* We have no use for nonzero flags right now */
-+	ret = lkl_sys_mount("none", dir, fstype, flags, NULL);
-+	if (ret && ret != -LKL_EBUSY) {
-+		lkl_sys_rmdir(dir);
-+		return ret;
-+	}
-+
-+	if (ret == -LKL_EBUSY)
-+		return 1;
-+	return 0;
-+}
-+
-+static uint32_t new_encode_dev(unsigned int major, unsigned int minor)
-+{
-+	return (minor & 0xff) | (major << 8) | ((minor & ~0xff) << 12);
-+}
-+
-+static int startswith(const char *str, const char *pre)
-+{
-+	return strncmp(pre, str, strlen(pre)) == 0;
-+}
-+
-+static int get_node_with_prefix(const char *path, const char *prefix,
-+				char *result, unsigned int result_len)
-+{
-+	struct lkl_dir *dir = NULL;
-+	struct lkl_linux_dirent64 *dirent;
-+	int ret;
-+
-+	dir = lkl_opendir(path, &ret);
-+	if (!dir)
-+		return ret;
-+
-+	ret = -LKL_ENOENT;
-+
-+	while ((dirent = lkl_readdir(dir))) {
-+		if (startswith(dirent->d_name, prefix)) {
-+			if (strlen(dirent->d_name) + 1 > result_len) {
-+				ret = -LKL_ENOMEM;
-+				break;
-+			}
-+			memcpy(result, dirent->d_name, strlen(dirent->d_name));
-+			result[strlen(dirent->d_name)] = '\0';
-+			ret = 0;
-+			break;
-+		}
-+	}
-+
-+	lkl_closedir(dir);
-+
-+	return ret;
-+}
-+
-+int lkl_encode_dev_from_sysfs(const char *sysfs_path, uint32_t *pdevid)
-+{
-+	int ret;
-+	long fd;
-+	int major, minor;
-+	char buf[16] = { 0, };
-+	char *bufptr;
-+
-+	fd = lkl_sys_open(sysfs_path, LKL_O_RDONLY, 0);
-+	if (fd < 0)
-+		return fd;
-+
-+	ret = lkl_sys_read(fd, buf, sizeof(buf));
-+	if (ret < 0)
-+		goto out_close;
-+
-+	if (ret == sizeof(buf)) {
-+		ret = -LKL_ENOBUFS;
-+		goto out_close;
-+	}
-+
-+	bufptr = strchr(buf, ':');
-+	if (bufptr == NULL) {
-+		ret = -LKL_EINVAL;
-+		goto out_close;
-+	}
-+	bufptr[0] = '\0';
-+	bufptr++;
-+
-+	major = atoi(buf);
-+	minor = atoi(bufptr);
-+
-+	*pdevid = new_encode_dev(major, minor);
-+	ret = 0;
-+
-+out_close:
-+	lkl_sys_close(fd);
-+
-+	return ret;
-+}
-+
-+#define SYSFS_DEV_VIRTIO_PLATFORM_PATH \
-+	"/sysfs/devices/platform/virtio-mmio.%d.auto"
-+#define SYSFS_DEV_VIRTIO_CMDLINE_PATH \
-+	"/sysfs/devices/virtio-mmio-cmdline/virtio-mmio.%d"
-+
-+struct abuf {
-+	char *mem, *ptr;
-+	unsigned int len;
++char doc[] = "";
++char args_doc[] = "-t fstype fsimage_path tar_path";
++static struct argp_option options[] = {
++	{"enable-printk", 'p', 0, 0, "show Linux printks"},
++	{"partition", 'P', "int", 0, "partition number"},
++	{"filesystem-type", 't', "string", 0,
++	 "select filesystem type - mandatory"},
++	{"selinux-contexts", 's', "file", 0,
++	 "export selinux contexts to file"},
++	{0},
 +};
 +
-+static int snprintf_append(struct abuf *buf, const char *fmt, ...)
++static struct cl_args {
++	int printk;
++	int part;
++	const char *fsimg_type;
++	const char *fsimg_path;
++	const char *tar_path;
++	FILE *selinux;
++} cla;
++
++static error_t parse_opt(int key, char *arg, struct argp_state *state)
 +{
-+	int ret;
-+	va_list args;
++	struct cl_args *cla = state->input;
 +
-+	if (!buf->ptr)
-+		buf->ptr = buf->mem;
-+
-+	va_start(args, fmt);
-+	ret = vsnprintf(buf->ptr, buf->len - (buf->ptr - buf->mem), fmt, args);
-+	va_end(args);
-+
-+	if (ret < 0 || (ret >= (buf->len - (buf->ptr - buf->mem))))
-+		return -LKL_ENOMEM;
-+
-+	buf->ptr += ret;
-+
-+	return 0;
-+}
-+
-+int lkl_get_virtio_blkdev(int disk_id, unsigned int part, uint32_t *pdevid)
-+{
-+	char sysfs_path[LKL_PATH_MAX];
-+	char virtio_name[LKL_PATH_MAX];
-+	char disk_name[LKL_PATH_MAX];
-+	struct abuf sysfs_path_buf = {
-+		.mem = sysfs_path,
-+		.len = sizeof(sysfs_path),
-+	};
-+	char *fmt;
-+	int ret;
-+
-+	if (disk_id < 0)
-+		return -LKL_EINVAL;
-+
-+	ret = lkl_mount_fs("sysfs");
-+	if (ret < 0)
-+		return ret;
-+
-+	if ((uint32_t) disk_id >= virtio_get_num_bootdevs()) {
-+		fmt = SYSFS_DEV_VIRTIO_PLATFORM_PATH;
-+		disk_id -= virtio_get_num_bootdevs();
-+	} else {
-+		fmt = SYSFS_DEV_VIRTIO_CMDLINE_PATH;
-+	}
-+
-+	ret = snprintf_append(&sysfs_path_buf, fmt, disk_id);
-+	if (ret)
-+		return ret;
-+
-+	ret = get_node_with_prefix(sysfs_path, "virtio", virtio_name,
-+				   sizeof(virtio_name));
-+	if (ret)
-+		return ret;
-+
-+	ret = snprintf_append(&sysfs_path_buf, "/%s/block", virtio_name);
-+	if (ret)
-+		return ret;
-+
-+	ret = get_node_with_prefix(sysfs_path, "vd", disk_name,
-+				   sizeof(disk_name));
-+	if (ret)
-+		return ret;
-+
-+	if (!part)
-+		ret = snprintf_append(&sysfs_path_buf, "/%s/dev", disk_name);
-+	else
-+		ret = snprintf_append(&sysfs_path_buf, "/%s/%s%d/dev",
-+				      disk_name, disk_name, part);
-+	if (ret)
-+		return ret;
-+
-+	return lkl_encode_dev_from_sysfs(sysfs_path, pdevid);
-+}
-+
-+long lkl_mount_dev(unsigned int disk_id, unsigned int part,
-+		   const char *fs_type, int flags,
-+		   const char *data, char *mnt_str, unsigned int mnt_str_len)
-+{
-+	char dev_str[] = { "/dev/xxxxxxxx" };
-+	unsigned int dev;
-+	int err;
-+	char _data[4096]; /* FIXME: PAGE_SIZE is not exported by LKL */
-+
-+	if (mnt_str_len < sizeof(dev_str))
-+		return -LKL_ENOMEM;
-+
-+	err = lkl_get_virtio_blkdev(disk_id, part, &dev);
-+	if (err < 0)
-+		return err;
-+
-+	snprintf(dev_str, sizeof(dev_str), "/dev/%08x", dev);
-+	snprintf(mnt_str, mnt_str_len, "/mnt/%08x", dev);
-+
-+	err = lkl_sys_access("/dev", LKL_S_IRWXO);
-+	if (err < 0) {
-+		if (err == -LKL_ENOENT)
-+			err = lkl_sys_mkdir("/dev", 0700);
-+		if (err < 0)
-+			return err;
-+	}
-+
-+	err = lkl_sys_mknod(dev_str, LKL_S_IFBLK | 0600, dev);
-+	if (err < 0)
-+		return err;
-+
-+	err = lkl_sys_access("/mnt", LKL_S_IRWXO);
-+	if (err < 0) {
-+		if (err == -LKL_ENOENT)
-+			err = lkl_sys_mkdir("/mnt", 0700);
-+		if (err < 0)
-+			return err;
-+	}
-+
-+	err = lkl_sys_mkdir(mnt_str, 0700);
-+	if (err < 0) {
-+		lkl_sys_unlink(dev_str);
-+		return err;
-+	}
-+
-+	/* kernel always copies a full page */
-+	if (data) {
-+		strncpy(_data, data, sizeof(_data));
-+		_data[sizeof(_data) - 1] = 0;
-+	} else {
-+		_data[0] = 0;
-+	}
-+
-+	err = lkl_sys_mount(dev_str, mnt_str, (char *)fs_type, flags, _data);
-+	if (err < 0) {
-+		lkl_sys_unlink(dev_str);
-+		lkl_sys_rmdir(mnt_str);
-+		return err;
++	switch (key) {
++	case 'p':
++		cla->printk = 1;
++		break;
++	case 'P':
++		cla->part = atoi(arg);
++		break;
++	case 't':
++		cla->fsimg_type = arg;
++		break;
++	case 's':
++		cla->selinux = fopen(arg, "w");
++		if (!cla->selinux) {
++			fprintf(stderr,
++				"failed to open selinux contexts file: %s\n",
++				strerror(errno));
++			return -1;
++		}
++		break;
++	case ARGP_KEY_ARG:
++		if (!cla->fsimg_path)
++			cla->fsimg_path = arg;
++		else if (!cla->tar_path)
++			cla->tar_path = arg;
++		else
++			return -1;
++		break;
++	case ARGP_KEY_END:
++		if (state->arg_num < 2 || !cla->fsimg_type)
++			argp_usage(state);
++	default:
++		return ARGP_ERR_UNKNOWN;
 +	}
 +
 +	return 0;
 +}
 +
-+long lkl_umount_timeout(char *path, int flags, long timeout_ms)
++static struct argp argp = { options, parse_opt, args_doc, doc };
++
++static struct archive *tar;
++
++static int searchdir(const char *fsimg_path, const char *path);
++
++static int copy_file(const char *fsimg_path, const char *path)
 +{
-+	long incr = 10000000; /* 10 ms */
-+	struct lkl_timespec ts = {
-+		.tv_sec = 0,
-+		.tv_nsec = incr,
-+	};
-+	long err;
++	long fsimg_fd;
++	char buff[4096];
++	long len, wrote;
++	int ret = 0;
++
++	fsimg_fd = lkl_sys_open(fsimg_path, LKL_O_RDONLY, 0);
++	if (fsimg_fd < 0) {
++		fprintf(stderr, "fsimg error opening %s: %s\n", fsimg_path,
++			lkl_strerror(fsimg_fd));
++		return fsimg_fd;
++	}
 +
 +	do {
-+		err = lkl_sys_umount(path, flags);
-+		if (err == -LKL_EBUSY) {
-+			lkl_sys_nanosleep((struct __lkl__kernel_timespec *)&ts,
-+					  NULL);
-+			timeout_ms -= incr / 1000000;
++		len = lkl_sys_read(fsimg_fd, buff, sizeof(buff));
++		if (len > 0) {
++			wrote = archive_write_data(tar, buff, len);
++			if (wrote != len) {
++				fprintf(stderr,
++					"error writing file %s to archive: %s [%d %ld]\n",
++					path, archive_error_string(tar), ret,
++					len);
++				ret = -archive_errno(tar);
++				break;
++			}
 +		}
-+	} while (err == -LKL_EBUSY && timeout_ms > 0);
 +
-+	return err;
-+}
++		if (len < 0) {
++			fprintf(stderr, "error reading fsimg file %s: %s\n",
++				fsimg_path, lkl_strerror(len));
++			ret = len;
++		}
 +
-+long lkl_umount_dev(unsigned int disk_id, unsigned int part, int flags,
-+		    long timeout_ms)
-+{
-+	char dev_str[] = { "/dev/xxxxxxxx" };
-+	char mnt_str[] = { "/mnt/xxxxxxxx" };
-+	unsigned int dev;
-+	int err;
++	} while (len > 0);
 +
-+	err = lkl_get_virtio_blkdev(disk_id, part, &dev);
-+	if (err < 0)
-+		return err;
-+
-+	snprintf(dev_str, sizeof(dev_str), "/dev/%08x", dev);
-+	snprintf(mnt_str, sizeof(mnt_str), "/mnt/%08x", dev);
-+
-+	err = lkl_umount_timeout(mnt_str, flags, timeout_ms);
-+	if (err)
-+		return err;
-+
-+	err = lkl_sys_unlink(dev_str);
-+	if (err)
-+		return err;
-+
-+	return lkl_sys_rmdir(mnt_str);
-+}
-+
-+struct lkl_dir {
-+	int fd;
-+	char buf[1024];
-+	char *pos;
-+	int len;
-+};
-+
-+static struct lkl_dir *lkl_dir_alloc(int *err)
-+{
-+	struct lkl_dir *dir = lkl_host_ops.mem_alloc(sizeof(struct lkl_dir));
-+
-+	if (!dir) {
-+		*err = -LKL_ENOMEM;
-+		return NULL;
-+	}
-+
-+	dir->len = 0;
-+	dir->pos = NULL;
-+
-+	return dir;
-+}
-+
-+struct lkl_dir *lkl_opendir(const char *path, int *err)
-+{
-+	struct lkl_dir *dir = lkl_dir_alloc(err);
-+
-+	if (!dir) {
-+		*err = -LKL_ENOMEM;
-+		return NULL;
-+	}
-+
-+	dir->fd = lkl_sys_open(path, LKL_O_RDONLY | LKL_O_DIRECTORY, 0);
-+	if (dir->fd < 0) {
-+		*err = dir->fd;
-+		lkl_host_ops.mem_free(dir);
-+		return NULL;
-+	}
-+
-+	*err = 0;
-+
-+	return dir;
-+}
-+
-+struct lkl_dir *lkl_fdopendir(int fd, int *err)
-+{
-+	struct lkl_dir *dir = lkl_dir_alloc(err);
-+
-+	if (!dir)
-+		return NULL;
-+
-+	dir->fd = fd;
-+
-+	return dir;
-+}
-+
-+void lkl_rewinddir(struct lkl_dir *dir)
-+{
-+	lkl_sys_lseek(dir->fd, 0, LKL_SEEK_SET);
-+	dir->len = 0;
-+	dir->pos = NULL;
-+}
-+
-+int lkl_closedir(struct lkl_dir *dir)
-+{
-+	int ret;
-+
-+	ret = lkl_sys_close(dir->fd);
-+	lkl_host_ops.mem_free(dir);
++	lkl_sys_close(fsimg_fd);
 +
 +	return ret;
 +}
 +
-+struct lkl_linux_dirent64 *lkl_readdir(struct lkl_dir *dir)
++static int add_link(const char *fsimg_path, const char *path,
++		    struct archive_entry *entry)
 +{
-+	struct lkl_linux_dirent64 *de;
++	char buf[4096] = { 0, };
++	long len;
 +
-+	if (dir->len < 0)
-+		return NULL;
++	len = lkl_sys_readlink(fsimg_path, buf, sizeof(buf));
++	if (len < 0) {
++		fprintf(stderr, "fsimg readlink error %s: %s\n",
++			fsimg_path, lkl_strerror(len));
++		return len;
++	}
 +
-+	if (!dir->pos || dir->pos - dir->buf >= dir->len)
-+		goto read_buf;
++	archive_entry_set_symlink(entry, buf);
 +
-+return_de:
-+	de = (struct lkl_linux_dirent64 *)dir->pos;
-+	dir->pos += de->d_reclen;
-+
-+	return de;
-+
-+read_buf:
-+	dir->pos = NULL;
-+	de = (struct lkl_linux_dirent64 *)dir->buf;
-+	dir->len = lkl_sys_getdents64(dir->fd, de, sizeof(dir->buf));
-+	if (dir->len <= 0)
-+		return NULL;
-+
-+	dir->pos = dir->buf;
-+	goto return_de;
++	return 0;
 +}
 +
-+int lkl_errdir(struct lkl_dir *dir)
++static inline void fsimg_copy_stat(struct stat *st, struct lkl_stat *fst)
 +{
-+	if (dir->len >= 0)
++	st->st_dev = fst->st_dev;
++	st->st_ino = fst->st_ino;
++	st->st_mode = fst->st_mode;
++	st->st_nlink = fst->st_nlink;
++	st->st_uid = fst->st_uid;
++	st->st_gid = fst->st_gid;
++	st->st_rdev = fst->st_rdev;
++	st->st_size = fst->st_size;
++	st->st_blksize = fst->st_blksize;
++	st->st_blocks = fst->st_blocks;
++	st->st_atim.tv_sec = fst->lkl_st_atime;
++	st->st_atim.tv_nsec = fst->st_atime_nsec;
++	st->st_mtim.tv_sec = fst->lkl_st_mtime;
++	st->st_mtim.tv_nsec = fst->st_mtime_nsec;
++	st->st_ctim.tv_sec = fst->lkl_st_ctime;
++	st->st_ctim.tv_nsec = fst->st_ctime_nsec;
++}
++
++static int copy_xattr(const char *fsimg_path, const char *path,
++		      struct archive_entry *entry)
++{
++	long ret;
++	char *xattr_list, *i;
++	long xattr_list_size;
++
++	ret = lkl_sys_llistxattr(fsimg_path, NULL, 0);
++	if (ret < 0) {
++		fprintf(stderr, "fsimg llistxattr(%s) error: %s\n",
++			path, lkl_strerror(ret));
++		return ret;
++	}
++
++	if (!ret)
 +		return 0;
 +
-+	return dir->len;
++	xattr_list = malloc(ret);
++
++	ret = lkl_sys_llistxattr(fsimg_path, xattr_list, ret);
++	if (ret < 0) {
++		fprintf(stderr, "fsimg llistxattr(%s) error: %s\n", path,
++			lkl_strerror(ret));
++		free(xattr_list);
++		return ret;
++	}
++
++	xattr_list_size = ret;
++
++	for (i = xattr_list; i - xattr_list < xattr_list_size;
++	     i += strlen(i) + 1) {
++		void *xattr_buf;
++
++		ret = lkl_sys_lgetxattr(fsimg_path, i, NULL, 0);
++		if (ret < 0) {
++			fprintf(stderr, "fsimg lgetxattr(%s) error: %s\n", path,
++				lkl_strerror(ret));
++			free(xattr_list);
++			return ret;
++		}
++
++		xattr_buf = malloc(ret);
++
++		ret = lkl_sys_lgetxattr(fsimg_path, i, xattr_buf, ret);
++		if (ret < 0) {
++			fprintf(stderr, "fsimg lgetxattr2(%s) error: %s\n",
++				path, lkl_strerror(ret));
++			free(xattr_list);
++			free(xattr_buf);
++			return ret;
++		}
++
++		if (cla.selinux && strcmp(i, "security.selinux") == 0)
++			fprintf(cla.selinux, "%s %s\n", path,
++				(char *)xattr_buf);
++
++		archive_entry_xattr_clear(entry);
++		archive_entry_xattr_add_entry(entry, i, xattr_buf, ret);
++
++		free(xattr_buf);
++	}
++
++	free(xattr_list);
++
++	return 0;
 +}
 +
-+int lkl_dirfd(struct lkl_dir *dir)
++static int do_entry(const char *fsimg_path, const char *path,
++		    const struct lkl_linux_dirent64 *de)
 +{
-+	return dir->fd;
++	char fsimg_new_path[PATH_MAX], new_path[PATH_MAX];
++	struct lkl_stat fsimg_stat;
++	struct stat stat;
++	struct archive_entry *entry;
++	int ftype;
++	long ret;
++
++	snprintf(new_path, sizeof(new_path), "%s/%s", path, de->d_name);
++	snprintf(fsimg_new_path, sizeof(fsimg_new_path), "%s/%s", fsimg_path,
++		 de->d_name);
++
++	ret = lkl_sys_lstat(fsimg_new_path, &fsimg_stat);
++	if (ret) {
++		fprintf(stderr, "fsimg lstat(%s) error: %s\n",
++			path, lkl_strerror(ret));
++		return ret;
++	}
++
++	entry = archive_entry_new();
++
++	archive_entry_set_pathname(entry, new_path);
++	fsimg_copy_stat(&stat, &fsimg_stat);
++	archive_entry_copy_stat(entry, &stat);
++	ret = copy_xattr(fsimg_new_path, new_path, entry);
++	if (ret)
++		return ret;
++	/* TODO: ACLs */
++
++	ftype = stat.st_mode & S_IFMT;
++
++	switch (ftype) {
++	case S_IFREG:
++		archive_write_header(tar, entry);
++		ret = copy_file(fsimg_new_path, new_path);
++		break;
++	case S_IFDIR:
++		archive_write_header(tar, entry);
++		ret = searchdir(fsimg_new_path, new_path);
++		break;
++	case S_IFLNK:
++		ret = add_link(fsimg_new_path, new_path, entry);
++		/* fall through */
++	case S_IFSOCK:
++	case S_IFBLK:
++	case S_IFCHR:
++	case S_IFIFO:
++		if (ret)
++			break;
++		archive_write_header(tar, entry);
++		break;
++	default:
++		printf("skipping %s: unsupported entry type %d\n", new_path,
++		       ftype);
++	}
++
++	archive_entry_free(entry);
++
++	if (ret)
++		printf("error processing entry %s, aborting\n", new_path);
++
++	return ret;
 +}
 +
-+int lkl_set_fd_limit(unsigned int fd_limit)
++static int searchdir(const char *fsimg_path, const char *path)
 +{
-+	struct lkl_rlimit rlim = {
-+		.rlim_cur = fd_limit,
-+		.rlim_max = fd_limit,
-+	};
-+	return lkl_sys_setrlimit(LKL_RLIMIT_NOFILE, &rlim);
++	long ret, fd;
++	char buf[1024], *pos;
++	long buf_len;
++
++	fd = lkl_sys_open(fsimg_path, LKL_O_RDONLY | LKL_O_DIRECTORY, 0);
++	if (fd < 0) {
++		fprintf(stderr, "failed to open dir %s: %s", fsimg_path,
++			lkl_strerror(fd));
++		return fd;
++	}
++
++	do {
++		struct lkl_linux_dirent64 *de;
++
++		de = (struct lkl_linux_dirent64 *) buf;
++		buf_len = lkl_sys_getdents64(fd, de, sizeof(buf));
++		if (buf_len < 0) {
++			fprintf(stderr, "gentdents64 error: %s\n",
++				lkl_strerror(buf_len));
++			break;
++		}
++
++		for (pos = buf; pos - buf < buf_len; pos += de->d_reclen) {
++			de = (struct lkl_linux_dirent64 *)pos;
++
++			if (!strcmp(de->d_name, ".") ||
++			    !strcmp(de->d_name, ".."))
++				continue;
++
++			ret = do_entry(fsimg_path, path, de);
++			if (ret)
++				goto out;
++		}
++
++	} while (buf_len > 0);
++
++out:
++	lkl_sys_close(fd);
++	return ret;
++}
++
++int main(int argc, char **argv)
++{
++	struct lkl_disk disk;
++	long ret;
++	char mpoint[32];
++	unsigned int disk_id;
++
++	if (argp_parse(&argp, argc, argv, 0, 0, &cla) < 0)
++		return -1;
++
++	if (!cla.printk)
++		lkl_host_ops.print = NULL;
++
++	disk.fd = open(cla.fsimg_path, O_RDONLY);
++	if (disk.fd < 0) {
++		fprintf(stderr, "can't open fsimg %s: %s\n", cla.fsimg_path,
++			strerror(errno));
++		ret = 1;
++		goto out;
++	}
++
++	disk.ops = NULL;
++
++	ret = lkl_disk_add(&disk);
++	if (ret < 0) {
++		fprintf(stderr, "can't add disk: %s\n", lkl_strerror(ret));
++		goto out_close;
++	}
++	disk_id = ret;
++
++	lkl_start_kernel(&lkl_host_ops, "mem=10M");
++
++	ret = lkl_mount_dev(disk_id, cla.part, cla.fsimg_type, LKL_MS_RDONLY,
++			    NULL, mpoint, sizeof(mpoint));
++	if (ret) {
++		fprintf(stderr, "can't mount disk: %s\n", lkl_strerror(ret));
++		goto out_close;
++	}
++
++	ret = lkl_sys_chdir(mpoint);
++	if (ret) {
++		fprintf(stderr, "can't chdir to %s: %s\n", mpoint,
++			lkl_strerror(ret));
++		goto out_umount;
++	}
++
++	tar = archive_write_new();
++	archive_write_set_format_pax_restricted(tar);
++	archive_write_open_filename(tar, cla.tar_path);
++
++	ret = searchdir(mpoint, "");
++
++	archive_write_free(tar);
++
++	if (cla.selinux)
++		fclose(cla.selinux);
++
++out_umount:
++	lkl_umount_dev(disk_id, cla.part, 0, 1000);
++
++out_close:
++	close(disk.fd);
++
++out:
++	lkl_sys_halt();
++
++	return ret;
 +}
 -- 
 2.20.1 (Apple Git-117)
