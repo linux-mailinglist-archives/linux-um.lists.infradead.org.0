@@ -2,80 +2,54 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 838C0E167C
-	for <lists+linux-um@lfdr.de>; Wed, 23 Oct 2019 11:44:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 88D04E17D6
+	for <lists+linux-um@lfdr.de>; Wed, 23 Oct 2019 12:26:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uT5q43o/jUlko9iWj4L5qj6ewSCRP6Q7zd1qroUuri8=; b=mdJ/dygVvMjq6b
-	C5hIbCge/qMT1Ru1B7qgYFXx0FIfywzqQfHQ5Dco+5CUsa7FiwWWTmMaDdLQ1tyEkdzHwg/kUPjpW
-	Jg0uYYzcQT6g24sBdncqExGqD8/vTPYV6tqN3krMeeW/94v/7X8kMtSpCZcG1iqRnvJQJUn/uL2RE
-	0jcmja0/ZDkXVXyZZdb6N6hwpN+FYtxVUKO3ek/U8kEfDOdCqFkEDERLWv7bSoJ1pkP4ZScOep1H6
-	NWdzcE7/NIb+SEdBMr/Nx5RNXWh4LzAxCuec+FtShRvDLUB7rZqF4Zkk45V9Hpf9tOA9eiUJK5DO8
-	Gdk9q0qXnUUzx9YAgSmQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=wvayPB7hoVEZjByKeLv6Vl7tj4XPz/t6GErIDG/W64Y=; b=g+E2r5sC67QJbLUBesv0xzBU/
+	/rB+ciSeaIHThNlkfGd2m6uhFvOlRgcAscaCqqIujuzifKL6mqHgcHseSZHBPd0/Lrg4jBUepFg5s
+	z8F5QcYhqQ3zju+b4FxbDGSHyRrSrkVlSmmtL398vGP6xVP0d9N750enlfavOSrU4lXzr24kR2N7O
+	bQLkj5zK7vqlf8LNhYXx1bPKyA6OlluzWyYQR2+mCRQrEYHQUkfXeOYYGX+uM4HMo8Te/wud2dfPX
+	k4R7aQ2AWT1FJYi0mlH5bT5gnCVNmDwmuiDgtj2gk+VIZgHdiU0WkoLSxPYIxlbzxAp5iwT3ppuO8
+	ihpPzZAGw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNDBX-000352-5e; Wed, 23 Oct 2019 09:44:07 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1iNDqS-0005Qg-Fr; Wed, 23 Oct 2019 10:26:24 +0000
+Received: from mail.sf-mail.de ([2a01:4f8:1c17:6fae:616d:6c69:616d:6c69])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNDBH-0002RL-En; Wed, 23 Oct 2019 09:43:55 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=Zj5XfgeeJGpKuLcZ9xIMs7v8y6wlyVmuVne2tYjeW1M=; b=tSh0TWsLv0zTB/+cgvenf9Alp
- bJ97VOL1Q4Q/wIuvnA12UaDMLRf78wnJjHpbggLuo4iMGeNglZ1as6l8RASl1TDll+uOHTPG25/pR
- acvy9GNDVqZ7KfBh47xSWs+PI5asIdAhm13tXE6BItpl+2VzngNhBvzuj+zOzsXjQrFsNNJCGjnRC
- AbTb9a1MpJm1fedkHTRfoEwRE0vhBKPst8jQpneLESyhJ64OYxELIPZrr0oJy1xuGi9RVf/xLwxxe
- lNgreE5Mr25YZDU0qQD3g4xFyjZHQ8a3w8RDULX7AAdieMMMEEubl0LuajXBuQGADa2mAfoNErhWi
- 9nNtjsKOg==;
-Received: from shell.armlinux.org.uk
- ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:46362)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1iND8K-00047D-6h; Wed, 23 Oct 2019 10:40:48 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1iND7x-0005NN-6r; Wed, 23 Oct 2019 10:40:25 +0100
-Date: Wed, 23 Oct 2019 10:40:25 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Mike Rapoport <rppt@kernel.org>
-Subject: Re: [PATCH 02/12] arm: nommu: use pgtable-nopud instead of
- 4level-fixup
-Message-ID: <20191023094025.GY25745@shell.armlinux.org.uk>
-References: <1571822941-29776-1-git-send-email-rppt@kernel.org>
- <1571822941-29776-3-git-send-email-rppt@kernel.org>
+ id 1iNDqH-0004bg-LO
+ for linux-um@lists.infradead.org; Wed, 23 Oct 2019 10:26:15 +0000
+Received: (qmail 27735 invoked from network); 23 Oct 2019 10:20:38 -0000
+Received: from mail.sf-mail.de ([2a01:4f8:1c17:6fae:616d:6c69:616d:6c69]:43938
+ HELO webmail.sf-mail.de) (auth=eike@sf-mail.de)
+ by mail.sf-mail.de (Qsmtpd 0.36dev) with (DHE-RSA-AES256-GCM-SHA384 encrypted)
+ ESMTPSA for <rppt@kernel.org>; Wed, 23 Oct 2019 12:20:38 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1571822941-29776-3-git-send-email-rppt@kernel.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+Date: Wed, 23 Oct 2019 12:20:29 +0200
+From: Rolf Eike Beer <eike-kernel@sf-tec.de>
+To: Mike Rapoport <rppt@kernel.org>
+Subject: Re: [PATCH 08/12] parisc: use pgtable-nopXd instead of 4level-fixup
+In-Reply-To: <1571822941-29776-9-git-send-email-rppt@kernel.org>
+References: <1571822941-29776-1-git-send-email-rppt@kernel.org>
+ <1571822941-29776-9-git-send-email-rppt@kernel.org>
+Message-ID: <70339cfc547e2fa0f6b98fefb1b1a9fa@sf-tec.de>
+X-Sender: eike-kernel@sf-tec.de
+User-Agent: Roundcube Webmail/1.3.8
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191023_024353_496691_192C0D3E 
-X-CRM114-Status: GOOD (  14.44  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191023_032614_020571_18A4CCAA 
+X-CRM114-Status: UNSURE (   7.42  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,69 +61,57 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>,
+Cc: linux-parisc-owner@vger.kernel.org,
+ "James E.J. Bottomley" <James.Bottomley@hansenpartnership.com>,
  linux-mm@kvack.org, sparclinux@vger.kernel.org,
  Vincent Chen <deanbo422@gmail.com>, Greg Ungerer <gerg@linux-m68k.org>,
  Anton Ivanov <anton.ivanov@cambridgegreys.com>, linux-arch@vger.kernel.org,
  linux-c6x-dev@linux-c6x.org, Richard Weinberger <richard@nod.at>,
- Helge Deller <deller@gmx.de>, Mike Rapoport <rppt@linux.ibm.com>,
- Geert Uytterhoeven <geert@linux-m68k.org>, Mark Salter <msalter@redhat.com>,
- Matt Turner <mattst88@gmail.com>, Jeff Dike <jdike@addtoit.com>,
- Sam Creasey <sammy@sammy.net>, Arnd Bergmann <arnd@arndb.de>,
- Vineet Gupta <Vineet.Gupta1@synopsys.com>, linux-um@lists.infradead.org,
- linux-m68k@lists.linux-m68k.org, Greentime Hu <green.hu@gmail.com>,
- "Kirill A. Shutemov" <kirill@shutemov.name>,
+ Helge Deller <deller@gmx.de>, Russell King <linux@armlinux.org.uk>,
+ Mike Rapoport <rppt@linux.ibm.com>, Geert Uytterhoeven <geert@linux-m68k.org>,
+ Mark Salter <msalter@redhat.com>, Matt Turner <mattst88@gmail.com>,
+ Jeff Dike <jdike@addtoit.com>, Sam Creasey <sammy@sammy.net>,
+ Arnd Bergmann <arnd@arndb.de>, Vineet Gupta <Vineet.Gupta1@synopsys.com>,
+ linux-um@lists.infradead.org, linux-m68k@lists.linux-m68k.org,
+ Greentime Hu <green.hu@gmail.com>, "Kirill A. Shutemov" <kirill@shutemov.name>,
  linux-arm-kernel@lists.infradead.org, Michal Simek <monstr@monstr.eu>,
  linux-parisc@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-alpha@vger.kernel.org, Andrew Morton <akpm@linux-foundation.org>,
  Linus Torvalds <torvalds@linux-foundation.org>,
  "David S. Miller" <davem@davemloft.net>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Wed, Oct 23, 2019 at 12:28:51PM +0300, Mike Rapoport wrote:
-> From: Mike Rapoport <rppt@linux.ibm.com>
+> diff --git a/arch/parisc/include/asm/page.h 
+> b/arch/parisc/include/asm/page.h
+> index 93caf17..1d339ee 100644
+> --- a/arch/parisc/include/asm/page.h
+> +++ b/arch/parisc/include/asm/page.h
+> @@ -42,48 +42,54 @@ typedef struct { unsigned long pte; } pte_t; /*
+> either 32 or 64bit */
 > 
-> The generic nommu implementation of page table manipulation takes care of
-> folding of the upper levels and does not require fixups.
+>  /* NOTE: even on 64 bits, these entries are __u32 because we allocate
+>   * the pmd and pgd in ZONE_DMA (i.e. under 4GB) */
+> -typedef struct { __u32 pmd; } pmd_t;
+>  typedef struct { __u32 pgd; } pgd_t;
+>  typedef struct { unsigned long pgprot; } pgprot_t;
 > 
-> Simply replace of include/asm-generic/4level-fixup.h with
-> include/asm-generic/pgtable-nopud.h.
-> 
-> Signed-off-by: Mike Rapoport <rppt@linux.ibm.com>
+> -#define pte_val(x)	((x).pte)
+> -/* These do not work lvalues, so make sure we don't use them as such. 
+> */
+> +#if CONFIG_PGTABLE_LEVELS == 3
+> +typedef struct { __u32 pmd; } pmd_t;
+> +#define __pmd(x)	((pmd_t) { (x) } )
+> +/* pXd_val() do not work lvalues, so make sure we don't use them as 
+> such. */
 
-Acked-by: Russell King <rmk+kernel@armlinux.org.uk>
+For me it sounds like there is something missing, maybe an "as" before 
+lvalues?
+And it was "These", so plural, and now it is singular, so do -> does?
 
-Thanks.
-
-> ---
->  arch/arm/include/asm/pgtable.h | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/arch/arm/include/asm/pgtable.h b/arch/arm/include/asm/pgtable.h
-> index 3ae120c..eabcb48 100644
-> --- a/arch/arm/include/asm/pgtable.h
-> +++ b/arch/arm/include/asm/pgtable.h
-> @@ -12,7 +12,7 @@
->  
->  #ifndef CONFIG_MMU
->  
-> -#include <asm-generic/4level-fixup.h>
-> +#include <asm-generic/pgtable-nopud.h>
->  #include <asm/pgtable-nommu.h>
->  
->  #else
-> -- 
-> 2.7.4
-> 
-> 
-
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
-According to speedtest.net: 11.9Mbps down 500kbps up
+Eike
 
 _______________________________________________
 linux-um mailing list
