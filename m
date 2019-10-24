@@ -2,110 +2,61 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 86C54E2D78
-	for <lists+linux-um@lfdr.de>; Thu, 24 Oct 2019 11:35:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 167BEE2DEA
+	for <lists+linux-um@lfdr.de>; Thu, 24 Oct 2019 11:51:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vIDgwwrdlfnOOD6+PDf3RkaPxWrqOHGuSKlocCfAkiY=; b=KJmlyBjNGz7Ivz
-	f+xy99YN4dlABcZ6HTo9GkbtiWmwhqDmO5iEB+YKoFGvOcZe68KMQT06CZFQpRReBYt1uhKy9l8g9
-	Sd8YEf6V1+oAziuooEuNINcjQ4FvPuUmnXvc+ej6TphsrSJ9S7AVaYD8TWESy7niH7oCH9m5dFm8X
-	EIQSfPS3+KR28odMxUGbhrPOThfgwEf1Kwl3gcLsqgInyYjrZaRyYK7K0dy0JjSTv6aE2P0u9Ta4R
-	TlYbBZNTUFckzK7XUUeuWqBibdqIEp2mfBR+uVVDv3pWmlNi5rYsAXkPxpxatZhwtl+Ze6OpgdB7X
-	rL5NmFzdfZ8aobIEjk4Q==;
+	List-Owner; bh=BMXWXXUzOthcrMiI0IOnZubxQWY7mgya83P6iL8lHCg=; b=TMVgszqKuJDHWZ
+	7vZSm8hjY78OozqgN8ftY9nfG1WeC/OuPSZXwyU7ewDNQbbJNgQc6pSHoDizKYL5CYaXURGssvNys
+	7vNVUrTESfGfWzXuiVdyoBcBpPaFCsgym4UFNcmy/tOsGpVxu9jkd2NcAxTGhoCSsVaPeWqRCXAVV
+	E4D3BUmcqd21rjALGN4NPWIqKlRZpQn5WFbMt3oDd0LWfsMH75lTZ2SSFm6U8HBSfV+273EPNDZAE
+	d1cMbSbzXmPg6ii8cccK+mQTNjByH3NDKBMWPX1T91w/Oq4o7pXQSCj4VpQBAp3Fr6LUcZJiXl9DQ
+	O7VadxC6w2Rboai3TErA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNZWj-0000Uc-Gl; Thu, 24 Oct 2019 09:35:29 +0000
-Received: from mail-eopbgr70112.outbound.protection.outlook.com
- ([40.107.7.112] helo=EUR04-HE1-obe.outbound.protection.outlook.com)
+	id 1iNZm1-0003hP-1z; Thu, 24 Oct 2019 09:51:17 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNZWY-0000KY-F9; Thu, 24 Oct 2019 09:35:20 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=cmGiBsQxz3T86HnbxSahtPCZQiOWo7K6bAsIeym0n5GpvZzeBpAcVwPs2v1+jHPgkoZpf8wUxIqs4YKZyHUCb6LSOH3pn8rkgbx5ZAA2vZXzw8hV21FScyu3GH5I0r4sFLpBptfoU4tumfDYDdaHhOAoqIAg7KKfBTzHwEKjypdmB9kqKpNNp22c2deK8HocEfd3TK6nt6fRz1XaHO6fEV7azWsAp0XqdnZZ7gCWUP7w8Sx3WzKa33mbMYQ6esS8paBXPYjEqYOpJeldDHbcGbh64EtbL4RDNvcYRf8SWnQqoCy9ZMg0PmzzRiDXWKRie1gumqVD2k6f3X3+mUmthg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=DIt9WUl36EPMd6/sTow+jAoauCcP0HziIST+STpNbbY=;
- b=gEJ6Fr4/2XPwmUqdJEkHtAcqkzJLv1qKL92rKRfQh6AfQePvhiZ67pZFNwV/VuoKe65CRS8NdKty6ok7y/eR3u0Vd6dpfEVoyb9FU/Dyk0pzzLdbB+NmRlRmROjW4AejpDFddoYDfiIgRL8RFh/UXZVvXfiSyCTjMw9+QKj+l2vZjV1pDSH3pT9rtkOSqh9nVcSAOrqdyKJWxmlC/kITIf74nrliU4n7uCYMLCvZQOkDnX5sHnQLfVyTnUvACFZe8PxNI8uyTqi0I2bRFcH8iI1aGIPoXlNoNlRKLRqFDeuL3XLEz4uOEGTsMI1RYv/923GMEGV1vVoztnQTdxwmww==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=axentia.se; dmarc=pass action=none header.from=axentia.se;
- dkim=pass header.d=axentia.se; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=axentia.se;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=DIt9WUl36EPMd6/sTow+jAoauCcP0HziIST+STpNbbY=;
- b=fEAnr2/i3O1AFS3nbpfEP8nNqk2J98i29Ta1hHaixE6dDgnhOQxfsfxuZdfA1FoKmOIky8RikVrhIENBJQZaDuSscfbgTUCYfJwUvhLLXD96t0J3rrr38rgQM1Hq/pS9wFlWvV0Gz7tHQUrFL7AK1wapZGeBnZx/qiLMDB7cTGA=
-Received: from DB3PR0202MB3434.eurprd02.prod.outlook.com (52.134.66.158) by
- DB3PR0202MB3546.eurprd02.prod.outlook.com (52.134.69.30) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2387.22; Thu, 24 Oct 2019 09:35:12 +0000
-Received: from DB3PR0202MB3434.eurprd02.prod.outlook.com
- ([fe80::c5b8:6014:87a4:1afe]) by DB3PR0202MB3434.eurprd02.prod.outlook.com
- ([fe80::c5b8:6014:87a4:1afe%7]) with mapi id 15.20.2347.030; Thu, 24 Oct 2019
- 09:35:12 +0000
-From: Peter Rosin <peda@axentia.se>
-To: "rppt@kernel.org" <rppt@kernel.org>
+ id 1iNZlr-0003Yd-7f; Thu, 24 Oct 2019 09:51:08 +0000
+Received: from rapoport-lnx (nesher1.haifa.il.ibm.com [195.110.40.7])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id A218C20856;
+ Thu, 24 Oct 2019 09:50:58 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1571910666;
+ bh=/+Ql7TLHSuqRBTRatle/8UuavLp8M4wg90FkQYvX1ZA=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=fHWraPApPelpUnhz80IdJ6qZ3Jw5R++RrLd4l7PfuOCafzao2ErCM/1ApQ91lUK7E
+ 0uYS2e9f/H3CF0FLyqr+11wZLk0ellanlE4rDMkvpBd62/g9WmtWFtWw6GDYvxb0sb
+ DxnPSUgn8n7OenmDPbNDDb0vZF9lfVpAL0VLc18U=
+Date: Thu, 24 Oct 2019 12:50:54 +0300
+From: Mike Rapoport <rppt@kernel.org>
+To: Peter Rosin <peda@axentia.se>
 Subject: Re: [PATCH 08/12] parisc: use pgtable-nopXd instead of 4level-fixup
-Thread-Topic: [PATCH 08/12] parisc: use pgtable-nopXd instead of 4level-fixup
-Thread-Index: AQHVik5IAuql7dy41k6PeTHw6KB4tA==
-Date: Thu, 24 Oct 2019 09:35:12 +0000
-Message-ID: <20191024093451.15161-1-peda@axentia.se>
+Message-ID: <20191024095053.GC12281@rapoport-lnx>
 References: <1571822941-29776-9-git-send-email-rppt@kernel.org>
-In-Reply-To: <1571822941-29776-9-git-send-email-rppt@kernel.org>
-Accept-Language: en-US, sv-SE
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-mailer: git-send-email 2.11.0
-x-originating-ip: [213.112.138.100]
-x-clientproxiedby: HE1PR0501CA0011.eurprd05.prod.outlook.com
- (2603:10a6:3:1a::21) To DB3PR0202MB3434.eurprd02.prod.outlook.com
- (2603:10a6:8:5::30)
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=peda@axentia.se; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 8c3bd73e-ee81-4715-6d9a-08d7586577ad
-x-ms-traffictypediagnostic: DB3PR0202MB3546:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <DB3PR0202MB35468A3E1F5AE0EF9B52833BBC6A0@DB3PR0202MB3546.eurprd02.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:3826;
-x-forefront-prvs: 0200DDA8BE
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(39830400003)(396003)(366004)(376002)(136003)(346002)(199004)(189003)(64756008)(1076003)(66946007)(66476007)(66446008)(66556008)(4744005)(50226002)(8936002)(8676002)(1730700003)(4001150100001)(86362001)(305945005)(7406005)(7736002)(66066001)(7416002)(2501003)(54906003)(99286004)(81156014)(81166006)(186003)(14454004)(5660300002)(76176011)(316002)(52116002)(2616005)(53546011)(6506007)(256004)(102836004)(386003)(26005)(6436002)(6512007)(71190400001)(71200400001)(446003)(11346002)(229853002)(486006)(5640700003)(508600001)(6486002)(25786009)(4326008)(476003)(2906002)(6246003)(107886003)(6916009)(6116002)(3846002)(2351001)(36756003);
- DIR:OUT; SFP:1102; SCL:1; SRVR:DB3PR0202MB3546;
- H:DB3PR0202MB3434.eurprd02.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: axentia.se does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: 6Z+ITuVOvCqKitQmaADNxgLO2KW0fDtwzxFLSRNNn7r/d6V85rreanKo2s+2tZaj57S+YSqLI8dMNxycmFP8TlbakDoiFDVeKSRPOuJMnSnLz1FzJ7iBy5FiQjktww9Zw3RWbkbaN4l8LIFun9RYGE1a+THN5jNpOMYuioTqkSimDg+3oKV0TYwESyYh1EUIGoUOwF4rz96lC1DTez136wnhWjR8bRzbsSQlFYS9NScyPinY2fuJ4aYSJh+2DAxCiSAFCobU6RUtFi4veZnHL30ia6pfX28Yt3ehNs5GYmVtFyV9xNES/PlYYRfl6QOXFPAbB1XEzjvbSKf4E0nKvP5X+69BruKyQA070TgGVgdtHQJdNqcM3TihTxK47muVoD9QxJUr985Mz1Js63GkmAokSqaiYs0iRgoJbAAJ+NZnMA++qwWJCmuskvsG/Dto
+ <20191024093451.15161-1-peda@axentia.se>
 MIME-Version: 1.0
-X-OriginatorOrg: axentia.se
-X-MS-Exchange-CrossTenant-Network-Message-Id: 8c3bd73e-ee81-4715-6d9a-08d7586577ad
-X-MS-Exchange-CrossTenant-originalarrivaltime: 24 Oct 2019 09:35:12.1588 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 4ee68585-03e1-4785-942a-df9c1871a234
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: OVrjWJqkAg7QlUmFAou+rEr+R3o62OggdRIdKwgVr0fz9Ctp3nIcWVOZEyuS4mrB
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0202MB3546
+Content-Disposition: inline
+In-Reply-To: <20191024093451.15161-1-peda@axentia.se>
+User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191024_023518_732683_F91880CD 
-X-CRM114-Status: UNSURE (   6.71  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191024_025107_296321_225CE2C4 
+X-CRM114-Status: GOOD (  10.48  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.7.112 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -113,6 +64,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -150,7 +102,6 @@ Cc: "James.Bottomley@HansenPartnership.com"
  "monstr@monstr.eu" <monstr@monstr.eu>,
  "linux-parisc@vger.kernel.org" <linux-parisc@vger.kernel.org>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Peter Rosin <peda@axentia.se>,
  "linux-alpha@vger.kernel.org" <linux-alpha@vger.kernel.org>,
  "akpm@linux-foundation.org" <akpm@linux-foundation.org>,
  "torvalds@linux-foundation.org" <torvalds@linux-foundation.org>,
@@ -160,19 +111,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On 2019-10-23 12:28, Mike Rapoport <rppt@kernel.org> wrote:
-> parisc has two or three levels of page tables and can use appropriate
-> pgtable-nopXd and folding of the upper layers.
->
-> Replace usage of include/asm-generic/4level-fixup.h and explicit
-> definitions of __PAGETABLE_PxD_FOLDED in parisc with
-> include/asm-generic/pgtable-nopmd.h for two-level configurations and with
-> include/asm-generic/pgtable-nopmd.h for three-lelve configurations and
+On Thu, Oct 24, 2019 at 09:35:12AM +0000, Peter Rosin wrote:
+> On 2019-10-23 12:28, Mike Rapoport <rppt@kernel.org> wrote:
+> > parisc has two or three levels of page tables and can use appropriate
+> > pgtable-nopXd and folding of the upper layers.
+> >
+> > Replace usage of include/asm-generic/4level-fixup.h and explicit
+> > definitions of __PAGETABLE_PxD_FOLDED in parisc with
+> > include/asm-generic/pgtable-nopmd.h for two-level configurations and with
+> > include/asm-generic/pgtable-nopmd.h for three-lelve configurations and
+> 
+> I think you mean .../pgtable-nopud.h in the latter case.
 
-I think you mean .../pgtable-nopud.h in the latter case.
+Right, thanks!
+ 
+> Cheers,
+> Peter
 
-Cheers,
-Peter
+-- 
+Sincerely yours,
+Mike.
 
 _______________________________________________
 linux-um mailing list
