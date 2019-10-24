@@ -2,60 +2,70 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6F56AE2A5D
-	for <lists+linux-um@lfdr.de>; Thu, 24 Oct 2019 08:23:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 597ACE2C95
+	for <lists+linux-um@lfdr.de>; Thu, 24 Oct 2019 10:51:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ySgT4hpTpt+NI0N4DuNTqSDwjhlNdwPkJG6dRz6XkXI=; b=qX4+oX6d6gH7XAY04o2QO9wRr
-	yYitbgmSgDMuyZzgHWxxoEB5q8b1kKtujaJOcZhF2uj9vFnWDBK6DL7tlBCuG/hZGnQ9/2sIv0Gsv
-	SOtxN/L0Vc4cpyzDKZqt0y1wknTJsiwDRreWe3eYg4DDLyZwWNhQH73vKtSZjdwbIZynYnrCxQSyC
-	qKdb+0iuQAZuq/x/Bpk+olfypzpC93mzuPqT6HlYglhIf8XY36wC4U1tfcfBQCEGQe3LtwOC8UPag
-	P4M+ico+2DbIrNASLBpdSV8hSzMQgJDOvpQIHVCEvG9wTiEo4837f3pDPQNnMVeS6SZUlJCJOezAJ
-	GXZaOhRUQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=praKZromuX1B4YPK7Qq3RoeU5jNpS4CNRGiohQLCJ7U=; b=W3GPpE6QPMfTok
+	SWkeG7HsufCoGLOqNthap02LTird4albaAdkyX5HfIBwzPY48E6kdh/LFvFfu3Je9cygvOPXEAhb7
+	AinPj1HEeEULvdalXZivVrta93M+i0Y7GOFTKcfkyKVSU7HZE76UBrxUuSwtvNhYtH6x6MeQh9uKa
+	ehG0NQvEzZ/clbpW0iayNi9m8vZpgMzC8ODYpTP5TrT5RZohmoOKQDkNv8PB1AG5WvAibWfh+ZDAp
+	qM+o/d5t5EjHZG+Li/8y1Von/xCs+stpBFB4riWIQbwWs5ymhUmf7ZL4hJJW6bIWhCZ25xAB653tq
+	6XPUFl7pu4w9gAYYDVFQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iNWWq-0004Aq-7r; Thu, 24 Oct 2019 06:23:24 +0000
+	id 1iNYqV-0007xs-HJ; Thu, 24 Oct 2019 08:51:51 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iNWWf-0003zO-R8; Thu, 24 Oct 2019 06:23:15 +0000
-Received: from [10.44.0.22] (unknown [103.48.210.53])
+ id 1iNYqG-0007lZ-L2; Thu, 24 Oct 2019 08:51:37 +0000
+Received: from rapoport-lnx (nesher1.haifa.il.ibm.com [195.110.40.7])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2C14921655;
- Thu, 24 Oct 2019 06:23:06 +0000 (UTC)
-Subject: Re: [PATCH 04/12] m68k: nommu: use pgtable-nopud instead of
- 4level-fixup
-To: Mike Rapoport <rppt@kernel.org>
+ by mail.kernel.org (Postfix) with ESMTPSA id 4C60620684;
+ Thu, 24 Oct 2019 08:51:28 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1571907096;
+ bh=yne+q2OXrSImKWVSiY3azP5LbAIN48uZobw79sAWlFU=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=xpwdM9yMJT3vwdJLbOI5KIPEEpEYHfqEfSqqKjUi5ZSSU5mfa5OWBh563R00Omteo
+ 1c6jhSHIeQS869/swtQtZqJJbFD6Wthojjuy5NInms0kvWdnjQNTpkjIm45S4+i5rs
+ whgYfB8T+i91x0MJgndRbMS9GGWr99hizp8ehhpU=
+Date: Thu, 24 Oct 2019 11:51:24 +0300
+From: Mike Rapoport <rppt@kernel.org>
+To: Rolf Eike Beer <eike-kernel@sf-tec.de>
+Subject: Re: [PATCH 08/12] parisc: use pgtable-nopXd instead of 4level-fixup
+Message-ID: <20191024085123.GB12281@rapoport-lnx>
 References: <1571822941-29776-1-git-send-email-rppt@kernel.org>
- <1571822941-29776-5-git-send-email-rppt@kernel.org>
- <de03a882-fb1a-455c-7c60-84ab0c4f9674@linux-m68k.org>
- <20191024053533.GA12281@rapoport-lnx>
-From: Greg Ungerer <gerg@linux-m68k.org>
-Message-ID: <24454c38-184a-b5fe-e534-aad3713c157e@linux-m68k.org>
-Date: Thu, 24 Oct 2019 16:23:04 +1000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ <1571822941-29776-9-git-send-email-rppt@kernel.org>
+ <70339cfc547e2fa0f6b98fefb1b1a9fa@sf-tec.de>
 MIME-Version: 1.0
-In-Reply-To: <20191024053533.GA12281@rapoport-lnx>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <70339cfc547e2fa0f6b98fefb1b1a9fa@sf-tec.de>
+User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191023_232313_921150_924647C3 
-X-CRM114-Status: GOOD (  17.57  )
-X-Spam-Score: -4.8 (----)
+X-CRM114-CacheID: sfid-20191024_015136_715548_D7CE93FC 
+X-CRM114-Status: GOOD (  12.78  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-4.8 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
  high trust [198.145.29.99 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,9 +77,10 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>,
+Cc: linux-parisc-owner@vger.kernel.org,
+ "James E.J. Bottomley" <James.Bottomley@hansenpartnership.com>,
  linux-mm@kvack.org, sparclinux@vger.kernel.org,
- Vincent Chen <deanbo422@gmail.com>,
+ Vincent Chen <deanbo422@gmail.com>, Greg Ungerer <gerg@linux-m68k.org>,
  Anton Ivanov <anton.ivanov@cambridgegreys.com>, linux-arch@vger.kernel.org,
  linux-c6x-dev@linux-c6x.org, Richard Weinberger <richard@nod.at>,
  Helge Deller <deller@gmx.de>, Russell King <linux@armlinux.org.uk>,
@@ -84,59 +95,51 @@ Cc: "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>,
  linux-alpha@vger.kernel.org, Andrew Morton <akpm@linux-foundation.org>,
  Linus Torvalds <torvalds@linux-foundation.org>,
  "David S. Miller" <davem@davemloft.net>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-SGkgTWlrZSwKCk9uIDI0LzEwLzE5IDM6MzUgcG0sIE1pa2UgUmFwb3BvcnQgd3JvdGU6Cj4gSGkg
-R3JlZywKPiAKPiBPbiBUaHUsIE9jdCAyNCwgMjAxOSBhdCAwMjowOTowMVBNICsxMDAwLCBHcmVn
-IFVuZ2VyZXIgd3JvdGU6Cj4+IEhpIE1pa2UsCj4+Cj4+IE9uIDIzLzEwLzE5IDc6MjggcG0sIE1p
-a2UgUmFwb3BvcnQgd3JvdGU6Cj4+PiBGcm9tOiBNaWtlIFJhcG9wb3J0IDxycHB0QGxpbnV4Lmli
-bS5jb20+Cj4+Pgo+Pj4gVGhlIGdlbmVyaWMgbm9tbXUgaW1wbGVtZW50YXRpb24gb2YgcGFnZSB0
-YWJsZSBtYW5pcHVsYXRpb24gdGFrZXMgY2FyZSBvZgo+Pj4gZm9sZGluZyBvZiB0aGUgdXBwZXIg
-bGV2ZWxzIGFuZCBkb2VzIG5vdCByZXF1aXJlIGZpeHVwcy4KPj4+Cj4+PiBTaW1wbHkgcmVwbGFj
-ZSBvZiBpbmNsdWRlL2FzbS1nZW5lcmljLzRsZXZlbC1maXh1cC5oIHdpdGgKPj4+IGluY2x1ZGUv
-YXNtLWdlbmVyaWMvcGd0YWJsZS1ub3B1ZC5oLgo+Pj4KPj4+IFNpZ25lZC1vZmYtYnk6IE1pa2Ug
-UmFwb3BvcnQgPHJwcHRAbGludXguaWJtLmNvbT4KPj4+IC0tLQo+Pj4gICBhcmNoL202OGsvaW5j
-bHVkZS9hc20vcGd0YWJsZV9uby5oIHwgMiArLQo+Pj4gICAxIGZpbGUgY2hhbmdlZCwgMSBpbnNl
-cnRpb24oKyksIDEgZGVsZXRpb24oLSkKPj4+Cj4+PiBkaWZmIC0tZ2l0IGEvYXJjaC9tNjhrL2lu
-Y2x1ZGUvYXNtL3BndGFibGVfbm8uaCBiL2FyY2gvbTY4ay9pbmNsdWRlL2FzbS9wZ3RhYmxlX25v
-LmgKPj4+IGluZGV4IGMxODE2NWIuLmNjYzQ1NjggMTAwNjQ0Cj4+PiAtLS0gYS9hcmNoL202OGsv
-aW5jbHVkZS9hc20vcGd0YWJsZV9uby5oCj4+PiArKysgYi9hcmNoL202OGsvaW5jbHVkZS9hc20v
-cGd0YWJsZV9uby5oCj4+PiBAQCAtMiw3ICsyLDcgQEAKPj4+ICAgI2lmbmRlZiBfTTY4S05PTU1V
-X1BHVEFCTEVfSAo+Pj4gICAjZGVmaW5lIF9NNjhLTk9NTVVfUEdUQUJMRV9ICj4+PiAtI2luY2x1
-ZGUgPGFzbS1nZW5lcmljLzRsZXZlbC1maXh1cC5oPgo+Pj4gKyNpbmNsdWRlIDxhc20tZ2VuZXJp
-Yy9wZ3RhYmxlLW5vcHVkLmg+Cj4+PiAgIC8qCj4+PiAgICAqIChDKSBDb3B5cmlnaHQgMjAwMC0y
-MDAyLCBHcmVnIFVuZ2VyZXIgPGdlcmdAc25hcGdlYXIuY29tPgo+Pgo+PiBUaGlzIGZhaWxzIHRv
-IGNvbXBpbGUgZm9yIG1lICh0YXJnZXRpbmcgbTUyMDhldmJfZGVmY29uZmlnKToKPj4KPj4gICAg
-Q0MgICAgICBpbml0L21haW4ubwo+PiBJbiBmaWxlIGluY2x1ZGVkIGZyb20gLi9hcmNoL202OGsv
-aW5jbHVkZS9hc20vcGd0YWJsZV9uby5oOjU2OjAsCj4+ICAgICAgICAgICAgICAgICAgIGZyb20g
-Li9hcmNoL202OGsvaW5jbHVkZS9hc20vcGd0YWJsZS5oOjMsCj4+ICAgICAgICAgICAgICAgICAg
-IGZyb20gLi9pbmNsdWRlL2xpbnV4L21tLmg6OTksCj4+ICAgICAgICAgICAgICAgICAgIGZyb20g
-Li9pbmNsdWRlL2xpbnV4L3JpbmdfYnVmZmVyLmg6NSwKPj4gICAgICAgICAgICAgICAgICAgZnJv
-bSAuL2luY2x1ZGUvbGludXgvdHJhY2VfZXZlbnRzLmg6NiwKPj4gICAgICAgICAgICAgICAgICAg
-ZnJvbSAuL2luY2x1ZGUvdHJhY2Uvc3lzY2FsbC5oOjcsCj4+ICAgICAgICAgICAgICAgICAgIGZy
-b20gLi9pbmNsdWRlL2xpbnV4L3N5c2NhbGxzLmg6ODUsCj4+ICAgICAgICAgICAgICAgICAgIGZy
-b20gaW5pdC9tYWluLmM6MjE6Cj4+IC4vaW5jbHVkZS9hc20tZ2VuZXJpYy9wZ3RhYmxlLmg6NzM4
-OjM0OiBlcnJvcjogdW5rbm93biB0eXBlIG5hbWUg4oCYcG1kX3TigJkKPj4gICBzdGF0aWMgaW5s
-aW5lIGludCBwbWRfc29mdF9kaXJ0eShwbWRfdCBwbWQpCj4+ICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgXgo+IAo+IC4uLgo+IAo+PiBzY3JpcHRzL01ha2VmaWxlLmJ1aWxkOjI2
-NTogcmVjaXBlIGZvciB0YXJnZXQgJ2luaXQvbWFpbi5vJyBmYWlsZWQKPj4gbWFrZVsxXTogKioq
-IFtpbml0L21haW4ub10gRXJyb3IgMQo+PiBNYWtlZmlsZToxNjQ5OiByZWNpcGUgZm9yIHRhcmdl
-dCAnaW5pdCcgZmFpbGVkCj4+IG1ha2U6ICoqKiBbaW5pdF0gRXJyb3IgMgo+IAo+IFRoZSBodW5r
-IGJlbG93IGZpeGVzIHRoZSBidWlsZC4KPiAKPiBkaWZmIC0tZ2l0IGEvYXJjaC9tNjhrL2luY2x1
-ZGUvYXNtL3BhZ2UuaCBiL2FyY2gvbTY4ay9pbmNsdWRlL2FzbS9wYWdlLmgKPiBpbmRleCBjMDBi
-NjdhLi4wNWUxZTFlIDEwMDY0NAo+IC0tLSBhL2FyY2gvbTY4ay9pbmNsdWRlL2FzbS9wYWdlLmgK
-PiArKysgYi9hcmNoL202OGsvaW5jbHVkZS9hc20vcGFnZS5oCj4gQEAgLTIxLDcgKzIxLDcgQEAK
-PiAgIC8qCj4gICAgKiBUaGVzZSBhcmUgdXNlZCB0byBtYWtlIHVzZSBvZiBDIHR5cGUtY2hlY2tp
-bmcuLgo+ICAgICovCj4gLSNpZiBDT05GSUdfUEdUQUJMRV9MRVZFTFMgPT0gMwo+ICsjaWYgIWRl
-ZmluZWQoQ09ORklHX01NVSkgfHwgQ09ORklHX1BHVEFCTEVfTEVWRUxTID09IDMKPiAgIHR5cGVk
-ZWYgc3RydWN0IHsgdW5zaWduZWQgbG9uZyBwbWRbMTZdOyB9IHBtZF90Owo+ICAgI2RlZmluZSBw
-bWRfdmFsKHgpCSgoJngpLT5wbWRbMF0pCj4gICAjZGVmaW5lIF9fcG1kKHgpCSgocG1kX3QpIHsg
-eyAoeCkgfSwgfSkKClRoYXQgbG9va3MgYmV0dGVyLiBUaGFua3MuClRlc3RlZCBhbmQgd29ya2lu
-ZyBvbiBtNjhrbm9tbXUuIEZvciB0aGUgY29tYmluZWQgcGF0Y2hlczoKCkFja2VkLWJ5OiBHcmVn
-IFVuZ2VyZXIgPGdlcmdAbGludXgtbTY4ay5vcmc+CgpSZWdhcmRzCkdyZWcKCgoKX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtdW0gbWFpbGluZyBs
-aXN0CmxpbnV4LXVtQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5v
-cmcvbWFpbG1hbi9saXN0aW5mby9saW51eC11bQo=
+On Wed, Oct 23, 2019 at 12:20:29PM +0200, Rolf Eike Beer wrote:
+> >diff --git a/arch/parisc/include/asm/page.h
+> >b/arch/parisc/include/asm/page.h
+> >index 93caf17..1d339ee 100644
+> >--- a/arch/parisc/include/asm/page.h
+> >+++ b/arch/parisc/include/asm/page.h
+> >@@ -42,48 +42,54 @@ typedef struct { unsigned long pte; } pte_t; /*
+> >either 32 or 64bit */
+> >
+> > /* NOTE: even on 64 bits, these entries are __u32 because we allocate
+> >  * the pmd and pgd in ZONE_DMA (i.e. under 4GB) */
+> >-typedef struct { __u32 pmd; } pmd_t;
+> > typedef struct { __u32 pgd; } pgd_t;
+> > typedef struct { unsigned long pgprot; } pgprot_t;
+> >
+> >-#define pte_val(x)	((x).pte)
+> >-/* These do not work lvalues, so make sure we don't use them as such. */
+> >+#if CONFIG_PGTABLE_LEVELS == 3
+> >+typedef struct { __u32 pmd; } pmd_t;
+> >+#define __pmd(x)	((pmd_t) { (x) } )
+> >+/* pXd_val() do not work lvalues, so make sure we don't use them as such.
+> >*/
+> 
+> For me it sounds like there is something missing, maybe an "as" before
+> lvalues?
+
+Right, "as lvalues" makes sense.
+
+> And it was "These", so plural, and now it is singular, so do -> does?
+
+There's also pgd_val() a few lines below, it's just not visible in the
+patch.
+ 
+> Eike
+
+-- 
+Sincerely yours,
+Mike.
+
+_______________________________________________
+linux-um mailing list
+linux-um@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-um
