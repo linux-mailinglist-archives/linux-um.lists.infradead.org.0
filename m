@@ -2,87 +2,94 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4DE3FE560E
-	for <lists+linux-um@lfdr.de>; Fri, 25 Oct 2019 23:40:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3C37AE604A
+	for <lists+linux-um@lfdr.de>; Sun, 27 Oct 2019 03:34:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Subject:To:From:Message-ID:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/BkFBDacng5/aBqaUuc3UE3SsKLuw2jtXrCgmLfoiyQ=; b=a52tcNLLb+533Y
-	ZYaz4KGsT3Kp8+e/ZzqkTCkulzh7bazo1nY5cAEulyijct8q88Xltz58Xfv9yVJN3ju+xmwrpDbx2
-	P5EQQ/DVyNZJ8R1bNmRf0gxSV5duuEXIqR1o10JzhbAQ3zK9aX+avKtd/YKqMY+HxCBmu/o5/xI7s
-	x30DJjFbjv3k/jCXWudMx7dz74q0k3XT/1Nk92aBBo6FaB5av2zwVaif/4h9q5q+t4rkbsX/McuDq
-	35PIRbIFhcQnETC0gCFziLECdY9voOoq3dkaBWK/mDjORfTntnkiQxFKBZmklh9fVohLI6XNHYTJ/
-	CjbNKoudoM8uv2BFH6eg==;
+	List-Owner; bh=HUTrVRycMGZqZPEtWINljO71taWLYVFnmFayny6iPiE=; b=X1LCbfCoNMHQLb
+	JxyVJPgj53orztznMMX3bA4VDR9ByQfXooM8/9G42GfE/PSBwECFQVjp0f/HMnKFvPMMGC1CJUiDi
+	AMneHFaYWETbiULzpXPoSxU7T+nljEKUe78BC1IZOe1Xh+gBdW1Ji4DU+zPnoDCh/eyOzldR5xMoq
+	9oI0QOoC+qH4Aqod1bpHwgs8nLgQqWJqa+8I4N+RyzLgNPFmQL6p24J2mbcyWL5bzjQ3/YT9zxd1U
+	3x2CiU+EUQwCeFAIFdMXVHVc1hfUFxvI7sC5zEApzPEygHjkMa3+cTmq25F2sYQGvsaECwo/VN4GA
+	jG+QcVix6wDGCx3x1Emg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iO7Jk-0006V3-TM; Fri, 25 Oct 2019 21:40:20 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1iOYNs-0008KG-P8; Sun, 27 Oct 2019 02:34:24 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iO7Jh-0006UP-VC
- for linux-um@lists.infradead.org; Fri, 25 Oct 2019 21:40:19 +0000
-Received: by mail-wm1-x341.google.com with SMTP id 22so3316702wms.3
- for <linux-um@lists.infradead.org>; Fri, 25 Oct 2019 14:40:17 -0700 (PDT)
+ id 1iOYNq-0008JW-1S
+ for linux-um@lists.infradead.org; Sun, 27 Oct 2019 02:34:23 +0000
+Received: by mail-pg1-x542.google.com with SMTP id c8so4195848pgb.2
+ for <linux-um@lists.infradead.org>; Sat, 26 Oct 2019 19:34:21 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=3+j3R6PK1FN/v2klWIVTyr6Yr/OlDLc7cERsr9jHr1s=;
- b=M275/00wuXb4QHYdEJIew5VXRToO1htVh/4wxCSkcEzg4GtTU49o2YEWG+7FiSpqOd
- BD914LnagFuiCJJzqTBeKQhflPWZI0QlawpiSr3xZHVzANY5AIjVOBlP7hd5arpm/cmr
- guFNrFVQD4kN5Fi8ygSc9nb7m9OKaptbQ2AvN2xwuKlqgEszYWvIfRGZj5UMBKiQT8aX
- xgcfg8PTWI7c0mxKQCG7pMTvO8OrqdMOz3LnEAO9tMEC9FrGpB28UoSnjH2XtlWyU/Ot
- KgWkb5Tq+mrCDwX2LIlW+wMdyruXgYEbL9wPfVsO3R6Is1so9o+LOdmnvmYcGgBOPSvL
- +D0g==
+ h=date:message-id:from:to:cc:subject:in-reply-to:references
+ :user-agent:mime-version;
+ bh=OBBT2t3d/CB4GMqarYF+/S8G0ZXqf6Xv8Y2CoiPXH0c=;
+ b=LBGLI/zKs3mA+6cx1+hnRflzkf02MqgrXyve+CBjoAwh6p7KKaqW43pQkZxcFcuzNz
+ oad2snKDZ0egkkUIf/V8rYqgf9rjlRT4DLPpkC6ZAdI+lT0KOGU145XWaKJSj2jjIRcM
+ pvOHwCdcunU+6svy7K1y9QSgUqy9tun/oekMq574vNgGKgBUUIdATp8Cd7RxoUHTj4vW
+ YE/3WoY6urT4CIVKxaU8eDZyqsTOS26iLJNZBpifc19qm7mpQarZ0+wTyME56q9iA4E3
+ i8DOIfvVISG/E6HZ28+sQmsj0DMOCx3SwqE1vH3zJZv/t1UO1Wt4OcQF7cYA3g/ytdtP
+ 5peA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=3+j3R6PK1FN/v2klWIVTyr6Yr/OlDLc7cERsr9jHr1s=;
- b=doGlEbdc3baAYKyoLe84xxZ1Gpci7PpKtWRiHhfDo4LhOtKSKGWYM67lkQcC41V9Kv
- OYenTue6iEjJEoOmp6Vi1GIvS+7gUJxDkVw8M/JTSV7b57MTg7W0FH7Mai08cSj2cclj
- JKZVTGpcfYGU3iGoVPTZ/csU3wPHb2kjhWC+6hABE1Col8alVHpIqIRyzXcCeFEtC0lM
- Fz/jLIjBPB3+ByTriSkFG2Elwym8ldq3gRH7Di8eNqdw5H2gVsHt1+tDwd2ZU7zMjbOD
- 9RSPbX3+1Z4C91veqlPdcPi4+x7ZeRmJtUwzDj8kWIXVxHzePafkEQrfo6PfwRumHYdd
- G3Sw==
-X-Gm-Message-State: APjAAAX0cBDXTxX9lqFYNP78zp6LVooUG8pFTv35sSwyBkld/HJfM7i9
- ubR6i8iW+Zsi8/Wrf2o0N2J0Mwc7xv5zGZXUB8I=
-X-Google-Smtp-Source: APXvYqwKtGlQN1Juyu/GKh7ttlbyz3UICwpZ2AUNJKMIwumOkzcJceYGI/cigIuK/1oC7uCVCP5Ze5aKg+zusA7Wd3M=
-X-Received: by 2002:a1c:5459:: with SMTP id p25mr1923137wmi.109.1572039616566; 
- Fri, 25 Oct 2019 14:40:16 -0700 (PDT)
-MIME-Version: 1.0
+ h=x-gm-message-state:date:message-id:from:to:cc:subject:in-reply-to
+ :references:user-agent:mime-version;
+ bh=OBBT2t3d/CB4GMqarYF+/S8G0ZXqf6Xv8Y2CoiPXH0c=;
+ b=QrP4Vlek+DTBS7ERWFXoaT/ctXvye043XXatHMvWbkQ1uBhW5vwm/h6qyD0GQXK2/r
+ o9lr0IzdLX4SJ0AKGYvX/ZOko3PMxipIHwZGScbBJmHg2qDlTzq4GJXnlvvILl4Vo2Od
+ 6yjd6uWtouVwpqtdEwhJHVH0d5J3ljRvcdMwmVMzboXPSul7N6XbKRUuNta4lciKIYyq
+ KU5U6AGwo2/RUI4kctL5Q5htoD7zm0kzJipa0rAW1mUhPwDfMd/FGveeFyaNFypCZpZR
+ bxfLajBjl6WV7lpMvh/pUqcKqjvrL4mbO33459PVOYqDTsNkibtxeBwI3gCL8KIP+Ozy
+ H93A==
+X-Gm-Message-State: APjAAAXS1BBzuxZZB2t5ppfItTBEa+eTp7lu3MPebI4U4DPZ2WXFkRsU
+ VGt0R+5r2WfxhSmD+Ao77OQ=
+X-Google-Smtp-Source: APXvYqxFhcdB/CcpQ6FJzqo4BJ74zWljLCXDtm3F3dVKK+6tqLpmX4lU9+DCeltQ2vjASnpW++On/g==
+X-Received: by 2002:a63:3d41:: with SMTP id k62mr13146012pga.129.1572143660586; 
+ Sat, 26 Oct 2019 19:34:20 -0700 (PDT)
+Received: from earth-mac.local.gmail.com
+ (219x123x138x129.ap219.ftth.ucom.ne.jp. [219.123.138.129])
+ by smtp.gmail.com with ESMTPSA id p1sm6686167pfb.112.2019.10.26.19.34.17
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Sat, 26 Oct 2019 19:34:19 -0700 (PDT)
+Date: Sun, 27 Oct 2019 11:34:13 +0900
+Message-ID: <m2blu2x6fu.wl-thehajime@gmail.com>
+From: Hajime Tazaki<thehajime@gmail.com>
+To: richard.weinberger@gmail.com
+Subject: Re: [RFC PATCH 00/47] Unifying LKL into UML
+In-Reply-To: <CAFLxGvyshYxocTNrzWV0mLQ-_qZzMG7u64=ySMbjrsu8j4cwTQ@mail.gmail.com>
 References: <cover.1571798507.git.thehajime@gmail.com>
- <0b1464dd4904ee2b049fef624895ead3fe6aa555.1571798507.git.thehajime@gmail.com>
-In-Reply-To: <0b1464dd4904ee2b049fef624895ead3fe6aa555.1571798507.git.thehajime@gmail.com>
-From: Richard Weinberger <richard.weinberger@gmail.com>
-Date: Fri, 25 Oct 2019 23:40:05 +0200
-Message-ID: <CAFLxGvzqPzZtUSzymWgnhGnr6qgcDe9ue6Q8ALMS-r_Y+KXVOw@mail.gmail.com>
-Subject: Re: [RFC PATCH 03/47] lkl: architecture skeleton for Linux kernel
- library
-To: Hajime Tazaki <thehajime@gmail.com>
+ <CAFLxGvyshYxocTNrzWV0mLQ-_qZzMG7u64=ySMbjrsu8j4cwTQ@mail.gmail.com>
+User-Agent: Wanderlust/2.15.9 (Almost Unreal) Emacs/25.3 Mule/6.0
+ (HANACHIRUSATO)
+MIME-Version: 1.0 (generated by SEMI-EPG 1.14.7 - "Harue")
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191025_144018_033593_B672919D 
-X-CRM114-Status: UNSURE (   6.96  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191026_193422_109532_0BBB8022 
+X-CRM114-Status: GOOD (  29.24  )
+X-Spam-Score: 2.3 (++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (richard.weinberger[at]gmail.com)
+ provider (thehajime[at]gmail.com)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ 2.5 TO_NO_BRKTS_FROM_MSSP  Multiple header formatting problems
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,49 +101,135 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: "H . K . Jerry Chu" <hkchu@google.com>, Levente Kurusa <levex@linux.com>,
- Matthieu Coudron <mattator@gmail.com>, Conrad Meyer <cem@freebsd.org>,
- Octavian Purdila <tavi.purdila@gmail.com>,
- Lai Jiangshan <jiangshanlai@gmail.com>, Jens Staal <staal1978@gmail.com>,
- Motomu Utsumi <motomuman@gmail.com>, linux-um@lists.infradead.org,
- Akira Moroo <retrage01@gmail.com>, Petros Angelatos <petrosagg@gmail.com>,
- Andreas Abel <aabel@google.com>, Xiao Jia <xiaoj@google.com>,
- Mark Stillwell <mark@stillwell.me>,
- "Edison M . Castro" <edisonmcastro@hotmail.com>,
- Patrick Collins <pscollins@google.com>, Pierre-Hugues Husson <phh@phh.me>,
- Michael Zimmermann <sigmaepsilon92@gmail.com>,
- Luca Dariz <luca.dariz@gmail.com>, Yuan Liu <liuyuan@google.com>
+Cc: tavi.purdila@gmail.com, linux-arch@vger.kernel.org,
+ linux-um@lists.infradead.org, retrage01@gmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Wed, Oct 23, 2019 at 6:39 AM Hajime Tazaki <thehajime@gmail.com> wrote:
->
-> From: Octavian Purdila <tavi.purdila@gmail.com>
-> +LINUX KERNEL LIBRARY
-> +M:     Octavian Purdila <octavian.purdila@intel.com>
-> +M:     Hajime Tazaki <thehajime@gmail.com>
-> +L:     linux-kernel-library@freelists.org
-> +S:     Maintained
-> +F:     arch/lkl/
-> +F:     tools/lkl/
-> +
 
-The arch/lkl path is outdated.
-So, you and Octavian will maintain LKL?
+Hello Richard,
 
-Do you want to be sub maintainers of arch/um/lkl and send pull requests to me
-or co-maintain the whole UML ecosystem together with me and Anton?
+Thanks for the review.
 
-I'm perfectly fine with both variants but tend to the latter one since
-it is less overhead.
-In case you need your PGP keys signed, next week I'll be in Lyon at
-OSS, ELCE, ...
+On Sat, 26 Oct 2019 06:34:59 +0900,
+Richard Weinberger wrote:
+> 
+> On Wed, Oct 23, 2019 at 6:39 AM Hajime Tazaki <thehajime@gmail.com> wrote:
+> >
+> > This RFC patchset is to ask opinions from UML people, whether LKL codes is
+> > good to integrate into UML code base.  We wish to have any kind of feedback
+> > from your kind reviews.  There are numbers of commits which should be asked
+> > for reviews to other mailing lists; we will do it later once we got
+> > discussed in this mailing list.
+> 
+> Thanks a lot for doing this, this effort is much appreciated! :-)
+> 
+> > # sorry for the long list of patches: we can make it smaller by only
+> >   including basic set of LKL (e.g., removing foreign OS support, etc) if
+> >   you wish.
+> 
+> Let use see how the review goes. First I'll give it a high level review to make
+> sure we all talk about the same things.
 
--- 
-Thanks,
-//richard
+Thanks.
+
+> Please CC linux-arch@vger.kernel.org for the next patch round.
+> Integrating LKL (into arch/um/) is something which needs more audience and
+> feedback from Arnd Bergmann, our global arch maintainer.
+
+Sure, will Cc.
+
+> >
+> > LKL (Linux Kernel Library) is aiming to allow reusing the Linux kernel code
+> > as extensively as possible with minimal effort and reduced maintenance
+> > overhead.
+> >
+> > Examples of how LKL can be used are: creating userspace applications
+> > (running on Linux and other operating systems) that can read or write Linux
+> > filesystems or can use the Linux networking stack, creating kernel drivers
+> > for other operating systems that can read Linux filesystems, bootloaders
+> > support for reading/writing Linux filesystems, etc.
+> >
+> > With LKL, the kernel code is compiled into an object file that can be
+> > directly linked by applications. The API offered by LKL is based on the
+> > Linux system call interface.
+> >
+> > LKL is originally implemented as an architecture port in arch/lkl, but this
+> > series of commits tries to integrate this into arch/um as one of the mode
+> > of UML.  This was discussed during RFC email of LKL (*1).
+> >
+> > The latest LKL version can be found at https://github.com/lkl/linux
+> >
+> > Milestone
+> > =========
+> > This patches is just a first step toward upstreaming *library mode* of
+> > Linux kernel, but we think we need to have several steps toward our goal,
+> > describing in the below.
+> >
+> > 1. Put LKL code under arch/um (arch/um/lkl), and build it in a
+> > separate way from UML.
+> 
+> Makes sense.
+> 
+> > 2. Share common parts of implementation between UML and LKL.
+> 
+> Since both UML and LKL are usermode ports there is a lot of potential.
+> From my side it is also no big deal if there is some duplication which can be
+> resolved in later releases. Unifiing needs deep thoughts and miding odd corner
+> cases.
+
+I understand.
+
+> > 3. Reimplement UML features with LKL API (if we wish)
+> 
+> Yep. In the last release UML got virtio support, so there is hope. ;-)
+
+Good news.
+
+> > For the step 1, we put LKL as one of SUBARCH in order to make less effort
+> > to integrate (make ARCH=um SUBARCH=lkl).  The modification to existing UML
+> > code is trying to be minimized.
+> 
+> I'm not sure if SUBARCH is the right approach. How do I build a i386
+> lkl on x86_64?
+
+This is currently handled under tools/lkl: building
+arch/um/lkl part only requires toolchain information (e.g.,
+CROSS_COMPILE=).
+
+So to build i386 liblkl.a, do `make ARCH=um SUBARCH=lkl`,
+which might not be intuitive..
+
+> Maybe we can use another variable like UMMODE={library,kernel}?
+
+We will try to find this way to switch the mode instead.
+
+> > The RFC patches also includes and a bit of step 2 as a proof of possibility
+> > to share the code.  For this, we used the virtio device code of LKL and use
+> > it from UML by enabling virtio-mmio driver with UML code.
+> >
+> >
+> >
+> > Building LKL the host library and LKL applications
+> > ==================================================
+> >
+> > % cd tools/lkl
+> > % make
+> 
+> Is there a reason why tool/lkl is not under arch/um?
+
+I thought that this way makes clear distinction between host
+hardware/environment *dependent* (tools/lkl) part and
+*independent* (arch/um/lkl).
+
+We can rename it to tools/um instead.
+
+But if using new tools directory makes noisy, we would try to
+move those under arch/um.
+
+-- Hajime
 
 _______________________________________________
 linux-um mailing list
