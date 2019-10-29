@@ -2,93 +2,59 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2DC68E81DF
-	for <lists+linux-um@lfdr.de>; Tue, 29 Oct 2019 08:13:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 31C37E82D6
+	for <lists+linux-um@lfdr.de>; Tue, 29 Oct 2019 08:58:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Subject:To:From:Message-ID:Date:Reply-To:Content-ID:Content-Description:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=c1Z74HLpdncBCpmqm4lCmeqfp/Lw9NSPzxJqqKvc+Lo=; b=BDWfoqtcLe4L44
-	DKjKjXOEHcTJPmvJ6yB5Nh0qr52f0Gzp9TDFYPwlenqx2kQiFj8Z2FWrl9Tel3VIWar+qHe4qYYdE
-	hN4oGY7BRNht7zoTaCJe/k31oPqLyDFIS3kKTujMs79gVEf8dKHiyvdWn0ixodeWm4UEcJZ6qJAQw
-	DQry3K7L7M1rCWeIOtRcKgfGUK2AhLx7wehF6I1REoQ5M57yGo4PGSdK9+0nEtS83QNojvLgdOb6K
-	37p8U6G/RvlHqFvu2NIDNnu80IjXsHAoG6KwivW8u+qBjssUXGTUTBNfh1ipbM/vInYEd6wUey8+W
-	HcyHx7WBvBg6YiJ749pA==;
+	List-Owner; bh=JXGTv8MsOBMhFOCkVg5UTcWxkuB4OHfjuH/G2z+7YzY=; b=aPhAMWjqStAJgr
+	dAFsA9Oxtn4djtIFaWfjbc1dCcUosTLOWDWM09JiMdah0N6yOMlx526UjZnf/fgLCKfL/cnm8iQ6A
+	5DfBDFYb3VMWNaH+JgMEVKErvD0fQt87ULLkPNKuSkuWRzyvBxqRQ33NhW+BEDAywxs5ZpE79lgst
+	EjO+WW/vj3eLqPbtjG/+4Cr0pVUS6AdC55b2f/OwZG72nFA1jBWA9Xj8bxJZeiBDbRa3pTI+9IPHP
+	nQgA2/5mVOikLy8AQVdFaPFVBM6DhlGe8rPVXxpwfqgTm2ZZfSGKSKkHCPIYDeXVdgK6+t5Uv4InK
+	jTypA0H5+n+vTV3XOgDg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPLhC-0008DT-MH; Tue, 29 Oct 2019 07:13:38 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1iPMO4-00015U-Rp; Tue, 29 Oct 2019 07:57:56 +0000
+Received: from s3.sipsolutions.net ([2a01:4f8:191:4433::2]
+ helo=sipsolutions.net)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPLh9-0008Cl-Vg
- for linux-um@lists.infradead.org; Tue, 29 Oct 2019 07:13:37 +0000
-Received: by mail-pf1-x442.google.com with SMTP id c13so8891732pfp.5
- for <linux-um@lists.infradead.org>; Tue, 29 Oct 2019 00:13:35 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:message-id:from:to:cc:subject:in-reply-to:references
- :user-agent:mime-version;
- bh=gGRE+FXfakT/KMCGNr1MxY2FLq94iIC8mxV7jkZn9BE=;
- b=UFtPsbTV5hFdb+NHcp7sV5V26pwU0JxjMhLu3B8gFzAH2EbgEDo2+i332abpcvxlXi
- BTLYna8P2vy9f5FQV6WunFdGACQwIP6+JJRLn1VRYhhxuDpRbOQVBm0S7IN3nnJIyZUB
- 68e2KyuvBKVDjs353Z6YFRqHy90GvL95naHIEDkaiULbrR0YaGDbRqZgKVVise8Stk5V
- bRG+tuPtn8LJa7UMTOUg0MEqvCr04jCkhuz8PVQxr3Z4Ibxv4t4Coly/MnH4MnW1SFlc
- fFgtKUyfaKPdfA4D0FiDWmKOJ6WjgKeRkhhYz15oVg9sEXwKeMtn+rzGVSBzSXJKrjSm
- TGrw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:message-id:from:to:cc:subject:in-reply-to
- :references:user-agent:mime-version;
- bh=gGRE+FXfakT/KMCGNr1MxY2FLq94iIC8mxV7jkZn9BE=;
- b=AU486thS9VBq2V6VpyXVT/EUz6bA+ttpWvP5VnN96ppRNrUts1W0nw77mzKoXL8hl/
- qzG39d5kh2bDLW66F66v7QC5o00aRGARURLbrkpFedZO81VoYvu5AyE24bqHSraY3kFf
- 2MshUFmlOhzNAmbZVT3OCf75cbwSDb6Bdnhj0k6nlVbjql6a9kRYxg69noBuaTvJEkjv
- Iq1DB23lqAipLmbnm2oUHEIkE9Mrn3omeTHlkjLoHpnBvNGoio4y5a77Nft4UIa/z0Jp
- nds2cABAL936o8s2IJ5rHclIWAxtIdGe0QquQSixcGt1EYAG4u417j2L0JjT9RMYj34Q
- 7kZA==
-X-Gm-Message-State: APjAAAU/3Kd7xeEeaE/dLj0QvOBJi9gjti8SV4iD9FtuFeMcM6kHbp0B
- D9K6ff5Lfm6N17rY0e04cUg=
-X-Google-Smtp-Source: APXvYqzTdg/bnD6IPMO60mw9UYFtWidRO3fDefwxzUloeBCca6oOvcDoRIOZDoqX+6eQg7b1NmsBlA==
-X-Received: by 2002:a65:64d4:: with SMTP id t20mr402918pgv.181.1572333214182; 
- Tue, 29 Oct 2019 00:13:34 -0700 (PDT)
-Received: from earth-mac.local.gmail.com ([202.214.86.179])
- by smtp.gmail.com with ESMTPSA id 21sm5251349pfa.170.2019.10.29.00.13.29
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 29 Oct 2019 00:13:33 -0700 (PDT)
-Date: Tue, 29 Oct 2019 16:13:28 +0900
-Message-ID: <m2a79k3tyf.wl-thehajime@gmail.com>
-From: Hajime Tazaki<thehajime@gmail.com>
-To: jiangshanlai@gmail.com
+ id 1iPMO2-0000nX-AV
+ for linux-um@lists.infradead.org; Tue, 29 Oct 2019 07:57:55 +0000
+Received: by sipsolutions.net with esmtpsa
+ (TLS1.3:ECDHE_SECP256R1__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
+ (Exim 4.92.2) (envelope-from <johannes@sipsolutions.net>)
+ id 1iPMNu-0002ja-Tf; Tue, 29 Oct 2019 08:57:47 +0100
+Message-ID: <9df8075205912512a9a0ec7eb0393ff74d3c4bbb.camel@sipsolutions.net>
 Subject: Re: [RFC PATCH 03/47] lkl: architecture skeleton for Linux kernel
  library
-In-Reply-To: <CAJhGHyBy4ok+Sg7TyLaaksqEBDanmZgsk6ujRqXU1KFcu+DHZQ@mail.gmail.com>
-References: <cover.1571798507.git.thehajime@gmail.com>	<0b1464dd4904ee2b049fef624895ead3fe6aa555.1571798507.git.thehajime@gmail.com>	<CAFLxGvzqPzZtUSzymWgnhGnr6qgcDe9ue6Q8ALMS-r_Y+KXVOw@mail.gmail.com>	<m2a79mx6br.wl-thehajime@gmail.com>	<CAJhGHyBy4ok+Sg7TyLaaksqEBDanmZgsk6ujRqXU1KFcu+DHZQ@mail.gmail.com>
-User-Agent: Wanderlust/2.15.9 (Almost Unreal) Emacs/25.3 Mule/6.0
- (HANACHIRUSATO)
-MIME-Version: 1.0 (generated by SEMI-EPG 1.14.7 - "Harue")
+From: Johannes Berg <johannes@sipsolutions.net>
+To: Hajime Tazaki <thehajime@gmail.com>, jiangshanlai@gmail.com
+Date: Tue, 29 Oct 2019 08:57:43 +0100
+In-Reply-To: <m2a79k3tyf.wl-thehajime@gmail.com>
+References: <cover.1571798507.git.thehajime@gmail.com>
+ <0b1464dd4904ee2b049fef624895ead3fe6aa555.1571798507.git.thehajime@gmail.com>
+ <CAFLxGvzqPzZtUSzymWgnhGnr6qgcDe9ue6Q8ALMS-r_Y+KXVOw@mail.gmail.com>
+ <m2a79mx6br.wl-thehajime@gmail.com>
+ <CAJhGHyBy4ok+Sg7TyLaaksqEBDanmZgsk6ujRqXU1KFcu+DHZQ@mail.gmail.com>
+ <m2a79k3tyf.wl-thehajime@gmail.com>
+User-Agent: Evolution 3.30.5 (3.30.5-1.fc29) 
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191029_001336_047154_D9D6DBDC 
-X-CRM114-Status: GOOD (  10.50  )
-X-Spam-Score: 2.3 (++)
+X-CRM114-CacheID: sfid-20191029_005754_368723_522E4632 
+X-CRM114-Status: UNSURE (   9.93  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (2.3 points)
+ Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (thehajime[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 2.5 TO_NO_BRKTS_FROM_MSSP  Multiple header formatting problems
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.4 KHOP_HELO_FCRDNS       Relay HELO differs from its IP's reverse DNS
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,67 +67,60 @@ List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
 Cc: levex@linux.com, mattator@gmail.com, cem@freebsd.org,
- richard.weinberger@gmail.com, staal1978@gmail.com, motomuman@gmail.com,
- linux-um@lists.infradead.org, retrage01@gmail.com, petrosagg@gmail.com,
- tavi.purdila@gmail.com, xiaoj@google.com, mark@stillwell.me,
- edisonmcastro@hotmail.com, pscollins@google.com, phh@phh.me,
- sigmaepsilon92@gmail.com, luca.dariz@gmail.com, liuyuan@google.com
+ richard.weinberger@gmail.com, liuyuan@google.com, staal1978@gmail.com,
+ motomuman@gmail.com, linux-um@lists.infradead.org, retrage01@gmail.com,
+ petrosagg@gmail.com, tavi.purdila@gmail.com, xiaoj@google.com,
+ mark@stillwell.me, pscollins@google.com, phh@phh.me, sigmaepsilon92@gmail.com,
+ luca.dariz@gmail.com, edisonmcastro@hotmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
+Hi,
 
-Hello Lai,
-
-On Tue, 29 Oct 2019 13:04:59 +0900,
-Lai Jiangshan wrote:
+> You're right: current patchset only share Makefile(s)
+> between UML and LKL.  This is the first step toward the
+> unification in my plan, described in the milestone of the
+> cover letter (copy-pasted below).
 > 
-> Hello, Hajime
+> > Milestone
+> > =========
+> > (snip)
+> > 1. Put LKL code under arch/um (arch/um/lkl), and build it in a
+> > separate way from UML.
+> > 2. Share common parts of implementation between UML and LKL.
+> > 3. Reimplement UML features with LKL API (if we wish)
 > 
-> I can't get how UML&LKL is going to unify even I read
-> the cover-letter of the patchset. After quick glance, what I
-> understand is that the patchset just puts LKL under
-> arch/um/lkl rather than arch/lkl. It is still separated "arch" for me.
+> For the step 2, [PATCH 46/47] and [47/47] are the kind of
+> examples for this level of unification (sorry for the very
+> dirty code).
 > 
-> Could you put me in more detail of the plan to unify them please?
+> For the step 3, I don't have any WIP code nor detailed plan.
+> Implementing ptrace-based (or similar) syscall interception
+> would be one of the development (I believe there are more).
+> 
+> Offering UML feature-sets, keeping compatibility, while
+> benefiting from LKL (e.g., various underlying environment
+> support) would be very high-level goal since there are many
+> users of UML (various test tool projects, including coming
+> Kunit).
 
-Thanks for the comment.
+Aren't you going about this the wrong way around?
 
-You're right: current patchset only share Makefile(s)
-between UML and LKL.  This is the first step toward the
-unification in my plan, described in the milestone of the
-cover letter (copy-pasted below).
+I mean, this reads like you're proposing to start from LKL and
+reimplement UML on top of it, but we currently have UML in the tree and
+LKL isn't. Seems backward to me.
 
-> Milestone
-> =========
-> (snip)
-> 1. Put LKL code under arch/um (arch/um/lkl), and build it in a
-> separate way from UML.
-> 2. Share common parts of implementation between UML and LKL.
-> 3. Reimplement UML features with LKL API (if we wish)
+Also, looking at the patches, I'm not a huge fan of the whole "drop LKL
+into UML". UML is already complex enough as is, with its memory model
+and all, mixing in LKL makes it way more complex.
 
-For the step 2, [PATCH 46/47] and [47/47] are the kind of
-examples for this level of unification (sorry for the very
-dirty code).
+I don't think "drop LKL under UML" was what people had in mind when they
+suggested that the two merge ...
 
-For the step 3, I don't have any WIP code nor detailed plan.
-Implementing ptrace-based (or similar) syscall interception
-would be one of the development (I believe there are more).
+johannes
 
-Offering UML feature-sets, keeping compatibility, while
-benefiting from LKL (e.g., various underlying environment
-support) would be very high-level goal since there are many
-users of UML (various test tool projects, including coming
-Kunit).
-
-
-
-Having similar archs in Linux kernel is not likely to
-happen; that was feedback after RFC email of LKL (in 2015).
-This motivates us to upstream the LKL code into arch/um.
-
--- Hajime
 
 _______________________________________________
 linux-um mailing list
