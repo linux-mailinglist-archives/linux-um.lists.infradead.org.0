@@ -2,80 +2,84 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4930BE7EF4
-	for <lists+linux-um@lfdr.de>; Tue, 29 Oct 2019 05:05:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2DC68E81DF
+	for <lists+linux-um@lfdr.de>; Tue, 29 Oct 2019 08:13:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Subject:To:From:Message-ID:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=n28CVucUlCgwy3EjEeYiaaNr6NlLWY5iUq1WA+Ii8wE=; b=ugmF9xLYA2ZpzX
-	w2X9lwALbIOlwbMMS5bj6VuFtAOvY2V+6wocJ0JzgWaNIEwSjze/k4woCYi6Ta/0KB4c5xFOLai7E
-	Epua0OWVcHZWjNnPS0pcpkjGxBXfsdj1Q/8UKVJ/Q0I3ASlrniMvXpzLsDi5wDyCL77DXq7phGOHD
-	umgDTzvkK/8RwJik9rAKecqBt7BJ11Hh7FdHgoWucuHPgLv0l+Wx3G8aV/UuZM87f1yLfiZLJ1PIg
-	8fyF0EUREN1FyY7DnkiIeHqW7oABJ4FT5EMuRRndHQ8WJ36doazKEzybEHiagQ+eim9P7ygr9Tzm2
-	+YShC3iaKR3tr/UHmLBQ==;
+	List-Owner; bh=c1Z74HLpdncBCpmqm4lCmeqfp/Lw9NSPzxJqqKvc+Lo=; b=BDWfoqtcLe4L44
+	DKjKjXOEHcTJPmvJ6yB5Nh0qr52f0Gzp9TDFYPwlenqx2kQiFj8Z2FWrl9Tel3VIWar+qHe4qYYdE
+	hN4oGY7BRNht7zoTaCJe/k31oPqLyDFIS3kKTujMs79gVEf8dKHiyvdWn0ixodeWm4UEcJZ6qJAQw
+	DQry3K7L7M1rCWeIOtRcKgfGUK2AhLx7wehF6I1REoQ5M57yGo4PGSdK9+0nEtS83QNojvLgdOb6K
+	37p8U6G/RvlHqFvu2NIDNnu80IjXsHAoG6KwivW8u+qBjssUXGTUTBNfh1ipbM/vInYEd6wUey8+W
+	HcyHx7WBvBg6YiJ749pA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPIkw-00069K-4f; Tue, 29 Oct 2019 04:05:18 +0000
-Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
+	id 1iPLhC-0008DT-MH; Tue, 29 Oct 2019 07:13:38 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPIks-00068Y-Ek
- for linux-um@lists.infradead.org; Tue, 29 Oct 2019 04:05:15 +0000
-Received: by mail-io1-xd43.google.com with SMTP id r144so13248074iod.8
- for <linux-um@lists.infradead.org>; Mon, 28 Oct 2019 21:05:11 -0700 (PDT)
+ id 1iPLh9-0008Cl-Vg
+ for linux-um@lists.infradead.org; Tue, 29 Oct 2019 07:13:37 +0000
+Received: by mail-pf1-x442.google.com with SMTP id c13so8891732pfp.5
+ for <linux-um@lists.infradead.org>; Tue, 29 Oct 2019 00:13:35 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=BVyY2bb1y1f3zbEQF0kB1OWMSoAc5b6mMNbzwhXoZHg=;
- b=VZaCONINII/HfAgvz5TaemptI5DrVYyfQazUaUA43i+LzZsT9umcUioFSss5oKDwVo
- wEqZ8JtcFJzxJVfLGVUQmI8tKWWhlbhWlzQtsBggQyZOqXfswugDbl3KDROvx3bC8tpH
- SUxCgiO7qqW3r3j0kg0QnJXb0bqt7MmOwpWNY+h8KG03372Kd/+19y0n4yvYcS0/wNEC
- mx87eYMRQIVL1TmIDfGq9bLuLP6OcfNRRRvFjbvYuIQuP9wTbHZ+sySKUa5D16aNRNFA
- sWnNlIgVJFaLHvzD8U6uVuka8pqKXMBuwILHdAh6PyE3QUn1EcmbzoUP5Jw6NpHHtmRV
- MoPQ==
+ h=date:message-id:from:to:cc:subject:in-reply-to:references
+ :user-agent:mime-version;
+ bh=gGRE+FXfakT/KMCGNr1MxY2FLq94iIC8mxV7jkZn9BE=;
+ b=UFtPsbTV5hFdb+NHcp7sV5V26pwU0JxjMhLu3B8gFzAH2EbgEDo2+i332abpcvxlXi
+ BTLYna8P2vy9f5FQV6WunFdGACQwIP6+JJRLn1VRYhhxuDpRbOQVBm0S7IN3nnJIyZUB
+ 68e2KyuvBKVDjs353Z6YFRqHy90GvL95naHIEDkaiULbrR0YaGDbRqZgKVVise8Stk5V
+ bRG+tuPtn8LJa7UMTOUg0MEqvCr04jCkhuz8PVQxr3Z4Ibxv4t4Coly/MnH4MnW1SFlc
+ fFgtKUyfaKPdfA4D0FiDWmKOJ6WjgKeRkhhYz15oVg9sEXwKeMtn+rzGVSBzSXJKrjSm
+ TGrw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=BVyY2bb1y1f3zbEQF0kB1OWMSoAc5b6mMNbzwhXoZHg=;
- b=OsIuxwwZ6mMEhEe4VNvxhCHwMxNv6jgp5nkuzF3eGF56PDIDK8z9QAfmqKyuLNjEyp
- Zb4W/tFT62sjSyAzcgFoP5tj2A5eHdEwuFqLUwZSkuRIFwW6QR4OYX1XZ5j+eFaJ85YB
- VnfPt9Eu5GIhoEccxOXWCbALRV5yN7EsoweNfY0kemWA5wKeRP4kjeqOSX2QDNIWQqdF
- 3noFaagPdzzRN5aFpPcBXL/4wWHbYRnshB7lwL+qLXW3f3WM/V6BKzVCFbHhFQRjaEhL
- wST/bY4PFbghcqjSykneZKj5KhVZ5GAZ72gN6Q1SxAVqmK17FGl/u9OWRjMwGwI6rIet
- /9pQ==
-X-Gm-Message-State: APjAAAUJHi4OwIcwSMAlbcGf62FuuV9YlcumMuFBd0o+n3R+wc77BcW/
- AiDjSClE0L9mGLXCJXFO6FBx8QOtayNroutJc/k=
-X-Google-Smtp-Source: APXvYqwT3XkVJQQ5nkIWqi1AuaBGl7fD9XCXtwmzfDxe9nzE+jeYDaAdbWx6m1iiQsWO+bbKjhlta4aEeOUnYxbGZUo=
-X-Received: by 2002:a6b:8e8a:: with SMTP id q132mr1463006iod.94.1572321910902; 
- Mon, 28 Oct 2019 21:05:10 -0700 (PDT)
-MIME-Version: 1.0
-References: <cover.1571798507.git.thehajime@gmail.com>
- <0b1464dd4904ee2b049fef624895ead3fe6aa555.1571798507.git.thehajime@gmail.com>
- <CAFLxGvzqPzZtUSzymWgnhGnr6qgcDe9ue6Q8ALMS-r_Y+KXVOw@mail.gmail.com>
- <m2a79mx6br.wl-thehajime@gmail.com>
-In-Reply-To: <m2a79mx6br.wl-thehajime@gmail.com>
-From: Lai Jiangshan <jiangshanlai@gmail.com>
-Date: Tue, 29 Oct 2019 12:04:59 +0800
-Message-ID: <CAJhGHyBy4ok+Sg7TyLaaksqEBDanmZgsk6ujRqXU1KFcu+DHZQ@mail.gmail.com>
+ h=x-gm-message-state:date:message-id:from:to:cc:subject:in-reply-to
+ :references:user-agent:mime-version;
+ bh=gGRE+FXfakT/KMCGNr1MxY2FLq94iIC8mxV7jkZn9BE=;
+ b=AU486thS9VBq2V6VpyXVT/EUz6bA+ttpWvP5VnN96ppRNrUts1W0nw77mzKoXL8hl/
+ qzG39d5kh2bDLW66F66v7QC5o00aRGARURLbrkpFedZO81VoYvu5AyE24bqHSraY3kFf
+ 2MshUFmlOhzNAmbZVT3OCf75cbwSDb6Bdnhj0k6nlVbjql6a9kRYxg69noBuaTvJEkjv
+ Iq1DB23lqAipLmbnm2oUHEIkE9Mrn3omeTHlkjLoHpnBvNGoio4y5a77Nft4UIa/z0Jp
+ nds2cABAL936o8s2IJ5rHclIWAxtIdGe0QquQSixcGt1EYAG4u417j2L0JjT9RMYj34Q
+ 7kZA==
+X-Gm-Message-State: APjAAAU/3Kd7xeEeaE/dLj0QvOBJi9gjti8SV4iD9FtuFeMcM6kHbp0B
+ D9K6ff5Lfm6N17rY0e04cUg=
+X-Google-Smtp-Source: APXvYqzTdg/bnD6IPMO60mw9UYFtWidRO3fDefwxzUloeBCca6oOvcDoRIOZDoqX+6eQg7b1NmsBlA==
+X-Received: by 2002:a65:64d4:: with SMTP id t20mr402918pgv.181.1572333214182; 
+ Tue, 29 Oct 2019 00:13:34 -0700 (PDT)
+Received: from earth-mac.local.gmail.com ([202.214.86.179])
+ by smtp.gmail.com with ESMTPSA id 21sm5251349pfa.170.2019.10.29.00.13.29
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Tue, 29 Oct 2019 00:13:33 -0700 (PDT)
+Date: Tue, 29 Oct 2019 16:13:28 +0900
+Message-ID: <m2a79k3tyf.wl-thehajime@gmail.com>
+From: Hajime Tazaki<thehajime@gmail.com>
+To: jiangshanlai@gmail.com
 Subject: Re: [RFC PATCH 03/47] lkl: architecture skeleton for Linux kernel
  library
-To: Hajime Tazaki <thehajime@gmail.com>
+In-Reply-To: <CAJhGHyBy4ok+Sg7TyLaaksqEBDanmZgsk6ujRqXU1KFcu+DHZQ@mail.gmail.com>
+References: <cover.1571798507.git.thehajime@gmail.com>	<0b1464dd4904ee2b049fef624895ead3fe6aa555.1571798507.git.thehajime@gmail.com>	<CAFLxGvzqPzZtUSzymWgnhGnr6qgcDe9ue6Q8ALMS-r_Y+KXVOw@mail.gmail.com>	<m2a79mx6br.wl-thehajime@gmail.com>	<CAJhGHyBy4ok+Sg7TyLaaksqEBDanmZgsk6ujRqXU1KFcu+DHZQ@mail.gmail.com>
+User-Agent: Wanderlust/2.15.9 (Almost Unreal) Emacs/25.3 Mule/6.0
+ (HANACHIRUSATO)
+MIME-Version: 1.0 (generated by SEMI-EPG 1.14.7 - "Harue")
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191028_210514_546103_4310F091 
-X-CRM114-Status: GOOD (  19.09  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191029_001336_047154_D9D6DBDC 
+X-CRM114-Status: GOOD (  10.50  )
+X-Spam-Score: 2.3 (++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (jiangshanlai[at]gmail.com)
+ provider (thehajime[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -84,6 +88,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ 2.5 TO_NO_BRKTS_FROM_MSSP  Multiple header formatting problems
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -106,71 +111,57 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-Hello, Hajime
 
-I can't get how UML&LKL is going to unify even I read
-the cover-letter of the patchset. After quick glance, what I
-understand is that the patchset just puts LKL under
-arch/um/lkl rather than arch/lkl. It is still separated "arch" for me.
+Hello Lai,
 
-Could you put me in more detail of the plan to unify them please?
+On Tue, 29 Oct 2019 13:04:59 +0900,
+Lai Jiangshan wrote:
+> 
+> Hello, Hajime
+> 
+> I can't get how UML&LKL is going to unify even I read
+> the cover-letter of the patchset. After quick glance, what I
+> understand is that the patchset just puts LKL under
+> arch/um/lkl rather than arch/lkl. It is still separated "arch" for me.
+> 
+> Could you put me in more detail of the plan to unify them please?
 
-Thanks
-Lai
+Thanks for the comment.
 
-On Sun, Oct 27, 2019 at 10:36 AM Hajime Tazaki <thehajime@gmail.com> wrote:
->
->
-> # dropping two Cc's since those are not reachable..
->
-> On Sat, 26 Oct 2019 06:40:05 +0900,
-> Richard Weinberger wrote:
-> >
-> > On Wed, Oct 23, 2019 at 6:39 AM Hajime Tazaki <thehajime@gmail.com> wrote:
-> > >
-> > > From: Octavian Purdila <tavi.purdila@gmail.com>
-> > > +LINUX KERNEL LIBRARY
-> > > +M:     Octavian Purdila <octavian.purdila@intel.com>
-> > > +M:     Hajime Tazaki <thehajime@gmail.com>
-> > > +L:     linux-kernel-library@freelists.org
-> > > +S:     Maintained
-> > > +F:     arch/lkl/
-> > > +F:     tools/lkl/
-> > > +
-> >
-> > The arch/lkl path is outdated.
->
-> Ah, should be updated.  We will fix it.
->
-> > So, you and Octavian will maintain LKL?
->
-> Yes.
->
-> > Do you want to be sub maintainers of arch/um/lkl and send pull requests to me
-> > or co-maintain the whole UML ecosystem together with me and Anton?
-> >
-> > I'm perfectly fine with both variants but tend to the latter one since
-> > it is less overhead.
->
-> I was not thinking well enough for the maintenance procedure;
-> I agree that the latter case is better, but for the early
-> stage of this integration, I think starting with the former
-> (send pull-req from LKL to you/Anton) would be nice.
->
-> LKL is now on github and utilizes several useful features
-> (CI test at each pull request, issue tracking, wiki), and if
-> possible I'd also like to migrate those tools, or make them
-> available to UML because this makes easier maintenance for
-> LKL.
->
-> What do you think ?
->
-> > In case you need your PGP keys signed, next week I'll be in Lyon at
-> > OSS, ELCE, ...
->
-> I won't be there, unfortunately..
->
-> -- Hajime
+You're right: current patchset only share Makefile(s)
+between UML and LKL.  This is the first step toward the
+unification in my plan, described in the milestone of the
+cover letter (copy-pasted below).
+
+> Milestone
+> =========
+> (snip)
+> 1. Put LKL code under arch/um (arch/um/lkl), and build it in a
+> separate way from UML.
+> 2. Share common parts of implementation between UML and LKL.
+> 3. Reimplement UML features with LKL API (if we wish)
+
+For the step 2, [PATCH 46/47] and [47/47] are the kind of
+examples for this level of unification (sorry for the very
+dirty code).
+
+For the step 3, I don't have any WIP code nor detailed plan.
+Implementing ptrace-based (or similar) syscall interception
+would be one of the development (I believe there are more).
+
+Offering UML feature-sets, keeping compatibility, while
+benefiting from LKL (e.g., various underlying environment
+support) would be very high-level goal since there are many
+users of UML (various test tool projects, including coming
+Kunit).
+
+
+
+Having similar archs in Linux kernel is not likely to
+happen; that was feedback after RFC email of LKL (in 2015).
+This motivates us to upstream the LKL code into arch/um.
+
+-- Hajime
 
 _______________________________________________
 linux-um mailing list
