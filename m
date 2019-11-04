@@ -2,68 +2,74 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 44A84ED9A3
-	for <lists+linux-um@lfdr.de>; Mon,  4 Nov 2019 08:01:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 390D0EDADA
+	for <lists+linux-um@lfdr.de>; Mon,  4 Nov 2019 09:54:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=0fNDyaETW75CyPtHI1L8rCGNWHKZxi22aAJmucs6114=; b=Fn4lmI7m+UxsQJtrn3jtBid7Tl
-	ySK+CPCwLN7eeebCfILu8EnNmo8b/P8mhT9KJaNF0OlwKf3U5RKhK0DuzW8hS4pHg8NAkg+KeZHBx
-	bkk26ULQTF0maQ7k7dsclLUVfDhVbm6Go4Dh6TQGIqz1K1o0Sr6qoqzgYq6C6aAYMWGxauiBx7lb5
-	7ZahT1V++W5d7qCNi6YVAPQ05k9R65aV4HJFLxhb2ogfHRkEYRwe84yPWzN3KJtYQqH+3HJtgMETQ
-	oDYOUIMtAFgJ+J7s82IwqXipSuGwCGQbgIrSaTXzB4IWQKb+V/8Koi5gtSOcR8qYKBi95RyY8d57T
-	2W5decgQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=SKnrAeSDmcZXfbNrrmyq4f3hLE4ah+oY86cnVg+Zzek=; b=Og46T/lyOBEBkj
+	QTrCJwlgBe+OfcPbmrigjK1+1ruU7fr+ncW0/hM7/5nUaXsShPtx7QWl5T/+tx2Ht1r1j/fVhG0Hy
+	sgH1ZqK4Skf9z2iG6+5cCsht/cVR2d9uuw7g5/KmG1geQ7Kv/R8/TtYteR/ENb/ujSKXHlLq9W8NO
+	HRemiee1JIOerZRtFAQHzWAGJCSSuyVIXqg3xCeg90tP7R31D8hfPGeaxMjiLj8DcABAdu8WpJ/ho
+	HyttArG7Ta5R31Gj8krLbzHUYzyNq8r20PSo0TkYLWsfGaMAUc8WwIawozBKS2lVjUbQNU2fD2Tgu
+	xCKSOhpSLDbYLRWORVfw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRWMQ-0002Co-VH; Mon, 04 Nov 2019 07:01:10 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iRY7Z-0004tc-0K; Mon, 04 Nov 2019 08:53:57 +0000
+Received: from mail-oi1-f195.google.com ([209.85.167.195])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRWK0-0007Lz-Lt; Mon, 04 Nov 2019 06:58:42 +0000
-Received: from aquarius.haifa.ibm.com (nesher1.haifa.il.ibm.com [195.110.40.7])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 60C4722468;
- Mon,  4 Nov 2019 06:58:31 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572850719;
- bh=0lGj0AI/IfAJbVTLRfdK6fD/lMA7GlT+qoua/5oNwys=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Wr+WMJECeH/M1Pn3KdzWLNvJHglih66+/tqZrVLvVIkAOW6resJH3KFuVOfbUwbpP
- 3Ee4i/8/TFA20e/QQnyzLRrGm4sRjhKrakK9B4M9D00SEX3C8nuPZRRAgDo3/DhADp
- pcy3WvSnO0+rQyqTHc/Hb+lkcykYgUuRVFwvTDHU=
-From: Mike Rapoport <rppt@kernel.org>
-To: linux-mm@kvack.org
-Subject: [PATCH v3 13/13] mm: remove __ARCH_HAS_4LEVEL_HACK and
- include/asm-generic/4level-fixup.h
-Date: Mon,  4 Nov 2019 08:56:27 +0200
-Message-Id: <1572850587-20314-14-git-send-email-rppt@kernel.org>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1572850587-20314-1-git-send-email-rppt@kernel.org>
+ id 1iRY7P-0004jR-8B; Mon, 04 Nov 2019 08:53:48 +0000
+Received: by mail-oi1-f195.google.com with SMTP id v138so13405074oif.6;
+ Mon, 04 Nov 2019 00:53:46 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=ftGbwwjNOfRweFmtue9SSD86OxwGEsa99D0pa3CKj2k=;
+ b=JHGcHy8wA/5gdQTEteayCuvxagWDlSOqeN3ageCMABapxYC4WWy78mBJBgB/6VitRu
+ BSCn4WhQqMXELgq6/OYoS1WHxEkiBWL+ZmYVl/o5xNPx40EegLBZj/F40QSUyJeUIiJs
+ fZFw9I/FgNLAypSJZHu85zVmRquTopjiIl8BQ4OU/UsKT8td6K/KC2+1iy5ni/vTODYF
+ LUQAuTsEWVFHZC+XXupk5JaXBp5vMsjxTmar/CRuriwQaGXriUrUGmCH83qjoe58/8zd
+ yXSrXf/iGxNNBN7siRTYEVEZ07epaKXEXNe/pOzV93+E3r6Jk3/wAA9TUpGYXf5+roYA
+ Mupw==
+X-Gm-Message-State: APjAAAUGFbKyiG8qpKha11+gAJAFkaWBuOIVIZvbnXoWvNMlk4NEREA/
+ +TOip75hVSpo2Mr56COxLuQViyKwdGvII5Ke9Yw=
+X-Google-Smtp-Source: APXvYqwHBlxWvX9baD3gMlRXyGYNGxo8XeR6zpTu9ocP235D46KuJQHptAVE+pdBySSjAAujVU5GG1b4JqAjn27tERM=
+X-Received: by 2002:aca:882:: with SMTP id 124mr32125oii.54.1572857625673;
+ Mon, 04 Nov 2019 00:53:45 -0800 (PST)
+MIME-Version: 1.0
 References: <1572850587-20314-1-git-send-email-rppt@kernel.org>
+ <1572850587-20314-6-git-send-email-rppt@kernel.org>
+In-Reply-To: <1572850587-20314-6-git-send-email-rppt@kernel.org>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Mon, 4 Nov 2019 09:53:34 +0100
+Message-ID: <CAMuHMdUG3V7uxzhbetw75vVeobeP0-bQySb3r=0V5XujUF123g@mail.gmail.com>
+Subject: Re: [PATCH v3 05/13] m68k: mm: use pgtable-nopXd instead of
+ 4level-fixup
+To: Mike Rapoport <rppt@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191103_225840_811884_41823306 
-X-CRM114-Status: GOOD (  13.30  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191104_005347_292823_3674C295 
+X-CRM114-Status: GOOD (  16.82  )
+X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.167.195 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (geert.uytterhoeven[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.195 listed in wl.mailspike.net]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,169 +81,134 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>,
- sparclinux@vger.kernel.org, Rolf Eike Beer <eike-kernel@sf-tec.de>,
- Vincent Chen <deanbo422@gmail.com>, Greg Ungerer <gerg@linux-m68k.org>,
- Anton Ivanov <anton.ivanov@cambridgegreys.com>, linux-arch@vger.kernel.org,
- linux-c6x-dev@linux-c6x.org, Richard Weinberger <richard@nod.at>,
- Helge Deller <deller@gmx.de>, Russell King <linux@armlinux.org.uk>,
- Mike Rapoport <rppt@linux.ibm.com>, Geert Uytterhoeven <geert@linux-m68k.org>,
+Cc: "James E.J. Bottomley" <James.Bottomley@hansenpartnership.com>,
+ Linux MM <linux-mm@kvack.org>, sparclinux <sparclinux@vger.kernel.org>,
+ Rolf Eike Beer <eike-kernel@sf-tec.de>, Vincent Chen <deanbo422@gmail.com>,
+ Greg Ungerer <gerg@linux-m68k.org>,
+ Anton Ivanov <anton.ivanov@cambridgegreys.com>,
+ Linux-Arch <linux-arch@vger.kernel.org>, linux-c6x-dev@linux-c6x.org,
+ Richard Weinberger <richard@nod.at>, Helge Deller <deller@gmx.de>,
+ Russell King <linux@armlinux.org.uk>, Mike Rapoport <rppt@linux.ibm.com>,
  Mark Salter <msalter@redhat.com>, Matt Turner <mattst88@gmail.com>,
- Jeff Dike <jdike@addtoit.com>, Sam Creasey <sammy@sammy.net>,
- Arnd Bergmann <arnd@arndb.de>, Vineet Gupta <Vineet.Gupta1@synopsys.com>,
- linux-um@lists.infradead.org, linux-m68k@lists.linux-m68k.org,
+ Vineet Gupta <Vineet.Gupta1@synopsys.com>, Sam Creasey <sammy@sammy.net>,
+ Arnd Bergmann <arnd@arndb.de>, Jeff Dike <jdike@addtoit.com>,
+ linux-um@lists.infradead.org, linux-m68k <linux-m68k@lists.linux-m68k.org>,
  Greentime Hu <green.hu@gmail.com>, "Kirill A. Shutemov" <kirill@shutemov.name>,
- linux-arm-kernel@lists.infradead.org, Michal Simek <monstr@monstr.eu>,
- linux-parisc@vger.kernel.org, linux-kernel@vger.kernel.org,
- "David S. Miller" <davem@davemloft.net>, linux-alpha@vger.kernel.org,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Michal Simek <monstr@monstr.eu>, Parisc List <linux-parisc@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ "David S. Miller" <davem@davemloft.net>, alpha <linux-alpha@vger.kernel.org>,
  Andrew Morton <akpm@linux-foundation.org>,
- Linus Torvalds <torvalds@linux-foundation.org>, Peter Rosin <peda@axentia.se>,
- Mike Rapoport <rppt@kernel.org>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+ Linus Torvalds <torvalds@linux-foundation.org>, Peter Rosin <peda@axentia.se>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-From: Mike Rapoport <rppt@linux.ibm.com>
-
-There are no architectures that use include/asm-generic/4level-fixup.h
-therefore it can be removed along with __ARCH_HAS_4LEVEL_HACK define.
-
-Signed-off-by: Mike Rapoport <rppt@linux.ibm.com>
----
- include/asm-generic/4level-fixup.h | 40 --------------------------------------
- include/asm-generic/tlb.h          |  2 --
- include/linux/mm.h                 | 10 +++++-----
- mm/memory.c                        |  8 --------
- 4 files changed, 5 insertions(+), 55 deletions(-)
- delete mode 100644 include/asm-generic/4level-fixup.h
-
-diff --git a/include/asm-generic/4level-fixup.h b/include/asm-generic/4level-fixup.h
-deleted file mode 100644
-index e3667c9..0000000
---- a/include/asm-generic/4level-fixup.h
-+++ /dev/null
-@@ -1,40 +0,0 @@
--/* SPDX-License-Identifier: GPL-2.0 */
--#ifndef _4LEVEL_FIXUP_H
--#define _4LEVEL_FIXUP_H
--
--#define __ARCH_HAS_4LEVEL_HACK
--#define __PAGETABLE_PUD_FOLDED 1
--
--#define PUD_SHIFT			PGDIR_SHIFT
--#define PUD_SIZE			PGDIR_SIZE
--#define PUD_MASK			PGDIR_MASK
--#define PTRS_PER_PUD			1
--
--#define pud_t				pgd_t
--
--#define pmd_alloc(mm, pud, address) \
--	((unlikely(pgd_none(*(pud))) && __pmd_alloc(mm, pud, address))? \
-- 		NULL: pmd_offset(pud, address))
--
--#define pud_offset(pgd, start)		(pgd)
--#define pud_none(pud)			0
--#define pud_bad(pud)			0
--#define pud_present(pud)		1
--#define pud_ERROR(pud)			do { } while (0)
--#define pud_clear(pud)			pgd_clear(pud)
--#define pud_val(pud)			pgd_val(pud)
--#define pud_populate(mm, pud, pmd)	pgd_populate(mm, pud, pmd)
--#define pud_page(pud)			pgd_page(pud)
--#define pud_page_vaddr(pud)		pgd_page_vaddr(pud)
--
--#undef pud_free_tlb
--#define pud_free_tlb(tlb, x, addr)	do { } while (0)
--#define pud_free(mm, x)			do { } while (0)
--#define __pud_free_tlb(tlb, x, addr)	do { } while (0)
--
--#undef  pud_addr_end
--#define pud_addr_end(addr, end)		(end)
--
--#include <asm-generic/5level-fixup.h>
--
--#endif
-diff --git a/include/asm-generic/tlb.h b/include/asm-generic/tlb.h
-index 04c0644..5e0c2d0 100644
---- a/include/asm-generic/tlb.h
-+++ b/include/asm-generic/tlb.h
-@@ -584,7 +584,6 @@ static inline void tlb_end_vma(struct mmu_gather *tlb, struct vm_area_struct *vm
- 	} while (0)
- #endif
- 
--#ifndef __ARCH_HAS_4LEVEL_HACK
- #ifndef pud_free_tlb
- #define pud_free_tlb(tlb, pudp, address)			\
- 	do {							\
-@@ -594,7 +593,6 @@ static inline void tlb_end_vma(struct mmu_gather *tlb, struct vm_area_struct *vm
- 		__pud_free_tlb(tlb, pudp, address);		\
- 	} while (0)
- #endif
--#endif
- 
- #ifndef __ARCH_HAS_5LEVEL_HACK
- #ifndef p4d_free_tlb
-diff --git a/include/linux/mm.h b/include/linux/mm.h
-index cc29227..477b52a 100644
---- a/include/linux/mm.h
-+++ b/include/linux/mm.h
-@@ -1850,12 +1850,12 @@ static inline void mm_dec_nr_ptes(struct mm_struct *mm) {}
- int __pte_alloc(struct mm_struct *mm, pmd_t *pmd);
- int __pte_alloc_kernel(pmd_t *pmd);
- 
-+#if defined(CONFIG_MMU)
-+
- /*
-- * The following ifdef needed to get the 4level-fixup.h header to work.
-- * Remove it when 4level-fixup.h has been removed.
-+ * The following ifdef needed to get the 5level-fixup.h header to work.
-+ * Remove it when 5level-fixup.h has been removed.
-  */
--#if defined(CONFIG_MMU) && !defined(__ARCH_HAS_4LEVEL_HACK)
--
- #ifndef __ARCH_HAS_5LEVEL_HACK
- static inline p4d_t *p4d_alloc(struct mm_struct *mm, pgd_t *pgd,
- 		unsigned long address)
-@@ -1877,7 +1877,7 @@ static inline pmd_t *pmd_alloc(struct mm_struct *mm, pud_t *pud, unsigned long a
- 	return (unlikely(pud_none(*pud)) && __pmd_alloc(mm, pud, address))?
- 		NULL: pmd_offset(pud, address);
- }
--#endif /* CONFIG_MMU && !__ARCH_HAS_4LEVEL_HACK */
-+#endif /* CONFIG_MMU */
- 
- #if USE_SPLIT_PTE_PTLOCKS
- #if ALLOC_SPLIT_PTLOCKS
-diff --git a/mm/memory.c b/mm/memory.c
-index b1ca51a..50300f0 100644
---- a/mm/memory.c
-+++ b/mm/memory.c
-@@ -4095,19 +4095,11 @@ int __pmd_alloc(struct mm_struct *mm, pud_t *pud, unsigned long address)
- 	smp_wmb(); /* See comment in __pte_alloc */
- 
- 	ptl = pud_lock(mm, pud);
--#ifndef __ARCH_HAS_4LEVEL_HACK
- 	if (!pud_present(*pud)) {
- 		mm_inc_nr_pmds(mm);
- 		pud_populate(mm, pud, new);
- 	} else	/* Another has populated it */
- 		pmd_free(mm, new);
--#else
--	if (!pgd_present(*pud)) {
--		mm_inc_nr_pmds(mm);
--		pgd_populate(mm, pud, new);
--	} else /* Another has populated it */
--		pmd_free(mm, new);
--#endif /* __ARCH_HAS_4LEVEL_HACK */
- 	spin_unlock(ptl);
- 	return 0;
- }
--- 
-2.7.4
-
-
-_______________________________________________
-linux-um mailing list
-linux-um@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-um
+SGkgTWlrZSwKCk9uIE1vbiwgTm92IDQsIDIwMTkgYXQgNzo1NyBBTSBNaWtlIFJhcG9wb3J0IDxy
+cHB0QGtlcm5lbC5vcmc+IHdyb3RlOgo+IEZyb206IE1pa2UgUmFwb3BvcnQgPHJwcHRAbGludXgu
+aWJtLmNvbT4KPiBtNjhrIGhhcyB0d28gb3IgdGhyZWUgbGV2ZWxzIG9mIHBhZ2UgdGFibGVzIGFu
+ZCBjYW4gdXNlIGFwcHJvcHJpYXRlCj4gcGd0YWJsZS1ub3BYZCBhbmQgZm9sZGluZyBvZiB0aGUg
+dXBwZXIgbGF5ZXJzLgo+Cj4gUmVwbGFjZSB1c2FnZSBvZiBpbmNsdWRlL2FzbS1nZW5lcmljLzRs
+ZXZlbC1maXh1cC5oIGFuZCBleHBsaWNpdAo+IGRlZmluaXRpb25zIG9mIF9fUEFHRVRBQkxFX1B4
+RF9GT0xERUQgaW4gbTY4ayB3aXRoCj4gaW5jbHVkZS9hc20tZ2VuZXJpYy9wZ3RhYmxlLW5vcG1k
+LmggZm9yIHR3by1sZXZlbCBjb25maWd1cmF0aW9ucyBhbmQgd2l0aAo+IGluY2x1ZGUvYXNtLWdl
+bmVyaWMvcGd0YWJsZS1ub3B1ZC5oIGZvciB0aHJlZS1sZWx2ZSBjb25maWd1cmF0aW9ucyBhbmQK
+PiBhZGp1c3QgcGFnZSB0YWJsZSBtYW5pcHVsYXRpb24gbWFjcm9zIGFuZCBmdW5jdGlvbnMgYWNj
+b3JkaW5nbHkuCj4KPiBTaWduZWQtb2ZmLWJ5OiBNaWtlIFJhcG9wb3J0IDxycHB0QGxpbnV4Lmli
+bS5jb20+Cj4gQWNrZWQtYnk6IEdyZWcgVW5nZXJlciA8Z2VyZ0BsaW51eC1tNjhrLm9yZz4KClRo
+YW5rcyBmb3IgeW91ciBwYXRjaCEKClRoZSBidWlsZCBlcnJvciByZXBvcnRlZCBmb3IgdjEgYnkg
+a2J1aWxkIHRlc3Qgcm9ib3Qgd2hlbiBidWlsZGluZyBmb3IKc3VuM3ggaXMgc3RpbGwgdGhlcmUg
+KG02OGsgZGVmY29uZmlnIG9yIHN1bjN4X2RlZmNvbmZpZyk6CgogICAgYXJjaC9tNjhrL3N1bjN4
+L2R2bWEuYzogSW4gZnVuY3Rpb24g4oCYZHZtYV9tYXBfY3B14oCZOgogICAgYXJjaC9tNjhrL3N1
+bjN4L2R2bWEuYzo5ODozMzogZXJyb3I6IHBhc3NpbmcgYXJndW1lbnQgMiBvZgrigJhwbWRfYWxs
+b2PigJkgZnJvbSBpbmNvbXBhdGlibGUgcG9pbnRlciB0eXBlClstV2Vycm9yPWluY29tcGF0aWJs
+ZS1wb2ludGVyLXR5cGVzXQogICAgICAgaWYoKHBtZCA9IHBtZF9hbGxvYygmaW5pdF9tbSwgcGdk
+LCB2YWRkcikpID09IE5VTEwpIHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+IF5+fgogICAgSW4gZmlsZSBpbmNsdWRlZCBmcm9tIGFyY2gvbTY4ay9zdW4zeC9kdm1hLmM6MTc6
+CiAgICBpbmNsdWRlL2xpbnV4L21tLmg6MTg3NTo2MTogbm90ZTogZXhwZWN0ZWQg4oCYcHVkX3Qg
+KuKAmSB7YWthIOKAmHN0cnVjdAo8YW5vbnltb3VzPiAq4oCZfSBidXQgYXJndW1lbnQgaXMgb2Yg
+dHlwZSDigJhwZ2RfdCAq4oCZIHtha2Eg4oCYc3RydWN0Cjxhbm9ueW1vdXM+ICrigJl9CiAgICAg
+c3RhdGljIGlubGluZSBwbWRfdCAqcG1kX2FsbG9jKHN0cnVjdCBtbV9zdHJ1Y3QgKm1tLCBwdWRf
+dCAqcHVkLAp1bnNpZ25lZCBsb25nIGFkZHJlc3MpCiAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB+fn5+fn5+Xn5+CgpUaGlzIGluZGVlZCBi
+b290cyBmaW5lIG9uIEFSQW55TSwgd2hpY2ggZW11bGF0ZXMgb24gNjgwNDAuCkl0IHdvdWxkIGJl
+IGdvb2QgdG8gaGF2ZSBzb21lIGJvb3QgdGVzdGluZyBvbiAnMDIwLzAzMCwgdG9vLgoKPiAtLS0g
+YS9hcmNoL202OGsvbW0va21hcC5jCj4gKysrIGIvYXJjaC9tNjhrL21tL2ttYXAuYwoKPiBAQCAt
+MTk2LDE3ICsxOTgsMjEgQEAgdm9pZCBfX2lvbWVtICpfX2lvcmVtYXAodW5zaWduZWQgbG9uZyBw
+aHlzYWRkciwgdW5zaWduZWQgbG9uZyBzaXplLCBpbnQgY2FjaGVmbGEKPiAgICAgICAgICAgICAg
+ICAgICAgICAgICBwcmludGsgKCJcbnBhPSUjbHggdmE9JSNseCAiLCBwaHlzYWRkciwgdmlydGFk
+ZHIpOwo+ICAjZW5kaWYKPiAgICAgICAgICAgICAgICAgcGdkX2RpciA9IHBnZF9vZmZzZXRfayh2
+aXJ0YWRkcik7Cj4gLSAgICAgICAgICAgICAgIHBtZF9kaXIgPSBwbWRfYWxsb2MoJmluaXRfbW0s
+IHBnZF9kaXIsIHZpcnRhZGRyKTsKPiArICAgICAgICAgICAgICAgcDRkX2RpciA9IHA0ZF9vZmZz
+ZXQocGdkX2RpciwgdmlydGFkZHIpOwo+ICsgICAgICAgICAgICAgICBwdWRfZGlyID0gcHVkX29m
+ZnNldChwNGRfZGlyLCB2aXJ0YWRkcik7Cj4gKyAgICAgICAgICAgICAgIHBtZF9kaXIgPSBwbWRf
+YWxsb2MoJmluaXRfbW0sIHB1ZF9kaXIsIHZpcnRhZGRyKTsKPiAgICAgICAgICAgICAgICAgaWYg
+KCFwbWRfZGlyKSB7Cj4gICAgICAgICAgICAgICAgICAgICAgICAgcHJpbnRrKCJpb3JlbWFwOiBu
+byBtZW0gZm9yIHBtZF9kaXJcbiIpOwo+ICAgICAgICAgICAgICAgICAgICAgICAgIHJldHVybiBO
+VUxMOwo+ICAgICAgICAgICAgICAgICB9Cj4KPiAgICAgICAgICAgICAgICAgaWYgKENQVV9JU18w
+MjBfT1JfMDMwKSB7Cj4gKyNpZiBDT05GSUdfUEdUQUJMRV9MRVZFTFMgPT0gMwoKVGhpcyBjaGVj
+ayBwdXp6bGVkIG1lIGEgYml0OiB3aGVuIHdlIGdldCBoZXJlLCBDT05GSUdfUEdUQUJMRV9MRVZF
+TFMgaXMKYWx3YXlzIHRydWUuCkhvd2V2ZXIsIHRoZSBjaGVjayBjYW5ub3QgYmUgcmVtb3ZlZCwg
+YXMgdGhlIGNvZGUgaXQgcHJvdGVjdHMgZmFpbHMgdG8gY29tcGlsZQp3aGVuIGJ1aWxkaW5nIGZv
+ciBDb2xkZmlyZS4KClBlcmhhcHMgdGhpcyBjYW4gYmUgbWFkZSBtb3JlIGNsZWFyIGJ5IHJldmVy
+dGluZyB0aGUgb3JkZXI/CkkuZS4KCiAgICAjaWYgQ09ORklHX1BHVEFCTEVfTEVWRUxTID09IDMK
+ICAgICAgICAgICAgaWYgKENQVV9JU18wMjBfT1JfMDMwKSB7CiAgICAgICAgICAgICAgICAgICAg
+Li4uCiAgICAgICAgICAgIH0gZWxzZQogICAgI2VuZGlmCiAgICAgICAgICAgIHsKCk9yIGlzIHRo
+ZXJlIHNvbWUgYmV0dGVyIHdheT8KCj4gICAgICAgICAgICAgICAgICAgICAgICAgcG1kX2Rpci0+
+cG1kWyh2aXJ0YWRkci9QVFJUUkVFU0laRSkgJiAxNV0gPSBwaHlzYWRkcjsKPiAgICAgICAgICAg
+ICAgICAgICAgICAgICBwaHlzYWRkciArPSBQVFJUUkVFU0laRTsKPiAgICAgICAgICAgICAgICAg
+ICAgICAgICB2aXJ0YWRkciArPSBQVFJUUkVFU0laRTsKPiAgICAgICAgICAgICAgICAgICAgICAg
+ICBzaXplIC09IFBUUlRSRUVTSVpFOwo+ICsjZW5kaWYKPiAgICAgICAgICAgICAgICAgfSBlbHNl
+IHsKPiAgICAgICAgICAgICAgICAgICAgICAgICBwdGVfZGlyID0gcHRlX2FsbG9jX2tlcm5lbChw
+bWRfZGlyLCB2aXJ0YWRkcik7Cj4gICAgICAgICAgICAgICAgICAgICAgICAgaWYgKCFwdGVfZGly
+KSB7Cj4gQEAgLTI1OCwxOSArMjY0LDI0IEBAIHZvaWQgX19pb3VubWFwKHZvaWQgKmFkZHIsIHVu
+c2lnbmVkIGxvbmcgc2l6ZSkKPiAgewo+ICAgICAgICAgdW5zaWduZWQgbG9uZyB2aXJ0YWRkciA9
+ICh1bnNpZ25lZCBsb25nKWFkZHI7Cj4gICAgICAgICBwZ2RfdCAqcGdkX2RpcjsKPiArICAgICAg
+IHA0ZF90ICpwNGRfZGlyOwo+ICsgICAgICAgcHVkX3QgKnB1ZF9kaXI7Cj4gICAgICAgICBwbWRf
+dCAqcG1kX2RpcjsKPiAgICAgICAgIHB0ZV90ICpwdGVfZGlyOwo+Cj4gICAgICAgICB3aGlsZSAo
+KGxvbmcpc2l6ZSA+IDApIHsKPiAgICAgICAgICAgICAgICAgcGdkX2RpciA9IHBnZF9vZmZzZXRf
+ayh2aXJ0YWRkcik7Cj4gLSAgICAgICAgICAgICAgIGlmIChwZ2RfYmFkKCpwZ2RfZGlyKSkgewo+
+IC0gICAgICAgICAgICAgICAgICAgICAgIHByaW50aygiaW91bm1hcDogYmFkIHBnZCglMDhseClc
+biIsIHBnZF92YWwoKnBnZF9kaXIpKTsKPiAtICAgICAgICAgICAgICAgICAgICAgICBwZ2RfY2xl
+YXIocGdkX2Rpcik7Cj4gKyAgICAgICAgICAgICAgIHA0ZF9kaXIgPSBwNGRfb2Zmc2V0KHBnZF9k
+aXIsIHZpcnRhZGRyKTsKPiArICAgICAgICAgICAgICAgcHVkX2RpciA9IHB1ZF9vZmZzZXQocDRk
+X2RpciwgdmlydGFkZHIpOwo+ICsgICAgICAgICAgICAgICBpZiAocHVkX2JhZCgqcHVkX2Rpcikp
+IHsKPiArICAgICAgICAgICAgICAgICAgICAgICBwcmludGsoImlvdW5tYXA6IGJhZCBwZ2QoJTA4
+bHgpXG4iLCBwdWRfdmFsKCpwdWRfZGlyKSk7Cj4gKyAgICAgICAgICAgICAgICAgICAgICAgcHVk
+X2NsZWFyKHB1ZF9kaXIpOwo+ICAgICAgICAgICAgICAgICAgICAgICAgIHJldHVybjsKPiAgICAg
+ICAgICAgICAgICAgfQo+IC0gICAgICAgICAgICAgICBwbWRfZGlyID0gcG1kX29mZnNldChwZ2Rf
+ZGlyLCB2aXJ0YWRkcik7Cj4gKyAgICAgICAgICAgICAgIHBtZF9kaXIgPSBwbWRfb2Zmc2V0KHB1
+ZF9kaXIsIHZpcnRhZGRyKTsKPgo+ICAgICAgICAgICAgICAgICBpZiAoQ1BVX0lTXzAyMF9PUl8w
+MzApIHsKPiArI2lmIENPTkZJR19QR1RBQkxFX0xFVkVMUyA9PSAzCgpMaWtld2lzZS4KCj4gICAg
+ICAgICAgICAgICAgICAgICAgICAgaW50IHBtZF9vZmYgPSAodmlydGFkZHIvUFRSVFJFRVNJWkUp
+ICYgMTU7Cj4gICAgICAgICAgICAgICAgICAgICAgICAgaW50IHBtZF90eXBlID0gcG1kX2Rpci0+
+cG1kW3BtZF9vZmZdICYgX0RFU0NUWVBFX01BU0s7Cj4KCj4gQEAgLTM0MSwxNCArMzU1LDE3IEBA
+IHZvaWQga2VybmVsX3NldF9jYWNoZW1vZGUodm9pZCAqYWRkciwgdW5zaWduZWQgbG9uZyBzaXpl
+LCBpbnQgY21vZGUpCj4KPiAgICAgICAgIHdoaWxlICgobG9uZylzaXplID4gMCkgewo+ICAgICAg
+ICAgICAgICAgICBwZ2RfZGlyID0gcGdkX29mZnNldF9rKHZpcnRhZGRyKTsKPiAtICAgICAgICAg
+ICAgICAgaWYgKHBnZF9iYWQoKnBnZF9kaXIpKSB7Cj4gLSAgICAgICAgICAgICAgICAgICAgICAg
+cHJpbnRrKCJpb2NhY2hlbW9kZTogYmFkIHBnZCglMDhseClcbiIsIHBnZF92YWwoKnBnZF9kaXIp
+KTsKPiAtICAgICAgICAgICAgICAgICAgICAgICBwZ2RfY2xlYXIocGdkX2Rpcik7Cj4gKyAgICAg
+ICAgICAgICAgIHA0ZF9kaXIgPSBwNGRfb2Zmc2V0KHBnZF9kaXIsIHZpcnRhZGRyKTsKPiArICAg
+ICAgICAgICAgICAgcHVkX2RpciA9IHB1ZF9vZmZzZXQocDRkX2RpciwgdmlydGFkZHIpOwo+ICsg
+ICAgICAgICAgICAgICBpZiAocHVkX2JhZCgqcHVkX2RpcikpIHsKPiArICAgICAgICAgICAgICAg
+ICAgICAgICBwcmludGsoImlvY2FjaGVtb2RlOiBiYWQgcHVkKCUwOGx4KVxuIiwgcHVkX3ZhbCgq
+cHVkX2RpcikpOwo+ICsgICAgICAgICAgICAgICAgICAgICAgIHB1ZF9jbGVhcihwdWRfZGlyKTsK
+PiAgICAgICAgICAgICAgICAgICAgICAgICByZXR1cm47Cj4gICAgICAgICAgICAgICAgIH0KPiAt
+ICAgICAgICAgICAgICAgcG1kX2RpciA9IHBtZF9vZmZzZXQocGdkX2RpciwgdmlydGFkZHIpOwo+
+ICsgICAgICAgICAgICAgICBwbWRfZGlyID0gcG1kX29mZnNldChwdWRfZGlyLCB2aXJ0YWRkcik7
+Cj4KPiAgICAgICAgICAgICAgICAgaWYgKENQVV9JU18wMjBfT1JfMDMwKSB7Cj4gKyNpZiBDT05G
+SUdfUEdUQUJMRV9MRVZFTFMgPT0gMwoKTGlrZXdpc2UKCj4gICAgICAgICAgICAgICAgICAgICAg
+ICAgaW50IHBtZF9vZmYgPSAodmlydGFkZHIvUFRSVFJFRVNJWkUpICYgMTU7Cj4KPiAgICAgICAg
+ICAgICAgICAgICAgICAgICBpZiAoKHBtZF9kaXItPnBtZFtwbWRfb2ZmXSAmIF9ERVNDVFlQRV9N
+QVNLKSA9PSBfUEFHRV9QUkVTRU5UKSB7CgpHcntvZXRqZSxlZXRpbmd9cywKCiAgICAgICAgICAg
+ICAgICAgICAgICAgIEdlZXJ0CgotLSAKR2VlcnQgVXl0dGVyaG9ldmVuIC0tIFRoZXJlJ3MgbG90
+cyBvZiBMaW51eCBiZXlvbmQgaWEzMiAtLSBnZWVydEBsaW51eC1tNjhrLm9yZwoKSW4gcGVyc29u
+YWwgY29udmVyc2F0aW9ucyB3aXRoIHRlY2huaWNhbCBwZW9wbGUsIEkgY2FsbCBteXNlbGYgYSBo
+YWNrZXIuIEJ1dAp3aGVuIEknbSB0YWxraW5nIHRvIGpvdXJuYWxpc3RzIEkganVzdCBzYXkgInBy
+b2dyYW1tZXIiIG9yIHNvbWV0aGluZyBsaWtlIHRoYXQuCiAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgLS0gTGludXMgVG9ydmFsZHMKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fCmxpbnV4LXVtIG1haWxpbmcgbGlzdApsaW51eC11bUBsaXN0cy5p
+bmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8v
+bGludXgtdW0K
