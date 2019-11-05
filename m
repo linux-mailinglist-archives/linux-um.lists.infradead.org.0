@@ -2,54 +2,47 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 17F43EDC0B
-	for <lists+linux-um@lfdr.de>; Mon,  4 Nov 2019 11:02:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 77117EF600
+	for <lists+linux-um@lfdr.de>; Tue,  5 Nov 2019 08:16:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AKCqa5IrDGDbfUOJPJFKp4eM/fK1pywhLCLpcjAa7Ss=; b=hzCn1NjBsEAJU8
-	VFQp7yVVBk01Zf8BXZrHEc/X1tO5s6Zz0Rfn2UDpi2jVmTnstKkkMva4n+axfHnT1lqxcsOP8FAbH
-	dl5XHHcZaNRavsyYSwDqyWoLquFl6oshvCmdFDjdJlZ9FHR5B2EueSOGdy0B5WO2Q3XoeNR+6+0LW
-	1MbB3KmBxVOxx/aJG3tQC5602RP/oJfb/DfQM9mvaS00bf7+sTIUpx1mYBuKOhg6q8KW0EyvLsoaO
-	LNoVCz094YeSFDY9a0V0S+/DESVeieWcwm6y5OEfAYDH8zAt/dSN/J+z4HJlL2zAsTq0IaPmgjJSw
-	URH2Wf7BewylgDY8bJPg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=islvYBMX7u/yZRvDrGkPeMymrxrrnwB7COMLQ+PGjmY=; b=sMJ
+	HIijLw27zjDb2pFA5PU78uMDvG8DxESvWp2Co136OMgNnby4uFwUzM6PpllHPQMz9luOk3kqJ9i8z
+	UqEmHCQ78pdO3xBxJHp77Kn4SqUvRR6qW3XwtFd2Oy0G+sT0F8WXxa1zlk1AA4REs2aHKFZ/PKq9I
+	4xI8DVka/Ty4vnMKuDPaFFx1uj59jwwY9+A1n/C8pcc/ZMzpTzJm3S48/zZ2e3FSZ2LL9/hvdZKGs
+	PEl4r25yIG16GBLign6ZpltJ6QrzO21umzYdDddpvDkK/JZpaHoY7U92bh+HJsLoItW0vlkO94zFU
+	7wpUa2mOZj1w7vyPAwfOI1XClWPXsEg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRZC7-00088x-3H; Mon, 04 Nov 2019 10:02:43 +0000
+	id 1iRt4U-0005T8-45; Tue, 05 Nov 2019 07:16:10 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRZBy-00081u-Vu; Mon, 04 Nov 2019 10:02:37 +0000
-Received: from rapoport-lnx (nesher1.haifa.il.ibm.com [195.110.40.7])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ id 1iRt4D-0005I0-5c; Tue, 05 Nov 2019 07:15:54 +0000
+Received: from aquarius.haifa.ibm.com (nesher1.haifa.il.ibm.com [195.110.40.7])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 3768B217F4;
- Mon,  4 Nov 2019 10:02:25 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 376E820663;
+ Tue,  5 Nov 2019 07:15:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1572861754;
- bh=RwuWoZThXjDNqHvn7aTTzoFOSaLFxJpu4JuE9FFAq2g=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=ZQXJDyCwPvvErBhc/JPFvqf0ahcZeThDhCNKls9A5hiFMXg7/bxxaR+FRMEZqomQo
- 7UkvkxzVQJ8UmcmpblINg/P6vMg4z3dq8+ii2/Ci/olfoMvg0slJoe+lmMsP+7zPv5
- 4p/WigolfFBvLYahqoidIrM5ZrPlGWpuHfVEwAZI=
-Date: Mon, 4 Nov 2019 12:02:22 +0200
+ s=default; t=1572938149;
+ bh=kjNCQHuIO20IAKAWjmpzSoXh0rbx0a5UW2oa2LBkQmM=;
+ h=From:To:Cc:Subject:Date:From;
+ b=e8CnLOFFAk03scBwXT2glhNQqZljnzKpdDdV9ssLH4vgZwUfT7sZlsQa0jZMc56FG
+ hU/h/q0Zcr6pcZ40FngsJHQtvgJijqR5HEkxJc+40V8Vuj3up2Q03COp7V+pPOallg
+ fILpyL0bn+D110+yGHv3uHDLybDa4PupJWXc/fN8=
 From: Mike Rapoport <rppt@kernel.org>
-To: Arnd Bergmann <arnd@arndb.de>
-Subject: Re: [PATCH v3 13/13] mm: remove __ARCH_HAS_4LEVEL_HACK and
- include/asm-generic/4level-fixup.h
-Message-ID: <20191104100221.GC23288@rapoport-lnx>
-References: <1572850587-20314-1-git-send-email-rppt@kernel.org>
- <1572850587-20314-14-git-send-email-rppt@kernel.org>
- <CAK8P3a3e7oG5NMPbhgQOoKvB0Z5ui0iAHHFqyAxy87Nd903Vmw@mail.gmail.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAK8P3a3e7oG5NMPbhgQOoKvB0Z5ui0iAHHFqyAxy87Nd903Vmw@mail.gmail.com>
-User-Agent: Mutt/1.5.24 (2015-08-30)
+To: linux-mm@kvack.org
+Subject: [PATCH v4 00/13] mm: remove __ARCH_HAS_4LEVEL_HACK
+Date: Tue,  5 Nov 2019 09:15:22 +0200
+Message-Id: <1572938135-31886-1-git-send-email-rppt@kernel.org>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_020235_612308_9189823C 
-X-CRM114-Status: GOOD (  14.33  )
+X-CRM114-CacheID: sfid-20191104_231553_257575_5975C923 
+X-CRM114-Status: GOOD (  13.42  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -78,65 +71,154 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: "James E.J. Bottomley" <James.Bottomley@hansenpartnership.com>,
- Linux-MM <linux-mm@kvack.org>, sparclinux <sparclinux@vger.kernel.org>,
- Rolf Eike Beer <eike-kernel@sf-tec.de>, Vincent Chen <deanbo422@gmail.com>,
- Greg Ungerer <gerg@linux-m68k.org>,
- Anton Ivanov <anton.ivanov@cambridgegreys.com>,
- linux-arch <linux-arch@vger.kernel.org>, linux-c6x-dev@linux-c6x.org,
- Richard Weinberger <richard@nod.at>, Helge Deller <deller@gmx.de>,
- Russell King <linux@armlinux.org.uk>, Mike Rapoport <rppt@linux.ibm.com>,
- Geert Uytterhoeven <geert@linux-m68k.org>, Mark Salter <msalter@redhat.com>,
- Matt Turner <mattst88@gmail.com>, Jeff Dike <jdike@addtoit.com>,
- Sam Creasey <sammy@sammy.net>, Vineet Gupta <Vineet.Gupta1@synopsys.com>,
- linux-um@lists.infradead.org, linux-m68k <linux-m68k@lists.linux-m68k.org>,
+Cc: "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>,
+ sparclinux@vger.kernel.org, Rolf Eike Beer <eike-kernel@sf-tec.de>,
+ Vincent Chen <deanbo422@gmail.com>, Greg Ungerer <gerg@linux-m68k.org>,
+ Anton Ivanov <anton.ivanov@cambridgegreys.com>, linux-arch@vger.kernel.org,
+ linux-c6x-dev@linux-c6x.org, Richard Weinberger <richard@nod.at>,
+ Helge Deller <deller@gmx.de>, Russell King <linux@armlinux.org.uk>,
+ Mike Rapoport <rppt@linux.ibm.com>, Geert Uytterhoeven <geert@linux-m68k.org>,
+ Mark Salter <msalter@redhat.com>, Matt Turner <mattst88@gmail.com>,
+ Jeff Dike <jdike@addtoit.com>, Sam Creasey <sammy@sammy.net>,
+ Arnd Bergmann <arnd@arndb.de>, Vineet Gupta <Vineet.Gupta1@synopsys.com>,
+ linux-um@lists.infradead.org, linux-m68k@lists.linux-m68k.org,
  Greentime Hu <green.hu@gmail.com>, "Kirill A. Shutemov" <kirill@shutemov.name>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Michal Simek <monstr@monstr.eu>, Parisc List <linux-parisc@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "David S. Miller" <davem@davemloft.net>, alpha <linux-alpha@vger.kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Michal Simek <monstr@monstr.eu>,
+ linux-parisc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ "David S. Miller" <davem@davemloft.net>, linux-alpha@vger.kernel.org,
  Andrew Morton <akpm@linux-foundation.org>,
- Linus Torvalds <torvalds@linux-foundation.org>, Peter Rosin <peda@axentia.se>
+ Linus Torvalds <torvalds@linux-foundation.org>, Peter Rosin <peda@axentia.se>,
+ Mike Rapoport <rppt@kernel.org>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Mon, Nov 04, 2019 at 10:11:51AM +0100, Arnd Bergmann wrote:
-> On Mon, Nov 4, 2019 at 7:58 AM Mike Rapoport <rppt@kernel.org> wrote:
-> >
-> > From: Mike Rapoport <rppt@linux.ibm.com>
-> >
-> > There are no architectures that use include/asm-generic/4level-fixup.h
-> > therefore it can be removed along with __ARCH_HAS_4LEVEL_HACK define.
-> >
-> > Signed-off-by: Mike Rapoport <rppt@linux.ibm.com>
-> 
-> For asm-generic:
-> 
-> Acked-by: Arnd Bergmann <arnd@arndb.de>
-> 
-> Have you discussed how the series should get merged? I assume an initial
-> set of patches can just go through architecture maintainer trees, but
-> whatever patches don't get picked up that way would go through either
-> Andrew's -mm tree (for memory management) or my asm-generic tree
-> (for cross-architecture cleanups).
+From: Mike Rapoport <rppt@linux.ibm.com>
 
-I thought that the entire set could go via -mm or asm-generic, but if
-architecture maintainers would prefer to pick relevant patches to the arch
-trees, I'll resend the rest afterwards.
- 
-> Since there is still at least one regression, I expect not to do anything
-> for now. Please let me know when/if you expect me to merge the
-> remaining patches.
+Hi,
 
-Sure, thanks!
+These patches convert several architectures to use page table folding and
+remove __ARCH_HAS_4LEVEL_HACK along with include/asm-generic/4level-fixup.h.
 
->       Arnd
+For the nommu configurations the folding is already implemented by the
+generic code so the only change was to use the appropriate header file.
+
+As for the rest, the changes are mostly about mechanical replacement of
+pgd accessors with pud/pmd ones and the addition of higher levels to page
+table traversals.
+
+With Vineet's patches from "elide extraneous generated code for folded
+p4d/pud/pmd" series [1] there is a small shrink of the kernel size of about
+-0.01% for the defconfig builds. 
+
+The set is boot-tested on UML, qemu-{alpha,sparc} and aranym.
+
+v4 changes:
+* m68k: fix sun3x_defconfig build and reorder ifdefs as per Geert's
+  suggestion
+
+v3 changes:
+* alpha: fix changelog to use pgtable-nopud.h rather than pgtable-nop4d.h
+* um: remove dead-code that was intended as provisioning for 4-level page
+  tables
+
+v2 changes:
+* m68k: fixed ifdefs around pmd_t defintion to work with nommu
+* parisc: added conversion of hugetlb (thanks, Helge!); lexical fixups in
+  comments and changelog
+* collected acks
+
+[1] https://lore.kernel.org/lkml/20191016162400.14796-1-vgupta@synopsys.com
+
+Helge Deller (1):
+  parisc/hugetlb: use pgtable-nopXd instead of 4level-fixup
+
+Mike Rapoport (12):
+  alpha: use pgtable-nopud instead of 4level-fixup
+  arm: nommu: use pgtable-nopud instead of 4level-fixup
+  c6x: use pgtable-nopud instead of 4level-fixup
+  m68k: nommu: use pgtable-nopud instead of 4level-fixup
+  m68k: mm: use pgtable-nopXd instead of 4level-fixup
+  microblaze: use pgtable-nopmd instead of 4level-fixup
+  nds32: use pgtable-nopmd instead of 4level-fixup
+  parisc: use pgtable-nopXd instead of 4level-fixup
+  sparc32: use pgtable-nopud instead of 4level-fixup
+  um: remove unused pxx_offset_proc() and addr_pte() functions
+  um: add support for folded p4d page tables
+  mm: remove __ARCH_HAS_4LEVEL_HACK and include/asm-generic/4level-fixup.h
+
+ arch/alpha/include/asm/mmzone.h          |  1 -
+ arch/alpha/include/asm/pgalloc.h         |  4 +-
+ arch/alpha/include/asm/pgtable.h         | 24 ++++-----
+ arch/alpha/mm/init.c                     | 12 +++--
+ arch/arm/include/asm/pgtable.h           |  2 +-
+ arch/c6x/include/asm/pgtable.h           |  2 +-
+ arch/m68k/include/asm/mcf_pgalloc.h      |  7 ---
+ arch/m68k/include/asm/mcf_pgtable.h      | 28 ++++-------
+ arch/m68k/include/asm/mmu_context.h      | 12 ++++-
+ arch/m68k/include/asm/motorola_pgalloc.h |  4 +-
+ arch/m68k/include/asm/motorola_pgtable.h | 32 +++++++-----
+ arch/m68k/include/asm/page.h             |  9 ++--
+ arch/m68k/include/asm/pgtable_mm.h       | 11 +++--
+ arch/m68k/include/asm/pgtable_no.h       |  2 +-
+ arch/m68k/include/asm/sun3_pgalloc.h     |  5 --
+ arch/m68k/include/asm/sun3_pgtable.h     | 18 -------
+ arch/m68k/kernel/sys_m68k.c              | 10 +++-
+ arch/m68k/mm/init.c                      |  6 ++-
+ arch/m68k/mm/kmap.c                      | 39 +++++++++++----
+ arch/m68k/mm/mcfmmu.c                    | 16 +++++-
+ arch/m68k/mm/motorola.c                  | 17 ++++---
+ arch/m68k/sun3x/dvma.c                   |  7 ++-
+ arch/microblaze/include/asm/page.h       |  3 --
+ arch/microblaze/include/asm/pgalloc.h    | 16 ------
+ arch/microblaze/include/asm/pgtable.h    | 32 +-----------
+ arch/microblaze/kernel/signal.c          | 10 ++--
+ arch/microblaze/mm/init.c                |  7 ++-
+ arch/microblaze/mm/pgtable.c             | 13 ++++-
+ arch/nds32/include/asm/page.h            |  3 --
+ arch/nds32/include/asm/pgalloc.h         |  3 --
+ arch/nds32/include/asm/pgtable.h         | 12 +----
+ arch/nds32/include/asm/tlb.h             |  1 -
+ arch/nds32/kernel/pm.c                   |  4 +-
+ arch/nds32/mm/fault.c                    | 16 ++++--
+ arch/nds32/mm/init.c                     | 11 +++--
+ arch/nds32/mm/mm-nds32.c                 |  6 ++-
+ arch/nds32/mm/proc.c                     | 26 ++++++----
+ arch/parisc/include/asm/page.h           | 30 ++++++-----
+ arch/parisc/include/asm/pgalloc.h        | 41 ++++++---------
+ arch/parisc/include/asm/pgtable.h        | 52 ++++++++++---------
+ arch/parisc/include/asm/tlb.h            |  2 +
+ arch/parisc/kernel/cache.c               | 13 +++--
+ arch/parisc/kernel/pci-dma.c             |  9 +++-
+ arch/parisc/mm/fixmap.c                  | 10 ++--
+ arch/parisc/mm/hugetlbpage.c             | 18 ++++---
+ arch/sparc/include/asm/pgalloc_32.h      |  6 +--
+ arch/sparc/include/asm/pgtable_32.h      | 28 +++++------
+ arch/sparc/mm/fault_32.c                 | 11 ++++-
+ arch/sparc/mm/highmem.c                  |  6 ++-
+ arch/sparc/mm/io-unit.c                  |  6 ++-
+ arch/sparc/mm/iommu.c                    |  6 ++-
+ arch/sparc/mm/srmmu.c                    | 51 ++++++++++++++-----
+ arch/um/include/asm/pgtable-2level.h     |  1 -
+ arch/um/include/asm/pgtable-3level.h     |  1 -
+ arch/um/include/asm/pgtable.h            |  3 ++
+ arch/um/kernel/mem.c                     |  8 ++-
+ arch/um/kernel/skas/mmu.c                | 12 ++++-
+ arch/um/kernel/skas/uaccess.c            |  7 ++-
+ arch/um/kernel/tlb.c                     | 85 +++++++++++++++++++-------------
+ arch/um/kernel/trap.c                    |  4 +-
+ include/asm-generic/4level-fixup.h       | 40 ---------------
+ include/asm-generic/tlb.h                |  2 -
+ include/linux/mm.h                       | 10 ++--
+ mm/memory.c                              |  8 ---
+ 64 files changed, 483 insertions(+), 418 deletions(-)
+ delete mode 100644 include/asm-generic/4level-fixup.h
 
 -- 
-Sincerely yours,
-Mike.
+2.7.4
+
 
 _______________________________________________
 linux-um mailing list
