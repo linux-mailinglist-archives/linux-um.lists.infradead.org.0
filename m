@@ -2,73 +2,76 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 64FB6F0C92
-	for <lists+linux-um@lfdr.de>; Wed,  6 Nov 2019 04:08:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 13775F103D
+	for <lists+linux-um@lfdr.de>; Wed,  6 Nov 2019 08:29:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BwXHt1U2cQkNTgpuhNbHjDA/o63iL7DaHZ9+wacnQz0=; b=hDXkvdHndzB9GN
-	L72zp+HALeTK1fd7mqav5D+jeE6z6XbZJ1xyF4R1tPTOWiXBmsinZeyXDlVcCZYKrwLXzg6DSP1hk
-	pJFrDLQvRjmMgMu2e+YHU7AF0kXH1oZvZmus+nRVUKbM5y4eaIzpd86QKAvXlumddfZ6/3KldAnI2
-	AGlWwrCakpXARtqiArkesAvT77caNzq7Zy18bzr38QHbEp9ln0+Cx8bW+p7cHLku46FdA/CEVa7IA
-	i63+kQX5OF7Wnp23MnNKqofSc+RnJQzRdCDGEUf+biouTMPsVSGrjWpecPpJqyqVSu7U0aZSU5G3r
-	UMQ73gwKXTu1XWLMCe2Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=g4AoxjgN1pYSUfmefOIoUH7PYTjssyBYeCiJQfGc0mw=; b=HoN/KcbiU9U6g2/YyJdSKDuEM
+	e1TgL9tvSiK59BqsXc/F/hSrIgeIBoPWDe9Q/BVHbQj4By6TjYfEapDGyV9jIxYT+bJ8sJE9diUQr
+	DSDqRZpPRBpb4FIkOW2T6NV2wMc0QP0/4ZkGqgo/49vIcyDh9+gfOH3pR0Yk81Pktot62LpJfw/of
+	BsldZP7AxwuGRWdOOFrYrMFUmuPZMli6U9M0LKqHkgtdX5UCW+v19vlQ5JDjJLmDkEAxr0sebc8In
+	diKcJzaCmT+botrsPBjwmc6am4tPeMfYY2QsDvo6GhG0qvJVDZRYpeBVub6zrZULR+Si/nXADQxlq
+	VmFZ+Mr9g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSBgZ-0003pT-Nq; Wed, 06 Nov 2019 03:08:43 +0000
+	id 1iSFkp-0008WF-QB; Wed, 06 Nov 2019 07:29:23 +0000
 Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSBgI-0003Zl-5B
- for linux-um@lists.infradead.org; Wed, 06 Nov 2019 03:08:34 +0000
-Received: by mail-pf1-x442.google.com with SMTP id 3so17717512pfb.10
- for <linux-um@lists.infradead.org>; Tue, 05 Nov 2019 19:08:26 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=arista.com; s=googlenew;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=P3KAk4JFoRkmJY5UYpiE9Ad5UYmzG6Av2SQ7Rw3IXDc=;
- b=dGYz6wv+PceywAO0mjiAaPM4I4bawDqWfU0ekn7Khp2ckO0xcUgC6siNIdOcsLrIJa
- CwNbiBvkxpIeOwrQG0ige6I0s0ZUJZJXCCn0XLM9SL05aboewYqMvzrLYy474/QrUgPX
- HSe32vbj8VdIN4wjowemksP8tv+Z4nMKtzvqmJct24falWE7rbEDc0MB/qPr1yReKu4m
- cZSNYjqbdGQJsEhjsiC3YA5jp766XNhrQ2J8Ba7zdsJncLXScFm8v8WL1R1+JfRuozuX
- ope2lbXxPUS1ru6xuoqxDO4VZENci0YUGSCH27LJrKvs2uF0SGZDLU2Dg/bPb4M7os2A
- o/6Q==
+ id 1iSFkj-0008Uz-FZ; Wed, 06 Nov 2019 07:29:22 +0000
+Received: by mail-pf1-x442.google.com with SMTP id d13so18191095pfq.2;
+ Tue, 05 Nov 2019 23:29:16 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:references:cc:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-transfer-encoding;
+ bh=CZXGdk9uFu2d7V8fak5kkfAh72DjR9+d3K1XsYdLz38=;
+ b=oGcJVGIO9nAfwZ9U9gs9P3ysGflXOrasF6qEiEhb6WpEy/r0O4b4WcXcLFHBABCJ7R
+ QUOnBvxM0K+ORQ5GEwdd68Rbvuyj5JajApo+O20Qk7aw+1UO9FWS+6+LzSfRmtqSLrdq
+ xvCHWuUmC+aEABOOmXkQjFb1AvmC1AZ+Bwjcb+sSQtS1GRTuQLMEbpuch+Wd9OB5B9nR
+ MEP3ZWqL3l8J6HAnG5DRusZtOBOPsYcpMAZ4FMs88UBSyQ00BeMuWCLwvOdu7PSHWk++
+ XtgmclZQxAc89Qmj6l/gKcwAVt76pZv/YKMWttV48g2arcZGneYo8SkwGAFkxvqsnIJf
+ JInQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=P3KAk4JFoRkmJY5UYpiE9Ad5UYmzG6Av2SQ7Rw3IXDc=;
- b=iYGT8Tn5EIsmlbY9/ZcvqTZ0BchseVIznEmMJRO72Hj/EEBYIuHGrsqwrCbA6CAQn3
- Gbhdv94ALrJeSiFD8ekeHobcGhCqBWAHzfXEkpz3wKxnyhWpKaFJqYPQWmTE9NUXIbZZ
- Ns4j40Y37+Ph36l1n/crRpgAA9VjQvvwZwZPNqEfy13SzQMZ67qIsQPXoCbidgRWOET6
- j7R1ZPOb14XbNiCRqRjezaYbmmBLzUe9fz5aW3rYLyr4VqPyQMmDErQw6gXbSGFNnjW2
- vN7UPSuZsSGXL64WlEVmzm/QvBLUXPDxttldUJhbBCZx9Ijn66OPv7npqHKNVY5QL6NF
- 846A==
-X-Gm-Message-State: APjAAAVviAyvD4KqjDeSx2HCiigOt9tKspWpQMkfroXFBEd3EMg0aY0S
- uK9QGSqo7CfKfXRvGLdVqvAcUw==
-X-Google-Smtp-Source: APXvYqzdoADpYOilv6zYZDLM1SN3kH63KqdGum7CjWRsWYBdHmb16/bpBc5NmIQ9TPPC/7aTNfzH4g==
-X-Received: by 2002:a17:90a:340c:: with SMTP id
- o12mr657765pjb.18.1573009705238; 
- Tue, 05 Nov 2019 19:08:25 -0800 (PST)
-Received: from Mindolluin.ire.aristanetworks.com ([217.173.96.166])
- by smtp.gmail.com with ESMTPSA id k24sm19570487pgl.6.2019.11.05.19.08.21
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 05 Nov 2019 19:08:24 -0800 (PST)
-From: Dmitry Safonov <dima@arista.com>
-To: linux-kernel@vger.kernel.org
-Subject: [PATCH 36/50] um: Add show_stack_loglvl()
-Date: Wed,  6 Nov 2019 03:05:27 +0000
-Message-Id: <20191106030542.868541-37-dima@arista.com>
-X-Mailer: git-send-email 2.23.0
-In-Reply-To: <20191106030542.868541-1-dima@arista.com>
-References: <20191106030542.868541-1-dima@arista.com>
+ h=x-gm-message-state:subject:to:references:cc:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-transfer-encoding;
+ bh=CZXGdk9uFu2d7V8fak5kkfAh72DjR9+d3K1XsYdLz38=;
+ b=W4k7E51/n9wJZ+xIjNtwPCJE6Ff2f7liovTX+1+K5OPJO1DPIavOeJ/hY5KF+WpZXF
+ TRdL4x1Xh5Xy7Nw8PyPLjWjssV/d27RgYB3V2NXP/f92M+XTMakA2OVAqB/P5VVVTKSJ
+ YTPTp/+5qtOZFXb48LxQaJrIz5J0su9Tl3wsoLbSQ0CHfCk2/k39e3FNTLaLXVvuqFnk
+ fBJEFoDsNBHIVhZYVcJ8fiOimncmPjFjQg5K/A3d7M+32pXELkNQ/tvqsT/gOc5AWeAm
+ S1mvh34ovxYNKdolZ1xXk2Pp4tiVwza7CgnU5xlNDedSgDGy6oog4vuiynYGf9o8jyXR
+ Udtg==
+X-Gm-Message-State: APjAAAW/sWgj/JhKilunU2rcanW9MW08PCuogPw63sMNCab+jzVatDEL
+ DaQSMaz19dfNdmH+y7YJI5I=
+X-Google-Smtp-Source: APXvYqxBVXh1jmjAePr3S1g4NtkWBhTLAIl9OTaZqYXb6wMgMaiO3o4Y3mgSEbDLjoLjMA38tOeOfg==
+X-Received: by 2002:a62:90:: with SMTP id 138mr1557534pfa.209.1573025356612;
+ Tue, 05 Nov 2019 23:29:16 -0800 (PST)
+Received: from [192.168.1.101] (122-58-182-39-adsl.sparkbb.co.nz.
+ [122.58.182.39])
+ by smtp.gmail.com with ESMTPSA id h13sm26505185pfr.98.2019.11.05.23.29.01
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 05 Nov 2019 23:29:15 -0800 (PST)
+Subject: Re: [PATCH v3 05/13] m68k: mm: use pgtable-nopXd instead of
+ 4level-fixup
+To: Geert Uytterhoeven <geert@linux-m68k.org>, Mike Rapoport <rppt@kernel.org>
+References: <1572850587-20314-1-git-send-email-rppt@kernel.org>
+ <1572850587-20314-6-git-send-email-rppt@kernel.org>
+ <CAMuHMdUG3V7uxzhbetw75vVeobeP0-bQySb3r=0V5XujUF123g@mail.gmail.com>
+ <20191104094748.GB23288@rapoport-lnx>
+ <CAMuHMdVHsNyLxhaxZcVdLvQ1PUnb=2_+ECPWVD0234V+qu+kOw@mail.gmail.com>
+From: Michael Schmitz <schmitzmic@gmail.com>
+Message-ID: <15fafca0-e4c4-1f46-4f19-9b2a177f7d6b@gmail.com>
+Date: Wed, 6 Nov 2019 20:28:59 +1300
+User-Agent: Mozilla/5.0 (X11; Linux ppc; rv:45.0) Gecko/20100101 Icedove/45.4.0
 MIME-Version: 1.0
+In-Reply-To: <CAMuHMdVHsNyLxhaxZcVdLvQ1PUnb=2_+ECPWVD0234V+qu+kOw@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191105_190826_356342_E3028018 
-X-CRM114-Status: GOOD (  11.70  )
+X-CRM114-CacheID: sfid-20191105_232918_194783_EF534672 
+X-CRM114-Status: GOOD (  14.02  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -79,6 +82,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (schmitzmic[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -86,7 +91,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,106 +102,56 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: Petr Mladek <pmladek@suse.com>, Richard Weinberger <richard@nod.at>,
- Dmitry Safonov <dima@arista.com>,
- Tetsuo Handa <penguin-kernel@I-love.SAKURA.ne.jp>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Jeff Dike <jdike@addtoit.com>,
- Dmitry Safonov <0x7f454c46@gmail.com>, Steven Rostedt <rostedt@goodmis.org>,
- linux-um@lists.infradead.org,
- Sergey Senozhatsky <sergey.senozhatsky@gmail.com>,
- Jiri Slaby <jslaby@suse.com>, Andrew Morton <akpm@linux-foundation.org>,
- Ingo Molnar <mingo@kernel.org>, Anton Ivanov <anton.ivanov@cambridgegreys.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: "James E.J. Bottomley" <James.Bottomley@hansenpartnership.com>,
+ Linux MM <linux-mm@kvack.org>, sparclinux <sparclinux@vger.kernel.org>,
+ Rolf Eike Beer <eike-kernel@sf-tec.de>, Vincent Chen <deanbo422@gmail.com>,
+ Greg Ungerer <gerg@linux-m68k.org>,
+ Anton Ivanov <anton.ivanov@cambridgegreys.com>,
+ Linux-Arch <linux-arch@vger.kernel.org>, linux-c6x-dev@linux-c6x.org,
+ Richard Weinberger <richard@nod.at>, Helge Deller <deller@gmx.de>,
+ Russell King <linux@armlinux.org.uk>, Mike Rapoport <rppt@linux.ibm.com>,
+ Mark Salter <msalter@redhat.com>, Matt Turner <mattst88@gmail.com>,
+ Vineet Gupta <Vineet.Gupta1@synopsys.com>, Sam Creasey <sammy@sammy.net>,
+ Arnd Bergmann <arnd@arndb.de>, Jeff Dike <jdike@addtoit.com>,
+ linux-um@lists.infradead.org, linux-m68k <linux-m68k@lists.linux-m68k.org>,
+ Greentime Hu <green.hu@gmail.com>, "Kirill A. Shutemov" <kirill@shutemov.name>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Michal Simek <monstr@monstr.eu>, Parisc List <linux-parisc@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ "David S. Miller" <davem@davemloft.net>, alpha <linux-alpha@vger.kernel.org>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Linus Torvalds <torvalds@linux-foundation.org>, Peter Rosin <peda@axentia.se>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-Currently, the log-level of show_stack() depends on a platform
-realization. It creates situations where the headers are printed with
-lower log level or higher than the stacktrace (depending on
-a platform or user).
+Hi Geert,
 
-Furthermore, it forces the logic decision from user to an architecture
-side. In result, some users as sysrq/kdb/etc are doing tricks with
-temporary rising console_loglevel while printing their messages.
-And in result it not only may print unwanted messages from other CPUs,
-but also omit printing at all in the unlucky case where the printk()
-was deferred.
+Am 04.11.2019 um 22:53 schrieb Geert Uytterhoeven:
+>>> This indeed boots fine on ARAnyM, which emulates on 68040.
+>>> It would be good to have some boot testing on '020/030, too.
+>>
+>> To be honest, I have no idea how to to that :)
+>
+> Sure. This was more a request for the fellow m68k users.
 
-Introducing log-level parameter and KERN_UNSUPPRESSED [1] seems
-an easier approach than introducing more printk buffers.
-Also, it will consolidate printings with headers.
+I heard you :-) Still doing more regression testing on the latest SCSI 
+fix, but I can schedule this next.
 
-Introduce show_stack_loglvl(), that eventually will substitute
-show_stack().
+Cheers,
 
-Cc: Anton Ivanov <anton.ivanov@cambridgegreys.com>
-Cc: Jeff Dike <jdike@addtoit.com>
-Cc: Richard Weinberger <richard@nod.at>
-Cc: linux-um@lists.infradead.org
-[1]: https://lore.kernel.org/lkml/20190528002412.1625-1-dima@arista.com/T/#u
-Signed-off-by: Dmitry Safonov <dima@arista.com>
----
- arch/um/kernel/sysrq.c | 24 ++++++++++++++++--------
- 1 file changed, 16 insertions(+), 8 deletions(-)
+	Michael
 
-diff --git a/arch/um/kernel/sysrq.c b/arch/um/kernel/sysrq.c
-index c831a1c2eb94..1b54b6431499 100644
---- a/arch/um/kernel/sysrq.c
-+++ b/arch/um/kernel/sysrq.c
-@@ -17,7 +17,9 @@
- 
- static void _print_addr(void *data, unsigned long address, int reliable)
- {
--	pr_info(" [<%08lx>] %s%pS\n", address, reliable ? "" : "? ",
-+	const char *loglvl = data;
-+
-+	printk("%s [<%08lx>] %s%pS\n", loglvl, address, reliable ? "" : "? ",
- 		(void *)address);
- }
- 
-@@ -25,7 +27,8 @@ static const struct stacktrace_ops stackops = {
- 	.address = _print_addr
- };
- 
--void show_stack(struct task_struct *task, unsigned long *stack)
-+void show_stack_loglvl(struct task_struct *task, unsigned long *stack,
-+		       const char *loglvl)
- {
- 	struct pt_regs *segv_regs = current->thread.segv_regs;
- 	int i;
-@@ -39,17 +42,22 @@ void show_stack(struct task_struct *task, unsigned long *stack)
- 	if (!stack)
- 		stack = get_stack_pointer(task, segv_regs);
- 
--	pr_info("Stack:\n");
-+	printk("%sStack:\n", loglvl);
- 	for (i = 0; i < 3 * STACKSLOTS_PER_LINE; i++) {
- 		if (kstack_end(stack))
- 			break;
- 		if (i && ((i % STACKSLOTS_PER_LINE) == 0))
--			pr_cont("\n");
-+			printk("%s\n", loglvl);
- 		pr_cont(" %08lx", *stack++);
- 	}
--	pr_cont("\n");
-+	printk("%s\n", loglvl);
-+
-+	printk("%sCall Trace:\n", loglvl);
-+	dump_trace(current, &stackops, (void *)loglvl);
-+	printk("%s\n", loglvl);
-+}
- 
--	pr_info("Call Trace:\n");
--	dump_trace(current, &stackops, NULL);
--	pr_info("\n");
-+void show_stack(struct task_struct *task, unsigned long *stack)
-+{
-+	show_stack_loglvl(task, stack, KERN_INFO);
- }
--- 
-2.23.0
-
+> But don't worry too much about it.  If it breaks '020/'030, we can fix
+> that later.
+>
+> Thanks!
+>
+> Gr{oetje,eeting}s,
+>
+>                         Geert
+>
 
 _______________________________________________
 linux-um mailing list
