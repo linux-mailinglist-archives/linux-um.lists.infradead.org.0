@@ -2,7 +2,7 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 905C9F3F5C
+	by mail.lfdr.de (Postfix) with ESMTPS id EF50FF3F5D
 	for <lists+linux-um@lfdr.de>; Fri,  8 Nov 2019 06:04:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
@@ -10,72 +10,73 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xNtfP2HWdcasvAB63+U9DseLUOuInbfo/y2dkkywVUA=; b=iXYkeBWJ435QWt
-	fHdwApBO5Ub2oMjv9D245m+RnsEiFZps/sVBtZiuI5uNW38Gd7nJxRXnL61TD4TCH/KeLhWGdrS75
-	kVxJomotCPDIKo4JoYMwsR4Rj73RWipikob+9GX+rmGhWTnkIrsz1QR13o7aafzq3SDktt3bbmvLR
-	k0auAKVxkzXGBnSZJxmkjv4BgCIzGtbq/4vzEknVTbdKB0ZOnSHV+LvATWJHRqA5ifRK/VsaG5qcC
-	00rETP3JQ2B+xI6Z/0l9ieWD2x4sXoMHAr3VGxVezfJOLQ3TaRcYAWOK8dg+OujL6Lj+iLhGFQ+R7
-	XSGFcXPqlc3TamWknUFQ==;
+	List-Owner; bh=yIjVx7eSeySxw8Br/ZUEVTqhLOianus6wa7EYfoqWPw=; b=Jmq7ypZWq2G+xL
+	hk2IMYtQg0DfAVHDmDgACmy8d5wllN5Wg7LnMrChdsEhhFVgF1928fZF3M2+ZsJCVQVEEvTDe7tRY
+	rJqAwNc9AUm23YDgTBOXiijHhkkck0uUUQJlmu2ON2ujBPWu519m2qzg4hxgrT9cSsV0E+KNx8TQ+
+	GftEjP10S8VhRtdoOsBvpP6MQX44BRuAhHINGxXLmxg0Zh35ffeC3NyOnitCZjJL/u9mdFLUQ0Xtf
+	jj/apA/zoL3qmTqMpFP+xOuucTzwta4YinQ3R+TgF1Ie5P5ekQd/FSpvgItXg8vXJkQkEcLy7yA7X
+	lb4J1uXuppOqT0zrUAhA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSwRj-0004At-DJ; Fri, 08 Nov 2019 05:04:31 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1iSwRj-0004BD-V0; Fri, 08 Nov 2019 05:04:31 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSwRf-00048C-5s
+ id 1iSwRf-00048Z-Jm
  for linux-um@lists.infradead.org; Fri, 08 Nov 2019 05:04:29 +0000
-Received: by mail-pg1-x544.google.com with SMTP id l24so3273220pgh.10
+Received: by mail-pl1-x643.google.com with SMTP id a18so3225475plm.10
  for <linux-um@lists.infradead.org>; Thu, 07 Nov 2019 21:04:27 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=Fks9wSbUJ+kC5hvrb/d3gYtZgeZ3GOt0V9E8ftVXrv0=;
- b=jif0I7BBFZV/PvH3i2IiQVMhDzZvf9rW67+2kDSO87msB0VWxjSpUyneqxmNh1uZCg
- PcOPu34wK0Ld/MpSs5anDqUMLXsTGBzZJU3rCdCCmq4KF7bjLOGCpmbwsjqJafVzjWQr
- QYBF3Tb1gBPuz8rEZ/HCnpi55qyP1oQiaeFC5rNUyiE+NQknyo2XAtx9LoEaflYzdqyL
- 9yFjZyzYoP4ds/3tlROvHb62wJEG3YXAJJzzm/tlLUTnPPo9VQ2N8wDO++vkIxN5w3Zk
- YRMriLr/K88cQxJ202zFrJKXXuQYQ+pRmb3gurRJK4zdgp+b4CMzs5ifx3O9usZy8cRK
- 7TJg==
+ bh=EAMcWojeZjosbPdsBURQeYP5+yJLNkhHO06NsV6qOiA=;
+ b=i5b7/jUUNM14hr21v5qknEUbABSONQ8j2SvaaNXKXYpqVBA4k+1kHfUMlb5EqsAJa0
+ wD62YpsM7zNck93QscenFHmiIWHwioxAaccQdQEQPdL0MRoCLC++a/XVcxryz0SJrcXi
+ gqYQoU9aTG4nJz1G8EgXxjlVY+fPTe6KVNgWWNskh6/D73/iUSkD0ZyiKFOQS6OO0rgz
+ jpqxZc/tB5zAVHCeWE342sxnykRUGa/q+NSlURBDJpDuSR/KUuSnSbBF4Pa/YYq81hb9
+ RqaJBabk8iD3tMSm3pBZ0JNL3y+TW+jKa44tUdtfS1ND9CHQEM0p3OppmFzFk5zyHlbh
+ VJEQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=Fks9wSbUJ+kC5hvrb/d3gYtZgeZ3GOt0V9E8ftVXrv0=;
- b=UQfkPp7gIKU1pQSJdSoBcd9yb3+51zpqj0APs0QGN822+RXHKYn4l2v6He84L0xZD6
- 3rExLrBdTGnVn8d5NIz9s0bnX7nm5iLZ26s+P56QsdVdezod8iOt/3p95MRk79kW69mR
- yY78W9lrGr1WKSOF4anjfV/OgZX02HpcDC9rteJzU4AkeD8Wh+icbL5sDPXY0elsJE22
- MSSPVIzQSG9sgzSP6MYXSUrUaGQ834105Tlm8gSzrkmk6UrkwbglzlHF/4IOUCts3whh
- kWY1PPUiLX3iC2R+WkVTVgZ5Y4BgDGVhN9qumcwn6e8m08T8/AxmO0+BGaBCixnyeE2u
- Vq5A==
-X-Gm-Message-State: APjAAAXo8sqLSzwwPt+yGVL06IdO9XtX58Ub+C/ocG5va+wpU5f1nAxv
- i6zIoYsRIIky8DQKlrRiQUY6z/V0yyHlNA==
-X-Google-Smtp-Source: APXvYqzighXCDmZ62e/x8lyMtbNIM5EN72p6qguyakenljWjbCFfBBdjlipHJYybk0yfCfDGnnXK+A==
-X-Received: by 2002:a63:4206:: with SMTP id p6mr9277702pga.270.1573189466275; 
+ bh=EAMcWojeZjosbPdsBURQeYP5+yJLNkhHO06NsV6qOiA=;
+ b=c3Eig2cyF6l+SwA6V9omkm8ewtslUIfSEIcmrSHnhCek7jbDgQz5IOZQX6LmOisHFG
+ fxDRUhP5G9lLma4jE/ySBcrFpB4daUx16LpdbWYqhBvJGhUHbVYudr4ytDtvSLj7UEY+
+ O9M7yPE7ILOgSDEOwSvUd17nCXO6VKDd0/oJ8CBbAO3BXGnMiY041jsgm5K2FSgDvhA/
+ KQcTTcUmqxc4DAnYvkIIbrt3gvmPs3KN+EEnz99XDI6qcj7N38DFotZxTl+vXZLt+9Pj
+ ULSbuSOCIGerwMA3/wnl7JsRL40VjH0AQe5ZHSO8XqFtnSRBmzzmTzLFEGIta2/9IcNT
+ Dl/Q==
+X-Gm-Message-State: APjAAAXgd865TFVwyOeXkx+ASYOU/1tv0XLg0rU98J6HfRK5BltFN/DN
+ f+L7/f9p7LV2VSjdkhf2z04=
+X-Google-Smtp-Source: APXvYqzOD91O64ZCTTI7HwcJOxJzEJNSUtb32Iv485BCJAuFbHZkQYurVT94BiEkoAJ1gWGwj69qew==
+X-Received: by 2002:a17:90a:2385:: with SMTP id
+ g5mr10701960pje.117.1573189466825; 
  Thu, 07 Nov 2019 21:04:26 -0800 (PST)
 Received: from earth-mac.local ([202.214.86.179])
- by smtp.gmail.com with ESMTPSA id fz12sm3627791pjb.15.2019.11.07.21.04.24
+ by smtp.gmail.com with ESMTPSA id f8sm4837075pgd.64.2019.11.07.21.04.24
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
  Thu, 07 Nov 2019 21:04:24 -0800 (PST)
 Received: by earth-mac.local (Postfix, from userid 501)
- id D939C201ACFEB8; Fri,  8 Nov 2019 14:04:22 +0900 (JST)
+ id E3EE3201ACFEBA; Fri,  8 Nov 2019 14:04:22 +0900 (JST)
 From: Hajime Tazaki <thehajime@gmail.com>
 To: linux-um@lists.infradead.org
-Subject: [RFC v2 34/37] lkl: Android ARM (arm/arm64) support
-Date: Fri,  8 Nov 2019 14:02:49 +0900
-Message-Id: <ec1915b36d1e4de138bfad60862beaaef0b47274.1573179553.git.thehajime@gmail.com>
+Subject: [RFC v2 35/37] um lkl: add CI tests
+Date: Fri,  8 Nov 2019 14:02:50 +0900
+Message-Id: <daca6ae93eb213e8827411f514ca24fcd11a1a8f.1573179553.git.thehajime@gmail.com>
 X-Mailer: git-send-email 2.20.1 (Apple Git-117)
 In-Reply-To: <cover.1573179553.git.thehajime@gmail.com>
 References: <cover.1573179553.git.thehajime@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191107_210427_235591_F6E72080 
-X-CRM114-Status: GOOD (  14.41  )
+X-CRM114-CacheID: sfid-20191107_210427_656897_B2C88D4D 
+X-CRM114-Status: GOOD (  12.43  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -107,323 +108,392 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-Initial attempt to run an application with hijack library on Android
-platform.  Tested mostly on Android 6.x and 7.x.
-
-The build process assumes that the android ndk toolchain is installed in
-a host system. arm32 build is required to use alternate linker in order
-to avoid a link issue during the build (described in *1).
-
-*1
-https://github.com/lkl/linux/issues/59#issuecomment-308961122
+We use CircleCI for the tests, which should check regressions before
+merging.
 
 Signed-off-by: Hajime Tazaki <thehajime@gmail.com>
 ---
- arch/um/lkl/Kconfig            |  1 +
- tools/lkl/Makefile.autoconf    |  7 +++-
- tools/lkl/lib/hijack/hijack.c  | 13 ++++++++
- tools/lkl/lib/hijack/init.c    | 11 ++++++
- tools/lkl/tests/disk.sh        | 11 +++++-
- tools/lkl/tests/hijack-test.sh | 43 ++++++++++++++++++------
- tools/lkl/tests/test.sh        | 61 +++++++++++++++++++++++++++++++++-
- 7 files changed, 134 insertions(+), 13 deletions(-)
+ .circleci/config.yml             | 274 +++++++++++++++++++++++++++++++
+ tools/lkl/scripts/checkpatch.sh  |  60 +++++++
+ tools/lkl/scripts/lkl-jenkins.sh |  21 +++
+ 3 files changed, 355 insertions(+)
+ create mode 100644 .circleci/config.yml
+ create mode 100755 tools/lkl/scripts/checkpatch.sh
+ create mode 100755 tools/lkl/scripts/lkl-jenkins.sh
 
-diff --git a/arch/um/lkl/Kconfig b/arch/um/lkl/Kconfig
-index 1629e2679b75..fc501b64a2af 100644
---- a/arch/um/lkl/Kconfig
-+++ b/arch/um/lkl/Kconfig
-@@ -23,6 +23,7 @@ config LKL
-        select 64BIT if "$(OUTPUT_FORMAT)" = "pe-x86-64"
-        select HAVE_UNDERSCORE_SYMBOL_PREFIX if "$(OUTPUT_FORMAT)" = "pe-i386"
-        select 64BIT if "$(OUTPUT_FORMAT)" = "elf64-x86-64-freebsd"
-+       select 64BIT if "$(OUTPUT_FORMAT)" = "elf64-littleaarch64"
-        select NET
-        select MULTIUSER
-        select INET
-diff --git a/tools/lkl/Makefile.autoconf b/tools/lkl/Makefile.autoconf
-index 1631f5cc25ac..7222a95c314f 100644
---- a/tools/lkl/Makefile.autoconf
-+++ b/tools/lkl/Makefile.autoconf
-@@ -1,4 +1,4 @@
--POSIX_HOSTS=elf64-x86-64 elf32-i386 elf64-x86-64-freebsd
-+POSIX_HOSTS=elf64-x86-64 elf32-i386 elf64-x86-64-freebsd elf32-littlearm elf64-littleaarch64
- NT_HOSTS=pe-i386 pe-x86-64
- 
- define set_autoconf_var
-@@ -17,6 +17,10 @@ define is_defined
- $(shell $(CC) -dM -E - </dev/null | grep $(1))
- endef
- 
-+define android_host
-+  $(call set_autoconf_var,ANDROID,y)
-+endef
+diff --git a/.circleci/config.yml b/.circleci/config.yml
+new file mode 100644
+index 000000000000..5c7b2fbad703
+--- /dev/null
++++ b/.circleci/config.yml
+@@ -0,0 +1,274 @@
++version: 2
++general:
++  artifacts:
 +
- define bsd_host
-   $(call set_autoconf_var,BSD,y)
- endef
-@@ -54,6 +58,7 @@ define posix_host
-   LDFLAGS += -pie
-   CFLAGS += -fPIC -pthread
-   SOSUF := .so
-+  $(if $(call is_defined,__ANDROID__),$(call android_host),LDLIBS += -lrt -lpthread)
-   $(if $(filter $(1),elf64-x86-64-freebsd),$(call bsd_host))
-   $(if $(filter $(1),elf32-littlearm),$(call arm_host))
-   $(if $(filter $(1),elf64-littleaarch64),$(call aarch64_host))
-diff --git a/tools/lkl/lib/hijack/hijack.c b/tools/lkl/lib/hijack/hijack.c
-index 485c15d7c279..3a95b9dbe88b 100644
---- a/tools/lkl/lib/hijack/hijack.c
-+++ b/tools/lkl/lib/hijack/hijack.c
-@@ -204,7 +204,11 @@ int socket(int domain, int type, int protocol)
- }
- 
- HOST_CALL(ioctl);
-+#ifdef __ANDROID__
-+int ioctl(int fd, int req, ...)
-+#else
- int ioctl(int fd, unsigned long req, ...)
-+#endif
- {
- 	va_list vl;
- 	long arg;
-@@ -586,6 +590,15 @@ void *mmap(void *addr, size_t length, int prot, int flags, int fd, off_t offset)
- 	return lkl_sys_mmap(addr, length, prot, flags, fd, offset);
- }
- 
-+#ifndef __ANDROID__
-+HOST_CALL(__xstat64)
-+int stat(const char *pathname, struct stat *buf)
-+{
-+	CHECK_HOST_CALL(__xstat64);
-+	return host___xstat64(0, pathname, buf);
-+}
-+#endif
++do_steps: &do_steps
++ steps:
++  - run: echo "$CROSS_COMPILE" > ~/_cross_compile
++  - restore_cache:
++      key: code-tree-shallow-{{ .Environment.CACHE_VERSION }}
++  - run:
++      name: checkout build tree
++      command: |
++        mkdir -p ~/.ssh/
++        ssh-keyscan -H github.com >> ~/.ssh/known_hosts
++        if ! [ -d .git ]; then
++          git clone --depth=1 $CIRCLE_REPOSITORY_URL .;
++        fi
++        if [[ $CIRCLE_BRANCH == pull/* ]]; then
++           git fetch --depth=1 origin $CIRCLE_BRANCH/head;
++        else
++           git fetch --depth=1 origin $CIRCLE_BRANCH;
++        fi
++        git reset --hard $CIRCLE_SHA1
++  - save_cache:
++      key: code-tree-shallow-{{ .Environment.CACHE_VERSION }}-{{ epoch }}
++      paths:
++        - /home/ubuntu/project/.git
++  - run:
++      name: clean
++      command: |
++        make mrproper
++        cd tools/lkl && make clean-conf
++        rm -rf ~/junit
++  - run: mkdir -p /home/ubuntu/.ccache
++  - restore_cache:
++      key: compiler-cache-{{ checksum "~/_cross_compile" }}-{{ .Environment.CACHE_VERSION }}
++  - run:
++      name: build DPDK
++      command: |
++        if [ "$MKARG" = "dpdk=yes" ]; then
++          sudo apt-get update
++          if ! sudo apt-get install -y linux-headers-$(uname -r) ; then
++             cd /lib/modules && sudo ln -sf 4.4.0-97-generic `uname -r` && \
++               cd /home/ubuntu/project
++          fi
++          cd tools/lkl && ./scripts/dpdk-sdk-build.sh;
++        fi
++  - run:
++      name: copy mingw binutils
++      command: |
++        if [ "$CROSS_COMPILE" = "i686-w64-mingw32-" ]; then
++          wget https://github.com/lkl/linux/raw/master/tools/lkl/bin/i686-w64-mingw32-as
++          wget https://github.com/lkl/linux/raw/master/tools/lkl/bin/i686-w64-mingw32-ld
++          wget https://github.com/lkl/linux/raw/master/tools/lkl/bin/i686-w64-mingw32-objcopy
++          sudo cp i686-w64-mingw32-* /usr/bin;
++        elif [ "$CROSS_COMPILE" = "arm-linux-androideabi-" ]; then
++          wget https://github.com/lkl/linux/raw/master/tools/lkl/bin/arm-linux-androideabi-ld.gold
++          sudo cp arm-linux-androideabi-ld.gold /usr/bin/arm-linux-androideabi-ld;
++        fi
++  - run:
++      name: start emulator
++      command: |
++        if [[ $CROSS_COMPILE == *android* ]]; then
++          emulator -avd Nexus5_API24 -no-window -no-audio -no-boot-anim;
++        elif [[ $CROSS_COMPILE == *freebsd* ]]; then
++          cd /home/ubuntu && $QEMU
++        fi
++      background: true
++  - run: cd tools/lkl && make -j8 ${MKARG}
++  - run: mkdir -p ~/destdir && cd tools/lkl && make DESTDIR=~/destdir
++  - save_cache:
++     paths:
++       - /home/ubuntu/.ccache
++     key: compiler-cache-{{ checksum "~/_cross_compile" }}-{{ .Environment.CACHE_VERSION }}-{{ epoch }}
++  - run:
++      name: wait emulator to boot
++      command: |
++        if [[ $CROSS_COMPILE == *android* ]]; then
++          /home/ubuntu/circle-android.sh wait-for-boot;
++        elif [[ $CROSS_COMPILE == *freebsd* ]]; then
++          while ! $MYSSH -o ConnectTimeout=1 exit 2> /dev/null
++          do
++             sleep 5
++          done
++        fi
++  - run:
++      name: run tests
++      command: |
++        mkdir -p ~/junit
++        make -C tools/lkl run-tests tests="--junit-dir ~/junit"
++        find ./tools/lkl/ -type f -name "*.xml" -exec mv {} ~/junit/ \;
++      no_output_timeout: "90m"
++  - store_test_results:
++      path: ~/junit
++  - store_artifacts:
++      path: ~/junit
 +
- ssize_t send(int fd, const void *buf, size_t len, int flags)
- {
- 	return sendto(fd, buf, len, flags, 0, 0);
-diff --git a/tools/lkl/lib/hijack/init.c b/tools/lkl/lib/hijack/init.c
-index 2145fb7ec2cb..de00f2018e59 100644
---- a/tools/lkl/lib/hijack/init.c
-+++ b/tools/lkl/lib/hijack/init.c
-@@ -170,6 +170,17 @@ hijack_init(void)
- 	if (single_cpu_mode == 1)
- 		PinToFirstCpu(&ori_cpu);
- 
-+#ifdef __ANDROID__
-+	struct sigaction sa;
 +
-+	sa.sa_handler = SIG_IGN;
-+	sa.sa_flags = 0;
-+	if (sigaction(32, &sa, 0) == -1) {
-+		perror("sigaction");
-+		exit(1);
-+	}
-+#endif
++do_uml_steps: &do_uml_steps
++ steps:
++  - run: echo "$CROSS_COMPILE" > ~/_cross_compile
++  - restore_cache:
++      key: code-tree-shallow-{{ .Environment.CACHE_VERSION }}
++  - run:
++      name: checkout build tree
++      command: |
++        mkdir -p ~/.ssh/
++        ssh-keyscan -H github.com >> ~/.ssh/known_hosts
++        if ! [ -d .git ]; then
++          git clone --depth=1 $CIRCLE_REPOSITORY_URL .;
++        fi
++        if [[ $CIRCLE_BRANCH == pull/* ]]; then
++           git fetch --depth=1 origin $CIRCLE_BRANCH/head;
++        else
++           git fetch --depth=1 origin $CIRCLE_BRANCH;
++        fi
++        git reset --hard $CIRCLE_SHA1
++  - save_cache:
++      key: code-tree-shallow-{{ .Environment.CACHE_VERSION }}-{{ epoch }}
++      paths:
++        - /home/ubuntu/project/.git
++  - run: mkdir -p /home/ubuntu/.ccache
++  - restore_cache:
++      key: compiler-cache-{{ checksum "~/_cross_compile" }}-{{ .Environment.CACHE_VERSION }}
++  - run:
++      name: build
++      command: |
++        sudo apt-get update
++        sudo apt-get install -y gcc-multilib g++-multilib
++        make -C tools/lkl/
++        make defconfig ARCH=um SUBARCH=$SUBARCH
++        make ARCH=um SUBARCH=$SUBARCH
++  - save_cache:
++     paths:
++       - /home/ubuntu/.ccache
++     key: compiler-cache-{{ checksum "~/_cross_compile" }}-{{ .Environment.CACHE_VERSION }}-{{ epoch }}
++  - run:
++      name: test
++      command: |
++        # XXX: i386 build doesn't work with the test
++        if [ $CIRCLE_STAGE = "i386_uml" ] || [ $CIRCLE_STAGE = "i386_uml_on_x86_64" ]; then
++          exit 0
++        fi
++        ./linux rootfstype=hostfs ro mem=1g loglevel=10 init="/bin/bash -c exit" || export RETVAL=$?
++        # SIGABRT=6 => 128+6
++        if [ $RETVAL != "134" ]; then
++          exit 1
++        fi
 +
- 	ret = lkl_start_kernel(&lkl_host_ops, cfg->boot_cmdline);
- 	if (ret) {
- 		fprintf(stderr, "can't start kernel: %s\n", lkl_strerror(ret));
-diff --git a/tools/lkl/tests/disk.sh b/tools/lkl/tests/disk.sh
-index 9bdcb16f2d5c..e2ec6cf69d4b 100755
---- a/tools/lkl/tests/disk.sh
-+++ b/tools/lkl/tests/disk.sh
-@@ -15,6 +15,12 @@ function prepfs()
- 
-     yes | mkfs.$1 $file
- 
-+    if ! [ -z $ANDROID_WDIR ]; then
-+        adb shell mkdir -p $ANDROID_WDIR
-+        adb push $file $ANDROID_WDIR
-+        rm $file
-+        file=$ANDROID_WDIR/$(basename $file)
-+    fi
-     if ! [ -z $BSD_WDIR ]; then
-         $MYSSH mkdir -p $BSD_WDIR
-         ssh_copy $file $BSD_WDIR
-@@ -29,7 +35,10 @@ function cleanfs()
- {
-     set -e
- 
--    if ! [ -z $BSD_WDIR ]; then
-+    if ! [ -z $ANDROID_WDIR ]; then
-+        adb shell rm $1
-+        adb shell rm $ANDROID_WDIR/disk
-+    elif ! [ -z $BSD_WDIR ]; then
-         $MYSSH rm $1
-         $MYSSH rm $BSD_WDIR/disk
-     else
-diff --git a/tools/lkl/tests/hijack-test.sh b/tools/lkl/tests/hijack-test.sh
-index 097af6cff3ba..a62aa5b251e0 100755
---- a/tools/lkl/tests/hijack-test.sh
-+++ b/tools/lkl/tests/hijack-test.sh
-@@ -15,7 +15,11 @@ set_cfgjson()
- {
-     cfgjson=${wdir}/hijack-test$1.conf
- 
--    cat > ${cfgjson}
-+    if [ -n "$LKL_HOST_CONFIG_ANDROID" ]; then
-+        adb shell cat \> ${cfgjson}
-+    else
-+        cat > ${cfgjson}
-+    fi
- 
-     export_vars cfgjson
- }
-@@ -54,6 +58,11 @@ test_mount_and_dump()
- {
-     set -e
- 
-+    if [ -n "$LKL_HOST_CONFIG_ANDROID" ]; then
-+        echo "TODO: android-23 doesn't call destructor..."
-+        return $TEST_SKIP
-+    fi
++## Customize the test machine
++jobs:
++  x86_64:
++   docker:
++     - image: lkldocker/circleci-x86_64:0.7
++   environment:
++     CROSS_COMPILE: ""
++     MKARG: "dpdk=no"
++   <<: *do_steps
 +
-     set_cfgjson << EOF
-     {
-         "mount":"proc,sysfs",
-@@ -377,6 +386,10 @@ test_tap_qdisc()
- {
-     set -e
- 
-+    if [ -n "$LKL_HOST_CONFIG_ANDROID" ]; then
-+        return $TEST_SKIP
-+    fi
++  i386:
++   docker:
++     - image: lkldocker/circleci-i386:0.1
++   environment:
++     CROSS_COMPILE: ""
++   <<: *do_steps
 +
-     set_cfgjson << EOF
-     {
-         "gateway":"$(ip_host)",
-@@ -655,15 +668,25 @@ if [[ ! -e ${basedir}/lib/hijack/liblkl-hijack.so ]]; then
-     exit 0
- fi
- 
--# Make a temporary directory to run tests in, since we'll be copying
--# things there.
--wdir=$(mktemp -d)
--cp `which ping` ${wdir}
--cp `which ping6` ${wdir}
--ping=${wdir}/ping
--ping6=${wdir}/ping6
--hijack=$basedir/bin/lkl-hijack.sh
--netperf=$basedir/tests/run_netperf.sh
-+if [ -n "$LKL_HOST_CONFIG_ANDROID" ]; then
-+    wdir=$ANDROID_WDIR
-+    adb_push lib/hijack/liblkl-hijack.so bin/lkl-hijack.sh tests/net-setup.sh \
-+             tests/run_netperf.sh tests/hijack-test.sh
-+    ping="ping"
-+    ping6="ping6"
-+    hijack="$wdir/bin/lkl-hijack.sh"
-+    netperf="$wdir/tests/run_netperf.sh"
++  mingw32:
++   docker:
++     - image: lkldocker/circleci-mingw:0.6
++   environment:
++     CROSS_COMPILE: "i686-w64-mingw32-"
++   <<: *do_steps
++
++  android-arm32:
++   docker:
++     - image: lkldocker/circleci-android-arm32:0.6
++   environment:
++     CROSS_COMPILE: "arm-linux-androideabi-"
++     LKL_ANDROID_TEST: 1
++     ANDROID_SDK_ROOT: /home/ubuntu/android-sdk
++   <<: *do_steps
++
++  android-aarch64:
++   docker:
++     - image: lkldocker/circleci-android-arm64:0.6
++   environment:
++     CROSS_COMPILE: "aarch64-linux-android-"
++     LKL_ANDROID_TEST: 1
++     ANDROID_SDK_ROOT: /home/ubuntu/android-sdk
++   <<: *do_steps
++
++  freebsd11_x86_64:
++   docker:
++     - image: lkldocker/circleci-freebsd11-x86_64:0.4
++   environment:
++     CROSS_COMPILE: "x86_64-pc-freebsd11-"
++   <<: *do_steps
++
++  x86_64_valgrind:
++   docker:
++     - image: lkldocker/circleci-x86_64:0.7
++   environment:
++     CROSS_COMPILE: ""
++     MKARG: "dpdk=no"
++     VALGRIND: 1
++   <<: *do_steps
++
++  x86_64_uml:
++   docker:
++     - image: lkldocker/circleci-x86_64:0.7
++   environment:
++     CROSS_COMPILE: ""
++     TMPDIR: "/tmp" # required for not using /dev/shm
++     SUBARCH: "x86_64"
++   <<: *do_uml_steps
++
++  i386_uml:
++   docker:
++     - image: lkldocker/circleci-i386:0.1
++   environment:
++     CROSS_COMPILE: ""
++     SUBARCH: "i386"
++     TMPDIR: "/tmp" # required for not using /dev/shm
++   <<: *do_uml_steps
++
++  i386_uml_on_x86_64:
++   docker:
++     - image: lkldocker/circleci-x86_64:0.7
++   environment:
++     CROSS_COMPILE: ""
++     TMPDIR: "/tmp" # required for not using /dev/shm
++     SUBARCH: "i386"
++   <<: *do_uml_steps
++
++  checkpatch:
++   docker:
++     - image: lkldocker/circleci:0.5
++   environment:
++   steps:
++     - restore_cache:
++        key: code-tree-full-history-{{ .Environment.CACHE_VERSION }}
++     - checkout
++     - run: sudo pip install ply
++     - run: tools/lkl/scripts/checkpatch.sh
++     - save_cache:
++        key: code-tree-full-history-{{ .Environment.CACHE_VERSION }}-{{ epoch }}
++        paths:
++          - /home/ubuntu/project/.git
++        when: always
++
++workflows:
++  version: 2
++  build:
++    jobs:
++     - x86_64
++     - mingw32
++     - android-arm32
++     - android-aarch64
++     - freebsd11_x86_64
++     - checkpatch
++     - i386
++     - x86_64_uml
++     - i386_uml
++     - i386_uml_on_x86_64
++  nightly:
++    triggers:
++      - schedule:
++          cron: "0 0 * * *"
++          filters:
++            branches:
++              only:
++                - master
++    jobs:
++      - x86_64_valgrind
+diff --git a/tools/lkl/scripts/checkpatch.sh b/tools/lkl/scripts/checkpatch.sh
+new file mode 100755
+index 000000000000..0c02ca6b21a2
+--- /dev/null
++++ b/tools/lkl/scripts/checkpatch.sh
+@@ -0,0 +1,60 @@
++#!/bin/sh -ex
++# SPDX-License-Identifier: GPL-2.0
++
++if [ -z "$origin_master" ]; then
++    origin_master="origin/master"
++fi
++
++UPSTREAM=git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
++LKL=github.com:lkl/linux.git
++
++upstream=`git remote -v | grep $UPSTREAM | cut -f1 | head -n1`
++lkl=`git remote -v | grep $LKL | cut -f1 | head -n1`
++
++if [ -z "$upstream" ]; then
++    git fetch --tags --progress git://$UPSTREAM
 +else
-+    # Make a temporary directory to run tests in, since we'll be copying
-+    # things there.
-+    wdir=$(mktemp -d)
-+    cp `which ping` ${wdir}
-+    cp `which ping6` ${wdir}
-+    ping=${wdir}/ping
-+    ping6=${wdir}/ping6
-+    hijack=$basedir/bin/lkl-hijack.sh
-+    netperf=$basedir/tests/run_netperf.sh
-+fi
- 
- fifo1=${wdir}/fifo1
- fifo2=${wdir}/fifo2
-diff --git a/tools/lkl/tests/test.sh b/tools/lkl/tests/test.sh
-index cda932b98058..a40d08fd6185 100644
---- a/tools/lkl/tests/test.sh
-+++ b/tools/lkl/tests/test.sh
-@@ -100,6 +100,19 @@ lkl_test_exec()
- 
-     if file $file | grep PE32; then
-         WRAPPER="wine"
-+    elif file $file | grep "interpreter /system/bin/linker" ; then
-+        adb push "$file" $ANDROID_WDIR
-+        if [ -n "$SUDO" ]; then
-+            ANDROID_USER=root
-+            SUDO=""
-+        fi
-+        if [ -n "$ANDROID_USER" ]; then
-+            SU="su $ANDROID_USER"
-+        else
-+            SU=""
-+        fi
-+        WRAPPER="adb shell $SU"
-+        file=$ANDROID_WDIR/$(basename $file)
-     elif file $file | grep ARM; then
-         WRAPPER="qemu-arm-static"
-     elif file $file | grep "FreeBSD" ; then
-@@ -134,13 +147,48 @@ lkl_test_cmd()
-         SHOPTS="-x"
-     fi
- 
--    if [ -n "$LKL_HOST_CONFIG_BSD" ]; then
-+    if [ -n "$LKL_HOST_CONFIG_ANDROID" ]; then
-+        if [ "$1" = "sudo" ]; then
-+            ANDROID_USER=root
-+            shift
-+        fi
-+        if [ -n "$ANDROID_USER" ]; then
-+            SU="su $ANDROID_USER"
-+        else
-+            SU=""
-+        fi
-+        WRAPPER="adb shell $SU"
-+    elif [ -n "$LKL_HOST_CONFIG_BSD" ]; then
-         WRAPPER="$MYSSH $SU"
-     fi
- 
-     echo "$@" | $WRAPPER sh $SHOPTS
- }
- 
-+adb_push()
-+{
-+    while [ -n "$1" ]; do
-+        if [[ "$1" = *.sh ]]; then
-+            type="script"
-+        else
-+            type="file"
-+        fi
-+
-+        dir=$(dirname $1)
-+        adb shell mkdir -p $ANDROID_WDIR/$dir
-+
-+        if [ "$type" = "script" ]; then
-+            sed "s/\/usr\/bin\/env bash/\/system\/bin\/sh/" $basedir/$1 | \
-+                adb shell cat \> $ANDROID_WDIR/$1
-+            adb shell chmod a+x $ANDROID_WDIR/$1
-+        else
-+            adb push $basedir/$1 $ANDROID_WDIR/$dir
-+        fi
-+
-+        shift
-+    done
-+}
-+
- # XXX: $MYSSH and $MYSCP are defined in a circleci docker image.
- # see the definitions in lkl/lkl-docker:circleci/freebsd11/Dockerfile
- ssh_push()
-@@ -169,11 +217,22 @@ ssh_copy()
-     $MYSCP -P 7722 -r $1 root@localhost:$2
- }
- 
-+lkl_test_android_cleanup()
-+{
-+    adb shell rm -rf $ANDROID_WDIR
-+}
-+
- lkl_test_bsd_cleanup()
- {
-     $MYSSH rm -rf $BSD_WDIR
- }
- 
-+if [ -n "$LKL_HOST_CONFIG_ANDROID" ]; then
-+    trap lkl_test_android_cleanup EXIT
-+    export ANDROID_WDIR=/data/local/tmp/lkl
-+    adb shell mkdir -p $ANDROID_WDIR
++    git fetch --tags $upstream
 +fi
 +
- if [ -n "$LKL_HOST_CONFIG_BSD" ]; then
-     trap lkl_test_bsd_cleanup EXIT
-     export BSD_WDIR=/root/lkl
++if [ -z "$lkl" ]; then
++    git remote add lkl-upstream git@$LKL || true
++    lkl=`git remote -v | grep $LKL | cut -f1 | head -n1`
++fi
++
++if [ -z "$lkl" ]; then
++    echo "can't find lkl remote, quiting"
++    exit 1
++fi
++
++git fetch $lkl
++git fetch --tags $upstream
++
++# find the last upstream tag to avoid checking upstream commits during
++# upstream merges
++tag=`git tag --sort='-*authordate' | grep ^v | head -n1`
++tmp=`mktemp -d`
++
++commits=$(git log --no-merges --pretty=format:%h HEAD ^$lkl/master ^$tag)
++for c in $commits; do
++    git format-patch -1 -o $tmp $c
++done
++
++if [ -z "$c" ]; then
++    echo "there are not commits/patches to check, quiting."
++    rmdir $tmp
++    exit 0
++fi
++
++./scripts/checkpatch.pl --ignore FILE_PATH_CHANGES $tmp/*.patch
++rm $tmp/*.patch
++
++# checkpatch.pl does not know how to deal with 3 way diffs which would
++# be useful to check the conflict resolutions during merges...
++#for c in `git log --merges --pretty=format:%h HEAD ^$origin_master ^$tag`; do
++#    git log --pretty=email $c -1 > $tmp/$c.patch
++#    git diff $c $c^1 $c^2 >> $tmp/$c.patch
++#done
++
++rmdir $tmp
++
+diff --git a/tools/lkl/scripts/lkl-jenkins.sh b/tools/lkl/scripts/lkl-jenkins.sh
+new file mode 100755
+index 000000000000..eaadc6e90143
+--- /dev/null
++++ b/tools/lkl/scripts/lkl-jenkins.sh
+@@ -0,0 +1,21 @@
++#!/bin/bash
++# SPDX-License-Identifier: GPL-2.0
++
++set -e
++
++script_dir=$(cd $(dirname ${BASH_SOURCE:-$0}); pwd)
++basedir=$(cd $script_dir/../../..; pwd)
++
++export PATH=$PATH:/sbin
++
++build_and_test()
++{
++    cd $basedir
++    make mrproper
++    cd tools/lkl
++    make clean-conf
++    make -j4
++    make run-tests
++}
++
++build_and_test
 -- 
 2.20.1 (Apple Git-117)
 
