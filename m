@@ -2,75 +2,100 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A7AE7F593A
-	for <lists+linux-um@lfdr.de>; Fri,  8 Nov 2019 22:11:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C0EA3F5934
+	for <lists+linux-um@lfdr.de>; Fri,  8 Nov 2019 22:08:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xQykmCQj/UFTTX9ZcxhEyu6z61WMrxjGzmY0cYfpd4Q=; b=aVcc+EW3HkrgOt
-	IJe5O/UkVKu5uCEGSuQK1hafo/732RMzzrqahKfhMOwJygoGnWQGyIdlRkjrgp+MQrloDph9m0jZe
-	syC6JTIIIKn02fmQ1BaAIdKFV7+llwMcn/Svy36/3vM0Ad4V/HCMQ8TKGadrrjZCMBcOU53oQX3Og
-	YGTsdcXhTqj0ZnMkh7CLI4dYSGzs38RmjTR0vQ37E+naMRxjArKSYGo8c/xYYqQ/GmDZbodL9LrpJ
-	M28FVkENtHeeG5FtmM8dN9L2SRrSB0H8X0mG06MgWzIDU+4iP7d/YraHQMi/YFDK5dpL5oRSfyvPF
-	fkCFiLM/nY5OWAh0yldg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=FWvL18ApIYIlSuBjAENoeZi2JxYiHfJbqGYu1BbfRmc=; b=Wf8ADYBkNu9K7G
+	OqwHlVZbw1ci26Q1Z79YHpTc0cGO1RaN707lVci2/Y3maqrN5R0OvVNMfHW+tAnOTMZogtOmsXNqc
+	PFUl5Gr+TONpePh+Z6GFUFyZuh6zb7pq1RFUHqq/6PO4CLzajnvdKgXIvumvaBIiq52ftznNlJSyX
+	hFAe/0rLZro1zXeSOA1Ws9fJLit2wIiZFKH2tc6vG9UyPD/lGHjWq/yRgRCLQB2AjmOktzAzIWcgb
+	YpyPTXzRniv60UHtBtR+yWz81bMOiziGVle8JMH5c8khQcDjYEJWZvmb5+tuyIhHw+bBOqaMxlyui
+	uny4YHdu6Tgcsm87NWQA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iTBX5-0000oo-1t; Fri, 08 Nov 2019 21:11:03 +0000
-Received: from mout.kundenserver.de ([217.72.192.75])
+	id 1iTBUq-0007aC-V6; Fri, 08 Nov 2019 21:08:44 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iTBX1-0000nT-Df
- for linux-um@lists.infradead.org; Fri, 08 Nov 2019 21:11:01 +0000
-Received: from threadripper.lan ([149.172.19.189]) by mrelayeu.kundenserver.de
- (mreue108 [212.227.15.145]) with ESMTPA (Nemesis) id
- 1MrQR7-1i6FJk2Bdf-00oUk0; Fri, 08 Nov 2019 22:10:27 +0100
-From: Arnd Bergmann <arnd@arndb.de>
-To: y2038@lists.linaro.org, Andy Lutomirski <luto@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>, Ingo Molnar <mingo@redhat.com>,
- Borislav Petkov <bp@alien8.de>, x86@kernel.org,
- Jeff Dike <jdike@addtoit.com>, Richard Weinberger <richard@nod.at>,
- Anton Ivanov <anton.ivanov@cambridgegreys.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>
-Subject: [PATCH 05/23] y2038: vdso: change time_t to __kernel_old_time_t
-Date: Fri,  8 Nov 2019 22:07:25 +0100
-Message-Id: <20191108210824.1534248-5-arnd@arndb.de>
-X-Mailer: git-send-email 2.20.0
-In-Reply-To: <20191108210236.1296047-1-arnd@arndb.de>
-References: <20191108210236.1296047-1-arnd@arndb.de>
+ id 1iTBUo-0007ZX-0w; Fri, 08 Nov 2019 21:08:43 +0000
+Received: by mail-wm1-x344.google.com with SMTP id z19so7580915wmk.3;
+ Fri, 08 Nov 2019 13:08:40 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=leuvFNJRBbgvPXZJlD4yDG614p9ePBBBJqh6/bi0nWM=;
+ b=rjflubiq8T92r7IsfuflmmOLhAbyeUiuHnf/rQSYhhlSmttRaTaotAvL5xYp4yOydT
+ GvzpvT1wRN/Se5w5Bamn3iuJIAGtHWJ3FQg7uwfFHiBZYXDG6coXsfRkKjBQWYAriMTe
+ 4kTrO4cphBn73YaGY9oVhRABcMWkQkwRmG/gGE9R1eQjZ3xrtTYtO4ekpHSWHoSNgXQt
+ LOIHB3CeUqi5Hx5sAbRW5lNwEUAqSAnAREOPMl/n34UjrP0bXjp7N2IIvVwOE5dHTyoC
+ y/6fNB8lMSjFK19DQSqAbg52NdT8Yh0NvqWS+ZavZPT5hVJ6jwjvtDCEDMZ1djztH8HA
+ lzbQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=leuvFNJRBbgvPXZJlD4yDG614p9ePBBBJqh6/bi0nWM=;
+ b=EkxvlN/PHgu+Du4+nXXUXlO6FYK+cIsSjhhvSKhkyLxfGCi842NrWIKRS3rPh7qIQB
+ NOBQkj1/0i17s7rv88avu8xyUaK9EO3TNM9LRbNbetoKgl+v6NYBLkSJOwfx+rVOG70U
+ vMSkcCm94cQSnYNtwIbcUCQ/yRC6NvKy9hwFRyBUIeLxrOyGCKFv4uNkWoCiTqpEcusA
+ lTh7Z0G2AX9jaIPWxlnIgppH/60R+E0J5FDZooxuFZq7damQoZMkMD5aUoyNeLrOt19Q
+ Zcx2bSPvW18pFXWYQ74FQg5qrlgtclqg2R5LTzdlsu+8FrQNOTPjMGy1PZ8V834FAbbg
+ NfYg==
+X-Gm-Message-State: APjAAAW9Q9T7wImqIPWljXQh8GPcPeg8iOXFIFDUazMbWOT19B6ZRWi6
+ HqgYbsF91GaVJ04FJrgjfbs=
+X-Google-Smtp-Source: APXvYqy4dAVQ+ZAcZ+Na7c6XiIr61o8y7Lfg2+bZQEg4XJKlBUyi7kCGw2dZZvY/2MRfFQOLGhdeXA==
+X-Received: by 2002:a1c:810d:: with SMTP id c13mr6004971wmd.154.1573247319697; 
+ Fri, 08 Nov 2019 13:08:39 -0800 (PST)
+Received: from [10.83.36.153] ([217.173.96.166])
+ by smtp.gmail.com with ESMTPSA id j63sm9370828wmj.46.2019.11.08.13.08.36
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Fri, 08 Nov 2019 13:08:38 -0800 (PST)
+Subject: Re: [PATCH 00/50] Add log level to show_stack()
+To: Russell King - ARM Linux admin <linux@armlinux.org.uk>,
+ Dmitry Safonov <dima@arista.com>
+References: <20191106030542.868541-1-dima@arista.com>
+ <20191106092039.GT4131@hirez.programming.kicks-ass.net>
+ <10db6fa1-5b17-ebe6-09e0-6335e09e4db8@arista.com>
+ <20191106203440.GH3079@worktop.programming.kicks-ass.net>
+ <CAGrbwDRgX1BZoFrVYSXhAeeUKHrB=q3w8jXFPOuRvO7HV4Ciqw@mail.gmail.com>
+ <20191108173045.GY25745@shell.armlinux.org.uk>
+From: Dmitry Safonov <0x7f454c46@gmail.com>
+Message-ID: <5a411348-be84-f592-ef2d-ffaec99332bd@gmail.com>
+Date: Fri, 8 Nov 2019 21:08:30 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.0
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:o8Zkr+sOZ52wm0ae45/RQryAsK7xYXnsT+HPUpQaufkmPH+Q6/t
- Mx1QjONjSFAcKcXg6d+qmIO5Nz2Z1PzDnxY6Ir3M0ox/+vbOAVauXJZo7+cMsdRcRszJBe7
- Aj8ZN5RLd1R69CpmSVEU9MTURTureJNFvVMuvJJDqIIb4Y4IhYa+4XE+s6Ccc/3w7U5VVCC
- UD2jKhDgaH7FjqUd1a5VA==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:1Ts/01x3JdM=:/uunyXLl4bvJWCavpfEcb/
- 9UoHBVyzqBkcj75fodAjDhjhAyjHi2SMlxz2uJbRFRUmXsG6e6eAogVfcdfts7c47d1reojiA
- KrgDDY253RADofyZtnh5viCrKGzvxm4TKGABjrnBJ0bt1w3KfIWjCYWav1trSnZDSOZooRHfO
- WWwwqG5TUQys5Sv+D10PdDh1BmV1PkR0uQvqi3CJd4F1tM+ZGkEG/J9xbVfFsiF8+0dbqDPUQ
- hr3zgVglY92iRK6SwZ3FDgYMfVogf9R2bfVq1QDRbmGdrtFL2VujlHW7nH5WANGKBkOXxZHrO
- gXnN2qQQM31mucJGqTVaHLg+IF8tEGR7WvtN5gFD771I0OsvEOSfwY4xnWz6Z8mPCLoTrrfg0
- iO1f2ahEO0l71Q3MDRR9pChW632vnUMGqXR0Ky4OTVKsj1JqLoKg32dGg6Nf2QnNk4+i5Nn4N
- 8P3pt9RnLY3nZ8uRAevHKgNdEPEzkueh4uRRA1fLHzn7oheQgyQ958Xc84M2+/zWIdm4pq7h/
- ReSWhlc/Z0PIHrf6SCL/pkAUlTZ0nXkqcG2+JlONuaSiCIQ1UBPDIwAPipVV24b3qpbmW4+uZ
- ELTyVt3T3AirdIi6KcrlMebb/OnK4+Dpa2LEw92WHUcZ8wj70YTk2UptblgI1j60iH9hZBR7V
- DB3kobMcaX8Q7kGMdND8zIaTooRs/2vF0yOcrx4+3ujrUla+IZhROs6oWdLsansep6RTDDz3R
- 3oqTybQw5FsZaFfFrXLoFrDZGx9IkW9T7vaKNmv/iEf/bxmME60Q+D50eSBPH5cE5flykxY1y
- 89ZLtDAK60bylXgCvCP2fF5he1cpwrsVM+CNavdYFN4bEulPNhEaj7Ri0q4m9ntK04XxaoFqh
- BWMSp+QkU2j1ZURv5T0w==
+In-Reply-To: <20191108173045.GY25745@shell.armlinux.org.uk>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_131059_758970_A4F8568E 
-X-CRM114-Status: GOOD (  12.33  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191108_130842_111666_BC36BA18 
+X-CRM114-Status: GOOD (  18.89  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.72.192.75 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (0x7f454c46[at]gmail.com)
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (0x7f454c46[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,108 +107,103 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: linux-um@lists.infradead.org, linux-kernel@vger.kernel.org,
- Arnd Bergmann <arnd@arndb.de>, "H. Peter Anvin" <hpa@zytor.com>
+Cc: Juri Lelli <juri.lelli@redhat.com>, linux-sh@vger.kernel.org,
+ Catalin Marinas <catalin.marinas@arm.com>, Ben Segall <bsegall@google.com>,
+ Guo Ren <guoren@kernel.org>, Pavel Machek <pavel@ucw.cz>,
+ Vincent Guittot <vincent.guittot@linaro.org>,
+ Paul Burton <paulburton@kernel.org>, Michael Ellerman <mpe@ellerman.id.au>,
+ Geert Uytterhoeven <geert@linux-m68k.org>, Mel Gorman <mgorman@suse.de>,
+ Jiri Slaby <jslaby@suse.com>, Matt Turner <mattst88@gmail.com>,
+ uclinux-h8-devel@lists.sourceforge.jp, Len Brown <len.brown@intel.com>,
+ linux-pm@vger.kernel.org, linux-um@lists.infradead.org,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Dietmar Eggemann <dietmar.eggemann@arm.com>,
+ Richard Henderson <rth@twiddle.net>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>, LKML <linux-kernel@vger.kernel.org>,
+ Ralf Baechle <ralf@linux-mips.org>, Paul Mackerras <paulus@samba.org>,
+ Andrew Morton <akpm@linux-foundation.org>, linux-ia64@vger.kernel.org,
+ Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>,
+ James Hogan <jhogan@kernel.org>,
+ "James E.J. Bottomley" <James.Bottomley@hansenpartnership.com>,
+ Max Filippov <jcmvbkbc@gmail.com>, Vincent Chen <deanbo422@gmail.com>,
+ Ingo Molnar <mingo@kernel.org>, linux-s390@vger.kernel.org,
+ linux-c6x-dev@linux-c6x.org, Yoshinori Sato <ysato@users.sourceforge.jp>,
+ linux-hexagon@vger.kernel.org, Helge Deller <deller@gmx.de>,
+ "open list:TENSILICA XTENSA PORT \(xtensa\)" <linux-xtensa@linux-xtensa.org>,
+ Vasily Gorbik <gor@linux.ibm.com>,
+ Aurelien Jacquiot <jacquiot.aurelien@gmail.com>,
+ linux-m68k@lists.linux-m68k.org, Stafford Horne <shorne@gmail.com>,
+ linux-arm-kernel@lists.infradead.org, Chris Zankel <chris@zankel.net>,
+ Tony Luck <tony.luck@intel.com>, Douglas Anderson <dianders@chromium.org>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, Will Deacon <will@kernel.org>,
+ Daniel Thompson <daniel.thompson@linaro.org>,
+ Brian Cain <bcain@codeaurora.org>,
+ Christian Borntraeger <borntraeger@de.ibm.com>,
+ kgdb-bugreport@lists.sourceforge.net, linux-snps-arc@lists.infradead.org,
+ Fenghua Yu <fenghua.yu@intel.com>, Borislav Petkov <bp@alien8.de>,
+ Jeff Dike <jdike@addtoit.com>, Steven Rostedt <rostedt@goodmis.org>,
+ Ivan Kokshaysky <ink@jurassic.park.msu.ru>, Greentime Hu <green.hu@gmail.com>,
+ Guan Xuetao <gxt@pku.edu.cn>, linux-parisc@vger.kernel.org,
+ linux-alpha@vger.kernel.org, Ley Foon Tan <lftan@altera.com>,
+ "David S. Miller" <davem@davemloft.net>, Rich Felker <dalias@libc.org>,
+ Petr Mladek <pmladek@suse.com>, Peter Zijlstra <peterz@infradead.org>,
+ "H. Peter Anvin" <hpa@zytor.com>, sparclinux@vger.kernel.org,
+ linux-riscv@lists.infradead.org,
+ Anton Ivanov <anton.ivanov@cambridgegreys.com>,
+ Jonas Bonn <jonas@southpole.se>, Richard Weinberger <richard@nod.at>,
+ X86 ML <x86@kernel.org>, clang-built-linux@googlegroups.com,
+ Ingo Molnar <mingo@redhat.com>, Mark Salter <msalter@redhat.com>,
+ Albert Ou <aou@eecs.berkeley.edu>,
+ Stefan Kristiansson <stefan.kristiansson@saunalahti.fi>,
+ openrisc@lists.librecores.org, Paul Walmsley <paul.walmsley@sifive.com>,
+ Michal Simek <monstr@monstr.eu>, Vineet Gupta <vgupta@synopsys.com>,
+ linux-mips@vger.kernel.org, Sergey Senozhatsky <sergey.senozhatsky@gmail.com>,
+ Palmer Dabbelt <palmer@dabbelt.com>, Jason Wessel <jason.wessel@windriver.com>,
+ nios2-dev@lists.rocketboards.org, linuxppc-dev@lists.ozlabs.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-Only x86 uses the 'time' syscall in vdso, so change that to
-__kernel_old_time_t as a preparation for removing 'time_t' and
-'__kernel_time_t' later.
 
-Signed-off-by: Arnd Bergmann <arnd@arndb.de>
----
- arch/x86/entry/vdso/vclock_gettime.c  | 6 +++---
- arch/x86/entry/vsyscall/vsyscall_64.c | 2 +-
- arch/x86/um/vdso/um_vdso.c            | 4 ++--
- lib/vdso/gettimeofday.c               | 4 ++--
- 4 files changed, 8 insertions(+), 8 deletions(-)
+On 11/8/19 5:30 PM, Russell King - ARM Linux admin wrote:
+> On Fri, Nov 08, 2019 at 04:28:30PM +0000, Dmitry Safonov wrote:
+[..]
+>>
+>> Well, the use-case for lower log-level is that everything goes into logs
+>> (/var/log/dmesg or /var/log/messages whatever rsyslog has settting).
+>>
+>> That has it's value:
+>> - after a failure (i.e. panic) messages, those were only signs that
+>> something goes wrong can be seen in logs which can give ideas what has
+>> happened.
+> 
+> No they don't.  When the kernel panics, userspace generally stops
+> running, so rsyslog won't be able to write them to /var/log/messages.
+> 
+> How, by "kernel panics" I mean a real kernel panic, which probably
+> isn't what you're talking about there.  You are probably talking
+> about the whole shebang of non-fatal kernel oops, kernel warnings
+> and the like.  If so, I'd ask you to stop confuzzilating terminology.
+> 
+> If you really want to capture such events, then you need to have the
+> kernel write the panic to (e.g.) flash - see the mtdoops driver.
 
-diff --git a/arch/x86/entry/vdso/vclock_gettime.c b/arch/x86/entry/vdso/vclock_gettime.c
-index d9ff616bb0f6..7d70935b6758 100644
---- a/arch/x86/entry/vdso/vclock_gettime.c
-+++ b/arch/x86/entry/vdso/vclock_gettime.c
-@@ -15,7 +15,7 @@
- #include "../../../../lib/vdso/gettimeofday.c"
- 
- extern int __vdso_gettimeofday(struct __kernel_old_timeval *tv, struct timezone *tz);
--extern time_t __vdso_time(time_t *t);
-+extern __kernel_old_time_t __vdso_time(__kernel_old_time_t *t);
- 
- int __vdso_gettimeofday(struct __kernel_old_timeval *tv, struct timezone *tz)
- {
-@@ -25,12 +25,12 @@ int __vdso_gettimeofday(struct __kernel_old_timeval *tv, struct timezone *tz)
- int gettimeofday(struct __kernel_old_timeval *, struct timezone *)
- 	__attribute__((weak, alias("__vdso_gettimeofday")));
- 
--time_t __vdso_time(time_t *t)
-+__kernel_old_time_t __vdso_time(__kernel_old_time_t *t)
- {
- 	return __cvdso_time(t);
- }
- 
--time_t time(time_t *t)	__attribute__((weak, alias("__vdso_time")));
-+__kernel_old_time_t time(__kernel_old_time_t *t)	__attribute__((weak, alias("__vdso_time")));
- 
- 
- #if defined(CONFIG_X86_64) && !defined(BUILD_VDSO32_64)
-diff --git a/arch/x86/entry/vsyscall/vsyscall_64.c b/arch/x86/entry/vsyscall/vsyscall_64.c
-index 76e62bcb8d87..bba5bfdb2a56 100644
---- a/arch/x86/entry/vsyscall/vsyscall_64.c
-+++ b/arch/x86/entry/vsyscall/vsyscall_64.c
-@@ -194,7 +194,7 @@ bool emulate_vsyscall(unsigned long error_code,
- 		break;
- 
- 	case 1:
--		if (!write_ok_or_segv(regs->di, sizeof(time_t))) {
-+		if (!write_ok_or_segv(regs->di, sizeof(__kernel_old_time_t))) {
- 			ret = -EFAULT;
- 			goto check_fault;
- 		}
-diff --git a/arch/x86/um/vdso/um_vdso.c b/arch/x86/um/vdso/um_vdso.c
-index 371724cf70da..2112b8d14668 100644
---- a/arch/x86/um/vdso/um_vdso.c
-+++ b/arch/x86/um/vdso/um_vdso.c
-@@ -37,7 +37,7 @@ int __vdso_gettimeofday(struct __kernel_old_timeval *tv, struct timezone *tz)
- int gettimeofday(struct __kernel_old_timeval *, struct timezone *)
- 	__attribute__((weak, alias("__vdso_gettimeofday")));
- 
--time_t __vdso_time(time_t *t)
-+__kernel_old_time_t __vdso_time(__kernel_old_time_t *t)
- {
- 	long secs;
- 
-@@ -47,7 +47,7 @@ time_t __vdso_time(time_t *t)
- 
- 	return secs;
- }
--time_t time(time_t *t) __attribute__((weak, alias("__vdso_time")));
-+__kernel_old_time_t time(__kernel_old_time_t *t) __attribute__((weak, alias("__vdso_time")));
- 
- long
- __vdso_getcpu(unsigned *cpu, unsigned *node, struct getcpu_cache *unused)
-diff --git a/lib/vdso/gettimeofday.c b/lib/vdso/gettimeofday.c
-index 45f57fd2db64..9ecfd3b547ba 100644
---- a/lib/vdso/gettimeofday.c
-+++ b/lib/vdso/gettimeofday.c
-@@ -164,10 +164,10 @@ __cvdso_gettimeofday(struct __kernel_old_timeval *tv, struct timezone *tz)
- }
- 
- #ifdef VDSO_HAS_TIME
--static __maybe_unused time_t __cvdso_time(time_t *time)
-+static __maybe_unused __kernel_old_time_t __cvdso_time(__kernel_old_time_t *time)
- {
- 	const struct vdso_data *vd = __arch_get_vdso_data();
--	time_t t = READ_ONCE(vd[CS_HRES_COARSE].basetime[CLOCK_REALTIME].sec);
-+	__kernel_old_time_t t = READ_ONCE(vd[CS_HRES_COARSE].basetime[CLOCK_REALTIME].sec);
- 
- 	if (time)
- 		*time = t;
--- 
-2.20.0
+I was talking about things prior the panic: OOMs, MMC write/read
+warnings, hung tasks, we also have local patches to produce a warning if
+the mutex is being held for too long or a task is starving on CPU time
+by hard/soft irqs (I hope I will design something like that for
+upstream). I've found those warnings useful to:
+(a) have an early message when the things are starting going bad.
+(b) analyze contentions or too large scale for a box or faulty hardware
+for non-reproducible issues just from logs.
 
+We use kexec to save the dmesg ringbuffer content after the panic.
+
+Thanks,
+          Dmitry
 
 _______________________________________________
 linux-um mailing list
