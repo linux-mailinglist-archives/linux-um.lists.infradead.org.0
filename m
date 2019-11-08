@@ -2,80 +2,74 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C1431F4226
-	for <lists+linux-um@lfdr.de>; Fri,  8 Nov 2019 09:32:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EC6C4F423B
+	for <lists+linux-um@lfdr.de>; Fri,  8 Nov 2019 09:35:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dP46aDpF4ZOuJK8zWBcbYBDOFJ1Dun1YcJYcgWKSM2c=; b=GshAM4MmNIF6AF
-	R/nyZD1yPFuaqGKQXFI6qVnHRYSfxdhOfOA24ZRRUAzcFI5C8LrbXLTzJkGOlc0NJY8pJ788COyL+
-	jd3701aoH4t7Z5dHH14rDiP2iXLf74ay1Lyndk3lEQWGEO6XLxMne+8DlkRkuK9Kkiuw+xpp2O/Wn
-	hqPv2ZPcVQyQCU5ryAXiZnSy9+fUycxPgcME/HDXMCAvAF+kTlOoqLLpWhwALkuVtzSdkACMp6PTg
-	0UZfLREWncLqv98a4ZhhzDicpemjD16jEKn/Dc/Y30QBdr3mYMhycD23YVpj1I/KUEjPk3P3W2TIN
-	J1JYJR5AC/AS2ptZV1tA==;
+	List-Owner; bh=Qw+OPicyTqAs8/8xlqgDpNk5+sjzrSXQShDgqFnD75Y=; b=YCAl3uerncNyy4
+	FVcL/MRiMysyDVDeUOajmoSQqHCKHtU4woPXaxv5izB22xBoaQlnyoV+GVcqFY8hACWzrDm5gKrrW
+	r/Wm1qZLgw6MDrKyGWUpFXTUSaTdJrw99W9u4oT5wsNVoMHDJx4INmZVVOzRc35hR6x68MhiHw904
+	9fspHl2QOgihYIwth+Ryse/jqNZnGroG7a8lX8VREF48BNHcrTOhmldp++b1u/8AzaQXBkgQob+ko
+	DLEuhdh59plYWWc0n0s4LqKgOdNRPikvsSLIogQPXjpH0IGvKMAnxC20zy9dParXjJX7dOGek0nVL
+	dhzPq+XsUap74zFcuA5A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSzhM-0007M1-NS; Fri, 08 Nov 2019 08:32:52 +0000
-Received: from mail-ot1-f66.google.com ([209.85.210.66])
+	id 1iSzkH-0001Bx-Ro; Fri, 08 Nov 2019 08:35:53 +0000
+Received: from mail-oi1-f195.google.com ([209.85.167.195])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSzhA-0007Bg-Om; Fri, 08 Nov 2019 08:32:42 +0000
-Received: by mail-ot1-f66.google.com with SMTP id b16so4522522otk.9;
- Fri, 08 Nov 2019 00:32:39 -0800 (PST)
+ id 1iSzk7-00012Y-OI; Fri, 08 Nov 2019 08:35:45 +0000
+Received: by mail-oi1-f195.google.com with SMTP id j7so4573524oib.3;
+ Fri, 08 Nov 2019 00:35:43 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=Mb8MvPT80CBr0Al9ctm+EN0Y96m3kmKlyXiJXBeWesc=;
- b=jyHm/up2Sfe0c1LE6wk2NNG6v2qS+LHXTRVFs1/RhIYc/yqU5KnLKCV63XHBmAqj/c
- FP6ziVQeKRpiQD1XRwLBHkCoaDL3c/+hKnG20u9y3gJJ84Tp9ulJk9B9QZNFM7xkV2Sw
- e5mVcYN4OWEjeNSixwQJ/hKiLFSr7VQcEUUQ09LsAWkDxCR5MkNsvR9XrKioOO5SWPUM
- 0GJlnV/JXKpEtw1oyxtTTTaB1ix8Yvq0r4DEZU+6eW28Q0tpozpYuFNQi986dZG/5l2r
- 38A+f8kPuO7/PJk5ygs2s1qmCs8ttEHpyxIcKHivsi6wjnxeDtzvXX0Ca8Cx95n9IDG0
- jCZQ==
-X-Gm-Message-State: APjAAAV44w4SSfa/WQ1i/A07wYo/GqvjqqNx35xyCGx8i4CWC5Io0+uy
- L4KKxWysk74M1T4yXFjpXKvI2HGitc0FYGN/Iz8=
-X-Google-Smtp-Source: APXvYqw+43SGPSED0AJZnzsx4nEcpKNktTl/12Rw+DSczrLXTnm64tHUPqVN8uYM7eIOKZWrtAAa7/8vyyyqFua3Kw4=
-X-Received: by 2002:a05:6830:2363:: with SMTP id
- r3mr7709762oth.39.1573201958505; 
- Fri, 08 Nov 2019 00:32:38 -0800 (PST)
+ bh=h1uMs1sJfEiNP+XnwLWOA56bVLhvU2oQuJJbSb2fF04=;
+ b=Sz6KZezBOjTRatGfiicNwQahFEoIX3zz1GB0o65VSoEIS3gtWX0E+/l+J2v0otXYZX
+ x9j1wzcYBOjhD6RunDqhcLEDkiYm3laoeJudW9Cfgqj18Q9CCe0y+J6jBuvslqUgfz8S
+ nnh8+mU1o0EwOUgqj5xOiKDaAXx9jagMyPdu1Qt0VR4dL9yZOh5cgFFklbno3BKw/a8U
+ I0hDCDTeA3VfL8yqkkGpZ7sRP2AUXI8wuk7to35fXzs3UgBmhdODSNo4LV5jYNwhzMRx
+ /doApqBTct1R4IOxtUxEgeIKlEvK29o1fJ0wJTbdrH2XeechxgBOkV2KXQYbAY99V9Sc
+ 6wuA==
+X-Gm-Message-State: APjAAAVcyVsUoeoO8mEBzD/0Z2qYxm4PvkTUjeQ3n/xhnikR8fZFjkUC
+ M6R7bQ1xxb9mS/83fuoVp1nvSS09RvMtx/TjB4U=
+X-Google-Smtp-Source: APXvYqxOUOr/TBH5H/Et++6eJWrvXzscFQJINZxRtWaYCdbXL4E/D5dDGUqtPMP+MwKaU6AtU89yWbI44eh67jVJ2zk=
+X-Received: by 2002:aca:3a86:: with SMTP id h128mr8105952oia.131.1573202142533; 
+ Fri, 08 Nov 2019 00:35:42 -0800 (PST)
 MIME-Version: 1.0
-References: <1572850587-20314-1-git-send-email-rppt@kernel.org>
- <1572850587-20314-6-git-send-email-rppt@kernel.org>
- <CAMuHMdUG3V7uxzhbetw75vVeobeP0-bQySb3r=0V5XujUF123g@mail.gmail.com>
- <20191104094748.GB23288@rapoport-lnx>
- <CAMuHMdVHsNyLxhaxZcVdLvQ1PUnb=2_+ECPWVD0234V+qu+kOw@mail.gmail.com>
- <3d908bbf-0469-c53b-dd86-87df98f40ee7@gmail.com>
-In-Reply-To: <3d908bbf-0469-c53b-dd86-87df98f40ee7@gmail.com>
+References: <1572938135-31886-1-git-send-email-rppt@kernel.org>
+ <1572938135-31886-6-git-send-email-rppt@kernel.org>
+In-Reply-To: <1572938135-31886-6-git-send-email-rppt@kernel.org>
 From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Fri, 8 Nov 2019 09:32:27 +0100
-Message-ID: <CAMuHMdVe-7=587nMWK_FcHzsm1TLckwTY9JxKHM_Gg8+ogZsgA@mail.gmail.com>
-Subject: Re: [PATCH v3 05/13] m68k: mm: use pgtable-nopXd instead of
+Date: Fri, 8 Nov 2019 09:35:31 +0100
+Message-ID: <CAMuHMdXqaw_k=XiY0RYvvR+smE-5tbTBzWiAZOFev731vR3q3A@mail.gmail.com>
+Subject: Re: [PATCH v4 05/13] m68k: mm: use pgtable-nopXd instead of
  4level-fixup
-To: Michael Schmitz <schmitzmic@gmail.com>
+To: Mike Rapoport <rppt@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_003240_808720_E7574F34 
-X-CRM114-Status: GOOD (  12.90  )
+X-CRM114-CacheID: sfid-20191108_003543_790328_8794FF5C 
+X-CRM114-Status: GOOD (  13.29  )
 X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.66 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.66 listed in wl.mailspike.net]
+ no trust [209.85.167.195 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (geert.uytterhoeven[at]gmail.com)
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.195 listed in wl.mailspike.net]
  0.1 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,29 +99,66 @@ Cc: "James E.J. Bottomley" <James.Bottomley@hansenpartnership.com>,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
  "David S. Miller" <davem@davemloft.net>, alpha <linux-alpha@vger.kernel.org>,
  Andrew Morton <akpm@linux-foundation.org>,
- Linus Torvalds <torvalds@linux-foundation.org>, Peter Rosin <peda@axentia.se>,
- Mike Rapoport <rppt@kernel.org>
+ Linus Torvalds <torvalds@linux-foundation.org>, Peter Rosin <peda@axentia.se>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-Hi Michael,
+Hi Mike,
 
-On Fri, Nov 8, 2019 at 5:30 AM Michael Schmitz <schmitzmic@gmail.com> wrote:
-> Am 04.11.2019 um 22:53 schrieb Geert Uytterhoeven:
-> >>> This indeed boots fine on ARAnyM, which emulates on 68040.
-> >>> It would be good to have some boot testing on '020/030, too.
-> >>
-> >> To be honest, I have no idea how to to that :)
-> >
-> > Sure. This was more a request for the fellow m68k users.
-> > But don't worry too much about it.  If it breaks '020/'030, we can fix
-> > that later.
+On Tue, Nov 5, 2019 at 8:16 AM Mike Rapoport <rppt@kernel.org> wrote:
+> From: Mike Rapoport <rppt@linux.ibm.com>
 >
-> Boots fine on 030, too.
+> m68k has two or three levels of page tables and can use appropriate
+> pgtable-nopXd and folding of the upper layers.
+>
+> Replace usage of include/asm-generic/4level-fixup.h and explicit
+> definitions of __PAGETABLE_PxD_FOLDED in m68k with
+> include/asm-generic/pgtable-nopmd.h for two-level configurations and with
+> include/asm-generic/pgtable-nopud.h for three-lelve configurations and
+> adjust page table manipulation macros and functions accordingly.
+>
+> Signed-off-by: Mike Rapoport <rppt@linux.ibm.com>
+> Acked-by: Greg Ungerer <gerg@linux-m68k.org>
 
-Thanks a lot for testing!
+Acked-by: Geert Uytterhoeven <geert@linux-m68k.org>
+
+One forgotten error message update below.
+
+> --- a/arch/m68k/mm/kmap.c
+> +++ b/arch/m68k/mm/kmap.c
+> @@ -258,18 +265,23 @@ void __iounmap(void *addr, unsigned long size)
+>  {
+>         unsigned long virtaddr = (unsigned long)addr;
+>         pgd_t *pgd_dir;
+> +       p4d_t *p4d_dir;
+> +       pud_t *pud_dir;
+>         pmd_t *pmd_dir;
+>         pte_t *pte_dir;
+>
+>         while ((long)size > 0) {
+>                 pgd_dir = pgd_offset_k(virtaddr);
+> -               if (pgd_bad(*pgd_dir)) {
+> -                       printk("iounmap: bad pgd(%08lx)\n", pgd_val(*pgd_dir));
+> -                       pgd_clear(pgd_dir);
+> +               p4d_dir = p4d_offset(pgd_dir, virtaddr);
+> +               pud_dir = pud_offset(p4d_dir, virtaddr);
+> +               if (pud_bad(*pud_dir)) {
+> +                       printk("iounmap: bad pgd(%08lx)\n", pud_val(*pud_dir));
+
+bad pud
+
+> +                       pud_clear(pud_dir);
+>                         return;
+>                 }
+> -               pmd_dir = pmd_offset(pgd_dir, virtaddr);
+> +               pmd_dir = pmd_offset(pud_dir, virtaddr);
+>
+> +#if CONFIG_PGTABLE_LEVELS == 3
+>                 if (CPU_IS_020_OR_030) {
+>                         int pmd_off = (virtaddr/PTRTREESIZE) & 15;
+>                         int pmd_type = pmd_dir->pmd[pmd_off] & _DESCTYPE_MASK;
 
 Gr{oetje,eeting}s,
 
