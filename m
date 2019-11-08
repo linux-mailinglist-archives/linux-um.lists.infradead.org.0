@@ -2,89 +2,86 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 57C43F3EEE
-	for <lists+linux-um@lfdr.de>; Fri,  8 Nov 2019 05:30:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4646AF3F19
+	for <lists+linux-um@lfdr.de>; Fri,  8 Nov 2019 06:03:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=2jJ0hHvMz51E2VjS0JTzVBeCteBm1LJhLD+wEClyon4=; b=fLGxhBRN+oOEP1fUicChByOAJ
-	5bArtzmqrYN825kuUEbBmhGUOTLwyce04QL/JHvTEBJxlQyQ67RMfQStlFy+5IJtGcw3GV/mjUdiI
-	ZQKAvdfuBI90YEYfdj5IzFNdaNb3VZnsWCqmmBGVMRcnoVsiSF+40mNlup/Iy49+gK95CJ+I6WF3y
-	QA9qB4n77O9loeqCt6io0UW4MEkBNnHv/nu0YUkc96N5ogZuCGNKprRS+VG4KetYs3OMGYsswVgMk
-	VtJAo6+vquIxVRk/+HatIDzYO9MdLGrpVEojFqxX8VCRd10KxnT9x0tQ5INlPB/LCtJdzR7izOw2R
-	L5t20fJHg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=rS3P56Q+U6I3TYUW92mlEbTb79tzr1tGa7l2AmLX1N0=; b=Kv3D5V/ZXr3Ugt
+	jCboimypdaZX+KlaQfqIEy/czlNE7JXNyCoz8N9OsWmaHXQZ0gKjJYSEA5SExNyLg4Zlko9gMVGGw
+	veV3y/ucxCWYEvz0gV12WCbgLSNcDvLGyG0YoENAmwXzrwIA+c3IxG5ZaPpinqrmlIiWvyh2iWwYZ
+	unkXSUhRYG+kSTCXe8hzMy6OlulAU8TP+ysRJsKCY0jqkSlBWMTD+8/6BXm29hXbLQwu7Z9NYdVYy
+	mEsocyre8UtxSTaQVnRPekDTuMRFrzqyrc+5/x+L8Q5FxW5K2J3HGlRATIKSPJSrdRQng7H1lQI60
+	E8f/NmetzFYPiBJskHGA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSvue-00018Z-IS; Fri, 08 Nov 2019 04:30:20 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1iSwQQ-0003Y3-IN; Fri, 08 Nov 2019 05:03:10 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSvub-00017x-VF; Fri, 08 Nov 2019 04:30:19 +0000
-Received: by mail-pl1-x642.google.com with SMTP id e3so3188462plt.7;
- Thu, 07 Nov 2019 20:30:17 -0800 (PST)
+ id 1iSwQM-0003W6-1u
+ for linux-um@lists.infradead.org; Fri, 08 Nov 2019 05:03:08 +0000
+Received: by mail-pl1-x643.google.com with SMTP id w8so3250454plq.5
+ for <linux-um@lists.infradead.org>; Thu, 07 Nov 2019 21:03:05 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:references:cc:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-transfer-encoding;
- bh=GEvPrgPPegoWDjxGYmMInikn90DDnMAOw8xBaDl5kZA=;
- b=pGQ+a/83A9/0Nc2QLG/lrr1EYbt/bjvX3SE4LpTBgZGf0KilWjqO6VeOG6Jwcb1D23
- fj+jvlUeTjjSw255ZQykSDw3AJVbte/f/cE1oLe8M6sGNMwYNJK9ALY+tjxZheqDchxu
- uAZMm1A8J8KM9d9f92xRrv1AInfaJSQbOM4UjupIdxR+V8PDnlIAOjTNsXdQqC1CSA9i
- 7NDAIlAd9wtaEkQI0UHHeMwVQpIhz75MXzB4PVA2lnJTqpyORABxoTq5C4z7RED5Jagj
- p7JTWMZQtDHju/NCEn/n/ZU5jW56e2cp+KSQRvmhV5kQrLQKAhFZLEAm61D2fgLPindm
- WN9g==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=9N2TffLEBrMFoiozRY5yNdglRHURpqU2tyMjuvZW3aE=;
+ b=M58zom/46XeIQRH7bKVOFP7MoTTZ3FgGCiyrV8lMGzsSbThWLjWkhdeuGBtQP65J6E
+ G0YAuE5sdYG+ifCbivAdUoaGNSxLS27SKxTGu5wyGLzWjn82yCIjcnozKXcHDIyYRTQA
+ EeqFVvvZ51/IwA7yv36HCW5W1IbPuHGiHVdTSuHz3uCj44kDRmRTJbhHzzaCLDMLWq55
+ d67DY9WZfwwW3hqNfOOTLwmm8ONNSqKncjVVdPd5iTUqz+gt2VpEUdCjye1j9/Sp8gSY
+ pUdcAg0mBzDiENCoqrcGf+kTfFqE5Vksnml6BZQZrXr4dNm6491JS4DIrpiVhu+uEq+7
+ 7DGQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:references:cc:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-transfer-encoding;
- bh=GEvPrgPPegoWDjxGYmMInikn90DDnMAOw8xBaDl5kZA=;
- b=J66x3lxlaLjyvkwB42JLrxY7ZTfXeUlRAzivD6d/expJQ0pa/OrWhyt9m+LxQIqvhX
- a8ao8guKEk1532VhBVt21ixZYEPUBl5JZcT8xBfgCvfxz+yUpKLhQb35IKBxADaxs4dg
- TTyaqyhSAqBJhFCvmluaN3A7gL/sw6dJkd5mn3xd8OuXvP6PPuv4FAKRwvhXU1xiu+5L
- l+M76vwsrbhFayvGslIuNJop8BvYjvP7cCQMrN30zo39OKeoTHnu33vk1cevSMMlKkcm
- yJxsWV/3cponbA+JtmZFWhFQm9NQq2y2UmObukHTjEyzTeBYL0+m3qLpWskB52NYr2Ki
- HtUw==
-X-Gm-Message-State: APjAAAX94QTh+YVNCYFkv+WIuNOxTt/y5DAhR/mXNyqNyd8N/W0XeAFk
- TtzWaKLEmMPReV8A+2b8efg=
-X-Google-Smtp-Source: APXvYqwQ686n7vNnzVLImLtqcTfZ3PQU/gu1LdOpnaXjAFca86+mHnqZ1aY/PwV9eAq6yZBUTvdpJw==
-X-Received: by 2002:a17:90a:bf04:: with SMTP id
- c4mr10812587pjs.5.1573187416969; 
- Thu, 07 Nov 2019 20:30:16 -0800 (PST)
-Received: from [192.168.1.101] (122-58-182-39-adsl.sparkbb.co.nz.
- [122.58.182.39])
- by smtp.gmail.com with ESMTPSA id x70sm4621756pfd.132.2019.11.07.20.30.01
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=9N2TffLEBrMFoiozRY5yNdglRHURpqU2tyMjuvZW3aE=;
+ b=clmvYdf+fbDchNsRIhvDvGiV9DHuOn5xjBAHEO/6o/PPbkfoCk3QNs4mOXBizPZUPJ
+ 5Ta7icl6M4FXs1rQmK+7sqDzJAwPbXHCCJacU7odpkNBWrPdEXM3Jn51KDGAPmoY4z1C
+ l96iL87V7OeeRoHf3Xbla2AIGpPFtT99d5NUcKolfgMj6rpnA1wyHNOBOzKCgQr8q5O7
+ S/LxlWpDh2Ic89pxcRbB1cstHl9v7p6u6qQ5F7v1sWtOrRM/gcHhVa+yDGJsUb2TLhon
+ iPsy4GymHZQfCExg2iZogc7dPy6OX00UFQK5OLGLYAJzX3fNWDwv4jMb+1BCXhmT9vRk
+ IxiQ==
+X-Gm-Message-State: APjAAAWG2i5j6Jvdqwv2Ws5njbds9GI1QUtz3S3k2l0ELObBkqrN/5/3
+ yV1O3BkrAOE7t5I+A6DqxUI6VlfraTR+Tg==
+X-Google-Smtp-Source: APXvYqyw9HJDEoun5sQUJLgwmPPTjDrDJB7wHiBxougDsyjVSgTK/bNPV49hR2QRN5Jk6Qppdg2dkQ==
+X-Received: by 2002:a17:90a:7309:: with SMTP id
+ m9mr10629875pjk.10.1573189385029; 
+ Thu, 07 Nov 2019 21:03:05 -0800 (PST)
+Received: from earth-mac.local ([202.214.86.179])
+ by smtp.gmail.com with ESMTPSA id b17sm4825470pfr.17.2019.11.07.21.03.03
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 07 Nov 2019 20:30:16 -0800 (PST)
-Subject: Re: [PATCH v3 05/13] m68k: mm: use pgtable-nopXd instead of
- 4level-fixup
-To: Geert Uytterhoeven <geert@linux-m68k.org>, Mike Rapoport <rppt@kernel.org>
-References: <1572850587-20314-1-git-send-email-rppt@kernel.org>
- <1572850587-20314-6-git-send-email-rppt@kernel.org>
- <CAMuHMdUG3V7uxzhbetw75vVeobeP0-bQySb3r=0V5XujUF123g@mail.gmail.com>
- <20191104094748.GB23288@rapoport-lnx>
- <CAMuHMdVHsNyLxhaxZcVdLvQ1PUnb=2_+ECPWVD0234V+qu+kOw@mail.gmail.com>
-From: Michael Schmitz <schmitzmic@gmail.com>
-Message-ID: <3d908bbf-0469-c53b-dd86-87df98f40ee7@gmail.com>
-Date: Fri, 8 Nov 2019 17:29:58 +1300
-User-Agent: Mozilla/5.0 (X11; Linux ppc; rv:45.0) Gecko/20100101 Icedove/45.4.0
+ Thu, 07 Nov 2019 21:03:03 -0800 (PST)
+Received: by earth-mac.local (Postfix, from userid 501)
+ id A4C62201ACFC48; Fri,  8 Nov 2019 14:03:01 +0900 (JST)
+From: Hajime Tazaki <thehajime@gmail.com>
+To: linux-um@lists.infradead.org
+Subject: [RFC v2 00/37] Unifying LKL into UML
+Date: Fri,  8 Nov 2019 14:02:15 +0900
+Message-Id: <cover.1573179553.git.thehajime@gmail.com>
+X-Mailer: git-send-email 2.20.1 (Apple Git-117)
+In-Reply-To: <cover.1571798507.git.thehajime@gmail.com>
+References: <cover.1571798507.git.thehajime@gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <CAMuHMdVHsNyLxhaxZcVdLvQ1PUnb=2_+ECPWVD0234V+qu+kOw@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191107_203018_031928_EF3E3F8A 
-X-CRM114-Status: GOOD (  12.99  )
+X-CRM114-CacheID: sfid-20191107_210306_097666_6B396A47 
+X-CRM114-Status: GOOD (  20.78  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (schmitzmic[at]gmail.com)
+ provider (thehajime[at]gmail.com)
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -103,47 +100,487 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: "James E.J. Bottomley" <James.Bottomley@hansenpartnership.com>,
- Linux MM <linux-mm@kvack.org>, sparclinux <sparclinux@vger.kernel.org>,
- Rolf Eike Beer <eike-kernel@sf-tec.de>, Vincent Chen <deanbo422@gmail.com>,
- Greg Ungerer <gerg@linux-m68k.org>,
- Anton Ivanov <anton.ivanov@cambridgegreys.com>,
- Linux-Arch <linux-arch@vger.kernel.org>, linux-c6x-dev@linux-c6x.org,
- Richard Weinberger <richard@nod.at>, Helge Deller <deller@gmx.de>,
- Russell King <linux@armlinux.org.uk>, Mike Rapoport <rppt@linux.ibm.com>,
- Mark Salter <msalter@redhat.com>, Matt Turner <mattst88@gmail.com>,
- Vineet Gupta <Vineet.Gupta1@synopsys.com>, Sam Creasey <sammy@sammy.net>,
- Arnd Bergmann <arnd@arndb.de>, Jeff Dike <jdike@addtoit.com>,
- linux-um@lists.infradead.org, linux-m68k <linux-m68k@lists.linux-m68k.org>,
- Greentime Hu <green.hu@gmail.com>, "Kirill A. Shutemov" <kirill@shutemov.name>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Michal Simek <monstr@monstr.eu>, Parisc List <linux-parisc@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- "David S. Miller" <davem@davemloft.net>, alpha <linux-alpha@vger.kernel.org>,
- Andrew Morton <akpm@linux-foundation.org>,
- Linus Torvalds <torvalds@linux-foundation.org>, Peter Rosin <peda@axentia.se>
+Cc: Octavian Purdila <tavi.purdila@gmail.com>,
+ linux-kernel-library@freelists.org, linux-arch@vger.kernel.org,
+ Hajime Tazaki <thehajime@gmail.com>, Akira Moroo <retrage01@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-Hi Geert,
+This RFC patchset is to ask opinions from folks, whether LKL codes is good
+to integrate into UML code base.  We wish to have any kind of feedback from
+your kind reviews.  There are numbers of commits which should be asked for
+reviews to other mailing lists; we will do it later once we got discussed
+in this mailing list.
 
-Am 04.11.2019 um 22:53 schrieb Geert Uytterhoeven:
->>> This indeed boots fine on ARAnyM, which emulates on 68040.
->>> It would be good to have some boot testing on '020/030, too.
->>
->> To be honest, I have no idea how to to that :)
->
-> Sure. This was more a request for the fellow m68k users.
-> But don't worry too much about it.  If it breaks '020/'030, we can fix
-> that later.
+# sorry for the long list of patches: we can make it smaller by only
+  including basic set of LKL (e.g., removing foreign OS support, etc) if
+  you wish.
 
-Boots fine on 030, too.
 
-Cheers,
+rfc v2:
+- use UMMODE instead of SUBARCH to switch UML or LKL
+- tools/lkl directory is still there. I confirmed we can move under arch/um
+  (e.g., arch/um/lkl/hosts).  I will move it IF this is preferable.
+- drop several patches involved non-uml directory
+- drop several patches which are not required
+- refine commit logs
+- document updated
 
-	Michael
+
+
+
+LKL (Linux Kernel Library) is aiming to allow reusing the Linux kernel code
+as extensively as possible with minimal effort and reduced maintenance
+overhead.
+
+Examples of how LKL can be used are: creating userspace applications
+(running on Linux and other operating systems) that can read or write Linux
+filesystems or can use the Linux networking stack, creating kernel drivers
+for other operating systems that can read Linux filesystems, bootloaders
+support for reading/writing Linux filesystems, etc.
+
+With LKL, the kernel code is compiled into an object file that can be
+directly linked by applications. The API offered by LKL is based on the
+Linux system call interface.
+
+LKL is originally implemented as an architecture port in arch/lkl, but this
+series of commits tries to integrate this into arch/um as one of the mode
+of UML.  This was discussed during RFC email of LKL (*1).
+
+The latest LKL version can be found at https://github.com/lkl/linux
+
+Milestone
+=========
+This patches is just a first step toward upstreaming *library mode* of
+Linux kernel, but we think we need to have several steps toward our goal,
+describing in the below.
+
+1. Put LKL code under arch/um (arch/um/lkl), and build it in a
+separate way from UML.
+2. Share common parts of implementation between UML and LKL.
+3. Reimplement UML features with LKL API (if we wish)
+
+For the step 1, we put LKL as one of UMMODE in order to make less effort to
+integrate (make ARCH=um UMMODE=library).  The modification to existing UML
+code is trying to be minimized.
+
+The RFC patches also includes and a bit of step 2 as a proof of possibility
+to share the code.  For this, we used the virtio device code of LKL and use
+it from UML by enabling virtio-mmio driver with UML code.
+
+
+
+Building LKL the host library and LKL applications
+==================================================
+
+% cd tools/lkl
+% make
+
+will build LKL as a object file, it will install it in tools/lkl/lib together
+with the headers files in tools/lkl/include then will build the host library,
+tests and a few of application examples:
+
+* tests/boot - a simple applications that uses LKL and exercises the basic
+LKL APIs
+
+* tests/net-test - a simple applications that uses network feature of
+LKL and exercises the basic network-related APIs
+
+* fs2tar - a tool that converts a filesystem image to a tar archive
+
+* cptofs/cpfromfs - a tool that copies files to/from a filesystem image
+
+% make run-tests
+
+should run the above `tests/boot` and `tests/net-test` and report errors if
+there are any.
+
+Supported hosts
+===============
+
+Currently LKL supports POSIX and Windows userspace applications. New hosts
+can be added relatively easy if the host supports gcc and GNU ld. Previous
+versions of LKL supported Windows kernel and Haiku kernel hosts, and we
+also have WIP patches (not included in this RFC) with rump-hypercall
+interface, used in UEFI, as well as macOS userspace (part of POSIX?).
+
+There is also musl-libc port for LKL, which might be interested in for some
+folks.
+
+
+Further readings about LKL
+=========================
+
+- Discussion in github LKL issue
+https://github.com/lkl/linux/issues/304
+
+- LKL (an article)
+https://www.researchgate.net/profile/Nicolae_Tapus2/publication/224164682_LKL_The_Linux_kernel_library/links/02bfe50fd921ab4f7c000000.pdf
+
+*1 RFC email to LKML (back in 2015)
+https://www.mail-archive.com/linux-kernel@vger.kernel.org/msg1012277.html
+
+
+
+Please review the following changes for suitability for inclusion. If you have
+any objections or suggestions for improvement, please respond to the patches. If
+you agree with the changes, please provide your Acked-by.
+
+The following changes since commit 73625ed66389d4c620520058d828f43a93ab4d0c:
+
+  um: irq: Fix LAST_IRQ usage in init_IRQ() (2019-09-16 08:38:58 +0200)
+
+are available in the Git repository at:
+
+  git://github.com/thehajime/linux 61b15bfb52c7f1f066685c90a1cfe8346b3faec9
+  https://github.com/thehajime/linux/tree/upstream-to-uml-5.5-rc1-v2
+
+Andreas Abel (1):
+  kallsyms: Add a config option to select section for kallsyms
+
+Hajime Tazaki (6):
+  lkl: add system call hijack support
+  scripts: revert CONFIG_HAVE_UNDERSCORE_SYMBOL_PREFIX patches
+  lkl: Android ARM (arm/arm64) support
+  um lkl: add CI tests
+  um: use lkl virtio_net_tap device as UML device
+  um: add lkl virtio-blk device
+
+Octavian Purdila (29):
+  asm-generic: atomic64: allow using generic atomic64 on 64bit platforms
+  arch: add __SYSCALL_DEFINE_ARCH
+  lkl: architecture skeleton for Linux kernel library
+  lkl: host interface
+  lkl: memory handling
+  lkl: kernel threads support
+  lkl: interrupt support
+  lkl: system call interface and application API
+  lkl: timers, time and delay support
+  lkl: memory mapped I/O support
+  lkl: basic kernel console support
+  lkl: initialization and cleanup
+  lkl: plug in the build system
+  lkl tools: skeleton for host side library, tests and tools
+  lkl tools: host lib: add utilities functions
+  lkl tools: host lib: memory mapped I/O helpers
+  lkl tools: host lib: virtio devices
+  lkl tools: host lib: virtio block device
+  lkl tools: host lib: filesystem helpers
+  lkl tools: host lib: posix host operations
+  lkl tools: "boot" test
+  lkl tools: tool that reads/writes to/from a filesystem image
+  lkl tools: tool that converts a filesystem image to tar
+  lkl tools: virtio: add network device support
+  checkpatch: avoid showing BIT_ULL warnings for tools/ files
+  lkl tools: add lklfuse
+  lkl: add documentation
+  lkl: add support for Windows hosts
+  lkl tools: add support for Windows host
+
+Thomas Liebetraut (1):
+  tools: Add the lkl host library to the common tools Makefile
+
+ .circleci/config.yml                       | 276 ++++++
+ Documentation/virt/uml/lkl.txt             | 453 ++++++++++
+ MAINTAINERS                                |   8 +
+ Makefile                                   |   4 +-
+ arch/Kconfig                               |   6 +
+ arch/um/Kconfig                            |  32 +-
+ arch/um/Makefile                           | 151 +---
+ arch/um/Makefile.um                        | 152 ++++
+ arch/um/configs/x86_64_defconfig           |   6 +
+ arch/um/include/asm/Kbuild                 |   1 +
+ arch/um/include/asm/io.h                   |   4 +
+ arch/um/kernel/syscall.c                   |  53 ++
+ arch/um/lkl/.gitignore                     |   2 +
+ arch/um/lkl/Kconfig                        |  91 ++
+ arch/um/lkl/Kconfig.debug                  |   0
+ arch/um/lkl/Makefile                       |  69 ++
+ arch/um/lkl/auto.conf                      |   1 +
+ arch/um/lkl/configs/lkl_defconfig          |  91 ++
+ arch/um/lkl/include/asm/Kbuild             |  80 ++
+ arch/um/lkl/include/asm/bitsperlong.h      |  11 +
+ arch/um/lkl/include/asm/byteorder.h        |   7 +
+ arch/um/lkl/include/asm/cpu.h              |  14 +
+ arch/um/lkl/include/asm/elf.h              |  15 +
+ arch/um/lkl/include/asm/host_ops.h         |  10 +
+ arch/um/lkl/include/asm/io.h               | 104 +++
+ arch/um/lkl/include/asm/irq.h              |  15 +
+ arch/um/lkl/include/asm/mutex.h            |   7 +
+ arch/um/lkl/include/asm/page.h             |  14 +
+ arch/um/lkl/include/asm/pgtable.h          |  62 ++
+ arch/um/lkl/include/asm/processor.h        |  60 ++
+ arch/um/lkl/include/asm/ptrace.h           |  25 +
+ arch/um/lkl/include/asm/sched.h            |  23 +
+ arch/um/lkl/include/asm/setup.h            |   7 +
+ arch/um/lkl/include/asm/syscalls.h         |  18 +
+ arch/um/lkl/include/asm/syscalls_32.h      |  43 +
+ arch/um/lkl/include/asm/thread_info.h      |  70 ++
+ arch/um/lkl/include/asm/tlb.h              |  12 +
+ arch/um/lkl/include/asm/uaccess.h          |  64 ++
+ arch/um/lkl/include/asm/unistd.h           |  29 +
+ arch/um/lkl/include/asm/unistd_32.h        |  31 +
+ arch/um/lkl/include/asm/vmlinux.lds.h      |  14 +
+ arch/um/lkl/include/asm/xor.h              |   9 +
+ arch/um/lkl/include/system/stdarg.h        |   2 +
+ arch/um/lkl/include/uapi/asm/Kbuild        |   9 +
+ arch/um/lkl/include/uapi/asm/bitsperlong.h |  13 +
+ arch/um/lkl/include/uapi/asm/byteorder.h   |  11 +
+ arch/um/lkl/include/uapi/asm/host_ops.h    | 153 ++++
+ arch/um/lkl/include/uapi/asm/irq.h         |  36 +
+ arch/um/lkl/include/uapi/asm/sigcontext.h  |  16 +
+ arch/um/lkl/include/uapi/asm/siginfo.h     |  11 +
+ arch/um/lkl/include/uapi/asm/swab.h        |  11 +
+ arch/um/lkl/include/uapi/asm/syscalls.h    | 348 ++++++++
+ arch/um/lkl/include/uapi/asm/unistd.h      |  18 +
+ arch/um/lkl/kernel/Makefile                |   4 +
+ arch/um/lkl/kernel/asm-offsets.c           |   2 +
+ arch/um/lkl/kernel/console.c               |  42 +
+ arch/um/lkl/kernel/cpu.c                   | 223 +++++
+ arch/um/lkl/kernel/irq.c                   | 193 +++++
+ arch/um/lkl/kernel/misc.c                  |  60 ++
+ arch/um/lkl/kernel/setup.c                 | 193 +++++
+ arch/um/lkl/kernel/syscalls.c              | 246 ++++++
+ arch/um/lkl/kernel/syscalls_32.c           | 159 ++++
+ arch/um/lkl/kernel/threads.c               | 227 +++++
+ arch/um/lkl/kernel/time.c                  | 145 ++++
+ arch/um/lkl/kernel/vmlinux.lds.S           |  51 ++
+ arch/um/lkl/mm/Makefile                    |   1 +
+ arch/um/lkl/mm/bootmem.c                   |  66 ++
+ arch/um/lkl/scripts/headers_install.py     | 195 +++++
+ arch/um/os-Linux/Makefile                  |   5 +
+ arch/um/os-Linux/lkl_dev.c                 | 188 +++++
+ certs/system_certificates.S                |  16 +-
+ include/asm-generic/atomic64.h             |   2 +
+ include/asm-generic/export.h               |  34 +-
+ include/asm-generic/vmlinux.lds.h          | 279 ++++---
+ include/linux/compiler_attributes.h        |   4 +
+ include/linux/export.h                     |  23 +-
+ include/linux/linkage.h                    |  12 +-
+ include/linux/syscalls.h                   |   6 +
+ init/Kconfig                               |  12 +
+ lib/.gitignore                             |   2 +
+ lib/raid6/.gitignore                       |   1 +
+ scripts/.gitignore                         |   2 +
+ scripts/Makefile.build                     |   9 +-
+ scripts/adjust_autoksyms.sh                |   6 +
+ scripts/basic/.gitignore                   |   1 +
+ scripts/checkpatch.pl                      |  13 +-
+ scripts/depmod.sh                          |  25 +-
+ scripts/genksyms/genksyms.c                |  11 +-
+ scripts/kallsyms.c                         |  54 +-
+ scripts/kconfig/.gitignore                 |   1 +
+ scripts/link-vmlinux.sh                    |  10 +
+ scripts/mod/.gitignore                     |   1 +
+ scripts/mod/modpost.c                      |  30 +-
+ tools/Makefile                             |  11 +-
+ tools/lkl/.gitignore                       |  15 +
+ tools/lkl/Build                            |   6 +
+ tools/lkl/Makefile                         | 130 +++
+ tools/lkl/Makefile.autoconf                | 114 +++
+ tools/lkl/Targets                          |  25 +
+ tools/lkl/bin/lkl-hijack.sh                |  23 +
+ tools/lkl/cptofs.c                         | 635 ++++++++++++++
+ tools/lkl/fs2tar.c                         | 410 +++++++++
+ tools/lkl/include/.gitignore               |   1 +
+ tools/lkl/include/lkl.h                    | 928 +++++++++++++++++++++
+ tools/lkl/include/lkl_config.h             |  61 ++
+ tools/lkl/include/lkl_host.h               | 160 ++++
+ tools/lkl/include/mingw32/sys/socket.h     |   4 +
+ tools/lkl/lib/.gitignore                   |   3 +
+ tools/lkl/lib/Build                        |  26 +
+ tools/lkl/lib/Makefile                     |  33 +
+ tools/lkl/lib/config.c                     | 793 ++++++++++++++++++
+ tools/lkl/lib/dbg.c                        | 300 +++++++
+ tools/lkl/lib/dbg_handler.c                |  44 +
+ tools/lkl/lib/endian.h                     |  31 +
+ tools/lkl/lib/fs.c                         | 433 ++++++++++
+ tools/lkl/lib/hijack/Build                 |   4 +
+ tools/lkl/lib/hijack/hijack.c              | 620 ++++++++++++++
+ tools/lkl/lib/hijack/init.c                | 252 ++++++
+ tools/lkl/lib/hijack/init.h                |   8 +
+ tools/lkl/lib/hijack/xlate.c               | 613 ++++++++++++++
+ tools/lkl/lib/hijack/xlate.h               |  13 +
+ tools/lkl/lib/iomem.c                      |  88 ++
+ tools/lkl/lib/iomem.h                      |  15 +
+ tools/lkl/lib/jmp_buf.c                    |  14 +
+ tools/lkl/lib/jmp_buf.h                    |   8 +
+ tools/lkl/lib/net.c                        | 818 ++++++++++++++++++
+ tools/lkl/lib/nt-host.c                    | 375 +++++++++
+ tools/lkl/lib/posix-host.c                 | 439 ++++++++++
+ tools/lkl/lib/utils.c                      | 266 ++++++
+ tools/lkl/lib/virtio.c                     | 644 ++++++++++++++
+ tools/lkl/lib/virtio.h                     | 115 +++
+ tools/lkl/lib/virtio_blk.c                 | 132 +++
+ tools/lkl/lib/virtio_net.c                 | 345 ++++++++
+ tools/lkl/lib/virtio_net_dpdk.c            | 480 +++++++++++
+ tools/lkl/lib/virtio_net_fd.c              | 195 +++++
+ tools/lkl/lib/virtio_net_fd.h              |  50 ++
+ tools/lkl/lib/virtio_net_macvtap.c         |  32 +
+ tools/lkl/lib/virtio_net_pipe.c            |  76 ++
+ tools/lkl/lib/virtio_net_raw.c             |  94 +++
+ tools/lkl/lib/virtio_net_tap.c             | 111 +++
+ tools/lkl/lib/virtio_net_vde.c             | 168 ++++
+ tools/lkl/lklfuse.c                        | 658 +++++++++++++++
+ tools/lkl/scripts/checkpatch.sh            |  60 ++
+ tools/lkl/scripts/lkl-jenkins.sh           |  21 +
+ tools/lkl/tests/Build                      |   3 +
+ tools/lkl/tests/boot.c                     | 562 +++++++++++++
+ tools/lkl/tests/boot.sh                    |   9 +
+ tools/lkl/tests/cla.c                      | 159 ++++
+ tools/lkl/tests/cla.h                      |  33 +
+ tools/lkl/tests/disk.c                     | 189 +++++
+ tools/lkl/tests/disk.sh                    |  70 ++
+ tools/lkl/tests/hijack-test.sh             | 760 +++++++++++++++++
+ tools/lkl/tests/lklfuse.sh                 | 110 +++
+ tools/lkl/tests/net-setup.sh               | 134 +++
+ tools/lkl/tests/net-test.c                 | 317 +++++++
+ tools/lkl/tests/net.sh                     | 186 +++++
+ tools/lkl/tests/run.py                     | 182 ++++
+ tools/lkl/tests/run_netperf.sh             |  98 +++
+ tools/lkl/tests/tap13.py                   | 209 +++++
+ tools/lkl/tests/test.c                     | 126 +++
+ tools/lkl/tests/test.h                     |  72 ++
+ tools/lkl/tests/test.sh                    | 240 ++++++
+ tools/lkl/tests/valgrind.supp              |  85 ++
+ tools/lkl/tests/valgrind2xunit.py          |  69 ++
+ usr/initramfs_data.S                       |   4 +-
+ 165 files changed, 19489 insertions(+), 354 deletions(-)
+ create mode 100644 .circleci/config.yml
+ create mode 100644 Documentation/virt/uml/lkl.txt
+ create mode 100644 arch/um/Makefile.um
+ create mode 100644 arch/um/lkl/.gitignore
+ create mode 100644 arch/um/lkl/Kconfig
+ create mode 100644 arch/um/lkl/Kconfig.debug
+ create mode 100644 arch/um/lkl/Makefile
+ create mode 100644 arch/um/lkl/auto.conf
+ create mode 100644 arch/um/lkl/configs/lkl_defconfig
+ create mode 100644 arch/um/lkl/include/asm/Kbuild
+ create mode 100644 arch/um/lkl/include/asm/bitsperlong.h
+ create mode 100644 arch/um/lkl/include/asm/byteorder.h
+ create mode 100644 arch/um/lkl/include/asm/cpu.h
+ create mode 100644 arch/um/lkl/include/asm/elf.h
+ create mode 100644 arch/um/lkl/include/asm/host_ops.h
+ create mode 100644 arch/um/lkl/include/asm/io.h
+ create mode 100644 arch/um/lkl/include/asm/irq.h
+ create mode 100644 arch/um/lkl/include/asm/mutex.h
+ create mode 100644 arch/um/lkl/include/asm/page.h
+ create mode 100644 arch/um/lkl/include/asm/pgtable.h
+ create mode 100644 arch/um/lkl/include/asm/processor.h
+ create mode 100644 arch/um/lkl/include/asm/ptrace.h
+ create mode 100644 arch/um/lkl/include/asm/sched.h
+ create mode 100644 arch/um/lkl/include/asm/setup.h
+ create mode 100644 arch/um/lkl/include/asm/syscalls.h
+ create mode 100644 arch/um/lkl/include/asm/syscalls_32.h
+ create mode 100644 arch/um/lkl/include/asm/thread_info.h
+ create mode 100644 arch/um/lkl/include/asm/tlb.h
+ create mode 100644 arch/um/lkl/include/asm/uaccess.h
+ create mode 100644 arch/um/lkl/include/asm/unistd.h
+ create mode 100644 arch/um/lkl/include/asm/unistd_32.h
+ create mode 100644 arch/um/lkl/include/asm/vmlinux.lds.h
+ create mode 100644 arch/um/lkl/include/asm/xor.h
+ create mode 100644 arch/um/lkl/include/system/stdarg.h
+ create mode 100644 arch/um/lkl/include/uapi/asm/Kbuild
+ create mode 100644 arch/um/lkl/include/uapi/asm/bitsperlong.h
+ create mode 100644 arch/um/lkl/include/uapi/asm/byteorder.h
+ create mode 100644 arch/um/lkl/include/uapi/asm/host_ops.h
+ create mode 100644 arch/um/lkl/include/uapi/asm/irq.h
+ create mode 100644 arch/um/lkl/include/uapi/asm/sigcontext.h
+ create mode 100644 arch/um/lkl/include/uapi/asm/siginfo.h
+ create mode 100644 arch/um/lkl/include/uapi/asm/swab.h
+ create mode 100644 arch/um/lkl/include/uapi/asm/syscalls.h
+ create mode 100644 arch/um/lkl/include/uapi/asm/unistd.h
+ create mode 100644 arch/um/lkl/kernel/Makefile
+ create mode 100644 arch/um/lkl/kernel/asm-offsets.c
+ create mode 100644 arch/um/lkl/kernel/console.c
+ create mode 100644 arch/um/lkl/kernel/cpu.c
+ create mode 100644 arch/um/lkl/kernel/irq.c
+ create mode 100644 arch/um/lkl/kernel/misc.c
+ create mode 100644 arch/um/lkl/kernel/setup.c
+ create mode 100644 arch/um/lkl/kernel/syscalls.c
+ create mode 100644 arch/um/lkl/kernel/syscalls_32.c
+ create mode 100644 arch/um/lkl/kernel/threads.c
+ create mode 100644 arch/um/lkl/kernel/time.c
+ create mode 100644 arch/um/lkl/kernel/vmlinux.lds.S
+ create mode 100644 arch/um/lkl/mm/Makefile
+ create mode 100644 arch/um/lkl/mm/bootmem.c
+ create mode 100755 arch/um/lkl/scripts/headers_install.py
+ create mode 100644 arch/um/os-Linux/lkl_dev.c
+ create mode 100644 tools/lkl/.gitignore
+ create mode 100644 tools/lkl/Build
+ create mode 100644 tools/lkl/Makefile
+ create mode 100644 tools/lkl/Makefile.autoconf
+ create mode 100644 tools/lkl/Targets
+ create mode 100755 tools/lkl/bin/lkl-hijack.sh
+ create mode 100644 tools/lkl/cptofs.c
+ create mode 100644 tools/lkl/fs2tar.c
+ create mode 100644 tools/lkl/include/.gitignore
+ create mode 100644 tools/lkl/include/lkl.h
+ create mode 100644 tools/lkl/include/lkl_config.h
+ create mode 100644 tools/lkl/include/lkl_host.h
+ create mode 100644 tools/lkl/include/mingw32/sys/socket.h
+ create mode 100644 tools/lkl/lib/.gitignore
+ create mode 100644 tools/lkl/lib/Build
+ create mode 100644 tools/lkl/lib/Makefile
+ create mode 100644 tools/lkl/lib/config.c
+ create mode 100644 tools/lkl/lib/dbg.c
+ create mode 100644 tools/lkl/lib/dbg_handler.c
+ create mode 100644 tools/lkl/lib/endian.h
+ create mode 100644 tools/lkl/lib/fs.c
+ create mode 100644 tools/lkl/lib/hijack/Build
+ create mode 100644 tools/lkl/lib/hijack/hijack.c
+ create mode 100644 tools/lkl/lib/hijack/init.c
+ create mode 100644 tools/lkl/lib/hijack/init.h
+ create mode 100644 tools/lkl/lib/hijack/xlate.c
+ create mode 100644 tools/lkl/lib/hijack/xlate.h
+ create mode 100644 tools/lkl/lib/iomem.c
+ create mode 100644 tools/lkl/lib/iomem.h
+ create mode 100644 tools/lkl/lib/jmp_buf.c
+ create mode 100644 tools/lkl/lib/jmp_buf.h
+ create mode 100644 tools/lkl/lib/net.c
+ create mode 100644 tools/lkl/lib/nt-host.c
+ create mode 100644 tools/lkl/lib/posix-host.c
+ create mode 100644 tools/lkl/lib/utils.c
+ create mode 100644 tools/lkl/lib/virtio.c
+ create mode 100644 tools/lkl/lib/virtio.h
+ create mode 100644 tools/lkl/lib/virtio_blk.c
+ create mode 100644 tools/lkl/lib/virtio_net.c
+ create mode 100644 tools/lkl/lib/virtio_net_dpdk.c
+ create mode 100644 tools/lkl/lib/virtio_net_fd.c
+ create mode 100644 tools/lkl/lib/virtio_net_fd.h
+ create mode 100644 tools/lkl/lib/virtio_net_macvtap.c
+ create mode 100644 tools/lkl/lib/virtio_net_pipe.c
+ create mode 100644 tools/lkl/lib/virtio_net_raw.c
+ create mode 100644 tools/lkl/lib/virtio_net_tap.c
+ create mode 100644 tools/lkl/lib/virtio_net_vde.c
+ create mode 100644 tools/lkl/lklfuse.c
+ create mode 100755 tools/lkl/scripts/checkpatch.sh
+ create mode 100755 tools/lkl/scripts/lkl-jenkins.sh
+ create mode 100644 tools/lkl/tests/Build
+ create mode 100644 tools/lkl/tests/boot.c
+ create mode 100755 tools/lkl/tests/boot.sh
+ create mode 100644 tools/lkl/tests/cla.c
+ create mode 100644 tools/lkl/tests/cla.h
+ create mode 100644 tools/lkl/tests/disk.c
+ create mode 100755 tools/lkl/tests/disk.sh
+ create mode 100755 tools/lkl/tests/hijack-test.sh
+ create mode 100755 tools/lkl/tests/lklfuse.sh
+ create mode 100644 tools/lkl/tests/net-setup.sh
+ create mode 100644 tools/lkl/tests/net-test.c
+ create mode 100755 tools/lkl/tests/net.sh
+ create mode 100755 tools/lkl/tests/run.py
+ create mode 100755 tools/lkl/tests/run_netperf.sh
+ create mode 100644 tools/lkl/tests/tap13.py
+ create mode 100644 tools/lkl/tests/test.c
+ create mode 100644 tools/lkl/tests/test.h
+ create mode 100644 tools/lkl/tests/test.sh
+ create mode 100644 tools/lkl/tests/valgrind.supp
+ create mode 100755 tools/lkl/tests/valgrind2xunit.py
+
+-- 
+2.20.1 (Apple Git-117)
 
 
 _______________________________________________
