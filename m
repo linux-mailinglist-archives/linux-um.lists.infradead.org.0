@@ -2,100 +2,70 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C0EA3F5934
-	for <lists+linux-um@lfdr.de>; Fri,  8 Nov 2019 22:08:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 43027F5A01
+	for <lists+linux-um@lfdr.de>; Fri,  8 Nov 2019 22:35:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FWvL18ApIYIlSuBjAENoeZi2JxYiHfJbqGYu1BbfRmc=; b=Wf8ADYBkNu9K7G
-	OqwHlVZbw1ci26Q1Z79YHpTc0cGO1RaN707lVci2/Y3maqrN5R0OvVNMfHW+tAnOTMZogtOmsXNqc
-	PFUl5Gr+TONpePh+Z6GFUFyZuh6zb7pq1RFUHqq/6PO4CLzajnvdKgXIvumvaBIiq52ftznNlJSyX
-	hFAe/0rLZro1zXeSOA1Ws9fJLit2wIiZFKH2tc6vG9UyPD/lGHjWq/yRgRCLQB2AjmOktzAzIWcgb
-	YpyPTXzRniv60UHtBtR+yWz81bMOiziGVle8JMH5c8khQcDjYEJWZvmb5+tuyIhHw+bBOqaMxlyui
-	uny4YHdu6Tgcsm87NWQA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=vWLCB8oAggJP1nhxIuOObEzgZYtn16BcYvbE/zFmL8w=; b=pK+Eg8h3z+EhYk
+	g2pWBPKY3E6JBnsPHdX90weuphOeYJne8jKXOFC/cp8lHnnZz+f/xFNlYfVGNtOKghRpoV7j/Qzph
+	ZxaKspTcZTngtvOQamOIfoKTc/7irftiAvcvCiHVicBt+hFaOZ8Ht+HXT+wPs1PbbfnmvLMO0c/TJ
+	4rK0rIHhF73xZOg66YSk/z704CcPUDh8pMJOgu8t2cOrS9vJI87q7kvnnQ/d5KDnK/dVoReCMEs+D
+	EEUEVrPKKTzzN/LeHddhS5mjGsc0FPI0RVfg/T1s3YIieEcqHzI/lx6z30gAiBfumSObzS5q1FNhk
+	NDEBOSvC89nviOlPTDYw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iTBUq-0007aC-V6; Fri, 08 Nov 2019 21:08:44 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1iTBv9-00010s-GW; Fri, 08 Nov 2019 21:35:55 +0000
+Received: from mout.kundenserver.de ([212.227.126.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iTBUo-0007ZX-0w; Fri, 08 Nov 2019 21:08:43 +0000
-Received: by mail-wm1-x344.google.com with SMTP id z19so7580915wmk.3;
- Fri, 08 Nov 2019 13:08:40 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=leuvFNJRBbgvPXZJlD4yDG614p9ePBBBJqh6/bi0nWM=;
- b=rjflubiq8T92r7IsfuflmmOLhAbyeUiuHnf/rQSYhhlSmttRaTaotAvL5xYp4yOydT
- GvzpvT1wRN/Se5w5Bamn3iuJIAGtHWJ3FQg7uwfFHiBZYXDG6coXsfRkKjBQWYAriMTe
- 4kTrO4cphBn73YaGY9oVhRABcMWkQkwRmG/gGE9R1eQjZ3xrtTYtO4ekpHSWHoSNgXQt
- LOIHB3CeUqi5Hx5sAbRW5lNwEUAqSAnAREOPMl/n34UjrP0bXjp7N2IIvVwOE5dHTyoC
- y/6fNB8lMSjFK19DQSqAbg52NdT8Yh0NvqWS+ZavZPT5hVJ6jwjvtDCEDMZ1djztH8HA
- lzbQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=leuvFNJRBbgvPXZJlD4yDG614p9ePBBBJqh6/bi0nWM=;
- b=EkxvlN/PHgu+Du4+nXXUXlO6FYK+cIsSjhhvSKhkyLxfGCi842NrWIKRS3rPh7qIQB
- NOBQkj1/0i17s7rv88avu8xyUaK9EO3TNM9LRbNbetoKgl+v6NYBLkSJOwfx+rVOG70U
- vMSkcCm94cQSnYNtwIbcUCQ/yRC6NvKy9hwFRyBUIeLxrOyGCKFv4uNkWoCiTqpEcusA
- lTh7Z0G2AX9jaIPWxlnIgppH/60R+E0J5FDZooxuFZq7damQoZMkMD5aUoyNeLrOt19Q
- Zcx2bSPvW18pFXWYQ74FQg5qrlgtclqg2R5LTzdlsu+8FrQNOTPjMGy1PZ8V834FAbbg
- NfYg==
-X-Gm-Message-State: APjAAAW9Q9T7wImqIPWljXQh8GPcPeg8iOXFIFDUazMbWOT19B6ZRWi6
- HqgYbsF91GaVJ04FJrgjfbs=
-X-Google-Smtp-Source: APXvYqy4dAVQ+ZAcZ+Na7c6XiIr61o8y7Lfg2+bZQEg4XJKlBUyi7kCGw2dZZvY/2MRfFQOLGhdeXA==
-X-Received: by 2002:a1c:810d:: with SMTP id c13mr6004971wmd.154.1573247319697; 
- Fri, 08 Nov 2019 13:08:39 -0800 (PST)
-Received: from [10.83.36.153] ([217.173.96.166])
- by smtp.gmail.com with ESMTPSA id j63sm9370828wmj.46.2019.11.08.13.08.36
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 08 Nov 2019 13:08:38 -0800 (PST)
-Subject: Re: [PATCH 00/50] Add log level to show_stack()
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>,
- Dmitry Safonov <dima@arista.com>
-References: <20191106030542.868541-1-dima@arista.com>
- <20191106092039.GT4131@hirez.programming.kicks-ass.net>
- <10db6fa1-5b17-ebe6-09e0-6335e09e4db8@arista.com>
- <20191106203440.GH3079@worktop.programming.kicks-ass.net>
- <CAGrbwDRgX1BZoFrVYSXhAeeUKHrB=q3w8jXFPOuRvO7HV4Ciqw@mail.gmail.com>
- <20191108173045.GY25745@shell.armlinux.org.uk>
-From: Dmitry Safonov <0x7f454c46@gmail.com>
-Message-ID: <5a411348-be84-f592-ef2d-ffaec99332bd@gmail.com>
-Date: Fri, 8 Nov 2019 21:08:30 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.0
+ id 1iTBv5-0000zf-Hz
+ for linux-um@lists.infradead.org; Fri, 08 Nov 2019 21:35:53 +0000
+Received: from threadripper.lan ([149.172.19.189]) by mrelayeu.kundenserver.de
+ (mreue011 [212.227.15.129]) with ESMTPA (Nemesis) id
+ 1MXXdn-1iQ6AP0R4R-00YveV; Fri, 08 Nov 2019 22:33:06 +0100
+From: Arnd Bergmann <arnd@arndb.de>
+To: y2038@lists.linaro.org
+Subject: [PATCH 00/16] drivers: y2038 updates
+Date: Fri,  8 Nov 2019 22:32:38 +0100
+Message-Id: <20191108213257.3097633-1-arnd@arndb.de>
+X-Mailer: git-send-email 2.20.0
 MIME-Version: 1.0
-In-Reply-To: <20191108173045.GY25745@shell.armlinux.org.uk>
-Content-Language: en-US
+X-Provags-ID: V03:K1:cC60oL5qW9T6f3VnEX4IUPUnbZtH58Z5jHTCkfEP3lSVCyJMvvf
+ nXa+3lb+MuvX4UyJFUN+jNUJOtYV6vEdBeRluSdOxKcMLTIRW/MA2X5WNg5vjL4h5VMaMqq
+ bNkxydHkOOB1gWSeiigewsSsL+Ope/gjBqLstKOktXFNHvIvAI8OyB16Bh3/KHWq5bI5gbP
+ ttyknhIOC7MVt+zSJY39Q==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:C6N/AXULkaM=:Y7JwaiMRl7Ar2O9O2mXFFn
+ XNkpKgwWM8P0qO+0Is3DdFORJejcsg4Z7H/JEbKB71PaPIxwYqUaCL54KvYWbGI4UgpeJv2VL
+ TDM5JP6XHLZEPg418lMXvJDgfjoG3Hi8z6xcm4eVCYMVOopNmDKLw8sRTvZs5Y9MehLPeuCjA
+ FJDznxm+bmmpVwkpxdVxGg/UsFc/GByVXrqgr8aIeNTyU+6QiRoIugryzBDmS8vQIcTfTmtwM
+ Xis+iVVThIPm/7TlELGn4QUpWrGuBM87bpEytZmN7iZ2Xv4Pi09GCc0fWAfdVlykCBom4fWhN
+ SzMqNyByMJJu1qqSoOmRZIb/A06TGj1hHe1DR8fSuMXOJgyyZG4W2LkZTNTrG0kWBaTiNY4qD
+ FOQ5PN5Ds9rUxxJ5jvFQEnBCHs0boCj+R1ogKQHj961SNOjz/iTK9PRAJ2Q/S9lr1OiO0Aill
+ 9n9w+FUDSA0uaCjboLcZG7ZPwbRrutTP1fW0uPjb2lcWPcBIloby7q+PHrtvR5VMW5jiv1fmf
+ hfT7ITXtJL4SPQ1ZG94BaqALxufFNPlW7b2L8+b77UeY7PzZf7Q27rY8HVKNoecjq4sWzCpXp
+ sCo16dBMR11yeGV02rWBECYG21JJTtOeHNbls/EWzI9gHEegxzRctljs0BXpmtr3fDrj8dL0R
+ TjY2ibzd1SUcPAPXUGKnTI3EjBlBn5NTJbwUJGVyl+zhLeAtQdCVVn9ZET82XUaihtFVsb6l/
+ VlZeLSfRYEOZKFWPEnJYv06Nf3Nrd84B+GWSJ7z9QIE1YkNSFvSz0y/FFznyuSImBN+NzxHxs
+ 7v0SH2wqAYB54MS6c3rahz8Oz2PuxEdQKh0LU5tG8fz8w3hUaZHnsrADS9CMXvPoTccssMd61
+ Ly+JSeRt68rTP+cnNhXA==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_130842_111666_BC36BA18 
-X-CRM114-Status: GOOD (  18.89  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20191108_133551_892203_D3EAD522 
+X-CRM114-Status: GOOD (  11.44  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
+ no trust [212.227.126.130 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.126.130 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (0x7f454c46[at]gmail.com)
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (0x7f454c46[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -107,103 +77,141 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: Juri Lelli <juri.lelli@redhat.com>, linux-sh@vger.kernel.org,
- Catalin Marinas <catalin.marinas@arm.com>, Ben Segall <bsegall@google.com>,
- Guo Ren <guoren@kernel.org>, Pavel Machek <pavel@ucw.cz>,
- Vincent Guittot <vincent.guittot@linaro.org>,
- Paul Burton <paulburton@kernel.org>, Michael Ellerman <mpe@ellerman.id.au>,
- Geert Uytterhoeven <geert@linux-m68k.org>, Mel Gorman <mgorman@suse.de>,
- Jiri Slaby <jslaby@suse.com>, Matt Turner <mattst88@gmail.com>,
- uclinux-h8-devel@lists.sourceforge.jp, Len Brown <len.brown@intel.com>,
- linux-pm@vger.kernel.org, linux-um@lists.infradead.org,
- Thomas Gleixner <tglx@linutronix.de>,
- Dietmar Eggemann <dietmar.eggemann@arm.com>,
- Richard Henderson <rth@twiddle.net>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>, LKML <linux-kernel@vger.kernel.org>,
- Ralf Baechle <ralf@linux-mips.org>, Paul Mackerras <paulus@samba.org>,
- Andrew Morton <akpm@linux-foundation.org>, linux-ia64@vger.kernel.org,
- Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>,
- James Hogan <jhogan@kernel.org>,
- "James E.J. Bottomley" <James.Bottomley@hansenpartnership.com>,
- Max Filippov <jcmvbkbc@gmail.com>, Vincent Chen <deanbo422@gmail.com>,
- Ingo Molnar <mingo@kernel.org>, linux-s390@vger.kernel.org,
- linux-c6x-dev@linux-c6x.org, Yoshinori Sato <ysato@users.sourceforge.jp>,
- linux-hexagon@vger.kernel.org, Helge Deller <deller@gmx.de>,
- "open list:TENSILICA XTENSA PORT \(xtensa\)" <linux-xtensa@linux-xtensa.org>,
- Vasily Gorbik <gor@linux.ibm.com>,
- Aurelien Jacquiot <jacquiot.aurelien@gmail.com>,
- linux-m68k@lists.linux-m68k.org, Stafford Horne <shorne@gmail.com>,
- linux-arm-kernel@lists.infradead.org, Chris Zankel <chris@zankel.net>,
- Tony Luck <tony.luck@intel.com>, Douglas Anderson <dianders@chromium.org>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Heiko Carstens <heiko.carstens@de.ibm.com>, Will Deacon <will@kernel.org>,
- Daniel Thompson <daniel.thompson@linaro.org>,
- Brian Cain <bcain@codeaurora.org>,
- Christian Borntraeger <borntraeger@de.ibm.com>,
- kgdb-bugreport@lists.sourceforge.net, linux-snps-arc@lists.infradead.org,
- Fenghua Yu <fenghua.yu@intel.com>, Borislav Petkov <bp@alien8.de>,
- Jeff Dike <jdike@addtoit.com>, Steven Rostedt <rostedt@goodmis.org>,
- Ivan Kokshaysky <ink@jurassic.park.msu.ru>, Greentime Hu <green.hu@gmail.com>,
- Guan Xuetao <gxt@pku.edu.cn>, linux-parisc@vger.kernel.org,
- linux-alpha@vger.kernel.org, Ley Foon Tan <lftan@altera.com>,
- "David S. Miller" <davem@davemloft.net>, Rich Felker <dalias@libc.org>,
- Petr Mladek <pmladek@suse.com>, Peter Zijlstra <peterz@infradead.org>,
- "H. Peter Anvin" <hpa@zytor.com>, sparclinux@vger.kernel.org,
- linux-riscv@lists.infradead.org,
- Anton Ivanov <anton.ivanov@cambridgegreys.com>,
- Jonas Bonn <jonas@southpole.se>, Richard Weinberger <richard@nod.at>,
- X86 ML <x86@kernel.org>, clang-built-linux@googlegroups.com,
- Ingo Molnar <mingo@redhat.com>, Mark Salter <msalter@redhat.com>,
- Albert Ou <aou@eecs.berkeley.edu>,
- Stefan Kristiansson <stefan.kristiansson@saunalahti.fi>,
- openrisc@lists.librecores.org, Paul Walmsley <paul.walmsley@sifive.com>,
- Michal Simek <monstr@monstr.eu>, Vineet Gupta <vgupta@synopsys.com>,
- linux-mips@vger.kernel.org, Sergey Senozhatsky <sergey.senozhatsky@gmail.com>,
- Palmer Dabbelt <palmer@dabbelt.com>, Jason Wessel <jason.wessel@windriver.com>,
- nios2-dev@lists.rocketboards.org, linuxppc-dev@lists.ozlabs.org
+Cc: airlied@linux.ie, dri-devel@lists.freedesktop.org, jcmvbkbc@gmail.com,
+ edumazet@google.com, netdev@vger.kernel.org,
+ linux1394-devel@lists.sourceforge.net, devel@driverdev.osuosl.org,
+ richard@nod.at, kadlec@netfilter.org, cluster-devel@redhat.com,
+ ccaulfie@redhat.com, coreteam@netfilter.org, linux+etnaviv@armlinux.org.uk,
+ pablo@netfilter.org, Arnd Bergmann <arnd@arndb.de>,
+ linux-arm-msm@vger.kernel.org, jdike@addtoit.com, linux-um@lists.infradead.org,
+ etnaviv@lists.freedesktop.org, christian.gmeiner@gmail.com,
+ teigland@redhat.com, viro@zeniv.linux.org.uk, tglx@linutronix.de,
+ sean@poorly.run, hirofumi@mail.parknet.co.jp, willemb@google.com,
+ valdis.kletnieks@vt.edu, rfontana@redhat.com, gregkh@linuxfoundation.org,
+ fw@strlen.de, linux-kernel@vger.kernel.org, robdclark@gmail.com,
+ stefanr@s5r6.in-berlin.de, netfilter-devel@vger.kernel.org, daniel@ffwll.ch,
+ jack@suse.com, linux-fsdevel@vger.kernel.org, freedreno@lists.freedesktop.org,
+ davem@davemloft.net, l.stach@pengutronix.de
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
+These are updates to devidce drivers and file systems that for some
+reason or another were not included in the kernel in the previous
+y2038 series.
 
-On 11/8/19 5:30 PM, Russell King - ARM Linux admin wrote:
-> On Fri, Nov 08, 2019 at 04:28:30PM +0000, Dmitry Safonov wrote:
-[..]
->>
->> Well, the use-case for lower log-level is that everything goes into logs
->> (/var/log/dmesg or /var/log/messages whatever rsyslog has settting).
->>
->> That has it's value:
->> - after a failure (i.e. panic) messages, those were only signs that
->> something goes wrong can be seen in logs which can give ideas what has
->> happened.
-> 
-> No they don't.  When the kernel panics, userspace generally stops
-> running, so rsyslog won't be able to write them to /var/log/messages.
-> 
-> How, by "kernel panics" I mean a real kernel panic, which probably
-> isn't what you're talking about there.  You are probably talking
-> about the whole shebang of non-fatal kernel oops, kernel warnings
-> and the like.  If so, I'd ask you to stop confuzzilating terminology.
-> 
-> If you really want to capture such events, then you need to have the
-> kernel write the panic to (e.g.) flash - see the mtdoops driver.
+I've gone through all users of time_t again to make sure the
+kernel is in a long-term maintainable state.
 
-I was talking about things prior the panic: OOMs, MMC write/read
-warnings, hung tasks, we also have local patches to produce a warning if
-the mutex is being held for too long or a task is starving on CPU time
-by hard/soft irqs (I hope I will design something like that for
-upstream). I've found those warnings useful to:
-(a) have an early message when the things are starting going bad.
-(b) analyze contentions or too large scale for a box or faulty hardware
-for non-reproducible issues just from logs.
+Posting these as a series for better organization, but each change
+here is applicable standalone.
 
-We use kexec to save the dmesg ringbuffer content after the panic.
+Please merge, review, ack/nack etc as you see fit. My plan is to
+include any patches that don't get a reply this time around in
+a future pull request, probably for linux-5.6.
 
-Thanks,
-          Dmitry
+As mentioned before, the full series of 90 patches is available at
+https://git.kernel.org/pub/scm/linux/kernel/git/arnd/playground.git/log/?h=y2038-endgame
+
+    Arnd
+
+Arnd Bergmann (16):
+  staging: exfat: use prandom_u32() for i_generation
+  fat: use prandom_u32() for i_generation
+  net: sock: use __kernel_old_timespec instead of timespec
+  dlm: use SO_SNDTIMEO_NEW instead of SO_SNDTIMEO_OLD
+  xtensa: ISS: avoid struct timeval
+  um: ubd: use 64-bit time_t where possible
+  acct: stop using get_seconds()
+  tsacct: add 64-bit btime field
+  netfilter: nft_meta: use 64-bit time arithmetic
+  packet: clarify timestamp overflow
+  quota: avoid time_t in v1_disk_dqblk definition
+  hostfs: pass 64-bit timestamps to/from user space
+  hfs/hfsplus: use 64-bit inode timestamps
+  drm/msm: avoid using 'timespec'
+  drm/etnaviv: use ktime_t for timeouts
+  firewire: ohci: stop using get_seconds() for BUS_TIME
+
+ arch/um/drivers/cow.h                         |  2 +-
+ arch/um/drivers/cow_user.c                    |  7 +++--
+ arch/um/drivers/ubd_kern.c                    | 10 +++----
+ arch/um/include/shared/os.h                   |  2 +-
+ arch/um/os-Linux/file.c                       |  2 +-
+ .../platforms/iss/include/platform/simcall.h  |  4 +--
+ drivers/firewire/ohci.c                       |  2 +-
+ drivers/gpu/drm/etnaviv/etnaviv_drv.c         | 19 ++++++-------
+ drivers/gpu/drm/etnaviv/etnaviv_drv.h         | 21 ++++++--------
+ drivers/gpu/drm/etnaviv/etnaviv_gem.c         |  5 ++--
+ drivers/gpu/drm/etnaviv/etnaviv_gem.h         |  2 +-
+ drivers/gpu/drm/etnaviv/etnaviv_gpu.c         |  4 +--
+ drivers/gpu/drm/etnaviv/etnaviv_gpu.h         |  4 +--
+ drivers/gpu/drm/msm/msm_drv.h                 |  3 +-
+ drivers/staging/exfat/exfat_super.c           |  4 +--
+ fs/dlm/lowcomms.c                             |  6 ++--
+ fs/fat/inode.c                                |  3 +-
+ fs/hfs/hfs_fs.h                               | 26 +++++++++++++----
+ fs/hfs/inode.c                                |  4 +--
+ fs/hfsplus/hfsplus_fs.h                       | 26 +++++++++++++----
+ fs/hfsplus/inode.c                            | 12 ++++----
+ fs/hostfs/hostfs.h                            | 22 +++++++++------
+ fs/hostfs/hostfs_kern.c                       | 15 ++++++----
+ fs/quota/quotaio_v1.h                         |  6 ++--
+ include/linux/skbuff.h                        |  7 +++--
+ include/uapi/linux/acct.h                     |  2 ++
+ include/uapi/linux/taskstats.h                |  6 +++-
+ kernel/acct.c                                 |  4 ++-
+ kernel/tsacct.c                               |  9 ++++--
+ net/compat.c                                  |  2 +-
+ net/ipv4/tcp.c                                | 28 +++++++++++--------
+ net/netfilter/nft_meta.c                      | 10 +++----
+ net/packet/af_packet.c                        | 27 +++++++++++-------
+ net/socket.c                                  |  2 +-
+ 34 files changed, 184 insertions(+), 124 deletions(-)
+
+-- 
+2.20.0
+
+Cc: jdike@addtoit.com
+Cc: richard@nod.at
+Cc: jcmvbkbc@gmail.com
+Cc: stefanr@s5r6.in-berlin.de
+Cc: l.stach@pengutronix.de
+Cc: linux+etnaviv@armlinux.org.uk
+Cc: christian.gmeiner@gmail.com
+Cc: airlied@linux.ie
+Cc: daniel@ffwll.ch
+Cc: robdclark@gmail.com
+Cc: sean@poorly.run
+Cc: valdis.kletnieks@vt.edu
+Cc: gregkh@linuxfoundation.org
+Cc: ccaulfie@redhat.com
+Cc: teigland@redhat.com
+Cc: hirofumi@mail.parknet.co.jp
+Cc: jack@suse.com
+Cc: davem@davemloft.net
+Cc: edumazet@google.com
+Cc: pablo@netfilter.org
+Cc: kadlec@netfilter.org
+Cc: fw@strlen.de
+Cc: willemb@google.com
+Cc: viro@zeniv.linux.org.uk
+Cc: rfontana@redhat.com
+Cc: tglx@linutronix.de
+Cc: linux-um@lists.infradead.org
+Cc: linux-kernel@vger.kernel.org
+Cc: linux1394-devel@lists.sourceforge.net
+Cc: etnaviv@lists.freedesktop.org
+Cc: dri-devel@lists.freedesktop.org>
+Cc: linux-arm-msm@vger.kernel.org>
+Cc: freedreno@lists.freedesktop.org>
+Cc: devel@driverdev.osuosl.org>
+Cc: cluster-devel@redhat.com>
+Cc: linux-fsdevel@vger.kernel.org>
+Cc: netdev@vger.kernel.org>
+Cc: netfilter-devel@vger.kernel.org>
+Cc: coreteam@netfilter.org>
 
 _______________________________________________
 linux-um mailing list
