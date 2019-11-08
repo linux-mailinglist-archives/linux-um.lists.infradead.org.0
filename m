@@ -2,81 +2,80 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 14D84F3F5A
-	for <lists+linux-um@lfdr.de>; Fri,  8 Nov 2019 06:04:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 905C9F3F5C
+	for <lists+linux-um@lfdr.de>; Fri,  8 Nov 2019 06:04:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7Y0e0Or7UpWMe55MwsfLPSRh6U/XkCv5nz4NZscwX/E=; b=FhhT+PmNYqdz2H
-	K596Bpdm3v5lFSHu9Uvas+Hwu5Q2cAv26/e4I6E6EX2+GYLiNadDyW4zUP4qcrDXFj3nS2t5g72js
-	zgEPJ1o0bDRLj55U8xTjK7jLm8LfpX93U3AXu3FCsD3m+oPHfG2c5TYI7oGD8TpwYrGT1zZKe4eLw
-	jmbi7UNbqOPtY7Yms7KiMsDboNVKxbV68kCW44SKZed56TtSRMnCyX3KUER5QdeQQzoMsAvU8Lejq
-	NpmBXSn8wjufx2FPBQBVYrJ8A3iz9qjU//B+8FpqOl2do18F0ylGwSJksMUje8IVDlkpQp9AXzyS6
-	0Lp3OsOvugq1ZxpClseQ==;
+	List-Owner; bh=xNtfP2HWdcasvAB63+U9DseLUOuInbfo/y2dkkywVUA=; b=iXYkeBWJ435QWt
+	fHdwApBO5Ub2oMjv9D245m+RnsEiFZps/sVBtZiuI5uNW38Gd7nJxRXnL61TD4TCH/KeLhWGdrS75
+	kVxJomotCPDIKo4JoYMwsR4Rj73RWipikob+9GX+rmGhWTnkIrsz1QR13o7aafzq3SDktt3bbmvLR
+	k0auAKVxkzXGBnSZJxmkjv4BgCIzGtbq/4vzEknVTbdKB0ZOnSHV+LvATWJHRqA5ifRK/VsaG5qcC
+	00rETP3JQ2B+xI6Z/0l9ieWD2x4sXoMHAr3VGxVezfJOLQ3TaRcYAWOK8dg+OujL6Lj+iLhGFQ+R7
+	XSGFcXPqlc3TamWknUFQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iSwRg-00049B-Ta; Fri, 08 Nov 2019 05:04:28 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1iSwRj-0004At-DJ; Fri, 08 Nov 2019 05:04:31 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iSwRd-000475-GO
- for linux-um@lists.infradead.org; Fri, 08 Nov 2019 05:04:27 +0000
-Received: by mail-pf1-x441.google.com with SMTP id 3so3836849pfb.10
- for <linux-um@lists.infradead.org>; Thu, 07 Nov 2019 21:04:25 -0800 (PST)
+ id 1iSwRf-00048C-5s
+ for linux-um@lists.infradead.org; Fri, 08 Nov 2019 05:04:29 +0000
+Received: by mail-pg1-x544.google.com with SMTP id l24so3273220pgh.10
+ for <linux-um@lists.infradead.org>; Thu, 07 Nov 2019 21:04:27 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=QrjmXpZuOzccN2+JudtgFdgeHtwX1E16OtMi3lDfOVM=;
- b=Y9yadeGOgErzUddVQaR3NPy/OAB4ecyzula11ciS1U1xJsZyGEqe7Wbbt36DbWKXj1
- g7eOOXXR+C7CyM+vBqstnaOz3nHtH1jguEy6BjRDA2T18xBct7sooeZZpToT6DpW1FkD
- ut/KJkgbu8HDB/dBbMlQkg59N3k/pfFtAw5bMJNEqqkM//DFypFWt4rX+1FkVoOScIMb
- Ez969CYAPvkPdCe4v2hr4mEUezByfTw5o9/c9IR3oCAb8Y92qbNBgI/6EmATHHZbHcmJ
- Bnvo/y+ldvjaLlbtFoPY/xXcUze9DsvNVqhdUqd+KgF9QeIzi7U7chu1duPLosGCj79Y
- q+ow==
+ bh=Fks9wSbUJ+kC5hvrb/d3gYtZgeZ3GOt0V9E8ftVXrv0=;
+ b=jif0I7BBFZV/PvH3i2IiQVMhDzZvf9rW67+2kDSO87msB0VWxjSpUyneqxmNh1uZCg
+ PcOPu34wK0Ld/MpSs5anDqUMLXsTGBzZJU3rCdCCmq4KF7bjLOGCpmbwsjqJafVzjWQr
+ QYBF3Tb1gBPuz8rEZ/HCnpi55qyP1oQiaeFC5rNUyiE+NQknyo2XAtx9LoEaflYzdqyL
+ 9yFjZyzYoP4ds/3tlROvHb62wJEG3YXAJJzzm/tlLUTnPPo9VQ2N8wDO++vkIxN5w3Zk
+ YRMriLr/K88cQxJ202zFrJKXXuQYQ+pRmb3gurRJK4zdgp+b4CMzs5ifx3O9usZy8cRK
+ 7TJg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=QrjmXpZuOzccN2+JudtgFdgeHtwX1E16OtMi3lDfOVM=;
- b=XNvBe1ZCsnfkBwiq2Pr2VYm5qDedZm/pEx6la9o9Bx5L0fjHzkUNEgTy19Y+eYK+sa
- ljKtkYi/49psEBnu3cACITNE94jrQUXn4+asvm7A820jA8nreJn4bsmGQ4gxZbbkHrMb
- 7hCLyLmcfEXZaajJeocYl1InX6FinI5kVw4x6L0fQxZv0RrwsXXzivEKa28n8+hgCNHc
- jMN89uv9nlMlPgxdG/YzWwn4pCgFVvsx7rFBfsJrs+5yuqIU+1D38CxR5EfNLHBNwp/h
- v3QY3lTHgSq4DxP24dU4RDDI5uBWy3RSxiGWcWfjo9yTcR5U39FETjwrHU/OeQrmDN8f
- aVZw==
-X-Gm-Message-State: APjAAAUuCKFveYYX1WY3klYx9+2v0+MPCE7zUSCFyeR8s3Oc6TsXWHpr
- h2CfsOYoQLQYrQFUXhrnjtU=
-X-Google-Smtp-Source: APXvYqxQD8QrWXP7+eiU17/ipd12O0nObfnHNN9xVDYT3JbAFjZOV7aXzVkoEG/46k1PmhUGLmGvSQ==
-X-Received: by 2002:a65:68d7:: with SMTP id k23mr9286140pgt.157.1573189464648; 
- Thu, 07 Nov 2019 21:04:24 -0800 (PST)
+ bh=Fks9wSbUJ+kC5hvrb/d3gYtZgeZ3GOt0V9E8ftVXrv0=;
+ b=UQfkPp7gIKU1pQSJdSoBcd9yb3+51zpqj0APs0QGN822+RXHKYn4l2v6He84L0xZD6
+ 3rExLrBdTGnVn8d5NIz9s0bnX7nm5iLZ26s+P56QsdVdezod8iOt/3p95MRk79kW69mR
+ yY78W9lrGr1WKSOF4anjfV/OgZX02HpcDC9rteJzU4AkeD8Wh+icbL5sDPXY0elsJE22
+ MSSPVIzQSG9sgzSP6MYXSUrUaGQ834105Tlm8gSzrkmk6UrkwbglzlHF/4IOUCts3whh
+ kWY1PPUiLX3iC2R+WkVTVgZ5Y4BgDGVhN9qumcwn6e8m08T8/AxmO0+BGaBCixnyeE2u
+ Vq5A==
+X-Gm-Message-State: APjAAAXo8sqLSzwwPt+yGVL06IdO9XtX58Ub+C/ocG5va+wpU5f1nAxv
+ i6zIoYsRIIky8DQKlrRiQUY6z/V0yyHlNA==
+X-Google-Smtp-Source: APXvYqzighXCDmZ62e/x8lyMtbNIM5EN72p6qguyakenljWjbCFfBBdjlipHJYybk0yfCfDGnnXK+A==
+X-Received: by 2002:a63:4206:: with SMTP id p6mr9277702pga.270.1573189466275; 
+ Thu, 07 Nov 2019 21:04:26 -0800 (PST)
 Received: from earth-mac.local ([202.214.86.179])
- by smtp.gmail.com with ESMTPSA id n21sm2148057pjq.13.2019.11.07.21.04.23
+ by smtp.gmail.com with ESMTPSA id fz12sm3627791pjb.15.2019.11.07.21.04.24
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
  Thu, 07 Nov 2019 21:04:24 -0800 (PST)
 Received: by earth-mac.local (Postfix, from userid 501)
- id CFABE201ACFEB6; Fri,  8 Nov 2019 14:04:22 +0900 (JST)
+ id D939C201ACFEB8; Fri,  8 Nov 2019 14:04:22 +0900 (JST)
 From: Hajime Tazaki <thehajime@gmail.com>
 To: linux-um@lists.infradead.org
-Subject: [RFC v2 33/37] kallsyms: Add a config option to select section for
- kallsyms
-Date: Fri,  8 Nov 2019 14:02:48 +0900
-Message-Id: <1f8a9e18edf808f2016899887a3110be63cbc3c1.1573179553.git.thehajime@gmail.com>
+Subject: [RFC v2 34/37] lkl: Android ARM (arm/arm64) support
+Date: Fri,  8 Nov 2019 14:02:49 +0900
+Message-Id: <ec1915b36d1e4de138bfad60862beaaef0b47274.1573179553.git.thehajime@gmail.com>
 X-Mailer: git-send-email 2.20.1 (Apple Git-117)
 In-Reply-To: <cover.1573179553.git.thehajime@gmail.com>
 References: <cover.1573179553.git.thehajime@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191107_210425_561898_42553A18 
-X-CRM114-Status: GOOD (  17.35  )
+X-CRM114-CacheID: sfid-20191107_210427_235591_F6E72080 
+X-CRM114-Status: GOOD (  14.41  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -102,124 +101,329 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
 Cc: Octavian Purdila <tavi.purdila@gmail.com>,
  linux-kernel-library@freelists.org, linux-arch@vger.kernel.org,
- Akira Moroo <retrage01@gmail.com>
+ Hajime Tazaki <thehajime@gmail.com>, Akira Moroo <retrage01@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-From: Andreas Abel <aabel@google.com>
+Initial attempt to run an application with hijack library on Android
+platform.  Tested mostly on Android 6.x and 7.x.
 
-This commit adds a kernel config option to select whether the
-kallsyms data should be in the .rodata section (the default for
-non-LKL builds), or in the .data section (the default for LKL).
+The build process assumes that the android ndk toolchain is installed in
+a host system. arm32 build is required to use alternate linker in order
+to avoid a link issue during the build (described in *1).
 
-This is to avoid relocations in the text segment (TEXTRELs) that
-would otherwise occur with LKL when the .rodata and the .text
-section end up in the same segment.
+*1
+https://github.com/lkl/linux/issues/59#issuecomment-308961122
 
-Having TEXTRELs can lead to a number of issues:
-
-1. If a shared library contains a TEXTREL, the corresponding memory
-pages cannot be shared.
-
-2. Android >=6 and SELinux do not support binaries with TEXTRELs
-(http://android-developers.blogspot.com/2016/06/android-changes-for-ndk-developers.html).
-
-3. If a program has a TEXTREL, uses an ifunc, and is compiled with
-early binding, this can lead to a segmentation fault when processing
-the relocation for the ifunc during dynamic linking because the text
-segment is made temporarily non-executable to process the TEXTREL
-(line 248 in dl_reloc.c).
-
-Signed-off-by: Andreas Abel <aabel@google.com>
+Signed-off-by: Hajime Tazaki <thehajime@gmail.com>
 ---
- init/Kconfig            | 12 ++++++++++++
- scripts/kallsyms.c      | 11 +++++++++--
- scripts/link-vmlinux.sh |  4 ++++
- 3 files changed, 25 insertions(+), 2 deletions(-)
+ arch/um/lkl/Kconfig            |  1 +
+ tools/lkl/Makefile.autoconf    |  7 +++-
+ tools/lkl/lib/hijack/hijack.c  | 13 ++++++++
+ tools/lkl/lib/hijack/init.c    | 11 ++++++
+ tools/lkl/tests/disk.sh        | 11 +++++-
+ tools/lkl/tests/hijack-test.sh | 43 ++++++++++++++++++------
+ tools/lkl/tests/test.sh        | 61 +++++++++++++++++++++++++++++++++-
+ 7 files changed, 134 insertions(+), 13 deletions(-)
 
-diff --git a/init/Kconfig b/init/Kconfig
-index 81293d78a6ad..bd1a846e0ee0 100644
---- a/init/Kconfig
-+++ b/init/Kconfig
-@@ -1385,6 +1385,18 @@ config POSIX_TIMERS
+diff --git a/arch/um/lkl/Kconfig b/arch/um/lkl/Kconfig
+index 1629e2679b75..fc501b64a2af 100644
+--- a/arch/um/lkl/Kconfig
++++ b/arch/um/lkl/Kconfig
+@@ -23,6 +23,7 @@ config LKL
+        select 64BIT if "$(OUTPUT_FORMAT)" = "pe-x86-64"
+        select HAVE_UNDERSCORE_SYMBOL_PREFIX if "$(OUTPUT_FORMAT)" = "pe-i386"
+        select 64BIT if "$(OUTPUT_FORMAT)" = "elf64-x86-64-freebsd"
++       select 64BIT if "$(OUTPUT_FORMAT)" = "elf64-littleaarch64"
+        select NET
+        select MULTIUSER
+        select INET
+diff --git a/tools/lkl/Makefile.autoconf b/tools/lkl/Makefile.autoconf
+index 1631f5cc25ac..7222a95c314f 100644
+--- a/tools/lkl/Makefile.autoconf
++++ b/tools/lkl/Makefile.autoconf
+@@ -1,4 +1,4 @@
+-POSIX_HOSTS=elf64-x86-64 elf32-i386 elf64-x86-64-freebsd
++POSIX_HOSTS=elf64-x86-64 elf32-i386 elf64-x86-64-freebsd elf32-littlearm elf64-littleaarch64
+ NT_HOSTS=pe-i386 pe-x86-64
  
- 	  If unsure say y.
+ define set_autoconf_var
+@@ -17,6 +17,10 @@ define is_defined
+ $(shell $(CC) -dM -E - </dev/null | grep $(1))
+ endef
  
-+config KALLSYMS_USE_DATA_SECTION
-+	bool "Use .data instead of .rodata section for kallsyms"
-+	depends on KALLSYMS
-+	default n
-+	help
-+	  Enabling this option will put the kallsyms data in the .data section
-+	  instead of the .rodata section.
++define android_host
++  $(call set_autoconf_var,ANDROID,y)
++endef
 +
-+	  This is useful when building the kernel as a library, as it avoids
-+	  relocations in the text segment that could otherwise occur if the
-+	  .rodata section is in the same segment as the .text section.
-+
- config PRINTK
- 	default y
- 	bool "Enable support for printk" if EXPERT
-diff --git a/scripts/kallsyms.c b/scripts/kallsyms.c
-index 75ec25554111..5e4f270c3904 100644
---- a/scripts/kallsyms.c
-+++ b/scripts/kallsyms.c
-@@ -59,6 +59,7 @@ static struct addr_range percpu_range = {
- static struct sym_entry *table;
- static unsigned int table_size, table_cnt;
- static int all_symbols = 0;
-+static int use_data_section;
- static int absolute_percpu = 0;
- static char symbol_prefix_char = '\0';
- static int base_relative = 0;
-@@ -74,6 +75,7 @@ static void usage(void)
- {
- 	fprintf(stderr, "Usage: kallsyms [--all-symbols] "
- 			"[--symbol-prefix=<prefix char>] "
-+			"[--use-data-section] "
- 			"[--base-relative] < in.map > out.S\n");
- 	exit(1);
+ define bsd_host
+   $(call set_autoconf_var,BSD,y)
+ endef
+@@ -54,6 +58,7 @@ define posix_host
+   LDFLAGS += -pie
+   CFLAGS += -fPIC -pthread
+   SOSUF := .so
++  $(if $(call is_defined,__ANDROID__),$(call android_host),LDLIBS += -lrt -lpthread)
+   $(if $(filter $(1),elf64-x86-64-freebsd),$(call bsd_host))
+   $(if $(filter $(1),elf32-littlearm),$(call arm_host))
+   $(if $(filter $(1),elf64-littleaarch64),$(call aarch64_host))
+diff --git a/tools/lkl/lib/hijack/hijack.c b/tools/lkl/lib/hijack/hijack.c
+index 485c15d7c279..3a95b9dbe88b 100644
+--- a/tools/lkl/lib/hijack/hijack.c
++++ b/tools/lkl/lib/hijack/hijack.c
+@@ -204,7 +204,11 @@ int socket(int domain, int type, int protocol)
  }
-@@ -362,7 +364,10 @@ static void write_src(void)
- 	printf("#define ALGN .balign 4\n");
- 	printf("#endif\n");
  
--	printf("\t.section .rodata, \"a\"\n");
-+	if (use_data_section)
-+		printf("\t.section .data\n");
-+	else
-+		printf("\t.section .rodata, \"a\"\n");
+ HOST_CALL(ioctl);
++#ifdef __ANDROID__
++int ioctl(int fd, int req, ...)
++#else
+ int ioctl(int fd, unsigned long req, ...)
++#endif
+ {
+ 	va_list vl;
+ 	long arg;
+@@ -586,6 +590,15 @@ void *mmap(void *addr, size_t length, int prot, int flags, int fd, off_t offset)
+ 	return lkl_sys_mmap(addr, length, prot, flags, fd, offset);
+ }
  
- 	/* Provide proper symbols relocatability by their relativeness
- 	 * to a fixed anchor point in the runtime image, either '_text'
-@@ -774,7 +779,9 @@ int main(int argc, char **argv)
- 				if ((*p == '"' && *(p+2) == '"') || (*p == '\'' && *(p+2) == '\''))
- 					p++;
- 				symbol_prefix_char = *p;
--			} else
-+			} else if (strcmp(argv[i], "--use-data-section") == 0)
-+				use_data_section = 1;
-+			else
- 				usage();
- 		}
- 	} else if (argc != 1)
-diff --git a/scripts/link-vmlinux.sh b/scripts/link-vmlinux.sh
-index 553d966a1986..3fc1fc406b38 100755
---- a/scripts/link-vmlinux.sh
-+++ b/scripts/link-vmlinux.sh
-@@ -133,6 +133,10 @@ kallsyms()
- 		kallsymopt="${kallsymopt} --base-relative"
- 	fi
- 
-+	if [ -n "${CONFIG_KALLSYMS_USE_DATA_SECTION}" ]; then
-+		kallsymopt="${kallsymopt} --use-data-section"
-+	fi
++#ifndef __ANDROID__
++HOST_CALL(__xstat64)
++int stat(const char *pathname, struct stat *buf)
++{
++	CHECK_HOST_CALL(__xstat64);
++	return host___xstat64(0, pathname, buf);
++}
++#endif
 +
- 	local aflags="${KBUILD_AFLAGS} ${KBUILD_AFLAGS_KERNEL}               \
- 		      ${NOSTDINC_FLAGS} ${LINUXINCLUDE} ${KBUILD_CPPFLAGS}"
+ ssize_t send(int fd, const void *buf, size_t len, int flags)
+ {
+ 	return sendto(fd, buf, len, flags, 0, 0);
+diff --git a/tools/lkl/lib/hijack/init.c b/tools/lkl/lib/hijack/init.c
+index 2145fb7ec2cb..de00f2018e59 100644
+--- a/tools/lkl/lib/hijack/init.c
++++ b/tools/lkl/lib/hijack/init.c
+@@ -170,6 +170,17 @@ hijack_init(void)
+ 	if (single_cpu_mode == 1)
+ 		PinToFirstCpu(&ori_cpu);
  
++#ifdef __ANDROID__
++	struct sigaction sa;
++
++	sa.sa_handler = SIG_IGN;
++	sa.sa_flags = 0;
++	if (sigaction(32, &sa, 0) == -1) {
++		perror("sigaction");
++		exit(1);
++	}
++#endif
++
+ 	ret = lkl_start_kernel(&lkl_host_ops, cfg->boot_cmdline);
+ 	if (ret) {
+ 		fprintf(stderr, "can't start kernel: %s\n", lkl_strerror(ret));
+diff --git a/tools/lkl/tests/disk.sh b/tools/lkl/tests/disk.sh
+index 9bdcb16f2d5c..e2ec6cf69d4b 100755
+--- a/tools/lkl/tests/disk.sh
++++ b/tools/lkl/tests/disk.sh
+@@ -15,6 +15,12 @@ function prepfs()
+ 
+     yes | mkfs.$1 $file
+ 
++    if ! [ -z $ANDROID_WDIR ]; then
++        adb shell mkdir -p $ANDROID_WDIR
++        adb push $file $ANDROID_WDIR
++        rm $file
++        file=$ANDROID_WDIR/$(basename $file)
++    fi
+     if ! [ -z $BSD_WDIR ]; then
+         $MYSSH mkdir -p $BSD_WDIR
+         ssh_copy $file $BSD_WDIR
+@@ -29,7 +35,10 @@ function cleanfs()
+ {
+     set -e
+ 
+-    if ! [ -z $BSD_WDIR ]; then
++    if ! [ -z $ANDROID_WDIR ]; then
++        adb shell rm $1
++        adb shell rm $ANDROID_WDIR/disk
++    elif ! [ -z $BSD_WDIR ]; then
+         $MYSSH rm $1
+         $MYSSH rm $BSD_WDIR/disk
+     else
+diff --git a/tools/lkl/tests/hijack-test.sh b/tools/lkl/tests/hijack-test.sh
+index 097af6cff3ba..a62aa5b251e0 100755
+--- a/tools/lkl/tests/hijack-test.sh
++++ b/tools/lkl/tests/hijack-test.sh
+@@ -15,7 +15,11 @@ set_cfgjson()
+ {
+     cfgjson=${wdir}/hijack-test$1.conf
+ 
+-    cat > ${cfgjson}
++    if [ -n "$LKL_HOST_CONFIG_ANDROID" ]; then
++        adb shell cat \> ${cfgjson}
++    else
++        cat > ${cfgjson}
++    fi
+ 
+     export_vars cfgjson
+ }
+@@ -54,6 +58,11 @@ test_mount_and_dump()
+ {
+     set -e
+ 
++    if [ -n "$LKL_HOST_CONFIG_ANDROID" ]; then
++        echo "TODO: android-23 doesn't call destructor..."
++        return $TEST_SKIP
++    fi
++
+     set_cfgjson << EOF
+     {
+         "mount":"proc,sysfs",
+@@ -377,6 +386,10 @@ test_tap_qdisc()
+ {
+     set -e
+ 
++    if [ -n "$LKL_HOST_CONFIG_ANDROID" ]; then
++        return $TEST_SKIP
++    fi
++
+     set_cfgjson << EOF
+     {
+         "gateway":"$(ip_host)",
+@@ -655,15 +668,25 @@ if [[ ! -e ${basedir}/lib/hijack/liblkl-hijack.so ]]; then
+     exit 0
+ fi
+ 
+-# Make a temporary directory to run tests in, since we'll be copying
+-# things there.
+-wdir=$(mktemp -d)
+-cp `which ping` ${wdir}
+-cp `which ping6` ${wdir}
+-ping=${wdir}/ping
+-ping6=${wdir}/ping6
+-hijack=$basedir/bin/lkl-hijack.sh
+-netperf=$basedir/tests/run_netperf.sh
++if [ -n "$LKL_HOST_CONFIG_ANDROID" ]; then
++    wdir=$ANDROID_WDIR
++    adb_push lib/hijack/liblkl-hijack.so bin/lkl-hijack.sh tests/net-setup.sh \
++             tests/run_netperf.sh tests/hijack-test.sh
++    ping="ping"
++    ping6="ping6"
++    hijack="$wdir/bin/lkl-hijack.sh"
++    netperf="$wdir/tests/run_netperf.sh"
++else
++    # Make a temporary directory to run tests in, since we'll be copying
++    # things there.
++    wdir=$(mktemp -d)
++    cp `which ping` ${wdir}
++    cp `which ping6` ${wdir}
++    ping=${wdir}/ping
++    ping6=${wdir}/ping6
++    hijack=$basedir/bin/lkl-hijack.sh
++    netperf=$basedir/tests/run_netperf.sh
++fi
+ 
+ fifo1=${wdir}/fifo1
+ fifo2=${wdir}/fifo2
+diff --git a/tools/lkl/tests/test.sh b/tools/lkl/tests/test.sh
+index cda932b98058..a40d08fd6185 100644
+--- a/tools/lkl/tests/test.sh
++++ b/tools/lkl/tests/test.sh
+@@ -100,6 +100,19 @@ lkl_test_exec()
+ 
+     if file $file | grep PE32; then
+         WRAPPER="wine"
++    elif file $file | grep "interpreter /system/bin/linker" ; then
++        adb push "$file" $ANDROID_WDIR
++        if [ -n "$SUDO" ]; then
++            ANDROID_USER=root
++            SUDO=""
++        fi
++        if [ -n "$ANDROID_USER" ]; then
++            SU="su $ANDROID_USER"
++        else
++            SU=""
++        fi
++        WRAPPER="adb shell $SU"
++        file=$ANDROID_WDIR/$(basename $file)
+     elif file $file | grep ARM; then
+         WRAPPER="qemu-arm-static"
+     elif file $file | grep "FreeBSD" ; then
+@@ -134,13 +147,48 @@ lkl_test_cmd()
+         SHOPTS="-x"
+     fi
+ 
+-    if [ -n "$LKL_HOST_CONFIG_BSD" ]; then
++    if [ -n "$LKL_HOST_CONFIG_ANDROID" ]; then
++        if [ "$1" = "sudo" ]; then
++            ANDROID_USER=root
++            shift
++        fi
++        if [ -n "$ANDROID_USER" ]; then
++            SU="su $ANDROID_USER"
++        else
++            SU=""
++        fi
++        WRAPPER="adb shell $SU"
++    elif [ -n "$LKL_HOST_CONFIG_BSD" ]; then
+         WRAPPER="$MYSSH $SU"
+     fi
+ 
+     echo "$@" | $WRAPPER sh $SHOPTS
+ }
+ 
++adb_push()
++{
++    while [ -n "$1" ]; do
++        if [[ "$1" = *.sh ]]; then
++            type="script"
++        else
++            type="file"
++        fi
++
++        dir=$(dirname $1)
++        adb shell mkdir -p $ANDROID_WDIR/$dir
++
++        if [ "$type" = "script" ]; then
++            sed "s/\/usr\/bin\/env bash/\/system\/bin\/sh/" $basedir/$1 | \
++                adb shell cat \> $ANDROID_WDIR/$1
++            adb shell chmod a+x $ANDROID_WDIR/$1
++        else
++            adb push $basedir/$1 $ANDROID_WDIR/$dir
++        fi
++
++        shift
++    done
++}
++
+ # XXX: $MYSSH and $MYSCP are defined in a circleci docker image.
+ # see the definitions in lkl/lkl-docker:circleci/freebsd11/Dockerfile
+ ssh_push()
+@@ -169,11 +217,22 @@ ssh_copy()
+     $MYSCP -P 7722 -r $1 root@localhost:$2
+ }
+ 
++lkl_test_android_cleanup()
++{
++    adb shell rm -rf $ANDROID_WDIR
++}
++
+ lkl_test_bsd_cleanup()
+ {
+     $MYSSH rm -rf $BSD_WDIR
+ }
+ 
++if [ -n "$LKL_HOST_CONFIG_ANDROID" ]; then
++    trap lkl_test_android_cleanup EXIT
++    export ANDROID_WDIR=/data/local/tmp/lkl
++    adb shell mkdir -p $ANDROID_WDIR
++fi
++
+ if [ -n "$LKL_HOST_CONFIG_BSD" ]; then
+     trap lkl_test_bsd_cleanup EXIT
+     export BSD_WDIR=/root/lkl
 -- 
 2.20.1 (Apple Git-117)
 
