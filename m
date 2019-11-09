@@ -2,74 +2,76 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 329E8F5A02
-	for <lists+linux-um@lfdr.de>; Fri,  8 Nov 2019 22:37:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7322BF5F88
+	for <lists+linux-um@lfdr.de>; Sat,  9 Nov 2019 15:27:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wbARGTwX7W5R4vcqwCfOEk049nwIvvrGV1UKkqVoZDo=; b=bLNPP6Qik513GI
-	zxRkoRLGkKQhjafXjJrQLDjYLNeRAhT4JZlS07PpBl3/kuJL8DMdpp3b91vWGdi2lbHbILej3iU8d
-	kq8uxtWGZh0MoSEX3jqTZzdVR53jqvsNM/cmBprYfjmlqt8c4xdTEYKIpPhPdu2Ub9LrXQKeTfR27
-	3bRIFJ5GG+t3z9g2RB1HM0UFYvRjlcEAcjJKmaiwbOMhrwOxxhJsCyAlXIbQ8/Bz6duseq06MHKL4
-	IPUZiXJwS0jbjV/C2dRpDJgnxS9FFJKLWfBKk7mJTQFclMoZOqu7awmvpLCLJ1Y6aAnheovneSlS+
-	w5sVLEe0k1JH+PnTKqyA==;
+	List-Owner; bh=d8O9C730hcYhGTBC/48LBjG/4MGBYhde13zvA72KbLc=; b=GXdFvRWScMsDDw
+	DLLOiGaup8ukrUn/vjhQ/cwetD42AbB/1gF7GXfgB84pDTQ7mI9Aot9FnCdofC8TIIW5b89ZElflS
+	GUIrzooM4GcdcPwyKdHHQ5p8+TsoV4tU2lolfuy8OzATNH3EDSRcff1Bda9/gb165bj8hjQPOPHE8
+	ZogNKbr/KMUBnqlL/iuFxSSY5MUTF6m2E8ab1M2FVZ+V3yQyjRceZb/JWU+yyYSITjmBvHRQgoHUb
+	JumugknrUhlB6q05tBQRBm5Sq43CzleV7D5BKuM8vG0JyiHpJaoqP7IptnteYpRvJKWWeJXS6STg+
+	iuhhGfaRIUq5OcOiZbAw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iTBwC-00016W-R2; Fri, 08 Nov 2019 21:37:00 +0000
-Received: from mout.kundenserver.de ([212.227.126.130])
+	id 1iTRhY-0006XP-5K; Sat, 09 Nov 2019 14:26:56 +0000
+Received: from mail-ot1-f65.google.com ([209.85.210.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iTBw9-000169-R7
- for linux-um@lists.infradead.org; Fri, 08 Nov 2019 21:36:59 +0000
-Received: from threadripper.lan ([149.172.19.189]) by mrelayeu.kundenserver.de
- (mreue011 [212.227.15.129]) with ESMTPA (Nemesis) id
- 1MXXdn-1iQ6Au3bOp-00YveV; Fri, 08 Nov 2019 22:36:51 +0100
-From: Arnd Bergmann <arnd@arndb.de>
-To: y2038@lists.linaro.org, Jeff Dike <jdike@addtoit.com>,
- Richard Weinberger <richard@nod.at>,
- Anton Ivanov <anton.ivanov@cambridgegreys.com>
-Subject: [PATCH 12/16] hostfs: pass 64-bit timestamps to/from user space
-Date: Fri,  8 Nov 2019 22:32:50 +0100
-Message-Id: <20191108213257.3097633-13-arnd@arndb.de>
-X-Mailer: git-send-email 2.20.0
-In-Reply-To: <20191108213257.3097633-1-arnd@arndb.de>
-References: <20191108213257.3097633-1-arnd@arndb.de>
+ id 1iTRhK-0006PA-MK; Sat, 09 Nov 2019 14:26:44 +0000
+Received: by mail-ot1-f65.google.com with SMTP id d5so7714371otp.4;
+ Sat, 09 Nov 2019 06:26:41 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Fkse6mn+BlbyKaVzVIbzg4CVFkjF596d7A0VyrrgtRU=;
+ b=LNHoBkSIOLft5iDsiPTxi92fM1lDa2KJtNtjmBDYzTmWNps4+gzrF1VDIdGNTWFfGP
+ NO/kdjsrwWJyDiu45vEmBrv5q4b2qjEWhHN8RuTC60fusQ1Ygp69mQZzfw2mVAY5vVd0
+ J/IohS+l/USLR+lwpLBOh9oWWvz1vC2zILaFU0smZpNddE2KiFUNVLAH+QcJUGI5bzR4
+ SC1Ikikls8jGGHhx9wFE0yr/KgMXwkJqQ9IUlbTuoA2eVrquxbvtwBBfCewIebVLpgL3
+ fp2jzbKwSGtSL9p/knrhjId66uvrxSdtsdCQGJLjiIk9SFGFARM424sP1sTIf1WTmP3B
+ N+Gw==
+X-Gm-Message-State: APjAAAWpAf2SxbN6sgDFHRSkubh/N7hRIlF4I54VUyj/zDZHBaQjtFUQ
+ hPUTc1buixXk2ooTDrpf+MvVMX42VqU8tke4O7U=
+X-Google-Smtp-Source: APXvYqwpjgCj+NHQWmmo7wlASzZaObwnisMuzQQ68HgJW5L0F4ZE2XkJ/WLy2vxRTaOAABifbqXLM9wt0RfHZ30Isk4=
+X-Received: by 2002:a9d:422:: with SMTP id 31mr13203157otc.107.1573309600743; 
+ Sat, 09 Nov 2019 06:26:40 -0800 (PST)
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:Yjh6blzut3U2WoiDT+9caZknQkgK1SpL5j185/SocENaX6KahaJ
- kOL/KPbr4pFe9IK4tNAPuqUZYc9vyuuRJlXa5Jyi5HeOeb/Mqnh0xCaFpV2rdvsfH7y4Wit
- 8UNwCPfTSY925fxcJvFdawPFZqCjcSfTBZkeg5nRD1wJtObhSfUCv5bW5Ua7XjmkI40iyLD
- p8Q5pHUIIqdkvM0JmOt5A==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:s6RMSOV+IEU=:WJyWxBiIq8IQCJo/f/EKGK
- nqQ7zcAZIxMF8ulFyWM0BfYcrcDNkXlwNqouT+zyA+QDs28rWHJWnLUgU3IGZV6s4hn9NIDl0
- og/Zgd7ooGGaFdG1Ixujt9uatHRtM/p2mXFQ3y9d+X6bDq2a10m3jJu5E/gleN/fStRntxfjt
- TMgfnaYURyOib+S2OXeg09KikTVqMiBXxamINr30VR6p4wxwrLGOLRpnoCi7B7FF/g2u7bENY
- Jc70Fs4f3erfgcfvzu5NszIBybVltfX5SoCJkff1nM1/30ycy0Ty1kUWdhDwaX3wzPcOSEaGv
- ieVmmTHqFpL+2pwStqHjQfThVawdeEKIp2qKX6AgWIPei04i26CNLIaPNE8OnWYR8xg5st6Ui
- DL9HNF09gu87sO0m45Ffair4klP3nAr52XsUhiOhuyw2orclqBQ7BZaiwqX8h4kCpBuG/RKvB
- 45a5ySGCzIdLNbrBSLXjQp3OEVCbz1MQI5Ge8KRvURLrxLta7mN3uzS/bZN/yTvYRrmKOQmrs
- T7IOnOzlgOFPYQFeQgjzjW/4QvQzTi89y/sUvSbuKgej0slGgyvW/kxi1XgEOIaW7Hxjimqua
- n1ioK5aaHnQ4KXmIrXS7zqnikJzS9Dh39KvWoghF0JfkXVGb48p3ZzlnoXOVb88BLqSHuiZsS
- cEoyEbpdO0HCKFTUMxuOFghzD6KBj0kA2D+PA7I79q7eI5gu5nQ5sL1Rp8XM8GWxbN45szYrL
- PLEQ5gOAnsfDyg0iatYRqpwrvGpSOPxHB64nYdAItsP6HnAa2pE0jWVQ1rWrOS5O6lgvy+XtC
- GdFBv5ySckoxO0DoPYjQrhQZRgsWnmu035Pl8oaOzX2VHdSJzmoxST9WIZnKK+GvPp4XwIF55
- 4PGIiv/0CL4yDVP7LC1w==
+References: <1572938135-31886-1-git-send-email-rppt@kernel.org>
+ <1572938135-31886-6-git-send-email-rppt@kernel.org>
+ <20191108113917.a9c6ebb8373cc95fd684b734@linux-foundation.org>
+In-Reply-To: <20191108113917.a9c6ebb8373cc95fd684b734@linux-foundation.org>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Sat, 9 Nov 2019 15:26:29 +0100
+Message-ID: <CAMuHMdXdoFSVno4WT=F6Q1UwEaZ6AQJmhNUqPpYHJm6uh165iw@mail.gmail.com>
+Subject: Re: [PATCH v4 05/13] m68k: mm: use pgtable-nopXd instead of
+ 4level-fixup
+To: Andrew Morton <akpm@linux-foundation.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_133658_169864_AC095E28 
-X-CRM114-Status: GOOD (  11.48  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191109_062642_727691_13D7E270 
+X-CRM114-Status: GOOD (  11.81  )
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.130 listed in list.dnswl.org]
+ no trust [209.85.210.65 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.126.130 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.65 listed in wl.mailspike.net]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (geert.uytterhoeven[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,118 +83,63 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: Colin Ian King <colin.king@canonical.com>, linux-um@lists.infradead.org,
- linux-kernel@vger.kernel.org, Arnd Bergmann <arnd@arndb.de>,
- Al Viro <viro@zeniv.linux.org.uk>
+Cc: Linux/m68k <linux-m68k@vger.kernel.org>,
+ "James E.J. Bottomley" <James.Bottomley@hansenpartnership.com>,
+ Linux MM <linux-mm@kvack.org>, sparclinux <sparclinux@vger.kernel.org>,
+ Rolf Eike Beer <eike-kernel@sf-tec.de>, Vincent Chen <deanbo422@gmail.com>,
+ Greg Ungerer <gerg@linux-m68k.org>,
+ Anton Ivanov <anton.ivanov@cambridgegreys.com>,
+ Linux-Arch <linux-arch@vger.kernel.org>, linux-c6x-dev@linux-c6x.org,
+ Richard Weinberger <richard@nod.at>, Helge Deller <deller@gmx.de>,
+ Russell King <linux@armlinux.org.uk>, Mike Rapoport <rppt@linux.ibm.com>,
+ Mark Salter <msalter@redhat.com>, Matt Turner <mattst88@gmail.com>,
+ Vineet Gupta <Vineet.Gupta1@synopsys.com>, Sam Creasey <sammy@sammy.net>,
+ Arnd Bergmann <arnd@arndb.de>, Jeff Dike <jdike@addtoit.com>,
+ linux-um@lists.infradead.org, Greentime Hu <green.hu@gmail.com>,
+ "Kirill A. Shutemov" <kirill@shutemov.name>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Michal Simek <monstr@monstr.eu>, Parisc List <linux-parisc@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ "David S. Miller" <davem@davemloft.net>, alpha <linux-alpha@vger.kernel.org>,
+ Linus Torvalds <torvalds@linux-foundation.org>, Peter Rosin <peda@axentia.se>,
+ Mike Rapoport <rppt@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-The use of 'struct timespec' is deprecated in the kernel, so we
-want to avoid the conversions from/to the proper timespec64
-structure.
+Hi Andrew,
 
-On the user space side, we have a 'struct timespec' that is defined
-by the C library and that will be incompatible with the kernel's
-view on 32-bit architectures once they move to a 64-bit time_t,
-breaking the shared binary layout of hostfs_iattr and hostfs_stat.
+On Fri, Nov 8, 2019 at 8:39 PM Andrew Morton <akpm@linux-foundation.org> wrote:
+> On Tue,  5 Nov 2019 09:15:27 +0200 Mike Rapoport <rppt@kernel.org> wrote:
+> > m68k has two or three levels of page tables and can use appropriate
+> > pgtable-nopXd and folding of the upper layers.
+> >
+> > Replace usage of include/asm-generic/4level-fixup.h and explicit
+> > definitions of __PAGETABLE_PxD_FOLDED in m68k with
+> > include/asm-generic/pgtable-nopmd.h for two-level configurations and with
+> > include/asm-generic/pgtable-nopud.h for three-lelve configurations and
+> > adjust page table manipulation macros and functions accordingly.
+>
+> This one was messed up by linux-next changes in arch/m68k/mm/kmap.c.
+> Can you please take a look?
 
-This changes the two structures to use a new hostfs_timespec structure
-with fixed 64-bit seconds/nanoseconds for passing the timestamps
-between hostfs_kern.c and hostfs_user.c. With a new enough user
-space side, this will allow timestamps beyond year 2038.
+You mean due to the rename and move of __iounmap() to __free_io_area()
+in commit aa3a1664285d0bec ("m68k: rename __iounmap and mark it static")?
 
-Signed-off-by: Arnd Bergmann <arnd@arndb.de>
----
- fs/hostfs/hostfs.h      | 22 +++++++++++++---------
- fs/hostfs/hostfs_kern.c | 15 +++++++++------
- 2 files changed, 22 insertions(+), 15 deletions(-)
+Commit 42d6c83d6180f800 ("m68k: mm: use pgtable-nopXd instead of
+4level-fixup") in next-20191108 looks good to me.
 
-diff --git a/fs/hostfs/hostfs.h b/fs/hostfs/hostfs.h
-index f4295aa19350..69cb796f6270 100644
---- a/fs/hostfs/hostfs.h
-+++ b/fs/hostfs/hostfs.h
-@@ -37,16 +37,20 @@
-  * is on, and remove the appropriate bits from attr->ia_mode (attr is a
-  * "struct iattr *"). -BlaisorBlade
-  */
-+struct hostfs_timespec {
-+	long long tv_sec;
-+	long long tv_nsec;
-+};
- 
- struct hostfs_iattr {
--	unsigned int	ia_valid;
--	unsigned short	ia_mode;
--	uid_t		ia_uid;
--	gid_t		ia_gid;
--	loff_t		ia_size;
--	struct timespec	ia_atime;
--	struct timespec	ia_mtime;
--	struct timespec	ia_ctime;
-+	unsigned int		ia_valid;
-+	unsigned short		ia_mode;
-+	uid_t			ia_uid;
-+	gid_t			ia_gid;
-+	loff_t			ia_size;
-+	struct hostfs_timespec	ia_atime;
-+	struct hostfs_timespec	ia_mtime;
-+	struct hostfs_timespec	ia_ctime;
- };
- 
- struct hostfs_stat {
-@@ -56,7 +60,7 @@ struct hostfs_stat {
- 	unsigned int uid;
- 	unsigned int gid;
- 	unsigned long long size;
--	struct timespec atime, mtime, ctime;
-+	struct hostfs_timespec atime, mtime, ctime;
- 	unsigned int blksize;
- 	unsigned long long blocks;
- 	unsigned int maj;
-diff --git a/fs/hostfs/hostfs_kern.c b/fs/hostfs/hostfs_kern.c
-index 5a7eb0c79839..e6b8c49076bb 100644
---- a/fs/hostfs/hostfs_kern.c
-+++ b/fs/hostfs/hostfs_kern.c
-@@ -549,9 +549,9 @@ static int read_name(struct inode *ino, char *name)
- 	set_nlink(ino, st.nlink);
- 	i_uid_write(ino, st.uid);
- 	i_gid_write(ino, st.gid);
--	ino->i_atime = timespec_to_timespec64(st.atime);
--	ino->i_mtime = timespec_to_timespec64(st.mtime);
--	ino->i_ctime = timespec_to_timespec64(st.ctime);
-+	ino->i_atime = (struct timespec64){ st.atime.tv_sec, st.atime.tv_nsec };
-+	ino->i_mtime = (struct timespec64){ st.mtime.tv_sec, st.mtime.tv_nsec };
-+	ino->i_ctime = (struct timespec64){ st.ctime.tv_sec, st.ctime.tv_nsec };
- 	ino->i_size = st.size;
- 	ino->i_blocks = st.blocks;
- 	return 0;
-@@ -820,15 +820,18 @@ static int hostfs_setattr(struct dentry *dentry, struct iattr *attr)
- 	}
- 	if (attr->ia_valid & ATTR_ATIME) {
- 		attrs.ia_valid |= HOSTFS_ATTR_ATIME;
--		attrs.ia_atime = timespec64_to_timespec(attr->ia_atime);
-+		attrs.ia_atime = (struct hostfs_timespec)
-+			{ attr->ia_atime.tv_sec, attr->ia_atime.tv_nsec };
- 	}
- 	if (attr->ia_valid & ATTR_MTIME) {
- 		attrs.ia_valid |= HOSTFS_ATTR_MTIME;
--		attrs.ia_mtime = timespec64_to_timespec(attr->ia_mtime);
-+		attrs.ia_mtime = (struct hostfs_timespec)
-+			{ attr->ia_mtime.tv_sec, attr->ia_mtime.tv_nsec };
- 	}
- 	if (attr->ia_valid & ATTR_CTIME) {
- 		attrs.ia_valid |= HOSTFS_ATTR_CTIME;
--		attrs.ia_ctime = timespec64_to_timespec(attr->ia_ctime);
-+		attrs.ia_ctime = (struct hostfs_timespec)
-+			{ attr->ia_ctime.tv_sec, attr->ia_ctime.tv_nsec };
- 	}
- 	if (attr->ia_valid & ATTR_ATIME_SET) {
- 		attrs.ia_valid |= HOSTFS_ATTR_ATIME_SET;
--- 
-2.20.0
+Gr{oetje,eeting}s,
 
+                        Geert
+
+--
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 _______________________________________________
 linux-um mailing list
