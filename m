@@ -2,63 +2,85 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F37D5F6806
-	for <lists+linux-um@lfdr.de>; Sun, 10 Nov 2019 09:41:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2BAC1F6C3B
+	for <lists+linux-um@lfdr.de>; Mon, 11 Nov 2019 02:23:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=giIcS7+VxgM6EWd2+xnMmvH8daYIF3DSSit3quej9V4=; b=t99Cz7a5SrX3qZ
-	dDcKUUHP5VBero6xYrbM1wVRbhMDkMMfpL1aaibEq8/cVoRHHd8prSTkbBLKMl7keC4EJfeC812t9
-	6dYxn6KzaSRWLe+yqc7nYU7GX+QP8hHfNVaflESIoAbJScc8cko0CG9W4ekYqnyhjB9AKs6iv7pAF
-	JjfYScsq2Bhbwd2seiGvvIRlJtvJGeDNDoPZklgMKxxj5rbqOx+KEE76Dd0FPdhJVCs0dy+q+8u/M
-	dCOMoHycJvG6hjSNnl46rkxqWNsDHUUHQhSRNQIXYodZDO+nMRS/oe+4lQ+0f4DjYmGHdDd3jKDFm
-	1+8l6DiJBjXjH4ya5c2A==;
+	List-Owner; bh=eafBG9dhU+5UH5WM0ep/esS7NUzMZIT5FOIQ462MCFo=; b=GDfilzD4mbHJCH
+	qlvZgsgbsHUZc1CJeVkNHcSumNNsfFFG/mK5+t3iyWxY/AIlDCnLqFPCWg9jSv3NmrMwwKewRCrit
+	faxzhrVjuMGmyKBuv/jH5AYOwC9DZK0mKXYtAD52IEqb0XW9/7wysnPs6a2TZVVENzkGEEALGZX9A
+	L9qG3vDAaZ7rSEpfc2hCYFTJthdFZm6By3OuFGXnAl9F3BchaNB2ys4FqD0CEZTj6A4rLVH0ypJ8M
+	joMKaF2W28BR/aTt170iwBj5yMujVA2clDChT4hko/TAJdKMFU807HNb8HwFl/oDKR/GSNz8GGgOs
+	JsyUisBP49Q1KlP3Ma4g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iTinA-0007Zq-56; Sun, 10 Nov 2019 08:41:52 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iTyQm-0008Pd-CU; Mon, 11 Nov 2019 01:23:48 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iTimz-0007SU-MA; Sun, 10 Nov 2019 08:41:44 +0000
-Received: from rapoport-lnx (nesher1.haifa.il.ibm.com [195.110.40.7])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2045B2077C;
- Sun, 10 Nov 2019 08:41:30 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1573375299;
- bh=VivvRZF7S/gADzD3po2D0GMBa+a0TZ5FLEfZj0Cja2I=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=MhQPa5FrV+cprfH5LgO2ngz5WqWHYxNnhtlF8+EWWiR3YG5Vr0xkKzXyZ33AQdepy
- Y53SeeHSS15YwGONO0eTs1D0QPsAGRYcPqxFn365q39QPKS3BXz4WP3RSRENNf6l8i
- sUwJM9yFWuX0jXXhjx2/CnlEYW9BRJ1kjfyDrNEs=
-Date: Sun, 10 Nov 2019 10:41:26 +0200
-From: Mike Rapoport <rppt@kernel.org>
-To: Geert Uytterhoeven <geert@linux-m68k.org>
-Subject: Re: [PATCH v4 05/13] m68k: mm: use pgtable-nopXd instead of
- 4level-fixup
-Message-ID: <20191110084125.GA9494@rapoport-lnx>
-References: <1572938135-31886-1-git-send-email-rppt@kernel.org>
- <1572938135-31886-6-git-send-email-rppt@kernel.org>
- <20191108113917.a9c6ebb8373cc95fd684b734@linux-foundation.org>
- <CAMuHMdXdoFSVno4WT=F6Q1UwEaZ6AQJmhNUqPpYHJm6uh165iw@mail.gmail.com>
+ id 1iTyQh-0008Nx-9a; Mon, 11 Nov 2019 01:23:45 +0000
+Received: by mail-pg1-x541.google.com with SMTP id z24so8364664pgu.4;
+ Sun, 10 Nov 2019 17:23:40 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=meRRGW7ni43do21CnMh1ypMYB7GRo8yRghEKxpnOMtM=;
+ b=PEUFO8IEu1osGIrKprDzvbxlNRJeZ7+VQZKgcPA4VWwOYdra1vch/X2sOCSKa29N9n
+ VdblGN+C6xXZa66p438tGiFX2wH1ZMvXaLBCYR4jMYFYKpHWbu3dvuf4i51nfGHovAdM
+ kJ21eWqlCVZNsUh7vR0KmZmoQmTZB1DoPsxQK2h0K8DrMvb84HP3pZHYPYw+F3AAOb8s
+ 2PUdw4923VWsoF2jPoVNv2KKLc7p6DTbwWWIyb/CwJRvDtzNsBcrU623traZ5+UDPhd8
+ dvUZh/U5lV6A1081bATRr1q945s51Yb6awkYmElXIQG0WkPEPjbs1iqGD3WlzUt7rcka
+ L5/w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=meRRGW7ni43do21CnMh1ypMYB7GRo8yRghEKxpnOMtM=;
+ b=g8pbAh7YOBubP2l7ZGgVpk4v7Z/PTqLoqnzDItAp53ScTIIXpcjXo5HJYCBtzYLKra
+ A2ep1kvK2NCtqcRhmIsEsciJjHtZqHM0QG64FHNvnePtVVgzsyOUEIRCYpoDP9HeuWhv
+ grlws3REdt7TJUKmZgjsdanuC/11XBkDeaYMlsPeLWaXNwY2RcXCgFT2CheEJWEHf//t
+ SP/9raIqj3c2cXgQzW2DdL5UBMFn9Y0brV7xtchLxXeIouJ/GMLhc86a2BZqD/tIldsW
+ H1LBQGn1uNrSA5Ld7+PwxZqhq9NIwiYiqcT9gabK4c4gM40tu2H5r9r6WsU6sWsN4f8Z
+ aIKw==
+X-Gm-Message-State: APjAAAUeKX9eCUsjq3Xla3P+FgKUokTPcmHpygSkeEvPP27HZBxyG5OM
+ N9HE3FGp8LPKBGrrI8pe5iM=
+X-Google-Smtp-Source: APXvYqy6vC5fNwNO+7Jnp+tE/qbyOeavvD3kd+/MEwk8H/f5hGFY+WAM1K+Wsl4w+fZzo2o0jtZpqg==
+X-Received: by 2002:a63:b047:: with SMTP id z7mr20331363pgo.224.1573435419566; 
+ Sun, 10 Nov 2019 17:23:39 -0800 (PST)
+Received: from localhost ([2401:fa00:8f:203:250d:e71d:5a0a:9afe])
+ by smtp.gmail.com with ESMTPSA id r8sm12584714pgr.59.2019.11.10.17.23.37
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sun, 10 Nov 2019 17:23:38 -0800 (PST)
+Date: Mon, 11 Nov 2019 10:23:36 +0900
+From: Sergey Senozhatsky <sergey.senozhatsky.work@gmail.com>
+To: Petr Mladek <pmladek@suse.com>
+Subject: Re: [PATCH 00/50] Add log level to show_stack()
+Message-ID: <20191111012336.GA85185@google.com>
+References: <20191106030542.868541-1-dima@arista.com>
+ <20191106083538.z5nlpuf64cigxigh@pathway.suse.cz>
+ <20191108103719.GB175344@google.com>
+ <20191108130447.h3wfgo4efjkto56f@pathway.suse.cz>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAMuHMdXdoFSVno4WT=F6Q1UwEaZ6AQJmhNUqPpYHJm6uh165iw@mail.gmail.com>
-User-Agent: Mutt/1.5.24 (2015-08-30)
+In-Reply-To: <20191108130447.h3wfgo4efjkto56f@pathway.suse.cz>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191110_004141_769275_52DAD6AB 
-X-CRM114-Status: GOOD (  16.62  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191110_172343_339099_B301DB72 
+X-CRM114-Status: GOOD (  11.61  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (sergey.senozhatsky.work[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -67,7 +89,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,78 +100,90 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: Linux/m68k <linux-m68k@vger.kernel.org>,
- "James E.J. Bottomley" <James.Bottomley@hansenpartnership.com>,
- Linux MM <linux-mm@kvack.org>, sparclinux <sparclinux@vger.kernel.org>,
- Rolf Eike Beer <eike-kernel@sf-tec.de>, Vincent Chen <deanbo422@gmail.com>,
- Greg Ungerer <gerg@linux-m68k.org>,
+Cc: Juri Lelli <juri.lelli@redhat.com>,
+ Sergey Senozhatsky <sergey.senozhatsky.work@gmail.com>,
+ linux-sh@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
+ Ben Segall <bsegall@google.com>, Guo Ren <guoren@kernel.org>,
+ Pavel Machek <pavel@ucw.cz>, Vincent Guittot <vincent.guittot@linaro.org>,
+ Paul Burton <paulburton@kernel.org>, Dmitry Safonov <dima@arista.com>,
+ Michael Ellerman <mpe@ellerman.id.au>,
+ Geert Uytterhoeven <geert@linux-m68k.org>, Mel Gorman <mgorman@suse.de>,
+ Jiri Slaby <jslaby@suse.com>, Matt Turner <mattst88@gmail.com>,
+ uclinux-h8-devel@lists.sourceforge.jp, Len Brown <len.brown@intel.com>,
+ linux-pm@vger.kernel.org, Heiko Carstens <heiko.carstens@de.ibm.com>,
+ linux-um@lists.infradead.org, Thomas Gleixner <tglx@linutronix.de>,
+ Dietmar Eggemann <dietmar.eggemann@arm.com>,
+ Richard Henderson <rth@twiddle.net>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>, linux-kernel@vger.kernel.org,
+ Ralf Baechle <ralf@linux-mips.org>, Paul Mackerras <paulus@samba.org>,
+ Andrew Morton <akpm@linux-foundation.org>, linux-ia64@vger.kernel.org,
+ Tetsuo Handa <penguin-kernel@I-love.SAKURA.ne.jp>,
+ James Hogan <jhogan@kernel.org>,
+ "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>,
+ Max Filippov <jcmvbkbc@gmail.com>, Vincent Chen <deanbo422@gmail.com>,
+ Ingo Molnar <mingo@kernel.org>, linux-s390@vger.kernel.org,
+ linux-c6x-dev@linux-c6x.org, Yoshinori Sato <ysato@users.sourceforge.jp>,
+ linux-hexagon@vger.kernel.org, Helge Deller <deller@gmx.de>,
+ linux-xtensa@linux-xtensa.org, Vasily Gorbik <gor@linux.ibm.com>,
+ Aurelien Jacquiot <jacquiot.aurelien@gmail.com>,
+ linux-m68k@lists.linux-m68k.org, Stafford Horne <shorne@gmail.com>,
+ linux-arm-kernel@lists.infradead.org, Chris Zankel <chris@zankel.net>,
+ Tony Luck <tony.luck@intel.com>, Douglas Anderson <dianders@chromium.org>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Dmitry Safonov <0x7f454c46@gmail.com>, Will Deacon <will@kernel.org>,
+ Daniel Thompson <daniel.thompson@linaro.org>,
+ Brian Cain <bcain@codeaurora.org>,
+ Christian Borntraeger <borntraeger@de.ibm.com>,
+ kgdb-bugreport@lists.sourceforge.net, linux-snps-arc@lists.infradead.org,
+ Fenghua Yu <fenghua.yu@intel.com>, Borislav Petkov <bp@alien8.de>,
+ Jeff Dike <jdike@addtoit.com>, Steven Rostedt <rostedt@goodmis.org>,
+ Ivan Kokshaysky <ink@jurassic.park.msu.ru>, Greentime Hu <green.hu@gmail.com>,
+ Guan Xuetao <gxt@pku.edu.cn>, linux-parisc@vger.kernel.org,
+ linux-alpha@vger.kernel.org, Ley Foon Tan <lftan@altera.com>,
+ "David S. Miller" <davem@davemloft.net>, Rich Felker <dalias@libc.org>,
+ Peter Zijlstra <peterz@infradead.org>, "H. Peter Anvin" <hpa@zytor.com>,
+ sparclinux@vger.kernel.org, linux-riscv@lists.infradead.org,
  Anton Ivanov <anton.ivanov@cambridgegreys.com>,
- Linux-Arch <linux-arch@vger.kernel.org>, linux-c6x-dev@linux-c6x.org,
- Richard Weinberger <richard@nod.at>, Helge Deller <deller@gmx.de>,
- Russell King <linux@armlinux.org.uk>, Mike Rapoport <rppt@linux.ibm.com>,
- Mark Salter <msalter@redhat.com>, Matt Turner <mattst88@gmail.com>,
- Vineet Gupta <Vineet.Gupta1@synopsys.com>, Sam Creasey <sammy@sammy.net>,
- Arnd Bergmann <arnd@arndb.de>, Jeff Dike <jdike@addtoit.com>,
- linux-um@lists.infradead.org, Greentime Hu <green.hu@gmail.com>,
- "Kirill A. Shutemov" <kirill@shutemov.name>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Michal Simek <monstr@monstr.eu>, Parisc List <linux-parisc@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- "David S. Miller" <davem@davemloft.net>, alpha <linux-alpha@vger.kernel.org>,
- Andrew Morton <akpm@linux-foundation.org>,
- Linus Torvalds <torvalds@linux-foundation.org>, Peter Rosin <peda@axentia.se>
+ Jonas Bonn <jonas@southpole.se>, Richard Weinberger <richard@nod.at>,
+ x86@kernel.org, Russell King <linux@armlinux.org.uk>,
+ clang-built-linux@googlegroups.com, Ingo Molnar <mingo@redhat.com>,
+ Mark Salter <msalter@redhat.com>, Albert Ou <aou@eecs.berkeley.edu>,
+ Stefan Kristiansson <stefan.kristiansson@saunalahti.fi>,
+ openrisc@lists.librecores.org, Paul Walmsley <paul.walmsley@sifive.com>,
+ Michal Simek <monstr@monstr.eu>, Vineet Gupta <vgupta@synopsys.com>,
+ linux-mips@vger.kernel.org, Sergey Senozhatsky <sergey.senozhatsky@gmail.com>,
+ Palmer Dabbelt <palmer@dabbelt.com>, Jason Wessel <jason.wessel@windriver.com>,
+ nios2-dev@lists.rocketboards.org, linuxppc-dev@lists.ozlabs.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-Hi Andrew,
+On (19/11/08 14:04), Petr Mladek wrote:
+[..]
+> I agree that it is complicated to pass the loglevel as
+> a parameter. It would be better define the default
+> log level for a given code section. It might be stored
+> in task_struct for the normal context and in per-CPU
+> variables for interrupt contexts.
 
-On Sat, Nov 09, 2019 at 03:26:29PM +0100, Geert Uytterhoeven wrote:
-> Hi Andrew,
-> 
-> On Fri, Nov 8, 2019 at 8:39 PM Andrew Morton <akpm@linux-foundation.org> wrote:
-> > On Tue,  5 Nov 2019 09:15:27 +0200 Mike Rapoport <rppt@kernel.org> wrote:
-> > > m68k has two or three levels of page tables and can use appropriate
-> > > pgtable-nopXd and folding of the upper layers.
-> > >
-> > > Replace usage of include/asm-generic/4level-fixup.h and explicit
-> > > definitions of __PAGETABLE_PxD_FOLDED in m68k with
-> > > include/asm-generic/pgtable-nopmd.h for two-level configurations and with
-> > > include/asm-generic/pgtable-nopud.h for three-lelve configurations and
-> > > adjust page table manipulation macros and functions accordingly.
-> >
-> > This one was messed up by linux-next changes in arch/m68k/mm/kmap.c.
-> > Can you please take a look?
+I do recall that we talked about per-CPU printk state bit which would
+start/end "just print it" section. We probably can extend it to "just
+log_store" type of functionality. Doesn't look like a very bad idea.
+"This task/context is in trouble, whatever it printk()-s is important".
 
-Can you please elaborate what was the problem?
+Per-console loglevel also might help sometimes. Slower consoles would
+->write() only critical messages, faster consoles everything.
 
-The patch applies cleanly to v5.4-rc6-mmots-2019-11-08-16-23 (from
-github.com/hnaz/linux-mm) and all the page table traversals in
-arch/m68k/mm/kmap.c look Ok.
+Passing log_level as part of message payload, which printk machinery
+magically hides is not entirely exciting. What we have in the code
+now - printk("%s blah\n", lvl) - is not what we see in the logs.
+Because the leading '%s' becomes special. And printk()/sprintf()
+documentation should reflect that: '%s' prints a string, but sometimes
+it doesn't.
 
-I've build atari_defconfig and it boots fine on aranym.
- 
-> You mean due to the rename and move of __iounmap() to __free_io_area()
-> in commit aa3a1664285d0bec ("m68k: rename __iounmap and mark it static")?
-> 
-> Commit 42d6c83d6180f800 ("m68k: mm: use pgtable-nopXd instead of
-> 4level-fixup") in next-20191108 looks good to me.
-> 
-> Gr{oetje,eeting}s,
-> 
->                         Geert
-> 
-> --
-> Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
-> 
-> In personal conversations with technical people, I call myself a hacker. But
-> when I'm talking to journalists I just say "programmer" or something like that.
->                                 -- Linus Torvalds
-
--- 
-Sincerely yours,
-Mike.
+	-ss
 
 _______________________________________________
 linux-um mailing list
