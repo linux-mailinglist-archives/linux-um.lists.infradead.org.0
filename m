@@ -2,63 +2,64 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3E445F86F6
-	for <lists+linux-um@lfdr.de>; Tue, 12 Nov 2019 03:40:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6E483F8760
+	for <lists+linux-um@lfdr.de>; Tue, 12 Nov 2019 05:26:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=W+ltHzu9xOYMbcxCabaKI7aX2IH21j4+YlrZ8eEIVyE=; b=Bv0H9sKtBsL0jH
-	a08K781byR9oY3YLCMqdfAKqYL9JEvGdlfIuqcEnig8K0Y8Pr+4dXkECnl74dx5zpCxzmsNlef5j4
-	ftMcT911y3f4L/xaxUmDf3deAo9wrtVP/usUU0V5jlbxOD5aMGxGpw+wjtVrewKuM4B1oJfANZQGf
-	1Yw7YCt7tQv3B74nyzJ490ElJX2lbTBpgnujCead9yrBW/4PZQGhJN9dZRsQSmyRYUT/pre9lM2e6
-	6ZYpAO3sZkqveCaDidOfHQnG3TeLUwaGpn2CwD8ps4cIJ2khW9SMNuuFUy5NqlshYJrCVtuL9c0mp
-	xMM8JEf/Z4y0FiFB29fQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=XSkZr3rB8LaczyYl7g3NU082uZhnp2ZvQsFYKdTaWFs=; b=GW9BNqvIli4xP4
+	wABIms3sTmqe2WgDM/+SVYv4kbHg5w7E48lrDYjKJHxcMWuyWEV8Esy25ySTZyFHZigqjRFL+V2ng
+	8qu87P+fhBJ1tU/wCMyHyBesqL4b5Q6O7vX0Q+RxO3m5JGUXBeNdugIPwMYlLYPlaEBoTna2M2a9Z
+	37HcRRiq3pnvY6qIOtYeV4ZA1OS21if4mVyPIRSXNzLoDl3tbUzUvomYlFv+Ag2G95yW5c9E53add
+	qqU2+MRzdZVZpKtcXVCGoGsq6wathLLP4ZaHflVsQ6hPOjE9nUlNFC3lIC4UnvCHmIAp5WZGOwdtj
+	abhrIotNlRUCaQ99wX+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUM6T-0004nM-1X; Tue, 12 Nov 2019 02:40:25 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1iUNkY-0004Wa-S1; Tue, 12 Nov 2019 04:25:54 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUM6P-0004m1-N7
- for linux-um@lists.infradead.org; Tue, 12 Nov 2019 02:40:23 +0000
-Received: by mail-wm1-x343.google.com with SMTP id z26so1397985wmi.4
- for <linux-um@lists.infradead.org>; Mon, 11 Nov 2019 18:40:21 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=arista.com; s=googlenew;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=hc0bl6ua3Awo0puTEJJtiCFLlsTJGov09J6GyMYDUcw=;
- b=MX42aMTTzAgzmolo19ziCaVvJW01j4llkcsSSsPBgIZf5M/QJqFnu0ykgQ+YU9I1XM
- lWWUfFOOmvWQUbOV/+iKy4yX6WRH0x7F+7sbAobnLPJdwSzb9YWyJ9/pnJvSWZVMB+xV
- UFEneok+5nQrKqWY1H/ryexuorVth0ci9XQccgC0yNGEatwsWoLWkeJcz3zYnXhenkJH
- nhLbJhqGH8CSvC3ekwmNTkFJs9KRa26JVi5KOJ0GN3lmDlPGH14xef5YqFU0Sk8qUi0p
- NtXZ7DYgZXwHf2rN/1LtOFtVEw8aJlkAZJ8tf3acCKNzLndcz00BKo1YrVsWG4zo53JF
- Pi/g==
+ id 1iUNkU-0004U7-EB; Tue, 12 Nov 2019 04:25:51 +0000
+Received: by mail-pl1-x644.google.com with SMTP id o9so8812179plk.6;
+ Mon, 11 Nov 2019 20:25:50 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=9VefD4i9ErvjrjSu5lBHBfa2VMuQnRlhyfcHWoSsFGA=;
+ b=cdGWTYNC6NHRu+kvA4I6kS1Y2LfiO2jKF0r2reR+0mRqcG8yKudKBCw9I9DOXABIX4
+ /3TUFbNC4J3e6CiNMFB22KOrjhFeNSMw6A4f5zE4eujUVPhwdAy4UE6JiknhjlsRGWe7
+ RTgQRbIczKqjQpk9q9jHQE31BO+69ykoGYVcUuJlUop2q+ad5Zn3tErki59ff20RUtZo
+ yWETgjDNltG315ymhYBMnymIi7dXr1HTD7KD2QIijuj5xF7vcEzw9cliyVtugI35e748
+ tq7YxpziGywkq1lpdx1pl1YBrcMuX71SP1knncXeWdL4sRO4vx39eBLBEYWFTo///pwr
+ NCHA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=hc0bl6ua3Awo0puTEJJtiCFLlsTJGov09J6GyMYDUcw=;
- b=m+9W5Wfl450EcnAtu6chTJFzKvAcRXMV4/wOQnaVF+rd/Xzoua4IeLkWj4ZE2Vd3aQ
- CtfhYPpd6ydqahWYZ0CPqatK3/qq1ZpuneyognMDvW2x1pMUaAONjurouuScrVtICcbk
- jbeIfXnQj2aclY1zLCP8vkgg1YDqkHJssijnxDcIMAxag96BU4CqRdGPpZHNrGhd8W0n
- o7HOtgsK5MYfeOve5LJxR0Bc32PcJ3p8nVRYTg0Pvs54KQJGTIzPVOiSGZIHF0BfZ7DV
- LyXiZTEO9AcSpKSY0bHK8shbIwU7x8QC3xKv9OkEnVil2UKfRzMB5xXjxx391fda4O8x
- KpIQ==
-X-Gm-Message-State: APjAAAUtyOiLpomEvVLP+lwOrke12vo/4YbrfhcqXteEgu0JsM/t56Ns
- nbCsF8U2yUI54WIqodP5JjiWoA==
-X-Google-Smtp-Source: APXvYqwGQmDILzErOejMnS6vcYmyu3aXwuweLJ3fDyVGcyV1rhcTRlJUkjSBJvf4yqYURAoU8N6Q/w==
-X-Received: by 2002:a7b:c211:: with SMTP id x17mr1567811wmi.71.1573526420054; 
- Mon, 11 Nov 2019 18:40:20 -0800 (PST)
-Received: from [10.83.36.153] ([217.173.96.166])
- by smtp.gmail.com with ESMTPSA id u26sm1511046wmj.9.2019.11.11.18.40.16
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 11 Nov 2019 18:40:19 -0800 (PST)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=9VefD4i9ErvjrjSu5lBHBfa2VMuQnRlhyfcHWoSsFGA=;
+ b=RT1vUZMz4D1IiY4qbCaMzVyS8+JCFF9FnRRpBf8RvXqtYllHvTcNI3MYQIx0gVKTHT
+ Z1RYOdg43snZdWAzIoHibmulGYCyDdgO3/HY4KhCuKMLiVhaJhUKMrRFL1pjwKvyw7SM
+ 1aM7rTF0mS746ZSPcwbp8AtqQiwNFtcLo5DDm9Fozx0NUFsHaKBjaB95GP2l19svMfKd
+ QpWhdH0fE3HxcIwGZr0sjNCoyQ0kPQOJzV4MhTyhrUyEepM2w1HJBbdEok1GwEDcoVO4
+ PeJb59kNMqZUCTqjyeTacx6oUxgd5n7vllWK4ULLQYZEQCXqrbX5qBDewGGNi4Z5xqW1
+ raqA==
+X-Gm-Message-State: APjAAAVF2JPagSEHzKvKaNjhr+WIjZVxe5KkWFpvmBox/2m/HDrz8XHN
+ Q2LBXHmpznDGUxxMfuPE99s=
+X-Google-Smtp-Source: APXvYqyjkigrHz92j3yARMh7vwLk0eQQU3iBJc8XJ3FFSXhKkmIaB79Wx/YFJE8etx6MkatMc7zyFg==
+X-Received: by 2002:a17:902:246:: with SMTP id
+ 64mr28628529plc.339.1573532749511; 
+ Mon, 11 Nov 2019 20:25:49 -0800 (PST)
+Received: from localhost ([2401:fa00:8f:203:250d:e71d:5a0a:9afe])
+ by smtp.gmail.com with ESMTPSA id 186sm23754823pfb.99.2019.11.11.20.25.47
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 11 Nov 2019 20:25:48 -0800 (PST)
+Date: Tue, 12 Nov 2019 13:25:46 +0900
+From: Sergey Senozhatsky <sergey.senozhatsky.work@gmail.com>
+To: Dmitry Safonov <dima@arista.com>
 Subject: Re: [PATCH 00/50] Add log level to show_stack()
-To: Sergey Senozhatsky <sergey.senozhatsky.work@gmail.com>
+Message-ID: <20191112042546.GA119579@google.com>
 References: <20191106030542.868541-1-dima@arista.com>
  <20191106083538.z5nlpuf64cigxigh@pathway.suse.cz>
  <20191108103719.GB175344@google.com>
@@ -66,25 +67,24 @@ References: <20191106030542.868541-1-dima@arista.com>
  <20191111012336.GA85185@google.com>
  <13e72b62-c842-8ed5-5b41-bc1692b28f53@arista.com>
  <20191112021747.GA68506@google.com>
-From: Dmitry Safonov <dima@arista.com>
-Message-ID: <25cb9647-007a-9c18-4784-49c0aef4f54b@arista.com>
-Date: Tue, 12 Nov 2019 02:40:11 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.0
+ <25cb9647-007a-9c18-4784-49c0aef4f54b@arista.com>
 MIME-Version: 1.0
-In-Reply-To: <20191112021747.GA68506@google.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <25cb9647-007a-9c18-4784-49c0aef4f54b@arista.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191111_184021_767738_FB523A15 
-X-CRM114-Status: GOOD (  14.96  )
+X-CRM114-CacheID: sfid-20191111_202550_505553_A18D0EF1 
+X-CRM114-Status: GOOD (  11.94  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
  [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (sergey.senozhatsky.work[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -94,7 +94,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -106,14 +105,15 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: Juri Lelli <juri.lelli@redhat.com>, linux-sh@vger.kernel.org,
- Catalin Marinas <catalin.marinas@arm.com>, Ben Segall <bsegall@google.com>,
- Guo Ren <guoren@kernel.org>, Pavel Machek <pavel@ucw.cz>,
- Vincent Guittot <vincent.guittot@linaro.org>,
+Cc: Juri Lelli <juri.lelli@redhat.com>,
+ Sergey Senozhatsky <sergey.senozhatsky.work@gmail.com>,
+ linux-sh@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
+ Ben Segall <bsegall@google.com>, Guo Ren <guoren@kernel.org>,
+ Pavel Machek <pavel@ucw.cz>, Vincent Guittot <vincent.guittot@linaro.org>,
  Paul Burton <paulburton@kernel.org>, Michael Ellerman <mpe@ellerman.id.au>,
  Geert Uytterhoeven <geert@linux-m68k.org>, Mel Gorman <mgorman@suse.de>,
  Jiri Slaby <jslaby@suse.com>, Matt Turner <mattst88@gmail.com>,
- uclinux-h8-devel@lists.sourceforge.jp, Len Brown <len.brown@intel.com>,
+ uclinux-h8-devel@lists.sourceforge.jp, Petr Mladek <pmladek@suse.com>,
  linux-pm@vger.kernel.org, Heiko Carstens <heiko.carstens@de.ibm.com>,
  linux-um@lists.infradead.org, Thomas Gleixner <tglx@linutronix.de>,
  Dietmar Eggemann <dietmar.eggemann@arm.com>,
@@ -146,7 +146,7 @@ Cc: Juri Lelli <juri.lelli@redhat.com>, linux-sh@vger.kernel.org,
  Guan Xuetao <gxt@pku.edu.cn>, linux-parisc@vger.kernel.org,
  linux-alpha@vger.kernel.org, Ley Foon Tan <lftan@altera.com>,
  "David S. Miller" <davem@davemloft.net>, Rich Felker <dalias@libc.org>,
- Petr Mladek <pmladek@suse.com>, Peter Zijlstra <peterz@infradead.org>,
+ Len Brown <len.brown@intel.com>, Peter Zijlstra <peterz@infradead.org>,
  "H. Peter Anvin" <hpa@zytor.com>, sparclinux@vger.kernel.org,
  linux-riscv@lists.infradead.org,
  Anton Ivanov <anton.ivanov@cambridgegreys.com>,
@@ -165,37 +165,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-Hi Sergey,
-
-On 11/12/19 2:17 AM, Sergey Senozhatsky wrote:
-> On (19/11/11 19:47), Dmitry Safonov wrote:
+On (19/11/12 02:40), Dmitry Safonov wrote:
 [..]
->> What I'm going to do - is to fix all build and reported issues, I'll
->> send v2 this week and feel free to NAK it, I will forget about those
->> patches and won't be offended.
-> 
-> Lovely.
-> And - no, I'm not going to NAK platform specific changes. Just so you know.
-> 
-> *All* I'm talking about is an alternative, less "go and touch a ton of
-> platform code" approach. The argument "I patched so many files that I'm
-> not even going to discuss anything now" is not productive, to say the
-> least. Hope this clarifies.
+> In my point of view the cost of one-time [mostly build] testing every
+> architecture is cheaper than introducing some new smart code that will
+> live forever.
 
-It probably was a wrong impression from the both sides.
-My impression was "You touch every architecture - we won't even consider
-that". Sorry for the the wrong impression from my side - I'm open for
-discussion.
+Well, there may be the need to pass loglevel deeper due to "hey __show_stack()
+on that arch invokes bar(), which invokes foo() and now foo() does printk(),
+but we don't see it". The context which decided to backtaraces decided
+to do so for a reason, probably, so I guess we can look at it as "a special
+error reporting code block".
 
-In my point of view the cost of one-time [mostly build] testing every
-architecture is cheaper than introducing some new smart code that will
-live forever. Though, again you and Petr understand more than me in
-printk() code, so I'm not any insisting.
+The proposed patch set passes loglevel via slightly unusual channel -
+via sprintf(). We probably can do it, but I would prefer to minimize
+the number of such printk-s in the kernel. The code snippet which I
+posted also does pretty unusual thing w.r.t loglevel. Both approaches
+are "non-standard" from that POV.
 
-I'll reply to your suggestion tomorrow, it's a bit late in my tz.
+> I'll reply to your suggestion tomorrow, it's a bit late in my tz.
 
-Thanks,
-          Dmitry
+Sure.
+
+To anyone who will comment on that code snippet - this is not a
+"look, here is what you need to do" type of proposal. Just an
+alternative approach with its pros and cons.
+
+We had several requests over the years to have something like "forcibly
+allow all underlying printk-s from here to here" or "forcibly suppress
+or postpone underlying printk-s from here to here", etc.
+
+	-ss
 
 _______________________________________________
 linux-um mailing list
