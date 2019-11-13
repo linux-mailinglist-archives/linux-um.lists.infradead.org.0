@@ -2,63 +2,63 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D54EDF8C8D
-	for <lists+linux-um@lfdr.de>; Tue, 12 Nov 2019 11:12:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D695EFA00A
+	for <lists+linux-um@lfdr.de>; Wed, 13 Nov 2019 02:23:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=towcF/d/mee3NjqZUk1EhPbfON3CjRj4k2dB5x4q9PM=; b=MiYFfU/SKTWOuU
-	Ivjzx/TFxQs3qn2/nL0PAn64paQzkNOEJjvdlr+CmYIOOQ0UUuOrkpZEfr7qKcT0vgwEoIY2tj2nf
-	AWcGe72de9uwCs8725HeQSyhCpwPpCECsWlkCcTy72naST6qZBqbD7dXinDLfGqQYBeBOsaUga+eY
-	2Y8Z4VOx3zju0UDVSGU+bT2VzFPZ8KzmbHnt5xhqdIXg6vzXroHvs8SPYpPT/vKPNd8AeOy4u0pSz
-	4PaQmNPvGrYx9U4QzMkaIw5P/SBlX8UzRiLNM8jqfLek6lvTdw8MXz8c6IC5D7XKMAlLPXVFRol64
-	v4+FNPKoZj7E1syjJIsQ==;
+	List-Owner; bh=AUyt0UAXUgdUdoClBLED9i8vuXig0IeLuxHfB6MZQ+E=; b=VWkF4Mp9jaCgNB
+	j8AOhJc5Zs5VwYydYPnWo0v0+sEzrEOo3p/LNUjHSw96ZNSwF1y7uLmoyJF5+l9w/9Fpt510NUbfH
+	NsLy7yzcoEjNkancV+4cJBkRr+jS7pwDTy5O9PtVrH9nYsy5++mHggnxL6ZzHiX+Kg362esOJ+5dk
+	gFG9nkrZBwwSvbJ01dstMoL+kSKRzJE6F4J2r+mrj8UswzfeDmNSzGbKS9MhvHmB0MX0UaOolT5Hm
+	HaIXpL0mwG9wQxL8KjOmsXFCx6UpEdSNiMhGrL2TiJ+hjbelhqKbzNx65AE3gOO8xri8sXGNvYqXS
+	Ly3AgepH6Px8ckhV8YJw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUTA6-0003w1-0b; Tue, 12 Nov 2019 10:12:38 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1iUhNq-0000Do-Bq; Wed, 13 Nov 2019 01:23:46 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUTA1-0003uR-Uf; Tue, 12 Nov 2019 10:12:35 +0000
-Received: by mail-pg1-x544.google.com with SMTP id q22so11552756pgk.2;
- Tue, 12 Nov 2019 02:12:33 -0800 (PST)
+ id 1iUhNl-0000C7-Tc; Wed, 13 Nov 2019 01:23:43 +0000
+Received: by mail-pl1-x644.google.com with SMTP id w8so317142plq.5;
+ Tue, 12 Nov 2019 17:23:41 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=iABlNrF2pKWSZ44AJQZkuRtZU/cPi9wpLdONGxReYeE=;
- b=lVQpY920ERl+suupN9XSt5AI00c2Bwp6YTe+nuAxfJ0tx8/CHdvsOX8KqHu3FmMDHw
- pKJz2qZ3MIZdI/LvHcuOQwnw03zOL+xBaPoBM3Sk8cqEAObtva+w2W+VwUQXyt+Yzl0z
- 2Ik5jh60mk6441pRqx3/IONqYdeiU8UBQPNLpaFQv+9/cOgrSL80TVTu8IIfCepoYN0k
- 46xEtzM2XHEzQhHHKxX5sVHiAqwMvF9Sq45W8ZvBkd56VxLaVtoM4UNEcrlWR3NAHdQy
- xhQtHdonv/wnGP9QHISUJ1hs6f5eymrLlJUCAqXrERs33xe9PtMv6394ZI1rErDw09YV
- v71Q==
+ bh=1L7ASzKkM9H3jGXxNBrUB+7DORYDzuzDLILdAI3Iz7A=;
+ b=hPWPZKlqyeQnXDnfKM+yto4tna7/NwAt3iB5d61vGkkJIZuUufxmpnoxkEgePVnej7
+ L3hqEC23l+0zKgGK6W4wPhhfu5rKZowqxPh/46+GMjsQYom9+rxAtKscDZa4tq1EZ716
+ v3E2zlUhIldCXA7DVyUqyyBaEbvglPUOrZExWlUjNqVUbKviWiZ0UqqlQQn5uS5GaAHc
+ mq/bIirdXr39H9gdTuhjl1CNb4pz9u1NyVaytreQwY9zEl/crJdG04QmPFkkR8rnNcTE
+ UvMTM+CfzewoFMwCfZcUTuuW9mgMTzeza8o6UpjTQJvYoUxBVhuX8rWLl3B8wj02ljU3
+ maaw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=iABlNrF2pKWSZ44AJQZkuRtZU/cPi9wpLdONGxReYeE=;
- b=O+B0T1bxJaLvl2vU77+p8Juv0WyEv8MQ3mU8F0OPEVqjcQXGDe6hShGrxiI+JVT/KN
- sgsPv2TK0ksbFFOneltKc5LS+hn/E0Z17MURBEuAmTocz15pF/AKG5vUQySJNy2sEFEA
- ySPs/ReltrNk2mHixaT8F2HI3IsyX4L9u57fyvfYVLwYqZLvdy2vJ70222+MT8jkfTFx
- dmmybnfTb2EruQqGDKDvg9VICyLf71p7Bst2Lc1YYUHxTqS6+JhC5jR0IIBTsL3T5u1P
- T/RkQaetfl1KfBXh3HC+kVBxtkcG9vueK1zrg82onLhYclUopRAHcLdIvpCMFWMnE5qx
- lmjw==
-X-Gm-Message-State: APjAAAU2jMlBF065fBfCVmUI0D/aVCC1HX58xCQtzXSBmpX4YZjo44KV
- tNw2+zphdjBtOtBq+WOyBPA=
-X-Google-Smtp-Source: APXvYqzbLkT+ewX6d5aDmf1lCSG1EnFPCAEpBjMiCepHVQ5OZ8DJHna0XlH2m+np53cmAKdzl8CVcA==
-X-Received: by 2002:a62:fb02:: with SMTP id x2mr28010053pfm.254.1573553553232; 
- Tue, 12 Nov 2019 02:12:33 -0800 (PST)
+ bh=1L7ASzKkM9H3jGXxNBrUB+7DORYDzuzDLILdAI3Iz7A=;
+ b=Dta5ADakPGhRi106kLbuHtE/4WRx1wMe6cU9ITESIl6UkiXuImVACZUyEa9zt76jVm
+ 2Gn1vpBrrfij0x7Volru+LBE3Ve3HRnMTV8b5hf57J6kkYYXYl1hpHCGl7Sbl5LkqlvN
+ 7RtKPuxEd3jZJ8tgn75xCn3uXerT+nJ3vqFxpg+xah15lajhbcPx15ToUX/bSohU0ALQ
+ bsIE73b0NWmC1YU7B8EVm/b4CaOV6lSvzQkAvBLpdWNAyffzcwOet75fj2H7r65QXJSy
+ U9xa2pr35R+wsuhP/OWGmIhNYPkkToNoqvny70qUlRikQnrWL3JZ/nAiKhxnTbA6y7tg
+ quSQ==
+X-Gm-Message-State: APjAAAWi5Hzzu9DzyeWoYx0RxsIUPLOGCaguhzfbpmcKvrhs9q6HkCJ7
+ 1Fz5hrXuJIvYwJRWgrWlHHU=
+X-Google-Smtp-Source: APXvYqyiqUiMRcG57rYhVmi/PN592L9nB6krMmKeStEG0mbc1TStTpGh0xSJ8gvsM3GDADDNTGDfqQ==
+X-Received: by 2002:a17:902:8a83:: with SMTP id p3mr856215plo.79.1573608220830; 
+ Tue, 12 Nov 2019 17:23:40 -0800 (PST)
 Received: from localhost ([2401:fa00:8f:203:250d:e71d:5a0a:9afe])
- by smtp.gmail.com with ESMTPSA id k9sm19867384pfk.72.2019.11.12.02.12.31
+ by smtp.gmail.com with ESMTPSA id s3sm304442pjr.13.2019.11.12.17.23.39
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 12 Nov 2019 02:12:31 -0800 (PST)
-Date: Tue, 12 Nov 2019 19:12:29 +0900
+ Tue, 12 Nov 2019 17:23:39 -0800 (PST)
+Date: Wed, 13 Nov 2019 10:23:37 +0900
 From: Sergey Senozhatsky <sergey.senozhatsky.work@gmail.com>
-To: Petr Mladek <pmladek@suse.com>
+To: Petr Mladek <pmladek@suse.com>, Dmitry Safonov <dima@arista.com>
 Subject: Re: [PATCH 00/50] Add log level to show_stack()
-Message-ID: <20191112101229.GA201294@google.com>
+Message-ID: <20191113012337.GA70781@google.com>
 References: <20191106030542.868541-1-dima@arista.com>
  <20191106083538.z5nlpuf64cigxigh@pathway.suse.cz>
  <20191108103719.GB175344@google.com>
@@ -68,20 +68,21 @@ References: <20191106030542.868541-1-dima@arista.com>
  <20191112044447.GA121272@google.com>
  <20191112045704.GA138013@google.com>
  <20191112083509.gmgjpkjffsfaw5lm@pathway.suse.cz>
+ <20191112101229.GA201294@google.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191112083509.gmgjpkjffsfaw5lm@pathway.suse.cz>
+In-Reply-To: <20191112101229.GA201294@google.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191112_021234_026679_813F69E9 
-X-CRM114-Status: GOOD (  10.39  )
+X-CRM114-CacheID: sfid-20191112_172341_960195_1C61D2D0 
+X-CRM114-Status: GOOD (  11.23  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (sergey.senozhatsky.work[at]gmail.com)
@@ -110,8 +111,7 @@ Cc: Juri Lelli <juri.lelli@redhat.com>,
  linux-sh@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
  Ben Segall <bsegall@google.com>, Guo Ren <guoren@kernel.org>,
  Pavel Machek <pavel@ucw.cz>, Vincent Guittot <vincent.guittot@linaro.org>,
- Paul Burton <paulburton@kernel.org>, Dmitry Safonov <dima@arista.com>,
- Michael Ellerman <mpe@ellerman.id.au>,
+ Paul Burton <paulburton@kernel.org>, Michael Ellerman <mpe@ellerman.id.au>,
  Geert Uytterhoeven <geert@linux-m68k.org>, Mel Gorman <mgorman@suse.de>,
  Jiri Slaby <jslaby@suse.com>, Matt Turner <mattst88@gmail.com>,
  uclinux-h8-devel@lists.sourceforge.jp, Len Brown <len.brown@intel.com>,
@@ -165,20 +165,44 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On (19/11/12 09:35), Petr Mladek wrote:
-[..]
-> This is getting too complicated. It would introduce too many
-> hidden rules. While the explicitly passed loglevel parameter
-> is straightforward and clear.
+On (19/11/12 19:12), Sergey Senozhatsky wrote:
+> On (19/11/12 09:35), Petr Mladek wrote:
+> [..]
+> > This is getting too complicated. It would introduce too many
+> > hidden rules. While the explicitly passed loglevel parameter
+> > is straightforward and clear.
+>
+> If loglevel is DEFAULT or NOTICE or INFO then we can overwrite it
+> (either downgrade or upgrade). That's one rule, basically. Not too
+> complicated, I guess.
 
-If loglevel is DEFAULT or NOTICE or INFO then we can overwrite it
-(either downgrade or upgrade). That's one rule, basically. Not too
-complicated, I guess.
+Can be taken even a bit further than
 
-> I am getting more inclined to the solution introduced by this
-> patchset. It looks reasonable for the different use-cases.
+	show_stack(NULL, NULL, LOGLEVEL_DEBUG);
+or
+	show_stack(NULL, NULL, LOGLEVEL_ERR);
 
-No pressure from my side. Up to arch maintainers.
+For instance,
+
+	spin_lock_irqsave(&rq->lock, flags);
+	printk_emergency_enter(LOGLEVEL_SCHED);
+		...
+		show_stack(...);
+		printk();
+		printk();
+		...
+	spin_unlock_irqrestore(&rq->lock, flags);
+
+or
+
+	spin_lock_irqsave(&uart_port->lock, flags);
+	printk_emergency_enter(LOGLEVEL_SCHED);
+		...
+		printk();
+		printk();
+		...
+
+and so on.
 
 	-ss
 
