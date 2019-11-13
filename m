@@ -2,48 +2,54 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 71788FB402
-	for <lists+linux-um@lfdr.de>; Wed, 13 Nov 2019 16:45:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 337FBFB4FC
+	for <lists+linux-um@lfdr.de>; Wed, 13 Nov 2019 17:24:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8wLt4cN94xeBBKDnngjsV04FO6eZUJ3rUtNyOk7b9E4=; b=plpl98rSRbQ2qG
-	om4a2rSwYSfGsWieXE8mJS8uGb7wpKGzIsLXUugOmGrKADAYpSFdHdysSBHO/eW7oTa0PfDtzdiAc
-	iLeLytTSkb3jZGtHx6A06lCQz2GDNrxh1vxHfq5eiO86TdoLefYD/nr0pJEZNIzwJjnc4KmR/M6Em
-	aTLenvnBNrvRDjHo7dWclvSo2G0cOJPt5AQ0vR7Dih7IWFhC3x/LyX/cmAAbsVibsrEaCt6a+U6bw
-	eJNs3WcJIaQCnMkezXsVHtzvVixLtDi/YLQBOmQAWD0LPIFAJNXEazzQppdPahogOlkRoScgPq2Xf
-	USPXA0tNflNY60Qp6ERA==;
+	List-Owner; bh=BkHFXXpunCqaZDVbI7YvdbPeFHeHvuYKTJARntMo+rI=; b=Xn9vGE5/xc3yFI
+	QzpXQ//nNoslTGg3l85oDPYM645cKHGeLDZ8fToRv6tIXylNRe3/h/MfsidzJXM7IygbP+6yq0mLI
+	vbLZdkPqht71iZh74U99fN8oBRYyuLvlSFZs/m7wuT54Uecmc9+sXkVhnpGeBhxmWjQfKPWgg3KWW
+	Sb61mM4NjRPsTO8YkAgVpVfuleUEXNMCbFx0oWdK8l1mFs8OHcTlK+dcra/a2lnQTG6qCBbvd3d40
+	WT/8Zh/zgbMO4QMje0drqpprRtTDaE3Ji2tvj1XJm+akSv1bBV1/O31jU5orWMgw/taWJFxBurIOE
+	rgBRM1HAiWTQCvKEsmSA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUupO-0001e1-5B; Wed, 13 Nov 2019 15:45:06 +0000
+	id 1iUvRu-0002Re-G2; Wed, 13 Nov 2019 16:24:54 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUupE-0001KX-AL; Wed, 13 Nov 2019 15:45:00 +0000
+ id 1iUvRq-0002Pg-NR; Wed, 13 Nov 2019 16:24:52 +0000
 Received: from gandalf.local.home (cpe-66-24-58-225.stny.res.rr.com
  [66.24.58.225])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4850B225AE;
- Wed, 13 Nov 2019 15:44:48 +0000 (UTC)
-Date: Wed, 13 Nov 2019 10:44:46 -0500
+ by mail.kernel.org (Postfix) with ESMTPSA id 0CF0D2247C;
+ Wed, 13 Nov 2019 16:24:42 +0000 (UTC)
+Date: Wed, 13 Nov 2019 11:24:41 -0500
 From: Steven Rostedt <rostedt@goodmis.org>
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Petr Mladek <pmladek@suse.com>
 Subject: Re: [PATCH 00/50] Add log level to show_stack()
-Message-ID: <20191113104446.419e4d8a@gandalf.local.home>
-In-Reply-To: <20191106232512.GU25745@shell.armlinux.org.uk>
-References: <20191106030542.868541-1-dima@arista.com>
- <20191106092039.GT4131@hirez.programming.kicks-ass.net>
- <10db6fa1-5b17-ebe6-09e0-6335e09e4db8@arista.com>
- <20191106203440.GH3079@worktop.programming.kicks-ass.net>
- <20191106232512.GU25745@shell.armlinux.org.uk>
+Message-ID: <20191113112441.41f6763c@gandalf.local.home>
+In-Reply-To: <20191113084722.emzee7g34zki4kkl@pathway.suse.cz>
+References: <20191108130447.h3wfgo4efjkto56f@pathway.suse.cz>
+ <20191111012336.GA85185@google.com>
+ <20191111091207.u3lrd6cmumnx4czr@pathway.suse.cz>
+ <20191112044447.GA121272@google.com>
+ <20191112045704.GA138013@google.com>
+ <20191112083509.gmgjpkjffsfaw5lm@pathway.suse.cz>
+ <20191112101229.GA201294@google.com>
+ <20191113012337.GA70781@google.com>
+ <25ff45f0-6420-f660-55a8-637f11ab5ab4@arista.com>
+ <20191113063334.GA147997@google.com>
+ <20191113084722.emzee7g34zki4kkl@pathway.suse.cz>
 X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191113_074456_423048_62B797C3 
-X-CRM114-Status: GOOD (  19.55  )
+X-CRM114-CacheID: sfid-20191113_082450_801688_752D721E 
+X-CRM114-Status: GOOD (  10.76  )
 X-Spam-Score: -4.8 (----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-4.8 points)
@@ -66,10 +72,11 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: Juri Lelli <juri.lelli@redhat.com>, linux-sh@vger.kernel.org,
- Catalin Marinas <catalin.marinas@arm.com>, Ben Segall <bsegall@google.com>,
- Guo Ren <guoren@kernel.org>, Pavel Machek <pavel@ucw.cz>,
- Vincent Guittot <vincent.guittot@linaro.org>,
+Cc: Juri Lelli <juri.lelli@redhat.com>,
+ Sergey Senozhatsky <sergey.senozhatsky.work@gmail.com>,
+ linux-sh@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
+ Ben Segall <bsegall@google.com>, Guo Ren <guoren@kernel.org>,
+ Pavel Machek <pavel@ucw.cz>, Vincent Guittot <vincent.guittot@linaro.org>,
  Paul Burton <paulburton@kernel.org>, Dmitry Safonov <dima@arista.com>,
  Michael Ellerman <mpe@ellerman.id.au>,
  Geert Uytterhoeven <geert@linux-m68k.org>, Mel Gorman <mgorman@suse.de>,
@@ -84,8 +91,8 @@ Cc: Juri Lelli <juri.lelli@redhat.com>, linux-sh@vger.kernel.org,
  Ralf Baechle <ralf@linux-mips.org>, Paul Mackerras <paulus@samba.org>,
  Andrew Morton <akpm@linux-foundation.org>, linux-ia64@vger.kernel.org,
  Tetsuo Handa <penguin-kernel@I-love.SAKURA.ne.jp>,
- James Hogan <jhogan@kernel.org>,
- "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>,
+ James Hogan <jhogan@kernel.org>, "James E.J.
+ Bottomley" <James.Bottomley@HansenPartnership.com>,
  Max Filippov <jcmvbkbc@gmail.com>, Vincent Chen <deanbo422@gmail.com>,
  Ingo Molnar <mingo@kernel.org>, linux-s390@vger.kernel.org,
  linux-c6x-dev@linux-c6x.org, Yoshinori Sato <ysato@users.sourceforge.jp>,
@@ -106,14 +113,14 @@ Cc: Juri Lelli <juri.lelli@redhat.com>, linux-sh@vger.kernel.org,
  Greentime Hu <green.hu@gmail.com>, Guan Xuetao <gxt@pku.edu.cn>,
  linux-parisc@vger.kernel.org, linux-alpha@vger.kernel.org,
  Ley Foon Tan <lftan@altera.com>, "David S. Miller" <davem@davemloft.net>,
- Rich Felker <dalias@libc.org>, Petr Mladek <pmladek@suse.com>,
- Peter Zijlstra <peterz@infradead.org>, "H. Peter Anvin" <hpa@zytor.com>,
- sparclinux@vger.kernel.org, linux-riscv@lists.infradead.org,
+ Rich Felker <dalias@libc.org>, Peter Zijlstra <peterz@infradead.org>,
+ "H. Peter Anvin" <hpa@zytor.com>, sparclinux@vger.kernel.org,
+ linux-riscv@lists.infradead.org,
  Anton Ivanov <anton.ivanov@cambridgegreys.com>,
  Jonas Bonn <jonas@southpole.se>, Richard Weinberger <richard@nod.at>,
- x86@kernel.org, clang-built-linux@googlegroups.com,
- Ingo Molnar <mingo@redhat.com>, Mark Salter <msalter@redhat.com>,
- Albert Ou <aou@eecs.berkeley.edu>,
+ x86@kernel.org, Russell King <linux@armlinux.org.uk>,
+ clang-built-linux@googlegroups.com, Ingo Molnar <mingo@redhat.com>,
+ Mark Salter <msalter@redhat.com>, Albert Ou <aou@eecs.berkeley.edu>,
  Stefan Kristiansson <stefan.kristiansson@saunalahti.fi>,
  openrisc@lists.librecores.org, Paul Walmsley <paul.walmsley@sifive.com>,
  Michal Simek <monstr@monstr.eu>, Vineet Gupta <vgupta@synopsys.com>,
@@ -125,42 +132,19 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Wed, 6 Nov 2019 23:25:13 +0000
-Russell King - ARM Linux admin <linux@armlinux.org.uk> wrote:
+On Wed, 13 Nov 2019 09:47:22 +0100
+Petr Mladek <pmladek@suse.com> wrote:
 
-> On Wed, Nov 06, 2019 at 09:34:40PM +0100, Peter Zijlstra wrote:
-> > I suppose I'm surprised there are backtraces that are not important.
-> > Either badness happened and it needs printing, or the user asked for it
-> > and it needs printing.  
-> 
-> Or utterly meaningless.
-> 
-> > Perhaps we should be removing backtraces if they're not important
-> > instead of allowing to print them as lower loglevels?  
-> 
-> Definitely!  WARN_ON() is well overused - and as is typical, used
-> without much thought.  Bound to happen after Linus got shirty about
-> BUG_ON() being over used.  Everyone just grabbed the next nearest thing
-> to assert().
-> 
-> As a kind of example, I've recently come across one WARN_ON() in a
-> driver subsystem (that shall remain nameless at the moment) which very
-> likely has multiple different devices on a platform.  The WARN_ON()
-> triggers as a result of a problem with the hardware, but because it's a
-> WARN_ON(), you've no idea which device has a problem.  The backtrace is
-> mostly meaningless.  So you know that a problem has occurred, but the
-> kernel prints *useless* backtrace to let you know, and totally omits
-> the *useful* information.
-> 
+> At the moment, I am in favor of this patchset. It is huge and
+> needed a lot of manual work. But the result is straightforward and
+> easy to understand.
 
-I would like to bring up a topic for the next maintainers summit
-(although I may not even be there), that we define a clear use of
-WARN_ON(). I use it only if the code does something I do not expect it
-to do, and is considered a bug in the code if it triggers. But it
-appears that some drivers use it for "oh I didn't realize this hardware
-does something I didn't expect". And is ignored when the warn on is
-triggered and reported, with "you have buggy hardware" but my hardware
-appears to work just fine!
+I'm in favor of this patchset too. If there's other areas that need to
+adjust the current loglevel (say per task context), then we can cross
+that bridge when the need arises. But I don't want to over engineer
+this as the stack trace logic should have a way to explicitly state how
+important this stack trace really is (or better yet, we should be
+removing stack traces that are not important!)
 
 -- Steve
 
