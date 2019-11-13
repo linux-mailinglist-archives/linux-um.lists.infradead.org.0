@@ -2,47 +2,48 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 04158FB3EE
-	for <lists+linux-um@lfdr.de>; Wed, 13 Nov 2019 16:41:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 71788FB402
+	for <lists+linux-um@lfdr.de>; Wed, 13 Nov 2019 16:45:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2oerezYsHyB/orVSQABczfFlzFbXjjrcrAJmXqy/qLE=; b=hqsNdUz+ibc2Gy
-	MnDHEFY3sEUsWwwcAvUwewgSe0vqwVIJGNFoa6ZEsgIccTcbAR+qEcSKoprci/lv+Bxen99ts6c8P
-	Ukddlsj2G6QWo6tuRxKeXkvelzRSimv5vDHb1wqa1hzFxSZIn5YOg3ked8g7C2Ve54KEXDjWBG03K
-	aCG3+00N9Zotb49JKkX65aQ1mwHda+xB4RekPFwnuuOOpSdux6FrNJ6bT8qFElPLeem5qYCtlfP4g
-	QZ0HLqEBXlLrwkSylnExDLRH446yEPcJWLW1YOtQOfLXi7XtlAp+tfTZqMeSlMVUqBbC2Xp8iwAOb
-	g+BtNAbgieilcq8QbFOQ==;
+	List-Owner; bh=8wLt4cN94xeBBKDnngjsV04FO6eZUJ3rUtNyOk7b9E4=; b=plpl98rSRbQ2qG
+	om4a2rSwYSfGsWieXE8mJS8uGb7wpKGzIsLXUugOmGrKADAYpSFdHdysSBHO/eW7oTa0PfDtzdiAc
+	iLeLytTSkb3jZGtHx6A06lCQz2GDNrxh1vxHfq5eiO86TdoLefYD/nr0pJEZNIzwJjnc4KmR/M6Em
+	aTLenvnBNrvRDjHo7dWclvSo2G0cOJPt5AQ0vR7Dih7IWFhC3x/LyX/cmAAbsVibsrEaCt6a+U6bw
+	eJNs3WcJIaQCnMkezXsVHtzvVixLtDi/YLQBOmQAWD0LPIFAJNXEazzQppdPahogOlkRoScgPq2Xf
+	USPXA0tNflNY60Qp6ERA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUulz-0000eO-8u; Wed, 13 Nov 2019 15:41:35 +0000
+	id 1iUupO-0001e1-5B; Wed, 13 Nov 2019 15:45:06 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUulu-0000by-Fv; Wed, 13 Nov 2019 15:41:31 +0000
+ id 1iUupE-0001KX-AL; Wed, 13 Nov 2019 15:45:00 +0000
 Received: from gandalf.local.home (cpe-66-24-58-225.stny.res.rr.com
  [66.24.58.225])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 29788224EF;
- Wed, 13 Nov 2019 15:41:23 +0000 (UTC)
-Date: Wed, 13 Nov 2019 10:41:21 -0500
+ by mail.kernel.org (Postfix) with ESMTPSA id 4850B225AE;
+ Wed, 13 Nov 2019 15:44:48 +0000 (UTC)
+Date: Wed, 13 Nov 2019 10:44:46 -0500
 From: Steven Rostedt <rostedt@goodmis.org>
-To: Peter Zijlstra <peterz@infradead.org>
+To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
 Subject: Re: [PATCH 00/50] Add log level to show_stack()
-Message-ID: <20191113104121.696c9093@gandalf.local.home>
-In-Reply-To: <20191106203440.GH3079@worktop.programming.kicks-ass.net>
+Message-ID: <20191113104446.419e4d8a@gandalf.local.home>
+In-Reply-To: <20191106232512.GU25745@shell.armlinux.org.uk>
 References: <20191106030542.868541-1-dima@arista.com>
  <20191106092039.GT4131@hirez.programming.kicks-ass.net>
  <10db6fa1-5b17-ebe6-09e0-6335e09e4db8@arista.com>
  <20191106203440.GH3079@worktop.programming.kicks-ass.net>
+ <20191106232512.GU25745@shell.armlinux.org.uk>
 X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191113_074130_569309_3576CBF1 
-X-CRM114-Status: GOOD (  12.05  )
+X-CRM114-CacheID: sfid-20191113_074456_423048_62B797C3 
+X-CRM114-Status: GOOD (  19.55  )
 X-Spam-Score: -4.8 (----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-4.8 points)
@@ -83,8 +84,8 @@ Cc: Juri Lelli <juri.lelli@redhat.com>, linux-sh@vger.kernel.org,
  Ralf Baechle <ralf@linux-mips.org>, Paul Mackerras <paulus@samba.org>,
  Andrew Morton <akpm@linux-foundation.org>, linux-ia64@vger.kernel.org,
  Tetsuo Handa <penguin-kernel@I-love.SAKURA.ne.jp>,
- James Hogan <jhogan@kernel.org>, "James E.J.
- Bottomley" <James.Bottomley@HansenPartnership.com>,
+ James Hogan <jhogan@kernel.org>,
+ "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>,
  Max Filippov <jcmvbkbc@gmail.com>, Vincent Chen <deanbo422@gmail.com>,
  Ingo Molnar <mingo@kernel.org>, linux-s390@vger.kernel.org,
  linux-c6x-dev@linux-c6x.org, Yoshinori Sato <ysato@users.sourceforge.jp>,
@@ -106,13 +107,13 @@ Cc: Juri Lelli <juri.lelli@redhat.com>, linux-sh@vger.kernel.org,
  linux-parisc@vger.kernel.org, linux-alpha@vger.kernel.org,
  Ley Foon Tan <lftan@altera.com>, "David S. Miller" <davem@davemloft.net>,
  Rich Felker <dalias@libc.org>, Petr Mladek <pmladek@suse.com>,
- "H. Peter Anvin" <hpa@zytor.com>, sparclinux@vger.kernel.org,
- linux-riscv@lists.infradead.org,
+ Peter Zijlstra <peterz@infradead.org>, "H. Peter Anvin" <hpa@zytor.com>,
+ sparclinux@vger.kernel.org, linux-riscv@lists.infradead.org,
  Anton Ivanov <anton.ivanov@cambridgegreys.com>,
  Jonas Bonn <jonas@southpole.se>, Richard Weinberger <richard@nod.at>,
- x86@kernel.org, Russell King <linux@armlinux.org.uk>,
- clang-built-linux@googlegroups.com, Ingo Molnar <mingo@redhat.com>,
- Mark Salter <msalter@redhat.com>, Albert Ou <aou@eecs.berkeley.edu>,
+ x86@kernel.org, clang-built-linux@googlegroups.com,
+ Ingo Molnar <mingo@redhat.com>, Mark Salter <msalter@redhat.com>,
+ Albert Ou <aou@eecs.berkeley.edu>,
  Stefan Kristiansson <stefan.kristiansson@saunalahti.fi>,
  openrisc@lists.librecores.org, Paul Walmsley <paul.walmsley@sifive.com>,
  Michal Simek <monstr@monstr.eu>, Vineet Gupta <vgupta@synopsys.com>,
@@ -124,25 +125,44 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Wed, 6 Nov 2019 21:34:40 +0100
-Peter Zijlstra <peterz@infradead.org> wrote:
+On Wed, 6 Nov 2019 23:25:13 +0000
+Russell King - ARM Linux admin <linux@armlinux.org.uk> wrote:
 
-> I suppose I'm surprised there are backtraces that are not important.
-> Either badness happened and it needs printing, or the user asked for it
-> and it needs printing.
-
-Unfortunately that is the case. As my tests will fail if a backtrace is
-detected.
-
+> On Wed, Nov 06, 2019 at 09:34:40PM +0100, Peter Zijlstra wrote:
+> > I suppose I'm surprised there are backtraces that are not important.
+> > Either badness happened and it needs printing, or the user asked for it
+> > and it needs printing.  
 > 
-> Perhaps we should be removing backtraces if they're not important
-> instead of allowing to print them as lower loglevels?
+> Or utterly meaningless.
+> 
+> > Perhaps we should be removing backtraces if they're not important
+> > instead of allowing to print them as lower loglevels?  
+> 
+> Definitely!  WARN_ON() is well overused - and as is typical, used
+> without much thought.  Bound to happen after Linus got shirty about
+> BUG_ON() being over used.  Everyone just grabbed the next nearest thing
+> to assert().
+> 
+> As a kind of example, I've recently come across one WARN_ON() in a
+> driver subsystem (that shall remain nameless at the moment) which very
+> likely has multiple different devices on a platform.  The WARN_ON()
+> triggers as a result of a problem with the hardware, but because it's a
+> WARN_ON(), you've no idea which device has a problem.  The backtrace is
+> mostly meaningless.  So you know that a problem has occurred, but the
+> kernel prints *useless* backtrace to let you know, and totally omits
+> the *useful* information.
+> 
 
-I usually end up removing backtraces for my tests, so I'm for this.
-Specifically this happens in the drm and i915 drivers :-p
+I would like to bring up a topic for the next maintainers summit
+(although I may not even be there), that we define a clear use of
+WARN_ON(). I use it only if the code does something I do not expect it
+to do, and is considered a bug in the code if it triggers. But it
+appears that some drivers use it for "oh I didn't realize this hardware
+does something I didn't expect". And is ignored when the warn on is
+triggered and reported, with "you have buggy hardware" but my hardware
+appears to work just fine!
 
 -- Steve
-
 
 _______________________________________________
 linux-um mailing list
