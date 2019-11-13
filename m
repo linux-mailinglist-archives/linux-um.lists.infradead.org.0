@@ -2,81 +2,81 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 68CFBFA6DE
-	for <lists+linux-um@lfdr.de>; Wed, 13 Nov 2019 03:52:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3CCADFAA39
+	for <lists+linux-um@lfdr.de>; Wed, 13 Nov 2019 07:33:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7q76/Ici0PjRRsKxPwwIBDYHJjH/X4A/PLh85v17kHE=; b=lOYhkiAva2oFk2
-	pGh6kzNAWzMsx3zahqkeF4/Znot7xt5VLbSIRhErCSRHYI5Gu7Cq9ckqc3jW3ytUxgO2JBkU07vyf
-	mmVmKRk24FIM8ovdDXunhZUozB1JFjqiypj3tVbAKlmKY6h82GcN5L1zcd02b7aF5w6hBdAskBBEm
-	clHKGuZ9O778/bcXvaRjBZgLhZ73kRFQKJIZNduFylhsbTXUQDPXCQeM9PKgdrpJaHBTM6wofk8JG
-	lyEy92fw16hEXFjZSXmadCgFbWwI98to5CbBGHtc68u7OlGDN4+e01uz62O26ib+lqBEvtaZqgM7N
-	zFG1cEeG0/P6iyuwH07Q==;
+	List-Owner; bh=ulBSG1UcQ6cT1dNcCQnA2qFu9XCgGrZ9xSgQz2XqnJk=; b=GEIqA6xNtuttaj
+	ntRh7aY1v44Eo4vIaCBwht4tv9hlCvZ9aumDACp1pnTePE91d2jrWPFFzuCegvobkfrNjncs48PNj
+	ck3fh7SbSvqtkV36DRpf4s4yM7Dn01x9YAELsa4OYKWC40obGNSCjL3/4hKFHf6MXinYSg7p5CT/q
+	eOqFsbrPciedItd4kVxol/LB3qWDSW3228I1+aXZ5m4LdKODXS9ie32lfAlW6stSBi7cvK7ROVNI6
+	LWQNrOmC79xhyt5aWwHOD0W0f6NjxKVuOcVDMkpO6cPm5mFjqTzcmwr0/HTNf0b5TlfUiRsRQF3j+
+	Mr8bHydoYfETYvHzCRaw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUilD-0001uZ-Mu; Wed, 13 Nov 2019 02:51:59 +0000
+	id 1iUmDn-0000ON-Tf; Wed, 13 Nov 2019 06:33:43 +0000
 Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUil9-0001st-Tf; Wed, 13 Nov 2019 02:51:57 +0000
-Received: by mail-pl1-x643.google.com with SMTP id w8so411371plq.5;
- Tue, 12 Nov 2019 18:51:54 -0800 (PST)
+ id 1iUmDj-0000M2-Ii; Wed, 13 Nov 2019 06:33:40 +0000
+Received: by mail-pl1-x643.google.com with SMTP id d29so630359plj.8;
+ Tue, 12 Nov 2019 22:33:39 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=mAEGoUcf015Kc1YtW4ruE+InFHxWlwYn7gbBVyirKYs=;
- b=XXCh/lzhc9PTzZMC0vGMEKaB6i1csVlUbqsH9rt47YYmIE3wdFLdN1RZ9XLo0Arau9
- DFSxYtIImotqP13tsBpRhqb8n2/Js3UmCNvM723O76JsU3YeDgNvB62RSmDR472f865P
- t1QAOVBhx+MjcLVo2R7QGZwppOQAhnDe5pnFM8bcC1mQYP4Xfr9JZq5mLce2CdFOCSHQ
- 84njoBNSpMDUUGTsuJ77DSMbJh6PdBhKnrYmuC5XmJlJhZH9X7UWxpAWc2QurRhXPwj/
- RNRLsIyLkoYPXcQN5wrdc5lLemIanQ8txwfErNc3g/3wLnhyIhyW/Sj8BqL1ib+dXaLC
- deQg==
+ bh=KPZG4VqXDKJQhwt8QhBKSdwu6zZ1yvGSLXAAovETV8E=;
+ b=U+7/ZvVfxKk+hxsLJDRIKIa9v9E62t1+RHHdRG8fTOKlKCc4Kg8kLlVghoiEvtLKpI
+ pPB/09WWUgNDAvmTd9ZCgUOuDBo7+0/f9WrOXWR2uZQ/aTiznYX6i7YMJNAQqiVBiT9D
+ uNMlkpfHxoC092SA3lqUUmN6Py1jaNvbxPVR7bhPPMcnC5VVTdQfrrvn9g+mwUT9wmS5
+ IpQo+ozODVnxdup9AaHr+12x4K6wNPJd6H6aHacy3JkNKTrjQ9VPgzg12dvkP1Aua/p8
+ JdT9N+L+Gr2JhZIIZgVnzKCc48NZMHSHGJjqaFnpF0Bg0opyuGJWVOEoMHo8Jbl+CwGg
+ Qilw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=mAEGoUcf015Kc1YtW4ruE+InFHxWlwYn7gbBVyirKYs=;
- b=mP1/ajVK1eFW3W0im7rTC28EQjYsVTUQLVGJcC4oWjmNWbFIdvq6LxjAS5w7DWeEdd
- nxKzjGnt0gf/usIQdIGVb4uFMnr+KX8XWjOHr3UJ/0c5sspTNIW4mLDNelO0+LQzzNBc
- Q7ImNkHwwlXCh6L/Dm2HAgdcACtVC/l9Avpte9GfHmZVbhRSfUIGpI605i76VPR6vrmL
- gWFHe+lTxs3f8NA8IW6Nm6ftdZCvtpK2FYGtdlxd+oVWdL4qRw65ViFxqMFHsbEmz4sA
- u8Ms1972+zYvA+oFnaZlThH4EWgScpu912Dw/CLj1g0mMF0aRED4OrwQ55b/gwd6fj12
- LlKQ==
-X-Gm-Message-State: APjAAAVybhkLultWVmlPWWy9LJsCU6FNhBz2+4nk2zQuz0nn9aagYWBg
- Y0abpcaKQnW0hAg7Moe2nzU=
-X-Google-Smtp-Source: APXvYqyYgp5zwm8PfyC8ptc3y1M5FnRWqZNijSFiWVlVB0inT58a3/TsEELAtnKC4KW8B7tYLJSv2Q==
-X-Received: by 2002:a17:902:fe06:: with SMTP id
- g6mr1170542plj.159.1573613513522; 
- Tue, 12 Nov 2019 18:51:53 -0800 (PST)
+ bh=KPZG4VqXDKJQhwt8QhBKSdwu6zZ1yvGSLXAAovETV8E=;
+ b=Cbl9vV8Kmc2UKRAtJCXWY/IFWuMkkJTzQchYyk+WymuixXuFZIGC49qyAWtikjeVPS
+ ZhqVsv3fLTZPJuAR9hnZoAnAHfs836T0gXVZwMQYj3QvnIVF8ig9+mh6IkLcdIGhLSs5
+ /JHsWVEzdmrFilP2FY45qqIkNYk+sc/3KkG8JaGpMTtFpVxqumB+fAThxL9Rtxv24YTl
+ XfrxnFo+gXP86PxWnOeo4E51d7YE0HhMG/Y9jknj1SaxUE+2KI44pWw4GvlH+DOZG6FD
+ iZzzbRmGdED51uU4XCrqymJVuxx3YwwmOGneB8FABcpzvTyzTB90w5vGfvtM4/llQ/H3
+ FMVg==
+X-Gm-Message-State: APjAAAWu/H4N7qwyfMag3XBY8nDG79KsTByCSS053voU+I8KwT7Ezo/T
+ D6I81HQZHQrxYMliHMBONks=
+X-Google-Smtp-Source: APXvYqw/EXwYt3YxwlYA4wZk8PjZNxrmOm0/6WUJy4pyQbt0uw3oeq/94f1ysfc7w8q8vIp4HTP4BA==
+X-Received: by 2002:a17:902:5a44:: with SMTP id
+ f4mr2028828plm.174.1573626818736; 
+ Tue, 12 Nov 2019 22:33:38 -0800 (PST)
 Received: from localhost ([2401:fa00:8f:203:250d:e71d:5a0a:9afe])
- by smtp.gmail.com with ESMTPSA id b1sm463002pjw.19.2019.11.12.18.51.52
+ by smtp.gmail.com with ESMTPSA id i16sm1209291pfa.184.2019.11.12.22.33.36
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 12 Nov 2019 18:51:52 -0800 (PST)
-Date: Wed, 13 Nov 2019 11:51:50 +0900
+ Tue, 12 Nov 2019 22:33:37 -0800 (PST)
+Date: Wed, 13 Nov 2019 15:33:34 +0900
 From: Sergey Senozhatsky <sergey.senozhatsky.work@gmail.com>
 To: Dmitry Safonov <dima@arista.com>
 Subject: Re: [PATCH 00/50] Add log level to show_stack()
-Message-ID: <20191113025150.GA101113@google.com>
-References: <20191106030542.868541-1-dima@arista.com>
- <20191106083538.z5nlpuf64cigxigh@pathway.suse.cz>
- <20191108103719.GB175344@google.com>
+Message-ID: <20191113063334.GA147997@google.com>
+References: <20191108103719.GB175344@google.com>
  <20191108130447.h3wfgo4efjkto56f@pathway.suse.cz>
  <20191111012336.GA85185@google.com>
- <13e72b62-c842-8ed5-5b41-bc1692b28f53@arista.com>
- <20191112021747.GA68506@google.com>
- <25cb9647-007a-9c18-4784-49c0aef4f54b@arista.com>
- <20191112042546.GA119579@google.com>
- <d828cb62-aeea-4d67-33ba-b3a93ea10a3d@arista.com>
+ <20191111091207.u3lrd6cmumnx4czr@pathway.suse.cz>
+ <20191112044447.GA121272@google.com>
+ <20191112045704.GA138013@google.com>
+ <20191112083509.gmgjpkjffsfaw5lm@pathway.suse.cz>
+ <20191112101229.GA201294@google.com>
+ <20191113012337.GA70781@google.com>
+ <25ff45f0-6420-f660-55a8-637f11ab5ab4@arista.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <d828cb62-aeea-4d67-33ba-b3a93ea10a3d@arista.com>
+In-Reply-To: <25ff45f0-6420-f660-55a8-637f11ab5ab4@arista.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191112_185155_980659_BBD72B2E 
-X-CRM114-Status: GOOD (  10.90  )
+X-CRM114-CacheID: sfid-20191112_223339_643010_C3BD994E 
+X-CRM114-Status: GOOD (  12.33  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -167,17 +167,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On (19/11/13 02:41), Dmitry Safonov wrote:
+On (19/11/13 02:25), Dmitry Safonov wrote:
+> I guess I've pointed that in my point of view price for one-time testing
+> code is cheaper than adding a new printk feature to swap log levels on
+> the fly.
 [..]
-> 
-> I don't strongly disagree, but if you look at those results:
-> git grep 'printk("%s.*", \(lvl\|level\)'
-> 
-> it seems to be used in quite a few places.
+> I've gone through functions used by sysrq driver and the same changes
+> introducing log level parameter would be needed for: sched_show_task(),
+> debug_show_all_locks(), show_regs(), show_state(), show_mem(). Some of
+> them don't need any platform changes, but at least show_regs() needs.
 
-Yes, you are right, it is used in some places. That's why I said
-that I'd prefer to keep that number low (minimize it). But it's
-not 0 (that ship has sailed).
+Good points and nice conclusion.
+
+Well, here we go. There is a number of generally useful functions that
+print nice data and where people might want to have better loglevel control
+(for debugging purposes). show_stack() is just one of them. Patching all
+those functions, which you have mentioned above, is hardly a fun task to do.
+Hence the printk() per-CPU per-context loglevel proposition. The code there
+is not clever or complicated and is meant for debugging purposes only, but
+with just 3 lines of code one can do some stuff:
+
+	/* @BTW you can't do this with "%s" KERN_FOO ;P */
++	printk_emergency_enter(LOGLEVEL_SCHED);
++	debug_show_all_locks();
++	printk_emergency_exit();
+
+Now...
+I'm not sure if this whole thing is up to "printk maintainers only".
+If no one is going to use "emergency printk contexts" then there is
+no point in having that code in the kernel.
 
 	-ss
 
