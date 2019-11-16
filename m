@@ -2,54 +2,54 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E0F4AFEE24
-	for <lists+linux-um@lfdr.de>; Sat, 16 Nov 2019 16:49:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A818EFEE89
+	for <lists+linux-um@lfdr.de>; Sat, 16 Nov 2019 16:52:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Rxe1R+EM0M/nXXEX0m5sZILQY0dZsHlrQJku4HriPEE=; b=gZAU2phebIXF0S
-	tg2wabOwHqF3QmRXGE2xMC3+gQTfujyhQDgNJX8qDRpdqfLlEkBhgMh1zkcP5uI4/vsXba+hXxR1O
-	cz8a7smnPoaoUcrCkgsnSvtNzEPU/6KOs43h2LljodilZ9xjWVQxrbglkJGAyOh9F25F6QUDWMWfo
-	KB98jSydEPMicLIN3jmpk7oNy96v5vNRc7PAwUa5XgbR57pjq1eDud77LiWy9py23+N2r9jHwcCpg
-	0+eTZnf0BneYweDI6D2IIIpnHIVDHuCPp/jves+dCRJT4qY/QqAKXhY55b8d8uaOq5QdKYO9aMNEU
-	InyvgjmE7KZ5Qa/YyEjA==;
+	List-Owner; bh=rOMM67zQ+BIZdVvYtG7AA+3/cmEwZOPh0+vGnHCtVoI=; b=gwya7SIyWLflVa
+	qvhykD45veYkTwpCPJ/y14GFxdnkAUKDqhWeklwm5o3PDwI3CngznF/VAJookB0nwfK0eYkT8/aYP
+	xu/L9eJEu6iuTcymVyhMGNFa+LCSlsM19majeA2sgdPC+VphpS7xboFxZxNt60YPI3q7UA3z251Nw
+	vn+j/XwoZSiCpcy7mHqetfBVwWjAovbmNoczHcVm+qkuJ2b96BP5FxhiNSjgy5PcM1BeeXEtakSBY
+	JdwreOIWzDww8wW5GS8sHm2jcLhuQSTlVxVUaeULV2KREAQ1TIv1HZWEkXe+K+qtgQqZDQOZeZndC
+	E2gcG1yB4CwRBm8E/1kQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iW0KG-0003Ux-Bh; Sat, 16 Nov 2019 15:49:28 +0000
+	id 1iW0N6-00061p-Pb; Sat, 16 Nov 2019 15:52:24 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iW0KD-0003Ub-W3
- for linux-um@lists.infradead.org; Sat, 16 Nov 2019 15:49:27 +0000
+ id 1iW0N3-00060k-Tj
+ for linux-um@lists.infradead.org; Sat, 16 Nov 2019 15:52:23 +0000
 Received: from sasha-vm.mshome.net (unknown [50.234.116.4])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6A93020870;
- Sat, 16 Nov 2019 15:49:25 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 42E9020728;
+ Sat, 16 Nov 2019 15:52:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1573919365;
- bh=PZrL9vWqCTiFw2xV4xCtIutuGc0aIhE7zE1PDg4v3/M=;
+ s=default; t=1573919541;
+ bh=dvvlDb/+0VMhtBKkl1moFhh/et82E8jtpyGoaFbPt7I=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=V6PlZZqPcDvDOiHGjIkG32U1y3ENQJy61urFVoYSC2juGfZ6AFu0g5rF1MtgaocKN
- B92O05DB69DTfpetnmcGg9oS9fX3dhMDobdmVqugzmhvazuJTj4zN0qwoXT6+sr3Ut
- YsNxHu0U2l4+xVhwfpbtNvIBTNzUa956S/aQH8Vc=
+ b=O7dVi7VI6xUFGv7gJYMn0cvHgj6rKot0LCfaaEfKKpAAEDSOYNdtrHN4ufrI6mITe
+ dMDiIlt0g8iRoEfZ4TmAHjN5MlZKwDCr4m++3H+0qHK6rLJw+2xLr8hWudVSP0CO/P
+ I1QmPk7cu79HQHcFJqBDgnqD5FXHVTF70zdM9xSo=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.14 087/150] um: Make line/tty semantics use true
- write IRQ
-Date: Sat, 16 Nov 2019 10:46:25 -0500
-Message-Id: <20191116154729.9573-87-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.9 56/99] um: Make line/tty semantics use true write
+ IRQ
+Date: Sat, 16 Nov 2019 10:50:19 -0500
+Message-Id: <20191116155103.10971-56-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20191116154729.9573-1-sashal@kernel.org>
-References: <20191116154729.9573-1-sashal@kernel.org>
+In-Reply-To: <20191116155103.10971-1-sashal@kernel.org>
+References: <20191116155103.10971-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191116_074926_048983_4CD1F50F 
+X-CRM114-CacheID: sfid-20191116_075221_979644_B49505B0 
 X-CRM114-Status: GOOD (  11.49  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -107,10 +107,10 @@ Signed-off-by: Sasha Levin <sashal@kernel.org>
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/arch/um/drivers/line.c b/arch/um/drivers/line.c
-index 366e57f5e8d63..7e524efed5848 100644
+index 62087028a9ce1..d2ad45c101137 100644
 --- a/arch/um/drivers/line.c
 +++ b/arch/um/drivers/line.c
-@@ -261,7 +261,7 @@ static irqreturn_t line_write_interrupt(int irq, void *data)
+@@ -260,7 +260,7 @@ static irqreturn_t line_write_interrupt(int irq, void *data)
  	if (err == 0) {
  		spin_unlock(&line->lock);
  		return IRQ_NONE;
