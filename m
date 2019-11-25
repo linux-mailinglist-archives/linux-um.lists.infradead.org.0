@@ -2,73 +2,74 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DCDFE109552
-	for <lists+linux-um@lfdr.de>; Mon, 25 Nov 2019 23:00:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A8118109555
+	for <lists+linux-um@lfdr.de>; Mon, 25 Nov 2019 23:02:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+IngOnzTnY0Vu+E63JjERK2fwBakp1NGxp1PKBrUww8=; b=Y5WgwZLnSFMA1W
-	V16wRtWFRGAFfagNjYjN8AEuru69zDvK+e0lW0NSSdj9k7pa2WI2yLcVeAJT4N8g2qZgUcmWPW3dc
-	ohw1FibtRhltkZ0iKQesT4nQMvR37JZZnYKVCCLbv1a4SH0mLzqS9S1EBrs6kntQZgUIcp2igAPfF
-	AJzUOsAIL1hX9gIV2GAG7Z5z5FmW7nXtRSJAQ8SGue0bHSKU/N1+19RBEQ/elwRUKQRYbfgmSbOXZ
-	tqv4joxhNf+GxzfSxtaPPBct7LsYHBFcxAP1siktxtTd7h3dw/aESWpGwTgzesGpDEfk/qpwXLnZR
-	gJ4Pr6+yO5f9x1VCtMpg==;
+	List-Owner; bh=nsY6BBu12wssIowtWM2TJKlPUqCkL8/dGctMnQfDNfs=; b=sHneqX6VRuqE5q
+	3GI2VGtEFKYt5v2oxqe4VFXZASmqlPtol7ZAX5pdMk+VdjUfve/ik/xRJwylj2fbl3e5UYwbSfDgI
+	wre8Ovf9Uk3jkKvs9JV3EGdjgRp7YNajXp5pm1LRnlLCu3aTxkp13spScPtSn9k/JYnvV8Nt4AvdK
+	AkBYRhKQI+Efxjd/w/EJvD0dOu7aBHTE0G3tZ9MSdRw2CLY4OWq4AVyQUkVWtCkHfUsC2Wm2w9XO4
+	1b4q1fdxcd1a68p1yRyMOAKBZzGpCJ0HgoCv4e5cO2gWr5wNtplP62L6XTQ6l+ZGIRwJvYwKDVqA0
+	M9GcaSv3xF1WKGTGpjog==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZMPd-0007sG-N7; Mon, 25 Nov 2019 22:00:53 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1iZMR1-0007wE-2F; Mon, 25 Nov 2019 22:02:19 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZMPV-0007rW-OL
- for linux-um@lists.infradead.org; Mon, 25 Nov 2019 22:00:51 +0000
-Received: by mail-wr1-x441.google.com with SMTP id s5so20033813wrw.2
- for <linux-um@lists.infradead.org>; Mon, 25 Nov 2019 14:00:45 -0800 (PST)
+ id 1iZMQy-0007vj-OO
+ for linux-um@lists.infradead.org; Mon, 25 Nov 2019 22:02:18 +0000
+Received: by mail-wm1-x344.google.com with SMTP id l17so1013130wmh.0
+ for <linux-um@lists.infradead.org>; Mon, 25 Nov 2019 14:02:16 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=pK6K8psgHbpF1pg13+lNb6hLePrayQO5yUnaw8JPsNk=;
- b=CPp6YgKBPDRSzCp+2zR0Axg8HSMv3Gyy3VKemypTsBfcFXTTJV0Stsy40n7TfuSteb
- DZmqtuhOEsAzojncjeS4acrMyXQF+gbH2muS3CLcahuoTJDyTbzvqeXGKUCqrMHSRDeN
- KJ09CPYtdhSTfK8MClRYTppzP3KAahyvlYcicN0JCiRnhVnodAKovg6UDuHjcKMUCwu1
- EwatxWhHlNNAZlkpFHH7nXXLQXU69wk1qp4hSNC2EZ7gnPWZbhqAfRbcaoixkUHTsm0N
- TyBnHzI2y+cPZ1WnhFYJ57HSxj23ezTR6eY5JOEtr9T9FDmWauCSKMvVQKW2IX6Y92n4
- 3B0w==
+ :cc; bh=Siahvh+RN3JBEPcY4HC2+CrgvWiJj3EvQGXrV37Qh98=;
+ b=OII9ZI9714IwrXeLwLBmD9Fm3xINuYGIwm/zdiM4hVqMNOvJzvHBrTOaO9oCxqJWNl
+ NnRc2IwxqqIW3JOqV2GPtQcZKWySxkxABl/ANwwFkGV/gktuObcZpym2Xxtc3DuGgl6b
+ inLGqqN0uuTi/p+yoQ2ZjMKn18X/zXpRYWovB3tyND7hMUyuDHdwuli6tq153X5qdjT4
+ /Qz+MQg7BYndlixqPLXdr0vVJRHLa6FjHCP8ErNripInhAVwwcgugrkYSszGIbtRZ3pI
+ bfeeEPo47PVepMQFqCwWVx3lgT/YclmgwPWPtAoUPVfz8qaGs3xCybFA04320iSZ9au6
+ QElA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=pK6K8psgHbpF1pg13+lNb6hLePrayQO5yUnaw8JPsNk=;
- b=RAgfvVdZUhWwhyDIfyPKKJTVI7IHvpaoolzk/pjjpzbHs7F1tuJ29DET5TICKCy0IB
- 8VaogSLhz1vCwQw+vcnm8Ca4Uh4G3ooiTG5ame7HQRr5MPqmPzk9cnzfT5K0po/d8Iet
- iDKQ6ESeIas37AmkJlOGB4zwBUdv5RCDKCO3JIjKv0dxLmW6p6MXRWB7paWXDm7/pa3R
- OxVpcQKRbKcm7jlMQ78ISD1AmsTS6jtlpdB7Auyh1Ozdz9lmLApFk13Ta5Gkv2Kbbb3x
- /6s6C7P3WoY89xFWqlc4/UeSCp+3GxZfXYHP9PkB1zP0OPTw9Z6ZubJGLfnBvyYxDUHP
- rHHQ==
-X-Gm-Message-State: APjAAAUYlaZ+V23jy4tZHAx5SjV1A/nwkS4elTCIxnm8Dme73omUKoVr
- UTWbXKReQAATWBFslGijTUptYLjW555KP1K3jNg=
-X-Google-Smtp-Source: APXvYqwSHNXL4y7qfBAV5NDOFC2UjF0y2EvaPOzdDhmZcp8BgX39ca5HaUjb1lE9A3RaUdQTMbR41zf7pBKtuPaj2w4=
-X-Received: by 2002:adf:c449:: with SMTP id a9mr32809537wrg.240.1574719244216; 
- Mon, 25 Nov 2019 14:00:44 -0800 (PST)
+ bh=Siahvh+RN3JBEPcY4HC2+CrgvWiJj3EvQGXrV37Qh98=;
+ b=PATEkcyTBdfVHdrj87LBhIpeLSq4x1SHd8NMwAy2g3zO5k1NicxcPpCthujharvaLH
+ Jm6qTwIxsC6KKd0YQD11in+UdoiExvAR5mqAIHWieldTwATL1XcYgEWyPs29aRzfLKZO
+ EEU8MEJj7y45ECu4niCghQaNqbhpUFka91nO8rj+nFBaeTRw5j0pR12Opy3bI0LTbcwf
+ SLMkJXGMv1GuGl2sHZR21QPNF2yBDnWybASbGTU3HPUG8GW4cbM8qCN5PXfGKCWl/dR/
+ gJChuxDtQahB2G9hC2J22vx/V12uN9QokPoAyHaRiM8Si2EvSHj1RSWaCeu/9rxe8k0r
+ afZw==
+X-Gm-Message-State: APjAAAVlatEzlS2VKQHoD1lrv62v9xA4evB04g+9F3G7UEzhrr7052ia
+ fxyWQYKS4S/CMZU8D/fWUHAA6ND9RkyXw7023yaNBbgjD1g=
+X-Google-Smtp-Source: APXvYqz9JiXDbAZQRCTwuOtVpnuyn/5fzZTQ/dslF6XeKtqpYlrUBUQQCjcIfdaQytFhopC9JO8xKbddtaKLAcsr7e0=
+X-Received: by 2002:a1c:3c86:: with SMTP id j128mr849466wma.137.1574719335520; 
+ Mon, 25 Nov 2019 14:02:15 -0800 (PST)
 MIME-Version: 1.0
 References: <cover.1573179553.git.thehajime@gmail.com>
- <64a5d6c94d331058331af7d191d2cdbe870d009b.1573179553.git.thehajime@gmail.com>
-In-Reply-To: <64a5d6c94d331058331af7d191d2cdbe870d009b.1573179553.git.thehajime@gmail.com>
+ <3ed3c306fc51b0073fcf3a222f7314fcaf50ccf4.1573179553.git.thehajime@gmail.com>
+In-Reply-To: <3ed3c306fc51b0073fcf3a222f7314fcaf50ccf4.1573179553.git.thehajime@gmail.com>
 From: Richard Weinberger <richard.weinberger@gmail.com>
-Date: Mon, 25 Nov 2019 23:00:33 +0100
-Message-ID: <CAFLxGvw+w+xmput3xMjKPXPn4hj9opbo+gtV6896hhzDUzQNiA@mail.gmail.com>
-Subject: Re: [RFC v2 03/37] lkl: architecture skeleton for Linux kernel library
+Date: Mon, 25 Nov 2019 23:02:04 +0100
+Message-ID: <CAFLxGvzXv7pHaY8i_RBs2BL5qHLMQJO97MWGF5cnh34kmeGZJg@mail.gmail.com>
+Subject: Re: [RFC v2 01/37] asm-generic: atomic64: allow using generic
+ atomic64 on 64bit platforms
 To: Hajime Tazaki <thehajime@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191125_140050_096469_93D1B80F 
-X-CRM114-Status: GOOD (  11.87  )
+X-CRM114-CacheID: sfid-20191125_140216_794117_D2E4D711 
+X-CRM114-Status: GOOD (  11.63  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -92,17 +93,9 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-Arch <linux-arch@vger.kernel.org>, Levente Kurusa <levex@linux.com>,
- Matthieu Coudron <mattator@gmail.com>, Conrad Meyer <cem@freebsd.org>,
- Octavian Purdila <tavi.purdila@gmail.com>,
- Lai Jiangshan <jiangshanlai@gmail.com>, Jens Staal <staal1978@gmail.com>,
- Motomu Utsumi <motomuman@gmail.com>, linux-um@lists.infradead.org,
- Akira Moroo <retrage01@gmail.com>, Petros Angelatos <petrosagg@gmail.com>,
- "Edison M . Castro" <edisonmcastro@hotmail.com>, Xiao Jia <xiaoj@google.com>,
- Mark Stillwell <mark@stillwell.me>, linux-kernel-library@freelists.org,
- Patrick Collins <pscollins@google.com>, Pierre-Hugues Husson <phh@phh.me>,
- Michael Zimmermann <sigmaepsilon92@gmail.com>,
- Luca Dariz <luca.dariz@gmail.com>, Yuan Liu <liuyuan@google.com>
+Cc: Octavian Purdila <tavi.purdila@gmail.com>,
+ linux-kernel-library@freelists.org, Akira Moroo <retrage01@gmail.com>,
+ linux-um@lists.infradead.org, Linux-Arch <linux-arch@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
@@ -112,77 +105,46 @@ On Fri, Nov 8, 2019 at 6:03 AM Hajime Tazaki <thehajime@gmail.com> wrote:
 >
 > From: Octavian Purdila <tavi.purdila@gmail.com>
 >
-> Adds the LKL Kconfig, vmlinux linker script, basic architecture
-> headers and miscellaneous basic functions or stubs such as
-> dump_stack(), show_regs() and cpuinfo proc ops.
+> With CONFIG_64BIT enabled, atomic64 via CONFIG_GENERIC_ATOMIC64 options
+> are not compiled due to type conflict of atomic64_t defined in
+> linux/type.h.
 >
-> The headers we introduce in this patch are simple wrappers to the
-> asm-generic headers or stubs for things we don't support, such as
-> ptrace, DMA, signals, ELF handling and low level processor operations.
->
-> The kernel configuration is automatically updated to reflect the
-> endianness of the host, 64bit support or the output format for
-> vmlinux's linker script. We do this by looking at the ld's default
-> output format.
->
-> Signed-off-by: Andreas Abel <aabel@google.com>
-> Signed-off-by: Conrad Meyer <cem@FreeBSD.org>
-> Signed-off-by: Edison M. Castro <edisonmcastro@hotmail.com>
-> Signed-off-by: H.K. Jerry Chu <hkchu@google.com>
-> Signed-off-by: Hajime Tazaki <thehajime@gmail.com>
-> Signed-off-by: Jens Staal <staal1978@gmail.com>
-> Signed-off-by: Lai Jiangshan <jiangshanlai@gmail.com>
-> Signed-off-by: Levente Kurusa <levex@linux.com>
-> Signed-off-by: Luca Dariz <luca.dariz@gmail.com>
-> Signed-off-by: Mark Stillwell <mark@stillwell.me>
-> Signed-off-by: Matthieu Coudron <mattator@gmail.com>
-> Signed-off-by: Michael Zimmermann <sigmaepsilon92@gmail.com>
-> Signed-off-by: Motomu Utsumi <motomuman@gmail.com>
-> Signed-off-by: Patrick Collins <pscollins@google.com>
-> Signed-off-by: Petros Angelatos <petrosagg@gmail.com>
-> Signed-off-by: Pierre-Hugues Husson <phh@phh.me>
-> Signed-off-by: Xiao Jia <xiaoj@google.com>
-> Signed-off-by: Yuan Liu <liuyuan@google.com>
+> This commit fixes the issue and allow using generic atomic64 ops.
+
+Hmm, why is this specific to LKL?
+This need a review from core developers.
+
 > Signed-off-by: Octavian Purdila <tavi.purdila@gmail.com>
-
-Can we please have this chain cleaned up?
-Please see process/submitting-patches.rst.
-
 > ---
->  MAINTAINERS                                |   8 +
->  arch/um/lkl/.gitignore                     |   2 +
->  arch/um/lkl/Kconfig                        |  95 ++++++
->  arch/um/lkl/Kconfig.debug                  |   0
->  arch/um/lkl/configs/lkl_defconfig          |  91 ++++++
->  arch/um/lkl/include/asm/Kbuild             |  80 +++++
->  arch/um/lkl/include/asm/bitsperlong.h      |  11 +
->  arch/um/lkl/include/asm/byteorder.h        |   7 +
->  arch/um/lkl/include/asm/cpu.h              |  14 +
->  arch/um/lkl/include/asm/elf.h              |  15 +
->  arch/um/lkl/include/asm/mutex.h            |   7 +
->  arch/um/lkl/include/asm/processor.h        |  60 ++++
->  arch/um/lkl/include/asm/ptrace.h           |  25 ++
->  arch/um/lkl/include/asm/sched.h            |  23 ++
->  arch/um/lkl/include/asm/syscalls.h         |  18 ++
->  arch/um/lkl/include/asm/syscalls_32.h      |  43 +++
->  arch/um/lkl/include/asm/tlb.h              |  12 +
->  arch/um/lkl/include/asm/uaccess.h          |  64 ++++
->  arch/um/lkl/include/asm/unistd_32.h        |  31 ++
->  arch/um/lkl/include/asm/vmlinux.lds.h      |  14 +
->  arch/um/lkl/include/asm/xor.h              |   9 +
->  arch/um/lkl/include/uapi/asm/Kbuild        |   9 +
->  arch/um/lkl/include/uapi/asm/bitsperlong.h |  13 +
->  arch/um/lkl/include/uapi/asm/byteorder.h   |  11 +
->  arch/um/lkl/include/uapi/asm/siginfo.h     |  11 +
->  arch/um/lkl/include/uapi/asm/swab.h        |  11 +
->  arch/um/lkl/include/uapi/asm/syscalls.h    | 348 +++++++++++++++++++++
+>  include/asm-generic/atomic64.h | 2 ++
+>  1 file changed, 2 insertions(+)
+>
+> diff --git a/include/asm-generic/atomic64.h b/include/asm-generic/atomic64.h
+> index 370f01d4450f..9b15847baae5 100644
+> --- a/include/asm-generic/atomic64.h
+> +++ b/include/asm-generic/atomic64.h
+> @@ -9,9 +9,11 @@
+>  #define _ASM_GENERIC_ATOMIC64_H
+>  #include <linux/types.h>
+>
+> +#ifndef CONFIG_64BIT
+>  typedef struct {
+>         s64 counter;
+>  } atomic64_t;
+> +#endif
+>
+>  #define ATOMIC64_INIT(i)       { (i) }
+>
+> --
+> 2.20.1 (Apple Git-117)
+>
+>
+> _______________________________________________
+> linux-um mailing list
+> linux-um@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-um
 
-I think this is the first big thing which needs a unification.
 
-In UML we try hard to re-use headers from x86.
-We also have some headers in arch/x86/um/.
-
-LKL should do the same. At least try hard to avoid duplication.
 
 -- 
 Thanks,
