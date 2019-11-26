@@ -2,55 +2,67 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CE81B109A5E
-	for <lists+linux-um@lfdr.de>; Tue, 26 Nov 2019 09:44:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3FA2E109A87
+	for <lists+linux-um@lfdr.de>; Tue, 26 Nov 2019 09:50:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Subject:References:
+	In-Reply-To:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gsLAmxWQ75FmFtG9IYkZbUq4Oc4dJDDUl0U3TvMIoiQ=; b=D/E2E5hu/9G8ji
-	socolVaHPyAjxiTip7g0gpVqqLfEbxvM3YqB54wP9vzG6rA5Pd4tGz6NSBnob8+oUWX3YX5A49X4h
-	TmfQeZoFdUMyYEPN8OW4DxZ4Uem3RFtUIM8NLm6N83ZEu2b2TahrjuCn6P5RoOQ1eHltJMcEZSRPn
-	zroqQ1QNxRuOw6dZiF9p8NHo/ooz4X5uM8O74UolkSABrN9AWNmC/zzPlIgTG3+xHp7z8r4E5z9JA
-	r4CDjhJTJq3jFdsV9wDG0szbhLAOsuHvx4ghVqFfNyj7n4wmvxpwrBbmqxLXSyoT7BNXvpTz/tbd8
-	jQz9J1Qqbw5fhSHqk94A==;
+	List-Owner; bh=xMr63T+0MSWxzxBZ0i9gmRZN6a0sxbdfM2l9PkB2ozc=; b=jkKuwx/L7CtFTl
+	KlX4kEKKpAK0gDJsie+fanWpDYac2+w+YMGf8KiXGfeJsDPUKx7eBnzhr0aISw9pmJEAoj9mjju6R
+	Bh/UfqoNv9ndJVjW1TxlO9SIrpusVVNp6oqyQKAxZpv82Sdzl4VgEmUA3Cdd9pjKdToXj5/JsdJ9T
+	jZM6Q80WnEicRQhPoQ3Ws65g8mQbsmAYQ7Lpo4LxMtJxu35qdRD7YLRkWFlFZqSQnH0CCGSIW5z4U
+	xiwt0W0l0HMRDBDSXhfX2dOy3mNHrt2spCDd+iho9Fu1rx4iyGuR42ujg3BawUPp+7LsBQLEXGnxy
+	FHNQdE+4EbFOxQ++NZ4w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZWRu-0001P6-Dz; Tue, 26 Nov 2019 08:43:54 +0000
-Received: from s3.sipsolutions.net ([2a01:4f8:191:4433::2]
- helo=sipsolutions.net)
+	id 1iZWYK-0004dX-OZ; Tue, 26 Nov 2019 08:50:32 +0000
+Received: from lithops.sigma-star.at ([195.201.40.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZWRq-0001OZ-K7
- for linux-um@lists.infradead.org; Tue, 26 Nov 2019 08:43:52 +0000
-Received: by sipsolutions.net with esmtpsa
- (TLS1.3:ECDHE_SECP256R1__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
- (Exim 4.92.3) (envelope-from <johannes@sipsolutions.net>)
- id 1iZWRg-00AxG9-G8; Tue, 26 Nov 2019 09:43:40 +0100
-Message-ID: <de90b04151bafee083727c9769833932788cf428.camel@sipsolutions.net>
-Subject: Re: [RFC v2 17/37] lkl tools: host lib: virtio devices
-From: Johannes Berg <johannes@sipsolutions.net>
-To: Richard Weinberger <richard.weinberger@gmail.com>, Hajime Tazaki
- <thehajime@gmail.com>
-Date: Tue, 26 Nov 2019 09:43:36 +0100
-In-Reply-To: <CAFLxGvzCwCLbLMhcF6ZJ2afeo7PSd8xLQrU9hRH6YVaMakBSyw@mail.gmail.com>
+ id 1iZWYH-0004bu-At
+ for linux-um@lists.infradead.org; Tue, 26 Nov 2019 08:50:31 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by lithops.sigma-star.at (Postfix) with ESMTP id CA22D6058361;
+ Tue, 26 Nov 2019 09:50:26 +0100 (CET)
+Received: from lithops.sigma-star.at ([127.0.0.1])
+ by localhost (lithops.sigma-star.at [127.0.0.1]) (amavisd-new, port 10032)
+ with ESMTP id nmmVOUxEIDAe; Tue, 26 Nov 2019 09:50:26 +0100 (CET)
+Received: from localhost (localhost [127.0.0.1])
+ by lithops.sigma-star.at (Postfix) with ESMTP id 3A2796083137;
+ Tue, 26 Nov 2019 09:50:26 +0100 (CET)
+Received: from lithops.sigma-star.at ([127.0.0.1])
+ by localhost (lithops.sigma-star.at [127.0.0.1]) (amavisd-new, port 10026)
+ with ESMTP id sAE3L2lO1OQI; Tue, 26 Nov 2019 09:50:26 +0100 (CET)
+Received: from lithops.sigma-star.at (lithops.sigma-star.at [195.201.40.130])
+ by lithops.sigma-star.at (Postfix) with ESMTP id 02A406058361;
+ Tue, 26 Nov 2019 09:50:25 +0100 (CET)
+Date: Tue, 26 Nov 2019 09:50:25 +0100 (CET)
+From: Richard Weinberger <richard@nod.at>
+To: Johannes Berg <johannes@sipsolutions.net>
+Message-ID: <1662825264.98055.1574758225905.JavaMail.zimbra@nod.at>
+In-Reply-To: <de90b04151bafee083727c9769833932788cf428.camel@sipsolutions.net>
 References: <cover.1573179553.git.thehajime@gmail.com>
  <1531c5f16a00b608635c9a62fa3951807075f950.1573179553.git.thehajime@gmail.com>
  <CAFLxGvzCwCLbLMhcF6ZJ2afeo7PSd8xLQrU9hRH6YVaMakBSyw@mail.gmail.com>
-User-Agent: Evolution 3.30.5 (3.30.5-1.fc29) 
+ <de90b04151bafee083727c9769833932788cf428.camel@sipsolutions.net>
+Subject: Re: [RFC v2 17/37] lkl tools: host lib: virtio devices
 MIME-Version: 1.0
+X-Originating-IP: [195.201.40.130]
+X-Mailer: Zimbra 8.8.12_GA_3807 (ZimbraWebClient - FF68 (Linux)/8.8.12_GA_3809)
+Thread-Topic: lkl tools: host lib: virtio devices
+Thread-Index: MSw2wTWhPSRSQKoe6IhqCb8SZu2Bxw==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191126_004350_661741_D4BD1F36 
-X-CRM114-Status: GOOD (  12.05  )
-X-Spam-Score: 0.4 (/)
+X-CRM114-CacheID: sfid-20191126_005029_669565_FA87856B 
+X-CRM114-Status: GOOD (  10.55  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.4 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.4 KHOP_HELO_FCRDNS       Relay HELO differs from its IP's reverse DNS
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,43 +74,50 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-Arch <linux-arch@vger.kernel.org>, Conrad Meyer <cem@freebsd.org>,
- Octavian Purdila <tavi.purdila@gmail.com>, linux-um@lists.infradead.org,
- Akira Moroo <retrage01@gmail.com>, Patrick Collins <pscollins@google.com>,
- linux-kernel-library@freelists.org,
- Michael Zimmermann <sigmaepsilon92@gmail.com>, Yuan Liu <liuyuan@google.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-arch <linux-arch@vger.kernel.org>, cem <cem@freebsd.org>,
+ tavi purdila <tavi.purdila@gmail.com>, linux-um <linux-um@lists.infradead.org>,
+ retrage01 <retrage01@gmail.com>, liuyuan <liuyuan@google.com>,
+ pscollins <pscollins@google.com>, linux-kernel-library@freelists.org,
+ sigmaepsilon92 <sigmaepsilon92@gmail.com>, Hajime Tazaki <thehajime@gmail.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Mon, 2019-11-25 at 23:07 +0100, Richard Weinberger wrote:
-> On Fri, Nov 8, 2019 at 6:03 AM Hajime Tazaki <thehajime@gmail.com> wrote:
-> > From: Octavian Purdila <tavi.purdila@gmail.com>
-> > 
-> > Add helpers for implementing host virtio devices. It uses the memory
-> > mapped I/O helpers to interact with the Linux MMIO virtio transport
-> > driver and offers support to setup and add a new virtio device,
-> > dispatch requests from the incoming queues as well as support for
-> > completing requests.
-> > 
-> > All added virtio devices are stored in lkl_virtio_devs as strings, per
-> > the Linux MMIO virtio transport driver command line specification.
-> 
-> Did you checkout arch/um/drivers/virtio_uml.c?
-> Why is this driver needed?
-
-This isn't really a driver, this is virtio *device-side* code. Our
-virtio_uml is *guest-side* code, and only speaks vhost-user.
-
-I'm not sure how MMIO devices could possibly work though, does LKL
-intercept MMIO somehow?
-
-johannes
-
-
-
-_______________________________________________
-linux-um mailing list
-linux-um@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-um
+LS0tLS0gVXJzcHLDvG5nbGljaGUgTWFpbCAtLS0tLQo+IFZvbjogIkpvaGFubmVzIEJlcmciIDxq
+b2hhbm5lc0BzaXBzb2x1dGlvbnMubmV0Pgo+IEFuOiAiUmljaGFyZCBXZWluYmVyZ2VyIiA8cmlj
+aGFyZC53ZWluYmVyZ2VyQGdtYWlsLmNvbT4sICJIYWppbWUgVGF6YWtpIiA8dGhlaGFqaW1lQGdt
+YWlsLmNvbT4KPiBDQzogImxpbnV4LWFyY2giIDxsaW51eC1hcmNoQHZnZXIua2VybmVsLm9yZz4s
+ICJjZW0iIDxjZW1AZnJlZWJzZC5vcmc+LCAidGF2aSBwdXJkaWxhIiA8dGF2aS5wdXJkaWxhQGdt
+YWlsLmNvbT4sCj4gImxpbnV4LXVtIiA8bGludXgtdW1AbGlzdHMuaW5mcmFkZWFkLm9yZz4sICJy
+ZXRyYWdlMDEiIDxyZXRyYWdlMDFAZ21haWwuY29tPiwgbGludXgta2VybmVsLWxpYnJhcnlAZnJl
+ZWxpc3RzLm9yZywKPiAicHNjb2xsaW5zIiA8cHNjb2xsaW5zQGdvb2dsZS5jb20+LCAic2lnbWFl
+cHNpbG9uOTIiIDxzaWdtYWVwc2lsb245MkBnbWFpbC5jb20+LCAibGl1eXVhbiIgPGxpdXl1YW5A
+Z29vZ2xlLmNvbT4KPiBHZXNlbmRldDogRGllbnN0YWcsIDI2LiBOb3ZlbWJlciAyMDE5IDA5OjQz
+OjM2Cj4gQmV0cmVmZjogUmU6IFtSRkMgdjIgMTcvMzddIGxrbCB0b29sczogaG9zdCBsaWI6IHZp
+cnRpbyBkZXZpY2VzCgo+IE9uIE1vbiwgMjAxOS0xMS0yNSBhdCAyMzowNyArMDEwMCwgUmljaGFy
+ZCBXZWluYmVyZ2VyIHdyb3RlOgo+PiBPbiBGcmksIE5vdiA4LCAyMDE5IGF0IDY6MDMgQU0gSGFq
+aW1lIFRhemFraSA8dGhlaGFqaW1lQGdtYWlsLmNvbT4gd3JvdGU6Cj4+ID4gRnJvbTogT2N0YXZp
+YW4gUHVyZGlsYSA8dGF2aS5wdXJkaWxhQGdtYWlsLmNvbT4KPj4gPiAKPj4gPiBBZGQgaGVscGVy
+cyBmb3IgaW1wbGVtZW50aW5nIGhvc3QgdmlydGlvIGRldmljZXMuIEl0IHVzZXMgdGhlIG1lbW9y
+eQo+PiA+IG1hcHBlZCBJL08gaGVscGVycyB0byBpbnRlcmFjdCB3aXRoIHRoZSBMaW51eCBNTUlP
+IHZpcnRpbyB0cmFuc3BvcnQKPj4gPiBkcml2ZXIgYW5kIG9mZmVycyBzdXBwb3J0IHRvIHNldHVw
+IGFuZCBhZGQgYSBuZXcgdmlydGlvIGRldmljZSwKPj4gPiBkaXNwYXRjaCByZXF1ZXN0cyBmcm9t
+IHRoZSBpbmNvbWluZyBxdWV1ZXMgYXMgd2VsbCBhcyBzdXBwb3J0IGZvcgo+PiA+IGNvbXBsZXRp
+bmcgcmVxdWVzdHMuCj4+ID4gCj4+ID4gQWxsIGFkZGVkIHZpcnRpbyBkZXZpY2VzIGFyZSBzdG9y
+ZWQgaW4gbGtsX3ZpcnRpb19kZXZzIGFzIHN0cmluZ3MsIHBlcgo+PiA+IHRoZSBMaW51eCBNTUlP
+IHZpcnRpbyB0cmFuc3BvcnQgZHJpdmVyIGNvbW1hbmQgbGluZSBzcGVjaWZpY2F0aW9uLgo+PiAK
+Pj4gRGlkIHlvdSBjaGVja291dCBhcmNoL3VtL2RyaXZlcnMvdmlydGlvX3VtbC5jPwo+PiBXaHkg
+aXMgdGhpcyBkcml2ZXIgbmVlZGVkPwo+IAo+IFRoaXMgaXNuJ3QgcmVhbGx5IGEgZHJpdmVyLCB0
+aGlzIGlzIHZpcnRpbyAqZGV2aWNlLXNpZGUqIGNvZGUuIE91cgo+IHZpcnRpb191bWwgaXMgKmd1
+ZXN0LXNpZGUqIGNvZGUsIGFuZCBvbmx5IHNwZWFrcyB2aG9zdC11c2VyLgoKU29ycnksIGJhZCB3
+b3JkaW5nIGZyb20gbXkgc2lkZS4gSSBtZWFudCB3aXRoICJkcml2ZXIiIGEga2VybmVsIGNvbXBv
+bmVudC4KIAo+IEknbSBub3Qgc3VyZSBob3cgTU1JTyBkZXZpY2VzIGNvdWxkIHBvc3NpYmx5IHdv
+cmsgdGhvdWdoLCBkb2VzIExLTAo+IGludGVyY2VwdCBNTUlPIHNvbWVob3c/CgpNeSBwb2ludCBp
+cyB0aGF0IFVNTCBhbmQgTEtMIHNob3VsZCB0cnkgdG8gZG8gdXNlIHRoZSBzYW1lIGNvbmNlcHQv
+Y29kZQpyZWdhcmRpbmcgdmlydGlvLiBBdCB0aGUgZW5kIG9mIGRheSBib3RoIHVzZSB2aXJ0dWFs
+IGRldmljZXMgd2hpY2ggdXNlCmZhY2lsaXRpZXMgZnJvbSB0aGUgaG9zdC4KSWYgdGhpcyBpcyBy
+ZWFsbHkgbm90IHBvc3NpYmxlIGl0IG5lZWRzIGEgZ29vZCBleHBsYW5hdGlvbi4KClRoYW5rcywK
+Ly9yaWNoYXJkCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+XwpsaW51eC11bSBtYWlsaW5nIGxpc3QKbGludXgtdW1AbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRw
+Oi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXVtCg==
