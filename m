@@ -2,95 +2,68 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 889CB10A01B
-	for <lists+linux-um@lfdr.de>; Tue, 26 Nov 2019 15:17:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DBC2910A1B0
+	for <lists+linux-um@lfdr.de>; Tue, 26 Nov 2019 17:02:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Subject:To:From:Message-ID:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Subject:References:
+	In-Reply-To:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wZgDpkqM3NikH/WMmx/m+7/eD23SPfu2I/HYQnA9Dq4=; b=XEzkc+94Tm5fhU
-	7LlOuZrtol5zh8vvEH95fp2KlDTg8VnJos0F9VcxeWDaj5/esX2roq7ujSlT9oMXn4MSN0E8oPSIa
-	bIRlefXjjzo9a1f/twg5UVH+R/4se9UiYFZ4tM8X/jFfylHXSV000nC+TrBWFb93fHImah6W4+8H1
-	mCd3+ED9wyp/kQzSDD0HAWPgYcxz27/oIkt0vRrH0OxJkTEuVf4Z2hdsbW3zD/Gvkyjdl3W5XkUj8
-	VCOzpn2kUqkqYWgQzGF0QWqj7FN1jEs9xIwAeCBDytg0uDZDvWU0cu8TO0+fjyp/jGwtUSzE8pG3z
-	Y4EmllqNjlciEI/11WuA==;
+	List-Owner; bh=ASSgB3s+T2x9EKjUiMHESEQ//TP50rfjCP05QOt86Io=; b=T/lsmooiCloq2t
+	zfjqkC2zTzxPDOmBVmS0zn+k3CcQZ+IpoIwiCFM4L+NKYkoTzzqM8jM81M+lkqqvjeAojiY2YVRpf
+	l0vYQhZoIsCZite8spgIRQYjelUBfAWq9VMRtKrMmdrm/RPiuDJPANq2KkPRZ5hiJdot2ULHvF95q
+	D/00yrijlTuYAKltdch0HcB0pFRDfuxp/aYNZOEvE1gzjJ1YOgH3GDpUaHdXUwl+EDQqiGsXvR0aD
+	qcka9Pj0dLInL3u6MTdGlN5uWTCfzOuoeO1PHlYPnJac7fWqycdCyrTxSNvNtiaYm9piLkGZiaMgS
+	8GLiAbNbMLggUIv0DxkQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZbet-0005Kn-6R; Tue, 26 Nov 2019 14:17:39 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1iZdIC-0001s7-Jr; Tue, 26 Nov 2019 16:02:20 +0000
+Received: from lithops.sigma-star.at ([195.201.40.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZbeq-0004kW-QQ
- for linux-um@lists.infradead.org; Tue, 26 Nov 2019 14:17:38 +0000
-Received: by mail-pg1-x541.google.com with SMTP id k13so9089441pgh.3
- for <linux-um@lists.infradead.org>; Tue, 26 Nov 2019 06:17:34 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:message-id:from:to:cc:subject:in-reply-to:references
- :user-agent:mime-version;
- bh=B9gEZW9KBbjSLUH43XFMNPk7q5sL7CRFwNtVSQi85QY=;
- b=i+q+l3O8WgRp7bNdQkZ3MI5ipuDBUjK3Gel3G7luigeprpHfBfqguqPOWlvomM4siS
- f3Abdl9wXU7/viFftuUTltqS8SmeFDAHTV+pxYVHIEzkN3aXsALcnvI125bt3cMizKQD
- D7RdUH7YVHgoKXseWQW5MqarWxSzs3UwEIqZGWHc3uP4kd0zWIXvYGbIbCPlL4EAn027
- 1YVie3gWBVvkjtIIYI/w6ix9ed1wxjj0pYP+oR7DEOvUu6C8s8B2NoxTnwVf6ipT0oAz
- qiDTKzHrLS//rMNHdOm7ZkSS118SuPH68f2TkTeD17XKZyzYKN7XKyRrFvRv/hand8NO
- VSvg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:message-id:from:to:cc:subject:in-reply-to
- :references:user-agent:mime-version;
- bh=B9gEZW9KBbjSLUH43XFMNPk7q5sL7CRFwNtVSQi85QY=;
- b=eXMy+cRCT8qpO4M9KfpyFBKY3rVOk16xiVigH7HwklTLHKw7i9BfErsjYOuRmOXvA4
- HNarS7MZnvG9I9F7Pk0+a9X5ejtac6Rh+LoNxrzg43Ghn93pU07T9OO56zTt0dHykEEO
- hI2J9czwGO6EbWLAswO4mbgpMGktBH8wEpkjVLoIboUmzG8ESU9G/6TZGzU9eH9NFp+h
- kKxgA5273xKGGL7V7OoX05klcsRMlFLjtPf45Bs7D73RSbufpAVQE7alwlgfWYWDrgoY
- qxQPVfNWmL+dxSlbgTZSrNEbUP+uh+4q5oex/Vbr+adFiIUPUsk4zzfa5xwUy/CkhfDb
- reQQ==
-X-Gm-Message-State: APjAAAVKJQ1yWBDMyl1GPL3W8Yy/Gvd/V33yYj63ESM6KXfKD2SPnjUa
- PGF/iTw9oxTE3dLsD+v4V1E=
-X-Google-Smtp-Source: APXvYqyR4gCW7aw3CBCL1MpXUB1X7dqU63d3cH8y7i6KOlkWrmC/UzIz0ckB91GfiGeoSJ8IlxhaiQ==
-X-Received: by 2002:a62:f243:: with SMTP id y3mr41997909pfl.196.1574777853400; 
- Tue, 26 Nov 2019 06:17:33 -0800 (PST)
-Received: from earth-mac.local.gmail.com
- (219x123x138x129.ap219.ftth.ucom.ne.jp. [219.123.138.129])
- by smtp.gmail.com with ESMTPSA id c9sm12834744pfn.65.2019.11.26.06.17.27
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 26 Nov 2019 06:17:32 -0800 (PST)
-Date: Tue, 26 Nov 2019 23:17:26 +0900
-Message-ID: <m2v9r6iux5.wl-thehajime@gmail.com>
-From: Hajime Tazaki<thehajime@gmail.com>
-To: richard.weinberger@gmail.com
-Subject: Re: [RFC v2 03/37] lkl: architecture skeleton for Linux kernel library
-In-Reply-To: <CAFLxGvw+w+xmput3xMjKPXPn4hj9opbo+gtV6896hhzDUzQNiA@mail.gmail.com>
+ id 1iZdI9-0001rF-Hz
+ for linux-um@lists.infradead.org; Tue, 26 Nov 2019 16:02:19 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by lithops.sigma-star.at (Postfix) with ESMTP id C138760A073C;
+ Tue, 26 Nov 2019 17:02:14 +0100 (CET)
+Received: from lithops.sigma-star.at ([127.0.0.1])
+ by localhost (lithops.sigma-star.at [127.0.0.1]) (amavisd-new, port 10032)
+ with ESMTP id f34gkYDE1roQ; Tue, 26 Nov 2019 17:02:12 +0100 (CET)
+Received: from localhost (localhost [127.0.0.1])
+ by lithops.sigma-star.at (Postfix) with ESMTP id C5044607BD95;
+ Tue, 26 Nov 2019 17:02:12 +0100 (CET)
+Received: from lithops.sigma-star.at ([127.0.0.1])
+ by localhost (lithops.sigma-star.at [127.0.0.1]) (amavisd-new, port 10026)
+ with ESMTP id X44XAjAkgYcv; Tue, 26 Nov 2019 17:02:12 +0100 (CET)
+Received: from lithops.sigma-star.at (lithops.sigma-star.at [195.201.40.130])
+ by lithops.sigma-star.at (Postfix) with ESMTP id 7FC1062EBCAB;
+ Tue, 26 Nov 2019 17:02:12 +0100 (CET)
+Date: Tue, 26 Nov 2019 17:02:12 +0100 (CET)
+From: Richard Weinberger <richard@nod.at>
+To: Hajime Tazaki <thehajime@gmail.com>
+Message-ID: <907430042.98310.1574784132348.JavaMail.zimbra@nod.at>
+In-Reply-To: <m2v9r6iux5.wl-thehajime@gmail.com>
 References: <cover.1573179553.git.thehajime@gmail.com>
  <64a5d6c94d331058331af7d191d2cdbe870d009b.1573179553.git.thehajime@gmail.com>
  <CAFLxGvw+w+xmput3xMjKPXPn4hj9opbo+gtV6896hhzDUzQNiA@mail.gmail.com>
-User-Agent: Wanderlust/2.15.9 (Almost Unreal) Emacs/25.3 Mule/6.0
- (HANACHIRUSATO)
-MIME-Version: 1.0 (generated by SEMI-EPG 1.14.7 - "Harue")
+ <m2v9r6iux5.wl-thehajime@gmail.com>
+Subject: Re: [RFC v2 03/37] lkl: architecture skeleton for Linux kernel library
+MIME-Version: 1.0
+X-Originating-IP: [195.201.40.130]
+X-Mailer: Zimbra 8.8.12_GA_3807 (ZimbraWebClient - FF68 (Linux)/8.8.12_GA_3809)
+Thread-Topic: architecture skeleton for Linux kernel library
+Thread-Index: lvbtPMSot5jWCgVHtFQyj94K0JHInQ==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191126_061736_874236_D38EB366 
-X-CRM114-Status: GOOD (  10.63  )
-X-Spam-Score: 2.3 (++)
+X-CRM114-CacheID: sfid-20191126_080217_886669_17CA3AB9 
+X-CRM114-Status: UNSURE (   7.53  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (thehajime[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 2.5 TO_NO_BRKTS_FROM_MSSP  Multiple header formatting problems
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,63 +75,69 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, levex@linux.com, mattator@gmail.com,
- cem@freebsd.org, tavi.purdila@gmail.com, jiangshanlai@gmail.com,
- staal1978@gmail.com, motomuman@gmail.com, linux-um@lists.infradead.org,
- retrage01@gmail.com, petrosagg@gmail.com, edisonmcastro@hotmail.com,
- xiaoj@google.com, mark@stillwell.me, linux-kernel-library@freelists.org,
- pscollins@google.com, phh@phh.me, sigmaepsilon92@gmail.com,
- luca.dariz@gmail.com, liuyuan@google.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-arch <linux-arch@vger.kernel.org>, levex <levex@linux.com>,
+ mattator <mattator@gmail.com>, cem <cem@freebsd.org>,
+ tavi purdila <tavi.purdila@gmail.com>, jiangshanlai <jiangshanlai@gmail.com>,
+ staal1978 <staal1978@gmail.com>, motomuman <motomuman@gmail.com>,
+ linux-um <linux-um@lists.infradead.org>, retrage01 <retrage01@gmail.com>,
+ petrosagg <petrosagg@gmail.com>, edisonmcastro <edisonmcastro@hotmail.com>,
+ xiaoj <xiaoj@google.com>, mark <mark@stillwell.me>,
+ linux-kernel-library <linux-kernel-library@freelists.org>,
+ pscollins <pscollins@google.com>, phh <phh@phh.me>,
+ sigmaepsilon92 <sigmaepsilon92@gmail.com>, luca dariz <luca.dariz@gmail.com>,
+ liuyuan <liuyuan@google.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-
-On Tue, 26 Nov 2019 07:00:33 +0900,
-Richard Weinberger wrote:
-> 
-(snip)
-> >
-> > Signed-off-by: Andreas Abel <aabel@google.com>
-> > Signed-off-by: Conrad Meyer <cem@FreeBSD.org>
-> > Signed-off-by: Edison M. Castro <edisonmcastro@hotmail.com>
-> > Signed-off-by: H.K. Jerry Chu <hkchu@google.com>
-> > Signed-off-by: Hajime Tazaki <thehajime@gmail.com>
-> > Signed-off-by: Jens Staal <staal1978@gmail.com>
-> > Signed-off-by: Lai Jiangshan <jiangshanlai@gmail.com>
-> > Signed-off-by: Levente Kurusa <levex@linux.com>
-> > Signed-off-by: Luca Dariz <luca.dariz@gmail.com>
-> > Signed-off-by: Mark Stillwell <mark@stillwell.me>
-> > Signed-off-by: Matthieu Coudron <mattator@gmail.com>
-> > Signed-off-by: Michael Zimmermann <sigmaepsilon92@gmail.com>
-> > Signed-off-by: Motomu Utsumi <motomuman@gmail.com>
-> > Signed-off-by: Patrick Collins <pscollins@google.com>
-> > Signed-off-by: Petros Angelatos <petrosagg@gmail.com>
-> > Signed-off-by: Pierre-Hugues Husson <phh@phh.me>
-> > Signed-off-by: Xiao Jia <xiaoj@google.com>
-> > Signed-off-by: Yuan Liu <liuyuan@google.com>
-> > Signed-off-by: Octavian Purdila <tavi.purdila@gmail.com>
-> 
-> Can we please have this chain cleaned up?
-> Please see process/submitting-patches.rst.
-
-Do you mean "this chain" by the long list of Signed-off-by lines, or
-something else ?
-
-We were trying to put all of contributors on the list.  I was failed to
-interpret process/submitting-patches.rst on which part is not appropriate.
-
-If you could be more specific, it would be definitely helpful.
-# sorry to disturb you...
-
-btw, currently we have more than 15 patches, which I may need to drop some
-of them for the first step.
-
-
--- Hajime
-
-_______________________________________________
-linux-um mailing list
-linux-um@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-um
+LS0tLS0gVXJzcHLDvG5nbGljaGUgTWFpbCAtLS0tLQo+IFZvbjogIkhhamltZSBUYXpha2kiIDx0
+aGVoYWppbWVAZ21haWwuY29tPgo+IEFuOiAiUmljaGFyZCBXZWluYmVyZ2VyIiA8cmljaGFyZC53
+ZWluYmVyZ2VyQGdtYWlsLmNvbT4KPiBDQzogImxpbnV4LXVtIiA8bGludXgtdW1AbGlzdHMuaW5m
+cmFkZWFkLm9yZz4sICJsaW51eC1hcmNoIiA8bGludXgtYXJjaEB2Z2VyLmtlcm5lbC5vcmc+LCAi
+cHNjb2xsaW5zIgo+IDxwc2NvbGxpbnNAZ29vZ2xlLmNvbT4sICJsZXZleCIgPGxldmV4QGxpbnV4
+LmNvbT4sICJtYXR0YXRvciIgPG1hdHRhdG9yQGdtYWlsLmNvbT4sICJjZW0iIDxjZW1AZnJlZWJz
+ZC5vcmc+LCAidGF2aQo+IHB1cmRpbGEiIDx0YXZpLnB1cmRpbGFAZ21haWwuY29tPiwgInN0YWFs
+MTk3OCIgPHN0YWFsMTk3OEBnbWFpbC5jb20+LCAibW90b211bWFuIiA8bW90b211bWFuQGdtYWls
+LmNvbT4sICJqaWFuZ3NoYW5sYWkiCj4gPGppYW5nc2hhbmxhaUBnbWFpbC5jb20+LCAicmV0cmFn
+ZTAxIiA8cmV0cmFnZTAxQGdtYWlsLmNvbT4sICJwZXRyb3NhZ2ciIDxwZXRyb3NhZ2dAZ21haWwu
+Y29tPiwgImxpdXl1YW4iCj4gPGxpdXl1YW5AZ29vZ2xlLmNvbT4sICJ4aWFvaiIgPHhpYW9qQGdv
+b2dsZS5jb20+LCAibWFyayIgPG1hcmtAc3RpbGx3ZWxsLm1lPiwgImxpbnV4LWtlcm5lbC1saWJy
+YXJ5Igo+IDxsaW51eC1rZXJuZWwtbGlicmFyeUBmcmVlbGlzdHMub3JnPiwgInBoaCIgPHBoaEBw
+aGgubWU+LCAic2lnbWFlcHNpbG9uOTIiIDxzaWdtYWVwc2lsb245MkBnbWFpbC5jb20+LCAibHVj
+YSBkYXJpeiIKPiA8bHVjYS5kYXJpekBnbWFpbC5jb20+LCAiZWRpc29ubWNhc3RybyIgPGVkaXNv
+bm1jYXN0cm9AaG90bWFpbC5jb20+Cj4gR2VzZW5kZXQ6IERpZW5zdGFnLCAyNi4gTm92ZW1iZXIg
+MjAxOSAxNToxNzoyNgo+IEJldHJlZmY6IFJlOiBbUkZDIHYyIDAzLzM3XSBsa2w6IGFyY2hpdGVj
+dHVyZSBza2VsZXRvbiBmb3IgTGludXgga2VybmVsIGxpYnJhcnkKCj4gT24gVHVlLCAyNiBOb3Yg
+MjAxOSAwNzowMDozMyArMDkwMCwKPiBSaWNoYXJkIFdlaW5iZXJnZXIgd3JvdGU6Cj4+IAo+IChz
+bmlwKQo+PiA+Cj4+ID4gU2lnbmVkLW9mZi1ieTogQW5kcmVhcyBBYmVsIDxhYWJlbEBnb29nbGUu
+Y29tPgo+PiA+IFNpZ25lZC1vZmYtYnk6IENvbnJhZCBNZXllciA8Y2VtQEZyZWVCU0Qub3JnPgo+
+PiA+IFNpZ25lZC1vZmYtYnk6IEVkaXNvbiBNLiBDYXN0cm8gPGVkaXNvbm1jYXN0cm9AaG90bWFp
+bC5jb20+Cj4+ID4gU2lnbmVkLW9mZi1ieTogSC5LLiBKZXJyeSBDaHUgPGhrY2h1QGdvb2dsZS5j
+b20+Cj4+ID4gU2lnbmVkLW9mZi1ieTogSGFqaW1lIFRhemFraSA8dGhlaGFqaW1lQGdtYWlsLmNv
+bT4KPj4gPiBTaWduZWQtb2ZmLWJ5OiBKZW5zIFN0YWFsIDxzdGFhbDE5NzhAZ21haWwuY29tPgo+
+PiA+IFNpZ25lZC1vZmYtYnk6IExhaSBKaWFuZ3NoYW4gPGppYW5nc2hhbmxhaUBnbWFpbC5jb20+
+Cj4+ID4gU2lnbmVkLW9mZi1ieTogTGV2ZW50ZSBLdXJ1c2EgPGxldmV4QGxpbnV4LmNvbT4KPj4g
+PiBTaWduZWQtb2ZmLWJ5OiBMdWNhIERhcml6IDxsdWNhLmRhcml6QGdtYWlsLmNvbT4KPj4gPiBT
+aWduZWQtb2ZmLWJ5OiBNYXJrIFN0aWxsd2VsbCA8bWFya0BzdGlsbHdlbGwubWU+Cj4+ID4gU2ln
+bmVkLW9mZi1ieTogTWF0dGhpZXUgQ291ZHJvbiA8bWF0dGF0b3JAZ21haWwuY29tPgo+PiA+IFNp
+Z25lZC1vZmYtYnk6IE1pY2hhZWwgWmltbWVybWFubiA8c2lnbWFlcHNpbG9uOTJAZ21haWwuY29t
+Pgo+PiA+IFNpZ25lZC1vZmYtYnk6IE1vdG9tdSBVdHN1bWkgPG1vdG9tdW1hbkBnbWFpbC5jb20+
+Cj4+ID4gU2lnbmVkLW9mZi1ieTogUGF0cmljayBDb2xsaW5zIDxwc2NvbGxpbnNAZ29vZ2xlLmNv
+bT4KPj4gPiBTaWduZWQtb2ZmLWJ5OiBQZXRyb3MgQW5nZWxhdG9zIDxwZXRyb3NhZ2dAZ21haWwu
+Y29tPgo+PiA+IFNpZ25lZC1vZmYtYnk6IFBpZXJyZS1IdWd1ZXMgSHVzc29uIDxwaGhAcGhoLm1l
+Pgo+PiA+IFNpZ25lZC1vZmYtYnk6IFhpYW8gSmlhIDx4aWFvakBnb29nbGUuY29tPgo+PiA+IFNp
+Z25lZC1vZmYtYnk6IFl1YW4gTGl1IDxsaXV5dWFuQGdvb2dsZS5jb20+Cj4+ID4gU2lnbmVkLW9m
+Zi1ieTogT2N0YXZpYW4gUHVyZGlsYSA8dGF2aS5wdXJkaWxhQGdtYWlsLmNvbT4KPj4gCj4+IENh
+biB3ZSBwbGVhc2UgaGF2ZSB0aGlzIGNoYWluIGNsZWFuZWQgdXA/Cj4+IFBsZWFzZSBzZWUgcHJv
+Y2Vzcy9zdWJtaXR0aW5nLXBhdGNoZXMucnN0Lgo+IAo+IERvIHlvdSBtZWFuICJ0aGlzIGNoYWlu
+IiBieSB0aGUgbG9uZyBsaXN0IG9mIFNpZ25lZC1vZmYtYnkgbGluZXMsIG9yCj4gc29tZXRoaW5n
+IGVsc2UgPwoKVGhlIGxvbmcgbGlzdCBpcyByYXRoZXIgdW51c3VhbC4KIAo+IFdlIHdlcmUgdHJ5
+aW5nIHRvIHB1dCBhbGwgb2YgY29udHJpYnV0b3JzIG9uIHRoZSBsaXN0LiAgSSB3YXMgZmFpbGVk
+IHRvCj4gaW50ZXJwcmV0IHByb2Nlc3Mvc3VibWl0dGluZy1wYXRjaGVzLnJzdCBvbiB3aGljaCBw
+YXJ0IGlzIG5vdCBhcHByb3ByaWF0ZS4KCklmIGV2ZXJ5IGNvbnRyaWJ1dG9yIGlzIGFsc28gYSBD
+by1BdXRob3IuIE9rYXkuIEJ1dCBoYXZpbmcgc3VjaCBhIGxvbmcKbGlzdCBvZiBhdXRob3JzIGlz
+IHN0aWxsIGEgbGl0dGxlIG9kZC4KClRoYW5rcywKLy9yaWNoYXJkCgpfX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC11bSBtYWlsaW5nIGxpc3QKbGlu
+dXgtdW1AbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWls
+bWFuL2xpc3RpbmZvL2xpbnV4LXVtCg==
