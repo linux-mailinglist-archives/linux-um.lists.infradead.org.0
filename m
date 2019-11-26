@@ -2,71 +2,84 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1CADA10A1B5
-	for <lists+linux-um@lfdr.de>; Tue, 26 Nov 2019 17:05:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 051B810A204
+	for <lists+linux-um@lfdr.de>; Tue, 26 Nov 2019 17:25:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Subject:References:
-	In-Reply-To:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=df7VTE3pySoxg5Fzw7ktgfWt+3eNMyktl4Gkc2ko5fI=; b=FJg8SltxPrmRCg
-	41L3PUhAqXR1OqT540GBetfXGSdFgaFNe4aslqWf+1nMfjEA8jmBT2XedzmS1A6KpM+CX2hIIPOnY
-	7prsTdWOEy/S/1y0CCiHeLGLM54Wga7P/SNFeHF5NjA2q4A2TVQry9WPxCCxMDvjVuWi+TFjGGB/V
-	jgeDT4N9YFJJs7my63R6Ac5Gfg4/NkJbJU6ODuhI4tEMJDgf14bWV3wrumZ9EratLah3+FrKpc5vm
-	/4haTfUTfcSaylI0sqlTfGek3JjynaoEO/ZYlIaw9ewID70bxWJ1miVcoCPMuQJVpV+YUdVarG2qw
-	lBjvjw3JdgKFwXVkb2ZQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=U7Hyhk1X6ixYmOPM3m9plJRcp0lwk4HFDGjR4+TP4hQ=; b=gVnW0kG+4Ye/6F
+	Cn0a7yikuy6t4KtEfXAdUdvsXS26aT3/Tqor8KMBKpO34ECZ/i6aBhTmzSL6xOSoRr9xdu0hALXHZ
+	VcZtNPcwSZoeXFyUjcFD38RWFOG+/SVgJTKO9LBlSKyG3gYWf8Wno5lmXqyAXlPAAax0SinCWYMY+
+	3q3gWOMXl5/j8E3kvp5NYDpA+tBhDBzf+V2fwM5E6fJPDFHQHHENyxHpPmI0ZmMHWi3aKrzcMzune
+	oRulOqxfPcbE8V5DRs0mByxLsqNMJfRJ9fjUWBcE+vgFOoMKS4QJfPIfCUdMFl48Fm7rVhgzE6d1G
+	txQPH8RL9703I3F7+f3A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZdKs-0002jf-2U; Tue, 26 Nov 2019 16:05:06 +0000
-Received: from lithops.sigma-star.at ([195.201.40.130])
+	id 1iZdeh-0002x1-Ne; Tue, 26 Nov 2019 16:25:35 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZdKl-00028D-3w
- for linux-um@lists.infradead.org; Tue, 26 Nov 2019 16:05:04 +0000
-Received: from localhost (localhost [127.0.0.1])
- by lithops.sigma-star.at (Postfix) with ESMTP id D44CC60A073C;
- Tue, 26 Nov 2019 17:04:57 +0100 (CET)
-Received: from lithops.sigma-star.at ([127.0.0.1])
- by localhost (lithops.sigma-star.at [127.0.0.1]) (amavisd-new, port 10032)
- with ESMTP id aPXrgi07fPtX; Tue, 26 Nov 2019 17:04:56 +0100 (CET)
-Received: from localhost (localhost [127.0.0.1])
- by lithops.sigma-star.at (Postfix) with ESMTP id 009F862EBCAB;
- Tue, 26 Nov 2019 17:04:56 +0100 (CET)
-Received: from lithops.sigma-star.at ([127.0.0.1])
- by localhost (lithops.sigma-star.at [127.0.0.1]) (amavisd-new, port 10026)
- with ESMTP id p1iqjx-8fVLP; Tue, 26 Nov 2019 17:04:55 +0100 (CET)
-Received: from lithops.sigma-star.at (lithops.sigma-star.at [195.201.40.130])
- by lithops.sigma-star.at (Postfix) with ESMTP id CD0A7607BD95;
- Tue, 26 Nov 2019 17:04:55 +0100 (CET)
-Date: Tue, 26 Nov 2019 17:04:55 +0100 (CET)
-From: Richard Weinberger <richard@nod.at>
-To: tavi purdila <tavi.purdila@gmail.com>
-Message-ID: <293078386.98317.1574784295793.JavaMail.zimbra@nod.at>
-In-Reply-To: <CAMoF9u3LRC_NaVJzmKPc0+XBxhAqdhnr4-ZzY_ypwQEzUz78yQ@mail.gmail.com>
-References: <cover.1573179553.git.thehajime@gmail.com>
- <CAFLxGvzCwCLbLMhcF6ZJ2afeo7PSd8xLQrU9hRH6YVaMakBSyw@mail.gmail.com>
- <de90b04151bafee083727c9769833932788cf428.camel@sipsolutions.net>
- <1662825264.98055.1574758225905.JavaMail.zimbra@nod.at>
- <4ebb14dc67ccb70543617ce1f7066f3f27cd11a8.camel@sipsolutions.net>
- <243342257.98153.1574762974057.JavaMail.zimbra@nod.at>
- <98acf77a7c6f6cba7f76c12a850ac2929b9e5a48.camel@sipsolutions.net>
- <CAMoF9u3LRC_NaVJzmKPc0+XBxhAqdhnr4-ZzY_ypwQEzUz78yQ@mail.gmail.com>
-Subject: Re: [RFC v2 17/37] lkl tools: host lib: virtio devices
+ id 1iZded-0002wD-Rl
+ for linux-um@lists.infradead.org; Tue, 26 Nov 2019 16:25:33 +0000
+Received: by mail-pl1-x644.google.com with SMTP id bb5so8374995plb.4
+ for <linux-um@lists.infradead.org>; Tue, 26 Nov 2019 08:25:31 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=date:from:to:cc:subject:message-id:mime-version:content-disposition;
+ bh=1hOraEYfhl1CfHNUuJ9PdJuLSAhfXrel88lp028GyuE=;
+ b=ofXBE/7VkptXvyZUZ8nCpnF8LnSUO7HEYT1LoAa9Am/hhjFzn63h+s86Xpuxq0Imbq
+ jUQVSTWIj7em0wn8lhMOpFYO0/YgE+PlYLu1zC6sZNJlmQnhCSb5Cm639iotn9wnQsOH
+ 94e3PBGT1YD16gYa0ACD2djV5jMozSNFZRB8s=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
+ :content-disposition;
+ bh=1hOraEYfhl1CfHNUuJ9PdJuLSAhfXrel88lp028GyuE=;
+ b=BKxdbIwGJoki/f9ZxXnVUJd0G5IqQSoC3FV5hIM2I7o7hS8fkKq00cz7aXFKBnPXmT
+ x6awe/2KlU7kwLN3LqqxtoWMwRdApm32QjkjNeWj4+GbhbZInlJn4b3Wz7rR+3grhlOf
+ AyfN0wfe4L5krOZezG6sPt+KIWMKKSMgZZINyLIHvvI1O8lo5TljFnKEzvAVGpXhV8Mo
+ 6A95hqeTsoLMzhLNsIqoH5tj1u5P3geavum9vGHAeiHcq1sjfToWkUHakB7HbJGGkl4c
+ MC8Q12mU3OaURaHgEGi4DOY+UP44JkhxI2JbO2F0yxqYSTNjcvCC7EJV7ynYwqsGMFfM
+ iUeA==
+X-Gm-Message-State: APjAAAUIzndEgsKsITI7zS+IobLGwJGtg8OuqyI8PCTIqdugxEJTeGXj
+ ZG3tC/hbu/ZnkUzi44/FM5VawA==
+X-Google-Smtp-Source: APXvYqxdb3m8lvitpYcVMwL44atFGySYuA7LVySZPpCySFXgRV4Lv/KUVp10g+KjQW8s8fRGDFE4FQ==
+X-Received: by 2002:a17:902:ab82:: with SMTP id
+ f2mr32593783plr.276.1574785530825; 
+ Tue, 26 Nov 2019 08:25:30 -0800 (PST)
+Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
+ by smtp.gmail.com with ESMTPSA id j4sm3993110pjf.25.2019.11.26.08.25.29
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 26 Nov 2019 08:25:29 -0800 (PST)
+Date: Tue, 26 Nov 2019 08:25:28 -0800
+From: Kees Cook <keescook@chromium.org>
+To: Linus Torvalds <torvalds@linux-foundation.org>
+Subject: [GIT PULL] seccomp updates for v5.5-rc1
+Message-ID: <201911260818.9C5DC1E@keescook>
 MIME-Version: 1.0
-X-Originating-IP: [195.201.40.130]
-X-Mailer: Zimbra 8.8.12_GA_3807 (ZimbraWebClient - FF68 (Linux)/8.8.12_GA_3809)
-Thread-Topic: lkl tools: host lib: virtio devices
-Thread-Index: 2KnPvE0uN6YbhCCXecDemzTGhDLtJQ==
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191126_080459_455539_2CFBF1BD 
-X-CRM114-Status: GOOD (  14.71  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191126_082531_909136_DF842EA8 
+X-CRM114-Status: GOOD (  12.13  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,64 +91,97 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch <linux-arch@vger.kernel.org>, cem <cem@freebsd.org>,
- linux-um <linux-um@lists.infradead.org>, retrage01 <retrage01@gmail.com>,
- liuyuan <liuyuan@google.com>, pscollins <pscollins@google.com>,
- linux-kernel-library <linux-kernel-library@freelists.org>,
- Johannes Berg <johannes@sipsolutions.net>,
- sigmaepsilon92 <sigmaepsilon92@gmail.com>, Hajime Tazaki <thehajime@gmail.com>,
- anton ivanov <anton.ivanov@cambridgegreys.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Song Liu <songliubraving@fb.com>, Alexei Starovoitov <ast@kernel.org>,
+ linux-kernel@vger.kernel.org, linux-kselftest@vger.kernel.org,
+ Christian Brauner <christian.brauner@ubuntu.com>,
+ Shuah Khan <shuah@kernel.org>, linux-s390@vger.kernel.org,
+ Tycho Andersen <tycho@tycho.ws>, Daniel Borkmann <daniel@iogearbox.net>,
+ kernel test robot <rong.a.chen@intel.com>, x86@kernel.org,
+ Yonghong Song <yhs@fb.com>, Borislav Petkov <bp@suse.de>,
+ linux-um@lists.infradead.org, Andy Lutomirski <luto@kernel.org>,
+ Paul Walmsley <paul.walmsley@sifive.com>, Thomas Gleixner <tglx@linutronix.de>,
+ linux-arm-kernel@lists.infradead.org, Will Drewry <wad@chromium.org>,
+ linux-parisc@vger.kernel.org,
+ David Abdurachmanov <david.abdurachmanov@sifive.com>, netdev@vger.kernel.org,
+ Oleg Nesterov <oleg@redhat.com>, Tyler Hicks <tyhicks@canonical.com>,
+ bpf@vger.kernel.org, Martin KaFai Lau <kafai@fb.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-LS0tLS0gVXJzcHLDvG5nbGljaGUgTWFpbCAtLS0tLQo+IFZvbjogInRhdmkgcHVyZGlsYSIgPHRh
-dmkucHVyZGlsYUBnbWFpbC5jb20+Cj4gQW46ICJKb2hhbm5lcyBCZXJnIiA8am9oYW5uZXNAc2lw
-c29sdXRpb25zLm5ldD4KPiBDQzogInJpY2hhcmQiIDxyaWNoYXJkQG5vZC5hdD4sICJIYWppbWUg
-VGF6YWtpIiA8dGhlaGFqaW1lQGdtYWlsLmNvbT4sICJsaW51eC1hcmNoIiA8bGludXgtYXJjaEB2
-Z2VyLmtlcm5lbC5vcmc+LCAiY2VtIgo+IDxjZW1AZnJlZWJzZC5vcmc+LCAibGludXgtdW0iIDxs
-aW51eC11bUBsaXN0cy5pbmZyYWRlYWQub3JnPiwgInJldHJhZ2UwMSIgPHJldHJhZ2UwMUBnbWFp
-bC5jb20+LCAibGludXgta2VybmVsLWxpYnJhcnkiCj4gPGxpbnV4LWtlcm5lbC1saWJyYXJ5QGZy
-ZWVsaXN0cy5vcmc+LCAicHNjb2xsaW5zIiA8cHNjb2xsaW5zQGdvb2dsZS5jb20+LCAic2lnbWFl
-cHNpbG9uOTIiIDxzaWdtYWVwc2lsb245MkBnbWFpbC5jb20+LAo+ICJsaXV5dWFuIiA8bGl1eXVh
-bkBnb29nbGUuY29tPgo+IEdlc2VuZGV0OiBEaWVuc3RhZywgMjYuIE5vdmVtYmVyIDIwMTkgMTE6
-NDI6MDEKPiBCZXRyZWZmOiBSZTogW1JGQyB2MiAxNy8zN10gbGtsIHRvb2xzOiBob3N0IGxpYjog
-dmlydGlvIGRldmljZXMKCj4gT24gVHVlLCBOb3YgMjYsIDIwMTkgYXQgMTI6MTYgUE0gSm9oYW5u
-ZXMgQmVyZwo+IDxqb2hhbm5lc0BzaXBzb2x1dGlvbnMubmV0PiB3cm90ZToKPj4KPj4gT24gVHVl
-LCAyMDE5LTExLTI2IGF0IDExOjA5ICswMTAwLCBSaWNoYXJkIFdlaW5iZXJnZXIgd3JvdGU6Cj4+
-ID4gLS0tLS0gVXJzcHLDvG5nbGljaGUgTWFpbCAtLS0tLQo+PiA+ID4gPiBNeSBwb2ludCBpcyB0
-aGF0IFVNTCBhbmQgTEtMIHNob3VsZCB0cnkgdG8gZG8gdXNlIHRoZSBzYW1lIGNvbmNlcHQvY29k
-ZQo+PiA+ID4gPiByZWdhcmRpbmcgdmlydGlvLiBBdCB0aGUgZW5kIG9mIGRheSBib3RoIHVzZSB2
-aXJ0dWFsIGRldmljZXMgd2hpY2ggdXNlCj4+ID4gPiA+IGZhY2lsaXRpZXMgZnJvbSB0aGUgaG9z
-dC4KPj4gPiA+ID4gSWYgdGhpcyBpcyByZWFsbHkgbm90IHBvc3NpYmxlIGl0IG5lZWRzIGEgZ29v
-ZCBleHBsYW5hdGlvbi4KPj4gPiA+Cj4+ID4gPiBJIHRoaW5rIGl0IGlzbid0IHBvc3NpYmxlLCB1
-bmxlc3MgeW91IHVzZSB2aG9zdC11c2VyIG92ZXIgYSB1bml4IGRvbWFpbgo+PiA+ID4gc29ja2V0
-IGludGVybmFsbHkgdG8gdGFsayBiZXR3ZWVuIHRoZSBrZXJuZWwgKHZpcnRpb191bWwpIGFuZCBo
-eXBlcnZpc29yCj4+ID4gPiAoZGV2aWNlKSBjb21wb25lbnRzLgo+PiA+ID4KPj4gPiA+IEluIHZp
-cnRpb191bWwsIHRoZSBkZXZpY2UgaW1wbGVtZW50YXRpb24gaXMgYXNzdW1lZCB0byBiZSBhIHNl
-cGFyYXRlCj4+ID4gPiBwcm9jZXNzIHdpdGggYSB2aG9zdC11c2VyIGNvbm5lY3Rpb24uIEhlcmUg
-aW4gTEtMLCB0aGUgdmlydGlvIGRldmljZSBpcwo+PiA+ID4gcGFydCBvZiB0aGUgImh5cGVydmlz
-b3IiLCBpLmUuIGluIHRoZSBzYW1lIHByb2Nlc3MuCj4+ID4KPj4gPiBFeGFjdGx5LCBjdXJyZW50
-bHkgVU1MIGFuZCBMS0wgc29sdmUgc2FtZSB0aGluZ3MgZGlmZmVyZW50bHksIGJ1dCBkbyB3ZSBu
-ZWVkIHRvPwo+Pgo+PiBJdCdzIG5vdCB0aGUgc2FtZSB0aGluZyB0aG91Z2ggOi0pCj4+Cj4+IFVN
-TCByaWdodCBub3cgZG9lc24ndCBoYXZlIG9yIHN1cHBvcnQgdmlydGlvIGRldmljZXMgaW4gdGhl
-IGJ1aWx0LWluCj4+IGh5cGVydmlzb3IsIHdoYXQgd2Ugd2FudGVkIHRvIHVzZSB2aXJ0aW8gZm9y
-IHdhcyBleHBsaWNpdGx5IGZvciB0aGUKPj4gdmhvc3QtdXNlciBkZXZpY2VzLgo+Pgo+PiBMS0wg
-Y2xlYXJseSB3YW50cyB0byBoYXZlIGRldmljZSBpbXBsZW1lbnRhdGlvbnMgaW4gdGhlIGh5cGVy
-dmlzb3IsCj4+IHBlcmhhcHMgZm9yIG5ldHdvcmtpbmcgb3IgY29uc29sZSBldGMuPyBUaGF0IF9t
-aWdodF8gYmUgdXNlZnVsIHNpbmNlIGl0Cj4+IG1ha2VzIHRoZSBkZXZpY2UgaW1wbGVtZW50YXRp
-b24gbW9yZSBnZW5lcmFsLCB1bmxpa2UgdGhlIFVNTCBhcHByb2FjaAo+PiB3aGVyZSBhbGwgZGV2
-aWNlcyBjb21lIHdpdGggYSBrZXJuZWwtIGFuZCB1c2VyLXNpZGUgYW5kIGFyZSBzcGVjaWFsCj4+
-IGRyaXZlcnMgaW4gdGhlIGtlcm5lbCwgdnMuIGdlbmVyYWwgdmlydGlvIGRyaXZlcnMuCj4+Cj4g
-Cj4gVGhhdCBpcyBjb3JyZWN0LiBJbml0aWFsbHkgd2UgdXNlZCB0aGUgc2FtZSBVTUwgbW9kZWws
-IHdpdGggZGVkaWNhdGVkCj4gZHJpdmVycyBmb3IgTEtMLCBhbmQgbGF0ZXIgc3dpdGNoZWQgdG8g
-dXNpbmcgdGhlIGJ1aWx0LWluIHZpcnRpbwo+IGRyaXZlcnMgKHNvIGZhciBmb3IgbmV0d29yayBh
-bmQgYmxvY2sgZGV2aWNlcykuCgpDYW4geW91IHBsZWFzZSBwb2ludCBvdXQgYSBsaXR0bGUgZnVy
-dGhlciB3aHkgVU1MJ3MgbmV0IG9yIGJsb2NrIGRyaXZlcnMKYXJlIG5vdCB1c2FibGUgZm9yIExL
-TD8KV2hhdCBpcyBtaXNzaW5nPwoKUGVyZm9ybWFuY2UgbnVtYmVycyB3b3VsZCBiZSBhbHNvIG5p
-Y2UgdG8gaGF2ZS4KQW50b24gZGlkIGdyZWF0IHdvcmsgb24gaW1wcm92aW5nIFVNTCdzIGRyaXZl
-cnMuCgpUaGFua3MsCi8vcmljaGFyZAoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX18KbGludXgtdW0gbWFpbGluZyBsaXN0CmxpbnV4LXVtQGxpc3RzLmluZnJh
-ZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51
-eC11bQo=
+Hi Linus,
+
+Please pull these seccomp updates for v5.5-rc1. Mostly this is
+implementing the new flag SECCOMP_USER_NOTIF_FLAG_CONTINUE, but there
+are cleanups as well. Most notably, the secure_computing() prototype
+has changed (to remove an unused argument), but this has happened at the
+same time as riscv adding seccomp support, so the cleanest merge order
+would be to merge riscv first, then seccomp with the following patch for
+riscv to handle the change from "seccomp: simplify secure_computing()":
+
+diff --git a/arch/riscv/kernel/ptrace.c b/arch/riscv/kernel/ptrace.c
+index 0f84628b9385..407464201b91 100644
+--- a/arch/riscv/kernel/ptrace.c
++++ b/arch/riscv/kernel/ptrace.c
+@@ -159,7 +159,7 @@ __visible void do_syscall_trace_enter(struct pt_regs *regs)
+ 	 * If this fails we might have return value in a0 from seccomp
+ 	 * (via SECCOMP_RET_ERRNO/TRACE).
+ 	 */
+-	if (secure_computing(NULL) == -1) {
++	if (secure_computing() == -1) {
+ 		syscall_set_nr(current, regs, -1);
+ 		return;
+ 	}
+
+Thanks!
+
+-Kees
+
+The following changes since commit da0c9ea146cbe92b832f1b0f694840ea8eb33cce:
+
+  Linux 5.4-rc2 (2019-10-06 14:27:30 -0700)
+
+are available in the Git repository at:
+
+  https://git.kernel.org/pub/scm/linux/kernel/git/kees/linux.git tags/seccomp-v5.5-rc1
+
+for you to fetch changes up to 23b2c96fad21886c53f5e1a4ffedd45ddd2e85ba:
+
+  seccomp: rework define for SECCOMP_USER_NOTIF_FLAG_CONTINUE (2019-10-28 12:29:46 -0700)
+
+----------------------------------------------------------------
+seccomp updates for v5.5
+
+- implement SECCOMP_USER_NOTIF_FLAG_CONTINUE (Christian Brauner)
+- fixes to selftests (Christian Brauner)
+- remove secure_computing() argument (Christian Brauner)
+
+----------------------------------------------------------------
+Christian Brauner (6):
+      seccomp: avoid overflow in implicit constant conversion
+      seccomp: add SECCOMP_USER_NOTIF_FLAG_CONTINUE
+      seccomp: test SECCOMP_USER_NOTIF_FLAG_CONTINUE
+      seccomp: simplify secure_computing()
+      seccomp: fix SECCOMP_USER_NOTIF_FLAG_CONTINUE test
+      seccomp: rework define for SECCOMP_USER_NOTIF_FLAG_CONTINUE
+
+ arch/arm/kernel/ptrace.c                      |   2 +-
+ arch/arm64/kernel/ptrace.c                    |   2 +-
+ arch/parisc/kernel/ptrace.c                   |   2 +-
+ arch/s390/kernel/ptrace.c                     |   2 +-
+ arch/um/kernel/skas/syscall.c                 |   2 +-
+ arch/x86/entry/vsyscall/vsyscall_64.c         |   2 +-
+ include/linux/seccomp.h                       |   6 +-
+ include/uapi/linux/seccomp.h                  |  29 +++++++
+ kernel/seccomp.c                              |  28 +++++--
+ tools/testing/selftests/seccomp/seccomp_bpf.c | 110 +++++++++++++++++++++++++-
+ 10 files changed, 169 insertions(+), 16 deletions(-)
+
+-- 
+Kees Cook
+
+_______________________________________________
+linux-um mailing list
+linux-um@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-um
