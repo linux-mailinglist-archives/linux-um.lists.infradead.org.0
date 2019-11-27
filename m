@@ -2,73 +2,73 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 120C610A944
-	for <lists+linux-um@lfdr.de>; Wed, 27 Nov 2019 05:06:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6BB0510A94A
+	for <lists+linux-um@lfdr.de>; Wed, 27 Nov 2019 05:08:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Subject:To:From:Message-ID:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=m2gmPS/U4VN7Wk2ykUHkEiq4OqwvjXZtlz1SemTk0JQ=; b=ZJghc/EUgSa/2G
-	EN5ltJMIKMA0Q038Sz90E4+CFJPOr4ZWOt2jgCWkMFKBEV1Uk1iSH+4ApnZZ/5/B9+s62d1yZIB23
-	/j27yyxN/wZsmfeXZREWL1w1V854/tVnxSNy13YfMVPiV7z8ssMK8CJ+FqyXP6I4Y0Lcuq3iute0X
-	8MS7Ec3KGgge7GYWmcJaRXEJVtQs/MOmVH16AyQuSerbeW6+iDUKqFvtYKLZFCDJw2RF8PAPmadWD
-	q0cwJP+eMFwxB2DkaV5nYULSVdq+Rde5Ucs8PobY+orXo9lxGMSCufXjTsbxYDgGMYo/9q1wTutIQ
-	s5OsBzIEnQ5GjwU9cAuA==;
+	List-Owner; bh=CZdE8Ksuy+0JsVnUupJ7IKA5KAyTKvUMpEPhOc5sbqk=; b=ns8u3KBGIB6oVY
+	FPP4+3MBbh0hs3tWYfEXpbaiW/ZiNBt7+lsVI6MnakHcCH4C3HBiVOqH2kEDwbLykaqWr44DHBXYj
+	eRXwiq7dmhyDlJRjz4Rq+LxMunwQqn6KsluJotPQsY4/eBZXn5w7LoLrdiC2zzhq9vkduvkX6TC+k
+	6jaCyJnOCxtCsbh7lrzS2aEPv+wXt95yhiY7DFhKyiK7ZwUPuBfcLiV40I6nIeQoLTjTWECPBjJrk
+	A/INdpWOlN76ps40OE8VQQPFyYKPLOVJ2WxqpJM47YPnUq9FeksVRKnsJJWY+qxJMla2U+K7orbAE
+	fyx1GFcd9sSTIxFJF2eg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZob9-0007qP-Fi; Wed, 27 Nov 2019 04:06:39 +0000
+	id 1iZocl-00080O-Po; Wed, 27 Nov 2019 04:08:19 +0000
 Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZob4-0007pr-9i
- for linux-um@lists.infradead.org; Wed, 27 Nov 2019 04:06:38 +0000
-Received: by mail-pl1-x642.google.com with SMTP id d7so9148703pls.3
- for <linux-um@lists.infradead.org>; Tue, 26 Nov 2019 20:06:28 -0800 (PST)
+ id 1iZoci-0007zx-Sv
+ for linux-um@lists.infradead.org; Wed, 27 Nov 2019 04:08:18 +0000
+Received: by mail-pl1-x642.google.com with SMTP id q16so4959552plr.10
+ for <linux-um@lists.infradead.org>; Tue, 26 Nov 2019 20:08:16 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=date:message-id:from:to:cc:subject:in-reply-to:references
  :user-agent:mime-version:content-transfer-encoding;
- bh=nWCrWadR1SyGOjV0H+GqNGY+efisuZ1V6ZkGf7TSgNU=;
- b=BK7jI1zdvguVZjIAT90XaFG3dEFHndJTsbUxZz0leQCrmjtkDUEpqvUQYxlSVxC2Y3
- TKECbu1XcDLLfli1zAAJUYFLiubUwQip12mTH6Jz0K1HgqsXn+HBu63Kd3gUgZ3z6+14
- 3qML+w0naA7qM7upZrjDTrMReHJk8PUvf1u5iKuOjpsE0rG4iv7e30MZ6jRiv2Va3150
- yYO/wZOVdVC7oouqZlvXISEUw4UaB04qk26OMpgpdyT+LjVEu3WBjWXEhkE21QADIspx
- +WJdjWknIABGZHcbU9xTBgVw3S06EaBw+dnkm6PKPNCIX8fYqky5Ifj5CnuIWbfqcbXr
- 3VBQ==
+ bh=ma2Ny4OJtmFo45i8pZLjdZV3vdlSDPefHNP0fIdM2y0=;
+ b=UQ1hObs8DfToT1ZlbJlkV9Q0mQbIGVxv5RMF6vHfQsXXWLiBxbroMcTDpr7YGf25uj
+ fCbvhb6omsAnIlcsr+dkQU+RFCZNatP8AnI2SBq4HfhsNY+p2gmSzxxKytcFqHcODdg6
+ aCsIwmg17kPvrtsO6H33QaVRCWKoYNRafyBDnG1D5FH/TWHPHH3v4m/YE4Tyzo9uVdZe
+ qMartVO6Y9IANSqg/2SKU14PuPv8gknFqsawuXShBKYq97bXOTxrOSoyMEfJdPWkEWrz
+ 33UOP1FBMPbR11vAMa/mWPx4WJ7xS7NgO8orpqkbTKOkM3bV0BWDYX3j27dP6piKeb1J
+ lepg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:message-id:from:to:cc:subject:in-reply-to
  :references:user-agent:mime-version:content-transfer-encoding;
- bh=nWCrWadR1SyGOjV0H+GqNGY+efisuZ1V6ZkGf7TSgNU=;
- b=TgIpKh8IaBfvhjEQpC+NYUzBDVW1MOogRi0u9DzbfAuog4zt/wLnwqJ3T09rB56jHN
- foJAKtv9gwZoygxK+RqNGth6+Cs/CAtlnz0kDZY6v1Dmv3Phvv6cEmFRj4U71LvvGq18
- vSQNgHH6Wf8F+ISGBWvPRzXvVXWo/rOIgStDanCkP6yf8hBLUegmpk2LgF48WUvoEtBd
- Dcim1lpJf4AtpmDT1K4AUdf/pi2DONYNRyhptkpGq2F/29Dkrwe6SO+lhN+qlvcGwJyS
- WQHY1UT5V5IBjo/C192xyAR2xrVYWNngYmihO23HQTokifVZ5wa+yTK1QCeMzQzqH2n0
- H27A==
-X-Gm-Message-State: APjAAAUWq8Z9Nq1aB3n9FeEiE2g1rvHYgMFVQYTcJaHc3CkaOp2cqTyU
- 1mekebxG3Aup5qgA1hsqm7o=
-X-Google-Smtp-Source: APXvYqw/oDtif706HC6kg2dNtThDgIUg5At8+AEcw8NUMkR0naS+2ezlpZxeKJc59UJ9FRuHdT/SaQ==
-X-Received: by 2002:a17:90a:d352:: with SMTP id
- i18mr3457008pjx.42.1574827587380; 
- Tue, 26 Nov 2019 20:06:27 -0800 (PST)
+ bh=ma2Ny4OJtmFo45i8pZLjdZV3vdlSDPefHNP0fIdM2y0=;
+ b=tb32y1iSb6ToPHqVhOlPd1Rw8X/klC0cPx/aT+V1TeE2bz5/958v3HlfIEcWDNwjUD
+ tdB0iQUw65NDrTJzoOtp7Bxd10UOn0bQe9UeKiTcWNulVKIgZrE2DDmftBsYt+55y9FP
+ CpNra2ToE00asQbfOd90DSaQbn6VeZQN4FEbnrMiCtB0SqmrKueJMjOSJOGKyLfSWqwo
+ csRd40saQp7OhFqm+Tfpv8CWyk7l0nMNR/UWuLJGyblD5U+v0I8WIsuyO5/V8tL0Z1gp
+ hdBHSbNc2QwSRck3hbM2rjcwGohcuKDk5f6sM7/6rVUFNwaoRxJaUxNy8Py/g2TlX33D
+ X7XA==
+X-Gm-Message-State: APjAAAUAQ6qq2ejjfztqY1bpJQOjYj1Xhnl0/tKWGiXai6W/FX5TBzi/
+ hs+Gt3nA51YrRinbcPfVgUw=
+X-Google-Smtp-Source: APXvYqy/+IWsMA7tqZO3lWfWjX2Qqa9evQQmu/qKEeBRofHytkcbCPGWP3ixsiVTs4fQFn7O7pyycA==
+X-Received: by 2002:a17:902:6bc5:: with SMTP id
+ m5mr1872960plt.185.1574827696049; 
+ Tue, 26 Nov 2019 20:08:16 -0800 (PST)
 Received: from earth-mac.local.gmail.com ([202.214.86.179])
- by smtp.gmail.com with ESMTPSA id f10sm13936893pfd.28.2019.11.26.20.06.24
+ by smtp.gmail.com with ESMTPSA id g192sm14075274pgc.3.2019.11.26.20.08.13
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 26 Nov 2019 20:06:26 -0800 (PST)
-Date: Wed, 27 Nov 2019 13:06:22 +0900
-Message-ID: <m2y2w2q7y9.wl-thehajime@gmail.com>
+ Tue, 26 Nov 2019 20:08:15 -0800 (PST)
+Date: Wed, 27 Nov 2019 13:08:11 +0900
+Message-ID: <m2wobmq7v8.wl-thehajime@gmail.com>
 From: Hajime Tazaki<thehajime@gmail.com>
-To: anton.ivanov@kot-begemot.co.uk
+To: richard@nod.at
 Subject: Re: [RFC v2 17/37] lkl tools: host lib: virtio devices
-In-Reply-To: <ce1a96d4-3d5e-32be-f493-3522fc56a25b@kot-begemot.co.uk>
-References: <cover.1573179553.git.thehajime@gmail.com>	<1531c5f16a00b608635c9a62fa3951807075f950.1573179553.git.thehajime@gmail.com>	<CAFLxGvzCwCLbLMhcF6ZJ2afeo7PSd8xLQrU9hRH6YVaMakBSyw@mail.gmail.com>	<de90b04151bafee083727c9769833932788cf428.camel@sipsolutions.net>	<1662825264.98055.1574758225905.JavaMail.zimbra@nod.at>	<4ebb14dc67ccb70543617ce1f7066f3f27cd11a8.camel@sipsolutions.net>	<243342257.98153.1574762974057.JavaMail.zimbra@nod.at>	<98acf77a7c6f6cba7f76c12a850ac2929b9e5a48.camel@sipsolutions.net>	<CAMoF9u3LRC_NaVJzmKPc0+XBxhAqdhnr4-ZzY_ypwQEzUz78yQ@mail.gmail.com>	<ce1a96d4-3d5e-32be-f493-3522fc56a25b@kot-begemot.co.uk>
+In-Reply-To: <293078386.98317.1574784295793.JavaMail.zimbra@nod.at>
+References: <cover.1573179553.git.thehajime@gmail.com>	<CAFLxGvzCwCLbLMhcF6ZJ2afeo7PSd8xLQrU9hRH6YVaMakBSyw@mail.gmail.com>	<de90b04151bafee083727c9769833932788cf428.camel@sipsolutions.net>	<1662825264.98055.1574758225905.JavaMail.zimbra@nod.at>	<4ebb14dc67ccb70543617ce1f7066f3f27cd11a8.camel@sipsolutions.net>	<243342257.98153.1574762974057.JavaMail.zimbra@nod.at>	<98acf77a7c6f6cba7f76c12a850ac2929b9e5a48.camel@sipsolutions.net>	<CAMoF9u3LRC_NaVJzmKPc0+XBxhAqdhnr4-ZzY_ypwQEzUz78yQ@mail.gmail.com>	<293078386.98317.1574784295793.JavaMail.zimbra@nod.at>
 User-Agent: Wanderlust/2.15.9 (Almost Unreal) Emacs/25.3 Mule/6.0
  (HANACHIRUSATO)
 MIME-Version: 1.0 (generated by SEMI-EPG 1.14.7 - "Harue")
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191126_200634_341638_4B0366CB 
-X-CRM114-Status: GOOD (  26.18  )
+X-CRM114-CacheID: sfid-20191126_200816_937822_4E12C6D3 
+X-CRM114-Status: GOOD (  22.07  )
 X-Spam-Score: 3.9 (+++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (3.9 points)
@@ -102,121 +102,86 @@ List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
 Cc: linux-arch@vger.kernel.org, cem@freebsd.org, tavi.purdila@gmail.com,
- richard@nod.at, linux-um@lists.infradead.org, retrage01@gmail.com,
- pscollins@google.com, linux-kernel-library@freelists.org,
- johannes@sipsolutions.net, sigmaepsilon92@gmail.com, liuyuan@google.com
+ linux-um@lists.infradead.org, retrage01@gmail.com, pscollins@google.com,
+ linux-kernel-library@freelists.org, johannes@sipsolutions.net,
+ sigmaepsilon92@gmail.com, liuyuan@google.com, anton.ivanov@cambridgegreys.com
 Content-Type: text/plain; charset="iso-8859-1"
 Content-Transfer-Encoding: quoted-printable
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
 
-On Tue, 26 Nov 2019 19:49:48 +0900,
-Anton Ivanov wrote:
-> =
+Hello,
 
-> =
-
-> =
-
-> On 26/11/2019 10:42, Octavian Purdila wrote:
-> > On Tue, Nov 26, 2019 at 12:16 PM Johannes Berg
-> > <johannes@sipsolutions.net> wrote:
-> >> =
+On Wed, 27 Nov 2019 01:04:55 +0900,
+Richard Weinberger wrote:
 
 > >> On Tue, 2019-11-26 at 11:09 +0100, Richard Weinberger wrote:
-> >>> ----- Urspr=FCngliche Mail -----
-> >>>>> My point is that UML and LKL should try to do use the same concept/=
-code
-> >>>>> regarding virtio. At the end of day both use virtual devices which =
-use
-> >>>>> facilities from the host.
-> >>>>> If this is really not possible it needs a good explanation.
-> >>>> =
-
-> >>>> I think it isn't possible, unless you use vhost-user over a unix dom=
-ain
-> >>>> socket internally to talk between the kernel (virtio_uml) and hyperv=
-isor
-> >>>> (device) components.
-> >>>> =
-
-> >>>> In virtio_uml, the device implementation is assumed to be a separate
-> >>>> process with a vhost-user connection. Here in LKL, the virtio device=
- is
-> >>>> part of the "hypervisor", i.e. in the same process.
-> >>> =
-
-> >>> Exactly, currently UML and LKL solve same things differently, but do =
-we need to?
-> >> =
-
+> >> > ----- Urspr=FCngliche Mail -----
+> >> > > > My point is that UML and LKL should try to do use the same conce=
+pt/code
+> >> > > > regarding virtio. At the end of day both use virtual devices whi=
+ch use
+> >> > > > facilities from the host.
+> >> > > > If this is really not possible it needs a good explanation.
+> >> > >
+> >> > > I think it isn't possible, unless you use vhost-user over a unix d=
+omain
+> >> > > socket internally to talk between the kernel (virtio_uml) and hype=
+rvisor
+> >> > > (device) components.
+> >> > >
+> >> > > In virtio_uml, the device implementation is assumed to be a separa=
+te
+> >> > > process with a vhost-user connection. Here in LKL, the virtio devi=
+ce is
+> >> > > part of the "hypervisor", i.e. in the same process.
+> >> >
+> >> > Exactly, currently UML and LKL solve same things differently, but do=
+ we need to?
+> >>
 > >> It's not the same thing though :-)
-> >> =
-
+> >>
 > >> UML right now doesn't have or support virtio devices in the built-in
 > >> hypervisor, what we wanted to use virtio for was explicitly for the
 > >> vhost-user devices.
-> >> =
-
+> >>
 > >> LKL clearly wants to have device implementations in the hypervisor,
 > >> perhaps for networking or console etc.? That _might_ be useful since it
 > >> makes the device implementation more general, unlike the UML approach
 > >> where all devices come with a kernel- and user-side and are special
 > >> drivers in the kernel, vs. general virtio drivers.
-> >> =
-
+> >>
 > > =
 
 > > That is correct. Initially we used the same UML model, with dedicated
 > > drivers for LKL, and later switched to using the built-in virtio
 > > drivers (so far for network and block devices).
-> > =
-
-> >> Now, arguably, since UML has all these already a combined UML/LKL
-> >> doesn't actually *need* any virtio devices, since all (or at least mos=
-t)
-> >> of the things that could be covered by virtio today are already covered
-> >> by UML devices (block, net, console, random).
-> >> =
-
-> >> I'd probably say then that this can be removed from an initial "minimum
-> >> viable product" of LKL, since once merged with UML you get the devices
-> >> from that. Later, we could decide that UML devices actually are better
-> >> done as virtio, and support something like this.
-> >> =
-
-> > =
-
-> > I agree, I think it make sense to drop these since the problem of
-> > dedicated vs generic / virtio drivers are orthogonal with regard to
-> > UML and LKL unification and can later be worked on.
 > =
 
-> This brings us back to the interrupt controller as noted by Richard earli=
-er.
-> =
+> Can you please point out a little further why UML's net or block drivers
+> are not usable for LKL?
 
-> UML devices are heavily dependent on the file io as an IRQ trigger
-> paradigm and they need an interrupt controller which has an IO event
-> feed into it. I did not see that in LKL on first read.
+I think we can do it (but need to check).
 
-Indeed, the current interrupt model in LKL is not directly associated
-with file IO events delivered by epoll family as UML does.  Instead,
-calling lkl_trigger_irq() at places will trigger an interrupt in the
-LKL case so, we need to adapt somehow if LKL uses UML devices.
+LKL may use UML's drivers, and UML can also use LKL's devices/drivers
+(as my 36/37 and 37/37 patches do, though the patches has no careful
+consideration on IRQ handling).
 
-> So as a first step we should get it to work with existing UML IRQ
-> controller and whatever incremental patches are needed on top of that.
+> What is missing?
 
-I understand and agree on your comments by all of you.
+As Anton mentioned, the IRQ handling needs to be considered in LKL, at
+least. I need to check but there might be other factors.
 
-If implementing LKL with current/existing UML devices is the right
-direction, I would go and try to test this approach to verify if this
-is doable.
+> Performance numbers would be also nice to have.
+> Anton did great work on improving UML's drivers.
+
+Performance improve techniques (bulk operations, offload, etc) are
+also applicable to both.  As UML can do, LKL can TSO/csum offload with
+configured virtio-net devices.
+
 
 -- Hajime
-
 
 _______________________________________________
 linux-um mailing list
