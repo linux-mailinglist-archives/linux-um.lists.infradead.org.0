@@ -2,81 +2,83 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E61EB10A7B8
-	for <lists+linux-um@lfdr.de>; Wed, 27 Nov 2019 01:59:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 120C610A944
+	for <lists+linux-um@lfdr.de>; Wed, 27 Nov 2019 05:06:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
-	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Subject:To:From:Message-ID:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BU6U7+H1D2qSIQAlXKAvB+z8n6r3LGaVLGqWGj2HiDY=; b=KTN58jZqwAAQCC
-	1OciMU+A9SnDQOTYqcDJrQb2Y5vgGZa8U3rlpfwulvcxRSFlY6+4fzka9NeQNAvBWtMkkS7egiMVz
-	3OTeLsnNJnpFRKXz+7Y/O9p1mkD5YkqmVx4yLGS07Yud9Bcya45zRzQwOCY/8SDxIXuch+NQhXGNZ
-	/vqf3MFF+30DlQxoiT8HURwdVAWVJQbFOQklxxXP0IVjU5q5kjsko5L41ZgoNO6gtVCvuTXJmIu4b
-	xvYo1o/RbC2T9QESGVzEimyoa0VlgcWCtP5zmsvQd94PWUamOJTCgUEp9bTkWVhQmkas6jRxkR8W+
-	DmZ2tTnyHjIGiBTrUDpA==;
+	List-Owner; bh=m2gmPS/U4VN7Wk2ykUHkEiq4OqwvjXZtlz1SemTk0JQ=; b=ZJghc/EUgSa/2G
+	EN5ltJMIKMA0Q038Sz90E4+CFJPOr4ZWOt2jgCWkMFKBEV1Uk1iSH+4ApnZZ/5/B9+s62d1yZIB23
+	/j27yyxN/wZsmfeXZREWL1w1V854/tVnxSNy13YfMVPiV7z8ssMK8CJ+FqyXP6I4Y0Lcuq3iute0X
+	8MS7Ec3KGgge7GYWmcJaRXEJVtQs/MOmVH16AyQuSerbeW6+iDUKqFvtYKLZFCDJw2RF8PAPmadWD
+	q0cwJP+eMFwxB2DkaV5nYULSVdq+Rde5Ucs8PobY+orXo9lxGMSCufXjTsbxYDgGMYo/9q1wTutIQ
+	s5OsBzIEnQ5GjwU9cAuA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZlfw-0000I7-6C; Wed, 27 Nov 2019 00:59:24 +0000
-Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
+	id 1iZob9-0007qP-Fi; Wed, 27 Nov 2019 04:06:39 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZlfn-0000BR-Ew
- for linux-um@lists.infradead.org; Wed, 27 Nov 2019 00:59:17 +0000
-Received: by mail-io1-xd44.google.com with SMTP id i11so22807056iol.13
- for <linux-um@lists.infradead.org>; Tue, 26 Nov 2019 16:59:14 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sifive.com; s=google;
- h=date:from:to:cc:subject:in-reply-to:message-id:references
- :user-agent:mime-version;
- bh=VbU/38+yNJ+zfC9u+frCXiwxMQpfNcWxp5XLS8niF1A=;
- b=A10E0Zkk+zRrcOORDMMGCsKvy9BHFgf9FxT8Q5Z+F9T0wHGy8ix5R/AeW+qpfr2BLY
- AuSpKXkAJKbWFrfzzgtr9gXIip0OYbus86/WG9/IaIKfRq2eNqfUL4oW0gSl7kAGiLKC
- hpLn9uWQyeaELHETva1e3D83DjU/edfu7aUWAOAV7ru9LRkEs1dfRabuSYfIFDcLaDFu
- IReRx9b2JQ1INbGgMuTdZECfpMi3o8NeOqWOkz82VQhy4PIh54PN+jRYK96gnq2z7w4q
- ywrDF0yv5vR+B5AzLX9VjE216xTiY7ZcEEGWPiRNZbxy8JRTu5eTmdXKEHIE7XLW7Xbq
- V6gA==
+ id 1iZob4-0007pr-9i
+ for linux-um@lists.infradead.org; Wed, 27 Nov 2019 04:06:38 +0000
+Received: by mail-pl1-x642.google.com with SMTP id d7so9148703pls.3
+ for <linux-um@lists.infradead.org>; Tue, 26 Nov 2019 20:06:28 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:message-id:from:to:cc:subject:in-reply-to:references
+ :user-agent:mime-version:content-transfer-encoding;
+ bh=nWCrWadR1SyGOjV0H+GqNGY+efisuZ1V6ZkGf7TSgNU=;
+ b=BK7jI1zdvguVZjIAT90XaFG3dEFHndJTsbUxZz0leQCrmjtkDUEpqvUQYxlSVxC2Y3
+ TKECbu1XcDLLfli1zAAJUYFLiubUwQip12mTH6Jz0K1HgqsXn+HBu63Kd3gUgZ3z6+14
+ 3qML+w0naA7qM7upZrjDTrMReHJk8PUvf1u5iKuOjpsE0rG4iv7e30MZ6jRiv2Va3150
+ yYO/wZOVdVC7oouqZlvXISEUw4UaB04qk26OMpgpdyT+LjVEu3WBjWXEhkE21QADIspx
+ +WJdjWknIABGZHcbU9xTBgVw3S06EaBw+dnkm6PKPNCIX8fYqky5Ifj5CnuIWbfqcbXr
+ 3VBQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:in-reply-to:message-id
- :references:user-agent:mime-version;
- bh=VbU/38+yNJ+zfC9u+frCXiwxMQpfNcWxp5XLS8niF1A=;
- b=SQGOAPlIXYFySDK1rsXpHpgCyN3h02CC3Ny/HyYDpirrbE8mGlAVSdnwoeKqamWTLZ
- tXCqYBSLY1blowDFhWZmIl4Zg8x47KZl79NFshJvwDnamtckhFzN/X5DmWkG07P0/5Q6
- /F4mL5BFdT5Qcf4691V01XtARhnW2sbMR1zB7R5MpDUWuWhdl/EMPWu2YHWkl+B0ccGk
- aA4KKk9hrwfmKYohB1O3gS292qbvnEE31gwvKyUM8uR0ENI0vwWqCQMeXslRs/GYoXa2
- atuZDyaZNXaqijHtlkq/ayOlojLB9eGmAyN/OSQR5KvuirFhveEPkC6vGLhuz/D2ReCS
- uFfw==
-X-Gm-Message-State: APjAAAXROiQRt2I3WskdUKFtHaUtF9pc24Hfm1Os2wJJOuD5cBUwmlFP
- 3QpHDp5boSkQ9hqX2lmg/InvyA==
-X-Google-Smtp-Source: APXvYqxCcCkr//QkJqo4RilDXTt5UmXBfkRr7b/U5pz2/bN55Ik8XDB5pe77KNzYh8fyijKcertCWA==
-X-Received: by 2002:a5d:9b08:: with SMTP id y8mr36537219ion.108.1574816354041; 
- Tue, 26 Nov 2019 16:59:14 -0800 (PST)
-Received: from localhost (67-0-26-4.albq.qwest.net. [67.0.26.4])
- by smtp.gmail.com with ESMTPSA id k20sm3215043iol.3.2019.11.26.16.59.11
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 26 Nov 2019 16:59:12 -0800 (PST)
-Date: Tue, 26 Nov 2019 16:59:11 -0800 (PST)
-From: Paul Walmsley <paul.walmsley@sifive.com>
-X-X-Sender: paulw@viisi.sifive.com
-To: Kees Cook <keescook@chromium.org>
-Subject: Re: [GIT PULL] seccomp updates for v5.5-rc1
-In-Reply-To: <201911260818.9C5DC1E@keescook>
-Message-ID: <alpine.DEB.2.21.9999.1911261656110.23039@viisi.sifive.com>
-References: <201911260818.9C5DC1E@keescook>
-User-Agent: Alpine 2.21.9999 (DEB 301 2018-08-15)
-MIME-Version: 1.0
+ h=x-gm-message-state:date:message-id:from:to:cc:subject:in-reply-to
+ :references:user-agent:mime-version:content-transfer-encoding;
+ bh=nWCrWadR1SyGOjV0H+GqNGY+efisuZ1V6ZkGf7TSgNU=;
+ b=TgIpKh8IaBfvhjEQpC+NYUzBDVW1MOogRi0u9DzbfAuog4zt/wLnwqJ3T09rB56jHN
+ foJAKtv9gwZoygxK+RqNGth6+Cs/CAtlnz0kDZY6v1Dmv3Phvv6cEmFRj4U71LvvGq18
+ vSQNgHH6Wf8F+ISGBWvPRzXvVXWo/rOIgStDanCkP6yf8hBLUegmpk2LgF48WUvoEtBd
+ Dcim1lpJf4AtpmDT1K4AUdf/pi2DONYNRyhptkpGq2F/29Dkrwe6SO+lhN+qlvcGwJyS
+ WQHY1UT5V5IBjo/C192xyAR2xrVYWNngYmihO23HQTokifVZ5wa+yTK1QCeMzQzqH2n0
+ H27A==
+X-Gm-Message-State: APjAAAUWq8Z9Nq1aB3n9FeEiE2g1rvHYgMFVQYTcJaHc3CkaOp2cqTyU
+ 1mekebxG3Aup5qgA1hsqm7o=
+X-Google-Smtp-Source: APXvYqw/oDtif706HC6kg2dNtThDgIUg5At8+AEcw8NUMkR0naS+2ezlpZxeKJc59UJ9FRuHdT/SaQ==
+X-Received: by 2002:a17:90a:d352:: with SMTP id
+ i18mr3457008pjx.42.1574827587380; 
+ Tue, 26 Nov 2019 20:06:27 -0800 (PST)
+Received: from earth-mac.local.gmail.com ([202.214.86.179])
+ by smtp.gmail.com with ESMTPSA id f10sm13936893pfd.28.2019.11.26.20.06.24
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Tue, 26 Nov 2019 20:06:26 -0800 (PST)
+Date: Wed, 27 Nov 2019 13:06:22 +0900
+Message-ID: <m2y2w2q7y9.wl-thehajime@gmail.com>
+From: Hajime Tazaki<thehajime@gmail.com>
+To: anton.ivanov@kot-begemot.co.uk
+Subject: Re: [RFC v2 17/37] lkl tools: host lib: virtio devices
+In-Reply-To: <ce1a96d4-3d5e-32be-f493-3522fc56a25b@kot-begemot.co.uk>
+References: <cover.1573179553.git.thehajime@gmail.com>	<1531c5f16a00b608635c9a62fa3951807075f950.1573179553.git.thehajime@gmail.com>	<CAFLxGvzCwCLbLMhcF6ZJ2afeo7PSd8xLQrU9hRH6YVaMakBSyw@mail.gmail.com>	<de90b04151bafee083727c9769833932788cf428.camel@sipsolutions.net>	<1662825264.98055.1574758225905.JavaMail.zimbra@nod.at>	<4ebb14dc67ccb70543617ce1f7066f3f27cd11a8.camel@sipsolutions.net>	<243342257.98153.1574762974057.JavaMail.zimbra@nod.at>	<98acf77a7c6f6cba7f76c12a850ac2929b9e5a48.camel@sipsolutions.net>	<CAMoF9u3LRC_NaVJzmKPc0+XBxhAqdhnr4-ZzY_ypwQEzUz78yQ@mail.gmail.com>	<ce1a96d4-3d5e-32be-f493-3522fc56a25b@kot-begemot.co.uk>
+User-Agent: Wanderlust/2.15.9 (Almost Unreal) Emacs/25.3 Mule/6.0
+ (HANACHIRUSATO)
+MIME-Version: 1.0 (generated by SEMI-EPG 1.14.7 - "Harue")
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191126_165915_630014_D472D538 
-X-CRM114-Status: UNSURE (   7.31  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191126_200634_341638_4B0366CB 
+X-CRM114-Status: GOOD (  26.18  )
+X-Spam-Score: 3.9 (+++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (3.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
  [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (thehajime[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -86,6 +88,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ 2.5 TO_NO_BRKTS_FROM_MSSP  Multiple header formatting problems
+ 1.6 FROM_MISSP_FREEMAIL    From misspaced + freemail provider
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,40 +101,122 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: Song Liu <songliubraving@fb.com>, Alexei Starovoitov <ast@kernel.org>,
- Oleg Nesterov <oleg@redhat.com>, linux-kselftest@vger.kernel.org,
- Christian Brauner <christian.brauner@ubuntu.com>,
- Shuah Khan <shuah@kernel.org>, linux-s390@vger.kernel.org,
- Tycho Andersen <tycho@tycho.ws>, Daniel Borkmann <daniel@iogearbox.net>,
- kernel test robot <rong.a.chen@intel.com>, x86@kernel.org,
- Yonghong Song <yhs@fb.com>, Borislav Petkov <bp@suse.de>,
- linux-um@lists.infradead.org, Andy Lutomirski <luto@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- Will Drewry <wad@chromium.org>, linux-parisc@vger.kernel.org,
- David Abdurachmanov <david.abdurachmanov@sifive.com>, netdev@vger.kernel.org,
- linux-kernel@vger.kernel.org, Tyler Hicks <tyhicks@canonical.com>,
- bpf@vger.kernel.org, Linus Torvalds <torvalds@linux-foundation.org>,
- Martin KaFai Lau <kafai@fb.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-arch@vger.kernel.org, cem@freebsd.org, tavi.purdila@gmail.com,
+ richard@nod.at, linux-um@lists.infradead.org, retrage01@gmail.com,
+ pscollins@google.com, linux-kernel-library@freelists.org,
+ johannes@sipsolutions.net, sigmaepsilon92@gmail.com, liuyuan@google.com
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Tue, 26 Nov 2019, Kees Cook wrote:
 
-> Most notably, the secure_computing() prototype has changed (to remove an 
-> unused argument), but this has happened at the same time as riscv adding 
-> seccomp support, so the cleanest merge order would be to merge riscv 
-> first, then seccomp with the following patch for riscv to handle the 
-> change from "seccomp: simplify secure_computing()":
+On Tue, 26 Nov 2019 19:49:48 +0900,
+Anton Ivanov wrote:
+> =
 
-The RISC-V pull request that contains the seccomp change has been sent.  
-It's here:
+> =
 
-https://lore.kernel.org/linux-riscv/alpine.DEB.2.21.9999.1911261311520.23039@viisi.sifive.com/T/#u
+> =
 
+> On 26/11/2019 10:42, Octavian Purdila wrote:
+> > On Tue, Nov 26, 2019 at 12:16 PM Johannes Berg
+> > <johannes@sipsolutions.net> wrote:
+> >> =
 
-- Paul
+> >> On Tue, 2019-11-26 at 11:09 +0100, Richard Weinberger wrote:
+> >>> ----- Urspr=FCngliche Mail -----
+> >>>>> My point is that UML and LKL should try to do use the same concept/=
+code
+> >>>>> regarding virtio. At the end of day both use virtual devices which =
+use
+> >>>>> facilities from the host.
+> >>>>> If this is really not possible it needs a good explanation.
+> >>>> =
+
+> >>>> I think it isn't possible, unless you use vhost-user over a unix dom=
+ain
+> >>>> socket internally to talk between the kernel (virtio_uml) and hyperv=
+isor
+> >>>> (device) components.
+> >>>> =
+
+> >>>> In virtio_uml, the device implementation is assumed to be a separate
+> >>>> process with a vhost-user connection. Here in LKL, the virtio device=
+ is
+> >>>> part of the "hypervisor", i.e. in the same process.
+> >>> =
+
+> >>> Exactly, currently UML and LKL solve same things differently, but do =
+we need to?
+> >> =
+
+> >> It's not the same thing though :-)
+> >> =
+
+> >> UML right now doesn't have or support virtio devices in the built-in
+> >> hypervisor, what we wanted to use virtio for was explicitly for the
+> >> vhost-user devices.
+> >> =
+
+> >> LKL clearly wants to have device implementations in the hypervisor,
+> >> perhaps for networking or console etc.? That _might_ be useful since it
+> >> makes the device implementation more general, unlike the UML approach
+> >> where all devices come with a kernel- and user-side and are special
+> >> drivers in the kernel, vs. general virtio drivers.
+> >> =
+
+> > =
+
+> > That is correct. Initially we used the same UML model, with dedicated
+> > drivers for LKL, and later switched to using the built-in virtio
+> > drivers (so far for network and block devices).
+> > =
+
+> >> Now, arguably, since UML has all these already a combined UML/LKL
+> >> doesn't actually *need* any virtio devices, since all (or at least mos=
+t)
+> >> of the things that could be covered by virtio today are already covered
+> >> by UML devices (block, net, console, random).
+> >> =
+
+> >> I'd probably say then that this can be removed from an initial "minimum
+> >> viable product" of LKL, since once merged with UML you get the devices
+> >> from that. Later, we could decide that UML devices actually are better
+> >> done as virtio, and support something like this.
+> >> =
+
+> > =
+
+> > I agree, I think it make sense to drop these since the problem of
+> > dedicated vs generic / virtio drivers are orthogonal with regard to
+> > UML and LKL unification and can later be worked on.
+> =
+
+> This brings us back to the interrupt controller as noted by Richard earli=
+er.
+> =
+
+> UML devices are heavily dependent on the file io as an IRQ trigger
+> paradigm and they need an interrupt controller which has an IO event
+> feed into it. I did not see that in LKL on first read.
+
+Indeed, the current interrupt model in LKL is not directly associated
+with file IO events delivered by epoll family as UML does.  Instead,
+calling lkl_trigger_irq() at places will trigger an interrupt in the
+LKL case so, we need to adapt somehow if LKL uses UML devices.
+
+> So as a first step we should get it to work with existing UML IRQ
+> controller and whatever incremental patches are needed on top of that.
+
+I understand and agree on your comments by all of you.
+
+If implementing LKL with current/existing UML devices is the right
+direction, I would go and try to test this approach to verify if this
+is doable.
+
+-- Hajime
+
 
 _______________________________________________
 linux-um mailing list
