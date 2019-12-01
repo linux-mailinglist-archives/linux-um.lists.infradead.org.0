@@ -2,70 +2,63 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2D78310E016
-	for <lists+linux-um@lfdr.de>; Sun,  1 Dec 2019 02:40:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 44CAB10E36A
+	for <lists+linux-um@lfdr.de>; Sun,  1 Dec 2019 21:19:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:To:Date:Message-Id:
-	References:In-Reply-To:From:Subject:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9QysCtxRAhu1kXleCbCO+uAdXftsNH5+4GZ/Zn+OUC4=; b=eEf33u1NoM3lhx
-	9ef5mXg2wRwW+DzAhRKtV6Se49NlE5SuFgjEFSGJgFn/Z2vYzvlhloaMugap9IxAmSY+8DgoUGGjc
-	uh/LAOuFsDMGn1Gq0r4eQq8impCAp2dLOusPv3KgQADXMISpDbVGkQdBXmtklg7rKtlTbZ/4Dryy+
-	oQO8sknYRd6qpEx6yPbHqZYh1gOcylkN5ITgY9FOirrRC5ukvKyQLta3zYsUJ1uJAhmfCiNnnwIR8
-	uIi5b1bTcUOgwxkN07MMsB77KYAy0EEVGi2q2fi8ZzK6ftWUrSwXs/Uji2Jujrz2kRi7eSWdH/xqx
-	F9tM7v1klEvLZnob/n0g==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Subject:Message-ID:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=/soZxXnI02JE5HQFQOBgpOp9kwkCBesTGeLSDDWtFfE=; b=RQn7GuP1JQcbmF
+	U3ELp7sCyM9/ZfzKbYq6zb6kxdkLnW+neJhC7CRaCB3RqpEVlf45RynL1UHHcScDCBFjwb4zez45q
+	wjkgYlJybhvo0Efg0nPz+MGkewf0bitPW2gse6Jv3KkdztLzA5UX58VrQcgHaBxozSCacpzQ+utOO
+	UpjTn3+ZMxxzEU8OWMmkNLqWZOx1fWZVwQmhiqr2y1uKTDf3kDFvqreo7Qmq0BWALRB7Mb8SiEeJy
+	e8VmR98lznV22getdEkTOQou9mMwjEu4o9MxIcp2MNfbBlfXvHnOh/Q7SKhcE7avwHOZ9QTYkw7NK
+	MaOSRQsLe7nC4Lp2n/MA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ibEDi-0003Sm-0C; Sun, 01 Dec 2019 01:40:18 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1ibVgP-0007YB-8P; Sun, 01 Dec 2019 20:19:05 +0000
+Received: from lithops.sigma-star.at ([195.201.40.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ibEDZ-0002UY-Kd; Sun, 01 Dec 2019 01:40:10 +0000
-Subject: Re: [GIT PULL] seccomp updates for v5.5-rc1
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1575164403;
- bh=ajBvj1IaLYQkSA/v/7Hod991P4s7CVCuIKBejh5pxg0=;
- h=From:In-Reply-To:References:Date:To:Cc:From;
- b=kDQly26WJo5YJvsn/LzUkhhjzAbbvTcxecHnSpiUFC8U97ES9N5DdXAy/GZSEdcMO
- okriinkm2YBXTi6WKKnlrAzV0PoPrCF2os90+EL++4P9JWLP7OjusJhRIZ5c4SPwIf
- trItpK1jsUwqxZLH+Rd885EDUMUrMh7dkdsR/JSk=
-From: pr-tracker-bot@kernel.org
-In-Reply-To: <201911260818.9C5DC1E@keescook>
-References: <201911260818.9C5DC1E@keescook>
-X-PR-Tracked-List-Id: <linux-parisc.vger.kernel.org>
-X-PR-Tracked-Message-Id: <201911260818.9C5DC1E@keescook>
-X-PR-Tracked-Remote: https://git.kernel.org/pub/scm/linux/kernel/git/kees/linux.git
- tags/seccomp-v5.5-rc1
-X-PR-Tracked-Commit-Id: 23b2c96fad21886c53f5e1a4ffedd45ddd2e85ba
-X-PR-Merge-Tree: torvalds/linux.git
-X-PR-Merge-Refname: refs/heads/master
-X-PR-Merge-Commit-Id: b94ae8ad9fe79da61231999f347f79645b909bda
-Message-Id: <157516440360.28955.6948106020327612727.pr-tracker-bot@kernel.org>
-Date: Sun, 01 Dec 2019 01:40:03 +0000
-To: Kees Cook <keescook@chromium.org>
+ id 1ibVgG-0007Pb-AI
+ for linux-um@lists.infradead.org; Sun, 01 Dec 2019 20:18:57 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by lithops.sigma-star.at (Postfix) with ESMTP id 23B196075EB6;
+ Sun,  1 Dec 2019 21:18:55 +0100 (CET)
+Received: from lithops.sigma-star.at ([127.0.0.1])
+ by localhost (lithops.sigma-star.at [127.0.0.1]) (amavisd-new, port 10032)
+ with ESMTP id Xx61N7WiFue1; Sun,  1 Dec 2019 21:18:54 +0100 (CET)
+Received: from localhost (localhost [127.0.0.1])
+ by lithops.sigma-star.at (Postfix) with ESMTP id CF17D609D2D9;
+ Sun,  1 Dec 2019 21:18:54 +0100 (CET)
+Received: from lithops.sigma-star.at ([127.0.0.1])
+ by localhost (lithops.sigma-star.at [127.0.0.1]) (amavisd-new, port 10026)
+ with ESMTP id gvqUPrLA80Gv; Sun,  1 Dec 2019 21:18:54 +0100 (CET)
+Received: from lithops.sigma-star.at (lithops.sigma-star.at [195.201.40.130])
+ by lithops.sigma-star.at (Postfix) with ESMTP id B72596094C4B;
+ Sun,  1 Dec 2019 21:18:54 +0100 (CET)
+Date: Sun, 1 Dec 2019 21:18:54 +0100 (CET)
+From: Richard Weinberger <richard@nod.at>
+To: torvalds <torvalds@linux-foundation.org>
+Message-ID: <1468911323.103246.1575231534725.JavaMail.zimbra@nod.at>
+Subject: [GIT PULL] UML changes for v5.5-rc1
+MIME-Version: 1.0
+X-Originating-IP: [195.201.40.130]
+X-Mailer: Zimbra 8.8.12_GA_3807 (ZimbraWebClient - FF68 (Linux)/8.8.12_GA_3809)
+Thread-Index: 76qbsLMIGCl1qWUEP3cLHVH+nD3HKw==
+Thread-Topic: UML changes for v5.5-rc1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191130_174009_696942_7633D4D9 
-X-CRM114-Status: UNSURE (   1.22  )
+X-CRM114-CacheID: sfid-20191201_121856_503398_0C38EE1F 
+X-CRM114-Status: UNSURE (   5.90  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -3.7 (---)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-3.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 1.5 FROM_FMBLA_NEWDOM      From domain was registered in last 7 days
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,39 +70,57 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: Song Liu <songliubraving@fb.com>, Alexei Starovoitov <ast@kernel.org>,
- linux-kernel@vger.kernel.org, linux-kselftest@vger.kernel.org,
- Christian Brauner <christian.brauner@ubuntu.com>,
- Shuah Khan <shuah@kernel.org>, linux-s390@vger.kernel.org,
- Tycho Andersen <tycho@tycho.ws>, Daniel Borkmann <daniel@iogearbox.net>,
- kernel test robot <rong.a.chen@intel.com>, x86@kernel.org,
- Yonghong Song <yhs@fb.com>, Borislav Petkov <bp@suse.de>,
- linux-um@lists.infradead.org, Andy Lutomirski <luto@kernel.org>,
- Paul Walmsley <paul.walmsley@sifive.com>, Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel@lists.infradead.org, Will Drewry <wad@chromium.org>,
- linux-parisc@vger.kernel.org,
- David Abdurachmanov <david.abdurachmanov@sifive.com>, netdev@vger.kernel.org,
- Oleg Nesterov <oleg@redhat.com>, Tyler Hicks <tyhicks@canonical.com>,
- bpf@vger.kernel.org, Linus Torvalds <torvalds@linux-foundation.org>,
- Martin KaFai Lau <kafai@fb.com>
-MIME-Version: 1.0
+Cc: linux-um <linux-um@lists.infradead.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-The pull request you sent on Tue, 26 Nov 2019 08:25:28 -0800:
+Linus,
 
-> https://git.kernel.org/pub/scm/linux/kernel/git/kees/linux.git tags/seccomp-v5.5-rc1
+The following changes since commit e472c64aa4fa6150c6076fd36d101d667d71c30a:
 
-has been merged into torvalds/linux.git:
-https://git.kernel.org/torvalds/c/b94ae8ad9fe79da61231999f347f79645b909bda
+  Merge tag 'dmaengine-fix-5.4-rc6' of git://git.infradead.org/users/vkoul/slave-dma (2019-10-31 07:34:09 +0000)
 
-Thank you!
+are available in the Git repository at:
 
--- 
-Deet-doot-dot, I am a bot.
-https://korg.wiki.kernel.org/userdoc/prtracker
+  git://git.kernel.org/pub/scm/linux/kernel/git/rw/uml.git tags/for-linus-5.5-rc1
+
+for you to fetch changes up to 9807019a62dc670c73ce8e59e09b41ae458c34b3:
+
+  um: Loadable BPF "Firmware" for vector drivers (2019-11-25 22:43:31 +0100)
+
+----------------------------------------------------------------
+This pull request contains the following changes for UML:
+
+- Fixes for our new virtio code
+- Fix for the irqflags tracer
+- Kconfig coding style fixes
+- Allow BPF firmware loading in our vector driver
+
+----------------------------------------------------------------
+Anton Ivanov (1):
+      um: Loadable BPF "Firmware" for vector drivers
+
+Johannes Berg (4):
+      um: Don't trace irqflags during shutdown
+      um: virtio: Remove device on disconnect
+      um: virtio: Keep reading on -EAGAIN
+      um: virtio_uml: Disallow modular build
+
+Krzysztof Kozlowski (1):
+      um: Fix Kconfig indentation
+
+ arch/um/Kconfig               |   2 +-
+ arch/um/drivers/Kconfig       |   2 +-
+ arch/um/drivers/vector_kern.c | 113 ++++++++++++++++++++++++++++++++++++++----
+ arch/um/drivers/vector_kern.h |   8 ++-
+ arch/um/drivers/vector_user.c |  94 ++++++++++++++++++++++++++++-------
+ arch/um/drivers/vector_user.h |   8 ++-
+ arch/um/drivers/virtio_uml.c  |  76 ++++++++++++++++++----------
+ arch/um/os-Linux/main.c       |   2 +-
+ 8 files changed, 247 insertions(+), 58 deletions(-)
 
 _______________________________________________
 linux-um mailing list
