@@ -2,75 +2,71 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C3A0F114ABB
-	for <lists+linux-um@lfdr.de>; Fri,  6 Dec 2019 03:02:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DB06E114ABD
+	for <lists+linux-um@lfdr.de>; Fri,  6 Dec 2019 03:02:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
 	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=C5KOk5YL7m6e0VVYBl52OYmRE00II1bLEj+Vn12kIFQ=; b=XcAvRtDxOInBPQ
-	s0EJWQO7klttFOI/Oqhxxm4/wXnba7dqSXLKWkNe5PxTcqXo8j8u1Z4bEOkjytJEAVVDbwk2PaIQr
-	CbtKRyWLIsLzR3M7XiwSnx8rXhMTwMPHMbHXuir/bxXkROj67Qcd235AHg7ng8yIMWsPZOZlRj2gb
-	vrOggoh+APwBRiWIsfI+qYnjcOvj943eSj4j5m04LkkP0cJcfdnuzdgQrElawCzpyPffLWT+BZtGv
-	IkbVIObyipaFYsghGp6jIrqh4egJiAqnxPEOMurQytrnwuclQrEwavByyTTaYDJXPL3S0L3ry8NaC
-	3iTwrONtBt/3mWkg1E6g==;
+	List-Owner; bh=yovB+1TIabUd1NVtDAZGVELAesKOYvNkMXebSZl8Y6I=; b=TJWrY2hjq7q2OX
+	vCVuLwADbZwotK1LUR69cMJReplJF4z+RQ85yaTddaAeKq1eDFE6fxgtWovsig5Y8zT/G6rHiiCEf
+	Ctl4iy7uPxm5DM4mMDxhKPEiVCXczwsddxm8sW/mh2JW7odntbWdVUAk1YAxjGL6CkJlvcJYkjGqC
+	fXc/JOsfjyPvDjKbMZGnlv8LlvCxjsNx2N79JdsevzgrnfkGl4G2seFEVDfHxVgGXvKiTAZhHClew
+	VPew1dbm4DgTDLLGeTSrJIGdZrBpTSZfmizEZayLXzKteNvPVQ4BBtvrj9Rn/w95PXN12kwXd92A0
+	sMZ+z8ZK2IG7LPDOAmmg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1id2wW-0007Mb-R9; Fri, 06 Dec 2019 02:02:04 +0000
-Received: from mail-pf1-x44a.google.com ([2607:f8b0:4864:20::44a])
+	id 1id2wb-0007OC-0F; Fri, 06 Dec 2019 02:02:09 +0000
+Received: from mail-qv1-xf49.google.com ([2607:f8b0:4864:20::f49])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1id2wT-0007LM-58
- for linux-um@lists.infradead.org; Fri, 06 Dec 2019 02:02:03 +0000
-Received: by mail-pf1-x44a.google.com with SMTP id h22so2994057pfo.18
- for <linux-um@lists.infradead.org>; Thu, 05 Dec 2019 18:02:00 -0800 (PST)
+ id 1id2wW-0007MN-Sp
+ for linux-um@lists.infradead.org; Fri, 06 Dec 2019 02:02:07 +0000
+Received: by mail-qv1-xf49.google.com with SMTP id d12so3305952qvj.16
+ for <linux-um@lists.infradead.org>; Thu, 05 Dec 2019 18:02:03 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=date:in-reply-to:message-id:mime-version:references:subject:from:to
- :cc:content-transfer-encoding;
- bh=YGa/L/Mr7Uz/QYpQqGTTCPKCu7L8FPjERNxtmSKm5BY=;
- b=Ln2+8XGO5H2TfRQ/QWpgtHOld3FOGFsXqOTKyAVisHiApC5OxjUKMPFtUq6JvnLmdY
- I9o4UrOIgM+bq7BwiCa1nzJlQnuRPViBl5qsoZvFhAZ7kDdU64TOSfdRZHeN8ybF4A63
- PR6s6C8LM9DV//Y065jkwIuBUE0GWA2L97d9JbBU06KCu0o9Z5gTafVxWvlDda1W5H3/
- zgVFDU55ap7AQ2b3ypVGMGSPDX3ClYfIVZO93EPRBs7MHv9FhSkNxt5zEzWVkVk1T/jX
- Oqe6DwcjKFO8NlhrTKNdeudAFZnvH3g9rbQcj3RKRMMUtc/q59jyMRoxRq7+1RGuVfrY
- 1b5A==
+ :cc; bh=Uoiqh1iH4v2ToeU0Yb3li8l0pRuRjEA756eXvPEi7Mo=;
+ b=I+URPTph6l0Gjs3Ty5lna/SaVY6dGnLiMvedep9LVzRlBnXh4BlRhEru9kNSK7kAgA
+ Sr1FEq019Zb8B8NkmYgdQWR06k1Sab84vy1YdjKtBrGGM1qOKfylPpP3BqK3Pgym8RNA
+ V9crMh95vDkLIDuTwMaaga8rAriY4ZWzjpNhS01LZXT32PoWm8cRD+bZ8KYKK+KsZlxR
+ ZlkEzFee724eKYHofmb5Yt/qrIUvfuc1tFAHZgZIQ5BfLLiO+rxyBGEPUjk8tkA3B6JI
+ ybGslqwWeP8xp47xYVzGKoXYTseDCW7VmHcitBDxe0d4KtQk4zZJH5HYnu+ZfiEuFxC1
+ YzuQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:in-reply-to:message-id:mime-version
- :references:subject:from:to:cc:content-transfer-encoding;
- bh=YGa/L/Mr7Uz/QYpQqGTTCPKCu7L8FPjERNxtmSKm5BY=;
- b=QyjbKAklBGi1Nm2t7/JTW51w0p9BvZxKd2Q9iBsejA6TxbQ9sfbjh6TQIRYtuH3pDA
- WovgKM70zrCimaIVrQKMhOKCc05qn3Ym39VBtirBCoC9oVMtMI20M57Da9gtr1g8Tobc
- l3M69lyUFw4qT5rqLHZqiaH5oqfM1vTE/oZNHlutQKrEh90hyfu5m3tSACzriTBOblPy
- 2Uamzojzh23vQHrSpdxv2ERQ7D29kliRocVxsd+BzD6HaLLq8fuVjgRR9FYOy0IhdJsM
- Ysx1PF6gRmVinrbRBsts0GHRoke9kHmdkYGQJO8vjn0/zuLH0fSvBUx29kMrPXccNr76
- PfVA==
-X-Gm-Message-State: APjAAAXkTQuswpDNOPc9dm8Qez7ldJYhbzFUlzHfooTZHpK0RO1Gk6wk
- C+l6S+klCXHlRFiYFU3iH5atGNx5mqNtTp7gEoOa1Q==
-X-Google-Smtp-Source: APXvYqy+PKkvv2AIjDmjpOBBiRGtOuRvXhAimcF4OHZQ6+mefAaiV4laxkAoqsEvZ6RVblPnffQp4LiDJ2lN+lysoBeF2g==
-X-Received: by 2002:a63:a508:: with SMTP id n8mr808314pgf.278.1575597719867;
- Thu, 05 Dec 2019 18:01:59 -0800 (PST)
-Date: Thu,  5 Dec 2019 18:01:52 -0800
+ :references:subject:from:to:cc;
+ bh=Uoiqh1iH4v2ToeU0Yb3li8l0pRuRjEA756eXvPEi7Mo=;
+ b=bdrhwbtGvMHOf+YfRRk4HJ0v6uAr70roGdYaguBggXxGYpYnJVBr6Uve7X0MQLBUiB
+ 8YFNI7+XzijwLGt6VYIYaWCG1uYB5imcvVVu+bhlHgdhTG7t9XSbjKA/W47lwjg969qL
+ +vadXGsQJ1wjW2ZP5Ve0ZfwmOryEFteMuhFZbMEzyWi1X8UFKAd5UAWAI6CDAWM77pX/
+ WqaRkfxwy7gKlIqezFtYTYLhsGpdHfBikYvKrMU9cjWF/tyHcb62XLHHnoJeS+5Ye6nF
+ GxFrAaD73/mKXpmOFUttvmwS7cAxZR5BSuINmYP7I3HHlePLavUJbFaDvctY+VL+1Ysg
+ Of2A==
+X-Gm-Message-State: APjAAAWaTbW47G6UWc+0/BZudMOdSaITRQ39dODXrMxq6Yj399OictWY
+ N/2luf7E2w5/Mr94/wt1FKT31/tCxAjqj25EJjfpVQ==
+X-Google-Smtp-Source: APXvYqxnCAAePAJYwutn/nMNtv2h7hp4eBG3fP64yEX27E7cV5KiNxgEwZ9eXMu1isQAmWYuE4uF7xe7qroFbRXw978AKA==
+X-Received: by 2002:ac8:47cc:: with SMTP id d12mr10768532qtr.246.1575597722723; 
+ Thu, 05 Dec 2019 18:02:02 -0800 (PST)
+Date: Thu,  5 Dec 2019 18:01:53 -0800
 In-Reply-To: <20191206020153.228283-1-brendanhiggins@google.com>
-Message-Id: <20191206020153.228283-2-brendanhiggins@google.com>
+Message-Id: <20191206020153.228283-3-brendanhiggins@google.com>
 Mime-Version: 1.0
 References: <20191206020153.228283-1-brendanhiggins@google.com>
 X-Mailer: git-send-email 2.24.0.393.g34dc348eaf-goog
-Subject: [RFC v1 1/2] um: drivers: remove support for UML_NET_PCAP
+Subject: [RFC v1 2/2] uml: remove support for CONFIG_STATIC_LINK
 From: Brendan Higgins <brendanhiggins@google.com>
 To: jdike@addtoit.com, richard@nod.at, anton.ivanov@cambridgegreys.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191205_180201_198695_6ADF38BF 
-X-CRM114-Status: GOOD (  15.88  )
+X-CRM114-CacheID: sfid-20191205_180204_939037_7275F5AF 
+X-CRM114-Status: GOOD (  16.13  )
 X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:44a listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
@@ -96,208 +92,579 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
 Cc: davidgow@google.com, Brendan Higgins <brendanhiggins@google.com>,
  linux-um@lists.infradead.org, linux-kernel@vger.kernel.org,
  johannes.berg@intel.com
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-UmVtb3ZlIHN1cHBvcnQgZm9yIFVNTF9ORVRfUENBUC4gSXQgaXMgYnJva2VuLiBXaGVuIGJ1aWxk
-aW5nIHdpdGgKbGlicGNhcCBpbnN0YWxsZWQsIHRoZSBidWlsZCBmYWlsczoKCmFyY2gvdW0vZHJp
-dmVycy9wY2FwX3VzZXIuYzozNToxMjogZXJyb3I6IGNvbmZsaWN0aW5nIHR5cGVzIGZvciDigJhw
-Y2FwX29wZW7igJkKIHN0YXRpYyBpbnQgcGNhcF9vcGVuKHZvaWQgKmRhdGEpCiAgICAgICAgICAg
-IF5+fn5+fn5+fgpJbiBmaWxlIGluY2x1ZGVkIGZyb20gL3Vzci9pbmNsdWRlL3BjYXAuaDo0MywK
-ICAgICAgICAgICAgICAgICBmcm9tIGFyY2gvdW0vZHJpdmVycy9wY2FwX3VzZXIuYzo3OgovdXNy
-L2luY2x1ZGUvcGNhcC9wY2FwLmg6ODU5OjE4OiBub3RlOiBwcmV2aW91cyBkZWNsYXJhdGlvbiBv
-ZiDigJhwY2FwX29wZW7igJkgd2FzIGhlcmUKIFBDQVBfQVBJIHBjYXBfdCAqcGNhcF9vcGVuKGNv
-bnN0IGNoYXIgKnNvdXJjZSwgaW50IHNuYXBsZW4sIGludCBmbGFncywKICAgICAgICAgICAgICAg
-ICAgXn5+fn5+fn5+CgpTbyBpdCBsb29rcyBsaWtlIHRoaXMgaGFzIHByb2JhYmx5IGJlZW4gYnJv
-a2VuIGZvciBzb21lIHRpbWUuCgpJbiBpbnRlcmVzdCBvZiB0cnlpbmcgdG8gbWFrZSBhbGx5ZXNj
-b25maWcgd29yayB3aXRoIFVNTCwgaXQgaXMgYmVzdApqdXN0IHRvIGRyb3AgdGhpcy4KClNpZ25l
-ZC1vZmYtYnk6IEJyZW5kYW4gSGlnZ2lucyA8YnJlbmRhbmhpZ2dpbnNAZ29vZ2xlLmNvbT4KLS0t
-CiBhcmNoL3VtL2RyaXZlcnMvS2NvbmZpZyAgICAgfCAgMTYgLS0tLS0KIGFyY2gvdW0vZHJpdmVy
-cy9NYWtlZmlsZSAgICB8ICAxNyArLS0tLQogYXJjaC91bS9kcml2ZXJzL3BjYXBfa2Vybi5jIHwg
-MTEzIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCiBhcmNoL3VtL2RyaXZlcnMvcGNhcF91
-c2VyLmMgfCAxMzcgLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCiBhcmNoL3Vt
-L2RyaXZlcnMvcGNhcF91c2VyLmggfCAgMjEgLS0tLS0tCiA1IGZpbGVzIGNoYW5nZWQsIDIgaW5z
-ZXJ0aW9ucygrKSwgMzAyIGRlbGV0aW9ucygtKQogZGVsZXRlIG1vZGUgMTAwNjQ0IGFyY2gvdW0v
-ZHJpdmVycy9wY2FwX2tlcm4uYwogZGVsZXRlIG1vZGUgMTAwNjQ0IGFyY2gvdW0vZHJpdmVycy9w
-Y2FwX3VzZXIuYwogZGVsZXRlIG1vZGUgMTAwNjQ0IGFyY2gvdW0vZHJpdmVycy9wY2FwX3VzZXIu
-aAoKZGlmZiAtLWdpdCBhL2FyY2gvdW0vZHJpdmVycy9LY29uZmlnIGIvYXJjaC91bS9kcml2ZXJz
-L0tjb25maWcKaW5kZXggMzg4MDk2ZmI0NWEyNS4uOThmZWFkMDdjMzNkZSAxMDA2NDQKLS0tIGEv
-YXJjaC91bS9kcml2ZXJzL0tjb25maWcKKysrIGIvYXJjaC91bS9kcml2ZXJzL0tjb25maWcKQEAg
-LTI5MSwyMiArMjkxLDYgQEAgY29uZmlnIFVNTF9ORVRfTUNBU1QKIAkgIGV4Y2x1c2l2ZSkuICBJ
-ZiB5b3UgZG9uJ3QgbmVlZCB0byBuZXR3b3JrIFVNTHMgc2F5IE4gdG8gZWFjaCBvZgogCSAgdGhl
-IHRyYW5zcG9ydHMuCiAKLWNvbmZpZyBVTUxfTkVUX1BDQVAKLQlib29sICJwY2FwIHRyYW5zcG9y
-dCIKLQlkZXBlbmRzIG9uIFVNTF9ORVQKLQloZWxwCi0JVGhlIHBjYXAgdHJhbnNwb3J0IG1ha2Vz
-IGEgcGNhcCBwYWNrZXQgc3RyZWFtIG9uIHRoZSBob3N0IGxvb2sKLQlsaWtlIGFuIGV0aGVybmV0
-IGRldmljZSBpbnNpZGUgVU1MLiAgVGhpcyBpcyB1c2VmdWwgZm9yIG1ha2luZwotCVVNTCBhY3Qg
-YXMgYSBuZXR3b3JrIG1vbml0b3IgZm9yIHRoZSBob3N0LiAgWW91IG11c3QgaGF2ZSBsaWJjYXAK
-LQlpbnN0YWxsZWQgaW4gb3JkZXIgdG8gYnVpbGQgdGhlIHBjYXAgdHJhbnNwb3J0IGludG8gVU1M
-LgotCi0JICBGb3IgbW9yZSBpbmZvcm1hdGlvbiwgc2VlCi0JICA8aHR0cDovL3VzZXItbW9kZS1s
-aW51eC5zb3VyY2Vmb3JnZS5uZXQvb2xkL25ldHdvcmtpbmcuaHRtbD4gIFRoYXQgc2l0ZQotCSAg
-aGFzIGV4YW1wbGVzIG9mIHRoZSBVTUwgY29tbWFuZCBsaW5lIHRvIHVzZSB0byBlbmFibGUgdGhp
-cyBvcHRpb24uCi0KLQlJZiB5b3UgaW50ZW5kIHRvIHVzZSBVTUwgYXMgYSBuZXR3b3JrIG1vbml0
-b3IgZm9yIHRoZSBob3N0LCBzYXkKLQlZIGhlcmUuICBPdGhlcndpc2UsIHNheSBOLgotCiBjb25m
-aWcgVU1MX05FVF9TTElSUAogCWJvb2wgIlNMaVJQIHRyYW5zcG9ydCIKIAlkZXBlbmRzIG9uIFVN
-TF9ORVQKZGlmZiAtLWdpdCBhL2FyY2gvdW0vZHJpdmVycy9NYWtlZmlsZSBiL2FyY2gvdW0vZHJp
-dmVycy9NYWtlZmlsZQppbmRleCBhMjkwODIxZTM1NWMyLi43NTQ4YjE4ZTc3YTI3IDEwMDY0NAot
-LS0gYS9hcmNoL3VtL2RyaXZlcnMvTWFrZWZpbGUKKysrIGIvYXJjaC91bS9kcml2ZXJzL01ha2Vm
-aWxlCkBAIC0zLDkgKzMsNiBAQAogIyBDb3B5cmlnaHQgKEMpIDIwMDAsIDIwMDIsIDIwMDMgSmVm
-ZiBEaWtlIChqZGlrZUBrYXJheWEuY29tKQogIwogCi0jIHBjYXAgaXMgYnJva2VuIGluIDIuNSBi
-ZWNhdXNlIGtidWlsZCBkb2Vzbid0IGFsbG93IHBjYXAuYSB0byBiZSBsaW5rZWQKLSMgaW4gdG8g
-cGNhcC5vCi0KIHNsaXAtb2JqcyA6PSBzbGlwX2tlcm4ubyBzbGlwX3VzZXIubwogc2xpcnAtb2Jq
-cyA6PSBzbGlycF9rZXJuLm8gc2xpcnBfdXNlci5vCiBkYWVtb24tb2JqcyA6PSBkYWVtb25fa2Vy
-bi5vIGRhZW1vbl91c2VyLm8KQEAgLTE4LDE0ICsxNSw5IEBAIHViZC1vYmpzIDo9IHViZF9rZXJu
-Lm8gdWJkX3VzZXIubwogcG9ydC1vYmpzIDo9IHBvcnRfa2Vybi5vIHBvcnRfdXNlci5vCiBoYXJk
-ZG9nLW9ianMgOj0gaGFyZGRvZ19rZXJuLm8gaGFyZGRvZ191c2VyLm8KIAotTERGTEFHU19wY2Fw
-Lm8gOj0gLXIgJChzaGVsbCAkKENDKSAkKEtCVUlMRF9DRkxBR1MpIC1wcmludC1maWxlLW5hbWU9
-bGlicGNhcC5hKQotCiBMREZMQUdTX3ZkZS5vIDo9IC1yICQoc2hlbGwgJChDQykgJChDRkxBR1Mp
-IC1wcmludC1maWxlLW5hbWU9bGlidmRlcGx1Zy5hKQogCi10YXJnZXRzIDo9IHBjYXBfa2Vybi5v
-IHBjYXBfdXNlci5vIHZkZV9rZXJuLm8gdmRlX3VzZXIubwotCi0kKG9iaikvcGNhcC5vOiAkKG9i
-aikvcGNhcF9rZXJuLm8gJChvYmopL3BjYXBfdXNlci5vCi0JJChMRCkgLXIgLWRwIC1vICRAICRe
-ICQobGRfZmxhZ3MpCit0YXJnZXRzIDo9IHZkZV9rZXJuLm8gdmRlX3VzZXIubwogCiAkKG9iaikv
-dmRlLm86ICQob2JqKS92ZGVfa2Vybi5vICQob2JqKS92ZGVfdXNlci5vCiAJJChMRCkgLXIgLWRw
-IC1vICRAICReICQobGRfZmxhZ3MpCkBAIC0zNCw5ICsyNiw2IEBAICQob2JqKS92ZGUubzogJChv
-YmopL3ZkZV9rZXJuLm8gJChvYmopL3ZkZV91c2VyLm8KICMgb2JqZWN0IG5hbWUsIHNvIG5vdGhp
-bmcgZnJvbSB0aGUgbGlicmFyeSBnZXRzIGxpbmtlZC4KICMkKGNhbGwgaWZfY2hhbmdlZCxsZCkK
-IAotIyBXaGVuIHRoZSBhYm92ZSBpcyBmaXhlZCwgZG9uJ3QgZm9yZ2V0IHRvIGFkZCB0aGlzIHRv
-byEKLSN0YXJnZXRzICs9ICQob2JqKS9wY2FwLm8KLQogb2JqLXkgOj0gc3RkaW9fY29uc29sZS5v
-IGZkLm8gY2hhbl9rZXJuLm8gY2hhbl91c2VyLm8gbGluZS5vCiBvYmotJChDT05GSUdfU1NMKSAr
-PSBzc2wubwogb2JqLSQoQ09ORklHX1NUREVSUl9DT05TT0xFKSArPSBzdGRlcnJfY29uc29sZS5v
-CkBAIC00Nyw3ICszNiw2IEBAIG9iai0kKENPTkZJR19VTUxfTkVUX0RBRU1PTikgKz0gZGFlbW9u
-Lm8KIG9iai0kKENPTkZJR19VTUxfTkVUX1ZFQ1RPUikgKz0gdmVjdG9yLm8KIG9iai0kKENPTkZJ
-R19VTUxfTkVUX1ZERSkgKz0gdmRlLm8KIG9iai0kKENPTkZJR19VTUxfTkVUX01DQVNUKSArPSB1
-bWNhc3Qubwotb2JqLSQoQ09ORklHX1VNTF9ORVRfUENBUCkgKz0gcGNhcC5vCiBvYmotJChDT05G
-SUdfVU1MX05FVCkgKz0gbmV0Lm8gCiBvYmotJChDT05GSUdfTUNPTlNPTEUpICs9IG1jb25zb2xl
-Lm8KIG9iai0kKENPTkZJR19NTUFQUEVSKSArPSBtbWFwcGVyX2tlcm4ubyAKQEAgLTYzLDggKzUx
-LDcgQEAgb2JqLSQoQ09ORklHX0JMS19ERVZfQ09XX0NPTU1PTikgKz0gY293X3VzZXIubwogb2Jq
-LSQoQ09ORklHX1VNTF9SQU5ET00pICs9IHJhbmRvbS5vCiBvYmotJChDT05GSUdfVklSVElPX1VN
-TCkgKz0gdmlydGlvX3VtbC5vCiAKLSMgcGNhcF91c2VyLm8gbXVzdCBiZSBhZGRlZCBleHBsaWNp
-dGx5LgotVVNFUl9PQkpTIDo9IGZkLm8gbnVsbC5vIHB0eS5vIHR0eS5vIHh0ZXJtLm8gc2xpcF9j
-b21tb24ubyBwY2FwX3VzZXIubyB2ZGVfdXNlci5vIHZlY3Rvcl91c2VyLm8KK1VTRVJfT0JKUyA6
-PSBmZC5vIG51bGwubyBwdHkubyB0dHkubyB4dGVybS5vIHNsaXBfY29tbW9uLm8gdmRlX3VzZXIu
-byB2ZWN0b3JfdXNlci5vCiBDRkxBR1NfbnVsbC5vID0gLURERVZfTlVMTD0kKERFVl9OVUxMX1BB
-VEgpCiAKIGluY2x1ZGUgYXJjaC91bS9zY3JpcHRzL01ha2VmaWxlLnJ1bGVzCmRpZmYgLS1naXQg
-YS9hcmNoL3VtL2RyaXZlcnMvcGNhcF9rZXJuLmMgYi9hcmNoL3VtL2RyaXZlcnMvcGNhcF9rZXJu
-LmMKZGVsZXRlZCBmaWxlIG1vZGUgMTAwNjQ0CmluZGV4IGNmZTRjYjE3Njk0Y2MuLjAwMDAwMDAw
-MDAwMDAKLS0tIGEvYXJjaC91bS9kcml2ZXJzL3BjYXBfa2Vybi5jCisrKyAvZGV2L251bGwKQEAg
-LTEsMTEzICswLDAgQEAKLS8vIFNQRFgtTGljZW5zZS1JZGVudGlmaWVyOiBHUEwtMi4wCi0vKgot
-ICogQ29weXJpZ2h0IChDKSAyMDAyIC0gMjAwNyBKZWZmIERpa2UgKGpkaWtlQHthZGR0b2l0LGxp
-bnV4LmludGVsfS5jb20pCi0gKi8KLQotI2luY2x1ZGUgPGxpbnV4L2luaXQuaD4KLSNpbmNsdWRl
-IDxsaW51eC9uZXRkZXZpY2UuaD4KLSNpbmNsdWRlIDxuZXRfa2Vybi5oPgotI2luY2x1ZGUgInBj
-YXBfdXNlci5oIgotCi1zdHJ1Y3QgcGNhcF9pbml0IHsKLQljaGFyICpob3N0X2lmOwotCWludCBw
-cm9taXNjOwotCWludCBvcHRpbWl6ZTsKLQljaGFyICpmaWx0ZXI7Ci19OwotCi12b2lkIHBjYXBf
-aW5pdChzdHJ1Y3QgbmV0X2RldmljZSAqZGV2LCB2b2lkICpkYXRhKQotewotCXN0cnVjdCB1bWxf
-bmV0X3ByaXZhdGUgKnByaTsKLQlzdHJ1Y3QgcGNhcF9kYXRhICpwcHJpOwotCXN0cnVjdCBwY2Fw
-X2luaXQgKmluaXQgPSBkYXRhOwotCi0JcHJpID0gbmV0ZGV2X3ByaXYoZGV2KTsKLQlwcHJpID0g
-KHN0cnVjdCBwY2FwX2RhdGEgKikgcHJpLT51c2VyOwotCXBwcmktPmhvc3RfaWYgPSBpbml0LT5o
-b3N0X2lmOwotCXBwcmktPnByb21pc2MgPSBpbml0LT5wcm9taXNjOwotCXBwcmktPm9wdGltaXpl
-ID0gaW5pdC0+b3B0aW1pemU7Ci0JcHByaS0+ZmlsdGVyID0gaW5pdC0+ZmlsdGVyOwotCi0JcHJp
-bnRrKCJwY2FwIGJhY2tlbmQsIGhvc3QgaW50ZXJmYWNlICVzXG4iLCBwcHJpLT5ob3N0X2lmKTsK
-LX0KLQotc3RhdGljIGludCBwY2FwX3JlYWQoaW50IGZkLCBzdHJ1Y3Qgc2tfYnVmZiAqc2tiLCBz
-dHJ1Y3QgdW1sX25ldF9wcml2YXRlICpscCkKLXsKLQlyZXR1cm4gcGNhcF91c2VyX3JlYWQoZmQs
-IHNrYl9tYWNfaGVhZGVyKHNrYiksCi0JCQkgICAgICBza2ItPmRldi0+bXR1ICsgRVRIX0hFQURF
-Ul9PVEhFUiwKLQkJCSAgICAgIChzdHJ1Y3QgcGNhcF9kYXRhICopICZscC0+dXNlcik7Ci19Ci0K
-LXN0YXRpYyBpbnQgcGNhcF93cml0ZShpbnQgZmQsIHN0cnVjdCBza19idWZmICpza2IsIHN0cnVj
-dCB1bWxfbmV0X3ByaXZhdGUgKmxwKQotewotCXJldHVybiAtRVBFUk07Ci19Ci0KLXN0YXRpYyBj
-b25zdCBzdHJ1Y3QgbmV0X2tlcm5faW5mbyBwY2FwX2tlcm5faW5mbyA9IHsKLQkuaW5pdAkJCT0g
-cGNhcF9pbml0LAotCS5wcm90b2NvbAkJPSBldGhfcHJvdG9jb2wsCi0JLnJlYWQJCQk9IHBjYXBf
-cmVhZCwKLQkud3JpdGUJCQk9IHBjYXBfd3JpdGUsCi19OwotCi1pbnQgcGNhcF9zZXR1cChjaGFy
-ICpzdHIsIGNoYXIgKiptYWNfb3V0LCB2b2lkICpkYXRhKQotewotCXN0cnVjdCBwY2FwX2luaXQg
-KmluaXQgPSBkYXRhOwotCWNoYXIgKnJlbWFpbiwgKmhvc3RfaWYgPSBOVUxMLCAqb3B0aW9uc1sy
-XSA9IHsgTlVMTCwgTlVMTCB9OwotCWludCBpOwotCi0JKmluaXQgPSAoKHN0cnVjdCBwY2FwX2lu
-aXQpCi0JCXsgLmhvc3RfaWYgCT0gImV0aDAiLAotCQkgIC5wcm9taXNjIAk9IDEsCi0JCSAgLm9w
-dGltaXplIAk9IDAsCi0JCSAgLmZpbHRlciAJPSBOVUxMIH0pOwotCi0JcmVtYWluID0gc3BsaXRf
-aWZfc3BlYyhzdHIsICZob3N0X2lmLCAmaW5pdC0+ZmlsdGVyLAotCQkJICAgICAgICZvcHRpb25z
-WzBdLCAmb3B0aW9uc1sxXSwgbWFjX291dCwgTlVMTCk7Ci0JaWYgKHJlbWFpbiAhPSBOVUxMKSB7
-Ci0JCXByaW50ayhLRVJOX0VSUiAicGNhcF9zZXR1cCAtIEV4dHJhIGdhcmJhZ2Ugb24gIgotCQkg
-ICAgICAgInNwZWNpZmljYXRpb24gOiAnJXMnXG4iLCByZW1haW4pOwotCQlyZXR1cm4gMDsKLQl9
-Ci0KLQlpZiAoaG9zdF9pZiAhPSBOVUxMKQotCQlpbml0LT5ob3N0X2lmID0gaG9zdF9pZjsKLQot
-CWZvciAoaSA9IDA7IGkgPCBBUlJBWV9TSVpFKG9wdGlvbnMpOyBpKyspIHsKLQkJaWYgKG9wdGlv
-bnNbaV0gPT0gTlVMTCkKLQkJCWNvbnRpbnVlOwotCQlpZiAoIXN0cmNtcChvcHRpb25zW2ldLCAi
-cHJvbWlzYyIpKQotCQkJaW5pdC0+cHJvbWlzYyA9IDE7Ci0JCWVsc2UgaWYgKCFzdHJjbXAob3B0
-aW9uc1tpXSwgIm5vcHJvbWlzYyIpKQotCQkJaW5pdC0+cHJvbWlzYyA9IDA7Ci0JCWVsc2UgaWYg
-KCFzdHJjbXAob3B0aW9uc1tpXSwgIm9wdGltaXplIikpCi0JCQlpbml0LT5vcHRpbWl6ZSA9IDE7
-Ci0JCWVsc2UgaWYgKCFzdHJjbXAob3B0aW9uc1tpXSwgIm5vb3B0aW1pemUiKSkKLQkJCWluaXQt
-Pm9wdGltaXplID0gMDsKLQkJZWxzZSB7Ci0JCQlwcmludGsoS0VSTl9FUlIgInBjYXBfc2V0dXAg
-OiBiYWQgb3B0aW9uIC0gJyVzJ1xuIiwKLQkJCSAgICAgICBvcHRpb25zW2ldKTsKLQkJCXJldHVy
-biAwOwotCQl9Ci0JfQotCi0JcmV0dXJuIDE7Ci19Ci0KLXN0YXRpYyBzdHJ1Y3QgdHJhbnNwb3J0
-IHBjYXBfdHJhbnNwb3J0ID0gewotCS5saXN0IAkJPSBMSVNUX0hFQURfSU5JVChwY2FwX3RyYW5z
-cG9ydC5saXN0KSwKLQkubmFtZSAJCT0gInBjYXAiLAotCS5zZXR1cCAgCT0gcGNhcF9zZXR1cCwK
-LQkudXNlciAJCT0gJnBjYXBfdXNlcl9pbmZvLAotCS5rZXJuIAkJPSAmcGNhcF9rZXJuX2luZm8s
-Ci0JLnByaXZhdGVfc2l6ZSAJPSBzaXplb2Yoc3RydWN0IHBjYXBfZGF0YSksCi0JLnNldHVwX3Np
-emUgCT0gc2l6ZW9mKHN0cnVjdCBwY2FwX2luaXQpLAotfTsKLQotc3RhdGljIGludCByZWdpc3Rl
-cl9wY2FwKHZvaWQpCi17Ci0JcmVnaXN0ZXJfdHJhbnNwb3J0KCZwY2FwX3RyYW5zcG9ydCk7Ci0J
-cmV0dXJuIDA7Ci19Ci0KLWxhdGVfaW5pdGNhbGwocmVnaXN0ZXJfcGNhcCk7CmRpZmYgLS1naXQg
-YS9hcmNoL3VtL2RyaXZlcnMvcGNhcF91c2VyLmMgYi9hcmNoL3VtL2RyaXZlcnMvcGNhcF91c2Vy
-LmMKZGVsZXRlZCBmaWxlIG1vZGUgMTAwNjQ0CmluZGV4IGJiZDIwNjM4Nzg4YWYuLjAwMDAwMDAw
-MDAwMDAKLS0tIGEvYXJjaC91bS9kcml2ZXJzL3BjYXBfdXNlci5jCisrKyAvZGV2L251bGwKQEAg
-LTEsMTM3ICswLDAgQEAKLS8vIFNQRFgtTGljZW5zZS1JZGVudGlmaWVyOiBHUEwtMi4wCi0vKgot
-ICogQ29weXJpZ2h0IChDKSAyMDAyIC0gMjAwNyBKZWZmIERpa2UgKGpkaWtlQHthZGR0b2l0LGxp
-bnV4LmludGVsfS5jb20pCi0gKi8KLQotI2luY2x1ZGUgPGVycm5vLmg+Ci0jaW5jbHVkZSA8cGNh
-cC5oPgotI2luY2x1ZGUgPHN0cmluZy5oPgotI2luY2x1ZGUgPGFzbS90eXBlcy5oPgotI2luY2x1
-ZGUgPG5ldF91c2VyLmg+Ci0jaW5jbHVkZSAicGNhcF91c2VyLmgiCi0jaW5jbHVkZSA8dW1fbWFs
-bG9jLmg+Ci0KLSNkZWZpbmUgUENBUF9GRChwKSAoKihpbnQgKikocCkpCi0KLXN0YXRpYyBpbnQg
-cGNhcF91c2VyX2luaXQodm9pZCAqZGF0YSwgdm9pZCAqZGV2KQotewotCXN0cnVjdCBwY2FwX2Rh
-dGEgKnByaSA9IGRhdGE7Ci0JcGNhcF90ICpwOwotCWNoYXIgZXJyb3JzW1BDQVBfRVJSQlVGX1NJ
-WkVdOwotCi0JcCA9IHBjYXBfb3Blbl9saXZlKHByaS0+aG9zdF9pZiwgRVRIX01BWF9QQUNLRVQg
-KyBFVEhfSEVBREVSX09USEVSLAotCQkJICAgcHJpLT5wcm9taXNjLCAwLCBlcnJvcnMpOwotCWlm
-IChwID09IE5VTEwpIHsKLQkJcHJpbnRrKFVNX0tFUk5fRVJSICJwY2FwX3VzZXJfaW5pdCA6IHBj
-YXBfb3Blbl9saXZlIGZhaWxlZCAtICIKLQkJICAgICAgICInJXMnXG4iLCBlcnJvcnMpOwotCQly
-ZXR1cm4gLUVJTlZBTDsKLQl9Ci0KLQlwcmktPmRldiA9IGRldjsKLQlwcmktPnBjYXAgPSBwOwot
-CXJldHVybiAwOwotfQotCi1zdGF0aWMgaW50IHBjYXBfb3Blbih2b2lkICpkYXRhKQotewotCXN0
-cnVjdCBwY2FwX2RhdGEgKnByaSA9IGRhdGE7Ci0JX191MzIgbmV0bWFzazsKLQlpbnQgZXJyOwot
-Ci0JaWYgKHByaS0+cGNhcCA9PSBOVUxMKQotCQlyZXR1cm4gLUVOT0RFVjsKLQotCWlmIChwcmkt
-PmZpbHRlciAhPSBOVUxMKSB7Ci0JCWVyciA9IGRldl9uZXRtYXNrKHByaS0+ZGV2LCAmbmV0bWFz
-ayk7Ci0JCWlmIChlcnIgPCAwKSB7Ci0JCQlwcmludGsoVU1fS0VSTl9FUlIgInBjYXBfb3BlbiA6
-IGRldl9uZXRtYXNrIGZhaWxlZFxuIik7Ci0JCQlyZXR1cm4gLUVJTzsKLQkJfQotCi0JCXByaS0+
-Y29tcGlsZWQgPSB1bWxfa21hbGxvYyhzaXplb2Yoc3RydWN0IGJwZl9wcm9ncmFtKSwKLQkJCQkJ
-VU1fR0ZQX0tFUk5FTCk7Ci0JCWlmIChwcmktPmNvbXBpbGVkID09IE5VTEwpIHsKLQkJCXByaW50
-ayhVTV9LRVJOX0VSUiAicGNhcF9vcGVuIDoga21hbGxvYyBmYWlsZWRcbiIpOwotCQkJcmV0dXJu
-IC1FTk9NRU07Ci0JCX0KLQotCQllcnIgPSBwY2FwX2NvbXBpbGUocHJpLT5wY2FwLAotCQkJCSAg
-IChzdHJ1Y3QgYnBmX3Byb2dyYW0gKikgcHJpLT5jb21waWxlZCwKLQkJCQkgICBwcmktPmZpbHRl
-ciwgcHJpLT5vcHRpbWl6ZSwgbmV0bWFzayk7Ci0JCWlmIChlcnIgPCAwKSB7Ci0JCQlwcmludGso
-VU1fS0VSTl9FUlIgInBjYXBfb3BlbiA6IHBjYXBfY29tcGlsZSBmYWlsZWQgLSAiCi0JCQkgICAg
-ICAgIiclcydcbiIsIHBjYXBfZ2V0ZXJyKHByaS0+cGNhcCkpOwotCQkJZ290byBvdXQ7Ci0JCX0K
-LQotCQllcnIgPSBwY2FwX3NldGZpbHRlcihwcmktPnBjYXAsIHByaS0+Y29tcGlsZWQpOwotCQlp
-ZiAoZXJyIDwgMCkgewotCQkJcHJpbnRrKFVNX0tFUk5fRVJSICJwY2FwX29wZW4gOiBwY2FwX3Nl
-dGZpbHRlciAiCi0JCQkgICAgICAgImZhaWxlZCAtICclcydcbiIsIHBjYXBfZ2V0ZXJyKHByaS0+
-cGNhcCkpOwotCQkJZ290byBvdXQ7Ci0JCX0KLQl9Ci0KLQlyZXR1cm4gUENBUF9GRChwcmktPnBj
-YXApOwotCi0gb3V0OgotCWtmcmVlKHByaS0+Y29tcGlsZWQpOwotCXJldHVybiAtRUlPOwotfQot
-Ci1zdGF0aWMgdm9pZCBwY2FwX3JlbW92ZSh2b2lkICpkYXRhKQotewotCXN0cnVjdCBwY2FwX2Rh
-dGEgKnByaSA9IGRhdGE7Ci0KLQlpZiAocHJpLT5jb21waWxlZCAhPSBOVUxMKQotCQlwY2FwX2Zy
-ZWVjb2RlKHByaS0+Y29tcGlsZWQpOwotCi0JaWYgKHByaS0+cGNhcCAhPSBOVUxMKQotCQlwY2Fw
-X2Nsb3NlKHByaS0+cGNhcCk7Ci19Ci0KLXN0cnVjdCBwY2FwX2hhbmRsZXJfZGF0YSB7Ci0JY2hh
-ciAqYnVmZmVyOwotCWludCBsZW47Ci19OwotCi1zdGF0aWMgdm9pZCBoYW5kbGVyKHVfY2hhciAq
-ZGF0YSwgY29uc3Qgc3RydWN0IHBjYXBfcGt0aGRyICpoZWFkZXIsCi0JCSAgICBjb25zdCB1X2No
-YXIgKnBhY2tldCkKLXsKLQlpbnQgbGVuOwotCi0Jc3RydWN0IHBjYXBfaGFuZGxlcl9kYXRhICpo
-ZGF0YSA9IChzdHJ1Y3QgcGNhcF9oYW5kbGVyX2RhdGEgKikgZGF0YTsKLQotCWxlbiA9IGhkYXRh
-LT5sZW4gPCBoZWFkZXItPmNhcGxlbiA/IGhkYXRhLT5sZW4gOiBoZWFkZXItPmNhcGxlbjsKLQlt
-ZW1jcHkoaGRhdGEtPmJ1ZmZlciwgcGFja2V0LCBsZW4pOwotCWhkYXRhLT5sZW4gPSBsZW47Ci19
-Ci0KLWludCBwY2FwX3VzZXJfcmVhZChpbnQgZmQsIHZvaWQgKmJ1ZmZlciwgaW50IGxlbiwgc3Ry
-dWN0IHBjYXBfZGF0YSAqcHJpKQotewotCXN0cnVjdCBwY2FwX2hhbmRsZXJfZGF0YSBoZGF0YSA9
-ICgoc3RydWN0IHBjYXBfaGFuZGxlcl9kYXRhKQotCQkgICAgICAgICAgICAgICAgICAgICAgICAg
-IHsgLmJ1ZmZlciAgCT0gYnVmZmVyLAotCQkJCQkgICAgLmxlbiAJPSBsZW4gfSk7Ci0JaW50IG47
-Ci0KLQluID0gcGNhcF9kaXNwYXRjaChwcmktPnBjYXAsIDEsIGhhbmRsZXIsICh1X2NoYXIgKikg
-JmhkYXRhKTsKLQlpZiAobiA8IDApIHsKLQkJcHJpbnRrKFVNX0tFUk5fRVJSICJwY2FwX2Rpc3Bh
-dGNoIGZhaWxlZCAtICVzXG4iLAotCQkgICAgICAgcGNhcF9nZXRlcnIocHJpLT5wY2FwKSk7Ci0J
-CXJldHVybiAtRUlPOwotCX0KLQllbHNlIGlmIChuID09IDApCi0JCXJldHVybiAwOwotCXJldHVy
-biBoZGF0YS5sZW47Ci19Ci0KLWNvbnN0IHN0cnVjdCBuZXRfdXNlcl9pbmZvIHBjYXBfdXNlcl9p
-bmZvID0gewotCS5pbml0CQk9IHBjYXBfdXNlcl9pbml0LAotCS5vcGVuCQk9IHBjYXBfb3BlbiwK
-LQkuY2xvc2UJIAk9IE5VTEwsCi0JLnJlbW92ZQkgCT0gcGNhcF9yZW1vdmUsCi0JLmFkZF9hZGRy
-ZXNzCT0gTlVMTCwKLQkuZGVsZXRlX2FkZHJlc3MgPSBOVUxMLAotCS5tdHUJCT0gRVRIX01BWF9Q
-QUNLRVQsCi0JLm1heF9wYWNrZXQJPSBFVEhfTUFYX1BBQ0tFVCArIEVUSF9IRUFERVJfT1RIRVIs
-Ci19OwpkaWZmIC0tZ2l0IGEvYXJjaC91bS9kcml2ZXJzL3BjYXBfdXNlci5oIGIvYXJjaC91bS9k
-cml2ZXJzL3BjYXBfdXNlci5oCmRlbGV0ZWQgZmlsZSBtb2RlIDEwMDY0NAppbmRleCAyMTYyNDZm
-NWYwOWJkLi4wMDAwMDAwMDAwMDAwCi0tLSBhL2FyY2gvdW0vZHJpdmVycy9wY2FwX3VzZXIuaAor
-KysgL2Rldi9udWxsCkBAIC0xLDIxICswLDAgQEAKLS8qIFNQRFgtTGljZW5zZS1JZGVudGlmaWVy
-OiBHUEwtMi4wICovCi0vKiAKLSAqIENvcHlyaWdodCAoQykgMjAwMiBKZWZmIERpa2UgKGpkaWtl
-QGthcmF5YS5jb20pCi0gKi8KLQotI2luY2x1ZGUgPG5ldF91c2VyLmg+Ci0KLXN0cnVjdCBwY2Fw
-X2RhdGEgewotCWNoYXIgKmhvc3RfaWY7Ci0JaW50IHByb21pc2M7Ci0JaW50IG9wdGltaXplOwot
-CWNoYXIgKmZpbHRlcjsKLQl2b2lkICpjb21waWxlZDsKLQl2b2lkICpwY2FwOwotCXZvaWQgKmRl
-djsKLX07Ci0KLWV4dGVybiBjb25zdCBzdHJ1Y3QgbmV0X3VzZXJfaW5mbyBwY2FwX3VzZXJfaW5m
-bzsKLQotZXh0ZXJuIGludCBwY2FwX3VzZXJfcmVhZChpbnQgZmQsIHZvaWQgKmJ1ZiwgaW50IGxl
-biwgc3RydWN0IHBjYXBfZGF0YSAqcHJpKTsKLQotLSAKMi4yNC4wLjM5My5nMzRkYzM0OGVhZi1n
-b29nCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGlu
-dXgtdW0gbWFpbGluZyBsaXN0CmxpbnV4LXVtQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xp
-c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC11bQo=
+CONFIG_STATIC_LINK appears to have been broken since before v4.20. It
+doesn't play nice with CONFIG_UML_NET_VECTOR=y:
+
+/usr/bin/ld: arch/um/drivers/vector_user.o: in function
+`user_init_socket_fds': vector_user.c:(.text+0x430): warning: Using
+'getaddrinfo' in statically linked applications requires at runtime the
+shared libraries from the glibc version used for linking
+
+And it seems to break the ptrace check:
+
+Checking that ptrace can change system call numbers...check_ptrace :
+child exited with exitcode 6, while expecting 0; status 0x67f
+[1]    126822 abort      ./linux mem=256M
+
+Given the importance of ptrace in UML, CONFIG_STATIC_LINK seems totally
+broken right now; remove it in order to fix allyesconfig for ARCH=um.
+
+Signed-off-by: Brendan Higgins <brendanhiggins@google.com>
+---
+ arch/um/Kconfig              |  23 +----
+ arch/um/Makefile             |   3 +-
+ arch/um/kernel/dyn.lds.S     | 170 ----------------------------------
+ arch/um/kernel/uml.lds.S     | 115 -----------------------
+ arch/um/kernel/vmlinux.lds.S | 175 ++++++++++++++++++++++++++++++++++-
+ 5 files changed, 172 insertions(+), 314 deletions(-)
+ delete mode 100644 arch/um/kernel/dyn.lds.S
+ delete mode 100644 arch/um/kernel/uml.lds.S
+
+diff --git a/arch/um/Kconfig b/arch/um/Kconfig
+index 2a6d04fcb3e91..00927fb7ce67a 100644
+--- a/arch/um/Kconfig
++++ b/arch/um/Kconfig
+@@ -19,6 +19,7 @@ config UML
+ 	select GENERIC_CLOCKEVENTS
+ 	select HAVE_GCC_PLUGINS
+ 	select TTY # Needed for line.c
++	select MODULE_REL_CRCS if MODVERSIONS
+ 
+ config MMU
+ 	bool
+@@ -61,28 +62,6 @@ config NR_CPUS
+ 
+ source "arch/$(HEADER_ARCH)/um/Kconfig"
+ 
+-config STATIC_LINK
+-	bool "Force a static link"
+-	default n
+-	help
+-	  This option gives you the ability to force a static link of UML.
+-	  Normally, UML is linked as a shared binary.  This is inconvenient for
+-	  use in a chroot jail.  So, if you intend to run UML inside a chroot,
+-	  you probably want to say Y here.
+-	  Additionally, this option enables using higher memory spaces (up to
+-	  2.75G) for UML.
+-
+-config LD_SCRIPT_STATIC
+-	bool
+-	default y
+-	depends on STATIC_LINK
+-
+-config LD_SCRIPT_DYN
+-	bool
+-	default y
+-	depends on !LD_SCRIPT_STATIC
+-	select MODULE_REL_CRCS if MODVERSIONS
+-
+ config HOSTFS
+ 	tristate "Host filesystem"
+ 	help
+diff --git a/arch/um/Makefile b/arch/um/Makefile
+index d2daa206872da..ec8af28daf051 100644
+--- a/arch/um/Makefile
++++ b/arch/um/Makefile
+@@ -117,8 +117,7 @@ archheaders:
+ archprepare:
+ 	$(Q)$(MAKE) $(build)=$(HOST_DIR)/um include/generated/user_constants.h
+ 
+-LINK-$(CONFIG_LD_SCRIPT_STATIC) += -static
+-LINK-$(CONFIG_LD_SCRIPT_DYN) += -Wl,-rpath,/lib $(call cc-option, -no-pie)
++LINK-y += -Wl,-rpath,/lib $(call cc-option, -no-pie)
+ 
+ CFLAGS_NO_HARDENING := $(call cc-option, -fno-PIC,) $(call cc-option, -fno-pic,) \
+ 	$(call cc-option, -fno-stack-protector,) \
+diff --git a/arch/um/kernel/dyn.lds.S b/arch/um/kernel/dyn.lds.S
+deleted file mode 100644
+index c69d69ee96beb..0000000000000
+--- a/arch/um/kernel/dyn.lds.S
++++ /dev/null
+@@ -1,170 +0,0 @@
+-#include <asm/vmlinux.lds.h>
+-#include <asm/page.h>
+-
+-OUTPUT_FORMAT(ELF_FORMAT)
+-OUTPUT_ARCH(ELF_ARCH)
+-ENTRY(_start)
+-jiffies = jiffies_64;
+-
+-SECTIONS
+-{
+-  PROVIDE (__executable_start = START);
+-  . = START + SIZEOF_HEADERS;
+-  .interp         : { *(.interp) }
+-  __binary_start = .;
+-  . = ALIGN(4096);		/* Init code and data */
+-  _text = .;
+-  INIT_TEXT_SECTION(PAGE_SIZE)
+-
+-  . = ALIGN(PAGE_SIZE);
+-
+-  /* Read-only sections, merged into text segment: */
+-  .hash           : { *(.hash) }
+-  .gnu.hash       : { *(.gnu.hash) }
+-  .dynsym         : { *(.dynsym) }
+-  .dynstr         : { *(.dynstr) }
+-  .gnu.version    : { *(.gnu.version) }
+-  .gnu.version_d  : { *(.gnu.version_d) }
+-  .gnu.version_r  : { *(.gnu.version_r) }
+-  .rel.init       : { *(.rel.init) }
+-  .rela.init      : { *(.rela.init) }
+-  .rel.text       : { *(.rel.text .rel.text.* .rel.gnu.linkonce.t.*) }
+-  .rela.text      : { *(.rela.text .rela.text.* .rela.gnu.linkonce.t.*) }
+-  .rel.fini       : { *(.rel.fini) }
+-  .rela.fini      : { *(.rela.fini) }
+-  .rel.rodata     : { *(.rel.rodata .rel.rodata.* .rel.gnu.linkonce.r.*) }
+-  .rela.rodata    : { *(.rela.rodata .rela.rodata.* .rela.gnu.linkonce.r.*) }
+-  .rel.data       : { *(.rel.data .rel.data.* .rel.gnu.linkonce.d.*) }
+-  .rela.data      : { *(.rela.data .rela.data.* .rela.gnu.linkonce.d.*) }
+-  .rel.tdata	  : { *(.rel.tdata .rel.tdata.* .rel.gnu.linkonce.td.*) }
+-  .rela.tdata	  : { *(.rela.tdata .rela.tdata.* .rela.gnu.linkonce.td.*) }
+-  .rel.tbss	  : { *(.rel.tbss .rel.tbss.* .rel.gnu.linkonce.tb.*) }
+-  .rela.tbss	  : { *(.rela.tbss .rela.tbss.* .rela.gnu.linkonce.tb.*) }
+-  .rel.ctors      : { *(.rel.ctors) }
+-  .rela.ctors     : { *(.rela.ctors) }
+-  .rel.dtors      : { *(.rel.dtors) }
+-  .rela.dtors     : { *(.rela.dtors) }
+-  .rel.got        : { *(.rel.got) }
+-  .rela.got       : { *(.rela.got) }
+-  .rel.bss        : { *(.rel.bss .rel.bss.* .rel.gnu.linkonce.b.*) }
+-  .rela.bss       : { *(.rela.bss .rela.bss.* .rela.gnu.linkonce.b.*) }
+-  .rel.plt : {
+-	*(.rel.plt)
+-	PROVIDE_HIDDEN(__rel_iplt_start = .);
+-	*(.rel.iplt)
+-	PROVIDE_HIDDEN(__rel_iplt_end = .);
+-  }
+-  .rela.plt : {
+-	*(.rela.plt)
+-	PROVIDE_HIDDEN(__rela_iplt_start = .);
+-	*(.rela.iplt)
+-	PROVIDE_HIDDEN(__rela_iplt_end = .);
+-  }
+-  .init           : {
+-    KEEP (*(.init))
+-  } =0x90909090
+-  .plt            : { *(.plt) }
+-  .text           : {
+-    _stext = .;
+-    TEXT_TEXT
+-    SCHED_TEXT
+-    CPUIDLE_TEXT
+-    LOCK_TEXT
+-    IRQENTRY_TEXT
+-    SOFTIRQENTRY_TEXT
+-    *(.fixup)
+-    *(.stub .text.* .gnu.linkonce.t.*)
+-    /* .gnu.warning sections are handled specially by elf32.em.  */
+-    *(.gnu.warning)
+-
+-    . = ALIGN(PAGE_SIZE);
+-  } =0x90909090
+-  . = ALIGN(PAGE_SIZE);
+-  .syscall_stub : {
+-	__syscall_stub_start = .;
+-	*(.__syscall_stub*)
+-	__syscall_stub_end = .;
+-  }
+-  .fini           : {
+-    KEEP (*(.fini))
+-  } =0x90909090
+-
+-  .kstrtab : { *(.kstrtab) }
+-
+-  #include <asm/common.lds.S>
+-
+-  __init_begin = .;
+-  init.data : { INIT_DATA }
+-  __init_end = .;
+-
+-  /* Ensure the __preinit_array_start label is properly aligned.  We
+-     could instead move the label definition inside the section, but
+-     the linker would then create the section even if it turns out to
+-     be empty, which isn't pretty.  */
+-  . = ALIGN(32 / 8);
+-  .preinit_array     : { *(.preinit_array) }
+-  .fini_array     : { *(.fini_array) }
+-  .data           : {
+-    INIT_TASK_DATA(KERNEL_STACK_SIZE)
+-    . = ALIGN(KERNEL_STACK_SIZE);
+-    *(.data..init_irqstack)
+-    DATA_DATA
+-    *(.data.* .gnu.linkonce.d.*)
+-    SORT(CONSTRUCTORS)
+-  }
+-  .data1          : { *(.data1) }
+-  .tdata	  : { *(.tdata .tdata.* .gnu.linkonce.td.*) }
+-  .tbss		  : { *(.tbss .tbss.* .gnu.linkonce.tb.*) *(.tcommon) }
+-  .eh_frame       : { KEEP (*(.eh_frame)) }
+-  .gcc_except_table   : { *(.gcc_except_table) }
+-  .dynamic        : { *(.dynamic) }
+-  .ctors          : {
+-    /* gcc uses crtbegin.o to find the start of
+-       the constructors, so we make sure it is
+-       first.  Because this is a wildcard, it
+-       doesn't matter if the user does not
+-       actually link against crtbegin.o; the
+-       linker won't look for a file to match a
+-       wildcard.  The wildcard also means that it
+-       doesn't matter which directory crtbegin.o
+-       is in.  */
+-    KEEP (*crtbegin.o(.ctors))
+-    /* We don't want to include the .ctor section from
+-       from the crtend.o file until after the sorted ctors.
+-       The .ctor section from the crtend file contains the
+-       end of ctors marker and it must be last */
+-    KEEP (*(EXCLUDE_FILE (*crtend.o ) .ctors))
+-    KEEP (*(SORT(.ctors.*)))
+-    KEEP (*(.ctors))
+-  }
+-  .dtors          : {
+-    KEEP (*crtbegin.o(.dtors))
+-    KEEP (*(EXCLUDE_FILE (*crtend.o ) .dtors))
+-    KEEP (*(SORT(.dtors.*)))
+-    KEEP (*(.dtors))
+-  }
+-  .jcr            : { KEEP (*(.jcr)) }
+-  .got            : { *(.got.plt) *(.got) }
+-  _edata = .;
+-  PROVIDE (edata = .);
+-  .bss            : {
+-   __bss_start = .;
+-   *(.dynbss)
+-   *(.bss .bss.* .gnu.linkonce.b.*)
+-   *(COMMON)
+-   /* Align here to ensure that the .bss section occupies space up to
+-      _end.  Align after .bss to ensure correct alignment even if the
+-      .bss section disappears because there are no input sections.  */
+-   . = ALIGN(32 / 8);
+-  . = ALIGN(32 / 8);
+-  }
+-   __bss_stop = .;
+-  _end = .;
+-  PROVIDE (end = .);
+-
+-  STABS_DEBUG
+-
+-  DWARF_DEBUG
+-
+-  DISCARDS
+-}
+diff --git a/arch/um/kernel/uml.lds.S b/arch/um/kernel/uml.lds.S
+deleted file mode 100644
+index 9f21443be2c9e..0000000000000
+--- a/arch/um/kernel/uml.lds.S
++++ /dev/null
+@@ -1,115 +0,0 @@
+-/* SPDX-License-Identifier: GPL-2.0 */
+-#include <asm/vmlinux.lds.h>
+-#include <asm/page.h>
+-
+-OUTPUT_FORMAT(ELF_FORMAT)
+-OUTPUT_ARCH(ELF_ARCH)
+-ENTRY(_start)
+-jiffies = jiffies_64;
+-
+-SECTIONS
+-{
+-  /* This must contain the right address - not quite the default ELF one.*/
+-  PROVIDE (__executable_start = START);
+-  /* Static binaries stick stuff here, like the sigreturn trampoline,
+-   * invisibly to objdump.  So, just make __binary_start equal to the very
+-   * beginning of the executable, and if there are unmapped pages after this,
+-   * they are forever unusable.
+-   */
+-  __binary_start = START;
+-
+-  . = START + SIZEOF_HEADERS;
+-
+-  _text = .;
+-  INIT_TEXT_SECTION(0)
+-  . = ALIGN(PAGE_SIZE);
+-
+-  .text      :
+-  {
+-    _stext = .;
+-    TEXT_TEXT
+-    SCHED_TEXT
+-    CPUIDLE_TEXT
+-    LOCK_TEXT
+-    IRQENTRY_TEXT
+-    SOFTIRQENTRY_TEXT
+-    *(.fixup)
+-    /* .gnu.warning sections are handled specially by elf32.em.  */
+-    *(.gnu.warning)
+-    *(.gnu.linkonce.t*)
+-  }
+-
+-  . = ALIGN(PAGE_SIZE);
+-  .syscall_stub : {
+-	__syscall_stub_start = .;
+-	*(.__syscall_stub*)
+-	__syscall_stub_end = .;
+-  }
+-
+-  /*
+-   * These are needed even in a static link, even if they wind up being empty.
+-   * Newer glibc needs these __rel{,a}_iplt_{start,end} symbols.
+-   */
+-  .rel.plt : {
+-	*(.rel.plt)
+-	PROVIDE_HIDDEN(__rel_iplt_start = .);
+-	*(.rel.iplt)
+-	PROVIDE_HIDDEN(__rel_iplt_end = .);
+-  }
+-  .rela.plt : {
+-	*(.rela.plt)
+-	PROVIDE_HIDDEN(__rela_iplt_start = .);
+-	*(.rela.iplt)
+-	PROVIDE_HIDDEN(__rela_iplt_end = .);
+-  }
+-
+-  #include <asm/common.lds.S>
+-
+-  __init_begin = .;
+-  init.data : { INIT_DATA }
+-  __init_end = .;
+-
+-  .data    :
+-  {
+-    INIT_TASK_DATA(KERNEL_STACK_SIZE)
+-    . = ALIGN(KERNEL_STACK_SIZE);
+-    *(.data..init_irqstack)
+-    DATA_DATA
+-    *(.gnu.linkonce.d*)
+-    CONSTRUCTORS
+-  }
+-  .data1   : { *(.data1) }
+-  .ctors         :
+-  {
+-    *(.ctors)
+-  }
+-  .dtors         :
+-  {
+-    *(.dtors)
+-  }
+-
+-  .got           : { *(.got.plt) *(.got) }
+-  .dynamic       : { *(.dynamic) }
+-  .tdata	  : { *(.tdata .tdata.* .gnu.linkonce.td.*) }
+-  .tbss		  : { *(.tbss .tbss.* .gnu.linkonce.tb.*) *(.tcommon) }
+-  /* We want the small data sections together, so single-instruction offsets
+-     can access them all, and initialized data all before uninitialized, so
+-     we can shorten the on-disk segment size.  */
+-  .sdata     : { *(.sdata) }
+-  _edata  =  .;
+-  PROVIDE (edata = .);
+-  . = ALIGN(PAGE_SIZE);
+-  __bss_start = .;
+-  PROVIDE(_bss_start = .);
+-  SBSS(0)
+-  BSS(0)
+-   __bss_stop = .;
+-  _end = .;
+-  PROVIDE (end = .);
+-
+-  STABS_DEBUG
+-
+-  DWARF_DEBUG
+-
+-  DISCARDS
+-}
+diff --git a/arch/um/kernel/vmlinux.lds.S b/arch/um/kernel/vmlinux.lds.S
+index 16e49bfa2b426..f4b6114e54d62 100644
+--- a/arch/um/kernel/vmlinux.lds.S
++++ b/arch/um/kernel/vmlinux.lds.S
+@@ -1,8 +1,173 @@
+ 
+ KERNEL_STACK_SIZE = 4096 * (1 << CONFIG_KERNEL_STACK_ORDER);
+ 
+-#ifdef CONFIG_LD_SCRIPT_STATIC
+-#include "uml.lds.S"
+-#else
+-#include "dyn.lds.S"
+-#endif
++#include <asm/vmlinux.lds.h>
++#include <asm/page.h>
++
++OUTPUT_FORMAT(ELF_FORMAT)
++OUTPUT_ARCH(ELF_ARCH)
++ENTRY(_start)
++jiffies = jiffies_64;
++
++SECTIONS
++{
++  PROVIDE (__executable_start = START);
++  . = START + SIZEOF_HEADERS;
++  .interp         : { *(.interp) }
++  __binary_start = .;
++  . = ALIGN(4096);		/* Init code and data */
++  _text = .;
++  INIT_TEXT_SECTION(PAGE_SIZE)
++
++  . = ALIGN(PAGE_SIZE);
++
++  /* Read-only sections, merged into text segment: */
++  .hash           : { *(.hash) }
++  .gnu.hash       : { *(.gnu.hash) }
++  .dynsym         : { *(.dynsym) }
++  .dynstr         : { *(.dynstr) }
++  .gnu.version    : { *(.gnu.version) }
++  .gnu.version_d  : { *(.gnu.version_d) }
++  .gnu.version_r  : { *(.gnu.version_r) }
++  .rel.init       : { *(.rel.init) }
++  .rela.init      : { *(.rela.init) }
++  .rel.text       : { *(.rel.text .rel.text.* .rel.gnu.linkonce.t.*) }
++  .rela.text      : { *(.rela.text .rela.text.* .rela.gnu.linkonce.t.*) }
++  .rel.fini       : { *(.rel.fini) }
++  .rela.fini      : { *(.rela.fini) }
++  .rel.rodata     : { *(.rel.rodata .rel.rodata.* .rel.gnu.linkonce.r.*) }
++  .rela.rodata    : { *(.rela.rodata .rela.rodata.* .rela.gnu.linkonce.r.*) }
++  .rel.data       : { *(.rel.data .rel.data.* .rel.gnu.linkonce.d.*) }
++  .rela.data      : { *(.rela.data .rela.data.* .rela.gnu.linkonce.d.*) }
++  .rel.tdata	  : { *(.rel.tdata .rel.tdata.* .rel.gnu.linkonce.td.*) }
++  .rela.tdata	  : { *(.rela.tdata .rela.tdata.* .rela.gnu.linkonce.td.*) }
++  .rel.tbss	  : { *(.rel.tbss .rel.tbss.* .rel.gnu.linkonce.tb.*) }
++  .rela.tbss	  : { *(.rela.tbss .rela.tbss.* .rela.gnu.linkonce.tb.*) }
++  .rel.ctors      : { *(.rel.ctors) }
++  .rela.ctors     : { *(.rela.ctors) }
++  .rel.dtors      : { *(.rel.dtors) }
++  .rela.dtors     : { *(.rela.dtors) }
++  .rel.got        : { *(.rel.got) }
++  .rela.got       : { *(.rela.got) }
++  .rel.bss        : { *(.rel.bss .rel.bss.* .rel.gnu.linkonce.b.*) }
++  .rela.bss       : { *(.rela.bss .rela.bss.* .rela.gnu.linkonce.b.*) }
++  .rel.plt : {
++	*(.rel.plt)
++	PROVIDE_HIDDEN(__rel_iplt_start = .);
++	*(.rel.iplt)
++	PROVIDE_HIDDEN(__rel_iplt_end = .);
++  }
++  .rela.plt : {
++	*(.rela.plt)
++	PROVIDE_HIDDEN(__rela_iplt_start = .);
++	*(.rela.iplt)
++	PROVIDE_HIDDEN(__rela_iplt_end = .);
++  }
++  .init           : {
++    KEEP (*(.init))
++  } =0x90909090
++  .plt            : { *(.plt) }
++  .text           : {
++    _stext = .;
++    TEXT_TEXT
++    SCHED_TEXT
++    CPUIDLE_TEXT
++    LOCK_TEXT
++    IRQENTRY_TEXT
++    SOFTIRQENTRY_TEXT
++    *(.fixup)
++    *(.stub .text.* .gnu.linkonce.t.*)
++    /* .gnu.warning sections are handled specially by elf32.em.  */
++    *(.gnu.warning)
++
++    . = ALIGN(PAGE_SIZE);
++  } =0x90909090
++  . = ALIGN(PAGE_SIZE);
++  .syscall_stub : {
++	__syscall_stub_start = .;
++	*(.__syscall_stub*)
++	__syscall_stub_end = .;
++  }
++  .fini           : {
++    KEEP (*(.fini))
++  } =0x90909090
++
++  .kstrtab : { *(.kstrtab) }
++
++  #include <asm/common.lds.S>
++
++  __init_begin = .;
++  init.data : { INIT_DATA }
++  __init_end = .;
++
++  /* Ensure the __preinit_array_start label is properly aligned.  We
++     could instead move the label definition inside the section, but
++     the linker would then create the section even if it turns out to
++     be empty, which isn't pretty.  */
++  . = ALIGN(32 / 8);
++  .preinit_array     : { *(.preinit_array) }
++  .fini_array     : { *(.fini_array) }
++  .data           : {
++    INIT_TASK_DATA(KERNEL_STACK_SIZE)
++    . = ALIGN(KERNEL_STACK_SIZE);
++    *(.data..init_irqstack)
++    DATA_DATA
++    *(.data.* .gnu.linkonce.d.*)
++    SORT(CONSTRUCTORS)
++  }
++  .data1          : { *(.data1) }
++  .tdata	  : { *(.tdata .tdata.* .gnu.linkonce.td.*) }
++  .tbss		  : { *(.tbss .tbss.* .gnu.linkonce.tb.*) *(.tcommon) }
++  .eh_frame       : { KEEP (*(.eh_frame)) }
++  .gcc_except_table   : { *(.gcc_except_table) }
++  .dynamic        : { *(.dynamic) }
++  .ctors          : {
++    /* gcc uses crtbegin.o to find the start of
++       the constructors, so we make sure it is
++       first.  Because this is a wildcard, it
++       doesn't matter if the user does not
++       actually link against crtbegin.o; the
++       linker won't look for a file to match a
++       wildcard.  The wildcard also means that it
++       doesn't matter which directory crtbegin.o
++       is in.  */
++    KEEP (*crtbegin.o(.ctors))
++    /* We don't want to include the .ctor section from
++       from the crtend.o file until after the sorted ctors.
++       The .ctor section from the crtend file contains the
++       end of ctors marker and it must be last */
++    KEEP (*(EXCLUDE_FILE (*crtend.o ) .ctors))
++    KEEP (*(SORT(.ctors.*)))
++    KEEP (*(.ctors))
++  }
++  .dtors          : {
++    KEEP (*crtbegin.o(.dtors))
++    KEEP (*(EXCLUDE_FILE (*crtend.o ) .dtors))
++    KEEP (*(SORT(.dtors.*)))
++    KEEP (*(.dtors))
++  }
++  .jcr            : { KEEP (*(.jcr)) }
++  .got            : { *(.got.plt) *(.got) }
++  _edata = .;
++  PROVIDE (edata = .);
++  .bss            : {
++   __bss_start = .;
++   *(.dynbss)
++   *(.bss .bss.* .gnu.linkonce.b.*)
++   *(COMMON)
++   /* Align here to ensure that the .bss section occupies space up to
++      _end.  Align after .bss to ensure correct alignment even if the
++      .bss section disappears because there are no input sections.  */
++   . = ALIGN(32 / 8);
++  . = ALIGN(32 / 8);
++  }
++   __bss_stop = .;
++  _end = .;
++  PROVIDE (end = .);
++
++  STABS_DEBUG
++
++  DWARF_DEBUG
++
++  DISCARDS
++}
+-- 
+2.24.0.393.g34dc348eaf-goog
+
+
+_______________________________________________
+linux-um mailing list
+linux-um@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-um
