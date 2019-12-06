@@ -2,66 +2,79 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0C8D8113E5C
-	for <lists+linux-um@lfdr.de>; Thu,  5 Dec 2019 10:42:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BC6EF114ABA
+	for <lists+linux-um@lfdr.de>; Fri,  6 Dec 2019 03:02:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=8GWBBwNEfjNFLTXu+rqC/1xsA5lAPYfL3XMfcAzkFnI=; b=HE5XkM5QydICgSe4//S/chcM0
-	6mlObW4EVvDeEMrO51c/QfDmdoduZ0ADcjQ9SjvzwnkXYH32t9xkj2l4wUoGO57iy0x8JVOWQ+xep
-	XT6Li50NiF7HekL90vOryDpIg5+YeQy9wFspMVFIImNmH4XY/JzFC/RlmoQZof5kuhOwGixZy6ADI
-	+hJ6cw9qMf+K0/YoD4XmIkYxMZLvVxILW616ZWvYzeNtIbhNe5n1uNkAS6vlGJLnJQB1A2dfswhLK
-	2sr+3ksQ4g/0p3vFfndQLEIT0szg8+7mCHqL64EfhpIs72FEZ6TOo2Nnf19GYiU8KDiWMKbtxrH2g
-	My+1yvHXA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:Mime-Version:Message-Id
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=NYv6INRRuxd1PJT28HDeXL8yvLfADbXBybzuv7M3eyI=; b=Z5xL9nz9X1pJji
+	1gwmR4SzZiykuPmrnoCt9Fvwq6PJOxRDWtScySR3EAQvAGnSExj2tftMLqUG8In5TJji72J1MU0JS
+	H7oyvDFFR6/Gt6ozc0wsZynn02ezelqYgYHY4VEd/WzjfWPlKNcypQJPe+nK30Qmav+v5XCdMslI0
+	OFutwirKXycEICeIi2hAFIXvZKKZEtNQ8n+EGBILHrocDxCPn+i0OAPrn+rl+OALTnljyIY8qxqRF
+	HkbmH5zDSichzFyS8Rwq3WFRR+s7qVHy+JLNefw4Sv+Wh37Onsic2p9ERMOAIrIVPfkiceti3wIvh
+	ZekflTWPXYEFuU2U3d2Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icne0-0005oQ-Oz; Thu, 05 Dec 2019 09:41:56 +0000
-Received: from ivanoab7.miniserver.com ([37.128.132.42]
- helo=www.kot-begemot.co.uk)
+	id 1id2wT-0007Lh-MK; Fri, 06 Dec 2019 02:02:01 +0000
+Received: from mail-qv1-xf4a.google.com ([2607:f8b0:4864:20::f4a])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icndy-0005no-8N
- for linux-um@lists.infradead.org; Thu, 05 Dec 2019 09:41:55 +0000
-Received: from tun252.jain.kot-begemot.co.uk ([192.168.18.6]
- helo=jain.kot-begemot.co.uk)
- by www.kot-begemot.co.uk with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.92) (envelope-from <anton.ivanov@cambridgegreys.com>)
- id 1icndv-0003js-Ez; Thu, 05 Dec 2019 09:41:51 +0000
-Received: from jain.kot-begemot.co.uk ([192.168.3.3])
- by jain.kot-begemot.co.uk with esmtp (Exim 4.92)
- (envelope-from <anton.ivanov@cambridgegreys.com>)
- id 1icndt-0006il-7M; Thu, 05 Dec 2019 09:41:51 +0000
-Subject: Re: 64 bit time regression in recvmmsg()
-To: Arnd Bergmann <arnd@arndb.de>
-References: <3820d68b-1d97-8f41-d55d-237d1695458c@cambridgegreys.com>
- <CAMuHMdWuiGC4ay=f6M2H=-PLiffavnFSu8CPXE26euAi6aoY0w@mail.gmail.com>
- <CAK8P3a1mrFgRyh5Fgv-d8Szd2pq0T6Ac7wL3ogeYcf-Uyrg4ZQ@mail.gmail.com>
- <a5b9709d-b93b-46e1-ab18-a94ab921ccf7@cambridgegreys.com>
- <CAK8P3a2A13pfvRRvpamx1woUz0CZTR3gvt_P1-ERqH+QtRATig@mail.gmail.com>
-From: Anton Ivanov <anton.ivanov@cambridgegreys.com>
-Message-ID: <549efee7-2cb4-79b4-7f7f-a3fa493c4e85@cambridgegreys.com>
-Date: Thu, 5 Dec 2019 09:41:49 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
-MIME-Version: 1.0
-In-Reply-To: <CAK8P3a2A13pfvRRvpamx1woUz0CZTR3gvt_P1-ERqH+QtRATig@mail.gmail.com>
-Content-Language: en-US
-X-Spam-Score: -1.0
-X-Spam-Score: -1.0
-X-Clacks-Overhead: GNU Terry Pratchett
+ id 1id2wR-0007Kq-AP
+ for linux-um@lists.infradead.org; Fri, 06 Dec 2019 02:02:00 +0000
+Received: by mail-qv1-xf4a.google.com with SMTP id g15so3305824qvq.20
+ for <linux-um@lists.infradead.org>; Thu, 05 Dec 2019 18:01:58 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=date:message-id:mime-version:subject:from:to:cc;
+ bh=7yhy1qVy7r+OhvXrem9lQMeX0WI2ZBv4daZte/Qe81A=;
+ b=EX46zlqkNdgUkQf4DjlzdWcdW0CotPab3ag5TehwyqpseikYVbO8LOlacwlZv8u/6h
+ TNnsxzYEASdKkuiCFl9UkI14s0SP5xwOBQIcoW4xxVCw45EPIA1W+42WHM8ForICvwwY
+ ZSG2uZjkWJ7CQvaZBX8JAeezo2S3bjAJGB9AWN+sTgewVxGK7q4oi6Ti1aFH06ww1xji
+ HnHUzrvD4XvhL3yKrdGMDaUvZUNA5GWUwVE6NA7VyXdOAmyn8TtYeTMJB/mfzDRWZVN2
+ fGprjqR7yw7qDNJnErIqcttmh6hajXBVmR+2H5wpWpz/gYLFLcxLV2qiNZiM8Bk5K2rJ
+ WT2g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:message-id:mime-version:subject:from:to:cc;
+ bh=7yhy1qVy7r+OhvXrem9lQMeX0WI2ZBv4daZte/Qe81A=;
+ b=UD0H/Ds0qJh2k/aUEiZ/IXnT+BwX/LVb+FaGWKeMmsUdA5muuaF02fwL4U2c9S5I0u
+ hLYYlsi1J5rF1sub6SuAn3Kz7JnDfHJkRhdPwiGxxXbxGdsO98xZU3284RxWMB1ai6kb
+ cc4lUNfnEh+7PfGlHCQTwRP2o/wQAjDwIzeJec5UjHZniLKQ1KwctCG7d9/zOf+V44Fo
+ shUw0qxYffu0Yiy3Pv2gRZs7MpOTwwLa8ixHCGs1CKE/2BZG8sVqAMm8eRwhFM73gp4p
+ UALJa+bxeDdlC/psDhLohCD7Ykc0SCW/3ortTUSzCiC1j8x/WwUe30DiGERQEDaZtdaj
+ Xcbw==
+X-Gm-Message-State: APjAAAV86Gno3147ev5MLx4BDU5uBMo2z7QlrzOnugyf4P7NFODy47in
+ zV2fQlkuijKdhcL0/h9DPyVbEQJEt9JP1wNyoWXW1Q==
+X-Google-Smtp-Source: APXvYqx8I5bEIazMNgm70QCTtM1l3Nmciyo0UDNEDBk/gGH1/pKfd5iPWcvoIq0JcpNcc2IVrJoYfiifLm5Gs//JviyGSQ==
+X-Received: by 2002:ac8:425a:: with SMTP id r26mr10607042qtm.138.1575597717420; 
+ Thu, 05 Dec 2019 18:01:57 -0800 (PST)
+Date: Thu,  5 Dec 2019 18:01:51 -0800
+Message-Id: <20191206020153.228283-1-brendanhiggins@google.com>
+Mime-Version: 1.0
+X-Mailer: git-send-email 2.24.0.393.g34dc348eaf-goog
+Subject: [RFC v1 0/2] um: drop broken features to fix allyesconfig
+From: Brendan Higgins <brendanhiggins@google.com>
+To: jdike@addtoit.com, richard@nod.at, anton.ivanov@cambridgegreys.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191205_014154_298415_28229493 
-X-CRM114-Status: GOOD (  19.62  )
-X-Spam-Score: 0.4 (/)
+X-CRM114-CacheID: sfid-20191205_180159_385528_AF17BCD9 
+X-CRM114-Status: GOOD (  12.02  )
+X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.4 points)
+ Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.4 KHOP_HELO_FCRDNS       Relay HELO differs from its IP's reverse DNS
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,86 +86,133 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: linux-um <linux-um@lists.infradead.org>,
- Geert Uytterhoeven <geert@linux-m68k.org>
+Cc: davidgow@google.com, Brendan Higgins <brendanhiggins@google.com>,
+ linux-um@lists.infradead.org, linux-kernel@vger.kernel.org,
+ johannes.berg@intel.com
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
+# TL;DR
 
+This patchset drops two broken features in an attempt to get
+allyesconfig closer to working for ARCH=um.
 
-On 04/12/2019 21:08, Arnd Bergmann wrote:
-> On Fri, Nov 29, 2019 at 5:34 PM Anton Ivanov
-> <anton.ivanov@cambridgegreys.com> wrote:
->>
->>
->>
->> On 29/11/2019 15:17, Arnd Bergmann wrote:
->>> On Fri, Nov 29, 2019 at 4:05 PM Geert Uytterhoeven <geert@linux-m68k.org> wrote:
->>>> On Fri, Nov 29, 2019 at 3:34 PM Anton Ivanov
->>>> <anton.ivanov@cambridgegreys.com> wrote:
->>>>> Unfortunately, it looks like the recent year 2038 have broken
->>>>> compatibility for one particular syscall interface we use - recvmmsg.
->>>>>
->>>>> The host now occasionally returns -22 (EINVAL) and the only way I see
->>>>> for this to happen looking at the source is if when it gets something
->>>>> bogus as a timeout.
->>>>>
->>>>> I think I have eliminated all other possible sources for this error.
->>>>>
->>>>> The picture can be observed when using a 64 bit host 5.2 kernel on a
->>>>> Debian 64 bit buster userspace (glibc compiled vs 4.19 headers).
->>>>>
->>>>> The code as it is written at present retries and by sheer luck and
->>>>> perseverance it manages to work, but this needs to be fixed.
->>>
->>> I only see a single call to recvmmsg() in arch/um, in uml_vector_recvmmsg(),
->>> and this passes a NULL timeout pointer, is this the one that broke or
->>> should I be looking at something else?
->>>
->>> Do I understand you right that the regression is on a pure 64-bit system?
->>
->> Yes.
->>
->> 64 bit host, Debian Buster with the stock 4.19 replaced by a 5.2.17
->> kernel upgrade, 5.2 and 5.3 64 bit UML also running Debian Buster inside.
->>
->> It sporadically produces -EINVAL (-22) from the recvmmsg.
->>
->> I went through the allocation and deallocation of the actual mmsg
->> several times to ensure it is not that.
->>
->> IMHO it is the timespec conversion somewhere, but I cannot pinpoint the
->> actual cause.
->>
-> 
-> I've looked at the changes again as well now without finding anything
-> suspicious. The only commit of mine that significantly changes recvmmsg
-> is e11d4284e2f4 ("y2038: socket: Add compat_sys_recvmmsg_time64").
-> I tried reverting it on top of  5.2.17, but that causes a lot of conflicts.
-> 
-> The best suggestion I still have would be to check out the kernel before
-> and after this commit, to see if it is the root cause. This one was part
-> of the linux-5.0 merge window, so right in the middle of the range
-> you have identified.
-> 
->       Arnd
-> 
+# What am I trying to do?
 
+This patchset is part of my attempt to get `make ARCH=um allyesconfig`
+to produce a config that will build *and* boot to init, so that I can
+use it as a mechanism to run tests[1].
 
-I am still chasing this - there is some host regression in play too.
+# How far away are we from an allyesconfig UML kernel?
 
-Once I have a better understanding on what is going on I will post more 
-info.
+I have identified 33 Kconfigs that are selected by allyesconfig, but
+will either not build on UML, or prevent it from booting. They are:
 
-Brgds,
+CONFIG_STATIC_LINK=y
+CONFIG_UML_NET_PCAP=y
+CONFIG_NET_PTP_CLASSIFY=y
+CONFIG_IP_VS=y
+CONFIG_BRIDGE_EBT_BROUTE=y
+CONFIG_BRIDGE_EBT_T_FILTER=y
+CONFIG_BRIDGE_EBT_T_NAT=y
+CONFIG_MTD_NAND_CADENCE=y
+CONFIG_MTD_NAND_NANDSIM=y
+CONFIG_BLK_DEV_NULL_BLK=y
+CONFIG_BLK_DEV_RAM=y
+CONFIG_SCSI_DEBUG=y
+CONFIG_NET_VENDOR_XILINX=y
+CONFIG_NULL_TTY=y
+CONFIG_PTP_1588_CLOCK=y
+CONFIG_PINCTRL_EQUILIBRIUM=y
+CONFIG_DMABUF_SELFTESTS=y
+CONFIG_COMEDI=y
+CONFIG_XIL_AXIS_FIFO=y
+CONFIG_EXFAT_FS=y
+CONFIG_STM_DUMMY=y
+CONFIG_FSI_MASTER_ASPEED=y
+CONFIG_JFS_FS=y
+CONFIG_UBIFS_FS=y
+CONFIG_CRAMFS=y
+CONFIG_CRYPTO_DEV_SAFEXCEL=y
+CONFIG_CRYPTO_DEV_AMLOGIC_GXL=y
+CONFIG_KCOV=y
+CONFIG_LKDTM=y
+CONFIG_REED_SOLOMON_TEST=y
+CONFIG_TEST_RHASHTABLE=y
+CONFIG_TEST_MEMINIT=y
+CONFIG_NETWORK_PHY_TIMESTAMPING=y
 
+This patchset attempts to deal with CONFIG_STATIC_LINK=y and
+CONFIG_UML_NET_PCAP=y by just removing them since they are broken and
+appear to have been broken for some time. (I am aware of the taboo of
+dropping configs, but given the amount of time they have been broken, I
+figured that I might be able to get away with it in this case, which is
+easier than trying to actually fix them.)
+
+I also have a patch out to fix CONFIG_EXFAT_FS=y[2].
+
+After this I plan on going after
+
+CONFIG_PINCTRL_EQUILIBRIUM=y
+CONFIG_MTD_NAND_CADENCE=y
+CONFIG_FSI_MASTER_ASPEED=y
+CONFIG_CRYPTO_DEV_SAFEXCEL=y
+CONFIG_XIL_AXIS_FIFO=y
+CONFIG_CRYPTO_DEV_AMLOGIC_GXL=y
+CONFIG_XILINX_AXI_EMAC=y
+
+the problem with these is that they depend on
+devm_platform_ioremap_resource without explicitly depending on
+CONFIG_HAS_IOMEM=y.
+
+Also note that I don't think that CONFIG_NULL_TTY=y is actually broken
+on UML; however, console seems to get assigned to the null TTY by
+default when it is enabled, so I added it to the list for the sake of
+completeness.
+
+The other broken configs require more investigation (I would welcome
+help, if anyone is interested ;-) ).
+
+# Why won't allyesconfig break again after this series of fixes?
+
+As I mentioned above, I am using UML for testing the kernel, and I am
+currently working on getting my tests to run on KernelCI. As part of our
+testing procedure for KernelCI, we are planning on building a UML kernel
+using allyesconfig and running our tests on it. Thus, we will find out
+very quickly once someone breaks allyesconfig again once we get this all
+working.
+
+Brendan Higgins (2):
+  um: drivers: remove support for UML_NET_PCAP
+  uml: remove support for CONFIG_STATIC_LINK
+
+ arch/um/Kconfig              |  23 +----
+ arch/um/Makefile             |   3 +-
+ arch/um/drivers/Kconfig      |  16 ----
+ arch/um/drivers/Makefile     |  17 +---
+ arch/um/drivers/pcap_kern.c  | 113 ----------------------
+ arch/um/drivers/pcap_user.c  | 137 ---------------------------
+ arch/um/drivers/pcap_user.h  |  21 -----
+ arch/um/kernel/dyn.lds.S     | 170 ----------------------------------
+ arch/um/kernel/uml.lds.S     | 115 -----------------------
+ arch/um/kernel/vmlinux.lds.S | 175 ++++++++++++++++++++++++++++++++++-
+ 10 files changed, 174 insertions(+), 616 deletions(-)
+ delete mode 100644 arch/um/drivers/pcap_kern.c
+ delete mode 100644 arch/um/drivers/pcap_user.c
+ delete mode 100644 arch/um/drivers/pcap_user.h
+ delete mode 100644 arch/um/kernel/dyn.lds.S
+ delete mode 100644 arch/um/kernel/uml.lds.S
+
+Looking forward to hearing people's thoughts!
+
+[1] https://bugzilla.kernel.org/show_bug.cgi?id=205223
+[2] https://patchwork.kernel.org/patch/11273771/
 
 -- 
-Anton R. Ivanov
-Cambridgegreys Limited. Registered in England. Company Number 10273661
-https://www.cambridgegreys.com/
+2.24.0.393.g34dc348eaf-goog
+
 
 _______________________________________________
 linux-um mailing list
