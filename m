@@ -2,57 +2,57 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3A72A114CDE
-	for <lists+linux-um@lfdr.de>; Fri,  6 Dec 2019 08:45:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1E64B1156C0
+	for <lists+linux-um@lfdr.de>; Fri,  6 Dec 2019 18:50:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:References:
+	To:From:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Lndz1m/TfEpeTXmS9qwiVGIBs/yULiS1Q0MkhoeEpWo=; b=kAZWhCmMbl1QofChwWzBMkgnY
-	U70Ziq9jJQNQAcXjqkVrhfMA+A7wKXTL/P00iBlpZ+VaJa3rAzi2nWcZiaiblBKFe06SCcjfesz0I
-	MDguhYXw+YntBNxqartfzXlrpFR4+tsG1ms4zNmAHTJ41iumXtSlLkM7QrBMMgIZeYs5wRhNDhR/v
-	8TgoVFOeLFpTbe0QGD2x4IO2mhBiw+/5NEchgavSa6xqhiBvJ7rFdIJUwnLuShe37hmpY4noNuGKp
-	qDkCNRBtsumQAIqO9Pzvjs+gfKtI+1cB+2RRmn2+stb/syxH5pbRoomBcST1ucYERCLyn1iP2YZQe
-	k2emjrLbQ==;
+	 bh=ZpjAC+O2BzTot8I5+ZlQGqJ/3PW/hMb6MMKqrif/JtI=; b=S76THCX9ZGrBO5/tNvOhwoqx8
+	t3eudCDTqE5Sy73HBFTmo5lJ/tmbrGHBnDTrfQB0qhi4qahOvEb12dEHjc8bo8muIn9WfE0NA9ZWY
+	8F7XauIZ96sbAaV6TCoSFGTbvz1R7W905nCcVANnW92HejLeXKA+eCSf353dycPVwOvsKcfSxHQKQ
+	HChnmMsQQkZIcjBQefTd4jBSsVmwjtCApGKlfqVjJkdzwMvYRX9A7suP3XR6cbp111WzYEs1TOFGn
+	FS5ay0sRjqE0QN0xjxbej89ndC3Mu6xxXRuEbVyZkDc6iA4y5q6IxClT62Adzui2A/o0aS6/wQcSt
+	dGSwpEMbw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1id8IZ-0005Fd-Ul; Fri, 06 Dec 2019 07:45:11 +0000
+	id 1idHjy-00088K-9q; Fri, 06 Dec 2019 17:50:06 +0000
 Received: from ivanoab7.miniserver.com ([37.128.132.42]
  helo=www.kot-begemot.co.uk)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1id8IW-0004W5-Ck
- for linux-um@lists.infradead.org; Fri, 06 Dec 2019 07:45:10 +0000
+ id 1idHju-0007X3-7y
+ for linux-um@lists.infradead.org; Fri, 06 Dec 2019 17:50:04 +0000
 Received: from tun252.jain.kot-begemot.co.uk ([192.168.18.6]
  helo=jain.kot-begemot.co.uk)
  by www.kot-begemot.co.uk with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
  (Exim 4.92) (envelope-from <anton.ivanov@cambridgegreys.com>)
- id 1id8IT-0007Hp-HS; Fri, 06 Dec 2019 07:45:05 +0000
-Received: from sleer.kot-begemot.co.uk ([192.168.3.72])
- by jain.kot-begemot.co.uk with esmtps
- (TLS1.3:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
+ id 1idHjq-0000Px-PW; Fri, 06 Dec 2019 17:49:59 +0000
+Received: from jain.kot-begemot.co.uk ([192.168.3.3])
+ by jain.kot-begemot.co.uk with esmtp (Exim 4.92)
  (envelope-from <anton.ivanov@cambridgegreys.com>)
- id 1id8IR-0005uH-Cl; Fri, 06 Dec 2019 07:45:05 +0000
-Subject: Re: [RFC v1 0/2] um: drop broken features to fix allyesconfig
-To: Brendan Higgins <brendanhiggins@google.com>, jdike@addtoit.com,
- richard@nod.at
-References: <20191206020153.228283-1-brendanhiggins@google.com>
+ id 1idHjo-00040M-Ik; Fri, 06 Dec 2019 17:49:58 +0000
+Subject: Re: 64 bit time regression in recvmmsg()
 From: Anton Ivanov <anton.ivanov@cambridgegreys.com>
-Organization: Cambridge Greys
-Message-ID: <dd086a74-402c-5b9a-5a12-15a791f8749f@cambridgegreys.com>
-Date: Fri, 6 Dec 2019 07:45:03 +0000
+To: Arnd Bergmann <arnd@arndb.de>, Geert Uytterhoeven <geert@linux-m68k.org>
+References: <3820d68b-1d97-8f41-d55d-237d1695458c@cambridgegreys.com>
+ <CAMuHMdWuiGC4ay=f6M2H=-PLiffavnFSu8CPXE26euAi6aoY0w@mail.gmail.com>
+ <CAK8P3a1mrFgRyh5Fgv-d8Szd2pq0T6Ac7wL3ogeYcf-Uyrg4ZQ@mail.gmail.com>
+ <a5b9709d-b93b-46e1-ab18-a94ab921ccf7@cambridgegreys.com>
+Message-ID: <9dc1be66-5c55-8b3d-875b-4e1206914e78@cambridgegreys.com>
+Date: Fri, 6 Dec 2019 17:49:56 +0000
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.2.2
 MIME-Version: 1.0
-In-Reply-To: <20191206020153.228283-1-brendanhiggins@google.com>
+In-Reply-To: <a5b9709d-b93b-46e1-ab18-a94ab921ccf7@cambridgegreys.com>
 Content-Language: en-US
 X-Spam-Score: -1.0
 X-Spam-Score: -1.0
 X-Clacks-Overhead: GNU Terry Pratchett
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191205_234508_440641_5D5FD0F3 
-X-CRM114-Status: GOOD (  22.76  )
+X-CRM114-CacheID: sfid-20191206_095002_308490_CAB24A17 
+X-CRM114-Status: GOOD (  18.41  )
 X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.4 points)
@@ -72,140 +72,59 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: johannes.berg@intel.com, linux-um@lists.infradead.org,
- linux-kernel@vger.kernel.org, davidgow@google.com
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: linux-um <linux-um@lists.infradead.org>
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On 06/12/2019 02:01, Brendan Higgins wrote:
-> # TL;DR
-> 
-> This patchset drops two broken features in an attempt to get
-> allyesconfig closer to working for ARCH=um.
-> 
-> # What am I trying to do?
-> 
-> This patchset is part of my attempt to get `make ARCH=um allyesconfig`
-> to produce a config that will build *and* boot to init, so that I can
-> use it as a mechanism to run tests[1].
-> 
-> # How far away are we from an allyesconfig UML kernel?
-> 
-> I have identified 33 Kconfigs that are selected by allyesconfig, but
-> will either not build on UML, or prevent it from booting. They are:
-> 
-> CONFIG_STATIC_LINK=y
-> CONFIG_UML_NET_PCAP=y
-> CONFIG_NET_PTP_CLASSIFY=y
-> CONFIG_IP_VS=y
-> CONFIG_BRIDGE_EBT_BROUTE=y
-> CONFIG_BRIDGE_EBT_T_FILTER=y
-> CONFIG_BRIDGE_EBT_T_NAT=y
-> CONFIG_MTD_NAND_CADENCE=y
-> CONFIG_MTD_NAND_NANDSIM=y
-> CONFIG_BLK_DEV_NULL_BLK=y
-> CONFIG_BLK_DEV_RAM=y
-> CONFIG_SCSI_DEBUG=y
-> CONFIG_NET_VENDOR_XILINX=y
-> CONFIG_NULL_TTY=y
-> CONFIG_PTP_1588_CLOCK=y
-> CONFIG_PINCTRL_EQUILIBRIUM=y
-> CONFIG_DMABUF_SELFTESTS=y
-> CONFIG_COMEDI=y
-> CONFIG_XIL_AXIS_FIFO=y
-> CONFIG_EXFAT_FS=y
-> CONFIG_STM_DUMMY=y
-> CONFIG_FSI_MASTER_ASPEED=y
-> CONFIG_JFS_FS=y
-> CONFIG_UBIFS_FS=y
-> CONFIG_CRAMFS=y
-> CONFIG_CRYPTO_DEV_SAFEXCEL=y
-> CONFIG_CRYPTO_DEV_AMLOGIC_GXL=y
-> CONFIG_KCOV=y
-> CONFIG_LKDTM=y
-> CONFIG_REED_SOLOMON_TEST=y
-> CONFIG_TEST_RHASHTABLE=y
-> CONFIG_TEST_MEMINIT=y
-> CONFIG_NETWORK_PHY_TIMESTAMPING=y
-> 
-> This patchset attempts to deal with CONFIG_STATIC_LINK=y and
-> CONFIG_UML_NET_PCAP=y by just removing them since they are broken and
-> appear to have been broken for some time. (I am aware of the taboo of
-> dropping configs, but given the amount of time they have been broken, I
-> figured that I might be able to get away with it in this case, which is
-> easier than trying to actually fix them.)
-> 
-> I also have a patch out to fix CONFIG_EXFAT_FS=y[2].
-> 
-> After this I plan on going after
-> 
-> CONFIG_PINCTRL_EQUILIBRIUM=y
-> CONFIG_MTD_NAND_CADENCE=y
-> CONFIG_FSI_MASTER_ASPEED=y
-> CONFIG_CRYPTO_DEV_SAFEXCEL=y
-> CONFIG_XIL_AXIS_FIFO=y
-> CONFIG_CRYPTO_DEV_AMLOGIC_GXL=y
-> CONFIG_XILINX_AXI_EMAC=y
-> 
-> the problem with these is that they depend on
-> devm_platform_ioremap_resource without explicitly depending on
-> CONFIG_HAS_IOMEM=y.
-> 
-> Also note that I don't think that CONFIG_NULL_TTY=y is actually broken
-> on UML; however, console seems to get assigned to the null TTY by
-> default when it is enabled, so I added it to the list for the sake of
-> completeness.
-> 
-> The other broken configs require more investigation (I would welcome
-> help, if anyone is interested ;-) ).
-> 
-> # Why won't allyesconfig break again after this series of fixes?
-> 
-> As I mentioned above, I am using UML for testing the kernel, and I am
-> currently working on getting my tests to run on KernelCI. As part of our
-> testing procedure for KernelCI, we are planning on building a UML kernel
-> using allyesconfig and running our tests on it. Thus, we will find out
-> very quickly once someone breaks allyesconfig again once we get this all
-> working.
-> 
-> Brendan Higgins (2):
->    um: drivers: remove support for UML_NET_PCAP
->    uml: remove support for CONFIG_STATIC_LINK
-> 
->   arch/um/Kconfig              |  23 +----
->   arch/um/Makefile             |   3 +-
->   arch/um/drivers/Kconfig      |  16 ----
->   arch/um/drivers/Makefile     |  17 +---
->   arch/um/drivers/pcap_kern.c  | 113 ----------------------
->   arch/um/drivers/pcap_user.c  | 137 ---------------------------
->   arch/um/drivers/pcap_user.h  |  21 -----
->   arch/um/kernel/dyn.lds.S     | 170 ----------------------------------
->   arch/um/kernel/uml.lds.S     | 115 -----------------------
->   arch/um/kernel/vmlinux.lds.S | 175 ++++++++++++++++++++++++++++++++++-
->   10 files changed, 174 insertions(+), 616 deletions(-)
->   delete mode 100644 arch/um/drivers/pcap_kern.c
->   delete mode 100644 arch/um/drivers/pcap_user.c
->   delete mode 100644 arch/um/drivers/pcap_user.h
->   delete mode 100644 arch/um/kernel/dyn.lds.S
->   delete mode 100644 arch/um/kernel/uml.lds.S
-> 
-> Looking forward to hearing people's thoughts!
-> 
-> [1] https://bugzilla.kernel.org/show_bug.cgi?id=205223
-> [2] https://patchwork.kernel.org/patch/11273771/
-> 
-
-Patch for pcap: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=938962#79
-
-
--- 
-Anton R. Ivanov
-Cambridgegreys Limited. Registered in England. Company Number 10273661
-https://www.cambridgegreys.com/
-
-_______________________________________________
-linux-um mailing list
-linux-um@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-um
+CgpPbiAyOS8xMS8yMDE5IDE2OjM0LCBBbnRvbiBJdmFub3Ygd3JvdGU6Cj4gCj4gCj4gT24gMjkv
+MTEvMjAxOSAxNToxNywgQXJuZCBCZXJnbWFubiB3cm90ZToKPj4gT24gRnJpLCBOb3YgMjksIDIw
+MTkgYXQgNDowNSBQTSBHZWVydCBVeXR0ZXJob2V2ZW4gCj4+IDxnZWVydEBsaW51eC1tNjhrLm9y
+Zz4gd3JvdGU6Cj4+PiBPbiBGcmksIE5vdiAyOSwgMjAxOSBhdCAzOjM0IFBNIEFudG9uIEl2YW5v
+dgo+Pj4gPGFudG9uLml2YW5vdkBjYW1icmlkZ2VncmV5cy5jb20+IHdyb3RlOgo+Pj4+IFVuZm9y
+dHVuYXRlbHksIGl0IGxvb2tzIGxpa2UgdGhlIHJlY2VudCB5ZWFyIDIwMzggaGF2ZSBicm9rZW4K
+Pj4+PiBjb21wYXRpYmlsaXR5IGZvciBvbmUgcGFydGljdWxhciBzeXNjYWxsIGludGVyZmFjZSB3
+ZSB1c2UgLSByZWN2bW1zZy4KPj4+Pgo+Pj4+IFRoZSBob3N0IG5vdyBvY2Nhc2lvbmFsbHkgcmV0
+dXJucyAtMjIgKEVJTlZBTCkgYW5kIHRoZSBvbmx5IHdheSBJIHNlZQo+Pj4+IGZvciB0aGlzIHRv
+IGhhcHBlbiBsb29raW5nIGF0IHRoZSBzb3VyY2UgaXMgaWYgd2hlbiBpdCBnZXRzIHNvbWV0aGlu
+Zwo+Pj4+IGJvZ3VzIGFzIGEgdGltZW91dC4KPj4+Pgo+Pj4+IEkgdGhpbmsgSSBoYXZlIGVsaW1p
+bmF0ZWQgYWxsIG90aGVyIHBvc3NpYmxlIHNvdXJjZXMgZm9yIHRoaXMgZXJyb3IuCj4+Pj4KPj4+
+PiBUaGUgcGljdHVyZSBjYW4gYmUgb2JzZXJ2ZWQgd2hlbiB1c2luZyBhIDY0IGJpdCBob3N0IDUu
+MiBrZXJuZWwgb24gYQo+Pj4+IERlYmlhbiA2NCBiaXQgYnVzdGVyIHVzZXJzcGFjZSAoZ2xpYmMg
+Y29tcGlsZWQgdnMgNC4xOSBoZWFkZXJzKS4KPj4+Pgo+Pj4+IFRoZSBjb2RlIGFzIGl0IGlzIHdy
+aXR0ZW4gYXQgcHJlc2VudCByZXRyaWVzIGFuZCBieSBzaGVlciBsdWNrIGFuZAo+Pj4+IHBlcnNl
+dmVyYW5jZSBpdCBtYW5hZ2VzIHRvIHdvcmssIGJ1dCB0aGlzIG5lZWRzIHRvIGJlIGZpeGVkLgo+
+Pgo+PiBJIG9ubHkgc2VlIGEgc2luZ2xlIGNhbGwgdG8gcmVjdm1tc2coKSBpbiBhcmNoL3VtLCBp
+biAKPj4gdW1sX3ZlY3Rvcl9yZWN2bW1zZygpLAo+PiBhbmQgdGhpcyBwYXNzZXMgYSBOVUxMIHRp
+bWVvdXQgcG9pbnRlciwgaXMgdGhpcyB0aGUgb25lIHRoYXQgYnJva2Ugb3IKPj4gc2hvdWxkIEkg
+YmUgbG9va2luZyBhdCBzb21ldGhpbmcgZWxzZT8KPj4KPj4gRG8gSSB1bmRlcnN0YW5kIHlvdSBy
+aWdodCB0aGF0IHRoZSByZWdyZXNzaW9uIGlzIG9uIGEgcHVyZSA2NC1iaXQgc3lzdGVtPwo+IAo+
+IFllcy4KPiAKPiA2NCBiaXQgaG9zdCwgRGViaWFuIEJ1c3RlciB3aXRoIHRoZSBzdG9jayA0LjE5
+IHJlcGxhY2VkIGJ5IGEgNS4yLjE3IAo+IGtlcm5lbCB1cGdyYWRlLCA1LjIgYW5kIDUuMyA2NCBi
+aXQgVU1MIGFsc28gcnVubmluZyBEZWJpYW4gQnVzdGVyIGluc2lkZS4KPiAKPiBJdCBzcG9yYWRp
+Y2FsbHkgcHJvZHVjZXMgLUVJTlZBTCAoLTIyKSBmcm9tIHRoZSByZWN2bW1zZy4KPiAKPiBJIHdl
+bnQgdGhyb3VnaCB0aGUgYWxsb2NhdGlvbiBhbmQgZGVhbGxvY2F0aW9uIG9mIHRoZSBhY3R1YWwg
+bW1zZyAKPiBzZXZlcmFsIHRpbWVzIHRvIGVuc3VyZSBpdCBpcyBub3QgdGhhdC4KPiAKPiBJTUhP
+IGl0IGlzIHRoZSB0aW1lc3BlYyBjb252ZXJzaW9uIHNvbWV3aGVyZSwgYnV0IEkgY2Fubm90IHBp
+bnBvaW50IHRoZSAKPiBhY3R1YWwgY2F1c2UuCj4gCj4gVGhlIGtlcm5lbCBjb21tYW5kIGxpbmUg
+aXM6Cj4gCj4gCj4gL3Zhci9hdXRvZnMvbG9jYWwvc3JjL2xpbnV4LXdvcmsvbGludXgvdm1saW51
+eCBtZW09MjA0OE0gdW1pZD1PUFggXAo+IHViZDA9L3Zhci9hdXRvZnMvbG9jYWwvVU1ML09QWC0z
+LjAtV29yay5pbWfCoCBcCj4gdmVjMDp0cmFuc3BvcnQ9cmF3LGlmbmFtZT1wdmV0aDAsZGVwdGg9
+MTI4LGdybz0xLG1hYz05Mjo5YjozNjo1ZTozODo2OSBcCj4gcm9vdD0vZGV2L3ViZGEgcm8gY29u
+PW51bGwgY29uMD1udWxsLGZkOjIgY29uMT1mZDowLGZkOjEKPiAKPiBwdmV0aDAgaXMgb25lIGhh
+bGYgb2YgYSB2ZXRoIHBhaXIgY3JlYXRlZCBieSBkb2luZwo+IAo+IAo+IGlwIGxpbmsgYWRkIGx2
+ZXRoMCB0eXBlIHZldGggcGVlciBuYW1lIHB2ZXRoMCAmJiBpZmNvbmZpZyBwdmV0aDAgdXAKPiAK
+PiBsdmV0aDAgaXMgdXNlZCBmb3IgdGhlIGhvc3Qgc2lkZS4KPiAKPiBCcmdkcywKPiAKPj4KPj4g
+wqDCoMKgwqDCoCBBcm5kCj4+Cj4gCgoKQXJuZCwKCkkgYXBvbG9naXplLCBwcm9ibGVtIGVsc2V3
+aGVyZS4gSSBoYXZlIG5hcnJvd2VkIGl0IGRvd24sIGl0IGlzIGEgaG9zdCAKcmVncmVzc2lvbiBh
+dCB0aGUgZW5kLCBub3QgYSByZWN2bW1zZy90aW1lIG9uZS4KClRoZSBFSU5WQUwgaXMgb2NjYXNp
+b25hbGx5IHJldHVybmVkIGZyb20gdGhlIGd1dHMgb2YgcGFja2V0X3Jjdl92bmV0CgpodHRwczov
+L2VsaXhpci5ib290bGluLmNvbS9saW51eC9sYXRlc3QvaWRlbnQvcGFja2V0X3Jjdl92bmV0Cgpp
+biBhZl9wYWNrZXQuIEkgYW0gZ29pbmcgdG8gdHJ5IHRvIGZpZ3VyZSBvdXQgZXhhY3RseSB3aGVu
+IGl0IGhhcHBlbnMgCmFuZCB3aHkuCgpNeSBzaW5jZXJlIGFwb2xvZ2llcywKCi0tIApBbnRvbiBS
+LiBJdmFub3YKQ2FtYnJpZGdlZ3JleXMgTGltaXRlZC4gUmVnaXN0ZXJlZCBpbiBFbmdsYW5kLiBD
+b21wYW55IE51bWJlciAxMDI3MzY2MQpodHRwczovL3d3dy5jYW1icmlkZ2VncmV5cy5jb20vCgpf
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC11bSBt
+YWlsaW5nIGxpc3QKbGludXgtdW1AbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5m
+cmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXVtCg==
