@@ -2,75 +2,83 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E46F1115A57
-	for <lists+linux-um@lfdr.de>; Sat,  7 Dec 2019 01:32:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0C4AE115A9F
+	for <lists+linux-um@lfdr.de>; Sat,  7 Dec 2019 02:21:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rFs8V/7uyIVp3fK2KwfgPUXMGkVFRCOKhG2xnwfU2lc=; b=nMEFoykMjknjUK
-	sv/OZHtAWPMsF240DOhNTHAXPEG3I0ryhxiPNTxRZYfBuSH5S61LgsZKEn/cVvB5g/xPoF+7EH1qS
-	SsRLmNiLXo+GlvVzhYpUeA5ix2K1WoB/tVa0w7K1IQpV9q0H6hnXHRiFHTJktwhGwpzSzD3hGWD6A
-	DMYjNRLsIZWrnQZUg4s6uJvLNyHXMCo7qbKFWmvU6GpcSlfCRH8nREV8IHE7GUDAmMw71XBryBMbC
-	iIGkSzYdNaAhU8DHEfeYBi860CAnpXSJymPZW4tVe4nrxOSyimdLFmvosxnyY+bKkSrAXBQYs+Rv3
-	P5uue9vYU2O5hjqULTxg==;
+	List-Owner; bh=w5hu2DXXAH9UQnCVqHxE0XLQVXWKHU5oBstJECqxXHI=; b=lvW7ci7jWshq/Z
+	pEIrbZ/mRKCKO+LE876g5IL7L6rdXkoLzVAEnBBoOS8kvt6zC0S1wsoELyh2QfZM5D3Sz/LDh9cc/
+	A2hLbD9WdBMdFqZ5uCil9ADexfhWPSnaTyIBnA+b/C7WcT1t5vKUy6dz78roAda17bwokpssoofJ6
+	/QnI1Wg+VAIe+fZyKKAhW5wwsoZkS8CpG10/Ixe9gxHXbWbs+lkgkUg3OdZJ1xqU00j0lOrRJeIZc
+	sASNfxmSIHsr0yVsiqoJ6J7vehAhJhSAcXfkTqr3tFphx7fgqcyojq9vDBKsaIPerI8agDRpknslL
+	T10seEHT3X1jotsGXl6g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1idO1i-000565-Rs; Sat, 07 Dec 2019 00:32:50 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1idOmf-0003YH-1P; Sat, 07 Dec 2019 01:21:21 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1idO1f-00055U-Po
- for linux-um@lists.infradead.org; Sat, 07 Dec 2019 00:32:48 +0000
-Received: by mail-pf1-x441.google.com with SMTP id h14so4180939pfe.10
- for <linux-um@lists.infradead.org>; Fri, 06 Dec 2019 16:32:47 -0800 (PST)
+ id 1idOmb-0003Xn-Hr
+ for linux-um@lists.infradead.org; Sat, 07 Dec 2019 01:21:19 +0000
+Received: by mail-pf1-x443.google.com with SMTP id d199so4229023pfd.11
+ for <linux-um@lists.infradead.org>; Fri, 06 Dec 2019 17:21:14 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=9nA6TLXHYl8v79peg3VhVosiUxmffdmpQbw61XmrrVw=;
- b=k0mgtqawhqQauqAo6Xm6Y0XzZGm+X99KsWdAV+KuEkGfXAz/WbV5qUCiTIVMIqFkwk
- 7YChpnQVxjemzb+1wlbUjYOprUtpKjXvqjRtjpw7O/Vsf1oTijwu+Po2hmkkgHo4rHWL
- yYy8ypWJhdy/D+TdRYSMxI5LAbmxsNoON7lZOBvucAOTj9ehPhvWT4RVSHNtjtSIpE7M
- IMfHqeUxooqAdCRdoVmiE+LDBu4CoMo7vw/OkUMVo/Wh3sR9MReIZOODRP+FVe9E2TII
- OgsKP/VB4cJYtHkOpR697qiXPFqarvTCZK58ExPs4sJ7HRe6kUR27yRcsJiWMAnTy6XZ
- VuOg==
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:content-transfer-encoding:in-reply-to
+ :user-agent; bh=yEn14k+clLvmNnACMsBkTxLXcZL5KjXBaody+Go5YQA=;
+ b=RVktpsWsyDJ2zmC5kzzH0C65ikVPwt/aU1ngdwnfogURM6j3WsR3m2gPL5rckVuipn
+ 37OfiaQUZKb4e4iABBSyMR3akYVbt2fuiScLpd0tFMdOMr06qAkUA5GZ0rNg3zN9ZOR3
+ 3sVtvBvg67wLijt8omw4z3DHgUa3jjQldzcQDG0U8kMq7o8rF703wcLWkYrNVkq/Dmay
+ rmfOzXv2nDlUtcLk+xRbhOHolVoOUsmpJ3+X1dbxmT542OBbniJALQgylZCRjjJ96WGG
+ WdtXyXWdVYqXsriR1Ay4dUdrbOA7+4QG2AuDIIUfl7qWV04gAKemav+hoX3HsGy18eZA
+ KNvQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=9nA6TLXHYl8v79peg3VhVosiUxmffdmpQbw61XmrrVw=;
- b=ZvgVfVyCks7vl9DwmzrN4CGDCmFfGKx6OBfOFtZVY9xiHDqYUBdb8sk6aBFtDwS1Bg
- XYoP+TM4+LvZNU3RSKbq4BJ71+GdGzM2B7AkvPPWDHJ+GRll9V2jQ+OM1O2UJKJK8afK
- dIknMQ60PyQvS42qXnJE4HlaFJkuvbnf+9YK6vSbehHp64OkhSYAe6qUnfgxvXABppbB
- Kfk2h0szzP3eizqLP/Hyg/nsNP2gTqCuvMhqzxaZ7BIS9RMCcBXQ0lFnl3bV6f9vVNmq
- 6NDEx4LVKVl6NCePgR0n1sG0o6PSamn/krDinKYG5UwuD0fAsxGg+VZ/1ypVtThKVFMJ
- xRag==
-X-Gm-Message-State: APjAAAWEryys1PVCeG3PiprZLv0S4GZco9bPKQXJaQZ5PKW18bPSSxAV
- tdRv+UTsOrHIqVHeeHFr7MNeQscopSQF/FnrAe1JVgDEbgnfIA==
-X-Google-Smtp-Source: APXvYqyAM9UyYZckbr97n8v5vv5QX+O9jWt0njXHGztaN/fZMNU2oZVIVd2VtftBNRvnLjGxsuqS4BrCMBIKw6qyeGk=
-X-Received: by 2002:aa7:961b:: with SMTP id q27mr17493808pfg.23.1575678766044; 
- Fri, 06 Dec 2019 16:32:46 -0800 (PST)
-MIME-Version: 1.0
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to:user-agent;
+ bh=yEn14k+clLvmNnACMsBkTxLXcZL5KjXBaody+Go5YQA=;
+ b=Zer8/eUxrG6+oeJn10A1uO2ShPGQhvmH+FlHfsbDkkYZRqxRymzbwzgYVkJemdbyo8
+ kzq8r7BCcdxhXRrsKZ3h0mGgbVvSXMw8n6Se4XsgFKIq1BphRGGcmYv/R70J+xl9A89G
+ W9oAoYtbCgF7QKHNpTyT7GRUJTv9tQSP3d9K9Yf72G336ufFfMunwiaFqJnlvTpsmTM4
+ 5c6C3Sm0oPgPJ6DYWhyVXSDE0O8g3abxx7omjgJCXJCkxoYrz0TzHEiejMH4jVA/0iFd
+ EemLGl5yzjOb7fE0AAW8/p+mfX1Yvb2rfA8AdKjq16Bhtw40WmgbsLEmXqrXlXIA2HyE
+ zlVw==
+X-Gm-Message-State: APjAAAVENaRv7foB9IW6tzn7i06P5roULlq831eQt4rxg7Rp/+DX5TfU
+ 3tl4oC1Vf3z4WI/uz2wbkEKhWw==
+X-Google-Smtp-Source: APXvYqzfNrW47rjcKV8huzvGoXPAKRUzD/VyzmnJ6kimzv2+42ubB+gwb5kQUmNkYzvseub7koSQ9A==
+X-Received: by 2002:a63:4f5c:: with SMTP id p28mr6632289pgl.409.1575681673644; 
+ Fri, 06 Dec 2019 17:21:13 -0800 (PST)
+Received: from google.com ([2620:15c:2cb:1:e90c:8e54:c2b4:29e7])
+ by smtp.gmail.com with ESMTPSA id b65sm17348072pgc.18.2019.12.06.17.21.12
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 06 Dec 2019 17:21:12 -0800 (PST)
+Date: Fri, 6 Dec 2019 17:21:08 -0800
+From: Brendan Higgins <brendanhiggins@google.com>
+To: Anton Ivanov <anton.ivanov@cambridgegreys.com>
+Subject: Re: [RFC v1 1/2] um: drivers: remove support for UML_NET_PCAP
+Message-ID: <20191207012108.GA220741@google.com>
 References: <20191206020153.228283-1-brendanhiggins@google.com>
  <20191206020153.228283-2-brendanhiggins@google.com>
  <f217945d-ab64-10cc-bb12-3a4d810ff25a@cambridgegreys.com>
-In-Reply-To: <f217945d-ab64-10cc-bb12-3a4d810ff25a@cambridgegreys.com>
-From: Brendan Higgins <brendanhiggins@google.com>
-Date: Fri, 6 Dec 2019 16:32:34 -0800
-Message-ID: <CAFd5g45cSKATfw4GKPw6QdhQKDNi=0gcDRjQ7N0T1XrdtSTPrg@mail.gmail.com>
-Subject: Re: [RFC v1 1/2] um: drivers: remove support for UML_NET_PCAP
-To: Anton Ivanov <anton.ivanov@cambridgegreys.com>
+ <CAFd5g45cSKATfw4GKPw6QdhQKDNi=0gcDRjQ7N0T1XrdtSTPrg@mail.gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CAFd5g45cSKATfw4GKPw6QdhQKDNi=0gcDRjQ7N0T1XrdtSTPrg@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191206_163247_859999_620E781E 
-X-CRM114-Status: UNSURE (   7.56  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191206_172117_614056_BAB4564E 
+X-CRM114-Status: GOOD (  12.26  )
 X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
  white-list
@@ -102,29 +110,35 @@ Cc: johannes.berg@intel.com, Richard Weinberger <richard@nod.at>,
  Jeff Dike <jdike@addtoit.com>, linux-um@lists.infradead.org,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
  David Gow <davidgow@google.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Thu, Dec 5, 2019 at 11:23 PM Anton Ivanov
-<anton.ivanov@cambridgegreys.com> wrote:
-[...]
-> 1. There is a proposed patch for the build system to fix it.
->
-> 2. We should be removing all old drivers and replacing them with the
-> vector ones.
-
-Hmm...does this mean you would entertain a patch removing all the
-non-vector UML network drivers? I would be happy to see VDE go as
-well.
-
-In any event, it sounds like I should probably drop this patch as it
-is currently.
-
-Thanks!
-
-_______________________________________________
-linux-um mailing list
-linux-um@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-um
+T24gRnJpLCBEZWMgMDYsIDIwMTkgYXQgMDQ6MzI6MzRQTSAtMDgwMCwgQnJlbmRhbiBIaWdnaW5z
+IHdyb3RlOgo+IE9uIFRodSwgRGVjIDUsIDIwMTkgYXQgMTE6MjMgUE0gQW50b24gSXZhbm92Cj4g
+PGFudG9uLml2YW5vdkBjYW1icmlkZ2VncmV5cy5jb20+IHdyb3RlOgo+IFsuLi5dCj4gPiAxLiBU
+aGVyZSBpcyBhIHByb3Bvc2VkIHBhdGNoIGZvciB0aGUgYnVpbGQgc3lzdGVtIHRvIGZpeCBpdC4K
+ClNvIEkganVzdCB0cmllZCB0aGUgcGF0Y2ggeW91IGxpbmtlZCBvbiB0aGUgY292ZXIgbGV0dGVy
+WzFdLCBhbmQgSSBhbQpzdGlsbCBnZXR0aW5nIHRoZSBidWlsZCBlcnJvciBkZXNjcmliZWQgYWJv
+dmU6CgphcmNoL3VtL2RyaXZlcnMvcGNhcF91c2VyLmM6MzU6MTI6IGVycm9yOiBjb25mbGljdGlu
+ZyB0eXBlcyBmb3Ig4oCYcGNhcF9vcGVu4oCZCiBzdGF0aWMgaW50IHBjYXBfb3Blbih2b2lkICpk
+YXRhKQogICAgICAgICAgICBefn5+fn5+fn4KSW4gZmlsZSBpbmNsdWRlZCBmcm9tIC91c3IvaW5j
+bHVkZS9wY2FwLmg6NDMsCiAgICAgICAgICAgICAgICAgZnJvbSBhcmNoL3VtL2RyaXZlcnMvcGNh
+cF91c2VyLmM6NzoKL3Vzci9pbmNsdWRlL3BjYXAvcGNhcC5oOjg1OToxODogbm90ZTogcHJldmlv
+dXMgZGVjbGFyYXRpb24gb2Yg4oCYcGNhcF9vcGVu4oCZIHdhcyBoZXJlCiBQQ0FQX0FQSSBwY2Fw
+X3QgKnBjYXBfb3Blbihjb25zdCBjaGFyICpzb3VyY2UsIGludCBzbmFwbGVuLCBpbnQgZmxhZ3Ms
+CgpMb29raW5nIGF0IHRoZSBwYXRjaCwgSSB3b3VsZG4ndCBleHBlY3QgaXQgdG8gc29sdmUgdGhp
+cyBwcm9ibGVtLgoKQXJlIHRoZXJlIG1heWJlIGRpZmZlcmVudCBjb25mbGljdGluZyBsaWJwY2Fw
+LWRldiBsaWJyYXJpZXMgYW5kIEkgaGF2ZQp0aGUgd3Jvbmcgb25lPyBPciBpcyB0aGlzIGp1c3Qg
+c3RpbGwgYnJva2VuPwoKPiA+IDIuIFdlIHNob3VsZCBiZSByZW1vdmluZyBhbGwgb2xkIGRyaXZl
+cnMgYW5kIHJlcGxhY2luZyB0aGVtIHdpdGggdGhlCj4gPiB2ZWN0b3Igb25lcy4KPiAKPiBIbW0u
+Li5kb2VzIHRoaXMgbWVhbiB5b3Ugd291bGQgZW50ZXJ0YWluIGEgcGF0Y2ggcmVtb3ZpbmcgYWxs
+IHRoZQo+IG5vbi12ZWN0b3IgVU1MIG5ldHdvcmsgZHJpdmVycz8gSSB3b3VsZCBiZSBoYXBweSB0
+byBzZWUgVkRFIGdvIGFzCj4gd2VsbC4KPiAKPiBJbiBhbnkgZXZlbnQsIGl0IHNvdW5kcyBsaWtl
+IEkgc2hvdWxkIHByb2JhYmx5IGRyb3AgdGhpcyBwYXRjaCBhcyBpdAo+IGlzIGN1cnJlbnRseS4K
+PiAKPiBUaGFua3MhCgpbMV0gaHR0cHM6Ly9idWdzLmRlYmlhbi5vcmcvY2dpLWJpbi9idWdyZXBv
+cnQuY2dpP2J1Zz05Mzg5NjIjNzkKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fCmxpbnV4LXVtIG1haWxpbmcgbGlzdApsaW51eC11bUBsaXN0cy5pbmZyYWRl
+YWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgt
+dW0K
