@@ -2,75 +2,75 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6C135115967
-	for <lists+linux-um@lfdr.de>; Fri,  6 Dec 2019 23:50:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E46F1115A57
+	for <lists+linux-um@lfdr.de>; Sat,  7 Dec 2019 01:32:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8qPyWrHu/nQuUP1Lq+6mFNn34bkiKAi/v8zZOF9j7Ds=; b=NoN6L1nwrrT2CN
-	pgLnu6KUfCc74tgaq1pRaqGj1uWeBWgpGO+VtqG8aE/OzrWq3b0B4P0WMsVHDt8taJwncYfsdYcoK
-	QOQotJ+NEGCi8ZzshdFd1z2MWQQHNJJtp/+VqMfv3Mg9KIWbTWF6jIwsYBH2BBQ4B1W3+23pGJPR2
-	Tb+VkIKWPNwTd5On2TWio36QtTo5PognyaSeGx6T660j6BI+pdahw3dqQQaqGztKzm0PBEQ0cCi7f
-	8gEcM426E175Uj3ct2jjdhuBLkBEhJYvFjzIyRX4NFejCMJi8bCCsRHYnyEt5EhHiyAx8r/oqu3F/
-	gi+Ab0e5oDmAgRrZqmSA==;
+	List-Owner; bh=rFs8V/7uyIVp3fK2KwfgPUXMGkVFRCOKhG2xnwfU2lc=; b=nMEFoykMjknjUK
+	sv/OZHtAWPMsF240DOhNTHAXPEG3I0ryhxiPNTxRZYfBuSH5S61LgsZKEn/cVvB5g/xPoF+7EH1qS
+	SsRLmNiLXo+GlvVzhYpUeA5ix2K1WoB/tVa0w7K1IQpV9q0H6hnXHRiFHTJktwhGwpzSzD3hGWD6A
+	DMYjNRLsIZWrnQZUg4s6uJvLNyHXMCo7qbKFWmvU6GpcSlfCRH8nREV8IHE7GUDAmMw71XBryBMbC
+	iIGkSzYdNaAhU8DHEfeYBi860CAnpXSJymPZW4tVe4nrxOSyimdLFmvosxnyY+bKkSrAXBQYs+Rv3
+	P5uue9vYU2O5hjqULTxg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1idMQP-00064s-JA; Fri, 06 Dec 2019 22:50:13 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1idO1i-000565-Rs; Sat, 07 Dec 2019 00:32:50 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1idMQM-00064J-Rn
- for linux-um@lists.infradead.org; Fri, 06 Dec 2019 22:50:12 +0000
-Received: by mail-pl1-x644.google.com with SMTP id w7so3315954plz.12
- for <linux-um@lists.infradead.org>; Fri, 06 Dec 2019 14:50:07 -0800 (PST)
+ id 1idO1f-00055U-Po
+ for linux-um@lists.infradead.org; Sat, 07 Dec 2019 00:32:48 +0000
+Received: by mail-pf1-x441.google.com with SMTP id h14so4180939pfe.10
+ for <linux-um@lists.infradead.org>; Fri, 06 Dec 2019 16:32:47 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=0riUqAQ9KJmR0KLv8Y1JmTN4AxBmbDidTAabyI8WLM4=;
- b=CvjmPGaHYt7Fk59w4IG3gtg0H9jfBUJVTLvrLXYNwz4/vYsyQCo/BqVFbHMBCdohie
- m1wjjW1JIZrxT+rnv7yLmtkImyIg8S3FR4+/tTZHVh8rx5vH/OnbKrjhrEeh8s5lbga+
- wcEAeIvHfLLKUZzgERgHazKD/Fv0y4D54zAo0Yx08lw89jvflreRxCzTt8doK3NjGW4Q
- sJV3nNzOfX9/WTfasTD9cp+KQRGRIG3smUZFkjF71SFrlpTzMmFPjWFUdLo1ae+BdoP0
- LsrWqzgOKTnDXeuoLdREH0M3rq6+DTRfPjXrPYubssoe+l+m59gmOpRwDv4j+cTH+X5e
- 1a4Q==
+ :cc; bh=9nA6TLXHYl8v79peg3VhVosiUxmffdmpQbw61XmrrVw=;
+ b=k0mgtqawhqQauqAo6Xm6Y0XzZGm+X99KsWdAV+KuEkGfXAz/WbV5qUCiTIVMIqFkwk
+ 7YChpnQVxjemzb+1wlbUjYOprUtpKjXvqjRtjpw7O/Vsf1oTijwu+Po2hmkkgHo4rHWL
+ yYy8ypWJhdy/D+TdRYSMxI5LAbmxsNoON7lZOBvucAOTj9ehPhvWT4RVSHNtjtSIpE7M
+ IMfHqeUxooqAdCRdoVmiE+LDBu4CoMo7vw/OkUMVo/Wh3sR9MReIZOODRP+FVe9E2TII
+ OgsKP/VB4cJYtHkOpR697qiXPFqarvTCZK58ExPs4sJ7HRe6kUR27yRcsJiWMAnTy6XZ
+ VuOg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=0riUqAQ9KJmR0KLv8Y1JmTN4AxBmbDidTAabyI8WLM4=;
- b=cg3uBFVWyf+KX7g3ECqQXIG8VWjkr/I32P7kz74HBa1MnvjBIiWxByakzqBerGniSF
- xd+ArpuV5/eqtmWlXIf/1/8fbwR38t5cvxsUbPm+FTVXNGP2gghr+NGvC1244uNYxUdu
- jucQiUrUoo+9xEXPXMdYEVOu0guwB61CdMHJynhC97ZGe5B9dq5ZyIjS1/EQAdDnW9DR
- yUp+VkzCD0giVM/Pk80CTSw/c9JLUHFzeOm2PbEs5EomQgWueHi/gxHLZHmcgWfAL8k5
- KcgHJLPH0aBmw8mwyTR8XeKM99WCmJ8QdWXFRVaXQJJTRqLYET7tu2RlZwZGWxF+WU7/
- 2F8A==
-X-Gm-Message-State: APjAAAXb/8/tbESnQUeGZyFtX2UgNx/1ceNX0Tt+C4JScUh1hwqDMmtP
- qv+lAnJSknvtdw8QM65yFx7SghIMsE0ptenH9iyEjw==
-X-Google-Smtp-Source: APXvYqxZb3qZLhT/tPljxS+wFVdxBrtjVSf2AfNUhesSCCcb0yeSN/+DZmHjqUhdO00p3A87s0OdCw0SaLG7Ya7glf8=
-X-Received: by 2002:a17:902:7c84:: with SMTP id
- y4mr16526668pll.297.1575672606927; 
- Fri, 06 Dec 2019 14:50:06 -0800 (PST)
+ bh=9nA6TLXHYl8v79peg3VhVosiUxmffdmpQbw61XmrrVw=;
+ b=ZvgVfVyCks7vl9DwmzrN4CGDCmFfGKx6OBfOFtZVY9xiHDqYUBdb8sk6aBFtDwS1Bg
+ XYoP+TM4+LvZNU3RSKbq4BJ71+GdGzM2B7AkvPPWDHJ+GRll9V2jQ+OM1O2UJKJK8afK
+ dIknMQ60PyQvS42qXnJE4HlaFJkuvbnf+9YK6vSbehHp64OkhSYAe6qUnfgxvXABppbB
+ Kfk2h0szzP3eizqLP/Hyg/nsNP2gTqCuvMhqzxaZ7BIS9RMCcBXQ0lFnl3bV6f9vVNmq
+ 6NDEx4LVKVl6NCePgR0n1sG0o6PSamn/krDinKYG5UwuD0fAsxGg+VZ/1ypVtThKVFMJ
+ xRag==
+X-Gm-Message-State: APjAAAWEryys1PVCeG3PiprZLv0S4GZco9bPKQXJaQZ5PKW18bPSSxAV
+ tdRv+UTsOrHIqVHeeHFr7MNeQscopSQF/FnrAe1JVgDEbgnfIA==
+X-Google-Smtp-Source: APXvYqyAM9UyYZckbr97n8v5vv5QX+O9jWt0njXHGztaN/fZMNU2oZVIVd2VtftBNRvnLjGxsuqS4BrCMBIKw6qyeGk=
+X-Received: by 2002:aa7:961b:: with SMTP id q27mr17493808pfg.23.1575678766044; 
+ Fri, 06 Dec 2019 16:32:46 -0800 (PST)
 MIME-Version: 1.0
 References: <20191206020153.228283-1-brendanhiggins@google.com>
- <20191206020153.228283-3-brendanhiggins@google.com>
- <aa7b77aa-bf3a-6919-ed66-37af00d856d2@cambridgegreys.com>
-In-Reply-To: <aa7b77aa-bf3a-6919-ed66-37af00d856d2@cambridgegreys.com>
+ <20191206020153.228283-2-brendanhiggins@google.com>
+ <f217945d-ab64-10cc-bb12-3a4d810ff25a@cambridgegreys.com>
+In-Reply-To: <f217945d-ab64-10cc-bb12-3a4d810ff25a@cambridgegreys.com>
 From: Brendan Higgins <brendanhiggins@google.com>
-Date: Fri, 6 Dec 2019 14:49:55 -0800
-Message-ID: <CAFd5g45_PaL_rSbhrUD1RJ1ZWasptG+z7TO9_B4-Qafs90L2KA@mail.gmail.com>
-Subject: Re: [RFC v1 2/2] uml: remove support for CONFIG_STATIC_LINK
+Date: Fri, 6 Dec 2019 16:32:34 -0800
+Message-ID: <CAFd5g45cSKATfw4GKPw6QdhQKDNi=0gcDRjQ7N0T1XrdtSTPrg@mail.gmail.com>
+Subject: Re: [RFC v1 1/2] um: drivers: remove support for UML_NET_PCAP
 To: Anton Ivanov <anton.ivanov@cambridgegreys.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191206_145010_925893_CD7B99B6 
-X-CRM114-Status: GOOD (  14.63  )
+X-CRM114-CacheID: sfid-20191206_163247_859999_620E781E 
+X-CRM114-Status: UNSURE (   7.56  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
  white-list
@@ -107,43 +107,22 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Thu, Dec 5, 2019 at 11:41 PM Anton Ivanov
+On Thu, Dec 5, 2019 at 11:23 PM Anton Ivanov
 <anton.ivanov@cambridgegreys.com> wrote:
->
-> On 06/12/2019 02:01, Brendan Higgins wrote:
-> > CONFIG_STATIC_LINK appears to have been broken since before v4.20. It
-> > doesn't play nice with CONFIG_UML_NET_VECTOR=y:
-> >
-> > /usr/bin/ld: arch/um/drivers/vector_user.o: in function
-> > `user_init_socket_fds': vector_user.c:(.text+0x430): warning: Using
-> > 'getaddrinfo' in statically linked applications requires at runtime the
-> > shared libraries from the glibc version used for linking
-> >
-> > And it seems to break the ptrace check:
-> >
-> > Checking that ptrace can change system call numbers...check_ptrace :
-> > child exited with exitcode 6, while expecting 0; status 0x67f
-> > [1]    126822 abort      ./linux mem=256M
-> >
-> > Given the importance of ptrace in UML, CONFIG_STATIC_LINK seems totally
-> > broken right now; remove it in order to fix allyesconfig for ARCH=um.
-> >
-> > Signed-off-by: Brendan Higgins <brendanhiggins@google.com>
 [...]
-> The ptrace check was discussed on the list this week - it is the enable
-> constructors commit in 5.3-rc1.
+> 1. There is a proposed patch for the build system to fix it.
 >
-> A patch reverting it was submitted by Johannes yesterday.
->
-> I did not try disabling/enabling static link - good catch.
->
-> Otherwise, I agree - static link should probably go.
->
-> Adding PCAP throws even more warnings and the AF_XDP work I have in
-> progress generates a whole page of them. Considering that the resulting
-> executable is not really static there is no point keeping the option.
+> 2. We should be removing all old drivers and replacing them with the
+> vector ones.
 
-Sounds good. I will send this out again as a non-RFC patch.
+Hmm...does this mean you would entertain a patch removing all the
+non-vector UML network drivers? I would be happy to see VDE go as
+well.
+
+In any event, it sounds like I should probably drop this patch as it
+is currently.
+
+Thanks!
 
 _______________________________________________
 linux-um mailing list
