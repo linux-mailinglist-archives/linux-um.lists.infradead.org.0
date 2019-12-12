@@ -2,113 +2,71 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 68A2311C595
-	for <lists+linux-um@lfdr.de>; Thu, 12 Dec 2019 06:45:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0BBD711C63D
+	for <lists+linux-um@lfdr.de>; Thu, 12 Dec 2019 08:15:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PrsMjZuuhhvIaTuawNk5alc+Zayanr4ke6jH+rpRDCU=; b=Eo2W4SKyXJ7+n5
-	mAyv6uZ4BwLpqGlzfutLzGlMnnGqxaRQqbLJptIYVa5wkjpy7mmuSxbFvBwzLnyqEjX2YD4PBWWT5
-	jvoG8T+E8nARaA+qA/qMhAUqyflBdb9kHZYWC203gAxRwJBPn7J9ceJkhp1inzq5xJgxAQQZ+WaFH
-	Zp7Ihj5K3zgit6swIw33T6A3DilV/MvIjVoYsOUECeyL4Zg/MP8EdmfP90AbMkWWJ4QHtDimyZSLM
-	7dIcjcRtga1T8J9BcV2yU/66B8PQklxDUAxTSkqkFctrGgoQrGeqPEjJhc9Z9AM5AchKYcwldDOW9
-	lN3aDcbaR+zflUS26FAw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=6aDIgYtw74I5JDiZcZyL3gTNhZ5ulAzSSPT1lhtP//o=; b=psesoEamo5tU8QqWheZL7UIvD
+	f6GEP+ZFZNr/ovK55lnXBdEy/UmEbenYtyhezizJtucQwvT38H6mRqYdbySfn1NJxiiFgNuoe9x28
+	Rr8g4waoEeWwkKbDMrLU1e+wUHTB3k5J0Mym2zYKSHalGIVqn7dVOvqAUXAgwYi2JUoyjSOgZBx8X
+	wC27Q3r3aS5XBCFlI90dfFw2g3zz/lh4wmAdUjAtGbriLNFHGVrpr+aWOUDEcqmipUnlNQzBZDsFR
+	EvSqurbAj93gVdg31af20TLM7dl7u8tm8NKYpWOAQHU3HlNa+GZmotbUao/HCipUBNWqAqSEmylaL
+	UhVtBrGJw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifHHy-0006pk-BH; Thu, 12 Dec 2019 05:45:26 +0000
-Received: from mail-mw2nam12on2082.outbound.protection.outlook.com
- ([40.107.244.82] helo=NAM12-MW2-obe.outbound.protection.outlook.com)
+	id 1ifIga-0000uu-2v; Thu, 12 Dec 2019 07:14:56 +0000
+Received: from ivanoab7.miniserver.com ([37.128.132.42]
+ helo=www.kot-begemot.co.uk)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifHHv-0006oz-58; Thu, 12 Dec 2019 05:45:24 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=ls3BWT2JZiMF1quQjuW2S15TCuOw5zaqfW9UMp5+cvzya7BxjfU74GoDqUL2DJTrnAx+fjLKdAbomdSn5Fx/m72igko0+A/n6ztqQNoegncHpDvr54Bd5WoF6QGRO2HpikosAsGNl8e3jCV0krI3R8vQLtB8fLJLO89Ib3nhXswYhv1dsgFYjiXKAuOfyeNU9A8f/QYo6ppB+wglcOl74xMwbuROdoXVo2FeLPbLXJ4z0S/buRnbAb7e5n5R5Z2nnJ/2xBeipiGCpyhbtd5SrqdZZWlwKn+XQm//eEYGhTzDHN2vpgUB4a1/Pv1dXh02mEebwBDVbjgDcl4yYTKBfg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=V6a0Tis2G2v9de9CINqeKkPu/zvCMbwC7NJdlkWUaG8=;
- b=eV/aKQy4/0wP1xhcE3sGrnKPyha8bqv+fqEb55YD+2oP7SpNie+Q0h7LIYWrdbKtolJGrdVMS0zqPWfi3GAOt/+hIYVyDliMx1wH+wsw89BX+70M3ZxvbYUgJoYDgiyS/6o3gQCsByqVntW6BQ40neFF25Q2QLZciZy6LDgEJAvZJOpWKaTW+YRSDMaVPa8QwewQknXecSUh0lm6O20Hoa0uQKsfAE6BLFuhJG6VfSLiMmSBY+AU1ixphIvL6TWlJjLv/S/WYEc3lP402kWKi3jkiO2SS0GYgna6V0AiimJ6dbjqTjFs7ckJvUzlIDEm122+PsABBG6UknZFMCOaOQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=xilinx.com; dmarc=pass action=none header.from=xilinx.com;
- dkim=pass header.d=xilinx.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=V6a0Tis2G2v9de9CINqeKkPu/zvCMbwC7NJdlkWUaG8=;
- b=mmvLvDM8nAWVILtSfZh238d9XxZzfllSCu8k/lQ5MW7kKE7HUBGytftme1HhcwrJZRf/JCvgXkw4e9v9YUPPflLhCcqef4M11Ns83aYDbpfBMD7sQTsqrLOUU7467sJMicpJI9Y+w5YaYdCM/mtUHieDF1wU6KX4RPEG8VGoCQk=
-Received: from CH2PR02MB7000.namprd02.prod.outlook.com (20.180.9.216) by
- CH2PR02MB6245.namprd02.prod.outlook.com (52.132.230.147) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2516.14; Thu, 12 Dec 2019 05:45:20 +0000
-Received: from CH2PR02MB7000.namprd02.prod.outlook.com
- ([fe80::5d66:1c32:4c41:b087]) by CH2PR02MB7000.namprd02.prod.outlook.com
- ([fe80::5d66:1c32:4c41:b087%3]) with mapi id 15.20.2516.018; Thu, 12 Dec 2019
- 05:45:20 +0000
-From: Radhey Shyam Pandey <radheys@xilinx.com>
-To: Brendan Higgins <brendanhiggins@google.com>, "jdike@addtoit.com"
- <jdike@addtoit.com>, "richard@nod.at" <richard@nod.at>,
- "anton.ivanov@cambridgegreys.com" <anton.ivanov@cambridgegreys.com>, "David
- S. Miller" <davem@davemloft.net>, Michal Simek <michals@xilinx.com>
-Subject: RE: [PATCH v1 3/7] net: axienet: add unspecified HAS_IOMEM dependency
-Thread-Topic: [PATCH v1 3/7] net: axienet: add unspecified HAS_IOMEM dependency
-Thread-Index: AQHVsFkiqR8nSduRnUG1Mm2Zwj3HCqe1/amA
-Date: Thu, 12 Dec 2019 05:45:20 +0000
-Message-ID: <CH2PR02MB7000A8C27E849A6B81251AFEC7550@CH2PR02MB7000.namprd02.prod.outlook.com>
-References: <20191211192742.95699-1-brendanhiggins@google.com>
- <20191211192742.95699-4-brendanhiggins@google.com>
-In-Reply-To: <20191211192742.95699-4-brendanhiggins@google.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=radheys@xilinx.com; 
-x-originating-ip: [149.199.50.133]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 9c65c8d5-7781-406b-2a30-08d77ec6796f
-x-ms-traffictypediagnostic: CH2PR02MB6245:|CH2PR02MB6245:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <CH2PR02MB62457B07B6E59B127FE8C450C7550@CH2PR02MB6245.namprd02.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:4941;
-x-forefront-prvs: 0249EFCB0B
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(366004)(376002)(346002)(396003)(136003)(39860400002)(13464003)(189003)(199004)(66946007)(76116006)(52536014)(478600001)(5660300002)(33656002)(9686003)(66476007)(26005)(2906002)(6636002)(4326008)(86362001)(186003)(66556008)(8936002)(66446008)(8676002)(316002)(7696005)(6506007)(53546011)(54906003)(71200400001)(81166006)(81156014)(64756008)(110136005)(55016002)(7416002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:CH2PR02MB6245;
- H:CH2PR02MB7000.namprd02.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: xilinx.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: wbdqpDUm6dDxHM6Yvm8GkKgvuhOVZSxhUtBsfZflN18AxhVoVk7/VXD6EAKeDeS1y2Sw+dm6fuCyRblTV31iVAGsDtIUchHUw1rsd++YE0bZ5oarS/QW6M+reEpGTBcEWXC2x3Q6PuKHP8EUeRBxQGPwJQLeM2aAAeI/qKOVv91Q9JVhTTL3extGojM9HvFQFpgz02uk5sYjXDskSYGKAzaO2t42mc9Fo+dEojE6C9qBSwYnnK9yg46rN3Jieih2vOOzLOR7mM7z8CEAZz7kzuk158QLG2S+vvvJAD5AMBcxgdVW3LmQJ8mlHw2WMGEVb5Pcy7pJf3zIOuU1YU/N/C8Cjfg/UdZC1Q8QziAI/Tp0Nnp+0phMjmQQBP6wrckK+8MlQtTJxKkz+Yfd/beaH4m1cQF12wkEOCcyGNn1rUZXL3bDP/7Wyv1u39XSKKH5muzcjrpgBT8tdO02DIjB0pWaR7fqe0QXXLatNQkselBeyoSodigOO5vaBFQqroR3
+ id 1ifIgX-0000u8-8D
+ for linux-um@lists.infradead.org; Thu, 12 Dec 2019 07:14:55 +0000
+Received: from tun252.jain.kot-begemot.co.uk ([192.168.18.6]
+ helo=jain.kot-begemot.co.uk)
+ by www.kot-begemot.co.uk with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.92) (envelope-from <anton.ivanov@cambridgegreys.com>)
+ id 1ifIgP-0000Xa-Ta; Thu, 12 Dec 2019 07:14:46 +0000
+Received: from sleer.kot-begemot.co.uk ([192.168.3.72])
+ by jain.kot-begemot.co.uk with esmtps
+ (TLS1.3:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
+ (envelope-from <anton.ivanov@cambridgegreys.com>)
+ id 1ifIgN-0002uy-Mj; Thu, 12 Dec 2019 07:14:45 +0000
+Subject: Re: [PATCH v1] uml: remove support for CONFIG_STATIC_LINK
+To: James McMechan <james_mcmechan@hotmail.com>,
+ Richard Weinberger <richard@nod.at>
+References: <20191209230248.227508-1-brendanhiggins@google.com>
+ <1406826345.111805.1575933346955.JavaMail.zimbra@nod.at>
+ <2eecf4dc-eb96-859a-a015-1a4f388b57a2@cambridgegreys.com>
+ <346757c8-c111-f6cf-21d2-b0bffd41b8a8@cambridgegreys.com>
+ <392256369.112046.1575966868218.JavaMail.zimbra@nod.at>
+ <DM6PR10MB3225EB0C204572F8D39C0ED5E2550@DM6PR10MB3225.namprd10.prod.outlook.com>
+ <DM6PR10MB32259A098E3BED3CF522C851E2550@DM6PR10MB3225.namprd10.prod.outlook.com>
+From: Anton Ivanov <anton.ivanov@cambridgegreys.com>
+Organization: Cambridge Greys
+Message-ID: <3f4af81b-72e5-b197-ef25-aaf5aae0e604@cambridgegreys.com>
+Date: Thu, 12 Dec 2019 07:14:43 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.2
 MIME-Version: 1.0
-X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 9c65c8d5-7781-406b-2a30-08d77ec6796f
-X-MS-Exchange-CrossTenant-originalarrivaltime: 12 Dec 2019 05:45:20.1141 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 657af505-d5df-48d0-8300-c31994686c5c
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 3vu+7lUBSOYsSLoPc2QJVeXj42dT7tBNwx8k4EpdsOZX7dK5n+akLfOMwqT+jG4Oi8TkJTpnrmZ5favEIMyRzw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH2PR02MB6245
+In-Reply-To: <DM6PR10MB32259A098E3BED3CF522C851E2550@DM6PR10MB3225.namprd10.prod.outlook.com>
+Content-Language: en-US
+X-Spam-Score: -1.0
+X-Spam-Score: -1.0
+X-Clacks-Overhead: GNU Terry Pratchett
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_214523_194260_A8F73FEC 
-X-CRM114-Status: GOOD (  14.81  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191211_231453_294105_315AD77E 
+X-CRM114-Status: GOOD (  21.49  )
+X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.244.82 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.4 KHOP_HELO_FCRDNS       Relay HELO differs from its IP's reverse DNS
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -120,70 +78,71 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- "linux-um@lists.infradead.org" <linux-um@lists.infradead.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "davidgow@google.com" <davidgow@google.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Johannes Berg <johannes.berg@intel.com>,
+ Brendan Higgins <brendanhiggins@google.com>, Jeff Dike <jdike@addtoit.com>,
+ linux-um <linux-um@lists.infradead.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>, davidgow <davidgow@google.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-> -----Original Message-----
-> From: Brendan Higgins <brendanhiggins@google.com>
-> Sent: Thursday, December 12, 2019 12:58 AM
-> To: jdike@addtoit.com; richard@nod.at;
-> anton.ivanov@cambridgegreys.com; David S. Miller
-> <davem@davemloft.net>; Michal Simek <michals@xilinx.com>; Radhey
-> Shyam Pandey <radheys@xilinx.com>
-> Cc: linux-um@lists.infradead.org; linux-kernel@vger.kernel.org;
-> davidgow@google.com; Brendan Higgins <brendanhiggins@google.com>;
-> netdev@vger.kernel.org; linux-arm-kernel@lists.infradead.org
-> Subject: [PATCH v1 3/7] net: axienet: add unspecified HAS_IOMEM
-> dependency
+On 12/12/2019 05:23, James McMechan wrote:
+> Fixed up version without html...
+> Um what is broken, uml seems to be working with the old stack and static linking.
 > 
-> Currently CONFIG_XILINX_AXI_EMAC=y implicitly depends on
-> CONFIG_HAS_IOMEM=y; consequently, on architectures without IOMEM we
-> get
-> the following build error:
+> I saw a comment that the vector io stuff breaks uml on static link,
+> but I was just running one without vector io, I had the pcap library linked in instead.
+> It was up for about 3 days when I rebooted from mconsole 'cad'
+> It would seem simplest to just mark vector io as !STATIC in the config...
+> I was running 5.4.2 with a pretty close to defconfig
 > 
-> ld: drivers/net/ethernet/xilinx/xilinx_axienet_main.o: in function
-> `axienet_probe':
-> drivers/net/ethernet/xilinx/xilinx_axienet_main.c:1680: undefined reference
-> to `devm_ioremap_resource'
-> ld: drivers/net/ethernet/xilinx/xilinx_axienet_main.c:1779: undefined
-> reference to `devm_ioremap_resource'
-> ld: drivers/net/ethernet/xilinx/xilinx_axienet_main.c:1789: undefined
-> reference to `devm_ioremap_resource'
+> I had to twiddle the uml pcap a little to deconflict the headers, and make sure pcap was not linking to dbus.
+> I have not looked into vector io too closely I seemed to remember it was using host getaddrinfo the only thing in uml doing so I think it was pulling in the glibc, so-so dynamically link networking even when told not to... and that was breaking the startup process by changing memory maps behind the programs back or some such and then segfaulting the process much like the "we will implement async io in userspace behind the processes back" did back in the day.
 > 
-> Fix the build error by adding the unspecified dependency.
-> 
-> Reported-by: Brendan Higgins <brendanhiggins@google.com>
-> Signed-off-by: Brendan Higgins <brendanhiggins@google.com>
-Reviewed-by: Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>
-Thanks!
+> I would expect it to be possible to remove the getaddrinfo or use kernel functions.
 
-> ---
->  drivers/net/ethernet/xilinx/Kconfig | 1 +
->  1 file changed, 1 insertion(+)
+If you just try to do 1:1 replacement with the legacy functions you stop 
+being v6 compliant. You after that need to go through quite a lot of 
+hoops and extra code to get that back.
+
+You cannot use kernel functions - this is on the host userspace side of UML.
+
+> It does not seem to have much in the way of comments, and I don't understand what it is trying to do.
+> Why would a network protocol need to lookup "protocol/ip address/port num" sets in userspace? it should just be passing everything somewhere...
+> Is it trying to do dynamic routing of the packets to different transports?
+
+It is using shared code for (at present) tap (two forms - one optimized 
+for throughput, one using a tap/socket pair optimized for packets per 
+second), raw sockets, gre, l2tpv3 (both raw and over udp) and one 
+flavour unix domain sockets.
+
+Both gre and l2tpv3 support v4 and v6.
+
+While it is possible to replace getaddrinfo with a sequence of 
+gethostbyname, etc it will:
+
+1. Grow the size of the code by at least 100 lines if not more. If I 
+take care of all corner cases which getaddrinfo() does - more.
+
+2. Defeat one of the purposes of the exercise - to make it easy to add 
+new socket transports.
+
+3. There is no guarantee that the glibc guys will not make gethostbyname 
+and friends fallback to getaddrinfo internally one day (in fact I am 
+surprised they have not done it yet).
+
 > 
-> diff --git a/drivers/net/ethernet/xilinx/Kconfig
-> b/drivers/net/ethernet/xilinx/Kconfig
-> index 6304ebd8b5c69..b1a285e693756 100644
-> --- a/drivers/net/ethernet/xilinx/Kconfig
-> +++ b/drivers/net/ethernet/xilinx/Kconfig
-> @@ -25,6 +25,7 @@ config XILINX_EMACLITE
+> Slight confused but still running,
 > 
->  config XILINX_AXI_EMAC
->  	tristate "Xilinx 10/100/1000 AXI Ethernet support"
-> +	depends on HAS_IOMEM
->  	select PHYLINK
->  	---help---
->  	  This driver supports the 10/100/1000 Ethernet from Xilinx for the
-> --
-> 2.24.0.525.g8f36a354ae-goog
+> Jim McMechan
+> 
+
+
+-- 
+Anton R. Ivanov
+Cambridgegreys Limited. Registered in England. Company Number 10273661
+https://www.cambridgegreys.com/
 
 _______________________________________________
 linux-um mailing list
