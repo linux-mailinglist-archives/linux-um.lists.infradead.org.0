@@ -2,63 +2,69 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 50B8911E85A
-	for <lists+linux-um@lfdr.de>; Fri, 13 Dec 2019 17:31:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D4BDC11EC16
+	for <lists+linux-um@lfdr.de>; Fri, 13 Dec 2019 21:51:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=lZf2VdnJriLx5N5zmhtjHXHNDzzBR4qUaGzrE6pf8k4=; b=gP/u8Hho/UBhr9Z+sVctPsJS2
-	RlGy3OPFYEAfU5vEccdwnBJ6PsjX20FNeVwrRY/Ttx7nYkV/P5gbse1tg7owyNF3iUzOLoNGbFiXQ
-	d8PLMrtwM9cuG0XPkmFxJ/r3dKj+pAYJkU943ZWfBAN58ezLozHwfNu691jCznzIH6UbCcWSbWoWc
-	Zi1XN3n9guMcRwDgN5YT+Ik3p9lQLSDQp5B7psABk9yVl9F3K8WOKqWV3P/ClSItVr0VsZ/DdiaPp
-	2XDgnq3RGUy4R//OIOmW997/FIteLVVK2Y5VuXpjOcI9kNqvYL3UUuNEPmbzJswikaZkoevHPENbu
-	OKoRVBhlg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=hPq7/sS7EkvvHAk6xwJ5YCtRXyg1jdw6yUt6eNwchys=; b=BxqNi6HV3exUWH
+	lk7ERi4Tyt7I9s3xbnoOvwUnQ7mVx2Kx/T3rL7Dm0j86wQXJFbMmV1sugSGERvmfTObOzi5DcqlTt
+	IpWlIlL7f9uLLrK419obCO1SHVRNvroaNBeDWVl5v0Oy0IZQsFs85/UDLh40y2xiId26qOqfLGaQ0
+	A+AEgnG/92psXfgzxPA72YTDACS68akF15tfWbv15606FKiPj6JufzuY+VP5XjVI8av3hvtyj/sIA
+	p4Bb6tcEYKOMyJzgVojJLL2CRygbtS2rZ8pvXKQbDqe/ttdzBSMJ5Ld7VW/ZInyr4IuCscO/7ZUp4
+	8vP7s6wCgN+nAM8krZqw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifnqH-0001XA-FY; Fri, 13 Dec 2019 16:31:01 +0000
-Received: from ivanoab7.miniserver.com ([37.128.132.42]
- helo=www.kot-begemot.co.uk)
+	id 1ifruf-0000R5-KY; Fri, 13 Dec 2019 20:51:49 +0000
+Received: from mout.kundenserver.de ([217.72.192.74])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifnqD-0001We-FW
- for linux-um@lists.infradead.org; Fri, 13 Dec 2019 16:31:00 +0000
-Received: from tun252.jain.kot-begemot.co.uk ([192.168.18.6]
- helo=jain.kot-begemot.co.uk)
- by www.kot-begemot.co.uk with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.92) (envelope-from <anton.ivanov@cambridgegreys.com>)
- id 1ifnqB-0005uU-2i; Fri, 13 Dec 2019 16:30:55 +0000
-Received: from jain.kot-begemot.co.uk ([192.168.3.3])
- by jain.kot-begemot.co.uk with esmtp (Exim 4.92)
- (envelope-from <anton.ivanov@cambridgegreys.com>)
- id 1ifnq8-0007yc-LX; Fri, 13 Dec 2019 16:30:54 +0000
-Subject: Re: [PATCH 3/3] um: Migrate socket transport to Vector backend
-To: linux-um@lists.infradead.org
-References: <20191213160858.28840-1-anton.ivanov@cambridgegreys.com>
- <20191213160858.28840-3-anton.ivanov@cambridgegreys.com>
-From: Anton Ivanov <anton.ivanov@cambridgegreys.com>
-Message-ID: <74b52582-9145-4094-6be9-709dd34e8c6d@cambridgegreys.com>
-Date: Fri, 13 Dec 2019 16:30:52 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
+ id 1ifrub-0000Po-S7
+ for linux-um@lists.infradead.org; Fri, 13 Dec 2019 20:51:48 +0000
+Received: from threadripper.lan ([149.172.19.189]) by mrelayeu.kundenserver.de
+ (mreue109 [212.227.15.145]) with ESMTPA (Nemesis) id
+ 1MvbO4-1hpQC52QtS-00scVY; Fri, 13 Dec 2019 21:50:19 +0100
+From: Arnd Bergmann <arnd@arndb.de>
+To: y2038@lists.linaro.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH v2 00/24] drivers, fs: y2038 updates
+Date: Fri, 13 Dec 2019 21:49:09 +0100
+Message-Id: <20191213204936.3643476-1-arnd@arndb.de>
+X-Mailer: git-send-email 2.20.0
 MIME-Version: 1.0
-In-Reply-To: <20191213160858.28840-3-anton.ivanov@cambridgegreys.com>
-Content-Language: en-US
-X-Spam-Score: -1.0
-X-Spam-Score: -1.0
-X-Clacks-Overhead: GNU Terry Pratchett
+X-Provags-ID: V03:K1:uP+kiANpOGJCAXUng4IDyXrHx7+oq5wNuUSCR2Raiw5aTIDdJGg
+ 5j4AA9RZwtRFpSlQJZR8HotU54Xfp+erI4gckXGaucpRhzYx4dcdDnO9RE7chr7C+S6QsS1
+ hz8jSvfht0kOIuwI+U39is0hUz6MZ6pZnETpaFRYUgmMegCz9cluYoQw5GzMKND6Vlt+MoP
+ vuRLets3Xp1M/VHl6bYkg==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:kP6IKflIR3w=:FkB32fEkAgwus2sZyvbWHj
+ gR1XadNmIQfTKvjDx+NHX537KVRwu9adI8C1WG7Uvu2xqdyhi6NbGnzLLS3erKQVoi1q2bcZJ
+ fRUG1d36ibEvFjwqysbPbwC5u4DHiftBkUdZ02IxQaCgRmMake1padTMioHJ5VK44dQCw0Wgi
+ l9FfLjhcz0ZpYw+KmnFwnCxdaEQ4rrmqMmI9qQZLKGibtvLox0uwJBt2f1iziiy+EV55optWx
+ eHVAl6FcsIhDR1hGIagPTt0pygd3l5tg/E0N5N3r8mcI/qaniqvi6KMSXngpuISEjztZUFIKj
+ E4vl7qLyA/xxvBi57YzPutpomt5K21wonhWSM7aFqvVNnIjTmvlIhulMkCwyDac28R/Z4Dp0g
+ KMewi00ymEE1euw319FGcrDlXrYDszeK+FvG14u8GD9wvnlwoLF7R9G2nx97kdApqLxfkXQly
+ B+hANhQzcIaPqD3Mj4IbgJQGI17ypNCagD8+FwqTZDb0OBqInzQnwij7FBHUOWFHF3Qs/EI7o
+ 1nrINilaeyXksJoTUhiuzSirhvGWBkbMzW5k02tP0uTz7sxrCz/FxXHDE522PcCDuQTBlyv+I
+ QJ9z1iVT5Xg/jxkC7PWxkiiqjSgCEiTCIb6V84/lzwlgwaR4VDO+WH8ZX/gzqVNe9o9vQ3KSE
+ 8vilfRFPAZi1Or+AvWmTgxeRFkLvobJdMhGGlGJUFAh0XHUkVTF0t8WkeZWhW85ocAbJ5g94z
+ t07OthlwQEZNuwc5Z06FKMmP8bFmSpWpMf3TMpq6QCKO+gB6xZa0zdZgyTvgHlhAZckFpPNzt
+ SLryaKF3jS+MB5IeJX7dR8/nMWgS5LTwsezZchNIkyBiQLIxvP9ZVqFsGf6QbesMAbCjQWssu
+ Ok7QMsSa208ewWk2bxEw==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191213_083057_779821_760FC602 
-X-CRM114-Status: GOOD (  20.08  )
-X-Spam-Score: 0.4 (/)
+X-CRM114-CacheID: sfid-20191213_125146_214123_F749AE36 
+X-CRM114-Status: GOOD (  11.32  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.4 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.72.192.74 listed in list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.4 KHOP_HELO_FCRDNS       Relay HELO differs from its IP's reverse DNS
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,525 +76,181 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: richard@nod.at, brendanhiggins@google.com
+Cc: airlied@linux.ie, dri-devel@lists.freedesktop.org, jcmvbkbc@gmail.com,
+ netdev@vger.kernel.org, sparclinux@vger.kernel.org,
+ linux1394-devel@lists.sourceforge.net, devel@driverdev.osuosl.org,
+ darrick.wong@oracle.com, richard@nod.at, cluster-devel@redhat.com,
+ ccaulfie@redhat.com, linux+etnaviv@armlinux.org.uk,
+ Arnd Bergmann <arnd@arndb.de>, linux-arm-msm@vger.kernel.org,
+ jdike@addtoit.com, linux-um@lists.infradead.org, etnaviv@lists.freedesktop.org,
+ christian.gmeiner@gmail.com, teigland@redhat.com, viro@zeniv.linux.org.uk,
+ tglx@linutronix.de, sean@poorly.run, trond.myklebust@hammerspace.com,
+ hirofumi@mail.parknet.co.jp, linux-nfs@vger.kernel.org,
+ valdis.kletnieks@vt.edu, rfontana@redhat.com, gregkh@linuxfoundation.org,
+ fw@strlen.de, anna.schumaker@netapp.com, linux-xfs@vger.kernel.org,
+ robdclark@gmail.com, stefanr@s5r6.in-berlin.de, daniel@ffwll.ch, jack@suse.com,
+ linux-fsdevel@vger.kernel.org, freedreno@lists.freedesktop.org,
+ davem@davemloft.net, l.stach@pengutronix.de
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
+These are updates to devidce drivers and file systems that for some
+reason or another were not included in the kernel in the previous
+y2038 series.
 
+I've gone through all users of time_t again to make sure the
+kernel is in a long-term maintainable state.
 
-On 13/12/2019 16:08, anton.ivanov@cambridgegreys.com wrote:
-> From: Anton Ivanov <anton.ivanov@cambridgegreys.com>
-> 
-> Moves legacy socket transport to the vector IO backend
-> 
-> Signed-off-by: Anton Ivanov <anton.ivanov@cambridgegreys.com>
-> ---
->   arch/um/drivers/Makefile      |   2 -
->   arch/um/drivers/umcast.h      |  27 -----
->   arch/um/drivers/umcast_kern.c | 188 ----------------------------------
->   arch/um/drivers/umcast_user.c | 184 ---------------------------------
->   arch/um/drivers/vector_kern.c |  31 ++++++
->   5 files changed, 31 insertions(+), 401 deletions(-)
->   delete mode 100644 arch/um/drivers/umcast.h
->   delete mode 100644 arch/um/drivers/umcast_kern.c
->   delete mode 100644 arch/um/drivers/umcast_user.c
-> 
-> diff --git a/arch/um/drivers/Makefile b/arch/um/drivers/Makefile
-> index ea449dc72236..a283b395b4da 100644
-> --- a/arch/um/drivers/Makefile
-> +++ b/arch/um/drivers/Makefile
-> @@ -10,7 +10,6 @@ slip-objs := slip_kern.o slip_user.o
->   slirp-objs := slirp_kern.o slirp_user.o
->   daemon-objs := daemon_kern.o daemon_user.o
->   vector-objs := vector_kern.o vector_user.o vector_transports.o
-> -umcast-objs := umcast_kern.o umcast_user.o
->   net-objs := net_kern.o net_user.o
->   mconsole-objs := mconsole_kern.o mconsole_user.o
->   hostaudio-objs := hostaudio_kern.o
-> @@ -46,7 +45,6 @@ obj-$(CONFIG_UML_NET_SLIRP) += slirp.o slip_common.o
->   obj-$(CONFIG_UML_NET_DAEMON) += daemon.o
->   obj-$(CONFIG_UML_NET_VECTOR) += vector.o
->   obj-$(CONFIG_UML_NET_VDE) += vde.o
-> -obj-$(CONFIG_UML_NET_MCAST) += umcast.o
->   obj-$(CONFIG_UML_NET_PCAP) += pcap.o
->   obj-$(CONFIG_UML_NET) += net.o
->   obj-$(CONFIG_MCONSOLE) += mconsole.o
-> diff --git a/arch/um/drivers/umcast.h b/arch/um/drivers/umcast.h
-> deleted file mode 100644
-> index fe39bee1e3bd..000000000000
-> --- a/arch/um/drivers/umcast.h
-> +++ /dev/null
-> @@ -1,27 +0,0 @@
-> -/* SPDX-License-Identifier: GPL-2.0 */
-> -/*
-> - * Copyright (C) 2001 - 2007 Jeff Dike (jdike@{addtoit,linux.intel}.com)
-> - */
-> -
-> -#ifndef __DRIVERS_UMCAST_H
-> -#define __DRIVERS_UMCAST_H
-> -
-> -#include <net_user.h>
-> -
-> -struct umcast_data {
-> -	char *addr;
-> -	unsigned short lport;
-> -	unsigned short rport;
-> -	void *listen_addr;
-> -	void *remote_addr;
-> -	int ttl;
-> -	int unicast;
-> -	void *dev;
-> -};
-> -
-> -extern const struct net_user_info umcast_user_info;
-> -
-> -extern int umcast_user_write(int fd, void *buf, int len,
-> -			     struct umcast_data *pri);
-> -
-> -#endif
-> diff --git a/arch/um/drivers/umcast_kern.c b/arch/um/drivers/umcast_kern.c
-> deleted file mode 100644
-> index 595a54f2b9c6..000000000000
-> --- a/arch/um/drivers/umcast_kern.c
-> +++ /dev/null
-> @@ -1,188 +0,0 @@
-> -// SPDX-License-Identifier: GPL-2.0
-> -/*
-> - * user-mode-linux networking multicast transport
-> - * Copyright (C) 2001 by Harald Welte <laforge@gnumonks.org>
-> - * Copyright (C) 2001 - 2007 Jeff Dike (jdike@{addtoit,linux.intel}.com)
-> - *
-> - * based on the existing uml-networking code, which is
-> - * Copyright (C) 2001 Lennert Buytenhek (buytenh@gnu.org) and
-> - * James Leu (jleu@mindspring.net).
-> - * Copyright (C) 2001 by various other people who didn't put their name here.
-> - *
-> - */
-> -
-> -#include <linux/init.h>
-> -#include <linux/netdevice.h>
-> -#include "umcast.h"
-> -#include <net_kern.h>
-> -
-> -struct umcast_init {
-> -	char *addr;
-> -	int lport;
-> -	int rport;
-> -	int ttl;
-> -	bool unicast;
-> -};
-> -
-> -static void umcast_init(struct net_device *dev, void *data)
-> -{
-> -	struct uml_net_private *pri;
-> -	struct umcast_data *dpri;
-> -	struct umcast_init *init = data;
-> -
-> -	pri = netdev_priv(dev);
-> -	dpri = (struct umcast_data *) pri->user;
-> -	dpri->addr = init->addr;
-> -	dpri->lport = init->lport;
-> -	dpri->rport = init->rport;
-> -	dpri->unicast = init->unicast;
-> -	dpri->ttl = init->ttl;
-> -	dpri->dev = dev;
-> -
-> -	if (dpri->unicast) {
-> -		printk(KERN_INFO "ucast backend address: %s:%u listen port: "
-> -		       "%u\n", dpri->addr, dpri->rport, dpri->lport);
-> -	} else {
-> -		printk(KERN_INFO "mcast backend multicast address: %s:%u, "
-> -		       "TTL:%u\n", dpri->addr, dpri->lport, dpri->ttl);
-> -	}
-> -}
-> -
-> -static int umcast_read(int fd, struct sk_buff *skb, struct uml_net_private *lp)
-> -{
-> -	return net_recvfrom(fd, skb_mac_header(skb),
-> -			    skb->dev->mtu + ETH_HEADER_OTHER);
-> -}
-> -
-> -static int umcast_write(int fd, struct sk_buff *skb, struct uml_net_private *lp)
-> -{
-> -	return umcast_user_write(fd, skb->data, skb->len,
-> -				(struct umcast_data *) &lp->user);
-> -}
-> -
-> -static const struct net_kern_info umcast_kern_info = {
-> -	.init			= umcast_init,
-> -	.protocol		= eth_protocol,
-> -	.read			= umcast_read,
-> -	.write			= umcast_write,
-> -};
-> -
-> -static int mcast_setup(char *str, char **mac_out, void *data)
-> -{
-> -	struct umcast_init *init = data;
-> -	char *port_str = NULL, *ttl_str = NULL, *remain;
-> -	char *last;
-> -
-> -	*init = ((struct umcast_init)
-> -		{ .addr	= "239.192.168.1",
-> -		  .lport	= 1102,
-> -		  .ttl	= 1 });
-> -
-> -	remain = split_if_spec(str, mac_out, &init->addr, &port_str, &ttl_str,
-> -			       NULL);
-> -	if (remain != NULL) {
-> -		printk(KERN_ERR "mcast_setup - Extra garbage on "
-> -		       "specification : '%s'\n", remain);
-> -		return 0;
-> -	}
-> -
-> -	if (port_str != NULL) {
-> -		init->lport = simple_strtoul(port_str, &last, 10);
-> -		if ((*last != '\0') || (last == port_str)) {
-> -			printk(KERN_ERR "mcast_setup - Bad port : '%s'\n",
-> -			       port_str);
-> -			return 0;
-> -		}
-> -	}
-> -
-> -	if (ttl_str != NULL) {
-> -		init->ttl = simple_strtoul(ttl_str, &last, 10);
-> -		if ((*last != '\0') || (last == ttl_str)) {
-> -			printk(KERN_ERR "mcast_setup - Bad ttl : '%s'\n",
-> -			       ttl_str);
-> -			return 0;
-> -		}
-> -	}
-> -
-> -	init->unicast = false;
-> -	init->rport = init->lport;
-> -
-> -	printk(KERN_INFO "Configured mcast device: %s:%u-%u\n", init->addr,
-> -	       init->lport, init->ttl);
-> -
-> -	return 1;
-> -}
-> -
-> -static int ucast_setup(char *str, char **mac_out, void *data)
-> -{
-> -	struct umcast_init *init = data;
-> -	char *lport_str = NULL, *rport_str = NULL, *remain;
-> -	char *last;
-> -
-> -	*init = ((struct umcast_init)
-> -		{ .addr		= "",
-> -		  .lport	= 1102,
-> -		  .rport	= 1102 });
-> -
-> -	remain = split_if_spec(str, mac_out, &init->addr,
-> -			       &lport_str, &rport_str, NULL);
-> -	if (remain != NULL) {
-> -		printk(KERN_ERR "ucast_setup - Extra garbage on "
-> -		       "specification : '%s'\n", remain);
-> -		return 0;
-> -	}
-> -
-> -	if (lport_str != NULL) {
-> -		init->lport = simple_strtoul(lport_str, &last, 10);
-> -		if ((*last != '\0') || (last == lport_str)) {
-> -			printk(KERN_ERR "ucast_setup - Bad listen port : "
-> -			       "'%s'\n", lport_str);
-> -			return 0;
-> -		}
-> -	}
-> -
-> -	if (rport_str != NULL) {
-> -		init->rport = simple_strtoul(rport_str, &last, 10);
-> -		if ((*last != '\0') || (last == rport_str)) {
-> -			printk(KERN_ERR "ucast_setup - Bad remote port : "
-> -			       "'%s'\n", rport_str);
-> -			return 0;
-> -		}
-> -	}
-> -
-> -	init->unicast = true;
-> -
-> -	printk(KERN_INFO "Configured ucast device: :%u -> %s:%u\n",
-> -	       init->lport, init->addr, init->rport);
-> -
-> -	return 1;
-> -}
-> -
-> -static struct transport mcast_transport = {
-> -	.list	= LIST_HEAD_INIT(mcast_transport.list),
-> -	.name	= "mcast",
-> -	.setup	= mcast_setup,
-> -	.user	= &umcast_user_info,
-> -	.kern	= &umcast_kern_info,
-> -	.private_size	= sizeof(struct umcast_data),
-> -	.setup_size	= sizeof(struct umcast_init),
-> -};
-> -
-> -static struct transport ucast_transport = {
-> -	.list	= LIST_HEAD_INIT(ucast_transport.list),
-> -	.name	= "ucast",
-> -	.setup	= ucast_setup,
-> -	.user	= &umcast_user_info,
-> -	.kern	= &umcast_kern_info,
-> -	.private_size	= sizeof(struct umcast_data),
-> -	.setup_size	= sizeof(struct umcast_init),
-> -};
-> -
-> -static int register_umcast(void)
-> -{
-> -	register_transport(&mcast_transport);
-> -	register_transport(&ucast_transport);
-> -	return 0;
-> -}
-> -
-> -late_initcall(register_umcast);
-> diff --git a/arch/um/drivers/umcast_user.c b/arch/um/drivers/umcast_user.c
-> deleted file mode 100644
-> index b50b13cff04e..000000000000
-> --- a/arch/um/drivers/umcast_user.c
-> +++ /dev/null
-> @@ -1,184 +0,0 @@
-> -// SPDX-License-Identifier: GPL-2.0
-> -/*
-> - * user-mode-linux networking multicast transport
-> - * Copyright (C) 2001 - 2007 Jeff Dike (jdike@{addtoit,linux.intel}.com)
-> - * Copyright (C) 2001 by Harald Welte <laforge@gnumonks.org>
-> - *
-> - * based on the existing uml-networking code, which is
-> - * Copyright (C) 2001 Lennert Buytenhek (buytenh@gnu.org) and
-> - * James Leu (jleu@mindspring.net).
-> - * Copyright (C) 2001 by various other people who didn't put their name here.
-> - *
-> - *
-> - */
-> -
-> -#include <unistd.h>
-> -#include <errno.h>
-> -#include <netinet/in.h>
-> -#include "umcast.h"
-> -#include <net_user.h>
-> -#include <um_malloc.h>
-> -
-> -static struct sockaddr_in *new_addr(char *addr, unsigned short port)
-> -{
-> -	struct sockaddr_in *sin;
-> -
-> -	sin = uml_kmalloc(sizeof(struct sockaddr_in), UM_GFP_KERNEL);
-> -	if (sin == NULL) {
-> -		printk(UM_KERN_ERR "new_addr: allocation of sockaddr_in "
-> -		       "failed\n");
-> -		return NULL;
-> -	}
-> -	sin->sin_family = AF_INET;
-> -	if (addr)
-> -		sin->sin_addr.s_addr = in_aton(addr);
-> -	else
-> -		sin->sin_addr.s_addr = INADDR_ANY;
-> -	sin->sin_port = htons(port);
-> -	return sin;
-> -}
-> -
-> -static int umcast_user_init(void *data, void *dev)
-> -{
-> -	struct umcast_data *pri = data;
-> -
-> -	pri->remote_addr = new_addr(pri->addr, pri->rport);
-> -	if (pri->unicast)
-> -		pri->listen_addr = new_addr(NULL, pri->lport);
-> -	else
-> -		pri->listen_addr = pri->remote_addr;
-> -	pri->dev = dev;
-> -	return 0;
-> -}
-> -
-> -static void umcast_remove(void *data)
-> -{
-> -	struct umcast_data *pri = data;
-> -
-> -	kfree(pri->listen_addr);
-> -	if (pri->unicast)
-> -		kfree(pri->remote_addr);
-> -	pri->listen_addr = pri->remote_addr = NULL;
-> -}
-> -
-> -static int umcast_open(void *data)
-> -{
-> -	struct umcast_data *pri = data;
-> -	struct sockaddr_in *lsin = pri->listen_addr;
-> -	struct sockaddr_in *rsin = pri->remote_addr;
-> -	struct ip_mreq mreq;
-> -	int fd, yes = 1, err = -EINVAL;
-> -
-> -
-> -	if ((!pri->unicast && lsin->sin_addr.s_addr == 0) ||
-> -	    (rsin->sin_addr.s_addr == 0) ||
-> -	    (lsin->sin_port == 0) || (rsin->sin_port == 0))
-> -		goto out;
-> -
-> -	fd = socket(AF_INET, SOCK_DGRAM, 0);
-> -
-> -	if (fd < 0) {
-> -		err = -errno;
-> -		printk(UM_KERN_ERR "umcast_open : data socket failed, "
-> -		       "errno = %d\n", errno);
-> -		goto out;
-> -	}
-> -
-> -	if (setsockopt(fd, SOL_SOCKET, SO_REUSEADDR, &yes, sizeof(yes)) < 0) {
-> -		err = -errno;
-> -		printk(UM_KERN_ERR "umcast_open: SO_REUSEADDR failed, "
-> -		       "errno = %d\n", errno);
-> -		goto out_close;
-> -	}
-> -
-> -	if (!pri->unicast) {
-> -		/* set ttl according to config */
-> -		if (setsockopt(fd, SOL_IP, IP_MULTICAST_TTL, &pri->ttl,
-> -			       sizeof(pri->ttl)) < 0) {
-> -			err = -errno;
-> -			printk(UM_KERN_ERR "umcast_open: IP_MULTICAST_TTL "
-> -			       "failed, error = %d\n", errno);
-> -			goto out_close;
-> -		}
-> -
-> -		/* set LOOP, so data does get fed back to local sockets */
-> -		if (setsockopt(fd, SOL_IP, IP_MULTICAST_LOOP,
-> -			       &yes, sizeof(yes)) < 0) {
-> -			err = -errno;
-> -			printk(UM_KERN_ERR "umcast_open: IP_MULTICAST_LOOP "
-> -			       "failed, error = %d\n", errno);
-> -			goto out_close;
-> -		}
-> -	}
-> -
-> -	/* bind socket to the address */
-> -	if (bind(fd, (struct sockaddr *) lsin, sizeof(*lsin)) < 0) {
-> -		err = -errno;
-> -		printk(UM_KERN_ERR "umcast_open : data bind failed, "
-> -		       "errno = %d\n", errno);
-> -		goto out_close;
-> -	}
-> -
-> -	if (!pri->unicast) {
-> -		/* subscribe to the multicast group */
-> -		mreq.imr_multiaddr.s_addr = lsin->sin_addr.s_addr;
-> -		mreq.imr_interface.s_addr = 0;
-> -		if (setsockopt(fd, SOL_IP, IP_ADD_MEMBERSHIP,
-> -			       &mreq, sizeof(mreq)) < 0) {
-> -			err = -errno;
-> -			printk(UM_KERN_ERR "umcast_open: IP_ADD_MEMBERSHIP "
-> -			       "failed, error = %d\n", errno);
-> -			printk(UM_KERN_ERR "There appears not to be a "
-> -			       "multicast-capable network interface on the "
-> -			       "host.\n");
-> -			printk(UM_KERN_ERR "eth0 should be configured in order "
-> -			       "to use the multicast transport.\n");
-> -			goto out_close;
-> -		}
-> -	}
-> -
-> -	return fd;
-> -
-> - out_close:
-> -	close(fd);
-> - out:
-> -	return err;
-> -}
-> -
-> -static void umcast_close(int fd, void *data)
-> -{
-> -	struct umcast_data *pri = data;
-> -
-> -	if (!pri->unicast) {
-> -		struct ip_mreq mreq;
-> -		struct sockaddr_in *lsin = pri->listen_addr;
-> -
-> -		mreq.imr_multiaddr.s_addr = lsin->sin_addr.s_addr;
-> -		mreq.imr_interface.s_addr = 0;
-> -		if (setsockopt(fd, SOL_IP, IP_DROP_MEMBERSHIP,
-> -			       &mreq, sizeof(mreq)) < 0) {
-> -			printk(UM_KERN_ERR "umcast_close: IP_DROP_MEMBERSHIP "
-> -			       "failed, error = %d\n", errno);
-> -		}
-> -	}
-> -
-> -	close(fd);
-> -}
-> -
-> -int umcast_user_write(int fd, void *buf, int len, struct umcast_data *pri)
-> -{
-> -	struct sockaddr_in *data_addr = pri->remote_addr;
-> -
-> -	return net_sendto(fd, buf, len, data_addr, sizeof(*data_addr));
-> -}
-> -
-> -const struct net_user_info umcast_user_info = {
-> -	.init	= umcast_user_init,
-> -	.open	= umcast_open,
-> -	.close	= umcast_close,
-> -	.remove	= umcast_remove,
-> -	.add_address	= NULL,
-> -	.delete_address = NULL,
-> -	.mtu	= ETH_MAX_PACKET,
-> -	.max_packet	= ETH_MAX_PACKET + ETH_HEADER_OTHER,
-> -};
-> diff --git a/arch/um/drivers/vector_kern.c b/arch/um/drivers/vector_kern.c
-> index 1388f09e09ea..234081ad4f02 100644
-> --- a/arch/um/drivers/vector_kern.c
-> +++ b/arch/um/drivers/vector_kern.c
-> @@ -1740,6 +1740,37 @@ int vector_compat_eth_configure(char *str, int index)
->   
->   	}
->   #endif
-> +#ifdef CONFIG_UM_NET_MCAST
-> +	if ((strncmp(str, "ucast", strlen("ucast")) == 0) || (strncmp(str, "mcast", strlen("mcast")) == 0)) {
-> +		char *src, *addr = NULL, *transport = NULL, *mac = NULL, *srcport = NULL, *dstport = NULL;
-> +
-> +		if (strncmp(str, "ucast", strlen("ucast")) == 0)
-> +			src = "0.0.0.0";
-> +		else
-> +			src = addr;
-> +
-> +		remain = split_if_spec(str, &transport, &addr, &srcport, &dstport, &mac, NULL);
-> +
-> +		if (!srcport)
-> +			srcport = "1102";
-> +
-> +		if (!dstport)
-> +			dstport = "1102";
-> +
-> +		if ((mac != NULL) && strlen(mac) > 0)
-> +			snprintf(tempargs, MAX_COMPAT_ARG, "transport=%s,src=%s,dst=%s,srcport=%s,dstport=%s,mac=%s",
-> +					transport, src, addr, srcport, dstport, mac);
-> +		else
-> +			snprintf(tempargs, MAX_COMPAT_ARG, "transport=%s,src=%s,dst=%s,srcport=%s,dstrport=%s",
-> +					transport, src, addr, srcport, dstport);
-> +
-> +		strcpy(newargs, tempargs);
-> +
-> +
-> +		do_compat = 1;
-> +
-> +	}
-> +#endif
->   	if (do_compat) {
->   		parsed = uml_parse_vector_ifspec(newargs);
->   		vector_eth_configure(index, parsed, true);
-> 
+Posting these as a series for better organization, but each change
+here is applicable standalone.
 
+Please merge, review, ack/nack etc as you see fit. I will
+add these to my y2038 branch [1] for linux-next, but can keep
+rebasing for feedback and to remove any patches that get
+picked up by a maintainer.
 
-I will do another version with tap next week and have a look at daemon 
-if we can easily accommodate it without making too many changes to the 
-backend.
+Changes since v1 [2]:
 
-This will leave VDE and one more driver I forgot about on first read.
+- Add Acks I received
+- Rebase to v5.5-rc1, droping patches that got merged already
+- Add NFS, XFS and the final three patches from another series
+- Rewrite etnaviv patches
 
-There is the wonder of internetworking called slirp to consider as well.
+      Arnd
+
+[1] https://git.kernel.org/pub/scm/linux/kernel/git/arnd/playground.git/log/?h=y2038
+[2] https://lore.kernel.org/lkml/20191108213257.3097633-1-arnd@arndb.de/
+
+Arnd Bergmann (24):
+  Input: input_event: fix struct padding on sparc64
+  fat: use prandom_u32() for i_generation
+  dlm: use SO_SNDTIMEO_NEW instead of SO_SNDTIMEO_OLD
+  xtensa: ISS: avoid struct timeval
+  um: ubd: use 64-bit time_t where possible
+  acct: stop using get_seconds()
+  tsacct: add 64-bit btime field
+  packet: clarify timestamp overflow
+  quota: avoid time_t in v1_disk_dqblk definition
+  hostfs: pass 64-bit timestamps to/from user space
+  hfs/hfsplus: use 64-bit inode timestamps
+  drm/msm: avoid using 'timespec'
+  drm/etnaviv: reject timeouts with tv_nsec >= NSEC_PER_SEC
+  drm/etnaviv: avoid deprecated timespec
+  sunrpc: convert to time64_t for expiry
+  nfs: use time64_t internally
+  nfs: fix timstamp debug prints
+  nfs: fscache: use timespec64 in inode auxdata
+  xfs: rename compat_time_t to old_time32_t
+  xfs: disallow broken ioctls without compat-32-bit-time
+  xfs: quota: move to time64_t interfaces
+  y2038: remove obsolete jiffies conversion functions
+  y2038: rename itimerval to __kernel_old_itimerval
+  y2038: sparc: remove use of struct timex
+
+ arch/sparc/kernel/sys_sparc_64.c              | 29 +++++-----
+ arch/um/drivers/cow.h                         |  2 +-
+ arch/um/drivers/cow_user.c                    |  7 ++-
+ arch/um/drivers/ubd_kern.c                    | 10 ++--
+ arch/um/include/shared/os.h                   |  2 +-
+ arch/um/os-Linux/file.c                       |  2 +-
+ .../platforms/iss/include/platform/simcall.h  |  4 +-
+ drivers/gpu/drm/etnaviv/etnaviv_drv.c         | 20 ++++---
+ drivers/gpu/drm/etnaviv/etnaviv_drv.h         | 11 ++--
+ drivers/gpu/drm/etnaviv/etnaviv_gem.c         |  4 +-
+ drivers/gpu/drm/etnaviv/etnaviv_gem.h         |  2 +-
+ drivers/gpu/drm/etnaviv/etnaviv_gpu.c         |  5 +-
+ drivers/gpu/drm/etnaviv/etnaviv_gpu.h         |  5 +-
+ drivers/gpu/drm/msm/msm_drv.h                 |  3 +-
+ drivers/input/evdev.c                         | 14 ++---
+ drivers/input/misc/uinput.c                   | 14 +++--
+ fs/dlm/lowcomms.c                             |  6 +-
+ fs/fat/inode.c                                |  3 +-
+ fs/hfs/hfs_fs.h                               | 28 +++++++--
+ fs/hfs/inode.c                                |  4 +-
+ fs/hfsplus/hfsplus_fs.h                       | 28 +++++++--
+ fs/hfsplus/inode.c                            | 12 ++--
+ fs/hostfs/hostfs.h                            | 22 ++++---
+ fs/hostfs/hostfs_kern.c                       | 15 +++--
+ fs/nfs/fscache-index.c                        |  6 +-
+ fs/nfs/fscache.c                              | 18 ++++--
+ fs/nfs/fscache.h                              |  8 ++-
+ fs/nfs/nfs4xdr.c                              | 10 ++--
+ fs/quota/quotaio_v1.h                         |  6 +-
+ fs/xfs/xfs_dquot.c                            |  6 +-
+ fs/xfs/xfs_ioctl.c                            | 26 +++++++++
+ fs/xfs/xfs_ioctl32.c                          |  2 +-
+ fs/xfs/xfs_ioctl32.h                          |  2 +-
+ fs/xfs/xfs_qm.h                               |  6 +-
+ fs/xfs/xfs_quotaops.c                         |  6 +-
+ fs/xfs/xfs_trans_dquot.c                      |  8 ++-
+ include/linux/jiffies.h                       | 20 -------
+ include/linux/sunrpc/cache.h                  | 42 ++++++++------
+ include/linux/sunrpc/gss_api.h                |  4 +-
+ include/linux/sunrpc/gss_krb5.h               |  2 +-
+ include/linux/syscalls.h                      |  9 ++-
+ include/uapi/linux/acct.h                     |  2 +
+ include/uapi/linux/input.h                    |  1 +
+ include/uapi/linux/taskstats.h                |  6 +-
+ include/uapi/linux/time_types.h               |  5 ++
+ include/uapi/linux/timex.h                    |  2 +
+ kernel/acct.c                                 |  4 +-
+ kernel/time/itimer.c                          | 18 +++---
+ kernel/time/time.c                            | 58 ++-----------------
+ kernel/tsacct.c                               |  9 ++-
+ net/packet/af_packet.c                        | 27 +++++----
+ net/sunrpc/auth_gss/gss_krb5_mech.c           | 12 +++-
+ net/sunrpc/auth_gss/gss_krb5_seal.c           |  8 +--
+ net/sunrpc/auth_gss/gss_krb5_unseal.c         |  6 +-
+ net/sunrpc/auth_gss/gss_krb5_wrap.c           | 16 ++---
+ net/sunrpc/auth_gss/gss_mech_switch.c         |  2 +-
+ net/sunrpc/auth_gss/svcauth_gss.c             |  6 +-
+ net/sunrpc/cache.c                            | 16 ++---
+ net/sunrpc/svcauth_unix.c                     | 10 ++--
+ 59 files changed, 351 insertions(+), 290 deletions(-)
 
 -- 
-Anton R. Ivanov
-Cambridgegreys Limited. Registered in England. Company Number 10273661
-https://www.cambridgegreys.com/
+2.20.0
+
+Cc: jdike@addtoit.com
+Cc: richard@nod.at
+Cc: jcmvbkbc@gmail.com
+Cc: stefanr@s5r6.in-berlin.de
+Cc: l.stach@pengutronix.de
+Cc: linux+etnaviv@armlinux.org.uk
+Cc: christian.gmeiner@gmail.com
+Cc: airlied@linux.ie
+Cc: daniel@ffwll.ch
+Cc: robdclark@gmail.com
+Cc: sean@poorly.run
+Cc: valdis.kletnieks@vt.edu
+Cc: gregkh@linuxfoundation.org
+Cc: ccaulfie@redhat.com
+Cc: teigland@redhat.com
+Cc: hirofumi@mail.parknet.co.jp
+Cc: jack@suse.com
+Cc: davem@davemloft.net
+Cc: fw@strlen.de
+Cc: viro@zeniv.linux.org.uk
+Cc: rfontana@redhat.com
+Cc: tglx@linutronix.de
+Cc: linux-um@lists.infradead.org
+Cc: linux1394-devel@lists.sourceforge.net
+Cc: etnaviv@lists.freedesktop.org
+Cc: dri-devel@lists.freedesktop.org
+Cc: linux-arm-msm@vger.kernel.org
+Cc: freedreno@lists.freedesktop.org
+Cc: devel@driverdev.osuosl.org
+Cc: cluster-devel@redhat.com
+Cc: linux-fsdevel@vger.kernel.org
+Cc: netdev@vger.kernel.org
+Cc: trond.myklebust@hammerspace.com
+Cc: anna.schumaker@netapp.com
+Cc: linux-nfs@vger.kernel.org
+Cc: linux-xfs@vger.kernel.org
+Cc: darrick.wong@oracle.com
+Cc: sparclinux@vger.kernel.org
 
 _______________________________________________
 linux-um mailing list
