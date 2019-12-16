@@ -2,65 +2,88 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 04E71121AF5
-	for <lists+linux-um@lfdr.de>; Mon, 16 Dec 2019 21:35:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 11390121C4F
+	for <lists+linux-um@lfdr.de>; Mon, 16 Dec 2019 23:07:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=V/8e24tegwr9tIvPD7oovBfDP1awxJuzsTIwdal0wpo=; b=r1OVqsfRqK/2FXP20h0XnmkZb
-	6GiPSLoo+vjZfAFLPADbTqY3Rh9Qp0ioyhhASyQsUU50PhI4OOwdZv+bjFWS8UJ+HMmnYpYjibIL5
-	wiKQUqai6sVZ+M/cSpaC0JvgC9QJ7KwmArBWFawaqgJ1B9TRuzf/10t6AWJ9Jik/7y/cy+AijAIzG
-	bvT7+Zdcnw+IS5JiUYMseKNROeo7rjGES5eISZnAIckMx6ZUyafecWZ4nOko9ElIwWhu0GaCnrIrv
-	n7ifHGoSgU1hBS4as4Dms37f751xnFwsubjwEQKVPaeY0RUicE76aOibUJxwd7GkEkxgiS+xUd5Kn
-	dmKDZQv1A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:Mime-Version:Message-Id
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ZFJNsqXLyBEjYSZVDLU5/McGPm0fmXztUwkiC8tl5rw=; b=AiKE6coQwTbTwY
+	WfF0+Wh7wmfGQuJSsZz64xRc5QKBnrJg2To3WBQLd3hPSE1VUq8PRYaDkKd2ZGR6EjNhn6o7qajmp
+	x5rdEKB1N3JKSg7itJQ068dkGMkXzoTqTAw557DPQKx/L+LvlG6RHT6k6CkQtal0mFW2vh9dp3ucA
+	vMZW/5amURNTzMarsP5OLsswk4KCt87C0Hm+mq8vjmzumatMe9PstPu60j+bijKg98UAGn2DHEE8w
+	xAOrVPIiMeZ6RelVudNZBEVKHZF9ly4oLH4h1v+6v/XJzQXc1REH7rELlhr+rY4sXhRow4+mpViV4
+	FTvtav3wCdyXzrK8t+sQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igx5W-0008S9-49; Mon, 16 Dec 2019 20:35:30 +0000
-Received: from ivanoab7.miniserver.com ([37.128.132.42]
- helo=www.kot-begemot.co.uk)
+	id 1igyVy-0001qY-V5; Mon, 16 Dec 2019 22:06:54 +0000
+Received: from mail-yw1-xc4a.google.com ([2607:f8b0:4864:20::c4a])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igx5S-0008RJ-Pd
- for linux-um@lists.infradead.org; Mon, 16 Dec 2019 20:35:29 +0000
-Received: from tun252.jain.kot-begemot.co.uk ([192.168.18.6]
- helo=jain.kot-begemot.co.uk)
- by www.kot-begemot.co.uk with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.92) (envelope-from <anton.ivanov@cambridgegreys.com>)
- id 1igx5M-0001b7-Mg; Mon, 16 Dec 2019 20:35:21 +0000
-Received: from sleer.kot-begemot.co.uk ([192.168.3.72])
- by jain.kot-begemot.co.uk with esmtps
- (TLS1.3:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
- (envelope-from <anton.ivanov@cambridgegreys.com>)
- id 1igx5K-0007Zw-7H; Mon, 16 Dec 2019 20:35:20 +0000
-Subject: Re: [PATCH v3 6/6] um: Migrate tap to vector IO
-To: linux-um@lists.infradead.org
-References: <20191216170321.14056-1-anton.ivanov@cambridgegreys.com>
- <20191216170321.14056-6-anton.ivanov@cambridgegreys.com>
-From: Anton Ivanov <anton.ivanov@cambridgegreys.com>
-Organization: Cambridge Greys
-Message-ID: <f43ecce3-8720-3896-ef84-53986cadaedd@cambridgegreys.com>
-Date: Mon, 16 Dec 2019 20:35:18 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.3.0
-MIME-Version: 1.0
-In-Reply-To: <20191216170321.14056-6-anton.ivanov@cambridgegreys.com>
-Content-Language: en-US
-X-Spam-Score: -1.0
-X-Spam-Score: -1.0
-X-Clacks-Overhead: GNU Terry Pratchett
+ id 1igyVv-0001pe-TV
+ for linux-um@lists.infradead.org; Mon, 16 Dec 2019 22:06:53 +0000
+Received: by mail-yw1-xc4a.google.com with SMTP id q130so6545772ywh.11
+ for <linux-um@lists.infradead.org>; Mon, 16 Dec 2019 14:06:50 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=date:message-id:mime-version:subject:from:to:cc;
+ bh=eppmz6bMb+izn2RzN3lnlHeodL5pBLSTz1Q/CRKnTLI=;
+ b=Ka/YLRaXtmaXZjNlTNPGUBn6yNVXrLBSLTY7QlLmb+pGLBk64G75unoAUKw7ENQh6A
+ uN5BE7ghfj4hLmg93Dnjr1XOQx9sqGT0tdRhCq572hnGsODMcX8BJaKgKGcekmQHBOhO
+ AT/G6wElDlZ16v6nXSv4LBy5fVRgnz65y56kDJQ63lH+EwqP4r4UCAJCoUmp7jWabH2A
+ irCUuf+Ew8cP8BWTuuXQZ7lkAr38ls5Def/i0fnUPPezbu4E1eeS4PwFWlu2NXCQ1HUv
+ S/CgWSpEN0xx6SLk+OOe8LLXlhdyBfcgbL4oUC4VSaGDR/NZqrh+rbF0+AzVkdQDf+rM
+ tSqQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:message-id:mime-version:subject:from:to:cc;
+ bh=eppmz6bMb+izn2RzN3lnlHeodL5pBLSTz1Q/CRKnTLI=;
+ b=C9Gb3JKLW92NI5BBab69s0n0VZCYPsQe1/Ve7Ccw22iTpr7WD5Vf9KfBx/ojG+oTCZ
+ rTzxbH9MwyCk9eV1HKAZvg57E0HfQ3aV7FXOZ3D3w6q7gKM/ehrD8JKKsWyhdFsTT1ZY
+ ALqXB9tieT9hIzIdGPyIYaUxkuADSGX+7DRYBgZ1XML2acb7fDlV5JNUEV1c7QTiVKdk
+ 6yqFdtN8HvS+0f0Nsxx3HtWxXwMpNNgCoyNXdLimlenwaIJrM3OHymqhYNn0QVcIXCAh
+ QbsxM62tZ+HK5XZTxaDE3JvEeDI63BtJG3J9fNwvcgmXkNowcrqx1c+dU2z8nz1jppOw
+ 3g0g==
+X-Gm-Message-State: APjAAAVMTMaIpMboExmHqFzWvXVGQpYHVpZJxewcly+Lhg7dN6Wt9Pgz
+ wN+cf3m22ahcarEbOlYse6HTIVkb6vCZLv5qTU3SNA==
+X-Google-Smtp-Source: APXvYqyw/OZ9oh2P4WMQ92Laluc4AJxvHqFO1NRLPLVu6fYKpIM1zMHeoh4jp2nR813dRQsMDcwHNPAwIm/JNWREsel9rQ==
+X-Received: by 2002:a0d:ddc8:: with SMTP id
+ g191mr21773562ywe.335.1576534009902; 
+ Mon, 16 Dec 2019 14:06:49 -0800 (PST)
+Date: Mon, 16 Dec 2019 14:05:49 -0800
+Message-Id: <20191216220555.245089-1-brendanhiggins@google.com>
+Mime-Version: 1.0
+X-Mailer: git-send-email 2.24.1.735.g03f4e72817-goog
+Subject: [RFC v1 0/6] kunit: create a centralized executor to dispatch all
+ KUnit tests
+From: Brendan Higgins <brendanhiggins@google.com>
+To: jdike@addtoit.com, richard@nod.at, anton.ivanov@cambridgegreys.com, 
+ arnd@arndb.de, keescook@chromium.org, skhan@linuxfoundation.org, 
+ alan.maguire@oracle.com, yzaikin@google.com, davidgow@google.com, 
+ akpm@linux-foundation.org, rppt@linux.ibm.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_123526_972212_346774A7 
-X-CRM114-Status: GOOD (  23.28  )
-X-Spam-Score: 0.4 (/)
+X-CRM114-CacheID: sfid-20191216_140651_979080_DA6C893F 
+X-CRM114-Status: GOOD (  14.11  )
+X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.4 points)
+ Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:c4a listed in]
+ [list.dnswl.org]
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.4 KHOP_HELO_FCRDNS       Relay HELO differs from its IP's reverse DNS
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,480 +95,97 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: richard@nod.at, brendanhiggins@google.com
+Cc: linux-arch@vger.kernel.org, sboyd@kernel.org, gregkh@linuxfoundation.org,
+ knut.omang@oracle.com, linux-kernel@vger.kernel.org,
+ linux-um@lists.infradead.org, mcgrof@kernel.org,
+ linux-kselftest@vger.kernel.org, logang@deltatee.com,
+ Brendan Higgins <brendanhiggins@google.com>, kunit-dev@googlegroups.com
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On 16/12/2019 17:03, anton.ivanov@cambridgegreys.com wrote:
-> From: Anton Ivanov <anton.ivanov@cambridgegreys.com>
-> 
-> Signed-off-by: Anton Ivanov <anton.ivanov@cambridgegreys.com>
-> ---
->   arch/um/drivers/Kconfig                |   4 +-
->   arch/um/drivers/net_kern.c             |   8 +-
->   arch/um/drivers/vector_kern.c          |  26 +++
->   arch/um/os-Linux/drivers/Makefile      |   2 -
->   arch/um/os-Linux/drivers/tuntap.h      |  21 ---
->   arch/um/os-Linux/drivers/tuntap_kern.c |  86 ----------
->   arch/um/os-Linux/drivers/tuntap_user.c | 215 -------------------------
->   7 files changed, 31 insertions(+), 331 deletions(-)
->   delete mode 100644 arch/um/os-Linux/drivers/tuntap.h
->   delete mode 100644 arch/um/os-Linux/drivers/tuntap_kern.c
->   delete mode 100644 arch/um/os-Linux/drivers/tuntap_user.c
-> 
-> diff --git a/arch/um/drivers/Kconfig b/arch/um/drivers/Kconfig
-> index a84b806212a3..74b76ac0a2fe 100644
-> --- a/arch/um/drivers/Kconfig
-> +++ b/arch/um/drivers/Kconfig
-> @@ -178,9 +178,7 @@ config UML_NET_TUNTAP
->   	depends on UML_NET
->   	help
->   	  The UML TUN/TAP network transport allows a UML instance to exchange
-> -	  packets with the host over a TUN/TAP device.  This option will only
-> -	  work with a 2.4 host, unless you've applied the TUN/TAP patch to
-> -	  your 2.2 host kernel.
-> +	  packets with the host over a TUN/TAP device.
->   
->   	  To use this transport, your host kernel must have support for TUN/TAP
->   	  devices, either built-in or as a module.
-> diff --git a/arch/um/drivers/net_kern.c b/arch/um/drivers/net_kern.c
-> index 7df7344f2194..21de09942ea6 100644
-> --- a/arch/um/drivers/net_kern.c
-> +++ b/arch/um/drivers/net_kern.c
-> @@ -42,8 +42,8 @@ static DEFINE_SPINLOCK(drop_lock);
->   static struct sk_buff *drop_skb;
->   static int drop_max;
->   
-> -static const char *migrated_to_vector = {"pcap"};
-> -#define MAX_MIGRATED 1
-> +static const char *migrated_to_vector[] = {"pcap", "ucast", "mcast", "tuntap"};
-> +#define MAX_MIGRATED 4
->   
->   static int update_drop_skb(int max)
->   {
-> @@ -593,7 +593,7 @@ static int register_compat(void)
->   	list_for_each_safe(ele, next, &eth_cmd_line) {
->   		eth = list_entry(ele, struct eth_init, list);
->   		for (compat = 0; compat < MAX_MIGRATED; compat++) {
-> -			if (strncmp(eth->init, &migrated_to_vector[compat], strlen(&migrated_to_vector[compat])) == 0) {
-> +			if (strncmp(eth->init, migrated_to_vector[compat], strlen(migrated_to_vector[compat])) == 0) {
->   				vector_compat_eth_configure(eth->init, eth->index);
->   				list_del(&eth->list);
->   				continue;
-> @@ -642,7 +642,7 @@ static int eth_setup_common(char *str, int index)
->   	int found = 0, compat;
->   
->   	for (compat = 0; compat < MAX_MIGRATED; compat++) {
-> -		if (strncmp(str, &migrated_to_vector[compat], strlen(&migrated_to_vector[compat])) == 0)
-> +		if (strncmp(str, migrated_to_vector[compat], strlen(migrated_to_vector[compat])) == 0)
->   			return vector_compat_eth_configure(str, index);
->   	}
->   
-> diff --git a/arch/um/drivers/vector_kern.c b/arch/um/drivers/vector_kern.c
-> index d52c24874f2a..224db8833b8e 100644
-> --- a/arch/um/drivers/vector_kern.c
-> +++ b/arch/um/drivers/vector_kern.c
-> @@ -1708,6 +1708,32 @@ int vector_compat_eth_configure(char *str, int index)
->   		kfree(newargs);
->   		return -ENOMEM;
->   	}
-> +#ifdef CONFIG_UML_NET_TUNTAP
-> +	if (strncmp(str, "tuntap", strlen("tuntap")) == 0) {
-> +		char *ifname = NULL, *script = NULL, *gateway = NULL, *transport = NULL, *mac = NULL;
-> +
-> +		remain = split_if_spec(str, &transport, &ifname, &script, &gateway, &mac, NULL);
-> +
-> +		if ((mac != NULL) && strlen(mac) > 0)
-> +			snprintf(tempargs, MAX_COMPAT_ARG, "transport=tap,gro=1,mac=%s", mac);
-> +		else
-> +			snprintf(tempargs, MAX_COMPAT_ARG, "transport=tap,gro=1");
-> +
-> +		strcpy(newargs, tempargs);
-> +
-> +		if (ifname != NULL) {
-> +			snprintf(tempargs, MAX_COMPAT_ARG, "%s,ifname=%s", newargs, ifname);
-> +			strcpy(newargs, tempargs);
-> +		}
-> +
-> +		if (script != NULL) {
-> +			snprintf(tempargs, MAX_COMPAT_ARG, "%s,script=%s", newargs, script);
-> +			strcpy(newargs, tempargs);
-> +		}
-> +
-> +		do_compat = 1;
-> +	}
-> +#endif
->   #ifdef CONFIG_UML_NET_PCAP
->   	if (strncmp(str, "pcap", strlen("pcap")) == 0) {
->   		char *ifname = NULL, *filter = NULL, *transport = NULL, *mac = NULL;
-> diff --git a/arch/um/os-Linux/drivers/Makefile b/arch/um/os-Linux/drivers/Makefile
-> index d79e75f1b69a..924c42641170 100644
-> --- a/arch/um/os-Linux/drivers/Makefile
-> +++ b/arch/um/os-Linux/drivers/Makefile
-> @@ -4,10 +4,8 @@
->   #
->   
->   ethertap-objs := ethertap_kern.o ethertap_user.o
-> -tuntap-objs := tuntap_kern.o tuntap_user.o
->   
->   obj-y =
->   obj-$(CONFIG_UML_NET_ETHERTAP) += ethertap.o
-> -obj-$(CONFIG_UML_NET_TUNTAP) += tuntap.o
->   
->   include arch/um/scripts/Makefile.rules
-> diff --git a/arch/um/os-Linux/drivers/tuntap.h b/arch/um/os-Linux/drivers/tuntap.h
-> deleted file mode 100644
-> index e364e42abfc5..000000000000
-> --- a/arch/um/os-Linux/drivers/tuntap.h
-> +++ /dev/null
-> @@ -1,21 +0,0 @@
-> -/* SPDX-License-Identifier: GPL-2.0 */
-> -/*
-> - * Copyright (C) 2001 - 2007 Jeff Dike (jdike@{addtoit,linux.intel}.com)
-> - */
-> -
-> -#ifndef __UM_TUNTAP_H
-> -#define __UM_TUNTAP_H
-> -
-> -#include <net_user.h>
-> -
-> -struct tuntap_data {
-> -	char *dev_name;
-> -	int fixed_config;
-> -	char *gate_addr;
-> -	int fd;
-> -	void *dev;
-> -};
-> -
-> -extern const struct net_user_info tuntap_user_info;
-> -
-> -#endif
-> diff --git a/arch/um/os-Linux/drivers/tuntap_kern.c b/arch/um/os-Linux/drivers/tuntap_kern.c
-> deleted file mode 100644
-> index adcb6717be6f..000000000000
-> --- a/arch/um/os-Linux/drivers/tuntap_kern.c
-> +++ /dev/null
-> @@ -1,86 +0,0 @@
-> -// SPDX-License-Identifier: GPL-2.0
-> -/*
-> - * Copyright (C) 2001 - 2007 Jeff Dike (jdike@{addtoit,linux.intel}.com)
-> - */
-> -
-> -#include <linux/netdevice.h>
-> -#include <linux/init.h>
-> -#include <linux/skbuff.h>
-> -#include <asm/errno.h>
-> -#include <net_kern.h>
-> -#include "tuntap.h"
-> -
-> -struct tuntap_init {
-> -	char *dev_name;
-> -	char *gate_addr;
-> -};
-> -
-> -static void tuntap_init(struct net_device *dev, void *data)
-> -{
-> -	struct uml_net_private *pri;
-> -	struct tuntap_data *tpri;
-> -	struct tuntap_init *init = data;
-> -
-> -	pri = netdev_priv(dev);
-> -	tpri = (struct tuntap_data *) pri->user;
-> -	tpri->dev_name = init->dev_name;
-> -	tpri->fixed_config = (init->dev_name != NULL);
-> -	tpri->gate_addr = init->gate_addr;
-> -	tpri->fd = -1;
-> -	tpri->dev = dev;
-> -
-> -	printk(KERN_INFO "TUN/TAP backend - ");
-> -	if (tpri->gate_addr != NULL)
-> -		printk(KERN_CONT "IP = %s", tpri->gate_addr);
-> -	printk(KERN_CONT "\n");
-> -}
-> -
-> -static int tuntap_read(int fd, struct sk_buff *skb, struct uml_net_private *lp)
-> -{
-> -	return net_read(fd, skb_mac_header(skb),
-> -			skb->dev->mtu + ETH_HEADER_OTHER);
-> -}
-> -
-> -static int tuntap_write(int fd, struct sk_buff *skb, struct uml_net_private *lp)
-> -{
-> -	return net_write(fd, skb->data, skb->len);
-> -}
-> -
-> -const struct net_kern_info tuntap_kern_info = {
-> -	.init			= tuntap_init,
-> -	.protocol		= eth_protocol,
-> -	.read			= tuntap_read,
-> -	.write 			= tuntap_write,
-> -};
-> -
-> -int tuntap_setup(char *str, char **mac_out, void *data)
-> -{
-> -	struct tuntap_init *init = data;
-> -
-> -	*init = ((struct tuntap_init)
-> -		{ .dev_name 	= NULL,
-> -		  .gate_addr 	= NULL });
-> -	if (tap_setup_common(str, "tuntap", &init->dev_name, mac_out,
-> -			    &init->gate_addr))
-> -		return 0;
-> -
-> -	return 1;
-> -}
-> -
-> -static struct transport tuntap_transport = {
-> -	.list 		= LIST_HEAD_INIT(tuntap_transport.list),
-> -	.name 		= "tuntap",
-> -	.setup  	= tuntap_setup,
-> -	.user 		= &tuntap_user_info,
-> -	.kern 		= &tuntap_kern_info,
-> -	.private_size 	= sizeof(struct tuntap_data),
-> -	.setup_size 	= sizeof(struct tuntap_init),
-> -};
-> -
-> -static int register_tuntap(void)
-> -{
-> -	register_transport(&tuntap_transport);
-> -	return 0;
-> -}
-> -
-> -late_initcall(register_tuntap);
-> diff --git a/arch/um/os-Linux/drivers/tuntap_user.c b/arch/um/os-Linux/drivers/tuntap_user.c
-> deleted file mode 100644
-> index 53eb3d508645..000000000000
-> --- a/arch/um/os-Linux/drivers/tuntap_user.c
-> +++ /dev/null
-> @@ -1,215 +0,0 @@
-> -// SPDX-License-Identifier: GPL-2.0
-> -/*
-> - * Copyright (C) 2001 - 2007 Jeff Dike (jdike@{addtoit,linux.intel}.com)
-> - */
-> -
-> -#include <stdio.h>
-> -#include <unistd.h>
-> -#include <errno.h>
-> -#include <string.h>
-> -#include <linux/if_tun.h>
-> -#include <net/if.h>
-> -#include <sys/ioctl.h>
-> -#include <sys/socket.h>
-> -#include <sys/wait.h>
-> -#include <sys/uio.h>
-> -#include <kern_util.h>
-> -#include <os.h>
-> -#include "tuntap.h"
-> -
-> -static int tuntap_user_init(void *data, void *dev)
-> -{
-> -	struct tuntap_data *pri = data;
-> -
-> -	pri->dev = dev;
-> -	return 0;
-> -}
-> -
-> -static void tuntap_add_addr(unsigned char *addr, unsigned char *netmask,
-> -			    void *data)
-> -{
-> -	struct tuntap_data *pri = data;
-> -
-> -	tap_check_ips(pri->gate_addr, addr);
-> -	if ((pri->fd == -1) || pri->fixed_config)
-> -		return;
-> -	open_addr(addr, netmask, pri->dev_name);
-> -}
-> -
-> -static void tuntap_del_addr(unsigned char *addr, unsigned char *netmask,
-> -			    void *data)
-> -{
-> -	struct tuntap_data *pri = data;
-> -
-> -	if ((pri->fd == -1) || pri->fixed_config)
-> -		return;
-> -	close_addr(addr, netmask, pri->dev_name);
-> -}
-> -
-> -struct tuntap_pre_exec_data {
-> -	int stdout_fd;
-> -	int close_me;
-> -};
-> -
-> -static void tuntap_pre_exec(void *arg)
-> -{
-> -	struct tuntap_pre_exec_data *data = arg;
-> -
-> -	dup2(data->stdout_fd, 1);
-> -	close(data->close_me);
-> -}
-> -
-> -static int tuntap_open_tramp(char *gate, int *fd_out, int me, int remote,
-> -			     char *buffer, int buffer_len, int *used_out)
-> -{
-> -	struct tuntap_pre_exec_data data;
-> -	char version_buf[sizeof("nnnnn\0")];
-> -	char *argv[] = { "uml_net", version_buf, "tuntap", "up", gate,
-> -			 NULL };
-> -	char buf[CMSG_SPACE(sizeof(*fd_out))];
-> -	struct msghdr msg;
-> -	struct cmsghdr *cmsg;
-> -	struct iovec iov;
-> -	int pid, n, err;
-> -
-> -	sprintf(version_buf, "%d", UML_NET_VERSION);
-> -
-> -	data.stdout_fd = remote;
-> -	data.close_me = me;
-> -
-> -	pid = run_helper(tuntap_pre_exec, &data, argv);
-> -
-> -	if (pid < 0)
-> -		return pid;
-> -
-> -	close(remote);
-> -
-> -	msg.msg_name = NULL;
-> -	msg.msg_namelen = 0;
-> -	if (buffer != NULL) {
-> -		iov = ((struct iovec) { buffer, buffer_len });
-> -		msg.msg_iov = &iov;
-> -		msg.msg_iovlen = 1;
-> -	}
-> -	else {
-> -		msg.msg_iov = NULL;
-> -		msg.msg_iovlen = 0;
-> -	}
-> -	msg.msg_control = buf;
-> -	msg.msg_controllen = sizeof(buf);
-> -	msg.msg_flags = 0;
-> -	n = recvmsg(me, &msg, 0);
-> -	*used_out = n;
-> -	if (n < 0) {
-> -		err = -errno;
-> -		printk(UM_KERN_ERR "tuntap_open_tramp : recvmsg failed - "
-> -		       "errno = %d\n", errno);
-> -		return err;
-> -	}
-> -	helper_wait(pid);
-> -
-> -	cmsg = CMSG_FIRSTHDR(&msg);
-> -	if (cmsg == NULL) {
-> -		printk(UM_KERN_ERR "tuntap_open_tramp : didn't receive a "
-> -		       "message\n");
-> -		return -EINVAL;
-> -	}
-> -	if ((cmsg->cmsg_level != SOL_SOCKET) ||
-> -	   (cmsg->cmsg_type != SCM_RIGHTS)) {
-> -		printk(UM_KERN_ERR "tuntap_open_tramp : didn't receive a "
-> -		       "descriptor\n");
-> -		return -EINVAL;
-> -	}
-> -	*fd_out = ((int *) CMSG_DATA(cmsg))[0];
-> -	os_set_exec_close(*fd_out);
-> -	return 0;
-> -}
-> -
-> -static int tuntap_open(void *data)
-> -{
-> -	struct ifreq ifr;
-> -	struct tuntap_data *pri = data;
-> -	char *output, *buffer;
-> -	int err, fds[2], len, used;
-> -
-> -	err = tap_open_common(pri->dev, pri->gate_addr);
-> -	if (err < 0)
-> -		return err;
-> -
-> -	if (pri->fixed_config) {
-> -		pri->fd = os_open_file("/dev/net/tun",
-> -				       of_cloexec(of_rdwr(OPENFLAGS())), 0);
-> -		if (pri->fd < 0) {
-> -			printk(UM_KERN_ERR "Failed to open /dev/net/tun, "
-> -			       "err = %d\n", -pri->fd);
-> -			return pri->fd;
-> -		}
-> -		memset(&ifr, 0, sizeof(ifr));
-> -		ifr.ifr_flags = IFF_TAP | IFF_NO_PI;
-> -		strlcpy(ifr.ifr_name, pri->dev_name, sizeof(ifr.ifr_name));
-> -		if (ioctl(pri->fd, TUNSETIFF, &ifr) < 0) {
-> -			err = -errno;
-> -			printk(UM_KERN_ERR "TUNSETIFF failed, errno = %d\n",
-> -			       errno);
-> -			close(pri->fd);
-> -			return err;
-> -		}
-> -	}
-> -	else {
-> -		err = socketpair(AF_UNIX, SOCK_DGRAM, 0, fds);
-> -		if (err) {
-> -			err = -errno;
-> -			printk(UM_KERN_ERR "tuntap_open : socketpair failed - "
-> -			       "errno = %d\n", errno);
-> -			return err;
-> -		}
-> -
-> -		buffer = get_output_buffer(&len);
-> -		if (buffer != NULL)
-> -			len--;
-> -		used = 0;
-> -
-> -		err = tuntap_open_tramp(pri->gate_addr, &pri->fd, fds[0],
-> -					fds[1], buffer, len, &used);
-> -
-> -		output = buffer;
-> -		if (err < 0) {
-> -			printk("%s", output);
-> -			free_output_buffer(buffer);
-> -			printk(UM_KERN_ERR "tuntap_open_tramp failed - "
-> -			       "err = %d\n", -err);
-> -			return err;
-> -		}
-> -
-> -		pri->dev_name = uml_strdup(buffer);
-> -		output += IFNAMSIZ;
-> -		printk("%s", output);
-> -		free_output_buffer(buffer);
-> -
-> -		close(fds[0]);
-> -		iter_addresses(pri->dev, open_addr, pri->dev_name);
-> -	}
-> -
-> -	return pri->fd;
-> -}
-> -
-> -static void tuntap_close(int fd, void *data)
-> -{
-> -	struct tuntap_data *pri = data;
-> -
-> -	if (!pri->fixed_config)
-> -		iter_addresses(pri->dev, close_addr, pri->dev_name);
-> -	close(fd);
-> -	pri->fd = -1;
-> -}
-> -
-> -const struct net_user_info tuntap_user_info = {
-> -	.init		= tuntap_user_init,
-> -	.open		= tuntap_open,
-> -	.close	 	= tuntap_close,
-> -	.remove	 	= NULL,
-> -	.add_address	= tuntap_add_addr,
-> -	.delete_address = tuntap_del_addr,
-> -	.mtu		= ETH_MAX_PACKET,
-> -	.max_packet	= ETH_MAX_PACKET + ETH_HEADER_OTHER,
-> -};
-> 
+## TL;DR
 
-Unless I am mistaken, Ethertap has been dead in the host kernels since 
-2.6.x
+This patchset adds a centralized executor to dispatch tests rather than
+relying on late_initcall to schedule each test suite separately along
+with a couple of new features that depend on it.
 
-I am proposing that we get rid of it - it is unsupportable.
+## What am I trying to do?
+
+Conceptually, I am trying to provide a mechanism by which test suites
+can be grouped together so that they can be reasoned about collectively.
+The last two patches in this series add features which depend on this:
+
+RFC 5/6 Prints out a test plan right before KUnit tests are run[1]; this
+        is valuable because it makes it possible for a test harness to
+        detect whether the number of tests run matches the number of
+        tests expected to be run, ensuring that no tests silently
+        failed.
+
+RFC 6/6 Add a new kernel command-line option which allows the user to
+        specify that the kernel poweroff, halt, or reboot after
+        completing all KUnit tests; this is very handy for running KUnit
+        tests on UML or a VM so that the UML/VM process exits cleanly
+        immediately after running all tests without needing a special
+        initramfs.
+
+In addition, by dispatching tests from a single location, we can
+guarantee that all KUnit tests run after late_init is complete, which
+was a concern during the initial KUnit patchset review (this has not
+been a problem in practice, but resolving with certainty is nevertheless
+desirable).
+
+Other use cases for this exist, but the above features should provide an
+idea of the value that this could provide.
+
+## What work remains to be done?
+
+These patches were based on patches in our non-upstream branch[2], so we
+have a pretty good idea that they are useable as presented;
+nevertheless, some of the changes done in this patchset could
+*definitely* use some review by subsystem experts (linker scripts, init,
+etc), and will likely change a lot after getting feedback.
+
+The biggest thing that I know will require additional attention is
+integrating this patchset with the KUnit module support patchset[3]. I
+have not even attempted to build these patches on top of the module
+support patches as I would like to get people's initial thoughts first
+(especially Alan's :-) ). I think that making these patches work with
+module support should be fairly straight forward, nevertheless.
+
+Brendan Higgins (5):
+  vmlinux.lds.h: add linker section for KUnit test suites
+  arch: um: add linker section for KUnit test suites
+  kunit: test: create a single centralized executor for all tests
+  init: main: add KUnit to kernel init
+  kunit: test: add test plan to KUnit TAP format
+
+David Gow (1):
+  kunit: Add 'kunit_shutdown' option
+
+ arch/um/include/asm/common.lds.S              |  4 +
+ include/asm-generic/vmlinux.lds.h             |  8 ++
+ include/kunit/test.h                          | 16 ++--
+ init/main.c                                   |  4 +
+ lib/kunit/Makefile                            |  3 +-
+ lib/kunit/executor.c                          | 74 ++++++++++++++++++
+ lib/kunit/test.c                              | 11 ---
+ tools/testing/kunit/kunit_kernel.py           |  2 +-
+ tools/testing/kunit/kunit_parser.py           | 76 +++++++++++++++----
+ .../test_is_test_passed-all_passed.log        |  1 +
+ .../test_data/test_is_test_passed-crash.log   |  1 +
+ .../test_data/test_is_test_passed-failure.log |  1 +
+ 12 files changed, 170 insertions(+), 31 deletions(-)
+ create mode 100644 lib/kunit/executor.c
+
+[1]: https://github.com/isaacs/testanything.github.io/blob/tap14/tap-version-14-specification.md#the-plan
+[2]: https://kunit-review.googlesource.com/c/linux/+/1037
+[3]: https://patchwork.kernel.org/project/linux-kselftest/list/?series=211727
 
 -- 
-Anton R. Ivanov
-Cambridgegreys Limited. Registered in England. Company Number 10273661
-https://www.cambridgegreys.com/
+2.24.1.735.g03f4e72817-goog
+
 
 _______________________________________________
 linux-um mailing list
