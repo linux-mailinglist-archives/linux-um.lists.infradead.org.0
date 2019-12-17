@@ -2,42 +2,42 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3003312285D
-	for <lists+linux-um@lfdr.de>; Tue, 17 Dec 2019 11:09:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1906512285E
+	for <lists+linux-um@lfdr.de>; Tue, 17 Dec 2019 11:09:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BA3KS4WSkA+0yOigGT5UC7GR4rk9sYXBSKnsUeBzLRE=; b=MYEPwfI7hblMB3
-	cElXoJ/JyvdDiwVXLbSpdmWgVwFa0oS2/Y6Wfl2bzTMWMcu1nakzFXcGtx9vBmAEwHyTTcM2wwGi2
-	KmuitP9AOkowCK8vr2QgHLNpjWB6Icf9QAD+yCU9kiesJ3Vu7ZCSAcyWuihY48g6WQiFE6pDr+/FB
-	MCPQfiulJJWvt9xz4iGWSO5hzDPNv8pT1fsWL36qGfqymRIkist1WPwgZjgrz1xnEdkZUbDCo9KLj
-	J5c+3fG4nV69PyV4zywhq2ep8kYyITGX0lpHEPxemXtlgiTXc9k+7DVmvlAG0pdvzW9inttjPBF/o
-	JCQdICODaUK9K6nTHszA==;
+	List-Owner; bh=YJn8J4y2gPWvpcZmv+wTur8aTPJHtCxaGpMJomnXiFg=; b=a7xBV5A7zOueL4
+	+hJlgXe39j46hhMbCnYotw4oyjU74WGKvJrIfVqLkwfDPx5R57FzVFTNWsnOHLz2Jk/YSQwefqlE5
+	RgO/HXBTBpVyasDzFE9WWt8k8JRcuxtM/QZSKFoz1ZKmzwcD+XwpZfMH3mq4nOvwKZ3GRKZgcHD0D
+	DmLlqcVwmuUgfxpd8CFqaUwNLbn9UByxm8VkpOU/LU3DOBSePrEpgV6uffPIItpgcLR0zk9GB38Gc
+	nEfaqMnaAN8mjC46C/3jXlvp4or1WqgxF6ynhukD71ECWd/PboKYqu2GmEY+TIwF40qujFEd51X5f
+	vfcMiHfuBqckacudxCmA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ih9nM-0002eV-P7; Tue, 17 Dec 2019 10:09:36 +0000
+	id 1ih9nO-0002fF-U1; Tue, 17 Dec 2019 10:09:38 +0000
 Received: from ivanoab7.miniserver.com ([37.128.132.42]
  helo=www.kot-begemot.co.uk)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ih9nJ-0002cL-Bi
- for linux-um@lists.infradead.org; Tue, 17 Dec 2019 10:09:35 +0000
+ id 1ih9nL-0002dY-La
+ for linux-um@lists.infradead.org; Tue, 17 Dec 2019 10:09:37 +0000
 Received: from tun252.jain.kot-begemot.co.uk ([192.168.18.6]
  helo=jain.kot-begemot.co.uk)
  by www.kot-begemot.co.uk with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
  (Exim 4.92) (envelope-from <anton.ivanov@cambridgegreys.com>)
- id 1ih9nI-0003pC-3X; Tue, 17 Dec 2019 10:09:32 +0000
+ id 1ih9nK-0003pI-9K; Tue, 17 Dec 2019 10:09:34 +0000
 Received: from jain.kot-begemot.co.uk ([192.168.3.3])
  by jain.kot-begemot.co.uk with esmtp (Exim 4.92)
  (envelope-from <anton.ivanov@cambridgegreys.com>)
- id 1ih9nF-0000uG-1h; Tue, 17 Dec 2019 10:09:30 +0000
+ id 1ih9nG-0000uG-V2; Tue, 17 Dec 2019 10:09:32 +0000
 From: anton.ivanov@cambridgegreys.com
 To: linux-um@lists.infradead.org
-Subject: [PATCH v4 8/9] um: Add daemon transport to vector subsystem
-Date: Tue, 17 Dec 2019 10:09:12 +0000
-Message-Id: <20191217100913.3422-8-anton.ivanov@cambridgegreys.com>
+Subject: [PATCH v4 9/9] um: migrate daemon to vector backend
+Date: Tue, 17 Dec 2019 10:09:13 +0000
+Message-Id: <20191217100913.3422-9-anton.ivanov@cambridgegreys.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191217100913.3422-1-anton.ivanov@cambridgegreys.com>
 References: <20191217100913.3422-1-anton.ivanov@cambridgegreys.com>
@@ -46,8 +46,8 @@ X-Spam-Score: -1.0
 X-Spam-Score: -1.0
 X-Clacks-Overhead: GNU Terry Pratchett
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191217_020933_529273_EE5481C9 
-X-CRM114-Status: GOOD (  17.65  )
+X-CRM114-CacheID: sfid-20191217_020935_840555_5C0B89D4 
+X-CRM114-Status: GOOD (  12.79  )
 X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.4 points)
@@ -76,271 +76,424 @@ Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
 From: Anton Ivanov <anton.ivanov@cambridgegreys.com>
 
-Adds a transport compatible with the old uml_switch from
-uml-utilities package to the vector subsystem.
+Removes old daemon packet-a-time code and migrates it to
+vector backend
 
 Signed-off-by: Anton Ivanov <anton.ivanov@cambridgegreys.com>
 ---
- arch/um/drivers/Kconfig       |   2 +-
- arch/um/drivers/vector_kern.c |   4 ++
- arch/um/drivers/vector_user.c | 110 ++++++++++++++++++++++++++++++++--
- arch/um/drivers/vector_user.h |   4 ++
- 4 files changed, 115 insertions(+), 5 deletions(-)
+ arch/um/drivers/Makefile      |   2 -
+ arch/um/drivers/daemon.h      |  29 -----
+ arch/um/drivers/daemon_kern.c |  95 -----------------
+ arch/um/drivers/daemon_user.c | 193 ----------------------------------
+ arch/um/drivers/net_kern.c    |   4 +-
+ arch/um/drivers/vector_kern.c |  21 ++++
+ 6 files changed, 23 insertions(+), 321 deletions(-)
+ delete mode 100644 arch/um/drivers/daemon.h
+ delete mode 100644 arch/um/drivers/daemon_kern.c
+ delete mode 100644 arch/um/drivers/daemon_user.c
 
-diff --git a/arch/um/drivers/Kconfig b/arch/um/drivers/Kconfig
-index 7362ac9953fc..2369bdf4be91 100644
---- a/arch/um/drivers/Kconfig
-+++ b/arch/um/drivers/Kconfig
-@@ -152,7 +152,7 @@ config UML_NET_TUNTAP
- 	depends on UML_NET
- 	help
- 	  The UML TUN/TAP network transport allows a UML instance to exchange
--	  packets with the host over a TUN/TAP device. 
-+	  packets with the host over a TUN/TAP device.
+diff --git a/arch/um/drivers/Makefile b/arch/um/drivers/Makefile
+index a283b395b4da..06448073dce6 100644
+--- a/arch/um/drivers/Makefile
++++ b/arch/um/drivers/Makefile
+@@ -8,7 +8,6 @@
  
- 	  To use this transport, your host kernel must have support for TUN/TAP
- 	  devices, either built-in or as a module.
+ slip-objs := slip_kern.o slip_user.o
+ slirp-objs := slirp_kern.o slirp_user.o
+-daemon-objs := daemon_kern.o daemon_user.o
+ vector-objs := vector_kern.o vector_user.o vector_transports.o
+ net-objs := net_kern.o net_user.o
+ mconsole-objs := mconsole_kern.o mconsole_user.o
+@@ -42,7 +41,6 @@ obj-$(CONFIG_STDERR_CONSOLE) += stderr_console.o
+ 
+ obj-$(CONFIG_UML_NET_SLIP) += slip.o slip_common.o
+ obj-$(CONFIG_UML_NET_SLIRP) += slirp.o slip_common.o
+-obj-$(CONFIG_UML_NET_DAEMON) += daemon.o 
+ obj-$(CONFIG_UML_NET_VECTOR) += vector.o
+ obj-$(CONFIG_UML_NET_VDE) += vde.o
+ obj-$(CONFIG_UML_NET_PCAP) += pcap.o
+diff --git a/arch/um/drivers/daemon.h b/arch/um/drivers/daemon.h
+deleted file mode 100644
+index 1509cc7eb907..000000000000
+--- a/arch/um/drivers/daemon.h
++++ /dev/null
+@@ -1,29 +0,0 @@
+-/* SPDX-License-Identifier: GPL-2.0 */
+-/*
+- * Copyright (C) 2001 - 2007 Jeff Dike (jdike@{addtoit,linux.intel}.com)
+- */
+-
+-#ifndef __DAEMON_H__
+-#define __DAEMON_H__
+-
+-#include <net_user.h>
+-
+-#define SWITCH_VERSION 3
+-
+-struct daemon_data {
+-	char *sock_type;
+-	char *ctl_sock;
+-	void *ctl_addr;
+-	void *data_addr;
+-	void *local_addr;
+-	int fd;
+-	int control;
+-	void *dev;
+-};
+-
+-extern const struct net_user_info daemon_user_info;
+-
+-extern int daemon_user_write(int fd, void *buf, int len,
+-			     struct daemon_data *pri);
+-
+-#endif
+diff --git a/arch/um/drivers/daemon_kern.c b/arch/um/drivers/daemon_kern.c
+deleted file mode 100644
+index fd2402669c49..000000000000
+--- a/arch/um/drivers/daemon_kern.c
++++ /dev/null
+@@ -1,95 +0,0 @@
+-// SPDX-License-Identifier: GPL-2.0
+-/*
+- * Copyright (C) 2001 Lennert Buytenhek (buytenh@gnu.org) and
+- * James Leu (jleu@mindspring.net).
+- * Copyright (C) 2001 - 2007 Jeff Dike (jdike@{addtoit,linux.intel}.com)
+- * Copyright (C) 2001 by various other people who didn't put their name here.
+- */
+-
+-#include <linux/init.h>
+-#include <linux/netdevice.h>
+-#include <net_kern.h>
+-#include "daemon.h"
+-
+-struct daemon_init {
+-	char *sock_type;
+-	char *ctl_sock;
+-};
+-
+-static void daemon_init(struct net_device *dev, void *data)
+-{
+-	struct uml_net_private *pri;
+-	struct daemon_data *dpri;
+-	struct daemon_init *init = data;
+-
+-	pri = netdev_priv(dev);
+-	dpri = (struct daemon_data *) pri->user;
+-	dpri->sock_type = init->sock_type;
+-	dpri->ctl_sock = init->ctl_sock;
+-	dpri->fd = -1;
+-	dpri->control = -1;
+-	dpri->dev = dev;
+-	/* We will free this pointer. If it contains crap we're burned. */
+-	dpri->ctl_addr = NULL;
+-	dpri->data_addr = NULL;
+-	dpri->local_addr = NULL;
+-
+-	printk("daemon backend (uml_switch version %d) - %s:%s",
+-	       SWITCH_VERSION, dpri->sock_type, dpri->ctl_sock);
+-	printk("\n");
+-}
+-
+-static int daemon_read(int fd, struct sk_buff *skb, struct uml_net_private *lp)
+-{
+-	return net_recvfrom(fd, skb_mac_header(skb),
+-			    skb->dev->mtu + ETH_HEADER_OTHER);
+-}
+-
+-static int daemon_write(int fd, struct sk_buff *skb, struct uml_net_private *lp)
+-{
+-	return daemon_user_write(fd, skb->data, skb->len,
+-				 (struct daemon_data *) &lp->user);
+-}
+-
+-static const struct net_kern_info daemon_kern_info = {
+-	.init			= daemon_init,
+-	.protocol		= eth_protocol,
+-	.read			= daemon_read,
+-	.write			= daemon_write,
+-};
+-
+-static int daemon_setup(char *str, char **mac_out, void *data)
+-{
+-	struct daemon_init *init = data;
+-	char *remain;
+-
+-	*init = ((struct daemon_init)
+-		{ .sock_type 		= "unix",
+-		  .ctl_sock 		= "/tmp/uml.ctl" });
+-
+-	remain = split_if_spec(str, mac_out, &init->sock_type, &init->ctl_sock,
+-			       NULL);
+-	if (remain != NULL)
+-		printk(KERN_WARNING "daemon_setup : Ignoring data socket "
+-		       "specification\n");
+-
+-	return 1;
+-}
+-
+-static struct transport daemon_transport = {
+-	.list 		= LIST_HEAD_INIT(daemon_transport.list),
+-	.name 		= "daemon",
+-	.setup  	= daemon_setup,
+-	.user 		= &daemon_user_info,
+-	.kern 		= &daemon_kern_info,
+-	.private_size 	= sizeof(struct daemon_data),
+-	.setup_size 	= sizeof(struct daemon_init),
+-};
+-
+-static int register_daemon(void)
+-{
+-	register_transport(&daemon_transport);
+-	return 0;
+-}
+-
+-late_initcall(register_daemon);
+diff --git a/arch/um/drivers/daemon_user.c b/arch/um/drivers/daemon_user.c
+deleted file mode 100644
+index 3695821d06a2..000000000000
+--- a/arch/um/drivers/daemon_user.c
++++ /dev/null
+@@ -1,193 +0,0 @@
+-// SPDX-License-Identifier: GPL-2.0
+-/*
+- * Copyright (C) 2001 - 2007 Jeff Dike (jdike@{addtoit,linux.intel}.com)
+- * Copyright (C) 2001 Lennert Buytenhek (buytenh@gnu.org) and
+- * James Leu (jleu@mindspring.net).
+- * Copyright (C) 2001 by various other people who didn't put their name here.
+- */
+-
+-#include <stdint.h>
+-#include <unistd.h>
+-#include <errno.h>
+-#include <sys/types.h>
+-#include <sys/socket.h>
+-#include <sys/time.h>
+-#include <sys/un.h>
+-#include "daemon.h"
+-#include <net_user.h>
+-#include <os.h>
+-#include <um_malloc.h>
+-
+-enum request_type { REQ_NEW_CONTROL };
+-
+-#define SWITCH_MAGIC 0xfeedface
+-
+-struct request_v3 {
+-	uint32_t magic;
+-	uint32_t version;
+-	enum request_type type;
+-	struct sockaddr_un sock;
+-};
+-
+-static struct sockaddr_un *new_addr(void *name, int len)
+-{
+-	struct sockaddr_un *sun;
+-
+-	sun = uml_kmalloc(sizeof(struct sockaddr_un), UM_GFP_KERNEL);
+-	if (sun == NULL) {
+-		printk(UM_KERN_ERR "new_addr: allocation of sockaddr_un "
+-		       "failed\n");
+-		return NULL;
+-	}
+-	sun->sun_family = AF_UNIX;
+-	memcpy(sun->sun_path, name, len);
+-	return sun;
+-}
+-
+-static int connect_to_switch(struct daemon_data *pri)
+-{
+-	struct sockaddr_un *ctl_addr = pri->ctl_addr;
+-	struct sockaddr_un *local_addr = pri->local_addr;
+-	struct sockaddr_un *sun;
+-	struct request_v3 req;
+-	int fd, n, err;
+-
+-	pri->control = socket(AF_UNIX, SOCK_STREAM, 0);
+-	if (pri->control < 0) {
+-		err = -errno;
+-		printk(UM_KERN_ERR "daemon_open : control socket failed, "
+-		       "errno = %d\n", -err);
+-		return err;
+-	}
+-
+-	if (connect(pri->control, (struct sockaddr *) ctl_addr,
+-		   sizeof(*ctl_addr)) < 0) {
+-		err = -errno;
+-		printk(UM_KERN_ERR "daemon_open : control connect failed, "
+-		       "errno = %d\n", -err);
+-		goto out;
+-	}
+-
+-	fd = socket(AF_UNIX, SOCK_DGRAM, 0);
+-	if (fd < 0) {
+-		err = -errno;
+-		printk(UM_KERN_ERR "daemon_open : data socket failed, "
+-		       "errno = %d\n", -err);
+-		goto out;
+-	}
+-	if (bind(fd, (struct sockaddr *) local_addr, sizeof(*local_addr)) < 0) {
+-		err = -errno;
+-		printk(UM_KERN_ERR "daemon_open : data bind failed, "
+-		       "errno = %d\n", -err);
+-		goto out_close;
+-	}
+-
+-	sun = uml_kmalloc(sizeof(struct sockaddr_un), UM_GFP_KERNEL);
+-	if (sun == NULL) {
+-		printk(UM_KERN_ERR "new_addr: allocation of sockaddr_un "
+-		       "failed\n");
+-		err = -ENOMEM;
+-		goto out_close;
+-	}
+-
+-	req.magic = SWITCH_MAGIC;
+-	req.version = SWITCH_VERSION;
+-	req.type = REQ_NEW_CONTROL;
+-	req.sock = *local_addr;
+-	n = write(pri->control, &req, sizeof(req));
+-	if (n != sizeof(req)) {
+-		printk(UM_KERN_ERR "daemon_open : control setup request "
+-		       "failed, err = %d\n", -errno);
+-		err = -ENOTCONN;
+-		goto out_free;
+-	}
+-
+-	n = read(pri->control, sun, sizeof(*sun));
+-	if (n != sizeof(*sun)) {
+-		printk(UM_KERN_ERR "daemon_open : read of data socket failed, "
+-		       "err = %d\n", -errno);
+-		err = -ENOTCONN;
+-		goto out_free;
+-	}
+-
+-	pri->data_addr = sun;
+-	return fd;
+-
+- out_free:
+-	kfree(sun);
+- out_close:
+-	close(fd);
+- out:
+-	close(pri->control);
+-	return err;
+-}
+-
+-static int daemon_user_init(void *data, void *dev)
+-{
+-	struct daemon_data *pri = data;
+-	struct timeval tv;
+-	struct {
+-		char zero;
+-		int pid;
+-		int usecs;
+-	} name;
+-
+-	if (!strcmp(pri->sock_type, "unix"))
+-		pri->ctl_addr = new_addr(pri->ctl_sock,
+-					 strlen(pri->ctl_sock) + 1);
+-	name.zero = 0;
+-	name.pid = os_getpid();
+-	gettimeofday(&tv, NULL);
+-	name.usecs = tv.tv_usec;
+-	pri->local_addr = new_addr(&name, sizeof(name));
+-	pri->dev = dev;
+-	pri->fd = connect_to_switch(pri);
+-	if (pri->fd < 0) {
+-		kfree(pri->local_addr);
+-		pri->local_addr = NULL;
+-		return pri->fd;
+-	}
+-
+-	return 0;
+-}
+-
+-static int daemon_open(void *data)
+-{
+-	struct daemon_data *pri = data;
+-	return pri->fd;
+-}
+-
+-static void daemon_remove(void *data)
+-{
+-	struct daemon_data *pri = data;
+-
+-	close(pri->fd);
+-	pri->fd = -1;
+-	close(pri->control);
+-	pri->control = -1;
+-
+-	kfree(pri->data_addr);
+-	pri->data_addr = NULL;
+-	kfree(pri->ctl_addr);
+-	pri->ctl_addr = NULL;
+-	kfree(pri->local_addr);
+-	pri->local_addr = NULL;
+-}
+-
+-int daemon_user_write(int fd, void *buf, int len, struct daemon_data *pri)
+-{
+-	struct sockaddr_un *data_addr = pri->data_addr;
+-
+-	return net_sendto(fd, buf, len, data_addr, sizeof(*data_addr));
+-}
+-
+-const struct net_user_info daemon_user_info = {
+-	.init		= daemon_user_init,
+-	.open		= daemon_open,
+-	.close	 	= NULL,
+-	.remove	 	= daemon_remove,
+-	.add_address	= NULL,
+-	.delete_address = NULL,
+-	.mtu		= ETH_MAX_PACKET,
+-	.max_packet	= ETH_MAX_PACKET + ETH_HEADER_OTHER,
+-};
+diff --git a/arch/um/drivers/net_kern.c b/arch/um/drivers/net_kern.c
+index 21de09942ea6..b5de5ad43547 100644
+--- a/arch/um/drivers/net_kern.c
++++ b/arch/um/drivers/net_kern.c
+@@ -42,8 +42,8 @@ static DEFINE_SPINLOCK(drop_lock);
+ static struct sk_buff *drop_skb;
+ static int drop_max;
+ 
+-static const char *migrated_to_vector[] = {"pcap", "ucast", "mcast", "tuntap"};
+-#define MAX_MIGRATED 4
++static const char *migrated_to_vector[] = {"pcap", "ucast", "mcast", "tuntap", "daemon"};
++#define MAX_MIGRATED 5
+ 
+ static int update_drop_skb(int max)
+ {
 diff --git a/arch/um/drivers/vector_kern.c b/arch/um/drivers/vector_kern.c
-index 224db8833b8e..aba2dc634f44 100644
+index aba2dc634f44..fcd8465fe335 100644
 --- a/arch/um/drivers/vector_kern.c
 +++ b/arch/um/drivers/vector_kern.c
-@@ -1187,6 +1187,10 @@ static int vector_net_close(struct net_device *dev)
- 		os_close_file(vp->fds->rx_fd);
- 		vp->fds->rx_fd = -1;
+@@ -1712,6 +1712,27 @@ int vector_compat_eth_configure(char *str, int index)
+ 		kfree(newargs);
+ 		return -ENOMEM;
  	}
-+	if (vp->fds->control_fd > 0) {
-+		os_close_file(vp->fds->control_fd);
-+		vp->fds->control_fd = -1;
++#ifdef CONFIG_UML_NET_DAEMON
++	if (strncmp(str, "daemon", strlen("daemon")) == 0) {
++		char *proto = NULL, *control = NULL, *transport = NULL, *mac = NULL;
++
++		remain = split_if_spec(str, &transport, &proto, &control, &mac, NULL);
++
++		if ((mac != NULL) && strlen(mac) > 0)
++			snprintf(tempargs, MAX_COMPAT_ARG, "transport=daemon,mac=%s", mac);
++		else
++			snprintf(tempargs, MAX_COMPAT_ARG, "transport=daemon");
++
++		strcpy(newargs, tempargs);
++
++		if (control != NULL) {
++			snprintf(tempargs, MAX_COMPAT_ARG, "%s,dst=%s", newargs, control);
++			strcpy(newargs, tempargs);
++		}
++
++		do_compat = 1;
 +	}
- 	if (vp->fds->tx_fd > 0) {
- 		os_close_file(vp->fds->tx_fd);
- 		vp->fds->tx_fd = -1;
-diff --git a/arch/um/drivers/vector_user.c b/arch/um/drivers/vector_user.c
-index ab01c194fba5..20c3bb22a211 100644
---- a/arch/um/drivers/vector_user.c
-+++ b/arch/um/drivers/vector_user.c
-@@ -25,6 +25,7 @@
- #include <linux/if_packet.h>
- #include <sys/wait.h>
- #include <sys/uio.h>
-+#include <sys/time.h>
- #include <linux/virtio_net.h>
- #include <netdb.h>
- #include <stdlib.h>
-@@ -37,7 +38,8 @@
- #define ID_BESS 2
- #define ID_UCAST 3
- #define ID_MCAST 4
--#define ID_MAX 4
-+#define ID_DAEMON 5
-+#define ID_MAX 5
- 
- #define TOKEN_IFNAME "ifname"
- #define TOKEN_SCRIPT "script"
-@@ -57,6 +59,18 @@
- static const char padchar[] = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
- static const char *template = "tapXXXXXX";
- 
-+enum request_type { REQ_NEW_CONTROL };
-+
-+#define SWITCH_MAGIC 0xfeedface
-+
-+struct request_v3 {
-+	uint32_t magic;
-+	uint32_t version;
-+	enum request_type type;
-+	struct sockaddr_un sock;
-+};
-+
-+
- /* This is very ugly and brute force lookup, but it is done
-  * only once at initialization so not worth doing hashes or
-  * anything more intelligent
-@@ -217,6 +231,7 @@ static struct vector_fds *user_init_tap_fds(struct arglist *ifspec)
- 	}
- 	result->rx_fd = -1;
- 	result->tx_fd = -1;
-+	result->control_fd = -1;
- 	result->remote_addr = NULL;
- 	result->remote_addr_size = 0;
- 
-@@ -272,6 +287,7 @@ static struct vector_fds *user_init_hybrid_fds(struct arglist *ifspec)
- 	}
- 	result->rx_fd = -1;
- 	result->tx_fd = -1;
-+	result->control_fd = -1;
- 	result->remote_addr = NULL;
- 	result->remote_addr_size = 0;
- 
-@@ -305,21 +321,35 @@ static struct vector_fds *user_init_hybrid_fds(struct arglist *ifspec)
- 	return NULL;
- }
- 
-+#define SWITCH_VERSION 3
-+
- static struct vector_fds *user_init_unix_fds(struct arglist *ifspec, int id)
- {
--	int fd = -1;
-+	int fd = -1, n;
- 	int socktype;
- 	char *src, *dst;
- 	struct vector_fds *result = NULL;
--	struct sockaddr_un *local_addr = NULL, *remote_addr = NULL;
-+	struct sockaddr_un *local_addr = NULL, *remote_addr = NULL, *control_addr = NULL;
-+	struct request_v3 req;
-+	struct {
-+		char zero;
-+		int pid;
-+		int usecs;
-+	} name;
-+	struct timeval tv;
- 
- 	src = uml_vector_fetch_arg(ifspec, "src");
- 	dst = uml_vector_fetch_arg(ifspec, "dst");
-+
-+	if (dst == NULL)
-+		dst = "/tmp/uml.ctl";
-+
- 	result = uml_kmalloc(sizeof(struct vector_fds), UM_GFP_KERNEL);
- 	if (result == NULL) {
- 		printk(UM_KERN_ERR "unix open:cannot allocate remote addr");
- 		goto unix_cleanup;
- 	}
-+	result->control_fd = -1;
- 	remote_addr = uml_kmalloc(sizeof(struct sockaddr_un), UM_GFP_KERNEL);
- 	if (remote_addr == NULL) {
- 		printk(UM_KERN_ERR "unix open:cannot allocate remote addr");
-@@ -327,6 +357,62 @@ static struct vector_fds *user_init_unix_fds(struct arglist *ifspec, int id)
- 	}
- 
- 	switch (id) {
-+	case ID_DAEMON:
-+		name.zero = 0;
-+		name.pid = os_getpid();
-+		gettimeofday(&tv, NULL);
-+		name.usecs = tv.tv_usec;
-+
-+		local_addr = uml_kmalloc(sizeof(struct sockaddr_un), UM_GFP_KERNEL);
-+		if (local_addr == NULL) {
-+			printk(UM_KERN_ERR "daemon open:cannot allocate local addr");
-+			goto unix_cleanup;
-+		}
-+		local_addr->sun_family = AF_UNIX;
-+		memcpy(local_addr->sun_path, &name, sizeof(name));
-+
-+		result->control_fd = socket(AF_UNIX, SOCK_STREAM, 0);
-+		if (result->control_fd < 0) {
-+			printk(UM_KERN_ERR
-+				"unix open: could not open socket, error = %d",
-+				-errno
-+			);
-+			goto unix_cleanup;
-+		}
-+		if (strlen(dst) <= MAX_UN_LEN) {
-+			control_addr = uml_kmalloc(sizeof(struct sockaddr_un), UM_GFP_KERNEL);
-+			if (control_addr == NULL) {
-+				printk(UM_KERN_ERR "daemon open:cannot allocate control addr");
-+				goto unix_cleanup;
-+			}
-+			control_addr->sun_family = AF_UNIX;
-+			memcpy(control_addr->sun_path, dst, strlen(dst) + 1);
-+		}
-+
-+		if (connect(result->control_fd, (struct sockaddr *) control_addr, sizeof(*control_addr)) < 0) {
-+			printk(UM_KERN_ERR "daemon_open : control connect failed, " "errno = %d\n", -errno);
-+			goto unix_cleanup;
-+		}
-+		req.magic = SWITCH_MAGIC;
-+		req.version = SWITCH_VERSION;
-+		req.type = REQ_NEW_CONTROL;
-+		req.sock = *local_addr;
-+
-+		n = write(result->control_fd, &req, sizeof(req));
-+		if (n != sizeof(req)) {
-+			printk(UM_KERN_ERR "daemon_open : control setup request "
-+			       "failed, err = %d\n", -errno);
-+			goto unix_cleanup;
-+		}
-+		n = read(result->control_fd, remote_addr, sizeof(struct sockaddr_un));
-+		if (n != sizeof(struct sockaddr_un)) {
-+			printk(UM_KERN_ERR "daemon_open : read of data socket failed, "
-+			       "err = %d\n", -errno);
-+			goto unix_cleanup;
-+		}
-+		socktype = SOCK_DGRAM;
-+
-+		break;
- 	case ID_BESS:
- 		socktype = SOCK_SEQPACKET;
- 		if ((src != NULL) && (strlen(src) <= MAX_UN_LEN)) {
-@@ -374,14 +460,27 @@ static struct vector_fds *user_init_unix_fds(struct arglist *ifspec, int id)
- 	result->tx_fd = fd;
- 	result->remote_addr_size = sizeof(struct sockaddr_un);
- 	result->remote_addr = remote_addr;
-+
-+	if (control_addr != NULL)
-+		kfree(control_addr);
-+	if (local_addr != NULL)
-+		kfree(local_addr);
-+
- 	return result;
- unix_cleanup:
- 	if (fd >= 0)
- 		os_close_file(fd);
- 	if (remote_addr != NULL)
- 		kfree(remote_addr);
--	if (result != NULL)
-+	if (control_addr != NULL)
-+		kfree(control_addr);
-+	if (local_addr != NULL)
-+		kfree(local_addr);
-+	if (result != NULL) {
-+		if (result->control_fd > 0)
-+			close(result->control_fd);
- 		kfree(result);
-+	}
- 	return NULL;
- }
- 
-@@ -422,6 +521,7 @@ static struct vector_fds *user_init_raw_fds(struct arglist *ifspec)
- 	if (result != NULL) {
- 		result->rx_fd = rxfd;
- 		result->tx_fd = txfd;
-+		result->control_fd = -1;
- 		result->remote_addr = NULL;
- 		result->remote_addr_size = 0;
- 	}
-@@ -677,6 +777,8 @@ struct vector_fds *uml_vector_user_open(
- 		return user_init_socket_fds(parsed, ID_L2TPV3);
- 	if (strncmp(transport, TRANS_BESS, TRANS_BESS_LEN) == 0)
- 		return user_init_unix_fds(parsed, ID_BESS);
-+	if (strncmp(transport, TRANS_DAEMON, TRANS_DAEMON_LEN) == 0)
-+		return user_init_unix_fds(parsed, ID_DAEMON);
- 	if (strncmp(transport, TRANS_UCAST, TRANS_UCAST_LEN) == 0)
- 		return user_init_socket_fds(parsed, ID_UCAST);
- 	if (strncmp(transport, TRANS_MCAST, TRANS_MCAST_LEN) == 0)
-diff --git a/arch/um/drivers/vector_user.h b/arch/um/drivers/vector_user.h
-index 3b05850a9c46..590ece585929 100644
---- a/arch/um/drivers/vector_user.h
-+++ b/arch/um/drivers/vector_user.h
-@@ -34,6 +34,9 @@
- #define TRANS_MCAST "mcast"
- #define TRANS_MCAST_LEN strlen(TRANS_MCAST)
- 
-+#define TRANS_DAEMON "daemon"
-+#define TRANS_DAEMON_LEN strlen(TRANS_MCAST)
-+
- #define DEFAULT_BPF_LEN 6
- 
- #ifndef IPPROTO_GRE
-@@ -71,6 +74,7 @@ struct vector_fds {
- 	int tx_fd;
- 	void *remote_addr;
- 	int remote_addr_size;
-+	int control_fd;
- };
- 
- #define VECTOR_READ	1
++#endif
+ #ifdef CONFIG_UML_NET_TUNTAP
+ 	if (strncmp(str, "tuntap", strlen("tuntap")) == 0) {
+ 		char *ifname = NULL, *script = NULL, *gateway = NULL, *transport = NULL, *mac = NULL;
 -- 
 2.20.1
 
