@@ -2,56 +2,56 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 12B7E12262C
-	for <lists+linux-um@lfdr.de>; Tue, 17 Dec 2019 09:04:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 25C7112264E
+	for <lists+linux-um@lfdr.de>; Tue, 17 Dec 2019 09:06:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:From:To:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wKWM0zAeavEASjBGi+rBDXVSehvD4DcTQNGfN6rfNFU=; b=R3DYfLO7Ap7H0M
-	TG2ezha/oxpcZfP/j1OiY04A1oukPlcVAFtqGr9DgeCP8wCJHkbhmUcvZUJL4QsDOsll1YCFOsJd+
-	5zw9rjgq9ng3d5S1A9x6yGEAcjI82dUjJLAjrIM3pEmn24Lx0GX09IZg7lxsEqLg0QYyd+g6LqmJc
-	BAqKGNOEFgbTxZYVTM797n8/rK6lnnFWQx2tC+XCgvBAuZopQxngZG3ORNxYzajfsSnhPaePRjWG7
-	rjv+J06+8+LEjgrjGWSYWa/U0jH+m9C8JY/S8QGbxwEq9UN8DBpDWRxehTNBuTN4ulzSVIik5CQQg
-	F40Fwfb2ovdOlLj9PQKQ==;
+	List-Owner; bh=n7io4Z8qExh5EIPjwKiDI176uWUhU2GhKm1zK7nzq1E=; b=gaqyzDj5fXTg3R
+	askBedk88N2KnFCZy0Oq8nZyELgnEyCV+0kG1vRuOMqL1pVAyLRr130eGdYJGYY0LklW1/QdmtleU
+	XmJs/0bwKzzeIl8VWcDeAumOwP9bsQGq8CzvRro4bipZQEsflAGeO/D74lpVtf5G+lNnvSLsLJtWx
+	kFMkdO5NKBkCbQMp+96g7aD55vfhYYlARFVXIAOM633q16C6mWy2w6WX+Hi8vr4PF1wudQojBYO8M
+	Z7XYHLjrywthF+ynEt5AZXdSkbf/fKfct5YSyTGuA7OuDsYgklGiMZyaweX05HJNKor0sVN7B0ieJ
+	U7voG4KFBCBQo1iwTwKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ih7pz-0004Jm-9d; Tue, 17 Dec 2019 08:04:11 +0000
+	id 1ih7sd-0005pG-Pu; Tue, 17 Dec 2019 08:06:55 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ih7pw-0004J5-Ep
- for linux-um@lists.infradead.org; Tue, 17 Dec 2019 08:04:09 +0000
+ id 1ih7sc-0005ok-4y
+ for linux-um@lists.infradead.org; Tue, 17 Dec 2019 08:06:55 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0E805207FF;
- Tue, 17 Dec 2019 08:04:08 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id B672B2082E;
+ Tue, 17 Dec 2019 08:06:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1576569848;
- bh=Y+8NIgqGUB5GGoVAmC1QyodloTkHrKNoE9BJ1KDgc0I=;
+ s=default; t=1576570013;
+ bh=2HEttcf2FK3isDhkwY7QsOLIh5N7UrvLjCETf/Z/wY8=;
  h=In-Reply-To:References:Cc:To:From:Subject:Date:From;
- b=NtCUV3NXdw3uz6E3WWDJ/f8avNB+JW3MgzuhyTbvTeFVozCkBMA1VlwHv2Z3SNFi6
- RfLW0D/1wbdJ8NsGI6PG+SW7IFEhnDvWvYJ0QAE1crrChc0U0DyFDqJna8T8DTxc+U
- fFlOb8qoGap3jmz9IyfKyLMKNHRAW2V9WYKcDVp4=
+ b=R3if4cpVHuRrFNYaLbiz7sGH/bwdNjle6N9etawjq8zT/vIHNtiMnGnWRmP/nqpmZ
+ aRNHn3kW5SpogEpAdtXeB4dmFbMkmmERy1vwIR9Mi8+rkAX87BU7LOSYhnngmTsAtP
+ KFsM1UkQlHp7uPa4XyWa9aecC4Lx/tF89egvPAwE=
 MIME-Version: 1.0
-In-Reply-To: <20191216220555.245089-4-brendanhiggins@google.com>
+In-Reply-To: <20191216220555.245089-7-brendanhiggins@google.com>
 References: <20191216220555.245089-1-brendanhiggins@google.com>
- <20191216220555.245089-4-brendanhiggins@google.com>
+ <20191216220555.245089-7-brendanhiggins@google.com>
 To: Brendan Higgins <brendanhiggins@google.com>, akpm@linux-foundation.org,
  alan.maguire@oracle.com, anton.ivanov@cambridgegreys.com, arnd@arndb.de,
  davidgow@google.com, jdike@addtoit.com, keescook@chromium.org, richard@nod.at,
  rppt@linux.ibm.com, skhan@linuxfoundation.org, yzaikin@google.com
 From: Stephen Boyd <sboyd@kernel.org>
-Subject: Re: [RFC v1 3/6] kunit: test: create a single centralized executor
- for all tests
+Subject: Re: [RFC v1 6/6] kunit: Add 'kunit_shutdown' option
 User-Agent: alot/0.8.1
-Date: Tue, 17 Dec 2019 00:04:07 -0800
-Message-Id: <20191217080408.0E805207FF@mail.kernel.org>
+Date: Tue, 17 Dec 2019 00:06:53 -0800
+Message-Id: <20191217080653.B672B2082E@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191217_000408_540068_E4809822 
-X-CRM114-Status: GOOD (  13.37  )
+X-CRM114-CacheID: sfid-20191217_000654_209595_C471042C 
+X-CRM114-Status: UNSURE (   8.34  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -90,91 +90,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-Quoting Brendan Higgins (2019-12-16 14:05:52)
-> diff --git a/include/kunit/test.h b/include/kunit/test.h
-> index dba48304b3bd3..c070798ebb765 100644
-> --- a/include/kunit/test.h
-> +++ b/include/kunit/test.h
-> @@ -217,11 +217,8 @@ int kunit_run_tests(struct kunit_suite *suite);
->   * everything else is definitely initialized.
->   */
->  #define kunit_test_suite(suite)                                                       \
-> -       static int kunit_suite_init##suite(void)                               \
+Quoting Brendan Higgins (2019-12-16 14:05:55)
+> From: David Gow <davidgow@google.com>
+> 
+> Add a new kernel command-line option, 'kunit_shutdown', which allows the
+> user to specify that the kernel poweroff, halt, or reboot after
+> completing all KUnit tests; this is very handy for running KUnit tests
+> on UML or a VM so that the UML/VM process exits cleanly immediately
+> after running all tests without needing a special initramfs.
+> 
+> Signed-off-by: David Gow <davidgow@google.com>
+> Signed-off-by: Brendan Higgins <brendanhiggins@google.com>
+> ---
+>  lib/kunit/executor.c                | 18 ++++++++++++++++++
+>  tools/testing/kunit/kunit_kernel.py |  2 +-
+>  tools/testing/kunit/kunit_parser.py |  2 +-
+>  3 files changed, 20 insertions(+), 2 deletions(-)
 
-Oh this should have been __init before.
+Can you document it in Documentation/admin-guide/kernel-parameters.txt ?
 
-> -       {                                                                      \
-> -               return kunit_run_tests(&suite);                                \
-> -       }                                                                      \
-> -       late_initcall(kunit_suite_init##suite)
-> +       static struct kunit_suite *__kunit_suite_##suite                       \
-> +       __used __aligned(8) __section(.kunit_test_suites) = &suite
->  
->  /*
->   * Like kunit_alloc_resource() below, but returns the struct kunit_resource
-> diff --git a/lib/kunit/executor.c b/lib/kunit/executor.c
-> new file mode 100644
-> index 0000000000000..978086cfd257d
-> --- /dev/null
-> +++ b/lib/kunit/executor.c
-> @@ -0,0 +1,43 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +/*
-> + * Base unit test (KUnit) API.
-> + *
-> + * Copyright (C) 2019, Google LLC.
-> + * Author: Brendan Higgins <brendanhiggins@google.com>
-> + */
-> +
-> +#include <linux/init.h>
-> +#include <linux/printk.h>
-> +#include <kunit/test.h>
-> +
-> +/*
-> + * These symbols point to the .kunit_test_suites section and are defined in
-> + * include/asm-generic/vmlinux.lds.h, and consequently must be extern.
-> + */
-> +extern struct kunit_suite *__kunit_suites_start[];
-> +extern struct kunit_suite *__kunit_suites_end[];
-> +
-> +static bool kunit_run_all_tests(void)
-
-Should be __init?
-
-> +{
-> +       struct kunit_suite **suite;
-
-Can this be const? And the linker references above too?
-
-> +       bool has_test_failed = false;
-> +
-> +       for (suite = __kunit_suites_start;
-> +            suite < __kunit_suites_end;
-> +            ++suite) {
-> +               if (kunit_run_tests(*suite))
-> +                       has_test_failed = true;
-> +       }
-> +
-> +       return !has_test_failed;
-> +}
-> +
-> +static int kunit_executor_init(void)
-
-Should be __init?
-
-> +{
-> +       if (kunit_run_all_tests())
-> +               return 0;
-> +       else
-> +               return -EFAULT;
-
-Why two functions instead of just one that is the target of the
-late_initcall? Nitpick: deindent that last return and take it out of the
-else.
-
-> +}
-> +
-> +late_initcall(kunit_executor_init);
 
 _______________________________________________
 linux-um mailing list
