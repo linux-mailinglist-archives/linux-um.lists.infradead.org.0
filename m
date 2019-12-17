@@ -2,42 +2,43 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B865B12285B
-	for <lists+linux-um@lfdr.de>; Tue, 17 Dec 2019 11:09:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E403C12285C
+	for <lists+linux-um@lfdr.de>; Tue, 17 Dec 2019 11:09:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xUwFg0sCGUlhsFdBWqGSwQdtEE9uMBGG7joiN6du+KQ=; b=lkcnaVt7gwBis2
-	eBMdxdKiMichtYmbCvyPY25xVA9nltOy0cjQ6D9mb+c55fI+jvx5Ljhx8S/ER1hnDAtViasVcqYcq
-	xT1P1cWOyftFbYy28hz5xDccuAf7z9HaswJLjHH7ijCUyL42JLLFqFruIrKH07NQh4k98QoH27Llz
-	CvqEQCfoMyQME6oNU3NHVfygzNbieKDu+Ntnm4/CawdluonhY0TKnqioYxtM6oe6L8E3fL8BA+J7P
-	Jrsqhyy+2v1MoBgWMpdePJMGvxJO2JZl5rJnUpD+I5fn86KU2/QwiOZHZN5zHThM54mL6Bruda7+8
-	EIbGfW4ZwD0eYxLagyKg==;
+	List-Owner; bh=3131EGR624Qx4TTv67j6YN3VP0nrJGlWzzgdESHyYwY=; b=Egycozq0BMrOIO
+	kRZqM7Ra6JspIJc73haDGzDQXyoA6cWhszxkGUiK7I0eHDcdwwjNFpHfoJhav4wl6//GVNg98ngtk
+	dEH2911YoIxfw5HaNYV2icsJKJHUlwa2+CbdK/ViUdVaHooIMtyPiacXyz1aalwAarUKvZ1KId9C+
+	qgkXoULqIHhl76wK5IZ1dn8bzdVnWIAA0hHYfC3xF4YkiVxzfiBbydDM/iWfyiBeCSXYCXGjQgn1P
+	jsXBvXGqgtkGwIOuBPz3PF3XmfYXfWM53OV8LFjdpKZoxyKU3busA5ldmMFC9NROTjfrSIHRzePO8
+	LYwWRP4yBGS/WaQ+p10g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ih9nI-0002bg-BK; Tue, 17 Dec 2019 10:09:32 +0000
+	id 1ih9nL-0002dk-Ir; Tue, 17 Dec 2019 10:09:35 +0000
 Received: from ivanoab7.miniserver.com ([37.128.132.42]
  helo=www.kot-begemot.co.uk)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ih9nF-0002Zh-Cm
- for linux-um@lists.infradead.org; Tue, 17 Dec 2019 10:09:31 +0000
+ id 1ih9nI-0002bT-6Y
+ for linux-um@lists.infradead.org; Tue, 17 Dec 2019 10:09:34 +0000
 Received: from tun252.jain.kot-begemot.co.uk ([192.168.18.6]
  helo=jain.kot-begemot.co.uk)
  by www.kot-begemot.co.uk with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
  (Exim 4.92) (envelope-from <anton.ivanov@cambridgegreys.com>)
- id 1ih9nD-0003p1-Vw; Tue, 17 Dec 2019 10:09:28 +0000
+ id 1ih9nG-0003p7-Nc; Tue, 17 Dec 2019 10:09:31 +0000
 Received: from jain.kot-begemot.co.uk ([192.168.3.3])
  by jain.kot-begemot.co.uk with esmtp (Exim 4.92)
  (envelope-from <anton.ivanov@cambridgegreys.com>)
- id 1ih9nA-0000uG-OL; Tue, 17 Dec 2019 10:09:26 +0000
+ id 1ih9nC-0000uG-ON; Tue, 17 Dec 2019 10:09:29 +0000
 From: anton.ivanov@cambridgegreys.com
 To: linux-um@lists.infradead.org
-Subject: [PATCH v4 6/9] um: Migrate tap to vector IO
-Date: Tue, 17 Dec 2019 10:09:10 +0000
-Message-Id: <20191217100913.3422-6-anton.ivanov@cambridgegreys.com>
+Subject: [PATCH v4 7/9] um: Remove ethertap driver and remaining legacy
+ tap/ethertap code
+Date: Tue, 17 Dec 2019 10:09:11 +0000
+Message-Id: <20191217100913.3422-7-anton.ivanov@cambridgegreys.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191217100913.3422-1-anton.ivanov@cambridgegreys.com>
 References: <20191217100913.3422-1-anton.ivanov@cambridgegreys.com>
@@ -46,8 +47,8 @@ X-Spam-Score: -1.0
 X-Spam-Score: -1.0
 X-Clacks-Overhead: GNU Terry Pratchett
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191217_020929_597383_5D0975FB 
-X-CRM114-Status: GOOD (  16.29  )
+X-CRM114-CacheID: sfid-20191217_020932_508891_EAB59499 
+X-CRM114-Status: GOOD (  16.11  )
 X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.4 points)
@@ -76,126 +77,166 @@ Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
 From: Anton Ivanov <anton.ivanov@cambridgegreys.com>
 
-Migrates tuntap to the vector IO backend
+Ethertap is no longer present in the host kernels and tap has been
+migrated to the vector IO backend.
 
 Signed-off-by: Anton Ivanov <anton.ivanov@cambridgegreys.com>
 ---
- arch/um/drivers/Kconfig                |   4 +-
- arch/um/drivers/net_kern.c             |   8 +-
- arch/um/drivers/vector_kern.c          |  26 +++
- arch/um/os-Linux/drivers/Makefile      |   2 -
- arch/um/os-Linux/drivers/tuntap.h      |  21 ---
- arch/um/os-Linux/drivers/tuntap_kern.c |  86 ----------
- arch/um/os-Linux/drivers/tuntap_user.c | 215 -------------------------
- 7 files changed, 31 insertions(+), 331 deletions(-)
- delete mode 100644 arch/um/os-Linux/drivers/tuntap.h
- delete mode 100644 arch/um/os-Linux/drivers/tuntap_kern.c
- delete mode 100644 arch/um/os-Linux/drivers/tuntap_user.c
+ arch/um/drivers/Kconfig                  |  26 ---
+ arch/um/drivers/net_user.c               |  31 ---
+ arch/um/include/shared/net_kern.h        |   2 -
+ arch/um/include/shared/net_user.h        |   3 -
+ arch/um/os-Linux/Makefile                |   2 +-
+ arch/um/os-Linux/drivers/Makefile        |  11 -
+ arch/um/os-Linux/drivers/etap.h          |  21 --
+ arch/um/os-Linux/drivers/ethertap_kern.c | 100 ---------
+ arch/um/os-Linux/drivers/ethertap_user.c | 248 -----------------------
+ 9 files changed, 1 insertion(+), 443 deletions(-)
+ delete mode 100644 arch/um/os-Linux/drivers/Makefile
+ delete mode 100644 arch/um/os-Linux/drivers/etap.h
+ delete mode 100644 arch/um/os-Linux/drivers/ethertap_kern.c
+ delete mode 100644 arch/um/os-Linux/drivers/ethertap_user.c
 
 diff --git a/arch/um/drivers/Kconfig b/arch/um/drivers/Kconfig
-index 494c778893ce..d8e59bf08d63 100644
+index d8e59bf08d63..7362ac9953fc 100644
 --- a/arch/um/drivers/Kconfig
 +++ b/arch/um/drivers/Kconfig
-@@ -178,9 +178,7 @@ config UML_NET_TUNTAP
- 	depends on UML_NET
- 	help
- 	  The UML TUN/TAP network transport allows a UML instance to exchange
--	  packets with the host over a TUN/TAP device.  This option will only
--	  work with a 2.4 host, unless you've applied the TUN/TAP patch to
--	  your 2.2 host kernel.
-+	  packets with the host over a TUN/TAP device. 
+@@ -146,32 +146,6 @@ config UML_NET
+ 	  enable at least one of the following transport options to actually
+ 	  make use of UML networking.
  
- 	  To use this transport, your host kernel must have support for TUN/TAP
- 	  devices, either built-in or as a module.
-diff --git a/arch/um/drivers/net_kern.c b/arch/um/drivers/net_kern.c
-index 597c38d517fc..21de09942ea6 100644
---- a/arch/um/drivers/net_kern.c
-+++ b/arch/um/drivers/net_kern.c
-@@ -42,8 +42,8 @@ static DEFINE_SPINLOCK(drop_lock);
- static struct sk_buff *drop_skb;
- static int drop_max;
+-config UML_NET_ETHERTAP
+-	bool "Ethertap transport"
+-	depends on UML_NET
+-	help
+-	  The Ethertap User-Mode Linux network transport allows a single
+-	  running UML to exchange packets with its host over one of the
+-	  host's Ethertap devices, such as /dev/tap0.  Additional running
+-	  UMLs can use additional Ethertap devices, one per running UML.
+-	  While the UML believes it's on a (multi-device, broadcast) virtual
+-	  Ethernet network, it's in fact communicating over a point-to-point
+-	  link with the host.
+-
+-	  To use this, your host kernel must have support for Ethertap
+-	  devices.  Also, if your host kernel is 2.4.x, it must have
+-	  CONFIG_NETLINK_DEV configured as Y or M.
+-
+-	  For more information, see
+-	  <http://user-mode-linux.sourceforge.net/old/networking.html>  That site
+-	  has examples of the UML command line to use to enable Ethertap
+-	  networking.
+-
+-	  If you'd like to set up an IP network with the host and/or the
+-	  outside world, say Y to this, the Daemon Transport and/or the
+-	  Slip Transport.  You'll need at least one of them, but may choose
+-	  more than one without conflict.  If you don't need UML networking,
+-	  say N.
  
--static const char *migrated_to_vector[] = {"pcap", "ucast", "mcast"};
--#define MAX_MIGRATED 3
-+static const char *migrated_to_vector[] = {"pcap", "ucast", "mcast", "tuntap"};
-+#define MAX_MIGRATED 4
+ config UML_NET_TUNTAP
+ 	bool "TUN/TAP transport"
+diff --git a/arch/um/drivers/net_user.c b/arch/um/drivers/net_user.c
+index 4c9576452ab0..4e231240fa25 100644
+--- a/arch/um/drivers/net_user.c
++++ b/arch/um/drivers/net_user.c
+@@ -15,37 +15,6 @@
+ #include <os.h>
+ #include <um_malloc.h>
  
- static int update_drop_skb(int max)
+-int tap_open_common(void *dev, char *gate_addr)
+-{
+-	int tap_addr[4];
+-
+-	if (gate_addr == NULL)
+-		return 0;
+-	if (sscanf(gate_addr, "%d.%d.%d.%d", &tap_addr[0],
+-		  &tap_addr[1], &tap_addr[2], &tap_addr[3]) != 4) {
+-		printk(UM_KERN_ERR "Invalid tap IP address - '%s'\n",
+-		       gate_addr);
+-		return -EINVAL;
+-	}
+-	return 0;
+-}
+-
+-void tap_check_ips(char *gate_addr, unsigned char *eth_addr)
+-{
+-	int tap_addr[4];
+-
+-	if ((gate_addr != NULL) &&
+-	    (sscanf(gate_addr, "%d.%d.%d.%d", &tap_addr[0],
+-		    &tap_addr[1], &tap_addr[2], &tap_addr[3]) == 4) &&
+-	    (eth_addr[0] == tap_addr[0]) &&
+-	    (eth_addr[1] == tap_addr[1]) &&
+-	    (eth_addr[2] == tap_addr[2]) &&
+-	    (eth_addr[3] == tap_addr[3])) {
+-		printk(UM_KERN_ERR "The tap IP address and the UML eth IP "
+-		       "address must be different\n");
+-	}
+-}
+-
+ /* Do reliable error handling as this fails frequently enough. */
+ void read_output(int fd, char *output, int len)
  {
-@@ -593,7 +593,7 @@ static int register_compat(void)
- 	list_for_each_safe(ele, next, &eth_cmd_line) {
- 		eth = list_entry(ele, struct eth_init, list);
- 		for (compat = 0; compat < MAX_MIGRATED; compat++) {
--			if (strncmp(eth->init, &migrated_to_vector[compat], strlen(&migrated_to_vector[compat])) == 0) {
-+			if (strncmp(eth->init, migrated_to_vector[compat], strlen(migrated_to_vector[compat])) == 0) {
- 				vector_compat_eth_configure(eth->init, eth->index);
- 				list_del(&eth->list);
- 				continue;
-@@ -642,7 +642,7 @@ static int eth_setup_common(char *str, int index)
- 	int found = 0, compat;
+diff --git a/arch/um/include/shared/net_kern.h b/arch/um/include/shared/net_kern.h
+index f9389a2ec2d8..0ef1021d1a7e 100644
+--- a/arch/um/include/shared/net_kern.h
++++ b/arch/um/include/shared/net_kern.h
+@@ -61,8 +61,6 @@ struct transport {
  
- 	for (compat = 0; compat < MAX_MIGRATED; compat++) {
--		if (strncmp(str, &migrated_to_vector[compat], strlen(&migrated_to_vector[compat])) == 0)
-+		if (strncmp(str, migrated_to_vector[compat], strlen(migrated_to_vector[compat])) == 0)
- 			return vector_compat_eth_configure(str, index);
- 	}
+ extern struct net_device *ether_init(int);
+ extern unsigned short ether_protocol(struct sk_buff *);
+-extern int tap_setup_common(char *str, char *type, char **dev_name,
+-			    char **mac_out, char **gate_addr);
+ extern void register_transport(struct transport *new);
+ extern unsigned short eth_protocol(struct sk_buff *skb);
+ extern void uml_net_setup_etheraddr(struct net_device *dev, char *str);
+diff --git a/arch/um/include/shared/net_user.h b/arch/um/include/shared/net_user.h
+index b523e469256c..22fd80e55bd0 100644
+--- a/arch/um/include/shared/net_user.h
++++ b/arch/um/include/shared/net_user.h
+@@ -32,9 +32,6 @@ extern void iter_addresses(void *d, void (*cb)(unsigned char *,
+ extern void *get_output_buffer(int *len_out);
+ extern void free_output_buffer(void *buffer);
  
-diff --git a/arch/um/drivers/vector_kern.c b/arch/um/drivers/vector_kern.c
-index d52c24874f2a..224db8833b8e 100644
---- a/arch/um/drivers/vector_kern.c
-+++ b/arch/um/drivers/vector_kern.c
-@@ -1708,6 +1708,32 @@ int vector_compat_eth_configure(char *str, int index)
- 		kfree(newargs);
- 		return -ENOMEM;
- 	}
-+#ifdef CONFIG_UML_NET_TUNTAP
-+	if (strncmp(str, "tuntap", strlen("tuntap")) == 0) {
-+		char *ifname = NULL, *script = NULL, *gateway = NULL, *transport = NULL, *mac = NULL;
-+
-+		remain = split_if_spec(str, &transport, &ifname, &script, &gateway, &mac, NULL);
-+
-+		if ((mac != NULL) && strlen(mac) > 0)
-+			snprintf(tempargs, MAX_COMPAT_ARG, "transport=tap,gro=1,mac=%s", mac);
-+		else
-+			snprintf(tempargs, MAX_COMPAT_ARG, "transport=tap,gro=1");
-+
-+		strcpy(newargs, tempargs);
-+
-+		if (ifname != NULL) {
-+			snprintf(tempargs, MAX_COMPAT_ARG, "%s,ifname=%s", newargs, ifname);
-+			strcpy(newargs, tempargs);
-+		}
-+
-+		if (script != NULL) {
-+			snprintf(tempargs, MAX_COMPAT_ARG, "%s,script=%s", newargs, script);
-+			strcpy(newargs, tempargs);
-+		}
-+
-+		do_compat = 1;
-+	}
-+#endif
- #ifdef CONFIG_UML_NET_PCAP
- 	if (strncmp(str, "pcap", strlen("pcap")) == 0) {
- 		char *ifname = NULL, *filter = NULL, *transport = NULL, *mac = NULL;
+-extern int tap_open_common(void *dev, char *gate_addr);
+-extern void tap_check_ips(char *gate_addr, unsigned char *eth_addr);
+-
+ extern void read_output(int fd, char *output_out, int len);
+ 
+ extern int net_read(int fd, void *buf, int len);
+diff --git a/arch/um/os-Linux/Makefile b/arch/um/os-Linux/Makefile
+index 839915b8c31c..5847b6f8551d 100644
+--- a/arch/um/os-Linux/Makefile
++++ b/arch/um/os-Linux/Makefile
+@@ -8,7 +8,7 @@ KCOV_INSTRUMENT                := n
+ 
+ obj-y = execvp.o file.o helper.o irq.o main.o mem.o process.o \
+ 	registers.o sigio.o signal.o start_up.o time.o tty.o \
+-	umid.o user_syms.o util.o drivers/ skas/
++	umid.o user_syms.o util.o skas/
+ 
+ obj-$(CONFIG_ARCH_REUSE_HOST_VSYSCALL_AREA) += elf_aux.o
+ 
 diff --git a/arch/um/os-Linux/drivers/Makefile b/arch/um/os-Linux/drivers/Makefile
-index d79e75f1b69a..924c42641170 100644
---- a/arch/um/os-Linux/drivers/Makefile
-+++ b/arch/um/os-Linux/drivers/Makefile
-@@ -4,10 +4,8 @@
- #
- 
- ethertap-objs := ethertap_kern.o ethertap_user.o
--tuntap-objs := tuntap_kern.o tuntap_user.o
- 
- obj-y = 
- obj-$(CONFIG_UML_NET_ETHERTAP) += ethertap.o
--obj-$(CONFIG_UML_NET_TUNTAP) += tuntap.o
- 
- include arch/um/scripts/Makefile.rules
-diff --git a/arch/um/os-Linux/drivers/tuntap.h b/arch/um/os-Linux/drivers/tuntap.h
 deleted file mode 100644
-index e364e42abfc5..000000000000
---- a/arch/um/os-Linux/drivers/tuntap.h
+index 924c42641170..000000000000
+--- a/arch/um/os-Linux/drivers/Makefile
++++ /dev/null
+@@ -1,11 +0,0 @@
+-# SPDX-License-Identifier: GPL-2.0
+-# 
+-# Copyright (C) 2000, 2002 Jeff Dike (jdike@karaya.com)
+-#
+-
+-ethertap-objs := ethertap_kern.o ethertap_user.o
+-
+-obj-y = 
+-obj-$(CONFIG_UML_NET_ETHERTAP) += ethertap.o
+-
+-include arch/um/scripts/Makefile.rules
+diff --git a/arch/um/os-Linux/drivers/etap.h b/arch/um/os-Linux/drivers/etap.h
+deleted file mode 100644
+index a475259f90e1..000000000000
+--- a/arch/um/os-Linux/drivers/etap.h
 +++ /dev/null
 @@ -1,21 +0,0 @@
 -/* SPDX-License-Identifier: GPL-2.0 */
@@ -203,334 +244,381 @@ index e364e42abfc5..000000000000
 - * Copyright (C) 2001 - 2007 Jeff Dike (jdike@{addtoit,linux.intel}.com)
 - */
 -
--#ifndef __UM_TUNTAP_H
--#define __UM_TUNTAP_H
+-#ifndef __DRIVERS_ETAP_H
+-#define __DRIVERS_ETAP_H
 -
 -#include <net_user.h>
 -
--struct tuntap_data {
+-struct ethertap_data {
 -	char *dev_name;
--	int fixed_config;
 -	char *gate_addr;
--	int fd;
+-	int data_fd;
+-	int control_fd;
 -	void *dev;
 -};
 -
--extern const struct net_user_info tuntap_user_info;
+-extern const struct net_user_info ethertap_user_info;
 -
 -#endif
-diff --git a/arch/um/os-Linux/drivers/tuntap_kern.c b/arch/um/os-Linux/drivers/tuntap_kern.c
+diff --git a/arch/um/os-Linux/drivers/ethertap_kern.c b/arch/um/os-Linux/drivers/ethertap_kern.c
 deleted file mode 100644
-index adcb6717be6f..000000000000
---- a/arch/um/os-Linux/drivers/tuntap_kern.c
+index 3182e759d8de..000000000000
+--- a/arch/um/os-Linux/drivers/ethertap_kern.c
 +++ /dev/null
-@@ -1,86 +0,0 @@
+@@ -1,100 +0,0 @@
 -// SPDX-License-Identifier: GPL-2.0
 -/*
+- * Copyright (C) 2001 Lennert Buytenhek (buytenh@gnu.org) and
+- * James Leu (jleu@mindspring.net).
 - * Copyright (C) 2001 - 2007 Jeff Dike (jdike@{addtoit,linux.intel}.com)
+- * Copyright (C) 2001 by various other people who didn't put their name here.
 - */
 -
--#include <linux/netdevice.h>
 -#include <linux/init.h>
--#include <linux/skbuff.h>
--#include <asm/errno.h>
+-#include <linux/netdevice.h>
+-#include "etap.h"
 -#include <net_kern.h>
--#include "tuntap.h"
 -
--struct tuntap_init {
+-struct ethertap_init {
 -	char *dev_name;
 -	char *gate_addr;
 -};
 -
--static void tuntap_init(struct net_device *dev, void *data)
+-static void etap_init(struct net_device *dev, void *data)
 -{
 -	struct uml_net_private *pri;
--	struct tuntap_data *tpri;
--	struct tuntap_init *init = data;
+-	struct ethertap_data *epri;
+-	struct ethertap_init *init = data;
 -
 -	pri = netdev_priv(dev);
--	tpri = (struct tuntap_data *) pri->user;
--	tpri->dev_name = init->dev_name;
--	tpri->fixed_config = (init->dev_name != NULL);
--	tpri->gate_addr = init->gate_addr;
--	tpri->fd = -1;
--	tpri->dev = dev;
+-	epri = (struct ethertap_data *) pri->user;
+-	epri->dev_name = init->dev_name;
+-	epri->gate_addr = init->gate_addr;
+-	epri->data_fd = -1;
+-	epri->control_fd = -1;
+-	epri->dev = dev;
 -
--	printk(KERN_INFO "TUN/TAP backend - ");
--	if (tpri->gate_addr != NULL)
--		printk(KERN_CONT "IP = %s", tpri->gate_addr);
+-	printk(KERN_INFO "ethertap backend - %s", epri->dev_name);
+-	if (epri->gate_addr != NULL)
+-		printk(KERN_CONT ", IP = %s", epri->gate_addr);
 -	printk(KERN_CONT "\n");
 -}
 -
--static int tuntap_read(int fd, struct sk_buff *skb, struct uml_net_private *lp)
+-static int etap_read(int fd, struct sk_buff *skb, struct uml_net_private *lp)
 -{
--	return net_read(fd, skb_mac_header(skb),
--			skb->dev->mtu + ETH_HEADER_OTHER);
+-	int len;
+-
+-	len = net_recvfrom(fd, skb_mac_header(skb),
+-			   skb->dev->mtu + 2 + ETH_HEADER_ETHERTAP);
+-	if (len <= 0)
+-		return(len);
+-
+-	skb_pull(skb, 2);
+-	len -= 2;
+-	return len;
 -}
 -
--static int tuntap_write(int fd, struct sk_buff *skb, struct uml_net_private *lp)
+-static int etap_write(int fd, struct sk_buff *skb, struct uml_net_private *lp)
 -{
--	return net_write(fd, skb->data, skb->len);
+-	skb_push(skb, 2);
+-	return net_send(fd, skb->data, skb->len);
 -}
 -
--const struct net_kern_info tuntap_kern_info = {
--	.init			= tuntap_init,
+-const struct net_kern_info ethertap_kern_info = {
+-	.init			= etap_init,
 -	.protocol		= eth_protocol,
--	.read			= tuntap_read,
--	.write 			= tuntap_write,
+-	.read			= etap_read,
+-	.write 			= etap_write,
 -};
 -
--int tuntap_setup(char *str, char **mac_out, void *data)
+-int ethertap_setup(char *str, char **mac_out, void *data)
 -{
--	struct tuntap_init *init = data;
+-	struct ethertap_init *init = data;
 -
--	*init = ((struct tuntap_init)
+-	*init = ((struct ethertap_init)
 -		{ .dev_name 	= NULL,
 -		  .gate_addr 	= NULL });
--	if (tap_setup_common(str, "tuntap", &init->dev_name, mac_out,
+-	if (tap_setup_common(str, "ethertap", &init->dev_name, mac_out,
 -			    &init->gate_addr))
 -		return 0;
+-	if (init->dev_name == NULL) {
+-		printk(KERN_ERR "ethertap_setup : Missing tap device name\n");
+-		return 0;
+-	}
 -
 -	return 1;
 -}
 -
--static struct transport tuntap_transport = {
--	.list 		= LIST_HEAD_INIT(tuntap_transport.list),
--	.name 		= "tuntap",
--	.setup  	= tuntap_setup,
--	.user 		= &tuntap_user_info,
--	.kern 		= &tuntap_kern_info,
--	.private_size 	= sizeof(struct tuntap_data),
--	.setup_size 	= sizeof(struct tuntap_init),
+-static struct transport ethertap_transport = {
+-	.list 		= LIST_HEAD_INIT(ethertap_transport.list),
+-	.name 		= "ethertap",
+-	.setup  	= ethertap_setup,
+-	.user 		= &ethertap_user_info,
+-	.kern 		= &ethertap_kern_info,
+-	.private_size 	= sizeof(struct ethertap_data),
+-	.setup_size 	= sizeof(struct ethertap_init),
 -};
 -
--static int register_tuntap(void)
+-static int register_ethertap(void)
 -{
--	register_transport(&tuntap_transport);
+-	register_transport(&ethertap_transport);
 -	return 0;
 -}
 -
--late_initcall(register_tuntap);
-diff --git a/arch/um/os-Linux/drivers/tuntap_user.c b/arch/um/os-Linux/drivers/tuntap_user.c
+-late_initcall(register_ethertap);
+diff --git a/arch/um/os-Linux/drivers/ethertap_user.c b/arch/um/os-Linux/drivers/ethertap_user.c
 deleted file mode 100644
-index 53eb3d508645..000000000000
---- a/arch/um/os-Linux/drivers/tuntap_user.c
+index 9483021d86dd..000000000000
+--- a/arch/um/os-Linux/drivers/ethertap_user.c
 +++ /dev/null
-@@ -1,215 +0,0 @@
+@@ -1,248 +0,0 @@
 -// SPDX-License-Identifier: GPL-2.0
--/* 
+-/*
 - * Copyright (C) 2001 - 2007 Jeff Dike (jdike@{addtoit,linux.intel}.com)
+- * Copyright (C) 2001 Lennert Buytenhek (buytenh@gnu.org) and
+- * James Leu (jleu@mindspring.net).
+- * Copyright (C) 2001 by various other people who didn't put their name here.
 - */
 -
 -#include <stdio.h>
 -#include <unistd.h>
 -#include <errno.h>
 -#include <string.h>
--#include <linux/if_tun.h>
--#include <net/if.h>
--#include <sys/ioctl.h>
 -#include <sys/socket.h>
 -#include <sys/wait.h>
--#include <sys/uio.h>
--#include <kern_util.h>
+-#include "etap.h"
 -#include <os.h>
--#include "tuntap.h"
+-#include <net_user.h>
+-#include <um_malloc.h>
 -
--static int tuntap_user_init(void *data, void *dev)
+-#define MAX_PACKET ETH_MAX_PACKET
+-
+-static int etap_user_init(void *data, void *dev)
 -{
--	struct tuntap_data *pri = data;
+-	struct ethertap_data *pri = data;
 -
 -	pri->dev = dev;
 -	return 0;
 -}
 -
--static void tuntap_add_addr(unsigned char *addr, unsigned char *netmask,
--			    void *data)
--{
--	struct tuntap_data *pri = data;
--
--	tap_check_ips(pri->gate_addr, addr);
--	if ((pri->fd == -1) || pri->fixed_config)
--		return;
--	open_addr(addr, netmask, pri->dev_name);
--}
--
--static void tuntap_del_addr(unsigned char *addr, unsigned char *netmask,
--			    void *data)
--{
--	struct tuntap_data *pri = data;
--
--	if ((pri->fd == -1) || pri->fixed_config)
--		return;
--	close_addr(addr, netmask, pri->dev_name);
--}
--
--struct tuntap_pre_exec_data {
--	int stdout_fd;
--	int close_me;
+-struct addr_change {
+-	enum { ADD_ADDR, DEL_ADDR } what;
+-	unsigned char addr[4];
+-	unsigned char netmask[4];
 -};
 -
--static void tuntap_pre_exec(void *arg)
+-static void etap_change(int op, unsigned char *addr, unsigned char *netmask,
+-			int fd)
 -{
--	struct tuntap_pre_exec_data *data = arg;
+-	struct addr_change change;
+-	char *output;
+-	int n;
 -
--	dup2(data->stdout_fd, 1);
--	close(data->close_me);
+-	change.what = op;
+-	memcpy(change.addr, addr, sizeof(change.addr));
+-	memcpy(change.netmask, netmask, sizeof(change.netmask));
+-	CATCH_EINTR(n = write(fd, &change, sizeof(change)));
+-	if (n != sizeof(change)) {
+-		printk(UM_KERN_ERR "etap_change - request failed, err = %d\n",
+-		       errno);
+-		return;
+-	}
+-
+-	output = uml_kmalloc(UM_KERN_PAGE_SIZE, UM_GFP_KERNEL);
+-	if (output == NULL)
+-		printk(UM_KERN_ERR "etap_change : Failed to allocate output "
+-		       "buffer\n");
+-	read_output(fd, output, UM_KERN_PAGE_SIZE);
+-	if (output != NULL) {
+-		printk("%s", output);
+-		kfree(output);
+-	}
 -}
 -
--static int tuntap_open_tramp(char *gate, int *fd_out, int me, int remote,
--			     char *buffer, int buffer_len, int *used_out)
+-static void etap_open_addr(unsigned char *addr, unsigned char *netmask,
+-			   void *arg)
 -{
--	struct tuntap_pre_exec_data data;
+-	etap_change(ADD_ADDR, addr, netmask, *((int *) arg));
+-}
+-
+-static void etap_close_addr(unsigned char *addr, unsigned char *netmask,
+-			    void *arg)
+-{
+-	etap_change(DEL_ADDR, addr, netmask, *((int *) arg));
+-}
+-
+-struct etap_pre_exec_data {
+-	int control_remote;
+-	int control_me;
+-	int data_me;
+-};
+-
+-static void etap_pre_exec(void *arg)
+-{
+-	struct etap_pre_exec_data *data = arg;
+-
+-	dup2(data->control_remote, 1);
+-	close(data->data_me);
+-	close(data->control_me);
+-}
+-
+-static int etap_tramp(char *dev, char *gate, int control_me,
+-		      int control_remote, int data_me, int data_remote)
+-{
+-	struct etap_pre_exec_data pe_data;
+-	int pid, err, n;
 -	char version_buf[sizeof("nnnnn\0")];
--	char *argv[] = { "uml_net", version_buf, "tuntap", "up", gate,
--			 NULL };
--	char buf[CMSG_SPACE(sizeof(*fd_out))];
--	struct msghdr msg;
--	struct cmsghdr *cmsg;
--	struct iovec iov;
--	int pid, n, err;
+-	char data_fd_buf[sizeof("nnnnnn\0")];
+-	char gate_buf[sizeof("nnn.nnn.nnn.nnn\0")];
+-	char *setup_args[] = { "uml_net", version_buf, "ethertap", dev,
+-			       data_fd_buf, gate_buf, NULL };
+-	char *nosetup_args[] = { "uml_net", version_buf, "ethertap",
+-				 dev, data_fd_buf, NULL };
+-	char **args, c;
 -
+-	sprintf(data_fd_buf, "%d", data_remote);
 -	sprintf(version_buf, "%d", UML_NET_VERSION);
+-	if (gate != NULL) {
+-		strncpy(gate_buf, gate, 15);
+-		args = setup_args;
+-	}
+-	else args = nosetup_args;
 -
--	data.stdout_fd = remote;
--	data.close_me = me;
--
--	pid = run_helper(tuntap_pre_exec, &data, argv);
+-	err = 0;
+-	pe_data.control_remote = control_remote;
+-	pe_data.control_me = control_me;
+-	pe_data.data_me = data_me;
+-	pid = run_helper(etap_pre_exec, &pe_data, args);
 -
 -	if (pid < 0)
--		return pid;
--
--	close(remote);
--
--	msg.msg_name = NULL;
--	msg.msg_namelen = 0;
--	if (buffer != NULL) {
--		iov = ((struct iovec) { buffer, buffer_len });
--		msg.msg_iov = &iov;
--		msg.msg_iovlen = 1;
--	}
--	else {
--		msg.msg_iov = NULL;
--		msg.msg_iovlen = 0;
--	}
--	msg.msg_control = buf;
--	msg.msg_controllen = sizeof(buf);
--	msg.msg_flags = 0;
--	n = recvmsg(me, &msg, 0);
--	*used_out = n;
--	if (n < 0) {
+-		err = pid;
+-	close(data_remote);
+-	close(control_remote);
+-	CATCH_EINTR(n = read(control_me, &c, sizeof(c)));
+-	if (n != sizeof(c)) {
 -		err = -errno;
--		printk(UM_KERN_ERR "tuntap_open_tramp : recvmsg failed - "
--		       "errno = %d\n", errno);
+-		printk(UM_KERN_ERR "etap_tramp : read of status failed, "
+-		       "err = %d\n", -err);
 -		return err;
 -	}
--	helper_wait(pid);
--
--	cmsg = CMSG_FIRSTHDR(&msg);
--	if (cmsg == NULL) {
--		printk(UM_KERN_ERR "tuntap_open_tramp : didn't receive a "
--		       "message\n");
--		return -EINVAL;
+-	if (c != 1) {
+-		printk(UM_KERN_ERR "etap_tramp : uml_net failed\n");
+-		err = helper_wait(pid);
 -	}
--	if ((cmsg->cmsg_level != SOL_SOCKET) ||
--	   (cmsg->cmsg_type != SCM_RIGHTS)) {
--		printk(UM_KERN_ERR "tuntap_open_tramp : didn't receive a "
--		       "descriptor\n");
--		return -EINVAL;
--	}
--	*fd_out = ((int *) CMSG_DATA(cmsg))[0];
--	os_set_exec_close(*fd_out);
--	return 0;
+-	return err;
 -}
 -
--static int tuntap_open(void *data)
+-static int etap_open(void *data)
 -{
--	struct ifreq ifr;
--	struct tuntap_data *pri = data;
--	char *output, *buffer;
--	int err, fds[2], len, used;
+-	struct ethertap_data *pri = data;
+-	char *output;
+-	int data_fds[2], control_fds[2], err, output_len;
 -
 -	err = tap_open_common(pri->dev, pri->gate_addr);
--	if (err < 0)
+-	if (err)
 -		return err;
 -
--	if (pri->fixed_config) {
--		pri->fd = os_open_file("/dev/net/tun",
--				       of_cloexec(of_rdwr(OPENFLAGS())), 0);
--		if (pri->fd < 0) {
--			printk(UM_KERN_ERR "Failed to open /dev/net/tun, "
--			       "err = %d\n", -pri->fd);
--			return pri->fd;
--		}
--		memset(&ifr, 0, sizeof(ifr));
--		ifr.ifr_flags = IFF_TAP | IFF_NO_PI;
--		strlcpy(ifr.ifr_name, pri->dev_name, sizeof(ifr.ifr_name));
--		if (ioctl(pri->fd, TUNSETIFF, &ifr) < 0) {
--			err = -errno;
--			printk(UM_KERN_ERR "TUNSETIFF failed, errno = %d\n",
--			       errno);
--			close(pri->fd);
--			return err;
--		}
+-	err = socketpair(AF_UNIX, SOCK_DGRAM, 0, data_fds);
+-	if (err) {
+-		err = -errno;
+-		printk(UM_KERN_ERR "etap_open - data socketpair failed - "
+-		       "err = %d\n", errno);
+-		return err;
 -	}
+-
+-	err = socketpair(AF_UNIX, SOCK_STREAM, 0, control_fds);
+-	if (err) {
+-		err = -errno;
+-		printk(UM_KERN_ERR "etap_open - control socketpair failed - "
+-		       "err = %d\n", errno);
+-		goto out_close_data;
+-	}
+-
+-	err = etap_tramp(pri->dev_name, pri->gate_addr, control_fds[0],
+-			 control_fds[1], data_fds[0], data_fds[1]);
+-	output_len = UM_KERN_PAGE_SIZE;
+-	output = uml_kmalloc(output_len, UM_GFP_KERNEL);
+-	read_output(control_fds[0], output, output_len);
+-
+-	if (output == NULL)
+-		printk(UM_KERN_ERR "etap_open : failed to allocate output "
+-		       "buffer\n");
 -	else {
--		err = socketpair(AF_UNIX, SOCK_DGRAM, 0, fds);
--		if (err) {
--			err = -errno;
--			printk(UM_KERN_ERR "tuntap_open : socketpair failed - "
--			       "errno = %d\n", errno);
--			return err;
--		}
--
--		buffer = get_output_buffer(&len);
--		if (buffer != NULL)
--			len--;
--		used = 0;
--
--		err = tuntap_open_tramp(pri->gate_addr, &pri->fd, fds[0],
--					fds[1], buffer, len, &used);
--
--		output = buffer;
--		if (err < 0) {
--			printk("%s", output);
--			free_output_buffer(buffer);
--			printk(UM_KERN_ERR "tuntap_open_tramp failed - "
--			       "err = %d\n", -err);
--			return err;
--		}
--
--		pri->dev_name = uml_strdup(buffer);
--		output += IFNAMSIZ;
 -		printk("%s", output);
--		free_output_buffer(buffer);
--
--		close(fds[0]);
--		iter_addresses(pri->dev, open_addr, pri->dev_name);
+-		kfree(output);
 -	}
 -
--	return pri->fd;
+-	if (err < 0) {
+-		printk(UM_KERN_ERR "etap_tramp failed - err = %d\n", -err);
+-		goto out_close_control;
+-	}
+-
+-	pri->data_fd = data_fds[0];
+-	pri->control_fd = control_fds[0];
+-	iter_addresses(pri->dev, etap_open_addr, &pri->control_fd);
+-	return data_fds[0];
+-
+-out_close_control:
+-	close(control_fds[0]);
+-	close(control_fds[1]);
+-out_close_data:
+-	close(data_fds[0]);
+-	close(data_fds[1]);
+-	return err;
 -}
 -
--static void tuntap_close(int fd, void *data)
+-static void etap_close(int fd, void *data)
 -{
--	struct tuntap_data *pri = data;
+-	struct ethertap_data *pri = data;
 -
--	if (!pri->fixed_config)
--		iter_addresses(pri->dev, close_addr, pri->dev_name);
+-	iter_addresses(pri->dev, etap_close_addr, &pri->control_fd);
 -	close(fd);
--	pri->fd = -1;
+-
+-	if (shutdown(pri->data_fd, SHUT_RDWR) < 0)
+-		printk(UM_KERN_ERR "etap_close - shutdown data socket failed, "
+-		       "errno = %d\n", errno);
+-
+-	if (shutdown(pri->control_fd, SHUT_RDWR) < 0)
+-		printk(UM_KERN_ERR "etap_close - shutdown control socket "
+-		       "failed, errno = %d\n", errno);
+-
+-	close(pri->data_fd);
+-	pri->data_fd = -1;
+-	close(pri->control_fd);
+-	pri->control_fd = -1;
 -}
 -
--const struct net_user_info tuntap_user_info = {
--	.init		= tuntap_user_init,
--	.open		= tuntap_open,
--	.close	 	= tuntap_close,
+-static void etap_add_addr(unsigned char *addr, unsigned char *netmask,
+-			  void *data)
+-{
+-	struct ethertap_data *pri = data;
+-
+-	tap_check_ips(pri->gate_addr, addr);
+-	if (pri->control_fd == -1)
+-		return;
+-	etap_open_addr(addr, netmask, &pri->control_fd);
+-}
+-
+-static void etap_del_addr(unsigned char *addr, unsigned char *netmask,
+-			  void *data)
+-{
+-	struct ethertap_data *pri = data;
+-
+-	if (pri->control_fd == -1)
+-		return;
+-
+-	etap_close_addr(addr, netmask, &pri->control_fd);
+-}
+-
+-const struct net_user_info ethertap_user_info = {
+-	.init		= etap_user_init,
+-	.open		= etap_open,
+-	.close	 	= etap_close,
 -	.remove	 	= NULL,
--	.add_address	= tuntap_add_addr,
--	.delete_address = tuntap_del_addr,
+-	.add_address	= etap_add_addr,
+-	.delete_address = etap_del_addr,
 -	.mtu		= ETH_MAX_PACKET,
--	.max_packet	= ETH_MAX_PACKET + ETH_HEADER_OTHER,
+-	.max_packet	= ETH_MAX_PACKET + ETH_HEADER_ETHERTAP,
 -};
 -- 
 2.20.1
