@@ -2,92 +2,84 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A09861316D4
-	for <lists+linux-um@lfdr.de>; Mon,  6 Jan 2020 18:30:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E7985131BA3
+	for <lists+linux-um@lfdr.de>; Mon,  6 Jan 2020 23:40:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:Reply-To
-	:List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ROBaWT4/EFUAbPAD0aWQMpqkXwGjC5QJXaE1HIQ0YgI=; b=tdp93QR4QRguV5hnIx7qh28Yu
-	sgFyUUYalfN3jAQj9eZYhVK1Qiwkkty3Lg0aSJ/XhAF8zbgrLNnalhtRK94/klW+Vr1GRA086t0bk
-	XtnavqU8vQO2+Cuh/mQ4eaAkxZ5GQlheP5s3wRMSb9+v8erfVBhaXOD5NGvguM6MGZGjppWCk9pqP
-	EJco8xTlJcklOHXVaT4vhH6lhxq1e0mHYhXM10+yDNJWaicL3G8Tl7rqCLcdr0NrlbZezaPoMaqjJ
-	i3zmV5s4KMh4gnbyTHR2Wk5gLIWHdntKZaikLm760ubIN2VhbFlJ2X5ytQaRChyCfxwKRHtJXTp06
-	d2Kc1OyqA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=cxQBUqlD+/k8/HG3ttYfKAACJq1VKNwL7Ndx30LvbL8=; b=oe45hJX+KeqwCP
+	gS+XP5/hcAkQpmf6Dj5nOo0zxO02Jt5yytFrxRjtM8e4rHqMLUVjk8lFYmc7X+O3jzBFhX+JKeiXi
+	DjqbacUk7tWrrPEWjTTDXe/1IAXYTx/yE0BN3O62PbLeCBblEoTT2rEwY1Wh6zcCDqhNoDTvfXCdt
+	6ktoKnr90C38JqhZBG7Yjln7XrP0pedULlIwQh94wduhfySn8esnr+7W74q1N0QY6eW74w9x1H9FQ
+	l92F0qCPOphpDkn1Pr8POM0qLxR3g0iBHf+BUlFRBu55owGA9bd6ADHc3ne5P320FqQjhjaPbFeMK
+	wMoyub56gSscZ/vKdajQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioWDK-0006RN-PD; Mon, 06 Jan 2020 17:30:50 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1iob2z-0008P3-AY; Mon, 06 Jan 2020 22:40:29 +0000
+Received: from mail-pj1-f66.google.com ([209.85.216.66])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioWDI-0006Qm-9Z
- for linux-um@lists.infradead.org; Mon, 06 Jan 2020 17:30:49 +0000
-Received: by mail-pg1-x541.google.com with SMTP id l24so27182571pgk.2
- for <linux-um@lists.infradead.org>; Mon, 06 Jan 2020 09:30:47 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=researchut.com; s=google;
- h=sender:message-id:subject:from:reply-to:to:cc:date:in-reply-to
- :references:organization:user-agent:mime-version;
- bh=OHdOLmfPzwap/KY8YdQmamIIqt/ItInNnqvhBgldaWw=;
- b=VFl95MpAYl2qV+R6K5rYJdFqkycMSQLqJe1pWHaE19XtdFCvkyDYma0yE4NlPgeai0
- eYoJ7p2c/38jZAyc8xghwHAXZanwKHo+iCtztAgy61K1xcFPEDgQxYxGqSLCwBnvrc1w
- Lv0U98NQh42RBDyh/8XyrLPaxXwYSz2pAjkYI=
+ id 1iob2w-0008OA-3k
+ for linux-um@lists.infradead.org; Mon, 06 Jan 2020 22:40:27 +0000
+Received: by mail-pj1-f66.google.com with SMTP id m13so8354700pjb.2
+ for <linux-um@lists.infradead.org>; Mon, 06 Jan 2020 14:40:25 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:message-id:subject:from:reply-to:to:cc
- :date:in-reply-to:references:organization:user-agent:mime-version;
- bh=OHdOLmfPzwap/KY8YdQmamIIqt/ItInNnqvhBgldaWw=;
- b=g74amzq/vJ+ihZUG6BHRJc3heChaS8W0kA89pUDec/EC03xAo+5pcNmZLMxq8MUrmE
- maIPfUwVKMFWuc550WTGh0X/gRnM2GyBXcGsua2jRC3CAwPxcPoQqslZ74L4US3QGEvA
- xTHUsuVN5Zj9YXajTlGo1262hM8y8NyEJwqU02aNLH5BmMYz/gdfsJ9IZQY3oBv6jBpq
- gW3JqU9Dy8WRlg8iqmKcuUUAXIrJ/QOeD1yz9QTj8gAWftnDbVmkErPT2KMyNtmDA2UX
- KPhi64g3G8Fa+MEfn3oNtiljtYupZiGoi0GHtT4TXumFvizu0VCCq3cCMmNg0xr2UXbQ
- ADnA==
-X-Gm-Message-State: APjAAAXM49y1RRyPTFcXqCHuLZ3TNAUBsQBCZoPytyttFuK0So+ZfAbw
- J38bM/c/7BmmygpgSftkUD5aYc52e95TOg==
-X-Google-Smtp-Source: APXvYqz38lTJ4665RSjvJz5z3q9BK1P9+dX87eSyxQ3DH6N0PgEv8v+ALwynTEiRV0ayg9cem5hZcg==
-X-Received: by 2002:a65:42c2:: with SMTP id l2mr108924102pgp.172.1578331847389; 
- Mon, 06 Jan 2020 09:30:47 -0800 (PST)
-Received: from priyasi.researchut.com ([157.49.165.47])
- by smtp.gmail.com with ESMTPSA id n7sm25170367pjq.8.2020.01.06.09.30.46
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=J3SHa4E3cS4gmRhRrRRBbMGMmQ7Swg+W9fTvK+8fgbo=;
+ b=CjHix+Dbgd3hIGQGMDUJvwx8u59Mg0SRfcowYtKuARNuTut2BlCyJD4FBTPxYc1TEc
+ BjtRor1cRZJN4vp3NC5i3GJHbyZ119WUyGPv8yjt/L1xKcTY3szuxpdgil3gH2o6JLVz
+ W5uLvKfp12AE3KEtTEAkp71MhDbe0yRDw7e2nMqNKbjJ5SVJTQ5bjp9mH4iFYA0RZ3wm
+ /nkBDkGndeWP7GDvJDcvdBxMd9K1dZTGP/22uhqMz56wwZD0O4QrPI2dd5Q6QbldxKUF
+ DzxSsiksl19WKueqaOiQhZbvo8dGC3qIYmc5YxjMC5Pf1nWv3oRiBwotRaTiniyelf9n
+ 8ORg==
+X-Gm-Message-State: APjAAAVzvcb6OpT5rnyDRBsem5S8mI6qLglSvRozcAiwcqmIMRBUhyLd
+ liZ9Bw5AFnXWIVOhlH0UyV8=
+X-Google-Smtp-Source: APXvYqzL/Or94L+UYrmZszgXQkyK1iniMt70cGilBDndaFa7eg0lzxl/eodRL6mwFRsCXTaDCoazNg==
+X-Received: by 2002:a17:902:8f85:: with SMTP id
+ z5mr108553143plo.43.1578350424536; 
+ Mon, 06 Jan 2020 14:40:24 -0800 (PST)
+Received: from 42.do-not-panic.com (42.do-not-panic.com. [157.230.128.187])
+ by smtp.gmail.com with ESMTPSA id s24sm81687763pfd.161.2020.01.06.14.40.23
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 06 Jan 2020 09:30:46 -0800 (PST)
-Received: from localhost (localhost [IPv6:::1])
- by priyasi.researchut.com (Postfix) with ESMTP id C22539B6529;
- Mon,  6 Jan 2020 23:00:38 +0530 (IST)
-Message-ID: <77154e8f71433fc0411b65b996a80641380fb717.camel@debian.org>
-Subject: Re: Bug#928924: user-mode-linux: xterm functionality broken due to
- wrong path to port-helper
-From: Ritesh Raj Sarraf <rrs@debian.org>
-To: Anton Ivanov <anton.ivanov@kot-begemot.co.uk>, 928924@bugs.debian.org
-Date: Mon, 06 Jan 2020 23:00:38 +0530
-In-Reply-To: <4d26aa36-d2ab-b7f1-6cd6-abf1b158fe0a@kot-begemot.co.uk>
-References: <451d491044af46fe1d87d10196e24e8e7b076f26.camel@debian.org>
- <157830351172.48768.9073767232890169518.reportbug@beast>
- <95a2a1cdb323633a0779acaeb0377ed60e7e3afc.camel@debian.org>
- <4d26aa36-d2ab-b7f1-6cd6-abf1b158fe0a@kot-begemot.co.uk>
-Organization: Debian
-User-Agent: Evolution 3.34.1-2+b1 
+ Mon, 06 Jan 2020 14:40:23 -0800 (PST)
+Received: by 42.do-not-panic.com (Postfix, from userid 1000)
+ id 9822040321; Mon,  6 Jan 2020 22:40:22 +0000 (UTC)
+Date: Mon, 6 Jan 2020 22:40:22 +0000
+From: Luis Chamberlain <mcgrof@kernel.org>
+To: Brendan Higgins <brendanhiggins@google.com>
+Subject: Re: [RFC v1 0/6] kunit: create a centralized executor to dispatch
+ all KUnit tests
+Message-ID: <20200106224022.GX11244@42.do-not-panic.com>
+References: <20191216220555.245089-1-brendanhiggins@google.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20191216220555.245089-1-brendanhiggins@google.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_093048_330891_042CD94A 
-X-CRM114-Status: GOOD (  13.92  )
+X-CRM114-CacheID: sfid-20200106_144026_157264_5A4085B7 
+X-CRM114-Status: GOOD (  27.64  )
 X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
- [list.dnswl.org]
+ no trust [209.85.216.66 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (mcgrof[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- 0.1 DKIM_INVALID           DKIM or DK signature exists, but is not valid
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.216.66 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,92 +91,118 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Reply-To: rrs@debian.org
-Cc: linux-um@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============1357763793479660287=="
+Cc: linux-arch@vger.kernel.org, linux-kselftest@vger.kernel.org,
+ keescook@chromium.org, arnd@arndb.de, gregkh@linuxfoundation.org,
+ sboyd@kernel.org, richard@nod.at, jdike@addtoit.com, knut.omang@oracle.com,
+ linux-kernel@vger.kernel.org, rppt@linux.ibm.com, linux-um@lists.infradead.org,
+ logang@deltatee.com, kunit-dev@googlegroups.com, davidgow@google.com,
+ skhan@linuxfoundation.org, akpm@linux-foundation.org, yzaikin@google.com,
+ alan.maguire@oracle.com, anton.ivanov@cambridgegreys.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
+On Mon, Dec 16, 2019 at 02:05:49PM -0800, Brendan Higgins wrote:
+> ## TL;DR
+> 
+> This patchset adds a centralized executor to dispatch tests rather than
+> relying on late_initcall to schedule each test suite separately along
+> with a couple of new features that depend on it.
+> 
+> ## What am I trying to do?
+> 
+> Conceptually, I am trying to provide a mechanism by which test suites
+> can be grouped together so that they can be reasoned about collectively.
+> The last two patches in this series add features which depend on this:
+> 
+> RFC 5/6 Prints out a test plan right before KUnit tests are run[1]; this
+>         is valuable because it makes it possible for a test harness to
+>         detect whether the number of tests run matches the number of
+>         tests expected to be run, ensuring that no tests silently
+>         failed.
+> 
+> RFC 6/6 Add a new kernel command-line option which allows the user to
+>         specify that the kernel poweroff, halt, or reboot after
+>         completing all KUnit tests; this is very handy for running KUnit
+>         tests on UML or a VM so that the UML/VM process exits cleanly
+>         immediately after running all tests without needing a special
+>         initramfs.
 
---===============1357763793479660287==
-Content-Type: multipart/signed; micalg="pgp-sha512";
-	protocol="application/pgp-signature"; boundary="=-v7d0Msxfwow0H1jV38pK"
+The approach seems sensible to me given that it separates from a
+semantics perspective kernel subsystem init work from *testing*, and
+so we are sure we'd run the *test* stuff *after* all subsystem init
+stuff.
 
+Dispatching, however is still immediate, and with a bit of work, this
+dispatcher could be configurable to run at an arbirary time after boot.
+If there are not immediate use cases for that though, then I suppose
+this is not a requirement for the dispatcher. But since there exists
+another modular test framework with its own dispatcher and it seems the
+goal is to merge the work long term, this might preempt the requirement
+to define how and when we can dispatch tests post boot.
 
---=-v7d0Msxfwow0H1jV38pK
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+And, if we're going to do that, I can suggest that a data structure
+instead of just a function init call be used to describe tests to be
+placed into an ELF section. With my linker table work this would be
+easy, I define section ranges for code describing only executable
+routines, but it defines linker tables for when a component in the
+kernel would define a data structure, part of which can be a callback.
+Such data structure stuffed into an ELF section could allow dynamic
+configuration of the dipsatching, even post boot.
 
-On Mon, 2020-01-06 at 16:58 +0000, Anton Ivanov wrote:
-> On 06/01/2020 16:21, Ritesh Raj Sarraf wrote:
-> > Control: tag -1 +help
-> >=20
-> > On Mon, 2020-01-06 at 10:38 +0100, Sjoerd Simons wrote:
-> > > On my sid system:
-> > > ```
-> > > $ strings /usr/bin/linux.uml | grep port-helper
-> > > /usr/lib//uml/port-helper
-> > > ```
-> > >=20
-> > > So the path is still incorrect even with newer upstream kernels.
-> >=20
-> > I spent some time today looking at the new build but I haven't been
-> > able to ascertain why this isn't setting the correct path.
->=20
-> It is used in a "user" side file - xterm.c
->=20
-> None of these sees "CONFIG_" so it considers it undef-ed which
-> defaults=20
-> to 32 bit.
->=20
-> You need to use some other way to figure out what is the build or to
-> set=20
-> OS_LIB_PATH for this case.
+I think this is a good stepping stone forward then, and to allow
+dynamic configuration of the dispatcher could mean eventual extensions
+to kunit's init stuff to stuff init calls into a data structure which
+can then allow configuration of the dispatching. One benefit that the
+linker table work *may* be able to help here with is that it allows
+an easy way to create kunit specific ordering, at linker time.
+There is also an example of addressing / generalizing dynamic / run time
+changes of ordering, by using the x86 IOMMU initialization as an
+example case. We don't have an easy way to do this today, but if kunit
+could benefit from such framework, it'd be another use case for
+the linker table work. That is, the ability to easilly allow
+dynamically modifying run time ordering of code through ELF sections.
 
-Thank you for the quick reply Anton.
+> In addition, by dispatching tests from a single location, we can
+> guarantee that all KUnit tests run after late_init is complete, which
+> was a concern during the initial KUnit patchset review (this has not
+> been a problem in practice, but resolving with certainty is nevertheless
+> desirable).
 
+Indeed, the concern is just a real semantics limitations. With the tests
+*always* running after all subsystem init stuff, we know we'd have a
+real full kernel ready.
 
---=20
-Ritesh Raj Sarraf | http://people.debian.org/~rrs
-Debian - The Universal Operating System
+It does beg the question if this means kunit is happy to not be a tool
+to test pre basic setup stuff (terminology used in init.c, meaning prior
+to running all init levels). I suspect this is the case.
 
---=-v7d0Msxfwow0H1jV38pK
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part
-Content-Transfer-Encoding: 7bit
+> Other use cases for this exist, but the above features should provide an
+> idea of the value that this could provide.
+> 
+> ## What work remains to be done?
+> 
+> These patches were based on patches in our non-upstream branch[2], so we
+> have a pretty good idea that they are useable as presented;
+> nevertheless, some of the changes done in this patchset could
+> *definitely* use some review by subsystem experts (linker scripts, init,
+> etc), and will likely change a lot after getting feedback.
+> 
+> The biggest thing that I know will require additional attention is
+> integrating this patchset with the KUnit module support patchset[3]. I
+> have not even attempted to build these patches on top of the module
+> support patches as I would like to get people's initial thoughts first
+> (especially Alan's :-) ). I think that making these patches work with
+> module support should be fairly straight forward, nevertheless.
 
------BEGIN PGP SIGNATURE-----
+Modules just have their own sections too. That's all. So it'd be a
+matter of extending the linker script for modules too. But a module's
+init is different than the core kernel's for vmlinux.
 
-iQIzBAABCgAdFiEEQCVDstmIVAB/Yn02pjpYo/LhdWkFAl4Tbr4ACgkQpjpYo/Lh
-dWn2eQ/+MslVAUODrH9HmbXbhg+KlmrAtTQd46H7ettMFR1JEyNeMvG6Qi/gm0yZ
-vWh5o9XbDvqSr7xAvYbb4B6P4S0r64MVdTGpvGF/UngVTd/4r4nNqRZZTe9C+/jQ
-R+QjHgw7RS6oLjHkW3iOcejdGD+ZJUksEtds2FDF5pnS+rXj9Ore3V8LkCwcIGCE
-+hOqrzZbJw5pC101vqrIHk8FZm20vCW+dTrFn4RsV00ESSfqawd2SeOuilUPtwes
-om6OiWSSwrUyPMo2Uays2HoBNbpg22L2+LJCZZidWo8n2uHrd486B2Zeo5d0j12g
-VpMmB6DGZD0cB7GqqHHRy9n+SaJ2N9IC4zg0MXd+Ch+iy0TzxZpbIt362sZbnAK3
-5aAZi2u/qVtSRkWyTGXwFlAHVD7OUJvaKiFx6+L9qnzWK7NfowPdrfT8Jw9Sg0u+
-h/dEazCRCnJa0wllNESTc1atdzfUGmdqgD07m0nQH2UOsxn51/04HZpAI7AXofVW
-q/T84GE+fAJWLC6zmoQ8fqfAlRadBNFsea6gvEior0o9bEt9SvqyJGCdr4nP2+g5
-wsUDJkW6emKFYE9Fwe1wWfe2EmU9T6ImofM9xCIh640maUif+m+jrQjTYGUUgMtU
-Xz8GeSq/diF4IrS9zIskN9Z99MW+f0q/4Dm8zs7HUYgHAQX+JZA=
-=Soqs
------END PGP SIGNATURE-----
-
---=-v7d0Msxfwow0H1jV38pK--
-
-
-
---===============1357763793479660287==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+  Luis
 
 _______________________________________________
 linux-um mailing list
 linux-um@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-um
-
---===============1357763793479660287==--
-
-
