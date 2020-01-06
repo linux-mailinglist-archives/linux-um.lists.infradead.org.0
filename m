@@ -2,85 +2,84 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CFE3F1316B3
-	for <lists+linux-um@lfdr.de>; Mon,  6 Jan 2020 18:25:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A09861316D4
+	for <lists+linux-um@lfdr.de>; Mon,  6 Jan 2020 18:30:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:Reply-To
 	:List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=PymPiYuJ0j0NPHz4b4ddQyIIc6xlNw4IgznO5TRGrjI=; b=PGsOPJdrA6J2bYZRVh2QCMfYk
-	+14qNCrZKSdzxpirz9VOIP72/fEfIcizUhZvhm9BKRGu1auINarJC613UGllaGYEkb4Kmhev0+j//
-	UUxmmUprP2U/XWyyQFucng8Zcab63aI0Ayapf3rINo2Ytf+TYT+OnKkaRumXApZa7JhBe0/ux3Z+k
-	40K/8lxs8CjljEaiaV/fujN9oTcm72ApNhAGdiI0G2rjTVLrldWFsMVKWXOiAV2hsue0rRoDwFJww
-	6RFhBfWVD0XAHXr6eHe/TxzA9m6gBccQ0jKndK8w8NZ1aVxZl9KR1y46dFCB+hfb9yyS1HkXAnYrw
-	efc+/NxxQ==;
+	 bh=ROBaWT4/EFUAbPAD0aWQMpqkXwGjC5QJXaE1HIQ0YgI=; b=tdp93QR4QRguV5hnIx7qh28Yu
+	sgFyUUYalfN3jAQj9eZYhVK1Qiwkkty3Lg0aSJ/XhAF8zbgrLNnalhtRK94/klW+Vr1GRA086t0bk
+	XtnavqU8vQO2+Cuh/mQ4eaAkxZ5GQlheP5s3wRMSb9+v8erfVBhaXOD5NGvguM6MGZGjppWCk9pqP
+	EJco8xTlJcklOHXVaT4vhH6lhxq1e0mHYhXM10+yDNJWaicL3G8Tl7rqCLcdr0NrlbZezaPoMaqjJ
+	i3zmV5s4KMh4gnbyTHR2Wk5gLIWHdntKZaikLm760ubIN2VhbFlJ2X5ytQaRChyCfxwKRHtJXTp06
+	d2Kc1OyqA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioW8S-00042D-9O; Mon, 06 Jan 2020 17:25:48 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1ioWDK-0006RN-PD; Mon, 06 Jan 2020 17:30:50 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioW8P-000419-2J
- for linux-um@lists.infradead.org; Mon, 06 Jan 2020 17:25:46 +0000
-Received: by mail-pl1-x641.google.com with SMTP id x17so22096471pln.1
- for <linux-um@lists.infradead.org>; Mon, 06 Jan 2020 09:25:44 -0800 (PST)
+ id 1ioWDI-0006Qm-9Z
+ for linux-um@lists.infradead.org; Mon, 06 Jan 2020 17:30:49 +0000
+Received: by mail-pg1-x541.google.com with SMTP id l24so27182571pgk.2
+ for <linux-um@lists.infradead.org>; Mon, 06 Jan 2020 09:30:47 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=researchut.com; s=google;
  h=sender:message-id:subject:from:reply-to:to:cc:date:in-reply-to
  :references:organization:user-agent:mime-version;
- bh=VDjjqDboI6o1EADo7drkuhCP6N9bmoPGH2CwG5hAa+c=;
- b=kbkTLQQZulqrlzD4Ni2qZPua4KID0ndNb7+G3zM5qQFdheW8af7LB2vYt7NJzLBOr4
- Y0adUnM2mB53ZqdQW3gWwZOk6EwivK9sa4n2ubB8D9857V87UJ7vsJpPgu4yyad4p4ct
- NBIX8HMQlTEdJVMwgnyaefTKpyuZj0fv/kV58=
+ bh=OHdOLmfPzwap/KY8YdQmamIIqt/ItInNnqvhBgldaWw=;
+ b=VFl95MpAYl2qV+R6K5rYJdFqkycMSQLqJe1pWHaE19XtdFCvkyDYma0yE4NlPgeai0
+ eYoJ7p2c/38jZAyc8xghwHAXZanwKHo+iCtztAgy61K1xcFPEDgQxYxGqSLCwBnvrc1w
+ Lv0U98NQh42RBDyh/8XyrLPaxXwYSz2pAjkYI=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:sender:message-id:subject:from:reply-to:to:cc
  :date:in-reply-to:references:organization:user-agent:mime-version;
- bh=VDjjqDboI6o1EADo7drkuhCP6N9bmoPGH2CwG5hAa+c=;
- b=P9unR48vuhG1WP2vMR8LkN8dg+YugGwaXLXkeoUY0hWniB/pZbeInsYA81yDLKd/HB
- lTiT9X61pK1LpDSqVx0KTI4OKwax6j2wrOZBh0aC5+nNmql1aZULbNK2wU6H1ChRxznq
- ITtzuGkZQPn5qR38mJ70JpkyjjvEGPdMCWs506w2BV2z5+2QILkqrBuUP/5jQuve6uqL
- OjiSes2agBSGhPrykUnpEQh0vbFiJ4VLGM1aevujum/W94FaN7lyox9Ikxxhu27EUm3z
- IaiRQRobr/FNLYt6Bdhih8CXYvkpU5S7Wd8Jnjdfc2CES/RVKu5vncdE9CrgMx8jHk4t
- 1TMQ==
-X-Gm-Message-State: APjAAAVREzQz+BxCMBY6iHCn69wIYdw9Jqwjwr+nRhBMce3y/9vOgGFi
- I482H8iU0NotSWRORFXVwsvmyedFYwjVIg==
-X-Google-Smtp-Source: APXvYqwMyG9D5KwmgRDRdqCuo1fkg/MVhCw+hhK+d9wnOkS71dM8yo7VUsmtS5RVCQonv5iWvS7RuA==
-X-Received: by 2002:a17:902:b68c:: with SMTP id
- c12mr72380250pls.160.1578331543472; 
- Mon, 06 Jan 2020 09:25:43 -0800 (PST)
+ bh=OHdOLmfPzwap/KY8YdQmamIIqt/ItInNnqvhBgldaWw=;
+ b=g74amzq/vJ+ihZUG6BHRJc3heChaS8W0kA89pUDec/EC03xAo+5pcNmZLMxq8MUrmE
+ maIPfUwVKMFWuc550WTGh0X/gRnM2GyBXcGsua2jRC3CAwPxcPoQqslZ74L4US3QGEvA
+ xTHUsuVN5Zj9YXajTlGo1262hM8y8NyEJwqU02aNLH5BmMYz/gdfsJ9IZQY3oBv6jBpq
+ gW3JqU9Dy8WRlg8iqmKcuUUAXIrJ/QOeD1yz9QTj8gAWftnDbVmkErPT2KMyNtmDA2UX
+ KPhi64g3G8Fa+MEfn3oNtiljtYupZiGoi0GHtT4TXumFvizu0VCCq3cCMmNg0xr2UXbQ
+ ADnA==
+X-Gm-Message-State: APjAAAXM49y1RRyPTFcXqCHuLZ3TNAUBsQBCZoPytyttFuK0So+ZfAbw
+ J38bM/c/7BmmygpgSftkUD5aYc52e95TOg==
+X-Google-Smtp-Source: APXvYqz38lTJ4665RSjvJz5z3q9BK1P9+dX87eSyxQ3DH6N0PgEv8v+ALwynTEiRV0ayg9cem5hZcg==
+X-Received: by 2002:a65:42c2:: with SMTP id l2mr108924102pgp.172.1578331847389; 
+ Mon, 06 Jan 2020 09:30:47 -0800 (PST)
 Received: from priyasi.researchut.com ([157.49.165.47])
- by smtp.gmail.com with ESMTPSA id 20sm57693759pfn.175.2020.01.06.09.25.41
+ by smtp.gmail.com with ESMTPSA id n7sm25170367pjq.8.2020.01.06.09.30.46
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 06 Jan 2020 09:25:42 -0800 (PST)
+ Mon, 06 Jan 2020 09:30:46 -0800 (PST)
 Received: from localhost (localhost [IPv6:::1])
- by priyasi.researchut.com (Postfix) with ESMTP id 7F8A29B6526;
- Mon,  6 Jan 2020 22:55:21 +0530 (IST)
-Message-ID: <bb3c230ca486ca8dcf1640c357be8d4025d5109b.camel@debian.org>
+ by priyasi.researchut.com (Postfix) with ESMTP id C22539B6529;
+ Mon,  6 Jan 2020 23:00:38 +0530 (IST)
+Message-ID: <77154e8f71433fc0411b65b996a80641380fb717.camel@debian.org>
 Subject: Re: Bug#928924: user-mode-linux: xterm functionality broken due to
  wrong path to port-helper
 From: Ritesh Raj Sarraf <rrs@debian.org>
-To: 928924@bugs.debian.org
-Date: Mon, 06 Jan 2020 22:55:21 +0530
-In-Reply-To: <95a2a1cdb323633a0779acaeb0377ed60e7e3afc.camel@debian.org>
+To: Anton Ivanov <anton.ivanov@kot-begemot.co.uk>, 928924@bugs.debian.org
+Date: Mon, 06 Jan 2020 23:00:38 +0530
+In-Reply-To: <4d26aa36-d2ab-b7f1-6cd6-abf1b158fe0a@kot-begemot.co.uk>
 References: <451d491044af46fe1d87d10196e24e8e7b076f26.camel@debian.org>
  <157830351172.48768.9073767232890169518.reportbug@beast>
  <95a2a1cdb323633a0779acaeb0377ed60e7e3afc.camel@debian.org>
+ <4d26aa36-d2ab-b7f1-6cd6-abf1b158fe0a@kot-begemot.co.uk>
 Organization: Debian
 User-Agent: Evolution 3.34.1-2+b1 
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_092545_118501_9CADC5CC 
-X-CRM114-Status: UNSURE (   7.31  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200106_093048_330891_042CD94A 
+X-CRM114-Status: GOOD (  13.92  )
 X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
@@ -102,87 +101,80 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
 Reply-To: rrs@debian.org
 Cc: linux-um@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============8464190044347047576=="
+Content-Type: multipart/mixed; boundary="===============1357763793479660287=="
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
 
---===============8464190044347047576==
+--===============1357763793479660287==
 Content-Type: multipart/signed; micalg="pgp-sha512";
-	protocol="application/pgp-signature"; boundary="=-+av4Mlpi0YF7GQ9z9YSM"
+	protocol="application/pgp-signature"; boundary="=-v7d0Msxfwow0H1jV38pK"
 
 
---=-+av4Mlpi0YF7GQ9z9YSM
+--=-v7d0Msxfwow0H1jV38pK
 Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: quoted-printable
 
-On Mon, 2020-01-06 at 21:51 +0530, Ritesh Raj Sarraf wrote:
-> First, for context to the readers here, the port-helper binary is
-> shipped with uml-utilities package. This package, depending on the
-> architecture, installs the binary to a architecture specific
-> location.
+On Mon, 2020-01-06 at 16:58 +0000, Anton Ivanov wrote:
+> On 06/01/2020 16:21, Ritesh Raj Sarraf wrote:
+> > Control: tag -1 +help
+> >=20
+> > On Mon, 2020-01-06 at 10:38 +0100, Sjoerd Simons wrote:
+> > > On my sid system:
+> > > ```
+> > > $ strings /usr/bin/linux.uml | grep port-helper
+> > > /usr/lib//uml/port-helper
+> > > ```
+> > >=20
+> > > So the path is still incorrect even with newer upstream kernels.
+> >=20
+> > I spent some time today looking at the new build but I haven't been
+> > able to ascertain why this isn't setting the correct path.
 >=20
-> https://sources.debian.org/src/uml-utilities/20070815.2-1/Makefile/#L10
+> It is used in a "user" side file - xterm.c
 >=20
-> Which on an amd64 machine is: /usr/lib64/uml/port-helper
+> None of these sees "CONFIG_" so it considers it undef-ed which
+> defaults=20
+> to 32 bit.
+>=20
+> You need to use some other way to figure out what is the build or to
+> set=20
+> OS_LIB_PATH for this case.
 
-So 2 things I noticed on my machine.
-
-1. There's nothing else under /usr/lib64/ on my Debian box. Even UML's
-modules are built and installed under /usr/lib/
-
-```
-rrs@priyasi:/usr/lib$ ls uml/modules/5.4.6/
-kernel/        modules.alias.bin  modules.builtin.bin      modules.dep=20
-     modules.devname  modules.softdep  modules.symbols.bin
-modules.alias  modules.builtin    modules.builtin.modinfo  modules.dep.
-bin  modules.order    modules.symbols
-22:18 =E2=99=92 =E0=A5=90  =E2=98=BA =F0=9F=98=84   =20
-rrs@priyasi:/usr/lib$ ls ../lib64/
-uml/
-22:18 =E2=99=92 =E0=A5=90  =E2=98=BA =F0=9F=98=84   =20
-rrs@priyasi:/usr/lib$ ls ../lib64/uml/
-port-helper*
-22:18 =E2=99=92 =E0=A5=90  =E2=98=BA =F0=9F=98=84   =20
-```
-
-
-2. Given that /usr/lib64/ is empty, quick immediate workaround could be to =
-patch uml-utilities
-and ship the binary under /usr/lib/. That would solve all these issues.
+Thank you for the quick reply Anton.
 
 
 --=20
 Ritesh Raj Sarraf | http://people.debian.org/~rrs
 Debian - The Universal Operating System
 
---=-+av4Mlpi0YF7GQ9z9YSM
+--=-v7d0Msxfwow0H1jV38pK
 Content-Type: application/pgp-signature; name="signature.asc"
 Content-Description: This is a digitally signed message part
 Content-Transfer-Encoding: 7bit
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAABCgAdFiEEQCVDstmIVAB/Yn02pjpYo/LhdWkFAl4TbYEACgkQpjpYo/Lh
-dWnhOQ/+LxY/mZlXQvCfGAg7z+dzZGCzzxAAd8mbtZPtWzmW740nyPy3xh8Q3Wfb
-c2OoiuU1dW5mPkR51ZLawDHSG3dxZmSBxEAPcCVGeaZ/sxI6e7cctLAHZWsBoZq+
-xoezxZrkYGBvTs16ncdzE68G4yAg9UHBn5q9A+1nLwSFVy+UGbQZCM/ZhjOMEHBS
-AGghnX398Rtf4kLidEVjsXOKx7NmWLiTEQpOWm00JJIeWacc48o7SYRmagHfXYlx
-Zmw05ssahAEkMRmwj1/JFQe81dH2fk4pLYjkhPj4adG8ORNqOVRxSSCkxkD9zQl3
-XKFM13muShVvMM3ryZOrpuJIoX/JwMvYwEQzd/l3roo3JoCbaHLWYgCJz6bRfwoX
-O5kJOY/WLwrjeFjamoOykt6GN6b+qjRSZiRC2rRyAbwyAc3Pz7kncfxT766j1bNY
-yMdJ8getNxn0sls+zAVU1VZugwx/qKbJEX3R/8XFnW05YCZaVofCTlmRBGwx6zpz
-4LF+EAPvO987nprc47DAqLcLXNIq2GDK6/1PvHHZJQ06OeYPLJ02Lna8P1WyBDFv
-BpWvbeZMiAhyhDVgr4n3pDvrz3lG3txtTT9ItWFXlDwfpj07rwDZfzCDC/59HNxa
-LI9yLuSSo++cuNKzrSOGW2ZqDdcR26qulPKFf/etMCjC95s8oeg=
-=mwr2
+iQIzBAABCgAdFiEEQCVDstmIVAB/Yn02pjpYo/LhdWkFAl4Tbr4ACgkQpjpYo/Lh
+dWn2eQ/+MslVAUODrH9HmbXbhg+KlmrAtTQd46H7ettMFR1JEyNeMvG6Qi/gm0yZ
+vWh5o9XbDvqSr7xAvYbb4B6P4S0r64MVdTGpvGF/UngVTd/4r4nNqRZZTe9C+/jQ
+R+QjHgw7RS6oLjHkW3iOcejdGD+ZJUksEtds2FDF5pnS+rXj9Ore3V8LkCwcIGCE
++hOqrzZbJw5pC101vqrIHk8FZm20vCW+dTrFn4RsV00ESSfqawd2SeOuilUPtwes
+om6OiWSSwrUyPMo2Uays2HoBNbpg22L2+LJCZZidWo8n2uHrd486B2Zeo5d0j12g
+VpMmB6DGZD0cB7GqqHHRy9n+SaJ2N9IC4zg0MXd+Ch+iy0TzxZpbIt362sZbnAK3
+5aAZi2u/qVtSRkWyTGXwFlAHVD7OUJvaKiFx6+L9qnzWK7NfowPdrfT8Jw9Sg0u+
+h/dEazCRCnJa0wllNESTc1atdzfUGmdqgD07m0nQH2UOsxn51/04HZpAI7AXofVW
+q/T84GE+fAJWLC6zmoQ8fqfAlRadBNFsea6gvEior0o9bEt9SvqyJGCdr4nP2+g5
+wsUDJkW6emKFYE9Fwe1wWfe2EmU9T6ImofM9xCIh640maUif+m+jrQjTYGUUgMtU
+Xz8GeSq/diF4IrS9zIskN9Z99MW+f0q/4Dm8zs7HUYgHAQX+JZA=
+=Soqs
 -----END PGP SIGNATURE-----
 
---=-+av4Mlpi0YF7GQ9z9YSM--
+--=-v7d0Msxfwow0H1jV38pK--
 
 
 
---===============8464190044347047576==
+--===============1357763793479660287==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -193,6 +185,6 @@ linux-um mailing list
 linux-um@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-um
 
---===============8464190044347047576==--
+--===============1357763793479660287==--
 
 
