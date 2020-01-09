@@ -2,57 +2,54 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CC6CB13565C
-	for <lists+linux-um@lfdr.de>; Thu,  9 Jan 2020 10:59:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3A755135CA1
+	for <lists+linux-um@lfdr.de>; Thu,  9 Jan 2020 16:23:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=afzfcTa5TfzmCiX1YtbXUFxE2ULX4ndkw8DEYo18Oqk=; b=ZZwSyDYSbUYn6A
-	Xz6CHgRu1IBFnolLXBcb2kPCRBPJkyHhCyIyfpfIqEUjD7LQjGkxRb3k18ZXg7ewCuBYOH/BiIAGh
-	BOXtyxF6/HrN2xAAf2cGVcNYG+thh2xw/EBTQ3ayztmTozjm7+Iv9X3LUm1Ln5kvsEYIOwUAER+z0
-	A6RU42rw7OCCzQhnxQC+GjkMmxBmB1UBRDQG8v9o1GjsNyC4npmFTW4KTT9bTr8opjpwrooGJ+hwd
-	GNJH0mg52NBtiBsKyBupkG+wBoEZCLb9uB9uDrRltK3GGGG3f8Ae0XUSpFmDlrlmsPPyygWGx+dSw
-	cOJ60uZAGDiDRdS99mpg==;
+	List-Owner; bh=pNHyWF8jefQ0O7qx40iyHJcg11DaJojXY8aOpASQPG4=; b=OaVPU+8kg4l8sc
+	JxNrFrDgqZdDcaxSNPSdSOybCQBUjl9pAOzI6zqFi+xkpU+1go8jmhRcer1aVuEN7q2JXqbGvnEAh
+	ZTmi+IqI+PdO4NgrWG2mwoj5al2Xcn+dQpd/hEcwm+bZSkDZSGPs2QVbDsa1SdI8oJp9JF/3zzHp/
+	9YOMY2kYBwvk+ySZjkHAUZHg+CmEtjMA5PPiggC+5ET9e1dxbOUJglFy98652Z3ty/nkWbRyeV4EK
+	NoxeFsUt/tQmKc9FwUcJ+jFis4A0pi3HPEOC+th5PfGAB1wSsWttI2dQllsByVa5p/ZawCCjJm01W
+	96snNqsem/9FWnD8lapA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipUac-0008J2-9f; Thu, 09 Jan 2020 09:58:54 +0000
-Received: from target.luon.net ([2a00:8240:5:10::21])
+	id 1ipZem-0003Ql-P4; Thu, 09 Jan 2020 15:23:32 +0000
+Received: from relay10.mail.gandi.net ([217.70.178.230])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipUaY-0008Hw-N8
- for linux-um@lists.infradead.org; Thu, 09 Jan 2020 09:58:52 +0000
-Received: from [2001:470:78b1:0:40e2:7ff:fef4:3122] (helo=beast.luon.net)
- by target.luon.net with esmtpsa (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.92) (envelope-from <sjoerd@debian.org>)
- id 1ipUaO-0001iT-HT; Thu, 09 Jan 2020 10:58:40 +0100
-Received: by beast.luon.net (Postfix, from userid 1000)
- id 0E5BA3E1F0D; Thu,  9 Jan 2020 10:58:40 +0100 (CET)
-Message-ID: <5caba454fee6e04443a8b51c63c50a39b9b932d8.camel@debian.org>
-Subject: Re: Bug#928924: user-mode-linux: xterm functionality broken due to
- wrong path to port-helper
-From: Sjoerd Simons <sjoerd@debian.org>
-To: Anton Ivanov <anton.ivanov@kot-begemot.co.uk>, rrs@debian.org, 
- 928924@bugs.debian.org
-Date: Thu, 09 Jan 2020 10:58:39 +0100
-In-Reply-To: <4d26aa36-d2ab-b7f1-6cd6-abf1b158fe0a@kot-begemot.co.uk>
-References: <451d491044af46fe1d87d10196e24e8e7b076f26.camel@debian.org>
- <157830351172.48768.9073767232890169518.reportbug@beast>
- <95a2a1cdb323633a0779acaeb0377ed60e7e3afc.camel@debian.org>
- <4d26aa36-d2ab-b7f1-6cd6-abf1b158fe0a@kot-begemot.co.uk>
-User-Agent: Evolution 3.34.1-2+b1 
+ id 1ipZea-00034x-I5; Thu, 09 Jan 2020 15:23:22 +0000
+Received: from xps13 (unknown [91.224.148.103])
+ (Authenticated sender: miquel.raynal@bootlin.com)
+ by relay10.mail.gandi.net (Postfix) with ESMTPSA id 2F1B1240004;
+ Thu,  9 Jan 2020 15:23:04 +0000 (UTC)
+Date: Thu, 9 Jan 2020 16:23:03 +0100
+From: Miquel Raynal <miquel.raynal@bootlin.com>
+To: Brendan Higgins <brendanhiggins@google.com>
+Subject: Re: [PATCH v1 2/7] mtd: rawnand: add unspecified HAS_IOMEM dependency
+Message-ID: <20200109162303.35f4f0a3@xps13>
+In-Reply-To: <20191211192742.95699-3-brendanhiggins@google.com>
+References: <20191211192742.95699-1-brendanhiggins@google.com>
+ <20191211192742.95699-3-brendanhiggins@google.com>
+Organization: Bootlin
+X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200109_015850_753024_C5E2B85B 
-X-CRM114-Status: GOOD (  21.89  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200109_072320_739449_2A823BDE 
+X-CRM114-Status: UNSURE (   6.49  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.178.230 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,132 +61,31 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: linux-um@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Vignesh Raghavendra <vigneshr@ti.com>,
+ Boris Brezillon <bbrezillon@kernel.org>, richard@nod.at, jdike@addtoit.com,
+ linux-um@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-mtd@lists.infradead.org, davidgow@google.com,
+ anton.ivanov@cambridgegreys.com, Piotr Sroka <piotrs@cadence.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Mon, 2020-01-06 at 16:58 +0000, Anton Ivanov wrote:
-> 
-> On 06/01/2020 16:21, Ritesh Raj Sarraf wrote:
-> > Control: tag -1 +help
-> > 
-> > On Mon, 2020-01-06 at 10:38 +0100, Sjoerd Simons wrote:
-> > > On my sid system:
-> > > ```
-> > > $ strings /usr/bin/linux.uml | grep port-helper
-> > > /usr/lib//uml/port-helper
-> > > ```
-> > > 
-> > > So the path is still incorrect even with newer upstream kernels.
-> > 
-> > I spent some time today looking at the new build but I haven't been
-> > able to ascertain why this isn't setting the correct path.
-> 
-> It is used in a "user" side file - xterm.c
-> 
-> None of these sees "CONFIG_" so it considers it undef-ed which
-> defaults 
-> to 32 bit.
-
-Is there any reason why the port helper is in the weird `/usr/lib64`
-that seems more like a redhat-ism; On Debian if it's proper multi arch
-under `/usr/lib/x86_64-linux-gnu/`..
-
-However uml-utilities can't be installed for multiple architectures on
-one system anyway (as it ships binaries). So there is little point in
-try to being multi-arch-like (or just awkward :p)...
-
-So to me the most practical and straight-forward solution would
-probably be to revert the broken kernel patch and change the uml-
-utilities package instead to always install in a single spot.
-
-> You need to use some other way to figure out what is the build or to
-> set 
-> OS_LIB_PATH for this case.
-> 
-> > ```
-> > $ strings `which  linux.uml` | grep port-helper
-> > /usr/lib/uml/port-helper
-> > ```
-> > 
-> > First, for context to the readers here, the port-helper binary is
-> > shipped with uml-utilities package. This package, depending on the
-> > architecture, installs the binary to a architecture specific
-> > location.
-> > 
-> > https://sources.debian.org/src/uml-utilities/20070815.2-1/Makefile/#L10
-> > 
-> > Which on an amd64 machine is: /usr/lib64/uml/port-helper
-> > 
-> > ```
-> > $ dpkg  -S /usr/lib64/uml/port-helper
-> > uml-utilities: /usr/lib64/uml/port-helper
-> > ```
-> > 
-> > The UML setup on my box always worked because long back, when I
-> > first
-> > encountered this problem, I had created a symlink of the path to
-> > /usr/lib/ too. And had completely forgotten about it. My apologies.
-> > 
-> > 
-> > But that said, the current problem is with the UML binary built by
-> > the
-> > kernel sources.
-> > Problem is that, as mentioned above and other reports too on this
-> > bug
-> > report thread, the path resolved at build time is always
-> > "/usr/lib/uml/".
-> > 
-> > The build configuration and the code are all correct.
-> > 
-> > ```
-> > $ grep 64BIT .config
-> > CONFIG_64BIT=y
-> > CONFIG_64BIT_TIME=y
-> > CONFIG_PHYS_ADDR_T_64BIT=y
-> > CONFIG_ARCH_DMA_ADDR_T_64BIT=y
-> > ```
-> > 
-> > 
-> > Snipped from: arch/um/include/shared/os.h
-> > 
-> > ```
-> > #ifdef CONFIG_64BIT
-> > #define OS_LIB_PATH     "/usr/lib64/"
-> > #else
-> > #define OS_LIB_PATH     "/usr/lib/"
-> > #endif
-> > ```
-> > 
-> > I also checked the generated include headers and they are correct
-> > for
-> > the amd64 .config file.
-> > 
-> > ```
-> > linux-source-5.4/include/generated$ grep 64BIT autoconf.h
-> > #define CONFIG_64BIT_TIME 1
-> > #define CONFIG_PHYS_ADDR_T_64BIT 1
-> > #define CONFIG_64BIT 1
-> > #define CONFIG_ARCH_DMA_ADDR_T_64BIT 1
-> > ```
-> > 
-> > I'll keep looking as time permits but if anyone else has ideas on
-> > what
-> > I may be doing wrong, please do mention.
-> > 
-> > Thanks,
-> > Ritesh
-> > 
-> > 
-> > _______________________________________________
-> > linux-um mailing list
-> > linux-um@lists.infradead.org
-> > http://lists.infradead.org/mailman/listinfo/linux-um
-> > 
-
-_______________________________________________
-linux-um mailing list
-linux-um@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-um
+SGkgQnJlbmRhbiwKCkJyZW5kYW4gSGlnZ2lucyA8YnJlbmRhbmhpZ2dpbnNAZ29vZ2xlLmNvbT4g
+d3JvdGUgb24gV2VkLCAxMSBEZWMgMjAxOQoxMToyNzozNyAtMDgwMDoKCj4gQ3VycmVudGx5IENP
+TkZJR19NVERfTkFORF9DQURFTkNFIGltcGxpY2l0bHkgZGVwZW5kcyBvbgo+IENPTkZJR19IQVNf
+SU9NRU09eTsgY29uc2VxdWVudGx5LCBvbiBhcmNoaXRlY3R1cmVzIHdpdGhvdXQgSU9NRU0gd2Ug
+Z2V0Cj4gdGhlIGZvbGxvd2luZyBidWlsZCBlcnJvcjoKPiAKPiBsZDogZHJpdmVycy9tdGQvbmFu
+ZC9yYXcvY2FkZW5jZS1uYW5kLWNvbnRyb2xsZXIubzogaW4gZnVuY3Rpb24gYGNhZGVuY2VfbmFu
+ZF9kdF9wcm9iZS5jb2xkLjMxJzoKPiBkcml2ZXJzL210ZC9uYW5kL3Jhdy9jYWRlbmNlLW5hbmQt
+Y29udHJvbGxlci5jOjI5Njk6IHVuZGVmaW5lZCByZWZlcmVuY2UgdG8gYGRldm1fcGxhdGZvcm1f
+aW9yZW1hcF9yZXNvdXJjZScKPiBsZDogZHJpdmVycy9tdGQvbmFuZC9yYXcvY2FkZW5jZS1uYW5k
+LWNvbnRyb2xsZXIuYzoyOTc3OiB1bmRlZmluZWQgcmVmZXJlbmNlIHRvIGBkZXZtX2lvcmVtYXBf
+cmVzb3VyY2UnCj4gCj4gRml4IHRoZSBidWlsZCBlcnJvciBieSBhZGRpbmcgdGhlIHVuc3BlY2lm
+aWVkIGRlcGVuZGVuY3kuCj4gCj4gUmVwb3J0ZWQtYnk6IEJyZW5kYW4gSGlnZ2lucyA8YnJlbmRh
+bmhpZ2dpbnNAZ29vZ2xlLmNvbT4KPiBTaWduZWQtb2ZmLWJ5OiBCcmVuZGFuIEhpZ2dpbnMgPGJy
+ZW5kYW5oaWdnaW5zQGdvb2dsZS5jb20+Cj4gLS0tCgpTb3JyeSBmb3IgdGhlIGRlbGF5LgoKQWNr
+ZWQtYnk6IE1pcXVlbCBSYXluYWwgPG1pcXVlbC5yYXluYWxAYm9vdGxpbi5jb20+CgpUaGFua3Ms
+Ck1pcXXDqGwKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+CmxpbnV4LXVtIG1haWxpbmcgbGlzdApsaW51eC11bUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6
+Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtdW0K
