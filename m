@@ -2,54 +2,53 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4DBD7139BF2
-	for <lists+linux-um@lfdr.de>; Mon, 13 Jan 2020 22:55:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 60F8313A4F8
+	for <lists+linux-um@lfdr.de>; Tue, 14 Jan 2020 11:06:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:From:To:
-	Subject:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=uDKPcPGywrzvm3TX521yivjomc91hax7rqXprqk4h1Q=; b=lMUPE89wN9Bs/d
-	vaupmncybbK9oyQV36iA6sj663NlQ6gDWIKV2GogXhhmQiVLaoDOlidDWgLDGrIIT1jTxuWEqOO9W
-	ivb7bIjE1Gm1u9ngHVo0GwR7UrVfjSY7z/hWU+qk9aFhBh2MKUqHL4ozzNcGl9SI8uckk8YnYvnX2
-	GTwYB1ibUQ1Bk++LdPKkUBYgksg8Y5pwo4DpNgIYGBZviqYU43HbsaYY3KPYy1WT4SRyWEOFtmKWQ
-	RKG0XeQrGc+/w662GiZDEKp47gzbbDccRDqWoo+fnh/Q3F0umdKADo0o9PUomAXAHMzl3nR7E2jkq
-	7weyniWH0sz3YYYFl0Ng==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=FNt1i0NNCLrBdnZtrATTmcN4lBUMMb6Es6sVii4ncxQ=; b=a+IdmrrgvF3zVD
+	CbrZYfCGWUsaedd8FFx/GFtXlU1trplCyjD3NHSgx2EJf8Ei7g/tvt5MX+VWVnpj1Ta66bQ2SuDSX
+	z5nr7qT8hGsuH5TGGNyaMddjlrBjsux9N8l/zoH8aH3mu/MBBn21rVyMLh70Q3Tl8DIOkHxZZ/Mug
+	s/oMlw6QqqGXReSaV6OHOnx2sJSd71KP+HmrI2Z07slAUKc5UI46s+jHgqWzzAsqhRdHtN0/JFWXJ
+	Wxr9o/GxBSEss2vq99TPM6aTosds797kQvzsPDL1n2FObvvYItIJoYw0szSdRJ3iwG9qB28md2GWa
+	z/QukPMgPJl3kn4o6mLg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ir7fp-0008Pa-Ut; Mon, 13 Jan 2020 21:55:01 +0000
+	id 1irJ5o-000610-DP; Tue, 14 Jan 2020 10:06:36 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ir7fm-0008P3-Pi
- for linux-um@lists.infradead.org; Mon, 13 Jan 2020 21:55:00 +0000
+ id 1irJ5i-0005xk-8S
+ for linux-um@lists.infradead.org; Tue, 14 Jan 2020 10:06:34 +0000
 Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
  [83.86.89.107])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E11CC2072B;
- Mon, 13 Jan 2020 21:54:57 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 8176F24672;
+ Tue, 14 Jan 2020 10:06:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1578952498;
- bh=1y7mrub1oIzkMyEXCAK4B2B/pj5phfzL0l0+eCUJO6s=;
- h=Subject:To:Cc:From:Date:From;
- b=ETZxxjCWogHjbL1V1v2qmTBBIBz9OR4E93ZZcrMdszx6c7pewCc25miLkXFkoi92p
- gLWjleoLxcXEuZ3Vtqnkj+0M6k7eqOc4ZS/jV634cFvuKwpGw7+NliUS7/jFF709dq
- NLj7YrpFFLp9w4irnOHb/akWaZwHm1fi5NrUPGXU=
-Subject: Patch "um: Implement copy_thread_tls" has been added to the
- 5.4-stable tree
-To: 20200104123928.1048822-1-amanieu@gmail.com, amanieu@gmail.com,
- christian.brauner@ubuntu.com, gregkh@linuxfoundation.org,
- linux-um@lists.infradead.org
-From: <gregkh@linuxfoundation.org>
-Date: Mon, 13 Jan 2020 22:53:40 +0100
-Message-ID: <1578952420143118@kroah.com>
+ s=default; t=1578996389;
+ bh=FkcS2BdMEXIokPkWULH/aGT00OXhvGq1WKC6EOCQqfc=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=HFZbSJW8hNnwmZVw7ntbo32WbOF8G0aL5rlrwoPd9ylcRsbuXDzCT3KVXgzUJjFQA
+ dBAmR0WCwS0J1UAzWE0P4/ElfYnGPFnEiu3aXz2Kr7/+PhP9FOoovcP8uq95g1mqxi
+ DB9Di4v7919AquLZq1lKYHthpcZ83DE3//PxDk3c=
+From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+To: linux-kernel@vger.kernel.org
+Subject: [PATCH 5.4 64/78] um: Implement copy_thread_tls
+Date: Tue, 14 Jan 2020 11:01:38 +0100
+Message-Id: <20200114094402.012253565@linuxfoundation.org>
+X-Mailer: git-send-email 2.24.1
+In-Reply-To: <20200114094352.428808181@linuxfoundation.org>
+References: <20200114094352.428808181@linuxfoundation.org>
+User-Agent: quilt/0.66
 MIME-Version: 1.0
-X-stable: commit
-X-Patchwork-Hint: ignore 
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200113_135458_877574_6312BE7D 
-X-CRM114-Status: GOOD (  13.77  )
+X-CRM114-CacheID: sfid-20200114_020630_355945_FA8AED6A 
+X-CRM114-Status: GOOD (  12.23  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -74,32 +73,14 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: stable-commits@vger.kernel.org
+Cc: linux-um@lists.infradead.org,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Christian Brauner <christian.brauner@ubuntu.com>,
+ Amanieu dAntras <amanieu@gmail.com>, stable@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
-
-
-This is a note to let you know that I've just added the patch titled
-
-    um: Implement copy_thread_tls
-
-to the 5.4-stable tree which can be found at:
-    http://www.kernel.org/git/?p=linux/kernel/git/stable/stable-queue.git;a=summary
-
-The filename of the patch is:
-     um-implement-copy_thread_tls.patch
-and it can be found in the queue-5.4 subdirectory.
-
-If you, or anyone else, feels it should not be added to the stable tree,
-please let <stable@vger.kernel.org> know about it.
-
-
-From 457677c70c7672a4586b0b8abc396cc1ecdd376d Mon Sep 17 00:00:00 2001
-From: Amanieu d'Antras <amanieu@gmail.com>
-Date: Sat, 4 Jan 2020 13:39:30 +0100
-Subject: um: Implement copy_thread_tls
 
 From: Amanieu d'Antras <amanieu@gmail.com>
 
@@ -207,16 +188,6 @@ Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
  }
 
 
-Patches currently in stable-queue which might be from amanieu@gmail.com are
-
-queue-5.4/arm-implement-copy_thread_tls.patch
-queue-5.4/arm64-implement-copy_thread_tls.patch
-queue-5.4/xtensa-implement-copy_thread_tls.patch
-queue-5.4/arm64-move-__arch_want_sys_clone3-definition-to-uapi-headers.patch
-queue-5.4/parisc-implement-copy_thread_tls.patch
-queue-5.4/clone3-ensure-copy_thread_tls-is-implemented.patch
-queue-5.4/riscv-implement-copy_thread_tls.patch
-queue-5.4/um-implement-copy_thread_tls.patch
 
 _______________________________________________
 linux-um mailing list
