@@ -2,54 +2,54 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CEC70140747
-	for <lists+linux-um@lfdr.de>; Fri, 17 Jan 2020 11:03:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 71CEB14074E
+	for <lists+linux-um@lfdr.de>; Fri, 17 Jan 2020 11:05:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fxAF28w3vghRW0aEt8UZIgArO7nSv6359AMg7HZG7tA=; b=X3HEfIXanhF0ju
-	Xr53X/ZT8MoPBbceSw2Kmzo8MUckpveNWl4nMtGwqFMxiyb//GgMskl1EzwZrlIgcuj91umXovi6M
-	y2/QJQZzD+rcc/tVno4kg38fZxoFGi1aMePI1f+PJcjnGcrm0+DYfmEDNCc8PMmiiykJ8Qgk9HYGn
-	KVgb+p30AmofPsBBrklwGfLUQ6Gp2jG/q7uyNw9tPb419cpuP6ke3CLJUGIvSkuciulE4mdogEQnh
-	VqaB1c8EfOJWI1C01n7JSFBQNXiox833LOFAWDYESUjGZcD1KlRPazYJNzC4Sr3NQpUsMpPIHDp8I
-	7rd4xahPcGq1McP6XLgw==;
+	List-Owner; bh=wkQW9ogIi1/6CZdDP+kSKYvHNk9R+u3tftGo6lrx7A4=; b=oDsdJ3BxSlwsO/
+	mM2NqYhh0zjmy0ed7jDheiBskuFvK7ySlsLzQ4Ut5DSwggj59KwVVOBCCxsDlCiRRQoOXRQmBJefz
+	iviyobzpCDtroTUAYqEU3+oaaQ/FxBG2/niOra8PCK/PFu7pdjG9PVJaHMDHyUQ9QQNl+rkHhV4Pe
+	Sbl4TpcH01OTDjhHBTOAQgEXTXMTXJRjBg1VnvCE1wXemb0qTNFK2VcdjY9Y92JzgvZRW8rDOLXCw
+	Hqojfh2akx+Gffy71cAH9UB3TsM2WSu7v9GnX7lWD/zDQFtVUejRHpdjheRtCDmGafCpP3DCq0Gx0
+	PRTq2bt3NSFU5nQjRIYw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1isOTS-0002n4-Th; Fri, 17 Jan 2020 10:03:30 +0000
-Received: from mail-qt1-x844.google.com ([2607:f8b0:4864:20::844])
+	id 1isOVT-0004BG-Ai; Fri, 17 Jan 2020 10:05:35 +0000
+Received: from mail-qk1-x741.google.com ([2607:f8b0:4864:20::741])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1isOTM-0002gO-TX
- for linux-um@lists.infradead.org; Fri, 17 Jan 2020 10:03:29 +0000
-Received: by mail-qt1-x844.google.com with SMTP id w30so21284993qtd.12
- for <linux-um@lists.infradead.org>; Fri, 17 Jan 2020 02:03:23 -0800 (PST)
+ id 1isOVN-0004AY-K9
+ for linux-um@lists.infradead.org; Fri, 17 Jan 2020 10:05:34 +0000
+Received: by mail-qk1-x741.google.com with SMTP id z14so22121905qkg.9
+ for <linux-um@lists.infradead.org>; Fri, 17 Jan 2020 02:05:28 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=kN9jFTsuucSemoNqf4dJLa9bNAFNxkxyRhdletZB1KA=;
- b=uMUCEpzDOb/YhPzJDKgHLZVBqvCippkuTHyQxxp2Cmnpz40yntAZP2m+g1FEG6tExR
- LFWi1AdXr+eAjej1PGMgGvob4wKuvYLxCLUH6GqPqhEFe83i0lTFH9W7wJR1MbKHKMMl
- uY7xC1fZdWlpU+eCfoSoeM1EJOvyX1xDyaJIPHusSH7gbW4L3Sv7X8jPKhabFm4jEUX1
- gBHm5RJ1SAHQugvdz0i52hpuEXVFgdBm6NXxab0lOrWJxbi4gWwFZIlg2ukDVOBnD9U0
- Ml5rETIniSPU8xMl5Ynb2ANw3+Nag/pkH0bmbsKR+tyvRUjKYor6GazB+AVaJ5aXCvCl
- gqdg==
+ :cc; bh=w/2c5M/UzJFnbWr1rvLc1suSEZvfABkxh5yg/ucrfTY=;
+ b=Mw7wWn7P4s/MDlKKDeO2hCa7cduHamni/cV2VqAPosAt6si42jbxLnx+IUNOF7B/Xx
+ if4jxxq3BIl5hm8W0DWkksygQWmW3YxDC6CK8ibhrPC2tvqh7HoEKYcJgYAH/Ummi20h
+ I9H8RoUJoqUR44gfg1N3dIdTZix4xCDKE/ZjyVYpHXsSBHEr0I552pxJMKvvItl8Yht8
+ avKxub0Bu33Sx6p6daRqXSJ5DCOb/u+WPYBvJotCUdVId7Yfj0nw8N5IIYnkMAOEC9DN
+ 3qXBAQQ/PE+8wLsmLUcvDbH1Mm+8dS7ScL2hkkB4b7S4ofHHpoQafskioxmHEqnka/Vf
+ KcDw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=kN9jFTsuucSemoNqf4dJLa9bNAFNxkxyRhdletZB1KA=;
- b=OlGdUq7mwjbPb7hzQkNBswW8pOFpV/SBT34qZwIgNn9KUugk3khUSl+TF+40oZDomJ
- 3xiZisDVDOrR/vtF5WwMltpRFQIT0dgw5ldi0reKg4OSnD+tjztiRU+Uve2q/aQSXzdn
- IvAqPHiGy6YUkBDAA1fDenFrJPwi95zHgEtI9/cJ7A1o4Y76Rv+swaoCbBnycRELThTL
- fCUdAHR5HWAggOrpO4zUrCezmvuqOggV2qTzSvpG783qZpXxgSlB5bKxkpgHT/1BWLRw
- eEVXPakvIHZ0nzeCma/oK/HRoZv16AisIr5/VIu9xpCNNbhiH38cfCSg64JAHNjOecDE
- owKA==
-X-Gm-Message-State: APjAAAXymKFchgnMwIaDXmcQXoBKtYOOOAJeHZOro9XHgfYkTIV3Xt/q
- /brsJOJ+cGYGT8vC3JR8rF1/B8ButbledHpbN0g/yg==
-X-Google-Smtp-Source: APXvYqzlZ86gy24oNdkpo3koZv9DQIH6cw6viAFVT92FEneqyzCrEOi79ncFmZ9Ch2Cod0dIRUvP1mHoUo69WbtuvFA=
-X-Received: by 2002:ac8:30f7:: with SMTP id w52mr6677250qta.380.1579255399591; 
- Fri, 17 Jan 2020 02:03:19 -0800 (PST)
+ bh=w/2c5M/UzJFnbWr1rvLc1suSEZvfABkxh5yg/ucrfTY=;
+ b=idZ3U0gK+2xW/Ri+9cklr5Xlx8EvBc3pfs5LXhk1vgBSsDKCt/wgeAJ9y+MxOg9HQ/
+ fFamnyh+8GxfW12RwYKgyDqZ4BPQmXQnuGl8U/8GBt8mmXoETbftKPoy8D1akU4zASD1
+ RNYdcAC3oYXV/mk6iEodxYjYbTcnXEB5Kpdk8FWID3xf3n2n+iAji1UvDGZiWaRvcwF5
+ yrrW2HDNXr6c5Uj+B4lXi32+U4QsiTzcD9nzyGVkRjU2Vp2wnbuh5vOJDUY9xDe7kbvX
+ 4ocpR/SLl2MXyQjH5VVRnIC1smdIAYhZNZZdu/GyBykwj+vvefQF2pSuDHzQnsLHBuOK
+ 1kMg==
+X-Gm-Message-State: APjAAAWfenMbIfa3LzOcZNkvu1V5gyfJPNIh0JicNGvBG+6A5AvdKi8V
+ uHoj3dUR0R7hDsvO5LimeLMJhIPx6eo/O9C7SKccgg==
+X-Google-Smtp-Source: APXvYqzAcVzOjTPbD6iv5XUDBRr1aI5aw0yrjPVM25XzN7IeyHsXe9f0JkYTbzdSlJzJmkpY7VaHrU9F9pCJQUXtoMU=
+X-Received: by 2002:a37:5841:: with SMTP id m62mr36462569qkb.256.1579255527934; 
+ Fri, 17 Jan 2020 02:05:27 -0800 (PST)
 MIME-Version: 1.0
 References: <20200115182816.33892-1-trishalfonso@google.com>
  <dce24e66d89940c8998ccc2916e57877ccc9f6ae.camel@sipsolutions.net>
@@ -60,22 +60,23 @@ References: <20200115182816.33892-1-trishalfonso@google.com>
  <2092169e6dd1f8d15f1db4b3787cc9fe596097b7.camel@sipsolutions.net>
  <CACT4Y+b6C+y9sDfMYPDy-nh=WTt5+u2kLcWx2LQmHc1A5L7y0A@mail.gmail.com>
  <CACT4Y+atPME1RYvusmr2EQpv_mNkKJ2_LjMeANv0HxF=+Uu5hw@mail.gmail.com>
-In-Reply-To: <CACT4Y+atPME1RYvusmr2EQpv_mNkKJ2_LjMeANv0HxF=+Uu5hw@mail.gmail.com>
+ <CACT4Y+bsaZoPC1Q7_rV-e_aO=LVPA-cE3btT_VARStWYk6dcPA@mail.gmail.com>
+In-Reply-To: <CACT4Y+bsaZoPC1Q7_rV-e_aO=LVPA-cE3btT_VARStWYk6dcPA@mail.gmail.com>
 From: Dmitry Vyukov <dvyukov@google.com>
-Date: Fri, 17 Jan 2020 11:03:07 +0100
-Message-ID: <CACT4Y+bsaZoPC1Q7_rV-e_aO=LVPA-cE3btT_VARStWYk6dcPA@mail.gmail.com>
+Date: Fri, 17 Jan 2020 11:05:15 +0100
+Message-ID: <CACT4Y+Z6_CwVyJhr3SdDejFsrXcM11LVY+gh4oKP6k03Pn95AA@mail.gmail.com>
 Subject: Re: [RFC PATCH] UML: add support for KASAN under x86_64
 To: Johannes Berg <johannes@sipsolutions.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200117_020325_031564_5B461838 
-X-CRM114-Status: GOOD (  24.13  )
+X-CRM114-CacheID: sfid-20200117_020529_687664_450A3B0F 
+X-CRM114-Status: GOOD (  26.06  )
 X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:844 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:741 listed in]
  [list.dnswl.org]
  -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
  white-list
@@ -114,70 +115,76 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Fri, Jan 17, 2020 at 10:59 AM Dmitry Vyukov <dvyukov@google.com> wrote:
+On Fri, Jan 17, 2020 at 11:03 AM Dmitry Vyukov <dvyukov@google.com> wrote:
 >
-> On Thu, Jan 16, 2020 at 10:39 PM Patricia Alfonso
-> <trishalfonso@google.com> wrote:
+> On Fri, Jan 17, 2020 at 10:59 AM Dmitry Vyukov <dvyukov@google.com> wrote:
 > >
-> > On Thu, Jan 16, 2020 at 1:23 AM Dmitry Vyukov <dvyukov@google.com> wrote:
+> > On Thu, Jan 16, 2020 at 10:39 PM Patricia Alfonso
+> > <trishalfonso@google.com> wrote:
 > > >
-> > > On Thu, Jan 16, 2020 at 10:20 AM Johannes Berg
-> > > <johannes@sipsolutions.net> wrote:
+> > > On Thu, Jan 16, 2020 at 1:23 AM Dmitry Vyukov <dvyukov@google.com> wrote:
 > > > >
-> > > > On Thu, 2020-01-16 at 10:18 +0100, Dmitry Vyukov wrote:
+> > > > On Thu, Jan 16, 2020 at 10:20 AM Johannes Berg
+> > > > <johannes@sipsolutions.net> wrote:
 > > > > >
-> > > > > Looking at this problem and at the number of KASAN_SANITIZE := n in
-> > > > > Makefiles (some of which are pretty sad, e.g. ignoring string.c,
-> > > > > kstrtox.c, vsprintf.c -- that's where the bugs are!), I think we
-> > > > > initialize KASAN too late. I think we need to do roughly what we do in
-> > > > > user-space asan (because it is user-space asan!). Constructors run
-> > > > > before main and it's really good, we need to initialize KASAN from
-> > > > > these constructors. Or if that's not enough in all cases, also add own
-> > > > > constructor/.preinit array entry to initialize as early as possible.
-> > > >
-> >
-> > I am not too happy with the number of KASAN_SANITIZE := n's either.
-> > This sounds like a good idea. Let me look into it; I am not familiar
-> > with constructors or .preint array.
-> >
-> > > > We even control the linker in this case, so we can put something into
-> > > > the .preinit array *first*.
+> > > > > On Thu, 2020-01-16 at 10:18 +0100, Dmitry Vyukov wrote:
+> > > > > >
+> > > > > > Looking at this problem and at the number of KASAN_SANITIZE := n in
+> > > > > > Makefiles (some of which are pretty sad, e.g. ignoring string.c,
+> > > > > > kstrtox.c, vsprintf.c -- that's where the bugs are!), I think we
+> > > > > > initialize KASAN too late. I think we need to do roughly what we do in
+> > > > > > user-space asan (because it is user-space asan!). Constructors run
+> > > > > > before main and it's really good, we need to initialize KASAN from
+> > > > > > these constructors. Or if that's not enough in all cases, also add own
+> > > > > > constructor/.preinit array entry to initialize as early as possible.
+> > > > >
 > > >
-> > > Even better! If we can reliably put something before constructors, we
-> > > don't even need lazy init in constructors.
+> > > I am not too happy with the number of KASAN_SANITIZE := n's either.
+> > > This sounds like a good idea. Let me look into it; I am not familiar
+> > > with constructors or .preint array.
 > > >
-> > > > > All we need to do is to call mmap syscall, there is really no
-> > > > > dependencies on anything kernel-related.
+> > > > > We even control the linker in this case, so we can put something into
+> > > > > the .preinit array *first*.
 > > > >
-> > > > OK. I wasn't really familiar with those details.
+> > > > Even better! If we can reliably put something before constructors, we
+> > > > don't even need lazy init in constructors.
 > > > >
-> > > > > This should resolve the problem with constructors (after they
-> > > > > initialize KASAN, they can proceed to do anything they need) and it
-> > > > > should get rid of most KASAN_SANITIZE (in particular, all of
-> > > > > lib/Makefile and kernel/Makefile) and should fix stack instrumentation
-> > > > > (in case it does not work now). The only tiny bit we should not
-> > > > > instrument is the path from constructor up to mmap call.
+> > > > > > All we need to do is to call mmap syscall, there is really no
+> > > > > > dependencies on anything kernel-related.
+> > > > >
+> > > > > OK. I wasn't really familiar with those details.
+> > > > >
+> > > > > > This should resolve the problem with constructors (after they
+> > > > > > initialize KASAN, they can proceed to do anything they need) and it
+> > > > > > should get rid of most KASAN_SANITIZE (in particular, all of
+> > > > > > lib/Makefile and kernel/Makefile) and should fix stack instrumentation
+> > > > > > (in case it does not work now). The only tiny bit we should not
+> > > > > > instrument is the path from constructor up to mmap call.
+> > >
+> > > This sounds like a great solution. I am getting this KASAN report:
+> > > "BUG: KASAN: stack-out-of-bounds in syscall_stub_data+0x2a5/0x2c7",
+> > > which is probably because of this stack instrumentation problem you
+> > > point out.
 > >
-> > This sounds like a great solution. I am getting this KASAN report:
-> > "BUG: KASAN: stack-out-of-bounds in syscall_stub_data+0x2a5/0x2c7",
-> > which is probably because of this stack instrumentation problem you
-> > point out.
+> > [reposting to the list]
+> >
+> > If that part of the code I mentioned is instrumented, manifestation
+> > would be different -- stack instrumentation will try to access shadow,
+> > shadow is not mapped yet, so it would crash on the shadow access.
+> >
+> > What you are seeing looks like, well, a kernel bug where it does a bad
+> > stack access. Maybe it's KASAN actually _working_? :)
 >
-> [reposting to the list]
->
-> If that part of the code I mentioned is instrumented, manifestation
-> would be different -- stack instrumentation will try to access shadow,
-> shadow is not mapped yet, so it would crash on the shadow access.
->
-> What you are seeing looks like, well, a kernel bug where it does a bad
-> stack access. Maybe it's KASAN actually _working_? :)
+> Though, stack instrumentation may have issues with longjmp-like things.
+> I would suggest first turning off stack instrumentation and getting
+> that work. Solving problems one-by-one is always easier.
+> If you need help debugging this, please post more info: patch, what
+> you are doing, full kernel output (preferably from start, if it's not
+> too lengthy).
 
-Though, stack instrumentation may have issues with longjmp-like things.
-I would suggest first turning off stack instrumentation and getting
-that work. Solving problems one-by-one is always easier.
-If you need help debugging this, please post more info: patch, what
-you are doing, full kernel output (preferably from start, if it's not
-too lengthy).
+I see syscall_stub_data does some weird things with stack (stack
+copy?). Maybe we just need to ignore accesses there: individual
+accesses, or whole function/file.
 
 _______________________________________________
 linux-um mailing list
