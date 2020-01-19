@@ -2,85 +2,79 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 31F9814203E
-	for <lists+linux-um@lfdr.de>; Sun, 19 Jan 2020 22:40:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 761EE14207B
+	for <lists+linux-um@lfdr.de>; Sun, 19 Jan 2020 23:33:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EOjtoV+bcMlLz9wIvlsRBeYwpci59kwxJyDenzqGxds=; b=Nd/Mfo7vg0hlPH
-	2wqQZPVEbcJr79kGL+wu8MZqnvg2sMlqXIPfH/ZGQ37xaq8pbtl6eFDiHX2vJmkcijzTSHzIY4oCC
-	erc0m+lH74VygM2MBzW94EkkiDJLhbk7Km2sVDJ4QCLcqwjDbWKDkfMd7lwoMcJYMNtHB69bJIhjo
-	Kz2FTKJW5x8ARHOhN0t939pGvOIxljSeTiobeoBTMg80UGYHTombvrig30M1PR8d77swws3aqBD5L
-	74q97wB4ByY//kF6YZAcslgaDbnYX2wvbNmTiDfyy8h8gea6pb44bfb+AmyEX3qpQt3CadT8RmVE3
-	cT2M1T2WM4CfkhMskbRQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Subject:Message-ID:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=mXoPWLfLV2H9pXvYJHE+qiNTDPTLuLTfgXZsynTZQ/I=; b=Ae4YbSWg0Rhom5
+	ilRcYfBH3aWYkcn2nOoTRgplhvVGwH3hS6Mo4rqxp1Ror8c+2BNJuIz5PhepBjio6+HZk8sdNKW+X
+	fbJ3bSAQ5MjPC78jpNiyoMYqwgnrIcDDrjW9+D1ic9QTxiAMFhlmaUK0nDoXX0Q2mUR3ifmMbUhRX
+	sMptuwSm1Bkh/DsHO+MnpFN709HsJqBORN9RybFw47LvFagLyWQvrnE2AknuS72JWI15rDIOaO2rJ
+	fcdjIymlNRQmE1/rBbfvksLucdME655dM8tz9r2x8VyrvBm/E/RDMz0ZB0Ndu+KqkS0BoJaVMZo9Z
+	p7Sz/uEsXTgXbnwm0I1A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itIJ0-0003lG-Ol; Sun, 19 Jan 2020 21:40:26 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1itJ8f-0005Ww-Im; Sun, 19 Jan 2020 22:33:49 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itIIy-0003kR-3p
- for linux-um@lists.infradead.org; Sun, 19 Jan 2020 21:40:25 +0000
-Received: by mail-wm1-x341.google.com with SMTP id f129so12788893wmf.2
- for <linux-um@lists.infradead.org>; Sun, 19 Jan 2020 13:40:23 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=asiPmtRmLRuG8iYLNhrmmXL1PmWfY69n+vUdZEEnRBI=;
- b=mk3vJeFOLJiVoWCN/ieoID5pyZ+AjcVEy9Y5wvlqGVfGMIaL+RA5vFZ0nERUqnj3gT
- zpLJtZaj4+6gMq0mhXHBjexAtdSLpC+ectpziCEVc96JZ0oYykIAsdFW4QvRX3FaBYfx
- 2tZoHzdVCSaPPy08gSaT2ECr+7Ymf1G572lJfiYOssEzN1/jhP3ncU77P/ug0/MUvnow
- zvJoxl1DAPYbcIhixSz/aFGOI7swKzRN+KINuVxAfnSOBehNKzX5S5LL0s5XIsWARQEd
- tA2xjSqE0AcnJo8IXT46sv8IC9AAnztAJc/5DwZccNHd4m17nY50iOepiv742jheKqPP
- JgEA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=asiPmtRmLRuG8iYLNhrmmXL1PmWfY69n+vUdZEEnRBI=;
- b=WWIJS3MYl4DBGhv4DWOD/ud6kwHEkHQ8slUlp0oomnIuJMjr5ijm5K0lsed/v4zw0V
- 7+z6kTiKXhwVrfQ0WIysU0cEIhH9TPJ0XqaxFh/rp6FBa8VLXyBLRPm0lRjZt8gO2r8s
- Or9tSVTPx/NwFmbhTrbA4XxflMMlhH4nrT7B3fT9hWbL4nYrL12mHot6UL9CUDBEXwuZ
- 5bIyaHxM+TuXnwpNT+aTsyn0C/fjRnjPnnNJNiGWXo+sKrjcQoUfb2cacN+Sq6aLMdau
- KTZnjKvrjlA7DTmfZ6bkGQdWPFOJQjWHTPL4vBRbyFY9qnsYd/VI4OsbQWMM6G3Re5xc
- 9CRg==
-X-Gm-Message-State: APjAAAU+zmWCLfDUK9Cub2DfozuM/Z9UbepqNSWbprQ3xKIMZePG/Rv3
- 8ugHgoMfm4x8JrQJqvkXWDlwEicXvboI562YP5w=
-X-Google-Smtp-Source: APXvYqxa29DZ8SIHSKa9e8RKhphlEYfnefUq8OEmoveTEJv1S3CzgFG5Q5HsQ6yWcpFLbs9pko3VHF12RmFrYMhwgv0=
-X-Received: by 2002:a7b:c4cc:: with SMTP id g12mr16601137wmk.68.1579470022651; 
- Sun, 19 Jan 2020 13:40:22 -0800 (PST)
+ id 1itJ8Z-0005QQ-NQ; Sun, 19 Jan 2020 22:33:43 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:Content-Type:
+ MIME-Version:Subject:Message-ID:Cc:To:From:Date:Sender:Reply-To:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=RfsoZEMNE5OKfXMAOMFO/WGjUCpCfJqnX/KUuLoJ26g=; b=VD6H+F1ZGW8YM/dtb3nfJcvSnT
+ E5i2mzEbt8yDeMoJ/L4Q29ChAkudgLwhMtU9Ryt9k4x93NgGsT3W9vRB0RxrXsiUmXRB6ZgROKHyQ
+ /8LmR+/SHjVMpoUbAooIKnMO4x4TvHE0LgHLRIbcs0T6UYyTL58ePszJmFBmzGgbEdJENRo9ntBOB
+ fnz49f/Le4rjfZH79VhE3VNJWVwpfsO+sLuyt1PKQQw3+iOxXxOIUV7Q73To/eFY6ZdXKc9gjG8XH
+ 3T2ZHvSEzNI/iMCuT0wd5CBuv/sFx8MgzEW9LeUfse8nd4XCpDdWG795+T+PnXf2h3mBtYnec2w++
+ gBQyWA7g==;
+Received: from lithops.sigma-star.at ([195.201.40.130])
+ by casper.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1itJ8w-00031j-Gz; Sun, 19 Jan 2020 22:34:08 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by lithops.sigma-star.at (Postfix) with ESMTP id 5393060B21B1;
+ Sun, 19 Jan 2020 23:33:30 +0100 (CET)
+Received: from lithops.sigma-star.at ([127.0.0.1])
+ by localhost (lithops.sigma-star.at [127.0.0.1]) (amavisd-new, port 10032)
+ with ESMTP id sZ_v3mHs91UY; Sun, 19 Jan 2020 23:33:30 +0100 (CET)
+Received: from localhost (localhost [127.0.0.1])
+ by lithops.sigma-star.at (Postfix) with ESMTP id 004DB6126B6B;
+ Sun, 19 Jan 2020 23:33:29 +0100 (CET)
+Received: from lithops.sigma-star.at ([127.0.0.1])
+ by localhost (lithops.sigma-star.at [127.0.0.1]) (amavisd-new, port 10026)
+ with ESMTP id fyVD4nqacwTq; Sun, 19 Jan 2020 23:33:29 +0100 (CET)
+Received: from lithops.sigma-star.at (lithops.sigma-star.at [195.201.40.130])
+ by lithops.sigma-star.at (Postfix) with ESMTP id CE53560B21B1;
+ Sun, 19 Jan 2020 23:33:29 +0100 (CET)
+Date: Sun, 19 Jan 2020 23:33:29 +0100 (CET)
+From: Richard Weinberger <richard@nod.at>
+To: torvalds <torvalds@linux-foundation.org>
+Message-ID: <1224347843.24297.1579473209765.JavaMail.zimbra@nod.at>
+Subject: Upcomming UBI/UBIFS/UML pull requests
 MIME-Version: 1.0
-References: <20191210212108.222514-1-brendanhiggins@google.com>
- <CAMuHMdVyjjZAoO3Q-Vr88fUGFwrn4EoiSxBmG_FV+o87BuBmwQ@mail.gmail.com>
-In-Reply-To: <CAMuHMdVyjjZAoO3Q-Vr88fUGFwrn4EoiSxBmG_FV+o87BuBmwQ@mail.gmail.com>
-From: Richard Weinberger <richard.weinberger@gmail.com>
-Date: Sun, 19 Jan 2020 22:40:11 +0100
-Message-ID: <CAFLxGvzMf1Fni4va1EM1ta_o7zDjkM8iAr=j+t74+G79wq=XOA@mail.gmail.com>
-Subject: Re: [PATCH v1] uml: make CONFIG_STATIC_LINK actually static
-To: Geert Uytterhoeven <geert@linux-m68k.org>
+X-Originating-IP: [195.201.40.130]
+X-Mailer: Zimbra 8.8.12_GA_3807 (ZimbraWebClient - FF68 (Linux)/8.8.12_GA_3809)
+Thread-Index: 9GyKq+zIpLlpVOH+DznQRKJEc5a+Gw==
+Thread-Topic: Upcomming UBI/UBIFS/UML pull requests
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200119_134024_157128_1E047AD1 
-X-CRM114-Status: GOOD (  13.43  )
-X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+X-CRM114-CacheID: sfid-20200119_223406_606698_85727AD2 
+X-CRM114-Status: UNSURE (   0.24  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 2.0 (++)
+X-Spam-Report: SpamAssassin version 3.4.3 on casper.infradead.org summary:
+ Content analysis details:   (2.0 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [richard.weinberger[at]gmail.com]
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 2.0 PDS_TONAME_EQ_TOLOCAL_SHORT Short body with To: name matches
+ everything in local email
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,53 +86,27 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: Johannes Berg <johannes.berg@intel.com>,
- Richard Weinberger <richard@nod.at>, Jeff Dike <jdike@addtoit.com>,
- linux-um <linux-um@lists.infradead.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, davidgow@google.com,
- Brendan Higgins <brendanhiggins@google.com>,
- Anton Ivanov <anton.ivanov@cambridgegreys.com>
+Cc: linux-um <linux-um@lists.infradead.org>,
+ Johannes Berg <johannes@sipsolutions.net>,
+ anton ivanov <anton.ivanov@cambridgegreys.com>,
+ linux-mtd <linux-mtd@lists.infradead.org>,
+ Miquel Raynal <miquel.raynal@bootlin.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Wed, Dec 11, 2019 at 9:40 AM Geert Uytterhoeven <geert@linux-m68k.org> wrote:
->
-> Hi Brendan,
->
-> On Tue, Dec 10, 2019 at 10:21 PM Brendan Higgins
-> <brendanhiggins@google.com> wrote:
-> > Currently, CONFIG_STATIC_LINK can be enabled with options which cannot
-> > be statically linked, namely UML_NET_VECTOR, UML_NET_VDE, and
-> > UML_NET_PCAP; this is because glibc tries to load NSS which does not
-> > support being statically linked. So make CONFIG_STATIC_LINK depend on
-> > !UML_NET_VECTOR && !UML_NET_VDE && !UML_NET_PCAP.
-> >
-> > Link: https://lore.kernel.org/lkml/f658f317-be54-ed75-8296-c373c2dcc697@cambridgegreys.com/#t
-> > Signed-off-by: Brendan Higgins <brendanhiggins@google.com>
-> > ---
-> >  arch/um/Kconfig | 4 ++++
-> >  1 file changed, 4 insertions(+)
-> >
-> > diff --git a/arch/um/Kconfig b/arch/um/Kconfig
-> > index 2a6d04fcb3e91..1ddc8745123f2 100644
-> > --- a/arch/um/Kconfig
-> > +++ b/arch/um/Kconfig
-> > @@ -63,6 +63,7 @@ source "arch/$(HEADER_ARCH)/um/Kconfig"
-> >
-> >  config STATIC_LINK
-> >         bool "Force a static link"
-> > +       depends on !UML_NET_VECTOR && !UML_NET_VDE && !UML_NET_PCAP
->
-> "depends on !FORBID_STATIC_LINK"?
->
-> Then all the drivers that are incompatible with static linking can just
-> select FORBID_STATIC_LINK in their own Kconfig block.
+Linus,
 
-Makes sense!
+due to traveling I won't be able to send you pull requests
+for UBI/UBIFS and UML this time.
 
--- 
+Therefore I've already prepared my next branches and one of my colleges will
+send you an PR as soon as the merge window opens.
+
+Miquel: UBI/UBIFS
+Anton or Johannes: UML
+
 Thanks,
 //richard
 
