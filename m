@@ -2,72 +2,73 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2829414202B
-	for <lists+linux-um@lfdr.de>; Sun, 19 Jan 2020 22:28:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AE084142033
+	for <lists+linux-um@lfdr.de>; Sun, 19 Jan 2020 22:36:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IlWRdSM+aYv+Nao3plhh2iBtuwcPNCHBbiQWWDkNSI8=; b=bt7+X+1cs+ffri
-	d7mm5F5dw0aCyFEEOr1teyUUyy9uJkceFkzTCwpJ8htyOT0E0YZj2OXLR+xJAmPK2Ahis7WVOzU9S
-	xPwsUokR5kF4jXq9cJf5NNaPfF7C9Tjm00UjsBytz5fcUgQboBYzGYImbFCARYpyz0WxbGH7Jqj0M
-	ckHxrNM68dcbIeZXDMIfdqELAB85X1Zfxzy17XRzbGGW4Y/x53LgrLJS5g2Cl9Ry3Yi5/ALer4VUK
-	7Q9gSeah5i8GnxXpqUen0HcfUeStf5R39zFMSIeR5Bu77B4ry+HJxiyCuzsfgqK5hsHfC3elW3f6+
-	qeVwIX7Q5s5we6Z7PEYQ==;
+	List-Owner; bh=21qzpObBSiPgeFVPQagTFAN+AbXIeABoFxYd32cESLg=; b=TpFl0dhaMDH+Us
+	8HhsPVstLTdefrf/yDpmseoSFv4OxMqWqOQOr92n3RcwVCneXvKHygzEHQ1vVX9Lrh/JFmLIprw4W
+	n4gYc39K6JAp3Hf6zOS/qIx43ylSaHg5u277DI4DuQrqUwJ5OklfJkcmmx9TVksloLPViwt8UHY+3
+	ZcCavM8VIkwBc9DA6hNE90cSyIym47SRLrNFuCUWvQo7fSONwA1lbGxI+UaW7tWa6YvhnSdwJKJfO
+	OpsrJnTSjkhZcZTO6rvhMORmdfinr36YHnx/m5K1Js+V71MEimobRt4LgmoB53W9cfQduILUTnhNM
+	gRX8CCxA9KZ+FRUweFlQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itI6u-0007PO-0T; Sun, 19 Jan 2020 21:27:56 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1itIEl-0001ze-Az; Sun, 19 Jan 2020 21:36:03 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itI6h-0007Bp-MC
- for linux-um@lists.infradead.org; Sun, 19 Jan 2020 21:27:45 +0000
-Received: by mail-wr1-x444.google.com with SMTP id d16so27581117wre.10
- for <linux-um@lists.infradead.org>; Sun, 19 Jan 2020 13:27:43 -0800 (PST)
+ id 1itIEi-0001z9-H0
+ for linux-um@lists.infradead.org; Sun, 19 Jan 2020 21:36:01 +0000
+Received: by mail-wm1-x342.google.com with SMTP id q9so12527496wmj.5
+ for <linux-um@lists.infradead.org>; Sun, 19 Jan 2020 13:35:58 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=AjemFh1kT3nDCNjh4jhxgYQzfSBikjpMPiBbCipFxwo=;
- b=XWo9n1IJD2TCVkpx7YDyQQ3MLeeKrd5HeTV+l7a/ESIX7RsHbgItLb1U2Lvqw/X3H0
- n6LMfauhyc9l9JJ+UEMjOmwADxniENUN+DsWLalZO7GTVrEzE9iwKsTIVjixc5JSq63k
- lxi8nlEGw/40gZO8sWCW5U8J+QtY/ug3OBkSWNgix0eQgufFBHIVTbCZdKi0mTuAwY8v
- RW2aY1Dq6wSSEGGR1TFEuI470YIZMwhxwrgCuyL4PB0gW5kdxnXxb90REwUnWTnP2tOE
- IeuA+LIo2loHv18d93yXok6PzkdaK+pBC3KJJ3umrukCEUKj91XWEsaMlvQpk0KM9SPp
- VDNQ==
+ :cc; bh=7XtrPleWokJAdJqzMxdbahxAVw1VbvWedpeJkRsmOi0=;
+ b=uentf34RvUl4TYATno3V5Zw2rZLs/kN0JkuqURQiy0+JwznK/M3PB5f6Jz+UJOhkbP
+ rxe3/wkILfXLTWAaY0JCniPV8zLP93CC3SJIVWRrEvn/v75Gh5F/V4idWAzOKCD/mYWN
+ fkkf/uKF7Luy6p1r1MWZzAO/gbBG4UVDXGTC6lZLCtKSJYD9WJ9Jw1BoDpn+gMWD4Y2W
+ FvqwWnZ/ZSRpwLmeCdEc8XiPjk5JP+NtS+MuLO4253Yug0OH1RPVzvxNOyNx0OIywKkO
+ e7bbfQjZAMCaheNGXVsRdk4PxIhUAoIq+uPy4iloz/yYqIuTudkIvzjeYVpXgWFt9K4J
+ 4rbQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=AjemFh1kT3nDCNjh4jhxgYQzfSBikjpMPiBbCipFxwo=;
- b=c1radJAQwnB46YIAVzMAWjXPONZJ+yYHcWhTWkpqlQ1mEwXS9F1RP3afFbLeVWRqhH
- dmbQrxvaOmE2X0eWJtuzxJq5QyP4rD2WIuvjfVaC1a3ywBHK+nIvfhqUMIbgryptg+ZB
- urtaAKqrzK0Dlz2EFtoBDeQGSgdMIvKukzi7NUNM+rFHTH+sMsm4x2sXK2qSD/u8SfMD
- 3AnxfTlfB+D60UptH3UV0N7ORaFf+WV/JCoAeytqIjQDZRUErsSS3E0EfKwEc+VYZSWH
- JMzfAEhYCpPL2aC3lOs0SNWb3yHiPGSed/TvJRYvDUhGIgbDq6P7iG/pP4FHUEQ6lbL4
- jHRQ==
-X-Gm-Message-State: APjAAAX524LUCB14+oo5J8PYrXvKDUUxQ0UkdWKOJYZg05i71t4tEulJ
- v8XIblawK3wjl0xQMS9/l2TnLq2lV7qqfyjxte0=
-X-Google-Smtp-Source: APXvYqxc4qJT7zyonVWpOZ5c2WXQcKVffFfJgARuJ4/1QONBqhMriedjvxabXnVUi5pEJb4+a0JD82ykoitPWKV0nF8=
-X-Received: by 2002:adf:f606:: with SMTP id t6mr12707494wrp.85.1579469262278; 
- Sun, 19 Jan 2020 13:27:42 -0800 (PST)
+ bh=7XtrPleWokJAdJqzMxdbahxAVw1VbvWedpeJkRsmOi0=;
+ b=sH1n9MAgMWLmY6hY5uXNdfrr8XH8fIGrSAHh0Q49luHpg5+2lf3ZYimCcmPj0odYxq
+ XieGmtjcWFASWfyXcTESRAgwm7zH4LhjmNldVuNqZVY1DWU3ioSVZx7IDx1Xr8EboXLR
+ pXgvJO66iTvSSICIn9nYi7NX5o6tSq8ihl0TTMv1o0EH4BtP0b8GGpZaHxkIAf7Bw5zI
+ qwH9NkUikbMTuAXriozTyBtRiHVTIiw8MtxSWJH31UiHLFbRzxAaZQ/q7LKdSm5dWFnp
+ zvaPYtLxmBJwpo0z3zVUaCtr5xbgk5uJE12Xvhl1f6r7lkeN8cgwxW0EVqqfpvXKy/sr
+ D5FA==
+X-Gm-Message-State: APjAAAVjOWWGOsKwIdhc6cgcsydlcOkB8H1vaualuguPblPGT769XAR2
+ OqnFsqTmhmGmNBK7TGh7YQLo2knMVNiSAbzs0V1H+2aP
+X-Google-Smtp-Source: APXvYqwOZ3SfiwvasCOOtCV4Mz1nREjiAMnpfvhz+v4Fw8nl8VOhQtSFKUF93I8bKEnVHg9O0tYFor8kLUbtjZBjnSI=
+X-Received: by 2002:a1c:e38b:: with SMTP id a133mr1444101wmh.1.1579469757590; 
+ Sun, 19 Jan 2020 13:35:57 -0800 (PST)
 MIME-Version: 1.0
-References: <20190524220843.27623-1-johannes@sipsolutions.net>
-In-Reply-To: <20190524220843.27623-1-johannes@sipsolutions.net>
+References: <20191213100128.04075cf409e9.Id772dc879535c85524c32b81fd392bbbfd515741@changeid>
+ <5bec5e3f-ad17-e60f-eb9f-7b2d7a08ed27@kot-begemot.co.uk>
+In-Reply-To: <5bec5e3f-ad17-e60f-eb9f-7b2d7a08ed27@kot-begemot.co.uk>
 From: Richard Weinberger <richard.weinberger@gmail.com>
-Date: Sun, 19 Jan 2020 22:27:31 +0100
-Message-ID: <CAFLxGvxFfa8QNh3_6-EcVFCvkV4Huqf2=bRMiCQdtU+F7Ocq1A@mail.gmail.com>
-Subject: Re: [PATCH v2] arch: um: add an option to make serial driver non-raw
-To: Johannes Berg <johannes@sipsolutions.net>
+Date: Sun, 19 Jan 2020 22:35:46 +0100
+Message-ID: <CAFLxGvxsATuz=-weO3MKBTzJOdoSoEhXusyK+114Xc0ma-HD_w@mail.gmail.com>
+Subject: Re: [PATCH] um: fix time-travel=inf-cpu with xor/raid6
+To: Anton Ivanov <anton.ivanov@kot-begemot.co.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200119_132743_788757_979CE76A 
-X-CRM114-Status: GOOD (  11.53  )
+X-CRM114-CacheID: sfid-20200119_133600_589117_82A4C38B 
+X-CRM114-Status: GOOD (  17.95  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -91,37 +92,84 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: Johannes Berg <johannes.berg@intel.com>, j@w1.fi,
- Richard Weinberger <richard@nod.at>, Jeff Dike <jdike@addtoit.com>,
+Cc: Johannes Berg <johannes@sipsolutions.net>,
  linux-um <linux-um@lists.infradead.org>,
- Anton Ivanov <anton.ivanov@cambridgegreys.com>
+ Johannes Berg <johannes.berg@intel.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Sat, May 25, 2019 at 12:08 AM Johannes Berg
-<johannes@sipsolutions.net> wrote:
+On Fri, Dec 13, 2019 at 11:32 AM Anton Ivanov
+<anton.ivanov@kot-begemot.co.uk> wrote:
 >
-> From: Johannes Berg <johannes.berg@intel.com>
 >
-> In some cases, for example when the program(s) running inside UML
-> isn't/aren't interactive (like the hwsim tests for wpa_supplicant)
-> there's really no value in having the serial lines configured to
-> be raw as they are now by default. Setting them to non-raw lets
-> one abort the whole UML with Ctrl-C, which is really the right
-> thing to do in these cases, basically the whole UML instance is
-> more like a single (testing) program.
 >
-> Add a "ssl-non-raw" option to UML to support such a mode.
+> On 13/12/2019 09:01, Johannes Berg wrote:
+> > From: Johannes Berg <johannes.berg@intel.com>
+> >
+> > Today, I erroneously built a time-travel configuration with btrfs
+> > enabled, and noticed it cannot boot in time-travel=inf-cpu mode,
+> > both xor and raid6 speed measurement gets stuck.
+> >
+> > For xor, work around it by picking the first algorithm if inf-cpu
+> > mode is enabled.
+> >
+> > For raid6, I didn't find such a workaround, so disallow enabling
+> > time-travel mode if RAID6_PQ_BENCHMARK is enabled.
+> >
+> > With this, and RAID6_PQ_BENCHMARK disabled, I can boot a kernel
+> > that has btrfs enabled in time-travel=inf-cpu mode.
+> >
+> > Signed-off-by: Johannes Berg <johannes.berg@intel.com>
+> > ---
+> >   arch/um/Kconfig            | 2 ++
+> >   arch/um/include/asm/Kbuild | 1 -
+> >   arch/um/include/asm/xor.h  | 7 +++++++
+> >   3 files changed, 9 insertions(+), 1 deletion(-)
+> >   create mode 100644 arch/um/include/asm/xor.h
+> >
+> > diff --git a/arch/um/Kconfig b/arch/um/Kconfig
+> > index 2a6d04fcb3e9..a8bf60b5c208 100644
+> > --- a/arch/um/Kconfig
+> > +++ b/arch/um/Kconfig
+> > @@ -188,6 +188,8 @@ config SECCOMP
+> >   config UML_TIME_TRAVEL_SUPPORT
+> >       bool
+> >       prompt "Support time-travel mode (e.g. for test execution)"
+> > +     # inf-cpu mode is incompatible with the benchmarking
+> > +     depends on !RAID6_PQ_BENCHMARK
+> >       help
+> >         Enable this option to support time travel inside the UML instance.
+> >
+> > diff --git a/arch/um/include/asm/Kbuild b/arch/um/include/asm/Kbuild
+> > index 398006d27e40..db7d9d4e30d8 100644
+> > --- a/arch/um/include/asm/Kbuild
+> > +++ b/arch/um/include/asm/Kbuild
+> > @@ -25,5 +25,4 @@ generic-y += switch_to.h
+> >   generic-y += topology.h
+> >   generic-y += trace_clock.h
+> >   generic-y += word-at-a-time.h
+> > -generic-y += xor.h
+> >   generic-y += kprobes.h
+> > diff --git a/arch/um/include/asm/xor.h b/arch/um/include/asm/xor.h
+> > new file mode 100644
+> > index 000000000000..7a3208c47cfc
+> > --- /dev/null
+> > +++ b/arch/um/include/asm/xor.h
+> > @@ -0,0 +1,7 @@
+> > +/* SPDX-License-Identifier: GPL-2.0 */
+> > +#include <asm-generic/xor.h>
+> > +#include <shared/timer-internal.h>
+> > +
+> > +/* pick an arbitrary one - measuring isn't possible with inf-cpu */
+> > +#define XOR_SELECT_TEMPLATE(x)       \
+> > +     (time_travel_mode == TT_MODE_INFCPU ? &xor_block_8regs : NULL)
+> >
 >
-> Signed-off-by: Johannes Berg <johannes.berg@intel.com>
-> ---
->  arch/um/drivers/chan_user.h | 2 +-
->  arch/um/drivers/ssl.c       | 8 ++++++++
+> Acked-by: Anton Ivanov <anton.ivanov@cambridgegreys.com>
 
-Applied. Thanks,
-//richard
+Applied. Thanks!
 
 -- 
 Thanks,
