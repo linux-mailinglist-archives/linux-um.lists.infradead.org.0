@@ -2,73 +2,72 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AE084142033
-	for <lists+linux-um@lfdr.de>; Sun, 19 Jan 2020 22:36:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 01599142035
+	for <lists+linux-um@lfdr.de>; Sun, 19 Jan 2020 22:37:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=21qzpObBSiPgeFVPQagTFAN+AbXIeABoFxYd32cESLg=; b=TpFl0dhaMDH+Us
-	8HhsPVstLTdefrf/yDpmseoSFv4OxMqWqOQOr92n3RcwVCneXvKHygzEHQ1vVX9Lrh/JFmLIprw4W
-	n4gYc39K6JAp3Hf6zOS/qIx43ylSaHg5u277DI4DuQrqUwJ5OklfJkcmmx9TVksloLPViwt8UHY+3
-	ZcCavM8VIkwBc9DA6hNE90cSyIym47SRLrNFuCUWvQo7fSONwA1lbGxI+UaW7tWa6YvhnSdwJKJfO
-	OpsrJnTSjkhZcZTO6rvhMORmdfinr36YHnx/m5K1Js+V71MEimobRt4LgmoB53W9cfQduILUTnhNM
-	gRX8CCxA9KZ+FRUweFlQ==;
+	List-Owner; bh=Qry/NORWs5ecZJ+wzZAnEWUW/BTNUJKkM0kugci3t7w=; b=ALoAdo6pYaauMR
+	jfgFR7ER6SGgMn+AXDoVdwGnDX1HdbvV+YGJWtEFJu4+JG99lHcYNZpu48507vck4FWcGOJl6/rZU
+	ageNNe4qULP+Od8dXKZY2SRzv2A5CDBUnx16Mfrh0wnAqK6z+y98rd9gPvNB3WskUvuqADt9wzOjZ
+	tg/l2q2/xx5Fr7mLeP3WM8wwl3l6+w7aLtVqEGwHRAX5A1QPJ87EI8RyzCW8POe1uhi3u98+fOiR6
+	SUBIT9hzmyira6FweIOMJkCtLflLVBQPHJ27C9Frh3rjmJ1d3vvmj5Yq0mNrrD49tCDpUKKdAEm91
+	2gAV9ooAx/NNZvOpU0Bg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itIEl-0001ze-Az; Sun, 19 Jan 2020 21:36:03 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1itIGC-00022V-In; Sun, 19 Jan 2020 21:37:32 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itIEi-0001z9-H0
- for linux-um@lists.infradead.org; Sun, 19 Jan 2020 21:36:01 +0000
-Received: by mail-wm1-x342.google.com with SMTP id q9so12527496wmj.5
- for <linux-um@lists.infradead.org>; Sun, 19 Jan 2020 13:35:58 -0800 (PST)
+ id 1itIG9-00022A-Pn
+ for linux-um@lists.infradead.org; Sun, 19 Jan 2020 21:37:31 +0000
+Received: by mail-wr1-x442.google.com with SMTP id d16so27595659wre.10
+ for <linux-um@lists.infradead.org>; Sun, 19 Jan 2020 13:37:29 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=7XtrPleWokJAdJqzMxdbahxAVw1VbvWedpeJkRsmOi0=;
- b=uentf34RvUl4TYATno3V5Zw2rZLs/kN0JkuqURQiy0+JwznK/M3PB5f6Jz+UJOhkbP
- rxe3/wkILfXLTWAaY0JCniPV8zLP93CC3SJIVWRrEvn/v75Gh5F/V4idWAzOKCD/mYWN
- fkkf/uKF7Luy6p1r1MWZzAO/gbBG4UVDXGTC6lZLCtKSJYD9WJ9Jw1BoDpn+gMWD4Y2W
- FvqwWnZ/ZSRpwLmeCdEc8XiPjk5JP+NtS+MuLO4253Yug0OH1RPVzvxNOyNx0OIywKkO
- e7bbfQjZAMCaheNGXVsRdk4PxIhUAoIq+uPy4iloz/yYqIuTudkIvzjeYVpXgWFt9K4J
- 4rbQ==
+ :cc; bh=0yhhLXZWkRk22XCrsnN5/sGz8BVyOku48FOhAd8M19E=;
+ b=ZilIjmdGKlTBSKD2ob0un1zakRrRgVplMpo0B/sQQIAGqoEvZUebSTcQ2LvAZFjt5W
+ nYJhriaohtYHJZAgTandTFoP4GCe94hUmAedCefa7AaHnNIDjuXIIS5tzjv+3Zlu4072
+ ErbP9PGhaM7WQTlQZy1q7eyQQdJ9e05Oaw6bD/PFxzG7sa0iTuOFdgSpBsAgTxBVH4Nw
+ BNnNqp2mxeKKK1J4V2Ph9xkVKQGWVU8plYoD0IMMI8wz32yGiD94Cy2stls9KjLvcDPN
+ 0galiqBfMAxhnWXsCyA6DBJ16WDgwkIjQ/OAATjhzJCA7K2Pr3Baaf3vjIZHdUw6QQON
+ tJiQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=7XtrPleWokJAdJqzMxdbahxAVw1VbvWedpeJkRsmOi0=;
- b=sH1n9MAgMWLmY6hY5uXNdfrr8XH8fIGrSAHh0Q49luHpg5+2lf3ZYimCcmPj0odYxq
- XieGmtjcWFASWfyXcTESRAgwm7zH4LhjmNldVuNqZVY1DWU3ioSVZx7IDx1Xr8EboXLR
- pXgvJO66iTvSSICIn9nYi7NX5o6tSq8ihl0TTMv1o0EH4BtP0b8GGpZaHxkIAf7Bw5zI
- qwH9NkUikbMTuAXriozTyBtRiHVTIiw8MtxSWJH31UiHLFbRzxAaZQ/q7LKdSm5dWFnp
- zvaPYtLxmBJwpo0z3zVUaCtr5xbgk5uJE12Xvhl1f6r7lkeN8cgwxW0EVqqfpvXKy/sr
- D5FA==
-X-Gm-Message-State: APjAAAVjOWWGOsKwIdhc6cgcsydlcOkB8H1vaualuguPblPGT769XAR2
- OqnFsqTmhmGmNBK7TGh7YQLo2knMVNiSAbzs0V1H+2aP
-X-Google-Smtp-Source: APXvYqwOZ3SfiwvasCOOtCV4Mz1nREjiAMnpfvhz+v4Fw8nl8VOhQtSFKUF93I8bKEnVHg9O0tYFor8kLUbtjZBjnSI=
-X-Received: by 2002:a1c:e38b:: with SMTP id a133mr1444101wmh.1.1579469757590; 
- Sun, 19 Jan 2020 13:35:57 -0800 (PST)
+ bh=0yhhLXZWkRk22XCrsnN5/sGz8BVyOku48FOhAd8M19E=;
+ b=jh+f7uOmAudrpiFJYlMQWiVCMgCG0NgQzFyfpZyJVwbn3sA2xdWoCE6aAKl6f4W9jE
+ FW1SytoJSnDwq+NHa9al3hevzvKZycNdJXc5kiFweT8vau7e4VakC6JZ6lcNbeWvHlAQ
+ 6fHZ8xY9/R/n09bUfzui86bIKfexKLBKxv6HAbkdBUGWf8LJ+JqTzFaDpURhFzTJPH4e
+ /j+N4K5/wDQNzfxQ/zCf60gSXjTKF8b/2HGZrti4ew75Ij2f1IGRhPW0/shEtP0DR44/
+ zpWV7LQgNmnerl7nRbGXycDNYQMoaIgW+U9F7eZxOai/n4AnFTqMP3E3GNJ7ID30k3yA
+ DY/A==
+X-Gm-Message-State: APjAAAWSzycuE9jPWQJgxQZ/H5uWf7CKX9lbG3qo8wc6HiNQPdsUGH6X
+ AoXG3KEalTS1CS19d8fjdhnrZk70GRyW/yIuUdI=
+X-Google-Smtp-Source: APXvYqwh50xTgDkYTgfH1G8mBb8ofLWObUuuYR1bGi1/0n3HtKI2N78Fl9Pxbnx17MhZXbHgwZyZwUf4fSSsyDlbTNE=
+X-Received: by 2002:a5d:6441:: with SMTP id d1mr14390186wrw.93.1579469848014; 
+ Sun, 19 Jan 2020 13:37:28 -0800 (PST)
 MIME-Version: 1.0
-References: <20191213100128.04075cf409e9.Id772dc879535c85524c32b81fd392bbbfd515741@changeid>
- <5bec5e3f-ad17-e60f-eb9f-7b2d7a08ed27@kot-begemot.co.uk>
-In-Reply-To: <5bec5e3f-ad17-e60f-eb9f-7b2d7a08ed27@kot-begemot.co.uk>
+References: <20191210223403.244842-1-brendanhiggins@google.com>
+In-Reply-To: <20191210223403.244842-1-brendanhiggins@google.com>
 From: Richard Weinberger <richard.weinberger@gmail.com>
-Date: Sun, 19 Jan 2020 22:35:46 +0100
-Message-ID: <CAFLxGvxsATuz=-weO3MKBTzJOdoSoEhXusyK+114Xc0ma-HD_w@mail.gmail.com>
-Subject: Re: [PATCH] um: fix time-travel=inf-cpu with xor/raid6
-To: Anton Ivanov <anton.ivanov@kot-begemot.co.uk>
+Date: Sun, 19 Jan 2020 22:37:17 +0100
+Message-ID: <CAFLxGvwHALbhE8XVWCijx25n-LpysYR=fH6WnHADn_=c_BZqow@mail.gmail.com>
+Subject: Re: [PATCH v1] um: drivers: mark non-vector net transports as obsolete
+To: Brendan Higgins <brendanhiggins@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200119_133600_589117_82A4C38B 
-X-CRM114-Status: GOOD (  17.95  )
+X-CRM114-CacheID: sfid-20200119_133729_838405_21DC5258 
+X-CRM114-Status: GOOD (  12.10  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -92,84 +91,46 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: Johannes Berg <johannes@sipsolutions.net>,
- linux-um <linux-um@lists.infradead.org>,
- Johannes Berg <johannes.berg@intel.com>
+Cc: "Berg, Johannes" <johannes.berg@intel.com>,
+ Richard Weinberger <richard@nod.at>, Jeff Dike <jdike@addtoit.com>,
+ linux-um <linux-um@lists.infradead.org>, LKML <linux-kernel@vger.kernel.org>,
+ davidgow@google.com, Anton Ivanov <anton.ivanov@cambridgegreys.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Fri, Dec 13, 2019 at 11:32 AM Anton Ivanov
-<anton.ivanov@kot-begemot.co.uk> wrote:
+On Tue, Dec 10, 2019 at 11:34 PM Brendan Higgins
+<brendanhiggins@google.com> wrote:
 >
+> UML_NET_VECTOR now supports filters compiled with pcap outside of UML;
+> it also supports: EoGRE, EoL2TPv3, RAW (+/- BPF), TAP and BESS.
 >
+> While vector drivers are not 1:1 replacements for the existing drivers,
+> you can achieve the same topologies and the same connectivity at much
+> higher performance (2.5 to 9 Gbit on mid-range Ryzen desktop) - the old
+> drivers test out in the 500Mbit range on the same hardware.
 >
-> On 13/12/2019 09:01, Johannes Berg wrote:
-> > From: Johannes Berg <johannes.berg@intel.com>
-> >
-> > Today, I erroneously built a time-travel configuration with btrfs
-> > enabled, and noticed it cannot boot in time-travel=inf-cpu mode,
-> > both xor and raid6 speed measurement gets stuck.
-> >
-> > For xor, work around it by picking the first algorithm if inf-cpu
-> > mode is enabled.
-> >
-> > For raid6, I didn't find such a workaround, so disallow enabling
-> > time-travel mode if RAID6_PQ_BENCHMARK is enabled.
-> >
-> > With this, and RAID6_PQ_BENCHMARK disabled, I can boot a kernel
-> > that has btrfs enabled in time-travel=inf-cpu mode.
-> >
-> > Signed-off-by: Johannes Berg <johannes.berg@intel.com>
-> > ---
-> >   arch/um/Kconfig            | 2 ++
-> >   arch/um/include/asm/Kbuild | 1 -
-> >   arch/um/include/asm/xor.h  | 7 +++++++
-> >   3 files changed, 9 insertions(+), 1 deletion(-)
-> >   create mode 100644 arch/um/include/asm/xor.h
-> >
-> > diff --git a/arch/um/Kconfig b/arch/um/Kconfig
-> > index 2a6d04fcb3e9..a8bf60b5c208 100644
-> > --- a/arch/um/Kconfig
-> > +++ b/arch/um/Kconfig
-> > @@ -188,6 +188,8 @@ config SECCOMP
-> >   config UML_TIME_TRAVEL_SUPPORT
-> >       bool
-> >       prompt "Support time-travel mode (e.g. for test execution)"
-> > +     # inf-cpu mode is incompatible with the benchmarking
-> > +     depends on !RAID6_PQ_BENCHMARK
-> >       help
-> >         Enable this option to support time travel inside the UML instance.
-> >
-> > diff --git a/arch/um/include/asm/Kbuild b/arch/um/include/asm/Kbuild
-> > index 398006d27e40..db7d9d4e30d8 100644
-> > --- a/arch/um/include/asm/Kbuild
-> > +++ b/arch/um/include/asm/Kbuild
-> > @@ -25,5 +25,4 @@ generic-y += switch_to.h
-> >   generic-y += topology.h
-> >   generic-y += trace_clock.h
-> >   generic-y += word-at-a-time.h
-> > -generic-y += xor.h
-> >   generic-y += kprobes.h
-> > diff --git a/arch/um/include/asm/xor.h b/arch/um/include/asm/xor.h
-> > new file mode 100644
-> > index 000000000000..7a3208c47cfc
-> > --- /dev/null
-> > +++ b/arch/um/include/asm/xor.h
-> > @@ -0,0 +1,7 @@
-> > +/* SPDX-License-Identifier: GPL-2.0 */
-> > +#include <asm-generic/xor.h>
-> > +#include <shared/timer-internal.h>
-> > +
-> > +/* pick an arbitrary one - measuring isn't possible with inf-cpu */
-> > +#define XOR_SELECT_TEMPLATE(x)       \
-> > +     (time_travel_mode == TT_MODE_INFCPU ? &xor_block_8regs : NULL)
-> >
+> For all these reasons, the non-vector based transports are now
+> unnecessary, and some, most notably pcap and vde are maintenance
+> burdens. Thus, it makes sense to at least start thinking about removing
+> the non-vector transports, so for now, mark them as obsolete.
 >
-> Acked-by: Anton Ivanov <anton.ivanov@cambridgegreys.com>
+> Link: https://lore.kernel.org/lkml/15f048d3-07ab-61c1-c6e0-0712e626dd33@cambridgegreys.com/T/#u
+> Suggested-by: Anton Ivanov <anton.ivanov@cambridgegreys.com>
+> Signed-off-by: Brendan Higgins <brendanhiggins@google.com>
+> ---
+>
+> I pretty much stole the commit message from Anton's comments in the
+> above link. Anton, if you would like me to credit you as a co-developer,
+> feel free to respond with the tags and I will include them on the next
+> revision.
+>
+> ---
+>  arch/um/drivers/Kconfig | 81 +++++++++++++++++++++--------------------
+>  1 file changed, 41 insertions(+), 40 deletions(-)
 
-Applied. Thanks!
+Applied. Thanks.
 
 -- 
 Thanks,
