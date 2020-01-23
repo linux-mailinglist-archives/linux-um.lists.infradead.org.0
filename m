@@ -2,93 +2,88 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AA845144D05
-	for <lists+linux-um@lfdr.de>; Wed, 22 Jan 2020 09:12:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EAEB81471D0
+	for <lists+linux-um@lfdr.de>; Thu, 23 Jan 2020 20:34:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=9VYStW2Ybk9dg6cKtelCleWzeD/kui1rhmvuLRkVSmk=; b=Yo7
-	EpTGrY3Hpb9UoJtEgUxoEei8TVF+W4xrokpUW6ejnuKlSrVXZtLZxLs28zMekffgRwDusLhJwOEXk
-	WdHguvcl/LHK+XWxlwAVFvWNklX/9sQEr0oLWlGYxhpDdnhVnND7x0J6YvcYDOgxBPj67Y7N7Pp4A
-	Qjr6pO+4SvEtB7WEIEadLdIfLZMBDtxyWo/vbUnmL7MN8/ssUkL2bSgu+HivWVTF4+WL6szP4SKsN
-	zSrz1FhDwTQ9UZFYfldFU7XhDcAyrtoQbxm6TTk32qlnf6V1zU5Zj0q0aGoUhdmBBEzRvIUx9B0Xh
-	UPFfdu8dbn7+bcVtPaOqLibbWEig4cA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
+	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=bih0eIBywW5WlX0+fKuxQSr6Kt5wtKkJjsPoQATjBgc=; b=E2tQKpUJl4LwNU
+	gVpaPqbwgDrJUSqOvR2z0J5z3YM/HrjQ3pxiWAYDceFGzD9PQUrFIKeEvNN78y/XDK2YHOpvi6SG9
+	bXKbqN5ybI3B8wm8CpwwGDZa6bYlfU5iLisv6dMVENVvXgyBkVmPKI5AubU0XN7MT1Y1Gfm/RhLWT
+	6LHyHwPgFGyg1054iia5LRqAMr2SxChmN0INXeaxvDQoDY4LvPIvBfaYhwkArncWhkcAfKvfurRdg
+	AVrX6u7PpD+4NrQpp23n9J5X20C1GirHRAbkY1yq2GcXOxvPmQd2n+puj8dvvll/inrAivbOlB4bZ
+	JsByGyiTmCw30Fha7HDA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuB7l-0002AV-7f; Wed, 22 Jan 2020 08:12:29 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1iuiFZ-0004V2-7E; Thu, 23 Jan 2020 19:34:45 +0000
+Received: from mail-qk1-x74a.google.com ([2607:f8b0:4864:20::74a])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuB7g-0002A1-TV
- for linux-um@lists.infradead.org; Wed, 22 Jan 2020 08:12:27 +0000
-Received: by mail-pg1-x543.google.com with SMTP id z124so3026360pgb.13
- for <linux-um@lists.infradead.org>; Wed, 22 Jan 2020 00:12:24 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=aLwRsma0wA4nm8Yfurb2c0IGjwZWYrQQ+Q5diXE5uqg=;
- b=KxWmSbFrEnujZQQpv5RgsD5EZWt2gtXdLiqDK4R6NbMpbC+siSiuPVSMwV3X4yzGEg
- n66WNwG226GflILXyXLQSVNs4CdR7jUjbKlFggDqr2tO8Pw3y0JAjwr21FPl6PzDj8IR
- NEYgusC1q/xOpW5jMXcb3nS6kEAVaQwRaM0tJcTNO6MmIY5hSCvYbbOKy/5ACL8l6Ry8
- zPkrl5I6fQfRkKrwUZ6GbzckoJR/mvOdr9oe97Cmp/IGP8g+bxo9F2VnOzXBNUxISjk3
- MwTHw4aVhrCN3qUiGloSOCO3fva+eLQ1zn11RdNlDJCDmaAPqb+3fKt/keR7xMxrxb1M
- qCQg==
+ id 1iuiFT-0004U9-7l
+ for linux-um@lists.infradead.org; Thu, 23 Jan 2020 19:34:43 +0000
+Received: by mail-qk1-x74a.google.com with SMTP id u10so2401164qkk.1
+ for <linux-um@lists.infradead.org>; Thu, 23 Jan 2020 11:34:33 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=date:in-reply-to:message-id:mime-version:references:subject:from:to
+ :cc; bh=DjBWKNKmbRUly3r6SmgNdOWTknSaPIdhRU5Ph1UjXj0=;
+ b=N4427GB7BknxCtu4sesD+d+Vp251VP/Qh25WBI6c7xjJ5HZ9j5+4t3QXEl4mtuWAFs
+ TxmLhgrAsCjVUx/QviFh60ZUSC04pGy3uaoiOa7O6JnuQwR6C8oJ9Ri8m3Au/UY2bCoI
+ 7zoyioYoog4T/1olu1L52PXBZwq4oEKPIk1Gf6oJ8ov+XmZKg39092Wv+RvmTRGzOvk1
+ 2CXoLSJ2VjBTXZeHc791qvrKjaWHHM/zs4EmSXTLs/c8Mwm3LRVoZx5BdJmBJhwlwm1Z
+ oEFbeKhQSe7D/q4g3k5KOyScY1RVhcrJZAVLVV8wIwXClM8vhQV1RbsocqFxesTXJSae
+ 0jXA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=aLwRsma0wA4nm8Yfurb2c0IGjwZWYrQQ+Q5diXE5uqg=;
- b=KfXcJF6s+GRLjhMVDv6M4tjcK0PG4qDug1fE6fl0AHKkm2uTQlhtjddk0SffP7lqw6
- zh4A0e34Z363NiENwY0s3+Y/CvIrW514WLsz6QNtvMJcOODpmnTpZBBXh8RDTvMJEdsb
- 1MOgAbEOv7Ol1qj+TbnZpS3IiGlc00pGdIOTN9/PGc3Vo8fb8bmYIAHJPtPubYX69ZzX
- /gnjZf+CDU2mTRB/O4xL59nX72Hq5zQ/aIDqkb51sUmCsL0YSadmr1ybYetv3hLwQntl
- mIvGUImHFf57064GunyhffkXBgYt43T6/G9PESmZxpjnF8wvJJZ+D2n53/7GbqNoTYHj
- EIFA==
-X-Gm-Message-State: APjAAAVMjMk1m1XfWkTZAQJgw6FdrQiCkfYmwmxo566+RIALV7qHKjVe
- dhT0eeG4uknOHNWTQLn0Hjsh5SfoCzs=
-X-Google-Smtp-Source: APXvYqwzLKmLMb5pQmnHhJk1blfhBxTONnP3LBme3RfXeeoH1XopYe63uBtAf9v+kXZNQX49Htoglw==
-X-Received: by 2002:a63:5924:: with SMTP id n36mr9977686pgb.43.1579680743766; 
- Wed, 22 Jan 2020 00:12:23 -0800 (PST)
-Received: from localhost ([43.224.245.180])
- by smtp.gmail.com with ESMTPSA id c1sm46357642pfa.51.2020.01.22.00.12.22
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 22 Jan 2020 00:12:23 -0800 (PST)
-From: liuyang34 <yangliuxm34@gmail.com>
-X-Google-Original-From: liuyang34 <liuyang34@xiaomi.com>
-To: Jeff Dike <jdike@addtoit.com>, Richard Weinberger <richard@nod.at>,
- Anton Ivanov <anton.ivanov@cambridgegreys.com>,
- Miklos Szeredi <miklos@szeredi.hu>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Alex Dewar <alex.dewar@gmx.co.uk>, linux-um@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-unionfs@vger.kernel.org
-Subject: [PATCH v2] overlayfs: print format optimization
-Date: Wed, 22 Jan 2020 16:12:20 +0800
-Message-Id: <1579680740-9893-1-git-send-email-liuyang34@xiaomi.com>
-X-Mailer: git-send-email 2.7.4
+ h=x-gm-message-state:date:in-reply-to:message-id:mime-version
+ :references:subject:from:to:cc;
+ bh=DjBWKNKmbRUly3r6SmgNdOWTknSaPIdhRU5Ph1UjXj0=;
+ b=lYPWo9brfIpiRl+oMeG/Jj5DWvGbOpuar1FQX6v5w2LiUyj8Kl5iTI6o7zMnsHadCQ
+ uisBVQedwG2Auu7H1Uw3/CC/z3rF9D51CsrNviYfCiknVa1vzdeUw8s4bEiyNophlBUc
+ UEq4va9Sound2GIuhnDtdEZFvhQmuXTiazByRoE4RNujTjz1/uZlBrTYRF9jHhgZ8S89
+ 80KoMTEFv2kCpOLyPIqsxpIvwtIiHU8V8idGFba6UpCr170uE4uJc2Y4xbmEBgoqDfVI
+ 8dWxVjdaKDLtRLtl3DWZcBCg0aYZ2Cd0yhsJY8i00Z3AnUfiDA2q//ip/A7U0UaBMO/S
+ mcnQ==
+X-Gm-Message-State: APjAAAW68pudJK7Sh7KYe4LvOAnAQusHcX+kluUnBkgFgbPpvgYwII3H
+ j/JeLgeZREokp063lgPMG65OllDy8GZvjDb7YdWt6A==
+X-Google-Smtp-Source: APXvYqyU1NV46vxsrSuOr2PlTSxBGDk291TMfL0tvxKUSYGZpyewWS5igzJCe9IKFMdcc7B0MP5cXVKaSlIUoM2tL5fkoA==
+X-Received: by 2002:ac8:664a:: with SMTP id j10mr17875232qtp.70.1579808072692; 
+ Thu, 23 Jan 2020 11:34:32 -0800 (PST)
+Date: Thu, 23 Jan 2020 11:33:15 -0800
+In-Reply-To: <fb0fcf4ffddaabc7eae82e25d7ec5ea9c37eb2ae.1573179553.git.thehajime@gmail.com>
+Message-Id: <20200123193315.132434-1-brendanhiggins@google.com>
+Mime-Version: 1.0
+References: <fb0fcf4ffddaabc7eae82e25d7ec5ea9c37eb2ae.1573179553.git.thehajime@gmail.com>
+X-Mailer: git-send-email 2.25.0.341.g760bfbb309-goog
+Subject: Re: [RFC v2 21/37] lkl tools: "boot" test
+From: Brendan Higgins <brendanhiggins@google.com>
+To: kunit-dev@googlegroups.com, Hajime Tazaki <thehajime@gmail.com>, 
+ Octavian Purdila <tavi.purdila@gmail.com>, Luis Chamberlain <mcgrof@kernel.org>,
+ David Gow <davidgow@google.com>, Aleksa Sarai <cyphar@cyphar.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200122_001225_011140_EC62BD0A 
-X-CRM114-Status: GOOD (  13.28  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200123_113439_325754_8A309278 
+X-CRM114-Status: GOOD (  21.69  )
+X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:74a listed in]
  [list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [yangliuxm34[at]gmail.com]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [yangliuxm34[at]gmail.com]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,765 +95,2167 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: liuyang34 <liuyang34@xiaomi.com>
-MIME-Version: 1.0
+Cc: linux-arch@vger.kernel.org, Lai Jiangshan <jiangshanlai@gmail.com>,
+ Conrad Meyer <cem@FreeBSD.org>, Brendan Higgins <brendanhiggins@google.com>,
+ Motomu Utsumi <motomuman@gmail.com>, linux-um@lists.infradead.org,
+ Akira Moroo <retrage01@gmail.com>, Petros Angelatos <petrosagg@gmail.com>,
+ linux-kernel-library@freelists.org, Thomas Liebetraut <thomas@tommie-lie.de>,
+ Mark Stillwell <mark@stillwell.me>, David Disseldorp <ddiss@suse.de>,
+ Patrick Collins <pscollins@google.com>, Luca Dariz <luca.dariz@gmail.com>,
+ Yuan Liu <liuyuan@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-Use pr_fmt to auto generate prefix of "overlayfs:"
+> Add a simple LKL test applications that starts the kernel and performs
+> simple tests that minimally exercise the LKL API.
+> 
+> Signed-off-by: Conrad Meyer <cem@FreeBSD.org>
+> Signed-off-by: David Disseldorp <ddiss@suse.de>
+> Signed-off-by: H.K. Jerry Chu <hkchu@google.com>
+> Signed-off-by: Hajime Tazaki <thehajime@gmail.com>
+> Signed-off-by: Lai Jiangshan <jiangshanlai@gmail.com>
+> Signed-off-by: Luca Dariz <luca.dariz@gmail.com>
+> Signed-off-by: Mark Stillwell <mark@stillwell.me>
+> Signed-off-by: Motomu Utsumi <motomuman@gmail.com>
+> Signed-off-by: Patrick Collins <pscollins@google.com>
+> Signed-off-by: Petros Angelatos <petrosagg@gmail.com>
+> Signed-off-by: Thomas Liebetraut <thomas@tommie-lie.de>
+> Signed-off-by: Yuan Liu <liuyuan@google.com>
+> Signed-off-by: Octavian Purdila <tavi.purdila@gmail.com>
+> ---
+>  tools/lkl/.gitignore              |   5 +
+>  tools/lkl/Makefile                |   5 +-
+>  tools/lkl/Targets                 |   3 +
+>  tools/lkl/tests/Build             |   3 +
+>  tools/lkl/tests/boot.c            | 562 ++++++++++++++++++++++++++++++
+>  tools/lkl/tests/boot.sh           |   9 +
+>  tools/lkl/tests/cla.c             | 159 +++++++++
+>  tools/lkl/tests/cla.h             |  33 ++
+>  tools/lkl/tests/disk.c            | 189 ++++++++++
+>  tools/lkl/tests/disk.sh           |  61 ++++
+>  tools/lkl/tests/run.py            | 182 ++++++++++
+>  tools/lkl/tests/tap13.py          | 209 +++++++++++
+>  tools/lkl/tests/test.c            | 126 +++++++
+>  tools/lkl/tests/test.h            |  72 ++++
+>  tools/lkl/tests/test.sh           | 179 ++++++++++
+>  tools/lkl/tests/valgrind.supp     |  85 +++++
+>  tools/lkl/tests/valgrind2xunit.py |  69 ++++
+>  17 files changed, 1950 insertions(+), 1 deletion(-)
+>  create mode 100644 tools/lkl/tests/Build
+>  create mode 100644 tools/lkl/tests/boot.c
+>  create mode 100755 tools/lkl/tests/boot.sh
+>  create mode 100644 tools/lkl/tests/cla.c
+>  create mode 100644 tools/lkl/tests/cla.h
+>  create mode 100644 tools/lkl/tests/disk.c
+>  create mode 100755 tools/lkl/tests/disk.sh
+>  create mode 100755 tools/lkl/tests/run.py
+>  create mode 100644 tools/lkl/tests/tap13.py
+>  create mode 100644 tools/lkl/tests/test.c
+>  create mode 100644 tools/lkl/tests/test.h
+>  create mode 100644 tools/lkl/tests/test.sh
+>  create mode 100644 tools/lkl/tests/valgrind.supp
+>  create mode 100755 tools/lkl/tests/valgrind2xunit.py
+> 
+> diff --git a/tools/lkl/.gitignore b/tools/lkl/.gitignore
+> index 1aed58bfe171..4e08254dbd46 100644
+> --- a/tools/lkl/.gitignore
+> +++ b/tools/lkl/.gitignore
+> @@ -2,3 +2,8 @@ Makefile.conf
+>  include/lkl_autoconf.h
+>  tests/autoconf.sh
+>  bin/stat
+> +tests/net-test
+> +tests/disk
+> +tests/boot
+> +tests/valgrind*.xml
+> +*.pyc
+> diff --git a/tools/lkl/Makefile b/tools/lkl/Makefile
+> index 6d6d2cead03f..9a55df5064e4 100644
+> --- a/tools/lkl/Makefile
+> +++ b/tools/lkl/Makefile
+> @@ -116,8 +116,11 @@ programs_install: $(progs-y:%=$(OUTPUT)%$(EXESUF))
+>  install: headers_install libraries_install programs_install
+>  
+>  
+> +run-tests:
+> +	./tests/run.py $(tests)
+> +
+>  FORCE: ;
+> -.PHONY: all clean FORCE
+> +.PHONY: all clean FORCE run-tests
+>  .PHONY: headers_install libraries_install programs_install install
+>  .NOTPARALLEL : lib/lkl.o
+>  .SECONDARY:
+> diff --git a/tools/lkl/Targets b/tools/lkl/Targets
+> index 24c985e64638..a9f74c3cc8fb 100644
+> --- a/tools/lkl/Targets
+> +++ b/tools/lkl/Targets
+> @@ -1,3 +1,6 @@
+>  libs-y += lib/liblkl
+>  
+> +progs-y += tests/boot
+> +progs-y += tests/disk
+> +progs-y += tests/net-test
+>  
+> diff --git a/tools/lkl/tests/Build b/tools/lkl/tests/Build
+> new file mode 100644
+> index 000000000000..ace86a3d3438
+> --- /dev/null
+> +++ b/tools/lkl/tests/Build
+> @@ -0,0 +1,3 @@
+> +boot-y += boot.o test.o
+> +disk-y += disk.o cla.o test.o
+> +net-test-y += net-test.o cla.o test.o
+> diff --git a/tools/lkl/tests/boot.c b/tools/lkl/tests/boot.c
+> new file mode 100644
+> index 000000000000..b021e9540147
+> --- /dev/null
+> +++ b/tools/lkl/tests/boot.c
+> @@ -0,0 +1,562 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +#include <stdio.h>
+> +#include <unistd.h>
+> +#include <string.h>
+> +#include <time.h>
+> +#include <stdlib.h>
+> +#include <stdint.h>
+> +#include <lkl.h>
+> +#include <lkl_host.h>
+> +
+> +#include <sys/stat.h>
+> +#include <fcntl.h>
+> +#if defined(__FreeBSD__)
+> +#include <net/if.h>
+> +#include <sys/ioctl.h>
+> +#elif __linux
+> +#include <sys/epoll.h>
+> +#include <sys/ioctl.h>
+> +#elif __MINGW32__
+> +#include <windows.h>
+> +#endif
+> +
+> +#include "test.h"
+> +
+> +#ifndef __MINGW32__
+> +#define sleep_ns 87654321
+> +int lkl_test_nanosleep(void)
+> +{
+> +	struct lkl_timespec ts = {
+> +		.tv_sec = 0,
+> +		.tv_nsec = sleep_ns,
+> +	};
+> +	struct timespec start, stop;
+> +	long delta;
+> +	long ret;
+> +
+> +	clock_gettime(CLOCK_MONOTONIC, &start);
+> +	ret = lkl_sys_nanosleep((struct __lkl__kernel_timespec *)&ts, NULL);
+> +	clock_gettime(CLOCK_MONOTONIC, &stop);
+> +
+> +	delta = 1e9*(stop.tv_sec - start.tv_sec) +
+> +		(stop.tv_nsec - start.tv_nsec);
+> +
+> +	lkl_test_logf("sleep %ld, expected sleep %d\n", delta, sleep_ns);
+> +
+> +	if (ret == 0 && delta > sleep_ns * 0.9)
+> +		return TEST_SUCCESS;
+> +
+> +	return TEST_FAILURE;
+> +}
+> +#endif
+> +
+> +LKL_TEST_CALL(getpid, lkl_sys_getpid, 1)
+> +
+> +void check_latency(long (*f)(void), long *min, long *max, long *avg)
+> +{
+> +	int i;
+> +	unsigned long long start, stop, sum = 0;
+> +	static const int count = 1000;
+> +	long delta;
+> +
+> +	*min = 1000000000;
+> +	*max = -1;
+> +
+> +	for (i = 0; i < count; i++) {
+> +		start = lkl_host_ops.time();
+> +		f();
+> +		stop = lkl_host_ops.time();
+> +		delta = stop - start;
+> +		if (*min > delta)
+> +			*min = delta;
+> +		if (*max < delta)
+> +			*max = delta;
+> +		sum += delta;
+> +	}
+> +	*avg = sum / count;
+> +}
+> +
+> +static long native_getpid(void)
+> +{
+> +#ifdef __MINGW32__
+> +	GetCurrentProcessId();
+> +#else
+> +	getpid();
+> +#endif
+> +	return 0;
+> +}
+> +
+> +int lkl_test_syscall_latency(void)
+> +{
+> +	long min, max, avg;
+> +
+> +	lkl_test_logf("avg/min/max: ");
+> +
+> +	check_latency(lkl_sys_getpid, &min, &max, &avg);
+> +
+> +	lkl_test_logf("lkl:%ld/%ld/%ld ", avg, min, max);
+> +
+> +	check_latency(native_getpid, &min, &max, &avg);
+> +
+> +	lkl_test_logf("native:%ld/%ld/%ld\n", avg, min, max);
+> +
+> +	return TEST_SUCCESS;
+> +}
+> +
+> +#define access_rights 0721
+> +
+> +LKL_TEST_CALL(creat, lkl_sys_creat, 0, "/file", access_rights)
+> +LKL_TEST_CALL(close, lkl_sys_close, 0, 0);
+> +LKL_TEST_CALL(failopen, lkl_sys_open, -LKL_ENOENT, "/file2", 0, 0);
+> +LKL_TEST_CALL(umask, lkl_sys_umask, 022,  0777);
+> +LKL_TEST_CALL(umask2, lkl_sys_umask, 0777, 0);
+> +LKL_TEST_CALL(open, lkl_sys_open, 0, "/file", LKL_O_RDWR, 0);
+> +static const char wrbuf[] = "test";
+> +LKL_TEST_CALL(write, lkl_sys_write, sizeof(wrbuf), 0, wrbuf, sizeof(wrbuf));
+> +LKL_TEST_CALL(lseek_cur, lkl_sys_lseek, sizeof(wrbuf), 0, 0, LKL_SEEK_CUR);
+> +LKL_TEST_CALL(lseek_end, lkl_sys_lseek, sizeof(wrbuf), 0, 0, LKL_SEEK_END);
+> +LKL_TEST_CALL(lseek_set, lkl_sys_lseek, 0, 0, 0, LKL_SEEK_SET);
+> +
+> +int lkl_test_read(void)
+> +{
+> +	char buf[10] = { 0, };
+> +	long ret;
+> +
+> +	ret = lkl_sys_read(0, buf, sizeof(buf));
+> +
+> +	lkl_test_logf("lkl_sys_read=%ld buf=%s\n", ret, buf);
+> +
+> +	if (ret == sizeof(wrbuf) && !strcmp(wrbuf, buf))
+> +		return TEST_SUCCESS;
+> +
+> +	return TEST_FAILURE;
+> +}
 
-Signed-off-by: liuyang <liuyang34@xiaomi.com>
----
- fs/overlayfs/copy_up.c   |  2 +-
- fs/overlayfs/dir.c       | 10 +++---
- fs/overlayfs/export.c    | 12 +++----
- fs/overlayfs/inode.c     |  6 ++--
- fs/overlayfs/namei.c     | 26 +++++++--------
- fs/overlayfs/overlayfs.h |  6 ++++
- fs/overlayfs/readdir.c   |  8 ++---
- fs/overlayfs/super.c     | 85 ++++++++++++++++++++++++------------------------
- fs/overlayfs/util.c      | 14 ++++----
- 9 files changed, 88 insertions(+), 81 deletions(-)
+These tests make me think that LKL could be very useful for KUnit and
+testing syscalls.
 
-diff --git a/fs/overlayfs/copy_up.c b/fs/overlayfs/copy_up.c
-index 6220642..b168c65 100644
---- a/fs/overlayfs/copy_up.c
-+++ b/fs/overlayfs/copy_up.c
-@@ -24,7 +24,7 @@
- 
- static int ovl_ccup_set(const char *buf, const struct kernel_param *param)
- {
--	pr_warn("overlayfs: \"check_copy_up\" module option is obsolete\n");
-+	pr_warn("\"check_copy_up\" module option is obsolete\n");
- 	return 0;
- }
- 
-diff --git a/fs/overlayfs/dir.c b/fs/overlayfs/dir.c
-index 29abdb1..8e57d53 100644
---- a/fs/overlayfs/dir.c
-+++ b/fs/overlayfs/dir.c
-@@ -35,7 +35,7 @@ int ovl_cleanup(struct inode *wdir, struct dentry *wdentry)
- 	dput(wdentry);
- 
- 	if (err) {
--		pr_err("overlayfs: cleanup of '%pd2' failed (%i)\n",
-+		pr_err("cleanup of '%pd2' failed (%i)\n",
- 		       wdentry, err);
- 	}
- 
-@@ -53,7 +53,7 @@ static struct dentry *ovl_lookup_temp(struct dentry *workdir)
- 
- 	temp = lookup_one_len(name, workdir, strlen(name));
- 	if (!IS_ERR(temp) && temp->d_inode) {
--		pr_err("overlayfs: workdir/%s already exists\n", name);
-+		pr_err("workdir/%s already exists\n", name);
- 		dput(temp);
- 		temp = ERR_PTR(-EIO);
- 	}
-@@ -134,7 +134,7 @@ static int ovl_mkdir_real(struct inode *dir, struct dentry **newdentry,
- 	d = lookup_one_len(dentry->d_name.name, dentry->d_parent,
- 			   dentry->d_name.len);
- 	if (IS_ERR(d)) {
--		pr_warn("overlayfs: failed lookup after mkdir (%pd2, err=%i).\n",
-+		pr_warn("failed lookup after mkdir (%pd2, err=%i).\n",
- 			dentry, err);
- 		return PTR_ERR(d);
- 	}
-@@ -267,7 +267,7 @@ static int ovl_instantiate(struct dentry *dentry, struct inode *inode,
- 
- 	d_instantiate(dentry, inode);
- 	if (inode != oip.newinode) {
--		pr_warn_ratelimited("overlayfs: newly created inode found in cache (%pd2)\n",
-+		pr_warn_ratelimited("newly created inode found in cache (%pd2)\n",
- 				    dentry);
- 	}
- 
-@@ -1009,7 +1009,7 @@ static int ovl_set_redirect(struct dentry *dentry, bool samedir)
- 		spin_unlock(&dentry->d_lock);
- 	} else {
- 		kfree(redirect);
--		pr_warn_ratelimited("overlayfs: failed to set redirect (%i)\n",
-+		pr_warn_ratelimited("failed to set redirect (%i)\n",
- 				    err);
- 		/* Fall back to userspace copy-up */
- 		err = -EXDEV;
-diff --git a/fs/overlayfs/export.c b/fs/overlayfs/export.c
-index 70e5558..2fe7242 100644
---- a/fs/overlayfs/export.c
-+++ b/fs/overlayfs/export.c
-@@ -30,7 +30,7 @@ static int ovl_encode_maybe_copy_up(struct dentry *dentry)
- 	}
- 
- 	if (err) {
--		pr_warn_ratelimited("overlayfs: failed to copy up on encode (%pd2, err=%i)\n",
-+		pr_warn_ratelimited("failed to copy up on encode (%pd2, err=%i)\n",
- 				    dentry, err);
- 	}
- 
-@@ -244,7 +244,7 @@ static int ovl_dentry_to_fid(struct dentry *dentry, u32 *fid, int buflen)
- 	return err;
- 
- fail:
--	pr_warn_ratelimited("overlayfs: failed to encode file handle (%pd2, err=%i, buflen=%d, len=%d, type=%d)\n",
-+	pr_warn_ratelimited("failed to encode file handle (%pd2, err=%i, buflen=%d, len=%d, type=%d)\n",
- 			    dentry, err, buflen, fh ? (int)fh->fb.len : 0,
- 			    fh ? fh->fb.type : 0);
- 	goto out;
-@@ -406,7 +406,7 @@ static struct dentry *ovl_lookup_real_one(struct dentry *connected,
- 	return this;
- 
- fail:
--	pr_warn_ratelimited("overlayfs: failed to lookup one by real (%pd2, layer=%d, connected=%pd2, err=%i)\n",
-+	pr_warn_ratelimited("failed to lookup one by real (%pd2, layer=%d, connected=%pd2, err=%i)\n",
- 			    real, layer->idx, connected, err);
- 	this = ERR_PTR(err);
- 	goto out;
-@@ -631,7 +631,7 @@ static struct dentry *ovl_lookup_real(struct super_block *sb,
- 	return connected;
- 
- fail:
--	pr_warn_ratelimited("overlayfs: failed to lookup by real (%pd2, layer=%d, connected=%pd2, err=%i)\n",
-+	pr_warn_ratelimited("failed to lookup by real (%pd2, layer=%d, connected=%pd2, err=%i)\n",
- 			    real, layer->idx, connected, err);
- 	dput(connected);
- 	return ERR_PTR(err);
-@@ -822,7 +822,7 @@ static struct dentry *ovl_fh_to_dentry(struct super_block *sb, struct fid *fid,
- 	return dentry;
- 
- out_err:
--	pr_warn_ratelimited("overlayfs: failed to decode file handle (len=%d, type=%d, flags=%x, err=%i)\n",
-+	pr_warn_ratelimited("failed to decode file handle (len=%d, type=%d, flags=%x, err=%i)\n",
- 			    fh_len, fh_type, flags, err);
- 	dentry = ERR_PTR(err);
- 	goto out;
-@@ -831,7 +831,7 @@ static struct dentry *ovl_fh_to_dentry(struct super_block *sb, struct fid *fid,
- static struct dentry *ovl_fh_to_parent(struct super_block *sb, struct fid *fid,
- 				       int fh_len, int fh_type)
- {
--	pr_warn_ratelimited("overlayfs: connectable file handles not supported; use 'no_subtree_check' exportfs option.\n");
-+	pr_warn_ratelimited("connectable file handles not supported; use 'no_subtree_check' exportfs option.\n");
- 	return ERR_PTR(-EACCES);
- }
- 
-diff --git a/fs/overlayfs/inode.c b/fs/overlayfs/inode.c
-index b045cf1..bfebef7 100644
---- a/fs/overlayfs/inode.c
-+++ b/fs/overlayfs/inode.c
-@@ -100,7 +100,7 @@ static int ovl_map_dev_ino(struct dentry *dentry, struct kstat *stat,
- 		 * persistent for a given layer configuration.
- 		 */
- 		if (stat->ino >> shift) {
--			pr_warn_ratelimited("overlayfs: inode number too big (%pd2, ino=%llu, xinobits=%d)\n",
-+			pr_warn_ratelimited("inode number too big (%pd2, ino=%llu, xinobits=%d)\n",
- 					    dentry, stat->ino, xinobits);
- 		} else {
- 			if (lower_layer)
-@@ -698,7 +698,7 @@ unsigned int ovl_get_nlink(struct dentry *lowerdentry,
- 	return nlink;
- 
- fail:
--	pr_warn_ratelimited("overlayfs: failed to get index nlink (%pd2, err=%i)\n",
-+	pr_warn_ratelimited("failed to get index nlink (%pd2, err=%i)\n",
- 			    upperdentry, err);
- 	return fallback;
- }
-@@ -969,7 +969,7 @@ struct inode *ovl_get_inode(struct super_block *sb,
- 	return inode;
- 
- out_err:
--	pr_warn_ratelimited("overlayfs: failed to get inode (%i)\n", err);
-+	pr_warn_ratelimited("failed to get inode (%i)\n", err);
- 	inode = ERR_PTR(err);
- 	goto out;
- }
-diff --git a/fs/overlayfs/namei.c b/fs/overlayfs/namei.c
-index 76ff663..205163f 100644
---- a/fs/overlayfs/namei.c
-+++ b/fs/overlayfs/namei.c
-@@ -141,10 +141,10 @@ static struct ovl_fh *ovl_get_fh(struct dentry *dentry, const char *name)
- 	return NULL;
- 
- fail:
--	pr_warn_ratelimited("overlayfs: failed to get origin (%i)\n", res);
-+	pr_warn_ratelimited("failed to get origin (%i)\n", res);
- 	goto out;
- invalid:
--	pr_warn_ratelimited("overlayfs: invalid origin (%*phN)\n", res, fh);
-+	pr_warn_ratelimited("invalid origin (%*phN)\n", res, fh);
- 	goto out;
- }
- 
-@@ -360,7 +360,7 @@ int ovl_check_origin_fh(struct ovl_fs *ofs, struct ovl_fh *fh, bool connected,
- 	return 0;
- 
- invalid:
--	pr_warn_ratelimited("overlayfs: invalid origin (%pd2, ftype=%x, origin ftype=%x).\n",
-+	pr_warn_ratelimited("invalid origin (%pd2, ftype=%x, origin ftype=%x).\n",
- 			    upperdentry, d_inode(upperdentry)->i_mode & S_IFMT,
- 			    d_inode(origin)->i_mode & S_IFMT);
- 	dput(origin);
-@@ -449,7 +449,7 @@ int ovl_verify_set_fh(struct dentry *dentry, const char *name,
- 
- fail:
- 	inode = d_inode(real);
--	pr_warn_ratelimited("overlayfs: failed to verify %s (%pd2, ino=%lu, err=%i)\n",
-+	pr_warn_ratelimited("failed to verify %s (%pd2, ino=%lu, err=%i)\n",
- 			    is_upper ? "upper" : "origin", real,
- 			    inode ? inode->i_ino : 0, err);
- 	goto out;
-@@ -475,7 +475,7 @@ struct dentry *ovl_index_upper(struct ovl_fs *ofs, struct dentry *index)
- 		return upper ?: ERR_PTR(-ESTALE);
- 
- 	if (!d_is_dir(upper)) {
--		pr_warn_ratelimited("overlayfs: invalid index upper (%pd2, upper=%pd2).\n",
-+		pr_warn_ratelimited("invalid index upper (%pd2, upper=%pd2).\n",
- 				    index, upper);
- 		dput(upper);
- 		return ERR_PTR(-EIO);
-@@ -589,12 +589,12 @@ int ovl_verify_index(struct ovl_fs *ofs, struct dentry *index)
- 	return err;
- 
- fail:
--	pr_warn_ratelimited("overlayfs: failed to verify index (%pd2, ftype=%x, err=%i)\n",
-+	pr_warn_ratelimited("failed to verify index (%pd2, ftype=%x, err=%i)\n",
- 			    index, d_inode(index)->i_mode & S_IFMT, err);
- 	goto out;
- 
- orphan:
--	pr_warn_ratelimited("overlayfs: orphan index entry (%pd2, ftype=%x, nlink=%u)\n",
-+	pr_warn_ratelimited("orphan index entry (%pd2, ftype=%x, nlink=%u)\n",
- 			    index, d_inode(index)->i_mode & S_IFMT,
- 			    d_inode(index)->i_nlink);
- 	err = -ENOENT;
-@@ -696,7 +696,7 @@ struct dentry *ovl_lookup_index(struct ovl_fs *ofs, struct dentry *upper,
- 			index = NULL;
- 			goto out;
- 		}
--		pr_warn_ratelimited("overlayfs: failed inode index lookup (ino=%lu, key=%.*s, err=%i);\n"
-+		pr_warn_ratelimited("failed inode index lookup (ino=%lu, key=%.*s, err=%i);\n"
- 				    "overlayfs: mount with '-o index=off' to disable inodes index.\n",
- 				    d_inode(origin)->i_ino, name.len, name.name,
- 				    err);
-@@ -723,13 +723,13 @@ struct dentry *ovl_lookup_index(struct ovl_fs *ofs, struct dentry *upper,
- 		 * unlinked, which means that finding a lower origin on lookup
- 		 * whose index is a whiteout should be treated as an error.
- 		 */
--		pr_warn_ratelimited("overlayfs: bad index found (index=%pd2, ftype=%x, origin ftype=%x).\n",
-+		pr_warn_ratelimited("bad index found (index=%pd2, ftype=%x, origin ftype=%x).\n",
- 				    index, d_inode(index)->i_mode & S_IFMT,
- 				    d_inode(origin)->i_mode & S_IFMT);
- 		goto fail;
- 	} else if (is_dir && verify) {
- 		if (!upper) {
--			pr_warn_ratelimited("overlayfs: suspected uncovered redirected dir found (origin=%pd2, index=%pd2).\n",
-+			pr_warn_ratelimited("suspected uncovered redirected dir found (origin=%pd2, index=%pd2).\n",
- 					    origin, index);
- 			goto fail;
- 		}
-@@ -738,7 +738,7 @@ struct dentry *ovl_lookup_index(struct ovl_fs *ofs, struct dentry *upper,
- 		err = ovl_verify_upper(index, upper, false);
- 		if (err) {
- 			if (err == -ESTALE) {
--				pr_warn_ratelimited("overlayfs: suspected multiply redirected dir found (upper=%pd2, origin=%pd2, index=%pd2).\n",
-+				pr_warn_ratelimited("suspected multiply redirected dir found (upper=%pd2, origin=%pd2, index=%pd2).\n",
- 						    upper, origin, index);
- 			}
- 			goto fail;
-@@ -967,7 +967,7 @@ struct dentry *ovl_lookup(struct inode *dir, struct dentry *dentry,
- 		 */
- 		err = -EPERM;
- 		if (d.redirect && !ofs->config.redirect_follow) {
--			pr_warn_ratelimited("overlayfs: refusing to follow redirect for (%pd2)\n",
-+			pr_warn_ratelimited("refusing to follow redirect for (%pd2)\n",
- 					    dentry);
- 			goto out_put;
- 		}
-@@ -994,7 +994,7 @@ struct dentry *ovl_lookup(struct inode *dir, struct dentry *dentry,
- 
- 		err = -EPERM;
- 		if (!ofs->config.metacopy) {
--			pr_warn_ratelimited("overlay: refusing to follow metacopy origin for (%pd2)\n",
-+			pr_warn_ratelimited("refusing to follow metacopy origin for (%pd2)\n",
- 					    dentry);
- 			goto out_put;
- 		}
-diff --git a/fs/overlayfs/overlayfs.h b/fs/overlayfs/overlayfs.h
-index f283b1d6..8478977 100644
---- a/fs/overlayfs/overlayfs.h
-+++ b/fs/overlayfs/overlayfs.h
-@@ -4,6 +4,12 @@
-  * Copyright (C) 2011 Novell Inc.
-  */
- 
-+#ifdef pr_fmt
-+#undef pr_fmt
-+#endif
-+
-+#define pr_fmt(fmt) "overlayfs: " fmt
-+
- #include <linux/kernel.h>
- #include <linux/uuid.h>
- #include <linux/fs.h>
-diff --git a/fs/overlayfs/readdir.c b/fs/overlayfs/readdir.c
-index 47a91c9..36d27b5 100644
---- a/fs/overlayfs/readdir.c
-+++ b/fs/overlayfs/readdir.c
-@@ -441,7 +441,7 @@ static u64 ovl_remap_lower_ino(u64 ino, int xinobits, int fsid,
- 			       const char *name, int namelen)
- {
- 	if (ino >> (64 - xinobits)) {
--		pr_warn_ratelimited("overlayfs: d_ino too big (%.*s, ino=%llu, xinobits=%d)\n",
-+		pr_warn_ratelimited("d_ino too big (%.*s, ino=%llu, xinobits=%d)\n",
- 				    namelen, name, ino, xinobits);
- 		return ino;
- 	}
-@@ -518,7 +518,7 @@ static int ovl_cache_update_ino(struct path *path, struct ovl_cache_entry *p)
- 	return err;
- 
- fail:
--	pr_warn_ratelimited("overlayfs: failed to look up (%s) for ino (%i)\n",
-+	pr_warn_ratelimited("failed to look up (%s) for ino (%i)\n",
- 			    p->name, err);
- 	goto out;
- }
-@@ -965,7 +965,7 @@ void ovl_cleanup_whiteouts(struct dentry *upper, struct list_head *list)
- 
- 		dentry = lookup_one_len(p->name, upper, p->len);
- 		if (IS_ERR(dentry)) {
--			pr_err("overlayfs: lookup '%s/%.*s' failed (%i)\n",
-+			pr_err("lookup '%s/%.*s' failed (%i)\n",
- 			       upper->d_name.name, p->len, p->name,
- 			       (int) PTR_ERR(dentry));
- 			continue;
-@@ -1147,6 +1147,6 @@ int ovl_indexdir_cleanup(struct ovl_fs *ofs)
- out:
- 	ovl_cache_free(&list);
- 	if (err)
--		pr_err("overlayfs: failed index dir cleanup (%i)\n", err);
-+		pr_err("failed index dir cleanup (%i)\n", err);
- 	return err;
- }
-diff --git a/fs/overlayfs/super.c b/fs/overlayfs/super.c
-index 7621ff1..cce483a 100644
---- a/fs/overlayfs/super.c
-+++ b/fs/overlayfs/super.c
-@@ -462,7 +462,7 @@ static int ovl_parse_redirect_mode(struct ovl_config *config, const char *mode)
- 		if (ovl_redirect_always_follow)
- 			config->redirect_follow = true;
- 	} else if (strcmp(mode, "nofollow") != 0) {
--		pr_err("overlayfs: bad mount option \"redirect_dir=%s\"\n",
-+		pr_err("bad mount option \"redirect_dir=%s\"\n",
- 		       mode);
- 		return -EINVAL;
- 	}
-@@ -560,14 +560,15 @@ static int ovl_parse_opt(char *opt, struct ovl_config *config)
- 			break;
- 
- 		default:
--			pr_err("overlayfs: unrecognized mount option \"%s\" or missing value\n", p);
-+			pr_err("unrecognized mount option \"%s\" or missing value\n",
-+					p);
- 			return -EINVAL;
- 		}
- 	}
- 
- 	/* Workdir is useless in non-upper mount */
- 	if (!config->upperdir && config->workdir) {
--		pr_info("overlayfs: option \"workdir=%s\" is useless in a non-upper mount, ignore\n",
-+		pr_info("option \"workdir=%s\" is useless in a non-upper mount, ignore\n",
- 			config->workdir);
- 		kfree(config->workdir);
- 		config->workdir = NULL;
-@@ -587,7 +588,7 @@ static int ovl_parse_opt(char *opt, struct ovl_config *config)
- 	/* Resolve metacopy -> redirect_dir dependency */
- 	if (config->metacopy && !config->redirect_dir) {
- 		if (metacopy_opt && redirect_opt) {
--			pr_err("overlayfs: conflicting options: metacopy=on,redirect_dir=%s\n",
-+			pr_err("conflicting options: metacopy=on,redirect_dir=%s\n",
- 			       config->redirect_mode);
- 			return -EINVAL;
- 		}
-@@ -596,7 +597,7 @@ static int ovl_parse_opt(char *opt, struct ovl_config *config)
- 			 * There was an explicit redirect_dir=... that resulted
- 			 * in this conflict.
- 			 */
--			pr_info("overlayfs: disabling metacopy due to redirect_dir=%s\n",
-+			pr_info("disabling metacopy due to redirect_dir=%s\n",
- 				config->redirect_mode);
- 			config->metacopy = false;
- 		} else {
-@@ -692,7 +693,7 @@ static struct dentry *ovl_workdir_create(struct ovl_fs *ofs,
- out_dput:
- 	dput(work);
- out_err:
--	pr_warn("overlayfs: failed to create directory %s/%s (errno: %i); mounting read-only\n",
-+	pr_warn("failed to create directory %s/%s (errno: %i); mounting read-only\n",
- 		ofs->config.workdir, name, -err);
- 	work = NULL;
- 	goto out_unlock;
-@@ -716,21 +717,21 @@ static int ovl_mount_dir_noesc(const char *name, struct path *path)
- 	int err = -EINVAL;
- 
- 	if (!*name) {
--		pr_err("overlayfs: empty lowerdir\n");
-+		pr_err("empty lowerdir\n");
- 		goto out;
- 	}
- 	err = kern_path(name, LOOKUP_FOLLOW, path);
- 	if (err) {
--		pr_err("overlayfs: failed to resolve '%s': %i\n", name, err);
-+		pr_err("failed to resolve '%s': %i\n", name, err);
- 		goto out;
- 	}
- 	err = -EINVAL;
- 	if (ovl_dentry_weird(path->dentry)) {
--		pr_err("overlayfs: filesystem on '%s' not supported\n", name);
-+		pr_err("filesystem on '%s' not supported\n", name);
- 		goto out_put;
- 	}
- 	if (!d_is_dir(path->dentry)) {
--		pr_err("overlayfs: '%s' not a directory\n", name);
-+		pr_err("'%s' not a directory\n", name);
- 		goto out_put;
- 	}
- 	return 0;
-@@ -752,7 +753,7 @@ static int ovl_mount_dir(const char *name, struct path *path)
- 
- 		if (!err)
- 			if (ovl_dentry_remote(path->dentry)) {
--				pr_err("overlayfs: filesystem on '%s' not supported as upperdir\n",
-+				pr_err("filesystem on '%s' not supported as upperdir\n",
- 				       tmp);
- 				path_put_init(path);
- 				err = -EINVAL;
-@@ -769,7 +770,7 @@ static int ovl_check_namelen(struct path *path, struct ovl_fs *ofs,
- 	int err = vfs_statfs(path, &statfs);
- 
- 	if (err)
--		pr_err("overlayfs: statfs failed on '%s'\n", name);
-+		pr_err("statfs failed on '%s'\n", name);
- 	else
- 		ofs->namelen = max(ofs->namelen, statfs.f_namelen);
- 
-@@ -804,7 +805,7 @@ static int ovl_lower_dir(const char *name, struct path *path,
- 	     (ofs->config.index && ofs->config.upperdir)) && !fh_type) {
- 		ofs->config.index = false;
- 		ofs->config.nfs_export = false;
--		pr_warn("overlayfs: fs on '%s' does not support file handles, falling back to index=off,nfs_export=off.\n",
-+		pr_warn("fs on '%s' does not support file handles, falling back to index=off,nfs_export=off.\n",
- 			name);
- 	}
- 
-@@ -996,7 +997,7 @@ static int ovl_setup_trap(struct super_block *sb, struct dentry *dir,
- 	err = PTR_ERR_OR_ZERO(trap);
- 	if (err) {
- 		if (err == -ELOOP)
--			pr_err("overlayfs: conflicting %s path\n", name);
-+			pr_err("conflicting %s path\n", name);
- 		return err;
- 	}
- 
-@@ -1013,11 +1014,11 @@ static int ovl_setup_trap(struct super_block *sb, struct dentry *dir,
- static int ovl_report_in_use(struct ovl_fs *ofs, const char *name)
- {
- 	if (ofs->config.index) {
--		pr_err("overlayfs: %s is in-use as upperdir/workdir of another mount, mount with '-o index=off' to override exclusive upperdir protection.\n",
-+		pr_err("%s is in-use as upperdir/workdir of another mount, mount with '-o index=off' to override exclusive upperdir protection.\n",
- 		       name);
- 		return -EBUSY;
- 	} else {
--		pr_warn("overlayfs: %s is in-use as upperdir/workdir of another mount, accessing files from both mounts will result in undefined behavior.\n",
-+		pr_warn("%s is in-use as upperdir/workdir of another mount, accessing files from both mounts will result in undefined behavior.\n",
- 			name);
- 		return 0;
- 	}
-@@ -1035,7 +1036,7 @@ static int ovl_get_upper(struct super_block *sb, struct ovl_fs *ofs,
- 
- 	/* Upper fs should not be r/o */
- 	if (sb_rdonly(upperpath->mnt->mnt_sb)) {
--		pr_err("overlayfs: upper fs is r/o, try multi-lower layers mount\n");
-+		pr_err("upper fs is r/o, try multi-lower layers mount\n");
- 		err = -EINVAL;
- 		goto out;
- 	}
-@@ -1052,7 +1053,7 @@ static int ovl_get_upper(struct super_block *sb, struct ovl_fs *ofs,
- 	upper_mnt = clone_private_mount(upperpath);
- 	err = PTR_ERR(upper_mnt);
- 	if (IS_ERR(upper_mnt)) {
--		pr_err("overlayfs: failed to clone upperpath\n");
-+		pr_err("failed to clone upperpath\n");
- 		goto out;
- 	}
- 
-@@ -1108,7 +1109,7 @@ static int ovl_make_workdir(struct super_block *sb, struct ovl_fs *ofs,
- 	 * kernel upgrade. So warn instead of erroring out.
- 	 */
- 	if (!err)
--		pr_warn("overlayfs: upper fs needs to support d_type.\n");
-+		pr_warn("upper fs needs to support d_type.\n");
- 
- 	/* Check if upper/work fs supports O_TMPFILE */
- 	temp = ovl_do_tmpfile(ofs->workdir, S_IFREG | 0);
-@@ -1116,7 +1117,7 @@ static int ovl_make_workdir(struct super_block *sb, struct ovl_fs *ofs,
- 	if (ofs->tmpfile)
- 		dput(temp);
- 	else
--		pr_warn("overlayfs: upper fs does not support tmpfile.\n");
-+		pr_warn("upper fs does not support tmpfile.\n");
- 
- 	/*
- 	 * Check if upper/work fs supports trusted.overlay.* xattr
-@@ -1126,7 +1127,7 @@ static int ovl_make_workdir(struct super_block *sb, struct ovl_fs *ofs,
- 		ofs->noxattr = true;
- 		ofs->config.index = false;
- 		ofs->config.metacopy = false;
--		pr_warn("overlayfs: upper fs does not support xattr, falling back to index=off and metacopy=off.\n");
-+		pr_warn("upper fs does not support xattr, falling back to index=off and metacopy=off.\n");
- 		err = 0;
- 	} else {
- 		vfs_removexattr(ofs->workdir, OVL_XATTR_OPAQUE);
-@@ -1136,7 +1137,7 @@ static int ovl_make_workdir(struct super_block *sb, struct ovl_fs *ofs,
- 	fh_type = ovl_can_decode_fh(ofs->workdir->d_sb);
- 	if (ofs->config.index && !fh_type) {
- 		ofs->config.index = false;
--		pr_warn("overlayfs: upper fs does not support file handles, falling back to index=off.\n");
-+		pr_warn("upper fs does not support file handles, falling back to index=off.\n");
- 	}
- 
- 	/* Check if upper fs has 32bit inode numbers */
-@@ -1145,7 +1146,7 @@ static int ovl_make_workdir(struct super_block *sb, struct ovl_fs *ofs,
- 
- 	/* NFS export of r/w mount depends on index */
- 	if (ofs->config.nfs_export && !ofs->config.index) {
--		pr_warn("overlayfs: NFS export requires \"index=on\", falling back to nfs_export=off.\n");
-+		pr_warn("NFS export requires \"index=on\", falling back to nfs_export=off.\n");
- 		ofs->config.nfs_export = false;
- 	}
- out:
-@@ -1165,11 +1166,11 @@ static int ovl_get_workdir(struct super_block *sb, struct ovl_fs *ofs,
- 
- 	err = -EINVAL;
- 	if (upperpath->mnt != workpath.mnt) {
--		pr_err("overlayfs: workdir and upperdir must reside under the same mount\n");
-+		pr_err("workdir and upperdir must reside under the same mount\n");
- 		goto out;
- 	}
- 	if (!ovl_workdir_ok(workpath.dentry, upperpath->dentry)) {
--		pr_err("overlayfs: workdir and upperdir must be separate subtrees\n");
-+		pr_err("workdir and upperdir must be separate subtrees\n");
- 		goto out;
- 	}
- 
-@@ -1210,7 +1211,7 @@ static int ovl_get_indexdir(struct super_block *sb, struct ovl_fs *ofs,
- 	err = ovl_verify_origin(upperpath->dentry, oe->lowerstack[0].dentry,
- 				true);
- 	if (err) {
--		pr_err("overlayfs: failed to verify upper root origin\n");
-+		pr_err("failed to verify upper root origin\n");
- 		goto out;
- 	}
- 
-@@ -1233,18 +1234,18 @@ static int ovl_get_indexdir(struct super_block *sb, struct ovl_fs *ofs,
- 			err = ovl_verify_set_fh(ofs->indexdir, OVL_XATTR_ORIGIN,
- 						upperpath->dentry, true, false);
- 			if (err)
--				pr_err("overlayfs: failed to verify index dir 'origin' xattr\n");
-+				pr_err("failed to verify index dir 'origin' xattr\n");
- 		}
- 		err = ovl_verify_upper(ofs->indexdir, upperpath->dentry, true);
- 		if (err)
--			pr_err("overlayfs: failed to verify index dir 'upper' xattr\n");
-+			pr_err("failed to verify index dir 'upper' xattr\n");
- 
- 		/* Cleanup bad/stale/orphan index entries */
- 		if (!err)
- 			err = ovl_indexdir_cleanup(ofs);
- 	}
- 	if (err || !ofs->indexdir)
--		pr_warn("overlayfs: try deleting index dir or mounting with '-o index=off' to disable inodes index.\n");
-+		pr_warn("try deleting index dir or mounting with '-o index=off' to disable inodes index.\n");
- 
- out:
- 	mnt_drop_write(mnt);
-@@ -1297,7 +1298,7 @@ static int ovl_get_fsid(struct ovl_fs *ofs, const struct path *path)
- 		if (ofs->config.index || ofs->config.nfs_export) {
- 			ofs->config.index = false;
- 			ofs->config.nfs_export = false;
--			pr_warn("overlayfs: %s uuid detected in lower fs '%pd2', falling back to index=off,nfs_export=off.\n",
-+			pr_warn("%s uuid detected in lower fs '%pd2', falling back to index=off,nfs_export=off.\n",
- 				uuid_is_null(&sb->s_uuid) ? "null" :
- 							    "conflicting",
- 				path->dentry);
-@@ -1306,7 +1307,7 @@ static int ovl_get_fsid(struct ovl_fs *ofs, const struct path *path)
- 
- 	err = get_anon_bdev(&dev);
- 	if (err) {
--		pr_err("overlayfs: failed to get anonymous bdev for lowerpath\n");
-+		pr_err("failed to get anonymous bdev for lowerpath\n");
- 		return err;
- 	}
- 
-@@ -1357,7 +1358,7 @@ static int ovl_get_lower_layers(struct super_block *sb, struct ovl_fs *ofs,
- 		mnt = clone_private_mount(&stack[i]);
- 		err = PTR_ERR(mnt);
- 		if (IS_ERR(mnt)) {
--			pr_err("overlayfs: failed to clone lowerpath\n");
-+			pr_err("failed to clone lowerpath\n");
- 			iput(trap);
- 			goto out;
- 		}
-@@ -1401,7 +1402,7 @@ static int ovl_get_lower_layers(struct super_block *sb, struct ovl_fs *ofs,
- 	}
- 
- 	if (ofs->xino_bits) {
--		pr_info("overlayfs: \"xino\" feature enabled using %d upper inode bits.\n",
-+		pr_info("\"xino\" feature enabled using %d upper inode bits.\n",
- 			ofs->xino_bits);
- 	}
- 
-@@ -1428,15 +1429,15 @@ static struct ovl_entry *ovl_get_lowerstack(struct super_block *sb,
- 	err = -EINVAL;
- 	stacklen = ovl_split_lowerdirs(lowertmp);
- 	if (stacklen > OVL_MAX_STACK) {
--		pr_err("overlayfs: too many lower directories, limit is %d\n",
-+		pr_err("too many lower directories, limit is %d\n",
- 		       OVL_MAX_STACK);
- 		goto out_err;
- 	} else if (!ofs->config.upperdir && stacklen == 1) {
--		pr_err("overlayfs: at least 2 lowerdir are needed while upperdir nonexistent\n");
-+		pr_err("at least 2 lowerdir are needed while upperdir nonexistent\n");
- 		goto out_err;
- 	} else if (!ofs->config.upperdir && ofs->config.nfs_export &&
- 		   ofs->config.redirect_follow) {
--		pr_warn("overlayfs: NFS export requires \"redirect_dir=nofollow\" on non-upper mount, falling back to nfs_export=off.\n");
-+		pr_warn("NFS export requires \"redirect_dir=nofollow\" on non-upper mount, falling back to nfs_export=off.\n");
- 		ofs->config.nfs_export = false;
- 	}
- 
-@@ -1459,7 +1460,7 @@ static struct ovl_entry *ovl_get_lowerstack(struct super_block *sb,
- 	err = -EINVAL;
- 	sb->s_stack_depth++;
- 	if (sb->s_stack_depth > FILESYSTEM_MAX_STACK_DEPTH) {
--		pr_err("overlayfs: maximum fs stacking depth exceeded\n");
-+		pr_err("maximum fs stacking depth exceeded\n");
- 		goto out_err;
- 	}
- 
-@@ -1515,7 +1516,7 @@ static int ovl_check_layer(struct super_block *sb, struct ovl_fs *ofs,
- 	while (!err && parent != next) {
- 		if (ovl_lookup_trap_inode(sb, parent)) {
- 			err = -ELOOP;
--			pr_err("overlayfs: overlapping %s path\n", name);
-+			pr_err("overlapping %s path\n", name);
- 		} else if (ovl_is_inuse(parent)) {
- 			err = ovl_report_in_use(ofs, name);
- 		}
-@@ -1595,7 +1596,7 @@ static int ovl_fill_super(struct super_block *sb, void *data, int silent)
- 	err = -EINVAL;
- 	if (!ofs->config.lowerdir) {
- 		if (!silent)
--			pr_err("overlayfs: missing 'lowerdir'\n");
-+			pr_err("missing 'lowerdir'\n");
- 		goto out_err;
- 	}
- 
-@@ -1610,7 +1611,7 @@ static int ovl_fill_super(struct super_block *sb, void *data, int silent)
- 
- 	if (ofs->config.upperdir) {
- 		if (!ofs->config.workdir) {
--			pr_err("overlayfs: missing 'workdir'\n");
-+			pr_err("missing 'workdir'\n");
- 			goto out_err;
- 		}
- 
-@@ -1660,13 +1661,13 @@ static int ovl_fill_super(struct super_block *sb, void *data, int silent)
- 	if (!ofs->indexdir) {
- 		ofs->config.index = false;
- 		if (ofs->upper_mnt && ofs->config.nfs_export) {
--			pr_warn("overlayfs: NFS export requires an index dir, falling back to nfs_export=off.\n");
-+			pr_warn("NFS export requires an index dir, falling back to nfs_export=off.\n");
- 			ofs->config.nfs_export = false;
- 		}
- 	}
- 
- 	if (ofs->config.metacopy && ofs->config.nfs_export) {
--		pr_warn("overlayfs: NFS export is not supported with metadata only copy up, falling back to nfs_export=off.\n");
-+		pr_warn("NFS export is not supported with metadata only copy up, falling back to nfs_export=off.\n");
- 		ofs->config.nfs_export = false;
- 	}
- 
-diff --git a/fs/overlayfs/util.c b/fs/overlayfs/util.c
-index f5678a3..cb4a5ea 100644
---- a/fs/overlayfs/util.c
-+++ b/fs/overlayfs/util.c
-@@ -576,7 +576,7 @@ int ovl_check_setxattr(struct dentry *dentry, struct dentry *upperdentry,
- 	err = ovl_do_setxattr(upperdentry, name, value, size, 0);
- 
- 	if (err == -EOPNOTSUPP) {
--		pr_warn("overlayfs: cannot set %s xattr on upper\n", name);
-+		pr_warn("cannot set %s xattr on upper\n", name);
- 		ofs->noxattr = true;
- 		return xerr;
- 	}
-@@ -700,7 +700,7 @@ static void ovl_cleanup_index(struct dentry *dentry)
- 
- 	inode = d_inode(upperdentry);
- 	if (!S_ISDIR(inode->i_mode) && inode->i_nlink != 1) {
--		pr_warn_ratelimited("overlayfs: cleanup linked index (%pd2, ino=%lu, nlink=%u)\n",
-+		pr_warn_ratelimited("cleanup linked index (%pd2, ino=%lu, nlink=%u)\n",
- 				    upperdentry, inode->i_ino, inode->i_nlink);
- 		/*
- 		 * We either have a bug with persistent union nlink or a lower
-@@ -739,7 +739,7 @@ static void ovl_cleanup_index(struct dentry *dentry)
- 	return;
- 
- fail:
--	pr_err("overlayfs: cleanup index of '%pd2' failed (%i)\n", dentry, err);
-+	pr_err("cleanup index of '%pd2' failed (%i)\n", dentry, err);
- 	goto out;
- }
- 
-@@ -830,7 +830,7 @@ int ovl_lock_rename_workdir(struct dentry *workdir, struct dentry *upperdir)
- err_unlock:
- 	unlock_rename(workdir, upperdir);
- err:
--	pr_err("overlayfs: failed to lock workdir+upperdir\n");
-+	pr_err("failed to lock workdir+upperdir\n");
- 	return -EIO;
- }
- 
-@@ -852,7 +852,7 @@ int ovl_check_metacopy_xattr(struct dentry *dentry)
- 
- 	return 1;
- out:
--	pr_warn_ratelimited("overlayfs: failed to get metacopy (%i)\n", res);
-+	pr_warn_ratelimited("failed to get metacopy (%i)\n", res);
- 	return res;
- }
- 
-@@ -899,7 +899,7 @@ ssize_t ovl_getxattr(struct dentry *dentry, char *name, char **value,
- 	return res;
- 
- fail:
--	pr_warn_ratelimited("overlayfs: failed to get xattr %s: err=%zi)\n",
-+	pr_warn_ratelimited("failed to get xattr %s: err=%zi)\n",
- 			    name, res);
- 	kfree(buf);
- 	return res;
-@@ -931,7 +931,7 @@ char *ovl_get_redirect_xattr(struct dentry *dentry, int padding)
- 
- 	return buf;
- invalid:
--	pr_warn_ratelimited("overlayfs: invalid redirect (%s)\n", buf);
-+	pr_warn_ratelimited("invalid redirect (%s)\n", buf);
- 	res = -EINVAL;
- 	kfree(buf);
- 	return ERR_PTR(res);
--- 
-2.7.4
+Luis and I had been talking about writing KUnit tests for syscalls to
+validate that syscalls conform to the expected behavior; however,
+calling syscalls from the kernel obviously has issues.
 
+On the other hand, testing syscalls from a userspace on a booted kernel
+is something that we do and something that needs to be done; however,
+this too has some issues. Writing and running tests in userspace on a
+booted kernel is not as easy as being able to write and run tests in the
+kernel. Also, even though some syscall end-to-end tests are necessary,
+not all syscall tests must be end-to-end tests, especially those which
+are only trying to exercise the entire syscall contract.
+
+I think it looks like LKL might be able to help us square that circle.
+
+Hajime (and other LKL people):
+
+What is the current status of this patchset? I have not seen any
+activity for a couple months.
+
+Luis,
+
+Does this kind of match what you were thinking with the syscall testing?
+I think this looks pretty close. You should be able to fully test the
+contract here using KUnit. Is there anyone else you think would be
+interested in this?
+
+In any case, I am excited about this. Please keep me posted in the
+future!
+
+Cheers
+
+> +int lkl_test_fstat(void)
+> +{
+> +	struct lkl_stat stat;
+> +	long ret;
+> +
+> +	ret = lkl_sys_fstat(0, &stat);
+> +
+> +	lkl_test_logf("lkl_sys_fstat=%ld mode=%o size=%zd\n", ret, stat.st_mode,
+> +		      stat.st_size);
+> +
+> +	if (ret == 0 && stat.st_size == sizeof(wrbuf) &&
+> +	    stat.st_mode == (access_rights | LKL_S_IFREG))
+> +		return TEST_SUCCESS;
+> +
+> +	return TEST_FAILURE;
+> +}
+> +
+> +LKL_TEST_CALL(mkdir, lkl_sys_mkdir, 0, "/mnt", access_rights)
+> +
+> +int lkl_test_stat(void)
+> +{
+> +	struct lkl_stat stat;
+> +	long ret;
+> +
+> +	ret = lkl_sys_stat("/mnt", &stat);
+> +
+> +	lkl_test_logf("lkl_sys_stat(\"/mnt\")=%ld mode=%o\n", ret,
+> +		      stat.st_mode);
+> +
+> +	if (ret == 0 && stat.st_mode == (access_rights | LKL_S_IFDIR))
+> +		return TEST_SUCCESS;
+> +
+> +	return TEST_FAILURE;
+> +}
+> +
+> +static int lkl_test_pipe2(void)
+> +{
+> +	int pipe_fds[2];
+> +	int READ_IDX = 0, WRITE_IDX = 1;
+> +	static const char msg[] = "Hello world!";
+> +	char str[20];
+> +	int msg_len_bytes = strlen(msg) + 1;
+> +	int cmp_res;
+> +	long ret;
+> +
+> +	ret = lkl_sys_pipe2(pipe_fds, LKL_O_NONBLOCK);
+> +	if (ret) {
+> +		lkl_test_logf("pipe2: %s\n", lkl_strerror(ret));
+> +		return TEST_FAILURE;
+> +	}
+> +
+> +	ret = lkl_sys_write(pipe_fds[WRITE_IDX], msg, msg_len_bytes);
+> +	if (ret != msg_len_bytes) {
+> +		if (ret < 0)
+> +			lkl_test_logf("write error: %s\n", lkl_strerror(ret));
+> +		else
+> +			lkl_test_logf("short write: %ld\n", ret);
+> +		return TEST_FAILURE;
+> +	}
+> +
+> +	ret = lkl_sys_read(pipe_fds[READ_IDX], str, msg_len_bytes);
+> +	if (ret != msg_len_bytes) {
+> +		if (ret < 0)
+> +			lkl_test_logf("read error: %s\n", lkl_strerror(ret));
+> +		else
+> +			lkl_test_logf("short read: %ld\n", ret);
+> +		return TEST_FAILURE;
+> +	}
+> +
+> +	cmp_res = memcmp(msg, str, msg_len_bytes);
+> +	if (cmp_res) {
+> +		lkl_test_logf("memcmp failed: %d\n", cmp_res);
+> +		return TEST_FAILURE;
+> +	}
+> +
+> +	ret = lkl_sys_close(pipe_fds[0]);
+> +	if (ret) {
+> +		lkl_test_logf("close error: %s\n", lkl_strerror(ret));
+> +		return TEST_FAILURE;
+> +	}
+> +
+> +	ret = lkl_sys_close(pipe_fds[1]);
+> +	if (ret) {
+> +		lkl_test_logf("close error: %s\n", lkl_strerror(ret));
+> +		return TEST_FAILURE;
+> +	}
+> +
+> +	return TEST_SUCCESS;
+> +}
+> +
+> +static int lkl_test_epoll(void)
+> +{
+> +	int epoll_fd, pipe_fds[2];
+> +	int READ_IDX = 0, WRITE_IDX = 1;
+> +	struct lkl_epoll_event wait_on, read_result;
+> +	static const char msg[] = "Hello world!";
+> +	long ret;
+> +
+> +	memset(&wait_on, 0, sizeof(wait_on));
+> +	memset(&read_result, 0, sizeof(read_result));
+> +
+> +	ret = lkl_sys_pipe2(pipe_fds, LKL_O_NONBLOCK);
+> +	if (ret) {
+> +		lkl_test_logf("pipe2 error: %s\n", lkl_strerror(ret));
+> +		return TEST_FAILURE;
+> +	}
+> +
+> +	epoll_fd = lkl_sys_epoll_create(1);
+> +	if (epoll_fd < 0) {
+> +		lkl_test_logf("epoll_create error: %s\n", lkl_strerror(ret));
+> +		return TEST_FAILURE;
+> +	}
+> +
+> +	wait_on.events = LKL_POLLIN | LKL_POLLOUT;
+> +	wait_on.data = pipe_fds[READ_IDX];
+> +
+> +	ret = lkl_sys_epoll_ctl(epoll_fd, LKL_EPOLL_CTL_ADD, pipe_fds[READ_IDX],
+> +				&wait_on);
+> +	if (ret < 0) {
+> +		lkl_test_logf("epoll_ctl error: %s\n", lkl_strerror(ret));
+> +		return TEST_FAILURE;
+> +	}
+> +
+> +	/* Shouldn't be ready before we have written something */
+> +	ret = lkl_sys_epoll_wait(epoll_fd, &read_result, 1, 0);
+> +	if (ret != 0) {
+> +		if (ret < 0)
+> +			lkl_test_logf("epoll_wait error: %s\n",
+> +				      lkl_strerror(ret));
+> +		else
+> +			lkl_test_logf("epoll_wait: bad event: 0x%lx\n", ret);
+> +		return TEST_FAILURE;
+> +	}
+> +
+> +	ret = lkl_sys_write(pipe_fds[WRITE_IDX], msg, strlen(msg) + 1);
+> +	if (ret < 0) {
+> +		lkl_test_logf("write error: %s\n", lkl_strerror(ret));
+> +		return TEST_FAILURE;
+> +	}
+> +
+> +	/* We expect exactly 1 fd to be ready immediately */
+> +	ret = lkl_sys_epoll_wait(epoll_fd, &read_result, 1, 0);
+> +	if (ret != 1) {
+> +		if (ret < 0)
+> +			lkl_test_logf("epoll_wait error: %s\n",
+> +				      lkl_strerror(ret));
+> +		else
+> +			lkl_test_logf("epoll_wait: bad ev no %ld\n", ret);
+> +		return TEST_FAILURE;
+> +	}
+> +
+> +	/* Already tested reading from pipe2 so no need to do it
+> +	 * here
+> +	 */
+> +
+> +	return TEST_SUCCESS;
+> +}
+> +
+> +LKL_TEST_CALL(chdir_proc, lkl_sys_chdir, 0, "proc");
+> +
+> +static int dir_fd;
+> +
+> +static int lkl_test_open_cwd(void)
+> +{
+> +	dir_fd = lkl_sys_open(".", LKL_O_RDONLY | LKL_O_DIRECTORY, 0);
+> +	if (dir_fd < 0) {
+> +		lkl_test_logf("failed to open current directory: %s\n",
+> +			      lkl_strerror(dir_fd));
+> +		return TEST_FAILURE;
+> +	}
+> +
+> +	return TEST_SUCCESS;
+> +}
+> +
+> +/* column where to insert a line break for the list file tests below. */
+> +#define COL_LINE_BREAK 70
+> +
+> +static int lkl_test_getdents64(void)
+> +{
+> +	long ret;
+> +	char buf[1024], *pos;
+> +	struct lkl_linux_dirent64 *de;
+> +	int wr;
+> +
+> +	de = (struct lkl_linux_dirent64 *)buf;
+> +	ret = lkl_sys_getdents64(dir_fd, de, sizeof(buf));
+> +
+> +	wr = lkl_test_logf("%d ", dir_fd);
+> +
+> +	if (ret < 0)
+> +		return TEST_FAILURE;
+> +
+> +	for (pos = buf; pos - buf < ret; pos += de->d_reclen) {
+> +		de = (struct lkl_linux_dirent64 *)pos;
+> +
+> +		wr += lkl_test_logf("%s ", de->d_name);
+> +		if (wr >= COL_LINE_BREAK) {
+> +			lkl_test_logf("\n");
+> +			wr = 0;
+> +		}
+> +	}
+> +
+> +	return TEST_SUCCESS;
+> +}
+> +
+> +LKL_TEST_CALL(close_dir_fd, lkl_sys_close, 0, dir_fd);
+> +LKL_TEST_CALL(chdir_root, lkl_sys_chdir, 0, "/");
+> +LKL_TEST_CALL(mount_fs_proc, lkl_mount_fs, 0, "proc");
+> +LKL_TEST_CALL(umount_fs_proc, lkl_umount_timeout, 0, "proc", 0, 1000);
+> +LKL_TEST_CALL(lo_ifup, lkl_if_up, 0, 1);
+> +
+> +static int lkl_test_mutex(void)
+> +{
+> +	long ret = TEST_SUCCESS;
+> +	/*
+> +	 * Can't do much to verify that this works, so we'll just let Valgrind
+> +	 * warn us on CI if we've made bad memory accesses.
+> +	 */
+> +
+> +	struct lkl_mutex *mutex;
+> +
+> +	mutex = lkl_host_ops.mutex_alloc(0);
+> +	lkl_host_ops.mutex_lock(mutex);
+> +	lkl_host_ops.mutex_unlock(mutex);
+> +	lkl_host_ops.mutex_free(mutex);
+> +
+> +	mutex = lkl_host_ops.mutex_alloc(1);
+> +	lkl_host_ops.mutex_lock(mutex);
+> +	lkl_host_ops.mutex_lock(mutex);
+> +	lkl_host_ops.mutex_unlock(mutex);
+> +	lkl_host_ops.mutex_unlock(mutex);
+> +	lkl_host_ops.mutex_free(mutex);
+> +
+> +	return ret;
+> +}
+> +
+> +static int lkl_test_semaphore(void)
+> +{
+> +	long ret = TEST_SUCCESS;
+> +	/*
+> +	 * Can't do much to verify that this works, so we'll just let Valgrind
+> +	 * warn us on CI if we've made bad memory accesses.
+> +	 */
+> +
+> +	struct lkl_sem *sem = lkl_host_ops.sem_alloc(1);
+> +
+> +	lkl_host_ops.sem_down(sem);
+> +	lkl_host_ops.sem_up(sem);
+> +	lkl_host_ops.sem_free(sem);
+> +
+> +	return ret;
+> +}
+> +
+> +static int lkl_test_gettid(void)
+> +{
+> +	long tid = lkl_host_ops.gettid();
+> +
+> +	lkl_test_logf("%ld", tid);
+> +
+> +	/* As far as I know, thread IDs are non-zero on all reasonable
+> +	 * systems.
+> +	 */
+> +	if (tid)
+> +		return TEST_SUCCESS;
+> +	else
+> +		return TEST_FAILURE;
+> +}
+> +
+> +static void test_thread(void *data)
+> +{
+> +	int *pipe_fds = (int *) data;
+> +	char tmp[LKL_PIPE_BUF+1];
+> +	int ret;
+> +
+> +	ret = lkl_sys_read(pipe_fds[0], tmp, sizeof(tmp));
+> +	if (ret < 0)
+> +		lkl_test_logf("%s: %s\n", __func__, lkl_strerror(ret));
+> +}
+> +
+> +static int lkl_test_syscall_thread(void)
+> +{
+> +	int pipe_fds[2];
+> +	char tmp[LKL_PIPE_BUF+1];
+> +	long ret;
+> +	lkl_thread_t tid;
+> +
+> +	ret = lkl_sys_pipe2(pipe_fds, 0);
+> +	if (ret) {
+> +		lkl_test_logf("pipe2: %s\n", lkl_strerror(ret));
+> +		return TEST_FAILURE;
+> +	}
+> +
+> +	ret = lkl_sys_fcntl(pipe_fds[0], LKL_F_SETPIPE_SZ, 1);
+> +	if (ret < 0) {
+> +		lkl_test_logf("fcntl setpipe_sz: %s\n", lkl_strerror(ret));
+> +		return TEST_FAILURE;
+> +	}
+> +
+> +	tid = lkl_host_ops.thread_create(test_thread, pipe_fds);
+> +	if (!tid) {
+> +		lkl_test_logf("failed to create thread\n");
+> +		return TEST_FAILURE;
+> +	}
+> +
+> +	ret = lkl_sys_write(pipe_fds[1], tmp, sizeof(tmp));
+> +	if (ret != sizeof(tmp)) {
+> +		if (ret < 0)
+> +			lkl_test_logf("write error: %s\n", lkl_strerror(ret));
+> +		else
+> +			lkl_test_logf("short write: %ld\n", ret);
+> +		return TEST_FAILURE;
+> +	}
+> +
+> +	ret = lkl_host_ops.thread_join(tid);
+> +	if (ret) {
+> +		lkl_test_logf("failed to join thread\n");
+> +		return TEST_FAILURE;
+> +	}
+> +
+> +	return TEST_SUCCESS;
+> +}
+> +
+> +#ifndef __MINGW32__
+> +static void thread_get_pid(void *unused)
+> +{
+> +	lkl_sys_getpid();
+> +}
+> +
+> +static int lkl_test_many_syscall_threads(void)
+> +{
+> +	lkl_thread_t tid;
+> +	int count = 65, ret;
+> +
+> +	while (--count > 0) {
+> +		tid = lkl_host_ops.thread_create(thread_get_pid, NULL);
+> +		if (!tid) {
+> +			lkl_test_logf("failed to create thread\n");
+> +			return TEST_FAILURE;
+> +		}
+> +
+> +		ret = lkl_host_ops.thread_join(tid);
+> +		if (ret) {
+> +			lkl_test_logf("failed to join thread\n");
+> +			return TEST_FAILURE;
+> +		}
+> +	}
+> +
+> +	return TEST_SUCCESS;
+> +}
+> +#endif
+> +
+> +static void thread_quit_immediately(void *unused)
+> +{
+> +}
+> +
+> +static int lkl_test_join(void)
+> +{
+> +	lkl_thread_t tid = lkl_host_ops.thread_create(thread_quit_immediately,
+> +						      NULL);
+> +	int ret = lkl_host_ops.thread_join(tid);
+> +
+> +	if (ret == 0) {
+> +		lkl_test_logf("joined %ld\n", tid);
+> +		return TEST_SUCCESS;
+> +	}
+> +
+> +	lkl_test_logf("failed joining %ld\n", tid);
+> +	return TEST_FAILURE;
+> +}
+> +
+> +LKL_TEST_CALL(start_kernel, lkl_start_kernel, 0, &lkl_host_ops,
+> +	     "mem=16M loglevel=8");
+> +LKL_TEST_CALL(stop_kernel, lkl_sys_halt, 0);
+> +
+> +struct lkl_test tests[] = {
+> +	LKL_TEST(mutex),
+> +	LKL_TEST(semaphore),
+> +	LKL_TEST(join),
+> +	LKL_TEST(start_kernel),
+> +	LKL_TEST(getpid),
+> +	LKL_TEST(syscall_latency),
+> +	LKL_TEST(umask),
+> +	LKL_TEST(umask2),
+> +	LKL_TEST(creat),
+> +	LKL_TEST(close),
+> +	LKL_TEST(failopen),
+> +	LKL_TEST(open),
+> +	LKL_TEST(write),
+> +	LKL_TEST(lseek_cur),
+> +	LKL_TEST(lseek_end),
+> +	LKL_TEST(lseek_set),
+> +	LKL_TEST(read),
+> +	LKL_TEST(fstat),
+> +	LKL_TEST(mkdir),
+> +	LKL_TEST(stat),
+> +#ifndef __MINGW32__
+> +	LKL_TEST(nanosleep),
+> +#endif
+> +	LKL_TEST(pipe2),
+> +	LKL_TEST(epoll),
+> +	LKL_TEST(mount_fs_proc),
+> +	LKL_TEST(chdir_proc),
+> +	LKL_TEST(open_cwd),
+> +	LKL_TEST(getdents64),
+> +	LKL_TEST(close_dir_fd),
+> +	LKL_TEST(chdir_root),
+> +	LKL_TEST(umount_fs_proc),
+> +	LKL_TEST(lo_ifup),
+> +	LKL_TEST(gettid),
+> +	LKL_TEST(syscall_thread),
+> +	/*
+> +	 * Wine has an issue where the FlsCallback is not called when
+> +	 * the thread terminates which makes testing the automatic
+> +	 * syscall threads cleanup impossible under wine.
+> +	 */
+> +#ifndef __MINGW32__
+> +	LKL_TEST(many_syscall_threads),
+> +#endif
+> +	LKL_TEST(stop_kernel),
+> +};
+> +
+> +int main(int argc, const char **argv)
+> +{
+> +	lkl_host_ops.print = lkl_test_log;
+> +
+> +	return lkl_test_run(tests, sizeof(tests)/sizeof(struct lkl_test),
+> +			    "boot");
+> +}
+> diff --git a/tools/lkl/tests/boot.sh b/tools/lkl/tests/boot.sh
+> new file mode 100755
+> index 000000000000..d985c04b0ac1
+> --- /dev/null
+> +++ b/tools/lkl/tests/boot.sh
+> @@ -0,0 +1,9 @@
+> +#!/usr/bin/env bash
+> +# SPDX-License-Identifier: GPL-2.0
+> +
+> +script_dir=$(cd $(dirname ${BASH_SOURCE:-$0}); pwd)
+> +source $script_dir/test.sh
+> +
+> +lkl_test_plan 1 "boot"
+> +lkl_test_run 1
+> +lkl_test_exec $script_dir/boot
+> diff --git a/tools/lkl/tests/cla.c b/tools/lkl/tests/cla.c
+> new file mode 100644
+> index 000000000000..a34badeb5f06
+> --- /dev/null
+> +++ b/tools/lkl/tests/cla.c
+> @@ -0,0 +1,159 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +#include <stdio.h>
+> +#include <string.h>
+> +#include <errno.h>
+> +#include <stdlib.h>
+> +#ifdef __MINGW32__
+> +#include <winsock2.h>
+> +#else
+> +#include <sys/socket.h>
+> +#include <netinet/in.h>
+> +#include <arpa/inet.h>
+> +#endif
+> +
+> +#include "cla.h"
+> +
+> +static int cl_arg_parse_bool(struct cl_arg *arg, const char *value)
+> +{
+> +	*((int *)arg->store) = 1;
+> +	return 0;
+> +}
+> +
+> +static int cl_arg_parse_str(struct cl_arg *arg, const char *value)
+> +{
+> +	*((const char **)arg->store) = value;
+> +	return 0;
+> +}
+> +
+> +static int cl_arg_parse_int(struct cl_arg *arg, const char *value)
+> +{
+> +	errno = 0;
+> +	*((int *)arg->store) = strtol(value, NULL, 0);
+> +	return errno == 0;
+> +}
+> +
+> +static int cl_arg_parse_str_set(struct cl_arg *arg, const char *value)
+> +{
+> +	const char **set = arg->set;
+> +	int i;
+> +
+> +	for (i = 0; set[i] != NULL; i++) {
+> +		if (strcmp(set[i], value) == 0) {
+> +			*((int *)arg->store) = i;
+> +			return 0;
+> +		}
+> +	}
+> +
+> +	return -1;
+> +}
+> +
+> +static int cl_arg_parse_ipv4(struct cl_arg *arg, const char *value)
+> +{
+> +	unsigned int addr;
+> +
+> +	if (!value)
+> +		return -1;
+> +
+> +	addr = inet_addr(value);
+> +	if (addr == INADDR_NONE)
+> +		return -1;
+> +	*((unsigned int *)arg->store) = addr;
+> +	return 0;
+> +}
+> +
+> +static cl_arg_parser_t parsers[] = {
+> +	[CL_ARG_BOOL] = cl_arg_parse_bool,
+> +	[CL_ARG_INT] = cl_arg_parse_int,
+> +	[CL_ARG_STR] = cl_arg_parse_str,
+> +	[CL_ARG_STR_SET] = cl_arg_parse_str_set,
+> +	[CL_ARG_IPV4] = cl_arg_parse_ipv4,
+> +};
+> +
+> +static struct cl_arg *find_short_arg(char name, struct cl_arg *args)
+> +{
+> +	struct cl_arg *arg;
+> +
+> +	for (arg = args; arg->short_name != 0; arg++) {
+> +		if (arg->short_name == name)
+> +			return arg;
+> +	}
+> +
+> +	return NULL;
+> +}
+> +
+> +static struct cl_arg *find_long_arg(const char *name, struct cl_arg *args)
+> +{
+> +	struct cl_arg *arg;
+> +
+> +	for (arg = args; arg->long_name; arg++) {
+> +		if (strcmp(arg->long_name, name) == 0)
+> +			return arg;
+> +	}
+> +
+> +	return NULL;
+> +}
+> +
+> +static void print_help(struct cl_arg *args)
+> +{
+> +	struct cl_arg *arg;
+> +
+> +	fprintf(stderr, "usage:\n");
+> +	for (arg = args; arg->long_name; arg++) {
+> +		fprintf(stderr, "-%c, --%-20s %s", arg->short_name,
+> +			arg->long_name, arg->help);
+> +		if (arg->type == CL_ARG_STR_SET) {
+> +			const char **set = arg->set;
+> +
+> +			fprintf(stderr, " [ ");
+> +			while (*set != NULL)
+> +				fprintf(stderr, "%s ", *(set++));
+> +			fprintf(stderr, "]");
+> +		}
+> +		fprintf(stderr, "\n");
+> +	}
+> +}
+> +
+> +int parse_args(int argc, const char **argv, struct cl_arg *args)
+> +{
+> +	int i;
+> +
+> +	for (i = 1; i < argc; i++) {
+> +		struct cl_arg *arg = NULL;
+> +		cl_arg_parser_t parser;
+> +
+> +		if (argv[i][0] == '-') {
+> +			if (argv[i][1] != '-')
+> +				arg = find_short_arg(argv[i][1], args);
+> +			else
+> +				arg = find_long_arg(&argv[i][2], args);
+> +		}
+> +
+> +		if (!arg) {
+> +			fprintf(stderr, "unknown option '%s'\n", argv[i]);
+> +			print_help(args);
+> +			return -1;
+> +		}
+> +
+> +		if (arg->type == CL_ARG_USER || arg->type >= CL_ARG_END)
+> +			parser = arg->parser;
+> +		else
+> +			parser = parsers[arg->type];
+> +
+> +		if (!parser) {
+> +			fprintf(stderr, "can't parse --'%s'/-'%c'\n",
+> +				arg->long_name, args->short_name);
+> +			return -1;
+> +		}
+> +
+> +		if (parser(arg, argv[i + 1]) < 0) {
+> +			fprintf(stderr, "can't parse '%s'\n", argv[i]);
+> +			print_help(args);
+> +			return -1;
+> +		}
+> +
+> +		if (arg->has_arg)
+> +			i++;
+> +	}
+> +
+> +	return 0;
+> +}
+> diff --git a/tools/lkl/tests/cla.h b/tools/lkl/tests/cla.h
+> new file mode 100644
+> index 000000000000..f8369be02e5a
+> --- /dev/null
+> +++ b/tools/lkl/tests/cla.h
+> @@ -0,0 +1,33 @@
+> +/* SPDX-License-Identifier: GPL-2.0 */
+> +#ifndef _LKL_TEST_CLA_H
+> +#define _LKL_TEST_CLA_H
+> +
+> +enum cl_arg_type {
+> +	CL_ARG_USER = 0,
+> +	CL_ARG_BOOL,
+> +	CL_ARG_INT,
+> +	CL_ARG_STR,
+> +	CL_ARG_STR_SET,
+> +	CL_ARG_IPV4,
+> +	CL_ARG_END,
+> +};
+> +
+> +struct cl_arg;
+> +
+> +typedef int (*cl_arg_parser_t)(struct cl_arg *arg, const char *value);
+> +
+> +struct cl_arg {
+> +	const char *long_name;
+> +	char short_name;
+> +	const char *help;
+> +	int has_arg;
+> +	enum cl_arg_type type;
+> +	void *store;
+> +	void *set;
+> +	cl_arg_parser_t parser;
+> +};
+> +
+> +int parse_args(int argc, const char **argv, struct cl_arg *args);
+> +
+> +
+> +#endif /* _LKL_TEST_CLA_H */
+> diff --git a/tools/lkl/tests/disk.c b/tools/lkl/tests/disk.c
+> new file mode 100644
+> index 000000000000..0aa039876b54
+> --- /dev/null
+> +++ b/tools/lkl/tests/disk.c
+> @@ -0,0 +1,189 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +#include <stdio.h>
+> +#include <unistd.h>
+> +#include <string.h>
+> +#include <time.h>
+> +#include <stdlib.h>
+> +#include <stdint.h>
+> +#include <lkl.h>
+> +#include <lkl_host.h>
+> +#ifndef __MINGW32__
+> +#include <sys/stat.h>
+> +#include <fcntl.h>
+> +#include <sys/ioctl.h>
+> +#else
+> +#include <windows.h>
+> +#endif
+> +
+> +#include "test.h"
+> +#include "cla.h"
+> +
+> +static struct {
+> +	int printk;
+> +	const char *disk;
+> +	const char *fstype;
+> +	int partition;
+> +} cla;
+> +
+> +struct cl_arg args[] = {
+> +	{"disk", 'd', "disk file to use", 1, CL_ARG_STR, &cla.disk},
+> +	{"partition", 'P', "partition to mount", 1, CL_ARG_INT, &cla.partition},
+> +	{"type", 't', "filesystem type", 1, CL_ARG_STR, &cla.fstype},
+> +	{0},
+> +};
+> +
+> +
+> +static struct lkl_disk disk;
+> +static int disk_id = -1;
+> +
+> +int lkl_test_disk_add(void)
+> +{
+> +#ifdef __MINGW32__
+> +	disk.handle = CreateFile(cla.disk, GENERIC_READ | GENERIC_WRITE,
+> +			       0, NULL, OPEN_EXISTING, 0, NULL);
+> +	if (!disk.handle)
+> +#else
+> +	disk.fd = open(cla.disk, O_RDWR);
+> +	if (disk.fd < 0)
+> +#endif
+> +		goto out_unlink;
+> +
+> +	disk.ops = NULL;
+> +
+> +	disk_id = lkl_disk_add(&disk);
+> +	if (disk_id < 0)
+> +		goto out_close;
+> +
+> +	goto out;
+> +
+> +out_close:
+> +#ifdef __MINGW32__
+> +	CloseHandle(disk.handle);
+> +#else
+> +	close(disk.fd);
+> +#endif
+> +
+> +out_unlink:
+> +#ifdef __MINGW32__
+> +	DeleteFile(cla.disk);
+> +#else
+> +	unlink(cla.disk);
+> +#endif
+> +
+> +out:
+> +	lkl_test_logf("disk fd/handle %x disk_id %d", disk.fd, disk_id);
+> +
+> +	if (disk_id >= 0)
+> +		return TEST_SUCCESS;
+> +
+> +	return TEST_FAILURE;
+> +}
+> +
+> +int lkl_test_disk_remove(void)
+> +{
+> +	int ret;
+> +
+> +	ret = lkl_disk_remove(disk);
+> +
+> +#ifdef __MINGW32__
+> +	CloseHandle(disk.handle);
+> +#else
+> +	close(disk.fd);
+> +#endif
+> +
+> +	if (ret == 0)
+> +		return TEST_SUCCESS;
+> +
+> +	return TEST_FAILURE;
+> +}
+> +
+> +
+> +static char mnt_point[32];
+> +
+> +LKL_TEST_CALL(mount_dev, lkl_mount_dev, 0, disk_id, cla.partition, cla.fstype,
+> +	      0, NULL, mnt_point, sizeof(mnt_point))
+> +
+> +static int lkl_test_umount_dev(void)
+> +{
+> +	long ret, ret2;
+> +
+> +	ret = lkl_sys_chdir("/");
+> +
+> +	ret2 = lkl_umount_dev(disk_id, cla.partition, 0, 1000);
+> +
+> +	lkl_test_logf("%ld %ld", ret, ret2);
+> +
+> +	if (!ret && !ret2)
+> +		return TEST_SUCCESS;
+> +
+> +	return TEST_FAILURE;
+> +}
+> +
+> +struct lkl_dir *dir;
+> +
+> +static int lkl_test_opendir(void)
+> +{
+> +	int err;
+> +
+> +	dir = lkl_opendir(mnt_point, &err);
+> +
+> +	lkl_test_logf("lkl_opedir(%s) = %d %s\n", mnt_point, err,
+> +		      lkl_strerror(err));
+> +
+> +	if (err == 0)
+> +		return TEST_SUCCESS;
+> +
+> +	return TEST_FAILURE;
+> +}
+> +
+> +static int lkl_test_readdir(void)
+> +{
+> +	struct lkl_linux_dirent64 *de = lkl_readdir(dir);
+> +	int wr = 0;
+> +
+> +	while (de) {
+> +		wr += lkl_test_logf("%s ", de->d_name);
+> +		if (wr >= 70) {
+> +			lkl_test_logf("\n");
+> +			wr = 0;
+> +			break;
+> +		}
+> +		de = lkl_readdir(dir);
+> +	}
+> +
+> +	if (lkl_errdir(dir) == 0)
+> +		return TEST_SUCCESS;
+> +
+> +	return TEST_FAILURE;
+> +}
+> +
+> +LKL_TEST_CALL(closedir, lkl_closedir, 0, dir);
+> +LKL_TEST_CALL(chdir_mnt_point, lkl_sys_chdir, 0, mnt_point);
+> +LKL_TEST_CALL(start_kernel, lkl_start_kernel, 0, &lkl_host_ops,
+> +	     "mem=16M loglevel=8");
+> +LKL_TEST_CALL(stop_kernel, lkl_sys_halt, 0);
+> +
+> +struct lkl_test tests[] = {
+> +	LKL_TEST(disk_add),
+> +	LKL_TEST(start_kernel),
+> +	LKL_TEST(mount_dev),
+> +	LKL_TEST(chdir_mnt_point),
+> +	LKL_TEST(opendir),
+> +	LKL_TEST(readdir),
+> +	LKL_TEST(closedir),
+> +	LKL_TEST(umount_dev),
+> +	LKL_TEST(stop_kernel),
+> +	LKL_TEST(disk_remove),
+> +
+> +};
+> +
+> +int main(int argc, const char **argv)
+> +{
+> +	if (parse_args(argc, argv, args) < 0)
+> +		return -1;
+> +
+> +	lkl_host_ops.print = lkl_test_log;
+> +
+> +	return lkl_test_run(tests, sizeof(tests)/sizeof(struct lkl_test),
+> +			    "disk %s", cla.fstype);
+> +}
+> diff --git a/tools/lkl/tests/disk.sh b/tools/lkl/tests/disk.sh
+> new file mode 100755
+> index 000000000000..9bdcb16f2d5c
+> --- /dev/null
+> +++ b/tools/lkl/tests/disk.sh
+> @@ -0,0 +1,61 @@
+> +#!/usr/bin/env bash
+> +# SPDX-License-Identifier: GPL-2.0
+> +
+> +script_dir=$(cd $(dirname ${BASH_SOURCE:-$0}); pwd)
+> +
+> +source $script_dir/test.sh
+> +
+> +function prepfs()
+> +{
+> +    set -e
+> +
+> +    file=`mktemp`
+> +
+> +    dd if=/dev/zero of=$file bs=1024 count=204800
+> +
+> +    yes | mkfs.$1 $file
+> +
+> +    if ! [ -z $BSD_WDIR ]; then
+> +        $MYSSH mkdir -p $BSD_WDIR
+> +        ssh_copy $file $BSD_WDIR
+> +        rm $file
+> +        file=$BSD_WDIR/$(basename $file)
+> +    fi
+> +
+> +    export_vars file
+> +}
+> +
+> +function cleanfs()
+> +{
+> +    set -e
+> +
+> +    if ! [ -z $BSD_WDIR ]; then
+> +        $MYSSH rm $1
+> +        $MYSSH rm $BSD_WDIR/disk
+> +    else
+> +        rm $1
+> +    fi
+> +}
+> +
+> +if [ "$1" = "-t" ]; then
+> +    shift
+> +    fstype=$1
+> +    shift
+> +fi
+> +
+> +if [ -z "$fstype" ]; then
+> +    fstype="ext4"
+> +fi
+> +
+> +if [ -z $(which mkfs.$fstype) ]; then
+> +    lkl_test_plan 0 "disk $fstype"
+> +    echo "no mkfs.$fstype command"
+> +    exit 0
+> +fi
+> +
+> +lkl_test_plan 1 "disk $fstype"
+> +lkl_test_run 1 prepfs $fstype
+> +lkl_test_exec $script_dir/disk -d $file -t $fstype $@
+> +lkl_test_plan 1 "disk $fstype"
+> +lkl_test_run 1 cleanfs $file
+> +
+> diff --git a/tools/lkl/tests/run.py b/tools/lkl/tests/run.py
+> new file mode 100755
+> index 000000000000..8fea72686a7a
+> --- /dev/null
+> +++ b/tools/lkl/tests/run.py
+> @@ -0,0 +1,182 @@
+> +#!/usr/bin/env python
+> +# SPDX-License-Identifier: GPL-2.0
+> +#
+> +# This program is free software; you can redistribute it and/or modify
+> +# it under the terms of the GNU General Public License as published by
+> +# the Free Software Foundation; version 2 of the License
+> +#
+> +# Author: Octavian Purdila <tavi@cs.pub.ro>
+> +#
+> +
+> +from __future__ import print_function
+> +
+> +import argparse
+> +import os
+> +import subprocess
+> +import sys
+> +import tap13
+> +import xml.etree.ElementTree as ET
+> +
+> +from junit_xml import TestSuite, TestCase
+> +
+> +
+> +class Reporter(tap13.Reporter):
+> +    def start(self, obj):
+> +        if type(obj) is tap13.Test:
+> +            if obj.result == "*":
+> +                end='\r'
+> +            else:
+> +                end='\n'
+> +            print("  TEST       %-8s %.50s" %
+> +                  (obj.result, obj.description + " " + obj.comment), end=end)
+> +
+> +        elif type(obj) is tap13.Suite:
+> +            if obj.tests_planned == 0:
+> +                status = "skip"
+> +            else:
+> +                status = ""
+> +            print("  SUITE      %-8s %s" % (status, obj.name))
+> +
+> +    def end(self, obj):
+> +        if type(obj) is tap13.Test:
+> +            if obj.result != "ok":
+> +                try:
+> +                    print(obj.yaml["log"], end='')
+> +                except:
+> +                    None
+> +
+> +
+> +mydir=os.path.dirname(os.path.realpath(__file__))
+> +
+> +tests = [
+> +    'boot.sh',
+> +    'disk.sh -t ext4',
+> +    'disk.sh -t vfat',
+> +    'net.sh -b loopback',
+> +    'net.sh -b tap',
+> +    'net.sh -b pipe',
+> +    'net.sh -b raw',
+> +    'net.sh -b macvtap',
+> +    'lklfuse.sh -t ext4',
+> +    'lklfuse.sh -t vfat',
+> +    'hijack-test.sh'
+> +]
+> +
+> +parser = argparse.ArgumentParser(description='LKL test runner')
+> +parser.add_argument('tests', nargs='?', action='append',
+> +                    help='tests to run %s' % tests)
+> +parser.add_argument('--junit-dir',
+> +                    help='directory where to store the juni suites')
+> +parser.add_argument('--gdb', action='store_true', default=False,
+> +                    help='run simple tests under gdb; implies --pass-through')
+> +parser.add_argument('--pass-through', action='store_true',  default=False,
+> +                    help='run the test without interpeting the test output')
+> +parser.add_argument('--valgrind', action='store_true', default=False,
+> +                    help='run simple tests under valgrind')
+> +
+> +args = parser.parse_args()
+> +if args.tests == [None]:
+> +    args.tests = tests
+> +
+> +if args.gdb:
+> +    args.pass_through=True
+> +    os.environ['GDB']="yes"
+> +
+> +if args.valgrind:
+> +    os.environ['VALGRIND']="yes"
+> +
+> +tap = tap13.Parser(Reporter())
+> +
+> +os.environ['PATH'] += ":" + mydir
+> +
+> +exit_code = 0
+> +
+> +for t in args.tests:
+> +    if not t:
+> +        continue
+> +    if args.pass_through:
+> +        print(t)
+> +        if subprocess.call(t, shell=True) != 0:
+> +            exit_code = 1
+> +    else:
+> +        p = subprocess.Popen(t, shell=True, stdout=subprocess.PIPE)
+> +        tap.parse(p.stdout)
+> +
+> +if args.pass_through:
+> +    sys.exit(exit_code)
+> +
+> +suites_count = 0
+> +tests_total = 0
+> +tests_not_ok = 0
+> +tests_ok = 0
+> +tests_skip = 0
+> +val_errs = 0
+> +val_fails = 0
+> +val_skips = 0
+> +
+> +for s in tap.run.suites:
+> +
+> +    junit_tests = []
+> +    suites_count += 1
+> +
+> +    for t in s.tests:
+> +        try:
+> +            secs = t.yaml["time_us"] / 1000000.0
+> +        except:
+> +            secs = 0
+> +        try:
+> +            log = t.yaml['log']
+> +        except:
+> +            log = ""
+> +
+> +        jt = TestCase(t.description, elapsed_sec=secs, stdout=log)
+> +        if t.result == 'skip':
+> +            jt.add_skipped_info(output=log)
+> +        elif t.result == 'not ok':
+> +            jt.add_error_info(output=log)
+> +
+> +        junit_tests.append(jt)
+> +
+> +        tests_total += 1
+> +        if t.result == "ok":
+> +            tests_ok += 1
+> +        elif t.result == "not ok":
+> +            tests_not_ok += 1
+> +            exit_code = 1
+> +        elif t.result == "skip":
+> +            tests_skip += 1
+> +
+> +    if args.junit_dir:
+> +        js = TestSuite(s.name, junit_tests)
+> +        with open(os.path.join(args.junit_dir, os.path.basename(s.name) + '.xml'), 'w') as f:
+> +            js.to_file(f, [js])
+> +
+> +        if os.getenv('VALGRIND') is not None:
+> +            val_xml = 'valgrind-%s.xml' % os.path.basename(s.name).replace(' ','-')
+> +            # skipped tests don't generate xml file
+> +            if os.path.exists(val_xml) is False:
+> +                continue
+> +
+> +            cmd = 'mv %s %s' % (val_xml, args.junit_dir)
+> +            subprocess.call(cmd, shell=True, )
+> +
+> +            cmd = mydir + '/valgrind2xunit.py ' + val_xml
+> +            subprocess.call(cmd, shell=True, cwd=args.junit_dir)
+> +
+> +            # count valgrind results
+> +            doc = ET.parse(os.path.join(args.junit_dir, 'valgrind-%s_xunit.xml' \
+> +                                        % (os.path.basename(s.name).replace(' ','-'))))
+> +            ts = doc.getroot()
+> +            val_errs += int(ts.get('errors'))
+> +            val_fails += int(ts.get('failures'))
+> +            val_skips += int(ts.get('skip'))
+> +
+> +print("Summary: %d suites run, %d tests, %d ok, %d not ok, %d skipped" %
+> +      (suites_count, tests_total, tests_ok, tests_not_ok, tests_skip))
+> +
+> +if os.getenv('VALGRIND') is not None:
+> +    print(" valgrind (memcheck): %d failures, %d skipped" % (val_fails, val_skips))
+> +    if val_errs or val_fails:
+> +        exit_code = 1
+> +
+> +sys.exit(exit_code)
+> diff --git a/tools/lkl/tests/tap13.py b/tools/lkl/tests/tap13.py
+> new file mode 100644
+> index 000000000000..65c73cda7ca1
+> --- /dev/null
+> +++ b/tools/lkl/tests/tap13.py
+> @@ -0,0 +1,209 @@
+> +#!/usr/bin/env python
+> +# SPDX-License-Identifier: GPL-2.0
+> +#
+> +# This program is free software; you can redistribute it and/or modify
+> +# it under the terms of the GNU General Public License as published by
+> +# the Free Software Foundation; version 2 of the License
+> +#
+> +# Author: Octavian Purdila <tavi@cs.pub.ro>
+> +#
+> +# Based on TAP13:
+> +#
+> +# Copyright 2013, Red Hat, Inc.
+> +# Author: Josef Skladanka <jskladan@redhat.com>
+> +#
+> +from __future__ import print_function
+> +
+> +import re
+> +import sys
+> +import yamlish
+> +
+> +
+> +class Reporter(object):
+> +
+> +    def start(self, obj):
+> +        None
+> +
+> +    def end(self, obj):
+> +        None
+> +
+> +
+> +class Test(object):
+> +    def __init__(self, reporter, result, id, description=None, directive=None,
+> +                 comment=None):
+> +        self.reporter = reporter
+> +        self.result = result
+> +        if directive:
+> +            self.result = directive.lower()
+> +        if id:
+> +            self.id = int(id)
+> +        else:
+> +            self.id = None
+> +        if description:
+> +            self.description = description
+> +        else:
+> +            self.description = ""
+> +        if comment:
+> +            self.comment = "# " + comment
+> +        else:
+> +            self.comment = ""
+> +        self.yaml = None
+> +        self._yaml_buffer = None
+> +        self.diagnostics = []
+> +
+> +        self.reporter.start(self)
+> +
+> +    def end(self):
+> +        if not self.yaml:
+> +            self.yaml = yamlish.load(self._yaml_buffer)
+> +            self.reporter.end(self)
+> +
+> +
+> +class Suite(object):
+> +    def __init__(self, reporter, start, end, explanation):
+> +        self.reporter = reporter
+> +        self.tests = []
+> +        self.name = explanation
+> +        self.tests_planned = int(end)
+> +
+> +        self.__tests_counter = 0
+> +        self.__tests_base = 0
+> +
+> +        self.reporter.start(self)
+> +
+> +    def newTest(self, args):
+> +        try:
+> +            self.tests[-1].end()
+> +        except IndexError:
+> +            None
+> +
+> +        if 'id' not in args or not args['id']:
+> +            args['id'] = self.__tests_counter
+> +        else:
+> +            args['id'] = int(args['id']) + self.__tests_base
+> +
+> +        if args['id'] < self.__tests_counter:
+> +            print("error: bad test id %d, fixing it" % (args['id']))
+> +            args['id'] = self.__tests_counter
+> +        # according to TAP13 specs, missing tests must be handled as 'not ok'
+> +        # here we add the missing tests in sequence
+> +        while args['id'] > (self.__tests_counter + 1):
+> +            comment = 'test %d not present' % self.__tests_counter
+> +            self.tests.append(Test(self.reporter, 'not ok',
+> +                                   self.__tests_counter, comment=comment))
+> +            self.__tests_counter += 1
+> +
+> +        if args['id'] == self.__tests_counter:
+> +            if args['directive']:
+> +                self.test().result = args['directive'].lower()
+> +            else:
+> +                self.test().result = args['result']
+> +            self.reporter.start(self.test())
+> +        else:
+> +            self.tests.append(Test(self.reporter, **args))
+> +            self.__tests_counter += 1
+> +
+> +    def test(self):
+> +        return self.tests[-1]
+> +
+> +    def end(self, name, planned):
+> +        if name == self.name:
+> +            self.tests_planned += int(planned)
+> +            self.__tests_base = self.__tests_counter
+> +            return False
+> +        try:
+> +            self.test().end()
+> +        except IndexError:
+> +            None
+> +        if len(self.tests) != self.tests_planned:
+> +            for i in range(len(self.tests), self.tests_planned):
+> +                self.tests.append(Test(self.reporter, 'not ok', i+1,
+> +                                       comment='test not present'))
+> +        return True
+> +
+> +
+> +class Run(object):
+> +
+> +    def __init__(self, reporter):
+> +        self.reporter = reporter
+> +        self.suites = []
+> +
+> +    def suite(self):
+> +        return self.suites[-1]
+> +
+> +    def test(self):
+> +        return self.suites[-1].tests[-1]
+> +
+> +    def newSuite(self, args):
+> +        new = False
+> +        try:
+> +            if self.suite().end(args['explanation'], args['end']):
+> +                new = True
+> +        except IndexError:
+> +            new = True
+> +        if new:
+> +            self.suites.append(Suite(self.reporter, **args))
+> +
+> +    def newTest(self, args):
+> +        self.suite().newTest(args)
+> +
+> +
+> +class Parser(object):
+> +    RE_PLAN = re.compile(r"^\s*(?P<start>\d+)\.\.(?P<end>\d+)\s*(#\s*(?P<explanation>.*))?\s*$")
+> +    RE_TEST_LINE = re.compile(r"^\s*(?P<result>(not\s+)?ok|[*]+)\s*(?P<id>\d+)?\s*(?P<description>[^#]+)?\s*(#\s*(?P<directive>TODO|SKIP)?\s*(?P<comment>.+)?)?\s*$",  re.IGNORECASE)
+> +    RE_EXPLANATION = re.compile(r"^\s*#\s*(?P<explanation>.+)?\s*$")
+> +    RE_YAMLISH_START = re.compile(r"^\s*---.*$")
+> +    RE_YAMLISH_END = re.compile(r"^\s*\.\.\.\s*$")
+> +
+> +    def __init__(self, reporter):
+> +        self.seek_test = False
+> +        self.in_test = False
+> +        self.in_yaml = False
+> +        self.run = Run(reporter)
+> +
+> +    def parse(self, source):
+> +        # to avoid input buffering
+> +        while True:
+> +            line = source.readline()
+> +            if not line:
+> +                break
+> +
+> +            if self.in_yaml:
+> +                if Parser.RE_YAMLISH_END.match(line):
+> +                    self.run.test()._yaml_buffer.append(line.strip())
+> +                    self.in_yaml = False
+> +                else:
+> +                    self.run.test()._yaml_buffer.append(line.rstrip())
+> +                continue
+> +
+> +            line = line.strip()
+> +
+> +            if self.in_test:
+> +                if Parser.RE_EXPLANATION.match(line):
+> +                    self.run.test().diagnostics.append(line)
+> +                    continue
+> +                if Parser.RE_YAMLISH_START.match(line):
+> +                    self.run.test()._yaml_buffer = [line.strip()]
+> +                    self.in_yaml = True
+> +                    continue
+> +
+> +            m = Parser.RE_PLAN.match(line)
+> +            if m:
+> +                self.seek_test = True
+> +                args = m.groupdict()
+> +                self.run.newSuite(args)
+> +                continue
+> +
+> +            if self.seek_test:
+> +                m = Parser.RE_TEST_LINE.match(line)
+> +                if m:
+> +                    args = m.groupdict()
+> +                    self.run.newTest(args)
+> +                    self.in_test = True
+> +                    continue
+> +
+> +            print(line)
+> +        try:
+> +            self.run.suite().end(None, 0)
+> +        except IndexError:
+> +            None
+> diff --git a/tools/lkl/tests/test.c b/tools/lkl/tests/test.c
+> new file mode 100644
+> index 000000000000..3e334d106c48
+> --- /dev/null
+> +++ b/tools/lkl/tests/test.c
+> @@ -0,0 +1,126 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +#include <stdio.h>
+> +#include <stdarg.h>
+> +#include <time.h>
+> +
+> +#include "test.h"
+> +
+> +/* circular log buffer */
+> +
+> +static char log_buf[0x10000];
+> +static char *head = log_buf, *tail = log_buf;
+> +
+> +static inline void advance(char **ptr)
+> +{
+> +	if ((unsigned int)(*ptr - log_buf) >= sizeof(log_buf))
+> +		*ptr = log_buf;
+> +	else
+> +		*ptr = *ptr + 1;
+> +}
+> +
+> +static void log_char(char c)
+> +{
+> +	*tail = c;
+> +	advance(&tail);
+> +	if (tail == head)
+> +		advance(&head);
+> +}
+> +
+> +static void print_log(void)
+> +{
+> +	char last;
+> +
+> +	printf(" log: |\n");
+> +	last = '\n';
+> +	while (head != tail) {
+> +		if (last == '\n')
+> +			printf("  ");
+> +		last = *head;
+> +		putchar(last);
+> +		advance(&head);
+> +	}
+> +	if (last != '\n')
+> +		putchar('\n');
+> +}
+> +
+> +int lkl_test_run(const struct lkl_test *tests, int nr, const char *fmt, ...)
+> +{
+> +	int i, ret, status = TEST_SUCCESS;
+> +	clock_t start, stop;
+> +	char name[1024];
+> +	va_list args;
+> +
+> +	va_start(args, fmt);
+> +	vsnprintf(name, sizeof(name), fmt, args);
+> +	va_end(args);
+> +
+> +	printf("1..%d # %s\n", nr, name);
+> +	for (i = 1; i <= nr; i++) {
+> +		const struct lkl_test *t = &tests[i-1];
+> +		unsigned long delta_us;
+> +
+> +		printf("* %d %s\n", i, t->name);
+> +		fflush(stdout);
+> +
+> +		start = clock();
+> +
+> +		ret = t->fn(t->arg1, t->arg2, t->arg3);
+> +
+> +		stop = clock();
+> +
+> +		switch (ret) {
+> +		case TEST_SUCCESS:
+> +			printf("ok %d %s\n", i, t->name);
+> +			break;
+> +		case TEST_SKIP:
+> +			printf("ok %d %s # SKIP\n", i, t->name);
+> +			break;
+> +		case TEST_BAILOUT:
+> +			status = TEST_BAILOUT;
+> +			/* fall through */
+> +		case TEST_FAILURE:
+> +		default:
+> +			if (status != TEST_BAILOUT)
+> +				status = TEST_FAILURE;
+> +			printf("not ok %d %s\n", i, t->name);
+> +		}
+> +
+> +		printf(" ---\n");
+> +		delta_us = (stop - start) * 1000000 / CLOCKS_PER_SEC;
+> +		printf(" time_us: %ld\n", delta_us);
+> +		print_log();
+> +		printf(" ...\n");
+> +
+> +		if (status == TEST_BAILOUT) {
+> +			printf("Bail out!\n");
+> +			return TEST_FAILURE;
+> +		}
+> +
+> +		fflush(stdout);
+> +	}
+> +
+> +	return status;
+> +}
+> +
+> +
+> +void lkl_test_log(const char *str, int len)
+> +{
+> +	while (len--)
+> +		log_char(*(str++));
+> +}
+> +
+> +int lkl_test_logf(const char *fmt, ...)
+> +{
+> +	char tmp[1024], *c;
+> +	va_list args;
+> +	unsigned int n;
+> +
+> +	va_start(args, fmt);
+> +	n = vsnprintf(tmp, sizeof(tmp), fmt, args);
+> +	va_end(args);
+> +
+> +	for (c = tmp; *c != 0; c++)
+> +		log_char(*c);
+> +
+> +	return n > sizeof(tmp) ? sizeof(tmp) : n;
+> +}
+> diff --git a/tools/lkl/tests/test.h b/tools/lkl/tests/test.h
+> new file mode 100644
+> index 000000000000..f63ad6d419cb
+> --- /dev/null
+> +++ b/tools/lkl/tests/test.h
+> @@ -0,0 +1,72 @@
+> +/* SPDX-License-Identifier: GPL-2.0 */
+> +#ifndef _LKL_TEST_H
+> +#define _LKL_TEST_H
+> +
+> +#define TEST_SUCCESS	0
+> +#define TEST_FAILURE	1
+> +#define TEST_SKIP	2
+> +#define TEST_TODO	3
+> +#define TEST_BAILOUT	4
+> +
+> +struct lkl_test {
+> +	const char *name;
+> +	int (*fn)();
+> +	void *arg1, *arg2, *arg3;
+> +};
+> +
+> +/**
+> + * Simple wrapper to initialize a test entry.
+> + * @name - test name, it assume test function is named test_@name
+> + * @vargs - arguments to be passed to the function
+> + */
+> +#define LKL_TEST(name, ...) { #name, lkl_test_##name, __VA_ARGS__ }
+> +
+> +/**
+> + * lkl_test_run - run a test suite
+> + *
+> + * @tests - the list of tests to run
+> + * @nr - number of tests
+> + * @fmt - format string to be used for suite name
+> + */
+> +int lkl_test_run(const struct lkl_test *tests, int nr, const char *fmt, ...);
+> +
+> +/**
+> + * lkl_test_log - store a string in the test log buffer
+> + * @str - the string to log (can be non-NULL terminated)
+> + * @len - the string length
+> + */
+> +void lkl_test_log(const char *str, int len);
+> +
+> +/**
+> + * lkl_test_logf - printf like function to store into the test log buffer
+> + * @fmt - printf format string
+> + * @vargs - arguments to the format string
+> + */
+> +int lkl_test_logf(const char *fmt, ...) __attribute__((format(printf, 1, 2)));
+> +
+> +/**
+> + * LKL_TEST_CALL - create a test function as for a LKL call
+> + *
+> + * The test function will be named lkl_test_@name and will return
+> + * TEST_SUCCESS if the called functions returns @expect. Otherwise
+> + * will return TEST_FAILUIRE.
+> + *
+> + * @name - test name; must be unique because it is part of the the
+> + * test function; the test function will be named
+> + * @call - function to call
+> + * @expect - expected return value for success
+> + * @args - arguments to pass to the LKL call
+> + */
+> +#define LKL_TEST_CALL(name, call, expect, ...)				\
+> +	static int lkl_test_##name(void)				\
+> +	{								\
+> +		long ret;						\
+> +									\
+> +		ret = call(__VA_ARGS__);				\
+> +		lkl_test_logf("%s(%s) = %ld %s\n", #call, #__VA_ARGS__, \
+> +			ret, ret < 0 ? lkl_strerror(ret) : "");		\
+> +		return (ret == expect) ? TEST_SUCCESS : TEST_FAILURE;	\
+> +	}
+> +
+> +
+> +#endif /* _LKL_TEST_H */
+> diff --git a/tools/lkl/tests/test.sh b/tools/lkl/tests/test.sh
+> new file mode 100644
+> index 000000000000..1a5619aed735
+> --- /dev/null
+> +++ b/tools/lkl/tests/test.sh
+> @@ -0,0 +1,179 @@
+> +#!/usr/bin/env bash
+> +# SPDX-License-Identifier: GPL-2.0
+> +
+> +script_dir=$(cd $(dirname ${BASH_SOURCE:-$0}); pwd)
+> +basedir=$(cd $script_dir/..; pwd)
+> +source ${script_dir}/autoconf.sh
+> +
+> +TEST_SUCCESS=0
+> +TEST_FAILURE=1
+> +TEST_SKIP=113
+> +TEST_TODO=114
+> +TEST_BAILOUT=115
+> +
+> +print_log()
+> +{
+> +    echo " log: |"
+> +    while read line; do
+> +        echo "  $line"
+> +    done < $1
+> +}
+> +
+> +export_vars()
+> +{
+> +    if [ -z "$var_file" ]; then
+> +        return
+> +    fi
+> +
+> +    for i in $@; do
+> +        echo "$i=${!i}" >> $var_file
+> +    done
+> +}
+> +
+> +lkl_test_run()
+> +{
+> +    log_file=$(mktemp)
+> +    export var_file=$(mktemp)
+> +
+> +    tid=$1 && shift && tname=$@
+> +
+> +    echo "* $tid $tname"
+> +
+> +    start=$(date '+%s%9N')
+> +    # run in a separate shell to avoid -e terminating us
+> +    $@ 2>&1 | strings >$log_file
+> +    exit=${PIPESTATUS[0]}
+> +    stop=$(date '+%s%9N')
+> +
+> +    case $exit in
+> +    $TEST_SUCCESS)
+> +        echo "ok $tid $tname"
+> +        ;;
+> +    $TEST_SKIP)
+> +        echo "ok $tid $tname # SKIP"
+> +        ;;
+> +    $TEST_BAILOUT)
+> +        echo "not ok $tid $tname"
+> +        echo "Bail out!"
+> +        ;;
+> +    $TEST_FAILURE|*)
+> +        echo "not ok $tid $tname"
+> +        ;;
+> +    esac
+> +
+> +    delta=$(((stop-start)/1000))
+> +
+> +    echo " ---"
+> +    echo " time_us: $delta"
+> +    print_log $log_file
+> +    echo -e " ..."
+> +
+> +    rm $log_file
+> +    . $var_file
+> +    rm $var_file
+> +
+> +    return $exit
+> +}
+> +
+> +lkl_test_plan()
+> +{
+> +    echo "1..$1 # $2"
+> +    export suite_name="${2// /\-}"
+> +}
+> +
+> +lkl_test_exec()
+> +{
+> +    local SUDO=""
+> +    local WRAPPER=""
+> +
+> +    if [ "$1" = "sudo" ]; then
+> +        SUDO=sudo
+> +        shift
+> +    fi
+> +
+> +    local file=$1
+> +    shift
+> +
+> +    if [ -n "$LKL_HOST_CONFIG_NT" ]; then
+> +        file=$file.exe
+> +    fi
+> +
+> +    if file $file | grep ARM; then
+> +        WRAPPER="qemu-arm-static"
+> +    elif file $file | grep "FreeBSD" ; then
+> +        ssh_copy "$file" $BSD_WDIR
+> +        if [ -n "$SUDO" ]; then
+> +            SUDO=""
+> +        fi
+> +        WRAPPER="$MYSSH $SU"
+> +        # ssh will mess up with pipes ('|') so, escape the pipe char.
+> +        args="${@//\|/\\\|}"
+> +        set - $BSD_WDIR/$(basename $file) $args
+> +        file=""
+> +    elif [ -n "$GDB" ]; then
+> +        WRAPPER="gdb"
+> +        args="$@"
+> +        set - -ex "run $args" -ex quit $file
+> +        file=""
+> +    elif [ -n "$VALGRIND" ]; then
+> +        WRAPPER="valgrind --suppressions=$script_dir/valgrind.supp \
+> +                  --leak-check=full --show-leak-kinds=all --xml=yes \
+> +                  --xml-file=valgrind-$suite_name.xml"
+> +    fi
+> +
+> +    $SUDO $WRAPPER $file "$@"
+> +}
+> +
+> +lkl_test_cmd()
+> +{
+> +    local WRAPPER=""
+> +
+> +    if [ -z "$QUIET" ]; then
+> +        SHOPTS="-x"
+> +    fi
+> +
+> +    if [ -n "$LKL_HOST_CONFIG_BSD" ]; then
+> +        WRAPPER="$MYSSH $SU"
+> +    fi
+> +
+> +    echo "$@" | $WRAPPER sh $SHOPTS
+> +}
+> +
+> +# XXX: $MYSSH and $MYSCP are defined in a circleci docker image.
+> +# see the definitions in lkl/lkl-docker:circleci/freebsd11/Dockerfile
+> +ssh_push()
+> +{
+> +    while [ -n "$1" ]; do
+> +        if [[ "$1" = *.sh ]]; then
+> +            type="script"
+> +        else
+> +            type="file"
+> +        fi
+> +
+> +        dir=$(dirname $1)
+> +        $MYSSH mkdir -p $BSD_WDIR/$dir
+> +
+> +        $MYSCP -P 7722 -r $basedir/$1 root@localhost:$BSD_WDIR/$dir
+> +        if [ "$type" = "script" ]; then
+> +            $MYSSH chmod a+x $BSD_WDIR/$1
+> +        fi
+> +
+> +        shift
+> +    done
+> +}
+> +
+> +ssh_copy()
+> +{
+> +    $MYSCP -P 7722 -r $1 root@localhost:$2
+> +}
+> +
+> +lkl_test_bsd_cleanup()
+> +{
+> +    $MYSSH rm -rf $BSD_WDIR
+> +}
+> +
+> +if [ -n "$LKL_HOST_CONFIG_BSD" ]; then
+> +    trap lkl_test_bsd_cleanup EXIT
+> +    export BSD_WDIR=/root/lkl
+> +    $MYSSH mkdir -p $BSD_WDIR
+> +fi
+> diff --git a/tools/lkl/tests/valgrind.supp b/tools/lkl/tests/valgrind.supp
+> new file mode 100644
+> index 000000000000..5ce717d759fc
+> --- /dev/null
+> +++ b/tools/lkl/tests/valgrind.supp
+> @@ -0,0 +1,85 @@
+> +{
+> +   <unfinished timer 1>
+> +   Memcheck:Leak
+> +   match-leak-kinds: possible
+> +   ...
+> +   fun:pthread_create@@GLIBC_2.2.5
+> +   fun:__start_helper_thread
+> +   fun:__pthread_once_slow
+> +   fun:timer_create@@GLIBC_2.3.3
+> +   fun:timer_alloc
+> +   fun:clockevent_set_state_oneshot
+> +   ...
+> +   fun:__clockevents_switch_state
+> +   fun:clockevents_switch_state
+> +   fun:tick_setup_periodic
+> +   ...
+> +}
+> +
+> +{
+> +   <pid1 kernel thread>
+> +   Memcheck:Leak
+> +   match-leak-kinds: possible
+> +   ...
+> +   fun:thread_create
+> +   fun:copy_thread
+> +   fun:copy_thread_tls
+> +   ...
+> +   fun:rest_init
+> +   fun:start_kernel
+> +   fun:lkl_run_kernel
+> +}
+> +
+> +{
+> +   <xfs uninitialized buf error: delete this once upstream is fixed>
+> +   Memcheck:Value8
+> +   fun:crc32_body
+> +   fun:crc32_le_generic
+> +   fun:__crc32c_le
+> +   fun:chksum_update
+> +   fun:crypto_shash_update
+> +   fun:crc32c
+> +   fun:xlog_cksum
+> +}
+> +
+> +{
+> +   <xfs pwrite64 issue: delete this once upstream is fixed>
+> +   Memcheck:Param
+> +   pwrite64(buf)
+> +   ...
+> +   fun:blk_request
+> +   fun:blk_enqueue
+> +   fun:virtio_process_one
+> +   fun:virtio_process_queue
+> +   fun:virtio_write
+> +   fun:__raw_writel
+> +   fun:writel
+> +   fun:vm_notify
+> +   fun:virtqueue_notify
+> +   fun:virtio_queue_rq
+> +   fun:blk_mq_dispatch_rq_list
+> +   fun:blk_mq_sched_dispatch_requests
+> +}
+> +
+> +{
+> +   <virtio_net_pipe xmits>
+> +   Memcheck:Param
+> +   writev(vector[...])
+> +   ...
+> +   fun:fd_net_tx
+> +   fun:net_enqueue
+> +   fun:virtio_process_one
+> +   fun:virtio_process_queue
+> +   fun:virtio_write
+> +   fun:__raw_writel
+> +   fun:writel
+> +   fun:vm_notify
+> +   fun:virtqueue_notify
+> +   fun:virtqueue_kick
+> +   fun:start_xmit
+> +   fun:__netdev_start_xmit
+> +   fun:netdev_start_xmit
+> +   fun:xmit_one
+> +   fun:dev_hard_start_xmit
+> +   fun:sch_direct_xmit
+> +}
+> \ No newline at end of file
+> diff --git a/tools/lkl/tests/valgrind2xunit.py b/tools/lkl/tests/valgrind2xunit.py
+> new file mode 100755
+> index 000000000000..ab7c12b83377
+> --- /dev/null
+> +++ b/tools/lkl/tests/valgrind2xunit.py
+> @@ -0,0 +1,69 @@
+> +#!/usr/bin/env python
+> +# SPDX-License-Identifier: GPL-2.0
+> +
+> +##
+> +## Downloader from
+> +## http://humdi.net/wiki/tips/valgrind-to-xunit-xml-converter
+> +##
+> +
+> +import xml.etree.ElementTree as ET
+> +import sys
+> +import os
+> +
+> +fname = sys.argv[1]
+> +if fname is None:
+> +    fname = 'valgrind.xml'
+> +
+> +doc = ET.parse(fname)
+> +errors = doc.findall('.//error')
+> +
+> +out = open(os.path.splitext(os.path.basename(fname))[0]+'_xunit.xml',"w")
+> +out.write('<?xml version="1.0" encoding="UTF-8"?>\n')
+> +out.write('<testsuite name="valgrind" tests="'+str(len(errors))+'" errors="0" failures="'+str(len(errors))+'" skip="0">\n')
+> +errorcount=0
+> +for error in errors:
+> +    errorcount=errorcount+1
+> +
+> +    kind = error.find('kind')
+> +    what = error.find('what')
+> +    if  what == None:
+> +        what = error.find('xwhat/text')
+> +
+> +    stack = error.find('stack')
+> +    frames = stack.findall('frame')
+> +
+> +    for frame in frames:
+> +        fi = frame.find('file')
+> +        li = frame.find('line')
+> +        if fi != None and li != None:
+> +            break
+> +
+> +    if fi != None and li != None:
+> +        out.write('    <testcase classname="ValgrindMemoryCheck" name="Memory check '+str(errorcount)+' ('+kind.text+', '+fi.text+':'+li.text+')" time="0">\n')
+> +    else:
+> +        out.write('    <testcase classname="ValgrindMemoryCheck" name="Memory check '+str(errorcount)+' ('+kind.text+')" time="0">\n')
+> +    out.write('        <error type="'+kind.text+'">\n')
+> +    out.write('  '+what.text+'\n\n')
+> +
+> +    for frame in frames:
+> +        ip = frame.find('ip')
+> +        fn = frame.find('fn')
+> +        fi = frame.find('file')
+> +        li = frame.find('line')
+> +
+> +        if fn is None:
+> +            bodytext = '(unresolved symbol)'
+> +        else:
+> +            bodytext = fn.text
+> +        bodytext = bodytext.replace("&","&amp;")
+> +        bodytext = bodytext.replace("<","&lt;")
+> +        bodytext = bodytext.replace(">","&gt;")
+> +        if fi != None and li != None:
+> +            out.write('  '+ip.text+': '+bodytext+' ('+fi.text+':'+li.text+')\n')
+> +        else:
+> +            out.write('  '+ip.text+': '+bodytext+'\n')
+> +
+> +    out.write('        </error>\n')
+> +    out.write('    </testcase>\n')
+> +out.write('</testsuite>\n')
+> +out.close()
 
 _______________________________________________
 linux-um mailing list
