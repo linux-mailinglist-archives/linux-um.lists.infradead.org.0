@@ -2,78 +2,73 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 726C21474C5
-	for <lists+linux-um@lfdr.de>; Fri, 24 Jan 2020 00:26:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4C4DE147524
+	for <lists+linux-um@lfdr.de>; Fri, 24 Jan 2020 00:59:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2rFw+98KaiKZDikFmIDrXL3aoVcVUuP0zOOObl3ZbJ0=; b=tJItjfX24ri00x
-	XtYlcmm2ZTDqHqNo/LFf1AG2jIa28sNjxLxwlDHEh68ViAbS8AoD8TVbyAG0SNwfzwQyz5JRCduVX
-	Uen1SDfuJmJsQsU3EkN/34YzcNN6cx0vCxZ7X+0Vuh3gNnCWY+epRq+4zUepSRa7Y7Wjlw/2DDDIU
-	y6m4dZjpaGTyb9S6vRD02+sOWZZ4uXchT3xwC3UTsCBX+UX1I6AEsugm3GT3klyHk2mBUoaSK1PaX
-	cySVS1jAW4a9dHGrwrGYXpozuf+5Wm54Vhq1GlzLluOe666PTug2kxFjIkfIoenDxzyNJ/ZK1/0FT
-	7h5kbxbWe1ZliEtCYuOw==;
+	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:Mime-Version:Message-Id
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=FKeIfDIwFwbu2PuJuJCjapbZMbHf6Uxqhiq09XivW9A=; b=r07JaYWy66jzuy
+	MA+3HXQrioIdQFUxMMYRSnUZ8r4UIfwzzJmjJ0eoEljqgkx+fv3Cj/a0CBmsCkfRVd9ntVtWNnXyT
+	J/e/jgX9BiaCD3SSawzb0N6c0ed45wyEeTDCez1aMbZrFVgYZVc0Job8mu/wyOXbXy5CMP5czydbH
+	J+1/kTlWi/QCaJ+25EZOy7piP2FBcx03wYuLjXREf6wE9gcS6lhp5LPlzyoWELC3WArZv/Z3+riZN
+	wmAGE5d1uVWITFfwpdDECDI7wKIuHymXpwj7t4yDcfDb5RkAoWqG5u2Rp7IEhvnGxIcIpFLUnbLic
+	GgxGmyMvl+I0TiJDJjfQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iulrR-0003zJ-Fh; Thu, 23 Jan 2020 23:26:05 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1iumNg-0004Zd-GI; Thu, 23 Jan 2020 23:59:24 +0000
+Received: from mail-pf1-x449.google.com ([2607:f8b0:4864:20::449])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iulrO-0003yW-DD
- for linux-um@lists.infradead.org; Thu, 23 Jan 2020 23:26:03 +0000
-Received: by mail-pg1-x541.google.com with SMTP id l24so31354pgk.2
- for <linux-um@lists.infradead.org>; Thu, 23 Jan 2020 15:26:01 -0800 (PST)
+ id 1iumNd-0004Yz-9e
+ for linux-um@lists.infradead.org; Thu, 23 Jan 2020 23:59:23 +0000
+Received: by mail-pf1-x449.google.com with SMTP id r127so213631pfc.11
+ for <linux-um@lists.infradead.org>; Thu, 23 Jan 2020 15:59:19 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=4W28UQlErbB5t4AS0heTRzpi/rx98hbqyEgzItkWb6g=;
- b=n3FX0UCzVuXqvvCwf+bLdSICmWk2pxQ7chxMCCTB2hx42/dMimta3BQBEfPyQ2046Q
- Qm8+4esUf31iOSr2kHqW/yFshxkl6gygYlpIVbuXOuumGNu+lDpV6HJ+RER5kBAfDmeQ
- vdmU0syrs6DKDNGGupYB6Fwm/0fUnmeGHc9jpzbo2z5Kumed7XqkxXhITJCtDdzyuMIw
- M0OkibI6uMSi5pIQA9DNluRUY1L9QR6rU40wEQg+oH0EWcB5NwLDSwBoNCjvMh5eSlAG
- GLTytxkX/JFyIvPaa8kaCTqqErVUeJrwj2pxPOsDcIz1hCcoydlB8k/kM8mD0Riz/RKU
- VG7A==
+ h=date:message-id:mime-version:subject:from:to:cc;
+ bh=taYXiMSvG/uOaWszHXNY3LIQcqdsQdZuQaVnEsyfgN4=;
+ b=X9ZZUmQCdFs3o0xNe3+a2C4Q/lpN3y90i7OPOgw8+bGTRkrAQwpN6gGiTFeZ2JR44C
+ vMbVwSw1/C/YVthi+ePmCJjl+nqJFlPnMna01e7d3lSWe/GrOkQX8NFNZZpOPkni8UqW
+ aiffVoXahEftvoB+wQpe9YS+2/B+YKdPeHB+ZlSuWMIgmbbDKa100IIaISWeB0OquqJL
+ fo0IzJpTh5hSuYaQH9eIAEDn4vOdGkCiM3zASdah+l1bHwAAEyNz6ROyEIiN2FFA05LU
+ P4+XGcpqX1Sw0l/BbUCUBZ22LzzckjxeoujgJk6s4Zn1G3ps6YVr/hPcD0dH/0xYIheO
+ hnNA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=4W28UQlErbB5t4AS0heTRzpi/rx98hbqyEgzItkWb6g=;
- b=VZz9/5z3tV6pc5+g/SLN3py8nApEPXLAL7mDgtIWNAJbYpNOJQoqFxe0mYgC4/PW+j
- 79qyK1Qoz3LGEk3tDrbWoeIOTYyFiXkb843qwhWiZTI4TEL2kV3XtkKxELtUozm2WFZQ
- LUXh5bkMhmB3S2yINv7a1qL0R5vOiHzN/0PMXnGOM9KipVm87c4ZvzMV2LgPhcgB76rB
- e8LyXJrJ55z1evm6YT/Jrk1e5UjrJOgIH/UDbjzWRV3jQtZr+VXnDOTC41pvWQuw/qEY
- MOZuERpE4kyO6MAf6hZx03tHJV450bBA4oWX5ifiCszj38nZc+xI2+ZRZl3MqXHXCLDb
- 1bXQ==
-X-Gm-Message-State: APjAAAVg+M7O8nDTOwDOVsP8VnDPlbeuG5Oayaaj+s+ZMkvsVrso/HBL
- OcMTpjEKZbFJYAt2XDbLcO2K5deMlbxOAtnh3npPiQ==
-X-Google-Smtp-Source: APXvYqymJno0peJ1TM4oS2RkGgGa2NGhPBBBghYsDeQjjbvRNEzA7mcsVhxszbxtw7GarqhCGy3ao9ADKGGhHyUFWlI=
-X-Received: by 2002:a63:480f:: with SMTP id v15mr820061pga.201.1579821961011; 
- Thu, 23 Jan 2020 15:26:01 -0800 (PST)
-MIME-Version: 1.0
-References: <20191210212108.222514-1-brendanhiggins@google.com>
- <CAMuHMdVyjjZAoO3Q-Vr88fUGFwrn4EoiSxBmG_FV+o87BuBmwQ@mail.gmail.com>
- <CAFLxGvzMf1Fni4va1EM1ta_o7zDjkM8iAr=j+t74+G79wq=XOA@mail.gmail.com>
- <c80a1c56a5a543d2a7174e598919164aSN6PR10MB3039E2FB633AC95CF4279B04E2320@SN6PR10MB3039.namprd10.prod.outlook.com>
-In-Reply-To: <c80a1c56a5a543d2a7174e598919164aSN6PR10MB3039E2FB633AC95CF4279B04E2320@SN6PR10MB3039.namprd10.prod.outlook.com>
+ h=x-gm-message-state:date:message-id:mime-version:subject:from:to:cc;
+ bh=taYXiMSvG/uOaWszHXNY3LIQcqdsQdZuQaVnEsyfgN4=;
+ b=Je0rg2WDdwsika7/8yfeVHIzo3GQnGoTfgXbPx1mcZQeos5F93Xs+X4olKlhtTR1h5
+ nXwA/PYydSPipLkR7oOLU6073wOfkURrbfGyA1itq9ZyE9z6NDQQJhFRIJ2LdUyPMwdM
+ jblyUnkh+MgIZI5JEbPYmIvhfmai8xPqkIoLS9FD0mcCykmWp2K9BuRilyqaUb8uPuNc
+ L+Nu2JEU8ol1rvWair+rcUA5gd9Q/j+Ul9mPjqlVlQ0Zbcki7DqkPLRciCKcbU94fOX2
+ 3fDY7pd/6sCKLWjhOM3ANbPRaEO1IdaW266wm+fcRMEI92MqAdrqb0BRBQITXC+/wvCg
+ kpPQ==
+X-Gm-Message-State: APjAAAUB0tnWuKqRwZljvypZrzRKiB1IWG5vLrNYkKYbAR0Dwa3+RCQS
+ f7J8xAgTllaiBkwAD6ooyVDe0xgRaWS2RqUlIgyBjg==
+X-Google-Smtp-Source: APXvYqyDIp+eGmrYp3/rfPhDduqurXLOKZW+c8hSrVPuXFgIDBtOVRKHnifIEoajdXNfOrzKOOaJj0Mi9uj6fqXTRVQmeg==
+X-Received: by 2002:a63:744f:: with SMTP id e15mr1054047pgn.344.1579823959193; 
+ Thu, 23 Jan 2020 15:59:19 -0800 (PST)
+Date: Thu, 23 Jan 2020 15:59:14 -0800
+Message-Id: <20200123235914.223178-1-brendanhiggins@google.com>
+Mime-Version: 1.0
+X-Mailer: git-send-email 2.25.0.341.g760bfbb309-goog
+Subject: [PATCH v2] uml: make CONFIG_STATIC_LINK actually static
 From: Brendan Higgins <brendanhiggins@google.com>
-Date: Thu, 23 Jan 2020 15:25:49 -0800
-Message-ID: <CAFd5g45oZrj4MRQzJhujr1pVbOjjcqukAxm3NWTRPwO78UaidA@mail.gmail.com>
-Subject: Re: [PATCH v1] uml: make CONFIG_STATIC_LINK actually static
-To: James McMechan <james_mcmechan@hotmail.com>
+To: jdike@addtoit.com, richard@nod.at, anton.ivanov@cambridgegreys.com, 
+ geert@linux-m68k.org, james_mcmechan@hotmail.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200123_152602_469763_86B7262A 
-X-CRM114-Status: GOOD (  13.05  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20200123_155921_654988_ED53105B 
+X-CRM114-Status: UNSURE (   8.10  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:449 listed in]
  [list.dnswl.org]
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
@@ -85,8 +80,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,43 +92,90 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: Johannes Berg <johannes.berg@intel.com>,
- Richard Weinberger <richard.weinberger@gmail.com>,
- Richard Weinberger <richard@nod.at>, Jeff Dike <jdike@addtoit.com>,
- linux-um <linux-um@lists.infradead.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Geert Uytterhoeven <geert@linux-m68k.org>,
- "davidgow@google.com" <davidgow@google.com>,
- Anton Ivanov <anton.ivanov@cambridgegreys.com>
+Cc: Brendan Higgins <brendanhiggins@google.com>, linux-um@lists.infradead.org,
+ linux-kernel@vger.kernel.org, davidgow@google.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Sun, Jan 19, 2020 at 4:30 PM James McMechan
-<james_mcmechan@hotmail.com> wrote:
->
-> Resent for the mailing list since my webmail decided to try to send html...
->
-> I agree that at least the UML_NET_VECTOR is not compatible with static linking at the moment,
-> but I was running a statically linked UML with PCAP back in December.
-> I was having no problems, but I don't remember if I was using PCAP itself...
+Currently, CONFIG_STATIC_LINK can be enabled with options which cannot
+be statically linked, namely UML_NET_VECTOR, UML_NET_VDE, and
+UML_NET_PCAP; this is because glibc tries to load NSS which does not
+support being statically linked. So make CONFIG_STATIC_LINK depend on
+!UML_NET_VECTOR && !UML_NET_VDE && !UML_NET_PCAP.
 
-I was just going off of what Anton and Johannes said in regard to
-PCAP; it seems to have deviated from the libpcap library, so I have
-been unable to test it:
+Link: https://lore.kernel.org/lkml/f658f317-be54-ed75-8296-c373c2dcc697@cambridgegreys.com/#t
+Signed-off-by: Brendan Higgins <brendanhiggins@google.com>
+---
+Changes since last revision:
 
-http://lists.infradead.org/pipermail/linux-um/2019-December/002548.html
+Incorporated Geert Uytterhoeven's suggestion of using a separate
+FORBID_STATIC_LINK config option that each driver incompatible with
+static linking selects.
+---
+ arch/um/Kconfig         | 7 +++++++
+ arch/um/drivers/Kconfig | 3 +++
+ 2 files changed, 10 insertions(+)
 
-Anton, do you have the fix for PCAP out yet?
+diff --git a/arch/um/Kconfig b/arch/um/Kconfig
+index 0917f8443c285..27a51e7dd59c6 100644
+--- a/arch/um/Kconfig
++++ b/arch/um/Kconfig
+@@ -62,8 +62,12 @@ config NR_CPUS
+ 
+ source "arch/$(HEADER_ARCH)/um/Kconfig"
+ 
++config FORBID_STATIC_LINK
++	def_bool n
++
+ config STATIC_LINK
+ 	bool "Force a static link"
++	depends on !FORBID_STATIC_LINK
+ 	default n
+ 	help
+ 	  This option gives you the ability to force a static link of UML.
+@@ -73,6 +77,9 @@ config STATIC_LINK
+ 	  Additionally, this option enables using higher memory spaces (up to
+ 	  2.75G) for UML.
+ 
++	  NOTE: This option is incompatible with some networking features which
++	  depend on features that require being dynamically loaded (like NSS).
++
+ config LD_SCRIPT_STATIC
+ 	bool
+ 	default y
+diff --git a/arch/um/drivers/Kconfig b/arch/um/drivers/Kconfig
+index 72d4170557820..9160ead56e33c 100644
+--- a/arch/um/drivers/Kconfig
++++ b/arch/um/drivers/Kconfig
+@@ -234,6 +234,7 @@ config UML_NET_DAEMON
+ config UML_NET_VECTOR
+ 	bool "Vector I/O high performance network devices"
+ 	depends on UML_NET
++	select FORBID_STATIC_LINK
+ 	help
+ 	This User-Mode Linux network driver uses multi-message send
+ 	and receive functions. The host running the UML guest must have
+@@ -245,6 +246,7 @@ config UML_NET_VECTOR
+ config UML_NET_VDE
+ 	bool "VDE transport (obsolete)"
+ 	depends on UML_NET
++	select FORBID_STATIC_LINK
+ 	help
+ 	This User-Mode Linux network transport allows one or more running
+ 	UMLs on a single host to communicate with each other and also
+@@ -292,6 +294,7 @@ config UML_NET_MCAST
+ config UML_NET_PCAP
+ 	bool "pcap transport (obsolete)"
+ 	depends on UML_NET
++	select FORBID_STATIC_LINK
+ 	help
+ 	The pcap transport makes a pcap packet stream on the host look
+ 	like an ethernet device inside UML.  This is useful for making
+-- 
+2.25.0.341.g760bfbb309-goog
 
-> I seem to remember a minor patch I did to fix a symbol conflict but nothing of note.
-> I have not played around with UML_NET_VECTOR since I run the normal networking.
-> And I did not find any config info with a quick googling the vector version so I just ignored it.
-
-Nevertheless, VDE still causes the linker to complain.
-
-Cheers
 
 _______________________________________________
 linux-um mailing list
