@@ -2,74 +2,75 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B4A42147421
-	for <lists+linux-um@lfdr.de>; Thu, 23 Jan 2020 23:57:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 726C21474C5
+	for <lists+linux-um@lfdr.de>; Fri, 24 Jan 2020 00:26:10 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vcOhRZaAUycz7HWErngdDVqCOakBwZK5102gpuIwYMw=; b=jg+zubbj12HhXF
-	Cj743r5MU/xi6h391J+XbC0biCMoARBulcFsYU+DDm1tCsvmZ1FAbcbK+Abgxh+ZzPdl9KfPHf7Wd
-	IjDIcovdKD1m6lwYd+AzWEZVVQA83E+ai5fdPsVd7L0pcAEcsM5rbk+7M3nN5zygjKgbIWfYnAQrI
-	OmcYbUG1QRqX0HCZG46vIdgxvsj56fRfDirpzF/UiYCmgFSFiZUgMsCbXYbpGE+qI9zAFR77Q/Z/i
-	koZWi5ffSsCt7ydquaYMsHzfePDWFfUmz7OAbwYHHrd/4siNe3su8Ni5KWbR79TM3nbflXOVdVaBF
-	yn+0asJ/d/9/FJh6Devg==;
+	List-Owner; bh=2rFw+98KaiKZDikFmIDrXL3aoVcVUuP0zOOObl3ZbJ0=; b=tJItjfX24ri00x
+	XtYlcmm2ZTDqHqNo/LFf1AG2jIa28sNjxLxwlDHEh68ViAbS8AoD8TVbyAG0SNwfzwQyz5JRCduVX
+	Uen1SDfuJmJsQsU3EkN/34YzcNN6cx0vCxZ7X+0Vuh3gNnCWY+epRq+4zUepSRa7Y7Wjlw/2DDDIU
+	y6m4dZjpaGTyb9S6vRD02+sOWZZ4uXchT3xwC3UTsCBX+UX1I6AEsugm3GT3klyHk2mBUoaSK1PaX
+	cySVS1jAW4a9dHGrwrGYXpozuf+5Wm54Vhq1GlzLluOe666PTug2kxFjIkfIoenDxzyNJ/ZK1/0FT
+	7h5kbxbWe1ZliEtCYuOw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iulPF-0000w0-5Q; Thu, 23 Jan 2020 22:56:57 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1iulrR-0003zJ-Fh; Thu, 23 Jan 2020 23:26:05 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iulPD-0000vX-Ab
- for linux-um@lists.infradead.org; Thu, 23 Jan 2020 22:56:56 +0000
-Received: by mail-pg1-x544.google.com with SMTP id l24so2153122pgk.2
- for <linux-um@lists.infradead.org>; Thu, 23 Jan 2020 14:56:55 -0800 (PST)
+ id 1iulrO-0003yW-DD
+ for linux-um@lists.infradead.org; Thu, 23 Jan 2020 23:26:03 +0000
+Received: by mail-pg1-x541.google.com with SMTP id l24so31354pgk.2
+ for <linux-um@lists.infradead.org>; Thu, 23 Jan 2020 15:26:01 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=KDyx4Ql8/Qn5VAoH2DVKut2V/mwsU6XM8Sb1jgu629k=;
- b=tplaEJ1vep6oo8dV1s9BOPDmRx7jCDz9+N3FKj3myXdVaRz6YvIrUsNyv5jg9YToT/
- pZ5HtpJWhlSL3p7j8WnO4gS9eQAO7GalnteaC+BCkCqtvuiTfGTnjccLM7HpIWCB1InI
- LaOSyoyDBgKX3T9+24hjMAV1y4lFY3c6TVIa7kolWbSK0ik4lMyaCXYVWkN6X0j07Ble
- If0fzVssdVXXYCan4YXZzy2cxyeVShgHfimuuTkLEQpPCk2agA1PzCsuD35FoTZCUhoW
- xOKM70JQm9yXnc1Y7PNVpG78ph9b1lMuHOBlFq58zE7QvCgLLkS63be/X5VyD+GE5w3g
- KkVQ==
+ :cc; bh=4W28UQlErbB5t4AS0heTRzpi/rx98hbqyEgzItkWb6g=;
+ b=n3FX0UCzVuXqvvCwf+bLdSICmWk2pxQ7chxMCCTB2hx42/dMimta3BQBEfPyQ2046Q
+ Qm8+4esUf31iOSr2kHqW/yFshxkl6gygYlpIVbuXOuumGNu+lDpV6HJ+RER5kBAfDmeQ
+ vdmU0syrs6DKDNGGupYB6Fwm/0fUnmeGHc9jpzbo2z5Kumed7XqkxXhITJCtDdzyuMIw
+ M0OkibI6uMSi5pIQA9DNluRUY1L9QR6rU40wEQg+oH0EWcB5NwLDSwBoNCjvMh5eSlAG
+ GLTytxkX/JFyIvPaa8kaCTqqErVUeJrwj2pxPOsDcIz1hCcoydlB8k/kM8mD0Riz/RKU
+ VG7A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=KDyx4Ql8/Qn5VAoH2DVKut2V/mwsU6XM8Sb1jgu629k=;
- b=mq2rZZ4do+2r12aXVWnfheKMnKlPDj0tyc2Kgx8qgS9bHNtta8eBUxcmxWSVBtvVbI
- 4mvIVoeYCc4IAS2bf93PxFOOWLzWchCUJpWkcSMWDgixZUWFPepCbHOVGVgzl3sRI0ZM
- IE4qak8TtaVQAJ6hWKyc/yL6qLQJEvbEuN1qpoezYC2nHoaxU1MIJMUdK5L7+RAxCpxG
- U+ksbgfMV6YtDoLc/dqz6e6VgnoQFewObAO5M5UdFB/ZaWnvmiaPxTekcJP9RJtKlNlp
- KF20zodGrpcm3o/GImWtgcIcfY8ndLfanEr189p6XuKwAhPivqHrTlvGUIaIV+qXZWSs
- R5RA==
-X-Gm-Message-State: APjAAAWdFMU79dKJuYbiE8KR6BZjmZbmnF1P+FJ5Lj3rG7WfgJINHLQZ
- Uzx850AetDh1B6aRLgXwQDx5GRa+ISsCaFwQHEEjhQ==
-X-Google-Smtp-Source: APXvYqyYSrlPKI5wQd9gqwUk5XMTQiSu85EU/bUZcbyAqDwHkHjIuhxEB+wv6Wrj3RCcUP6u/oi9MxoAR4RhwmZvvsg=
-X-Received: by 2002:a63:597:: with SMTP id 145mr705968pgf.384.1579820214473;
- Thu, 23 Jan 2020 14:56:54 -0800 (PST)
+ bh=4W28UQlErbB5t4AS0heTRzpi/rx98hbqyEgzItkWb6g=;
+ b=VZz9/5z3tV6pc5+g/SLN3py8nApEPXLAL7mDgtIWNAJbYpNOJQoqFxe0mYgC4/PW+j
+ 79qyK1Qoz3LGEk3tDrbWoeIOTYyFiXkb843qwhWiZTI4TEL2kV3XtkKxELtUozm2WFZQ
+ LUXh5bkMhmB3S2yINv7a1qL0R5vOiHzN/0PMXnGOM9KipVm87c4ZvzMV2LgPhcgB76rB
+ e8LyXJrJ55z1evm6YT/Jrk1e5UjrJOgIH/UDbjzWRV3jQtZr+VXnDOTC41pvWQuw/qEY
+ MOZuERpE4kyO6MAf6hZx03tHJV450bBA4oWX5ifiCszj38nZc+xI2+ZRZl3MqXHXCLDb
+ 1bXQ==
+X-Gm-Message-State: APjAAAVg+M7O8nDTOwDOVsP8VnDPlbeuG5Oayaaj+s+ZMkvsVrso/HBL
+ OcMTpjEKZbFJYAt2XDbLcO2K5deMlbxOAtnh3npPiQ==
+X-Google-Smtp-Source: APXvYqymJno0peJ1TM4oS2RkGgGa2NGhPBBBghYsDeQjjbvRNEzA7mcsVhxszbxtw7GarqhCGy3ao9ADKGGhHyUFWlI=
+X-Received: by 2002:a63:480f:: with SMTP id v15mr820061pga.201.1579821961011; 
+ Thu, 23 Jan 2020 15:26:01 -0800 (PST)
 MIME-Version: 1.0
-References: <20191216220555.245089-1-brendanhiggins@google.com>
- <20191216220555.245089-7-brendanhiggins@google.com>
- <20191217080653.B672B2082E@mail.kernel.org>
-In-Reply-To: <20191217080653.B672B2082E@mail.kernel.org>
+References: <20191210212108.222514-1-brendanhiggins@google.com>
+ <CAMuHMdVyjjZAoO3Q-Vr88fUGFwrn4EoiSxBmG_FV+o87BuBmwQ@mail.gmail.com>
+ <CAFLxGvzMf1Fni4va1EM1ta_o7zDjkM8iAr=j+t74+G79wq=XOA@mail.gmail.com>
+ <c80a1c56a5a543d2a7174e598919164aSN6PR10MB3039E2FB633AC95CF4279B04E2320@SN6PR10MB3039.namprd10.prod.outlook.com>
+In-Reply-To: <c80a1c56a5a543d2a7174e598919164aSN6PR10MB3039E2FB633AC95CF4279B04E2320@SN6PR10MB3039.namprd10.prod.outlook.com>
 From: Brendan Higgins <brendanhiggins@google.com>
-Date: Thu, 23 Jan 2020 14:56:43 -0800
-Message-ID: <CAFd5g45YJrrOu=kvSF9LhkCy_gxrAa3Sa6UJLRFGQtDtepe9xg@mail.gmail.com>
-Subject: Re: [RFC v1 6/6] kunit: Add 'kunit_shutdown' option
-To: Stephen Boyd <sboyd@kernel.org>
+Date: Thu, 23 Jan 2020 15:25:49 -0800
+Message-ID: <CAFd5g45oZrj4MRQzJhujr1pVbOjjcqukAxm3NWTRPwO78UaidA@mail.gmail.com>
+Subject: Re: [PATCH v1] uml: make CONFIG_STATIC_LINK actually static
+To: James McMechan <james_mcmechan@hotmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200123_145655_389417_C02B0555 
-X-CRM114-Status: GOOD (  13.12  )
+X-CRM114-CacheID: sfid-20200123_152602_469763_86B7262A 
+X-CRM114-Status: GOOD (  13.05  )
 X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
  white-list
@@ -97,48 +98,43 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org,
- "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
- Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
- Greg KH <gregkh@linuxfoundation.org>, Richard Weinberger <richard@nod.at>,
- Jeff Dike <jdike@addtoit.com>, Knut Omang <knut.omang@oracle.com>,
- Luis Chamberlain <mcgrof@kernel.org>, rppt@linux.ibm.com,
- linux-um <linux-um@lists.infradead.org>, Logan Gunthorpe <logang@deltatee.com>,
- KUnit Development <kunit-dev@googlegroups.com>,
- David Gow <davidgow@google.com>, Shuah Khan <skhan@linuxfoundation.org>,
- Andrew Morton <akpm@linux-foundation.org>, Iurii Zaikin <yzaikin@google.com>,
- Alan Maguire <alan.maguire@oracle.com>,
+Cc: Johannes Berg <johannes.berg@intel.com>,
+ Richard Weinberger <richard.weinberger@gmail.com>,
+ Richard Weinberger <richard@nod.at>, Jeff Dike <jdike@addtoit.com>,
+ linux-um <linux-um@lists.infradead.org>,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Geert Uytterhoeven <geert@linux-m68k.org>,
+ "davidgow@google.com" <davidgow@google.com>,
  Anton Ivanov <anton.ivanov@cambridgegreys.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Tue, Dec 17, 2019 at 12:06 AM Stephen Boyd <sboyd@kernel.org> wrote:
+On Sun, Jan 19, 2020 at 4:30 PM James McMechan
+<james_mcmechan@hotmail.com> wrote:
 >
-> Quoting Brendan Higgins (2019-12-16 14:05:55)
-> > From: David Gow <davidgow@google.com>
-> >
-> > Add a new kernel command-line option, 'kunit_shutdown', which allows the
-> > user to specify that the kernel poweroff, halt, or reboot after
-> > completing all KUnit tests; this is very handy for running KUnit tests
-> > on UML or a VM so that the UML/VM process exits cleanly immediately
-> > after running all tests without needing a special initramfs.
-> >
-> > Signed-off-by: David Gow <davidgow@google.com>
-> > Signed-off-by: Brendan Higgins <brendanhiggins@google.com>
-> > ---
-> >  lib/kunit/executor.c                | 18 ++++++++++++++++++
-> >  tools/testing/kunit/kunit_kernel.py |  2 +-
-> >  tools/testing/kunit/kunit_parser.py |  2 +-
-> >  3 files changed, 20 insertions(+), 2 deletions(-)
+> Resent for the mailing list since my webmail decided to try to send html...
 >
-> Can you document it in Documentation/admin-guide/kernel-parameters.txt ?
+> I agree that at least the UML_NET_VECTOR is not compatible with static linking at the moment,
+> but I was running a statically linked UML with PCAP back in December.
+> I was having no problems, but I don't remember if I was using PCAP itself...
 
-Ah, yes. That would be a good idea. Sorry, I just expected to be
-shouted at loudly for doing this, and didn't want to expend the effort
-until some people told me that they didn't hate the idea.
+I was just going off of what Anton and Johannes said in regard to
+PCAP; it seems to have deviated from the libpcap library, so I have
+been unable to test it:
+
+http://lists.infradead.org/pipermail/linux-um/2019-December/002548.html
+
+Anton, do you have the fix for PCAP out yet?
+
+> I seem to remember a minor patch I did to fix a symbol conflict but nothing of note.
+> I have not played around with UML_NET_VECTOR since I run the normal networking.
+> And I did not find any config info with a quick googling the vector version so I just ignored it.
+
+Nevertheless, VDE still causes the linker to complain.
+
+Cheers
 
 _______________________________________________
 linux-um mailing list
