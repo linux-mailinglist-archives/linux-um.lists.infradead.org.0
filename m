@@ -2,74 +2,75 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7483414741A
-	for <lists+linux-um@lfdr.de>; Thu, 23 Jan 2020 23:55:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B4A42147421
+	for <lists+linux-um@lfdr.de>; Thu, 23 Jan 2020 23:57:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qnePpq4ta0jYXsFucraMPJeOA4CEQykgMHzN+X6g4tg=; b=k0BKBYUQfzEU6t
-	pobszz6rTS6+z2dEairJ5Rax4z6jSJ5hyo6QrcK+6TEnjhVh66dekQ0kSt8+lQA5IvtUvOd99HvHa
-	1rMOGBC98YMOnhrdiH8Qxh2PVdhXwI40ZSVQ7nKK+CjaB8kHMEPS77EGjvto/aXHIaA66+xwabCgC
-	iI4mdtrqaeUVEApSTfWdQhCgjwGnLXGp/Rl9vjBRkPESpZ7gBDhR9tWTQUK8Oi1va4iwrn9ZrNK+p
-	Vu3/UEB+j0miwZcqvQpVDQN4Uz/+cZnEqsiii6O2289tv60gkbHS2mzXQorfxArvPGrMcjm9YT0s1
-	v7PkJHrh1WmECHsfC/zA==;
+	List-Owner; bh=vcOhRZaAUycz7HWErngdDVqCOakBwZK5102gpuIwYMw=; b=jg+zubbj12HhXF
+	Cj743r5MU/xi6h391J+XbC0biCMoARBulcFsYU+DDm1tCsvmZ1FAbcbK+Abgxh+ZzPdl9KfPHf7Wd
+	IjDIcovdKD1m6lwYd+AzWEZVVQA83E+ai5fdPsVd7L0pcAEcsM5rbk+7M3nN5zygjKgbIWfYnAQrI
+	OmcYbUG1QRqX0HCZG46vIdgxvsj56fRfDirpzF/UiYCmgFSFiZUgMsCbXYbpGE+qI9zAFR77Q/Z/i
+	koZWi5ffSsCt7ydquaYMsHzfePDWFfUmz7OAbwYHHrd/4siNe3su8Ni5KWbR79TM3nbflXOVdVaBF
+	yn+0asJ/d/9/FJh6Devg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iulNb-0000qo-QU; Thu, 23 Jan 2020 22:55:15 +0000
-Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
+	id 1iulPF-0000w0-5Q; Thu, 23 Jan 2020 22:56:57 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iulNY-0000aT-D4
- for linux-um@lists.infradead.org; Thu, 23 Jan 2020 22:55:13 +0000
-Received: by mail-pj1-x1041.google.com with SMTP id s7so166156pjc.0
- for <linux-um@lists.infradead.org>; Thu, 23 Jan 2020 14:55:07 -0800 (PST)
+ id 1iulPD-0000vX-Ab
+ for linux-um@lists.infradead.org; Thu, 23 Jan 2020 22:56:56 +0000
+Received: by mail-pg1-x544.google.com with SMTP id l24so2153122pgk.2
+ for <linux-um@lists.infradead.org>; Thu, 23 Jan 2020 14:56:55 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=bdR2VIngUyNsUGbPsP+UPl746ALnDu+ORGiYpHLsy/M=;
- b=JYMcOHTdAKO6qaAxt2V6dRl499d2oCBChvSKIPRVWm/EJYVbbKZob8zLiyhHlveyrk
- p+KvC/twgDmyuyPk4TqU6B4LjpV3xHxY03utbDuKBU6lhgSNxvHuoSu/JTiR4cyLZ6rk
- 9oVRRwxoX2c6oxsLLaLz9PYzd4kpQQiuYN/K2ecvoS766fFWpFNMIEYDHx8ebGAd0eir
- OkwhLZFL4pUC0U41ljkGgZ3MUEvNQwNCk8ilet4PeJDEIZLq3ZN9SZjBVSSWs1j8sh6g
- 1mBUxNyR5Zd+s2FiiiY/8Ss9qP69I2CyNbfhQxwnpP4ttaB+8MrwJ4bst6KAhAUDRkCJ
- 7qUw==
+ :cc; bh=KDyx4Ql8/Qn5VAoH2DVKut2V/mwsU6XM8Sb1jgu629k=;
+ b=tplaEJ1vep6oo8dV1s9BOPDmRx7jCDz9+N3FKj3myXdVaRz6YvIrUsNyv5jg9YToT/
+ pZ5HtpJWhlSL3p7j8WnO4gS9eQAO7GalnteaC+BCkCqtvuiTfGTnjccLM7HpIWCB1InI
+ LaOSyoyDBgKX3T9+24hjMAV1y4lFY3c6TVIa7kolWbSK0ik4lMyaCXYVWkN6X0j07Ble
+ If0fzVssdVXXYCan4YXZzy2cxyeVShgHfimuuTkLEQpPCk2agA1PzCsuD35FoTZCUhoW
+ xOKM70JQm9yXnc1Y7PNVpG78ph9b1lMuHOBlFq58zE7QvCgLLkS63be/X5VyD+GE5w3g
+ KkVQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=bdR2VIngUyNsUGbPsP+UPl746ALnDu+ORGiYpHLsy/M=;
- b=KozQIwIIMsq+VDLUpL4zBn8FaeDX9HUa4qSGN+1+3yieyXlbLk7eghdM6lLWl7rrrf
- w48LeaCpTOlfvR139vP97X6kTrZnYlxQ9414/kgXciYjrpTHRIDiME465JgxA2LTWKRr
- OnOUtTZILoCvaAPo2QWCmpxMq63+Ib+NWUVlp/cK4TSde2hbwp2zaIjSNErGcHzsRCWW
- q1zIclpLtK9AxpcyFQhocx5I+bVQOkUdnn/HCR0BApIXne9wa0KIZmR2sjSu/HZgN3A9
- p4w22T/heLtns1icfbhwm3iEmwzo15jarNG4sP+34QSVB1MZ4FOU9RsTkJQ9e9QuCjN0
- 5pwA==
-X-Gm-Message-State: APjAAAVUWcM638sP1ODH5HAwFRvovkyAUzW3/Ev3zHof1Dwd89VrvXuE
- P8Q/QfCL2AtyvnlE0x+Dp92EHwXSU5Sficqlc3a6/g==
-X-Google-Smtp-Source: APXvYqzdbpR7pO8euiReITGLrsk+/Oy+gyJrt9hmrf3x4sUM9Laf+reGcryH8NHCxinjRW4t04WOyzPtBwugde0z+ec=
-X-Received: by 2002:a17:902:9f98:: with SMTP id
- g24mr423318plq.325.1579820106653; 
- Thu, 23 Jan 2020 14:55:06 -0800 (PST)
+ bh=KDyx4Ql8/Qn5VAoH2DVKut2V/mwsU6XM8Sb1jgu629k=;
+ b=mq2rZZ4do+2r12aXVWnfheKMnKlPDj0tyc2Kgx8qgS9bHNtta8eBUxcmxWSVBtvVbI
+ 4mvIVoeYCc4IAS2bf93PxFOOWLzWchCUJpWkcSMWDgixZUWFPepCbHOVGVgzl3sRI0ZM
+ IE4qak8TtaVQAJ6hWKyc/yL6qLQJEvbEuN1qpoezYC2nHoaxU1MIJMUdK5L7+RAxCpxG
+ U+ksbgfMV6YtDoLc/dqz6e6VgnoQFewObAO5M5UdFB/ZaWnvmiaPxTekcJP9RJtKlNlp
+ KF20zodGrpcm3o/GImWtgcIcfY8ndLfanEr189p6XuKwAhPivqHrTlvGUIaIV+qXZWSs
+ R5RA==
+X-Gm-Message-State: APjAAAWdFMU79dKJuYbiE8KR6BZjmZbmnF1P+FJ5Lj3rG7WfgJINHLQZ
+ Uzx850AetDh1B6aRLgXwQDx5GRa+ISsCaFwQHEEjhQ==
+X-Google-Smtp-Source: APXvYqyYSrlPKI5wQd9gqwUk5XMTQiSu85EU/bUZcbyAqDwHkHjIuhxEB+wv6Wrj3RCcUP6u/oi9MxoAR4RhwmZvvsg=
+X-Received: by 2002:a63:597:: with SMTP id 145mr705968pgf.384.1579820214473;
+ Thu, 23 Jan 2020 14:56:54 -0800 (PST)
 MIME-Version: 1.0
 References: <20191216220555.245089-1-brendanhiggins@google.com>
- <20191216220555.245089-4-brendanhiggins@google.com>
- <20191217080408.0E805207FF@mail.kernel.org>
-In-Reply-To: <20191217080408.0E805207FF@mail.kernel.org>
+ <20191216220555.245089-7-brendanhiggins@google.com>
+ <20191217080653.B672B2082E@mail.kernel.org>
+In-Reply-To: <20191217080653.B672B2082E@mail.kernel.org>
 From: Brendan Higgins <brendanhiggins@google.com>
-Date: Thu, 23 Jan 2020 14:54:55 -0800
-Message-ID: <CAFd5g44Wh9kwXsY_M4GfMp0+wzN_3HhVfa360J-tF48aQ_KADg@mail.gmail.com>
-Subject: Re: [RFC v1 3/6] kunit: test: create a single centralized executor
- for all tests
+Date: Thu, 23 Jan 2020 14:56:43 -0800
+Message-ID: <CAFd5g45YJrrOu=kvSF9LhkCy_gxrAa3Sa6UJLRFGQtDtepe9xg@mail.gmail.com>
+Subject: Re: [RFC v1 6/6] kunit: Add 'kunit_shutdown' option
 To: Stephen Boyd <sboyd@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200123_145512_445216_F3334028 
-X-CRM114-Status: GOOD (  19.44  )
+X-CRM114-CacheID: sfid-20200123_145655_389417_C02B0555 
+X-CRM114-Status: GOOD (  13.12  )
 X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
  -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
  white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -114,107 +115,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Tue, Dec 17, 2019 at 12:04 AM Stephen Boyd <sboyd@kernel.org> wrote:
+On Tue, Dec 17, 2019 at 12:06 AM Stephen Boyd <sboyd@kernel.org> wrote:
 >
-> Quoting Brendan Higgins (2019-12-16 14:05:52)
-> > diff --git a/include/kunit/test.h b/include/kunit/test.h
-> > index dba48304b3bd3..c070798ebb765 100644
-> > --- a/include/kunit/test.h
-> > +++ b/include/kunit/test.h
-> > @@ -217,11 +217,8 @@ int kunit_run_tests(struct kunit_suite *suite);
-> >   * everything else is definitely initialized.
-> >   */
-> >  #define kunit_test_suite(suite)                                                       \
-> > -       static int kunit_suite_init##suite(void)                               \
->
-> Oh this should have been __init before.
-
-No, the stuff in this patch shouldn't be init. With the work that Alan
-has been doing (adding support for modules, debugfs); the test code
-can run after booting, so init in any of this code is incorrect.
-
-> > -       {                                                                      \
-> > -               return kunit_run_tests(&suite);                                \
-> > -       }                                                                      \
-> > -       late_initcall(kunit_suite_init##suite)
-> > +       static struct kunit_suite *__kunit_suite_##suite                       \
-> > +       __used __aligned(8) __section(.kunit_test_suites) = &suite
+> Quoting Brendan Higgins (2019-12-16 14:05:55)
+> > From: David Gow <davidgow@google.com>
 > >
-> >  /*
-> >   * Like kunit_alloc_resource() below, but returns the struct kunit_resource
-> > diff --git a/lib/kunit/executor.c b/lib/kunit/executor.c
-> > new file mode 100644
-> > index 0000000000000..978086cfd257d
-> > --- /dev/null
-> > +++ b/lib/kunit/executor.c
-> > @@ -0,0 +1,43 @@
-> > +// SPDX-License-Identifier: GPL-2.0
-> > +/*
-> > + * Base unit test (KUnit) API.
-> > + *
-> > + * Copyright (C) 2019, Google LLC.
-> > + * Author: Brendan Higgins <brendanhiggins@google.com>
-> > + */
-> > +
-> > +#include <linux/init.h>
-> > +#include <linux/printk.h>
-> > +#include <kunit/test.h>
-> > +
-> > +/*
-> > + * These symbols point to the .kunit_test_suites section and are defined in
-> > + * include/asm-generic/vmlinux.lds.h, and consequently must be extern.
-> > + */
-> > +extern struct kunit_suite *__kunit_suites_start[];
-> > +extern struct kunit_suite *__kunit_suites_end[];
-> > +
-> > +static bool kunit_run_all_tests(void)
+> > Add a new kernel command-line option, 'kunit_shutdown', which allows the
+> > user to specify that the kernel poweroff, halt, or reboot after
+> > completing all KUnit tests; this is very handy for running KUnit tests
+> > on UML or a VM so that the UML/VM process exits cleanly immediately
+> > after running all tests without needing a special initramfs.
+> >
+> > Signed-off-by: David Gow <davidgow@google.com>
+> > Signed-off-by: Brendan Higgins <brendanhiggins@google.com>
+> > ---
+> >  lib/kunit/executor.c                | 18 ++++++++++++++++++
+> >  tools/testing/kunit/kunit_kernel.py |  2 +-
+> >  tools/testing/kunit/kunit_parser.py |  2 +-
+> >  3 files changed, 20 insertions(+), 2 deletions(-)
 >
-> Should be __init?
+> Can you document it in Documentation/admin-guide/kernel-parameters.txt ?
 
-It could be, I think. Alan's code doesn't call this, so for now we
-might as well make it __init.
-
-> > +{
-> > +       struct kunit_suite **suite;
->
-> Can this be const? And the linker references above too?
-
-Good catch. Will fix.
-
-> > +       bool has_test_failed = false;
-> > +
-> > +       for (suite = __kunit_suites_start;
-> > +            suite < __kunit_suites_end;
-> > +            ++suite) {
-> > +               if (kunit_run_tests(*suite))
-> > +                       has_test_failed = true;
-> > +       }
-> > +
-> > +       return !has_test_failed;
-> > +}
-> > +
-> > +static int kunit_executor_init(void)
->
-> Should be __init?
-
-Will do.
-
-> > +{
-> > +       if (kunit_run_all_tests())
-> > +               return 0;
-> > +       else
-> > +               return -EFAULT;
->
-> Why two functions instead of just one that is the target of the
-> late_initcall? Nitpick: deindent that last return and take it out of the
-> else.
-
-Yeah, it probably makes more sense to just call kunit_run_all_tests
-and have it return an int.
-
-> > +}
-> > +
-> > +late_initcall(kunit_executor_init);
+Ah, yes. That would be a good idea. Sorry, I just expected to be
+shouted at loudly for doing this, and didn't want to expend the effort
+until some people told me that they didn't hate the idea.
 
 _______________________________________________
 linux-um mailing list
