@@ -2,94 +2,73 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 48DD21477A8
-	for <lists+linux-um@lfdr.de>; Fri, 24 Jan 2020 05:32:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E2DA5147911
+	for <lists+linux-um@lfdr.de>; Fri, 24 Jan 2020 08:51:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Subject:To:From:Message-ID:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UG2yIAWsmegAP2p+G79bnG98cipGasJdSHhw9YZehVw=; b=bR5j76KuCz1H7R
-	fCXrmee2qSJkP/Y7iUUKC68xLjr76a2uhUAM7VX2LHtdP/vUxE5/VOgeimp8GB8kpdIebYq8AcY2/
-	C6+9Lnkagz5JZ7HW5ZuffJUWmH3kgJM5z0qkWHIJAxnBcsI33T2VYSEIpIy+VF0t71jzwHYFaV+AH
-	vQKA7rYHWG8JKEsVZuzOhP9OM2k5DSXbXQyXjmBSXAs6tfc6aH5ALYMd/bu7GEkk659+csNNY3ce5
-	dVluK8Moubd3OIsV3ZgMOtsg1j55yCRPCNacvXKoUNyd6ohNP2kypOt7ASu0pK/YagzcYFhtSHVHI
-	kPTKY6xQQkshxafeT1JQ==;
+	List-Owner; bh=+COmlRVhi6PApYNBqY03ezqaO28ZydcrVoQVCUoHPpQ=; b=hOiyZU3Bcbgkyu
+	NURkPVY/ECFF/iWW0kWDpfUB31wZmwY4Qk0VfbSw9dUCIA8brPYsHP9I0HOwswrqaTthuvVeo593F
+	oHPFZ/8eYmkruyFNtqF+EvE777FDD5GOWowSD4FJHqny7JJ/t0EAWH9rYWnWvt3ni5xSyWnotxuMN
+	x0LGsGYjq19t8u0UB2wSlKirPWEOQrtFfJpUE8jbNMR/1P3Se267z/FxTw1Px/1hCX+p70PNu13hr
+	UgnRvV2Y8TfR9UGwJKPwkbMr53KureecsQfUKE31gb4EGXUpIFAIeE6+H4Efya9oK/XAyBn1bIYhL
+	O/b12vd0CrQ3Wch67eMg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuqdm-0004X1-Qk; Fri, 24 Jan 2020 04:32:18 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1iutkD-0005a3-MY; Fri, 24 Jan 2020 07:51:09 +0000
+Received: from mail-oi1-f194.google.com ([209.85.167.194])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuqdj-0004WP-Gh
- for linux-um@lists.infradead.org; Fri, 24 Jan 2020 04:32:17 +0000
-Received: by mail-pg1-x541.google.com with SMTP id u131so343773pgc.10
- for <linux-um@lists.infradead.org>; Thu, 23 Jan 2020 20:32:12 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:message-id:from:to:cc:subject:in-reply-to:references
- :user-agent:mime-version;
- bh=dB6PIC7bEOxOZs3zgfEEHDXJYRlN9x+mhXs0np19giU=;
- b=R5a8BV70MMHo3uYLeeijM9IvNDHVL3LJlGRbhgHeko0jnIpN4twx0BcpH238Hxym4b
- 8xdGm1r+vw7roID1mMwq/guElWwQIs/loZBCmDBOhjuRRvhNOAGVnKcc9+Qe6YYq1VJo
- 8aN6QmyOqZYPJu3kiVAYGdlVtSEocUGPbO9HifUZ5teCg3yozohgfmNlVl5UTz5CaZVv
- 2QE2NwCTN+k9Iy6PYQpagToYoo4SBD8PnJiZBfr/IxovJY7P7Qfs+N2RFD/Og85doKOK
- wqaLuNo0bhRth1m90EW7jSNA4zcqk5jrs8YodTou4p519PePAxDem6HvWkwtqjiVeJYs
- EkPg==
+ id 1iutkA-0005ZK-K8
+ for linux-um@lists.infradead.org; Fri, 24 Jan 2020 07:51:08 +0000
+Received: by mail-oi1-f194.google.com with SMTP id d62so1029272oia.11
+ for <linux-um@lists.infradead.org>; Thu, 23 Jan 2020 23:51:03 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:message-id:from:to:cc:subject:in-reply-to
- :references:user-agent:mime-version;
- bh=dB6PIC7bEOxOZs3zgfEEHDXJYRlN9x+mhXs0np19giU=;
- b=WOYevZgWq9z++FB9p5LP4YKLXCcet5k8XKJ5rt/zDWS03C5QmTq+2u2czqkyJrItR4
- ho6kM/KdGAjikEzohzQSIBCx0iVjFtx8WySeYre1K8a3uovAyNVnb9qaXaRjageAqPWp
- s6ehM0+4+jVJIFOkBCVTXrmWHs5UsZ6GzUI64nhiAAXBlQ7Zt0VKIcHJELuwsZgRHDik
- iuoYEyvHDgiSwd8l+HajS0CNG/FTzOCg+QMA+LPSuwarIIix2rZLcQPR3Cvj2pNW7/8O
- siv5I+KTuYza+/7jUpdgyF7rLrhZFSV1jjIi6712G7W4RF062ZFBKPmjbInflV21mSHF
- bN5g==
-X-Gm-Message-State: APjAAAUP/GJZmbHpj0qm9LwXlOG28xNy7bBg95ShoivRWEGInf4IkVs+
- QmiRDXds6FB2bOrEolaEEAM=
-X-Google-Smtp-Source: APXvYqy79GWDzkbN0sjK2M5yn4HK4dNJcXrlMR5GqL4odhQsMEqMfJe/yxjHVHEFbvkbDFpQuswBOQ==
-X-Received: by 2002:a63:5fce:: with SMTP id t197mr1998123pgb.173.1579840331382; 
- Thu, 23 Jan 2020 20:32:11 -0800 (PST)
-Received: from earth-mac.local.gmail.com ([202.214.86.179])
- by smtp.gmail.com with ESMTPSA id g19sm4070726pfh.134.2020.01.23.20.32.06
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 23 Jan 2020 20:32:10 -0800 (PST)
-Date: Fri, 24 Jan 2020 13:32:03 +0900
-Message-ID: <m2a76dsce4.wl-thehajime@gmail.com>
-From: Hajime Tazaki<thehajime@gmail.com>
-To: brendanhiggins@google.com
-Subject: Re: [RFC v2 21/37] lkl tools: "boot" test
-In-Reply-To: <20200123193315.132434-1-brendanhiggins@google.com>
-References: <fb0fcf4ffddaabc7eae82e25d7ec5ea9c37eb2ae.1573179553.git.thehajime@gmail.com>
- <20200123193315.132434-1-brendanhiggins@google.com>
-User-Agent: Wanderlust/2.15.9 (Almost Unreal) Emacs/25.3 Mule/6.0
- (HANACHIRUSATO)
-MIME-Version: 1.0 (generated by SEMI-EPG 1.14.7 - "Harue")
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=HT2x788AM1A0+5HwkBHH4G8cjfc7f1MBnQHIXAFoYnI=;
+ b=PyXw07VbOPk4fxPSOYWLCKFvB0TBqRNTnr2idYKRy+u7DAFJiKlfehVLTJKfv88drT
+ OEeCP9GFo28bNLmvnTthyewWhmIhVRseeatPCwGxc5+j90RxZ4xGxVNpy9hZDoESRkIh
+ MLhiLR4A1/iT4l1Kme+Tg57cYVF514/CR4M8LHxlpqezKQ2K9GqoRGzQ2zUj2Ct3SHiZ
+ hl4+WdeG+20QLbVKb/iZSSidX1bYDSh9VlNla7O1dPrDwueJhvcWMyZ+yriA6HO4uCE+
+ MVFH98L9DOFWAQyXxNzQUWd5lbGhxfAX4+npr7mps0dSY7gkYoGuhFq4A9m4hI7xarvh
+ SGHA==
+X-Gm-Message-State: APjAAAXEdAcgr8djnfmi8EdW+U9JXvjSJkp7yNrGOc7SfEVV+qAJah8F
+ fgbE6qbpQADsl1twssYQADZ/yEgKLBCJdGU2qCg=
+X-Google-Smtp-Source: APXvYqxJaLWdwe0RsmxfvQT+clUM3Yv9RXsCnLaveOqiQ7fXlM1Pe5Surtf6FmC+XS21csvE3aA1QZhj3B5AHfJ27SY=
+X-Received: by 2002:aca:5905:: with SMTP id n5mr1256281oib.54.1579852262583;
+ Thu, 23 Jan 2020 23:51:02 -0800 (PST)
+MIME-Version: 1.0
+References: <20200123235914.223178-1-brendanhiggins@google.com>
+In-Reply-To: <20200123235914.223178-1-brendanhiggins@google.com>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Fri, 24 Jan 2020 08:50:51 +0100
+Message-ID: <CAMuHMdVLcMXyxnoFvoqkt3KbdmXXk+6Swveez9+A_yowFsWRAg@mail.gmail.com>
+Subject: Re: [PATCH v2] uml: make CONFIG_STATIC_LINK actually static
+To: Brendan Higgins <brendanhiggins@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200123_203215_555612_E94FEB41 
-X-CRM114-Status: GOOD (  18.31  )
-X-Spam-Score: 3.8 (+++)
+X-CRM114-CacheID: sfid-20200123_235106_664448_E9AF9CA7 
+X-CRM114-Status: GOOD (  14.23  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (3.8 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.167.194 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.194 listed in wl.mailspike.net]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [thehajime[at]gmail.com]
+ provider [geert.uytterhoeven[at]gmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
- [list.dnswl.org]
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 2.5 TO_NO_BRKTS_FROM_MSSP  Multiple header formatting problems
- 1.5 FROM_MISSP_FREEMAIL    From misspaced + freemail provider
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,80 +80,72 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, mark@stillwell.me, cem@FreeBSD.org,
- tavi.purdila@gmail.com, jiangshanlai@gmail.com, motomuman@gmail.com,
- linux-um@lists.infradead.org, cyphar@cyphar.com, retrage01@gmail.com,
- petrosagg@gmail.com, mcgrof@kernel.org, linux-kernel-library@freelists.org,
- thomas@tommie-lie.de, davidgow@google.com, ddiss@suse.de, pscollins@google.com,
- luca.dariz@gmail.com, liuyuan@google.com, kunit-dev@googlegroups.com
+Cc: Richard Weinberger <richard@nod.at>, Jeff Dike <jdike@addtoit.com>,
+ linux-um <linux-um@lists.infradead.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ David Gow <davidgow@google.com>, James McMechan <james_mcmechan@hotmail.com>,
+ Anton Ivanov <anton.ivanov@cambridgegreys.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
+Hi Brendan,
 
-Hello Brendan,
+On Fri, Jan 24, 2020 at 12:59 AM Brendan Higgins
+<brendanhiggins@google.com> wrote:
+> Currently, CONFIG_STATIC_LINK can be enabled with options which cannot
+> be statically linked, namely UML_NET_VECTOR, UML_NET_VDE, and
+> UML_NET_PCAP; this is because glibc tries to load NSS which does not
+> support being statically linked. So make CONFIG_STATIC_LINK depend on
+> !UML_NET_VECTOR && !UML_NET_VDE && !UML_NET_PCAP.
+>
+> Link: https://lore.kernel.org/lkml/f658f317-be54-ed75-8296-c373c2dcc697@cambridgegreys.com/#t
+> Signed-off-by: Brendan Higgins <brendanhiggins@google.com>
+> ---
+> Changes since last revision:
+>
+> Incorporated Geert Uytterhoeven's suggestion of using a separate
+> FORBID_STATIC_LINK config option that each driver incompatible with
+> static linking selects.
+> ---
+>  arch/um/Kconfig         | 7 +++++++
+>  arch/um/drivers/Kconfig | 3 +++
+>  2 files changed, 10 insertions(+)
+>
+> diff --git a/arch/um/Kconfig b/arch/um/Kconfig
+> index 0917f8443c285..27a51e7dd59c6 100644
+> --- a/arch/um/Kconfig
+> +++ b/arch/um/Kconfig
+> @@ -62,8 +62,12 @@ config NR_CPUS
+>
+>  source "arch/$(HEADER_ARCH)/um/Kconfig"
+>
+> +config FORBID_STATIC_LINK
+> +       def_bool n
 
-On Fri, 24 Jan 2020 04:33:15 +0900,
-Brendan Higgins wrote:
+    bool
 
-> > +int lkl_test_read(void)
-> > +{
-> > +	char buf[10] = { 0, };
-> > +	long ret;
-> > +
-> > +	ret = lkl_sys_read(0, buf, sizeof(buf));
-> > +
-> > +	lkl_test_logf("lkl_sys_read=%ld buf=%s\n", ret, buf);
-> > +
-> > +	if (ret == sizeof(wrbuf) && !strcmp(wrbuf, buf))
-> > +		return TEST_SUCCESS;
-> > +
-> > +	return TEST_FAILURE;
-> > +}
-> 
-> These tests make me think that LKL could be very useful for KUnit and
-> testing syscalls.
-> 
-> Luis and I had been talking about writing KUnit tests for syscalls to
-> validate that syscalls conform to the expected behavior; however,
-> calling syscalls from the kernel obviously has issues.
-> 
-> On the other hand, testing syscalls from a userspace on a booted kernel
-> is something that we do and something that needs to be done; however,
-> this too has some issues. Writing and running tests in userspace on a
-> booted kernel is not as easy as being able to write and run tests in the
-> kernel. Also, even though some syscall end-to-end tests are necessary,
-> not all syscall tests must be end-to-end tests, especially those which
-> are only trying to exercise the entire syscall contract.
-> 
-> I think it looks like LKL might be able to help us square that circle.
+("n" is the default)
 
-That's good to know :)
+> +
+>  config STATIC_LINK
+>         bool "Force a static link"
+> +       depends on !FORBID_STATIC_LINK
+>         default n
 
-> Hajime (and other LKL people):
-> 
-> What is the current status of this patchset? I have not seen any
-> activity for a couple months.
+"default n" is the default (preexisting)
 
-I've been a bit busy over the year-end term but recently restarted to
-work for the patchset to address the comments received from the
-discussion.
+Gr{oetje,eeting}s,
 
-> Luis,
-> 
-> Does this kind of match what you were thinking with the syscall testing?
-> I think this looks pretty close. You should be able to fully test the
-> contract here using KUnit. Is there anyone else you think would be
-> interested in this?
-> 
-> In any case, I am excited about this. Please keep me posted in the
-> future!
+                        Geert
 
-I hope I can send v3 patches soon.
-Thanks for the interest !
+-- 
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
 
--- Hajime
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 _______________________________________________
 linux-um mailing list
