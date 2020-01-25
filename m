@@ -2,77 +2,81 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EF7CE1490C6
-	for <lists+linux-um@lfdr.de>; Fri, 24 Jan 2020 23:14:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 211D01492F8
+	for <lists+linux-um@lfdr.de>; Sat, 25 Jan 2020 03:12:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:Mime-Version:Message-Id
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=0c0v3pybLO5tNGKwe2l4Tg60sK4w8cEZH4Lif+Li0IQ=; b=A0fPC+AtY3GWlL
-	kqxWYXE0kNm7H2TrO1QXmkcfNYcRc7P6lZyr52Pf1x8vMMWsOcE4o9wR+desX1AAaFX7iXyoeC9a6
-	uFvXXBxdJbsYsT8imbQWtFpbKK4VUaQAIKtSjHkjqTTysuy7juKV3+wmbNNYm17AiKD1YK2hZ+aql
-	/x195gosjAOWDLbFzZWi2Z3PbK/Kx0vcrhZhYBcQanJxpaf4aMj7C2u4JxJCvqtFKD/JJRmO3HLg2
-	udhjpsZQ5RF9GmmHwI5sKk+C+cwEyJnAA4yU0JOhIu+8doDjh//NQ4EAhyPQbqkBymBthcdogpB8J
-	an13WvJW357q9jvBaKjQ==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=gFuNd7uyCF3ACHFeP9zo9l8xWZkpF/vxididUUC5IPk=; b=s25nhZUXav89zK
+	nq+V+qhep+gHMlZJQpJo3CwDJZBqZjXoRHZmMsNkEepqX89gaowibD0oPbwx+VvMUrpial9sq1C7I
+	gRXxX6Z7gemQplPFhW6qWG5NJCsQ2B36/m4eCgCYgWtceWgtfmJapG8vU7WGeA0YsCLpFKugJFJQK
+	vQjWAijZQ+unMLbv6+DeEvb7sfOntsI6V2Tl3ZVIK2Vet/9Ai7RIA+hs9EETn9goT0oc6pF1PybdE
+	SX1QaGtetWcnBFVmzutTydOqX49UljshkMkFt3u/4A/8dThGxZdKN7mxmp6Af/J8n66MzSntvITIt
+	sdeBoLW6HiMwt/oePCrg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iv7DS-0004dJ-Rc; Fri, 24 Jan 2020 22:14:14 +0000
-Received: from mail-pg1-x54a.google.com ([2607:f8b0:4864:20::54a])
+	id 1ivAw1-0001bq-Uk; Sat, 25 Jan 2020 02:12:29 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iv7DQ-0004cJ-AM
- for linux-um@lists.infradead.org; Fri, 24 Jan 2020 22:14:13 +0000
-Received: by mail-pg1-x54a.google.com with SMTP id r30so2196153pgm.8
- for <linux-um@lists.infradead.org>; Fri, 24 Jan 2020 14:14:08 -0800 (PST)
+ id 1ivAvz-0001ao-7E
+ for linux-um@lists.infradead.org; Sat, 25 Jan 2020 02:12:28 +0000
+Received: by mail-pg1-x543.google.com with SMTP id l24so2059557pgk.2
+ for <linux-um@lists.infradead.org>; Fri, 24 Jan 2020 18:12:24 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=date:message-id:mime-version:subject:from:to:cc;
- bh=geC9hix2m9kGrQA1AgAiVyPdofDuegQV+sdp/6AkzSY=;
- b=iRRfETWsjhw5goUymtnni7SUDlPk6D3OkS7laA0F9rkl54bMDWiXkDJ7ERP1BIuaBB
- k6kbMx7VK4npLy4YL/S/gNA+fOiStTiTERkqqGsT1tGRgOEiIiILDVwFv/yZLXnlkfkl
- 5Y2MURsG+KtkoyhNxpcyV+CfIdagtezZOcSbUhuWpkiowJkTJgG0upIx34t57wnvQZtU
- eiKc9urpSafdnhhHqAumxMZR/YOZdeYnDvCGv9zjIFeu5jP4K5+jeb3M3zrcdTfNHjdo
- QrF0K6Bnh2WwqYbuHZ2OOe9xZzFknDtYnVZZqhaaHdJkC9fFLb7OZw6/cKVFQjd9/8Tt
- 42wg==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=EXFe/vfnLkzT3mAWRy5NBHmIc8Oyyk9Ad0WMoNwuPt8=;
+ b=TkxDWTfMZU8Eqr69fjAxX4wvjaAyxwoq2CL2Bwlr1AgGV5D4EqkcCvbwxqxtk5oWQ7
+ Vu3iQLbxn7OwbKzTe4BtiWx7Bvvg/IeY5IAdi7Ep3DVIs6SknDPSxgtbYjPOKkFOA9vy
+ x1TB7CkGJlRbp0gzWpmXSkdZjh1hUhNKqoS0ZI9xK2qxCiNwtuYiAc1T7ywm7J2boTXa
+ Tv6qkmoVmv2ZmykEokMRBxmoaGc+RIaJSM0dV/GnsSeGscoWaVB3Y7CcmRsz4HdsSgGR
+ XWDLWKezF32jOsGs4kkhN3bUgl2Kd6ojl3ufz90tx6eQvHHL80yzoBsAUbi7t9WCXnAw
+ 6Rkg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:message-id:mime-version:subject:from:to:cc;
- bh=geC9hix2m9kGrQA1AgAiVyPdofDuegQV+sdp/6AkzSY=;
- b=a+bxcRIugw+EPPRDGyahtyPZkKHt0mncTudBgiSO/ZXBwahJQXI5BfryGoYwDST3lS
- 6GdBhZvPG3mlCMUsH0YMmnmOgwhmYy3ouh+GtBiPrnnALzRPc14NZ0Mk5+kLeZ3IRQ4F
- vO8vNy1jnQ8yEYvCvN7P/zkqAMTdAqHORjNoMCzAI5e5XLErTaF9jbhbgIbM4My5SWYg
- nLZZHH7ozDbA+W1t0kPezvc1qvzdLEteV2psJmSufpDrOm4QmqLWZ+sDXedOZLWsVp8i
- 6AmG/IMa1Yhu+jQVzckApfvO6NRW+d4gLNr7JWd4b7dLVBm4a/qI8xnZGRinmuEOcWSl
- u17A==
-X-Gm-Message-State: APjAAAXTPXPpAuWNj4KPnJ4QXZMxGtt6swQnbkoIt/TMKyVUn5zXL7wg
- hQJngH6ZCHwyoFm86OrAQwjqiLZxL/AvPiOQixgRMQ==
-X-Google-Smtp-Source: APXvYqyjUL9L/ftdar4bI9P2UlBlPlPH9Vl4aalxzJKewNpcsHgpqmvaINWiaQE9S4toNIr+Sijydu+SjX69SbztXbHu2w==
-X-Received: by 2002:a63:364f:: with SMTP id d76mr6652376pga.215.1579904047529; 
- Fri, 24 Jan 2020 14:14:07 -0800 (PST)
-Date: Fri, 24 Jan 2020 14:14:01 -0800
-Message-Id: <20200124221401.210449-1-brendanhiggins@google.com>
-Mime-Version: 1.0
-X-Mailer: git-send-email 2.25.0.341.g760bfbb309-goog
-Subject: [PATCH v3] uml: make CONFIG_STATIC_LINK actually static
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=EXFe/vfnLkzT3mAWRy5NBHmIc8Oyyk9Ad0WMoNwuPt8=;
+ b=RhX5EQPdHH+CM/zf87nwsq8f/GnnkH787QP1vbfxBc4ECeeZ4DVqc6KYY16ReWDRz4
+ oz9yi/1w5F9F790apEgLJFaA3nz4wnblzmUH2S0OudPCK4CcN0mFHF+SOzEPFmr8iNPm
+ z/K8maLh3FW2jGj7xgfo/q2wQkSrw0VLdLXJ8JM4z8W6gJ6GnQGdXa54u220iLGW/8Gu
+ krbARvBQKgzUZ5MFYCbmlYWIP0LKw2MLrPoTcOsXwnlcuCatGmcyZDuB9L1CCWx1ZETC
+ PypmmpA5gHtSePghaQw8RjtVPpIf2oIeq1XFfvrtM2P+n+HDBY4MDeTcgSEM1YpoBL7N
+ XcOw==
+X-Gm-Message-State: APjAAAWy1yFt9ER0gKJlvOCmbO5dfnJHnO+ptmaUn+HF9Pm3B+6vN/wn
+ lgXvaYncxrDSBDRq4dUlWltg1b1Nfz0ixhuFdC7Z68MG56E=
+X-Google-Smtp-Source: APXvYqyW0SmPK4KpuQbLoeF3vRxy+R+++4XuYWmuDeTZM4oxe/ppV3OLeGSF+O7JLzqqRY0RxLFKybydDDRXm7DDRfA=
+X-Received: by 2002:a63:cc4f:: with SMTP id q15mr7565027pgi.159.1579918343489; 
+ Fri, 24 Jan 2020 18:12:23 -0800 (PST)
+MIME-Version: 1.0
+References: <20191211192742.95699-1-brendanhiggins@google.com>
+ <20191211192742.95699-3-brendanhiggins@google.com>
+ <20200109162303.35f4f0a3@xps13>
+In-Reply-To: <20200109162303.35f4f0a3@xps13>
 From: Brendan Higgins <brendanhiggins@google.com>
-To: jdike@addtoit.com, richard@nod.at, anton.ivanov@cambridgegreys.com, 
- geert@linux-m68k.org, james_mcmechan@hotmail.com
+Date: Fri, 24 Jan 2020 18:12:12 -0800
+Message-ID: <CAFd5g47VLB6zOJsSySAYrJie8hj-OkvOC89-z2b9xMBZ2bxvYA@mail.gmail.com>
+Subject: Re: [PATCH v1 2/7] mtd: rawnand: add unspecified HAS_IOMEM dependency
+To: Miquel Raynal <miquel.raynal@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200124_141412_358104_805D7687 
-X-CRM114-Status: UNSURE (   8.91  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -7.7 (-------)
+X-CRM114-CacheID: sfid-20200124_181227_280562_332777A9 
+X-CRM114-Status: GOOD (  12.84  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-7.7 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
  white-list
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:54a listed in]
- [list.dnswl.org]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -80,7 +84,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,85 +97,51 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: Brendan Higgins <brendanhiggins@google.com>, linux-um@lists.infradead.org,
- linux-kernel@vger.kernel.org, davidgow@google.com
+Cc: Vignesh Raghavendra <vigneshr@ti.com>,
+ Boris Brezillon <bbrezillon@kernel.org>, Richard Weinberger <richard@nod.at>,
+ Jeff Dike <jdike@addtoit.com>, linux-um <linux-um@lists.infradead.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ linux-mtd@lists.infradead.org, David Gow <davidgow@google.com>,
+ Anton Ivanov <anton.ivanov@cambridgegreys.com>,
+ Piotr Sroka <piotrs@cadence.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-Currently, CONFIG_STATIC_LINK can be enabled with options which cannot
-be statically linked, namely UML_NET_VECTOR, UML_NET_VDE, and
-UML_NET_PCAP; this is because glibc tries to load NSS which does not
-support being statically linked. So make CONFIG_STATIC_LINK depend on
-!UML_NET_VECTOR && !UML_NET_VDE && !UML_NET_PCAP.
+On Thu, Jan 9, 2020 at 7:23 AM Miquel Raynal <miquel.raynal@bootlin.com> wrote:
+>
+> Hi Brendan,
+>
+> Brendan Higgins <brendanhiggins@google.com> wrote on Wed, 11 Dec 2019
+> 11:27:37 -0800:
+>
+> > Currently CONFIG_MTD_NAND_CADENCE implicitly depends on
+> > CONFIG_HAS_IOMEM=y; consequently, on architectures without IOMEM we get
+> > the following build error:
+> >
+> > ld: drivers/mtd/nand/raw/cadence-nand-controller.o: in function `cadence_nand_dt_probe.cold.31':
+> > drivers/mtd/nand/raw/cadence-nand-controller.c:2969: undefined reference to `devm_platform_ioremap_resource'
+> > ld: drivers/mtd/nand/raw/cadence-nand-controller.c:2977: undefined reference to `devm_ioremap_resource'
+> >
+> > Fix the build error by adding the unspecified dependency.
+> >
+> > Reported-by: Brendan Higgins <brendanhiggins@google.com>
+> > Signed-off-by: Brendan Higgins <brendanhiggins@google.com>
+> > ---
+>
+> Sorry for the delay.
+>
+> Acked-by: Miquel Raynal <miquel.raynal@bootlin.com>
 
-Link: https://lore.kernel.org/lkml/f658f317-be54-ed75-8296-c373c2dcc697@cambridgegreys.com/#t
-Signed-off-by: Brendan Higgins <brendanhiggins@google.com>
----
- arch/um/Kconfig         | 8 +++++++-
- arch/um/drivers/Kconfig | 3 +++
- 2 files changed, 10 insertions(+), 1 deletion(-)
+It looks like my change has not been applied to nand/next; is this the
+branch it should be applied to? I have also verified that this patch
+isn't in linux-next as of Jan 24th.
 
-diff --git a/arch/um/Kconfig b/arch/um/Kconfig
-index 0917f8443c285..28d62151fb2ed 100644
---- a/arch/um/Kconfig
-+++ b/arch/um/Kconfig
-@@ -62,9 +62,12 @@ config NR_CPUS
- 
- source "arch/$(HEADER_ARCH)/um/Kconfig"
- 
-+config FORBID_STATIC_LINK
-+	bool
-+
- config STATIC_LINK
- 	bool "Force a static link"
--	default n
-+	depends on !FORBID_STATIC_LINK
- 	help
- 	  This option gives you the ability to force a static link of UML.
- 	  Normally, UML is linked as a shared binary.  This is inconvenient for
-@@ -73,6 +76,9 @@ config STATIC_LINK
- 	  Additionally, this option enables using higher memory spaces (up to
- 	  2.75G) for UML.
- 
-+	  NOTE: This option is incompatible with some networking features which
-+	  depend on features that require being dynamically loaded (like NSS).
-+
- config LD_SCRIPT_STATIC
- 	bool
- 	default y
-diff --git a/arch/um/drivers/Kconfig b/arch/um/drivers/Kconfig
-index 72d4170557820..9160ead56e33c 100644
---- a/arch/um/drivers/Kconfig
-+++ b/arch/um/drivers/Kconfig
-@@ -234,6 +234,7 @@ config UML_NET_DAEMON
- config UML_NET_VECTOR
- 	bool "Vector I/O high performance network devices"
- 	depends on UML_NET
-+	select FORBID_STATIC_LINK
- 	help
- 	This User-Mode Linux network driver uses multi-message send
- 	and receive functions. The host running the UML guest must have
-@@ -245,6 +246,7 @@ config UML_NET_VECTOR
- config UML_NET_VDE
- 	bool "VDE transport (obsolete)"
- 	depends on UML_NET
-+	select FORBID_STATIC_LINK
- 	help
- 	This User-Mode Linux network transport allows one or more running
- 	UMLs on a single host to communicate with each other and also
-@@ -292,6 +294,7 @@ config UML_NET_MCAST
- config UML_NET_PCAP
- 	bool "pcap transport (obsolete)"
- 	depends on UML_NET
-+	select FORBID_STATIC_LINK
- 	help
- 	The pcap transport makes a pcap packet stream on the host look
- 	like an ethernet device inside UML.  This is useful for making
--- 
-2.25.0.341.g760bfbb309-goog
+Is mtd/linux the correct tree for this? Or do I need to reach out to
+someone else?
 
+Cheers
 
 _______________________________________________
 linux-um mailing list
