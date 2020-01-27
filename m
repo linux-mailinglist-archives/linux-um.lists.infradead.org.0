@@ -2,77 +2,78 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6B7CD14AA93
-	for <lists+linux-um@lfdr.de>; Mon, 27 Jan 2020 20:36:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3DADE14ACC0
+	for <lists+linux-um@lfdr.de>; Tue, 28 Jan 2020 00:54:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
-	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CCt+Yaci9P3bMT09EqHzdIL8z3x/uEjhrt8AJxGHOxk=; b=XlYk1q+oexQVuy
-	JmdrHtgsgX/ZbS0VWExO8pbUm9zloCgggNgmLqIVKRjtga8Qv3gdEmWJKeaf/GmuG9DwDxZancama
-	OSAd3yX+V3PC2sw0c68zzwYjMIW8sh0nHhgGQ3xlLCxAbeLaaCkyb7RcpueuX2P2aZwPucoNYsI6R
-	CdX5pM3ftAxuD/0ff7RxuwBBFwNxAdvsek2kd/xiYf9EabI/q+D2RxlFlTjMYXvq0ZMy8ZMAfjF6O
-	PN/yaexLqiCXEhGq2JT2jbelW6iC3WxXNHWMqVpUHnMmXEER/OkVIyW8ludTt7LggqSRO9VWA7jDY
-	I98PNJaU2aomaMWyi2/w==;
+	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:Mime-Version:Message-Id
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=qhGszkJ1tijgsRgkgGc+LjaPs/jZapE/vc72OqNLqxc=; b=peBEVXpatjbZVM
+	71kIv0k6QU4li4wzPiMhSlPTuGjJCn7kNEcuAQldWHalooRje90xYXyPARElhjp9LQdcQ4pSao4WJ
+	RsxyU8kwA1cMA6qFzXpYkyjatCAF+2dB17zrNx8+zcNCVRyMbKYKjbdNQGdCUWabgc8Nics+aRdFs
+	5W/SGWZyMPRxSrEnirEvQWytcox8PY2PSp4ZFQaInRwkKioTuBs2irAUION0rSRUcjE6qnma4Wy91
+	wjxZb6MBhzwCIkv85AwpI1qGXo7e28es2rMyXZ2P61Z/OYBmKzyjRR+exqvtowcwV0XJsJbVMlAlC
+	4n+dwkOJ1YhX+iOahy7w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iwABR-0003w4-3I; Mon, 27 Jan 2020 19:36:29 +0000
-Received: from mail-pl1-x64a.google.com ([2607:f8b0:4864:20::64a])
+	id 1iwEDP-0006Aw-5d; Mon, 27 Jan 2020 23:54:47 +0000
+Received: from mail-pf1-x449.google.com ([2607:f8b0:4864:20::449])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iwABO-0003uU-89
- for linux-um@lists.infradead.org; Mon, 27 Jan 2020 19:36:27 +0000
-Received: by mail-pl1-x64a.google.com with SMTP id bd7so4308768plb.0
- for <linux-um@lists.infradead.org>; Mon, 27 Jan 2020 11:36:24 -0800 (PST)
+ id 1iwEDK-00069e-KX
+ for linux-um@lists.infradead.org; Mon, 27 Jan 2020 23:54:44 +0000
+Received: by mail-pf1-x449.google.com with SMTP id i196so7473058pfe.6
+ for <linux-um@lists.infradead.org>; Mon, 27 Jan 2020 15:54:39 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=date:in-reply-to:message-id:mime-version:references:subject:from:to
- :cc; bh=MBXtYUj1QxYipcDyqZexYNOHIwmMYcL9qVU9w76TqMU=;
- b=kq/LGvpRySXRu0yzwNcC9o5kvB/Lf3EYScRJ6TjobnkWY/KSMsX71QlvFbaUrcvNdo
- 4TgexVq0q81r+Xgp3UVJwsvgjPZJZfOT0/i6OVXMNdyBf+0uQWKenONfiKRj1Fss6TUH
- uwDT8piaaknCsIiJbuQsD2ibYnoPwH+ua7g4NIFN+B4RoH3urbqrk11neJCl+cSjEw31
- lDIkR549+4xbzG68w/SuYa2PPrvpKuD4p/tzg5d+h4Ct+2mdRTZlZVpv85a4qOIY5R8F
- VklCupGL8s3FhI9JtzU/r/U/hwb3VjcPY/dG2CCsgHEr2z0BkYH6rjBGituOCbP170LT
- aKjQ==
+ h=date:message-id:mime-version:subject:from:to:cc;
+ bh=0WVlBZ9h/3UAmHAjFKk1i1lby5ArQALhCHp8vRDwf6s=;
+ b=B0D4GdH37zFLkAB6DLlyqBHlLmNEXHfnkYgFffeTOmOr475hSOENtNB8TIo3G4sGe0
+ FGQeW1LRFZFwEwZe0xYBNGSrbzuvSB/n522fs6/iqw0svGmiqpGIgfsGVIAnWpo0xe6b
+ BoM87ucGn23bNOQFBFwtOThLn+0+3twkPtHYFFqqNHT27mvPiaZYPxgu4N/l/e8eaXcg
+ 7jQiGP//cNxEUu+McL7virtX6XQNY1Tl0esKP2c/WrVvCyn1rDqO+BVfbr+AnTAAodm8
+ 8eaZUZJdgvoPLStiKNbl0DHxWBNzGU98A6D6t+uV4+grA51Z1w5tPzJYd+kP7DcwXnGr
+ FQyQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:in-reply-to:message-id:mime-version
- :references:subject:from:to:cc;
- bh=MBXtYUj1QxYipcDyqZexYNOHIwmMYcL9qVU9w76TqMU=;
- b=H/mNW3Id76VNxkD/pvkuxPppRPHa3gIpX6l1rvdLGxLJzAU5/X7gXo34fW71YLirei
- lZl+xt0lHvLKTlhJtqR3zThp4JnCmBD6/aSfbgO98zgKiknElm726kJ2Q6YyslYKUz2r
- iWvMJOzPYLcnvomy81ZRI5oPUqsKM+HIqEfdWmDhEUZBjGUHjWMpTBJZ2AgRGf4zfLE0
- nu2HVr0bnUCoM6yP2fk3LoIfSq/NEi0iynfgvP13A4oMwF5X5ylrcczdvSols487ZGEf
- m5qxLDiNOLed31RJpP5Tp2SkMVZkXJ1YsBDz9rbSKsNPBd0fPNY6mhEcUuSifkDMm/Qx
- gfgQ==
-X-Gm-Message-State: APjAAAUO500l9kttMgXKC6FIinfM/WUF7Y8+GO6IMkOblhHF2A61SqK/
- jLSuwR772sRerlv6oghn+NkI99LdauV9u4qbZEmkgw==
-X-Google-Smtp-Source: APXvYqzw4bcDZfIlq+zGGc1Fi/VjEsM3ED5HMkJFARpf6yPisIbRpOks2FuWI9Odc+UqXEL26ieYokh9OM7CembMrnve0Q==
-X-Received: by 2002:a63:78c:: with SMTP id 134mr20129191pgh.279.1580153784147; 
- Mon, 27 Jan 2020 11:36:24 -0800 (PST)
-Date: Mon, 27 Jan 2020 11:35:49 -0800
-In-Reply-To: <20200127193549.187419-1-brendanhiggins@google.com>
-Message-Id: <20200127193549.187419-3-brendanhiggins@google.com>
+ h=x-gm-message-state:date:message-id:mime-version:subject:from:to:cc;
+ bh=0WVlBZ9h/3UAmHAjFKk1i1lby5ArQALhCHp8vRDwf6s=;
+ b=GTb46y9ZVbfrncql1daZTOcarVYMjquNKFjuNF63HrpKr4xFRZg/RaekrB3aWKcFSG
+ TadvHkRe8cNa+7LMERAgK4hYGuUceu8F21qsMyZy6JAbn8wqkAD9wYGyeloi2yHssr/F
+ w95y/+bAjQ5nRI+8Y43Y1zq24+8ghwS92ULj/Or6ylkTbfKyokBo8NWLuKtaJSJC+GYu
+ 5OhmF6go1A1kz0kFm4qquQKlq4se/9VzDhWCBivTz4RgcnI007c3sTmmvtwkW+89GgSw
+ IaniMPteiD1tyYkihuNPB5cBx4UnwiBDpGtTzpZz9xnZ0V/aSoxdzSPbvNG3h2Gf5/Z0
+ V/9A==
+X-Gm-Message-State: APjAAAUIC2g7bGN3OxbBYsjD3Ew1OqN2jRWqfQiqeYTi2+/DPblciU2R
+ jZjb37ry3JfU7JV/ggDfCc+NaMQ4AB10UFOit7RgIg==
+X-Google-Smtp-Source: APXvYqxuHlif8YoC09sMp36DADFxZKUEjmOezwoOELE8SswXmvcrc2Cpl4SiqOBpXxHMb1qSYM81/g2GJjm81WrtmsBS6w==
+X-Received: by 2002:a63:ea4c:: with SMTP id l12mr20867620pgk.29.1580169278383; 
+ Mon, 27 Jan 2020 15:54:38 -0800 (PST)
+Date: Mon, 27 Jan 2020 15:53:51 -0800
+Message-Id: <20200127235356.122031-1-brendanhiggins@google.com>
 Mime-Version: 1.0
-References: <20200127193549.187419-1-brendanhiggins@google.com>
 X-Mailer: git-send-email 2.25.0.341.g760bfbb309-goog
-Subject: [RFC v1 2/2] arch: um: turn BTF_TYPEINFO support off
+Subject: [PATCH v1 0/5] uml: add more unspecified HAS_IOMEM dependencies
 From: Brendan Higgins <brendanhiggins@google.com>
 To: jdike@addtoit.com, richard@nod.at, anton.ivanov@cambridgegreys.com, 
- akpm@linux-foundation.org, changbin.du@intel.com, 
- yamada.masahiro@socionext.com, rdunlap@infradead.org, keescook@chromium.org, 
- andriy.shevchenko@linux.intel.com
+ Kevin Hilman <khilman@kernel.org>, Nishanth Menon <nm@ti.com>, 
+ Richard Cochran <richardcochran@gmail.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>, 
+ "David S . Miller" <davem@davemloft.net>,
+ Michal Simek <michal.simek@xilinx.com>, 
+ Andrew Lunn <andrew@lunn.ch>, Robert Hancock <hancock@sedsystems.ca>, 
+ Esben Haabendal <esben@geanix.com>, Thomas Gleixner <tglx@linutronix.de>, 
+ Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200127_113626_290313_A0C5BE1D 
-X-CRM114-Status: UNSURE (   7.35  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200127_155442_678109_67D59DEF 
+X-CRM114-Status: GOOD (  10.88  )
 X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:64a listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:449 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
@@ -96,42 +97,56 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: Brendan Higgins <brendanhiggins@google.com>, linux-um@lists.infradead.org,
- linux-kernel@vger.kernel.org, davidgow@google.com, heidifahim@google.com
+Cc: heidifahim@google.com, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ linux-pm@vger.kernel.org, Brendan Higgins <brendanhiggins@google.com>,
+ linux-kernel@vger.kernel.org, linux-um@lists.infradead.org,
+ davidgow@google.com, netdev@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-Currently CONFIG_DEBUG_INFO_BTF=y doesn't work on UML:
+# TL;DR
 
-scripts/link-vmlinux.sh: line 106: 17463 Segmentation fault      LLVM_OBJCOPY=${OBJCOPY} ${PAHOLE} -J ${1}
-objcopy: --change-section-vma .BTF=0x0000000000000000 never used
-objcopy: --change-section-lma .BTF=0x0000000000000000 never used
-objcopy: error: the input file '.btf.vmlinux.bin' is empty
-Failed to generate BTF for vmlinux
-Try to disable CONFIG_DEBUG_INFO_BTF
-make: *** [Makefile:1078: vmlinux] Error 1
+This patchset adds a missing HAS_IOMEM dependency to several drivers in
+an attempt to get allyesconfig closer to working for ARCH=um. Although I
+had caught all the broken ones in early 5.5[1], some new ones have
+broken since then.
 
-So turn off ARCH_HAS_BTF_TYPEINFO support off for the UM architecture.
+# What am I trying to do?
 
-Signed-off-by: Brendan Higgins <brendanhiggins@google.com>
----
- arch/um/Kconfig | 1 +
- 1 file changed, 1 insertion(+)
+This patchset is part of my attempt to get `make ARCH=um allyesconfig`
+to produce a config that will build *and* boot to init, so that I can
+use it as a mechanism to run tests[2].
 
-diff --git a/arch/um/Kconfig b/arch/um/Kconfig
-index 0917f8443c285..53e13d8b210e0 100644
---- a/arch/um/Kconfig
-+++ b/arch/um/Kconfig
-@@ -6,6 +6,7 @@ config UML
- 	bool
- 	default y
- 	select ARCH_HAS_KCOV
-+	select ARCH_NO_BTF_TYPEINFO
- 	select ARCH_NO_PREEMPT
- 	select HAVE_ARCH_AUDITSYSCALL
- 	select HAVE_ARCH_SECCOMP_FILTER
+# Why won't allyesconfig break again after this series of fixes?
+
+Well, in short, it will break again; however, as I mentioned above, I am
+using UML for testing the kernel, and I am currently working on getting
+my tests to run on KernelCI. As part of our testing procedure for
+KernelCI, we are planning on building a UML kernel using allyesconfig
+and running our tests on it. Thus, we will find out very quickly once
+someone breaks allyesconfig again once we get this all working. So this
+will keep breaking until we have a build test on KernelCI running, but
+we will need to send out these fixes anyway.
+
+Brendan Higgins (5):
+  net: axienet: add unspecified HAS_IOMEM dependency
+  reset: brcmstb-rescal: add unspecified HAS_IOMEM dependency
+  reset: intel: add unspecified HAS_IOMEM dependency
+  ptp: 1588_clock_ines: add unspecified HAS_IOMEM dependency
+  power: avs: qcom-cpr: add unspecified HAS_IOMEM dependency
+
+ drivers/net/ethernet/xilinx/Kconfig | 1 +
+ drivers/power/avs/Kconfig           | 2 +-
+ drivers/ptp/Kconfig                 | 1 +
+ drivers/reset/Kconfig               | 3 ++-
+ 4 files changed, 5 insertions(+), 2 deletions(-)
+
+[1] https://lore.kernel.org/lkml/20191211192742.95699-1-brendanhiggins@google.com/
+[2] https://bugzilla.kernel.org/show_bug.cgi?id=205223
+
 -- 
 2.25.0.341.g760bfbb309-goog
 
