@@ -2,7 +2,7 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7B3F914ACCD
+	by mail.lfdr.de (Postfix) with ESMTPS id E765714ACCE
 	for <lists+linux-um@lfdr.de>; Tue, 28 Jan 2020 00:55:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
@@ -10,66 +10,69 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
 	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HeG1eC3SOlu6ccvRiJrysmhMGgl4BYgLg82FmmDsiBg=; b=AxQNj2Bkf5v6hv
-	vErtvBHCCfxw7bFH0cE41zwN9hnPcF8Do60sqrjaMe8pryfK98GiYMh+WtgFZ5RGCwwq6L/6seFyH
-	yqiYvWekvA+O2QwXVbqHoLeZusUM0sa8yMryHN9JDQIfHe7UyLb6SBUZUg7v1qUHqfHefh/P01+gv
-	JVjHvx9H/wAuBcY6buscWDZO9qh76VDg5MR9PbyzafBZppy9zd54OeL44FFWK+F+/fsXq5dAC686c
-	RxpfAcKhIqdUafGmS3ebdURehUhXo532dOO7qdS18WFPnCVjWBOnj9RdBXLxylM4J1At5CF7VapQb
-	u2fmOZk+RyOeIg2GPXVA==;
+	List-Owner; bh=NjCL3DuizmAMrCRJh/P4klDjCeg/Jh5cQ+ucgscw7p8=; b=KqWHKCxqk7d5cg
+	AEMf2kqKZicVpMDPFbp1+Y3YQAthRUX6QSDD5TDaG6rBBchKzhLHYTFGvh/txDEcJklSlj6xkLb3W
+	uQvs9cuiHnZpsatH9EhoGs8Ak+aX9sK9XJIdQxtsPj02E5HO4Ej/QCWzxAMBkpqVL+tm7WLjXAhQX
+	+UxuoqU7iQEqkCYXhSfxTUyhcHJBn3TxJEX5u49DM/8uwCCVwbp0QNiKJi07YprmCF06u0TV7kFLw
+	B9Q+VHUnqpS1gP1KZ1bCsxCEjZt4Q9/gLQurx4SSAZBQnej/emXKd5Ppc+9fKV8MEzDKVpIj86RnX
+	ujjUPLPl+F6G7mLnbgdA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iwEE7-0007zz-0j; Mon, 27 Jan 2020 23:55:31 +0000
-Received: from mail-pj1-x104a.google.com ([2607:f8b0:4864:20::104a])
+	id 1iwEE7-00080d-Ej; Mon, 27 Jan 2020 23:55:31 +0000
+Received: from mail-pf1-x449.google.com ([2607:f8b0:4864:20::449])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iwEDo-0007I4-U4
- for linux-um@lists.infradead.org; Mon, 27 Jan 2020 23:55:14 +0000
-Received: by mail-pj1-x104a.google.com with SMTP id ie20so263640pjb.8
- for <linux-um@lists.infradead.org>; Mon, 27 Jan 2020 15:55:10 -0800 (PST)
+ id 1iwEDs-0007ki-Su
+ for linux-um@lists.infradead.org; Mon, 27 Jan 2020 23:55:18 +0000
+Received: by mail-pf1-x449.google.com with SMTP id k26so7459595pfp.20
+ for <linux-um@lists.infradead.org>; Mon, 27 Jan 2020 15:55:15 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=date:in-reply-to:message-id:mime-version:references:subject:from:to
- :cc; bh=4KjA2O3e5WfLc30wyB/HF4idXFgGIVfHNa/bFpMvIf4=;
- b=jeDzCCaf1mffpWsNrUWt3r7/AOzqb0HR4TMgu+vUxItxw6dM6qGy/RsJMXmJ6WYtdX
- 7H8qxJXbYGCxHSQx3QtCpcOzkdM45i3w9usgyo/DrZsvjkKUMrf4ydiONm+ks/OZxmvr
- 3NdNCDOAf2Ml6HAvOos5npaI8Mv3di0sVVio3OCZp7bEC1JysLrZEbnWde7rnyJwnHi/
- +/mzZWV6qyHFvgt3m00Et6fna971JpKrXzOX23GkJhQTJnCNsxnJA1w8wXDW5VNmEzDW
- tS2PA0lJg4Pka6yL4zllgKJA7fgCr3xDBatOSLX0vWRq+yM/k362tyJzSFjiQso3iRXx
- vQkA==
+ :cc; bh=lQAaJOF70jpkpbgo3OKWXwDeISOpcrqAl/nKJxxpz8I=;
+ b=rNFOFNSB6Pg92/nVyITfWgqaiTYud0bMb33xDqixTNQOq/2QFKGJTspVwiGjqiEHol
+ pXrIgNPQkcZ7yhcGyUNMxOYTDeyNi4nk5v0DLZVGW7f35WCj4CpYY0BV+QiCJ7/LjfTK
+ wR/VvA3wAETdLgOYcFLndJ4cWSttfI7XnOE6Hude8Dtm6Flirqve4TknqZl+mMgPzuwT
+ 1yJCA6VDlssrOkxal2JQTghrhpXiTXUoqltV/Sw/XeKRv4pVSnzUSrAisz2jLrfFewwj
+ xidGeyZfGUpJnurRqT5xDSrGmpDJ9rs3o1HBrNb/E3XWPuPQV72R9bC+ltwtlkjGQabS
+ Ms5A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:in-reply-to:message-id:mime-version
  :references:subject:from:to:cc;
- bh=4KjA2O3e5WfLc30wyB/HF4idXFgGIVfHNa/bFpMvIf4=;
- b=qocW1AqMWkjJ9g3DJ8NOXVWJt0VgwqfuZ32o7hhkHoRzAgAVIA2lYk6qi+x8jDwPhs
- HndV9vTaE2feLkdv+mD1Xd+pAxA6TpXYHp1QQD8NlBROtYYTDd6byyCi9JmLwo9+3OsX
- MUdwNMY9lKHic0vYpz/loXYc2NQR/yQQsyxFIMdOiNoBOZLqYbJa2mHGMEvXO+H8F3Qm
- yqiO1i04ruiPL5KoAjQ5hVOuZmg+NXot2p167rypvE7ZoNK5M9wtFcFxxaqtnM9xARtg
- T9xUJ43z7q5rQMSeJw68P0rQdCWPJ7u/JBTUdbfFRITbJ3sgvLKnL4NGJEf5vPcF4yk9
- LNgw==
-X-Gm-Message-State: APjAAAV/28WfRFor/28XGtkic56HXaMDidKh+50bW5TNhGqjmNX0X3ct
- 1Uv86KiBHSAargO8QPoKdVfmIj50oppUazc3YYT8Iw==
-X-Google-Smtp-Source: APXvYqxX2cTYOYi/6gfypjziF+v7JoXLJYFHxYRZUMf0IT3deC7wiZG5csxN84jPhbo7NcVApT5J2LUA/tX8yW3rQK9e7g==
-X-Received: by 2002:a63:d041:: with SMTP id s1mr22025574pgi.363.1580169310297; 
- Mon, 27 Jan 2020 15:55:10 -0800 (PST)
-Date: Mon, 27 Jan 2020 15:53:55 -0800
+ bh=lQAaJOF70jpkpbgo3OKWXwDeISOpcrqAl/nKJxxpz8I=;
+ b=MU7KjPSCgVG9f44gutiHH0D5U5IGqgpdJ89pWG8AHnQJX753jBS/qbioplxFwYA8xt
+ EYCLc7j59I/tTr4nPnc9myJ7ZNlG9impME/Y/Hhwa9Ms1mToU0X5zC+OZ/6FoTH0QuoX
+ xWqz0Vs9fzBliacc3qOx/YLur1D2Akew/7q3sM6eZ606N/i1rQWGyJ6VWx5sIoIuopKw
+ BqJCG4jmKthUVmlofDNKzUwCLsBQfYR6AYITVUV684AMAgLiwpkrIxzT9ItkS11mkhkb
+ +eVrImrkelNM87lEaOIikN3ftZUgjKk4SshjWw+xFEkeqqT44BzzMcHzZLZ9D14RMzpt
+ m4iA==
+X-Gm-Message-State: APjAAAUpyUBkN0KAgOt5ONrAsThXbqFytoTsxsqWHomgDqXM3ongNEfE
+ sAcfumPvNU19IeUpLWwZ76jTzx3fsRJTR3jsgailjQ==
+X-Google-Smtp-Source: APXvYqyPdtbN9DZT8FHWQNBJKmpfTGEpiSZRuvKVXpp6IV7WTXe3QBgDE+xT1lY2W+Mc5+T5G2jPTWwGlbE8hQlH33U92g==
+X-Received: by 2002:a63:fa50:: with SMTP id g16mr21686970pgk.202.1580169314974; 
+ Mon, 27 Jan 2020 15:55:14 -0800 (PST)
+Date: Mon, 27 Jan 2020 15:53:56 -0800
 In-Reply-To: <20200127235356.122031-1-brendanhiggins@google.com>
-Message-Id: <20200127235356.122031-5-brendanhiggins@google.com>
+Message-Id: <20200127235356.122031-6-brendanhiggins@google.com>
 Mime-Version: 1.0
 References: <20200127235356.122031-1-brendanhiggins@google.com>
 X-Mailer: git-send-email 2.25.0.341.g760bfbb309-goog
-Subject: [PATCH v1 4/5] ptp: 1588_clock_ines: add unspecified HAS_IOMEM
+Subject: [PATCH v1 5/5] power: avs: qcom-cpr: add unspecified HAS_IOMEM
  dependency
 From: Brendan Higgins <brendanhiggins@google.com>
 To: jdike@addtoit.com, richard@nod.at, anton.ivanov@cambridgegreys.com, 
- Richard Cochran <richardcochran@gmail.com>
+ Kevin Hilman <khilman@kernel.org>, Nishanth Menon <nm@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200127_155513_002911_F6B0E4F4 
-X-CRM114-Status: UNSURE (   8.29  )
+X-CRM114-CacheID: sfid-20200127_155517_143345_C13B827C 
+X-CRM114-Status: UNSURE (   9.34  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:449 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
  white-list
@@ -92,40 +95,41 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: heidifahim@google.com, netdev@vger.kernel.org,
- Brendan Higgins <brendanhiggins@google.com>, linux-kernel@vger.kernel.org,
- linux-um@lists.infradead.org, davidgow@google.com
+Cc: linux-pm@vger.kernel.org, linux-um@lists.infradead.org,
+ heidifahim@google.com, Brendan Higgins <brendanhiggins@google.com>,
+ linux-kernel@vger.kernel.org, davidgow@google.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-Currently CONFIG_PTP_1588_CLOCK_INES=y implicitly depends on
-CONFIG_HAS_IOMEM=y; consequently, on architectures without IOMEM we get
-the following build error:
+Currently CONFIG_QCOM_CPR=y implicitly depends on CONFIG_HAS_IOMEM=y;
+consequently, on architectures without IOMEM we get the following build
+error:
 
-/usr/bin/ld: drivers/ptp/ptp_ines.o: in function `ines_ptp_ctrl_probe':
-drivers/ptp/ptp_ines.c:795: undefined reference to `devm_ioremap_resource'
+/usr/bin/ld: drivers/power/avs/qcom-cpr.o: in function `cpr_probe':
+drivers/power/avs/qcom-cpr.c:1690: undefined reference to `devm_ioremap_resource'
 
 Fix the build error by adding the unspecified dependency.
 
 Signed-off-by: Brendan Higgins <brendanhiggins@google.com>
 ---
- drivers/ptp/Kconfig | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/power/avs/Kconfig | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/ptp/Kconfig b/drivers/ptp/Kconfig
-index 475c60dccaa4f..17e670fa1d4c8 100644
---- a/drivers/ptp/Kconfig
-+++ b/drivers/ptp/Kconfig
-@@ -80,6 +80,7 @@ config PTP_1588_CLOCK_INES
- 	depends on NETWORK_PHY_TIMESTAMPING
- 	depends on PHYLIB
- 	depends on PTP_1588_CLOCK
-+	depends on HAS_IOMEM
+diff --git a/drivers/power/avs/Kconfig b/drivers/power/avs/Kconfig
+index b8fe166cd0d9f..cdb4237bfd02e 100644
+--- a/drivers/power/avs/Kconfig
++++ b/drivers/power/avs/Kconfig
+@@ -14,7 +14,7 @@ menuconfig POWER_AVS
+ 
+ config QCOM_CPR
+ 	tristate "QCOM Core Power Reduction (CPR) support"
+-	depends on POWER_AVS
++	depends on POWER_AVS && HAS_IOMEM
+ 	select PM_OPP
+ 	select REGMAP
  	help
- 	  This driver adds support for using the ZHAW InES 1588 IP
- 	  core.  This clock is only useful if the MII bus of your MAC
 -- 
 2.25.0.341.g760bfbb309-goog
 
