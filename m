@@ -2,68 +2,68 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DFA1814ACCB
-	for <lists+linux-um@lfdr.de>; Tue, 28 Jan 2020 00:55:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 453C214ACCC
+	for <lists+linux-um@lfdr.de>; Tue, 28 Jan 2020 00:55:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
 	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vydNBxVa+zTMt/F6PwHUyB//rU0JP8b0ngzAn3AvTdI=; b=cGAPzzWpIhe/eo
-	Db3CEo24KRWTy7fF2DgWfV5CP9vvjdefKE4VdaROswP2fAh8BnxNZppUrz7HtTDG7Er1WRs9JHqYq
-	efqY5CHK42bd/dza3/O4YlVBlmCSsHT3ixS439ckeRvuRsjc22OmGTkxFxLRhmttlgfBwHae07Md4
-	e5z8lOkMWwXka9lBwmZ2sIe4aUWB7KtEb7pqCadzVdl0LndFowokFSSAB4XerY6YEaBHvOkMEFeuu
-	/OD/WLMJf8nWJ2ffMPWtOqtUn90D4QWcwyc3AysiPlJ+saFf1wDvaPEtCYChKyXykgG3e5e/zctgK
-	KhHrWIypLLqqncQy3NwA==;
+	List-Owner; bh=U42DNqcF26ootWyP8f3rFPSKUsoHLaiLtysOEXjOhH4=; b=lOFY58ftYRY1j3
+	AFwpDkQWTQN7ZPhbYqLq7L7XYsInAGMakrOFz74e4TWe/G3BV0gH+0OaLKKjEmdnxXxW1lp7QDpkY
+	XYWjVxgzd2AK1BXMpY5yEI6cc4k2fdS2Xl/FUa+hP83d7QXc8zBpNUGFLQ8AYwXyJauXbC41sugba
+	kixc+nQaQF6oKIlDi9VjdPXcYMRTB3+ajHzDpzoj/AANROqnZiFAmxJppV5AGavbBic4TKhfwDfI2
+	IVFiGYCwgjU5BcVJIk6BAxLw1MnLKColBIpq00129WJ7SPLk4VygxGo6+EVdDlaEFEJdukEKLS1CY
+	CXXArWCausFPBwfvCm6Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iwEE5-0007xx-W4; Mon, 27 Jan 2020 23:55:30 +0000
-Received: from mail-pj1-x1049.google.com ([2607:f8b0:4864:20::1049])
+	id 1iwEE6-0007yw-Hd; Mon, 27 Jan 2020 23:55:30 +0000
+Received: from mail-pj1-x104a.google.com ([2607:f8b0:4864:20::104a])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iwEDc-0006Kd-Nl
- for linux-um@lists.infradead.org; Mon, 27 Jan 2020 23:55:04 +0000
-Received: by mail-pj1-x1049.google.com with SMTP id d3so306312pjl.0
- for <linux-um@lists.infradead.org>; Mon, 27 Jan 2020 15:54:58 -0800 (PST)
+ id 1iwEDh-0006Wc-7y
+ for linux-um@lists.infradead.org; Mon, 27 Jan 2020 23:55:06 +0000
+Received: by mail-pj1-x104a.google.com with SMTP id d22so300903pjz.0
+ for <linux-um@lists.infradead.org>; Mon, 27 Jan 2020 15:55:04 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=date:in-reply-to:message-id:mime-version:references:subject:from:to
- :cc; bh=gntUp+SDXttnQBr/sc5cO3EsNHTPBbbt8uIYn4TJA2s=;
- b=iKJYkAu/HQnaxOEoyoyVHO60MC+U5XKfW9fiWKbMH70o4IcKZqg/8wyv+3aRvbFbvu
- nULy26QTeKImnh/3jyjjyYs/EPa9695yYzvs6D2R97xcgvFB/m02Nh0Qe7lFrxOH5ZtU
- 4fU5CLktqtCjUssNKlMRRaYVPTRsBIDCcTCdz6oYayiFu1UZ80YSWAKmySUXR4O8yS3V
- aTAd+K39cMTFRSPHSzVNRc8ES+rcQ/wAaJQsp2uQB00t2UvRv1oI0HcHRyOhAcYZQUrc
- IwpZtUoIbUXJNkHGFQHVn1MvW+S3+Os8iMZC/xAFseXj20h60mNHgUwP1hBfyiUGX4QO
- QBVw==
+ :cc; bh=ucQuwz+ateoZojufeFLUV/0W67kgVJ9nWifeRmz8AWM=;
+ b=KBKzWyUUHIv589qlPCBsMyl4G75Cdl9ZtQT2ZcSWfLN2zsnFPBiVMLhD+cIxQ0j4+7
+ BWqbEh7Oc2cx2JEO9hRHO92oxhBjVRTVG87myH+hOSwgh7LBLGYnbpVrNWgMKDSd1suV
+ nkdB43feEGUSaOb0bPoeIfI49WzPkBamwuOJUM8EfcC4oHnq2qHqP3ltV52xobkbemdm
+ jPCywjIXMQqfjX/1Qk39lxDMAjOtZScL2N7q5fLrQwvl0ect6ZsH9tYmdaH55MpVup3v
+ VLxk0r2ia9Sv77I8bAwgwo4pQd/fuObfaocRP5rEQLm7o+0Ib3mcUY6oAMOWaspYye1m
+ WhZg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:in-reply-to:message-id:mime-version
  :references:subject:from:to:cc;
- bh=gntUp+SDXttnQBr/sc5cO3EsNHTPBbbt8uIYn4TJA2s=;
- b=MEkl8Qna5XKI4+MqPIsqD+OysobF4lUqvtt47tSNTr9IMxAYo2/ov/hJGh5KVitHiO
- KXdmn6xX2s6cLWuuakMn2GXlUvfCByH/RxYF73qd7F0Fk8mlRb8pSaXcnb+9H6gYOJhr
- 5JX/FVAjNp2EFeV0d/wtVT/md8zPHoiiIJ/xXBxGqI/K8oWvOlr9E8xZ/OAtB3tuNioY
- mooiuhS3z3l76D2z6d785sFRfk4iWdvLZc5yYKuWt4pRdvkb/AqGGjS2UILVNUQ7Fsn9
- 7gTeDO27NOxFs60hgEg6AZoujA+i/HYgjstcwpGpYG53QfDbGkTNfPISxLcNjNN+IZ5U
- rcXw==
-X-Gm-Message-State: APjAAAXSbJiC0z4sYg60LB2JWTIBHVs8ATmXol4iN6HS9NfzInHNYDmq
- 1FCjNiEJCu+Dluruqv8TktVpBxoaIO1scipL4hoq8Q==
-X-Google-Smtp-Source: APXvYqz5lz8Bx5r+hOfkxT89taKmjq4XVEOcglFFrUjs0O7WjK+Y+IZCN7vcLSVeAwBbcJ6semWNObbc7RcHxrlyYdCb3A==
-X-Received: by 2002:a63:9548:: with SMTP id t8mr21223163pgn.205.1580169297243; 
- Mon, 27 Jan 2020 15:54:57 -0800 (PST)
-Date: Mon, 27 Jan 2020 15:53:53 -0800
+ bh=ucQuwz+ateoZojufeFLUV/0W67kgVJ9nWifeRmz8AWM=;
+ b=Y+1sOTySqOAz611hnN8/uRUtnlva+4mLV66xVbsOqfJXYERP+Ry3R66IDRnRShNmU/
+ 1p5KVmZ75NJGsilNTyH2n6OX8mviMd4mRLUNStKKsAV4A3RIafz6l/CvBAi1k/JSaALY
+ E9kQ5bbp3iTqvGNvrIi9zEykOZEN9gf/vAKLMN7O5CfKscTPZywHYOorOCzXjlNzrqc2
+ W9Gk3ya/3AANhgxSpjEcsA1QryLQlg4sr9Y83XcnN/ElicrYbKTnrnFBYlbVuPSPsO0O
+ cyR9ciFHghFcJw88teF6ztfJLATSHDjTK8PB7qx7H86CaFFgqXE43k5iCc7AqSHSsDlc
+ KAow==
+X-Gm-Message-State: APjAAAV5STQq6wvNOAG7L9/HvlnEiMulgnqxzzLnnq4guZUvfvrFMp5m
+ TI1Udb9eeONNrkqa10tX6wXxfB0+uIv9Xn8N8/17pA==
+X-Google-Smtp-Source: APXvYqzNkd8uO2qnBeczoimrL08h0KoxDWD4kdWRR2C1yxKMCQiZ3I6T3wZ3EM2PaeqKwjCpbd3NIGFQllyGGiXdm+suog==
+X-Received: by 2002:a63:3191:: with SMTP id
+ x139mr21666824pgx.368.1580169303480; 
+ Mon, 27 Jan 2020 15:55:03 -0800 (PST)
+Date: Mon, 27 Jan 2020 15:53:54 -0800
 In-Reply-To: <20200127235356.122031-1-brendanhiggins@google.com>
-Message-Id: <20200127235356.122031-3-brendanhiggins@google.com>
+Message-Id: <20200127235356.122031-4-brendanhiggins@google.com>
 Mime-Version: 1.0
 References: <20200127235356.122031-1-brendanhiggins@google.com>
 X-Mailer: git-send-email 2.25.0.341.g760bfbb309-goog
-Subject: [PATCH v1 2/5] reset: brcmstb-rescal: add unspecified HAS_IOMEM
- dependency
+Subject: [PATCH v1 3/5] reset: intel: add unspecified HAS_IOMEM dependency
 From: Brendan Higgins <brendanhiggins@google.com>
 To: jdike@addtoit.com, richard@nod.at, anton.ivanov@cambridgegreys.com, 
  Philipp Zabel <p.zabel@pengutronix.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200127_155500_884419_84146EA9 
-X-CRM114-Status: UNSURE (   7.71  )
+X-CRM114-CacheID: sfid-20200127_155505_343376_4E71745B 
+X-CRM114-Status: UNSURE (   9.96  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -99,32 +99,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-Currently CONFIG_RESET_BRCMSTB_RESCAL=y implicitly depends on
+Currently CONFIG_RESET_INTEL_GW=y implicitly depends on
 CONFIG_HAS_IOMEM=y; consequently, on architectures without IOMEM we get
 the following build error:
 
-/usr/bin/ld: drivers/reset/reset-brcmstb-rescal.o: in function `brcm_rescal_reset_probe':
-drivers/reset/reset-brcmstb-rescal.c:76: undefined reference to `devm_ioremap_resource'
+/usr/bin/ld: drivers/reset/reset-intel-gw.o: in function `intel_reset_probe':
+drivers/reset/reset-intel-gw.c:185: undefined reference to `devm_platform_ioremap_resource'
 
 Fix the build error by adding the unspecified dependency.
 
 Signed-off-by: Brendan Higgins <brendanhiggins@google.com>
 ---
- drivers/reset/Kconfig | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/reset/Kconfig | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/drivers/reset/Kconfig b/drivers/reset/Kconfig
-index 461b0e506a26f..a19bd303f31a9 100644
+index a19bd303f31a9..d9efbfd296463 100644
 --- a/drivers/reset/Kconfig
 +++ b/drivers/reset/Kconfig
-@@ -51,6 +51,7 @@ config RESET_BRCMSTB
+@@ -74,7 +74,7 @@ config RESET_IMX7
  
- config RESET_BRCMSTB_RESCAL
- 	bool "Broadcom STB RESCAL reset controller"
-+	depends on HAS_IOMEM
- 	default ARCH_BRCMSTB || COMPILE_TEST
+ config RESET_INTEL_GW
+ 	bool "Intel Reset Controller Driver"
+-	depends on OF
++	depends on OF && HAS_IOMEM
+ 	select REGMAP_MMIO
  	help
- 	  This enables the RESCAL reset controller for SATA, PCIe0, or PCIe1 on
+ 	  This enables the reset controller driver for Intel Gateway SoCs.
 -- 
 2.25.0.341.g760bfbb309-goog
 
