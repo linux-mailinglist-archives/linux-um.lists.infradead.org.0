@@ -2,63 +2,60 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 11E7814B1AF
-	for <lists+linux-um@lfdr.de>; Tue, 28 Jan 2020 10:22:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7DF9414B1B3
+	for <lists+linux-um@lfdr.de>; Tue, 28 Jan 2020 10:24:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YeYJUHHUfRmi+G4J5b2+u1x7uWA1Rv0WKxQD6OHQXFA=; b=qwenAhvfrm7Ug4
-	TbPoOIYv9pI5/alGSrV7ga4XHgqieXGbAtZapkIJZHkf3Wm49HhYv7URA0P3pOh1WnT6/Y4ir+REm
-	Jt0w2Plc52UKlNkExTu/5xVmXwN4gj8lDjyeMvF/59DD0ZmxSIVx30L5nn4MnYZjxaFeeZLTPhg++
-	xAqapnyJtbPnAsIYtRUdmHYx0UZtzrNlRM6BAfvoKpkFPgab5HbSGVdttZl/4GXaYfn5ZlhWdsD9H
-	LcCc3iy4r5iahy2zgMMpN2RKMwC9NKOjjEf+aaXkNl10RwJMjspUYaUD22uHdXzh4Qc+BbpfTVmT7
-	63s9qG8RO5Tq0ZV2pHYA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:To:Subject:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=2KeW3JszkOVhqku2PlwMNv4lBm+c/9/46XZwJu0KkrQ=; b=czJDAdJWeopPQGtnwgw05tx1M0
+	XsMHa01h1bEB7YzbflsaOVUQTQ0ejUcWlxkEelPFV7qMSu6VTGMOhkpAUQuGFbLSHV2IMpchuCAMU
+	qyS4CvDkdB0X2DEemD4XXB3LwHfUwzpQY6UXZzMXbv/Z7f8tJrmQJBb18554F5pMdwKfq91NkVr+J
+	37Xyz36a/KADSGFh2i6osMAlK6jBuFjgPKI/4l7ca9oco1VeFSVMo0GeOoQyFxKl3NONEf6hoQ/hE
+	CReATB/iVlKZmE8UHvSvtXdvG/DxDqYF3iAqvoHcX5KlvGEWW8TIiu4X9P6i9/jRuKA0RBf9hl5Oo
+	gph01gRA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iwN4c-0000Zg-K9; Tue, 28 Jan 2020 09:22:18 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1iwN6V-0000rG-8E; Tue, 28 Jan 2020 09:24:15 +0000
+Received: from ivanoab7.miniserver.com ([37.128.132.42]
+ helo=www.kot-begemot.co.uk)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iwN4a-0000ZG-Gp
- for linux-um@lists.infradead.org; Tue, 28 Jan 2020 09:22:17 +0000
-Received: from lupine.hi.pengutronix.de
- ([2001:67c:670:100:3ad5:47ff:feaf:1a17] helo=lupine)
- by metis.ext.pengutronix.de with esmtps
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <p.zabel@pengutronix.de>)
- id 1iwN4U-00038f-Iu; Tue, 28 Jan 2020 10:22:10 +0100
-Received: from pza by lupine with local (Exim 4.92)
- (envelope-from <p.zabel@pengutronix.de>)
- id 1iwN4S-00034Z-Jb; Tue, 28 Jan 2020 10:22:08 +0100
-Message-ID: <01d73961207b5110c2edc72d4964582b12bcc8f7.camel@pengutronix.de>
-Subject: Re: [PATCH v1 2/5] reset: brcmstb-rescal: add unspecified HAS_IOMEM
- dependency
-From: Philipp Zabel <p.zabel@pengutronix.de>
-To: Brendan Higgins <brendanhiggins@google.com>, jdike@addtoit.com, 
- richard@nod.at, anton.ivanov@cambridgegreys.com
-Date: Tue, 28 Jan 2020 10:22:08 +0100
-In-Reply-To: <20200127235356.122031-3-brendanhiggins@google.com>
-References: <20200127235356.122031-1-brendanhiggins@google.com>
- <20200127235356.122031-3-brendanhiggins@google.com>
-User-Agent: Evolution 3.30.5-1.1 
+ id 1iwN6S-0000qn-0n
+ for linux-um@lists.infradead.org; Tue, 28 Jan 2020 09:24:13 +0000
+Received: from tun252.jain.kot-begemot.co.uk ([192.168.18.6]
+ helo=jain.kot-begemot.co.uk)
+ by www.kot-begemot.co.uk with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.92) (envelope-from <anton.ivanov@cambridgegreys.com>)
+ id 1iwN6P-00081e-UC; Tue, 28 Jan 2020 09:24:10 +0000
+Received: from jain.kot-begemot.co.uk ([192.168.3.3])
+ by jain.kot-begemot.co.uk with esmtp (Exim 4.92)
+ (envelope-from <anton.ivanov@cambridgegreys.com>)
+ id 1iwN6N-00056c-9c; Tue, 28 Jan 2020 09:24:09 +0000
+From: Anton Ivanov <anton.ivanov@cambridgegreys.com>
+Subject: [GIT PULL] uml updates for 5.6-rc1
+To: torvalds@linux-foundation.org
+Message-ID: <aaf07936-6fd2-be40-15dc-f87e8e84091d@cambridgegreys.com>
+Date: Tue, 28 Jan 2020 09:24:07 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 2001:67c:670:100:3ad5:47ff:feaf:1a17
-X-SA-Exim-Mail-From: p.zabel@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-um@lists.infradead.org
+Content-Language: en-US
+X-Spam-Score: -1.0
+X-Spam-Score: -1.0
+X-Clacks-Overhead: GNU Terry Pratchett
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200128_012216_564941_2EFC7E42 
-X-CRM114-Status: GOOD (  10.26  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200128_012412_086662_7C1C6800 
+X-CRM114-Status: GOOD (  11.07  )
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.3 KHOP_HELO_FCRDNS       Relay HELO differs from its IP's reverse DNS
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,45 +67,63 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: linux-um@lists.infradead.org, linux-kernel@vger.kernel.org,
- davidgow@google.com, heidifahim@google.com
-Content-Type: text/plain; charset="us-ascii"
+Cc: Richard Weinberger <richard@nod.at>, johannes@sipsolutions.net,
+ linux-um@lists.infradead.org, linux-kernel@vger.kernel.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Mon, 2020-01-27 at 15:53 -0800, Brendan Higgins wrote:
-> Currently CONFIG_RESET_BRCMSTB_RESCAL=y implicitly depends on
-> CONFIG_HAS_IOMEM=y; consequently, on architectures without IOMEM we get
-> the following build error:
-> 
-> /usr/bin/ld: drivers/reset/reset-brcmstb-rescal.o: in function `brcm_rescal_reset_probe':
-> drivers/reset/reset-brcmstb-rescal.c:76: undefined reference to `devm_ioremap_resource'
-> 
-> Fix the build error by adding the unspecified dependency.
-> 
-> Signed-off-by: Brendan Higgins <brendanhiggins@google.com>
-> ---
->  drivers/reset/Kconfig | 1 +
->  1 file changed, 1 insertion(+)
-> 
-> diff --git a/drivers/reset/Kconfig b/drivers/reset/Kconfig
-> index 461b0e506a26f..a19bd303f31a9 100644
-> --- a/drivers/reset/Kconfig
-> +++ b/drivers/reset/Kconfig
-> @@ -51,6 +51,7 @@ config RESET_BRCMSTB
->  
->  config RESET_BRCMSTB_RESCAL
->  	bool "Broadcom STB RESCAL reset controller"
-> +	depends on HAS_IOMEM
->  	default ARCH_BRCMSTB || COMPILE_TEST
->  	help
->  	  This enables the RESCAL reset controller for SATA, PCIe0, or PCIe1 on
+Linus,
 
-Thank you, I'll pick up the reset patches 2 and 3.
+I am sending this on behalf of Richard who is traveling.
 
-regards
-Philipp
+Please pull the following uml updates for v5.6-rc1:
+
+The following changes since commit b3a987b0264d3ddbb24293ebff10eddfc472f653:
+
+   Linux 5.5-rc6 (2020-01-12 16:55:08 -0800)
+
+are available in the Git repository at:
+
+   git://git.kernel.org/pub/scm/linux/kernel/git/rw/uml.git tags/for-linus-5.6-rc1
+
+for you to fetch changes up to d65197ad52494bed3b5e64708281b8295f76c391:
+
+   um: Fix time-travel=inf-cpu with xor/raid6 (2020-01-19 22:42:06 +0100)
+
+----------------------------------------------------------------
+This pull request contains the following changes for UML:
+
+- Fix for time travel mode
+- Disable CONFIG_CONSTRUCTORS again
+- A new command line option to have an non-raw serial line
+- Preparations to remove obsolete UML network drivers
+
+----------------------------------------------------------------
+Brendan Higgins (1):
+       um: Mark non-vector net transports as obsolete
+
+Johannes Berg (3):
+       um: Add an option to make serial driver non-raw
+       Revert "um: Enable CONFIG_CONSTRUCTORS"
+       um: Fix time-travel=inf-cpu with xor/raid6
+
+  arch/um/Kconfig                  |  2 +
+  arch/um/drivers/Kconfig          | 81 ++++++++++++++++++++--------------------
+  arch/um/drivers/chan_user.h      |  2 +-
+  arch/um/drivers/ssl.c            |  8 ++++
+  arch/um/include/asm/Kbuild       |  1 -
+  arch/um/include/asm/common.lds.S |  2 +-
+  arch/um/include/asm/xor.h        |  7 ++++
+  arch/um/kernel/dyn.lds.S         |  1 +
+  init/Kconfig                     |  1 +
+  kernel/gcov/Kconfig              |  2 +-
+  10 files changed, 63 insertions(+), 44 deletions(-)
+  create mode 100644 arch/um/include/asm/xor.h
+
+
+
 
 _______________________________________________
 linux-um mailing list
