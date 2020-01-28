@@ -2,38 +2,95 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 43D5F14B5C3
-	for <lists+linux-um@lfdr.de>; Tue, 28 Jan 2020 15:00:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9232B14BC6D
+	for <lists+linux-um@lfdr.de>; Tue, 28 Jan 2020 15:58:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BSUWDi8fL8CrK+HJb/iRaTBEr9P+x8g90fRosH3K3Sc=; b=k/iOaMNdLGZrkj
-	ppjek7wgX83vnXqg8K9Ld03zAcb0ww11BLIztP/Yfzdt14Qkh3Onv8n05tgg+FtG9Q8oao/0pVzRc
-	W3pAc0WQTli/0mqEqSIUHQkZtEmjoVWiqEUwKFd0+PSS6garF1F4C8MzzGnjsb4yfsOcipQLr8II+
-	xd0FZAZ+v10HjijUa1+9N1/CyDWvic6n6CcjeasmKXg8BBDJhboytXIcByGJpeDUs1mHvWC4ODzO3
-	sA7KsMZzLTfe9rCtPmY5UZgw/1Vn8oPK3nsKSog+Maj+sBM1dnCL8GxTjxKK8O9l8/STqSJ38RTpR
-	YUVoWsRTes9Hc7sQ1BkA==;
+	List-Owner; bh=a4yAbRUTo6BnLZNld9wJ/l62byKclfc7TWV0UaCVzsM=; b=sZbWLEbnpcU3i5
+	PVwMHUbhVT4zBDX7OPUAti4Tm9oTLamLCdhTFORfFeJz8aIKUGrGcsuUnEUUfeBZQ6IrtH6kq2o++
+	cFJnGHSq2Xecwhh66G/4DdRvxh6AGoTPIGNfqIdqd3mhxUx31BqIHi8a9RMya+l41zUFNSQnNXwHE
+	9iqi5EAYN80/yIDxy8wJAedGRtPjwV0dMWFNo0PLC71+oa9S/LliGIhHU/HEdaGtpf03su8ZG4ZBn
+	D/rMOFurCkgR1J+0vSAzJn7g2hHgt5um56boeV67VFa/Pcknw5+UDnjAFxh5v2VOuxNuUN8jPBSoQ
+	KZfmDTz9oA6HW/At/Kvg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iwRQ7-0007mo-R3; Tue, 28 Jan 2020 14:00:47 +0000
-Received: from [177.41.103.99] (helo=bombadil.infradead.org)
- by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iwRQ5-0007ih-F2; Tue, 28 Jan 2020 14:00:46 +0000
-Received: from mchehab by bombadil.infradead.org with local (Exim 4.92.3)
- (envelope-from <mchehab@bombadil.infradead.org>)
- id 1iwRPp-001BNV-AQ; Tue, 28 Jan 2020 15:00:29 +0100
-From: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
-To: Linux Media Mailing List <linux-media@vger.kernel.org>
-Subject: [PATCH 04/27] docs: virt: user_mode_linux.rst: fix URL references
-Date: Tue, 28 Jan 2020 15:00:05 +0100
-Message-Id: <c26437ef62ca1568c75a0c771e3f8a837299a17b.1580219586.git.mchehab+huawei@kernel.org>
-X-Mailer: git-send-email 2.24.1
-In-Reply-To: <cover.1580219586.git.mchehab+huawei@kernel.org>
-References: <cover.1580219586.git.mchehab+huawei@kernel.org>
+	id 1iwSJl-0006Il-3o; Tue, 28 Jan 2020 14:58:17 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iwSJi-0006I3-9j
+ for linux-um@lists.infradead.org; Tue, 28 Jan 2020 14:58:15 +0000
+Received: by mail-pf1-x442.google.com with SMTP id 2so6717108pfg.12
+ for <linux-um@lists.infradead.org>; Tue, 28 Jan 2020 06:58:10 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=xVg7yvmtWgmr43KxLTmI3D7lMD6VbKHeVc6c1ksu9WU=;
+ b=cAoClRy3JAZUhXmD5tD9S6sAgFkmXeMAWWyZj4AyoV+mQvhmXqkmysZ/PpYCpQMh4q
+ 8URdcdKQjwDsls1KxHWOxtxJs9XXcM5qF6IluaXDwPXEre3psp1G3a+T5Szjt/gPDOKg
+ Lba5C4uWOILvq46slE+w3i+qqsxfGe3CwCTqQiHcKGjPEjd8qBGPadaQPhkAeRmusLf4
+ YMCDIEgpzRKl9cBTa1EYKwF+HoBNNiOxh9VdbuT8aai/yBMXWC5DtJnnWKy5kVEqwA2U
+ wF4V2/UN70Gq8OEmZd7yA+tb5TMmL6/imGvzthSSzdfv7+0L916YpT4Axr0cgaJrPDjA
+ HI2Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=xVg7yvmtWgmr43KxLTmI3D7lMD6VbKHeVc6c1ksu9WU=;
+ b=gVaRDTZnPynKZ1oTgIYdIZiRcfwJ5g404kDwAZpLSKOSlecIbGih8KI3BwyV47XPOg
+ n4bj4ScplWmPGtYFpLxlvWtFsuj+T9CCEwLaPlcEXYijy0YmTrrl0onP/FXgWEF2ZYeC
+ K12GDE0ZDJLkbQgh//KL32x89baAGn5TP5ETvBlY9T4EQ0bQt6Zpl4I8BUQHf3fG7EUz
+ YWs2Ia0oqTFbMEia5z/ORULcteNcfirQEcn+caWs2ocCuVcNa+6hS6ZF8PL8o0F1IKys
+ 3wtR5b5mDOmsJk96FroiUbLkt2isbryIV+cy1JkJGFsSswfgLZ+rSl7wBkvmQ4sz4chD
+ d/1A==
+X-Gm-Message-State: APjAAAV2P8YTUO2vZQMn0ceNAWAVw+6FdQd9+GvfGVB6CAsvl6jDzWBh
+ 9txackUtaDYKaM2zPHTD90w=
+X-Google-Smtp-Source: APXvYqxNf1EXoNBaASlV1mmB+s43Ce4o89OK8f/drmebdoVYbgswj1SeuD+turU5RtHfze5RRLx7Qw==
+X-Received: by 2002:a65:4b89:: with SMTP id t9mr11059341pgq.102.1580223490422; 
+ Tue, 28 Jan 2020 06:58:10 -0800 (PST)
+Received: from localhost (c-73-241-114-122.hsd1.ca.comcast.net.
+ [73.241.114.122])
+ by smtp.gmail.com with ESMTPSA id x7sm20743774pfp.93.2020.01.28.06.58.09
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 28 Jan 2020 06:58:09 -0800 (PST)
+Date: Tue, 28 Jan 2020 06:58:07 -0800
+From: Richard Cochran <richardcochran@gmail.com>
+To: Brendan Higgins <brendanhiggins@google.com>
+Subject: Re: [PATCH v1 4/5] ptp: 1588_clock_ines: add unspecified HAS_IOMEM
+ dependency
+Message-ID: <20200128145807.GA2492@localhost>
+References: <20200127235356.122031-1-brendanhiggins@google.com>
+ <20200127235356.122031-5-brendanhiggins@google.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200127235356.122031-5-brendanhiggins@google.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20200128_065814_362533_414D1879 
+X-CRM114-Status: UNSURE (   7.97  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [richardcochran[at]gmail.com]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -45,226 +102,27 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: Jonathan Corbet <corbet@lwn.net>,
- Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
- Richard Weinberger <richard@nod.at>, Jeff Dike <jdike@addtoit.com>,
- linux-doc@vger.kernel.org, linux-um@lists.infradead.org,
- Mauro Carvalho Chehab <mchehab@infradead.org>,
- Anton Ivanov <anton.ivanov@cambridgegreys.com>
+Cc: heidifahim@google.com, richard@nod.at, jdike@addtoit.com,
+ linux-um@lists.infradead.org, linux-kernel@vger.kernel.org,
+ davidgow@google.com, netdev@vger.kernel.org, anton.ivanov@cambridgegreys.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-Several URLs are pointing to outdated places.
+On Mon, Jan 27, 2020 at 03:53:55PM -0800, Brendan Higgins wrote:
+> Currently CONFIG_PTP_1588_CLOCK_INES=y implicitly depends on
+> CONFIG_HAS_IOMEM=y; consequently, on architectures without IOMEM we get
+> the following build error:
+> 
+> /usr/bin/ld: drivers/ptp/ptp_ines.o: in function `ines_ptp_ctrl_probe':
+> drivers/ptp/ptp_ines.c:795: undefined reference to `devm_ioremap_resource'
+> 
+> Fix the build error by adding the unspecified dependency.
+> 
+> Signed-off-by: Brendan Higgins <brendanhiggins@google.com>
 
-Update the references for the URLs whose contents still exists,
-removing the others.
-
-Signed-off-by: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
----
- Documentation/virt/uml/user_mode_linux.rst | 71 +++++++++-------------
- 1 file changed, 29 insertions(+), 42 deletions(-)
-
-diff --git a/Documentation/virt/uml/user_mode_linux.rst b/Documentation/virt/uml/user_mode_linux.rst
-index a96d29243964..d6844fb89b46 100644
---- a/Documentation/virt/uml/user_mode_linux.rst
-+++ b/Documentation/virt/uml/user_mode_linux.rst
-@@ -319,7 +319,7 @@ Linux: a port of the Linux kernel as a normal Intel Linux process.
-   as modules, especially filesystems and network protocols and filters,
-   so most symbols which need to be exported probably already are.
-   However, if you do find symbols that need exporting, let  us
--  <http://user-mode-linux.sourceforge.net/>  know, and
-+  know at http://user-mode-linux.sourceforge.net/, and
-   they'll be "taken care of".
- 
- 
-@@ -381,9 +381,9 @@ Linux: a port of the Linux kernel as a normal Intel Linux process.
- 
- 
-   You will need a filesystem to boot UML from.  There are a number
--  available for download from  here  <http://user-mode-
--  linux.sourceforge.net/> .  There are also  several tools
--  <http://user-mode-linux.sourceforge.net/>  which can be
-+  available for download from http://user-mode-linux.sourceforge.net.
-+  There are also  several tools at
-+  http://user-mode-linux.sourceforge.net/  which can be
-   used to generate UML-compatible filesystem images from media.
-   The kernel will boot up and present you with a login prompt.
- 
-@@ -462,10 +462,9 @@ Note:
- 
-   Here are some examples of UML in action:
- 
--  -  A login session <http://user-mode-linux.sourceforge.net/login.html>
--
--  -  A virtual network <http://user-mode-linux.sourceforge.net/net.html>
-+  -  A login session http://user-mode-linux.sourceforge.net/old/login.html
- 
-+  -  A virtual network http://user-mode-linux.sourceforge.net/old/net.html
- 
- 
- 
-@@ -1130,11 +1129,6 @@ Note:
- 
- 
- 
--
--  Harald's original README is here <http://user-mode-linux.source-
--  forge.net/>  and explains these in detail, as well as
--  some other issues.
--
-   There is also a related point-to-point only "ucast" transport.
-   This is useful when your network does not support multicast, and
-   all network connections are simple point to point links.
-@@ -1217,8 +1211,7 @@ Note:
-   make sure that /usr/src/linux points to the headers for the running
-   kernel.
- 
--  These were pointed out by Tim Robinson <timro at trkr dot net> in
--  <http://www.geocrawler.com/> name="this uml-user post"> .
-+  These were pointed out by Tim Robinson <timro at trkr dot net> in the past.
- 
- 
- 
-@@ -1912,8 +1905,8 @@ Note:
- 
-   uml_moo is installed with the UML deb and RPM.  If you didn't install
-   UML from one of those packages, you can also get it from the UML
--  utilities <http://user-mode-linux.sourceforge.net/
--  utilities>  tar file in tools/moo.
-+  utilities http://user-mode-linux.sourceforge.net/utilities tar file
-+  in tools/moo.
- 
- 
- 
-@@ -3707,18 +3700,15 @@ Note:
- 
- 
-   This is a syslogd bug.  There's a race between a parent process
--  installing a signal handler and its child sending the signal.  See
--  this uml-devel post <http://www.geocrawler.com/lists/3/Source-
--  Forge/709/0/6612801>  for the details.
-+  installing a signal handler and its child sending the signal.
- 
- 
- 
- 13.8.  TUN/TAP networking doesn't work on a 2.4 host
- ----------------------------------------------------
- 
--  There are a couple of problems which were
--  <http://www.geocrawler.com/lists/3/SourceForge/597/0/> name="pointed
--  out">  by Tim Robinson <timro at trkr dot net>
-+  There are a couple of problems which were reported by
-+  Tim Robinson <timro at trkr dot net>
- 
-   -  It doesn't work on hosts running 2.4.7 (or thereabouts) or earlier.
-      The fix is to upgrade to something more recent and then read the
-@@ -3761,7 +3751,7 @@ Note:
- 
- 
-   Documentation on IP Masquerading, and SNAT, can be found at
--  www.netfilter.org  <http://www.netfilter.org> .
-+  http://www.netfilter.org.
- 
- 
-   If you can reach the local net, but not the outside Internet, then
-@@ -4111,14 +4101,14 @@ Note:
- 
-   Rusty Russell <rusty at linuxcare.com.au>  -
- 
--  -  wrote the  HOWTO <http://user-mode-
--     linux.sourceforge.net/UserModeLinux-HOWTO.html>
-+  -  wrote the  HOWTO
-+     http://user-mode-linux.sourceforge.net/old/UserModeLinux-HOWTO.html
- 
-   -  prodded me into making this project official and putting it on
-      SourceForge
- 
--  -  came up with the way cool UML logo <http://user-mode-
--     linux.sourceforge.net/uml-small.png>
-+  -  came up with the way cool UML logo
-+     http://user-mode-linux.sourceforge.net/uml-small.png
- 
-   -  redid the config process
- 
-@@ -4146,17 +4136,15 @@ Note:
-   Jim Leu <jleu at mindspring.com>  - Wrote the virtual ethernet driver
-   and associated usermode tools
- 
--  Lars Brinkhoff <http://lars.nocrew.org/>  - Contributed the ptrace
--  proxy from his own  project <http://a386.nocrew.org/> to allow easier
--  kernel debugging
-+  Lars Brinkhoff http://lars.nocrew.org/  - Contributed the ptrace
-+  proxy from his own  project to allow easier kernel debugging
- 
- 
-   Andrea Arcangeli <andrea at suse.de>  - Redid some of the early boot
-   code so that it would work on machines with Large File Support
- 
- 
--  Chris Emerson <http://www.chiark.greenend.org.uk/~cemerson/>  - Did
--  the first UML port to Linux/ppc
-+  Chris Emerson - Did the first UML port to Linux/ppc
- 
- 
-   Harald Welte <laforge at gnumonks.org>  - Wrote the multicast
-@@ -4171,7 +4159,7 @@ Note:
-   wrote the iomem emulation support
- 
- 
--  Henrik Nordstrom <http://hem.passagen.se/hno/>  - Provided a variety
-+  Henrik Nordstrom http://hem.passagen.se/hno/  - Provided a variety
-   of patches, fixes, and clues
- 
- 
-@@ -4206,16 +4194,15 @@ Note:
-   submitted patches for the slip transport and lots of other things.
- 
- 
--  David Coulson <http://davidcoulson.net>  -
-+  David Coulson http://davidcoulson.net  -
- 
--  -  Set up the usermodelinux.org <http://usermodelinux.org>  site,
-+  -  Set up the http://usermodelinux.org  site,
-      which is a great way of keeping the UML user community on top of
-      UML goings-on.
- 
-   -  Site documentation and updates
- 
-   -  Nifty little UML management daemon  UMLd
--     <http://uml.openconsultancy.com/umld/>
- 
-   -  Lots of testing and bug reports
- 
-@@ -4388,12 +4375,12 @@ Note:
-   work with RH 6.2.
- 
-   Michael Jennings <mikejen at hevanet.com>  sent in some material which
--  is now gracing the top of the  index  page <http://user-mode-
--  linux.sourceforge.net/>  of this site.
-+  is now gracing the top of the  index  page
-+  http://user-mode-linux.sourceforge.net/  of this site.
- 
--  SGI <http://www.sgi.com>  (and more specifically Ralf Baechle <ralf at
--  uni-koblenz.de> ) gave me an account on oss.sgi.com
--  <http://www.oss.sgi.com> .  The bandwidth there made it possible to
-+  SGI (and more specifically Ralf Baechle <ralf at
-+  uni-koblenz.de> ) gave me an account on oss.sgi.com.
-+  The bandwidth there made it possible to
-   produce most of the filesystems available on the project download
-   page.
- 
-@@ -4410,5 +4397,5 @@ Note:
- 
-   Chris Reahard built a specialized root filesystem for running a DNS
-   server jailed inside UML.  It's available from the download
--  <http://user-mode-linux.sourceforge.net/dl-sf.html>  page in the Jail
-+  http://user-mode-linux.sourceforge.net/old/dl-sf.html  page in the Jail
-   Filesystems section.
--- 
-2.24.1
-
+Acked-by: Richard Cochran <richardcochran@gmail.com>
 
 _______________________________________________
 linux-um mailing list
