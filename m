@@ -2,94 +2,92 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B5F3F14C14B
-	for <lists+linux-um@lfdr.de>; Tue, 28 Jan 2020 20:54:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3AB9414C4AB
+	for <lists+linux-um@lfdr.de>; Wed, 29 Jan 2020 03:36:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=w37GlRgY9ElaBYIN8VpKSX25q9rkdiFa3TISKuAayrw=; b=QyMwCGTM+erPUA
-	9POr6yqdfprXJXgXYUQjwAsGw5o2I9AHJMTjHs1+3YDdPaWXNT6Wlo8BAMT0WbqzOwRhM8j9g+VES
-	TDzQHTwT8c8M6EomJQGtI+Kd4Se/6y8fk6TMU03YqLpi3J/6QQ65EOP7bVclcGzKfhdlsocUT/Jbr
-	aV8T4ThBbXgp00omBG9t9YhUPj7P0p4Hc7wAmEkchdv0t/cSnNqO5ISVDN+f2YGETUfSgR7cMdhWK
-	vpU8RcfFlgaZ9bkw4BEWWOgd7X7WL9IyEnk4CAPUGl5Yo+NHqkCCTKn8XlbOy4BcjpXOy0lH9K4JB
-	FGMOTY+KiV8hxt1lCJXA==;
+	List-Owner; bh=455P3RNlKUQsekMMMaXOiiEIQP/7oqPZdky0fV9Z5pY=; b=ouyFTvZh3c7lId
+	9baTd6lZ1DzgHs4+/gkccy7rF+/GOW5gCW7yPY3n+qHnsnwCtLLyIMju6HAtOueyjYfXjqbjoxg0T
+	S1uIQRQnk2y+Pu/qpHbx+GGkz/9NN6+GDOw3QxKBeWvovLzxfmy6g4DQBKOsprAHUV0l1Gjo0pExW
+	iTdlcQyOREPTbmw6+giiCnEp6B2PmUO91dmaFBS/xmmyxn04vjrH/mmY0BLGcaRrqyC2wo2RPqbp2
+	VDq8FdfXxLyDUdGpfWtXKYKuAofCCdb81yirCFGlQkLDYLjt5dMfNEulFdabCXugeeFvqSFlYKM5P
+	cCAuSfWqjDW1ceEwqfRg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iwWw2-0000zJ-NT; Tue, 28 Jan 2020 19:54:06 +0000
-Received: from mail-pj1-x1043.google.com ([2607:f8b0:4864:20::1043])
+	id 1iwdCy-0003ec-4x; Wed, 29 Jan 2020 02:36:00 +0000
+Received: from mail-lf1-x129.google.com ([2a00:1450:4864:20::129])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iwWvz-0000yN-9f
- for linux-um@lists.infradead.org; Tue, 28 Jan 2020 19:54:04 +0000
-Received: by mail-pj1-x1043.google.com with SMTP id dw13so1527755pjb.4
- for <linux-um@lists.infradead.org>; Tue, 28 Jan 2020 11:54:00 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ id 1iwdCw-0003e1-1k
+ for linux-um@lists.infradead.org; Wed, 29 Jan 2020 02:35:59 +0000
+Received: by mail-lf1-x129.google.com with SMTP id y19so10699755lfl.9
+ for <linux-um@lists.infradead.org>; Tue, 28 Jan 2020 18:35:56 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=linux-foundation.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=V/f5zRc++UUEl2oF7a/v6c3iW8+A1FaOUHgeSr1YnVs=;
- b=V3FY0oe6cawkXOzECXYXusqM1m9RESvFiJ318Zd1jyxpfbejY+CSUTAG0yDVae+gh7
- pYc3vMUzJ+h98Raq2Mf3MaJlkPS3Tq1kTEaVxRYxNtvNYvMIFeOQhAHA2IdylHb12t4O
- /Xyz1C6esVXDMnLz/jxMeZ051W5J+xMFr/TVseT7PIJ1Ykuj8JtuXkbEyg471Cv3xiyo
- IBdrZrDnfkkfbBfGnUduk8UZwMsrIx5XW2N13A4UEIBDsoED3fGtcpdZwubSJZPxsIvU
- K2iZbZPxbx7ZMoe/+aDnxn5RQhf9IVAHuYIr3D6N8L7T+IJ1VEFDze2+++I3nOi8MZ31
- WG2w==
+ :cc; bh=xKaKa4v/uLKsxDJmSSJEukA8v8wjYnguys66biR+79o=;
+ b=X5BcoUZt/2wlQ1NK6ysY4+Sgw9AsvgwRumxSBuD6ZSRePNHoqdm3x8xz8YZVMKBq6i
+ mjE6VgrmCNUVTA6uZnAd6LxDp5WhOQczQFZSInTO6IyCkNJz686lskGkXk61lbqiuHoi
+ z+E3sre49DVpJD17N8p07ANfLx3b0QveQdv4s=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=V/f5zRc++UUEl2oF7a/v6c3iW8+A1FaOUHgeSr1YnVs=;
- b=EsOorc1iQHoVx6W9QC4POr04l+VzG3acifWEdU2uwApkEMy7/UTTkyu8jQuPLF3/PV
- mX6/Yz6I1BhtC2KY5h3+giKg0q9nUNZl+/OE1kOzgCmyk9FXi9yMZb87JsQzcreR5KoO
- mxhl4hx4GCERZAo1gvl4a5ZKNNgEAP5slFpRFGnSjuHMKqmEUxEdqe6JuLZ2DZeYOCYj
- mzonANOeEbSp7oZlNGLywebZ+j8Opqd/cgxhBv5A9nqH+vgcLGCUwpGnbzJuBNB1r/tx
- Zxh3Lq5OiPKpKCHGfzSgmjMDo2JFu6nsuioThpjFpNU3LTtkQJdRdLGb9/1Iv0fABgxZ
- oABQ==
-X-Gm-Message-State: APjAAAW/G745P8DW5FPJcOHyalcV8NbFCDW5cpogkCUFBixgAJBTRt/c
- Wg55xeamtO4ZXsjfkMDBZ7iRSoB4ne+qS/O1lOrB4w==
-X-Google-Smtp-Source: APXvYqwsSX23sWF/7Cv3Xx+gB6ffHVSnTl6Sr/scnY3zT8fQnBaaunzuRNN1mXGoW9KHCLqS7PSV7ksn+8m5qxFFXXI=
-X-Received: by 2002:a17:90a:858a:: with SMTP id
- m10mr6625852pjn.117.1580241239520; 
- Tue, 28 Jan 2020 11:53:59 -0800 (PST)
+ bh=xKaKa4v/uLKsxDJmSSJEukA8v8wjYnguys66biR+79o=;
+ b=tGW9CwAlGN4UcGhiKTqNt+X7/frLNugpkG0MjEzkE0WCG+nltXtEVu24qa4T17OU8D
+ u8NhDLtYQyKVEWbfrcpxd08KN+frkYgaNp/lLA5EmHFJfKK9EBAI0QmfRku54sAcygHe
+ P3nicM23CDeF508lVIrDbHtp3klJVJOpW0dGja2r8c2yRnaxYtblpZ/geWQtDkMqi11D
+ b2ujoXflwa/ofUTNvA+ukr1Gh4izLD7Xg7ut9fGhstiOOr9CbSPESmjMErvQIk9gMCbm
+ Pc222QKI1AxL5/myquwpcmSs/Uy3NVzCeSXLwrAvc8iOLk/f4nVN4u89LKNWTPmLPjlv
+ jvkQ==
+X-Gm-Message-State: APjAAAVjJPfz9SrRZCc3thAyH9uAc9nf4zpRqJIfin06EfKeoAi+YDHn
+ PKKYui60IuLpwIKzROAqGk4mxBb0VbE=
+X-Google-Smtp-Source: APXvYqwZMFZADQqHyz1DsnPYBPkijZ9AOcdOV9zRXeHCXNFZWUhf6OkHKWl3JDgk2IEXpXM6XcHVkg==
+X-Received: by 2002:ac2:4909:: with SMTP id n9mr4122698lfi.21.1580265355032;
+ Tue, 28 Jan 2020 18:35:55 -0800 (PST)
+Received: from mail-lj1-f172.google.com (mail-lj1-f172.google.com.
+ [209.85.208.172])
+ by smtp.gmail.com with ESMTPSA id r10sm177543ljk.9.2020.01.28.18.35.53
+ for <linux-um@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Tue, 28 Jan 2020 18:35:53 -0800 (PST)
+Received: by mail-lj1-f172.google.com with SMTP id q8so12692773ljb.2
+ for <linux-um@lists.infradead.org>; Tue, 28 Jan 2020 18:35:53 -0800 (PST)
+X-Received: by 2002:a2e:9d92:: with SMTP id c18mr7936575ljj.265.1580265353277; 
+ Tue, 28 Jan 2020 18:35:53 -0800 (PST)
 MIME-Version: 1.0
-References: <20191216220555.245089-1-brendanhiggins@google.com>
- <20200106224022.GX11244@42.do-not-panic.com>
- <CAFd5g456c2Zs7rCvRPgio83G=SrtPGi25zbqAUyTBHspHwtu4w@mail.gmail.com>
- <594b7815-0611-34ea-beb5-0642114b5d82@gmail.com>
- <CAFd5g469TWzrLKmQNR2i0HACJ3FEu-=4-Rk005g9szB5UsZAcw@mail.gmail.com>
- <e801e4ac-b7c2-3d0a-71e7-f8153a3dfbc8@gmail.com>
- <ECADFF3FD767C149AD96A924E7EA6EAF982C9840@USCULXMSG17.am.sony.com>
-In-Reply-To: <ECADFF3FD767C149AD96A924E7EA6EAF982C9840@USCULXMSG17.am.sony.com>
-From: Brendan Higgins <brendanhiggins@google.com>
-Date: Tue, 28 Jan 2020 11:53:48 -0800
-Message-ID: <CAFd5g46Ut9Suptmp_bBspkp=KKt2GP+=1C5zLu0FXJY9dGJbFQ@mail.gmail.com>
-Subject: Re: [RFC v1 0/6] kunit: create a centralized executor to dispatch all
- KUnit tests
-To: "Bird, Timothy" <Tim.Bird@sony.com>, Frank Rowand <frowand.list@gmail.com>,
- Alan Maguire <alan.maguire@oracle.com>
+References: <1224347843.24297.1579473209765.JavaMail.zimbra@nod.at>
+In-Reply-To: <1224347843.24297.1579473209765.JavaMail.zimbra@nod.at>
+From: Linus Torvalds <torvalds@linux-foundation.org>
+Date: Tue, 28 Jan 2020 18:35:37 -0800
+X-Gmail-Original-Message-ID: <CAHk-=wjupwymAN-aOytdtxz4EfyKH7MirmJJw40chDGzFQT9wQ@mail.gmail.com>
+Message-ID: <CAHk-=wjupwymAN-aOytdtxz4EfyKH7MirmJJw40chDGzFQT9wQ@mail.gmail.com>
+Subject: Re: Upcomming UBI/UBIFS/UML pull requests
+To: Richard Weinberger <richard@nod.at>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200128_115403_340577_19BA92EF 
-X-CRM114-Status: GOOD (  16.65  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20200128_183558_098105_BCA4C31F 
+X-CRM114-Status: UNSURE (   9.71  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:129 listed in]
+ [list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,55 +99,44 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org,
- "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
- Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
- Greg KH <gregkh@linuxfoundation.org>, Stephen Boyd <sboyd@kernel.org>,
- Richard Weinberger <richard@nod.at>, Jeff Dike <jdike@addtoit.com>,
- Knut Omang <knut.omang@oracle.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, rppt@linux.ibm.com,
- linux-um <linux-um@lists.infradead.org>, Luis Chamberlain <mcgrof@kernel.org>,
- KUnit Development <kunit-dev@googlegroups.com>,
- David Gow <davidgow@google.com>, Shuah Khan <skhan@linuxfoundation.org>,
- Andrew Morton <akpm@linux-foundation.org>, Iurii Zaikin <yzaikin@google.com>,
- Logan Gunthorpe <logang@deltatee.com>,
- Anton Ivanov <anton.ivanov@cambridgegreys.com>
+Cc: linux-um <linux-um@lists.infradead.org>,
+ Johannes Berg <johannes@sipsolutions.net>,
+ anton ivanov <anton.ivanov@cambridgegreys.com>,
+ linux-mtd <linux-mtd@lists.infradead.org>,
+ Miquel Raynal <miquel.raynal@bootlin.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Tue, Jan 28, 2020 at 11:35 AM <Tim.Bird@sony.com> wrote:
+On Sun, Jan 19, 2020 at 2:33 PM Richard Weinberger <richard@nod.at> wrote:
 >
-> > -----Original Message-----
-> > From:  Frank Rowand on January 28, 2020 11:37 AM
-> >
-> > On 1/28/20 1:19 AM, Brendan Higgins wrote:
-> > > On Mon, Jan 27, 2020 at 9:40 AM Frank Rowand <frowand.list@gmail.com> wrote:
-> ...
-> > > we could add Kconfigs to control this, but the compiler nevertheless
-> > > complains because it doesn't know what phase KUnit runs in.
-> > >
-> > > Is there any way to tell the compiler that it is okay for non __init
-> > > code to call __init code? I would prefer not to have a duplicate
-> > > version of all the KUnit libraries with all the symbols marked __init.
-> >
-> > I'm not sure.  The build messages have always been useful and valid in
-> > my context, so I never thought to consider that possibility.
-> >
-> > > Thoughts?
+> due to traveling I won't be able to send you pull requests
+> for UBI/UBIFS and UML this time.
 >
-> I'm not sure there's a restriction on non __init code calling __init
-> code.  In init/main.c arch_call_reset_init() is in __init, and it calls
-> rest_init which is non __init, without any special handling.
+> Therefore I've already prepared my next branches and one of my colleges will
+> send you an PR as soon as the merge window opens.
 >
-> Is the compiler complaint mentioned above related to  calling
-> into __init code, or with some other issue?
+> Miquel: UBI/UBIFS
+> Anton or Johannes: UML
 
-I distinctly remember having the compiler complain at me when I was
-messing around with the device tree unit tests because of KUnit
-calling code marked as __init. Maybe it's time to start converting
-those to KUnit to force the issue? Frank, does that work for you?
+Heh. I just pulled from Anton's pull request, and noticed that the tag
+was actually signed by you.
+
+That's all fine, and this worked, and I have no complaints. But I
+would like to point out that it's perfectly ok to just send pull
+requests for the merge window early, since it was clearly all done and
+ready to go. Just make it very clear that it's an early pull request
+for the next merge window so that I don't get upset if I think I
+should pull it during the rc series and it's not just fixes.
+
+Delegating somebody else to send the pull request later obviously also
+worked, but I thought I'd mention this "send it early" option. It's
+not hugely common, but quite often I actually have one or two pull
+requests that come in before the window even opens (exactly because of
+travel or other timing issues), so it's also not exactly unheard of.
+
+                Linus
 
 _______________________________________________
 linux-um mailing list
