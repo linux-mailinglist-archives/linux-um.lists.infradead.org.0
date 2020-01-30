@@ -2,74 +2,75 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 001C514E5A7
-	for <lists+linux-um@lfdr.de>; Thu, 30 Jan 2020 23:51:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2705C14E5B6
+	for <lists+linux-um@lfdr.de>; Thu, 30 Jan 2020 23:57:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WbzI2LQFCrwEVO7DqmCjhp2+IM+0PncIY3CT7hmT3p0=; b=D7Ly9k9kzDHVfj
-	xLRxSqsMiaHR/DUBkR1SjQkfq6IgwY7A1ow2qOlGAeYIcj0lExnFWXx3JJnNVtuYdLh8OiY6GCT0d
-	k4UEuq2aEO4mK9j4VS1ckH+mWL68fp1cBqLsHaF2vNTLqDa99fUbublw4VwGrPwdYCRpnsfxaRnec
-	H3A7cz/1kClERMMKjR297lRMhyILV2riAN8m7nSo10erZ3G+daM0/H2S8Ivu7zubfYSRxktIszYln
-	HzXpwVx9dr3xevmj8ZPz9PGY0eOI/QKkywekDqKZG7uvz5UKM6Tv+g4l5fN/5wFUqaa1gX7aMm22C
-	I0lRXrNrYwABf8SKRyFA==;
+	List-Owner; bh=oST0c9EkJzy/BCKOvDkrv/wejTaZHJntWbxPSBo5Hxg=; b=mnRj1q08LTSeOF
+	To+LhSfDg2LF7JFakU1ZXwJEHlFBX1trUXxIm+AxLH+3qI0+rdihzwCEevxZ5GcR4LKSSZcA4lrk8
+	i6HAxW8R9jVVIUEBeoCNk3goYGTcHymFCFigFLKPB5vKMhSomfeRyb8jZ95aQUv+zPmobV9HG/OY1
+	9PNZxPcmpFbbhOrmGtP/s1b71XFjaPpXTAC7rPGbvmI7P3GFUVECCusNXjnfQqNNLsqbN/5ZX4hHU
+	+rLIMR6niwQ8Z6ft9rFjtFQ5eu79ZPybIUwx3UkpUig0MprkJO7bWyIevVCzHv3cQcVv1er5sGGMd
+	VliNpA1yOMKAqkVFy13w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ixIeR-00009R-Dw; Thu, 30 Jan 2020 22:51:07 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1ixIkA-0002Hs-KP; Thu, 30 Jan 2020 22:57:02 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ixIeO-00008M-8q
- for linux-um@lists.infradead.org; Thu, 30 Jan 2020 22:51:06 +0000
-Received: by mail-pg1-x542.google.com with SMTP id x8so2402167pgk.8
- for <linux-um@lists.infradead.org>; Thu, 30 Jan 2020 14:51:00 -0800 (PST)
+ id 1ixIk8-0002HE-6j
+ for linux-um@lists.infradead.org; Thu, 30 Jan 2020 22:57:01 +0000
+Received: by mail-pl1-x644.google.com with SMTP id y8so1903661pll.13
+ for <linux-um@lists.infradead.org>; Thu, 30 Jan 2020 14:56:59 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Nm7q/eqnnGMhJ4cSfabctzSKxn0MOorqNV0sKFngedQ=;
- b=TMfOq3Cm7tFFkVWajkEH/mOlfghX4QyLqQHqYZZWR4V20ArmjrlHpz0d8+8xSByinZ
- hdNbCAldYk6XW/2l4H6+W+D99nfYFDFdlo1JF1zsEkJxE9vw/m1xetfRlk4B1wB04LUf
- vgQJJnXFxYGn+sGKkA8pUh58KRPmTHCO35p+LwSV7Wkci1t0zGgCnSKFVsD3CJRVFyCo
- Hx7zchW0IfdwQSjwaOeDPLPmvT/qzRZbY0PFmpfI+3jsVs5e+ZwXMFUc5OJY345A6bMq
- pB48aI/3uWmIP/mXK6bLsZAtTLERYf85LGN/IzjM9ZEQtYWVvQ1wOCqgnYJxKRvVLiz2
- DaBg==
+ :cc; bh=F0OASKqvkAbKhPJi+8BLbJXf7NsJuVGG2F01NRx4uXs=;
+ b=uVpoLgWjGXuzd5yfcWM9lhJIpdK7H/ed03v0i4oe6ecKcTEcyUagDQonSnpspNqBrg
+ vzRW3ikS7UJQyY4Dj4PvpzbOlFmWNIQh30F18QIPfzj4FV1GaUcHqdOzZ3waSZX28dFR
+ owP1VctM6Zpi+bhXbngtnNxU5Npm2UP3BFLONGvIskBJ+Hso+Gm7uzXKWMzhnG1Wu8Zr
+ 3raQdUvOYsYH0Sw1qO1QgwRs+xaKfx7EYur5a3+Wfbi0ZwyEdL1Yu5dOLhbV7Pnmq3Wo
+ HmdITpnr8Myjlm7LxKgu2hN0B/4IlgJdB1tejGrAsObwA/gpPvKq22x5TFLXzj7T6OSa
+ Nmqg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=Nm7q/eqnnGMhJ4cSfabctzSKxn0MOorqNV0sKFngedQ=;
- b=N/BCmQDztsTJNlzbJD3Hoqf/MRuKOtuuquFzgBYWDNhRayl0XWMAQRqqhIRw7X6kbp
- xBT8/17mWakS4lt8LTEyW4/x8itnsaNVKdYc56RlTN3PFnK4HuErFRYJqSDpjWAQF1vh
- MbWDCe1kGqDQTl8Tb7x0o9PDRRR+6ddb7DyLwfQEpq/88E+FoGIcHSW19wPo8KO9n6pS
- L0Z7DzbjAiPv5bJ1rGJzgb1XKh3XowfQbBJ0Io+kIon4EcpkQ1Y4SGGofziZUsV/sJL3
- Tj6P2o+fMv6bZ5NpUiCJfriDCupMhSCTQ+xGbC0khKGQ2FtoJXjjHU2ek9vCdvPtAROD
- S0tw==
-X-Gm-Message-State: APjAAAWdT3Mp4HxFSgKkCh4kekzMq+HXhmCsO2ZD5ZSoVTbxTvvNR2En
- s2edAs6HFkIJKce61An4cn9j/DpB6n21YuUSxduX0Q==
-X-Google-Smtp-Source: APXvYqx0i4HutGZ0NwffQW6YWyeSX4LgIJj846OBe2RwSGkQlJX/8HwMxqcna9y1bwf7blHqEu8eaWZyufGuXP7EBl4=
-X-Received: by 2002:a63:597:: with SMTP id 145mr6755667pgf.384.1580424659726; 
- Thu, 30 Jan 2020 14:50:59 -0800 (PST)
+ bh=F0OASKqvkAbKhPJi+8BLbJXf7NsJuVGG2F01NRx4uXs=;
+ b=kfPdQg6uuJeNSOteEcBfsHpmEA11k+7yf0XhatqNVPbRcfNCBj6XNsQgscJAgaRuli
+ 0XbfF65HEi9eDsUX+Mu+Zhb+HYYgwRaJg5E8Ug/4lzvVGf7aPOHddV+YQzJP84evoMgb
+ LMPYgU1s4k5wQVFRwEo7i3psztFoQFDiugk480bNcZKByqgVnME+IVJVwHf9111rwvW8
+ NiUGHGHCCfJTbnII1d95j3J/Hm/kgdxP+Ldh6sKOEz4ZXVwD5hc2rMqfNOkjg6IiS/Ix
+ Shx18IsEaQDStoFiNSGW4ZqJwOCPwthiNLRqR5IVnkJ5pefbNTUOCyUE6VXx2SPNOQuY
+ 70DQ==
+X-Gm-Message-State: APjAAAWk7MieM45iAh+1539eQjZ94JHQ0KeiukjGmWcJgbxwZ5lairkq
+ lLIxRn/kFvxtiuxyn7FRo0o54Z/hXsjQ/qmK7qY67A==
+X-Google-Smtp-Source: APXvYqx06rRfdAGESGvFlaOpt4QDt5bLwuCNfe3+zYpcszJFW6Zuk8yX4mjZtgIJVufRQ/Br8R02iQzC8Gfj3f2ErLY=
+X-Received: by 2002:a17:902:9a4c:: with SMTP id
+ x12mr6694919plv.297.1580425018923; 
+ Thu, 30 Jan 2020 14:56:58 -0800 (PST)
 MIME-Version: 1.0
 References: <20200128072002.79250-1-brendanhiggins@google.com>
- <20200128072002.79250-5-brendanhiggins@google.com>
- <20200129063836.6C2A62064C@mail.kernel.org>
-In-Reply-To: <20200129063836.6C2A62064C@mail.kernel.org>
+ <20200128072002.79250-7-brendanhiggins@google.com>
+ <20200129063307.19CB4206F0@mail.kernel.org>
+In-Reply-To: <20200129063307.19CB4206F0@mail.kernel.org>
 From: Brendan Higgins <brendanhiggins@google.com>
-Date: Thu, 30 Jan 2020 14:50:48 -0800
-Message-ID: <CAFd5g440ENddSAGA=CQhE-RZQAC8Hh1_+EOmfx2oDueB-EZXLw@mail.gmail.com>
-Subject: Re: [PATCH v1 4/7] init: main: add KUnit to kernel init
+Date: Thu, 30 Jan 2020 14:56:47 -0800
+Message-ID: <CAFd5g44OO7Lany3U9dn-Axbsf2YBQ4fynvRpkqYYf-N1AhNMQQ@mail.gmail.com>
+Subject: Re: [PATCH v1 6/7] kunit: Add 'kunit_shutdown' option
 To: Stephen Boyd <sboyd@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200130_145104_313009_780F2C0A 
-X-CRM114-Status: GOOD (  10.43  )
+X-CRM114-CacheID: sfid-20200130_145700_271341_3BAA0E29 
+X-CRM114-Status: GOOD (  18.18  )
 X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
@@ -117,25 +118,75 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Tue, Jan 28, 2020 at 10:38 PM Stephen Boyd <sboyd@kernel.org> wrote:
+On Tue, Jan 28, 2020 at 10:33 PM Stephen Boyd <sboyd@kernel.org> wrote:
 >
-> Quoting Brendan Higgins (2020-01-27 23:19:59)
-> > Remove KUnit from init calls entirely, instead call directly from
-> > kernel_init().
+> Quoting Brendan Higgins (2020-01-27 23:20:01)
+> > From: David Gow <davidgow@google.com>
 > >
-> > Co-developed-by: Alan Maguire <alan.maguire@oracle.com>
-> > Signed-off-by: Alan Maguire <alan.maguire@oracle.com>
+> > Add a new kernel command-line option, 'kunit_shutdown', which allows the
+> > user to specify that the kernel poweroff, halt, or reboot after
+> > completing all KUnit tests; this is very handy for running KUnit tests
+> > on UML or a VM so that the UML/VM process exits cleanly immediately
+> > after running all tests without needing a special initramfs.
+> >
+> > Signed-off-by: David Gow <davidgow@google.com>
 > > Signed-off-by: Brendan Higgins <brendanhiggins@google.com>
 > > ---
 >
+> Two nitpicks below
+>
 > Reviewed-by: Stephen Boyd <sboyd@kernel.org>
 >
-> Although, why can't it be squashed with the previous patch?
+> > diff --git a/lib/kunit/executor.c b/lib/kunit/executor.c
+> > index 7fd16feff157e..d3ec1265a72fd 100644
+> > --- a/lib/kunit/executor.c
+> > +++ b/lib/kunit/executor.c
+> > @@ -1,6 +1,7 @@
+> >  // SPDX-License-Identifier: GPL-2.0
+> >
+> >  #include <kunit/test.h>
+> > +#include <linux/reboot.h>
+>
+> Should this include come before kunit/test.h? I imagine the order of
+> includes would be linux, kunit, local?
 
-I think that this is pretty much the smallest logical change that
-doesn't touch just KUnit. I figured it might make it easier for people
-not interested in KUnit what changes I am making to init. I assume
-that people don't touch init willy-nilly, right?
+I think some reviewers/maintainers want them all to be alphabetical.
+So I have probably done it both ways in the past. Will fix.
+
+> >
+> >  /*
+> >   * These symbols point to the .kunit_test_suites section and are defined in
+> > @@ -11,6 +12,23 @@ extern struct kunit_suite * const * const __kunit_suites_end[];
+> >
+> >  #if IS_BUILTIN(CONFIG_KUNIT)
+> >
+> > +static char *kunit_shutdown;
+> > +core_param(kunit_shutdown, kunit_shutdown, charp, 0644);
+> > +
+> > +static void kunit_handle_shutdown(void)
+> > +{
+> > +       if (!kunit_shutdown)
+> > +               return;
+> > +
+> > +       if (!strcmp(kunit_shutdown, "poweroff")) {
+> > +               kernel_power_off();
+> > +       } else if (!strcmp(kunit_shutdown, "halt")) {
+> > +               kernel_halt();
+> > +       } else if (!strcmp(kunit_shutdown, "reboot")) {
+> > +               kernel_restart(NULL);
+> > +       }
+>
+> Kernel style would be to not have braces on single line if statements.
+
+Whoops. Sometimes I forget :-)
+
+> > +}
+> > +
+> >  static void kunit_print_tap_header(void)
+> >  {
+> >         struct kunit_suite * const * const *suites, * const *subsuite;
+
+Thanks!
 
 _______________________________________________
 linux-um mailing list
