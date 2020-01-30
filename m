@@ -2,67 +2,70 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2277F14E5E6
-	for <lists+linux-um@lfdr.de>; Fri, 31 Jan 2020 00:08:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2503914E5E7
+	for <lists+linux-um@lfdr.de>; Fri, 31 Jan 2020 00:08:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:Mime-Version:Message-Id
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=D/KZPWiQ1IZ5jqBHSy23BjFYqyIBkRweooDzt7MezeY=; b=Q8QRwdH2YPG7tb
-	PQsUxfqmn3mMr1ZCUap1ofEgik8rVcTABXVTpDryN9OOfbH05lEWpkfh64S83RrMhi0tGq0XQNc0Q
-	LLC0TV8Q4y942GPo3AmIyRY9MP0FSDDVGqCv6IX+jhxxYfsdsOnJpSgNFP5ijQ+EiTmGZyED/nfrT
-	w7XW0tZYqkx1gG39/Z91aPrr3ZKkHQxG3Iv9U3VwHPFceUiat6Ibk88QRPpdv0z25wMdiFNJ8qNV2
-	w0V4cWly6ip8dZS6oUnv5i1983nWsIcDXq9F9FmoDvlOkrjdE5fXGdOGodeYmEPFk3Z7fBlaWNIMr
-	ENhTaYI8802UDCWRVJpQ==;
+	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
+	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=tx/DBjOJtzaOkdWZ6Hd1jMjHujKa6X6jGd3aHFRWi8I=; b=qg5Btg9kfI/sG7
+	ty+Qm+biiiyWZR9O3uqEnmSTvVOmTUGgUPFXTKeXJqkB5rkCsaXIjC+K4fgs+btb141EJedCgGdD1
+	pU4S2Hr+DfKJ37u+Ng5QDE5CtDfFcd8hoJwwVgG0fRQiSUAOV/3GB8csUBF7BVfsdlR4LnwPSgnci
+	T6f9AFL98NXIaFQ+VgvReApJ2ELLFq2Yet4ZsfxiI8Q3ZAF6IiS1WtRSYL7DFXQ2SPvL4HKIyhDPa
+	6DFu0xp/3EzJVBL+dm+Baf3fnlHv6brpNFeb3gd5H3bIqAFSf3LxPf3hpXRki6IrJeT/BDZBcnFnD
+	TxIpw/eNsk4sPBmCu29g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ixIvJ-000694-Jh; Thu, 30 Jan 2020 23:08:33 +0000
-Received: from mail-pl1-x64a.google.com ([2607:f8b0:4864:20::64a])
+	id 1ixIvM-0006Ap-PI; Thu, 30 Jan 2020 23:08:36 +0000
+Received: from mail-pj1-x1049.google.com ([2607:f8b0:4864:20::1049])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ixIvG-00066U-Mm
- for linux-um@lists.infradead.org; Thu, 30 Jan 2020 23:08:32 +0000
-Received: by mail-pl1-x64a.google.com with SMTP id j8so230204plk.1
- for <linux-um@lists.infradead.org>; Thu, 30 Jan 2020 15:08:30 -0800 (PST)
+ id 1ixIvJ-00068u-Ra
+ for linux-um@lists.infradead.org; Thu, 30 Jan 2020 23:08:35 +0000
+Received: by mail-pj1-x1049.google.com with SMTP id m61so3116317pjb.1
+ for <linux-um@lists.infradead.org>; Thu, 30 Jan 2020 15:08:32 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=date:message-id:mime-version:subject:from:to:cc;
- bh=geIt7NTj15qXn0Pd7vHPLbcleORDZqpFgUWoIN42PEM=;
- b=qTlSqhtNx7eHlvPfVYXKqr93F2m/Yz/e2GC7+PA4PGi2HpcSKlShgkySpjTmchthE/
- 5rNnvGRoyCEzqtTrv6EKSjlJuYU+3zLDIMbed0HlOkBqTKkEJTRV0KIqoCqJ1LbEvCXI
- C5l6LRInj0spf/zHtk5oN9VVkKAzXr4qJAJkGUF4pWGEZ8RRk/HQsa/nDx/sTN1RsPbH
- 7LgfYTwWo44LlVzhkeneNyIe8WsnvZGlJ29B8eTdroQR7CCkZltdJS0DLTO2x8/g41Ns
- pWfuYmthGrGSRVhPyan5JcBXVCnzPt5JWyqH0gqK02Pi3ha+J8hcxghq04jNrisHd7l8
- cWpA==
+ h=date:in-reply-to:message-id:mime-version:references:subject:from:to
+ :cc; bh=XuQcSLVF/Hrh3GBoBCfa3f7wfs7J5i1pjasDMgobHXc=;
+ b=AfGGk98bnxyyqHcpetjQvX41oGap4DIh7+0oNSJEg2O3R1PQCiDZZtdDhFMDnBhxK0
+ /1IpRPnzmNWZWCdDA+YmoH11+yZ8yuUmpOyt1a1C6USU6lfL8qgBToLhsSsLZNa22qcw
+ DeN090IVkvjCCffCPn/5OAPM2nRoarPWAvvLk+KM9KuY5bXHOlv/eW4GgopiPEam5w1U
+ OoY2SAfbLPxbM5Od+4uzT/fCGGx4M5wAozv3qmR20QB92nwmZRbSl5NMzEqnr0ikTRje
+ jyRldGQ6k5yB9GzKUFfikjYirdZINEHE5zYwOZsqejJsbcphEn8KaagiB3vqxnjMBUIk
+ K+Kg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:message-id:mime-version:subject:from:to:cc;
- bh=geIt7NTj15qXn0Pd7vHPLbcleORDZqpFgUWoIN42PEM=;
- b=mw6kEhhWnt36Z8rsNmdJtrJELQAw6Cw1qFgizKH0BeqNhBBBRx04qKu6x7w2RDFLMk
- 9x9sxap2rmVkHM6Mat/koO67XsXtOr2wVCSoryd0oEW/jbJkszxWnaQ935qQVLjcDAkv
- Nqxqs0uFxLNoxa/gx0JaqTpFwU2KIXNgyuEIXiFYe0xgRc3dW0G9GlzTRl18J11BUTQ+
- KRhpm2IvcABrmSRaLzeS6ERrq9SCD4NmAcmOIVXehFjXstw5g67vbcqrw/V1zvyJL28c
- boUuGoDX1Dx2ObhRD7SVFUypzEm/f98ftsDdVyhjjnDV45hCmJ5OLb3I+yMTbCdXvp/+
- /d6g==
-X-Gm-Message-State: APjAAAUwdowI48plDYRsEStgVRlYWhJPOyzVMYcOh/yT+7+XF0IF/NWX
- oKCCQvzY9kgI/V1eAEPIumnBJ3hpxrX/0NS7RnGs9w==
-X-Google-Smtp-Source: APXvYqzz6DkRHXw8EK9laj0mq1G8A+iOrN6WPOYO4gyPjhuGvx4vvL/HZjrARvRdEkfU4/FggK1bks+nWvmM29c4G/xx0Q==
-X-Received: by 2002:a63:4282:: with SMTP id p124mr6813514pga.155.1580425709390; 
- Thu, 30 Jan 2020 15:08:29 -0800 (PST)
-Date: Thu, 30 Jan 2020 15:08:05 -0800
-Message-Id: <20200130230812.142642-1-brendanhiggins@google.com>
+ h=x-gm-message-state:date:in-reply-to:message-id:mime-version
+ :references:subject:from:to:cc;
+ bh=XuQcSLVF/Hrh3GBoBCfa3f7wfs7J5i1pjasDMgobHXc=;
+ b=bTNWCKO/W9BiFGbZIBrytdTiVWHx2Tv+KI9ZZGUWP7w/E1wcKvkC9MtmiS76DAWqnX
+ L2qQHSWYa3v90efWD2v9oXbhxt35gvlligRuiHAshIa31GoLJvaB7gGAfAigaGRXx0x4
+ iLiZMUiKb6Yj66zYmkEiH2oNo9Ib53mIJA3WwnPJbpOM/ezbPlDudWAdLQk4AXPGShjp
+ TIjhaorEC0fhr0A8Av3oKlYOXhEj/dUVdoKfKRgVys8axqn0N9FJtid+YFvaoynSrPP9
+ 9AB978KnV7BeeQ0N/D/DcBq0lEnDVS9wXz4FFcdZzQf8C3T9bN6BD+/WzNExRSe2fgN+
+ shIw==
+X-Gm-Message-State: APjAAAU7HIGRbghtsCSkvW92k66fFhyR7bl/FUH+Q/PX4X/SwjkPaYCA
+ m5RU1+A6EUdbY16DAYwyWMGlyPpoy2aDtcZ+HWlbuA==
+X-Google-Smtp-Source: APXvYqzSRoUUWeQ2bKif6Z40xm7qv0HYLPbmPInMedOryPT9s0Chn/fw7nXAk5QeONDTypQImuUErdEfZqufShGTpuizag==
+X-Received: by 2002:a63:e649:: with SMTP id p9mr7159890pgj.15.1580425711922;
+ Thu, 30 Jan 2020 15:08:31 -0800 (PST)
+Date: Thu, 30 Jan 2020 15:08:06 -0800
+In-Reply-To: <20200130230812.142642-1-brendanhiggins@google.com>
+Message-Id: <20200130230812.142642-2-brendanhiggins@google.com>
 Mime-Version: 1.0
+References: <20200130230812.142642-1-brendanhiggins@google.com>
 X-Mailer: git-send-email 2.25.0.341.g760bfbb309-goog
-Subject: [PATCH v2 0/7] kunit: create a centralized executor to dispatch all
- KUnit tests
+Subject: [PATCH v2 1/7] vmlinux.lds.h: add linker section for KUnit test suites
 From: Brendan Higgins <brendanhiggins@google.com>
 To: jdike@addtoit.com, richard@nod.at, anton.ivanov@cambridgegreys.com, 
  arnd@arndb.de, keescook@chromium.org, skhan@linuxfoundation.org, 
  alan.maguire@oracle.com, yzaikin@google.com, davidgow@google.com, 
  akpm@linux-foundation.org, rppt@linux.ibm.com, frowand.list@gmail.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200130_150830_767469_375A57FB 
-X-CRM114-Status: GOOD (  13.30  )
+X-CRM114-CacheID: sfid-20200130_150833_891038_5D5DB21A 
+X-CRM114-Status: UNSURE (   7.63  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-7.7 points)
@@ -72,9 +75,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
  white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:64a listed in]
- [list.dnswl.org]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -104,70 +104,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-## TL;DR
+Add a linker section where KUnit can put references to its test suites.
+This patch is the first step in transitioning to dispatching all KUnit
+tests from a centralized executor rather than having each as its own
+separate late_initcall.
 
-This patchset adds a centralized executor to dispatch tests rather than
-relying on late_initcall to schedule each test suite separately along
-with a couple of new features that depend on it.
+Co-developed-by: Iurii Zaikin <yzaikin@google.com>
+Signed-off-by: Iurii Zaikin <yzaikin@google.com>
+Signed-off-by: Brendan Higgins <brendanhiggins@google.com>
+Reviewed-by: Stephen Boyd <sboyd@kernel.org>
+---
+ include/asm-generic/vmlinux.lds.h | 8 ++++++++
+ 1 file changed, 8 insertions(+)
 
-## What am I trying to do?
-
-Conceptually, I am trying to provide a mechanism by which test suites
-can be grouped together so that they can be reasoned about collectively.
-The last two of three patches in this series add features which depend
-on this:
-
-PATCH 5/7 Prints out a test plan right before KUnit tests are run[1];
-          this is valuable because it makes it possible for a test
-          harness to detect whether the number of tests run matches the
-          number of tests expected to be run, ensuring that no tests
-          silently failed.
-
-PATCH 6/7 Add a new kernel command-line option which allows the user to
-          specify that the kernel poweroff, halt, or reboot after
-          completing all KUnit tests; this is very handy for running
-          KUnit tests on UML or a VM so that the UML/VM process exits
-          cleanly immediately after running all tests without needing a
-          special initramfs.
-
-In addition, by dispatching tests from a single location, we can
-guarantee that all KUnit tests run after late_init is complete, which
-was a concern during the initial KUnit patchset review (this has not
-been a problem in practice, but resolving with certainty is nevertheless
-desirable).
-
-Other use cases for this exist, but the above features should provide an
-idea of the value that this could provide.
-
-Alan Maguire (1):
-  kunit: test: create a single centralized executor for all tests
-
-Brendan Higgins (5):
-  vmlinux.lds.h: add linker section for KUnit test suites
-  arch: um: add linker section for KUnit test suites
-  init: main: add KUnit to kernel init
-  kunit: test: add test plan to KUnit TAP format
-  Documentation: Add kunit_shutdown to kernel-parameters.txt
-
-David Gow (1):
-  kunit: Add 'kunit_shutdown' option
-
- .../admin-guide/kernel-parameters.txt         |  7 ++
- arch/um/include/asm/common.lds.S              |  4 +
- include/asm-generic/vmlinux.lds.h             |  8 ++
- include/kunit/test.h                          | 82 ++++++++++++-------
- init/main.c                                   |  4 +
- lib/kunit/Makefile                            |  3 +-
- lib/kunit/executor.c                          | 71 ++++++++++++++++
- lib/kunit/test.c                              | 11 ---
- tools/testing/kunit/kunit_kernel.py           |  2 +-
- tools/testing/kunit/kunit_parser.py           | 76 ++++++++++++++---
- .../test_is_test_passed-all_passed.log        |  1 +
- .../test_data/test_is_test_passed-crash.log   |  1 +
- .../test_data/test_is_test_passed-failure.log |  1 +
- 13 files changed, 217 insertions(+), 54 deletions(-)
- create mode 100644 lib/kunit/executor.c
-
+diff --git a/include/asm-generic/vmlinux.lds.h b/include/asm-generic/vmlinux.lds.h
+index e00f41aa8ec4f..99a866f49cb3d 100644
+--- a/include/asm-generic/vmlinux.lds.h
++++ b/include/asm-generic/vmlinux.lds.h
+@@ -856,6 +856,13 @@
+ 		KEEP(*(.con_initcall.init))				\
+ 		__con_initcall_end = .;
+ 
++/* Alignment must be consistent with (kunit_suite *) in include/kunit/test.h */
++#define KUNIT_TEST_SUITES						\
++		. = ALIGN(8);						\
++		__kunit_suites_start = .;				\
++		KEEP(*(.kunit_test_suites))				\
++		__kunit_suites_end = .;
++
+ #ifdef CONFIG_BLK_DEV_INITRD
+ #define INIT_RAM_FS							\
+ 	. = ALIGN(4);							\
+@@ -1024,6 +1031,7 @@
+ 		INIT_CALLS						\
+ 		CON_INITCALL						\
+ 		INIT_RAM_FS						\
++		KUNIT_TEST_SUITES					\
+ 	}
+ 
+ #define BSS_SECTION(sbss_align, bss_align, stop_align)			\
 -- 
 2.25.0.341.g760bfbb309-goog
 
