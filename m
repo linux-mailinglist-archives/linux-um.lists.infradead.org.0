@@ -2,68 +2,56 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5123B14E311
-	for <lists+linux-um@lfdr.de>; Thu, 30 Jan 2020 20:22:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8D2C514E35D
+	for <lists+linux-um@lfdr.de>; Thu, 30 Jan 2020 20:51:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=r8GzGUzhWui2Fsa3UXK3wn7Jd3YwcZlLii5mrm+XoXk=; b=Eb/
-	p9bWVdrxCajVTXtyhbS7GHyhqob4z4zLkBLJck7LhpNRe3Urk62SOM5XJdSjYjGUIluhCvHUADXAw
-	vIdL02PAeHE6Y+BXz/AZ9QWoWs1Y8y0RraK6J5AGSGFXG3xFtTJaqIinwo1LDdTVAnjkjM3eXAN1z
-	U6+XWLf4WKWcSus1q805vh2VgOO69Xc4TGoPzNuD7E3a/zU9a1GrBeU54wCGpFIrFf29D9hAlhe/h
-	tkpeGlblcuZJYWPBbRkA/JGyKaEd/C+7+aHF66AeTMxBA/Tc9laFJLdyjQZoRpqi3EwTVJPhzok1q
-	vKNnOnZcHIeh2tt7/I4zLSiZSBEaq7g==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ME5kqZ8bjiqQf4IsK2ySLiIxkdqsVd1NG961sOsSzGs=; b=Uyk8bw4pb65fq8
+	SuafrQSr9CItuzDbJZyqkO4+jBgHyjFejfeZoan4r32JdWdNwD/TU2Jx3HvtlL6TXzl9+oefqmTES
+	H3CCYrDafSnGZgS9TAsreXNCVE7/1jhNWxyf3apyqYzIgQI7Y1A32e0UEKcae9M2VCkIjTMF61dUP
+	44rlgyGHXpd8UO1ibX+aM7iwC7n0obWKyZpHNT2PkgHdStUqOwwxRQOICkNF54vIbLD/YG16jp0Nr
+	nUAVgf9+Rijw9gXJFTVpzsIDev5i3MEQcJMP5LB2rqjn8t7Djc/gt/1UP3H5FDhKKwj7t5JPI9U1T
+	0SDcUQR7+AZsUyLHf3wA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ixFOd-0002c3-1I; Thu, 30 Jan 2020 19:22:35 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1ixFqA-0004pZ-LE; Thu, 30 Jan 2020 19:51:02 +0000
+Received: from relay11.mail.gandi.net ([217.70.178.231])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ixFOa-0002bl-8u
- for linux-um@lists.infradead.org; Thu, 30 Jan 2020 19:22:34 +0000
-Received: from localhost.localdomain (unknown [194.230.155.229])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 19D26205F4;
- Thu, 30 Jan 2020 19:22:29 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1580412151;
- bh=fr+r1JFKwTNHUZAlTHUgAmBUgo5GF6Vj/doAxVu5rqg=;
- h=From:To:Cc:Subject:Date:From;
- b=JbYeKvXcGD1dWDYC/V36ABinagP1DJ+J9e9MclGDhtvsSB7JfsdTGMv7jW+RKkN7p
- gaamCRKnr1suSZkgVZFouBNW6d+fGDVvSmCt3hkv0uUJzMO1+eQIhdndiqkuYEatx6
- XMhDWjAUxOmUdzhTOrKE3R+Hx/r5TJlrWzReBInA=
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Jeff Dike <jdike@addtoit.com>, Richard Weinberger <richard@nod.at>,
- Anton Ivanov <anton.ivanov@cambridgegreys.com>,
- linux-um@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [PATCH] um: configs: Cleanup CONFIG_IOSCHED_CFQ
-Date: Thu, 30 Jan 2020 20:22:26 +0100
-Message-Id: <20200130192226.2776-1-krzk@kernel.org>
-X-Mailer: git-send-email 2.17.1
+ id 1ixFq4-0004mX-DU; Thu, 30 Jan 2020 19:50:58 +0000
+Received: from xps13 (10.196.23.93.rev.sfr.net [93.23.196.10])
+ (Authenticated sender: miquel.raynal@bootlin.com)
+ by relay11.mail.gandi.net (Postfix) with ESMTPSA id 4F4EC100004;
+ Thu, 30 Jan 2020 19:50:34 +0000 (UTC)
+Date: Thu, 30 Jan 2020 20:50:30 +0100
+From: Miquel Raynal <miquel.raynal@bootlin.com>
+To: Brendan Higgins <brendanhiggins@google.com>
+Subject: Re: [PATCH v1 2/7] mtd: rawnand: add unspecified HAS_IOMEM dependency
+Message-ID: <20200130205030.0f58cb02@xps13>
+In-Reply-To: <20200125162803.5a2375d7@xps13>
+References: <20191211192742.95699-1-brendanhiggins@google.com>
+ <20191211192742.95699-3-brendanhiggins@google.com>
+ <20200109162303.35f4f0a3@xps13>
+ <CAFd5g47VLB6zOJsSySAYrJie8hj-OkvOC89-z2b9xMBZ2bxvYA@mail.gmail.com>
+ <20200125162803.5a2375d7@xps13>
+Organization: Bootlin
+X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200130_112232_333195_79295743 
-X-CRM114-Status: UNSURE (   9.69  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200130_115056_592653_68D6031C 
+X-CRM114-Status: GOOD (  17.26  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.178.231 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,56 +63,52 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: Krzysztof Kozlowski <krzk@kernel.org>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Vignesh Raghavendra <vigneshr@ti.com>,
+ Boris Brezillon <bbrezillon@kernel.org>, Richard Weinberger <richard@nod.at>,
+ Jeff Dike <jdike@addtoit.com>, linux-um <linux-um@lists.infradead.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ linux-mtd@lists.infradead.org, David Gow <davidgow@google.com>,
+ Anton Ivanov <anton.ivanov@cambridgegreys.com>,
+ Piotr Sroka <piotrs@cadence.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-CONFIG_IOSCHED_CFQ is since commit f382fb0bcef4 ("block: remove legacy
-IO schedulers").
-
-The IOSCHED_BFQ seems to replace IOSCHED_CFQ so select it in configs
-previously choosing the latter.
-
-Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
----
- arch/um/configs/i386_defconfig   | 2 +-
- arch/um/configs/x86_64_defconfig | 2 +-
- 2 files changed, 2 insertions(+), 2 deletions(-)
-
-diff --git a/arch/um/configs/i386_defconfig b/arch/um/configs/i386_defconfig
-index 73e98bb57bf5..fb51bd206dbe 100644
---- a/arch/um/configs/i386_defconfig
-+++ b/arch/um/configs/i386_defconfig
-@@ -26,7 +26,7 @@ CONFIG_SLAB=y
- CONFIG_MODULES=y
- CONFIG_MODULE_UNLOAD=y
- # CONFIG_BLK_DEV_BSG is not set
--CONFIG_IOSCHED_CFQ=m
-+CONFIG_IOSCHED_BFQ=m
- CONFIG_SSL=y
- CONFIG_NULL_CHAN=y
- CONFIG_PORT_CHAN=y
-diff --git a/arch/um/configs/x86_64_defconfig b/arch/um/configs/x86_64_defconfig
-index 3281d7600225..477b87317424 100644
---- a/arch/um/configs/x86_64_defconfig
-+++ b/arch/um/configs/x86_64_defconfig
-@@ -24,7 +24,7 @@ CONFIG_SLAB=y
- CONFIG_MODULES=y
- CONFIG_MODULE_UNLOAD=y
- # CONFIG_BLK_DEV_BSG is not set
--CONFIG_IOSCHED_CFQ=m
-+CONFIG_IOSCHED_BFQ=m
- CONFIG_SSL=y
- CONFIG_NULL_CHAN=y
- CONFIG_PORT_CHAN=y
--- 
-2.17.1
-
-
-_______________________________________________
-linux-um mailing list
-linux-um@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-um
+SGVsbG8sCgpNaXF1ZWwgUmF5bmFsIDxtaXF1ZWwucmF5bmFsQGJvb3RsaW4uY29tPiB3cm90ZSBv
+biBTYXQsIDI1IEphbiAyMDIwCjE2OjI4OjAzICswMTAwOgoKPiBIaSBCcmVuZGFuLAo+IAo+IEJy
+ZW5kYW4gSGlnZ2lucyA8YnJlbmRhbmhpZ2dpbnNAZ29vZ2xlLmNvbT4gd3JvdGUgb24gRnJpLCAy
+NCBKYW4gMjAyMAo+IDE4OjEyOjEyIC0wODAwOgo+IAo+ID4gT24gVGh1LCBKYW4gOSwgMjAyMCBh
+dCA3OjIzIEFNIE1pcXVlbCBSYXluYWwgPG1pcXVlbC5yYXluYWxAYm9vdGxpbi5jb20+IHdyb3Rl
+OiAgCj4gPiA+Cj4gPiA+IEhpIEJyZW5kYW4sCj4gPiA+Cj4gPiA+IEJyZW5kYW4gSGlnZ2lucyA8
+YnJlbmRhbmhpZ2dpbnNAZ29vZ2xlLmNvbT4gd3JvdGUgb24gV2VkLCAxMSBEZWMgMjAxOQo+ID4g
+PiAxMToyNzozNyAtMDgwMDoKPiA+ID4gICAgCj4gPiA+ID4gQ3VycmVudGx5IENPTkZJR19NVERf
+TkFORF9DQURFTkNFIGltcGxpY2l0bHkgZGVwZW5kcyBvbgo+ID4gPiA+IENPTkZJR19IQVNfSU9N
+RU09eTsgY29uc2VxdWVudGx5LCBvbiBhcmNoaXRlY3R1cmVzIHdpdGhvdXQgSU9NRU0gd2UgZ2V0
+Cj4gPiA+ID4gdGhlIGZvbGxvd2luZyBidWlsZCBlcnJvcjoKPiA+ID4gPgo+ID4gPiA+IGxkOiBk
+cml2ZXJzL210ZC9uYW5kL3Jhdy9jYWRlbmNlLW5hbmQtY29udHJvbGxlci5vOiBpbiBmdW5jdGlv
+biBgY2FkZW5jZV9uYW5kX2R0X3Byb2JlLmNvbGQuMzEnOgo+ID4gPiA+IGRyaXZlcnMvbXRkL25h
+bmQvcmF3L2NhZGVuY2UtbmFuZC1jb250cm9sbGVyLmM6Mjk2OTogdW5kZWZpbmVkIHJlZmVyZW5j
+ZSB0byBgZGV2bV9wbGF0Zm9ybV9pb3JlbWFwX3Jlc291cmNlJwo+ID4gPiA+IGxkOiBkcml2ZXJz
+L210ZC9uYW5kL3Jhdy9jYWRlbmNlLW5hbmQtY29udHJvbGxlci5jOjI5Nzc6IHVuZGVmaW5lZCBy
+ZWZlcmVuY2UgdG8gYGRldm1faW9yZW1hcF9yZXNvdXJjZScKPiA+ID4gPgo+ID4gPiA+IEZpeCB0
+aGUgYnVpbGQgZXJyb3IgYnkgYWRkaW5nIHRoZSB1bnNwZWNpZmllZCBkZXBlbmRlbmN5Lgo+ID4g
+PiA+Cj4gPiA+ID4gUmVwb3J0ZWQtYnk6IEJyZW5kYW4gSGlnZ2lucyA8YnJlbmRhbmhpZ2dpbnNA
+Z29vZ2xlLmNvbT4KPiA+ID4gPiBTaWduZWQtb2ZmLWJ5OiBCcmVuZGFuIEhpZ2dpbnMgPGJyZW5k
+YW5oaWdnaW5zQGdvb2dsZS5jb20+Cj4gPiA+ID4gLS0tICAgIAo+ID4gPgo+ID4gPiBTb3JyeSBm
+b3IgdGhlIGRlbGF5Lgo+ID4gPgo+ID4gPiBBY2tlZC1ieTogTWlxdWVsIFJheW5hbCA8bWlxdWVs
+LnJheW5hbEBib290bGluLmNvbT4gICAgCj4gPiAKPiA+IEl0IGxvb2tzIGxpa2UgbXkgY2hhbmdl
+IGhhcyBub3QgYmVlbiBhcHBsaWVkIHRvIG5hbmQvbmV4dDsgaXMgdGhpcyB0aGUKPiA+IGJyYW5j
+aCBpdCBzaG91bGQgYmUgYXBwbGllZCB0bz8gSSBoYXZlIGFsc28gdmVyaWZpZWQgdGhhdCB0aGlz
+IHBhdGNoCj4gPiBpc24ndCBpbiBsaW51eC1uZXh0IGFzIG9mIEphbiAyNHRoLgo+ID4gCj4gPiBJ
+cyBtdGQvbGludXggdGhlIGNvcnJlY3QgdHJlZSBmb3IgdGhpcz8gT3IgZG8gSSBuZWVkIHRvIHJl
+YWNoIG91dCB0bwo+ID4gc29tZW9uZSBlbHNlPyAgCj4gCj4gV2hlbiBJIHNlbnQgbXkgQWNrZWQt
+YnkgSSBzdXBwb3NlZCBzb21lb25lIGVsc2Ugd291bGQgcGljayB0aGUgcGF0Y2gsCj4gYnV0IHRo
+ZXJlIGlzIGFjdHVhbGx5IG5vIGRlcGVuZGVuY3kgd2l0aCBhbGwgdGhlIG90aGVyIHBhdGNoZXMg
+c28gSQo+IGRvbid0IGtub3cgd2h5IEkgZGlkIGl0Li4uIFNvcnJ5IGFib3V0IHRoYXQuIEknbGwg
+dGFrZSBpdCBhbnl3YXkgaW4gbXkKPiBQUiBmb3IgNS42LgoKSXQgaXMgYXBwbGllZCBvbiB0b3Ag
+b2YgbXRkL25leHQgc2luY2UgYSBmZXcgZGF5cywgaXQgd2lsbCBiZSBwYXJ0IG9mCnRoZSA1LjYg
+UFIuCgpTb3JyeSBmb3IgdGhlIGRlbGF5LgoKVGhhbmtzLApNaXF1w6hsCgpfX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC11bSBtYWlsaW5nIGxpc3QK
+bGludXgtdW1AbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9t
+YWlsbWFuL2xpc3RpbmZvL2xpbnV4LXVtCg==
