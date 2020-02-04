@@ -2,87 +2,74 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D8EF114E7A7
-	for <lists+linux-um@lfdr.de>; Fri, 31 Jan 2020 04:44:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C6493151665
+	for <lists+linux-um@lfdr.de>; Tue,  4 Feb 2020 08:19:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:To:From:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XlVcObYV3Rs6HUhEDeg8/JwNQ5REVIl2IVoNei/UTT4=; b=Cgh6zWzL81tEih
-	thOEYkwgJA3obBVJSDZ8udUV78e2nLGPn9H3XB3oQTxnRsusp6TD283rQHzIurEEfNGAykJcviEJ1
-	rbbkFoyaQziRve+n31jRjLj7rkZpMryB1K/IRyC0DQJ39FrKEXdNOR/heQsr0iIloGPvTB+tLPFRj
-	LZRo4OOnJD9DfPL7f+vbnpEwPtv1UBbaTPcTP/xdJIOwHajgrhCW0sVat6JiSEUsE9aIOooLNmthD
-	5cCIT31dQ2UX4wHTNo16NvBE9sAf19jmyfG7Es2qLvhowKKlBSMl74VRJC4huXBavJXQ2zvBdISXv
-	nf4TtSQjcpkDvlzIUcmQ==;
+	List-Owner; bh=XGthLvERznPx1ZWqMN7sY187DGiMpz3HT1NQzewVccU=; b=A4FoReW9MU+mni
+	5VaeGSE2s2pG6wz2R7SSvadPdJowmCcMG6Iu7MRJ/Q9P6vWKkoBMMT+/Y2UoLxazCMKF+XTObKT0h
+	JbzaQhvSlv1HBvDs8botGl9O/pxgoHDL6HwhdYqU9IT45z+VnqQHNdo3Z9BCZM14A6cUe1usSqvnO
+	qzW9rE/FoVNYc8C+maTcJ0voB7fK1QBOijKMK65XCPZHVTfZsRqaNXjjcLIkFDNQkk+pddgm3CbB3
+	p98wb5kFhZPxvugKYIH06SlrpJBoI5Reh5Eqn9NPik61ZN5lxidVEFb2A8Nta077ihSYOkxeKaF54
+	mSeZ4bsfdEsXFHx7MG0A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ixNEH-0006Gw-6y; Fri, 31 Jan 2020 03:44:25 +0000
-Received: from mail-qk1-x744.google.com ([2607:f8b0:4864:20::744])
+	id 1iysUQ-0005uI-4f; Tue, 04 Feb 2020 07:19:18 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ixNED-0006GX-KP; Fri, 31 Jan 2020 03:44:23 +0000
-Received: by mail-qk1-x744.google.com with SMTP id s187so5256926qke.8;
- Thu, 30 Jan 2020 19:44:20 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jms.id.au; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=gnZ43qN7S1q4zZHme5V7oQ52yf1PnubAtyieKw4/fVY=;
- b=Jf3jwIJN6NmDEE5rHTH3bi4JBCItLuv4Z8GzrYcknpWQQ5kCZURSEcOUtxHYCcQ5eK
- rCg0uTFwevnnkGt785cjEtT+QPDAOFP1a5TzYfTETRSjUDZskAM/97VoZYjWatRYnYQz
- c7f6jh9skAy62+AXe7jyQE/Y6J/IYqqaExXZk=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=gnZ43qN7S1q4zZHme5V7oQ52yf1PnubAtyieKw4/fVY=;
- b=ibV0X05j3ZchR2qNywuD63ivRY6nPXZZHM8eozLhRtLjkjSYbh29bIMAs52I8f30St
- n4G5Y73UyomTIsX/EmiLesfMJ+E6GFHSJPt7wg2LyZZ8qt2h574OzuDYRDdaE43YZo90
- q6U7gnOs5Egyndca3Iv/skXAE7WC6YrtI9tMllrdAxmSNOfScb++bAnO6zWxUo+nbe17
- QeWPlBf51IAHAarPI/mMpkQ8v/KcTOGfliTVAfPQiLpRLLtvObfny/WJi6SBSToyx2uq
- dsB8g39ZvP1kT0NiDjJnJodnXRLxKHuHNtqd1016jfjO2WS2KlZrWnoJ3xNU6atxTe1G
- hE9g==
-X-Gm-Message-State: APjAAAV4LJtTj0J1BM+/L3RTO48TdksAZuycICOrBRdZ9A6cPzLnzuKU
- +oDczoWQAY5bPcvt5MGrDZNq5XiFz51PChzUYTI=
-X-Google-Smtp-Source: APXvYqwD62nlQsAFr4t2VRsUvR/xF3QgSUs3f8+MA8JJi/UqziVen3riJEm4PChAbEVcrDuYZozUpVA7fDtvclfVkKg=
-X-Received: by 2002:a37:d14:: with SMTP id 20mr8922868qkn.330.1580442248103;
- Thu, 30 Jan 2020 19:44:08 -0800 (PST)
+ id 1iysUO-0005ti-50
+ for linux-um@lists.infradead.org; Tue, 04 Feb 2020 07:19:17 +0000
+Received: from kernel.org (unknown [104.132.0.74])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id AF32B21582;
+ Tue,  4 Feb 2020 07:19:15 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1580800755;
+ bh=gsyVytQK3lixYjo33kenNe/YEUvIbsBpfPWPkn8VMak=;
+ h=In-Reply-To:References:From:To:Subject:Cc:Date:From;
+ b=YOESc0J/SHEpC/EWipMosXdbRmdp9/hgZzW02aTkN02BWA7qg8SdYtNgTEc9CMzE4
+ I2IL8ok2TF1bqiwmH14mE92yxsGbgdBhHidnG9n/DbA8zO2mvbFv0qd3pLEth4flUR
+ FNDsbDpC6W63KwlisnBO2WxUXSS+iuHw99Nwe4lY=
 MIME-Version: 1.0
-References: <20191211192742.95699-1-brendanhiggins@google.com>
- <20191211192742.95699-8-brendanhiggins@google.com>
- <CACPK8XctCb9Q2RaFVHEDuWxKDXpCWMWs-+vnKZ=SeTa3xRnT_g@mail.gmail.com>
- <CAFd5g45MFYMK-eZWPC5fhm2OkynUXKfArUVhbanYVH+qKRUwPg@mail.gmail.com>
- <CAFd5g454tX9zxRAq5T_pDGzcWt7u5r119wjo-BCGVq+=Ej4bGQ@mail.gmail.com>
-In-Reply-To: <CAFd5g454tX9zxRAq5T_pDGzcWt7u5r119wjo-BCGVq+=Ej4bGQ@mail.gmail.com>
-From: Joel Stanley <joel@jms.id.au>
-Date: Fri, 31 Jan 2020 03:43:56 +0000
-Message-ID: <CACPK8XddCV6QnvRSS7WcyoN7W3yuUSbyT67on=EMhV7jWDExUg@mail.gmail.com>
-Subject: Re: [PATCH v1 7/7] fsi: aspeed: add unspecified HAS_IOMEM dependency
-To: Brendan Higgins <brendanhiggins@google.com>
+In-Reply-To: <20200130230812.142642-1-brendanhiggins@google.com>
+References: <20200130230812.142642-1-brendanhiggins@google.com>
+From: Stephen Boyd <sboyd@kernel.org>
+To: Brendan Higgins <brendanhiggins@google.com>, akpm@linux-foundation.org,
+ alan.maguire@oracle.com, anton.ivanov@cambridgegreys.com, arnd@arndb.de,
+ davidgow@google.com, frowand.list@gmail.com, jdike@addtoit.com,
+ keescook@chromium.org, richard@nod.at, rppt@linux.ibm.com,
+ skhan@linuxfoundation.org, yzaikin@google.com
+Subject: Re: [PATCH v2 0/7] kunit: create a centralized executor to dispatch
+ all KUnit tests
+User-Agent: alot/0.8.1
+Date: Mon, 03 Feb 2020 23:19:14 -0800
+Message-Id: <20200204071915.AF32B21582@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200130_194421_670985_541AAAE0 
-X-CRM114-Status: UNSURE (   9.24  )
+X-CRM114-CacheID: sfid-20200203_231916_219057_9EB93F82 
+X-CRM114-Status: UNSURE (   6.65  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.4 (/)
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.4 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:744 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [joel.stan[at]gmail.com]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,37 +81,27 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: linux-aspeed <linux-aspeed@lists.ozlabs.org>,
- Andrew Jeffery <andrew@aj.id.au>, Richard Weinberger <richard@nod.at>,
- Jeff Dike <jdike@addtoit.com>, Eddie James <eajames@linux.ibm.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- linux-um <linux-um@lists.infradead.org>, Jeremy Kerr <jk@ozlabs.org>,
- David Gow <davidgow@google.com>, Alistar Popple <alistair@popple.id.au>,
- linux-fsi@lists.ozlabs.org, Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Anton Ivanov <anton.ivanov@cambridgegreys.com>
+Cc: linux-arch@vger.kernel.org, knut.omang@oracle.com,
+ linux-doc@vger.kernel.org, gregkh@linuxfoundation.org,
+ linux-um@lists.infradead.org, linux-kernel@vger.kernel.org, mcgrof@kernel.org,
+ linux-kselftest@vger.kernel.org, logang@deltatee.com,
+ Brendan Higgins <brendanhiggins@google.com>, kunit-dev@googlegroups.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Mon, 27 Jan 2020 at 09:46, Brendan Higgins <brendanhiggins@google.com> wrote:
+Quoting Brendan Higgins (2020-01-30 15:08:05)
+> ## TL;DR
+> 
+> This patchset adds a centralized executor to dispatch tests rather than
+> relying on late_initcall to schedule each test suite separately along
+> with a couple of new features that depend on it.
 
-> > > Do you want to get this in a fix for 5.5?
-> >
-> > Preferably, yes.
-> >
-> > > Acked-by: Joel Stanley <joel@jms.id.au>
->
-> Hey, I know I owe you a reply about debugging your kunitconfig (I'll
-> try to get to that this week); nevertheless, it looks like this patch
-> didn't make it into 5.5. Can you make sure it gets into 5.6? It
-> shouldn't depend on anything else.
+Is there any diff from v1 to v2? I don't know what changed, but I see
+that my Reviewed-by tag has been put on everything, so I guess
+everything I said was addressed or discussed in the previous round.
 
-Sure, thanks for the reminder.
-
-Cheers,
-
-Joel
 
 _______________________________________________
 linux-um mailing list
