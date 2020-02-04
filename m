@@ -2,81 +2,92 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C26A7152231
-	for <lists+linux-um@lfdr.de>; Tue,  4 Feb 2020 23:01:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F136E152256
+	for <lists+linux-um@lfdr.de>; Tue,  4 Feb 2020 23:27:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bKA+rkVm6xfWbYR2s/2W4RDzlcDmDqroW3GBRTDcBjs=; b=dRTO3I5x7QAv7O
-	n1zoPeVsvlENb1bAMos7CSUX28CZ59d7EhsoJZQPMrlKHsK2GFj07V1z9bNfFdnsl5qrE9dxN9rMD
-	BsnLltDpy5dH73dBEQ+i9zlN9avdeqp58g+so/LG+x2pj6IndZBAXy/iAomz4NqJqZXn5EV7A/jb8
-	MbV22EDloTD9owHMF8BiLCROAwaAaQ1jK5BqD2g9hGAWZRMj2qHvwXZ+AXfSU01vDOj2VNw5M9m3M
-	kKXv+3F+jxRRPBF42Mn7U+biGZ7o5xrwm/dxq+fBXyoQ/+y989tu7/XyKu2gP1KlXZBthcXFcu2nb
-	f2dp5pPE0wGP31QxweRg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=SCqhGogbqDUPNbZLhjalvqir8Q8sZJyr5igql7zK8vo=; b=Swf5jTXonx8dlB
+	MUGWc7O/dYpzCsihpIoWSqrqAaptKpOvyQLgBSpgHwENuBHePqJmo2WNgFuN2/nPT9QxRHVNfLKTe
+	0nrPW1ETV7s+/9XYvRRt6RwGvtO32HeHAiqzAfji94byUmxFRuse9LQe/7ldh6OzGUjR+/obP3s24
+	J5YrxZzbG9S87cRm50aB+327wPEAVoLa7Gltnj+VPyu5vSQkN269XVSjtw0C6GrtFfD3Tdv78fwSN
+	ZgSnjOHz9vsasqeJXd56zFWW8mXckPdedAcFd0+X7js1sl143wf8zsJG/P8PHWP3BVm7xojmwyVcR
+	0KzNS9gFKgmYtbngoajA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iz6GT-0001XT-1j; Tue, 04 Feb 2020 22:01:49 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1iz6f7-0000Yu-Or; Tue, 04 Feb 2020 22:27:17 +0000
+Received: from mail-yw1-xc44.google.com ([2607:f8b0:4864:20::c44])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iz6GQ-0001Wk-5j
- for linux-um@lists.infradead.org; Tue, 04 Feb 2020 22:01:47 +0000
-Received: by mail-pl1-x644.google.com with SMTP id d9so7841465plo.11
- for <linux-um@lists.infradead.org>; Tue, 04 Feb 2020 14:01:45 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=2gbLrEwk02zWD7CENpU+Y79Z4g6lABXP6G5204ZKfF0=;
- b=E0oUbKMeJ/0TYgw6tXi/MO3OscDACPIaTiAsWEZIXsQv1vNqtOobaC90NrPhXEpUYJ
- VssEyhthK9sByNSf/0MA5pn1q0+p1fv5/odVot189qFvsw1AJiFPZ1PMYV/iI4RKyOLp
- HJpmQkUZn4rwRCt+vIJZMS33fKHuIoaYsQ/BiBHFLf2hnVTthuZv7xXW53bOzIkoQXZ2
- 82EOY+PI8EH9bdWbEInMwvP96+SdY1qHoHdF4wCgQ6t3r6pqFjL5pRm/JztJrnVDKGI5
- Lqtcr5XKBzE8EOobYkPpHanqQUdwU/9+0Aawc8tVHXQ0jI2uBbrwh9o6mCiu9iY0TSI1
- HlxQ==
+ id 1iz6f4-0000YY-Rz
+ for linux-um@lists.infradead.org; Tue, 04 Feb 2020 22:27:16 +0000
+Received: by mail-yw1-xc44.google.com with SMTP id h126so436234ywc.6
+ for <linux-um@lists.infradead.org>; Tue, 04 Feb 2020 14:27:14 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=Qlf9lXYabruIPe7BY1Co9J9v9aB5hsqm1QaXhz8x6vk=;
+ b=RbyTv0k8Xr6WorAmAQb7L4q5vAOsjMKznfV4looZQtyEYh+Xjq11BOSdKOb5WmkqDO
+ 3UhtcKI0E5BFzKihuM9Llq4+WFgCxWThReDL+xHqRHdiIqAXfeDGdZ0meeMRBM67BMfV
+ UmIgyVIyE0YwQahyKHog1Lo024gUnsINmg6ksAdp2RwBkrkyIge/zUE6et1FidvzfN5P
+ 33h0PB1jafaOImbRfp2cl/d8NWGqB0PQtcABk3AH/Edxw9IM6Hw6dQLxmFjj0pzp2xya
+ y+Y9NJnMHATepZJ6O2H/tW+50oIACCO3GSirZCf/yQRk8HMq/beTA3g7B96PfZMVDedc
+ pU0A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=2gbLrEwk02zWD7CENpU+Y79Z4g6lABXP6G5204ZKfF0=;
- b=NB5thiy8CYa8ebsa0Z5NuPDyM+2aY0Am76lAV2ZdkkXOPydE3cbM/w5msDS/QMJAHp
- tvTAG6CZYfVK9nZTBNXvLTtf4u8HVC42DcdmPI34ZcDJ48bW8vCeviG4iaPAkzosu3wO
- Dde1nGXfzX13FHXh7JhIw1gxSfZUO9VUwfp4xAVJyq8CNYGQ4Bnvi+mJ8OOQHGIs0i+A
- 7Q+m42M9Zc1F4MMWhFKE6oJEb/+Mvkt8tQzGWrSd6qKbUY04ATw9t88wB6qYxiOroR/f
- NsLtmEu/RirTXWMtfhQ/ov5/EFD1n679QOvxIsMFUWOqnTLQ09vMEn2db8uM+yyMpKAW
- IesQ==
-X-Gm-Message-State: APjAAAXZ0Su3mnkdZwkCI+BGCOzemt4MgKtHUGfPOWQdls87aF8THM2y
- XW9oZP+17G8HWvN0A8nbeltHBTbc6DXoZGAVir8pRA==
-X-Google-Smtp-Source: APXvYqxbz4sx3QIM2DYLthc3QPGt7xVW390CJ1zhH8z0BnZ3BPAOQ4lgq+vVdXkWYRiV/OfTJYB2C5zBqBukoNrw4CM=
-X-Received: by 2002:a17:902:fe8d:: with SMTP id
- x13mr32553040plm.232.1580853704991; 
- Tue, 04 Feb 2020 14:01:44 -0800 (PST)
-MIME-Version: 1.0
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=Qlf9lXYabruIPe7BY1Co9J9v9aB5hsqm1QaXhz8x6vk=;
+ b=szYA7mAua+ZsZmfYAXc0KXgftatYiJ9VoG3dJLN9bEX2G56ZmguFMeA7X+S2CEW2cx
+ vHkGfTrxHkzwT2xYXSj/fQtrYa92YjFKqS9w2CIXU+yYGNRRfboQ5BCjNRH/f3n4YTg3
+ /K4sIBHHY9Gn7ta9bPBOKauzwmoNxMlPrJWPJoPZbAMjsNjYy5TGaaSHIFeklHujeOli
+ 5lRsEAGJfpmrdN5at0stz7+fienapdW+WPDYYGQu95FnqPr2lW2mNdx/s+Zw9WNGcL0x
+ rPfw1EHMka0RFG4cP0rCRumWXP1aEggdQXTaFldVbJ2HEGUvS5if+51GIWtzC8D5ynT4
+ 8MSw==
+X-Gm-Message-State: APjAAAXIYxHle0F53USBoMON5Fu6sRBhScXsv2pTOxwZSan08+z/AZ4U
+ kqxoL/1ZvKj7/AfzK9vomoA=
+X-Google-Smtp-Source: APXvYqzGEhXv6s8sZbVFoRron3hfRXsajLyg8uOv83wej5gSwevGY+lcpfFTiN6S+fqhvz+EA2LNqQ==
+X-Received: by 2002:a25:97c7:: with SMTP id j7mr25391925ybo.209.1580855233547; 
+ Tue, 04 Feb 2020 14:27:13 -0800 (PST)
+Received: from [192.168.1.46] (c-73-88-245-53.hsd1.tn.comcast.net.
+ [73.88.245.53])
+ by smtp.gmail.com with ESMTPSA id 144sm10038637ywy.20.2020.02.04.14.27.12
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 04 Feb 2020 14:27:13 -0800 (PST)
+Subject: Re: [PATCH v2 3/7] kunit: test: create a single centralized executor
+ for all tests
+To: Brendan Higgins <brendanhiggins@google.com>, jdike@addtoit.com,
+ richard@nod.at, anton.ivanov@cambridgegreys.com, arnd@arndb.de,
+ keescook@chromium.org, skhan@linuxfoundation.org, alan.maguire@oracle.com,
+ yzaikin@google.com, davidgow@google.com, akpm@linux-foundation.org,
+ rppt@linux.ibm.com
 References: <20200130230812.142642-1-brendanhiggins@google.com>
- <9e203718-dcca-3145-bc28-28979d41c278@gmail.com>
-In-Reply-To: <9e203718-dcca-3145-bc28-28979d41c278@gmail.com>
-From: Brendan Higgins <brendanhiggins@google.com>
-Date: Tue, 4 Feb 2020 14:01:33 -0800
-Message-ID: <CAFd5g45MQqGLY2xCjAmJz4-xxHwBo9DBPphZdnQMHDe=d-2K_Q@mail.gmail.com>
-Subject: Re: [PATCH v2 0/7] kunit: create a centralized executor to dispatch
- all KUnit tests
-To: Frank Rowand <frowand.list@gmail.com>
+ <20200130230812.142642-4-brendanhiggins@google.com>
+From: Frank Rowand <frowand.list@gmail.com>
+Message-ID: <11977708-bb18-e322-db7a-9f21d7cdec54@gmail.com>
+Date: Tue, 4 Feb 2020 16:27:12 -0600
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
+MIME-Version: 1.0
+In-Reply-To: <20200130230812.142642-4-brendanhiggins@google.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200204_140146_240608_AD4133F2 
-X-CRM114-Status: GOOD (  22.29  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20200204_142714_908654_FD29C4FE 
+X-CRM114-Status: GOOD (  31.73  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:c44 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [frowand.list[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -85,8 +96,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,78 +107,204 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:DOCUMENTATION" <linux-doc@vger.kernel.org>,
- "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
- Anton Ivanov <anton.ivanov@cambridgegreys.com>, linux-arch@vger.kernel.org,
- Richard Weinberger <richard@nod.at>, Knut Omang <knut.omang@oracle.com>,
- rppt@linux.ibm.com, Iurii Zaikin <yzaikin@google.com>,
- Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
- Jeff Dike <jdike@addtoit.com>, linux-um <linux-um@lists.infradead.org>,
- David Gow <davidgow@google.com>, Shuah Khan <skhan@linuxfoundation.org>,
- KUnit Development <kunit-dev@googlegroups.com>,
- Alan Maguire <alan.maguire@oracle.com>, Stephen Boyd <sboyd@kernel.org>,
- Greg KH <gregkh@linuxfoundation.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Luis Chamberlain <mcgrof@kernel.org>,
- Andrew Morton <akpm@linux-foundation.org>,
- Logan Gunthorpe <logang@deltatee.com>
+Cc: linux-arch@vger.kernel.org, linux-doc@vger.kernel.org, sboyd@kernel.org,
+ gregkh@linuxfoundation.org, knut.omang@oracle.com,
+ linux-kernel@vger.kernel.org, linux-um@lists.infradead.org, mcgrof@kernel.org,
+ linux-kselftest@vger.kernel.org, logang@deltatee.com,
+ kunit-dev@googlegroups.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Tue, Feb 4, 2020 at 1:18 PM Frank Rowand <frowand.list@gmail.com> wrote:
->
-> On 1/30/20 5:08 PM, Brendan Higgins wrote:
-> > ## TL;DR
-> >
-> > This patchset adds a centralized executor to dispatch tests rather than
-> > relying on late_initcall to schedule each test suite separately along
-> > with a couple of new features that depend on it.
->
-> And the "couple of new features" are .... ?
+On 1/30/20 5:08 PM, Brendan Higgins wrote:
+> From: Alan Maguire <alan.maguire@oracle.com>
+> 
+> Add a centralized executor to dispatch tests rather than relying on
+> late_initcall to schedule each test suite separately.  Centralized
+> execution is for built-in tests only; modules will execute tests
+> when loaded.
+> 
+> Signed-off-by: Alan Maguire <alan.maguire@oracle.com>
+> Co-developed-by: Iurii Zaikin <yzaikin@google.com>
+> Signed-off-by: Iurii Zaikin <yzaikin@google.com>
+> Co-developed-by: Brendan Higgins <brendanhiggins@google.com>
+> Signed-off-by: Brendan Higgins <brendanhiggins@google.com>
+> Reviewed-by: Stephen Boyd <sboyd@kernel.org>
+> ---
+>  include/kunit/test.h | 73 +++++++++++++++++++++++++++-----------------
+>  lib/kunit/Makefile   |  3 +-
+>  lib/kunit/executor.c | 36 ++++++++++++++++++++++
+>  3 files changed, 83 insertions(+), 29 deletions(-)
+>  create mode 100644 lib/kunit/executor.c
+> 
+> diff --git a/include/kunit/test.h b/include/kunit/test.h
+> index 2dfb550c6723a..8a02f93a6b505 100644
+> --- a/include/kunit/test.h
+> +++ b/include/kunit/test.h
 
-Sorry, I thought I addressed that in the next section, specifically by
-calling out: printing the test plan, and adding the new kernel command
-line option. I will call these out here in any future cover letters.
+The following fragment does not match the test.h in Linux 5.5 or 5.4-rc1 (as one
+possible earlier version).  And we are not to Linux 5.5-rc1 yet.  (Simple way
+to check for the mis-match - 5.5 has kunit_test_suite() instead of
+kunit_test_suites().)
 
-> > ## What am I trying to do?
-> >
-> > Conceptually, I am trying to provide a mechanism by which test suites
-> > can be grouped together so that they can be reasoned about collectively.
-> > The last two of three patches in this series add features which depend
-> > on this:
-> >
-> > PATCH 5/7 Prints out a test plan right before KUnit tests are run[1];
-> >           this is valuable because it makes it possible for a test
-> >           harness to detect whether the number of tests run matches the
-> >           number of tests expected to be run, ensuring that no tests
-> >           silently failed.
-> >
-> > PATCH 6/7 Add a new kernel command-line option which allows the user to
-> >           specify that the kernel poweroff, halt, or reboot after
-> >           completing all KUnit tests; this is very handy for running
-> >           KUnit tests on UML or a VM so that the UML/VM process exits
-> >           cleanly immediately after running all tests without needing a
-> >           special initramfs.
-> >
->
-> > In addition, by dispatching tests from a single location, we can
-> > guarantee that all KUnit tests run after late_init is complete, which
->
-> That the tests will run after late init (and are guaranteed to do such)
-> needs to be added to the documentation.
+I know that there is an alternate tree where some of the development occurs.
+Can you please add a link in MAINTAINERS?  And please note (at least in
+patch 0) what tree the series is developed against?
 
-Yeah, that's reasonable. I am not sure where I should put this in the
-documentation, however. This seems kind of a technical detail, and all
-the pages I have now are more of how-tos, I think.
+-Frank
 
-Maybe I should send a patch which adds a page detailing how KUnit works?
 
-I would like to get some other people's thoughts on this. Such a
-technical guide wouldn't provide me a lot of value, at least not now,
-so I want to make sure that something like that would be valuable to
-others.
+> @@ -197,46 +197,63 @@ void kunit_init_test(struct kunit *test, const char *name);
+>  
+>  int kunit_run_tests(struct kunit_suite *suite);
+>  
+> -/**
+> - * kunit_test_suites() - used to register one or more &struct kunit_suite
+> - *			 with KUnit.
+> - *
+> - * @suites: a statically allocated list of &struct kunit_suite.
+> - *
+> - * Registers @suites with the test framework. See &struct kunit_suite for
+> - * more information.
+> - *
+> - * When builtin,  KUnit tests are all run as late_initcalls; this means
+> - * that they cannot test anything where tests must run at a different init
+> - * phase. One significant restriction resulting from this is that KUnit
+> - * cannot reliably test anything that is initialize in the late_init phase;
+> - * another is that KUnit is useless to test things that need to be run in
+> - * an earlier init phase.
+> - *
+> - * An alternative is to build the tests as a module.  Because modules
+> - * do not support multiple late_initcall()s, we need to initialize an
+> - * array of suites for a module.
+> - *
+> - * TODO(brendanhiggins@google.com): Don't run all KUnit tests as
+> - * late_initcalls.  I have some future work planned to dispatch all KUnit
+> - * tests from the same place, and at the very least to do so after
+> - * everything else is definitely initialized.
+> +/*
+> + * If a test suite is built-in, module_init() gets translated into
+> + * an initcall which we don't want as the idea is that for builtins
+> + * the executor will manage execution.  So ensure we do not define
+> + * module_{init|exit} functions for the builtin case when registering
+> + * suites via kunit_test_suites() below.
+>   */
+> -#define kunit_test_suites(...)						\
+> -	static struct kunit_suite *suites[] = { __VA_ARGS__, NULL};	\
+> -	static int kunit_test_suites_init(void)				\
+> +#ifdef MODULE
+> +#define kunit_test_suites_for_module(__suites)				\
+> +	static int __init kunit_test_suites_init(void)			\
+>  	{								\
+> +		struct kunit_suite *suites[] = (__suites);		\
+>  		unsigned int i;						\
+> +									\
+>  		for (i = 0; suites[i] != NULL; i++)			\
+>  			kunit_run_tests(suites[i]);			\
+>  		return 0;						\
+>  	}								\
+> -	late_initcall(kunit_test_suites_init);				\
+> +	module_init(kunit_test_suites_init);				\
+> +									\
+>  	static void __exit kunit_test_suites_exit(void)			\
+>  	{								\
+>  		return;							\
+>  	}								\
+>  	module_exit(kunit_test_suites_exit)
+> +#else
+> +#define kunit_test_suites_for_module(__suites)
+> +#endif /* MODULE */
+> +
+> +#define __kunit_test_suites(unique_array, unique_suites, ...)		       \
+> +	static struct kunit_suite *unique_array[] = { __VA_ARGS__, NULL };     \
+> +	kunit_test_suites_for_module(unique_array);			       \
+> +	static struct kunit_suite **unique_suites			       \
+> +	__used __aligned(8) __section(.kunit_test_suites) = unique_array
+> +
+> +/**
+> + * kunit_test_suites() - used to register one or more &struct kunit_suite
+> + *			 with KUnit.
+> + *
+> + * @suites: a statically allocated list of &struct kunit_suite.
+> + *
+> + * Registers @suites with the test framework. See &struct kunit_suite for
+> + * more information.
+> + *
+> + * When builtin,  KUnit tests are all run via executor; this is done
+> + * by placing the array of struct kunit_suite * in the .kunit_test_suites
+> + * ELF section.
+> + *
+> + * An alternative is to build the tests as a module.  Because modules do not
+> + * support multiple initcall()s, we need to initialize an array of suites for a
+> + * module.
+> + *
+> + */
+> +#define kunit_test_suites(...)						\
+> +	__kunit_test_suites(__UNIQUE_ID(array),				\
+> +			    __UNIQUE_ID(suites),			\
+> +			    __VA_ARGS__)
+>  
+>  #define kunit_test_suite(suite)	kunit_test_suites(&suite)
+>  
+> diff --git a/lib/kunit/Makefile b/lib/kunit/Makefile
+> index fab55649b69a5..c282f02ca066b 100644
+> --- a/lib/kunit/Makefile
+> +++ b/lib/kunit/Makefile
+> @@ -3,7 +3,8 @@ obj-$(CONFIG_KUNIT) +=			kunit.o
+>  kunit-objs +=				test.o \
+>  					string-stream.o \
+>  					assert.o \
+> -					try-catch.o
+> +					try-catch.o \
+> +					executor.o
+>  
+>  obj-$(CONFIG_KUNIT_TEST) +=		kunit-test.o
+>  
+> diff --git a/lib/kunit/executor.c b/lib/kunit/executor.c
+> new file mode 100644
+> index 0000000000000..6429927d598a5
+> --- /dev/null
+> +++ b/lib/kunit/executor.c
+> @@ -0,0 +1,36 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +
+> +#include <kunit/test.h>
+> +
+> +/*
+> + * These symbols point to the .kunit_test_suites section and are defined in
+> + * include/asm-generic/vmlinux.lds.h, and consequently must be extern.
+> + */
+> +extern struct kunit_suite * const * const __kunit_suites_start[];
+> +extern struct kunit_suite * const * const __kunit_suites_end[];
+> +
+> +#if IS_BUILTIN(CONFIG_KUNIT)
+> +
+> +static int kunit_run_all_tests(void)
+> +{
+> +	struct kunit_suite * const * const *suites, * const *subsuite;
+> +	bool has_test_failed = false;
+> +
+> +	for (suites = __kunit_suites_start;
+> +	     suites < __kunit_suites_end;
+> +	     suites++) {
+> +		for (subsuite = *suites; *subsuite != NULL; subsuite++) {
+> +			if (kunit_run_tests(*subsuite))
+> +				has_test_failed = true;
+> +		}
+> +	}
+> +
+> +	if (has_test_failed)
+> +		return -EFAULT;
+> +
+> +	return 0;
+> +}
+> +
+> +late_initcall(kunit_run_all_tests);
+> +
+> +#endif /* IS_BUILTIN(CONFIG_KUNIT) */
+> 
+
 
 _______________________________________________
 linux-um mailing list
