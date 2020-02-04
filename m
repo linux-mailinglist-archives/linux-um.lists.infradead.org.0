@@ -2,80 +2,91 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 023C915213B
-	for <lists+linux-um@lfdr.de>; Tue,  4 Feb 2020 20:35:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id ABF931521D5
+	for <lists+linux-um@lfdr.de>; Tue,  4 Feb 2020 22:18:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=u3vN5KU8AlXSZq61hntLAGk5d4YzhdhGcP6CfBH6wLg=; b=XS82bsKfM46AJs
-	XmVOCR1PFfPXoV+KiEhvdk/YAML42myUS21hPTbcAwXqhu2l3Cm+Tzfu0C/GqkXpW64wRQ9w9KpDx
-	UMiEGUQxUnc3p5nek8TrEusZutJnDPA5u7VoCxuSTiRAlBnTW0jHrgiFUIXeLK98U0cji+MSAZ0F8
-	5iwGqgLKHhuIYBzRgDzTLbwZXopnkl8g17w3Cjucsqa9Y6SRhXH+dgqP7Ph6g2fyywZ+yp2Ram8pf
-	Q4BUHZCchufEyIIRcGga2ms3Nt0idHsym8JGLfE/kPm27obmmGd/Ros12aXiQdbEkUVTF/byO64L5
-	NTQ+b14oQGtSR5Jjs9CA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=JwaxRY8mgsiL0OzVygEHDb2E8HcTOE3l0WMXQV/dngM=; b=hSVk4+ndDwY/Oz
+	LoYvyaPqzgbODyY34FGZNRN85soW2AaU01+REKwQN6QSbUhCIx+w8zeLXMYOvK5KqdLhqdN83rvPN
+	t5vBoMOBVhrK2vl6Q6wy1Lb2fd0tFm6d1t4wjsRb3oqij+NRBN+UHVDwlLShn/I/sYxpaWCXUzGNl
+	buqMe/Z8ogW8yHksFLPK8eMvNCFJJSrPLR3JLvXBsb25KGTz9W3VRhd/xYEFReGNq9pqIStl7CFyM
+	AKD/tEArsh5Slwsy91oZmwJ74BfurpmLgftlZWSUMsxBd6HV+iQTtzkuFXmiS5YxJKkkX8Ajp6NPT
+	ZpKk8gLZWum8foNA1ITw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iz3zA-0006tb-Jc; Tue, 04 Feb 2020 19:35:48 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1iz5aq-0004HK-At; Tue, 04 Feb 2020 21:18:48 +0000
+Received: from mail-yw1-xc44.google.com ([2607:f8b0:4864:20::c44])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iz3z7-0006sZ-8L
- for linux-um@lists.infradead.org; Tue, 04 Feb 2020 19:35:46 +0000
-Received: by mail-pg1-x543.google.com with SMTP id z7so1383282pgk.7
- for <linux-um@lists.infradead.org>; Tue, 04 Feb 2020 11:35:42 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=ZBYf/F2Io0atf7tGD69pezEGXYzc+ynKJmxs01qZzAA=;
- b=QOo3HD1vuYYlz+4sD+zhB2tClXMUNBEVMlO7WB2JZ9IV9rmn7SF/rbwkwtEq2KhqH6
- JflMkH64e2XW0chioVXoRklQSjZ1ThVCqfFd4QNQZvy3cCKTKktltJOOJYcsi+dOXsiA
- xyKnNbIPPvpQIbEox4KqyaNXHcxW2y550fV9m69L6uSplE435tmpgX9LGNn5cxycQCX2
- WnL4rVBZyAfqQEJjgaX6r9LnrYU1cW8yz106G9HwDqFdmwyb5weFPXRl0cmTQUDEgiOT
- IuHegvLBA08oEM5t1e51IBhTgVFYRvE/0qHfcPD02u5/ihsaye3NxsNp4XwMhOnq9rty
- pXjQ==
+ id 1iz5an-0004GF-0e
+ for linux-um@lists.infradead.org; Tue, 04 Feb 2020 21:18:46 +0000
+Received: by mail-yw1-xc44.google.com with SMTP id b81so146595ywe.9
+ for <linux-um@lists.infradead.org>; Tue, 04 Feb 2020 13:18:44 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=rJdNxill8piqvMTWCgF4RO24y2zuf2qXqfrV3PzwGbQ=;
+ b=QJongeyYsMcOyLwpvXAwz6WVMVDNeXOfV03/lDzb1w++4+APc5JpfERT6/M36Me943
+ 0TE46okBUMZcgFUSz7/U0eAzS0hX5mwTJET3bF5woubK5iqfFoND5279RcPU1/z5zlPb
+ rsEGY4G7wLyc0riOmp5xb5uXALgBpgcoa7r0MZ0AoFidRnrLmIAqWFi9qvO0lbHPW2Uu
+ wCzGdGPlQdjgMgk0GRG4oK0LMzL3bqviHeBPaBLVtzc+9OygZQtLKwTj8K8xmed/2Ooe
+ 3PfWrIz+lloiFGRDybGnlxqoqiIFvInklnmnDLKSJlbd+VeqUAtiDU/qDYlVJDXmD6lJ
+ vVyw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=ZBYf/F2Io0atf7tGD69pezEGXYzc+ynKJmxs01qZzAA=;
- b=TxOqs3yA7UEfa178hpqKVnJgPxUYqJqTGK9qCb5TzuAkH9vPKaYPZqSRh2UH4vfZQm
- yuQjxri6PqYV+vMmOM54175LDedKQo7O1UHImS265oLcPOuSuIwQg6rNred6l8wbcg7I
- tttkz9yjQRDhu6ykCQ08EeErfwgV8r4HyT2mxCjF2pQ6a1Tx+XQsC7XArU/FtXJj5zmb
- 153PCuUkevD5IllVirBrkK9fALSrMNg8NdT68frG/Gy+u3+7jW4z2mBNGbvn2xStM8wW
- lzhZcTSf4pkC+3IikXvBS1oU45e7Ggl3dAYWC60C2rkzNaHFrVeTVA+yEO8nlm1D5dcW
- pMiw==
-X-Gm-Message-State: APjAAAV5Z/awD+OrG5U+l1P68F45kYFFkPNTuZwmyoRdOaSDh4Q2xfKA
- J3THS/SmQhn43L/okFUeT3AoSfykUistS41ZrOzulg==
-X-Google-Smtp-Source: APXvYqw4q+KWhmmtYLJvBYiGMg4pK4goKHR2pzDq2KQ/ueAn46fzf63AjOWVV2VKJzLV/wvMXo/IxMlPJ94Rwb3Ob+8=
-X-Received: by 2002:a63:3754:: with SMTP id g20mr17958855pgn.384.1580844941362; 
- Tue, 04 Feb 2020 11:35:41 -0800 (PST)
-MIME-Version: 1.0
-References: <20200130230812.142642-1-brendanhiggins@google.com>
- <20200204071915.AF32B21582@mail.kernel.org>
-In-Reply-To: <20200204071915.AF32B21582@mail.kernel.org>
-From: Brendan Higgins <brendanhiggins@google.com>
-Date: Tue, 4 Feb 2020 11:35:30 -0800
-Message-ID: <CAFd5g44ZG+E==gT24w49oKc6nHv4nBQFeipikKxXJH3oHdO99Q@mail.gmail.com>
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=rJdNxill8piqvMTWCgF4RO24y2zuf2qXqfrV3PzwGbQ=;
+ b=sHPFzntxR05XEa9irBuX5NgPKRubD6r6RDqEFH+e77EbqKjGAEqrLya2a0vnkr6dDz
+ KArVxWmkUOk94L6DpBIVRAPwUKrRXTXdER13qfE9qxY2D/YFKdeBc39H0MEBjGJSeHvK
+ Wj1mDw+3l2EejZv765RNPaTm6MWpvm1Syyxy2lhF0xysUHM5Qr8+g857CFbnHGgXHh2X
+ veoUtvM5w1DlzQiyv0T6BH+DpxAMxZ/NLLxyh4DrIaE7/8N3EkpeQ6Z1/fH0HrhbrJel
+ F66kp/2nclIuAKVRBGRobjJSSq52QhGKfT+d0KASuulnkd/BaVzby3GwoZjls8Wkt2XI
+ ktPA==
+X-Gm-Message-State: APjAAAUup05/ENG+a6M4GhxJisELQnP0zUJc6qb7EbR8In/3SMvAjQjP
+ xzhi4R6kEjwGrNqIAUtHRt4=
+X-Google-Smtp-Source: APXvYqx/4pLiWvDN2SSeNNE0WCYREq9BMw/a3Cyz3ZlWWFHi2jbhi1ruHmyqFPzoGZ1eBHqH741jjQ==
+X-Received: by 2002:a81:a00f:: with SMTP id x15mr7413542ywg.327.1580851123678; 
+ Tue, 04 Feb 2020 13:18:43 -0800 (PST)
+Received: from [192.168.1.46] (c-73-88-245-53.hsd1.tn.comcast.net.
+ [73.88.245.53])
+ by smtp.gmail.com with ESMTPSA id 124sm10363570ywm.25.2020.02.04.13.18.42
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 04 Feb 2020 13:18:43 -0800 (PST)
 Subject: Re: [PATCH v2 0/7] kunit: create a centralized executor to dispatch
  all KUnit tests
-To: Stephen Boyd <sboyd@kernel.org>
+To: Brendan Higgins <brendanhiggins@google.com>, jdike@addtoit.com,
+ richard@nod.at, anton.ivanov@cambridgegreys.com, arnd@arndb.de,
+ keescook@chromium.org, skhan@linuxfoundation.org, alan.maguire@oracle.com,
+ yzaikin@google.com, davidgow@google.com, akpm@linux-foundation.org,
+ rppt@linux.ibm.com
+References: <20200130230812.142642-1-brendanhiggins@google.com>
+From: Frank Rowand <frowand.list@gmail.com>
+Message-ID: <9e203718-dcca-3145-bc28-28979d41c278@gmail.com>
+Date: Tue, 4 Feb 2020 15:18:42 -0600
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
+MIME-Version: 1.0
+In-Reply-To: <20200130230812.142642-1-brendanhiggins@google.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200204_113545_302389_AE6958D2 
-X-CRM114-Status: GOOD (  13.47  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20200204_131845_059647_57488CFD 
+X-CRM114-Status: GOOD (  22.00  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:c44 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [frowand.list[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -84,8 +95,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,47 +106,92 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:DOCUMENTATION" <linux-doc@vger.kernel.org>,
- "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
- Frank Rowand <frowand.list@gmail.com>,
- Anton Ivanov <anton.ivanov@cambridgegreys.com>, linux-arch@vger.kernel.org,
- Logan Gunthorpe <logang@deltatee.com>, Knut Omang <knut.omang@oracle.com>,
- rppt@linux.ibm.com, Iurii Zaikin <yzaikin@google.com>,
- Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
- Jeff Dike <jdike@addtoit.com>, linux-um <linux-um@lists.infradead.org>,
- David Gow <davidgow@google.com>, Shuah Khan <skhan@linuxfoundation.org>,
- KUnit Development <kunit-dev@googlegroups.com>,
- Greg KH <gregkh@linuxfoundation.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Luis Chamberlain <mcgrof@kernel.org>, Richard Weinberger <richard@nod.at>,
- Andrew Morton <akpm@linux-foundation.org>,
- Alan Maguire <alan.maguire@oracle.com>
+Cc: linux-arch@vger.kernel.org, linux-doc@vger.kernel.org, sboyd@kernel.org,
+ gregkh@linuxfoundation.org, knut.omang@oracle.com,
+ linux-kernel@vger.kernel.org, linux-um@lists.infradead.org, mcgrof@kernel.org,
+ linux-kselftest@vger.kernel.org, logang@deltatee.com,
+ kunit-dev@googlegroups.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Mon, Feb 3, 2020 at 11:19 PM Stephen Boyd <sboyd@kernel.org> wrote:
->
-> Quoting Brendan Higgins (2020-01-30 15:08:05)
-> > ## TL;DR
-> >
-> > This patchset adds a centralized executor to dispatch tests rather than
-> > relying on late_initcall to schedule each test suite separately along
-> > with a couple of new features that depend on it.
->
-> Is there any diff from v1 to v2? I don't know what changed, but I see
-> that my Reviewed-by tag has been put on everything, so I guess
-> everything I said was addressed or discussed in the previous round.
+On 1/30/20 5:08 PM, Brendan Higgins wrote:
+> ## TL;DR
+> 
+> This patchset adds a centralized executor to dispatch tests rather than
+> relying on late_initcall to schedule each test suite separately along
+> with a couple of new features that depend on it.
 
-Oh yes, sorry about that. I have gotten a bit lazy in regard to
-changing logs. I noticed that a lot of people don't seem to care. I'll
-make a note that you do.
+And the "couple of new features" are .... ?
 
-Changes since last revision:
-- On patch 6/7, I flipped the include order and removed braces from the if
-  statements.
-- On patch 7/7, I removed the periods from the short descriptions.
+> 
+> ## What am I trying to do?
+> 
+> Conceptually, I am trying to provide a mechanism by which test suites
+> can be grouped together so that they can be reasoned about collectively.
+> The last two of three patches in this series add features which depend
+> on this:
+> 
+> PATCH 5/7 Prints out a test plan right before KUnit tests are run[1];
+>           this is valuable because it makes it possible for a test
+>           harness to detect whether the number of tests run matches the
+>           number of tests expected to be run, ensuring that no tests
+>           silently failed.
+> 
+> PATCH 6/7 Add a new kernel command-line option which allows the user to
+>           specify that the kernel poweroff, halt, or reboot after
+>           completing all KUnit tests; this is very handy for running
+>           KUnit tests on UML or a VM so that the UML/VM process exits
+>           cleanly immediately after running all tests without needing a
+>           special initramfs.
+> 
+
+> In addition, by dispatching tests from a single location, we can
+> guarantee that all KUnit tests run after late_init is complete, which
+
+That the tests will run after late init (and are guaranteed to do such)
+needs to be added to the documentation.
+
+-Frank
+
+> was a concern during the initial KUnit patchset review (this has not
+> been a problem in practice, but resolving with certainty is nevertheless
+> desirable).
+> 
+> Other use cases for this exist, but the above features should provide an
+> idea of the value that this could provide.
+> 
+> Alan Maguire (1):
+>   kunit: test: create a single centralized executor for all tests
+> 
+> Brendan Higgins (5):
+>   vmlinux.lds.h: add linker section for KUnit test suites
+>   arch: um: add linker section for KUnit test suites
+>   init: main: add KUnit to kernel init
+>   kunit: test: add test plan to KUnit TAP format
+>   Documentation: Add kunit_shutdown to kernel-parameters.txt
+> 
+> David Gow (1):
+>   kunit: Add 'kunit_shutdown' option
+> 
+>  .../admin-guide/kernel-parameters.txt         |  7 ++
+>  arch/um/include/asm/common.lds.S              |  4 +
+>  include/asm-generic/vmlinux.lds.h             |  8 ++
+>  include/kunit/test.h                          | 82 ++++++++++++-------
+>  init/main.c                                   |  4 +
+>  lib/kunit/Makefile                            |  3 +-
+>  lib/kunit/executor.c                          | 71 ++++++++++++++++
+>  lib/kunit/test.c                              | 11 ---
+>  tools/testing/kunit/kunit_kernel.py           |  2 +-
+>  tools/testing/kunit/kunit_parser.py           | 76 ++++++++++++++---
+>  .../test_is_test_passed-all_passed.log        |  1 +
+>  .../test_data/test_is_test_passed-crash.log   |  1 +
+>  .../test_data/test_is_test_passed-failure.log |  1 +
+>  13 files changed, 217 insertions(+), 54 deletions(-)
+>  create mode 100644 lib/kunit/executor.c
+> 
+
 
 _______________________________________________
 linux-um mailing list
