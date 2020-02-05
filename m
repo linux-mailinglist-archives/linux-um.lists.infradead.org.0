@@ -2,84 +2,82 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BAA4B1532C6
-	for <lists+linux-um@lfdr.de>; Wed,  5 Feb 2020 15:24:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E18A6153351
+	for <lists+linux-um@lfdr.de>; Wed,  5 Feb 2020 15:46:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Subject:To:From:Message-ID:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ba2VlmZ4JnrFJ3unmTMu6dYDvjkcHnSH5pb8klwrwM8=; b=l3xWfoQdhhNEly
-	LQJYIgFkog0foYBW+Os2cI9hpuDhdSLzvdXIFmtWWpYSlRVlEv9uVU2j1Wwr5GZ0nsQ7wDIpW7Sj9
-	Xt8qwJmq/5GI8cizDtL5FzIKMdaXwNgKIq/5R9wrdx/XrZa4LSft+3iUZyO54l7Ny5V1UmQMcNg54
-	OZtiGugSyCBCL7J+h3RWb96/GtHC66MG+CLV8LSFo/CWEx0zWkgX5n0h4WnjM3MMTHgYImk+RbpZe
-	eOfa3IEdwSfPvLFfFuE6vnLkUMMiG0AodVuW89og99blJkdFfJEpTnJZtjeRdtgfafs1NZ7O6Y0Zh
-	Ngp9CWK4M1h2ZxmVDDKw==;
+	List-Owner; bh=AZT65eiaGv9ZnyfD/abwe8rbuyGFNUfWTwypiETYxS0=; b=F61Strq0MRMp0P
+	7DFn2QHTIB28+I/xqHfWWD1vdoONK3e31U40O2OLI8wDNHF37cCYEurTyV9q3IBII73L05vkXasgI
+	TUBaCIEgN57L6BkZWcwShu0o+MlmBhCXroqeLI7/0zitkNBQVpRvz8SDWqADPkVRjRg+zXi8fV7XD
+	5gZA4gfd1E8TOcICLxil/tShxQMsneUkmSm4qdbryXSKrby/qvMdGxhbjCYzRXbzsIpfGvnja3HYs
+	7gfriuEz7WxPBssbap2vTo+2oe0Y1sY5dIMCRmmOmS+RtDvIZ9r72GfB8B2vAq0xTo/561aR9ivyH
+	THLSByuaHEfOQyz5Z4OQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izLbb-0004eM-Q3; Wed, 05 Feb 2020 14:24:39 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1izLx2-0008IZ-5K; Wed, 05 Feb 2020 14:46:48 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izLba-0004dt-08
- for linux-um@lists.infradead.org; Wed, 05 Feb 2020 14:24:39 +0000
-Received: by mail-pg1-x541.google.com with SMTP id z12so1045879pgl.4
- for <linux-um@lists.infradead.org>; Wed, 05 Feb 2020 06:24:37 -0800 (PST)
+ id 1izLwz-0008I1-Ie
+ for linux-um@lists.infradead.org; Wed, 05 Feb 2020 14:46:46 +0000
+Received: by mail-pf1-x443.google.com with SMTP id x185so1322586pfc.5
+ for <linux-um@lists.infradead.org>; Wed, 05 Feb 2020 06:46:45 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=date:message-id:from:to:cc:subject:in-reply-to:references
  :user-agent:mime-version;
- bh=gbABLLE49n2yhiqkhSn8nnzWORWiC6z8xKar+HwA+/I=;
- b=kg9Sn1pw4Iy6kPtWetppxrrt4YP1d+5khQ0zkoZYHFVlc4p203SjJdSTLjWvKWGNYr
- hmJtlobvFf48bqS37P5P1KkIKaop68XlaghavmaJCBBAXJ/GPwgkkDNyr0NTDcyHKbaQ
- h570jiYesTw2owj+r8izawRPmMZMwnzNbixeQ582Ak0PLKsyaiVGQW2rmXXkNuB2zaQa
- pBgPUtZxi4bjAWfefpEAGL0YclSVACs8wmteb2EPjKkwZCSwHvXv1mm9X48NZrpS9e9O
- qgJhw6HkszEP6dH0W3czrRAmHC/VPmAmFXsTb5Cw+P731J4oEG3Wy27NH/uG1jTPR4An
- ZDrw==
+ bh=VnerVuFYSXJ3ZDrE3RGGG9WiyeTQgleX/15FBOen3I8=;
+ b=I015MiL9KC1urIe7DFnBGSFKyfqHbslIUoRYLua8ldlRQciyw0LJvRjERmi2JEYRb4
+ wr+f+x4+pakJs+ZgmlFelnhxu8q05m93bWsQ/I/7SohWPBIqJefs3yxFPKW220x/2VNp
+ Q1WY79IpZKds4OqQBMD1f6AR/7Lek60RRKMFYlM9rK12fDrSZX/hfIZLPJZBX6n/6rbT
+ t3wSU32EHeCT99bzFHufYdX3H7EOnY78f6tQnLya3v9JmeKTCwai8e6j4vG1ZcCSYmnO
+ 8itnrZSBGcOCi7OdzE9NH1PUX5UkeIcyARq8bH0fn2WMu+RWjJ5Eu+2b9PX7UTaZ+gQy
+ 1LbA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:message-id:from:to:cc:subject:in-reply-to
  :references:user-agent:mime-version;
- bh=gbABLLE49n2yhiqkhSn8nnzWORWiC6z8xKar+HwA+/I=;
- b=kNpe6QOW3Ljgrl4TMFOyPB4vURQayMkDrTZTTV4S2+X9iPrNxrKfDQJin5UN/2O3qP
- Tp4hQZrj3iBbkx+4YrvbhliECxmodg5o/TB6uCbJ/Smoe2Vx4XdXv6faWk5vqcIoerhO
- dusJJYsG5fVRyekIxgm5bfZ4rI1ZBF/bP+cw6n0gcK1b+o2fMWW7OFfBNCwLkvhvuO08
- 06vTLCKNWGk9dIdw3tn1lriiAnhVRSCLqSbu91FlsggCscz/x3nS0Rhyh7K8n/ddttXL
- T4BQBiOQIc0j2xovNHtOp/TYBrqe97OUl5/hupWTdWRo4yPg7QHESjtzGUm8JD5zpjHT
- Ddbg==
-X-Gm-Message-State: APjAAAXkr9L26xf+KtG/dGEQe1usz12SqePvpXL3sT7M6bgeWKVpcpFb
- M6e9wgLfKWWXlFYCxjz8zek=
-X-Google-Smtp-Source: APXvYqzTM3SLLErn34QMZLRJfB84dU6EKiA3BC7oP1plFtsaxKPOXcUkvi3tdkYenkCKSexDkzubAA==
-X-Received: by 2002:a63:2c0e:: with SMTP id s14mr625716pgs.349.1580912676621; 
- Wed, 05 Feb 2020 06:24:36 -0800 (PST)
+ bh=VnerVuFYSXJ3ZDrE3RGGG9WiyeTQgleX/15FBOen3I8=;
+ b=IX4Kb3XtmH/HY8och3+GPLjZXc4koLzXvuKBuyTl5xyMeby2Mr34eOdLCo4wwh5bYF
+ Ov/wBTDB34z11bLhFBpmbwqwnIGX1mMX0C9m4PEL7HdQDbJ4cSxkH2hl/hALIhJfjmDS
+ 0/ZYtosIaeShfwPMTPXSlFrEdboMNi15dvArtFv/PVVm9/15gB7arbm7NO40oSgPOqDh
+ xk5z3m8pSH5YVHOmIiuZIF0IyKvkO3B7ry5+4KCvR3BKHVC1aIvOGJmpP9m+s9DSxMqA
+ OKzmubgD5+rybq8Zc0PlMn19ooo0BdwA/M7DSw+if9XUG4CqlZY75OKCE0NXJhb2Tpcn
+ V6/g==
+X-Gm-Message-State: APjAAAX3OsjdpGzmaXPB3YD525spoCjXTvhC8W6mM4smDuLNKZisjIIK
+ 9PSfmP7uuRUW5XWFNWN9DHQ=
+X-Google-Smtp-Source: APXvYqwg+V1rUWDUZItb3nJyAP9aMYWiRKvRFgk1ALOuRoQUXFflGcSxRsWz7jHNQKe1kGNy1i/RCA==
+X-Received: by 2002:a63:d24b:: with SMTP id t11mr27009003pgi.443.1580914004684; 
+ Wed, 05 Feb 2020 06:46:44 -0800 (PST)
 Received: from earth-mac.local.gmail.com
  (219x123x138x129.ap219.ftth.ucom.ne.jp. [219.123.138.129])
- by smtp.gmail.com with ESMTPSA id z16sm4170449pgl.92.2020.02.05.06.24.33
+ by smtp.gmail.com with ESMTPSA id x28sm27610pgc.83.2020.02.05.06.46.41
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 05 Feb 2020 06:24:34 -0800 (PST)
-Date: Wed, 05 Feb 2020 23:24:29 +0900
-Message-ID: <m2ftfpqfhe.wl-thehajime@gmail.com>
+ Wed, 05 Feb 2020 06:46:42 -0800 (PST)
+Date: Wed, 05 Feb 2020 23:46:39 +0900
+Message-ID: <m2eev9qegg.wl-thehajime@gmail.com>
 From: Hajime Tazaki<thehajime@gmail.com>
 To: anton.ivanov@kot-begemot.co.uk
-Subject: Re: [RFC v2 07/37] lkl: interrupt support
-In-Reply-To: <739ada9a-b88a-5192-fb4b-65132a74b4de@kot-begemot.co.uk>
-References: <cover.1573179553.git.thehajime@gmail.com>
- <567fd4d5c395e2279e86ca0bfca544ad2773a31d.1573179553.git.thehajime@gmail.com>
- <CAFLxGvxytmS4WSFj2ibyJKCuR5TbspdNf6MvHNvzh9dtKx2rJg@mail.gmail.com>
- <m2h805qy99.wl-thehajime@gmail.com>
- <739ada9a-b88a-5192-fb4b-65132a74b4de@kot-begemot.co.uk>
+Subject: Re: [RFC v3 07/26] um lkl: interrupt support
+In-Reply-To: <800b1132-68df-8c63-5371-015bfc83a511@kot-begemot.co.uk>
+References: <cover.1580882335.git.thehajime@gmail.com>
+ <9d6f93f061b2b248c0fa0a7f1530792936f8e7be.1580882335.git.thehajime@gmail.com>
+ <800b1132-68df-8c63-5371-015bfc83a511@kot-begemot.co.uk>
 User-Agent: Wanderlust/2.15.9 (Almost Unreal) Emacs/25.3 Mule/6.0
  (HANACHIRUSATO)
 MIME-Version: 1.0 (generated by SEMI-EPG 1.14.7 - "Harue")
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200205_062438_065017_CAEC9B68 
-X-CRM114-Status: GOOD (  13.61  )
+X-CRM114-CacheID: sfid-20200205_064645_616420_C3ABE881 
+X-CRM114-Status: GOOD (  11.49  )
 X-Spam-Score: 1.6 (+)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (1.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [thehajime[at]gmail.com]
@@ -105,8 +103,8 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, richard.weinberger@gmail.com,
- linux-um@lists.infradead.org, retrage01@gmail.com, tavi.purdila@gmail.com,
+Cc: linux-arch@vger.kernel.org, tavi.purdila@gmail.com,
+ linux-um@lists.infradead.org, retrage01@gmail.com,
  linux-kernel-library@freelists.org, sigmaepsilon92@gmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -114,44 +112,54 @@ Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
 
-Hello Anton,
-
-On Wed, 05 Feb 2020 19:49:37 +0900,
+On Wed, 05 Feb 2020 19:47:36 +0900,
 Anton Ivanov wrote:
 
-> >>>   arch/um/lkl/include/asm/irq.h             |  13 ++
-> >>>   arch/um/lkl/include/uapi/asm/irq.h        |  36 ++++
-> >>>   arch/um/lkl/include/uapi/asm/sigcontext.h |  16 ++
-> >>>   arch/um/lkl/kernel/irq.c                  | 193 ++++++++++++++++++++++
-> >> 
-> >> Like I said before, this also something to unify with UML.
-> >> I'm aware that this is easily said but we cannot have too much duplication.
-> >> 
-> >> Feel free to ask if UML internals give you headache. :-)
-> > 
-> > Same as nommu implementation, I left this part as-is.
-> > 
-> > Triggering interrupts with fd events (delivered by epoll&co) is a hard
-> > part to implement host-independent interrupts of LKL.  OTOH, the v3
-> > patchset shows that it is doable to use UML drivers with the LKL
-> > interrupt facility.
+> > +/**
+> > + * This function can be called from arbitrary host threads, so do not
+> > + * issue any Linux calls (e.g. prink) if lkl_cpu_get() was not issued
+> > + * before.
+> > + */
+> > +int lkl_trigger_irq(int irq)
+> > +{
+> > +	int ret;
+> > +
+> > +	if (!irq || irq > NR_IRQS)
+> > +		return -EINVAL;
+> > +
+> > +	ret = lkl_cpu_try_run_irq(irq);
+> > +	if (ret <= 0)
+> > +		return ret;
+> > +
+> > +	/*
+> > +	 * Since this can be called from Linux context (e.g. lkl_trigger_irq ->
+> > +	 * IRQ -> softirq -> lkl_trigger_irq) make sure we are actually allowed
+> > +	 * to run irqs at this point
+> > +	 */
+> > +	if (!irqs_enabled) {
+> > +		set_irq_pending(irq);
+> > +		lkl_cpu_put();
+> > +		return 0;
+> > +	}
+> > +
+> > +	run_irq(irq);
+> > +
+> > +	lkl_cpu_put();
+> > +
+> > +	return 0;
 > 
-> Make sure you are testing with the vector network devices, the
-> legacy ones are scheduled to be obsoleted at some point
+> Isn't that just:
+> 
+> 	if (irqs_enabled)
+> 		run_irq(irq);
+> 	else
+> 		set_irq_pending(irq);
+> 
+> 	lkl_cpu_put();
+> 
+> 	return 0;
 
-I was aware of the commit to obsolete several backend with the vector
-device, but did not include in the patchset and tests.  I will try to
-do it for the next round.
-
-> I know this will cause a headache on non-Linux, I am happy to write
-> wrappers/emulators for recvmms/sendmmsg so these build on the
-> systems which do not support them.
-
-If UML is going to extend to support non-Linux host, yes, those kind
-of wrappers will be helpful.
-
-Right now, the patchset only focuses on x86 hosts so, this can be
-postponed.
+Thanks, this is much cleaner.  I will fix this in the next turn.
 
 -- Hajime
 
