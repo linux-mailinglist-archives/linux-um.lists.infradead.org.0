@@ -2,82 +2,81 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5B05A152719
-	for <lists+linux-um@lfdr.de>; Wed,  5 Feb 2020 08:38:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E353815271B
+	for <lists+linux-um@lfdr.de>; Wed,  5 Feb 2020 08:39:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Subject:To:From:Message-ID:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qq5i7CjtWBSXMI5nuxpkkyzssXS0uhNi7N4hNscZ+tU=; b=mvYSqqRGmeCXPL
-	ofITU9NuFmxwKpY6G4YjYy4DxEot7P0QGz8/nurJCtxhObmVUU/oxP3f1KxXcn9EAVXel3hUdz7E4
-	ZTtVe1tSBVHkDfTYgNdTbgE0YswTZZ81ec2rtbv0vCEhB1Nbbx8CFKsoMd0gSmyagd2PSqTrEcXjp
-	NWboSQdTmQ+0gC0dsLmM6teUeZwA9QruzhlsuYnkarvQ9FMEedYq7Esbr9SBW5Dp4ZlerKSXWyiHW
-	s9wv7JXBJpiKH9BlckadJ4AnmGeeDF4URN5jzSLsjdTn5pK4VWxvFm4L3bcXiu9VO9HMMyaz6Amnu
-	6vSxR3vMvIvyxnoNBRKg==;
+	List-Owner; bh=bqR+XX463HMKMc0/u6IZHFo2y5fUmXwmupbAUTA7JTs=; b=S8MFKQwXEuKU1c
+	2TVwwQOYmtUuABjH4cIseP3wN61BCQGfd4Td0/uzE7y4lVEEbkcgLQLUyQTN4g7p9h01A47wZBhed
+	b6odMQp3hE5kt11drlb5VJvlQKsZaZ3dtfkJD5H9zrHtVirsD94u+Sjn6qNcfu0GOX2jk5m9Zs6ZX
+	d1nhbGpkqJ1wlhxQHBppRdU+2kn7sSW85icbRw5NlNS8bAUjOC5rdYK30RJTeb3WbrzPU3qymM9gB
+	CJZ6Vn9cllBKouT35IsCmpxUVJlUZTJDxmDAGT+TQ4uwGzlAmil8ASPsj0qxTXMJy+WQlNRWK0TO2
+	RFd+063R7MErRqBb4Q/A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izFGX-0001nx-IY; Wed, 05 Feb 2020 07:38:29 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1izFH7-0001rF-3p; Wed, 05 Feb 2020 07:39:05 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izFGU-0001nK-UD
- for linux-um@lists.infradead.org; Wed, 05 Feb 2020 07:38:28 +0000
-Received: by mail-pg1-x542.google.com with SMTP id j4so548381pgi.1
- for <linux-um@lists.infradead.org>; Tue, 04 Feb 2020 23:38:26 -0800 (PST)
+ id 1izFH5-0001qw-3d
+ for linux-um@lists.infradead.org; Wed, 05 Feb 2020 07:39:04 +0000
+Received: by mail-pf1-x442.google.com with SMTP id p14so758905pfn.4
+ for <linux-um@lists.infradead.org>; Tue, 04 Feb 2020 23:39:03 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=date:message-id:from:to:cc:subject:in-reply-to:references
  :user-agent:mime-version;
- bh=q6gbiA7g1XEnjsY45e/GHXTvVKuuaeFbJ9vWvbdAEI0=;
- b=vIe+tEdErPM406cyxJ3Uvp9MFmlEp/EtnjYh+DzEabn9oGzvJ0oBYnrAusQKOwAJEQ
- 9pqfsSrDQ9honJwW8aok9kxZlmUA5nygiRxfdKL3CMJ8qLjNzGaoIxVVbj4gAF1oF/yz
- l1HvgVeH7WNCdEQd/y3Tbz+6mHRcySgGUzeFPw0V4n1ahU+bOCoarXJmUdOcqAk53Jzh
- GPl6VrVnz/FCR/d0IhG3h0b3ByLolQI3DPEJhQ6Le2Z0Ks/tXn5ZzbRJWbLtwxXRp0vJ
- QRIuyJ7CICXzpNl5o+k6skfSHnjh4fWGZ/qbaqi1vz1WDh9UHmlnUWGR18PJbaHp+frC
- jLcw==
+ bh=wPNxZNcefQtXGqNsqQ4bOqLtRzkFN8K5CMyJqD0vjr0=;
+ b=QJghL7Up5Q6HpJVVz9MOUcXi+ETC1cfg2rFFFnWeaK6jcdKcP50v/Nvp1Q7HiC4DzJ
+ yi/dpNcgFvNkvAekJNPELoFXFNPKTfiq1oo6dtzdvMeLTybVryCPs1BHWMPpZTRvOdA1
+ 5un92RmnvBwYVAukoxv/B6/JGYMgUUW68/e/C/dKn3P7nNkuicVwLoVRtojLqQqjDPHm
+ c+8fQ7csp4RRb1A/8BxnNcxy/odGXq0DezyDxPoz5J+HVqA5mcgijpyjDbqy0YFc2MkU
+ VG+0dagz67+h+H1UumWxsE2b5PVj6lH0JEdwc1apzKbiLb8CD0BDtsCtVRBYNufgERZt
+ 9RZQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:message-id:from:to:cc:subject:in-reply-to
  :references:user-agent:mime-version;
- bh=q6gbiA7g1XEnjsY45e/GHXTvVKuuaeFbJ9vWvbdAEI0=;
- b=tFVBY/kwYCpKU0qR9p2Bfey0DeGsNCLkddD8mfatNDD7S7w+0Z2SdeUGLG1PTfeLDv
- 2FAPYIPC3GwestmyI13fry278fNOBsaV72egQbEEMRdHXh7bniHHmnXnzsDEY3iYdxIJ
- RgHW35s/pjAsaUVeHShiCYjLLCVBRW+wMT0EVStQXEPSexPzmFn24cP7uLAH2dSXV44m
- hVSpfq9Myg2CgYEMWEqcFD5yIp26CLXHHLXC3GYlcxqjxdI3XOFP9iYC1wu0fDhGoWZM
- JihelzW54/6gRyoMi48rBZ6zddHVhryXqtbR+r+P8iWbRk78bSL2N9ME+ySYdVuzrXCd
- VZqg==
-X-Gm-Message-State: APjAAAXVHhxJap4PFmzOgxjKtLagqmRUk/ho5ycB8/dkQRMJ0E3KxrMc
- fkMnINLU25XcWDZqvI0ObFhvDEEJ3hk=
-X-Google-Smtp-Source: APXvYqzgOl3fdPdQSOUoPCUuc4Udrh+nBSdbLpIPJKp6FWfi+X1MzVSBvrEn+WtdXKKlS4OVz/A20g==
-X-Received: by 2002:a63:28c7:: with SMTP id
- o190mr34417419pgo.394.1580888306090; 
- Tue, 04 Feb 2020 23:38:26 -0800 (PST)
+ bh=wPNxZNcefQtXGqNsqQ4bOqLtRzkFN8K5CMyJqD0vjr0=;
+ b=Zqc9Do+smzNzWf/JWdmbuTXVyAcnLIj4sA/XEl3M2aQG9czqvMmEdvzarZDv8Z6lnV
+ CEvgpCNGdKW6nytk9rhj34DgDFkMNWR4ZyUak/nasSxaj/BNPVR81xBENebBrCZ2nEoy
+ culvA79Rd63M6gCG0C48RGkAwqT1buDhnMKABnESAe3gjQS+eYp5GPVJ58sZ/UrZOKCg
+ NntPpanc/K9a80s/4TghVt+Xewtug0LSrwUDns19G2MNcEM0AWeNpLj+sdVFmqhaglrr
+ XyXvs635zUi/Wtx9Tf3sZ718Gx9IEKzB8ebYI33r1Sp4IwnaG2ePnEUt8pElXbvBy4P2
+ BOvg==
+X-Gm-Message-State: APjAAAV1zFyOhDNiP53LKkMcmt9n8KrsDj67UjLE7G16JphnwV8IcoO5
+ jj3V9tQbtCQRgXX+6rU7Vow=
+X-Google-Smtp-Source: APXvYqzPKFZIr3Y0tBQOBcxX8tIzevY3XsC0dSf78u7juBZdrhqOtherzRKZNoKjBsHrh+GUuTpAuA==
+X-Received: by 2002:a63:360a:: with SMTP id d10mr34546187pga.366.1580888342495; 
+ Tue, 04 Feb 2020 23:39:02 -0800 (PST)
 Received: from earth-mac.local.gmail.com ([202.214.86.179])
- by smtp.gmail.com with ESMTPSA id 3sm6526468pjg.27.2020.02.04.23.38.23
+ by smtp.gmail.com with ESMTPSA id y16sm26663001pfn.177.2020.02.04.23.39.00
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 04 Feb 2020 23:38:25 -0800 (PST)
-Date: Wed, 05 Feb 2020 16:38:22 +0900
-Message-ID: <m2imklqya9.wl-thehajime@gmail.com>
+ Tue, 04 Feb 2020 23:39:02 -0800 (PST)
+Date: Wed, 05 Feb 2020 16:38:58 +0900
+Message-ID: <m2h805qy99.wl-thehajime@gmail.com>
 From: Hajime Tazaki<thehajime@gmail.com>
 To: richard.weinberger@gmail.com
-Subject: Re: [RFC v2 05/37] lkl: memory handling
-In-Reply-To: <CAFLxGvw_tkmAq0nGrgEs8jQFGLADDuAyUOsYhdDzAH5yhHFHEA@mail.gmail.com>
+Subject: Re: [RFC v2 07/37] lkl: interrupt support
+In-Reply-To: <CAFLxGvxytmS4WSFj2ibyJKCuR5TbspdNf6MvHNvzh9dtKx2rJg@mail.gmail.com>
 References: <cover.1573179553.git.thehajime@gmail.com>
- <8b0c833bde42e761cadfd3542263ad7a8be5eb5b.1573179553.git.thehajime@gmail.com>
- <CAFLxGvw_tkmAq0nGrgEs8jQFGLADDuAyUOsYhdDzAH5yhHFHEA@mail.gmail.com>
+ <567fd4d5c395e2279e86ca0bfca544ad2773a31d.1573179553.git.thehajime@gmail.com>
+ <CAFLxGvxytmS4WSFj2ibyJKCuR5TbspdNf6MvHNvzh9dtKx2rJg@mail.gmail.com>
 User-Agent: Wanderlust/2.15.9 (Almost Unreal) Emacs/25.3 Mule/6.0
  (HANACHIRUSATO)
 MIME-Version: 1.0 (generated by SEMI-EPG 1.14.7 - "Harue")
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200204_233827_000283_DADD5139 
-X-CRM114-Status: GOOD (  12.41  )
+X-CRM114-CacheID: sfid-20200204_233903_152080_B20E6BCF 
+X-CRM114-Status: GOOD (  14.28  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -102,50 +101,59 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, levex@linux.com, tavi.purdila@gmail.com,
+Cc: linux-arch@vger.kernel.org, tavi.purdila@gmail.com,
  linux-um@lists.infradead.org, retrage01@gmail.com,
- linux-kernel-library@freelists.org, liuyuan@google.com
+ linux-kernel-library@freelists.org, sigmaepsilon92@gmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
 
-On Tue, 26 Nov 2019 07:10:28 +0900,
+On Tue, 26 Nov 2019 07:13:55 +0900,
 Richard Weinberger wrote:
 > 
 > On Fri, Nov 8, 2019 at 6:03 AM Hajime Tazaki <thehajime@gmail.com> wrote:
 > >
 > > From: Octavian Purdila <tavi.purdila@gmail.com>
 > >
-> > LKL is a non MMU architecture and hence there is not much work left to
-> > do other than initializing the boot allocator and providing the page
-> > and page table definitions.
+> > Add APIs that allows the host to reserve and free and interrupt number
+> > and also to trigger an interrupt.
 > >
-> > The backstore memory is allocated via a host operation and the memory
-> > size to be used is specified when the kernel is started, in the
-> > lkl_start_kernel call.
+> > The trigger operation will simply store the interrupt data in
+> > queue. The interrupt handler is run later, at the first opportunity it
+> > has to avoid races with any kernel threads.
 > >
-> > Signed-off-by: H.K. Jerry Chu <hkchu@google.com>
+> > Currently, interrupts are run on the first interrupt enable operation
+> > if interrupts are disabled and if we are not already in interrupt
+> > context.
+> >
+> > When triggering an interrupt, it uses GCC's built-in functions for
+> > atomic memory access to synchronize and simple boolean flags.
+> >
 > > Signed-off-by: Hajime Tazaki <thehajime@gmail.com>
-> > Signed-off-by: Levente Kurusa <levex@linux.com>
-> > Signed-off-by: Yuan Liu <liuyuan@google.com>
+> > Signed-off-by: Michael Zimmermann <sigmaepsilon92@gmail.com>
 > > Signed-off-by: Octavian Purdila <tavi.purdila@gmail.com>
 > > ---
-> >  arch/um/lkl/include/asm/page.h          | 14 ++++++
-> >  arch/um/lkl/include/asm/pgtable.h       | 62 +++++++++++++++++++++++
-> >  arch/um/lkl/include/uapi/asm/host_ops.h |  5 ++
-> >  arch/um/lkl/mm/bootmem.c                | 66 +++++++++++++++++++++++++
+> >  arch/um/lkl/include/asm/irq.h             |  13 ++
+> >  arch/um/lkl/include/uapi/asm/irq.h        |  36 ++++
+> >  arch/um/lkl/include/uapi/asm/sigcontext.h |  16 ++
+> >  arch/um/lkl/kernel/irq.c                  | 193 ++++++++++++++++++++++
 > 
-> This is also something which needs unification with UML.
-> UML in NOMMU mode would be LKL then...
+> Like I said before, this also something to unify with UML.
+> I'm aware that this is easily said but we cannot have too much duplication.
+> 
+> Feel free to ask if UML internals give you headache. :-)
 
-At this moment, I leave those part as is; changing LKL to MMU mode
-makes less possibility to host various underlying environments
-(non-Linux hosts, non-x86 subarchs).
+Same as nommu implementation, I left this part as-is.
 
-If you have nice suggestions (such as adding texts to docs), it would
-be definitely helpful.
+Triggering interrupts with fd events (delivered by epoll&co) is a hard
+part to implement host-independent interrupts of LKL.  OTOH, the v3
+patchset shows that it is doable to use UML drivers with the LKL
+interrupt facility.
+
+I may also need more time to evaluate/find a right direction, though.
+Your comments are always welcome.
 
 -- Hajime
 
