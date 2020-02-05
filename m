@@ -2,96 +2,51 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E18A6153351
-	for <lists+linux-um@lfdr.de>; Wed,  5 Feb 2020 15:46:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E8CDB153608
+	for <lists+linux-um@lfdr.de>; Wed,  5 Feb 2020 18:13:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Subject:To:From:Message-ID:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AZT65eiaGv9ZnyfD/abwe8rbuyGFNUfWTwypiETYxS0=; b=F61Strq0MRMp0P
-	7DFn2QHTIB28+I/xqHfWWD1vdoONK3e31U40O2OLI8wDNHF37cCYEurTyV9q3IBII73L05vkXasgI
-	TUBaCIEgN57L6BkZWcwShu0o+MlmBhCXroqeLI7/0zitkNBQVpRvz8SDWqADPkVRjRg+zXi8fV7XD
-	5gZA4gfd1E8TOcICLxil/tShxQMsneUkmSm4qdbryXSKrby/qvMdGxhbjCYzRXbzsIpfGvnja3HYs
-	7gfriuEz7WxPBssbap2vTo+2oe0Y1sY5dIMCRmmOmS+RtDvIZ9r72GfB8B2vAq0xTo/561aR9ivyH
-	THLSByuaHEfOQyz5Z4OQ==;
+	List-Owner; bh=f9vq39LLiMH1M4bIbfu0uICc7hYX9lViiF7WLmNWDaw=; b=rP1zlik7gChmY3
+	Ff0C9HGmJwy95BtnLujW8OFOqPJVCrdLst/Fv2IHw/CdVLIgQu6lCVCdoPKqQWBXcqxal/wqi3Ccg
+	WTbYLE0Yyis+OZvchr/sWSCEyUcudEJToP13j/6K/QDMZ4IwGbVUNUiKtyZFRsAK97zXyQGP5UeO0
+	hDHbyYDmgvsgyK0K8AMw253gFO3s/4XC0d/QkQYcBgNIZJBfa5Ftt7+TS8W5appmDTYC7X1Hj2Zbu
+	YjDHkAhFaIbBRpuVIm4z6HfDz6BbrZpDeM7df8/jianjUcU0lbHkEJbkHOWsuew9kZiKEgWN4aWMz
+	ldcITYuC92K9v/U2wO6A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izLx2-0008IZ-5K; Wed, 05 Feb 2020 14:46:48 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izLwz-0008I1-Ie
- for linux-um@lists.infradead.org; Wed, 05 Feb 2020 14:46:46 +0000
-Received: by mail-pf1-x443.google.com with SMTP id x185so1322586pfc.5
- for <linux-um@lists.infradead.org>; Wed, 05 Feb 2020 06:46:45 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:message-id:from:to:cc:subject:in-reply-to:references
- :user-agent:mime-version;
- bh=VnerVuFYSXJ3ZDrE3RGGG9WiyeTQgleX/15FBOen3I8=;
- b=I015MiL9KC1urIe7DFnBGSFKyfqHbslIUoRYLua8ldlRQciyw0LJvRjERmi2JEYRb4
- wr+f+x4+pakJs+ZgmlFelnhxu8q05m93bWsQ/I/7SohWPBIqJefs3yxFPKW220x/2VNp
- Q1WY79IpZKds4OqQBMD1f6AR/7Lek60RRKMFYlM9rK12fDrSZX/hfIZLPJZBX6n/6rbT
- t3wSU32EHeCT99bzFHufYdX3H7EOnY78f6tQnLya3v9JmeKTCwai8e6j4vG1ZcCSYmnO
- 8itnrZSBGcOCi7OdzE9NH1PUX5UkeIcyARq8bH0fn2WMu+RWjJ5Eu+2b9PX7UTaZ+gQy
- 1LbA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:message-id:from:to:cc:subject:in-reply-to
- :references:user-agent:mime-version;
- bh=VnerVuFYSXJ3ZDrE3RGGG9WiyeTQgleX/15FBOen3I8=;
- b=IX4Kb3XtmH/HY8och3+GPLjZXc4koLzXvuKBuyTl5xyMeby2Mr34eOdLCo4wwh5bYF
- Ov/wBTDB34z11bLhFBpmbwqwnIGX1mMX0C9m4PEL7HdQDbJ4cSxkH2hl/hALIhJfjmDS
- 0/ZYtosIaeShfwPMTPXSlFrEdboMNi15dvArtFv/PVVm9/15gB7arbm7NO40oSgPOqDh
- xk5z3m8pSH5YVHOmIiuZIF0IyKvkO3B7ry5+4KCvR3BKHVC1aIvOGJmpP9m+s9DSxMqA
- OKzmubgD5+rybq8Zc0PlMn19ooo0BdwA/M7DSw+if9XUG4CqlZY75OKCE0NXJhb2Tpcn
- V6/g==
-X-Gm-Message-State: APjAAAX3OsjdpGzmaXPB3YD525spoCjXTvhC8W6mM4smDuLNKZisjIIK
- 9PSfmP7uuRUW5XWFNWN9DHQ=
-X-Google-Smtp-Source: APXvYqwg+V1rUWDUZItb3nJyAP9aMYWiRKvRFgk1ALOuRoQUXFflGcSxRsWz7jHNQKe1kGNy1i/RCA==
-X-Received: by 2002:a63:d24b:: with SMTP id t11mr27009003pgi.443.1580914004684; 
- Wed, 05 Feb 2020 06:46:44 -0800 (PST)
-Received: from earth-mac.local.gmail.com
- (219x123x138x129.ap219.ftth.ucom.ne.jp. [219.123.138.129])
- by smtp.gmail.com with ESMTPSA id x28sm27610pgc.83.2020.02.05.06.46.41
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 05 Feb 2020 06:46:42 -0800 (PST)
-Date: Wed, 05 Feb 2020 23:46:39 +0900
-Message-ID: <m2eev9qegg.wl-thehajime@gmail.com>
-From: Hajime Tazaki<thehajime@gmail.com>
-To: anton.ivanov@kot-begemot.co.uk
-Subject: Re: [RFC v3 07/26] um lkl: interrupt support
-In-Reply-To: <800b1132-68df-8c63-5371-015bfc83a511@kot-begemot.co.uk>
+	id 1izOEg-0003Mn-5U; Wed, 05 Feb 2020 17:13:10 +0000
+Received: from j217100.upc-j.chello.nl ([24.132.217.100]
+ helo=noisy.programming.kicks-ass.net)
+ by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1izOEe-0003MR-Lh; Wed, 05 Feb 2020 17:13:08 +0000
+Received: from hirez.programming.kicks-ass.net
+ (hirez.programming.kicks-ass.net [192.168.1.225])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (Client did not present a certificate)
+ by noisy.programming.kicks-ass.net (Postfix) with ESMTPS id A9E7430257C;
+ Wed,  5 Feb 2020 18:11:20 +0100 (CET)
+Received: by hirez.programming.kicks-ass.net (Postfix, from userid 1000)
+ id ADF5F2B78D5B6; Wed,  5 Feb 2020 18:13:06 +0100 (CET)
+Date: Wed, 5 Feb 2020 18:13:06 +0100
+From: Peter Zijlstra <peterz@infradead.org>
+To: Octavian Purdila <tavi.purdila@gmail.com>
+Subject: Re: [RFC v3 01/26] asm-generic: atomic64: allow using generic
+ atomic64 on 64bit platforms
+Message-ID: <20200205171306.GP14879@hirez.programming.kicks-ass.net>
 References: <cover.1580882335.git.thehajime@gmail.com>
- <9d6f93f061b2b248c0fa0a7f1530792936f8e7be.1580882335.git.thehajime@gmail.com>
- <800b1132-68df-8c63-5371-015bfc83a511@kot-begemot.co.uk>
-User-Agent: Wanderlust/2.15.9 (Almost Unreal) Emacs/25.3 Mule/6.0
- (HANACHIRUSATO)
-MIME-Version: 1.0 (generated by SEMI-EPG 1.14.7 - "Harue")
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200205_064645_616420_C3ABE881 
-X-CRM114-Status: GOOD (  11.49  )
-X-Spam-Score: 1.6 (+)
-X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (1.6 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [thehajime[at]gmail.com]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.3 TO_NO_BRKTS_FROM_MSSP  Multiple header formatting problems
- 1.5 FROM_MISSP_FREEMAIL    From misspaced + freemail provider
+ <39e1313ff3cf3eab6ceb5ae322fcd3e5d4432167.1580882335.git.thehajime@gmail.com>
+ <20200205093454.GG14879@hirez.programming.kicks-ass.net>
+ <CAMoF9u3Jhqyvp3SpA3mUqPhS4zDuXP9GCUu_XsYx2etE0KGkcQ@mail.gmail.com>
+ <20200205124908.GL14879@hirez.programming.kicks-ass.net>
+ <CAMoF9u12nko0rBGT_iOgXtapuRitS9jSMzAoo8tTykn2dZGK7g@mail.gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CAMoF9u12nko0rBGT_iOgXtapuRitS9jSMzAoo8tTykn2dZGK7g@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,66 +58,55 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, tavi.purdila@gmail.com,
- linux-um@lists.infradead.org, retrage01@gmail.com,
- linux-kernel-library@freelists.org, sigmaepsilon92@gmail.com
+Cc: linux-arch <linux-arch@vger.kernel.org>, Boqun Feng <boqun.feng@gmail.com>,
+ linux-um <linux-um@lists.infradead.org>, Akira Moroo <retrage01@gmail.com>,
+ linux-kernel-library <linux-kernel-library@freelists.org>,
+ Will Deacon <will@kernel.org>, Hajime Tazaki <thehajime@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-
-On Wed, 05 Feb 2020 19:47:36 +0900,
-Anton Ivanov wrote:
-
-> > +/**
-> > + * This function can be called from arbitrary host threads, so do not
-> > + * issue any Linux calls (e.g. prink) if lkl_cpu_get() was not issued
-> > + * before.
-> > + */
-> > +int lkl_trigger_irq(int irq)
-> > +{
-> > +	int ret;
-> > +
-> > +	if (!irq || irq > NR_IRQS)
-> > +		return -EINVAL;
-> > +
-> > +	ret = lkl_cpu_try_run_irq(irq);
-> > +	if (ret <= 0)
-> > +		return ret;
-> > +
-> > +	/*
-> > +	 * Since this can be called from Linux context (e.g. lkl_trigger_irq ->
-> > +	 * IRQ -> softirq -> lkl_trigger_irq) make sure we are actually allowed
-> > +	 * to run irqs at this point
-> > +	 */
-> > +	if (!irqs_enabled) {
-> > +		set_irq_pending(irq);
-> > +		lkl_cpu_put();
-> > +		return 0;
-> > +	}
-> > +
-> > +	run_irq(irq);
-> > +
-> > +	lkl_cpu_put();
-> > +
-> > +	return 0;
+On Wed, Feb 05, 2020 at 04:00:41PM +0200, Octavian Purdila wrote:
+> On Wed, Feb 5, 2020 at 2:49 PM Peter Zijlstra <peterz@infradead.org> wrote:
+> >
+> > On Wed, Feb 05, 2020 at 02:24:38PM +0200, Octavian Purdila wrote:
+> > > I was not aware that not allowing GENERIC_ATOMIC64 was intentional. I
+> >
+> > It might not have been, but presented with this patch, I feel like it
+> > should've been :-)
+> >
+> > > understand your point that a 64 bit architecture that can't handle 64
+> > > bit atomic operation is broken.
+> >
+> > (sadly they actually exist, I shall name no names)
+> >
+> > > One way to deal with this in LKL would be to use GCC atomic builtins
+> > > or if that doesn't work expose them as host operations. This would
+> > > keep LKL as a meta-arch that can run on multiple physical
+> > > architectures. I'll give it a try.
+> >
+> > What is this LKL you speak of and how does it do the 32bit atomics?
+> >
 > 
-> Isn't that just:
-> 
-> 	if (irqs_enabled)
-> 		run_irq(irq);
-> 	else
-> 		set_irq_pending(irq);
-> 
-> 	lkl_cpu_put();
-> 
-> 	return 0;
+> LKL is a build of the Linux kernel as a library that can run in many
+> environments including multiple architectures and OSes [1]
 
-Thanks, this is much cleaner.  I will fix this in the next turn.
+Thanks, I'll put it on the to-read list.
 
--- Hajime
+> For 32bit atomics LKL also uses the asm-generic implementation. It is
+> very similar with generic 64bit atomic implementation and it is used
+> by multiple 32bit arches. I think this was my original reasoning for
+> this patch and not going with C11 atomics.
 
+Uh no, asm-generic/atomic.h is radically different from lib/atomic64.c.
+
+asm-generic/atomic.h builds all required atomic operations from
+cmpxchg() (loops), while lib/atomic64.c builds 64bit atomics by using a
+hashed set of spinlocks.
+
+The asm-generic stuff gives you real atomic ops, albeit sub-optimal,
+lib/atomic64.c gives you a turd.
 
 _______________________________________________
 linux-um mailing list
