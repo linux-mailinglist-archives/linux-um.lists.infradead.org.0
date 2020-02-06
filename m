@@ -2,83 +2,75 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 28611154B33
-	for <lists+linux-um@lfdr.de>; Thu,  6 Feb 2020 19:33:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 616E9154B6F
+	for <lists+linux-um@lfdr.de>; Thu,  6 Feb 2020 19:47:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6GWODjS9bJVYmBbM5cAQVYrzAZn1ynn8ZUc1N8imtYY=; b=WHz0tWRgqJiQUF
-	Mis2GbJHF5IZ/W6VrzduY8CCnyidre5NGElSlaAUC8VpDQMMjOyw6U7YYylCEKKLVAh1AjRjUsw3w
-	Qii/V6x/B9sPvnkAr8UoO+yyACUyJMOZ8kHmDDE7R7jrmkiviLm1w8JY5ROwUJ7vlv6U/tPD+L4r8
-	Lb0JQ00z2KJQSKDfiCua6VliKl8xRMNOu866Sf0lKa7GsbV3ruDWz9/S7VBfFKDjNQ2giDoydIsKz
-	/GIkju6LxsRg8aD5T4LYlK67Al7Y6pfVTYYJM5Ez9YRTUO6XDApHf1Pf7uKFST+io+cy0kwwzfA4d
-	2lANJ8iAxy+nYhQWJx4w==;
+	List-Owner; bh=inogZLtbO2yX4aoLhZuVu53zFYQiqSS4gJSMBL4Wag4=; b=CZRCgVPnf2iN11
+	KQ7UGLlLumzgPw+tLuqX0cqaOWT7pC+VlAcdGY9kM5yDmtCtgZVKQVpKnxj1TB5Dt05K37YPBey/7
+	C36SL5g+12ilvLMXsw8q3G2owl4+sOsTGrM4r8tFuXjna7K1BCqYsKoayEC4XQGGaSUFiNaUIervz
+	Ms4N+pTSemqYITavNPCOWQSQGxOBl2Cbme5lxwjNVD6SsYT5nDuxXw6ncGfgnMZrHVX2+jXCJxMzB
+	n4DuHE/kBtd9oxAoCXXJKRGIz9GmkA3NuMd9935zLxaNL2pTrvUleexqJdIMMfa7ZoY9eptLYyNJd
+	XoJOgUQ7WFIQc2PO49+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izlxs-0001Iz-Jv; Thu, 06 Feb 2020 18:33:24 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1izmBm-0006aW-Cx; Thu, 06 Feb 2020 18:47:46 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izlxp-0001IY-Nt
- for linux-um@lists.infradead.org; Thu, 06 Feb 2020 18:33:23 +0000
-Received: by mail-wr1-x443.google.com with SMTP id a6so8380443wrx.12
- for <linux-um@lists.infradead.org>; Thu, 06 Feb 2020 10:33:21 -0800 (PST)
+ id 1izmBk-0006ZH-7o
+ for linux-um@lists.infradead.org; Thu, 06 Feb 2020 18:47:45 +0000
+Received: by mail-pl1-x643.google.com with SMTP id ay11so2698579plb.0
+ for <linux-um@lists.infradead.org>; Thu, 06 Feb 2020 10:47:40 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=/o0TABmh3sA91z50JGeWR2QdDzZnMyxEswlhRW37yD8=;
- b=HR7uoCJJz73XXlC0tOxO2Tberzt+iuXFO7P4ixPw59zFnM5LttKSdf1tK9bRyAf3ka
- Cez5zxvwnBT7fJBnQ67tpaiouvNPQkKlpM62Rege6LCx2tSl2klKpsGsNk1zSshJSFRu
- FuGRvMh/ZCCsriTwBwTmSYNjePD9OPMT33VMFZSVk0gM5mYVnvt+OEMeWjL6dkKTVCgF
- sM0DFsahxxbvFSeltgIWn/b6lzvQQmDgav9bM2cUnKE9gHSBknhyx1jhX4s6EETMLgBX
- +EjI/i9GazD9vusTFNnsYDo9J3GXYXUZTO47N9ILD/BLLdwQYAt85BoFNwitlYdzsY/d
- /nsA==
+ :cc; bh=rx4sRzOip+Mq3tGXU7kM2rwUAP/FgU+xMoujRQ/y4dA=;
+ b=lgvMv7Qc1FR7VzTuur5zQETjZ4R1hLqWvzzOgqfbayhBhP23i0+A0FqGpEuB7DKUBV
+ qUU9Exb4rnQCoSYh7ld+zLT8gVbRvAoq7i+qdijRiM80OtiTWIgeQeYfScSMWKrN5lTr
+ sh8GL0Thd6+Mk8gjOO1VtjNrXhZISbfIHIfuRZihLSeUaz/gKrNAV+pJhJTLbJd+XVis
+ JjIAfW0KRiSdumBRagvfqbpvjlU+I2lSPuqP5hAupoK2wrq+jJ9W/MgeBGv/0WfSWOxY
+ JdckjHdCGrx/36SdGls8IO/qyexTSmGzzfw+LoXRTxQoROJUVHIRp/HRKVQs7/q6znL1
+ bufQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=/o0TABmh3sA91z50JGeWR2QdDzZnMyxEswlhRW37yD8=;
- b=OtTMuHtbhAA/p6Y/c4jGj5zKieMlRgq0JBK/4iqWAlW81kfI7Qn0yk32XFseqTvQyl
- 9mfA2a54DWa9lK8RnzOGOWmu/GcZaOqpm0620ZsAZUbcvGiLpWIdMZhb+7+gri556dhl
- GnM13UYOUuWg9+MzKpDcJb0QJYVAi/P08y77std/0SnMXac4+4rtBCHufPx1Aoepzud1
- 4Csiv0E2ZNrWtgSwlW41ev6Ey6GNVsl/JHUfjuFZNEbdk0FTVj466hIpPIorXfV2OoxG
- OTxoFR7dfu0Bfb3wk7120ph3XX0/my1BJwOhtX5hhzgON6qR8mWqhJiWt1P3s96pvAW+
- NsKw==
-X-Gm-Message-State: APjAAAWUOY9V+RtJDj7ZfGbRQzjznKDAnnRbX66SqwLOkf8W03w9XWxI
- XIfTDFrsL/4R/M6iYyDDPA2k11F1VSiFEaMPPPSbgw==
-X-Google-Smtp-Source: APXvYqyO7B6UBrWxHoZXCXiOleCEOatPxvuRTAcGxPS9KZaihVadCBanUHVq7vvpyCENHPfeoHcATMP4/PrwGyfLELQ=
-X-Received: by 2002:a05:6000:108e:: with SMTP id
- y14mr5254368wrw.338.1581013999924; 
- Thu, 06 Feb 2020 10:33:19 -0800 (PST)
+ bh=rx4sRzOip+Mq3tGXU7kM2rwUAP/FgU+xMoujRQ/y4dA=;
+ b=TfKhbDr7a39scMh4JiDzH0xd8cUmRBuN+rCDMuCdZqeZVXKhJwFlLMRfsEgkBwhOqb
+ 6KgqTxOVMc5HtTmlGb/XT3+3Ny0lkyr2EB0yUCMHrkNmaID4qpI63vbPQDlTlgQD5okT
+ 1SHt0pdVLLRSNYBnZqHMHJN9EkDQocbNNVzZRMEeq6ToQhzYB5OEkrmpaiSOmy/qhMX/
+ Khgcea6705bjB7bFQHQTAIGBomn1OLsYJJ9LJYdDE+QDUNZXZlkfr2uMFlKxgPszuUjg
+ 2dElcXNS1hNM+du0HPCqgfMicCVt5cMxcCsW0MDiZcqFcg5xi9um0H25jV1Nl54HkCZP
+ 11+g==
+X-Gm-Message-State: APjAAAWTlOJdR+vZYqcYHFUJeHrPX38GJ+J9z/xs7n76U3vU56IzQjgR
+ G+gi36HbrG3qW9BlC+UKgTcv1ls6yn9yzQ1xkXaOzw==
+X-Google-Smtp-Source: APXvYqwoMLnyphmn9jqUaL6zuzdMwQhZMO0C2FVmu1LrHrHVcviCyfV/O9rId5UR/by0bAMcdwlU6ZoLG29qVB4ScLk=
+X-Received: by 2002:a17:90a:6c26:: with SMTP id
+ x35mr5868897pjj.84.1581014860109; 
+ Thu, 06 Feb 2020 10:47:40 -0800 (PST)
 MIME-Version: 1.0
-References: <20200115182816.33892-1-trishalfonso@google.com>
- <dce24e66d89940c8998ccc2916e57877ccc9f6ae.camel@sipsolutions.net>
- <CAKFsvU+sUdGC9TXK6vkg5ZM9=f7ePe7+rh29DO+kHDzFXacx2w@mail.gmail.com>
- <4f382794416c023b6711ed2ca645abe4fb17d6da.camel@sipsolutions.net>
- <b55720804de8e56febf48c7c3c11b578d06a8c9f.camel@sipsolutions.net>
- <CACT4Y+brqD-o-u3Vt=C-PBiS2Wz+wXN3Q3RqBhf3XyRYaRoZJw@mail.gmail.com>
- <2092169e6dd1f8d15f1db4b3787cc9fe596097b7.camel@sipsolutions.net>
- <CACT4Y+b6C+y9sDfMYPDy-nh=WTt5+u2kLcWx2LQmHc1A5L7y0A@mail.gmail.com>
- <CACT4Y+atPME1RYvusmr2EQpv_mNkKJ2_LjMeANv0HxF=+Uu5hw@mail.gmail.com>
- <CACT4Y+bsaZoPC1Q7_rV-e_aO=LVPA-cE3btT_VARStWYk6dcPA@mail.gmail.com>
- <CACT4Y+Z6_CwVyJhr3SdDejFsrXcM11LVY+gh4oKP6k03Pn95AA@mail.gmail.com>
-In-Reply-To: <CACT4Y+Z6_CwVyJhr3SdDejFsrXcM11LVY+gh4oKP6k03Pn95AA@mail.gmail.com>
-From: Patricia Alfonso <trishalfonso@google.com>
-Date: Thu, 6 Feb 2020 10:33:08 -0800
-Message-ID: <CAKFsvULhg7i=tuw1LMS9avy4-NgDDfK2k-_kCa3CH3sNRXa0Qw@mail.gmail.com>
-Subject: Re: [RFC PATCH] UML: add support for KASAN under x86_64
-To: Dmitry Vyukov <dvyukov@google.com>
+References: <20200130230812.142642-1-brendanhiggins@google.com>
+ <20200130230812.142642-6-brendanhiggins@google.com>
+ <69582db9-d379-7d2a-1342-6de9a5d79141@gmail.com>
+In-Reply-To: <69582db9-d379-7d2a-1342-6de9a5d79141@gmail.com>
+From: Brendan Higgins <brendanhiggins@google.com>
+Date: Thu, 6 Feb 2020 10:47:28 -0800
+Message-ID: <CAFd5g45jHKXoMU4k103cqfeTAtUpaZh7ZK2ALpzHkRZTuVYa-g@mail.gmail.com>
+Subject: Re: [PATCH v2 5/7] kunit: test: add test plan to KUnit TAP format
+To: Frank Rowand <frowand.list@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200206_103321_804606_C1204B0A 
-X-CRM114-Status: GOOD (  19.74  )
+X-CRM114-CacheID: sfid-20200206_104744_283304_BAE73D1F 
+X-CRM114-Status: GOOD (  24.77  )
 X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
  [list.dnswl.org]
  -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
  white-list
@@ -106,72 +98,126 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: Richard Weinberger <richard@nod.at>, Jeff Dike <jdike@addtoit.com>,
- Brendan Higgins <brendanhiggins@google.com>,
- LKML <linux-kernel@vger.kernel.org>, kasan-dev <kasan-dev@googlegroups.com>,
- linux-um@lists.infradead.org, David Gow <davidgow@google.com>,
- Andrey Ryabinin <aryabinin@virtuozzo.com>,
- Johannes Berg <johannes@sipsolutions.net>, anton.ivanov@cambridgegreys.com
+Cc: "open list:DOCUMENTATION" <linux-doc@vger.kernel.org>,
+ "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
+ Anton Ivanov <anton.ivanov@cambridgegreys.com>, linux-arch@vger.kernel.org,
+ Richard Weinberger <richard@nod.at>, Knut Omang <knut.omang@oracle.com>,
+ rppt@linux.ibm.com, Iurii Zaikin <yzaikin@google.com>,
+ Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
+ Jeff Dike <jdike@addtoit.com>, linux-um <linux-um@lists.infradead.org>,
+ David Gow <davidgow@google.com>, Shuah Khan <skhan@linuxfoundation.org>,
+ KUnit Development <kunit-dev@googlegroups.com>,
+ Alan Maguire <alan.maguire@oracle.com>, Stephen Boyd <sboyd@kernel.org>,
+ Greg KH <gregkh@linuxfoundation.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Luis Chamberlain <mcgrof@kernel.org>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Logan Gunthorpe <logang@deltatee.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Fri, Jan 17, 2020 at 2:05 AM Dmitry Vyukov <dvyukov@google.com> wrote:
+On Tue, Feb 4, 2020 at 3:01 PM Frank Rowand <frowand.list@gmail.com> wrote:
 >
-> On Fri, Jan 17, 2020 at 11:03 AM Dmitry Vyukov <dvyukov@google.com> wrote:
+> On 1/30/20 5:08 PM, Brendan Higgins wrote:
+> > TAP 14 allows an optional test plan to be emitted before the start of
+> > the start of testing[1]; this is valuable because it makes it possible
+> > for a test harness to detect whether the number of tests run matches the
+> > number of tests expected to be run, ensuring that no tests silently
+> > failed.
 > >
-> > On Fri, Jan 17, 2020 at 10:59 AM Dmitry Vyukov <dvyukov@google.com> wrote:
-> > >
-> > > On Thu, Jan 16, 2020 at 10:39 PM Patricia Alfonso
-> > > <trishalfonso@google.com> wrote:
-> > > >
-> > > > On Thu, Jan 16, 2020 at 1:23 AM Dmitry Vyukov <dvyukov@google.com> wrote:
-> > > > >
-> > > > > On Thu, Jan 16, 2020 at 10:20 AM Johannes Berg
-> > > > > <johannes@sipsolutions.net> wrote:
-> > > > > >
-> > > > > > On Thu, 2020-01-16 at 10:18 +0100, Dmitry Vyukov wrote:
-> > > > > > >
-> > > > > > > This should resolve the problem with constructors (after they
-> > > > > > > initialize KASAN, they can proceed to do anything they need) and it
-> > > > > > > should get rid of most KASAN_SANITIZE (in particular, all of
-> > > > > > > lib/Makefile and kernel/Makefile) and should fix stack instrumentation
-> > > > > > > (in case it does not work now). The only tiny bit we should not
-> > > > > > > instrument is the path from constructor up to mmap call.
-> > > >
-
-By initializing KASAN as the first thing that executes, I have been
-able to get rid of most of the "KASAN_SANITIZE := n" lines and I am
-very happy about that. Thanks for the suggestions!
-
-> > > If that part of the code I mentioned is instrumented, manifestation
-> > > would be different -- stack instrumentation will try to access shadow,
-> > > shadow is not mapped yet, so it would crash on the shadow access.
-> > >
-> > > What you are seeing looks like, well, a kernel bug where it does a bad
-> > > stack access. Maybe it's KASAN actually _working_? :)
+> > Link[1]: https://github.com/isaacs/testanything.github.io/blob/tap14/tap-version-14-specification.md#the-plan
+> > Signed-off-by: Brendan Higgins <brendanhiggins@google.com>
+> > Reviewed-by: Stephen Boyd <sboyd@kernel.org>
+> > ---
+> >  lib/kunit/executor.c                          | 17 +++++
+> >  lib/kunit/test.c                              | 11 ---
+> >  tools/testing/kunit/kunit_parser.py           | 74 ++++++++++++++++---
+> >  .../test_is_test_passed-all_passed.log        |  1 +
+> >  .../test_data/test_is_test_passed-crash.log   |  1 +
+> >  .../test_data/test_is_test_passed-failure.log |  1 +
+> >  6 files changed, 82 insertions(+), 23 deletions(-)
 > >
-> > Though, stack instrumentation may have issues with longjmp-like things.
-> > I would suggest first turning off stack instrumentation and getting
-> > that work. Solving problems one-by-one is always easier.
-> > If you need help debugging this, please post more info: patch, what
-> > you are doing, full kernel output (preferably from start, if it's not
-> > too lengthy).
+> > diff --git a/lib/kunit/executor.c b/lib/kunit/executor.c
+> > index b75a46c560847..7fd16feff157e 100644
+> > --- a/lib/kunit/executor.c
+> > +++ b/lib/kunit/executor.c
+> > @@ -11,11 +11,28 @@ extern struct kunit_suite * const * const __kunit_suites_end[];
+> >
+> >  #if IS_BUILTIN(CONFIG_KUNIT)
+> >
+> > +static void kunit_print_tap_header(void)
+> > +{
+> > +     struct kunit_suite * const * const *suites, * const *subsuite;
+> > +     int num_of_suites = 0;
+> > +
+> > +     for (suites = __kunit_suites_start;
+> > +          suites < __kunit_suites_end;
+> > +          suites++)
+> > +             for (subsuite = *suites; *subsuite != NULL; subsuite++)
+> > +                     num_of_suites++;
+> > +
+> > +     pr_info("TAP version 14\n");
+> > +     pr_info("1..%d\n", num_of_suites);
+> > +}
+> > +
 >
-> I see syscall_stub_data does some weird things with stack (stack
-> copy?). Maybe we just need to ignore accesses there: individual
-> accesses, or whole function/file.
+> Subsuites are not in Linux 5.5, as far as I can tell, so it is hard to review
+> this.
+>
+> But I think this observation will still be valid even though I am not up
+> to speed on subsuites.
 
-It is still not clear whether the syscall_stub_data errors are false
-positives, but while moving the kasan_init() to be as early as
-possible in main(), I ran into a few more stack-related errors like
-this(show_stack, dump_trace, and get_wchan). I will be taking your
-advice to focus on one thing at a time and temporarily disable stack
-instrumentation wherever possible.
+"substitutes" are just an artifact from having to group together all
+suites that occur in a module. It should be mostly immaterial to most
+users, but we have to have all the suites that occur in a module
+grouped together in order to support KUnit tests as loadable modules.
 
---
-Patricia Alfonso
+I just call them subsuites here because I didn't know what else to
+call them. Still, the relationship between them should be mostly
+ignored by users as you seem to recognize below.
+
+Also, module support for KUnit was just recently accepted into torvalds/master:
+
+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=08a3ef8f6b0b1341c670caba35f782c9a452d488
+
+You should be able to apply this change to torvalds/master now.
+
+> num_of_suites is all test suites declared (as built in).  In Linux 5.5,
+> each kunit_suite contains one or more test cases.  Each test case leads
+> to either "ok" or "not ok".  So instead of counting number of tests
+> suites, the number of test cases needs to be counted.
+
+Nope, but I think you understand correctly below...
+
+> Ahhh, I think my lack of visibility of what tree this series is against
+> is about to lead me astray!  Are the test cases in the subsuite
+> implemented as what TAP 14 calls "subtests"?  If so, then the above
+> code that counts suites instead of test cases would be correct.
+
+Yep! You got it! Test cases are "subtests" in TAP 14. So there is a
+ok/not ok line for each suite, and nested as subtests above that are
+indented ok/not ok lines for each test case. KUnit already does this
+today. We are just moving some of the printing logic out so we can
+count the suites and print a test plan.
+
+Technically, what we print today (before this change) is legal TAP 14.
+The test plan is not required. However, the test plan is very helpful
+as it makes it possible to know if some tests just never ran for some
+reason.
+
+> I'm spinning my wheels now, since I don't know what I am
+> reviewing against, so I'm going to stop reviewing, other
+> than maybe a quick scan.
+
+I just applied this patch series against torvalds/master which I
+pulled this morning, and it applied cleanly. I will specify in any
+subsequent revisions that this is based on linux-kselftest/kunit since
+that's where these patches will be applied, but they should apply
+against any rc of 5.6 just fine once they are cut.
+
+Cheers!
 
 _______________________________________________
 linux-um mailing list
