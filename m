@@ -2,38 +2,103 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C719F15467A
-	for <lists+linux-um@lfdr.de>; Thu,  6 Feb 2020 15:50:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 45B6B15479D
+	for <lists+linux-um@lfdr.de>; Thu,  6 Feb 2020 16:18:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tqxZOG08phZLuzIokUQSFCLsCmC3QAmsSajNWXOyB+8=; b=q4uh4e7bJarG9J
-	xremHdyTQI2iQ8BPDfXEcrgbTTvfSmK8WLyFOROb1u5pZQ4DsUXjOI+Jm55mgXq2wcK9YJezNQmbT
-	tL2D9Ogcnn7L10+Nu/l60G87yTkeQshrCNeZlwDmq64PdAZmuOsW9B6IvM4xmx/9dYy5vvWphFwbK
-	m1hDp4mGWyJuoqEfp6OpIg0E8b6bN1mwODPb64XqJ2h+3H175GxCgZm7pWX8ByyTs7p8ElLRIpRGj
-	TVDwFrWyKm6pdH2hveABJrIgx1zD2qN25HcImg9rUF2zo2oOs1S02vHYA3ZLMjdLntBItwdjjWvvl
-	C+TO9DUeM9eLXocEYTkg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=+RrJA/npMU00fVoCcLZ8Bj7Nt7DnfvU9d5gHDVX8+Jg=; b=fXC76ts2pjTb2Z
+	WUTiQrP8d/nnxqVCJQv9fy9af/xmLg2hgDI9NyokCVZv120SD7OV2tB39QvS/G0QVSio1gtthOg9G
+	OnCPUOstT7n5N5msnWxql0OwJZ67j2TOQyf4KyFawPILnBESy3A94VGLHwcinE6E9wQyOCIRFjXrL
+	dmNuFxXNiyyEC0bUecBDs3AGhOvB1YDhrTabOuCgEZnPh3/AwwMtRVB8vVunQJqYWCAHcHtZg3uZA
+	nhRKfb6uBG3kF7YHS6BDk9jsQgFoHIoPc7tm+XT8C3IeNiWt5k5NQrbdAp2JYGGp3yfjPquQdY4p5
+	sE6fHnxr5LI1p6FVHo6Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iziUG-0004LS-TZ; Thu, 06 Feb 2020 14:50:36 +0000
-Received: from [179.95.15.160] (helo=bombadil.infradead.org)
- by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iziUE-0004IO-8Z; Thu, 06 Feb 2020 14:50:34 +0000
-Received: from mchehab by bombadil.infradead.org with local (Exim 4.92.3)
- (envelope-from <mchehab@bombadil.infradead.org>)
- id 1iziU6-002nKX-BH; Thu, 06 Feb 2020 15:50:26 +0100
-From: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
-To: Linux Media Mailing List <linux-media@vger.kernel.org>
-Subject: [PATCH v2 04/27] docs: virt: user_mode_linux.rst: fix URL references
-Date: Thu,  6 Feb 2020 15:50:01 +0100
-Message-Id: <7703891859ba5dae121fa9fa21914512ba3d3fbb.1581000481.git.mchehab+huawei@kernel.org>
-X-Mailer: git-send-email 2.24.1
-In-Reply-To: <cover.1581000481.git.mchehab+huawei@kernel.org>
+	id 1izivZ-0005tC-HL; Thu, 06 Feb 2020 15:18:49 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
+ helo=us-smtp-1.mimecast.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1izivU-0005rs-Ls
+ for linux-um@lists.infradead.org; Thu, 06 Feb 2020 15:18:47 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1581002321;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=bmV5fzydc3rcIazejW+HPUQs71G2JgpFlEg2HuiWNZ4=;
+ b=EsANk3ENHMDxF938RHvSmQt17OH96TAIcZOZsozE504ccJ57DKQk5XXDdWJTG0+QKHghKB
+ RR7Ze//dr5bbpGK1KKBUWAXtimbuVRxFGJE0PkYz73pQEXuRnjX29cKaY2lWDxgwS7Z70Q
+ N78npyuSCNGUxUr2rYbA+vJYYg8mPYo=
+Received: from mail-wr1-f70.google.com (mail-wr1-f70.google.com
+ [209.85.221.70]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-70-thzyM9SPPz-rg0cqaq4DKg-1; Thu, 06 Feb 2020 10:18:39 -0500
+Received: by mail-wr1-f70.google.com with SMTP id d8so3542724wrq.12
+ for <linux-um@lists.infradead.org>; Thu, 06 Feb 2020 07:18:39 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=bmV5fzydc3rcIazejW+HPUQs71G2JgpFlEg2HuiWNZ4=;
+ b=NVLMgvxd46i3jFQ8pboSOiIUASGr6Qh8IxLSgAJHcNeqV6caX9WcuHFBEA9g67bN7b
+ cuAcFpd+sakvMKFfn+UeLrvvGKRfC8OuZOnMKn/2wNRdc4e0rHPO0HSW8iQW+xEzOXfs
+ VUm0gfWDc5VpX4UeEhLJpQBe+OZTYyr+0iu6YB9gwyAsAyTjsl85E9nYR4kC06X/DMVv
+ wV94/u7Rpu0+r65MKtwrz0ENkoLG0gl8/7VfLWC5jiq/urw1+FEUU5/3RYh4pRDpq/n/
+ LTSN6R2Q7Ch4eM6ICNJAkxfapyekA/N+gOuhdOcAHmxCMqLKuuSIjqGJwGzNLa15m44f
+ UHeg==
+X-Gm-Message-State: APjAAAUJN3+b7Dsc+X94CMIKn+g2dqnhjwDPV6Iqh7KceaSD9nodr4mD
+ AoBU7ISL3HmKXGEJhnoDQP7UA5URNry6iLr1yq30jFvuAOoQrIv6Z6Jgvhy2HNsu3iAUgOmph0v
+ weKyZzTqZhxqoWNKKT6HvOOTo
+X-Received: by 2002:a7b:ca49:: with SMTP id m9mr5329732wml.50.1581002318397;
+ Thu, 06 Feb 2020 07:18:38 -0800 (PST)
+X-Google-Smtp-Source: APXvYqzAJWYqhylWktnILpnrmT9YkEhB6Yu5lRTU8758ARVrJbf++M5496LmTA7BV6VbGzIBWVT6Uw==
+X-Received: by 2002:a7b:ca49:: with SMTP id m9mr5329708wml.50.1581002318087;
+ Thu, 06 Feb 2020 07:18:38 -0800 (PST)
+Received: from [10.201.49.5] (nat-pool-mxp-u.redhat.com. [149.6.153.187])
+ by smtp.gmail.com with ESMTPSA id p15sm3918709wma.40.2020.02.06.07.18.35
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 06 Feb 2020 07:18:37 -0800 (PST)
+Subject: Re: [PATCH v2 00/27] docs: virt: manually convert text documents to
+ ReST format
+To: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
+ Linux Media Mailing List <linux-media@vger.kernel.org>
 References: <cover.1581000481.git.mchehab+huawei@kernel.org>
+From: Paolo Bonzini <pbonzini@redhat.com>
+Message-ID: <f8dab5f5-3b54-0b0a-0b34-c1c450813af5@redhat.com>
+Date: Thu, 6 Feb 2020 16:18:34 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.1.1
 MIME-Version: 1.0
+In-Reply-To: <cover.1581000481.git.mchehab+huawei@kernel.org>
+Content-Language: en-US
+X-MC-Unique: thzyM9SPPz-rg0cqaq4DKg-1
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20200206_071844_793101_F89C6C05 
+X-CRM114-Status: GOOD (  14.97  )
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [205.139.110.120 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -45,10 +110,9 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: Jonathan Corbet <corbet@lwn.net>,
- Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
+Cc: kvm@vger.kernel.org, linux-doc@vger.kernel.org,
  Richard Weinberger <richard@nod.at>, Jeff Dike <jdike@addtoit.com>,
- linux-doc@vger.kernel.org, linux-um@lists.infradead.org,
+ Jonathan Corbet <corbet@lwn.net>, linux-um@lists.infradead.org,
  Mauro Carvalho Chehab <mchehab@infradead.org>,
  Anton Ivanov <anton.ivanov@cambridgegreys.com>
 Content-Type: text/plain; charset="us-ascii"
@@ -56,214 +120,111 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-Several URLs are pointing to outdated places.
+On 06/02/20 15:49, Mauro Carvalho Chehab wrote:
+> Manually convert the documentation under Documentation/virt to ReST,
+> minimizing the usage of uneeded markups and preserving the documentation
+> writer's style.
+> 
+> PS.: Patches are against linux-next tree (20200204).
+> 
+> v2:
+> 
+> - Solved a conflict with linux-next;
+> - Added SPDX headers.
+> 
+> Mauro Carvalho Chehab (27):
+>   docs: kvm: add arm/pvtime.rst to index.rst
+>   docs: virt: convert UML documentation to ReST
+>   docs: virt: user_mode_linux.rst: update compiling instructions
+>   docs: virt: user_mode_linux.rst: fix URL references
+>   docs: virt: convert halt-polling.txt to ReST format
+>   docs: virt: Convert msr.txt to ReST format
+>   docs: kvm: devices/arm-vgic-its.txt to ReST format
+>   docs: kvm: devices/arm-vgit-v3.txt to ReST
+>   docs: kvm: convert devices/arm-vgit.txt to ReST
+>   docs: kvm: convert devices/mpic.txt to ReST
+>   docs: kvm: convert devices/s390_flic.txt to ReST
+>   docs: kvm: convert devices/vcpu.txt to ReST
+>   docs: kvm: convert devices/vcpu.txt to ReST
+>   docs: kvm: convert devices/vm.txt to ReST
+>   docs: kvm: convert devices/xics.txt to ReST
+>   docs: kvm: convert devices/xive.txt to ReST
+>   docs: kvm: Convert api.txt to ReST format
+>   docs: kvm: convert arm/hyp-abi.txt to ReST
+>   docs: kvm: arm/psci.txt: convert to ReST
+>   docs: kvm: Convert hypercalls.txt to ReST format
+>   docs: kvm: Convert locking.txt to ReST format
+>   docs: kvm: Convert mmu.txt to ReST format
+>   docs: kvm: Convert nested-vmx.txt to ReST format
+>   docs: kvm: Convert ppc-pv.txt to ReST format
+>   docs: kvm: Convert s390-diag.txt to ReST format
+>   docs: kvm: Convert timekeeping.txt to ReST format
+>   docs: kvm: review-checklist.txt: rename to ReST
+> 
+>  Documentation/virt/index.rst                  |    1 +
+>  Documentation/virt/kvm/{api.txt => api.rst}   | 3348 ++++++++++-------
+>  .../virt/kvm/arm/{hyp-abi.txt => hyp-abi.rst} |   28 +-
+>  Documentation/virt/kvm/arm/index.rst          |   12 +
+>  .../virt/kvm/arm/{psci.txt => psci.rst}       |   46 +-
+>  .../{arm-vgic-its.txt => arm-vgic-its.rst}    |  106 +-
+>  .../{arm-vgic-v3.txt => arm-vgic-v3.rst}      |  132 +-
+>  .../devices/{arm-vgic.txt => arm-vgic.rst}    |   89 +-
+>  Documentation/virt/kvm/devices/index.rst      |   19 +
+>  .../virt/kvm/devices/{mpic.txt => mpic.rst}   |   11 +-
+>  .../devices/{s390_flic.txt => s390_flic.rst}  |   70 +-
+>  Documentation/virt/kvm/devices/vcpu.rst       |  114 +
+>  Documentation/virt/kvm/devices/vcpu.txt       |   76 -
+>  .../virt/kvm/devices/{vfio.txt => vfio.rst}   |   25 +-
+>  .../virt/kvm/devices/{vm.txt => vm.rst}       |  206 +-
+>  .../virt/kvm/devices/{xics.txt => xics.rst}   |   28 +-
+>  .../virt/kvm/devices/{xive.txt => xive.rst}   |  148 +-
+>  .../{halt-polling.txt => halt-polling.rst}    |   86 +-
+>  .../kvm/{hypercalls.txt => hypercalls.rst}    |  129 +-
+>  Documentation/virt/kvm/index.rst              |   16 +
+>  .../virt/kvm/{locking.txt => locking.rst}     |  111 +-
+>  Documentation/virt/kvm/{mmu.txt => mmu.rst}   |   62 +-
+>  Documentation/virt/kvm/{msr.txt => msr.rst}   |  147 +-
+>  .../kvm/{nested-vmx.txt => nested-vmx.rst}    |   37 +-
+>  .../virt/kvm/{ppc-pv.txt => ppc-pv.rst}       |   26 +-
+>  ...iew-checklist.txt => review-checklist.rst} |    3 +
+>  .../virt/kvm/{s390-diag.txt => s390-diag.rst} |   13 +-
+>  .../kvm/{timekeeping.txt => timekeeping.rst}  |  221 +-
+>  ...odeLinux-HOWTO.txt => user_mode_linux.rst} | 1814 ++++-----
+>  29 files changed, 4003 insertions(+), 3121 deletions(-)
+>  rename Documentation/virt/kvm/{api.txt => api.rst} (71%)
+>  rename Documentation/virt/kvm/arm/{hyp-abi.txt => hyp-abi.rst} (79%)
+>  create mode 100644 Documentation/virt/kvm/arm/index.rst
+>  rename Documentation/virt/kvm/arm/{psci.txt => psci.rst} (60%)
+>  rename Documentation/virt/kvm/devices/{arm-vgic-its.txt => arm-vgic-its.rst} (71%)
+>  rename Documentation/virt/kvm/devices/{arm-vgic-v3.txt => arm-vgic-v3.rst} (77%)
+>  rename Documentation/virt/kvm/devices/{arm-vgic.txt => arm-vgic.rst} (66%)
+>  create mode 100644 Documentation/virt/kvm/devices/index.rst
+>  rename Documentation/virt/kvm/devices/{mpic.txt => mpic.rst} (91%)
+>  rename Documentation/virt/kvm/devices/{s390_flic.txt => s390_flic.rst} (87%)
+>  create mode 100644 Documentation/virt/kvm/devices/vcpu.rst
+>  delete mode 100644 Documentation/virt/kvm/devices/vcpu.txt
+>  rename Documentation/virt/kvm/devices/{vfio.txt => vfio.rst} (72%)
+>  rename Documentation/virt/kvm/devices/{vm.txt => vm.rst} (61%)
+>  rename Documentation/virt/kvm/devices/{xics.txt => xics.rst} (84%)
+>  rename Documentation/virt/kvm/devices/{xive.txt => xive.rst} (62%)
+>  rename Documentation/virt/kvm/{halt-polling.txt => halt-polling.rst} (64%)
+>  rename Documentation/virt/kvm/{hypercalls.txt => hypercalls.rst} (55%)
+>  rename Documentation/virt/kvm/{locking.txt => locking.rst} (78%)
+>  rename Documentation/virt/kvm/{mmu.txt => mmu.rst} (94%)
+>  rename Documentation/virt/kvm/{msr.txt => msr.rst} (74%)
+>  rename Documentation/virt/kvm/{nested-vmx.txt => nested-vmx.rst} (90%)
+>  rename Documentation/virt/kvm/{ppc-pv.txt => ppc-pv.rst} (91%)
+>  rename Documentation/virt/kvm/{review-checklist.txt => review-checklist.rst} (95%)
+>  rename Documentation/virt/kvm/{s390-diag.txt => s390-diag.rst} (90%)
+>  rename Documentation/virt/kvm/{timekeeping.txt => timekeeping.rst} (85%)
+>  rename Documentation/virt/uml/{UserModeLinux-HOWTO.txt => user_mode_linux.rst} (74%)
+> 
 
-Update the references for the URLs whose contents still exists,
-removing the others.
+Wow, thanks very much for doing this.  It would be great if we could get
+this to Linus not long after the merge window; I'll do my best to review
+it quickly.
 
-Signed-off-by: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
----
- Documentation/virt/uml/user_mode_linux.rst | 71 +++++++++-------------
- 1 file changed, 29 insertions(+), 42 deletions(-)
-
-diff --git a/Documentation/virt/uml/user_mode_linux.rst b/Documentation/virt/uml/user_mode_linux.rst
-index e0632d80753e..de0f0b2c9d5b 100644
---- a/Documentation/virt/uml/user_mode_linux.rst
-+++ b/Documentation/virt/uml/user_mode_linux.rst
-@@ -321,7 +321,7 @@ Linux: a port of the Linux kernel as a normal Intel Linux process.
-   as modules, especially filesystems and network protocols and filters,
-   so most symbols which need to be exported probably already are.
-   However, if you do find symbols that need exporting, let  us
--  <http://user-mode-linux.sourceforge.net/>  know, and
-+  know at http://user-mode-linux.sourceforge.net/, and
-   they'll be "taken care of".
- 
- 
-@@ -383,9 +383,9 @@ Linux: a port of the Linux kernel as a normal Intel Linux process.
- 
- 
-   You will need a filesystem to boot UML from.  There are a number
--  available for download from  here  <http://user-mode-
--  linux.sourceforge.net/> .  There are also  several tools
--  <http://user-mode-linux.sourceforge.net/>  which can be
-+  available for download from http://user-mode-linux.sourceforge.net.
-+  There are also  several tools at
-+  http://user-mode-linux.sourceforge.net/  which can be
-   used to generate UML-compatible filesystem images from media.
-   The kernel will boot up and present you with a login prompt.
- 
-@@ -464,10 +464,9 @@ Note:
- 
-   Here are some examples of UML in action:
- 
--  -  A login session <http://user-mode-linux.sourceforge.net/login.html>
--
--  -  A virtual network <http://user-mode-linux.sourceforge.net/net.html>
-+  -  A login session http://user-mode-linux.sourceforge.net/old/login.html
- 
-+  -  A virtual network http://user-mode-linux.sourceforge.net/old/net.html
- 
- 
- 
-@@ -1132,11 +1131,6 @@ Note:
- 
- 
- 
--
--  Harald's original README is here <http://user-mode-linux.source-
--  forge.net/>  and explains these in detail, as well as
--  some other issues.
--
-   There is also a related point-to-point only "ucast" transport.
-   This is useful when your network does not support multicast, and
-   all network connections are simple point to point links.
-@@ -1219,8 +1213,7 @@ Note:
-   make sure that /usr/src/linux points to the headers for the running
-   kernel.
- 
--  These were pointed out by Tim Robinson <timro at trkr dot net> in
--  <http://www.geocrawler.com/> name="this uml-user post"> .
-+  These were pointed out by Tim Robinson <timro at trkr dot net> in the past.
- 
- 
- 
-@@ -1914,8 +1907,8 @@ Note:
- 
-   uml_moo is installed with the UML deb and RPM.  If you didn't install
-   UML from one of those packages, you can also get it from the UML
--  utilities <http://user-mode-linux.sourceforge.net/
--  utilities>  tar file in tools/moo.
-+  utilities http://user-mode-linux.sourceforge.net/utilities tar file
-+  in tools/moo.
- 
- 
- 
-@@ -3709,18 +3702,15 @@ Note:
- 
- 
-   This is a syslogd bug.  There's a race between a parent process
--  installing a signal handler and its child sending the signal.  See
--  this uml-devel post <http://www.geocrawler.com/lists/3/Source-
--  Forge/709/0/6612801>  for the details.
-+  installing a signal handler and its child sending the signal.
- 
- 
- 
- 13.8.  TUN/TAP networking doesn't work on a 2.4 host
- ----------------------------------------------------
- 
--  There are a couple of problems which were
--  <http://www.geocrawler.com/lists/3/SourceForge/597/0/> name="pointed
--  out">  by Tim Robinson <timro at trkr dot net>
-+  There are a couple of problems which were reported by
-+  Tim Robinson <timro at trkr dot net>
- 
-   -  It doesn't work on hosts running 2.4.7 (or thereabouts) or earlier.
-      The fix is to upgrade to something more recent and then read the
-@@ -3763,7 +3753,7 @@ Note:
- 
- 
-   Documentation on IP Masquerading, and SNAT, can be found at
--  www.netfilter.org  <http://www.netfilter.org> .
-+  http://www.netfilter.org.
- 
- 
-   If you can reach the local net, but not the outside Internet, then
-@@ -4113,14 +4103,14 @@ Note:
- 
-   Rusty Russell <rusty at linuxcare.com.au>  -
- 
--  -  wrote the  HOWTO <http://user-mode-
--     linux.sourceforge.net/UserModeLinux-HOWTO.html>
-+  -  wrote the  HOWTO
-+     http://user-mode-linux.sourceforge.net/old/UserModeLinux-HOWTO.html
- 
-   -  prodded me into making this project official and putting it on
-      SourceForge
- 
--  -  came up with the way cool UML logo <http://user-mode-
--     linux.sourceforge.net/uml-small.png>
-+  -  came up with the way cool UML logo
-+     http://user-mode-linux.sourceforge.net/uml-small.png
- 
-   -  redid the config process
- 
-@@ -4148,17 +4138,15 @@ Note:
-   Jim Leu <jleu at mindspring.com>  - Wrote the virtual ethernet driver
-   and associated usermode tools
- 
--  Lars Brinkhoff <http://lars.nocrew.org/>  - Contributed the ptrace
--  proxy from his own  project <http://a386.nocrew.org/> to allow easier
--  kernel debugging
-+  Lars Brinkhoff http://lars.nocrew.org/  - Contributed the ptrace
-+  proxy from his own  project to allow easier kernel debugging
- 
- 
-   Andrea Arcangeli <andrea at suse.de>  - Redid some of the early boot
-   code so that it would work on machines with Large File Support
- 
- 
--  Chris Emerson <http://www.chiark.greenend.org.uk/~cemerson/>  - Did
--  the first UML port to Linux/ppc
-+  Chris Emerson - Did the first UML port to Linux/ppc
- 
- 
-   Harald Welte <laforge at gnumonks.org>  - Wrote the multicast
-@@ -4173,7 +4161,7 @@ Note:
-   wrote the iomem emulation support
- 
- 
--  Henrik Nordstrom <http://hem.passagen.se/hno/>  - Provided a variety
-+  Henrik Nordstrom http://hem.passagen.se/hno/  - Provided a variety
-   of patches, fixes, and clues
- 
- 
-@@ -4208,16 +4196,15 @@ Note:
-   submitted patches for the slip transport and lots of other things.
- 
- 
--  David Coulson <http://davidcoulson.net>  -
-+  David Coulson http://davidcoulson.net  -
- 
--  -  Set up the usermodelinux.org <http://usermodelinux.org>  site,
-+  -  Set up the http://usermodelinux.org  site,
-      which is a great way of keeping the UML user community on top of
-      UML goings-on.
- 
-   -  Site documentation and updates
- 
-   -  Nifty little UML management daemon  UMLd
--     <http://uml.openconsultancy.com/umld/>
- 
-   -  Lots of testing and bug reports
- 
-@@ -4390,12 +4377,12 @@ Note:
-   work with RH 6.2.
- 
-   Michael Jennings <mikejen at hevanet.com>  sent in some material which
--  is now gracing the top of the  index  page <http://user-mode-
--  linux.sourceforge.net/>  of this site.
-+  is now gracing the top of the  index  page
-+  http://user-mode-linux.sourceforge.net/  of this site.
- 
--  SGI <http://www.sgi.com>  (and more specifically Ralf Baechle <ralf at
--  uni-koblenz.de> ) gave me an account on oss.sgi.com
--  <http://www.oss.sgi.com> .  The bandwidth there made it possible to
-+  SGI (and more specifically Ralf Baechle <ralf at
-+  uni-koblenz.de> ) gave me an account on oss.sgi.com.
-+  The bandwidth there made it possible to
-   produce most of the filesystems available on the project download
-   page.
- 
-@@ -4412,5 +4399,5 @@ Note:
- 
-   Chris Reahard built a specialized root filesystem for running a DNS
-   server jailed inside UML.  It's available from the download
--  <http://user-mode-linux.sourceforge.net/dl-sf.html>  page in the Jail
-+  http://user-mode-linux.sourceforge.net/old/dl-sf.html  page in the Jail
-   Filesystems section.
--- 
-2.24.1
+Paolo
 
 
 _______________________________________________
