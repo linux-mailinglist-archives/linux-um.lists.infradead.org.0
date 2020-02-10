@@ -2,68 +2,37 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4774315635D
-	for <lists+linux-um@lfdr.de>; Sat,  8 Feb 2020 08:57:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 94987156F08
+	for <lists+linux-um@lfdr.de>; Mon, 10 Feb 2020 07:03:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=YBTGWJDobp7xBvgXTD4SOoOR6iTQnoilsIJcimp4cYE=; b=M1XkUoRtF+trqDfWrmTCHVoz6
-	0WnvkNdbc403G69/0GOxU0EdUGj0/Q9tSXcLVRHMcMLd/H7hPjr+lpWneWVc6RfPDOBu9wa1aVU0v
-	876hwEfYnzjbXcldkeCPoj6rJv6gmKF+xPVwX4Pka78uARHtwf17tOpFnPRo7p2rY/KJHqMP6Fal0
-	ZW1MGg7kX4htkW6XOTxdlEVJL50Ukd4TjkilCfsyMXIaxIZQTxAWmsSQ0GGMT7yGvsherpMhXuoT5
-	/P+V7A9Ho1qyqPzDNdfNdvJ1Krh4qf+n9Tex5lFJaF7J+I/cmq/3mkOhaTatTBnB7sLy3cG2O+Ab+
-	yXMMO8FBA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=23s7spPUrXtgcoTjhsY321my1+3ihb0HdIlel8cVjsc=; b=gBeYKBZS0QHjMS
+	9bM3PK/XEplTKa7dM0m8nevkI0NfArFJOb941UKPJuhiu4mdZagf1kMcD5T3RwPIboubUcBTFCZY0
+	qcPgO8GuvfhJoeXJHjNCqyhP1us3bY8q+c3OPUtqoveWdS4Ngs3C0EDQtKKZMJGmkgLJFz/1FbHHx
+	hVLs2i3gcGv0CUvnmUC1+wqw0h0zvCQrB0Pkdmgh90jxIXast4FpuOb7d7EdWh0y6qzc3hQHeCJXD
+	cTe5CbPN0xVXbZ9Dc6RUNCr2tGlGpv0cl8B0IMb/mnPil6pDimKaYlIJ1V82OJm5ZPLEhiITZY6Hk
+	fYFnk+6Y8sbdsHMzsrTw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j0KzI-0005tX-O5; Sat, 08 Feb 2020 07:57:12 +0000
-Received: from ivanoab7.miniserver.com ([37.128.132.42]
- helo=www.kot-begemot.co.uk)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j0KzF-0005tE-4Q
- for linux-um@lists.infradead.org; Sat, 08 Feb 2020 07:57:11 +0000
-Received: from tun252.jain.kot-begemot.co.uk ([192.168.18.6]
- helo=jain.kot-begemot.co.uk)
- by www.kot-begemot.co.uk with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.92) (envelope-from <anton.ivanov@cambridgegreys.com>)
- id 1j0Kz6-0006fj-Jw; Sat, 08 Feb 2020 07:57:02 +0000
-Received: from sleer.kot-begemot.co.uk ([192.168.3.72])
- by jain.kot-begemot.co.uk with esmtps
- (TLS1.3:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
- (envelope-from <anton.ivanov@cambridgegreys.com>)
- id 1j0Kz4-0007GD-8F; Sat, 08 Feb 2020 07:57:00 +0000
-Subject: Re: [PATCH v3] uml: make CONFIG_STATIC_LINK actually static
-To: Brendan Higgins <brendanhiggins@google.com>, Jeff Dike
- <jdike@addtoit.com>, Richard Weinberger <richard@nod.at>,
- Geert Uytterhoeven <geert@linux-m68k.org>,
- James McMechan <james_mcmechan@hotmail.com>
-References: <20200124221401.210449-1-brendanhiggins@google.com>
- <CAFd5g44eznV-9cPf4JVpsJo93+R8YCqUwBqRf+PbjaRMizy1aQ@mail.gmail.com>
-From: Anton Ivanov <anton.ivanov@cambridgegreys.com>
-Organization: Cambridge Greys
-Message-ID: <7f8b86f1-3759-c9ff-6216-a7104edb8030@cambridgegreys.com>
-Date: Sat, 8 Feb 2020 07:56:58 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+	id 1j12A6-0006Xp-D5; Mon, 10 Feb 2020 06:03:14 +0000
+Received: from [80.156.29.194] (helo=bombadil.infradead.org)
+ by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j12A3-0006Ta-Cq; Mon, 10 Feb 2020 06:03:11 +0000
+Received: from mchehab by bombadil.infradead.org with local (Exim 4.92.3)
+ (envelope-from <mchehab@bombadil.infradead.org>)
+ id 1j12A1-00C2Ua-MU; Mon, 10 Feb 2020 07:03:09 +0100
+From: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+To: Linux Media Mailing List <linux-media@vger.kernel.org>
+Subject: [PATCH 00/28] docs: virt: manually convert text documents to ReST
+ format
+Date: Mon, 10 Feb 2020 07:02:38 +0100
+Message-Id: <cover.1581314316.git.mchehab+huawei@kernel.org>
+X-Mailer: git-send-email 2.24.1
 MIME-Version: 1.0
-In-Reply-To: <CAFd5g44eznV-9cPf4JVpsJo93+R8YCqUwBqRf+PbjaRMizy1aQ@mail.gmail.com>
-Content-Language: en-US
-X-Spam-Score: -1.0
-X-Spam-Score: -1.0
-X-Clacks-Overhead: GNU Terry Pratchett
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200207_235709_175731_782B7838 
-X-CRM114-Status: GOOD (  15.69  )
-X-Spam-Score: 0.3 (/)
-X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.3 KHOP_HELO_FCRDNS       Relay HELO differs from its IP's reverse DNS
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,114 +44,133 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: linux-um <linux-um@lists.infradead.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- David Gow <davidgow@google.com>
+Cc: kvm@vger.kernel.org, Jonathan Corbet <corbet@lwn.net>,
+ Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
+ Richard Weinberger <richard@nod.at>, Jeff Dike <jdike@addtoit.com>,
+ linux-doc@vger.kernel.org, linux-um@lists.infradead.org,
+ Mauro Carvalho Chehab <mchehab@infradead.org>,
+ Paolo Bonzini <pbonzini@redhat.com>,
+ Anton Ivanov <anton.ivanov@cambridgegreys.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On 08/02/2020 01:07, Brendan Higgins wrote:
-> On Fri, Jan 24, 2020 at 2:14 PM Brendan Higgins
-> <brendanhiggins@google.com> wrote:
->>
->> Currently, CONFIG_STATIC_LINK can be enabled with options which cannot
->> be statically linked, namely UML_NET_VECTOR, UML_NET_VDE, and
->> UML_NET_PCAP; this is because glibc tries to load NSS which does not
->> support being statically linked. So make CONFIG_STATIC_LINK depend on
->> !UML_NET_VECTOR && !UML_NET_VDE && !UML_NET_PCAP.
->>
->> Link: https://lore.kernel.org/lkml/f658f317-be54-ed75-8296-c373c2dcc697@cambridgegreys.com/#t
->> Signed-off-by: Brendan Higgins <brendanhiggins@google.com>
->> ---
-> 
-> Ping.
+Manually convert the documentation under Documentation/virt to ReST,
+minimizing the usage of uneeded markups and preserving the documentation
+writer's style.
 
-ICMP echo reply,
+PS.: Patches are against linux-next tree (20200204).
 
-I thought I acked it :)
+v3:
 
-If not - apologies.
+- locking.rst now uses tables for the two concurrency examples;
+- The file guest-halt-polling.txt was still under Documentation/virtual.
+  Converted to ReST and moved to Documentaion/virt;
+- Addressed the issues pointed by Cornelia and Paolo.
 
-A.
+v2:
 
-> 
->>   arch/um/Kconfig         | 8 +++++++-
->>   arch/um/drivers/Kconfig | 3 +++
->>   2 files changed, 10 insertions(+), 1 deletion(-)
->>
->> diff --git a/arch/um/Kconfig b/arch/um/Kconfig
->> index 0917f8443c285..28d62151fb2ed 100644
->> --- a/arch/um/Kconfig
->> +++ b/arch/um/Kconfig
->> @@ -62,9 +62,12 @@ config NR_CPUS
->>
->>   source "arch/$(HEADER_ARCH)/um/Kconfig"
->>
->> +config FORBID_STATIC_LINK
->> +       bool
->> +
->>   config STATIC_LINK
->>          bool "Force a static link"
->> -       default n
->> +       depends on !FORBID_STATIC_LINK
->>          help
->>            This option gives you the ability to force a static link of UML.
->>            Normally, UML is linked as a shared binary.  This is inconvenient for
->> @@ -73,6 +76,9 @@ config STATIC_LINK
->>            Additionally, this option enables using higher memory spaces (up to
->>            2.75G) for UML.
->>
->> +         NOTE: This option is incompatible with some networking features which
->> +         depend on features that require being dynamically loaded (like NSS).
->> +
->>   config LD_SCRIPT_STATIC
->>          bool
->>          default y
->> diff --git a/arch/um/drivers/Kconfig b/arch/um/drivers/Kconfig
->> index 72d4170557820..9160ead56e33c 100644
->> --- a/arch/um/drivers/Kconfig
->> +++ b/arch/um/drivers/Kconfig
->> @@ -234,6 +234,7 @@ config UML_NET_DAEMON
->>   config UML_NET_VECTOR
->>          bool "Vector I/O high performance network devices"
->>          depends on UML_NET
->> +       select FORBID_STATIC_LINK
->>          help
->>          This User-Mode Linux network driver uses multi-message send
->>          and receive functions. The host running the UML guest must have
->> @@ -245,6 +246,7 @@ config UML_NET_VECTOR
->>   config UML_NET_VDE
->>          bool "VDE transport (obsolete)"
->>          depends on UML_NET
->> +       select FORBID_STATIC_LINK
->>          help
->>          This User-Mode Linux network transport allows one or more running
->>          UMLs on a single host to communicate with each other and also
->> @@ -292,6 +294,7 @@ config UML_NET_MCAST
->>   config UML_NET_PCAP
->>          bool "pcap transport (obsolete)"
->>          depends on UML_NET
->> +       select FORBID_STATIC_LINK
->>          help
->>          The pcap transport makes a pcap packet stream on the host look
->>          like an ethernet device inside UML.  This is useful for making
->> --
->> 2.25.0.341.g760bfbb309-goog
->>
-> 
-> _______________________________________________
-> linux-um mailing list
-> linux-um@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-um
-> 
+- Solved a conflict with linux-next;
+- Added SPDX headers.
 
+
+Mauro Carvalho Chehab (28):
+  docs: kvm: add arm/pvtime.rst to index.rst
+  docs: virt: convert UML documentation to ReST
+  docs: virt: user_mode_linux.rst: update compiling instructions
+  docs: virt: user_mode_linux.rst: fix URL references
+  docs: virt: convert halt-polling.txt to ReST format
+  docs: virt: Convert msr.txt to ReST format
+  docs: kvm: devices/arm-vgic-its.txt to ReST format
+  docs: kvm: devices/arm-vgit-v3.txt to ReST
+  docs: kvm: convert devices/arm-vgit.txt to ReST
+  docs: kvm: convert devices/mpic.txt to ReST
+  docs: kvm: convert devices/s390_flic.txt to ReST
+  docs: kvm: convert devices/vcpu.txt to ReST
+  docs: kvm: convert devices/vfio.txt to ReST
+  docs: kvm: convert devices/vm.txt to ReST
+  docs: kvm: convert devices/xics.txt to ReST
+  docs: kvm: convert devices/xive.txt to ReST
+  docs: kvm: Convert api.txt to ReST format
+  docs: kvm: convert arm/hyp-abi.txt to ReST
+  docs: kvm: arm/psci.txt: convert to ReST
+  docs: kvm: Convert hypercalls.txt to ReST format
+  docs: kvm: Convert locking.txt to ReST format
+  docs: kvm: Convert mmu.txt to ReST format
+  docs: kvm: Convert nested-vmx.txt to ReST format
+  docs: kvm: Convert ppc-pv.txt to ReST format
+  docs: kvm: Convert s390-diag.txt to ReST format
+  docs: kvm: Convert timekeeping.txt to ReST format
+  docs: kvm: review-checklist.txt: rename to ReST
+  docs: virt: guest-halt-polling.txt convert to ReST
+
+ .../guest-halt-polling.rst}                   |   12 +-
+ Documentation/virt/index.rst                  |    2 +
+ Documentation/virt/kvm/{api.txt => api.rst}   | 3348 ++++++++++-------
+ .../virt/kvm/arm/{hyp-abi.txt => hyp-abi.rst} |   28 +-
+ Documentation/virt/kvm/arm/index.rst          |   12 +
+ .../virt/kvm/arm/{psci.txt => psci.rst}       |   46 +-
+ .../{arm-vgic-its.txt => arm-vgic-its.rst}    |  106 +-
+ .../{arm-vgic-v3.txt => arm-vgic-v3.rst}      |  132 +-
+ .../devices/{arm-vgic.txt => arm-vgic.rst}    |   89 +-
+ Documentation/virt/kvm/devices/index.rst      |   19 +
+ .../virt/kvm/devices/{mpic.txt => mpic.rst}   |   11 +-
+ .../devices/{s390_flic.txt => s390_flic.rst}  |   70 +-
+ Documentation/virt/kvm/devices/vcpu.rst       |  114 +
+ Documentation/virt/kvm/devices/vcpu.txt       |   76 -
+ .../virt/kvm/devices/{vfio.txt => vfio.rst}   |   25 +-
+ .../virt/kvm/devices/{vm.txt => vm.rst}       |  206 +-
+ .../virt/kvm/devices/{xics.txt => xics.rst}   |   28 +-
+ .../virt/kvm/devices/{xive.txt => xive.rst}   |  148 +-
+ .../{halt-polling.txt => halt-polling.rst}    |   86 +-
+ .../kvm/{hypercalls.txt => hypercalls.rst}    |  129 +-
+ Documentation/virt/kvm/index.rst              |   16 +
+ Documentation/virt/kvm/locking.rst            |  243 ++
+ Documentation/virt/kvm/locking.txt            |  215 --
+ Documentation/virt/kvm/{mmu.txt => mmu.rst}   |   62 +-
+ Documentation/virt/kvm/{msr.txt => msr.rst}   |  147 +-
+ .../kvm/{nested-vmx.txt => nested-vmx.rst}    |   37 +-
+ .../virt/kvm/{ppc-pv.txt => ppc-pv.rst}       |   26 +-
+ ...iew-checklist.txt => review-checklist.rst} |    3 +
+ .../virt/kvm/{s390-diag.txt => s390-diag.rst} |   13 +-
+ .../kvm/{timekeeping.txt => timekeeping.rst}  |  221 +-
+ ...odeLinux-HOWTO.txt => user_mode_linux.rst} | 1814 ++++-----
+ 31 files changed, 4194 insertions(+), 3290 deletions(-)
+ rename Documentation/{virtual/guest-halt-polling.txt => virt/guest-halt-polling.rst} (91%)
+ rename Documentation/virt/kvm/{api.txt => api.rst} (71%)
+ rename Documentation/virt/kvm/arm/{hyp-abi.txt => hyp-abi.rst} (79%)
+ create mode 100644 Documentation/virt/kvm/arm/index.rst
+ rename Documentation/virt/kvm/arm/{psci.txt => psci.rst} (60%)
+ rename Documentation/virt/kvm/devices/{arm-vgic-its.txt => arm-vgic-its.rst} (71%)
+ rename Documentation/virt/kvm/devices/{arm-vgic-v3.txt => arm-vgic-v3.rst} (77%)
+ rename Documentation/virt/kvm/devices/{arm-vgic.txt => arm-vgic.rst} (66%)
+ create mode 100644 Documentation/virt/kvm/devices/index.rst
+ rename Documentation/virt/kvm/devices/{mpic.txt => mpic.rst} (91%)
+ rename Documentation/virt/kvm/devices/{s390_flic.txt => s390_flic.rst} (87%)
+ create mode 100644 Documentation/virt/kvm/devices/vcpu.rst
+ delete mode 100644 Documentation/virt/kvm/devices/vcpu.txt
+ rename Documentation/virt/kvm/devices/{vfio.txt => vfio.rst} (72%)
+ rename Documentation/virt/kvm/devices/{vm.txt => vm.rst} (61%)
+ rename Documentation/virt/kvm/devices/{xics.txt => xics.rst} (84%)
+ rename Documentation/virt/kvm/devices/{xive.txt => xive.rst} (62%)
+ rename Documentation/virt/kvm/{halt-polling.txt => halt-polling.rst} (64%)
+ rename Documentation/virt/kvm/{hypercalls.txt => hypercalls.rst} (55%)
+ create mode 100644 Documentation/virt/kvm/locking.rst
+ delete mode 100644 Documentation/virt/kvm/locking.txt
+ rename Documentation/virt/kvm/{mmu.txt => mmu.rst} (94%)
+ rename Documentation/virt/kvm/{msr.txt => msr.rst} (74%)
+ rename Documentation/virt/kvm/{nested-vmx.txt => nested-vmx.rst} (90%)
+ rename Documentation/virt/kvm/{ppc-pv.txt => ppc-pv.rst} (91%)
+ rename Documentation/virt/kvm/{review-checklist.txt => review-checklist.rst} (95%)
+ rename Documentation/virt/kvm/{s390-diag.txt => s390-diag.rst} (90%)
+ rename Documentation/virt/kvm/{timekeeping.txt => timekeeping.rst} (85%)
+ rename Documentation/virt/uml/{UserModeLinux-HOWTO.txt => user_mode_linux.rst} (74%)
 
 -- 
-Anton R. Ivanov
-Cambridgegreys Limited. Registered in England. Company Number 10273661
-https://www.cambridgegreys.com/
+2.24.1
+
+
 
 _______________________________________________
 linux-um mailing list
