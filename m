@@ -2,54 +2,49 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BE6C6158041
-	for <lists+linux-um@lfdr.de>; Mon, 10 Feb 2020 17:55:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 64369158384
+	for <lists+linux-um@lfdr.de>; Mon, 10 Feb 2020 20:24:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Q7yI3pIGnm+LYZorpIo8rQ19c6LqubThyOk74cqbf2c=; b=sLhFWX/dBtbUeFoYS1CoOQiN7
-	NRwDcGwVmHPFo4WxP0xEWbyNiJG1XgcE3NpRVxb6sR1usxYLPt7qhJgZHtd7LSNFQohWZG//JEEgk
-	zUga1EwkA6TaumtmpDnLUEIKFMMCK0rrNnwMcRPlMgICyJe8Pu1o8rvzMsX63m3jTnL/FA/8YU6Mb
-	gzMaj32UXaEna3j2NFB/0nPa9pcbzz/K8nfEUCnuRGLdbLbDDxmh8nEoZu/257x1IZ9+rHxV/7HY4
-	8nKCYqF0jqmCkX466wrWlU2zsMZxTARY/li9EAEZrhxA98Y2EG8EfpiFUK+X8U/POmdyH/2HT3ls8
-	6c4BL2ukw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=DOBnJPwVZbagK0jeIy2/QfxfDQhNi7LqGbSAEsMf1F4=; b=c8bqFKezjmPuFB
+	fMQ4d89euizK7LFKXpQ1UCKOvj8VkXOaSmyBzS7rH98pURVwiF0cF1/ZlIQSf65YQaHqVsi3Bete0
+	xeIlNBHoy9AWsdJb9Uwrj3TvM61qoBllWyl07MNjcQ/Zwu6hXVuPeV+rs97q8/YD3V4wOOmMPHvxl
+	gqWJEqykE5frstI+TneJ/DnXeV8Ju09g5CWIIiirZrEfnAlS3Q6yADeNYE0Z+dOM/TVExfjAd+D8G
+	ZLB/f3VhXmpDTyff+i6/jvS4XiRnCX1FlLDd1ae+u+slrI4TE2SYqaoMQ+5T6n7x+Cz0cThSlz1zh
+	TPyBMqAHwP0dNNavrUPg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1CLk-0004pm-LL; Mon, 10 Feb 2020 16:55:56 +0000
-Received: from ivanoab7.miniserver.com ([37.128.132.42]
- helo=www.kot-begemot.co.uk)
+	id 1j1EfP-0002OA-SX; Mon, 10 Feb 2020 19:24:23 +0000
+Received: from s3.sipsolutions.net ([2a01:4f8:191:4433::2]
+ helo=sipsolutions.net)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1CLg-0004oJ-T8
- for linux-um@lists.infradead.org; Mon, 10 Feb 2020 16:55:54 +0000
-Received: from tun252.jain.kot-begemot.co.uk ([192.168.18.6]
- helo=jain.kot-begemot.co.uk)
- by www.kot-begemot.co.uk with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.92) (envelope-from <anton.ivanov@cambridgegreys.com>)
- id 1j1CLa-0004sq-Iu; Mon, 10 Feb 2020 16:55:46 +0000
-Received: from jain.kot-begemot.co.uk ([192.168.3.3])
- by jain.kot-begemot.co.uk with esmtp (Exim 4.92)
- (envelope-from <anton.ivanov@cambridgegreys.com>)
- id 1j1CLY-0004P0-4b; Mon, 10 Feb 2020 16:55:46 +0000
-Subject: Re: [PATCH] virtio: Work around frames incorrectly marked as gso
-To: netdev@vger.kernel.org
-References: <20191209104824.17059-1-anton.ivanov@cambridgegreys.com>
-From: Anton Ivanov <anton.ivanov@cambridgegreys.com>
-Message-ID: <57230228-7030-c65f-a24f-910ca52bbe9e@cambridgegreys.com>
-Date: Mon, 10 Feb 2020 16:55:44 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ id 1j1EfN-0002NF-0H
+ for linux-um@lists.infradead.org; Mon, 10 Feb 2020 19:24:22 +0000
+Received: by sipsolutions.net with esmtpsa
+ (TLS1.3:ECDHE_SECP256R1__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
+ (Exim 4.93) (envelope-from <johannes@sipsolutions.net>)
+ id 1j1EfI-000ajs-3E; Mon, 10 Feb 2020 20:24:16 +0100
+Message-ID: <245eb08f8ecca1435c882f0be4f1543e22501694.camel@sipsolutions.net>
+Subject: Re: [DEMO] um: demonstrate super early constructors
+From: Johannes Berg <johannes@sipsolutions.net>
+To: Patricia Alfonso <trishalfonso@google.com>
+Date: Mon, 10 Feb 2020 20:24:15 +0100
+In-Reply-To: <CAKFsvUJzj-DXe9sDumyYmSr2WqrBCK6Xiuon+G1w8Jeycsc7tA@mail.gmail.com>
+ (sfid-20200207_013125_010309_E966A98D)
+References: <20200206204937.db680692f366.Ie05fc2ad440c8db59c1519194aeac356469efa72@changeid>
+ <51a008bc836a2630ee59e8d521cd3d1cc475a96d.camel@sipsolutions.net>
+ <CAKFsvUJzj-DXe9sDumyYmSr2WqrBCK6Xiuon+G1w8Jeycsc7tA@mail.gmail.com>
+ (sfid-20200207_013125_010309_E966A98D)
+User-Agent: Evolution 3.34.2 (3.34.2-1.fc31) 
 MIME-Version: 1.0
-In-Reply-To: <20191209104824.17059-1-anton.ivanov@cambridgegreys.com>
-Content-Language: en-US
-X-Spam-Score: -1.0
-X-Spam-Score: -1.0
-X-Clacks-Overhead: GNU Terry Pratchett
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200210_085552_933932_D4CD143A 
-X-CRM114-Status: GOOD (  17.70  )
+X-CRM114-CacheID: sfid-20200210_112421_040700_1E386D4D 
+X-CRM114-Status: UNSURE (   4.12  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.4 points)
@@ -69,64 +64,21 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: jasowang@redhat.com, virtualization@lists.linux-foundation.org,
- linux-um@lists.infradead.org, mst@redhat.com
+Cc: linux-um@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
+Hi,
 
+> Thank you so much for this patch!! I have been trying to find an
+> elegant fix all week and this is perfect!
 
-On 09/12/2019 10:48, anton.ivanov@cambridgegreys.com wrote:
-> From: Anton Ivanov <anton.ivanov@cambridgegreys.com>
-> 
-> Some of the frames marked as GSO which arrive at
-> virtio_net_hdr_from_skb() have no GSO_TYPE, no
-> fragments (data_len = 0) and length significantly shorter
-> than the MTU (752 in my experiments).
-> 
-> This is observed on raw sockets reading off vEth interfaces
-> in all 4.x and 5.x kernels I tested.
-> 
-> These frames are reported as invalid while they are in fact
-> gso-less frames.
-> 
-> This patch marks the vnet header as no-GSO for them instead
-> of reporting it as invalid.
-> 
-> Signed-off-by: Anton Ivanov <anton.ivanov@cambridgegreys.com>
-> ---
->   include/linux/virtio_net.h | 8 ++++++--
->   1 file changed, 6 insertions(+), 2 deletions(-)
-> 
-> diff --git a/include/linux/virtio_net.h b/include/linux/virtio_net.h
-> index 0d1fe9297ac6..d90d5cff1b9a 100644
-> --- a/include/linux/virtio_net.h
-> +++ b/include/linux/virtio_net.h
-> @@ -112,8 +112,12 @@ static inline int virtio_net_hdr_from_skb(const struct sk_buff *skb,
->   			hdr->gso_type = VIRTIO_NET_HDR_GSO_TCPV4;
->   		else if (sinfo->gso_type & SKB_GSO_TCPV6)
->   			hdr->gso_type = VIRTIO_NET_HDR_GSO_TCPV6;
-> -		else
-> -			return -EINVAL;
-> +		else {
-> +			if (skb->data_len == 0)
-> +				hdr->gso_type = VIRTIO_NET_HDR_GSO_NONE;
-> +			else
-> +				return -EINVAL;
-> +		}
->   		if (sinfo->gso_type & SKB_GSO_TCP_ECN)
->   			hdr->gso_type |= VIRTIO_NET_HDR_GSO_ECN;
->   	} else
-> 
+Glad it helped :-)
 
-ping.
+johannes
 
--- 
-Anton R. Ivanov
-Cambridgegreys Limited. Registered in England. Company Number 10273661
-https://www.cambridgegreys.com/
 
 _______________________________________________
 linux-um mailing list
