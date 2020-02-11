@@ -2,58 +2,48 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 14516158A90
-	for <lists+linux-um@lfdr.de>; Tue, 11 Feb 2020 08:42:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 18228158B35
+	for <lists+linux-um@lfdr.de>; Tue, 11 Feb 2020 09:21:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=FFt4OQ+FMw8Xfpe8YgXqpIErF1ylkqUB4xF7tyydFkE=; b=EoJDV2J0/kB4r6OTq0+mXQliX
-	ENrOOOzcbLISg//86u7x8uUNLohokgPbJ5kvg9x7DjuuKIcfkRn8pMQdf7HOhSoDsAkTJnPLbA99J
-	fKhjOJ7NFbD+EouHB44FW3Qztimmc9XGyFC61lmI5+4cUDHlfzLdWp2ePdKUdjayO3BSuzcekrcye
-	zzEZJ9gfTIwbLUMCU0cdwogR4cGrpdUPAjSnW/uAPeWt9wMZafivY+wemYry7wNFkEha7G3NqdZo3
-	728jz8DEnHWp/Zt2+NpMUJKBeGNr0Vx0KhIkQzeQXWkM7xmRDnlmvUnQxEOzi+iLkCiAEU95DxDUr
-	sfr9FlAWA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=fVAuWcSiLY5kRxCdNrn1dd1tXjdGSd7nr4BH6FX/gkQ=; b=QLP4ezDYrmtWyF
+	UvgTtfqFMvaX+9EsvLrrXmmY6Ma+xSnwLHESJdebHGeLQB05Ki0myDYDyF30r8ttsWXqQordclNzn
+	z837rnn4V+kz46vMdfukjapVf3Tndw8x4ZihBkJEE2IpEQLNqgpaHZsB+8d8XroQ1WCpuJC5KhOX+
+	yJnMhoQNAhNY00FFAcOpAmXqZOwvtjv+6Vp26Hc934AUppdNUi5C1ca/Qpkw/XfXd7m+CpOXikYB2
+	Fqe8RCxbm4X68q6vbvHybGbdNFr5TeqHLwP6h6H+jhvgvdp8HWqkU55YriD3shQc+DCmzf5Lp07qC
+	34wv1K+0fsgWdsszRXfg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1QBy-0007i4-JL; Tue, 11 Feb 2020 07:42:46 +0000
-Received: from ivanoab7.miniserver.com ([37.128.132.42]
- helo=www.kot-begemot.co.uk)
+	id 1j1QnE-0006dZ-DW; Tue, 11 Feb 2020 08:21:16 +0000
+Received: from s3.sipsolutions.net ([2a01:4f8:191:4433::2]
+ helo=sipsolutions.net)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1QBv-0007hi-NP
- for linux-um@lists.infradead.org; Tue, 11 Feb 2020 07:42:45 +0000
-Received: from tun252.jain.kot-begemot.co.uk ([192.168.18.6]
- helo=jain.kot-begemot.co.uk)
- by www.kot-begemot.co.uk with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.92) (envelope-from <anton.ivanov@cambridgegreys.com>)
- id 1j1QBs-0007Vn-1k; Tue, 11 Feb 2020 07:42:40 +0000
-Received: from sleer.kot-begemot.co.uk ([192.168.3.72])
- by jain.kot-begemot.co.uk with esmtps
- (TLS1.3:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
- (envelope-from <anton.ivanov@cambridgegreys.com>)
- id 1j1QBp-0007Nw-Mr; Tue, 11 Feb 2020 07:42:39 +0000
-Subject: Re: [PATCH] virtio: Work around frames incorrectly marked as gso
-To: Jason Wang <jasowang@redhat.com>, netdev@vger.kernel.org
-References: <20191209104824.17059-1-anton.ivanov@cambridgegreys.com>
- <57230228-7030-c65f-a24f-910ca52bbe9e@cambridgegreys.com>
- <f78bfe6e-2ffc-3734-9618-470f1afea0c6@redhat.com>
-From: Anton Ivanov <anton.ivanov@cambridgegreys.com>
-Organization: Cambridge Greys
-Message-ID: <918222d9-816a-be70-f8af-b8dfcb586240@cambridgegreys.com>
-Date: Tue, 11 Feb 2020 07:42:37 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ id 1j1QnA-0006cg-Ry
+ for linux-um@lists.infradead.org; Tue, 11 Feb 2020 08:21:14 +0000
+Received: by sipsolutions.net with esmtpsa
+ (TLS1.3:ECDHE_SECP256R1__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
+ (Exim 4.93) (envelope-from <johannes@sipsolutions.net>)
+ id 1j1Qmu-0029iO-8e; Tue, 11 Feb 2020 09:20:56 +0100
+Message-ID: <13b0ea0caff576e7944e4f9b91560bf46ac9caf0.camel@sipsolutions.net>
+Subject: Re: [RFC PATCH v2] UML: add support for KASAN under x86_64
+From: Johannes Berg <johannes@sipsolutions.net>
+To: Patricia Alfonso <trishalfonso@google.com>, jdike@addtoit.com, 
+ richard@nod.at, anton.ivanov@cambridgegreys.com, aryabinin@virtuozzo.com, 
+ dvyukov@google.com, davidgow@google.com, brendanhiggins@google.com
+Date: Tue, 11 Feb 2020 09:20:54 +0100
+In-Reply-To: <20200210225806.249297-1-trishalfonso@google.com>
+ (sfid-20200210_235813_002927_509D549C)
+References: <20200210225806.249297-1-trishalfonso@google.com>
+ (sfid-20200210_235813_002927_509D549C)
+User-Agent: Evolution 3.34.2 (3.34.2-1.fc31) 
 MIME-Version: 1.0
-In-Reply-To: <f78bfe6e-2ffc-3734-9618-470f1afea0c6@redhat.com>
-Content-Language: en-US
-X-Spam-Score: -1.0
-X-Spam-Score: -1.0
-X-Clacks-Overhead: GNU Terry Pratchett
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200210_234243_762644_7D203FAD 
-X-CRM114-Status: GOOD (  14.56  )
+X-CRM114-CacheID: sfid-20200211_002112_905455_047B8578 
+X-CRM114-Status: GOOD (  16.53  )
 X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.4 points)
@@ -73,53 +63,120 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: virtualization@lists.linux-foundation.org, linux-um@lists.infradead.org,
- mst@redhat.com
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: linux-um@lists.infradead.org, linux-kernel@vger.kernel.org,
+ kasan-dev@googlegroups.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-T24gMTEvMDIvMjAyMCAwMjo1MSwgSmFzb24gV2FuZyB3cm90ZToKPiAKPiBPbiAyMDIwLzIvMTEg
-5LiK5Y2IMTI6NTUsIEFudG9uIEl2YW5vdiB3cm90ZToKPj4KPj4KPj4gT24gMDkvMTIvMjAxOSAx
-MDo0OCwgYW50b24uaXZhbm92QGNhbWJyaWRnZWdyZXlzLmNvbSB3cm90ZToKPj4+IEZyb206IEFu
-dG9uIEl2YW5vdiA8YW50b24uaXZhbm92QGNhbWJyaWRnZWdyZXlzLmNvbT4KPj4+Cj4+PiBTb21l
-IG9mIHRoZSBmcmFtZXMgbWFya2VkIGFzIEdTTyB3aGljaCBhcnJpdmUgYXQKPj4+IHZpcnRpb19u
-ZXRfaGRyX2Zyb21fc2tiKCkgaGF2ZSBubyBHU09fVFlQRSwgbm8KPj4+IGZyYWdtZW50cyAoZGF0
-YV9sZW4gPSAwKSBhbmQgbGVuZ3RoIHNpZ25pZmljYW50bHkgc2hvcnRlcgo+Pj4gdGhhbiB0aGUg
-TVRVICg3NTIgaW4gbXkgZXhwZXJpbWVudHMpLgo+Pj4KPj4+IFRoaXMgaXMgb2JzZXJ2ZWQgb24g
-cmF3IHNvY2tldHMgcmVhZGluZyBvZmYgdkV0aCBpbnRlcmZhY2VzCj4+PiBpbiBhbGwgNC54IGFu
-ZCA1Lngga2VybmVscyBJIHRlc3RlZC4KPj4+Cj4+PiBUaGVzZSBmcmFtZXMgYXJlIHJlcG9ydGVk
-IGFzIGludmFsaWQgd2hpbGUgdGhleSBhcmUgaW4gZmFjdAo+Pj4gZ3NvLWxlc3MgZnJhbWVzLgo+
-Pj4KPj4+IFRoaXMgcGF0Y2ggbWFya3MgdGhlIHZuZXQgaGVhZGVyIGFzIG5vLUdTTyBmb3IgdGhl
-bSBpbnN0ZWFkCj4+PiBvZiByZXBvcnRpbmcgaXQgYXMgaW52YWxpZC4KPj4+Cj4+PiBTaWduZWQt
-b2ZmLWJ5OiBBbnRvbiBJdmFub3YgPGFudG9uLml2YW5vdkBjYW1icmlkZ2VncmV5cy5jb20+Cj4+
-PiAtLS0KPj4+IMKgIGluY2x1ZGUvbGludXgvdmlydGlvX25ldC5oIHwgOCArKysrKystLQo+Pj4g
-wqAgMSBmaWxlIGNoYW5nZWQsIDYgaW5zZXJ0aW9ucygrKSwgMiBkZWxldGlvbnMoLSkKPj4+Cj4+
-PiBkaWZmIC0tZ2l0IGEvaW5jbHVkZS9saW51eC92aXJ0aW9fbmV0LmggYi9pbmNsdWRlL2xpbnV4
-L3ZpcnRpb19uZXQuaAo+Pj4gaW5kZXggMGQxZmU5Mjk3YWM2Li5kOTBkNWNmZjFiOWEgMTAwNjQ0
-Cj4+PiAtLS0gYS9pbmNsdWRlL2xpbnV4L3ZpcnRpb19uZXQuaAo+Pj4gKysrIGIvaW5jbHVkZS9s
-aW51eC92aXJ0aW9fbmV0LmgKPj4+IEBAIC0xMTIsOCArMTEyLDEyIEBAIHN0YXRpYyBpbmxpbmUg
-aW50IHZpcnRpb19uZXRfaGRyX2Zyb21fc2tiKGNvbnN0IAo+Pj4gc3RydWN0IHNrX2J1ZmYgKnNr
-YiwKPj4+IMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGhkci0+Z3NvX3R5cGUgPSBWSVJUSU9f
-TkVUX0hEUl9HU09fVENQVjQ7Cj4+PiDCoMKgwqDCoMKgwqDCoMKgwqAgZWxzZSBpZiAoc2luZm8t
-Pmdzb190eXBlICYgU0tCX0dTT19UQ1BWNikKPj4+IMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-IGhkci0+Z3NvX3R5cGUgPSBWSVJUSU9fTkVUX0hEUl9HU09fVENQVjY7Cj4+PiAtwqDCoMKgwqDC
-oMKgwqAgZWxzZQo+Pj4gLcKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgcmV0dXJuIC1FSU5WQUw7Cj4+
-PiArwqDCoMKgwqDCoMKgwqAgZWxzZSB7Cj4+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBpZiAo
-c2tiLT5kYXRhX2xlbiA9PSAwKQo+Pj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBo
-ZHItPmdzb190eXBlID0gVklSVElPX05FVF9IRFJfR1NPX05PTkU7Cj4+PiArwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoCBlbHNlCj4+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHJldHVy
-biAtRUlOVkFMOwo+Pj4gK8KgwqDCoMKgwqDCoMKgIH0KPj4+IMKgwqDCoMKgwqDCoMKgwqDCoCBp
-ZiAoc2luZm8tPmdzb190eXBlICYgU0tCX0dTT19UQ1BfRUNOKQo+Pj4gwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqAgaGRyLT5nc29fdHlwZSB8PSBWSVJUSU9fTkVUX0hEUl9HU09fRUNOOwo+Pj4g
-wqDCoMKgwqDCoCB9IGVsc2UKPj4+Cj4+Cj4+IHBpbmcuCj4+Cj4gCj4gRG8geW91IG1lYW4gZ3Nv
-X3NpemUgaXMgc2V0IGJ1dCBnc29fdHlwZSBpcyBub3Q/IExvb2tzIGxpa2UgYSBidWcgCj4gZWxz
-ZXdoZXJlLgo+IAo+IFRoYW5rcwo+IAo+IApZZXMuCgpJIGNvdWxkIG5vdCB0cmFjZSBpdCB3aGVy
-ZSBpdCBpcyBjb21pbmcgZnJvbS4KCkkgc2VlIGl0IHdoZW4gZG9pbmcgcmVjdm1tc2cgb24gcmF3
-IHNvY2tldHMgaW4gdGhlIFVNTCB2ZWN0b3IgbmV0d29yayAKZHJpdmVycy4KCgotLSAKQW50b24g
-Ui4gSXZhbm92CkNhbWJyaWRnZWdyZXlzIExpbWl0ZWQuIFJlZ2lzdGVyZWQgaW4gRW5nbGFuZC4g
-Q29tcGFueSBOdW1iZXIgMTAyNzM2NjEKaHR0cHM6Ly93d3cuY2FtYnJpZGdlZ3JleXMuY29tLwoK
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtdW0g
-bWFpbGluZyBsaXN0CmxpbnV4LXVtQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmlu
-ZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC11bQo=
+Hi,
+
+Looks very nice! Some questions/comments below:
+
+> Depends on Constructor support in UML and is based off of
+> "[RFC PATCH] um: implement CONFIG_CONSTRUCTORS for modules"
+> (https://patchwork.ozlabs.org/patch/1234551/) 
+
+I guess I should resend this as a proper patch then. Did you test
+modules? I can try (later) too.
+
+> The location of the KASAN shadow memory, starting at
+> KASAN_SHADOW_OFFSET, can be configured using the
+> KASAN_SHADOW_OFFSET option. UML uses roughly 18TB of address
+> space, and KASAN requires 1/8th of this.
+
+That also means if I have say 512MB memory allocated for UML, KASAN will
+use an *additional* 64, unlike on a "real" system, where KASAN will take
+about 1/8th of the available physical memory, right?
+
+> +	help
+> +	  This is the offset at which the ~2.25TB of shadow memory is
+> +	  initialized 
+
+Maybe that should say "mapped" instead of "initialized", since there are
+relatively few machines on which it could actually all all be used?
+
+> +// used in kasan_mem_to_shadow to divide by 8
+> +#define KASAN_SHADOW_SCALE_SHIFT 3
+
+nit: use /* */ style comments
+
+> +#define KASAN_SHADOW_START (KASAN_SHADOW_OFFSET)
+> +#define KASAN_SHADOW_END (KASAN_SHADOW_START + KASAN_SHADOW_SIZE)
+> +
+> +#ifdef CONFIG_KASAN
+> +void kasan_init(void);
+> +#else
+> +static inline void kasan_init(void) { }
+> +#endif /* CONFIG_KASAN */
+> +
+> +void kasan_map_memory(void *start, unsigned long len);
+> +void kasan_unpoison_shadow(const void *address, size_t size);
+> +
+> +#endif /* __ASM_UM_KASAN_H */
+> diff --git a/arch/um/kernel/Makefile b/arch/um/kernel/Makefile
+> index 5aa882011e04..875e1827588b 100644
+> --- a/arch/um/kernel/Makefile
+> +++ b/arch/um/kernel/Makefile
+> @@ -8,6 +8,28 @@
+>  # kernel.
+>  KCOV_INSTRUMENT                := n
+>  
+> +# The way UMl deals with the stack causes seemingly false positive KASAN
+> +# reports such as:
+> +# BUG: KASAN: stack-out-of-bounds in show_stack+0x15e/0x1fb
+> +# Read of size 8 at addr 000000006184bbb0 by task swapper/1
+> +# ==================================================================
+> +# BUG: KASAN: stack-out-of-bounds in dump_trace+0x141/0x1c5
+> +# Read of size 8 at addr 0000000071057eb8 by task swapper/1
+> +# ==================================================================
+> +# BUG: KASAN: stack-out-of-bounds in get_wchan+0xd7/0x138
+> +# Read of size 8 at addr 0000000070e8fc80 by task systemd/1
+> +#
+> +# With these files removed from instrumentation, those reports are
+> +# eliminated, but KASAN still repeatedly reports a bug on syscall_stub_data:
+> +# ==================================================================
+> +# BUG: KASAN: stack-out-of-bounds in syscall_stub_data+0x299/0x2bf
+> +# Read of size 128 at addr 0000000071457c50 by task swapper/1
+
+So that's actually something to fix still? Just trying to understand,
+I'll test it later.
+
+> -extern int printf(const char *msg, ...);
+> -static void early_print(void)
+> +#ifdef CONFIG_KASAN
+> +void kasan_init(void)
+>  {
+> -	printf("I'm super early, before constructors\n");
+> +	kasan_map_memory((void *)KASAN_SHADOW_START, KASAN_SHADOW_SIZE);
+
+Heh, you *actually* based it on my patch, in git terms, not just in code
+terms. I think you should just pick up the few lines that you need from
+that patch and squash them into this one, I just posted that to
+demonstrate more clearly what I meant :-)
+
+> +/**
+> + * kasan_map_memory() - maps memory from @start with a size of @len.
+
+I think the () shouldn't be there?
+
+> +void kasan_map_memory(void *start, size_t len)
+> +{
+> +	if (mmap(start,
+> +		 len,
+> +		 PROT_READ|PROT_WRITE,
+> +		 MAP_FIXED|MAP_ANONYMOUS|MAP_PRIVATE|MAP_NORESERVE,
+> +		 -1,
+> +		 0) == MAP_FAILED)
+> +		os_info("Couldn't allocate shadow memory %s", strerror(errno));
+
+If that fails, can we even continue?
+
+johannes
+
+
+_______________________________________________
+linux-um mailing list
+linux-um@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-um
