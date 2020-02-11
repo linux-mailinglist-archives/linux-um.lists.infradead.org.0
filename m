@@ -2,56 +2,114 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 18228158B35
-	for <lists+linux-um@lfdr.de>; Tue, 11 Feb 2020 09:21:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EE07F158CD1
+	for <lists+linux-um@lfdr.de>; Tue, 11 Feb 2020 11:38:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fVAuWcSiLY5kRxCdNrn1dd1tXjdGSd7nr4BH6FX/gkQ=; b=QLP4ezDYrmtWyF
-	UvgTtfqFMvaX+9EsvLrrXmmY6Ma+xSnwLHESJdebHGeLQB05Ki0myDYDyF30r8ttsWXqQordclNzn
-	z837rnn4V+kz46vMdfukjapVf3Tndw8x4ZihBkJEE2IpEQLNqgpaHZsB+8d8XroQ1WCpuJC5KhOX+
-	yJnMhoQNAhNY00FFAcOpAmXqZOwvtjv+6Vp26Hc934AUppdNUi5C1ca/Qpkw/XfXd7m+CpOXikYB2
-	Fqe8RCxbm4X68q6vbvHybGbdNFr5TeqHLwP6h6H+jhvgvdp8HWqkU55YriD3shQc+DCmzf5Lp07qC
-	34wv1K+0fsgWdsszRXfg==;
+	List-Owner; bh=JOyP1WNkqK1Cs8TM0u8rOl1EZ08U4s701RfGpKvJ32Y=; b=XIy3Io+BrbMNCD
+	/LcrbZZ0IXM3RCgiALB/QqK8MwJrZfQzaP4HyDfDfTXcY8cIAbpWngOwqE/xo79VYigi5O58y8tK8
+	a3uYcbtg2UjYtAHlcSm1fzXq5c1Sj04yr8ungnU6oRV4BYbQ/0OwbCt+rag/cFpyHCZ2hB2XKR7R1
+	r4JCMiFdDE9ogh8SYSwkc85tG3NBedXpJB2sHa7Q6+vUIbmbVyN9I0VgsVkeom/FG5EJBxWXMkcO/
+	WgDu3c2crbNhBPZ7iUK6zRgye2sFMKcpeJfwfVeGocE4Vn8pVXq+H63KrQORNmSvw5j36iz/1DJB5
+	1ZjDuZoSA3JJEdxc1rkQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1QnE-0006dZ-DW; Tue, 11 Feb 2020 08:21:16 +0000
-Received: from s3.sipsolutions.net ([2a01:4f8:191:4433::2]
- helo=sipsolutions.net)
+	id 1j1Svt-00026z-NC; Tue, 11 Feb 2020 10:38:21 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1QnA-0006cg-Ry
- for linux-um@lists.infradead.org; Tue, 11 Feb 2020 08:21:14 +0000
-Received: by sipsolutions.net with esmtpsa
- (TLS1.3:ECDHE_SECP256R1__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
- (Exim 4.93) (envelope-from <johannes@sipsolutions.net>)
- id 1j1Qmu-0029iO-8e; Tue, 11 Feb 2020 09:20:56 +0100
-Message-ID: <13b0ea0caff576e7944e4f9b91560bf46ac9caf0.camel@sipsolutions.net>
-Subject: Re: [RFC PATCH v2] UML: add support for KASAN under x86_64
-From: Johannes Berg <johannes@sipsolutions.net>
-To: Patricia Alfonso <trishalfonso@google.com>, jdike@addtoit.com, 
- richard@nod.at, anton.ivanov@cambridgegreys.com, aryabinin@virtuozzo.com, 
- dvyukov@google.com, davidgow@google.com, brendanhiggins@google.com
-Date: Tue, 11 Feb 2020 09:20:54 +0100
-In-Reply-To: <20200210225806.249297-1-trishalfonso@google.com>
- (sfid-20200210_235813_002927_509D549C)
-References: <20200210225806.249297-1-trishalfonso@google.com>
- (sfid-20200210_235813_002927_509D549C)
-User-Agent: Evolution 3.34.2 (3.34.2-1.fc31) 
+ id 1j1Svr-00026r-D4
+ for linux-um@bombadil.infradead.org; Tue, 11 Feb 2020 10:38:19 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:Content-Type:
+ In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender
+ :Reply-To:Content-ID:Content-Description;
+ bh=5PC0HCludKqchk7qA7elCoVA/0IiH3BfkrsPcUclbyk=; b=R7kVba06BTkC9Ibusvpy+fgw8b
+ qJhu67EjMsWspfekKmFbeNI+/EQluTi8FQ0eHctUsflzWwWJ9Pav20WxHDGWb36JqbPSfAbDIdadM
+ CbaYs4+nNzN7NFukCgT0Z6ojy2kLbHVFCttu2J2SyX5dvkTuEbXJpKNnw1NEQWmFveDDe9OMVBfB5
+ zrXiEx433H0yzoLq4SwKh10KYgyKAecoXFGUHTKJRSmdgu0YAhT9QJLY0DKXmKNXm/bkp3h4JMkM/
+ KHNMDTKMHOfWD4nGGQqMh0S3atXih1RFqX1CIgligLlfU8wpmr829sKfIAWzYCC+yCjGjmsto6T41
+ ZxT6nv5w==;
+Received: from us-smtp-2.mimecast.com ([205.139.110.61]
+ helo=us-smtp-delivery-1.mimecast.com)
+ by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j1Svp-00013Q-4N
+ for linux-um@lists.infradead.org; Tue, 11 Feb 2020 10:38:17 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1581417479;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=5PC0HCludKqchk7qA7elCoVA/0IiH3BfkrsPcUclbyk=;
+ b=KnJtSauU58IvrNHNCdr/yV5t1rVPR9L9HJY4xRAXlgFKqPJvPM0rhrcFV//CTwNl958ZEM
+ cBFolhWSPecfEUd/OApsDkexLJT6JwdUbaOY6v82Ai9IQZWPCZRvY/+kRP929PIAZodEJK
+ LCndIDDNEA8pJ77sW28UiDaoBgq+OEM=
+Received: from mail-qk1-f197.google.com (mail-qk1-f197.google.com
+ [209.85.222.197]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-74-Cgx-dForMcOO9awfFhz_Ug-1; Tue, 11 Feb 2020 05:37:56 -0500
+Received: by mail-qk1-f197.google.com with SMTP id e3so5225665qkf.7
+ for <linux-um@lists.infradead.org>; Tue, 11 Feb 2020 02:37:56 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to;
+ bh=ShA6gshvRnZ0GGC3w/T/LthefFbDChD5+kxR6pT+rSA=;
+ b=Y7TfeqrJH4nIhdFXdv6FhrBtc/zhLvSFC6DiiURsc1c5aZYbwRdCmHJhg0nGF1Foa1
+ 0wsUr3CXtHXPMkIGRo6Is6DK9ilyDvSqxYlX8PrcPNB0pyI+VK6uuv+B1EjfdHo+uQxv
+ VxZdYYhi7y9EzzJkEmO0F/nrMDzBRWshhAI8ShaDdv+xwkRrKknsCKLiO5vvS4Obumx2
+ S+uXpsxyMva5BQHVNqyGobJooeSjfswonzYX2PgD3pp2to+ev53Y/ocvFU83uyaWG6hP
+ 2mN0kHwMnNgpCS7Iqoi41ioiAtsmQ2OPoVBzae5sTnzTpOJ2OsKVoCuzmJHoAGpJ/pDE
+ Ypeg==
+X-Gm-Message-State: APjAAAWSQXBj6pSAJ4BRyOqTJdUcXHLLs6ciZb6JwdKPrgEDd/YI/Gov
+ 9Kq248TUhQ8i0oVpsRdK62Psashtlp+Fni/UZyyzXvPQsMnljM6SVAQrKxFfC18tiqT8ZZFtLr3
+ X/OsNgdLLibWSTE0ljSUPOwXi
+X-Received: by 2002:a0c:ea50:: with SMTP id u16mr14484815qvp.110.1581417475251; 
+ Tue, 11 Feb 2020 02:37:55 -0800 (PST)
+X-Google-Smtp-Source: APXvYqy8CBMwITEeHUVRHIfIioI1sZv68eWt44VxQnsBgQVT6VXW8NhtMwPENj6EvZ4Ioukyy/gL1g==
+X-Received: by 2002:a0c:ea50:: with SMTP id u16mr14484803qvp.110.1581417475041; 
+ Tue, 11 Feb 2020 02:37:55 -0800 (PST)
+Received: from redhat.com (bzq-79-176-41-183.red.bezeqint.net. [79.176.41.183])
+ by smtp.gmail.com with ESMTPSA id v55sm1987057qtc.1.2020.02.11.02.37.52
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 11 Feb 2020 02:37:54 -0800 (PST)
+Date: Tue, 11 Feb 2020 05:37:50 -0500
+From: "Michael S. Tsirkin" <mst@redhat.com>
+To: Anton Ivanov <anton.ivanov@cambridgegreys.com>
+Subject: Re: [PATCH] virtio: Work around frames incorrectly marked as gso
+Message-ID: <20200211053502-mutt-send-email-mst@kernel.org>
+References: <20191209104824.17059-1-anton.ivanov@cambridgegreys.com>
+ <57230228-7030-c65f-a24f-910ca52bbe9e@cambridgegreys.com>
+ <f78bfe6e-2ffc-3734-9618-470f1afea0c6@redhat.com>
+ <918222d9-816a-be70-f8af-b8dfcb586240@cambridgegreys.com>
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200211_002112_905455_047B8578 
-X-CRM114-Status: GOOD (  16.53  )
-X-Spam-Score: 0.4 (/)
-X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.4 points)
+In-Reply-To: <918222d9-816a-be70-f8af-b8dfcb586240@cambridgegreys.com>
+X-MC-Unique: Cgx-dForMcOO9awfFhz_Ug-1
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
+Content-Disposition: inline
+X-Spam-Note: CRM114 invocation failed
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [205.139.110.61 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.4 KHOP_HELO_FCRDNS       Relay HELO differs from its IP's reverse DNS
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,120 +121,61 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: linux-um@lists.infradead.org, linux-kernel@vger.kernel.org,
- kasan-dev@googlegroups.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: netdev@vger.kernel.org, Jason Wang <jasowang@redhat.com>,
+ linux-um@lists.infradead.org, virtualization@lists.linux-foundation.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-Hi,
-
-Looks very nice! Some questions/comments below:
-
-> Depends on Constructor support in UML and is based off of
-> "[RFC PATCH] um: implement CONFIG_CONSTRUCTORS for modules"
-> (https://patchwork.ozlabs.org/patch/1234551/) 
-
-I guess I should resend this as a proper patch then. Did you test
-modules? I can try (later) too.
-
-> The location of the KASAN shadow memory, starting at
-> KASAN_SHADOW_OFFSET, can be configured using the
-> KASAN_SHADOW_OFFSET option. UML uses roughly 18TB of address
-> space, and KASAN requires 1/8th of this.
-
-That also means if I have say 512MB memory allocated for UML, KASAN will
-use an *additional* 64, unlike on a "real" system, where KASAN will take
-about 1/8th of the available physical memory, right?
-
-> +	help
-> +	  This is the offset at which the ~2.25TB of shadow memory is
-> +	  initialized 
-
-Maybe that should say "mapped" instead of "initialized", since there are
-relatively few machines on which it could actually all all be used?
-
-> +// used in kasan_mem_to_shadow to divide by 8
-> +#define KASAN_SHADOW_SCALE_SHIFT 3
-
-nit: use /* */ style comments
-
-> +#define KASAN_SHADOW_START (KASAN_SHADOW_OFFSET)
-> +#define KASAN_SHADOW_END (KASAN_SHADOW_START + KASAN_SHADOW_SIZE)
-> +
-> +#ifdef CONFIG_KASAN
-> +void kasan_init(void);
-> +#else
-> +static inline void kasan_init(void) { }
-> +#endif /* CONFIG_KASAN */
-> +
-> +void kasan_map_memory(void *start, unsigned long len);
-> +void kasan_unpoison_shadow(const void *address, size_t size);
-> +
-> +#endif /* __ASM_UM_KASAN_H */
-> diff --git a/arch/um/kernel/Makefile b/arch/um/kernel/Makefile
-> index 5aa882011e04..875e1827588b 100644
-> --- a/arch/um/kernel/Makefile
-> +++ b/arch/um/kernel/Makefile
-> @@ -8,6 +8,28 @@
->  # kernel.
->  KCOV_INSTRUMENT                := n
->  
-> +# The way UMl deals with the stack causes seemingly false positive KASAN
-> +# reports such as:
-> +# BUG: KASAN: stack-out-of-bounds in show_stack+0x15e/0x1fb
-> +# Read of size 8 at addr 000000006184bbb0 by task swapper/1
-> +# ==================================================================
-> +# BUG: KASAN: stack-out-of-bounds in dump_trace+0x141/0x1c5
-> +# Read of size 8 at addr 0000000071057eb8 by task swapper/1
-> +# ==================================================================
-> +# BUG: KASAN: stack-out-of-bounds in get_wchan+0xd7/0x138
-> +# Read of size 8 at addr 0000000070e8fc80 by task systemd/1
-> +#
-> +# With these files removed from instrumentation, those reports are
-> +# eliminated, but KASAN still repeatedly reports a bug on syscall_stub_data:
-> +# ==================================================================
-> +# BUG: KASAN: stack-out-of-bounds in syscall_stub_data+0x299/0x2bf
-> +# Read of size 128 at addr 0000000071457c50 by task swapper/1
-
-So that's actually something to fix still? Just trying to understand,
-I'll test it later.
-
-> -extern int printf(const char *msg, ...);
-> -static void early_print(void)
-> +#ifdef CONFIG_KASAN
-> +void kasan_init(void)
->  {
-> -	printf("I'm super early, before constructors\n");
-> +	kasan_map_memory((void *)KASAN_SHADOW_START, KASAN_SHADOW_SIZE);
-
-Heh, you *actually* based it on my patch, in git terms, not just in code
-terms. I think you should just pick up the few lines that you need from
-that patch and squash them into this one, I just posted that to
-demonstrate more clearly what I meant :-)
-
-> +/**
-> + * kasan_map_memory() - maps memory from @start with a size of @len.
-
-I think the () shouldn't be there?
-
-> +void kasan_map_memory(void *start, size_t len)
-> +{
-> +	if (mmap(start,
-> +		 len,
-> +		 PROT_READ|PROT_WRITE,
-> +		 MAP_FIXED|MAP_ANONYMOUS|MAP_PRIVATE|MAP_NORESERVE,
-> +		 -1,
-> +		 0) == MAP_FAILED)
-> +		os_info("Couldn't allocate shadow memory %s", strerror(errno));
-
-If that fails, can we even continue?
-
-johannes
-
-
-_______________________________________________
-linux-um mailing list
-linux-um@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-um
+T24gVHVlLCBGZWIgMTEsIDIwMjAgYXQgMDc6NDI6MzdBTSArMDAwMCwgQW50b24gSXZhbm92IHdy
+b3RlOgo+IE9uIDExLzAyLzIwMjAgMDI6NTEsIEphc29uIFdhbmcgd3JvdGU6Cj4gPiAKPiA+IE9u
+IDIwMjAvMi8xMSDkuIrljYgxMjo1NSwgQW50b24gSXZhbm92IHdyb3RlOgo+ID4gPiAKPiA+ID4g
+Cj4gPiA+IE9uIDA5LzEyLzIwMTkgMTA6NDgsIGFudG9uLml2YW5vdkBjYW1icmlkZ2VncmV5cy5j
+b20gd3JvdGU6Cj4gPiA+ID4gRnJvbTogQW50b24gSXZhbm92IDxhbnRvbi5pdmFub3ZAY2FtYnJp
+ZGdlZ3JleXMuY29tPgo+ID4gPiA+IAo+ID4gPiA+IFNvbWUgb2YgdGhlIGZyYW1lcyBtYXJrZWQg
+YXMgR1NPIHdoaWNoIGFycml2ZSBhdAo+ID4gPiA+IHZpcnRpb19uZXRfaGRyX2Zyb21fc2tiKCkg
+aGF2ZSBubyBHU09fVFlQRSwgbm8KPiA+ID4gPiBmcmFnbWVudHMgKGRhdGFfbGVuID0gMCkgYW5k
+IGxlbmd0aCBzaWduaWZpY2FudGx5IHNob3J0ZXIKPiA+ID4gPiB0aGFuIHRoZSBNVFUgKDc1MiBp
+biBteSBleHBlcmltZW50cykuCj4gPiA+ID4gCj4gPiA+ID4gVGhpcyBpcyBvYnNlcnZlZCBvbiBy
+YXcgc29ja2V0cyByZWFkaW5nIG9mZiB2RXRoIGludGVyZmFjZXMKPiA+ID4gPiBpbiBhbGwgNC54
+IGFuZCA1Lngga2VybmVscyBJIHRlc3RlZC4KPiA+ID4gPiAKPiA+ID4gPiBUaGVzZSBmcmFtZXMg
+YXJlIHJlcG9ydGVkIGFzIGludmFsaWQgd2hpbGUgdGhleSBhcmUgaW4gZmFjdAo+ID4gPiA+IGdz
+by1sZXNzIGZyYW1lcy4KPiA+ID4gPiAKPiA+ID4gPiBUaGlzIHBhdGNoIG1hcmtzIHRoZSB2bmV0
+IGhlYWRlciBhcyBuby1HU08gZm9yIHRoZW0gaW5zdGVhZAo+ID4gPiA+IG9mIHJlcG9ydGluZyBp
+dCBhcyBpbnZhbGlkLgo+ID4gPiA+IAo+ID4gPiA+IFNpZ25lZC1vZmYtYnk6IEFudG9uIEl2YW5v
+diA8YW50b24uaXZhbm92QGNhbWJyaWRnZWdyZXlzLmNvbT4KPiA+ID4gPiAtLS0KPiA+ID4gPiDC
+oCBpbmNsdWRlL2xpbnV4L3ZpcnRpb19uZXQuaCB8IDggKysrKysrLS0KPiA+ID4gPiDCoCAxIGZp
+bGUgY2hhbmdlZCwgNiBpbnNlcnRpb25zKCspLCAyIGRlbGV0aW9ucygtKQo+ID4gPiA+IAo+ID4g
+PiA+IGRpZmYgLS1naXQgYS9pbmNsdWRlL2xpbnV4L3ZpcnRpb19uZXQuaCBiL2luY2x1ZGUvbGlu
+dXgvdmlydGlvX25ldC5oCj4gPiA+ID4gaW5kZXggMGQxZmU5Mjk3YWM2Li5kOTBkNWNmZjFiOWEg
+MTAwNjQ0Cj4gPiA+ID4gLS0tIGEvaW5jbHVkZS9saW51eC92aXJ0aW9fbmV0LmgKPiA+ID4gPiAr
+KysgYi9pbmNsdWRlL2xpbnV4L3ZpcnRpb19uZXQuaAo+ID4gPiA+IEBAIC0xMTIsOCArMTEyLDEy
+IEBAIHN0YXRpYyBpbmxpbmUgaW50Cj4gPiA+ID4gdmlydGlvX25ldF9oZHJfZnJvbV9za2IoY29u
+c3Qgc3RydWN0IHNrX2J1ZmYgKnNrYiwKPiA+ID4gPiDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oCBoZHItPmdzb190eXBlID0gVklSVElPX05FVF9IRFJfR1NPX1RDUFY0Owo+ID4gPiA+IMKgwqDC
+oMKgwqDCoMKgwqDCoCBlbHNlIGlmIChzaW5mby0+Z3NvX3R5cGUgJiBTS0JfR1NPX1RDUFY2KQo+
+ID4gPiA+IMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGhkci0+Z3NvX3R5cGUgPSBWSVJUSU9f
+TkVUX0hEUl9HU09fVENQVjY7Cj4gPiA+ID4gLcKgwqDCoMKgwqDCoMKgIGVsc2UKPiA+ID4gPiAt
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoCByZXR1cm4gLUVJTlZBTDsKPiA+ID4gPiArwqDCoMKgwqDC
+oMKgwqAgZWxzZSB7Cj4gPiA+ID4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqAgaWYgKHNrYi0+ZGF0
+YV9sZW4gPT0gMCkKPiA+ID4gPiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGhkci0+
+Z3NvX3R5cGUgPSBWSVJUSU9fTkVUX0hEUl9HU09fTk9ORTsKPiA+ID4gPiArwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoCBlbHNlCj4gPiA+ID4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBy
+ZXR1cm4gLUVJTlZBTDsKPiA+ID4gPiArwqDCoMKgwqDCoMKgwqAgfQo+ID4gPiA+IMKgwqDCoMKg
+wqDCoMKgwqDCoCBpZiAoc2luZm8tPmdzb190eXBlICYgU0tCX0dTT19UQ1BfRUNOKQo+ID4gPiA+
+IMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGhkci0+Z3NvX3R5cGUgfD0gVklSVElPX05FVF9I
+RFJfR1NPX0VDTjsKPiA+ID4gPiDCoMKgwqDCoMKgIH0gZWxzZQo+ID4gPiA+IAo+ID4gPiAKPiA+
+ID4gcGluZy4KPiA+ID4gCj4gPiAKPiA+IERvIHlvdSBtZWFuIGdzb19zaXplIGlzIHNldCBidXQg
+Z3NvX3R5cGUgaXMgbm90PyBMb29rcyBsaWtlIGEgYnVnCj4gPiBlbHNld2hlcmUuCj4gPiAKPiA+
+IFRoYW5rcwo+ID4gCj4gPiAKPiBZZXMuCj4gCj4gSSBjb3VsZCBub3QgdHJhY2UgaXQgd2hlcmUg
+aXQgaXMgY29taW5nIGZyb20uCj4gCj4gSSBzZWUgaXQgd2hlbiBkb2luZyByZWN2bW1zZyBvbiBy
+YXcgc29ja2V0cyBpbiB0aGUgVU1MIHZlY3RvciBuZXR3b3JrCj4gZHJpdmVycy4KPiAKCkkgdGhp
+bmsgd2UgbmVlZCB0byBmaW5kIHRoZSBjdWxwcml0IGFuZCBmaXggaXQgdGhlcmUsIGxvdHMgb2Yg
+b3RoZXIgdGhpbmdzCmNhbiBicmVhayBvdGhlcndpc2UuCkp1c3QgcHJpbnRpbmcgb3V0IHNrYi0+
+ZGV2LT5uYW1lIHNob3VsZCBkbyB0aGUgdHJpY2ssIG5vPwoKCj4gLS0gCj4gQW50b24gUi4gSXZh
+bm92Cj4gQ2FtYnJpZGdlZ3JleXMgTGltaXRlZC4gUmVnaXN0ZXJlZCBpbiBFbmdsYW5kLiBDb21w
+YW55IE51bWJlciAxMDI3MzY2MQo+IGh0dHBzOi8vd3d3LmNhbWJyaWRnZWdyZXlzLmNvbS8KCgpf
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC11bSBt
+YWlsaW5nIGxpc3QKbGludXgtdW1AbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5m
+cmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXVtCg==
