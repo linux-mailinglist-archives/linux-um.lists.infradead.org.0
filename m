@@ -2,68 +2,66 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DC009159676
-	for <lists+linux-um@lfdr.de>; Tue, 11 Feb 2020 18:47:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 629CD159DAA
+	for <lists+linux-um@lfdr.de>; Wed, 12 Feb 2020 00:48:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eP/O6Xg9OXejv4ZZHSkTZyxnbCYMFKKhFF/1t6G2d7M=; b=f7/LKehktJ1M85
-	wnWg3upF79f5NlwF/xlnT6PWl/X2+Giy3F/czmzWRZ8dIXcgKqXQcIcCxBxvE5g1TT67h1yvWaaQt
-	GkwwFrKE8CggN0ShRAcTQ4GWw/1XTfka86jc8y5TxdM0DMA4zEN3tbTp0WssakCvf0L1ayhVQQvzR
-	1w/Gmlgt3JHBjuWQZPNIJHN+NG4XmhRKG15hfuZayGa0x2cI5wpeSu3Kw8FoBY6mCLnY2ahPs0/0v
-	HZ6GEe5UmUjC6C202GYbJcyvEvWDFu6s0UN4FSxHvVESW75c/2wv75C1pizltvubaq8zCW3vGgpav
-	7ya4eC/wdh6muIq36iVg==;
+	List-Owner; bh=22fdyqF+sfxQKzFBN+OtKTX0/1sbCP6s6PA5pfQPx10=; b=ojVrawYMQUxtNT
+	+LzvSJmxZOOMZDx7+JY5hI4Cx4ZLM6ZcDDEDcVeG/0SdhTtMWNZdh+Ew8f2XS3WwmAaB2eDYakUFH
+	favSkqnCMErmAoi1AWEhXhxs5FX0a7p4LgybEwVASxfxMjw/0JTgNuoDV6wxnRn7E3zQ4mNQmiTBC
+	Her3rCCaUtrPjnkcN38ZDzzO/Erkr9S70IKS/+cIY7FZr5ZUcBECZD5N5SpA9zMQW5c6yVwHORknM
+	v749wDLMpUl8yzaKClV2Teq7YOtRzwHNOjPBC7VaJQal5XpLEziYBoSjpwIQCahR2mXODqU2mM88+
+	RxuGdYqh0b9VAXcfTy1w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1Zcz-0006rF-Q1; Tue, 11 Feb 2020 17:47:17 +0000
+	id 1j1fGd-0005ua-TA; Tue, 11 Feb 2020 23:48:35 +0000
 Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1Zcx-0006qs-3o
- for linux-um@lists.infradead.org; Tue, 11 Feb 2020 17:47:16 +0000
-Received: by mail-wr1-x444.google.com with SMTP id c9so13539734wrw.8
- for <linux-um@lists.infradead.org>; Tue, 11 Feb 2020 09:47:11 -0800 (PST)
+ id 1j1fGb-0005tL-G3
+ for linux-um@lists.infradead.org; Tue, 11 Feb 2020 23:48:34 +0000
+Received: by mail-wr1-x444.google.com with SMTP id t2so14760704wrr.1
+ for <linux-um@lists.infradead.org>; Tue, 11 Feb 2020 15:48:32 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Z0VAV2uAZn7cwf80RoSqvTXJTOGM5LDaGHKNSoNSGHk=;
- b=QbpBWdwYnoWn8aPZgHyKzn+JoeOVAW1n6DG5fzvmx6mK8CHu9eCILwvxBg6NBGJJuA
- d2B+KVtyYZWeH/pfbTDW3SyN5oE5YxrFt8hSPITYFciFg8mvz1zVCjHb5+hc8HX653zK
- 411typsd9Iw2yaMmXdMoUhdBGJfJlr4dDNAHf1ntJO4ncSiyXK7t3Xzj5FIt3ho6ykRK
- wM3iX3nDhF4PYDhxcL1fFNGKifqtu7MWAuTALLPMGZO0YUmSR4hW6YAmp4gN8g2NrzgA
- 6oYvxc9hPaEBtL8CnE/C+CbfbAp/uM16GHLyl52ENJ3wePSA3d8G+hxOB2z16iqjFKmD
- 66Mw==
+ :cc; bh=tKZVKd7LefiyWeQ0F2PuNMLHXMThkRotLuzYefuE5rc=;
+ b=oJdxQzfCxBdsUpaXuR3MdBuCWDzZwSB+Jo1UxVNnw86Ms70GwIxxKD/6QYko2IyH2W
+ yvF4XlGbc1jJfuDgM9BEJSme/WhY6lGm7BL7WKPG+5zBgNhGHoldlwm3eNzEI9lRBSsK
+ OgVBN+dMbDU0frPADxuudeG1r4i8tcy9KbYcvpLsmYIkh/5qwYUsyIa0/8phC29yXqJE
+ oFSnw9UkCLhShWSYyozwzNdXwzqMR+wKNN+NXrPnH19KTr9R4VKkCITGg257Z5JAfSwZ
+ HfILBc5Jd1qt0PQ6irlIoHA1NYEhYB2zOKsGMp/Hh61sUvKBeLznK4i7be8TeXck/D7/
+ QoWw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=Z0VAV2uAZn7cwf80RoSqvTXJTOGM5LDaGHKNSoNSGHk=;
- b=iXcD2SyqDAJprMQyRbih8qbbw764VJfANgUv94SmZAZlSXuxdv4wNNsisoFv+4eoMw
- OeQBVsEGhQ9UZReq63Y+Q4DDyYsaeUKc9PuqbPppQhtAw3zP4T8Z9+keFG5za3+HF3jd
- 3eTefLf+GCv442/Zjupoglk4ArDBXt8CIhZ+pRRL4rtI+lC4Dh1+unGL/WjPRb7bXvtz
- 7sV8rDaDLqXLAPwMOXAeD8ceRJFTU82a9+j+jWPj1Bk45h+XPXhFSwwvBRIHrV7UY/TP
- 5x0ivDyWvMCGWT1XFHmWP71O0/pmk6BcZ88dnHFNHk+1DngbV9g5zXIXr221cYO2SyfA
- KRUQ==
-X-Gm-Message-State: APjAAAXk5vBN9fBRmG1TZYZ67zfENabffnaTVIR5l6RpiBrTyeFGQsFs
- QrcL1okZ5xVh+4plLhpzJreWZqzOkYx5vKEuZlv6Fg==
-X-Google-Smtp-Source: APXvYqxTiLAPBWBNjRiDwwF9xb8l42ZHllnWyO8r959e7mF1P+DYyJAKnd4NjVEsEhnkhq37FyrMm+yEO5iwmmCmPy0=
-X-Received: by 2002:a05:6000:108e:: with SMTP id
- y14mr9883732wrw.338.1581443230266; 
- Tue, 11 Feb 2020 09:47:10 -0800 (PST)
+ bh=tKZVKd7LefiyWeQ0F2PuNMLHXMThkRotLuzYefuE5rc=;
+ b=JAbzm0hrI+ssp5LtWb9Ub1yd/Z/82u0f2E3skPLYi0zPM2o4df3cQ3w3Lq6j18D9oQ
+ HSAuj2xlGGRN8o5IKthISpMVUyPuV+PeytxXCtKOWuZmEel2G6wGjrTWH3H9gaZghOLB
+ wqVEw46W7DSISnasarOdYfJQTQE2vKO/7kKwcxo98ozFiNMF+8g26rJhu9D7eywp2/KY
+ 1jGpermrvCf0NVxCC87EgccnSQAhUy93fm97vpDdeoqW3gGK6w7WtAzAOLQJazv6HVBI
+ jnTZTma+8zIx/jiJURVQ+yF0eXQOnFGwEmdoM0RIUI1Frw1wuZnIlRCLmgoJiwIFsAf+
+ 5GkQ==
+X-Gm-Message-State: APjAAAUNNHpWvlabdpGGX5P3/Gf/eqOn0mJfVP+Df/nqDUXCF9/aMwwz
+ H8pxT9T5ne+ix4Opv6KImN5YpeNW/uZ8+rz/eL5IAQ==
+X-Google-Smtp-Source: APXvYqzgPjm+6Ae93vV5GdgaxMOW+fUqoGME9hOeqCh/2kKErwHSyduMJTR409IMY5lgfqSel9EpaPO2WyLJIHU6PS8=
+X-Received: by 2002:adf:dd51:: with SMTP id u17mr10871983wrm.290.1581464909891; 
+ Tue, 11 Feb 2020 15:48:29 -0800 (PST)
 MIME-Version: 1.0
-References: <20200210225806.249297-1-trishalfonso@google.com>
- <CACT4Y+Y=Qj6coWpY107Dj+TsUJK1nruWAC=QMZBDC5snNZRTOw@mail.gmail.com>
-In-Reply-To: <CACT4Y+Y=Qj6coWpY107Dj+TsUJK1nruWAC=QMZBDC5snNZRTOw@mail.gmail.com>
+References: <20200115182816.33892-1-trishalfonso@google.com>
+ <CACT4Y+bPzRbWw-dPQkLVENPKy_DBdjrbSce0f6XE3=W7RhfhBA@mail.gmail.com>
+In-Reply-To: <CACT4Y+bPzRbWw-dPQkLVENPKy_DBdjrbSce0f6XE3=W7RhfhBA@mail.gmail.com>
 From: Patricia Alfonso <trishalfonso@google.com>
-Date: Tue, 11 Feb 2020 09:46:59 -0800
-Message-ID: <CAKFsvUL=maBVZ7v_N6W1skZRkYm4GacRGn-ohbf-o84p598XNQ@mail.gmail.com>
-Subject: Re: [RFC PATCH v2] UML: add support for KASAN under x86_64
+Date: Tue, 11 Feb 2020 15:48:18 -0800
+Message-ID: <CAKFsvUKhwAOV9O+LWBr=-zLEJCFJvKOH-ePsXMMVJzHotqd3Ug@mail.gmail.com>
+Subject: Re: [RFC PATCH] UML: add support for KASAN under x86_64
 To: Dmitry Vyukov <dvyukov@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200211_094715_238429_D979A0B4 
-X-CRM114-Status: UNSURE (   5.69  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200211_154833_562492_77F72F33 
+X-CRM114-Status: GOOD (  13.63  )
 X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-15.7 points)
@@ -102,20 +100,40 @@ Cc: Richard Weinberger <richard@nod.at>, Jeff Dike <jdike@addtoit.com>,
  Brendan Higgins <brendanhiggins@google.com>,
  LKML <linux-kernel@vger.kernel.org>, kasan-dev <kasan-dev@googlegroups.com>,
  linux-um@lists.infradead.org, David Gow <davidgow@google.com>,
- Andrey Ryabinin <aryabinin@virtuozzo.com>,
- Johannes Berg <johannes@sipsolutions.net>, anton.ivanov@cambridgegreys.com
+ Andrey Ryabinin <aryabinin@virtuozzo.com>, anton.ivanov@cambridgegreys.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-> I started reviewing this, but I am spotting things that I already
-> commented on, like shadow start and about shadow size const. Please
-> either address them, or answer why they are not addressed, or add some
-> kind of TODOs so that I don't write the same comment again.
+On Thu, Jan 16, 2020 at 12:44 AM Dmitry Vyukov <dvyukov@google.com> wrote:
+>
+> On Wed, Jan 15, 2020 at 7:28 PM Patricia Alfonso
+> <trishalfonso@google.com> wrote:
+> > +config KASAN_SHADOW_OFFSET
+> > +       hex
+> > +       depends on KASAN
+> > +       default 0x100000000000
+> > +       help
+> > +         This is the offset at which the ~2.25TB of shadow memory is
+> > +         initialized and used by KASAN for memory debugging. The default
+> > +         is 0x100000000000.
+>
+> What are restrictions on this value?
+The only restriction is that there is enough space there to map all of
+the KASAN shadow memory without conflicting with anything else.
 
-I'm sorry; They must have gotten lost in all the emails. I'll go
-through them all again.
+> In user-space we use 0x7fff8000 as a base (just below 2GB) and it's
+> extremely profitable wrt codegen since it fits into immediate of most
+> instructions.
+> We can load and add the base with a short instruction:
+>     2d8c: 48 81 c2 00 80 ff 7f    add    $0x7fff8000,%rdx
+> Or even add base, load shadow and check it with a single 7-byte instruction:
+>      1e4: 80 b8 00 80 ff 7f 00    cmpb   $0x0,0x7fff8000(%rax)
+>
+I just tested with 0x7fff8000 as the KASAN_SHADOW_OFFSET and it worked
+so I can make that the default if it will be more efficient.
+
 -- 
 Patricia Alfonso
 
