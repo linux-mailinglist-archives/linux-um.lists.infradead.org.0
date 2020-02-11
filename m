@@ -2,114 +2,88 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EE07F158CD1
-	for <lists+linux-um@lfdr.de>; Tue, 11 Feb 2020 11:38:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 13687158F6B
+	for <lists+linux-um@lfdr.de>; Tue, 11 Feb 2020 14:03:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JOyP1WNkqK1Cs8TM0u8rOl1EZ08U4s701RfGpKvJ32Y=; b=XIy3Io+BrbMNCD
-	/LcrbZZ0IXM3RCgiALB/QqK8MwJrZfQzaP4HyDfDfTXcY8cIAbpWngOwqE/xo79VYigi5O58y8tK8
-	a3uYcbtg2UjYtAHlcSm1fzXq5c1Sj04yr8ungnU6oRV4BYbQ/0OwbCt+rag/cFpyHCZ2hB2XKR7R1
-	r4JCMiFdDE9ogh8SYSwkc85tG3NBedXpJB2sHa7Q6+vUIbmbVyN9I0VgsVkeom/FG5EJBxWXMkcO/
-	WgDu3c2crbNhBPZ7iUK6zRgye2sFMKcpeJfwfVeGocE4Vn8pVXq+H63KrQORNmSvw5j36iz/1DJB5
-	1ZjDuZoSA3JJEdxc1rkQ==;
+	List-Owner; bh=jL2KmOOOwfGjBfDE38Jo4UN5/G9ZDr4gbR2LzoQlVWQ=; b=Wu2Oqsf3vqQW5o
+	GgmjX3MKZXo2h7VeKvuc5X6J373DFLC4ZhoxfaENm6gGiHrf+QzNMczDgaXfGDjDaOof070RcY3Mw
+	T4qZ6LBHT3jBXurg24KX5z3yygrMA2U/KCiLvfnue/9bTby2FbtM2glL/G8wc54IfionelW5oojQf
+	GjoppvjuMi2najsLFcaqbMJLW69orFCjnrvTCXQnCD/f7tJ3l2oOqeBp8tbLjV5N0KgSb8m/BnkwR
+	ko3fTG5yYEG2e2tyfv9RSN/XqCdswB4csoOUJHFR6bVEVbYxtl6BPLSxZSYpwqq37+vhCJbL9Pnad
+	+WgC5kRW26dvKHOsDn8g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1Svt-00026z-NC; Tue, 11 Feb 2020 10:38:21 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1j1VC8-0001p8-Qm; Tue, 11 Feb 2020 13:03:16 +0000
+Received: from mail-qt1-x842.google.com ([2607:f8b0:4864:20::842])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1Svr-00026r-D4
- for linux-um@bombadil.infradead.org; Tue, 11 Feb 2020 10:38:19 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:Content-Type:
- In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender
- :Reply-To:Content-ID:Content-Description;
- bh=5PC0HCludKqchk7qA7elCoVA/0IiH3BfkrsPcUclbyk=; b=R7kVba06BTkC9Ibusvpy+fgw8b
- qJhu67EjMsWspfekKmFbeNI+/EQluTi8FQ0eHctUsflzWwWJ9Pav20WxHDGWb36JqbPSfAbDIdadM
- CbaYs4+nNzN7NFukCgT0Z6ojy2kLbHVFCttu2J2SyX5dvkTuEbXJpKNnw1NEQWmFveDDe9OMVBfB5
- zrXiEx433H0yzoLq4SwKh10KYgyKAecoXFGUHTKJRSmdgu0YAhT9QJLY0DKXmKNXm/bkp3h4JMkM/
- KHNMDTKMHOfWD4nGGQqMh0S3atXih1RFqX1CIgligLlfU8wpmr829sKfIAWzYCC+yCjGjmsto6T41
- ZxT6nv5w==;
-Received: from us-smtp-2.mimecast.com ([205.139.110.61]
- helo=us-smtp-delivery-1.mimecast.com)
- by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1Svp-00013Q-4N
- for linux-um@lists.infradead.org; Tue, 11 Feb 2020 10:38:17 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1581417479;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=5PC0HCludKqchk7qA7elCoVA/0IiH3BfkrsPcUclbyk=;
- b=KnJtSauU58IvrNHNCdr/yV5t1rVPR9L9HJY4xRAXlgFKqPJvPM0rhrcFV//CTwNl958ZEM
- cBFolhWSPecfEUd/OApsDkexLJT6JwdUbaOY6v82Ai9IQZWPCZRvY/+kRP929PIAZodEJK
- LCndIDDNEA8pJ77sW28UiDaoBgq+OEM=
-Received: from mail-qk1-f197.google.com (mail-qk1-f197.google.com
- [209.85.222.197]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-74-Cgx-dForMcOO9awfFhz_Ug-1; Tue, 11 Feb 2020 05:37:56 -0500
-Received: by mail-qk1-f197.google.com with SMTP id e3so5225665qkf.7
- for <linux-um@lists.infradead.org>; Tue, 11 Feb 2020 02:37:56 -0800 (PST)
+ id 1j1VC5-0001o4-1M
+ for linux-um@lists.infradead.org; Tue, 11 Feb 2020 13:03:15 +0000
+Received: by mail-qt1-x842.google.com with SMTP id d5so7850487qto.0
+ for <linux-um@lists.infradead.org>; Tue, 11 Feb 2020 05:03:08 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=Bas+/VrzdMy27Ru/nYIGc/kjNJVzSRBJ3GgmNCXPKdM=;
+ b=WxJg/u6Na/pFoI949NKg7uYm3QzOQNt2Vp092Boa5ku+WMvifXoEKnS02wETWux/nZ
+ +oi7+xcseC1PYs96v5w5jEg9BVsU2u+kLs5jS2Pa25nagRNGNTZUQdV1h/VgqtHLqydF
+ s+XlnsHeAejkWpJ/IiFDRbkz5g4G9FHmdLdawEGc/fADvqH1cx/YAccoCARwukD4SGml
+ HxjZOKGM9/ibw7z9Y+0LYCRe1EHG3lPGkTSrvNnsyPQAtFryEy/itYCSori7Zdqh6X6Y
+ RP8xZUkvnLS00N/BzhjD3g9YqSbk9CY/I+l48i3/wtrUjvTbKQnBu+7oZ1JDYe3xhY89
+ rFFg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to;
- bh=ShA6gshvRnZ0GGC3w/T/LthefFbDChD5+kxR6pT+rSA=;
- b=Y7TfeqrJH4nIhdFXdv6FhrBtc/zhLvSFC6DiiURsc1c5aZYbwRdCmHJhg0nGF1Foa1
- 0wsUr3CXtHXPMkIGRo6Is6DK9ilyDvSqxYlX8PrcPNB0pyI+VK6uuv+B1EjfdHo+uQxv
- VxZdYYhi7y9EzzJkEmO0F/nrMDzBRWshhAI8ShaDdv+xwkRrKknsCKLiO5vvS4Obumx2
- S+uXpsxyMva5BQHVNqyGobJooeSjfswonzYX2PgD3pp2to+ev53Y/ocvFU83uyaWG6hP
- 2mN0kHwMnNgpCS7Iqoi41ioiAtsmQ2OPoVBzae5sTnzTpOJ2OsKVoCuzmJHoAGpJ/pDE
- Ypeg==
-X-Gm-Message-State: APjAAAWSQXBj6pSAJ4BRyOqTJdUcXHLLs6ciZb6JwdKPrgEDd/YI/Gov
- 9Kq248TUhQ8i0oVpsRdK62Psashtlp+Fni/UZyyzXvPQsMnljM6SVAQrKxFfC18tiqT8ZZFtLr3
- X/OsNgdLLibWSTE0ljSUPOwXi
-X-Received: by 2002:a0c:ea50:: with SMTP id u16mr14484815qvp.110.1581417475251; 
- Tue, 11 Feb 2020 02:37:55 -0800 (PST)
-X-Google-Smtp-Source: APXvYqy8CBMwITEeHUVRHIfIioI1sZv68eWt44VxQnsBgQVT6VXW8NhtMwPENj6EvZ4Ioukyy/gL1g==
-X-Received: by 2002:a0c:ea50:: with SMTP id u16mr14484803qvp.110.1581417475041; 
- Tue, 11 Feb 2020 02:37:55 -0800 (PST)
-Received: from redhat.com (bzq-79-176-41-183.red.bezeqint.net. [79.176.41.183])
- by smtp.gmail.com with ESMTPSA id v55sm1987057qtc.1.2020.02.11.02.37.52
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 11 Feb 2020 02:37:54 -0800 (PST)
-Date: Tue, 11 Feb 2020 05:37:50 -0500
-From: "Michael S. Tsirkin" <mst@redhat.com>
-To: Anton Ivanov <anton.ivanov@cambridgegreys.com>
-Subject: Re: [PATCH] virtio: Work around frames incorrectly marked as gso
-Message-ID: <20200211053502-mutt-send-email-mst@kernel.org>
-References: <20191209104824.17059-1-anton.ivanov@cambridgegreys.com>
- <57230228-7030-c65f-a24f-910ca52bbe9e@cambridgegreys.com>
- <f78bfe6e-2ffc-3734-9618-470f1afea0c6@redhat.com>
- <918222d9-816a-be70-f8af-b8dfcb586240@cambridgegreys.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Bas+/VrzdMy27Ru/nYIGc/kjNJVzSRBJ3GgmNCXPKdM=;
+ b=seixmj9AXSq0sZjeUgFdWbeTCKv+smPq5TT8GDX7b6f7B667hlcJTatPgGWnxsHsA8
+ AZZUptoB2XUO9dCVGjKB7dABpQvE/ObvYzdZLHmba2LtG50QJZ5oxPmAqQpJRsE+Qpu5
+ NlSCz6UrL/9d2FtmndyuZ7ZSTIxIBHeax6siV8BN7NAJOSc/QFAYQQ5vgSryO4/YDoHe
+ Qn1MpVXKs0LQxepNw7u2k6miN79R9L7B24lINoGxzSiqH7TiRbHTG1k5b18Db5IHIMC7
+ evtikevT3TeMVsY67cW5Diheb6IiJ4ARdTrsFcWAqmdgrTG0PD1354L23e5reH3H6hMa
+ K2LA==
+X-Gm-Message-State: APjAAAUvLbtsv616EIqt/gOkIUtAmwQ7D8wKSTKjLWcSrw/kyjEGyP+U
+ h6+uqXYjnVFv+TfbXcVwO7Ck/Tv/nqRz5Vy007b9bw==
+X-Google-Smtp-Source: APXvYqwZkrX6NfWxgbWR+Da8udNZDtLP1WdUg2ATAhvMsNOYXKquFhuVhGBHy5pks6LhgDwaGSpyBkdfJ/ejv2R7ANA=
+X-Received: by 2002:ac8:7159:: with SMTP id h25mr2278562qtp.380.1581426187228; 
+ Tue, 11 Feb 2020 05:03:07 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <918222d9-816a-be70-f8af-b8dfcb586240@cambridgegreys.com>
-X-MC-Unique: Cgx-dForMcOO9awfFhz_Ug-1
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
-Content-Disposition: inline
-X-Spam-Note: CRM114 invocation failed
-X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
- Content analysis details:   (-0.2 points)
+References: <20200210225806.249297-1-trishalfonso@google.com>
+In-Reply-To: <20200210225806.249297-1-trishalfonso@google.com>
+From: Dmitry Vyukov <dvyukov@google.com>
+Date: Tue, 11 Feb 2020 14:02:55 +0100
+Message-ID: <CACT4Y+Y=Qj6coWpY107Dj+TsUJK1nruWAC=QMZBDC5snNZRTOw@mail.gmail.com>
+Subject: Re: [RFC PATCH v2] UML: add support for KASAN under x86_64
+To: Patricia Alfonso <trishalfonso@google.com>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20200211_050313_109048_CA586A91 
+X-CRM114-Status: GOOD (  36.93  )
+X-Spam-Score: -15.7 (---------------)
+X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [205.139.110.61 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:842 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -121,61 +95,318 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: netdev@vger.kernel.org, Jason Wang <jasowang@redhat.com>,
- linux-um@lists.infradead.org, virtualization@lists.linux-foundation.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Richard Weinberger <richard@nod.at>, Jeff Dike <jdike@addtoit.com>,
+ Brendan Higgins <brendanhiggins@google.com>,
+ LKML <linux-kernel@vger.kernel.org>, kasan-dev <kasan-dev@googlegroups.com>,
+ linux-um@lists.infradead.org, David Gow <davidgow@google.com>,
+ Andrey Ryabinin <aryabinin@virtuozzo.com>,
+ Johannes Berg <johannes@sipsolutions.net>, anton.ivanov@cambridgegreys.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-T24gVHVlLCBGZWIgMTEsIDIwMjAgYXQgMDc6NDI6MzdBTSArMDAwMCwgQW50b24gSXZhbm92IHdy
-b3RlOgo+IE9uIDExLzAyLzIwMjAgMDI6NTEsIEphc29uIFdhbmcgd3JvdGU6Cj4gPiAKPiA+IE9u
-IDIwMjAvMi8xMSDkuIrljYgxMjo1NSwgQW50b24gSXZhbm92IHdyb3RlOgo+ID4gPiAKPiA+ID4g
-Cj4gPiA+IE9uIDA5LzEyLzIwMTkgMTA6NDgsIGFudG9uLml2YW5vdkBjYW1icmlkZ2VncmV5cy5j
-b20gd3JvdGU6Cj4gPiA+ID4gRnJvbTogQW50b24gSXZhbm92IDxhbnRvbi5pdmFub3ZAY2FtYnJp
-ZGdlZ3JleXMuY29tPgo+ID4gPiA+IAo+ID4gPiA+IFNvbWUgb2YgdGhlIGZyYW1lcyBtYXJrZWQg
-YXMgR1NPIHdoaWNoIGFycml2ZSBhdAo+ID4gPiA+IHZpcnRpb19uZXRfaGRyX2Zyb21fc2tiKCkg
-aGF2ZSBubyBHU09fVFlQRSwgbm8KPiA+ID4gPiBmcmFnbWVudHMgKGRhdGFfbGVuID0gMCkgYW5k
-IGxlbmd0aCBzaWduaWZpY2FudGx5IHNob3J0ZXIKPiA+ID4gPiB0aGFuIHRoZSBNVFUgKDc1MiBp
-biBteSBleHBlcmltZW50cykuCj4gPiA+ID4gCj4gPiA+ID4gVGhpcyBpcyBvYnNlcnZlZCBvbiBy
-YXcgc29ja2V0cyByZWFkaW5nIG9mZiB2RXRoIGludGVyZmFjZXMKPiA+ID4gPiBpbiBhbGwgNC54
-IGFuZCA1Lngga2VybmVscyBJIHRlc3RlZC4KPiA+ID4gPiAKPiA+ID4gPiBUaGVzZSBmcmFtZXMg
-YXJlIHJlcG9ydGVkIGFzIGludmFsaWQgd2hpbGUgdGhleSBhcmUgaW4gZmFjdAo+ID4gPiA+IGdz
-by1sZXNzIGZyYW1lcy4KPiA+ID4gPiAKPiA+ID4gPiBUaGlzIHBhdGNoIG1hcmtzIHRoZSB2bmV0
-IGhlYWRlciBhcyBuby1HU08gZm9yIHRoZW0gaW5zdGVhZAo+ID4gPiA+IG9mIHJlcG9ydGluZyBp
-dCBhcyBpbnZhbGlkLgo+ID4gPiA+IAo+ID4gPiA+IFNpZ25lZC1vZmYtYnk6IEFudG9uIEl2YW5v
-diA8YW50b24uaXZhbm92QGNhbWJyaWRnZWdyZXlzLmNvbT4KPiA+ID4gPiAtLS0KPiA+ID4gPiDC
-oCBpbmNsdWRlL2xpbnV4L3ZpcnRpb19uZXQuaCB8IDggKysrKysrLS0KPiA+ID4gPiDCoCAxIGZp
-bGUgY2hhbmdlZCwgNiBpbnNlcnRpb25zKCspLCAyIGRlbGV0aW9ucygtKQo+ID4gPiA+IAo+ID4g
-PiA+IGRpZmYgLS1naXQgYS9pbmNsdWRlL2xpbnV4L3ZpcnRpb19uZXQuaCBiL2luY2x1ZGUvbGlu
-dXgvdmlydGlvX25ldC5oCj4gPiA+ID4gaW5kZXggMGQxZmU5Mjk3YWM2Li5kOTBkNWNmZjFiOWEg
-MTAwNjQ0Cj4gPiA+ID4gLS0tIGEvaW5jbHVkZS9saW51eC92aXJ0aW9fbmV0LmgKPiA+ID4gPiAr
-KysgYi9pbmNsdWRlL2xpbnV4L3ZpcnRpb19uZXQuaAo+ID4gPiA+IEBAIC0xMTIsOCArMTEyLDEy
-IEBAIHN0YXRpYyBpbmxpbmUgaW50Cj4gPiA+ID4gdmlydGlvX25ldF9oZHJfZnJvbV9za2IoY29u
-c3Qgc3RydWN0IHNrX2J1ZmYgKnNrYiwKPiA+ID4gPiDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oCBoZHItPmdzb190eXBlID0gVklSVElPX05FVF9IRFJfR1NPX1RDUFY0Owo+ID4gPiA+IMKgwqDC
-oMKgwqDCoMKgwqDCoCBlbHNlIGlmIChzaW5mby0+Z3NvX3R5cGUgJiBTS0JfR1NPX1RDUFY2KQo+
-ID4gPiA+IMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGhkci0+Z3NvX3R5cGUgPSBWSVJUSU9f
-TkVUX0hEUl9HU09fVENQVjY7Cj4gPiA+ID4gLcKgwqDCoMKgwqDCoMKgIGVsc2UKPiA+ID4gPiAt
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoCByZXR1cm4gLUVJTlZBTDsKPiA+ID4gPiArwqDCoMKgwqDC
-oMKgwqAgZWxzZSB7Cj4gPiA+ID4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqAgaWYgKHNrYi0+ZGF0
-YV9sZW4gPT0gMCkKPiA+ID4gPiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGhkci0+
-Z3NvX3R5cGUgPSBWSVJUSU9fTkVUX0hEUl9HU09fTk9ORTsKPiA+ID4gPiArwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoCBlbHNlCj4gPiA+ID4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBy
-ZXR1cm4gLUVJTlZBTDsKPiA+ID4gPiArwqDCoMKgwqDCoMKgwqAgfQo+ID4gPiA+IMKgwqDCoMKg
-wqDCoMKgwqDCoCBpZiAoc2luZm8tPmdzb190eXBlICYgU0tCX0dTT19UQ1BfRUNOKQo+ID4gPiA+
-IMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGhkci0+Z3NvX3R5cGUgfD0gVklSVElPX05FVF9I
-RFJfR1NPX0VDTjsKPiA+ID4gPiDCoMKgwqDCoMKgIH0gZWxzZQo+ID4gPiA+IAo+ID4gPiAKPiA+
-ID4gcGluZy4KPiA+ID4gCj4gPiAKPiA+IERvIHlvdSBtZWFuIGdzb19zaXplIGlzIHNldCBidXQg
-Z3NvX3R5cGUgaXMgbm90PyBMb29rcyBsaWtlIGEgYnVnCj4gPiBlbHNld2hlcmUuCj4gPiAKPiA+
-IFRoYW5rcwo+ID4gCj4gPiAKPiBZZXMuCj4gCj4gSSBjb3VsZCBub3QgdHJhY2UgaXQgd2hlcmUg
-aXQgaXMgY29taW5nIGZyb20uCj4gCj4gSSBzZWUgaXQgd2hlbiBkb2luZyByZWN2bW1zZyBvbiBy
-YXcgc29ja2V0cyBpbiB0aGUgVU1MIHZlY3RvciBuZXR3b3JrCj4gZHJpdmVycy4KPiAKCkkgdGhp
-bmsgd2UgbmVlZCB0byBmaW5kIHRoZSBjdWxwcml0IGFuZCBmaXggaXQgdGhlcmUsIGxvdHMgb2Yg
-b3RoZXIgdGhpbmdzCmNhbiBicmVhayBvdGhlcndpc2UuCkp1c3QgcHJpbnRpbmcgb3V0IHNrYi0+
-ZGV2LT5uYW1lIHNob3VsZCBkbyB0aGUgdHJpY2ssIG5vPwoKCj4gLS0gCj4gQW50b24gUi4gSXZh
-bm92Cj4gQ2FtYnJpZGdlZ3JleXMgTGltaXRlZC4gUmVnaXN0ZXJlZCBpbiBFbmdsYW5kLiBDb21w
-YW55IE51bWJlciAxMDI3MzY2MQo+IGh0dHBzOi8vd3d3LmNhbWJyaWRnZWdyZXlzLmNvbS8KCgpf
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC11bSBt
-YWlsaW5nIGxpc3QKbGludXgtdW1AbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5m
-cmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LXVtCg==
+On Mon, Feb 10, 2020 at 11:58 PM 'Patricia Alfonso' via kasan-dev
+<kasan-dev@googlegroups.com> wrote:
+>
+> Make KASAN run on User Mode Linux on x86_64.
+>
+> Depends on Constructor support in UML and is based off of
+> "[RFC PATCH] um: implement CONFIG_CONSTRUCTORS for modules"
+> (https://patchwork.ozlabs.org/patch/1234551/) and "[DEMO] um:
+> demonstrate super early constructors"
+> (https://patchwork.ozlabs.org/patch/1234553/) by
+> Johannes.
+>
+> The location of the KASAN shadow memory, starting at
+> KASAN_SHADOW_OFFSET, can be configured using the
+> KASAN_SHADOW_OFFSET option. UML uses roughly 18TB of address
+> space, and KASAN requires 1/8th of this. The default location of
+> this offset is 0x100000000000. There is usually enough free space at
+> this location; however, it is a config option so that it can be
+> easily changed if needed.
+>
+> The UML-specific KASAN initializer uses mmap to map
+> the roughly 2.25TB of shadow memory to the location defined by
+> KASAN_SHADOW_OFFSET.
+>
+> Signed-off-by: Patricia Alfonso <trishalfonso@google.com>
+> ---
+>
+> Changes since v1:
+>  - KASAN has been initialized much earlier.
+>  - With the help of Johannes's RFC patch to implement constructors in
+>    UML and Demo showing how kasan_init could take advantage of these
+>    super early constructors, most of the "KASAN_SANITIZE := n" have
+>    been removed.
+>  - Removed extraneous code
+>  - Fixed typos
+
+
+I started reviewing this, but I am spotting things that I already
+commented on, like shadow start and about shadow size const. Please
+either address them, or answer why they are not addressed, or add some
+kind of TODOs so that I don't write the same comment again.
+
+
+>  arch/um/Kconfig              | 10 ++++++++++
+>  arch/um/Makefile             |  6 ++++++
+>  arch/um/include/asm/dma.h    |  1 +
+>  arch/um/include/asm/kasan.h  | 30 ++++++++++++++++++++++++++++++
+>  arch/um/kernel/Makefile      | 22 ++++++++++++++++++++++
+>  arch/um/kernel/mem.c         | 19 +++++++++----------
+>  arch/um/os-Linux/mem.c       | 19 +++++++++++++++++++
+>  arch/um/os-Linux/user_syms.c |  4 ++--
+>  arch/x86/um/Makefile         |  3 ++-
+>  arch/x86/um/vdso/Makefile    |  3 +++
+>  10 files changed, 104 insertions(+), 13 deletions(-)
+>  create mode 100644 arch/um/include/asm/kasan.h
+>
+> diff --git a/arch/um/Kconfig b/arch/um/Kconfig
+> index 0917f8443c28..2b76dc273731 100644
+> --- a/arch/um/Kconfig
+> +++ b/arch/um/Kconfig
+> @@ -8,6 +8,7 @@ config UML
+>         select ARCH_HAS_KCOV
+>         select ARCH_NO_PREEMPT
+>         select HAVE_ARCH_AUDITSYSCALL
+> +       select HAVE_ARCH_KASAN if X86_64
+>         select HAVE_ARCH_SECCOMP_FILTER
+>         select HAVE_ASM_MODVERSIONS
+>         select HAVE_UID16
+> @@ -200,6 +201,15 @@ config UML_TIME_TRAVEL_SUPPORT
+>
+>           It is safe to say Y, but you probably don't need this.
+>
+> +config KASAN_SHADOW_OFFSET
+> +       hex
+> +       depends on KASAN
+> +       default 0x100000000000
+> +       help
+> +         This is the offset at which the ~2.25TB of shadow memory is
+> +         initialized and used by KASAN for memory debugging. The default
+> +         is 0x100000000000.
+> +
+>  endmenu
+>
+>  source "arch/um/drivers/Kconfig"
+> diff --git a/arch/um/Makefile b/arch/um/Makefile
+> index d2daa206872d..28fe7a9a1858 100644
+> --- a/arch/um/Makefile
+> +++ b/arch/um/Makefile
+> @@ -75,6 +75,12 @@ USER_CFLAGS = $(patsubst $(KERNEL_DEFINES),,$(patsubst -I%,,$(KBUILD_CFLAGS))) \
+>                 -D_FILE_OFFSET_BITS=64 -idirafter $(srctree)/include \
+>                 -idirafter $(objtree)/include -D__KERNEL__ -D__UM_HOST__
+>
+> +# Kernel config options are not included in USER_CFLAGS, but the option for KASAN
+> +# should be included if the KASAN config option was set.
+> +ifdef CONFIG_KASAN
+> +       USER_CFLAGS+=-DCONFIG_KASAN=y
+> +endif
+> +
+>  #This will adjust *FLAGS accordingly to the platform.
+>  include $(ARCH_DIR)/Makefile-os-$(OS)
+>
+> diff --git a/arch/um/include/asm/dma.h b/arch/um/include/asm/dma.h
+> index fdc53642c718..8aafd60d62bb 100644
+> --- a/arch/um/include/asm/dma.h
+> +++ b/arch/um/include/asm/dma.h
+> @@ -5,6 +5,7 @@
+>  #include <asm/io.h>
+>
+>  extern unsigned long uml_physmem;
+> +extern unsigned long long physmem_size;
+>
+>  #define MAX_DMA_ADDRESS (uml_physmem)
+>
+> diff --git a/arch/um/include/asm/kasan.h b/arch/um/include/asm/kasan.h
+> new file mode 100644
+> index 000000000000..ba08061068cf
+> --- /dev/null
+> +++ b/arch/um/include/asm/kasan.h
+> @@ -0,0 +1,30 @@
+> +/* SPDX-License-Identifier: GPL-2.0 */
+> +#ifndef __ASM_UM_KASAN_H
+> +#define __ASM_UM_KASAN_H
+> +
+> +#include <linux/init.h>
+> +#include <linux/const.h>
+> +
+> +#define KASAN_SHADOW_OFFSET _AC(CONFIG_KASAN_SHADOW_OFFSET, UL)
+> +#ifdef CONFIG_X86_64
+> +#define KASAN_SHADOW_SIZE 0x100000000000UL
+> +#else
+> +#error "KASAN_SHADOW_SIZE is not defined for this sub-architecture"
+> +#endif /* CONFIG_X86_64 */
+> +
+> +// used in kasan_mem_to_shadow to divide by 8
+> +#define KASAN_SHADOW_SCALE_SHIFT 3
+> +
+> +#define KASAN_SHADOW_START (KASAN_SHADOW_OFFSET)
+> +#define KASAN_SHADOW_END (KASAN_SHADOW_START + KASAN_SHADOW_SIZE)
+> +
+> +#ifdef CONFIG_KASAN
+> +void kasan_init(void);
+> +#else
+> +static inline void kasan_init(void) { }
+> +#endif /* CONFIG_KASAN */
+> +
+> +void kasan_map_memory(void *start, unsigned long len);
+> +void kasan_unpoison_shadow(const void *address, size_t size);
+> +
+> +#endif /* __ASM_UM_KASAN_H */
+> diff --git a/arch/um/kernel/Makefile b/arch/um/kernel/Makefile
+> index 5aa882011e04..875e1827588b 100644
+> --- a/arch/um/kernel/Makefile
+> +++ b/arch/um/kernel/Makefile
+> @@ -8,6 +8,28 @@
+>  # kernel.
+>  KCOV_INSTRUMENT                := n
+>
+> +# The way UMl deals with the stack causes seemingly false positive KASAN
+> +# reports such as:
+> +# BUG: KASAN: stack-out-of-bounds in show_stack+0x15e/0x1fb
+> +# Read of size 8 at addr 000000006184bbb0 by task swapper/1
+> +# ==================================================================
+> +# BUG: KASAN: stack-out-of-bounds in dump_trace+0x141/0x1c5
+> +# Read of size 8 at addr 0000000071057eb8 by task swapper/1
+> +# ==================================================================
+> +# BUG: KASAN: stack-out-of-bounds in get_wchan+0xd7/0x138
+> +# Read of size 8 at addr 0000000070e8fc80 by task systemd/1
+> +#
+> +# With these files removed from instrumentation, those reports are
+> +# eliminated, but KASAN still repeatedly reports a bug on syscall_stub_data:
+> +# ==================================================================
+> +# BUG: KASAN: stack-out-of-bounds in syscall_stub_data+0x299/0x2bf
+> +# Read of size 128 at addr 0000000071457c50 by task swapper/1
+> +
+> +KASAN_SANITIZE_stacktrace.o := n
+> +KASAN_SANITIZE_sysrq.o := n
+> +KASAN_SANITIZE_process.o := n
+> +
+> +
+>  CPPFLAGS_vmlinux.lds := -DSTART=$(LDS_START)           \
+>                          -DELF_ARCH=$(LDS_ELF_ARCH)     \
+>                          -DELF_FORMAT=$(LDS_ELF_FORMAT) \
+> diff --git a/arch/um/kernel/mem.c b/arch/um/kernel/mem.c
+> index 32fc941c80f7..7b7b8a0ee724 100644
+> --- a/arch/um/kernel/mem.c
+> +++ b/arch/um/kernel/mem.c
+> @@ -18,21 +18,20 @@
+>  #include <kern_util.h>
+>  #include <mem_user.h>
+>  #include <os.h>
+> +#include <linux/sched/task.h>
+>
+> -extern int printf(const char *msg, ...);
+> -static void early_print(void)
+> +#ifdef CONFIG_KASAN
+> +void kasan_init(void)
+>  {
+> -       printf("I'm super early, before constructors\n");
+> +       kasan_map_memory((void *)KASAN_SHADOW_START, KASAN_SHADOW_SIZE);
+> +       init_task.kasan_depth = 0;
+> +       os_info("KernelAddressSanitizer initialized\n");
+>  }
+>
+> -static void __attribute__((constructor)) constructor_test(void)
+> -{
+> -       printf("yes, you can see it\n");
+> -}
+> -
+> -static void (*early_print_ptr)(void)
+> +static void (*kasan_init_ptr)(void)
+>  __attribute__((section(".kasan_init"), used))
+> - = early_print;
+> += kasan_init;
+> +#endif
+>
+>  /* allocated in paging_init, zeroed in mem_init, and unchanged thereafter */
+>  unsigned long *empty_zero_page = NULL;
+> diff --git a/arch/um/os-Linux/mem.c b/arch/um/os-Linux/mem.c
+> index 3c1b77474d2d..da7039721d35 100644
+> --- a/arch/um/os-Linux/mem.c
+> +++ b/arch/um/os-Linux/mem.c
+> @@ -17,6 +17,25 @@
+>  #include <init.h>
+>  #include <os.h>
+>
+> +/**
+> + * kasan_map_memory() - maps memory from @start with a size of @len.
+> + * The allocated memory is filled with zeroes upon success.
+> + * @start: the start address of the memory to be mapped
+> + * @len: the length of the memory to be mapped
+> + *
+> + * This function is used to map shadow memory for KASAN in uml
+> + */
+> +void kasan_map_memory(void *start, size_t len)
+> +{
+> +       if (mmap(start,
+> +                len,
+> +                PROT_READ|PROT_WRITE,
+> +                MAP_FIXED|MAP_ANONYMOUS|MAP_PRIVATE|MAP_NORESERVE,
+> +                -1,
+> +                0) == MAP_FAILED)
+> +               os_info("Couldn't allocate shadow memory %s", strerror(errno));
+> +}
+> +
+>  /* Set by make_tempfile() during early boot. */
+>  static char *tempdir = NULL;
+>
+> diff --git a/arch/um/os-Linux/user_syms.c b/arch/um/os-Linux/user_syms.c
+> index 715594fe5719..cb667c9225ab 100644
+> --- a/arch/um/os-Linux/user_syms.c
+> +++ b/arch/um/os-Linux/user_syms.c
+> @@ -27,10 +27,10 @@ EXPORT_SYMBOL(strstr);
+>  #ifndef __x86_64__
+>  extern void *memcpy(void *, const void *, size_t);
+>  EXPORT_SYMBOL(memcpy);
+> -#endif
+> -
+>  EXPORT_SYMBOL(memmove);
+>  EXPORT_SYMBOL(memset);
+> +#endif
+> +
+>  EXPORT_SYMBOL(printf);
+>
+>  /* Here, instead, I can provide a fake prototype. Yes, someone cares: genksyms.
+> diff --git a/arch/x86/um/Makefile b/arch/x86/um/Makefile
+> index 33c51c064c77..7dbd76c546fe 100644
+> --- a/arch/x86/um/Makefile
+> +++ b/arch/x86/um/Makefile
+> @@ -26,7 +26,8 @@ else
+>
+>  obj-y += syscalls_64.o vdso/
+>
+> -subarch-y = ../lib/csum-partial_64.o ../lib/memcpy_64.o ../entry/thunk_64.o
+> +subarch-y = ../lib/csum-partial_64.o ../lib/memcpy_64.o ../entry/thunk_64.o \
+> +       ../lib/memmove_64.o ../lib/memset_64.o
+>
+>  endif
+>
+> diff --git a/arch/x86/um/vdso/Makefile b/arch/x86/um/vdso/Makefile
+> index 0caddd6acb22..450efa0fb694 100644
+> --- a/arch/x86/um/vdso/Makefile
+> +++ b/arch/x86/um/vdso/Makefile
+> @@ -3,6 +3,9 @@
+>  # Building vDSO images for x86.
+>  #
+>
+> +# do not instrument on vdso because KASAN is not compatible with user mode
+> +KASAN_SANITIZE                 := n
+> +
+>  # Prevents link failures: __sanitizer_cov_trace_pc() is not linked in.
+>  KCOV_INSTRUMENT                := n
+>
+> --
+> 2.25.0.341.g760bfbb309-goog
+>
+> --
+> You received this message because you are subscribed to the Google Groups "kasan-dev" group.
+> To unsubscribe from this group and stop receiving emails from it, send an email to kasan-dev+unsubscribe@googlegroups.com.
+> To view this discussion on the web visit https://groups.google.com/d/msgid/kasan-dev/20200210225806.249297-1-trishalfonso%40google.com.
+
+_______________________________________________
+linux-um mailing list
+linux-um@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-um
