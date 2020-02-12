@@ -2,66 +2,91 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8808115AEDE
-	for <lists+linux-um@lfdr.de>; Wed, 12 Feb 2020 18:38:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5397515B3A3
+	for <lists+linux-um@lfdr.de>; Wed, 12 Feb 2020 23:26:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Y1IAZzyyfnSMn5NM6QFViKBKhWo81yfbRIWNC6APD3Q=; b=O32HhN+iLDS7j3W4CChDstV8C
-	1y9PaV7FdnQndAMPaurmRiWc/9Cp0C58etf49s3Jxy4t6hdoWrDy0V3B1MmFZRQO2M6HrwV62Weli
-	41piY3O7FMTr13nyirEeCeH0+ZK8rA+Nj3rthham+in0HNb28eefPjVGT1zevBozB/cXOIR3FPuQw
-	m3PFabP0ihJwn/bTYBATbxpnDrkRQQdRrLMjFwlIQBYJg7/ildl9pu9fDQHPUbQ7oSmrOoX6ZRydV
-	o4x6gkp/RUsfavxLfkblrkS8YeB7gcZ7amQBKjHPCQC3JT8lLtZzDJSDrPtwS7RsmQtuu2iT4wzCf
-	3qqPx5uhg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=J7NJIvgiUOt3Sill4DO9lOk+ISzBXqbDtjK4fYTBwk4=; b=eiXzH3nlfb1iQi
+	m0Afh+290wkqhqeVIweCVsK0xF2cwAqtvDpShXyUyQnDGvKNrsnjpo5d6uK+EmwwcGPPN9+z3Yx2j
+	jlQqRpGm5Y5BJpiNQvWX8oBvGe+66KRPIaW64zlF+GgfhFEmEDKJSydkWJlEozLIR+DI0rE0Arz7F
+	XM+5wXqH32BQPKCLcvFa+2ZpjTEythBiGBM6vK1n+ov7460KeisaXmlx6x4z+jM+Y6A4NGTWVL1YH
+	6k4/vuA/jRHQ+gXXcewPIh79hSE87+mygwGLutS3vda02guvmp8phmWz/Z9rxdW3sNEZtbw1Gk5ha
+	tkMq+Ulow2cek60vNH9w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1vxs-00066q-Ls; Wed, 12 Feb 2020 17:38:20 +0000
-Received: from ivanoab7.miniserver.com ([37.128.132.42]
- helo=www.kot-begemot.co.uk)
+	id 1j20SH-0003qg-DI; Wed, 12 Feb 2020 22:26:01 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1vxo-00065z-Ay
- for linux-um@lists.infradead.org; Wed, 12 Feb 2020 17:38:19 +0000
-Received: from tun252.jain.kot-begemot.co.uk ([192.168.18.6]
- helo=jain.kot-begemot.co.uk)
- by www.kot-begemot.co.uk with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.92) (envelope-from <anton.ivanov@cambridgegreys.com>)
- id 1j1vxk-00050o-Aa; Wed, 12 Feb 2020 17:38:12 +0000
-Received: from jain.kot-begemot.co.uk ([192.168.3.3])
- by jain.kot-begemot.co.uk with esmtp (Exim 4.92)
- (envelope-from <anton.ivanov@cambridgegreys.com>)
- id 1j1vxh-0002ep-QX; Wed, 12 Feb 2020 17:38:11 +0000
-Subject: Re: [PATCH] virtio: Work around frames incorrectly marked as gso
-To: "Michael S. Tsirkin" <mst@redhat.com>
-References: <20191209104824.17059-1-anton.ivanov@cambridgegreys.com>
- <57230228-7030-c65f-a24f-910ca52bbe9e@cambridgegreys.com>
- <f78bfe6e-2ffc-3734-9618-470f1afea0c6@redhat.com>
- <918222d9-816a-be70-f8af-b8dfcb586240@cambridgegreys.com>
- <20200211053502-mutt-send-email-mst@kernel.org>
-From: Anton Ivanov <anton.ivanov@cambridgegreys.com>
-Message-ID: <9547228b-aa93-f2b6-6fdc-8d33cde3716a@cambridgegreys.com>
-Date: Wed, 12 Feb 2020 17:38:09 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ id 1j20SA-0003gO-68
+ for linux-um@lists.infradead.org; Wed, 12 Feb 2020 22:25:55 +0000
+Received: by mail-wr1-x444.google.com with SMTP id w15so4318791wru.4
+ for <linux-um@lists.infradead.org>; Wed, 12 Feb 2020 14:25:50 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=kqLUL5r8C+tgnaPYz9HWPNgipcce1YW5/q3ifbXu5oA=;
+ b=U76D1PMAXPdzH4McXJdNoTnfNeoSGktudQQ1kymC7k9nvj7Zk4vDoele3b2Lrz9Oya
+ b54jfgEa7JSp061Us5huRzQQ5F0Rf103vwiM9otTrX5KJkmvmB+ApZE69JEXFEQBoL/r
+ Ri7tNBp3bMiN2qRsHUnImekTPzSVfGWQuZP72HZRVmoGTCc2nbisVgVlRWhGaGs/2s2z
+ F5hNx4EYeFNXVYM5nRZ2osI6aPGVkQkewa2ylVFo5X9XhIYeweuSSCrX2tVbQ3uHuL0Q
+ ViDDI3K0pcWiwdwbVbAPW/uV51nAsJ5iL4W8K6azD3Y3DcdbDk6jopUjiCj21iVG9bQX
+ q+Yg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=kqLUL5r8C+tgnaPYz9HWPNgipcce1YW5/q3ifbXu5oA=;
+ b=apFHtLjA5uB+aky0qhHGIEEauOs+VLxmX8SD8so8ztvGo2p/G0X1hC0FBJedTpoqR8
+ 5EWubfUuV6cRFFxv387tjUt0lWtQ1ooiCOppEke3Z7wMHkXc6ei3GhVYJ/E1MGfR9cbI
+ lI/8AJFd3gmD8ihtzJNjtpYz8WXbe7eteDmg+1nGBo3JN18nEJDNCYyMi7N0PetfszTF
+ A8pPILvUKD1feAv1u7GeVGKvs1y1UuPCG4y/ji/s+TlTlyjeEjcr62e0CKxYPLjRmGau
+ v6HuSe9mbVyWam8pnm6xqglVMnzg6G6Aw/bK5qWkXhWZI1mA0VsY4wBotamFSG4quRut
+ Tsrg==
+X-Gm-Message-State: APjAAAVd+YAp73qDeBSXv51vHEPzHTbMCm9+F8PGZKEp9bJVf6mfnlNm
+ 1yJEcOORwHc5VhNhiH9frirnjYmsQnKBH0J1abOw1g==
+X-Google-Smtp-Source: APXvYqyKikEA7Oc5ye0Hcm8hVCfh8p99mW4CCfUw/3zz4/Aw4Wf+K1jVzp8VtANBdH3QvrdqXsRTpZE+8a0lgaOsAV4=
+X-Received: by 2002:adf:81e3:: with SMTP id 90mr16580061wra.23.1581546349050; 
+ Wed, 12 Feb 2020 14:25:49 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <20200211053502-mutt-send-email-mst@kernel.org>
-Content-Language: en-US
-X-Spam-Score: -1.0
-X-Spam-Score: -1.0
-X-Clacks-Overhead: GNU Terry Pratchett
+References: <20200115182816.33892-1-trishalfonso@google.com>
+ <CACT4Y+b4+5PQvUeeHi=3g0my0WbaRaNEWY3P-MOVJXYSO7U5aA@mail.gmail.com>
+ <CAKFsvU+zaY6B_+g=UTpOddKXXgVaKWxH3c8nw6GSLceb1Mg2qA@mail.gmail.com>
+ <CACT4Y+aHRiR_7hiRE0DmaCQV2NzaqL0-kbMoVPJU=5-pcOBxJA@mail.gmail.com>
+In-Reply-To: <CACT4Y+aHRiR_7hiRE0DmaCQV2NzaqL0-kbMoVPJU=5-pcOBxJA@mail.gmail.com>
+From: Patricia Alfonso <trishalfonso@google.com>
+Date: Wed, 12 Feb 2020 14:25:37 -0800
+Message-ID: <CAKFsvUJ2w=re_-q5PTV8c30aVwot8zMOipRvhD9cCx-9cc-Ksw@mail.gmail.com>
+Subject: Re: [RFC PATCH] UML: add support for KASAN under x86_64
+To: Dmitry Vyukov <dvyukov@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200212_093816_391349_885353CD 
-X-CRM114-Status: GOOD (  17.66  )
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20200212_142554_279475_18CA5CDF 
+X-CRM114-Status: GOOD (  14.88  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.3 KHOP_HELO_FCRDNS       Relay HELO differs from its IP's reverse DNS
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,70 +98,57 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: netdev@vger.kernel.org, Jason Wang <jasowang@redhat.com>,
- linux-um@lists.infradead.org, virtualization@lists.linux-foundation.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Richard Weinberger <richard@nod.at>, Jeff Dike <jdike@addtoit.com>,
+ Brendan Higgins <brendanhiggins@google.com>,
+ LKML <linux-kernel@vger.kernel.org>, kasan-dev <kasan-dev@googlegroups.com>,
+ linux-um@lists.infradead.org, David Gow <davidgow@google.com>,
+ Andrey Ryabinin <aryabinin@virtuozzo.com>, anton.ivanov@cambridgegreys.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-CgpPbiAxMS8wMi8yMDIwIDEwOjM3LCBNaWNoYWVsIFMuIFRzaXJraW4gd3JvdGU6Cj4gT24gVHVl
-LCBGZWIgMTEsIDIwMjAgYXQgMDc6NDI6MzdBTSArMDAwMCwgQW50b24gSXZhbm92IHdyb3RlOgo+
-PiBPbiAxMS8wMi8yMDIwIDAyOjUxLCBKYXNvbiBXYW5nIHdyb3RlOgo+Pj4KPj4+IE9uIDIwMjAv
-Mi8xMSDkuIrljYgxMjo1NSwgQW50b24gSXZhbm92IHdyb3RlOgo+Pj4+Cj4+Pj4KPj4+PiBPbiAw
-OS8xMi8yMDE5IDEwOjQ4LCBhbnRvbi5pdmFub3ZAY2FtYnJpZGdlZ3JleXMuY29tIHdyb3RlOgo+
-Pj4+PiBGcm9tOiBBbnRvbiBJdmFub3YgPGFudG9uLml2YW5vdkBjYW1icmlkZ2VncmV5cy5jb20+
-Cj4+Pj4+Cj4+Pj4+IFNvbWUgb2YgdGhlIGZyYW1lcyBtYXJrZWQgYXMgR1NPIHdoaWNoIGFycml2
-ZSBhdAo+Pj4+PiB2aXJ0aW9fbmV0X2hkcl9mcm9tX3NrYigpIGhhdmUgbm8gR1NPX1RZUEUsIG5v
-Cj4+Pj4+IGZyYWdtZW50cyAoZGF0YV9sZW4gPSAwKSBhbmQgbGVuZ3RoIHNpZ25pZmljYW50bHkg
-c2hvcnRlcgo+Pj4+PiB0aGFuIHRoZSBNVFUgKDc1MiBpbiBteSBleHBlcmltZW50cykuCj4+Pj4+
-Cj4+Pj4+IFRoaXMgaXMgb2JzZXJ2ZWQgb24gcmF3IHNvY2tldHMgcmVhZGluZyBvZmYgdkV0aCBp
-bnRlcmZhY2VzCj4+Pj4+IGluIGFsbCA0LnggYW5kIDUueCBrZXJuZWxzIEkgdGVzdGVkLgo+Pj4+
-Pgo+Pj4+PiBUaGVzZSBmcmFtZXMgYXJlIHJlcG9ydGVkIGFzIGludmFsaWQgd2hpbGUgdGhleSBh
-cmUgaW4gZmFjdAo+Pj4+PiBnc28tbGVzcyBmcmFtZXMuCj4+Pj4+Cj4+Pj4+IFRoaXMgcGF0Y2gg
-bWFya3MgdGhlIHZuZXQgaGVhZGVyIGFzIG5vLUdTTyBmb3IgdGhlbSBpbnN0ZWFkCj4+Pj4+IG9m
-IHJlcG9ydGluZyBpdCBhcyBpbnZhbGlkLgo+Pj4+Pgo+Pj4+PiBTaWduZWQtb2ZmLWJ5OiBBbnRv
-biBJdmFub3YgPGFudG9uLml2YW5vdkBjYW1icmlkZ2VncmV5cy5jb20+Cj4+Pj4+IC0tLQo+Pj4+
-PiAgwqAgaW5jbHVkZS9saW51eC92aXJ0aW9fbmV0LmggfCA4ICsrKysrKy0tCj4+Pj4+ICDCoCAx
-IGZpbGUgY2hhbmdlZCwgNiBpbnNlcnRpb25zKCspLCAyIGRlbGV0aW9ucygtKQo+Pj4+Pgo+Pj4+
-PiBkaWZmIC0tZ2l0IGEvaW5jbHVkZS9saW51eC92aXJ0aW9fbmV0LmggYi9pbmNsdWRlL2xpbnV4
-L3ZpcnRpb19uZXQuaAo+Pj4+PiBpbmRleCAwZDFmZTkyOTdhYzYuLmQ5MGQ1Y2ZmMWI5YSAxMDA2
-NDQKPj4+Pj4gLS0tIGEvaW5jbHVkZS9saW51eC92aXJ0aW9fbmV0LmgKPj4+Pj4gKysrIGIvaW5j
-bHVkZS9saW51eC92aXJ0aW9fbmV0LmgKPj4+Pj4gQEAgLTExMiw4ICsxMTIsMTIgQEAgc3RhdGlj
-IGlubGluZSBpbnQKPj4+Pj4gdmlydGlvX25ldF9oZHJfZnJvbV9za2IoY29uc3Qgc3RydWN0IHNr
-X2J1ZmYgKnNrYiwKPj4+Pj4gIMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGhkci0+Z3NvX3R5
-cGUgPSBWSVJUSU9fTkVUX0hEUl9HU09fVENQVjQ7Cj4+Pj4+ICDCoMKgwqDCoMKgwqDCoMKgwqAg
-ZWxzZSBpZiAoc2luZm8tPmdzb190eXBlICYgU0tCX0dTT19UQ1BWNikKPj4+Pj4gIMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgIGhkci0+Z3NvX3R5cGUgPSBWSVJUSU9fTkVUX0hEUl9HU09fVENQ
-VjY7Cj4+Pj4+IC3CoMKgwqDCoMKgwqDCoCBlbHNlCj4+Pj4+IC3CoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgIHJldHVybiAtRUlOVkFMOwo+Pj4+PiArwqDCoMKgwqDCoMKgwqAgZWxzZSB7Cj4+Pj4+ICvC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgIGlmIChza2ItPmRhdGFfbGVuID09IDApCj4+Pj4+ICvCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgaGRyLT5nc29fdHlwZSA9IFZJUlRJT19ORVRfSERS
-X0dTT19OT05FOwo+Pj4+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBlbHNlCj4+Pj4+ICvCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgcmV0dXJuIC1FSU5WQUw7Cj4+Pj4+ICvCoMKgwqDC
-oMKgwqDCoCB9Cj4+Pj4+ICDCoMKgwqDCoMKgwqDCoMKgwqAgaWYgKHNpbmZvLT5nc29fdHlwZSAm
-IFNLQl9HU09fVENQX0VDTikKPj4+Pj4gIMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGhkci0+
-Z3NvX3R5cGUgfD0gVklSVElPX05FVF9IRFJfR1NPX0VDTjsKPj4+Pj4gIMKgwqDCoMKgwqAgfSBl
-bHNlCj4+Pj4+Cj4+Pj4KPj4+PiBwaW5nLgo+Pj4+Cj4+Pgo+Pj4gRG8geW91IG1lYW4gZ3NvX3Np
-emUgaXMgc2V0IGJ1dCBnc29fdHlwZSBpcyBub3Q/IExvb2tzIGxpa2UgYSBidWcKPj4+IGVsc2V3
-aGVyZS4KPj4+Cj4+PiBUaGFua3MKPj4+Cj4+Pgo+PiBZZXMuCj4+Cj4+IEkgY291bGQgbm90IHRy
-YWNlIGl0IHdoZXJlIGl0IGlzIGNvbWluZyBmcm9tLgo+Pgo+PiBJIHNlZSBpdCB3aGVuIGRvaW5n
-IHJlY3ZtbXNnIG9uIHJhdyBzb2NrZXRzIGluIHRoZSBVTUwgdmVjdG9yIG5ldHdvcmsKPj4gZHJp
-dmVycy4KPj4KPiAKPiBJIHRoaW5rIHdlIG5lZWQgdG8gZmluZCB0aGUgY3VscHJpdCBhbmQgZml4
-IGl0IHRoZXJlLCBsb3RzIG9mIG90aGVyIHRoaW5ncwo+IGNhbiBicmVhayBvdGhlcndpc2UuCj4g
-SnVzdCBwcmludGluZyBvdXQgc2tiLT5kZXYtPm5hbWUgc2hvdWxkIGRvIHRoZSB0cmljaywgbm8/
-CgpUaGUgcHJpbnRrIGluIHZpcnRpb19uZXRfaGRyX2Zyb21fc2tiIHNheXMgTlVMTC4KClRoYXQg
-aXMgcHJvYmFibHkgbm9ybWFsIGZvciBhIGxvY2FsbHkgb3JpZ2luYXRlZCBmcmFtZS4KCkkgY2Fu
-bm90IHJlcHJvZHVjZSB0aGlzIHdpdGggbmV0d29yayB0cmFmZmljIGJ5IHRoZSB3YXkgLSBpdCBo
-YXBwZW5zIG9ubHkgaWYgdGhlIHRyYWZmaWMgaXMgbG9jYWxseSBvcmlnaW5hdGVkIG9uIHRoZSBo
-b3N0LgoKQSwKCj4gCj4gCj4+IC0tIAo+PiBBbnRvbiBSLiBJdmFub3YKPj4gQ2FtYnJpZGdlZ3Jl
-eXMgTGltaXRlZC4gUmVnaXN0ZXJlZCBpbiBFbmdsYW5kLiBDb21wYW55IE51bWJlciAxMDI3MzY2
-MQo+PiBodHRwczovL3d3dy5jYW1icmlkZ2VncmV5cy5jb20vCj4gCj4gCj4gX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KPiBsaW51eC11bSBtYWlsaW5nIGxp
-c3QKPiBsaW51eC11bUBsaXN0cy5pbmZyYWRlYWQub3JnCj4gaHR0cDovL2xpc3RzLmluZnJhZGVh
-ZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC11bQo+IAoKLS0gCkFudG9uIFIuIEl2YW5vdgpD
-YW1icmlkZ2VncmV5cyBMaW1pdGVkLiBSZWdpc3RlcmVkIGluIEVuZ2xhbmQuIENvbXBhbnkgTnVt
-YmVyIDEwMjczNjYxCmh0dHBzOi8vd3d3LmNhbWJyaWRnZWdyZXlzLmNvbS8KCl9fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LXVtIG1haWxpbmcgbGlz
-dApsaW51eC11bUBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3Jn
-L21haWxtYW4vbGlzdGluZm8vbGludXgtdW0K
+On Tue, Feb 11, 2020 at 10:24 PM Dmitry Vyukov <dvyukov@google.com> wrote:
+>
+> On Wed, Feb 12, 2020 at 1:19 AM Patricia Alfonso
+> <trishalfonso@google.com> wrote:
+> >
+> > On Thu, Jan 16, 2020 at 12:53 AM Dmitry Vyukov <dvyukov@google.com> wrote:
+> > >
+> > > > +void kasan_init(void)
+> > > > +{
+> > > > +       kasan_map_memory((void *)KASAN_SHADOW_START, KASAN_SHADOW_SIZE);
+> > > > +
+> > > > +       // unpoison the kernel text which is form uml_physmem -> uml_reserved
+> > > > +       kasan_unpoison_shadow((void *)uml_physmem, physmem_size);
+> > > > +
+> > > > +       // unpoison the vmalloc region, which is start_vm -> end_vm
+> > > > +       kasan_unpoison_shadow((void *)start_vm, (end_vm - start_vm + 1));
+> > > > +
+> > > > +       init_task.kasan_depth = 0;
+> > > > +       pr_info("KernelAddressSanitizer initialized\n");
+> > > > +}
+> > >
+> > > Was this tested with stack instrumentation? Stack instrumentation
+> > > changes what shadow is being read/written and when. We don't need to
+> > > get it working right now, but if it does not work it would be nice to
+> > > restrict the setting and leave some comment traces for future
+> > > generations.
+> > If you are referring to KASAN_STACK_ENABLE, I just tested it and it
+> > seems to work fine.
+>
+>
+> I mean stack instrumentation which is enabled with CONFIG_KASAN_STACK.
+
+I believe I was testing with CONFIG_KASAN_STACK set to 1 since that is
+the default value when compiling with GCC.The syscall_stub_data error
+disappears when the value of CONFIG_KASAN_STACK is 0, though.
+
+
+-- 
+Patricia Alfonso
+
+_______________________________________________
+linux-um mailing list
+linux-um@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-um
