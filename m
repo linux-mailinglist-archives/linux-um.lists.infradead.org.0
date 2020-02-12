@@ -2,59 +2,66 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A3B9A15A593
-	for <lists+linux-um@lfdr.de>; Wed, 12 Feb 2020 11:03:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3545915A596
+	for <lists+linux-um@lfdr.de>; Wed, 12 Feb 2020 11:03:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=hQFKdEXwLfGovq2qU+m6vqS3d79uyA50D1CXe+1awYo=; b=jhzM8FXFMJT09i
-	9AlDb3UhXq4L9oL+OpTuyTnuWxysupp2tEjUfErxw4v/lrKN4rAdmmnaMrEjHpJ3sR5BGhJWY7FOn
-	JvTsA1y1V5D+YrUsMpkgbHwltajQV+Mzp238Q/wyx7Ke7/3d2BEvC9maXWUR7TvC+vVYfuC7Ka8pl
-	972B9qVvmLZC5ryBNTQya86oyv/Li++CNySp/uuoa205MUxNEupK70zcBFkH5FLAXvW40CFQmjUuy
-	u3A7y2rwOq8rdKXruqSpwNlEDKyAb82IqVOwXddUIm95Aff/pzttWhOxWjAHvoXDYiJNCwBK7Gkhb
-	ut/mjwwrMiAOl57/mFxA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=tiFNaOnfUMp5iU+Ov7JR7+2KXEz0AF9d1IBVHFtjDAA=; b=tXUlH4hRxNzaoC80dulIvHuwA
+	fo+wTAXs2Z9BaP06ppi77ErkF9yFvJTk6sxzBoNb83lA3+RgtSI6b4BiHvpbJb5DfygjsYJWMn2VP
+	ARZmIL/Bo0IAaiCD+gY0lzO9TalwaFVazhRsjDx085uPqjjXQVFPBMixAEl8ZN6yJoPKRWjZA27AH
+	d1r973sdc2wOy+5D7wJ2cehQbN9alA2ZEfXBOhKJnetQ23bVD4DkoAb2EsiG5XXUODP1Xq4uh445v
+	803pxD3NXNUjdQulAwWzOIxHy3oDSeIRDhzvswoBmziIZxA5EWwl1CurCfitjVfMVUCxpMp5pNdl9
+	1bv96Qizg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1orK-0005vE-WD; Wed, 12 Feb 2020 10:03:07 +0000
-Received: from mga04.intel.com ([192.55.52.120])
+	id 1j1oru-0005xr-8m; Wed, 12 Feb 2020 10:03:42 +0000
+Received: from ivanoab7.miniserver.com ([37.128.132.42]
+ helo=www.kot-begemot.co.uk)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1orI-0005ui-T5
- for linux-um@lists.infradead.org; Wed, 12 Feb 2020 10:03:06 +0000
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from orsmga008.jf.intel.com ([10.7.209.65])
- by fmsmga104.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 12 Feb 2020 02:03:03 -0800
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.70,428,1574150400"; d="scan'208";a="226815545"
-Received: from black.fi.intel.com ([10.237.72.28])
- by orsmga008.jf.intel.com with ESMTP; 12 Feb 2020 02:03:01 -0800
-Received: by black.fi.intel.com (Postfix, from userid 1003)
- id 5D21919C; Wed, 12 Feb 2020 12:03:00 +0200 (EET)
-From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-To: Jeff Dike <jdike@addtoit.com>, Richard Weinberger <richard@nod.at>,
- Anton Ivanov <anton.ivanov@cambridgegreys.com>,
- linux-um@lists.infradead.org
-Subject: [PATCH v2] um: Don't use console_drivers directly
-Date: Wed, 12 Feb 2020 12:02:59 +0200
-Message-Id: <20200212100259.80438-1-andriy.shevchenko@linux.intel.com>
-X-Mailer: git-send-email 2.25.0
+ id 1j1orq-0005xQ-Ng
+ for linux-um@lists.infradead.org; Wed, 12 Feb 2020 10:03:40 +0000
+Received: from tun252.jain.kot-begemot.co.uk ([192.168.18.6]
+ helo=jain.kot-begemot.co.uk)
+ by www.kot-begemot.co.uk with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.92) (envelope-from <anton.ivanov@cambridgegreys.com>)
+ id 1j1orl-0003s6-Kq; Wed, 12 Feb 2020 10:03:33 +0000
+Received: from jain.kot-begemot.co.uk ([192.168.3.3])
+ by jain.kot-begemot.co.uk with esmtp (Exim 4.92)
+ (envelope-from <anton.ivanov@cambridgegreys.com>)
+ id 1j1orj-0008KU-Ct; Wed, 12 Feb 2020 10:03:33 +0000
+Subject: Re: [PATCH] virtio: Work around frames incorrectly marked as gso
+To: "Michael S. Tsirkin" <mst@redhat.com>
+References: <20191209104824.17059-1-anton.ivanov@cambridgegreys.com>
+ <57230228-7030-c65f-a24f-910ca52bbe9e@cambridgegreys.com>
+ <f78bfe6e-2ffc-3734-9618-470f1afea0c6@redhat.com>
+ <918222d9-816a-be70-f8af-b8dfcb586240@cambridgegreys.com>
+ <20200211053502-mutt-send-email-mst@kernel.org>
+From: Anton Ivanov <anton.ivanov@cambridgegreys.com>
+Message-ID: <8e730fe1-3129-de8d-bcb6-d5e10695238a@cambridgegreys.com>
+Date: Wed, 12 Feb 2020 10:03:31 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
+In-Reply-To: <20200211053502-mutt-send-email-mst@kernel.org>
+Content-Language: en-US
+X-Spam-Score: -1.0
+X-Spam-Score: -1.0
+X-Clacks-Overhead: GNU Terry Pratchett
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200212_020304_952355_3F39C2E6 
-X-CRM114-Status: GOOD (  10.39  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200212_020338_769091_AF54EB6A 
+X-CRM114-Status: GOOD (  17.36  )
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [192.55.52.120 listed in list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.3 KHOP_HELO_FCRDNS       Relay HELO differs from its IP's reverse DNS
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,58 +73,71 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Thomas Meyer <thomas@m3y3r.de>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: netdev@vger.kernel.org, Jason Wang <jasowang@redhat.com>,
+ linux-um@lists.infradead.org, virtualization@lists.linux-foundation.org
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-console_drivers is kind of (semi-)private variable to the console code.
-Direct use of it make us stuck with it being exported here and there.
-Reduce use of console_drivers by replacing it with for_each_console().
-
-Cc: Thomas Meyer <thomas@m3y3r.de>
-Signed-off-by: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
----
-v2: fix condition (we do NOT want to have a console), remove confusing comment
- arch/um/kernel/kmsg_dump.c | 9 ++++-----
- 1 file changed, 4 insertions(+), 5 deletions(-)
-
-diff --git a/arch/um/kernel/kmsg_dump.c b/arch/um/kernel/kmsg_dump.c
-index 98bdf69e4c2e..e4abac6c9727 100644
---- a/arch/um/kernel/kmsg_dump.c
-+++ b/arch/um/kernel/kmsg_dump.c
-@@ -9,20 +9,19 @@ static void kmsg_dumper_stdout(struct kmsg_dumper *dumper,
- 				enum kmsg_dump_reason reason)
- {
- 	static char line[1024];
--
-+	struct console *con;
- 	size_t len = 0;
--	bool con_available = false;
- 
- 	/* only dump kmsg when no console is available */
- 	if (!console_trylock())
- 		return;
- 
--	if (console_drivers != NULL)
--		con_available = true;
-+	for_each_console(con)
-+		break;
- 
- 	console_unlock();
- 
--	if (con_available == true)
-+	if (con)
- 		return;
- 
- 	printf("kmsg_dump:\n");
--- 
-2.25.0
-
-
-_______________________________________________
-linux-um mailing list
-linux-um@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-um
+CgpPbiAxMS8wMi8yMDIwIDEwOjM3LCBNaWNoYWVsIFMuIFRzaXJraW4gd3JvdGU6Cj4gT24gVHVl
+LCBGZWIgMTEsIDIwMjAgYXQgMDc6NDI6MzdBTSArMDAwMCwgQW50b24gSXZhbm92IHdyb3RlOgo+
+PiBPbiAxMS8wMi8yMDIwIDAyOjUxLCBKYXNvbiBXYW5nIHdyb3RlOgo+Pj4KPj4+IE9uIDIwMjAv
+Mi8xMSDkuIrljYgxMjo1NSwgQW50b24gSXZhbm92IHdyb3RlOgo+Pj4+Cj4+Pj4KPj4+PiBPbiAw
+OS8xMi8yMDE5IDEwOjQ4LCBhbnRvbi5pdmFub3ZAY2FtYnJpZGdlZ3JleXMuY29tIHdyb3RlOgo+
+Pj4+PiBGcm9tOiBBbnRvbiBJdmFub3YgPGFudG9uLml2YW5vdkBjYW1icmlkZ2VncmV5cy5jb20+
+Cj4+Pj4+Cj4+Pj4+IFNvbWUgb2YgdGhlIGZyYW1lcyBtYXJrZWQgYXMgR1NPIHdoaWNoIGFycml2
+ZSBhdAo+Pj4+PiB2aXJ0aW9fbmV0X2hkcl9mcm9tX3NrYigpIGhhdmUgbm8gR1NPX1RZUEUsIG5v
+Cj4+Pj4+IGZyYWdtZW50cyAoZGF0YV9sZW4gPSAwKSBhbmQgbGVuZ3RoIHNpZ25pZmljYW50bHkg
+c2hvcnRlcgo+Pj4+PiB0aGFuIHRoZSBNVFUgKDc1MiBpbiBteSBleHBlcmltZW50cykuCj4+Pj4+
+Cj4+Pj4+IFRoaXMgaXMgb2JzZXJ2ZWQgb24gcmF3IHNvY2tldHMgcmVhZGluZyBvZmYgdkV0aCBp
+bnRlcmZhY2VzCj4+Pj4+IGluIGFsbCA0LnggYW5kIDUueCBrZXJuZWxzIEkgdGVzdGVkLgo+Pj4+
+Pgo+Pj4+PiBUaGVzZSBmcmFtZXMgYXJlIHJlcG9ydGVkIGFzIGludmFsaWQgd2hpbGUgdGhleSBh
+cmUgaW4gZmFjdAo+Pj4+PiBnc28tbGVzcyBmcmFtZXMuCj4+Pj4+Cj4+Pj4+IFRoaXMgcGF0Y2gg
+bWFya3MgdGhlIHZuZXQgaGVhZGVyIGFzIG5vLUdTTyBmb3IgdGhlbSBpbnN0ZWFkCj4+Pj4+IG9m
+IHJlcG9ydGluZyBpdCBhcyBpbnZhbGlkLgo+Pj4+Pgo+Pj4+PiBTaWduZWQtb2ZmLWJ5OiBBbnRv
+biBJdmFub3YgPGFudG9uLml2YW5vdkBjYW1icmlkZ2VncmV5cy5jb20+Cj4+Pj4+IC0tLQo+Pj4+
+PiAgwqAgaW5jbHVkZS9saW51eC92aXJ0aW9fbmV0LmggfCA4ICsrKysrKy0tCj4+Pj4+ICDCoCAx
+IGZpbGUgY2hhbmdlZCwgNiBpbnNlcnRpb25zKCspLCAyIGRlbGV0aW9ucygtKQo+Pj4+Pgo+Pj4+
+PiBkaWZmIC0tZ2l0IGEvaW5jbHVkZS9saW51eC92aXJ0aW9fbmV0LmggYi9pbmNsdWRlL2xpbnV4
+L3ZpcnRpb19uZXQuaAo+Pj4+PiBpbmRleCAwZDFmZTkyOTdhYzYuLmQ5MGQ1Y2ZmMWI5YSAxMDA2
+NDQKPj4+Pj4gLS0tIGEvaW5jbHVkZS9saW51eC92aXJ0aW9fbmV0LmgKPj4+Pj4gKysrIGIvaW5j
+bHVkZS9saW51eC92aXJ0aW9fbmV0LmgKPj4+Pj4gQEAgLTExMiw4ICsxMTIsMTIgQEAgc3RhdGlj
+IGlubGluZSBpbnQKPj4+Pj4gdmlydGlvX25ldF9oZHJfZnJvbV9za2IoY29uc3Qgc3RydWN0IHNr
+X2J1ZmYgKnNrYiwKPj4+Pj4gIMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGhkci0+Z3NvX3R5
+cGUgPSBWSVJUSU9fTkVUX0hEUl9HU09fVENQVjQ7Cj4+Pj4+ICDCoMKgwqDCoMKgwqDCoMKgwqAg
+ZWxzZSBpZiAoc2luZm8tPmdzb190eXBlICYgU0tCX0dTT19UQ1BWNikKPj4+Pj4gIMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgIGhkci0+Z3NvX3R5cGUgPSBWSVJUSU9fTkVUX0hEUl9HU09fVENQ
+VjY7Cj4+Pj4+IC3CoMKgwqDCoMKgwqDCoCBlbHNlCj4+Pj4+IC3CoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgIHJldHVybiAtRUlOVkFMOwo+Pj4+PiArwqDCoMKgwqDCoMKgwqAgZWxzZSB7Cj4+Pj4+ICvC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgIGlmIChza2ItPmRhdGFfbGVuID09IDApCj4+Pj4+ICvCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgaGRyLT5nc29fdHlwZSA9IFZJUlRJT19ORVRfSERS
+X0dTT19OT05FOwo+Pj4+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBlbHNlCj4+Pj4+ICvCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgcmV0dXJuIC1FSU5WQUw7Cj4+Pj4+ICvCoMKgwqDC
+oMKgwqDCoCB9Cj4+Pj4+ICDCoMKgwqDCoMKgwqDCoMKgwqAgaWYgKHNpbmZvLT5nc29fdHlwZSAm
+IFNLQl9HU09fVENQX0VDTikKPj4+Pj4gIMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGhkci0+
+Z3NvX3R5cGUgfD0gVklSVElPX05FVF9IRFJfR1NPX0VDTjsKPj4+Pj4gIMKgwqDCoMKgwqAgfSBl
+bHNlCj4+Pj4+Cj4+Pj4KPj4+PiBwaW5nLgo+Pj4+Cj4+Pgo+Pj4gRG8geW91IG1lYW4gZ3NvX3Np
+emUgaXMgc2V0IGJ1dCBnc29fdHlwZSBpcyBub3Q/IExvb2tzIGxpa2UgYSBidWcKPj4+IGVsc2V3
+aGVyZS4KPj4+Cj4+PiBUaGFua3MKPj4+Cj4+Pgo+PiBZZXMuCj4+Cj4+IEkgY291bGQgbm90IHRy
+YWNlIGl0IHdoZXJlIGl0IGlzIGNvbWluZyBmcm9tLgo+Pgo+PiBJIHNlZSBpdCB3aGVuIGRvaW5n
+IHJlY3ZtbXNnIG9uIHJhdyBzb2NrZXRzIGluIHRoZSBVTUwgdmVjdG9yIG5ldHdvcmsKPj4gZHJp
+dmVycy4KPj4KPiAKPiBJIHRoaW5rIHdlIG5lZWQgdG8gZmluZCB0aGUgY3VscHJpdCBhbmQgZml4
+IGl0IHRoZXJlLCBsb3RzIG9mIG90aGVyIHRoaW5ncwo+IGNhbiBicmVhayBvdGhlcndpc2UuCj4g
+SnVzdCBwcmludGluZyBvdXQgc2tiLT5kZXYtPm5hbWUgc2hvdWxkIGRvIHRoZSB0cmljaywgbm8/
+CgpJIHdpbGwgcmVidWlsZCBteSByaWcgYW5kIHJldGVzdCAoaXQncyBiZWVuIGEgd2hpbGUgc2lu
+Y2UgSSB3b3JrZWQgb24gdGhpcyBidWcpLgoKSW4gdGhlb3J5LCBpdCBzaG91bGQgYmUgdmV0aCAt
+IHRoZSB0ZXN0IGlzIG92ZXIgYSB2RXRoIHBhaXIgYW5kIGFsbCBmcmFtZXMgYXJlIGxvY2FsbHkg
+b3JpZ2luYXRlZCBieSBpcGVyZi4KCkluIHByYWN0aWNlIC0gSSB3aWxsIHJldGVzdCBhbmQgcG9z
+dCB0aGUgcmVzdWx0cyBzb21ldGltZXMgbGF0ZXIgdG9kYXkuCgpCcmdkcywKCiA+Cj4gCj4gCj4+
+IC0tIAo+PiBBbnRvbiBSLiBJdmFub3YKPj4gQ2FtYnJpZGdlZ3JleXMgTGltaXRlZC4gUmVnaXN0
+ZXJlZCBpbiBFbmdsYW5kLiBDb21wYW55IE51bWJlciAxMDI3MzY2MQo+PiBodHRwczovL3d3dy5j
+YW1icmlkZ2VncmV5cy5jb20vCj4gCj4gCj4gX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX18KPiBsaW51eC11bSBtYWlsaW5nIGxpc3QKPiBsaW51eC11bUBsaXN0
+cy5pbmZyYWRlYWQub3JnCj4gaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0
+aW5mby9saW51eC11bQo+IAoKLS0gCkFudG9uIFIuIEl2YW5vdgpDYW1icmlkZ2VncmV5cyBMaW1p
+dGVkLiBSZWdpc3RlcmVkIGluIEVuZ2xhbmQuIENvbXBhbnkgTnVtYmVyIDEwMjczNjYxCmh0dHBz
+Oi8vd3d3LmNhbWJyaWRnZWdyZXlzLmNvbS8KCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fCmxpbnV4LXVtIG1haWxpbmcgbGlzdApsaW51eC11bUBsaXN0cy5p
+bmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8v
+bGludXgtdW0K
