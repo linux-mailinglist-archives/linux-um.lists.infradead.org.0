@@ -2,81 +2,84 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5397515B3A3
-	for <lists+linux-um@lfdr.de>; Wed, 12 Feb 2020 23:26:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EADAE15B46B
+	for <lists+linux-um@lfdr.de>; Thu, 13 Feb 2020 00:05:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Subject:To:From:Message-ID:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=J7NJIvgiUOt3Sill4DO9lOk+ISzBXqbDtjK4fYTBwk4=; b=eiXzH3nlfb1iQi
-	m0Afh+290wkqhqeVIweCVsK0xF2cwAqtvDpShXyUyQnDGvKNrsnjpo5d6uK+EmwwcGPPN9+z3Yx2j
-	jlQqRpGm5Y5BJpiNQvWX8oBvGe+66KRPIaW64zlF+GgfhFEmEDKJSydkWJlEozLIR+DI0rE0Arz7F
-	XM+5wXqH32BQPKCLcvFa+2ZpjTEythBiGBM6vK1n+ov7460KeisaXmlx6x4z+jM+Y6A4NGTWVL1YH
-	6k4/vuA/jRHQ+gXXcewPIh79hSE87+mygwGLutS3vda02guvmp8phmWz/Z9rxdW3sNEZtbw1Gk5ha
-	tkMq+Ulow2cek60vNH9w==;
+	List-Owner; bh=bVmsYrpwyXdMze3eHNciIac29LKc4kdeewI2gEana98=; b=LjbT9lFEK2UqOB
+	yGdhpsN7dKjELySWqVgv7d8ITEkGOfbWkOTp1vGt9Oi7NkbCaPQrK+Avmb56sgo/ABEz25LxRAfX0
+	7HDQs3GqNKetW89ybKsKLKfD2ZojO1H4crt77cU2TayS+ctUExjTyNhGyAtktVfE4ZRQ+YpQxxfBS
+	DRh1Z1EnedpKpLeUIAt3zCQxFdTWtYiHxXi1PFsQjsVZyZ2+TjAOHt0/D9VSF/YqVUFoaCYGfEoaW
+	ntpjcEZjEdhYGzQAB7PwSNIEFSYoVcjudFltq5WJPJx6tLB/Zi6HZ8KtNsqHXre+MMPbgYY6VA8Rj
+	W4I/YecToQ4G9dcsvU4A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j20SH-0003qg-DI; Wed, 12 Feb 2020 22:26:01 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1j214C-0000kA-Eo; Wed, 12 Feb 2020 23:05:12 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j20SA-0003gO-68
- for linux-um@lists.infradead.org; Wed, 12 Feb 2020 22:25:55 +0000
-Received: by mail-wr1-x444.google.com with SMTP id w15so4318791wru.4
- for <linux-um@lists.infradead.org>; Wed, 12 Feb 2020 14:25:50 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=kqLUL5r8C+tgnaPYz9HWPNgipcce1YW5/q3ifbXu5oA=;
- b=U76D1PMAXPdzH4McXJdNoTnfNeoSGktudQQ1kymC7k9nvj7Zk4vDoele3b2Lrz9Oya
- b54jfgEa7JSp061Us5huRzQQ5F0Rf103vwiM9otTrX5KJkmvmB+ApZE69JEXFEQBoL/r
- Ri7tNBp3bMiN2qRsHUnImekTPzSVfGWQuZP72HZRVmoGTCc2nbisVgVlRWhGaGs/2s2z
- F5hNx4EYeFNXVYM5nRZ2osI6aPGVkQkewa2ylVFo5X9XhIYeweuSSCrX2tVbQ3uHuL0Q
- ViDDI3K0pcWiwdwbVbAPW/uV51nAsJ5iL4W8K6azD3Y3DcdbDk6jopUjiCj21iVG9bQX
- q+Yg==
+ id 1j2148-0000C1-Rv
+ for linux-um@lists.infradead.org; Wed, 12 Feb 2020 23:05:10 +0000
+Received: by mail-pf1-x442.google.com with SMTP id j9so1972091pfa.8
+ for <linux-um@lists.infradead.org>; Wed, 12 Feb 2020 15:05:06 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:message-id:from:to:cc:subject:in-reply-to:references
+ :user-agent:mime-version;
+ bh=DhLDDQpSTxFpPyY4fIgEFJiS+24LcZpCXWR7ewFu0Vs=;
+ b=myoINeW7M9rDV/8BC/mIst7zjwrxq/Q6SK3tQjLZxwwFnOQXqoNSBiUGd3cUx5NeWo
+ UO2gdjRUbZvEgc+tHlWNrw+TIHVP8Ay9dtID5uVY0CmhPSnWEVaRtj7xeLa2MQehWdNL
+ iIDKg5BpfrYRd+BrOZnFQ8YctmmMCZ8noC7LaQ3YIoMVBDdTVXiM+zB6u5j8GBbqyP+w
+ XwKoWwrIii6O1YnAYIEzPhwRp/O8YgObljmcdPUOTvBrXC0gJAU45hxNfnqB9qPnt0mx
+ /CAGj3Azg7p9SDnhUhTT1n+DH7y4qWKBxR9eqLB72/PS9aydK7tuKeIcAEQFCsLQaqau
+ 0Otw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=kqLUL5r8C+tgnaPYz9HWPNgipcce1YW5/q3ifbXu5oA=;
- b=apFHtLjA5uB+aky0qhHGIEEauOs+VLxmX8SD8so8ztvGo2p/G0X1hC0FBJedTpoqR8
- 5EWubfUuV6cRFFxv387tjUt0lWtQ1ooiCOppEke3Z7wMHkXc6ei3GhVYJ/E1MGfR9cbI
- lI/8AJFd3gmD8ihtzJNjtpYz8WXbe7eteDmg+1nGBo3JN18nEJDNCYyMi7N0PetfszTF
- A8pPILvUKD1feAv1u7GeVGKvs1y1UuPCG4y/ji/s+TlTlyjeEjcr62e0CKxYPLjRmGau
- v6HuSe9mbVyWam8pnm6xqglVMnzg6G6Aw/bK5qWkXhWZI1mA0VsY4wBotamFSG4quRut
- Tsrg==
-X-Gm-Message-State: APjAAAVd+YAp73qDeBSXv51vHEPzHTbMCm9+F8PGZKEp9bJVf6mfnlNm
- 1yJEcOORwHc5VhNhiH9frirnjYmsQnKBH0J1abOw1g==
-X-Google-Smtp-Source: APXvYqyKikEA7Oc5ye0Hcm8hVCfh8p99mW4CCfUw/3zz4/Aw4Wf+K1jVzp8VtANBdH3QvrdqXsRTpZE+8a0lgaOsAV4=
-X-Received: by 2002:adf:81e3:: with SMTP id 90mr16580061wra.23.1581546349050; 
- Wed, 12 Feb 2020 14:25:49 -0800 (PST)
-MIME-Version: 1.0
-References: <20200115182816.33892-1-trishalfonso@google.com>
- <CACT4Y+b4+5PQvUeeHi=3g0my0WbaRaNEWY3P-MOVJXYSO7U5aA@mail.gmail.com>
- <CAKFsvU+zaY6B_+g=UTpOddKXXgVaKWxH3c8nw6GSLceb1Mg2qA@mail.gmail.com>
- <CACT4Y+aHRiR_7hiRE0DmaCQV2NzaqL0-kbMoVPJU=5-pcOBxJA@mail.gmail.com>
-In-Reply-To: <CACT4Y+aHRiR_7hiRE0DmaCQV2NzaqL0-kbMoVPJU=5-pcOBxJA@mail.gmail.com>
-From: Patricia Alfonso <trishalfonso@google.com>
-Date: Wed, 12 Feb 2020 14:25:37 -0800
-Message-ID: <CAKFsvUJ2w=re_-q5PTV8c30aVwot8zMOipRvhD9cCx-9cc-Ksw@mail.gmail.com>
-Subject: Re: [RFC PATCH] UML: add support for KASAN under x86_64
-To: Dmitry Vyukov <dvyukov@google.com>
+ h=x-gm-message-state:date:message-id:from:to:cc:subject:in-reply-to
+ :references:user-agent:mime-version;
+ bh=DhLDDQpSTxFpPyY4fIgEFJiS+24LcZpCXWR7ewFu0Vs=;
+ b=aG6tVEpRF1gc9XQh3Hhq/dtel6mB/IZuxI/Prj5oictX2oeopOUQwiZpHe26v5LZ6o
+ WKVizA4SdGSG3TeOCmDzNNEGnavDilQ4BDt0gtW1SoohHfLh9AQze+ctJqs2IwG1HvGr
+ gJek8eWCmCuNrPm15uqzQkkmI+Ql18sGRfzOE3f7+EHZnRKmb83ZuXd/pqJQ52aJjgQf
+ la6lMSmonCL+fk3NYhrovtfyNTD29eOs7w93TOmcxRBBffQ+DtFm56ZfFoKIymfxd8VQ
+ G3DZmYzBrqbhuRGWYtBYXxm6ZlUmBfklDMAL8XZA6hckkeTWNcoKgXFXdBm6jPOHt34a
+ tY4w==
+X-Gm-Message-State: APjAAAUeP/s8l3XtFfLA/mKxLp3sB0J0OJQQbKSxsilBErb0tRQEMJ8g
+ aUZ1vGmPM2tZxtsUvDl98UTJBtLUaIQ=
+X-Google-Smtp-Source: APXvYqwdAFhaKYSrVpOv/xg3u8I//mwpyDlwYLaWBM+bM3X1ixRUXv1xvJEtKwM84UJs0i+zDHxRPw==
+X-Received: by 2002:a63:3f85:: with SMTP id m127mr14912056pga.15.1581548705689; 
+ Wed, 12 Feb 2020 15:05:05 -0800 (PST)
+Received: from earth-mac.local.gmail.com
+ (219x123x138x129.ap219.ftth.ucom.ne.jp. [219.123.138.129])
+ by smtp.gmail.com with ESMTPSA id y190sm289449pfb.82.2020.02.12.15.05.03
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Wed, 12 Feb 2020 15:05:05 -0800 (PST)
+Date: Thu, 13 Feb 2020 08:05:02 +0900
+Message-ID: <m2mu9nwgo1.wl-thehajime@gmail.com>
+From: Hajime Tazaki<thehajime@gmail.com>
+To: ddiss@suse.de
+Subject: Re: [RFC v3 18/26] lkl tools: add test programs
+In-Reply-To: <20200212143229.3a557114@suse.de>
+References: <20200212143229.3a557114@suse.de>
+User-Agent: Wanderlust/2.15.9 (Almost Unreal) Emacs/25.3 Mule/6.0
+ (HANACHIRUSATO)
+MIME-Version: 1.0 (generated by SEMI-EPG 1.14.7 - "Harue")
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200212_142554_279475_18CA5CDF 
-X-CRM114-Status: GOOD (  14.88  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20200212_150508_911858_18DB4D17 
+X-CRM114-Status: GOOD (  11.53  )
+X-Spam-Score: 1.3 (+)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (1.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [thehajime[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -85,8 +88,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ 1.5 TO_NO_BRKTS_FROM_MSSP  Multiple header formatting problems
+ 0.0 FROM_MISSP_FREEMAIL    From misspaced + freemail provider
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,55 +101,57 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: Richard Weinberger <richard@nod.at>, Jeff Dike <jdike@addtoit.com>,
- Brendan Higgins <brendanhiggins@google.com>,
- LKML <linux-kernel@vger.kernel.org>, kasan-dev <kasan-dev@googlegroups.com>,
- linux-um@lists.infradead.org, David Gow <davidgow@google.com>,
- Andrey Ryabinin <aryabinin@virtuozzo.com>, anton.ivanov@cambridgegreys.com
+Cc: tavi.purdila@gmail.com, linux-kernel-library@freelists.org,
+ linux-um@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Tue, Feb 11, 2020 at 10:24 PM Dmitry Vyukov <dvyukov@google.com> wrote:
->
-> On Wed, Feb 12, 2020 at 1:19 AM Patricia Alfonso
-> <trishalfonso@google.com> wrote:
-> >
-> > On Thu, Jan 16, 2020 at 12:53 AM Dmitry Vyukov <dvyukov@google.com> wrote:
-> > >
-> > > > +void kasan_init(void)
-> > > > +{
-> > > > +       kasan_map_memory((void *)KASAN_SHADOW_START, KASAN_SHADOW_SIZE);
-> > > > +
-> > > > +       // unpoison the kernel text which is form uml_physmem -> uml_reserved
-> > > > +       kasan_unpoison_shadow((void *)uml_physmem, physmem_size);
-> > > > +
-> > > > +       // unpoison the vmalloc region, which is start_vm -> end_vm
-> > > > +       kasan_unpoison_shadow((void *)start_vm, (end_vm - start_vm + 1));
-> > > > +
-> > > > +       init_task.kasan_depth = 0;
-> > > > +       pr_info("KernelAddressSanitizer initialized\n");
-> > > > +}
-> > >
-> > > Was this tested with stack instrumentation? Stack instrumentation
-> > > changes what shadow is being read/written and when. We don't need to
-> > > get it working right now, but if it does not work it would be nice to
-> > > restrict the setting and leave some comment traces for future
-> > > generations.
-> > If you are referring to KASAN_STACK_ENABLE, I just tested it and it
-> > seems to work fine.
->
->
-> I mean stack instrumentation which is enabled with CONFIG_KASAN_STACK.
 
-I believe I was testing with CONFIG_KASAN_STACK set to 1 since that is
-the default value when compiling with GCC.The syscall_stub_data error
-disappears when the value of CONFIG_KASAN_STACK is 0, though.
+On Wed, 12 Feb 2020 22:32:29 +0900,
+David Disseldorp wrote:
 
+> Some minor comments on net-test...
+> 
+> On Wed, 05 Feb 2020 23:46:39 +0900, Hajime Tazaki wrote:
+> 
+> > +static int lkl_test_icmp(void)
+> > +{
+> ...
+> > +	icmp = malloc(sizeof(struct lkl_icmphdr *));
+> 
+> I think this should be sizeof(struct lkl_icmphdr)
 
--- 
-Patricia Alfonso
+thanks, I'll fix this.
+
+> ...
+> > +	ret = lkl_sys_recv(sock, buf, sizeof(buf), LKL_MSG_DONTWAIT);
+> > +	if (ret < 0) {
+> > +		lkl_test_logf("recv error (%s)\n", lkl_strerror(ret));
+> > +		return TEST_FAILURE;
+> > +	}
+> > +
+> > +	iph = (struct lkl_iphdr *)buf;
+> > +	icmp = (struct lkl_icmphdr *)(buf + iph->ihl * 4);
+> 
+> I realise this is test code, but IMO it still makes sense to do bounds
+> checking here, e.g.
+> 
+>   pkt_len = ret;
+>   if (pkt_len < sizeof(struct lkl_iphdr)) {
+>           return TEST_FAILURE;
+>   }
+> 
+>   iph = (struct lkl_iphdr *)buf;
+>   icmphdr_off = iph->ihl * 4;
+>   if (pkt_len < icmphdr_off + sizeof(struct lkl_icmphdr)) {
+>           return TEST_FAILURE;
+>   }
+
+thanks,  I will fix this too in the next round.
+
+-- Hajime
 
 _______________________________________________
 linux-um mailing list
