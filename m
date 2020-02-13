@@ -2,92 +2,56 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3A0F115B922
-	for <lists+linux-um@lfdr.de>; Thu, 13 Feb 2020 06:40:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 77B4D15BAB0
+	for <lists+linux-um@lfdr.de>; Thu, 13 Feb 2020 09:19:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2RGBJhPdjSkCoLhUirNSq/x1Dx4v/9pN5k3hqhc2G3U=; b=Yjzj0Bg29kGJT8
-	GzLkOmycNXHAOVNOgSb7dw1kBXgRi1o4yrVyadAclQ2ET9on2hUix1HTqbX2qkpjSISDsslkOL34e
-	ikyLTs4YLNaHxZyTP8FzsfbxQ7G1Cj9s1fjg0NZqkrvo70/FdIV/vwP/64PwEOKk82NhQdOmrQ2zy
-	ohZjrEeyLZNYMMA5E90sX6O/zhoizNcMnvwnkXqCc03b9XXNI6IggX7OC+KyR5ZM+XIL/S50hs+1e
-	M2TrfQ/ZxlNQAEsZ4ffAxOawuvPEJaIA3rX4LcksAOcz8Mtc5x1AmrqfbuIVd0i7hGrIaNc7fqx7r
-	A7t94vG1PiDdk+P66Tzw==;
+	List-Owner; bh=C0asQj5uaFVzusioxXyqQlFVg8CnJy6cE27D92UXQFo=; b=Zl3ZVCh+vNfm4c
+	t6SMRlYqhd5ZJ8yr1TMBpOmGT+APL62Wh68RBTAiLzahgLMas+o1pezJc5hCRVrI0YtDkgMuULVF4
+	upXgw+oZYm49QT0DdOO1RhVO0YknnWTdD2w38nD8HAOVVARC9nHRj5Wy/xlMHwCVjgrpPHdQ8e3O+
+	/J39Emdbc8O++ax8yJ9HVL/JwWcohPuFpYdpO75OY4pwnPSwIphRBmrLFM6K1k//GLAT9sGllA2Og
+	cXAEDqwfa7LPcYCzmmEioWG9wGDOseUtHku7VI98+tt2JHLvtjAMN8Zdv898kK3necFFB9OOrhcUj
+	R60QQuhvOMi823Ok9nKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j27EP-0004Y1-1q; Thu, 13 Feb 2020 05:40:09 +0000
-Received: from mail-qk1-x744.google.com ([2607:f8b0:4864:20::744])
+	id 1j29ia-0008Qa-Du; Thu, 13 Feb 2020 08:19:28 +0000
+Received: from s3.sipsolutions.net ([2a01:4f8:191:4433::2]
+ helo=sipsolutions.net)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j27EM-0003Zd-A5
- for linux-um@lists.infradead.org; Thu, 13 Feb 2020 05:40:07 +0000
-Received: by mail-qk1-x744.google.com with SMTP id u124so4047225qkh.13
- for <linux-um@lists.infradead.org>; Wed, 12 Feb 2020 21:40:03 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=tFvB3dUHqlfWY0xdzQLpqooj9O1A8mgi9rJRJWCXmFQ=;
- b=vtBoid64kdWQODNZsUHlienhgxFYDOHEaJzpP6h14MdSty1RTBtrn1TQxj+u1qfYhr
- bRRlbvtlBlLfY6K0aFTZBm7MO3YcfKZ/bqP7MQLeM7MIH8UycmVZrN+cf0+TgFjMEvvt
- iD8NyrSZBWQ6ZQkN7WFDRZqKVYDHPaLejY7ZgT2CJjZp8d1Mr6eAifbIAFiBzOJMAr/P
- oV+4pks29Rczjh9mxbujVW8ohd0jGVH5hmMmJMFl4AyNfAVw6S9LzGTjuM6+X2widnnB
- 3LelD14XVVCJpK8f+45SAFsWZMXt8VE6oLODNh56dWAGAHPyZmIdzO1C/nVFjESghItf
- AdFw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=tFvB3dUHqlfWY0xdzQLpqooj9O1A8mgi9rJRJWCXmFQ=;
- b=K6s9otedtR3BxKBC/fPVlhigxxYIzGQ1Ql1WlLRu0NxQPcUdw2lP6ZQozqMW0r/LUg
- tdZxQTZQi9HdSqShF3Ay28rO6zE3HYV7SECeVT//uUn3dQczPfnvtrIfhfKSlsjQp7k5
- ubQAw/b77fynyXXRS8rijJScbu8MMl1MkV8ro6nX1WA2g1atxpY2MsGwIexaiDzVdZYM
- k8nh6l50aOwNSuy4YfTPv7hEVhE8pumsTavtw3USrg3aM0CDYk7B0raJVLOLITEzG8vZ
- Y/2S0u/+zN0WVlQpapcSA1oXUeUtViOewE9iMeE9+iaijUK/rPWTrfIM0B3CT4lsrzNT
- ja4w==
-X-Gm-Message-State: APjAAAU4fe8QBdPGIJmEKDpPStOH8W7LwUdn1sbMKtLIBmuBVZY8cYQC
- l/BfxH/kHugLz25waUxTStsywvOtJWleFCCj+480jA==
-X-Google-Smtp-Source: APXvYqzaDFUay/tiN8A69YthVrVrEWVEDha05NgK4STp1bXgm/zLYLJTkCUvxRYlnfDoyj2J8GDWh2dpSA3hoJCgWSQ=
-X-Received: by 2002:a37:4755:: with SMTP id u82mr13737500qka.43.1581572402214; 
- Wed, 12 Feb 2020 21:40:02 -0800 (PST)
-MIME-Version: 1.0
-References: <20200115182816.33892-1-trishalfonso@google.com>
- <CACT4Y+b4+5PQvUeeHi=3g0my0WbaRaNEWY3P-MOVJXYSO7U5aA@mail.gmail.com>
- <CAKFsvU+zaY6B_+g=UTpOddKXXgVaKWxH3c8nw6GSLceb1Mg2qA@mail.gmail.com>
- <CACT4Y+aHRiR_7hiRE0DmaCQV2NzaqL0-kbMoVPJU=5-pcOBxJA@mail.gmail.com>
- <CAKFsvUJ2w=re_-q5PTV8c30aVwot8zMOipRvhD9cCx-9cc-Ksw@mail.gmail.com>
-In-Reply-To: <CAKFsvUJ2w=re_-q5PTV8c30aVwot8zMOipRvhD9cCx-9cc-Ksw@mail.gmail.com>
-From: Dmitry Vyukov <dvyukov@google.com>
-Date: Thu, 13 Feb 2020 06:39:50 +0100
-Message-ID: <CACT4Y+ZJeABriqRZkThVa-MNDBwe7cH=Hmq1vonNmyCTMZOu6w@mail.gmail.com>
-Subject: Re: [RFC PATCH] UML: add support for KASAN under x86_64
+ id 1j29iX-0008Pc-2Q
+ for linux-um@lists.infradead.org; Thu, 13 Feb 2020 08:19:27 +0000
+Received: by sipsolutions.net with esmtpsa
+ (TLS1.3:ECDHE_SECP256R1__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
+ (Exim 4.93) (envelope-from <johannes@sipsolutions.net>)
+ id 1j29iF-0089Y1-N7; Thu, 13 Feb 2020 09:19:08 +0100
+Message-ID: <e8a45358b273f0d62c42f83d99c1b50a1608929d.camel@sipsolutions.net>
+Subject: Re: [RFC PATCH v2] UML: add support for KASAN under x86_64
+From: Johannes Berg <johannes@sipsolutions.net>
 To: Patricia Alfonso <trishalfonso@google.com>
+Date: Thu, 13 Feb 2020 09:19:06 +0100
+In-Reply-To: <CAKFsvUKaixKXbUqvVvjzjkty26GS+Ckshg2t7-+erqiN2LVS-g@mail.gmail.com>
+ (sfid-20200213_013812_463819_2E8172A0)
+References: <20200210225806.249297-1-trishalfonso@google.com>
+ <13b0ea0caff576e7944e4f9b91560bf46ac9caf0.camel@sipsolutions.net>
+ <CAKFsvUKaixKXbUqvVvjzjkty26GS+Ckshg2t7-+erqiN2LVS-g@mail.gmail.com>
+ (sfid-20200213_013812_463819_2E8172A0)
+User-Agent: Evolution 3.34.2 (3.34.2-1.fc31) 
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200212_214006_389546_59130B86 
-X-CRM114-Status: GOOD (  16.37  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20200213_001925_107701_0338F5E7 
+X-CRM114-Status: GOOD (  26.04  )
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:744 listed in]
- [list.dnswl.org]
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ 0.3 KHOP_HELO_FCRDNS       Relay HELO differs from its IP's reverse DNS
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,51 +67,98 @@ Cc: Richard Weinberger <richard@nod.at>, Jeff Dike <jdike@addtoit.com>,
  Brendan Higgins <brendanhiggins@google.com>,
  LKML <linux-kernel@vger.kernel.org>, kasan-dev <kasan-dev@googlegroups.com>,
  linux-um@lists.infradead.org, David Gow <davidgow@google.com>,
- Andrey Ryabinin <aryabinin@virtuozzo.com>, anton.ivanov@cambridgegreys.com
+ Andrey Ryabinin <aryabinin@virtuozzo.com>, Dmitry Vyukov <dvyukov@google.com>,
+ anton.ivanov@cambridgegreys.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Wed, Feb 12, 2020 at 11:25 PM Patricia Alfonso
-<trishalfonso@google.com> wrote:
-> > On Wed, Feb 12, 2020 at 1:19 AM Patricia Alfonso
-> > <trishalfonso@google.com> wrote:
-> > >
-> > > On Thu, Jan 16, 2020 at 12:53 AM Dmitry Vyukov <dvyukov@google.com> wrote:
-> > > >
-> > > > > +void kasan_init(void)
-> > > > > +{
-> > > > > +       kasan_map_memory((void *)KASAN_SHADOW_START, KASAN_SHADOW_SIZE);
-> > > > > +
-> > > > > +       // unpoison the kernel text which is form uml_physmem -> uml_reserved
-> > > > > +       kasan_unpoison_shadow((void *)uml_physmem, physmem_size);
-> > > > > +
-> > > > > +       // unpoison the vmalloc region, which is start_vm -> end_vm
-> > > > > +       kasan_unpoison_shadow((void *)start_vm, (end_vm - start_vm + 1));
-> > > > > +
-> > > > > +       init_task.kasan_depth = 0;
-> > > > > +       pr_info("KernelAddressSanitizer initialized\n");
-> > > > > +}
-> > > >
-> > > > Was this tested with stack instrumentation? Stack instrumentation
-> > > > changes what shadow is being read/written and when. We don't need to
-> > > > get it working right now, but if it does not work it would be nice to
-> > > > restrict the setting and leave some comment traces for future
-> > > > generations.
-> > > If you are referring to KASAN_STACK_ENABLE, I just tested it and it
-> > > seems to work fine.
-> >
-> >
-> > I mean stack instrumentation which is enabled with CONFIG_KASAN_STACK.
->
-> I believe I was testing with CONFIG_KASAN_STACK set to 1 since that is
-> the default value when compiling with GCC.The syscall_stub_data error
-> disappears when the value of CONFIG_KASAN_STACK is 0, though.
+On Wed, 2020-02-12 at 16:37 -0800, Patricia Alfonso wrote:
+> 
+> > That also means if I have say 512MB memory allocated for UML, KASAN will
+> > use an *additional* 64, unlike on a "real" system, where KASAN will take
+> > about 1/8th of the available physical memory, right?
+> > 
+> Currently, the amount of shadow memory allocated is a constant based
+> on the amount of user space address space in x86_64 since this is the
+> host architecture I have focused on.
 
+Right, but again like below - that's just mapped, not actually used. But
+as far as I can tell, once you actually start running and potentially
+use all of your mem=1024 (MB), you'll actually also use another 128MB on
+the KASAN shadow, right?
 
-Then I would either disable it for now for UML, or try to unpoision
-stack or ignore accesses.
+Unlike, say, a real x86_64 machine where if you just have 1024 MB
+physical memory, the KASAN shadow will have to fit into that as well.
+
+> > > +# With these files removed from instrumentation, those reports are
+> > > +# eliminated, but KASAN still repeatedly reports a bug on syscall_stub_data:
+> > > +# ==================================================================
+> > > +# BUG: KASAN: stack-out-of-bounds in syscall_stub_data+0x299/0x2bf
+> > > +# Read of size 128 at addr 0000000071457c50 by task swapper/1
+> > 
+> > So that's actually something to fix still? Just trying to understand,
+> > I'll test it later.
+> > 
+> Yes, I have not found a fix for these issues yet and even with these
+> few files excluded from instrumentation, the syscall_stub_data error
+> occurs(unless CONFIG_STACK is disabled, but CONFIG_STACK is enabled by
+> default when using gcc to compile). It is unclear whether this is a
+> bug that KASAN has found in UML or it is a mismatch of KASAN error
+> detection on UML.
+
+Right, ok, thanks for the explanation. I guess then stack
+instrumentation should be disabled for this patch initially.
+
+> > Heh, you *actually* based it on my patch, in git terms, not just in code
+> > terms. I think you should just pick up the few lines that you need from
+> > that patch and squash them into this one, I just posted that to
+> > demonstrate more clearly what I meant :-)
+> > 
+> I did base this on your patch. I figured it was more likely to get
+> merged before this patch anyway. To clarify, do you want me to include
+> your constructors patch with this one as a patchset?
+
+Well I had two patches:
+ (1) the module constructors one - I guess we need to test it, but you
+     can include it here if you like. I'm kinda swamped with other
+     things right now, no promises I can actually test it soon, though I
+     really do want to because that's the case I need :)
+ (2) the [DEMO] patch - you should just take the few lines you need from
+     that (in the linker script) and stick it into this patch. Don't
+     even credit me for that, I only wrote it as a patch instead of a
+     normal text email reply because I couldn't figure out how to word
+     things in an understandable way...
+
+Then we end up with 2 patches again, the (1) and your KASAN one. There's
+no point in keeping the [DEMO] separate, and 
+
+> > > +     if (mmap(start,
+> > > +              len,
+> > > +              PROT_READ|PROT_WRITE,
+> > > +              MAP_FIXED|MAP_ANONYMOUS|MAP_PRIVATE|MAP_NORESERVE,
+> > > +              -1,
+> > > +              0) == MAP_FAILED)
+> > > +             os_info("Couldn't allocate shadow memory %s", strerror(errno));
+> > 
+> > If that fails, can we even continue?
+> > 
+> Probably not, but with this executing before main(), what is the best
+> way to have an error occur? Or maybe there's a way we can just
+> continue without KASAN enabled and print to the console that KASAN
+> failed to initialize?
+
+You can always "exit(17)" or something.
+
+I'm not sure you can continue without KASAN?
+
+Arguably it's better to fail loudly anyway if something as simple as the
+mmap() here fails - after all, that probably means the KASAN offset in
+Kconfig needs to be adjusted?
+
+johannes
+
 
 _______________________________________________
 linux-um mailing list
