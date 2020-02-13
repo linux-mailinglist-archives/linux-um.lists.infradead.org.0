@@ -2,53 +2,94 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8ADF815BF48
-	for <lists+linux-um@lfdr.de>; Thu, 13 Feb 2020 14:27:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BEA0F15C019
+	for <lists+linux-um@lfdr.de>; Thu, 13 Feb 2020 15:11:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Subject:To:From:Message-ID:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jq5LnM8eY4TZii/UyWdSmRUQoj9zwhLAMsnKTX6MNf8=; b=fBbg695pzblDJ9
-	ElcV22+lDjq24Xi7IUb/UG4bhqz3ImJkgMLjVj6s+JFi8G/YeU887qsCKAiF6ylcaJyBWO/uo1YHj
-	OYqrKkHCPgME1WRJIHGT5kPt5UPml2FaZ8Trzg/j0WDH9w5Pw8frU/wfhiQKU9y0Mw4qZISEnlgT8
-	XgR9zJCbkyYzj6nMucc57cIH1fxtJOgeX5d+mqd6ABRyQJN77aAIub/Ez9gO71/nV2ApFxUVoFCTz
-	4aailluqZQIYYfmlr1Ry6tYiFMHIp/Vf3NjMcMp2lQcIgLE8KZB35XZZgpw29KEwZhrrUmnyVaLie
-	tIT2d3Ww77fSu18Xwf9Q==;
+	List-Owner; bh=LYasuGSqXbY1R1ZtF3YiTgbAe9C9tDjykbbHS8A9e+s=; b=Py1XhVm0hMKfNZ
+	u1oWbZp4a8umwZSd4kkFP/oYJfAaiHbM/mpNKCtBBedEFiLUmQAtgRgsn4UoQsPWcq7J0FiuttG81
+	+YwIw8Uf/jQ837hZQ87PjgKo20pu6GSek9qY97eyoaWCaRM2EiQJDlJagL2t/P4J2QF0B9uDySTwF
+	19xIUAwKE6VBfF2G6T3kSOhyXBo7C/tmUy2JcVTpc1+v3FsZCYDi6HXEiPg8Cea9FutZw1mnAiprH
+	DTNCjgPipzOx46Iro2zAVkRZZ6h+/xe+FTJ8FyhIbLTnXZOjanVztHMvEl+w/0wDpZX8/wOFPTlzZ
+	jjbi2ApK1hrtlnK/uHcg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2EWN-0001yQ-2T; Thu, 13 Feb 2020 13:27:11 +0000
-Received: from s3.sipsolutions.net ([2a01:4f8:191:4433::2]
- helo=sipsolutions.net)
+	id 1j2FCu-00020W-L8; Thu, 13 Feb 2020 14:11:08 +0000
+Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2EWI-0001vI-3K
- for linux-um@lists.infradead.org; Thu, 13 Feb 2020 13:27:09 +0000
-Received: by sipsolutions.net with esmtpsa
- (TLS1.3:ECDHE_X25519__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
- (Exim 4.93) (envelope-from <johannes@sipsolutions.net>)
- id 1j2EWF-008mZE-DO; Thu, 13 Feb 2020 14:27:03 +0100
-From: Johannes Berg <johannes@sipsolutions.net>
-To: linux-um@lists.infradead.org
-Subject: [PATCH 6/6] um: implement cpu_relax() as ndelay(1) for time-travel
-Date: Thu, 13 Feb 2020 14:26:49 +0100
-Message-Id: <20200213132651.20506-7-johannes@sipsolutions.net>
-X-Mailer: git-send-email 2.24.1
-In-Reply-To: <20200213132651.20506-1-johannes@sipsolutions.net>
+ id 1j2FCo-000208-7A
+ for linux-um@lists.infradead.org; Thu, 13 Feb 2020 14:11:06 +0000
+Received: by mail-pj1-x1041.google.com with SMTP id ep11so2444489pjb.2
+ for <linux-um@lists.infradead.org>; Thu, 13 Feb 2020 06:10:59 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:message-id:from:to:cc:subject:in-reply-to:references
+ :user-agent:mime-version;
+ bh=drqceFJULEkQ/55jOgYJzwZ6g50BBUpGERjTl9h6lVQ=;
+ b=kW5rLxDFgt+MOAsBwrQnSqD+IEpzn6dmXr2X7nUcJI3ToeuIZ/tDj70wkFTYMrmMgd
+ 82Qf8vCDdbhUnUv41bilt9eKYp9Z8f6NW4+iSePeUaPaECFPWyOwizfRefVEQov5jVUG
+ OZ8l4mZLkkTqrJrWqomYxloZVQIGI+XtUEfCtVIxlbQByKt6jkTEz36muTfhNA5g0s8/
+ DDQbejhLVdA2uvdPJO5RnObTx5xdfhv6pA5P4LllW5yglXtADknqpwtRnU6zFUzm2WKd
+ SVgbRLX7LsU964z/s5kem3aD9iJIMWRngo+4nE89f7kRELfFKMwuIHG6qmD0x5xgP49L
+ d11g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:message-id:from:to:cc:subject:in-reply-to
+ :references:user-agent:mime-version;
+ bh=drqceFJULEkQ/55jOgYJzwZ6g50BBUpGERjTl9h6lVQ=;
+ b=e8WtBrMPJk8yGZoj8+aknxGaDqa3bC6T3nmkfzbshovbNmifwz1ZkIPj01bcDs5jio
+ DRFyJNhp5MlZtdnJ4EJYJ0GxK0XrMbgO9wUchk7qB68Nsom50SLAZPgms8NDBSxM03Gw
+ d36cmVnjZhGJjovDMXkOkH9BA4eovQ/1VbMmgMUBFy6CHKHfoMqFPzAoZxLgFPzlzDb3
+ bn+Wkm57xpvyCgk7IdIR6qqwU7d/86cflYE/jziJhde8hjjpHbvlahQ6oZIK/1uJ4W+G
+ aGpmLKAyJdrTugYJjSP0/yluJ/6aK8U2HK+cIblxkgqviyCQiq3wdMruSB5xbVFatCWc
+ uL+Q==
+X-Gm-Message-State: APjAAAVwLz1jx/Nq/2Ay59g9yrlRKxMBvVIfvYf73MvP6UkFQ9weSKk4
+ b1DaGNCC+4W7KowAs6DQNy8=
+X-Google-Smtp-Source: APXvYqyh0JPRJj9kFh0gz7wGfhZDBCJmBKftva9URRCK16GI7y+auM1u943jiSLNVOabLnZmOErltA==
+X-Received: by 2002:a17:90a:da03:: with SMTP id
+ e3mr5533756pjv.100.1581603059194; 
+ Thu, 13 Feb 2020 06:10:59 -0800 (PST)
+Received: from earth-mac.local.gmail.com
+ (219x123x138x129.ap219.ftth.ucom.ne.jp. [219.123.138.129])
+ by smtp.gmail.com with ESMTPSA id w18sm3489197pfq.167.2020.02.13.06.10.57
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Thu, 13 Feb 2020 06:10:58 -0800 (PST)
+Date: Thu, 13 Feb 2020 23:10:55 +0900
+Message-ID: <m2h7zuwpao.wl-thehajime@gmail.com>
+From: Hajime Tazaki<thehajime@gmail.com>
+To: johannes@sipsolutions.net
+Subject: Re: [PATCH 4/6] um: implement time-travel=ext
+In-Reply-To: <20200213132651.20506-5-johannes@sipsolutions.net>
 References: <20200213132651.20506-1-johannes@sipsolutions.net>
-MIME-Version: 1.0
+ <20200213132651.20506-5-johannes@sipsolutions.net>
+User-Agent: Wanderlust/2.15.9 (Almost Unreal) Emacs/25.3 Mule/6.0
+ (HANACHIRUSATO)
+MIME-Version: 1.0 (generated by SEMI-EPG 1.14.7 - "Harue")
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200213_052706_151632_3ED9D6D7 
-X-CRM114-Status: UNSURE (   9.53  )
+X-CRM114-CacheID: sfid-20200213_061104_222925_92852CA2 
+X-CRM114-Status: UNSURE (   8.49  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.3 (/)
+X-Spam-Score: 1.3 (+)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (1.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [thehajime[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.3 KHOP_HELO_FCRDNS       Relay HELO differs from its IP's reverse DNS
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 1.5 TO_NO_BRKTS_FROM_MSSP  Multiple header formatting problems
+ 0.0 FROM_MISSP_FREEMAIL    From misspaced + freemail provider
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,67 +101,30 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: Johannes Berg <johannes.berg@intel.com>
+Cc: linux-um@lists.infradead.org, johannes.berg@intel.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-From: Johannes Berg <johannes.berg@intel.com>
 
-In time-travel mode, cpu_relax() currently does actual CPU relax,
-but that doesn't affect the simulation. Ideally, we wouldn't run
-anything that uses it in simulation, but if we actually have virtio
-devices combined with the same simulation it's possible. Implement
-cpu_relax() as ndelay(1) in this case, using time_travel_ndelay(1)
-directly to catch errors if this is used erroneously in builds that
-don't set CONFIG_UML_TIME_TRAVEL_SUPPORT.
+Hello,
 
-While at it, convert it to an __always_inline and also add that to
-rep_nop() like the original does now.
+On Thu, 13 Feb 2020 22:26:47 +0900,
+Johannes Berg wrote:
 
-Change-Id: I9c86c5c488c1cb2f7eabf4e8b8d1da9e24163ca9
-Signed-off-by: Johannes Berg <johannes.berg@intel.com>
----
- arch/x86/um/asm/processor.h | 12 ++++++++++--
- 1 file changed, 10 insertions(+), 2 deletions(-)
+> This implements synchronized time-travel mode which - using a special
+> application on a unix socket - lets multiple machines take part in a
+> time-travelling simulation together.
+> 
+> The protocol for the unix domain socket is defined in the new file
+> include/uapi/linux/um_timetravel.h.
 
-diff --git a/arch/x86/um/asm/processor.h b/arch/x86/um/asm/processor.h
-index 593d5f3902bd..478710384b34 100644
---- a/arch/x86/um/asm/processor.h
-+++ b/arch/x86/um/asm/processor.h
-@@ -1,6 +1,7 @@
- /* SPDX-License-Identifier: GPL-2.0 */
- #ifndef __UM_PROCESSOR_H
- #define __UM_PROCESSOR_H
-+#include <linux/time-internal.h>
- 
- /* include faultinfo structure */
- #include <sysdep/faultinfo.h>
-@@ -21,12 +22,19 @@
- #include <asm/user.h>
- 
- /* REP NOP (PAUSE) is a good thing to insert into busy-wait loops. */
--static inline void rep_nop(void)
-+static __always_inline void rep_nop(void)
- {
- 	__asm__ __volatile__("rep;nop": : :"memory");
- }
- 
--#define cpu_relax()		rep_nop()
-+static __always_inline void cpu_relax(void)
-+{
-+	if (time_travel_mode == TT_MODE_INFCPU ||
-+	    time_travel_mode == TT_MODE_EXTERNAL)
-+		time_travel_ndelay(1);
-+	else
-+		rep_nop();
-+}
- 
- #define task_pt_regs(t) (&(t)->thread.regs)
- 
--- 
-2.24.1
+I was wondering if the source code of the special application (central
+scheduler?) is public (or not) so that we can test on a local machine.
+
+thanks,
+-- Hajime
 
 
 _______________________________________________
