@@ -2,96 +2,59 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E233B15D1AE
-	for <lists+linux-um@lfdr.de>; Fri, 14 Feb 2020 06:35:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D70EE15D35F
+	for <lists+linux-um@lfdr.de>; Fri, 14 Feb 2020 09:07:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Subject:To:From:Message-ID:Date:Reply-To:Content-ID:Content-Description:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IkAsXb/xeapOcRffYeZChFpPv5s5I2+UupVb2vo27hg=; b=gqY9fPEs5w5XM6
-	OvP6NscgseON8lUXrDN9Ust9Uut6p6dKLtr3JpnYhprReqFRroL6esv95frCNe/O6qPX0nO86mpdQ
-	8v+isrRV/6QOfUN5URHwjCVkfwQxmmc9gio1st1N58cWIFs3bTeOy6DgViOPFpc2aPb40jHMSKNnn
-	hPJ75NAxHL4Z9ZVTShcXa3bo42wAh4jOI2BOgu1Mjm7P51M7VbSdrpe0FpUl3v3X2/iUGUgQnrVG1
-	HMiJhkgg6nJcKy4kbxq3TXiJ5NqKJJwuzpDLpJpbAwWRFudvlDeUmMJUffmSqMTCT4l2EjafDsL6w
-	j3EfhwEe3nL3bpEgDeGQ==;
+	List-Owner; bh=7EYCxVkvw/g83F/SF5j38vWvc2Q6RdIiat2s1wJ6s+g=; b=Y2/pLVXnHeP+UQ
+	50sOXy+dk5s/JxTEsJtsqf8BrQsNSjzbXs2FiKDGKu3dmnINwq/g8JJKhw4XIGfTNR8i+vixAqZ0Q
+	7O2aEqG9XjSN5vfz4/28dpHWiBwyfSeBuBpSNUvYcujQ55PIWjrS9kFbPxI+rYNVmDJ58mnRKvBvt
+	KNUXNljvl97tBAWgC1P3VBTtSmIYn4W4aE62ylpIbc4ZYmfV0hxBJBl1tfJt5EiVgs4bONk8V1uud
+	vJ/PR5RPmFyGQLEqPm2HZgP2ro9OtfbdpRWOZl7ErpLzLcyYZl1W0egyAtsnxdfjhg8K6yZAdwerc
+	3QRTr3e+p8yX/ykXaRxg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2Tcq-0001EH-B3; Fri, 14 Feb 2020 05:34:52 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1j2W0r-0002Eh-HC; Fri, 14 Feb 2020 08:07:49 +0000
+Received: from s3.sipsolutions.net ([2a01:4f8:191:4433::2]
+ helo=sipsolutions.net)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2Tcm-0001Do-IO
- for linux-um@lists.infradead.org; Fri, 14 Feb 2020 05:34:50 +0000
-Received: by mail-pf1-x443.google.com with SMTP id 84so4307324pfy.6
- for <linux-um@lists.infradead.org>; Thu, 13 Feb 2020 21:34:45 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:message-id:from:to:cc:subject:in-reply-to:references
- :user-agent:mime-version;
- bh=zaFn32FULQ9WJcbqRz9AWzq0Dto4gqQNjjQK60ExMPE=;
- b=A4O7R1fG8KPX0834TPV4XBfvVF2fYNeUcotehUjo7WoyvLSvGx44qDocZf29nmon+u
- y80IkjhvpRsD+7bk6OMRH+ur5+Ddl+C3NrD2u3yT0ZXpT/1JN1LDJTWJLqTOEtXbUnab
- sutPIzzAnQzQxLUNokRE+ixBNvqZibuCexY7XWMX0Dry2qIPMwM/AVV73vjvBszhrptD
- 2XRlKyPnQ/2irajwIc+y3RhvpgK0Sx1M3LK4Q27lzYcVkJ2Sxmmqx4PLAD3lqkmj4nVO
- S1OY0p69HAp6VLKbNHuRFTiUkQbJFW3bf+dgM70B18teinUQYcPkBrAOuSx9lbYIrVxQ
- 13mw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:message-id:from:to:cc:subject:in-reply-to
- :references:user-agent:mime-version;
- bh=zaFn32FULQ9WJcbqRz9AWzq0Dto4gqQNjjQK60ExMPE=;
- b=b/rTZI0Csgx+KvTqyXSEww81SC66nHvkuUvQ+ZR2hnDrETH/7F0I26Tw6bzdBc0Uad
- Yo3uHwa/mceapdXtWdKcUvBLjAiN+Q4KEIUkJrv7tzj37Yhl/V+F9sPco9EBP7e8lqEl
- B1EDnLkN9b25jUNgNkVq1NyJGNUDh6gRo8aeLck1IhFLStS0M66728gTwZOZ7A0luxLp
- tdcwTFS6+Vr1bJYa1ENFGhX6LsJcxV6OKAtpnq37GUT2v+4m3PTzxvJZSZnhp3aVMe8i
- AoPnpGGZiJWl4gehPfyYkvBw2QUq6F3mjmQ/a47wK2/fRvHFmiaptUkYVuy26LhHx0uV
- NMAw==
-X-Gm-Message-State: APjAAAX+tN3z3lCHMsJbKe1dxK3PMbZf/BSWfpF9waXwfq2uu7Z0VKlr
- 4x84larLDw3oLQ5PrL/hFIGOYb6dileeOw==
-X-Google-Smtp-Source: APXvYqxL1g6bqKZ7uqVhUoUqdO61x2iiHixliTHpMD+lWBG9iAjDVhypjh3TIyQlgP+bDPXgH25vig==
-X-Received: by 2002:aa7:9f88:: with SMTP id z8mr1655812pfr.220.1581658484728; 
- Thu, 13 Feb 2020 21:34:44 -0800 (PST)
-Received: from earth-mac.local.gmail.com ([202.214.86.179])
- by smtp.gmail.com with ESMTPSA id x11sm5019824pfn.53.2020.02.13.21.34.43
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 13 Feb 2020 21:34:43 -0800 (PST)
-Date: Fri, 14 Feb 2020 14:34:33 +0900
-Message-ID: <m2d0ahwx3q.wl-thehajime@gmail.com>
-From: Hajime Tazaki<thehajime@gmail.com>
-To: johannes@sipsolutions.net
-Subject: Re: [PATCH 4/6] um: implement time-travel=ext
-In-Reply-To: <e3073fbe7298451467a3a484efad90611df19c9e.camel@sipsolutions.net>
-References: <20200213132651.20506-1-johannes@sipsolutions.net>
- <20200213132651.20506-5-johannes@sipsolutions.net>
- <m2h7zuwpao.wl-thehajime@gmail.com>
- <e3073fbe7298451467a3a484efad90611df19c9e.camel@sipsolutions.net>
-User-Agent: Wanderlust/2.15.9 (Almost Unreal) Emacs/25.3 Mule/6.0
- (HANACHIRUSATO)
-MIME-Version: 1.0 (generated by SEMI-EPG 1.14.7 - "Harue")
+ id 1j2W0o-0002Dx-Aa
+ for linux-um@lists.infradead.org; Fri, 14 Feb 2020 08:07:48 +0000
+Received: by sipsolutions.net with esmtpsa
+ (TLS1.3:ECDHE_SECP256R1__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
+ (Exim 4.93) (envelope-from <johannes@sipsolutions.net>)
+ id 1j2W0W-00B5oY-In; Fri, 14 Feb 2020 09:07:28 +0100
+Message-ID: <d8151ac6b1e590d6c49d8c890604a08685cd2303.camel@sipsolutions.net>
+Subject: Re: [RFC PATCH v2] UML: add support for KASAN under x86_64
+From: Johannes Berg <johannes@sipsolutions.net>
+To: Patricia Alfonso <trishalfonso@google.com>
+Date: Fri, 14 Feb 2020 09:07:27 +0100
+In-Reply-To: <CAKFsvULfrFC_t4CJN5evwu3EnbzbVF1UGs30uHc1Jad-Sd=s9Q@mail.gmail.com>
+ (sfid-20200214_015457_457274_397896E3)
+References: <20200210225806.249297-1-trishalfonso@google.com>
+ <13b0ea0caff576e7944e4f9b91560bf46ac9caf0.camel@sipsolutions.net>
+ <CAKFsvUKaixKXbUqvVvjzjkty26GS+Ckshg2t7-+erqiN2LVS-g@mail.gmail.com>
+ <e8a45358b273f0d62c42f83d99c1b50a1608929d.camel@sipsolutions.net>
+ <CAKFsvULfrFC_t4CJN5evwu3EnbzbVF1UGs30uHc1Jad-Sd=s9Q@mail.gmail.com>
+ (sfid-20200214_015457_457274_397896E3)
+User-Agent: Evolution 3.34.2 (3.34.2-1.fc31) 
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200213_213448_609453_BE7D9139 
-X-CRM114-Status: GOOD (  17.76  )
-X-Spam-Score: 1.3 (+)
+X-CRM114-CacheID: sfid-20200214_000746_366132_8E4400D0 
+X-CRM114-Status: UNSURE (   7.11  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (1.3 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [thehajime[at]gmail.com]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 1.5 TO_NO_BRKTS_FROM_MSSP  Multiple header formatting problems
- 0.0 FROM_MISSP_FREEMAIL    From misspaced + freemail provider
+ 0.3 KHOP_HELO_FCRDNS       Relay HELO differs from its IP's reverse DNS
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,59 +66,36 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: linux-um@lists.infradead.org
+Cc: Richard Weinberger <richard@nod.at>, Jeff Dike <jdike@addtoit.com>,
+ Brendan Higgins <brendanhiggins@google.com>,
+ LKML <linux-kernel@vger.kernel.org>, kasan-dev <kasan-dev@googlegroups.com>,
+ linux-um@lists.infradead.org, David Gow <davidgow@google.com>,
+ Andrey Ryabinin <aryabinin@virtuozzo.com>, Dmitry Vyukov <dvyukov@google.com>,
+ anton.ivanov@cambridgegreys.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
+On Thu, 2020-02-13 at 16:54 -0800, Patricia Alfonso wrote:
 
-Hello,
+> Okay, so I'll rebase onto (1) and just add the lines I need from the
+> [DEMO]. Are you sure you don't want to be named as a co-developed-by
+> at least?
 
-On Fri, 14 Feb 2020 00:52:39 +0900,
-Johannes Berg wrote:
+Yeah ... it's like 3 lines of code? Don't worry about it :)
 
-> > > The protocol for the unix domain socket is defined in the new file
-> > > include/uapi/linux/um_timetravel.h.
-> > 
-> > I was wondering if the source code of the special application (central
-> > scheduler?) is public (or not) so that we can test on a local machine.
-> 
-> So ... sadly, it's a bit of a sad story right now.
-> 
-> I have one, but it's part of a bigger testing framework that we wrote
-> (and uses the infrastructure from it), that I haven't been able to
-> release so far.
+> Yeah, failing loudly does seem to be the best option here.
 
-I understand.  Thanks for telling this.
+I just ran into that with userspace ASAN yesterday for some reason, so
+yeah.
 
-> On this tool, conceptually, the code is very simple, just keep a sorted
-> "next event" list, and tell the next one that it's their turn.
+Perhaps good to tell people what to do - I couldn't actually solve the
+issue I had in userspace yesterday. Here, could tell people to check the
+address where it's mapped, or so?
 
-I can imagine how it looks like, as I was doing a similar integration
-with kernel code and ns-3 network simulator (which isn't LKL).
+johannes
 
-This is just my 2 cents (and may be out of topic for the patch
-review); it would be nice to have an example code of this external
-program.  Since the program is independent from arch/um, this is a
-great opportunity to extend in future.
-
-One might wish to implement his/her own scheduler for particular
-purpose; for instance, a randomized error injection into time progress
-to exercise or fuzzing the Linux implementation, or alternate external
-program that can handle multiple UML instances across different nodes
-(it this already possible?).
-
-In such case, having a reference implementation would be helpful.
-
-> For a vhost-user device implementation, it's a bit more complex, as it
-> needs to be able to handle scheduler messages while waiting for a vhost-
-> user ACK message, similar to what you can see in the UML vhost-user
-> code.
-
-Let me try to look at the code.
-
--- Hajime
 
 _______________________________________________
 linux-um mailing list
