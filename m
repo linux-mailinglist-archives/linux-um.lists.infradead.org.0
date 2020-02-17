@@ -2,64 +2,69 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 893A3160BF0
-	for <lists+linux-um@lfdr.de>; Mon, 17 Feb 2020 08:54:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6521F161840
+	for <lists+linux-um@lfdr.de>; Mon, 17 Feb 2020 17:51:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=JYpfGE270/EgcRR6btCTTOy9iMMjBj4iT40jycJ6ga4=; b=RzIuDBHxKR5qebSnAd7SCRjUd
-	UkO2vJL+2OEw4xeCt5WErEL/kk86DKAnakXqmxBtlUaME6YuhVckR+5uEfdzupWwihEDYKtUj/D/E
-	LkfZiL9IlqDx/9AtzwvCkVpQO53eakiviTXeiSF0lv67dIRwG8Zh2uQWsqDJVib27bEYWz/vUqxkh
-	2n09XbrBTqqR59omEmyi4IdI6JuWa64myFESheaXW9a8V0Z+m9OwNZLhhBvVIm4pk/ZHUIzku4Bx1
-	QFOu5IKshELUJFj1FSYiJRjZuaKRWYkY2tlouL6pf+cEbMlQE+zO3gPC+pVJ9sVn74St5RLKBYIES
-	Q5+Gzw3CQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:To:
+	From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=r8GzGUzhWui2Fsa3UXK3wn7Jd3YwcZlLii5mrm+XoXk=; b=UchxNqyMuC6Byh
+	FnXKIWAtXoc1bET9y0QAiH83X+ZwmHyzqUnYrmVQKSiqXTvIdvxFMynxZLFQ8rcvhHnQCvGXsWZFX
+	8zLfZTtXGSJB2BlrE0AV9N9tUF+3sxqk58q1WtDmzR/CPFYbx8f5MXZRezvOQMbuMKoLgfC1uVM5X
+	bvqxqHOBu7PMIcUEUokurFn+iNPlwH9lPrNMLiTvWqL/R/tRfDTWbwNZYAqn1pVR1RTQra+2A2k6C
+	iq9FF095lAvVj7v5ZRd5ulLog/AyBBTO+97sJH1v11cBSZ6seSpzX1Aha6XFblz90ZInnlTEi5U/n
+	Eona1z+QjYKz1/LDGKRw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3bED-0000df-7n; Mon, 17 Feb 2020 07:54:05 +0000
-Received: from ivanoab7.miniserver.com ([37.128.132.42]
- helo=www.kot-begemot.co.uk)
+	id 1j3jbl-0007qe-Ck; Mon, 17 Feb 2020 16:50:57 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3bEA-0000cm-Av
- for linux-um@lists.infradead.org; Mon, 17 Feb 2020 07:54:04 +0000
-Received: from tun252.jain.kot-begemot.co.uk ([192.168.18.6]
- helo=jain.kot-begemot.co.uk)
- by www.kot-begemot.co.uk with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.92) (envelope-from <anton.ivanov@cambridgegreys.com>)
- id 1j3bE0-00077C-Qf; Mon, 17 Feb 2020 07:53:53 +0000
-Received: from sleer.kot-begemot.co.uk ([192.168.3.72])
- by jain.kot-begemot.co.uk with esmtps
- (TLS1.3:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
- (envelope-from <anton.ivanov@cambridgegreys.com>)
- id 1j3bDy-0000Vm-LO; Mon, 17 Feb 2020 07:53:52 +0000
-Subject: Re: [PATCH] um: vector: Avoid NULL ptr deference if transport is unset
-To: Sjoerd Simons <sjoerd.simons@collabora.co.uk>, linux-um@lists.infradead.org
-References: <20200216213624.800463-1-sjoerd.simons@collabora.co.uk>
-From: Anton Ivanov <anton.ivanov@cambridgegreys.com>
-Organization: Cambridge Greys
-Message-ID: <74c04f11-4b67-d1a7-7d05-197a229b245c@cambridgegreys.com>
-Date: Mon, 17 Feb 2020 07:53:50 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
-MIME-Version: 1.0
-In-Reply-To: <20200216213624.800463-1-sjoerd.simons@collabora.co.uk>
-Content-Language: en-US
-X-Spam-Score: -1.0
-X-Spam-Score: -1.0
-X-Clacks-Overhead: GNU Terry Pratchett
+ id 1j3jbj-0007qN-NR
+ for linux-um@lists.infradead.org; Mon, 17 Feb 2020 16:50:56 +0000
+Received: from localhost.localdomain (unknown [194.230.155.125])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9C61C215A4;
+ Mon, 17 Feb 2020 16:50:53 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1581958255;
+ bh=fr+r1JFKwTNHUZAlTHUgAmBUgo5GF6Vj/doAxVu5rqg=;
+ h=From:To:Subject:Date:From;
+ b=nK9E7Rxj5yPNP6R7FG6IbW2+e1iFivVEUBbGTo8Mz3g2Cv2zpQINtnTBIKJNhlb2a
+ kNaoYPOuxo0FaDQxeFXBg1bw5ml+McZhycFtzuEtSFdba6biseOfl13H/V7ksNa8+7
+ u2g9uVLQi/4LN3rIbw6Xqm7ip5r2SoovsG8TOjcM=
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Jeff Dike <jdike@addtoit.com>, Richard Weinberger <richard@nod.at>,
+ Anton Ivanov <anton.ivanov@cambridgegreys.com>,
+ Krzysztof Kozlowski <krzk@kernel.org>, linux-um@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Subject: [RESEND PATCH] um: configs: Cleanup CONFIG_IOSCHED_CFQ
+Date: Mon, 17 Feb 2020 17:50:48 +0100
+Message-Id: <20200217165048.4711-1-krzk@kernel.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200216_235402_377853_5C4040E3 
-X-CRM114-Status: GOOD (  14.49  )
-X-Spam-Score: 0.4 (/)
+X-CRM114-CacheID: sfid-20200217_085055_784686_4C3CE34D 
+X-CRM114-Status: UNSURE (   9.94  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.4 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.4 KHOP_HELO_FCRDNS       Relay HELO differs from its IP's reverse DNS
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,45 +76,53 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: Richard Weinberger <richard@nod.at>, Jeff Dike <jdike@addtoit.com>,
- linux-kernel@vger.kernel.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On 16/02/2020 21:36, Sjoerd Simons wrote:
-> When the transport option of a vec isn't set strncmp ends up being
-> called on a NULL pointer. Better not do that.
-> 
-> Signed-off-by: Sjoerd Simons <sjoerd.simons@collabora.co.uk>
-> 
-> ---
-> 
->   arch/um/drivers/vector_kern.c | 3 +++
->   1 file changed, 3 insertions(+)
-> 
-> diff --git a/arch/um/drivers/vector_kern.c b/arch/um/drivers/vector_kern.c
-> index 0ff86391f77d..ca90666c0b61 100644
-> --- a/arch/um/drivers/vector_kern.c
-> +++ b/arch/um/drivers/vector_kern.c
-> @@ -198,6 +198,9 @@ static int get_transport_options(struct arglist *def)
->   	long parsed;
->   	int result = 0;
->   
-> +	if (transport == NULL)
-> +		return -EINVAL;
-> +
->   	if (vector != NULL) {
->   		if (kstrtoul(vector, 10, &parsed) == 0) {
->   			if (parsed == 0) {
-> 
-Acked-By: Anton Ivanov <anton.ivanov@cambridgegreys.com>
+CONFIG_IOSCHED_CFQ is since commit f382fb0bcef4 ("block: remove legacy
+IO schedulers").
 
+The IOSCHED_BFQ seems to replace IOSCHED_CFQ so select it in configs
+previously choosing the latter.
+
+Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
+---
+ arch/um/configs/i386_defconfig   | 2 +-
+ arch/um/configs/x86_64_defconfig | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/arch/um/configs/i386_defconfig b/arch/um/configs/i386_defconfig
+index 73e98bb57bf5..fb51bd206dbe 100644
+--- a/arch/um/configs/i386_defconfig
++++ b/arch/um/configs/i386_defconfig
+@@ -26,7 +26,7 @@ CONFIG_SLAB=y
+ CONFIG_MODULES=y
+ CONFIG_MODULE_UNLOAD=y
+ # CONFIG_BLK_DEV_BSG is not set
+-CONFIG_IOSCHED_CFQ=m
++CONFIG_IOSCHED_BFQ=m
+ CONFIG_SSL=y
+ CONFIG_NULL_CHAN=y
+ CONFIG_PORT_CHAN=y
+diff --git a/arch/um/configs/x86_64_defconfig b/arch/um/configs/x86_64_defconfig
+index 3281d7600225..477b87317424 100644
+--- a/arch/um/configs/x86_64_defconfig
++++ b/arch/um/configs/x86_64_defconfig
+@@ -24,7 +24,7 @@ CONFIG_SLAB=y
+ CONFIG_MODULES=y
+ CONFIG_MODULE_UNLOAD=y
+ # CONFIG_BLK_DEV_BSG is not set
+-CONFIG_IOSCHED_CFQ=m
++CONFIG_IOSCHED_BFQ=m
+ CONFIG_SSL=y
+ CONFIG_NULL_CHAN=y
+ CONFIG_PORT_CHAN=y
 -- 
-Anton R. Ivanov
-Cambridgegreys Limited. Registered in England. Company Number 10273661
-https://www.cambridgegreys.com/
+2.17.1
+
 
 _______________________________________________
 linux-um mailing list
