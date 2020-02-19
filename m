@@ -2,98 +2,60 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 76468162224
-	for <lists+linux-um@lfdr.de>; Tue, 18 Feb 2020 09:18:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B92251645DF
+	for <lists+linux-um@lfdr.de>; Wed, 19 Feb 2020 14:45:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Subject:To:From:Message-ID:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sSnz8l12nG3kB5djvbLANONHj2Xbf5WuIf7DmzCxZAs=; b=RHBRtS2uFxxWzo
-	mA+eL2gUOmdxYNFnQCVkqs8RIVn8RF27ek4FPIk3no4WoOJeO820J1CvvZ1nRDrWigb95FKTjuEPd
-	vP5ryzuV7mgLWC/nyDIr8aciKUi7iPBhedxIcCO281ebo9M3PqOl5gHfAVJLUNri+ezBNHPq9ZyvT
-	ppuaDG1kRRSoPFjZhUwyjOMhjySTJhDZNcWr9V1Q+f+chnpUdw8URZ9PHJUwLhkwJgUcMrAuI9zAq
-	C8LAEPvCgZUSxXU9DC+0wpMXKg0XQw+opcYSD08ZQKsqtvQ/A8GJRsDRLEf6/71cw0URaL3UkqnZI
-	1JXxrJUSo1l3ufXKZKrw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=KxWxIPdexkWx6b1vBgAYIpVPEX0Hge5l7fpoYoiHVI8=; b=Yw0X7P9UkglEeV
+	wRPANEjcBrLNkCAEmd80bl+RMqEiPWo4Ck1O22btFdzKgxTTnXFMX0Vb95E077kgkxkqczpvI7n0J
+	UW9nhdY6wtmdKaOBD2cC14LvKbgoCrf3oNJpTLMELpI/iBAuTWuuKUDV+eEUugX3vfI84VGQMbSZ6
+	k7Hwjqge5fOkv9w0bwtJjban9zl4LBFX7RaaYkK4x6lZCit4QTAK4nuOkOhSwAYvBx2n5fLPPN75Y
+	iNfqYING0tNh3+ecD69tRH5iqhyykrOvPwK6xBCyepunO052Q2lzDzX2TDFPD1WbQctAqo6TLiW0u
+	F4uOblyRjrFkEaQluExQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3y5g-000550-S7; Tue, 18 Feb 2020 08:18:48 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1j4Pf5-0002E1-KD; Wed, 19 Feb 2020 13:45:11 +0000
+Received: from out30-56.freemail.mail.aliyun.com ([115.124.30.56])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3y5e-00054Z-Sl
- for linux-um@lists.infradead.org; Tue, 18 Feb 2020 08:18:48 +0000
-Received: by mail-pg1-x541.google.com with SMTP id b9so10431296pgk.12
- for <linux-um@lists.infradead.org>; Tue, 18 Feb 2020 00:18:46 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:message-id:from:to:cc:subject:in-reply-to:references
- :user-agent:mime-version;
- bh=3QH+u+c1zJA9Tg+vDOfwSZj6vxcNHWsVgHSzwSidCFM=;
- b=UomwDpB10AOMCz8SChXeHzBvaVHikx1psg5NkMMlfe5RrDzwIQ2D13SJTW5d2sWjt7
- v/6nK59VokJa2yFUQPmF8CBezd/17+WBVd5DIIygj/5DmobzaCILdNSo/ZeQiTEqligC
- gro5d1aPQWDBXaDg06qYgbi9RlNj0czvhAbZjCpBp3420gOJH1GjHPKBuwC0IrDaTUvY
- 2/5rwBncTNS/4A30l6VAcX8dsSekTvv4b70KbG0yoj3YRAM8TzpplKcaoEAsFRZcCDqk
- LWgFIBTtV6P4ETgCmVgWI3Rdhd2K36DdUo+t0MkuduEv6sfmTFPqPXNu5kXFZyeJXqtB
- BxVg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:message-id:from:to:cc:subject:in-reply-to
- :references:user-agent:mime-version;
- bh=3QH+u+c1zJA9Tg+vDOfwSZj6vxcNHWsVgHSzwSidCFM=;
- b=A1dp3Q7fUcmsCNS2EivRovZ5aQ1+NULN065/c3UpILdjV+yBMej3DLLgDVQXCbRsdc
- ydyR0tL7vviF4TpcTe1IRA91EwwekEf81+pdfcvUCLZBMDNaJoR0QkuHXUqZi1HgI9eB
- toVUz9RlmQafmCTxi/Ze+kCjODncm4yzWlDWqu1sCRB4FsU+hBl30ghcihCdSOwu+1dF
- 0sxs3EqvViI9WZ5+LuU1efwWs8RiOhzivJdwJ6WGXx75irpOgNCt0ChfqmRMqzoirrJM
- cGtZHZ2336uIjnbst0xKOObHBPModBVSuXMP0LxNzit6zQML/k1tAMnZurc+GyRi422W
- MqBQ==
-X-Gm-Message-State: APjAAAWyRsKCk4ElL6f49RgfM2x6d6ABGzq+rdtfvOx8UwBnjQJIJjGh
- CJ7YX6ItSlu075fGu+iSwYrYZst8Jao=
-X-Google-Smtp-Source: APXvYqxPGRibZAfocM8X5NygWFzfK/MNXtoXSzJm8pGbVRzifK2OabnYw02A1yHRd+UGFgUmjJw2Sw==
-X-Received: by 2002:a62:1615:: with SMTP id 21mr20222667pfw.84.1582013925853; 
- Tue, 18 Feb 2020 00:18:45 -0800 (PST)
-Received: from earth-mac.local.gmail.com ([202.214.86.179])
- by smtp.gmail.com with ESMTPSA id g13sm3354570pgh.82.2020.02.18.00.18.43
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 18 Feb 2020 00:18:45 -0800 (PST)
-Date: Tue, 18 Feb 2020 17:18:41 +0900
-Message-ID: <m24kvopau6.wl-thehajime@gmail.com>
-From: Hajime Tazaki<thehajime@gmail.com>
-To: anton.ivanov@kot-begemot.co.uk
-Subject: Re: [RFC v2 07/37] lkl: interrupt support
-In-Reply-To: <m2ftfpqfhe.wl-thehajime@gmail.com>
-References: <cover.1573179553.git.thehajime@gmail.com>
- <567fd4d5c395e2279e86ca0bfca544ad2773a31d.1573179553.git.thehajime@gmail.com>
- <CAFLxGvxytmS4WSFj2ibyJKCuR5TbspdNf6MvHNvzh9dtKx2rJg@mail.gmail.com>
- <m2h805qy99.wl-thehajime@gmail.com>
- <739ada9a-b88a-5192-fb4b-65132a74b4de@kot-begemot.co.uk>
- <m2ftfpqfhe.wl-thehajime@gmail.com>
-User-Agent: Wanderlust/2.15.9 (Almost Unreal) Emacs/25.3 Mule/6.0
- (HANACHIRUSATO)
-MIME-Version: 1.0 (generated by SEMI-EPG 1.14.7 - "Harue")
+ id 1j4Pf2-00010R-C3
+ for linux-um@lists.infradead.org; Wed, 19 Feb 2020 13:45:10 +0000
+X-Alimail-AntiSpam: AC=PASS; BC=-1|-1; BR=01201311R131e4; CH=green; DM=||false|;
+ DS=||; FP=0|-1|-1|-1|0|-1|-1|-1; HT=e01f04396; MF=wenyang@linux.alibaba.com;
+ NM=1; PH=DS; RN=7; SR=0; TI=SMTPD_---0TqN-9jy_1582119888; 
+Received: from localhost(mailfrom:wenyang@linux.alibaba.com
+ fp:SMTPD_---0TqN-9jy_1582119888) by smtp.aliyun-inc.com(127.0.0.1);
+ Wed, 19 Feb 2020 21:44:57 +0800
+From: Wen Yang <wenyang@linux.alibaba.com>
+To: Jeff Dike <jdike@addtoit.com>, Richard Weinberger <richard@nod.at>,
+ Anton Ivanov <anton.ivanov@cambridgegreys.com>
+Subject: [PATCH] um: fix len of file in create_pid_file
+Date: Wed, 19 Feb 2020 21:44:42 +0800
+Message-Id: <20200219134442.68744-1-wenyang@linux.alibaba.com>
+X-Mailer: git-send-email 2.23.0
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_001846_956254_D4C83E58 
-X-CRM114-Status: GOOD (  11.16  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20200219_054508_594158_21ECECB8 
+X-CRM114-Status: UNSURE (   9.41  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -8.0 (--------)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (-8.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [thehajime[at]gmail.com]
+ no trust [115.124.30.56 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 1.2 TO_NO_BRKTS_FROM_MSSP  Multiple header formatting problems
- 0.0 FROM_MISSP_FREEMAIL    From misspaced + freemail provider
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,72 +67,51 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, richard.weinberger@gmail.com,
- linux-um@lists.infradead.org, retrage01@gmail.com, tavi.purdila@gmail.com,
- linux-kernel-library@freelists.org, sigmaepsilon92@gmail.com
+Cc: Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ linux-um@lists.infradead.org, Wen Yang <wenyang@linux.alibaba.com>,
+ Alex Dewar <alex.dewar@gmx.co.uk>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
+sizeof gives us the size of the pointer variable, not of the
+area it points to. So the number of bytes copied by umid_file_name()
+is 8.
+We should pass in the correct length of the file buffer.
 
-Hello,
+Signed-off-by: Wen Yang <wenyang@linux.alibaba.com>
+Cc: Jeff Dike <jdike@addtoit.com> (maintainer:USER-MODE LINUX (UML))
+Cc: Richard Weinberger <richard@nod.at> (maintainer:USER-MODE LINUX (UML),commit_signer:2/2=100%)
+Cc: Anton Ivanov <anton.ivanov@cambridgegreys.com> (maintainer:USER-MODE LINUX (UML))
+Cc: Bartosz Golaszewski <bgolaszewski@baylibre.com> (commit_signer:1/2=50%,authored:1/2=50%,added_lines:27/28=96%,removed_lines:9/10=90%)
+Cc: Alex Dewar <alex.dewar@gmx.co.uk> (commit_signer:1/2=50%,authored:1/2=50%,removed_lines:1/10=10%)
+Cc: linux-um@lists.infradead.org (open list:USER-MODE LINUX (UML))
+---
+ arch/um/os-Linux/umid.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
 
-On Wed, 05 Feb 2020 23:24:29 +0900,
-Hajime Tazaki wrote:
-
-> > Make sure you are testing with the vector network devices, the
-> > legacy ones are scheduled to be obsoleted at some point
-> 
-> I was aware of the commit to obsolete several backend with the vector
-> device, but did not include in the patchset and tests.  I will try to
-> do it for the next round.
-
-
-So I added a vector device support, tested with tap backend.
-Here is a list of numbers with various configurations that v3+ patch
-have.
-
-disclaimer: the experiment is immature, not apple-to-apple in many
-aspects.  So this result only presents one of the parameter set that I
-took.  I will update/clean up later if there are interests.
-
-- testbed
-
-               +--docker0--+
-               |           |     10GbE
- netperf +---tap0        eth0 +==========+ eth0 +---+ netserver
- (client)                (ixgbe)          (ixgbe)
-
-<-- Linux box (4.18.5) -->              <-- Linux box (4.17.19) -->
-
-- setup
-varied client side (netperf) with different net drivers/devices.
-tso,tx/rx csum are enabled if possible.
-
-- netperf 10secs (Mbps) result
-
-                     |TCP_STREAM  | TCP_MAERTS
--------------------- --------------------------
-UMMODE_LIB (um-tap)  | 2290.42    |    1.04
-UMMODE_LIB (vec-tap) | 3699.98    | 5682.40
-UMMODE_LIB (virtio)  | 8029.13    | 9384.78
-UMMODE_KERN (um-tap) | 2233.17    |    7.85
-UMMODE_KERN (vec-tap)| 5527.37    | 9414.00
-
-# UMMODE_LIB (virtio) isn't included in v3 patches.
-
-full output log is here;
-https://gist.github.com/thehajime/a71878cccf7830a23a23f8f8e8cc8753
-
-result of UMMODE_LIB (vec-tap) is not stable: it sometimes shows over
-8Gbps (TCP_STREAM) while most of the times lower.
-
-But I suppose UMMODE_LIB with vector driver isn't that bad, though
-there is still a gap to UMMODE_KERN (vector).
-
-
--- Hajime
+diff --git a/arch/um/os-Linux/umid.c b/arch/um/os-Linux/umid.c
+index 44def53a11cd..9e16078a4bf8 100644
+--- a/arch/um/os-Linux/umid.c
++++ b/arch/um/os-Linux/umid.c
+@@ -220,11 +220,12 @@ static void __init create_pid_file(void)
+ 	char pid[sizeof("nnnnn\0")], *file;
+ 	int fd, n;
+ 
+-	file = malloc(strlen(uml_dir) + UMID_LEN + sizeof("/pid\0"));
++	n = strlen(uml_dir) + UMID_LEN + sizeof("/pid\0");
++	file = malloc(n);
+ 	if (!file)
+ 		return;
+ 
+-	if (umid_file_name("pid", file, sizeof(file)))
++	if (umid_file_name("pid", file, n))
+ 		goto out;
+ 
+ 	fd = open(file, O_RDWR | O_CREAT | O_EXCL, 0644);
+-- 
+2.23.0
 
 
 _______________________________________________
