@@ -2,50 +2,52 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 33EDC165965
-	for <lists+linux-um@lfdr.de>; Thu, 20 Feb 2020 09:40:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 15586165966
+	for <lists+linux-um@lfdr.de>; Thu, 20 Feb 2020 09:40:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=BUzmSGdvEf7X7ETM6rcrjRgIJovA6BR05mOAQakAuEs=; b=AwZolALWG6vNkf
-	ww3qiSdNU3x99jS55byRcoU1K9qvfgq/WYbISPCoPVpGy50LQ+FsCZFJUWBlnWut73OEK2vIaiaoJ
-	SCtDbqmAQYxFBsBHSZxt7yPIJDKfIoht/bninYIgZYnVD7DdsWxunjjXa2bsZi4RHTxOl46UaAYqI
-	N5Z0aE5RVd5OuXKvL8Y26pwlpNo2ztY0ZU5pA1otFAhz6LfpWNcpZ2WitrfW8pVfUugIYSJo316nZ
-	TZ2PsXYOlIebghKRW/7fo4uevNwlRffc+fP1xg2/9aWHcqNB4CaxS3din1TTRdqGh8LZ6F964m1TJ
-	DRGGJAEU2bZZUypI+4Bg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=lFaBbBenKtSmP7U0pABFAK19CtUMQOnX8qYdTC/gWCw=; b=OXOZUSncaMsRSl
+	n9i1/cIypMdQFvA9ONnsjnvTUKIUdVbMTOn+9s0fDc2S09MqK4PGt8/+FWK1KzGOzjvicxs5QO8WR
+	TiN25fiiUkuLim1VC9EzsqBvSdzWSAid6R2FP/3SrWy2QLlXswEGhlcQKDGfB8nNMzW7fKucJ+yWz
+	goVBtubwuWRXwkV+Ksm3p8K3DEsDqB9iVHoecrdIMlvFaF3GNs8YNsR5jOt5cnl1zK5R0AzbBpq0c
+	npwGkhfvRPvOq9MB3c0C9z/wXSCXst4ra/otIAzlW6VswQrnY+Z3PHgqH/bJanqlOHRasaZsNLvdz
+	zvIWsxKwOk7FsTWWjAaA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4hNm-0003QE-EO; Thu, 20 Feb 2020 08:40:30 +0000
+	id 1j4hNp-0003R8-JQ; Thu, 20 Feb 2020 08:40:33 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4hNj-0003Pu-TK
- for linux-um@lists.infradead.org; Thu, 20 Feb 2020 08:40:29 +0000
+ id 1j4hNn-0003QW-I1
+ for linux-um@lists.infradead.org; Thu, 20 Feb 2020 08:40:32 +0000
 Received: from localhost (unknown [213.57.247.131])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 3A106208C4;
- Thu, 20 Feb 2020 08:40:26 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 984B624654;
+ Thu, 20 Feb 2020 08:40:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582188026;
- bh=YYtDNAQmy5Wcw2wNq69Q1Z8Aj/k+bmI4bRg/U006rvM=;
- h=From:To:Cc:Subject:Date:From;
- b=VU6X7pQr77KCIvq2Ph9gdueSeTAo5SUgb9y38C/D1fuXGrUXb+pHnpZtfozQXTq8S
- zu+/a5JnEvcAD+fwMn5P+VJxU8HwHPVRF/qA0fcgKLmHsXxCD1bNgmBoRNXZBQCav+
- YJcYkiMd8VpQyaJH3THH/FxO+LJczUMX3KyJFDSM=
+ s=default; t=1582188031;
+ bh=bc08eycBbPAZ93zn/eoQGXx+O3pOBslmn3d5qofuI0s=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=KqGUk2/u6MQKqIh/DqjxqmBej6o8wMI/lMG0pvXkmUH1hIBbcLWSwVF/6AQIpGtBp
+ Ketad8hoCA8eD7druqebwBZuEjyqi62+kUN6Q5Y6t8VWwupnw5A7a46Xl43Zzb2ZBP
+ VeWhxXIIoO0t+DVe2TOkF96SAIo1Op2peWWwAvmU=
 From: Leon Romanovsky <leon@kernel.org>
 To: Jeff Dike <jdike@addtoit.com>, Richard Weinberger <richard@nod.at>,
  Anton Ivanov <anton.ivanov@cambridgegreys.com>
-Subject: [PATCH 0/2] Remove dead code and driver version
-Date: Thu, 20 Feb 2020 10:40:12 +0200
-Message-Id: <20200220084014.238768-1-leon@kernel.org>
+Subject: [PATCH 1/2] um: Don't overwrite ethtool driver version
+Date: Thu, 20 Feb 2020 10:40:13 +0200
+Message-Id: <20200220084014.238768-2-leon@kernel.org>
 X-Mailer: git-send-email 2.24.1
+In-Reply-To: <20200220084014.238768-1-leon@kernel.org>
+References: <20200220084014.238768-1-leon@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200220_004027_968964_A877F027 
-X-CRM114-Status: UNSURE (   6.31  )
+X-CRM114-CacheID: sfid-20200220_004031_614540_2273A568 
+X-CRM114-Status: UNSURE (   8.99  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -84,24 +86,49 @@ Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
 From: Leon Romanovsky <leonro@mellanox.com>
 
-Hi,
 
-This short series is an outcome of the change in ethtool [1] to provide
-proper driver version that will work reliably. The second patch is
-removal of useless timer setup.
+In-tree drivers don't need to manage internal version because
+they are aligned to the global Linux kernel version, which is
+reported by default with "ethtool -i".
 
-Code is compile tested only.
+Signed-off-by: Leon Romanovsky <leonro@mellanox.com>
+---
+ arch/um/drivers/net_kern.c    | 1 -
+ arch/um/drivers/vector_kern.c | 2 --
+ 2 files changed, 3 deletions(-)
 
-[1] https://lore.kernel.org/linux-rdma/20200127072028.19123-1-leon@kernel.org/
+diff --git a/arch/um/drivers/net_kern.c b/arch/um/drivers/net_kern.c
+index 35ebeebfc1a8..af07733c2dc8 100644
+--- a/arch/um/drivers/net_kern.c
++++ b/arch/um/drivers/net_kern.c
+@@ -266,7 +266,6 @@ static void uml_net_get_drvinfo(struct net_device *dev,
+ 				struct ethtool_drvinfo *info)
+ {
+ 	strlcpy(info->driver, DRIVER_NAME, sizeof(info->driver));
+-	strlcpy(info->version, "42", sizeof(info->version));
+ }
 
-Leon Romanovsky (2):
-  um: Don't overwrite ethtool driver version
-  um: Delete never executed timer
+ static const struct ethtool_ops uml_net_ethtool_ops = {
+diff --git a/arch/um/drivers/vector_kern.c b/arch/um/drivers/vector_kern.c
+index 0ff86391f77d..9693dfca7651 100644
+--- a/arch/um/drivers/vector_kern.c
++++ b/arch/um/drivers/vector_kern.c
+@@ -46,7 +46,6 @@
 
- arch/um/drivers/net_kern.c    | 13 -------------
- arch/um/drivers/vector_kern.c |  2 --
- 2 files changed, 15 deletions(-)
 
+ #define DRIVER_NAME "uml-vector"
+-#define DRIVER_VERSION "01"
+ struct vector_cmd_line_arg {
+ 	struct list_head list;
+ 	int unit;
+@@ -1378,7 +1377,6 @@ static void vector_net_get_drvinfo(struct net_device *dev,
+ 				struct ethtool_drvinfo *info)
+ {
+ 	strlcpy(info->driver, DRIVER_NAME, sizeof(info->driver));
+-	strlcpy(info->version, DRIVER_VERSION, sizeof(info->version));
+ }
+
+ static int vector_net_load_bpf_flash(struct net_device *dev,
 --
 2.24.1
 
