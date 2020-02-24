@@ -2,66 +2,90 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 98B0416ABE3
-	for <lists+linux-um@lfdr.de>; Mon, 24 Feb 2020 17:45:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7BE4C16B040
+	for <lists+linux-um@lfdr.de>; Mon, 24 Feb 2020 20:28:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mFMlvPghN/z3jNaeGFzcAmW+SIkAuNAixpFYW5ALc8c=; b=MyL9W5SJo6WnMM
-	vOxR9DGFE+0Ji+6X3WRQOmSFGwhFtqJT3GOtWXRJlkLcA8ppd7e5+hTv/2u3+LknNVF1Z18vQDfw8
-	NnMW1D6WAiqpcp1SqnMWMvL0YQYc9iPCihidndpe30xbKlXa4TOxyKWUL2bQwsF+6Xf+2qUxw9L1y
-	MaDD1ZLHQQvjSUF9YpXc6MW3V9sjN8T0HCt1Tm1YZGQz4uBQ65CnHqBrakqHDQHX7FJn+FU3Nn7jl
-	P1Y9cCXX7qoc1sjdz6VTUJ3CYaHpCE1NU2KDv23Duf5cdXT49X8pjcxnYXE18gfundRm1gT42wZ25
-	DM6XT9NaNMrD8Whwxqig==;
+	List-Owner; bh=ZmL4n34lUWoxa6AELJwjX2mdJqR7jzeWUyLE9D+Ly+Q=; b=rFLKX3Xnz4yBPI
+	p6DK1aoCBZ7D3IK7NN48FL9EkRjVOj/e8diZbHrBM0YljyNatPSmRVu+T9llMyh+CTCWRhH3D2865
+	WjZI9EZjAu8kfRsRHmf9hqWu2sGO1ffPuDwq+j36K7SWfBig2jGPjjaEY4z0IAihoJ08quhfHUwm+
+	gRCUDhmLx/1dK+u4VX6vgFDa3CYnPTo4zzdouLQoHYBgT1heAK+qe/mKMy6wU4pbtuJ1nidAGBcwk
+	8Hos/hwPK6+IQBNSTxSR2p95fEJntXWdtro+Pyp+gcE6fzYDARkhB/x2/4rn5cVACUbyI98DYoSN8
+	mc006dq9fxr6GD5uw2uA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6GrH-0000ge-Iu; Mon, 24 Feb 2020 16:45:27 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1j6JP0-0007rX-Oo; Mon, 24 Feb 2020 19:28:26 +0000
+Received: from mail-yb1-xb43.google.com ([2607:f8b0:4864:20::b43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6GrF-0000gH-6G
- for linux-um@lists.infradead.org; Mon, 24 Feb 2020 16:45:26 +0000
-Received: from localhost (unknown [213.57.247.131])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id ED0D220836;
- Mon, 24 Feb 2020 16:45:22 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582562723;
- bh=+l/ame5etRAOayuMEJxhBK1Dv+4z5qY3CBmI0TDHgFo=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=AcL04sx3rEHLbSliG9kSN2W46JrezEjL6UIFCEhmEXZ5ehYjuhuidvsMXOf4eGghp
- bk4Ib/49pZpAm5lwJrsjr4izG1lrRgiVmbWCn3N7iWFjaf/BRKfH20LVuVQbBqn6t0
- lvrOa5TogTaUeCBdJjjiU+Y/ERxV3vn0FFhQkG38=
-Date: Mon, 24 Feb 2020 18:45:19 +0200
-From: Leon Romanovsky <leon@kernel.org>
-To: Anton Ivanov <anton.ivanov@cambridgegreys.com>,
- Richard Weinberger <richard@nod.at>
-Subject: Re: [PATCH 0/2] Remove dead code and driver version
-Message-ID: <20200224164519.GD4526@unreal>
-References: <20200220084014.238768-1-leon@kernel.org>
- <c26c2741-fdb5-a492-2b7b-8973650f15e8@cambridgegreys.com>
- <20200223105111.GC422704@unreal>
- <b43f4565-26a3-2339-2480-cb5abd96b359@cambridgegreys.com>
+ id 1j6JOx-0007rG-Ff
+ for linux-um@lists.infradead.org; Mon, 24 Feb 2020 19:28:24 +0000
+Received: by mail-yb1-xb43.google.com with SMTP id x9so3082640ybl.5
+ for <linux-um@lists.infradead.org>; Mon, 24 Feb 2020 11:28:22 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=pQ/Mv1lsK35PGwG/+EQQAX4t9NIVJij/qvcmgkXlig0=;
+ b=cPXMnH/CWqMNUZqfPD0rS6L9xlDNK0R07aS//51rLjkkM+TpdkJlYWJFDr+CFjNkNE
+ Bhljkrch4wHeufoFrhbeG4+ghD5xhgGHnrkss+hP85z2Xv3mm5Dnm/eVO2OqOz+GNadJ
+ a5dzlBqwhy8XeQ79gY2dwlbbGtR2QegDex11kpJ28betp2YxH6vkx8haV3GYchOX0TuX
+ fvqaX/aVqQii0jW2an9k0ZUBrLTi97/eQf0z30yjQKSISdJ9Fs5icr8Wwp2InVsTSjA+
+ EvNAPijegjWiJ4tJ+Izxdep4iTJa9mwNqwcYEy56ZYqs3XtooY1J1Y0CTGe0vXqgavNZ
+ 5/fg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=pQ/Mv1lsK35PGwG/+EQQAX4t9NIVJij/qvcmgkXlig0=;
+ b=DHewUavQUcV8v1P7okYcmL+fPbAD3ZBw26zflviGMJx3m4weem+BHA9x/OHGZiuKFk
+ 6Ur2YXCKeQCdsNV8+naoKL+MASP305wlLGBrjQY4Qa7KFqkthyLso12G/rBggjPfeRN1
+ co8v4xb6y/EXLuTqKqCU2rVfTdMd5rjn+x6DpYfNkRGUBaeLMN+TL3pCdpbU40fQZKpX
+ YTJPjCBK+TK341wGHewcs6lxZOuWldlewrYF7nJ998FihLzz9id6f5C8MOAXBwJ9dnVP
+ xTUc9W6QeeLU8hxovmzKz1rVGKUH3lIWuiZ9R70AX1SLQp6CHvJoVLbWAzfbmN69YYjB
+ pEeg==
+X-Gm-Message-State: APjAAAWCvtq6pIpY7PQg35KTu+EF1tLSb1EL/5bqPdfY+yuyLnQhxFYE
+ +dKPwh//jGdMUsC6GqH9cOmmGWQM
+X-Google-Smtp-Source: APXvYqwwWQ/aUQR9Le66ie0HkIWnL/npyHY6xDmdknGiNnq4ofYj2guGy/gWKk13JFZKrZLmHSzekQ==
+X-Received: by 2002:a25:d4cc:: with SMTP id
+ m195mr46332893ybf.321.1582572501301; 
+ Mon, 24 Feb 2020 11:28:21 -0800 (PST)
+Received: from mail-yb1-f173.google.com (mail-yb1-f173.google.com.
+ [209.85.219.173])
+ by smtp.gmail.com with ESMTPSA id l191sm31634ywb.12.2020.02.24.11.28.20
+ for <linux-um@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Mon, 24 Feb 2020 11:28:20 -0800 (PST)
+Received: by mail-yb1-f173.google.com with SMTP id f130so5169431ybc.7
+ for <linux-um@lists.infradead.org>; Mon, 24 Feb 2020 11:28:20 -0800 (PST)
+X-Received: by 2002:a25:cc8a:: with SMTP id l132mr8632212ybf.178.1582572499831; 
+ Mon, 24 Feb 2020 11:28:19 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <b43f4565-26a3-2339-2480-cb5abd96b359@cambridgegreys.com>
+References: <20200224132550.2083-1-anton.ivanov@cambridgegreys.com>
+In-Reply-To: <20200224132550.2083-1-anton.ivanov@cambridgegreys.com>
+From: Willem de Bruijn <willemdebruijn.kernel@gmail.com>
+Date: Mon, 24 Feb 2020 14:27:42 -0500
+X-Gmail-Original-Message-ID: <CA+FuTSd8P6uQnwisZEh7+nfowW9qKLBEvA4GPg+xUkjBa-6TDA@mail.gmail.com>
+Message-ID: <CA+FuTSd8P6uQnwisZEh7+nfowW9qKLBEvA4GPg+xUkjBa-6TDA@mail.gmail.com>
+Subject: Re: [PATCH v3] virtio: Work around frames incorrectly marked as gso
+To: anton.ivanov@cambridgegreys.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_084525_251557_D7418B64 
-X-CRM114-Status: GOOD (  15.34  )
-X-Spam-Score: -4.9 (----)
+X-CRM114-CacheID: sfid-20200224_112823_519406_E39B34AB 
+X-CRM114-Status: UNSURE (   8.94  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-4.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.3 URIBL_RHS_DOB          Contains an URI of a new domain (Day Old Bread)
- [URIs: cambridgegreys.com]
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:b43 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [willemdebruijn.kernel[at]gmail.com]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -69,7 +93,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,80 +104,36 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: Jeff Dike <jdike@addtoit.com>, linux-um <linux-um@lists.infradead.org>
+Cc: Eric Dumazet <eric.dumazet@gmail.com>,
+ "Michael S. Tsirkin" <mst@redhat.com>,
+ Network Development <netdev@vger.kernel.org>, Jason Wang <jasowang@redhat.com>,
+ linux-um@lists.infradead.org, virtualization@lists.linux-foundation.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Sun, Feb 23, 2020 at 07:58:58PM +0000, Anton Ivanov wrote:
-> On 23/02/2020 10:51, Leon Romanovsky wrote:
-> > On Thu, Feb 20, 2020 at 07:35:09PM +0000, Anton Ivanov wrote:
-> > >
-> > >
-> > > On 20/02/2020 08:40, Leon Romanovsky wrote:
-> > > > From: Leon Romanovsky <leonro@mellanox.com>
-> > > >
-> > > > Hi,
-> > > >
-> > > > This short series is an outcome of the change in ethtool [1] to provide
-> > > > proper driver version that will work reliably. The second patch is
-> > > > removal of useless timer setup.
-> > > >
-> > > > Code is compile tested only.
-> > > >
-> > > > [1] https://lore.kernel.org/linux-rdma/20200127072028.19123-1-leon@kernel.org/
-> > > >
-> > > > Leon Romanovsky (2):
-> > > >     um: Don't overwrite ethtool driver version
-> > > >     um: Delete never executed timer
-> > > >
-> > > >    arch/um/drivers/net_kern.c    | 13 -------------
-> > > >    arch/um/drivers/vector_kern.c |  2 --
-> > > >    2 files changed, 15 deletions(-)
-> > > >
-> > > > --
-> > > > 2.24.1
-> > > >
-> > > >
-> > >
-> > > Acked-by: Anton Ivanov <anton.ivanov@cambridgegreys.com>
-> >
-> > Thanks Anton, I'm wondering if I expected to do some extra steps
-> > to be sure that those patches will be sent in next merge window
-> > to Linus?
+On Mon, Feb 24, 2020 at 8:26 AM <anton.ivanov@cambridgegreys.com> wrote:
 >
-> "When" is Richard's decision. I just check and clear patches for the time
-> being.
+> From: Anton Ivanov <anton.ivanov@cambridgegreys.com>
+>
+> Some of the locally generated frames marked as GSO which
+> arrive at virtio_net_hdr_from_skb() have no GSO_TYPE, no
+> fragments (data_len = 0) and length significantly shorter
+> than the MTU (752 in my experiments).
 
-Richard, any feedback?
+Do we understand how these packets are generated? Else it seems this
+might be papering over a deeper problem.
 
-Thanks
+The stack should not create GSO packets less than or equal to
+skb_shinfo(skb)->gso_size. See for instance the check in
+tcp_gso_segment after pulling the tcp header:
 
->
-> Brgds,
->
-> >
-> > Thanks
-> >
-> > >
-> > > --
-> > > Anton R. Ivanov
-> > >
-> > > Cambridge Greys Limited, England and Wales company No 10273661
-> > > http://www.cambridgegreys.com/
-> >
-> > _______________________________________________
-> > linux-um mailing list
-> > linux-um@lists.infradead.org
-> > http://lists.infradead.org/mailman/listinfo/linux-um
-> >
->
->
-> --
-> Anton R. Ivanov
-> Cambridgegreys Limited. Registered in England. Company Number 10273661
-> https://www.cambridgegreys.com/
+        mss = skb_shinfo(skb)->gso_size;
+        if (unlikely(skb->len <= mss))
+                goto out;
+
+What is the gso_type, and does it include SKB_GSO_DODGY?
 
 _______________________________________________
 linux-um mailing list
