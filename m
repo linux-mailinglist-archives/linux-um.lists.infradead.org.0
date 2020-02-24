@@ -2,89 +2,64 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3585116A848
-	for <lists+linux-um@lfdr.de>; Mon, 24 Feb 2020 15:25:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 98B0416ABE3
+	for <lists+linux-um@lfdr.de>; Mon, 24 Feb 2020 17:45:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6zwj4Qnb2LMcpSGhu2QNg7hphjUZzs+XDkSgzhY9Jqk=; b=YgiibvbSzOSHAW
-	e5QZ37+R65BHUSaXVGb17sS8cNm+UQN/sAruvaJtkkzgk4gFraQL+s1d5HqchaQE4R0UgC6OIr/qC
-	Bk46F74hj5+Iewf9LTYhUV4kJOr04DnSFNtu65J6vr+JBAfoB5ltf6YhT35YpKQRA6Am9MGYoNPkQ
-	3nW2mJUf3DhBfhidn0MOCtNLlcMlDajRZvMyWfj2SAQS7UZ+0s2cLsuSJeGY/lPmdRFddPTiAlGT+
-	U6m325izSsaPGg6J+z8umX0Z/H9C8c5KfAOpje/P/2b4gsxxNXhY/XXOINz4NF2KnHz3jMrHKiBg4
-	oghfNDRGtvBBjVU+dV3g==;
+	List-Owner; bh=mFMlvPghN/z3jNaeGFzcAmW+SIkAuNAixpFYW5ALc8c=; b=MyL9W5SJo6WnMM
+	vOxR9DGFE+0Ji+6X3WRQOmSFGwhFtqJT3GOtWXRJlkLcA8ppd7e5+hTv/2u3+LknNVF1Z18vQDfw8
+	NnMW1D6WAiqpcp1SqnMWMvL0YQYc9iPCihidndpe30xbKlXa4TOxyKWUL2bQwsF+6Xf+2qUxw9L1y
+	MaDD1ZLHQQvjSUF9YpXc6MW3V9sjN8T0HCt1Tm1YZGQz4uBQ65CnHqBrakqHDQHX7FJn+FU3Nn7jl
+	P1Y9cCXX7qoc1sjdz6VTUJ3CYaHpCE1NU2KDv23Duf5cdXT49X8pjcxnYXE18gfundRm1gT42wZ25
+	DM6XT9NaNMrD8Whwxqig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6Eg4-0005Zl-Ey; Mon, 24 Feb 2020 14:25:44 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
- helo=us-smtp-1.mimecast.com)
+	id 1j6GrH-0000ge-Iu; Mon, 24 Feb 2020 16:45:27 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6Eg1-0005Yy-MB
- for linux-um@lists.infradead.org; Mon, 24 Feb 2020 14:25:43 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1582554339;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=2Jf9H76vsnWbGUIwVItnz2B71V4adciQUipmVESgisk=;
- b=L5qoPVovtc0j3UQ4WmWlFLleotV/CpkfZ/GP2TKhOr9lAJojRVOgq/lp8MEernXg7eiIw5
- uWHt3zVaeYpq+kB9PAQZHfSF1t3eUxnYbjE1cT28eWVaDnSvFBQhMaDe7IpRWdQWMsrXM0
- DpcGO+pYA44zHb7KGdUybGcVMfnliwA=
-Received: from mail-qk1-f197.google.com (mail-qk1-f197.google.com
- [209.85.222.197]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-296-3TfZ3MDKOD2b0gTIN-kL_w-1; Mon, 24 Feb 2020 09:25:37 -0500
-X-MC-Unique: 3TfZ3MDKOD2b0gTIN-kL_w-1
-Received: by mail-qk1-f197.google.com with SMTP id a10so5819562qkg.11
- for <linux-um@lists.infradead.org>; Mon, 24 Feb 2020 06:25:37 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=TB7sUf2pFHZ1gfff7bVBVaPbnW5iGaEMa9gLQVlWv7I=;
- b=F6/pgJAClOLGia2mmnrqRpxGevNSbkEY8SJXe+iGo64I06EcDEUleaguqYA3bAX8aB
- ADiqKer26DA/i95EzVYGGx4oyBqFvY9N8v58lMvUvVmt6xUmqvYtHrCB8g8ZAGQZ4Hj1
- EnMnx/sBc7UTVK5LNSszif85DXXZw/RbhrCeVjb1esRIagTgKFLgEXEbQCd8q+rFY+15
- zVqPHmqo2ULZ2XUmYDqrPpu8k484/bqGDLemxnwEorQ94gcYSFHXSuzFBkewOhtWRcGD
- a0kqQCxDFbYiGApGhrWvFja4Hxpw3jNmjkh9L2BXsB4Y/AveY0rljMrxu3JowYOXCJCq
- 3DBg==
-X-Gm-Message-State: APjAAAV5rVPotoftwNxGqNNg1n/QQWABNzWn/H75p/97TCZzLtmnYT/0
- MwYiUk7y9To1FB2i+LfRW0M0aL4VEV+zaCxYqt4m7cG+AVd40PZ0pJPQs6nt5B5dFOxR4wafyJh
- /RMQ3VE0+5LFDDY+rbUmbOMVI
-X-Received: by 2002:ac8:7657:: with SMTP id i23mr48528799qtr.197.1582554337426; 
- Mon, 24 Feb 2020 06:25:37 -0800 (PST)
-X-Google-Smtp-Source: APXvYqznUlCcqXeerYYf+szsmuv/Ph5idwuFaPaAFKrIhkobzWbc5eRNhdpX5HexMXIGUCrH38q8gw==
-X-Received: by 2002:ac8:7657:: with SMTP id i23mr48528784qtr.197.1582554337178; 
- Mon, 24 Feb 2020 06:25:37 -0800 (PST)
-Received: from redhat.com (bzq-79-178-2-214.red.bezeqint.net. [79.178.2.214])
- by smtp.gmail.com with ESMTPSA id
- g26sm5921357qkk.68.2020.02.24.06.25.34
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 24 Feb 2020 06:25:36 -0800 (PST)
-Date: Mon, 24 Feb 2020 09:25:32 -0500
-From: "Michael S. Tsirkin" <mst@redhat.com>
-To: anton.ivanov@cambridgegreys.com
-Subject: Re: [PATCH v3] virtio: Work around frames incorrectly marked as gso
-Message-ID: <20200224092526-mutt-send-email-mst@kernel.org>
-References: <20200224132550.2083-1-anton.ivanov@cambridgegreys.com>
+ id 1j6GrF-0000gH-6G
+ for linux-um@lists.infradead.org; Mon, 24 Feb 2020 16:45:26 +0000
+Received: from localhost (unknown [213.57.247.131])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id ED0D220836;
+ Mon, 24 Feb 2020 16:45:22 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1582562723;
+ bh=+l/ame5etRAOayuMEJxhBK1Dv+4z5qY3CBmI0TDHgFo=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=AcL04sx3rEHLbSliG9kSN2W46JrezEjL6UIFCEhmEXZ5ehYjuhuidvsMXOf4eGghp
+ bk4Ib/49pZpAm5lwJrsjr4izG1lrRgiVmbWCn3N7iWFjaf/BRKfH20LVuVQbBqn6t0
+ lvrOa5TogTaUeCBdJjjiU+Y/ERxV3vn0FFhQkG38=
+Date: Mon, 24 Feb 2020 18:45:19 +0200
+From: Leon Romanovsky <leon@kernel.org>
+To: Anton Ivanov <anton.ivanov@cambridgegreys.com>,
+ Richard Weinberger <richard@nod.at>
+Subject: Re: [PATCH 0/2] Remove dead code and driver version
+Message-ID: <20200224164519.GD4526@unreal>
+References: <20200220084014.238768-1-leon@kernel.org>
+ <c26c2741-fdb5-a492-2b7b-8973650f15e8@cambridgegreys.com>
+ <20200223105111.GC422704@unreal>
+ <b43f4565-26a3-2339-2480-cb5abd96b359@cambridgegreys.com>
 MIME-Version: 1.0
-In-Reply-To: <20200224132550.2083-1-anton.ivanov@cambridgegreys.com>
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
 Content-Disposition: inline
+In-Reply-To: <b43f4565-26a3-2339-2480-cb5abd96b359@cambridgegreys.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_062541_801564_F8993B24 
-X-CRM114-Status: GOOD (  16.29  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200224_084525_251557_D7418B64 
+X-CRM114-Status: GOOD (  15.34  )
+X-Spam-Score: -4.9 (----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-4.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [205.139.110.120 listed in list.dnswl.org]
+ 0.3 URIBL_RHS_DOB          Contains an URI of a new domain (Day Old Bread)
+ [URIs: cambridgegreys.com]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -106,64 +81,80 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: netdev@vger.kernel.org, jasowang@redhat.com, linux-um@lists.infradead.org,
- eric.dumazet@gmail.com, virtualization@lists.linux-foundation.org
+Cc: Jeff Dike <jdike@addtoit.com>, linux-um <linux-um@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Mon, Feb 24, 2020 at 01:25:50PM +0000, anton.ivanov@cambridgegreys.com wrote:
-> From: Anton Ivanov <anton.ivanov@cambridgegreys.com>
-> 
-> Some of the locally generated frames marked as GSO which
-> arrive at virtio_net_hdr_from_skb() have no GSO_TYPE, no
-> fragments (data_len = 0) and length significantly shorter
-> than the MTU (752 in my experiments).
-> 
-> This is observed on raw sockets reading off vEth interfaces
-> in all 4.x and 5.x kernels. The frames are reported as
-> invalid, while they are in fact gso-less frames.
-> 
-> The easiest way to reproduce is to connect a User Mode
-> Linux instance to the host using the vector raw transport
-> and a vEth interface. Vector raw uses recvmmsg/sendmmsg
-> with virtio headers on af_packet sockets. When running iperf
-> between the UML and the host, UML regularly complains about
-> EINVAL return from recvmmsg.
-> 
-> This patch marks the vnet header as non-GSO instead of
-> reporting it as invalid.
-> 
-> Signed-off-by: Anton Ivanov <anton.ivanov@cambridgegreys.com>
+On Sun, Feb 23, 2020 at 07:58:58PM +0000, Anton Ivanov wrote:
+> On 23/02/2020 10:51, Leon Romanovsky wrote:
+> > On Thu, Feb 20, 2020 at 07:35:09PM +0000, Anton Ivanov wrote:
+> > >
+> > >
+> > > On 20/02/2020 08:40, Leon Romanovsky wrote:
+> > > > From: Leon Romanovsky <leonro@mellanox.com>
+> > > >
+> > > > Hi,
+> > > >
+> > > > This short series is an outcome of the change in ethtool [1] to provide
+> > > > proper driver version that will work reliably. The second patch is
+> > > > removal of useless timer setup.
+> > > >
+> > > > Code is compile tested only.
+> > > >
+> > > > [1] https://lore.kernel.org/linux-rdma/20200127072028.19123-1-leon@kernel.org/
+> > > >
+> > > > Leon Romanovsky (2):
+> > > >     um: Don't overwrite ethtool driver version
+> > > >     um: Delete never executed timer
+> > > >
+> > > >    arch/um/drivers/net_kern.c    | 13 -------------
+> > > >    arch/um/drivers/vector_kern.c |  2 --
+> > > >    2 files changed, 15 deletions(-)
+> > > >
+> > > > --
+> > > > 2.24.1
+> > > >
+> > > >
+> > >
+> > > Acked-by: Anton Ivanov <anton.ivanov@cambridgegreys.com>
+> >
+> > Thanks Anton, I'm wondering if I expected to do some extra steps
+> > to be sure that those patches will be sent in next merge window
+> > to Linus?
+>
+> "When" is Richard's decision. I just check and clear patches for the time
+> being.
 
-Reviewed-by: Michael S. Tsirkin <mst@redhat.com>
+Richard, any feedback?
 
-> ---
->  include/linux/virtio_net.h | 5 +++--
->  1 file changed, 3 insertions(+), 2 deletions(-)
-> 
-> diff --git a/include/linux/virtio_net.h b/include/linux/virtio_net.h
-> index 0d1fe9297ac6..2c99c752cb20 100644
-> --- a/include/linux/virtio_net.h
-> +++ b/include/linux/virtio_net.h
-> @@ -98,10 +98,11 @@ static inline int virtio_net_hdr_from_skb(const struct sk_buff *skb,
->  					  bool has_data_valid,
->  					  int vlan_hlen)
->  {
-> +	struct skb_shared_info *sinfo = skb_shinfo(skb);
-> +
->  	memset(hdr, 0, sizeof(*hdr));   /* no info leak */
->  
-> -	if (skb_is_gso(skb)) {
-> -		struct skb_shared_info *sinfo = skb_shinfo(skb);
-> +	if (skb_is_gso(skb) && sinfo->gso_type) {
->  
->  		/* This is a hint as to how much should be linear. */
->  		hdr->hdr_len = __cpu_to_virtio16(little_endian,
-> -- 
-> 2.20.1
+Thanks
 
+>
+> Brgds,
+>
+> >
+> > Thanks
+> >
+> > >
+> > > --
+> > > Anton R. Ivanov
+> > >
+> > > Cambridge Greys Limited, England and Wales company No 10273661
+> > > http://www.cambridgegreys.com/
+> >
+> > _______________________________________________
+> > linux-um mailing list
+> > linux-um@lists.infradead.org
+> > http://lists.infradead.org/mailman/listinfo/linux-um
+> >
+>
+>
+> --
+> Anton R. Ivanov
+> Cambridgegreys Limited. Registered in England. Company Number 10273661
+> https://www.cambridgegreys.com/
 
 _______________________________________________
 linux-um mailing list
