@@ -2,88 +2,74 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0420A16F4F3
-	for <lists+linux-um@lfdr.de>; Wed, 26 Feb 2020 02:19:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0FDB416F8D0
+	for <lists+linux-um@lfdr.de>; Wed, 26 Feb 2020 08:53:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=In4PIUsNHTnsc4q5/sUhw9xsRV6Qu3ewV/0vAU36zQM=; b=HjTh6Nl7FQTQmo
-	A0qlaMfrLk5Kcz1xZM+BVOdEdNThoisd01BkvKNpByQwyMlAzQjtot2NTKnEsJ6ikmw2CVxjCanWU
-	X9kJCYy+TI93Ts+O2uoVvPfjiNBEVl+QPehzy8LiEz3iTEg6LAMw39YRBII8SA79x4V2amiaR1hUY
-	zHYvAuOAJ0ORFB/ePni6eWrUO+Luj1u7LLjACxUujaWZy1W1gcRlQ9GzvulmnkXJAFFV2mOXwZEH/
-	YsjDVfZYAzRi4+cbumQpNXoSicu2JXiPVMt8fuHc9Nq7xscfkiLL11iWWUg0P3kZaPcK21987h43J
-	dwHoC/EJ+PMDskFicNRA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=lihe+XeIg49KMnjPut1KY7yfwURQWeBIU8nsKgYAN1U=; b=IsGwfgiIsnmS5b78gegOkNlzD
+	2Ajxk5rH3/47MWXmR8b2f94AyRjNdlQ6q28Fu+A3AXGF7jqRzgVmH/XQwQZKBiaGXwXqm2nCuSfRy
+	tK2l3PjEm7OabZ1rGyiJjL85xtJUiRw71FjQExOP2C0B3lDSsjJ6bcnWyF1BNGXbvlpGH7/LKX361
+	jCsJlbjqXqgAdwBMbe5BhMNGZ9ZXhw3b4uAgCE9FnS0Ne8UXbHkvqoDHqxUZFHltuhWdX2JpD/mqk
+	wdc2TXy5UxSB24HeDWJLthSHDUvJmTWgxI0lWEP3TVgnz29aVXBWKAg89JFwUfodAH7nbDlxXaGFA
+	KV0bUKVAA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6lMT-0000vI-1u; Wed, 26 Feb 2020 01:19:41 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1j6rVT-0002e0-GC; Wed, 26 Feb 2020 07:53:23 +0000
+Received: from ivanoab7.miniserver.com ([37.128.132.42]
+ helo=www.kot-begemot.co.uk)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6lMP-0000uR-VS
- for linux-um@lists.infradead.org; Wed, 26 Feb 2020 01:19:39 +0000
-Received: by mail-pf1-x444.google.com with SMTP id j9so524384pfa.8
- for <linux-um@lists.infradead.org>; Tue, 25 Feb 2020 17:19:34 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=V+WJdtiodK7smJaw6cytKeNqvxCywC6JW8awTtYsnT4=;
- b=l4604xpw1I8955q9AJdeAjThTj77w5HfTFVsOgRzhxDZ0vM6gMjC8oeO4rqZCFsaox
- ZL/o13PdpDkiVgbVPLqS6E4izZOSUR739tueSpiptZML8g4LElY0KhMqkuFeS5sObhOF
- JOwdK51GnNpY+2ZwrKbnYeyV+VFN6Du8fjnf3/1QsQPpwNPdNxhHtDj5pkuJlxDpVS2R
- GhGoL68sm/V/cldSwdhNvaxy4/NszTqHPJLbJPMUZmgJKwjoLJu60kFbSsur5dceh/zE
- WEd4v0dzMW8UnaLMEd6VNNLYRRyYIg9MqkoKj1DKF8Svrkj+Fg2YjvcbJYCRg7b1NOzN
- c4gQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=V+WJdtiodK7smJaw6cytKeNqvxCywC6JW8awTtYsnT4=;
- b=GABLYQS0mTjaeRWoklYeAkSusk8DoTWGg87/NE44ZS6lLGQdPJQJGDF8oVZ7oJp8yU
- Fa+uZEpMdNMbE7Q/S8t5ezjQcdqflIHeOfnOSpZhSLJgr2PY+khczQDIODRS3r1wdWIT
- ifWtlalnhW6qZE4t4aDsTsvM987cNiAyRdZAv2jrN7HX4ybJ0MCTQR7o8fcVIFN7yzp4
- THnwgR1plTBebdX460h7Vg7kZ0pQC1OOp04A47xilnxiPDdp3GdWGcoZug8Me8ZKtDe2
- tvRqfURt3tPsSGxrsx+HfVO40Cbuh/SyCSAs86WLBccba7qszJnJV/5MEIncXS5+99Cb
- Z4ag==
-X-Gm-Message-State: APjAAAVamlqQSXPF2OFuxIGtKIXQoBnhRuZQzwqP8xia/zVfkkeXyQgE
- 3Aa8SknwbPBHdG3/A5vtt97NOqbox262vjV25UTVYA==
-X-Google-Smtp-Source: APXvYqyFxxd/7WafHcDRoH/+bFVruaVRPaqgsu+toTd8xnHclFNprOOCvoG32q9BcOQU7IT9T9jFz+V88xx6R08lb38=
-X-Received: by 2002:aa7:8545:: with SMTP id y5mr1551644pfn.185.1582679973137; 
- Tue, 25 Feb 2020 17:19:33 -0800 (PST)
+ id 1j6rVQ-0002dS-TS
+ for linux-um@lists.infradead.org; Wed, 26 Feb 2020 07:53:22 +0000
+Received: from tun252.jain.kot-begemot.co.uk ([192.168.18.6]
+ helo=jain.kot-begemot.co.uk)
+ by www.kot-begemot.co.uk with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.92) (envelope-from <anton.ivanov@cambridgegreys.com>)
+ id 1j6rVK-00054O-IM; Wed, 26 Feb 2020 07:53:14 +0000
+Received: from sleer.kot-begemot.co.uk ([192.168.3.72])
+ by jain.kot-begemot.co.uk with esmtps
+ (TLS1.3:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
+ (envelope-from <anton.ivanov@cambridgegreys.com>)
+ id 1j6rVI-0004Iu-4J; Wed, 26 Feb 2020 07:53:14 +0000
+Subject: Re: [PATCH v3] virtio: Work around frames incorrectly marked as gso
+To: Willem de Bruijn <willemdebruijn.kernel@gmail.com>
+References: <20200224132550.2083-1-anton.ivanov@cambridgegreys.com>
+ <CA+FuTSd8P6uQnwisZEh7+nfowW9qKLBEvA4GPg+xUkjBa-6TDA@mail.gmail.com>
+ <4e7757cf-148e-4585-b358-3b38f391275d@cambridgegreys.com>
+ <CA+FuTSdOCJZCVS4xohx+BQmkmq8JALnK=gGc0=qy1TbjY707ag@mail.gmail.com>
+ <93cb2b3f-6cae-8cf1-5fab-93fa34c14628@cambridgegreys.com>
+ <CA+FuTScEXRwYtFzn-jtFhV0dNKNQqKPBwCWaNORJW=ERU=izMA@mail.gmail.com>
+ <6b83116c-2cca-fb03-1c13-bb436dccf1b3@cambridgegreys.com>
+ <cd1b4084-af6b-7fd9-f182-8b32a3c8d837@cambridgegreys.com>
+ <CA+FuTSebC064cZXTz_n7jXLrtAcuXxp2N_jiAdi3v2=A6fBBJw@mail.gmail.com>
+From: Anton Ivanov <anton.ivanov@cambridgegreys.com>
+Organization: Cambridge Greys
+Message-ID: <f7983902-6f53-fe5f-263b-6555b5a1e883@cambridgegreys.com>
+Date: Wed, 26 Feb 2020 07:53:11 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
 MIME-Version: 1.0
-References: <20200226004608.8128-1-trishalfonso@google.com>
-In-Reply-To: <20200226004608.8128-1-trishalfonso@google.com>
-From: Brendan Higgins <brendanhiggins@google.com>
-Date: Tue, 25 Feb 2020 17:19:21 -0800
-Message-ID: <CAFd5g45gqZcJ6v3KSDuBffgBzfZ+=GJ2oCuSurYehoMHBK0Grg@mail.gmail.com>
-Subject: Re: [PATCH] UML: add support for KASAN under x86_64
-To: Patricia Alfonso <trishalfonso@google.com>
+In-Reply-To: <CA+FuTSebC064cZXTz_n7jXLrtAcuXxp2N_jiAdi3v2=A6fBBJw@mail.gmail.com>
+Content-Language: en-US
+X-Spam-Score: -0.7
+X-Spam-Score: -0.7
+X-Clacks-Overhead: GNU Terry Pratchett
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200225_171938_071840_465E0AB2 
-X-CRM114-Status: GOOD (  23.14  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20200225_235320_950206_3B120D2C 
+X-CRM114-Status: GOOD (  21.84  )
+X-Spam-Score: 0.6 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (0.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
+ 0.3 URIBL_RHS_DOB          Contains an URI of a new domain (Day Old Bread)
+ [URIs: bootlin.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.3 KHOP_HELO_FCRDNS       Relay HELO differs from its IP's reverse DNS
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,123 +81,127 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: Richard Weinberger <richard@nod.at>, Jeff Dike <jdike@addtoit.com>,
- linux-um <linux-um@lists.infradead.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- kasan-dev@googlegroups.com, David Gow <davidgow@google.com>,
- aryabinin@virtuozzo.com, Johannes Berg <johannes@sipsolutions.net>,
- Dmitry Vyukov <dvyukov@google.com>,
- Anton Ivanov <anton.ivanov@cambridgegreys.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Eric Dumazet <eric.dumazet@gmail.com>,
+ "Michael S. Tsirkin" <mst@redhat.com>,
+ Network Development <netdev@vger.kernel.org>, Jason Wang <jasowang@redhat.com>,
+ linux-um@lists.infradead.org, virtualization@lists.linux-foundation.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Tue, Feb 25, 2020 at 4:46 PM Patricia Alfonso
-<trishalfonso@google.com> wrote:
->
-> Make KASAN run on User Mode Linux on x86_64.
->
-> Depends on Constructor support in UML - "[RFC PATCH] um:
-> implement CONFIG_CONSTRUCTORS for modules"
-> (https://patchwork.ozlabs.org/patch/1234551/) by Johannes Berg.
->
-> The location of the KASAN shadow memory, starting at
-> KASAN_SHADOW_OFFSET, can be configured using the
-> KASAN_SHADOW_OFFSET option. UML uses roughly 18TB of address
-> space, and KASAN requires 1/8th of this. The default location of
-> this offset is 0x7fff8000 as suggested by Dmitry Vyukov. There is
-> usually enough free space at this location; however, it is a config
-> option so that it can be easily changed if needed.
->
-> The UML-specific KASAN initializer uses mmap to map
-> the roughly 2.25TB of shadow memory to the location defined by
-> KASAN_SHADOW_OFFSET. kasan_init() utilizes constructors to initialize
-> KASAN before main().
->
-> Disable stack instrumentation on UML via KASAN_STACK config option to
-> avoid false positive KASAN reports.
->
-> Signed-off-by: Patricia Alfonso <trishalfonso@google.com>
+On 25/02/2020 16:26, Willem de Bruijn wrote:
+>>>>>> An skb_dump() + dump_stack() when the packet socket gets such a
+>>>>>> packet may point us to the root cause and fix that.
+>>>>>
+>>>>> We tried dump stack, it was not informative - it was just the recvmmsg
+>>>>> call stack coming from the UML until it hits the relevant recv bit in
+>>>>> af_packet - it does not tell us where the packet is coming from.
+>>>>>
+>>>>> Quoting from the message earlier in the thread:
+>>>>>
+>>>>> [ 2334.180854] Call Trace:
+>>>>> [ 2334.181947]  dump_stack+0x5c/0x80
+>>>>> [ 2334.183021]  packet_recvmsg.cold+0x23/0x49
+>>>>> [ 2334.184063]  ___sys_recvmsg+0xe1/0x1f0
+>>>>> [ 2334.185034]  ? packet_poll+0xca/0x130
+>>>>> [ 2334.186014]  ? sock_poll+0x77/0xb0
+>>>>> [ 2334.186977]  ? ep_item_poll.isra.0+0x3f/0xb0
+>>>>> [ 2334.187936]  ? ep_send_events_proc+0xf1/0x240
+>>>>> [ 2334.188901]  ? dequeue_signal+0xdb/0x180
+>>>>> [ 2334.189848]  do_recvmmsg+0xc8/0x2d0
+>>>>> [ 2334.190728]  ? ep_poll+0x8c/0x470
+>>>>> [ 2334.191581]  __sys_recvmmsg+0x108/0x150
+>>>>> [ 2334.192441]  __x64_sys_recvmmsg+0x25/0x30
+>>>>> [ 2334.193346]  do_syscall_64+0x53/0x140
+>>>>> [ 2334.194262]  entry_SYSCALL_64_after_hwframe+0x44/0xa9
+>>>>
+>>>> That makes sense. skb_dump might show more interesting details about
+>>>> the packet.
+>>>
+>>> I will add that and retest later today.
+>>
+>>
+>> skb len=818 headroom=2 headlen=818 tailroom=908
+>> mac=(2,14) net=(16,0) trans=16
+>> shinfo(txflags=0 nr_frags=0 gso(size=752 type=0 segs=1))
+>> csum(0x100024 ip_summed=3 complete_sw=0 valid=0 level=0)
+>> hash(0x0 sw=0 l4=0) proto=0x0800 pkttype=4 iif=0
+>> sk family=17 type=3 proto=0
+>>
+>> Deciphering the actual packet data gives a
+>>
+>> TCP packet, ACK and PSH set.
+>>
+>> The PSH flag looks like the only "interesting" thing about it in first read.
+> 
+> Thanks.
+> 
+> TCP always sets the PSH bit on a GSO packet as of commit commit
+> 051ba67447de  ("tcp: force a PSH flag on TSO packets"), so that is
+> definitely informative.
+> 
+> The lower gso size might come from a path mtu probing depending on
+> tcp_base_mss, but that's definitely wild speculation. Increasing that
+> value to, say, 1024, could tell us.
+> 
+> In this case it may indeed not be a GSO packet. As 752 is the MSS + 28
+> B TCP header including timestamp + 20 B IPv4 header + 14B Eth header.
+> Which adds up to 814 already.
+> 
+> Not sure what those 2 B between skb->data and mac_header are. Was this
+> captured inside packet_rcv? 
 
-A couple of minor nits (well one nit and one question), but overall
-this looks good to me.
+af_packet, packet_rcv
 
-Reviewed-by: Brendan Higgins <brendanhiggins@google.com>
+https://elixir.bootlin.com/linux/latest/source/net/packet/af_packet.c#L2026
 
-> ---
->  arch/um/Kconfig                  | 13 +++++++++++++
->  arch/um/Makefile                 |  6 ++++++
->  arch/um/include/asm/common.lds.S |  1 +
->  arch/um/include/asm/kasan.h      | 32 ++++++++++++++++++++++++++++++++
->  arch/um/kernel/dyn.lds.S         |  5 ++++-
->  arch/um/kernel/mem.c             | 18 ++++++++++++++++++
->  arch/um/os-Linux/mem.c           | 22 ++++++++++++++++++++++
->  arch/um/os-Linux/user_syms.c     |  4 ++--
->  arch/x86/um/Makefile             |  3 ++-
->  arch/x86/um/vdso/Makefile        |  3 +++
->  lib/Kconfig.kasan                |  2 +-
->  11 files changed, 104 insertions(+), 5 deletions(-)
->  create mode 100644 arch/um/include/asm/kasan.h
->
-> diff --git a/arch/um/Kconfig b/arch/um/Kconfig
-> index 0917f8443c28..fb2ad1fb05fd 100644
-> --- a/arch/um/Kconfig
-> +++ b/arch/um/Kconfig
-> @@ -8,6 +8,7 @@ config UML
->         select ARCH_HAS_KCOV
->         select ARCH_NO_PREEMPT
->         select HAVE_ARCH_AUDITSYSCALL
-> +       select HAVE_ARCH_KASAN if X86_64
->         select HAVE_ARCH_SECCOMP_FILTER
->         select HAVE_ASM_MODVERSIONS
->         select HAVE_UID16
-> @@ -200,6 +201,18 @@ config UML_TIME_TRAVEL_SUPPORT
->
->           It is safe to say Y, but you probably don't need this.
->
-> +config KASAN_SHADOW_OFFSET
-> +       hex
-> +       depends on KASAN
-> +       default 0x7fff8000
+> network_header and transport_header both
+> at 16B offset is also sketchy, but again may be an artifact of where
+> exactly this is being read.
+> 
+> Perhaps this is a segment of a larger GSO packet that is retransmitted
+> in part. Like an mtu probe or loss probe. See for instance this in
+> tcp_send_loss_probe for  how a single MSS is extracted:
+> 
+>         if ((pcount > 1) && (skb->len > (pcount - 1) * mss)) {
+>                  if (unlikely(tcp_fragment(sk, TCP_FRAG_IN_RTX_QUEUE, skb,
+>                                            (pcount - 1) * mss, mss,
+>                                            GFP_ATOMIC)))
+>                          goto rearm_timer;
+>                  skb = skb_rb_next(skb);
+>          }
+> 
+> Note that I'm not implicating this specific code. I don't see anything
+> wrong with it. Just an indication that a trace would be very
+> informative, as it could tell if any of these edge cases is being hit.
 
-nit: It looks like you chose the default that Dmitry suggested. Some
-explanation of this in the help would probably be good.
+I will be honest, I have found it a bit difficult to trace.
 
-> +       help
-> +         This is the offset at which the ~2.25TB of shadow memory is
-> +         mapped and used by KASAN for memory debugging. This can be any
-> +         address that has at least KASAN_SHADOW_SIZE(total address space divided
-> +         by 8) amount of space so that the KASAN shadow memory does not conflict
-> +         with anything. The default is 0x7fff8000, as it fits into immediate of
-> +         most instructions.
-> +
->  endmenu
+At the point where this is detected, the packet is already in the vEth 
+interface queue and is being read by recvmmsg on a raw socket.
 
-[...]
+The flags + gso size combination happened long before that - even before 
+it was being placed in the queue.
 
-> diff --git a/lib/Kconfig.kasan b/lib/Kconfig.kasan
-> index 81f5464ea9e1..5b54f3c9a741 100644
-> --- a/lib/Kconfig.kasan
-> +++ b/lib/Kconfig.kasan
-> @@ -125,7 +125,7 @@ config KASAN_STACK_ENABLE
->
->  config KASAN_STACK
->         int
-> -       default 1 if KASAN_STACK_ENABLE || CC_IS_GCC
-> +       default 1 if (KASAN_STACK_ENABLE || CC_IS_GCC) && !UML
+What is clear so far is that while the packet has invalid 
+gso_size/gso_type combination, it is an otherwise valid tcp frame.
 
-Up to the KASAN people, but I think you can probably move this to
-arch/um/Kconfig. There is some advantage to having all the UML
-specific Kconfigery in arch/um/Kconfig, but there are also already a
-lot of things that specify !UML outside of arch/um/.
+I will stick the debug into is_gso (with a backtrace) instead and re-run 
+it later today to see if this can pick it up elsewhere in the stack.
 
->         default 0
->
->  config KASAN_S390_4_LEVEL_PAGING
-> --
-> 2.25.0.265.gbab2e86ba0-goog
->
+> 
+> _______________________________________________
+> linux-um mailing list
+> linux-um@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-um
+> 
+
+
+-- 
+Anton R. Ivanov
+Cambridgegreys Limited. Registered in England. Company Number 10273661
+https://www.cambridgegreys.com/
 
 _______________________________________________
 linux-um mailing list
