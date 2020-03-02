@@ -2,81 +2,75 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 170721766DF
-	for <lists+linux-um@lfdr.de>; Mon,  2 Mar 2020 23:25:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A875A1767A1
+	for <lists+linux-um@lfdr.de>; Mon,  2 Mar 2020 23:45:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kBi/KGzPHtijKxttwvtsv4HQ3JLOLf1C7wSCVIiePrw=; b=oktGqz30lKh7Kn
-	ft49hYLQPVazw5vIOuljv6F52FsSFzumjAkJH9iazcwtKCOJ//XFgAORJZDdxxH8rKtxNF8A0TVKH
-	AEdemhyr6ILswVSfqPqoh0uO/F6uejPi6BqoIUe42EObsL8AOkvzXA3oCvP9xv24Xmba4kSdLVnj0
-	MhbsPnvCsVH9RCY4uHNRwV17Mi/29PD7ISRnG5s62cv6T4g9JwZMxvIDAciMxXgsMl1pR+YXf0jY8
-	eVQYssEkdBIPKqCV1zTEy62Bg2c2h1EArJuvLbLxOuUibHZF156FrLwmcbUp+hn9IqSNgq3CgWow1
-	OsMKFPLervdyod9osTEA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
+	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+	List-Owner; bh=hHR8F3KtghLetVTp3gMRbKxcVrhfp9vaCavja4vBfzw=; b=KPholEect2jz7r
+	uQSxL1TI6AbvEhbX47Rc053T60s88qARn4hbeRFpTQ5CxYPhDeFQ8pKd222lKwKBSqlOqSUNOIoYG
+	gFqFXVqhtxz/oziOQg1O1SniO//9kRlaHZAJb9+BP26My8u0oBkotwhTGOgrNxlCRjSzJqIt/Q/Un
+	bYU+TStw6+k46q6/qtqzFjQPQlR0vTXVrCbBMyyu1vYBKtZl74Trb0GWHtEqFIZ4p/ZrvfNF8I7tn
+	Atq94llfRJWVANmhkbBxpQtUHAi9Dme6eQ+3JIa4zxpQovxgHm4aPYVXEJkPm5IXmA8T0j6GCGUpp
+	PJfUKRqTKC6SbQdvzsKA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8tVW-0003Ht-KM; Mon, 02 Mar 2020 22:25:50 +0000
-Received: from mail-pf1-x42f.google.com ([2607:f8b0:4864:20::42f])
+	id 1j8toe-0002B9-DB; Mon, 02 Mar 2020 22:45:36 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8tVU-0003HT-BS
- for linux-um@lists.infradead.org; Mon, 02 Mar 2020 22:25:49 +0000
-Received: by mail-pf1-x42f.google.com with SMTP id y5so390239pfb.11
- for <linux-um@lists.infradead.org>; Mon, 02 Mar 2020 14:25:47 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=6efxeA5g+rwuMvQr8ytRhTu98WaYVw12E5bJfbsJYZ4=;
- b=CtlFLiEgdgOJIvHde7LjiTVdMr7XEM5pCx2TL4QzVEgZNJ26I/KZvhJiBpfLhzBr4H
- UqDukDl1036Z2VoAjaYootIOlpSy5Ab5+4z+fJ6+/6G2q/7IDtBSkXgSNhp5DMc1yVVn
- ndR8/cg135lWM5cabo5z+wg9hmQJcQAalzllyhxCMwuLhkQdp5Ry5oE+ri7hoo7d/ICx
- dVleXyhu2b65FbQg9s0PnRuIMtIjI5QW/mIRhOoMIEWS+aeoSB9R79ieB0FhUzpqr7qz
- qy9FEMri79p7n6p+hRr6rMTU+Le0Go7qVbs2nbVEcB9fOY+bwem9CLw2CKfdp33zM+UP
- pk1Q==
+ id 1j8toc-0002Aj-3H
+ for linux-um@lists.infradead.org; Mon, 02 Mar 2020 22:45:35 +0000
+Received: by mail-pg1-x543.google.com with SMTP id t24so526600pgj.7
+ for <linux-um@lists.infradead.org>; Mon, 02 Mar 2020 14:45:33 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=date:from:to:cc:subject:message-id:mime-version:content-disposition
+ :in-reply-to; bh=GFD8ViXColObn8FM0PtoZqKUGLmCPza4UuJiavcTlUk=;
+ b=WOFD+1Nf4ROrRkdcS2D5Dsei0yXLkev6qnAqaLDLHleCetNWzzamUGvlzp/253O8jh
+ 3r03SkffB+wUd+5cZAcVQv7IP2C7/s6hLTVHBBxDMhIH9Zl/ntMVEcd/f6KslWykbsLn
+ tCMHnOUaFbey1oPEdx6KV21wnn0J36dc3JzMI=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=6efxeA5g+rwuMvQr8ytRhTu98WaYVw12E5bJfbsJYZ4=;
- b=DLNSyJDzqfZlHMoPRh469xVCqAPXdFTGNNobFqnl8c/MLW6Lxw0BQrpE6gePStL8zp
- g0Atb2SyoZm2syRcXHULEZpihiOaURLVjeCGz6coPYPFrJVbyJ8/42MsKCARaISi9OmE
- f4mICU3LHGZ4CZB6G3o049/Ne8kCC8s7cr7KGndr7pMB6NAqsREID3QfUKHG/4j+hBMD
- ymdz5BSzgPfsBt67RPk6Ms7Gq4Xng1/MfG5aL5RoOU8uFyCsIAwu3R51TktTcQTG0h31
- erXmVVJ0Um7UY0oAv2VcZmqZiPBYB+TfVoJHpNbs0byZ5ThmNJH2rx/gZsA5TYJDlFmp
- H1Ew==
-X-Gm-Message-State: ANhLgQ2jYVt0U6L08Ivg/yEaLB+9XDIcP2KHo0FKNPiGtznSdA37a/Og
- LoTXRZJrStWXJha/iThfYMYOs+ZT80HyXE/ekrUS9Q==
-X-Google-Smtp-Source: ADFU+vuIlSusFAlLcQ/Qbkm1zRK4hcRHHhfsZtG+4e7FhIOMG8G0a1QMZ5iwpVJnxKXi+rUWnFzSQvPpdZO9ZY2n5s4=
-X-Received: by 2002:a63:dd06:: with SMTP id t6mr987590pgg.384.1583187946657;
- Mon, 02 Mar 2020 14:25:46 -0800 (PST)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
+ :content-disposition:in-reply-to;
+ bh=GFD8ViXColObn8FM0PtoZqKUGLmCPza4UuJiavcTlUk=;
+ b=gMPVOw8Xnbiq4m491ukGjlB3M6ei0UcQs7raJXQCpwH0sgqzXbfHsBNGgYQu4GrQbC
+ ONt+cY5zijjt21G9NUMtC/S97H4Rpi1QIITJG13geOzDTeLFmXJ7voNHUkzfSvl8HjSY
+ tzPc4j6WyPiTW+KC0E+5VGxP3y9cSOD3TySEykipC7Ke6FjmSezy4OHKirk8FaedJWvW
+ RwRfQ9zULACvSEvnlAthtEKyS1nqqGowFFnlveMBYiFxLZOcX5C8CtNftOPNhn4Jo+RQ
+ H/fm/o3fKtRgXYVWxL7XOLgrdGZ2SeLf8mrdqEQ7GqLS/aQaP35deJB0Zp5FU2kQ2v1X
+ eDWg==
+X-Gm-Message-State: ANhLgQ3zcwdPzOOoFdMfPqyTHvzFKt7lRAutmeyC3tfHzimOxCMPcWzr
+ OOnR5rp8nnvNomOBxGMU7DsJfg==
+X-Google-Smtp-Source: ADFU+vu7n6pQF0dWmSqvn0KXxGvBVGm4fqd9FgIsTrDfyQROBoSJtdUzEcRBWZnkK1aK2uDhIh2uwA==
+X-Received: by 2002:a63:4555:: with SMTP id u21mr1106380pgk.66.1583189132864; 
+ Mon, 02 Mar 2020 14:45:32 -0800 (PST)
+Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
+ by smtp.gmail.com with ESMTPSA id a10sm21559754pgk.71.2020.03.02.14.45.31
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 02 Mar 2020 14:45:31 -0800 (PST)
+Date: Mon, 2 Mar 2020 14:45:30 -0800
+From: Kees Cook <keescook@chromium.org>
+To: Brendan Higgins <brendanhiggins@google.com>
+Subject: Re: [PATCH v3 4/7] init: main: add KUnit to kernel init
+Message-ID: <202003021439.A6B6FD8@keescook>
 MIME-Version: 1.0
-References: <fb0fcf4ffddaabc7eae82e25d7ec5ea9c37eb2ae.1573179553.git.thehajime@gmail.com>
- <20200123193315.132434-1-brendanhiggins@google.com>
- <20200302195116.GF11244@42.do-not-panic.com>
-In-Reply-To: <20200302195116.GF11244@42.do-not-panic.com>
-From: Brendan Higgins <brendanhiggins@google.com>
-Date: Mon, 2 Mar 2020 14:25:35 -0800
-Message-ID: <CAFd5g44+PD9FM6Vhy2uFAkSvgsOdxjy2gcP6duBzuhJGJaddgg@mail.gmail.com>
-Subject: Re: [RFC v2 21/37] lkl tools: "boot" test
-To: Luis Chamberlain <mcgrof@kernel.org>
+Content-Disposition: inline
+In-Reply-To: <20200228012036.15682-5-brendanhiggins@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200302_142548_416835_827CDD32 
-X-CRM114-Status: UNSURE (   9.50  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20200302_144534_163492_4057083D 
+X-CRM114-Status: GOOD (  11.25  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:42f listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -85,8 +79,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,44 +91,63 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, Mark Stillwell <mark@stillwell.me>,
- Conrad Meyer <cem@freebsd.org>, Octavian Purdila <tavi.purdila@gmail.com>,
- Lai Jiangshan <jiangshanlai@gmail.com>, Motomu Utsumi <motomuman@gmail.com>,
- linux-um <linux-um@lists.infradead.org>, Akira Moroo <retrage01@gmail.com>,
- Petros Angelatos <petrosagg@gmail.com>, Yuan Liu <liuyuan@google.com>,
- Aleksa Sarai <cyphar@cyphar.com>, linux-kernel-library@freelists.org,
- Thomas Liebetraut <thomas@tommie-lie.de>, David Gow <davidgow@google.com>,
- David Disseldorp <ddiss@suse.de>, Patrick Collins <pscollins@google.com>,
- Luca Dariz <luca.dariz@gmail.com>, Hajime Tazaki <thehajime@gmail.com>,
- KUnit Development <kunit-dev@googlegroups.com>
+Cc: linux-arch@vger.kernel.org, alan.maguire@oracle.com,
+ linux-kselftest@vger.kernel.org, arnd@arndb.de, gregkh@linuxfoundation.org,
+ sboyd@kernel.org, richard@nod.at, jdike@addtoit.com, linux-doc@vger.kernel.org,
+ linux-um@lists.infradead.org, mcgrof@kernel.org, rppt@linux.ibm.com,
+ logang@deltatee.com, kunit-dev@googlegroups.com, davidgow@google.com,
+ skhan@linuxfoundation.org, akpm@linux-foundation.org, yzaikin@google.com,
+ Frank Rowand <frowand.list@gmail.com>, linux-kernel@vger.kernel.org,
+ anton.ivanov@cambridgegreys.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Mon, Mar 2, 2020 at 11:51 AM Luis Chamberlain <mcgrof@kernel.org> wrote:
->
-> On Thu, Jan 23, 2020 at 11:33:15AM -0800, Brendan Higgins wrote:
-> > Luis,
-> >
-> > Does this kind of match what you were thinking with the syscall testing?
->
-> Without looking too deeply into the code, it seems to be the case.
-> Are you going to expose / port kunit to tools/ to allow usersapace
-> to run kunit tests?
+On 2/27/20 7:20 PM, Brendan Higgins wrote:
+> Remove KUnit from init calls entirely, instead call directly from
+> kernel_init().
+> 
+> Co-developed-by: Alan Maguire <alan.maguire@oracle.com>
+> Signed-off-by: Alan Maguire <alan.maguire@oracle.com>
+> Signed-off-by: Brendan Higgins <brendanhiggins@google.com>
+> Reviewed-by: Stephen Boyd <sboyd@kernel.org>
+> [...]
+> diff --git a/init/main.c b/init/main.c
+> index ee4947af823f3..7875a5c486dc4 100644
+> --- a/init/main.c
+> +++ b/init/main.c
+> @@ -104,6 +104,8 @@
+>  #define CREATE_TRACE_POINTS
+>  #include <trace/events/initcall.h>
+>  
+> +#include <kunit/test.h>
+> +
+>  static int kernel_init(void *);
+>  
+>  extern void init_IRQ(void);
+> @@ -1444,6 +1446,8 @@ static noinline void __init kernel_init_freeable(void)
+>  
+>  	do_basic_setup();
+>  
+> +	kunit_run_all_tests();
+> +
+>  	console_on_rootfs();
+>  
+>  	/*
 
-Yes, I am thinking about this as a distinct possibility. I think it
-only really makes sense in the context of syscall testing, probably
-via LKL (assuming this works), but for general end-to-end testing, I
-think kselftest has that area covered and users would be better served
-by just integrating KUnit with kselftest.
+I'm nervous about this happening before two key pieces of the kernel
+setup, which might lead to weird timing-sensitive bugs or false
+positives:
+	async_synchronize_full()
+	mark_readonly()
 
-> > In any case, I am excited about this. Please keep me posted in the
-> > future!
->
-> Yes please Cc me too.
->
->   Luis
+Now, I realize kunit tests _should_ be self-contained, but this seems
+like a possible robustness problem. Is there any reason this can't be
+moved after rcu_end_inkernel_boot() in kernel_init() instead?
+
+-- 
+Kees Cook
 
 _______________________________________________
 linux-um mailing list
