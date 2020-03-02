@@ -2,92 +2,57 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DEA281756BB
-	for <lists+linux-um@lfdr.de>; Mon,  2 Mar 2020 10:16:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D1150175881
+	for <lists+linux-um@lfdr.de>; Mon,  2 Mar 2020 11:37:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JP7+xdHzdFJK3sEIXq9adulh5qtHSLkw+N7I9mfnNgw=; b=mFa5v+f8GUHxuo
-	7TuDzvoZtibPI0KoFkqRpzcxpRCwjxTSnqmxSOc4ytC8+6yMKbrWwFOCQ+oJRDcrpQjxkJFxYKcm5
-	lTUPPf0imLIvKX4tiq1YK5DHIPIlVxnkpicwLleBP1VC4unhP7FcwOEFkcs4b57NKc7y9uBOn+kFa
-	e29XspsukucYOUTYaeC6/uSTm4uT4X+uGd/WQ8/ODV6yj/z34cIL8PXMuPge+Y/U28q2PfHUsC7gU
-	yeBNBwETWJ7Mo6Ok0qEW9VGwWvPHLeKrf9yw1tsHFySV/aIYx8cHnleAY/l1NlIBci8/NQqIiwJ3P
-	tYP5TRFye44MvpP46s0Q==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=bT6U/Plg85r8OCeiVhOhDDsDHr2PBzAzW+c1Vlhc/ok=; b=JiArGLJGNqWzFq
+	Wqst/eADjIGvqs1CBwsjdfhFKppaoUg0hYcGwnBcO4JjZ8ThFHgP0h4MZjTenFy7LyKKhhr6Cw8/J
+	VGLpqpcQxLaYDrNiKPRJe+PiFsHDYTT2aqACLg1DuW+7DlGRSWikh3RTVAccck7hsE2tKVvI2Ilhe
+	EjkBo3+SmZAW/3H+zXgq1gzwJXY5JLXq1SXF02leZPJMU6S0UKjp3wf/5QD+QzQF5JR8OkculpOZs
+	7pE55VD9x0uwEJVQvLR8rqZmIuEl0E8zI8VR5zUDIuV3707jo7FG1wT+cifHGa70Ud3CjLeuoOvYM
+	nP0j5Zgf0t2MNk93io8w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8hBy-0001F9-R0; Mon, 02 Mar 2020 09:16:50 +0000
-Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8hBo-00010y-UE; Mon, 02 Mar 2020 09:16:42 +0000
-Received: by mail-pj1-x1041.google.com with SMTP id nm14so1432559pjb.0;
- Mon, 02 Mar 2020 01:16:40 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=ndch3h4URTloyii1gSOs74b+yGmOg265tPn81wcSc2E=;
- b=vL0VVsuaaoEsbUHMmRXA6lfSc7FopuGlr36i0AXnSjtq/HXbT/8a6v2h2NFzs7jmga
- DQNmZYmIN2qjCn4v4UprQ1hhz87Li5nLtHphVK3d096BA9X8u9jvsl+X1E12z9uDygY0
- tDZeDZt7dIcEa5iu/48Zcj9kqwt/Afy8lQ2vPLl7eyAB1mcmVl07n5BrFg1XH9SvUM4V
- cODnqdSWYkDAaS9/SYbnZvwG7/Jwq9o5rMX/rJPp73ybLwKm3V2HM/o4EREpet7DoAG4
- 6ELWoIXedXfCwuV2u4nSq8sFAeFOZrb5Dfj1fao4CFdutyOVFG77o0e8I3Wc9gSbNNju
- 9spQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=ndch3h4URTloyii1gSOs74b+yGmOg265tPn81wcSc2E=;
- b=tvMxa9Cax3HpoFVJhS54XA4x58zSLD4NXH2/MNUUS/O+zpnXAJuIYtW8BzF2xmNybt
- nv7PRmRocQs1SzBWp7LbL2zcktl/qKEUgSD6tx7Aw0MSzb8RRxE0J0c5ciFFRZHdwLlY
- W7WAT094U6SeJQTS+VbTrpS6xUpkz4zjnNu8WHMcyaEkT6GvekvhR4wKQpP4K2Rw7vCv
- /qH4SZpm6MZyEvu4Bl2EyFTDRdvKMD/d0Dq6DZarPTdV9Vrbw2ccSFwRMLzr7sodVDGs
- xj3eODrXTuPX/XFv7a0FqK3R98qpQ94zvp5zzr1CyzUncSmWamXpBskALU0+W05kn6BE
- taIQ==
-X-Gm-Message-State: APjAAAUNy4wW/EEIo4Eq+OskhbnJgshoVJPHKtEIJ3/Z8du+qgJqip0n
- rLDckxbGSncNXANrYxo9/j4=
-X-Google-Smtp-Source: APXvYqxYIsfqZ+2k8oz/ngUWeeMoVuDFCKNrgGHaEoCYv0tsPO+VuDwJwr+REUi3DbiXhJ5trOFulQ==
-X-Received: by 2002:a17:902:8ec9:: with SMTP id
- x9mr17070699plo.182.1583140599577; 
- Mon, 02 Mar 2020 01:16:39 -0800 (PST)
-Received: from localhost (g183.222-224-185.ppp.wakwak.ne.jp. [222.224.185.183])
- by smtp.gmail.com with ESMTPSA id p18sm21513722pjo.3.2020.03.02.01.16.37
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 02 Mar 2020 01:16:38 -0800 (PST)
-Date: Mon, 2 Mar 2020 18:16:35 +0900
-From: Stafford Horne <shorne@gmail.com>
-To: Anshuman Khandual <anshuman.khandual@arm.com>
+	id 1j8iSJ-00066r-V2; Mon, 02 Mar 2020 10:37:47 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j8iSC-00060V-JQ; Mon, 02 Mar 2020 10:37:41 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5CD7531B;
+ Mon,  2 Mar 2020 02:37:39 -0800 (PST)
+Received: from [10.163.1.119] (unknown [10.163.1.119])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 9969E3F6CF;
+ Mon,  2 Mar 2020 02:37:25 -0800 (PST)
 Subject: Re: [PATCH] mm/special: Create generic fallbacks for pte_special()
  and pte_mkspecial()
-Message-ID: <20200302091635.GK7926@lianli.shorne-pla.net>
+To: Geert Uytterhoeven <geert@linux-m68k.org>
 References: <1583114190-7678-1-git-send-email-anshuman.khandual@arm.com>
+ <CAMuHMdXnUeYib2dMALyzrW8LKhTjsnGFsqALoTxVHzPGc+OUTg@mail.gmail.com>
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Message-ID: <02997860-9374-28b9-8703-dc9b62b3f8ff@arm.com>
+Date: Mon, 2 Mar 2020 16:07:27 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1583114190-7678-1-git-send-email-anshuman.khandual@arm.com>
-User-Agent: Mutt/1.11.4 (2019-03-13)
+In-Reply-To: <CAMuHMdXnUeYib2dMALyzrW8LKhTjsnGFsqALoTxVHzPGc+OUTg@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200302_011640_979207_7E251C9F 
-X-CRM114-Status: GOOD (  10.51  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200302_023740_683994_907ADBAA 
+X-CRM114-Status: GOOD (  12.83  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1041 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [shorne[at]gmail.com]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,29 +64,34 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: linux-ia64@vger.kernel.org, linux-xtensa@linux-xtensa.org,
- linux-kernel@vger.kernel.org,
+Cc: "linux-ia64@vger.kernel.org" <linux-ia64@vger.kernel.org>,
+ "open list:TENSILICA XTENSA PORT \(xtensa\)"
+ <linux-xtensa@linux-xtensa.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
  "James E.J. Bottomley" <James.Bottomley@hansenpartnership.com>,
- linux-mm@kvack.org, Guo Ren <guoren@kernel.org>, linux-csky@vger.kernel.org,
- sparclinux@vger.kernel.org, linux-hexagon@vger.kernel.org,
+ Linux MM <linux-mm@kvack.org>, Guo Ren <guoren@kernel.org>,
+ linux-csky@vger.kernel.org, sparclinux <sparclinux@vger.kernel.org>,
+ "open list:QUALCOMM HEXAGON..." <linux-hexagon@vger.kernel.org>,
  Vincent Chen <deanbo422@gmail.com>,
  Anton Ivanov <anton.ivanov@cambridgegreys.com>,
  Jonas Bonn <jonas@southpole.se>, Paul Burton <paulburton@kernel.org>,
  Richard Weinberger <richard@nod.at>, Helge Deller <deller@gmx.de>,
  Russell King <linux@armlinux.org.uk>, Ley Foon Tan <ley.foon.tan@intel.com>,
- Geert Uytterhoeven <geert@linux-m68k.org>, linux-parisc@vger.kernel.org,
- linux-arch@vger.kernel.org, Matt Turner <mattst88@gmail.com>,
+ Parisc List <linux-parisc@vger.kernel.org>,
+ Linux-Arch <linux-arch@vger.kernel.org>, Matt Turner <mattst88@gmail.com>,
  Sam Creasey <sammy@sammy.net>, Fenghua Yu <fenghua.yu@intel.com>,
- Jeff Dike <jdike@addtoit.com>, linux-um@lists.infradead.org,
+ Jeff Dike <jdike@addtoit.com>, linux-um <linux-um@lists.infradead.org>,
  Stefan Kristiansson <stefan.kristiansson@saunalahti.fi>,
- linux-m68k@lists.linux-m68k.org, openrisc@lists.librecores.org,
+ linux-m68k <linux-m68k@lists.linux-m68k.org>,
+ Openrisc <openrisc@lists.librecores.org>,
  Ivan Kokshaysky <ink@jurassic.park.msu.ru>, Greentime Hu <green.hu@gmail.com>,
- Guan Xuetao <gxt@pku.edu.cn>, linux-arm-kernel@lists.infradead.org,
+ Stafford Horne <shorne@gmail.com>, Guan Xuetao <gxt@pku.edu.cn>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
  Richard Henderson <rth@twiddle.net>, Chris Zankel <chris@zankel.net>,
  Michal Simek <monstr@monstr.eu>, Tony Luck <tony.luck@intel.com>,
  Brian Cain <bcain@codeaurora.org>, Nick Hu <nickhu@andestech.com>,
  Max Filippov <jcmvbkbc@gmail.com>, linux-mips@vger.kernel.org,
- Ralf Baechle <ralf@linux-mips.org>, linux-alpha@vger.kernel.org,
+ Ralf Baechle <ralf@linux-mips.org>, alpha <linux-alpha@vger.kernel.org>,
  nios2-dev@lists.rocketboards.org, Andrew Morton <akpm@linux-foundation.org>,
  "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
@@ -129,26 +99,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Mon, Mar 02, 2020 at 07:26:30AM +0530, Anshuman Khandual wrote:
 
-> diff --git a/arch/openrisc/include/asm/pgtable.h b/arch/openrisc/include/asm/pgtable.h
-> index 248d22d8faa7..7f3fb9ceb083 100644
-> --- a/arch/openrisc/include/asm/pgtable.h
-> +++ b/arch/openrisc/include/asm/pgtable.h
-> @@ -236,8 +236,6 @@ static inline int pte_write(pte_t pte) { return pte_val(pte) & _PAGE_WRITE; }
->  static inline int pte_exec(pte_t pte)  { return pte_val(pte) & _PAGE_EXEC; }
->  static inline int pte_dirty(pte_t pte) { return pte_val(pte) & _PAGE_DIRTY; }
->  static inline int pte_young(pte_t pte) { return pte_val(pte) & _PAGE_ACCESSED; }
-> -static inline int pte_special(pte_t pte) { return 0; }
-> -static inline pte_t pte_mkspecial(pte_t pte) { return pte; }
->  
->  static inline pte_t pte_wrprotect(pte_t pte)
->  {
+On 03/02/2020 01:49 PM, Geert Uytterhoeven wrote:
+> Hi Anshuman,
+> 
+> Thanks for your patch!
+> 
+> On Mon, Mar 2, 2020 at 2:56 AM Anshuman Khandual
+> <anshuman.khandual@arm.com> wrote:
+>> Currently there are many platforms that dont enable HAVE_ARCH_PTE_SPECIAL
+> ARCH_HAS_PTE_SPECIAL
+> 
+>> but required to define quite similar fallback stubs for special page table
+>> entry helpers such as pte_special() and pte_mkspecial(), as they get build
+>> in generic MM without a config check. This creates two generic fallback
+>> stub definitions for these helpers, eliminating much code duplication.
+>>
+>> mips platform has a special case where pte_special() and pte_mkspecial()
+>> visibility is wider than what HAVE_ARCH_PTE_SPECIAL enablement requires.
+> ARCH_HAS_PTE_SPECIAL
+> 
 
-For openrisc bits:
-
-Acked-by: Stafford Horne <shorne@gmail.com>
- 
+Oops, will fix it. I have been juggling between too many HAVE_ARCH_* and
+ARCH_HAS_* lately :)
 
 _______________________________________________
 linux-um mailing list
