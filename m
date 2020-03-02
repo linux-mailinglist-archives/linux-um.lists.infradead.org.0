@@ -2,91 +2,51 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4CA61173EEB
-	for <lists+linux-um@lfdr.de>; Fri, 28 Feb 2020 18:53:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5FA3E1751A7
+	for <lists+linux-um@lfdr.de>; Mon,  2 Mar 2020 02:57:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/fkKo2GuR3GUGZujn11fLqiCUovxaI9MUEqIXsQOv2A=; b=g0Q65H+TLKyHXU
-	fDy+RacsEEHcGpmtUHArUtcAIAzLNabLVXJwCqPfM4EtlU6JEZO0FLnglSK9/8V7pUDU4FjsHFvbW
-	bEHxvQ1TNismkPvtLK3EgFa+STEJ/yhYVrV2JTQ5AHqlbk/e+6NLkes9A4cexVE40zwpfA3Mfh4Bx
-	ZLWSzox3E6S4YlAi27Y1rre2MqqelJ+f9Jr+yBkF+l8mJSUANLOfNwhvAsMJlno/rqdpqWvVO3/oQ
-	E8Ka/fh853CUPsX4f8VTT+kDmfzO9xxeKHmvwYXv8hu+/iIoStnZSXCTUx9w2Rgmf4cWHnzBUhis2
-	FBK42HkMnHCJ0CgoOEMg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=CijSDFX03QY7EzaOX9vEBxIZrMV0O4iFYkradJ1NgdY=; b=gEb
+	Kj0XeLQMyJLh9NRCCUlrX+sHqeQtRf4o7ymAK+SrBufD6GUELhsWBNeRNCX37x2Vp3RFOY7oY2YOQ
+	J+6jWhAxQbxQJJDTyEB6LxchUrlk1i4OPU38wGeLtGVmzOlkH+K46SDdLQcJBe0g4a6bbVSyhkSGe
+	L6DUYf2i/d2LH55EskTUxZQ2ir++7VQFJSHxtQrDl+yXFa7/cFV1rHQMl9GUDRljdn1ZnFe6LIgzM
+	CAWgqooMX7Hc0O9DC2cFWqjd9TqDdd1nE30Fru6SRgssU1VVprJh4dbkVoZ0/SKum6+RJayAjLpeM
+	XmjlJS+4edRNgXU1YxIcOZ/iEPbuBJQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7jpX-0001Oc-12; Fri, 28 Feb 2020 17:53:43 +0000
-Received: from mail-qk1-x741.google.com ([2607:f8b0:4864:20::741])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7jpU-0001Nf-72
- for linux-um@lists.infradead.org; Fri, 28 Feb 2020 17:53:41 +0000
-Received: by mail-qk1-x741.google.com with SMTP id q18so3760095qki.10
- for <linux-um@lists.infradead.org>; Fri, 28 Feb 2020 09:53:37 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=7A81NCRtl/YMUGoXqhguAxYpB741arq6+hyuPYrsxj8=;
- b=sY0DpGEQqcJV+Om5EC5uuAuFwKAdjsRvhCmg7xEn8ttC+eOSqdtl9G7psxfJzUGzyq
- CFgexnJMO3BoZGn/iSzwSiVKiNzwcPPDrFaf2Kub18f4onnWtjyleou7j3D2qhFdanI8
- 98t3lMngB6DyG5RzEw7SjgPkXdKjFb3VE9dGVTR5oeAa+IK8b22h9bpLrpLx/BgQzkUe
- Toz5kRGpIoqs7+ZszYosKGlJnWIVNnjOECOmsMnWFqnLNWmKzGIpmPLHE0mrnCM6fr0q
- CIvoVZX6V+zY/5T2ce6U9NoaV0KO+J1Ir2Q/sD+StqT1lsJW9n9C8bqwLC/RPl6XtCpv
- 6fyA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=7A81NCRtl/YMUGoXqhguAxYpB741arq6+hyuPYrsxj8=;
- b=qun5VwUX3u4PglJ101ncFvhS/ub3A2YhN6U55QHjT9UhbE3ypzyP4ueNCXuq2XASa3
- K/rkfqebj/z0wvZXTEJ2/bC+KwSitGXlpwbi3owMTEvfLuO1yK4PAmJW226BBbYG+Dmw
- e6NWwxIlx+ztJP4TAx4y8eWUYfloe4viRjkb+jpD7gfJIpetR4OXdgsBu0JcDTPYhbJh
- 9z6ysXP3XYb1jgOpijh2fsiCOAnW7Yw1TaZerlPpiY2qzYgEPO1uM4XoND/v+R7IkkPh
- KQCwxtb4D4lEyUjZd0JRTPWaTsPYu7VBUvC36htXcvGsKxbdZ8bozExeUDeuO0WPSUcu
- OP9A==
-X-Gm-Message-State: APjAAAVu05p4d6rpKk3Nrt4mMZT8Hqg0op76ed9Qdj81j2DPbbIEFJsb
- v+KI2mfF9m66YHs6vAPZ90h5gZ7efAP8OBWiu1ND
-X-Google-Smtp-Source: APXvYqxuUZyxP1RTj056y0C7X/UxFsJhJD3+Tlwcqh1VF5LE+BUAzmAANREZPS01D5w3HfGzooO7MBqD5Ciibnynh/Y=
-X-Received: by 2002:ae9:f301:: with SMTP id p1mr5320690qkg.422.1582912416914; 
- Fri, 28 Feb 2020 09:53:36 -0800 (PST)
-MIME-Version: 1.0
-References: <20200228012036.15682-1-brendanhiggins@google.com>
- <20200228012036.15682-2-brendanhiggins@google.com>
- <CAFd5g46dVaV18=5mPLTHh06KQ6nDh4Xw4r8PAZDfSXASi=Qpmg@mail.gmail.com>
-In-Reply-To: <CAFd5g46dVaV18=5mPLTHh06KQ6nDh4Xw4r8PAZDfSXASi=Qpmg@mail.gmail.com>
-From: Iurii Zaikin <yzaikin@google.com>
-Date: Fri, 28 Feb 2020 09:53:00 -0800
-Message-ID: <CAAXuY3qnButVR4hRQcsUbUsvLFg9cSvxSe15uG82T=j+QSQUqQ@mail.gmail.com>
-Subject: Re: [PATCH v3 1/7] vmlinux.lds.h: add linker section for KUnit test
- suites
-To: Brendan Higgins <brendanhiggins@google.com>
+	id 1j8aKM-0003yQ-RV; Mon, 02 Mar 2020 01:57:02 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j8aK8-0003pY-ME; Mon, 02 Mar 2020 01:56:51 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8AB8931B;
+ Sun,  1 Mar 2020 17:56:44 -0800 (PST)
+Received: from p8cg001049571a15.arm.com (unknown [10.163.1.119])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 719B23F6CF;
+ Sun,  1 Mar 2020 17:56:32 -0800 (PST)
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+To: linux-mm@kvack.org
+Subject: [PATCH] mm/special: Create generic fallbacks for pte_special() and
+ pte_mkspecial()
+Date: Mon,  2 Mar 2020 07:26:30 +0530
+Message-Id: <1583114190-7678-1-git-send-email-anshuman.khandual@arm.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200228_095340_282490_C0A35947 
-X-CRM114-Status: GOOD (  17.47  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20200301_175648_824031_587C1634 
+X-CRM114-Status: GOOD (  17.36  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:741 listed in]
- [list.dnswl.org]
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,94 +58,610 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org,
- "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
- Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
- Greg KH <gregkh@linuxfoundation.org>, Stephen Boyd <sboyd@kernel.org>,
- Richard Weinberger <richard@nod.at>, Jeff Dike <jdike@addtoit.com>,
- "open list:DOCUMENTATION" <linux-doc@vger.kernel.org>,
- linux-um <linux-um@lists.infradead.org>, Frank Rowand <frowand.list@gmail.com>,
- rppt@linux.ibm.com, Logan Gunthorpe <logang@deltatee.com>,
- Luis Chamberlain <mcgrof@kernel.org>, David Gow <davidgow@google.com>,
- Shuah Khan <skhan@linuxfoundation.org>,
- Andrew Morton <akpm@linux-foundation.org>,
- KUnit Development <kunit-dev@googlegroups.com>,
- Alan Maguire <alan.maguire@oracle.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Anton Ivanov <anton.ivanov@cambridgegreys.com>
+Cc: linux-ia64@vger.kernel.org, linux-xtensa@linux-xtensa.org,
+ linux-kernel@vger.kernel.org,
+ "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>,
+ Max Filippov <jcmvbkbc@gmail.com>, Guo Ren <guoren@kernel.org>,
+ linux-csky@vger.kernel.org, sparclinux@vger.kernel.org,
+ linux-hexagon@vger.kernel.org, Vincent Chen <deanbo422@gmail.com>,
+ Anton Ivanov <anton.ivanov@cambridgegreys.com>,
+ Jonas Bonn <jonas@southpole.se>, Paul Burton <paulburton@kernel.org>,
+ Richard Weinberger <richard@nod.at>, Helge Deller <deller@gmx.de>,
+ Russell King <linux@armlinux.org.uk>, Ley Foon Tan <ley.foon.tan@intel.com>,
+ Geert Uytterhoeven <geert@linux-m68k.org>, linux-parisc@vger.kernel.org,
+ linux-arch@vger.kernel.org, Matt Turner <mattst88@gmail.com>,
+ Sam Creasey <sammy@sammy.net>, Fenghua Yu <fenghua.yu@intel.com>,
+ Anshuman Khandual <anshuman.khandual@arm.com>, Jeff Dike <jdike@addtoit.com>,
+ linux-um@lists.infradead.org,
+ Stefan Kristiansson <stefan.kristiansson@saunalahti.fi>,
+ linux-m68k@lists.linux-m68k.org, openrisc@lists.librecores.org,
+ Ivan Kokshaysky <ink@jurassic.park.msu.ru>, Greentime Hu <green.hu@gmail.com>,
+ Stafford Horne <shorne@gmail.com>, Guan Xuetao <gxt@pku.edu.cn>,
+ linux-arm-kernel@lists.infradead.org, Richard Henderson <rth@twiddle.net>,
+ Chris Zankel <chris@zankel.net>, Michal Simek <monstr@monstr.eu>,
+ Tony Luck <tony.luck@intel.com>, Brian Cain <bcain@codeaurora.org>,
+ Nick Hu <nickhu@andestech.com>, linux-mips@vger.kernel.org,
+ Ralf Baechle <ralf@linux-mips.org>, linux-alpha@vger.kernel.org,
+ nios2-dev@lists.rocketboards.org, Andrew Morton <akpm@linux-foundation.org>,
+ "David S. Miller" <davem@davemloft.net>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-We went with this alignment precisely because it's the largest that
-any supported arch may possibly need. The problem as I understood it
-was that the compiler, seeing a bunch of pointers decided to put them
-at the memory-access efficient alignment rather than at the section
-start. Remember that the section start used to be unaligned for some
-reason. Note that the alignment that is a multiple of smaller
-alignment is still aligned wrt the smaller alignment, so the compiler
-shouldn't need to put the pointers elsewhere.
-I wonder if there's a more robust way of forcing the compiler to put
-the pointers right at the section start and insert no gaps between
-them than playing with alignment.
+Currently there are many platforms that dont enable HAVE_ARCH_PTE_SPECIAL
+but required to define quite similar fallback stubs for special page table
+entry helpers such as pte_special() and pte_mkspecial(), as they get build
+in generic MM without a config check. This creates two generic fallback
+stub definitions for these helpers, eliminating much code duplication.
 
-On Thu, Feb 27, 2020 at 11:22 PM Brendan Higgins
-<brendanhiggins@google.com> wrote:
->
-> On Thu, Feb 27, 2020 at 5:20 PM Brendan Higgins
-> <brendanhiggins@google.com> wrote:
-> >
-> > Add a linker section where KUnit can put references to its test suites.
-> > This patch is the first step in transitioning to dispatching all KUnit
-> > tests from a centralized executor rather than having each as its own
-> > separate late_initcall.
-> >
-> > Co-developed-by: Iurii Zaikin <yzaikin@google.com>
-> > Signed-off-by: Iurii Zaikin <yzaikin@google.com>
-> > Signed-off-by: Brendan Higgins <brendanhiggins@google.com>
-> > Reviewed-by: Stephen Boyd <sboyd@kernel.org>
-> > ---
-> >  include/asm-generic/vmlinux.lds.h | 8 ++++++++
-> >  1 file changed, 8 insertions(+)
-> >
-> > diff --git a/include/asm-generic/vmlinux.lds.h b/include/asm-generic/vmlinux.lds.h
-> > index e00f41aa8ec4f..99a866f49cb3d 100644
-> > --- a/include/asm-generic/vmlinux.lds.h
-> > +++ b/include/asm-generic/vmlinux.lds.h
-> > @@ -856,6 +856,13 @@
-> >                 KEEP(*(.con_initcall.init))                             \
-> >                 __con_initcall_end = .;
-> >
-> > +/* Alignment must be consistent with (kunit_suite *) in include/kunit/test.h */
-> > +#define KUNIT_TEST_SUITES                                              \
-> > +               . = ALIGN(8);                                           \
->
-> After posting this, I saw I had gotten an email from 0day[1]. After
-> some investigation, I discovered that this 8 byte alignment works for
-> x86 64 bit fine, but only *sometimes* for 32 bit. 4 byte alignment
-> seems to work in all cases (so far). I am not sure why we went with
-> such a large alignment in hindsight. In any case, I should have a
-> fixed revision out pretty soon.
->
-> > +               __kunit_suites_start = .;                               \
-> > +               KEEP(*(.kunit_test_suites))                             \
-> > +               __kunit_suites_end = .;
-> > +
-> >  #ifdef CONFIG_BLK_DEV_INITRD
-> >  #define INIT_RAM_FS                                                    \
-> >         . = ALIGN(4);                                                   \
-> > @@ -1024,6 +1031,7 @@
-> >                 INIT_CALLS                                              \
-> >                 CON_INITCALL                                            \
-> >                 INIT_RAM_FS                                             \
-> > +               KUNIT_TEST_SUITES                                       \
-> >         }
-> >
-> >  #define BSS_SECTION(sbss_align, bss_align, stop_align)                 \
-> > --
->
-> [1] https://lists.01.org/hyperkitty/list/lkp@lists.01.org/thread/4I4UW4OAT63ETMIEUJQTOF3BFTMO6ROD/
+mips platform has a special case where pte_special() and pte_mkspecial()
+visibility is wider than what HAVE_ARCH_PTE_SPECIAL enablement requires.
+This restricts those symbol visibility in order to avoid redefinitions
+which is now exposed through this new generic stubs and subsequent build
+failure. arm platform set_pte_at() definition needs to be moved into a C
+file just to prevent a build failure.
+
+Cc: Richard Henderson <rth@twiddle.net>
+Cc: Ivan Kokshaysky <ink@jurassic.park.msu.ru>
+Cc: Matt Turner <mattst88@gmail.com>
+Cc: Russell King <linux@armlinux.org.uk>
+Cc: Guo Ren <guoren@kernel.org>
+Cc: Brian Cain <bcain@codeaurora.org>
+Cc: Tony Luck <tony.luck@intel.com>
+Cc: Fenghua Yu <fenghua.yu@intel.com>
+Cc: Geert Uytterhoeven <geert@linux-m68k.org>
+Cc: Sam Creasey <sammy@sammy.net>
+Cc: Michal Simek <monstr@monstr.eu>
+Cc: Ralf Baechle <ralf@linux-mips.org>
+Cc: Paul Burton <paulburton@kernel.org>
+Cc: Nick Hu <nickhu@andestech.com>
+Cc: Greentime Hu <green.hu@gmail.com>
+Cc: Vincent Chen <deanbo422@gmail.com>
+Cc: Ley Foon Tan <ley.foon.tan@intel.com>
+Cc: Jonas Bonn <jonas@southpole.se>
+Cc: Stefan Kristiansson <stefan.kristiansson@saunalahti.fi>
+Cc: Stafford Horne <shorne@gmail.com>
+Cc: "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>
+Cc: Helge Deller <deller@gmx.de>
+Cc: "David S. Miller" <davem@davemloft.net>
+Cc: Jeff Dike <jdike@addtoit.com>
+Cc: Richard Weinberger <richard@nod.at>
+Cc: Anton Ivanov <anton.ivanov@cambridgegreys.com>
+Cc: Guan Xuetao <gxt@pku.edu.cn>
+Cc: Chris Zankel <chris@zankel.net>
+Cc: Max Filippov <jcmvbkbc@gmail.com>
+Cc: Andrew Morton <akpm@linux-foundation.org>
+Cc: linux-alpha@vger.kernel.org
+Cc: linux-arm-kernel@lists.infradead.org
+Cc: linux-csky@vger.kernel.org
+Cc: linux-hexagon@vger.kernel.org
+Cc: linux-ia64@vger.kernel.org
+Cc: linux-m68k@lists.linux-m68k.org
+Cc: linux-mips@vger.kernel.org
+Cc: nios2-dev@lists.rocketboards.org
+Cc: openrisc@lists.librecores.org
+Cc: linux-parisc@vger.kernel.org
+Cc: sparclinux@vger.kernel.org
+Cc: linux-um@lists.infradead.org
+Cc: linux-xtensa@linux-xtensa.org
+Cc: linux-arch@vger.kernel.org
+Cc: linux-mm@kvack.org
+Cc: linux-kernel@vger.kernel.org
+Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
+---
+Build tested on multiple platforms but boot tested only for arm64.
+
+ arch/alpha/include/asm/pgtable.h         |  2 --
+ arch/arm/include/asm/pgtable-2level.h    |  2 --
+ arch/arm/include/asm/pgtable.h           | 15 ++------
+ arch/arm/mm/mmu.c                        | 14 ++++++++
+ arch/csky/include/asm/pgtable.h          |  3 --
+ arch/hexagon/include/asm/pgtable.h       |  2 --
+ arch/ia64/include/asm/pgtable.h          |  2 --
+ arch/m68k/include/asm/mcf_pgtable.h      | 10 ------
+ arch/m68k/include/asm/motorola_pgtable.h |  2 --
+ arch/m68k/include/asm/sun3_pgtable.h     |  2 --
+ arch/microblaze/include/asm/pgtable.h    |  4 ---
+ arch/mips/include/asm/pgtable.h          | 44 ++++++++++++++++--------
+ arch/nds32/include/asm/pgtable.h         |  9 -----
+ arch/nios2/include/asm/pgtable.h         |  3 --
+ arch/openrisc/include/asm/pgtable.h      |  2 --
+ arch/parisc/include/asm/pgtable.h        |  2 --
+ arch/sparc/include/asm/pgtable_32.h      |  7 ----
+ arch/um/include/asm/pgtable.h            | 10 ------
+ arch/unicore32/include/asm/pgtable.h     |  3 --
+ arch/xtensa/include/asm/pgtable.h        |  3 --
+ include/linux/mm.h                       | 12 +++++++
+ 21 files changed, 58 insertions(+), 95 deletions(-)
+
+diff --git a/arch/alpha/include/asm/pgtable.h b/arch/alpha/include/asm/pgtable.h
+index 299791ce14b6..0267aa8a4f86 100644
+--- a/arch/alpha/include/asm/pgtable.h
++++ b/arch/alpha/include/asm/pgtable.h
+@@ -268,7 +268,6 @@ extern inline void pud_clear(pud_t * pudp)	{ pud_val(*pudp) = 0; }
+ extern inline int pte_write(pte_t pte)		{ return !(pte_val(pte) & _PAGE_FOW); }
+ extern inline int pte_dirty(pte_t pte)		{ return pte_val(pte) & _PAGE_DIRTY; }
+ extern inline int pte_young(pte_t pte)		{ return pte_val(pte) & _PAGE_ACCESSED; }
+-extern inline int pte_special(pte_t pte)	{ return 0; }
+ 
+ extern inline pte_t pte_wrprotect(pte_t pte)	{ pte_val(pte) |= _PAGE_FOW; return pte; }
+ extern inline pte_t pte_mkclean(pte_t pte)	{ pte_val(pte) &= ~(__DIRTY_BITS); return pte; }
+@@ -276,7 +275,6 @@ extern inline pte_t pte_mkold(pte_t pte)	{ pte_val(pte) &= ~(__ACCESS_BITS); ret
+ extern inline pte_t pte_mkwrite(pte_t pte)	{ pte_val(pte) &= ~_PAGE_FOW; return pte; }
+ extern inline pte_t pte_mkdirty(pte_t pte)	{ pte_val(pte) |= __DIRTY_BITS; return pte; }
+ extern inline pte_t pte_mkyoung(pte_t pte)	{ pte_val(pte) |= __ACCESS_BITS; return pte; }
+-extern inline pte_t pte_mkspecial(pte_t pte)	{ return pte; }
+ 
+ #define PAGE_DIR_OFFSET(tsk,address) pgd_offset((tsk),(address))
+ 
+diff --git a/arch/arm/include/asm/pgtable-2level.h b/arch/arm/include/asm/pgtable-2level.h
+index 0d3ea35c97fe..9e084a464a97 100644
+--- a/arch/arm/include/asm/pgtable-2level.h
++++ b/arch/arm/include/asm/pgtable-2level.h
+@@ -211,8 +211,6 @@ static inline pmd_t *pmd_offset(pud_t *pud, unsigned long addr)
+ #define pmd_addr_end(addr,end) (end)
+ 
+ #define set_pte_ext(ptep,pte,ext) cpu_set_pte_ext(ptep,pte,ext)
+-#define pte_special(pte)	(0)
+-static inline pte_t pte_mkspecial(pte_t pte) { return pte; }
+ 
+ /*
+  * We don't have huge page support for short descriptors, for the moment
+diff --git a/arch/arm/include/asm/pgtable.h b/arch/arm/include/asm/pgtable.h
+index eabcb48a7840..556468240ba5 100644
+--- a/arch/arm/include/asm/pgtable.h
++++ b/arch/arm/include/asm/pgtable.h
+@@ -252,19 +252,8 @@ static inline void __sync_icache_dcache(pte_t pteval)
+ extern void __sync_icache_dcache(pte_t pteval);
+ #endif
+ 
+-static inline void set_pte_at(struct mm_struct *mm, unsigned long addr,
+-			      pte_t *ptep, pte_t pteval)
+-{
+-	unsigned long ext = 0;
+-
+-	if (addr < TASK_SIZE && pte_valid_user(pteval)) {
+-		if (!pte_special(pteval))
+-			__sync_icache_dcache(pteval);
+-		ext |= PTE_EXT_NG;
+-	}
+-
+-	set_pte_ext(ptep, pteval, ext);
+-}
++void set_pte_at(struct mm_struct *mm, unsigned long addr,
++		      pte_t *ptep, pte_t pteval);
+ 
+ static inline pte_t clear_pte_bit(pte_t pte, pgprot_t prot)
+ {
+diff --git a/arch/arm/mm/mmu.c b/arch/arm/mm/mmu.c
+index 5d0d0f86e790..16e9b041d7cf 100644
+--- a/arch/arm/mm/mmu.c
++++ b/arch/arm/mm/mmu.c
+@@ -1672,3 +1672,17 @@ void __init early_mm_init(const struct machine_desc *mdesc)
+ 	build_mem_type_table();
+ 	early_paging_init(mdesc);
+ }
++
++void set_pte_at(struct mm_struct *mm, unsigned long addr,
++			      pte_t *ptep, pte_t pteval)
++{
++	unsigned long ext = 0;
++
++	if (addr < TASK_SIZE && pte_valid_user(pteval)) {
++		if (!pte_special(pteval))
++			__sync_icache_dcache(pteval);
++		ext |= PTE_EXT_NG;
++	}
++
++	set_pte_ext(ptep, pteval, ext);
++}
+diff --git a/arch/csky/include/asm/pgtable.h b/arch/csky/include/asm/pgtable.h
+index 9b7764cb7645..9ab4a445ad99 100644
+--- a/arch/csky/include/asm/pgtable.h
++++ b/arch/csky/include/asm/pgtable.h
+@@ -110,9 +110,6 @@ extern unsigned long empty_zero_page[PAGE_SIZE / sizeof(unsigned long)];
+ extern void load_pgd(unsigned long pg_dir);
+ extern pte_t invalid_pte_table[PTRS_PER_PTE];
+ 
+-static inline int pte_special(pte_t pte) { return 0; }
+-static inline pte_t pte_mkspecial(pte_t pte) { return pte; }
+-
+ static inline void set_pte(pte_t *p, pte_t pte)
+ {
+ 	*p = pte;
+diff --git a/arch/hexagon/include/asm/pgtable.h b/arch/hexagon/include/asm/pgtable.h
+index 2fec20ad939e..d383e8bea5b2 100644
+--- a/arch/hexagon/include/asm/pgtable.h
++++ b/arch/hexagon/include/asm/pgtable.h
+@@ -158,8 +158,6 @@ extern pgd_t swapper_pg_dir[PTRS_PER_PGD];  /* located in head.S */
+ 
+ /* Seems to be zero even in architectures where the zero page is firewalled? */
+ #define FIRST_USER_ADDRESS 0UL
+-#define pte_special(pte)	0
+-#define pte_mkspecial(pte)	(pte)
+ 
+ /*  HUGETLB not working currently  */
+ #ifdef CONFIG_HUGETLB_PAGE
+diff --git a/arch/ia64/include/asm/pgtable.h b/arch/ia64/include/asm/pgtable.h
+index d602e7c622db..0e7b645b76c6 100644
+--- a/arch/ia64/include/asm/pgtable.h
++++ b/arch/ia64/include/asm/pgtable.h
+@@ -298,7 +298,6 @@ extern unsigned long VMALLOC_END;
+ #define pte_exec(pte)		((pte_val(pte) & _PAGE_AR_RX) != 0)
+ #define pte_dirty(pte)		((pte_val(pte) & _PAGE_D) != 0)
+ #define pte_young(pte)		((pte_val(pte) & _PAGE_A) != 0)
+-#define pte_special(pte)	0
+ 
+ /*
+  * Note: we convert AR_RWX to AR_RX and AR_RW to AR_R by clearing the 2nd bit in the
+@@ -311,7 +310,6 @@ extern unsigned long VMALLOC_END;
+ #define pte_mkclean(pte)	(__pte(pte_val(pte) & ~_PAGE_D))
+ #define pte_mkdirty(pte)	(__pte(pte_val(pte) | _PAGE_D))
+ #define pte_mkhuge(pte)		(__pte(pte_val(pte)))
+-#define pte_mkspecial(pte)	(pte)
+ 
+ /*
+  * Because ia64's Icache and Dcache is not coherent (on a cpu), we need to
+diff --git a/arch/m68k/include/asm/mcf_pgtable.h b/arch/m68k/include/asm/mcf_pgtable.h
+index b9f45aeded25..0031cd387b75 100644
+--- a/arch/m68k/include/asm/mcf_pgtable.h
++++ b/arch/m68k/include/asm/mcf_pgtable.h
+@@ -235,11 +235,6 @@ static inline int pte_young(pte_t pte)
+ 	return pte_val(pte) & CF_PAGE_ACCESSED;
+ }
+ 
+-static inline int pte_special(pte_t pte)
+-{
+-	return 0;
+-}
+-
+ static inline pte_t pte_wrprotect(pte_t pte)
+ {
+ 	pte_val(pte) &= ~CF_PAGE_WRITABLE;
+@@ -312,11 +307,6 @@ static inline pte_t pte_mkcache(pte_t pte)
+ 	return pte;
+ }
+ 
+-static inline pte_t pte_mkspecial(pte_t pte)
+-{
+-	return pte;
+-}
+-
+ #define swapper_pg_dir kernel_pg_dir
+ extern pgd_t kernel_pg_dir[PTRS_PER_PGD];
+ 
+diff --git a/arch/m68k/include/asm/motorola_pgtable.h b/arch/m68k/include/asm/motorola_pgtable.h
+index 62bedc61f110..a6f4b96d674e 100644
+--- a/arch/m68k/include/asm/motorola_pgtable.h
++++ b/arch/m68k/include/asm/motorola_pgtable.h
+@@ -168,7 +168,6 @@ static inline void pud_set(pud_t *pudp, pmd_t *pmdp)
+ static inline int pte_write(pte_t pte)		{ return !(pte_val(pte) & _PAGE_RONLY); }
+ static inline int pte_dirty(pte_t pte)		{ return pte_val(pte) & _PAGE_DIRTY; }
+ static inline int pte_young(pte_t pte)		{ return pte_val(pte) & _PAGE_ACCESSED; }
+-static inline int pte_special(pte_t pte)	{ return 0; }
+ 
+ static inline pte_t pte_wrprotect(pte_t pte)	{ pte_val(pte) |= _PAGE_RONLY; return pte; }
+ static inline pte_t pte_mkclean(pte_t pte)	{ pte_val(pte) &= ~_PAGE_DIRTY; return pte; }
+@@ -186,7 +185,6 @@ static inline pte_t pte_mkcache(pte_t pte)
+ 	pte_val(pte) = (pte_val(pte) & _CACHEMASK040) | m68k_supervisor_cachemode;
+ 	return pte;
+ }
+-static inline pte_t pte_mkspecial(pte_t pte)	{ return pte; }
+ 
+ #define PAGE_DIR_OFFSET(tsk,address) pgd_offset((tsk),(address))
+ 
+diff --git a/arch/m68k/include/asm/sun3_pgtable.h b/arch/m68k/include/asm/sun3_pgtable.h
+index bc4155264810..0caa18a08437 100644
+--- a/arch/m68k/include/asm/sun3_pgtable.h
++++ b/arch/m68k/include/asm/sun3_pgtable.h
+@@ -155,7 +155,6 @@ static inline void pmd_clear (pmd_t *pmdp) { pmd_val (*pmdp) = 0; }
+ static inline int pte_write(pte_t pte)		{ return pte_val(pte) & SUN3_PAGE_WRITEABLE; }
+ static inline int pte_dirty(pte_t pte)		{ return pte_val(pte) & SUN3_PAGE_MODIFIED; }
+ static inline int pte_young(pte_t pte)		{ return pte_val(pte) & SUN3_PAGE_ACCESSED; }
+-static inline int pte_special(pte_t pte)	{ return 0; }
+ 
+ static inline pte_t pte_wrprotect(pte_t pte)	{ pte_val(pte) &= ~SUN3_PAGE_WRITEABLE; return pte; }
+ static inline pte_t pte_mkclean(pte_t pte)	{ pte_val(pte) &= ~SUN3_PAGE_MODIFIED; return pte; }
+@@ -168,7 +167,6 @@ static inline pte_t pte_mknocache(pte_t pte)	{ pte_val(pte) |= SUN3_PAGE_NOCACHE
+ //static inline pte_t pte_mkcache(pte_t pte)	{ pte_val(pte) &= SUN3_PAGE_NOCACHE; return pte; }
+ // until then, use:
+ static inline pte_t pte_mkcache(pte_t pte)	{ return pte; }
+-static inline pte_t pte_mkspecial(pte_t pte)	{ return pte; }
+ 
+ extern pgd_t swapper_pg_dir[PTRS_PER_PGD];
+ extern pgd_t kernel_pg_dir[PTRS_PER_PGD];
+diff --git a/arch/microblaze/include/asm/pgtable.h b/arch/microblaze/include/asm/pgtable.h
+index 2def331f9e2c..db9bdfcf46b7 100644
+--- a/arch/microblaze/include/asm/pgtable.h
++++ b/arch/microblaze/include/asm/pgtable.h
+@@ -80,10 +80,6 @@ extern pte_t *va_to_pte(unsigned long address);
+  * Undefined behaviour if not..
+  */
+ 
+-static inline int pte_special(pte_t pte)	{ return 0; }
+-
+-static inline pte_t pte_mkspecial(pte_t pte)	{ return pte; }
+-
+ /* Start and end of the vmalloc area. */
+ /* Make sure to map the vmalloc area above the pinned kernel memory area
+    of 32Mb.  */
+diff --git a/arch/mips/include/asm/pgtable.h b/arch/mips/include/asm/pgtable.h
+index aef5378f909c..8e4e4be1ca00 100644
+--- a/arch/mips/include/asm/pgtable.h
++++ b/arch/mips/include/asm/pgtable.h
+@@ -269,6 +269,36 @@ static inline void set_pte_at(struct mm_struct *mm, unsigned long addr,
+  */
+ extern pgd_t swapper_pg_dir[];
+ 
++/*
++ * Platform specific pte_special() and pte_mkspecial() definitions
++ * are required only when ARCH_HAS_PTE_SPECIAL is enabled.
++ */
++#if !defined(CONFIG_32BIT) && !defined(CONFIG_CPU_HAS_RIXI)
++#if defined(CONFIG_PHYS_ADDR_T_64BIT) && defined(CONFIG_CPU_MIPS32)
++static inline int pte_special(pte_t pte)
++{
++	return pte.pte_low & _PAGE_SPECIAL;
++}
++
++static inline pte_t pte_mkspecial(pte_t pte)
++{
++	pte.pte_low |= _PAGE_SPECIAL;
++	return pte;
++}
++#else
++static inline int pte_special(pte_t pte)
++{
++	return pte_val(pte) & _PAGE_SPECIAL;
++}
++
++static inline pte_t pte_mkspecial(pte_t pte)
++{
++	pte_val(pte) |= _PAGE_SPECIAL;
++	return pte;
++}
++#endif
++#endif
++
+ /*
+  * The following only work if pte_present() is true.
+  * Undefined behaviour if not..
+@@ -277,7 +307,6 @@ extern pgd_t swapper_pg_dir[];
+ static inline int pte_write(pte_t pte)	{ return pte.pte_low & _PAGE_WRITE; }
+ static inline int pte_dirty(pte_t pte)	{ return pte.pte_low & _PAGE_MODIFIED; }
+ static inline int pte_young(pte_t pte)	{ return pte.pte_low & _PAGE_ACCESSED; }
+-static inline int pte_special(pte_t pte) { return pte.pte_low & _PAGE_SPECIAL; }
+ 
+ static inline pte_t pte_wrprotect(pte_t pte)
+ {
+@@ -338,17 +367,10 @@ static inline pte_t pte_mkyoung(pte_t pte)
+ 	}
+ 	return pte;
+ }
+-
+-static inline pte_t pte_mkspecial(pte_t pte)
+-{
+-	pte.pte_low |= _PAGE_SPECIAL;
+-	return pte;
+-}
+ #else
+ static inline int pte_write(pte_t pte)	{ return pte_val(pte) & _PAGE_WRITE; }
+ static inline int pte_dirty(pte_t pte)	{ return pte_val(pte) & _PAGE_MODIFIED; }
+ static inline int pte_young(pte_t pte)	{ return pte_val(pte) & _PAGE_ACCESSED; }
+-static inline int pte_special(pte_t pte) { return pte_val(pte) & _PAGE_SPECIAL; }
+ 
+ static inline pte_t pte_wrprotect(pte_t pte)
+ {
+@@ -392,12 +414,6 @@ static inline pte_t pte_mkyoung(pte_t pte)
+ 	return pte;
+ }
+ 
+-static inline pte_t pte_mkspecial(pte_t pte)
+-{
+-	pte_val(pte) |= _PAGE_SPECIAL;
+-	return pte;
+-}
+-
+ #ifdef CONFIG_MIPS_HUGE_TLB_SUPPORT
+ static inline int pte_huge(pte_t pte)	{ return pte_val(pte) & _PAGE_HUGE; }
+ 
+diff --git a/arch/nds32/include/asm/pgtable.h b/arch/nds32/include/asm/pgtable.h
+index 6abc58ac406d..476cc4dd1709 100644
+--- a/arch/nds32/include/asm/pgtable.h
++++ b/arch/nds32/include/asm/pgtable.h
+@@ -286,15 +286,6 @@ PTE_BIT_FUNC(mkclean, &=~_PAGE_D);
+ PTE_BIT_FUNC(mkdirty, |=_PAGE_D);
+ PTE_BIT_FUNC(mkold, &=~_PAGE_YOUNG);
+ PTE_BIT_FUNC(mkyoung, |=_PAGE_YOUNG);
+-static inline int pte_special(pte_t pte)
+-{
+-	return 0;
+-}
+-
+-static inline pte_t pte_mkspecial(pte_t pte)
+-{
+-	return pte;
+-}
+ 
+ /*
+  * Mark the prot value as uncacheable and unbufferable.
+diff --git a/arch/nios2/include/asm/pgtable.h b/arch/nios2/include/asm/pgtable.h
+index 99985d8b7166..f98b7f4519ba 100644
+--- a/arch/nios2/include/asm/pgtable.h
++++ b/arch/nios2/include/asm/pgtable.h
+@@ -113,7 +113,6 @@ static inline int pte_dirty(pte_t pte)		\
+ 	{ return pte_val(pte) & _PAGE_DIRTY; }
+ static inline int pte_young(pte_t pte)		\
+ 	{ return pte_val(pte) & _PAGE_ACCESSED; }
+-static inline int pte_special(pte_t pte)	{ return 0; }
+ 
+ #define pgprot_noncached pgprot_noncached
+ 
+@@ -168,8 +167,6 @@ static inline pte_t pte_mkdirty(pte_t pte)
+ 	return pte;
+ }
+ 
+-static inline pte_t pte_mkspecial(pte_t pte)	{ return pte; }
+-
+ static inline pte_t pte_mkyoung(pte_t pte)
+ {
+ 	pte_val(pte) |= _PAGE_ACCESSED;
+diff --git a/arch/openrisc/include/asm/pgtable.h b/arch/openrisc/include/asm/pgtable.h
+index 248d22d8faa7..7f3fb9ceb083 100644
+--- a/arch/openrisc/include/asm/pgtable.h
++++ b/arch/openrisc/include/asm/pgtable.h
+@@ -236,8 +236,6 @@ static inline int pte_write(pte_t pte) { return pte_val(pte) & _PAGE_WRITE; }
+ static inline int pte_exec(pte_t pte)  { return pte_val(pte) & _PAGE_EXEC; }
+ static inline int pte_dirty(pte_t pte) { return pte_val(pte) & _PAGE_DIRTY; }
+ static inline int pte_young(pte_t pte) { return pte_val(pte) & _PAGE_ACCESSED; }
+-static inline int pte_special(pte_t pte) { return 0; }
+-static inline pte_t pte_mkspecial(pte_t pte) { return pte; }
+ 
+ static inline pte_t pte_wrprotect(pte_t pte)
+ {
+diff --git a/arch/parisc/include/asm/pgtable.h b/arch/parisc/include/asm/pgtable.h
+index f0a365950536..9832c73a7021 100644
+--- a/arch/parisc/include/asm/pgtable.h
++++ b/arch/parisc/include/asm/pgtable.h
+@@ -377,7 +377,6 @@ static inline void pud_clear(pud_t *pud) {
+ static inline int pte_dirty(pte_t pte)		{ return pte_val(pte) & _PAGE_DIRTY; }
+ static inline int pte_young(pte_t pte)		{ return pte_val(pte) & _PAGE_ACCESSED; }
+ static inline int pte_write(pte_t pte)		{ return pte_val(pte) & _PAGE_WRITE; }
+-static inline int pte_special(pte_t pte)	{ return 0; }
+ 
+ static inline pte_t pte_mkclean(pte_t pte)	{ pte_val(pte) &= ~_PAGE_DIRTY; return pte; }
+ static inline pte_t pte_mkold(pte_t pte)	{ pte_val(pte) &= ~_PAGE_ACCESSED; return pte; }
+@@ -385,7 +384,6 @@ static inline pte_t pte_wrprotect(pte_t pte)	{ pte_val(pte) &= ~_PAGE_WRITE; ret
+ static inline pte_t pte_mkdirty(pte_t pte)	{ pte_val(pte) |= _PAGE_DIRTY; return pte; }
+ static inline pte_t pte_mkyoung(pte_t pte)	{ pte_val(pte) |= _PAGE_ACCESSED; return pte; }
+ static inline pte_t pte_mkwrite(pte_t pte)	{ pte_val(pte) |= _PAGE_WRITE; return pte; }
+-static inline pte_t pte_mkspecial(pte_t pte)	{ return pte; }
+ 
+ /*
+  * Huge pte definitions.
+diff --git a/arch/sparc/include/asm/pgtable_32.h b/arch/sparc/include/asm/pgtable_32.h
+index 6d6f44c0cad9..0de659ae0ba4 100644
+--- a/arch/sparc/include/asm/pgtable_32.h
++++ b/arch/sparc/include/asm/pgtable_32.h
+@@ -223,11 +223,6 @@ static inline int pte_young(pte_t pte)
+ 	return pte_val(pte) & SRMMU_REF;
+ }
+ 
+-static inline int pte_special(pte_t pte)
+-{
+-	return 0;
+-}
+-
+ static inline pte_t pte_wrprotect(pte_t pte)
+ {
+ 	return __pte(pte_val(pte) & ~SRMMU_WRITE);
+@@ -258,8 +253,6 @@ static inline pte_t pte_mkyoung(pte_t pte)
+ 	return __pte(pte_val(pte) | SRMMU_REF);
+ }
+ 
+-#define pte_mkspecial(pte)    (pte)
+-
+ #define pfn_pte(pfn, prot)		mk_pte(pfn_to_page(pfn), prot)
+ 
+ static inline unsigned long pte_pfn(pte_t pte)
+diff --git a/arch/um/include/asm/pgtable.h b/arch/um/include/asm/pgtable.h
+index 2daa58df2190..b5ddf5d98bd5 100644
+--- a/arch/um/include/asm/pgtable.h
++++ b/arch/um/include/asm/pgtable.h
+@@ -167,11 +167,6 @@ static inline int pte_newprot(pte_t pte)
+ 	return(pte_present(pte) && (pte_get_bits(pte, _PAGE_NEWPROT)));
+ }
+ 
+-static inline int pte_special(pte_t pte)
+-{
+-	return 0;
+-}
+-
+ /*
+  * =================================
+  * Flags setting section.
+@@ -247,11 +242,6 @@ static inline pte_t pte_mknewpage(pte_t pte)
+ 	return(pte);
+ }
+ 
+-static inline pte_t pte_mkspecial(pte_t pte)
+-{
+-	return(pte);
+-}
+-
+ static inline void set_pte(pte_t *pteptr, pte_t pteval)
+ {
+ 	pte_copy(*pteptr, pteval);
+diff --git a/arch/unicore32/include/asm/pgtable.h b/arch/unicore32/include/asm/pgtable.h
+index c8f7ba12f309..3b8731b3a937 100644
+--- a/arch/unicore32/include/asm/pgtable.h
++++ b/arch/unicore32/include/asm/pgtable.h
+@@ -177,7 +177,6 @@ extern struct page *empty_zero_page;
+ #define pte_dirty(pte)		(pte_val(pte) & PTE_DIRTY)
+ #define pte_young(pte)		(pte_val(pte) & PTE_YOUNG)
+ #define pte_exec(pte)		(pte_val(pte) & PTE_EXEC)
+-#define pte_special(pte)	(0)
+ 
+ #define PTE_BIT_FUNC(fn, op) \
+ static inline pte_t pte_##fn(pte_t pte) { pte_val(pte) op; return pte; }
+@@ -189,8 +188,6 @@ PTE_BIT_FUNC(mkdirty,   |= PTE_DIRTY);
+ PTE_BIT_FUNC(mkold,     &= ~PTE_YOUNG);
+ PTE_BIT_FUNC(mkyoung,   |= PTE_YOUNG);
+ 
+-static inline pte_t pte_mkspecial(pte_t pte) { return pte; }
+-
+ /*
+  * Mark the prot value as uncacheable.
+  */
+diff --git a/arch/xtensa/include/asm/pgtable.h b/arch/xtensa/include/asm/pgtable.h
+index 27ac17c9da09..8be0c0568c50 100644
+--- a/arch/xtensa/include/asm/pgtable.h
++++ b/arch/xtensa/include/asm/pgtable.h
+@@ -266,7 +266,6 @@ static inline void paging_init(void) { }
+ static inline int pte_write(pte_t pte) { return pte_val(pte) & _PAGE_WRITABLE; }
+ static inline int pte_dirty(pte_t pte) { return pte_val(pte) & _PAGE_DIRTY; }
+ static inline int pte_young(pte_t pte) { return pte_val(pte) & _PAGE_ACCESSED; }
+-static inline int pte_special(pte_t pte) { return 0; }
+ 
+ static inline pte_t pte_wrprotect(pte_t pte)	
+ 	{ pte_val(pte) &= ~(_PAGE_WRITABLE | _PAGE_HW_WRITE); return pte; }
+@@ -280,8 +279,6 @@ static inline pte_t pte_mkyoung(pte_t pte)
+ 	{ pte_val(pte) |= _PAGE_ACCESSED; return pte; }
+ static inline pte_t pte_mkwrite(pte_t pte)
+ 	{ pte_val(pte) |= _PAGE_WRITABLE; return pte; }
+-static inline pte_t pte_mkspecial(pte_t pte)
+-	{ return pte; }
+ 
+ #define pgprot_noncached(prot) (__pgprot(pgprot_val(prot) & ~_PAGE_CA_MASK))
+ 
+diff --git a/include/linux/mm.h b/include/linux/mm.h
+index 52269e56c514..79ed4ad2a954 100644
+--- a/include/linux/mm.h
++++ b/include/linux/mm.h
+@@ -1720,6 +1720,18 @@ static inline void sync_mm_rss(struct mm_struct *mm)
+ }
+ #endif
+ 
++#ifndef CONFIG_ARCH_HAS_PTE_SPECIAL
++static inline int pte_special(pte_t pte)
++{
++	return 0;
++}
++
++static inline pte_t pte_mkspecial(pte_t pte)
++{
++	return pte;
++}
++#endif
++
+ #ifndef CONFIG_ARCH_HAS_PTE_DEVMAP
+ static inline int pte_devmap(pte_t pte)
+ {
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-um mailing list
