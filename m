@@ -2,52 +2,52 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0B6B717B378
-	for <lists+linux-um@lfdr.de>; Fri,  6 Mar 2020 02:06:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4408A17B373
+	for <lists+linux-um@lfdr.de>; Fri,  6 Mar 2020 02:06:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8RQh5kFZUO3O2y/9+Ho7fkfoDEsAsab/ixU7fjuxgfI=; b=l4X9otJs9VoiF7
-	kKHa9JRe7ETCsYzGT/Tg63LMGU0ZXMboO0odx8sWMe07nREUBHFosiBlgKjtrnlBqp+l8AlpS+ZLh
-	7gPMxUM9gpcoea+RtB2XIArjZ0AtQpqeZ6+2/dLXFTGsPJqt+oz6mWNqHaUJt320mNwQciFdNYN4x
-	RDzLRVxVX6tdoLKstDtCRms3PpXbIzC9hFqm/AB+wU5zlarUHnb33DTONPN20QoJE1+HkqbZH6rWe
-	eIadTEZWvqBcO11zCXZXH7bYKW80xzQ0H1Gdy1vfpF9iJKmmqjtM83FZbPl03MPwOeBzfUDvi6qh9
-	8LE41kta8k01iOqVwwRA==;
+	List-Owner; bh=RuyYCp6IHbOp0b0ZkpiT2YF4SmD6xiD2sUQnT8REBE4=; b=mf7KTWwyokJ47C
+	hA/AKWGbmEl8H/xpyMfaHN+KmvyI7jRjVbZxjcJqKPfOUx0UY/D+RHUtMDtFBMcx0DGl1H40jK01N
+	cPGZKuWQpC3AYZ+pSs6VwmcDtNCvYF4GztYUl6/3DdgiWrSv4L2A2dszc2oKxNBnEFqwLzrloMvbd
+	ad8A9UbNyHat/SpFZAUVxVR/tHA+Gi/1oEbhJZKVdhCGkY7z7GoYHkRjg/jd2Cf4NPvP0f9oniDwx
+	BM55w3pHMYxo+/dZ2FeZKwDaUwxp0fcF8JMTO4QNoP0rMzF/3MSlJpL3VJrZtz5wzx+/tcIzUYbZo
+	4QjKRLUPgVrKolm5AQPQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jA1S2-0008Pb-Cg; Fri, 06 Mar 2020 01:06:54 +0000
+	id 1jA1S2-0008Pp-Ic; Fri, 06 Mar 2020 01:06:54 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jA1Ry-0008Mp-2S
+ id 1jA1Rz-0008Nl-4g
  for linux-um@lists.infradead.org; Fri, 06 Mar 2020 01:06:52 +0000
 Received: from kicinski-fedora-PC1C0HJN.thefacebook.com (unknown
  [163.114.132.128])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id CBE7E208C3;
- Fri,  6 Mar 2020 01:06:48 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id E54E3207FD;
+ Fri,  6 Mar 2020 01:06:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1583456809;
- bh=BFAz6k8N2AgaW0pXpCjlxC1XrQ/2bd8PY1PxlDWovR0=;
+ s=default; t=1583456810;
+ bh=JMpmxwJdUlOqRtaQwoDet8FowHZ56PTcFV4cVJtkGOs=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=eDv4q92MORThFDshgMnFSWnN8110Mhqn0qrE54dC9E9Y+VvvVknnafFvOnuYH/ZKD
- gmYxPMTC8cTzqhFWwwQSMS+YQORfDP0IGiQRhC/0UBDTJpDSpQwDKTs4Q+Nzn/qODN
- a2RcZc51Zeqqp6AIeWQOrvJk1S0sJ8uHzQhK90BY=
+ b=TVhxekQRZCVenUOrQTlnnNNa+rkp4xQ0U00iB1fJ08/7lJJyy79tmX3IYK151JCmJ
+ y3b4lABh4rvmEJnLaJQJ8jpnia2I+2uwC2LTQXjgc3hOAh6p4DUXFqRsn2JVEPqfbL
+ eKovMfGDEXjbry8wIJi1rABjvXeRmvo5uZsEkG4k=
 From: Jakub Kicinski <kuba@kernel.org>
 To: davem@davemloft.net
-Subject: [PATCH net-next 2/7] RDMA/ipoib: reject unsupported coalescing params
-Date: Thu,  5 Mar 2020 17:05:57 -0800
-Message-Id: <20200306010602.1620354-3-kuba@kernel.org>
+Subject: [PATCH net-next 3/7] tun: reject unsupported coalescing params
+Date: Thu,  5 Mar 2020 17:05:58 -0800
+Message-Id: <20200306010602.1620354-4-kuba@kernel.org>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200306010602.1620354-1-kuba@kernel.org>
 References: <20200306010602.1620354-1-kuba@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200305_170650_130736_E38FD0A7 
-X-CRM114-Status: UNSURE (   8.10  )
+X-CRM114-CacheID: sfid-20200305_170651_207984_CE18E4C2 
+X-CRM114-Status: UNSURE (   8.55  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -97,22 +97,21 @@ This driver did not previously reject unsupported parameters.
 
 Signed-off-by: Jakub Kicinski <kuba@kernel.org>
 ---
- drivers/infiniband/ulp/ipoib/ipoib_ethtool.c | 2 ++
- 1 file changed, 2 insertions(+)
+ drivers/net/tun.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/infiniband/ulp/ipoib/ipoib_ethtool.c b/drivers/infiniband/ulp/ipoib/ipoib_ethtool.c
-index 63e4f9d15fd9..a10a0c2ca2da 100644
---- a/drivers/infiniband/ulp/ipoib/ipoib_ethtool.c
-+++ b/drivers/infiniband/ulp/ipoib/ipoib_ethtool.c
-@@ -213,6 +213,8 @@ static int ipoib_get_link_ksettings(struct net_device *netdev,
+diff --git a/drivers/net/tun.c b/drivers/net/tun.c
+index 79f248cb282d..9e8f23519e82 100644
+--- a/drivers/net/tun.c
++++ b/drivers/net/tun.c
+@@ -3597,6 +3597,7 @@ static int tun_set_coalesce(struct net_device *dev,
  }
  
- static const struct ethtool_ops ipoib_ethtool_ops = {
-+	.supported_coalesce_params = ETHTOOL_COALESCE_RX_USECS |
-+				     ETHTOOL_COALESCE_RX_MAX_FRAMES,
- 	.get_link_ksettings	= ipoib_get_link_ksettings,
- 	.get_drvinfo		= ipoib_get_drvinfo,
- 	.get_coalesce		= ipoib_get_coalesce,
+ static const struct ethtool_ops tun_ethtool_ops = {
++	.supported_coalesce_params = ETHTOOL_COALESCE_RX_MAX_FRAMES,
+ 	.get_drvinfo	= tun_get_drvinfo,
+ 	.get_msglevel	= tun_get_msglevel,
+ 	.set_msglevel	= tun_set_msglevel,
 -- 
 2.24.1
 
