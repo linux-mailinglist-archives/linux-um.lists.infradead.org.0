@@ -2,53 +2,52 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A550317B37D
-	for <lists+linux-um@lfdr.de>; Fri,  6 Mar 2020 02:07:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B819417B37F
+	for <lists+linux-um@lfdr.de>; Fri,  6 Mar 2020 02:07:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1wvFeKHKcpls95h46y+iic27TfszFHvf47KMIYdjaWI=; b=A6cruBs1m4bZFB
-	5/GUl1lG/mNcMwBPGbrXEC5ky+/dtmJ7d0N2IXDxp9U0tCb3bHmv1Cthedjyyzfwxar5T3ih+iL59
-	bX7LYg99i1sWPyONyPyZ/+oIlGZAz92boZ9/XNPKBY1Y9+u2g+mvlr1RA0wPawv5LSBAM2RtcTRCx
-	VnH9v+JaWhK5BhhrmMU7I8bTGJoElRNFkQpdEQRs1a63cG8nOePL9m+NWZSHpso4X4F4Mk1lHudZH
-	N31pi5WmK8VSWgshv1yYS4PaGpQLrH69NFIQa8W89iOKoLUE1ToK8ME6EjXby/iENvhj34e7kPCb9
-	VqDvhLK2MY0lIveD/U9A==;
+	List-Owner; bh=YyqlEQcqPMs05hW0dJm2kd37kQ2evm1CHfSBw8jzXQQ=; b=uLBYE9IEjBRyCX
+	0bWpBMzKSSaZNkJ0L2fyj4rABIqBi/jL1rW5DaON0GqJlzSGbaL2JINynhvvxcA9xVAc1MnehVqZD
+	c0rb9D17yn65BiTCIOmK752dEulgQP6EjSeg43niXfaj9FrAH9bIuozWoeJM8Vqu0sxwGrhlw9i+s
+	ejuYgPq2moFJnl+GI8OLQj53WGIR6EbMqNsVZPysktM9wUvsDGN3jPWN6FDLPntp82SWuvz+STuNR
+	mws8032VOlnshJHHs08CtW+YNOqJYFbBc/tKJ+4XTrNWzRwXrzXpzvMRKnxNWUxAtfMigGA7hoE6d
+	Qj9pmEK5edgzwQ2BYvOA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jA1S5-0008Sf-8R; Fri, 06 Mar 2020 01:06:57 +0000
+	id 1jA1S6-0008TG-Dz; Fri, 06 Mar 2020 01:06:58 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jA1S2-0008Pf-FV
- for linux-um@lists.infradead.org; Fri, 06 Mar 2020 01:06:55 +0000
+ id 1jA1S3-0008Qu-HY
+ for linux-um@lists.infradead.org; Fri, 06 Mar 2020 01:06:56 +0000
 Received: from kicinski-fedora-PC1C0HJN.thefacebook.com (unknown
  [163.114.132.128])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 35ED52166E;
- Fri,  6 Mar 2020 01:06:53 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4CF9021739;
+ Fri,  6 Mar 2020 01:06:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1583456814;
- bh=RM7eXOLghBAxQOombdSNP2dy3sQBpkjdvLa0D3I5Dyo=;
+ s=default; t=1583456815;
+ bh=OTtKcRFqA0dHpMGNL6+t5z24seiqfljjuZjgBBCPLfY=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Bcn4aEmn6bdLy0jeeEaeMUpU/remFlYp2vgolj4RincgisqfFU4CEObnwDDWJfkXF
- I9FhD5DBaK11ROE+9WHsVbpX/6YaAwm8hgayvhrcPeuwu+7s57NsL0vip2x5TultwU
- jsVJO4cG3fiOZD4dHEPaEI3jSr7o7OfEOHtq63Kw=
+ b=o6Qjy9P01UiS3cRTUVa8SYuYa2qHdRq6ENqFXfERy7JrO+v0Vys+zs489/8ajnsxC
+ I5LvmiqAv3c7weaJqnT614MpmnsuCGQMJu31+Fjek+tI9ZN9gIzZhH/5GvaQLIRR/p
+ U1iHGRWr1Yw9Y2FZ5yV2ky8AL9hLDWygp4IJXWs4=
 From: Jakub Kicinski <kuba@kernel.org>
 To: davem@davemloft.net
-Subject: [PATCH net-next 6/7] staging: qlge: reject unsupported coalescing
- params
-Date: Thu,  5 Mar 2020 17:06:01 -0800
-Message-Id: <20200306010602.1620354-7-kuba@kernel.org>
+Subject: [PATCH net-next 7/7] wil6210: reject unsupported coalescing params
+Date: Thu,  5 Mar 2020 17:06:02 -0800
+Message-Id: <20200306010602.1620354-8-kuba@kernel.org>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200306010602.1620354-1-kuba@kernel.org>
 References: <20200306010602.1620354-1-kuba@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200305_170654_548562_1005A7A6 
-X-CRM114-Status: UNSURE (   8.01  )
+X-CRM114-CacheID: sfid-20200305_170655_610660_FAF9EEFE 
+X-CRM114-Status: UNSURE (   8.65  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -98,22 +97,21 @@ This driver did not previously reject unsupported parameters.
 
 Signed-off-by: Jakub Kicinski <kuba@kernel.org>
 ---
- drivers/staging/qlge/qlge_ethtool.c | 2 ++
- 1 file changed, 2 insertions(+)
+ drivers/net/wireless/ath/wil6210/ethtool.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/staging/qlge/qlge_ethtool.c b/drivers/staging/qlge/qlge_ethtool.c
-index 790997aff995..050c0da23c6f 100644
---- a/drivers/staging/qlge/qlge_ethtool.c
-+++ b/drivers/staging/qlge/qlge_ethtool.c
-@@ -714,6 +714,8 @@ static void ql_set_msglevel(struct net_device *ndev, u32 value)
+diff --git a/drivers/net/wireless/ath/wil6210/ethtool.c b/drivers/net/wireless/ath/wil6210/ethtool.c
+index fef10886ca4a..e481674485c2 100644
+--- a/drivers/net/wireless/ath/wil6210/ethtool.c
++++ b/drivers/net/wireless/ath/wil6210/ethtool.c
+@@ -95,6 +95,7 @@ static int wil_ethtoolops_set_coalesce(struct net_device *ndev,
  }
  
- const struct ethtool_ops qlge_ethtool_ops = {
-+	.supported_coalesce_params = ETHTOOL_COALESCE_USECS |
-+				     ETHTOOL_COALESCE_MAX_FRAMES,
- 	.get_drvinfo = ql_get_drvinfo,
- 	.get_wol = ql_get_wol,
- 	.set_wol = ql_set_wol,
+ static const struct ethtool_ops wil_ethtool_ops = {
++	.supported_coalesce_params = ETHTOOL_COALESCE_USECS,
+ 	.get_drvinfo	= cfg80211_get_drvinfo,
+ 	.get_coalesce	= wil_ethtoolops_get_coalesce,
+ 	.set_coalesce	= wil_ethtoolops_set_coalesce,
 -- 
 2.24.1
 
