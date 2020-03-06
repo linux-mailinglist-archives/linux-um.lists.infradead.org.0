@@ -2,52 +2,53 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6115E17B379
-	for <lists+linux-um@lfdr.de>; Fri,  6 Mar 2020 02:06:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B3B0B17B37C
+	for <lists+linux-um@lfdr.de>; Fri,  6 Mar 2020 02:06:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iYp8GGvohFFTIDQts5Et+9ZIMAyclp0O7ct0vXSzMDA=; b=Fe2ZD5+JPpVQ80
-	85u0Mnzwk/e/RFfxlh4+HWvHct8RtLq3jooNRc8mlH6b4jfzWOUEY4p+16kolZKCpdi1xkABEMUBl
-	Kk/loC+zXAfadE/CfZL6Tap3J83LfBHoI4d1asH3Eh3F/Li/8lSxlH7nFI+uDfkKPvUSr3z9saSeh
-	YO4Ex55bi9uR8FMENnfjVgZA3ODEsDyp0QF6DadKv36RLWwkNsKPZPpilt/PeBc/dy5IhTP//HlMH
-	G/qFmLUied3E+sBsbO19PKaIG5gay0AXe1LD+DyeQZrSf9rdINsjuRlFtZiDqt8pmDbY9zPhc35C9
-	D3jOVdERNzFwmn+5Fhpg==;
+	List-Owner; bh=l98TQVOpyTAEw9cOCBN4TnctnbYqVJvQAcAgC+Z9FtA=; b=AL5ZoMM6a2/4gi
+	3EoOuc96Nsk9D2p7pN4CzLxhTWdfFE+z1gTWUhBGqeNlmKMf/WdJcEmxpwfXgheTCXfL8X7WxElkA
+	lRkDBNXUTMLQAS2AfoxjSvvCkmym2ZgblbqGcxZn8vIRGoeHbWiniSkyy8/FbcZTcLzFsy6n/Cekm
+	mPnKLseTHyUvQBH9IZLVp5xkdqK8RQTouEcAzCGXMyHBn+9OxXL7ekroBtoAHihSYTfyI9hdz6CoB
+	Cfv3akhhNShfvOrfjFgwau8+Jalr9amHF/xMHxu8wwUbhOv8CIkklRwj3HMmEb1sItH88RBG9Xbje
+	OJHsXhoJiwz6Ti1JNxNg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jA1S2-0008QK-Uf; Fri, 06 Mar 2020 01:06:54 +0000
+	id 1jA1S4-0008RW-3a; Fri, 06 Mar 2020 01:06:56 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jA1S0-0008OI-88
- for linux-um@lists.infradead.org; Fri, 06 Mar 2020 01:06:53 +0000
+ id 1jA1S1-0008Ov-Aj
+ for linux-um@lists.infradead.org; Fri, 06 Mar 2020 01:06:54 +0000
 Received: from kicinski-fedora-PC1C0HJN.thefacebook.com (unknown
  [163.114.132.128])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 080BE21556;
- Fri,  6 Mar 2020 01:06:50 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1EFC22146E;
+ Fri,  6 Mar 2020 01:06:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1583456811;
- bh=t6+kueVIWNtLUqViCk3MdqFhB51exWacT2hvYbn4hoc=;
+ s=default; t=1583456813;
+ bh=T6cn0wHytPI/i5tO/aLymuIVcVVaOSY4AMgguxIiZ6g=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=xdk2QAQZ24xQ+XNnceK3ptrcg2bWbXOcr9edHCgW/cXLqloNOsBzFBFHkh9fZ17u/
- UTSOplONajI9FemA3ollW3gpdBxDi42uXizDTyOzUnVChUfYu9ictQzzt1NcQhxxKi
- mlXYnjjf8vCnK3wYVfT27cEmWiwwbI1lNXUchhlQ=
+ b=Ss6+rX3vSW20OZ+dJk5Jy601slJGsh4cB8F5Jwqec3EJ+RxT9LNNHRZ4lZ9wbYFMN
+ sjL/Gh1OS5xLhDggS0VzUabXakN8H5Xv97uoMglIbDdRe9/4nnhtDtu+BHkKX8tygj
+ 39cfUWrpF0482oyY5S3yizG4DVsAlXJQuuj3VBiA=
 From: Jakub Kicinski <kuba@kernel.org>
 To: davem@davemloft.net
-Subject: [PATCH net-next 4/7] r8152: reject unsupported coalescing params
-Date: Thu,  5 Mar 2020 17:05:59 -0800
-Message-Id: <20200306010602.1620354-5-kuba@kernel.org>
+Subject: [PATCH net-next 5/7] vmxnet3: let core reject the unsupported
+ coalescing parameters
+Date: Thu,  5 Mar 2020 17:06:00 -0800
+Message-Id: <20200306010602.1620354-6-kuba@kernel.org>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200306010602.1620354-1-kuba@kernel.org>
 References: <20200306010602.1620354-1-kuba@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200305_170652_304383_6892433F 
-X-CRM114-Status: UNSURE (   8.55  )
+X-CRM114-CacheID: sfid-20200305_170653_383384_2940DF5D 
+X-CRM114-Status: UNSURE (   9.62  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -93,25 +94,57 @@ Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 Set ethtool_ops->supported_coalesce_params to let
 the core reject unsupported coalescing parameters.
 
-This driver did not previously reject unsupported parameters.
+This driver correctly rejects all unsupported parameters.
+As a side effect of these changes the error code for
+unsupported params changes from EINVAL to EOPNOTSUPP.
 
 Signed-off-by: Jakub Kicinski <kuba@kernel.org>
 ---
- drivers/net/usb/r8152.c | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/net/vmxnet3/vmxnet3_ethtool.c | 24 +++---------------------
+ 1 file changed, 3 insertions(+), 21 deletions(-)
 
-diff --git a/drivers/net/usb/r8152.c b/drivers/net/usb/r8152.c
-index b8d2722a1b33..f27fdd6ab86f 100644
---- a/drivers/net/usb/r8152.c
-+++ b/drivers/net/usb/r8152.c
-@@ -6345,6 +6345,7 @@ static int rtl8152_set_ringparam(struct net_device *netdev,
+diff --git a/drivers/net/vmxnet3/vmxnet3_ethtool.c b/drivers/net/vmxnet3/vmxnet3_ethtool.c
+index 1e4b9ba70983..6528940ce5f3 100644
+--- a/drivers/net/vmxnet3/vmxnet3_ethtool.c
++++ b/drivers/net/vmxnet3/vmxnet3_ethtool.c
+@@ -780,27 +780,6 @@ vmxnet3_set_coalesce(struct net_device *netdev, struct ethtool_coalesce *ec)
+ 	if (!VMXNET3_VERSION_GE_3(adapter))
+ 		return -EOPNOTSUPP;
+ 
+-	if (ec->rx_coalesce_usecs_irq ||
+-	    ec->rx_max_coalesced_frames_irq ||
+-	    ec->tx_coalesce_usecs ||
+-	    ec->tx_coalesce_usecs_irq ||
+-	    ec->tx_max_coalesced_frames_irq ||
+-	    ec->stats_block_coalesce_usecs ||
+-	    ec->use_adaptive_tx_coalesce ||
+-	    ec->pkt_rate_low ||
+-	    ec->rx_coalesce_usecs_low ||
+-	    ec->rx_max_coalesced_frames_low ||
+-	    ec->tx_coalesce_usecs_low ||
+-	    ec->tx_max_coalesced_frames_low ||
+-	    ec->pkt_rate_high ||
+-	    ec->rx_coalesce_usecs_high ||
+-	    ec->rx_max_coalesced_frames_high ||
+-	    ec->tx_coalesce_usecs_high ||
+-	    ec->tx_max_coalesced_frames_high ||
+-	    ec->rate_sample_interval) {
+-		return -EINVAL;
+-	}
+-
+ 	if ((ec->rx_coalesce_usecs == 0) &&
+ 	    (ec->use_adaptive_rx_coalesce == 0) &&
+ 	    (ec->tx_max_coalesced_frames == 0) &&
+@@ -891,6 +870,9 @@ vmxnet3_set_coalesce(struct net_device *netdev, struct ethtool_coalesce *ec)
  }
  
- static const struct ethtool_ops ops = {
-+	.supported_coalesce_params = ETHTOOL_COALESCE_USECS,
- 	.get_drvinfo = rtl8152_get_drvinfo,
- 	.get_link = ethtool_op_get_link,
- 	.nway_reset = rtl8152_nway_reset,
+ static const struct ethtool_ops vmxnet3_ethtool_ops = {
++	.supported_coalesce_params = ETHTOOL_COALESCE_RX_USECS |
++				     ETHTOOL_COALESCE_MAX_FRAMES |
++				     ETHTOOL_COALESCE_USE_ADAPTIVE_RX,
+ 	.get_drvinfo       = vmxnet3_get_drvinfo,
+ 	.get_regs_len      = vmxnet3_get_regs_len,
+ 	.get_regs          = vmxnet3_get_regs,
 -- 
 2.24.1
 
