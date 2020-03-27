@@ -2,71 +2,85 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6C592190DBC
-	for <lists+linux-um@lfdr.de>; Tue, 24 Mar 2020 13:36:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 183DF195EE2
+	for <lists+linux-um@lfdr.de>; Fri, 27 Mar 2020 20:38:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LVLKKn7jPyPPSrKcMs049eQFffBtjAy8rvrzQ7g3pxc=; b=hzzp+WswlLqBHV
-	v6LiylS7fkA/dbmCWpn9S2chRqfyiamG0/hKS+hXGqWx4RhMxAbFt4OHdfNxEcD6oKgdVONtH/b2g
-	oLTYfhpnIjU84iOhw8vakpcgTZh1DYtZ0D4lsMMFuxB3pOSLf5wPdDLQCjwyrOCRzc1OUIw5/0Rk7
-	bx9WlDReJ9jbLH4ssZ3euFS7XkjzrbtVvvVEPYl6Q+qKlpDm9JTxS48v3cysxCjH2+oZh7TOybVZB
-	a9tZ5iML5cENGTapt/nMP7w8udRZ96bPNmyxV7ETTd+C+e1imN/3IWzK+gSYvDRqR+ivq//AA8UwJ
-	NshI6i4OYZGOOM/FUsVQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Rp4ffDeeh/h5ngkZLw0Nlm5EHW4jQpZhoqAKhEEz4IA=; b=aZ1mQx/1AET+I6
+	t16J224kwyJH8AHmBtnTIC7sdC1tP+aOALw3kbtQvtQFYOz8kSBCjPKiXIh60/9aiil02snLH0msQ
+	62sMYEe+rFCxaj3B5609m93CzFfdGuvN65mC3KCiuxnwCHSotkNt9VUv3W1YDDhJ7XX7IJeTUea6+
+	ayNO5yDXZ6eVwnM7L7LxuOfFievjemTz4agYV2/bvKzJvP+yakp+2bfmUUTWmaE1/FeskwvnEZ/HF
+	tXxGefBYtPfPiILGhNgDAxOEitgtcnriTxRC6AG3a0Uw/r4oP0c4qdJq1+fguWVMHY24+C98AM3Bz
+	AH0jdUV5uWEp3BdrnIGg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGinX-00062a-5l; Tue, 24 Mar 2020 12:36:47 +0000
-Received: from mga01.intel.com ([192.55.52.88])
+	id 1jHunn-0000T5-Kn; Fri, 27 Mar 2020 19:37:59 +0000
+Received: from mout.gmx.net ([212.227.17.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGinU-00061P-7h
- for linux-um@lists.infradead.org; Tue, 24 Mar 2020 12:36:45 +0000
-IronPort-SDR: OlZFgRwVc3F56WhEPEBaXRY4QJZRWmMGTnxDoUJ5eNf5fsVP6/Wr/ip4XB+c9y2RMInY9FADGO
- OggGC6rGw0HA==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from fmsmga002.fm.intel.com ([10.253.24.26])
- by fmsmga101.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 24 Mar 2020 05:36:43 -0700
-IronPort-SDR: LXAUFJrQ6+LaOFpNE7IgkDcma4O0UjOy098rnAwg4yxFJZ+KBo1rguv3vaDktm4vI40XB/QIXU
- 7O7vL0piyejw==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.72,300,1580803200"; d="scan'208";a="281701428"
-Received: from smile.fi.intel.com (HELO smile) ([10.237.68.40])
- by fmsmga002.fm.intel.com with ESMTP; 24 Mar 2020 05:36:42 -0700
-Received: from andy by smile with local (Exim 4.93)
- (envelope-from <andriy.shevchenko@linux.intel.com>)
- id 1jGinU-00CWjK-WC; Tue, 24 Mar 2020 14:36:45 +0200
-Date: Tue, 24 Mar 2020 14:36:44 +0200
-From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-To: Jeff Dike <jdike@addtoit.com>, Richard Weinberger <richard@nod.at>,
- Anton Ivanov <anton.ivanov@cambridgegreys.com>,
- linux-um@lists.infradead.org
-Subject: Re: [PATCH v1] hostfs: Use kasprintf() instead of fixed buffer
- formatting
-Message-ID: <20200324123644.GJ1922688@smile.fi.intel.com>
-References: <20200320130735.50925-1-andriy.shevchenko@linux.intel.com>
+ id 1jHunl-0000S2-76
+ for linux-um@lists.infradead.org; Fri, 27 Mar 2020 19:37:58 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
+ s=badeba3b8450; t=1585337871;
+ bh=TarnDvK03R5OkAwxQLkYshS6zrE7QtGDv0yDW0/OpmU=;
+ h=X-UI-Sender-Class:From:To:Cc:Subject:Date;
+ b=RUaNUpoEaB6PteNVLmClccvLXaT2/KjRwkUKp4U/TkJwEbYyZf/Mp4aZ8f/Sm2hdx
+ 4J1MPuTG/rK0DpTkNJGq9mR6BwqbQMFYDbDMyzS1DA6nIsMD5jRqlguTWG9JU9petZ
+ k1srTGU5wSquc0t5LEo7y2KvXJYuhrC65HmOOQko=
+X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
+Received: from localhost.localdomain ([82.19.195.159]) by mail.gmx.com
+ (mrgmx104 [212.227.17.174]) with ESMTPSA (Nemesis) id
+ 1MK3Rm-1iwOrx1gyc-00LWIu; Fri, 27 Mar 2020 20:37:51 +0100
+From: Alex Dewar <alex.dewar@gmx.co.uk>
+To: 
+Subject: [PATCH] um: Remove some unnecessary NULL checks in vector_user.c
+Date: Fri, 27 Mar 2020 19:36:25 +0000
+Message-Id: <20200327193626.82329-1-alex.dewar@gmx.co.uk>
+X-Mailer: git-send-email 2.26.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200320130735.50925-1-andriy.shevchenko@linux.intel.com>
-Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
+X-Provags-ID: V03:K1:kVSEqb+E7PCctOfuSvs+ejr1Qi393zTPSWxd19Z9576GecgGm7n
+ foEqUO34lrbD8dF74F7iesFAz51fS8w/TkeQk8JH43ITcAC8RRw12fRrvv+tG5v7GIKrEjV
+ F+EH+YXuos/y3U8NVnEUWSorfA8XeN3H1tw3BD5CtyRYSiQcoIE3T5WOkzit/iTU1stpVx2
+ EoabZ6jpOHyx8ms0q8Zmw==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:wym9GrTofkQ=:RmM4uceM7nIXWNuFgZreVv
+ enZ7UYCyfpkqUUqUW/cetOvpm5p7u457rqrSajlZy9Wt21iK1ILrSbkAIJEQkX1S0JBSJQv+Y
+ 0D7yujHwZPFTfDQj1pIoPs94oUL29xvB58NED+I42+dqEngYm9cxFb+2TqZ499+jz51zVcYRw
+ kCaf/gnfk6KpTNLywwZlp1nEq4n1FhM9pQml+WxbOt/wM3eKeeF7OYjA2qlwD8Ogi9Ibok6uZ
+ apJ9FdNiwfTvNoKgWRESz6yvyygUZaDFpFavIW7Pi1njR5u+PRYL6/37rFdgmpMFcqqPudCsn
+ 8ccI8EktL+XFVssfHx9LA2a910n4POYdbkPpIlCAJVoAvf7oYrqTgrZKSe6hYcasBH0IxADOu
+ NODhZzSXIMTOcFF1n6fW4iL4dTz2d/0T5v7jQNP1jtb4vWZFt1BUvqIsmtVzBOspPSHbQk7pT
+ lyv2nF71oW106IId/xyEnAVBsneXw+22yiPvMgfkJDrCWEqT+LhGTxkKEm2Tv3BDP46YxT4X5
+ YrX0/W0hJILILidnvJGimy5+Oc/LhQKu2Tfr/a0vZ0ZaG1mdfxwCzElnD4XgTU80P9jPR4QZg
+ mumdhhvSB4QGHiwLxPIgfZ5J5MV4K/nrkv4H3sI6Dc9poHOh9JS1i3370WEMHjJv2VRasFqcj
+ Cq92X4eTpGcl9onILqP79elsD8XeCWI3GwB8ssu/NZWwYISUcdPtZ9mb/84wct3JMevZNMroi
+ kqK6hk6ZuDroMmhaQNi9QXyb5Tt00kJ56YROuXZsUDKycKI9zGV74zMpAnf416vSDQuawzMOS
+ kAgipk6LK7InGU4p5eFy0zjnK0zEY0MIcWqRTqSFCCW1bpRHw8MygifSxeIDh9v8HHAJZHtOJ
+ 9HSeSODrPnj0RMTrvfQwApPavXIm4WDI7I/+2PecVfS14lLM0ETOHgwG+M0Y0XBBI0eAcrvAh
+ Z2jV7GzkLSxIaonyKRMiTn4tFtcSK8Ko7mwT1h/c3LTIV5gJ+8qAOXgNPYsEyOOesnbaoRsc8
+ CT4OrTnW6Mdkyj35jiQGeskgfvu09/j8zbYIiq5MNDL4Disa0V57CC2uz5TFr2yXFUQ6gZUBF
+ OUi3p13iJad1D3ogR3y9U1/CZUPQK1+gkdHJjouE3/CPmVDS4Y4cOk6LdlB3YnUxsbJdKTtu9
+ 87+YytRBEz3UBTGwI4iikkLZERPsoUrdrJPZKX/q4M5qGURCw2dvZQ7rDoBa6ZtOWDYmfm/c4
+ /xY793jGivdw1cQm0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200324_053644_287709_C3131010 
-X-CRM114-Status: GOOD (  16.04  )
-X-Spam-Score: -5.0 (-----)
-X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+X-CRM114-CacheID: sfid-20200327_123757_553510_0B520040 
+X-CRM114-Status: UNSURE (   6.77  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.7 (/)
+X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.55.52.88 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [212.227.17.21 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [192.55.52.88 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,83 +92,72 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
+Cc: Richard Weinberger <richard@nod.at>, Jeff Dike <jdike@addtoit.com>,
+ linux-um@lists.infradead.org, linux-kernel@vger.kernel.org,
+ Alex Dewar <alex.dewar@gmx.co.uk>,
+ Anton Ivanov <anton.ivanov@cambridgegreys.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Fri, Mar 20, 2020 at 03:07:35PM +0200, Andy Shevchenko wrote:
-> Improve readability and maintainability by replacing a hardcoded string
-> allocation and formatting by the use of the kasprintf() helper.
-> 
+kfree() already checks for null pointers, so additional checking is
+unnecessary.
 
-Any comments so far?
+Signed-off-by: Alex Dewar <alex.dewar@gmx.co.uk>
+---
+ arch/um/drivers/vector_user.c | 15 +++++----------
+ 1 file changed, 5 insertions(+), 10 deletions(-)
 
-> Signed-off-by: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-> ---
->  fs/hostfs/hostfs_kern.c | 12 ++++--------
->  1 file changed, 4 insertions(+), 8 deletions(-)
-> 
-> diff --git a/fs/hostfs/hostfs_kern.c b/fs/hostfs/hostfs_kern.c
-> index e6b8c49076bb..c070c0d8e3e9 100644
-> --- a/fs/hostfs/hostfs_kern.c
-> +++ b/fs/hostfs/hostfs_kern.c
-> @@ -139,8 +139,8 @@ static char *inode_name(struct inode *ino)
->  
->  static char *follow_link(char *link)
->  {
-> -	int len, n;
->  	char *name, *resolved, *end;
-> +	int n;
->  
->  	name = __getname();
->  	if (!name) {
-> @@ -164,15 +164,13 @@ static char *follow_link(char *link)
->  		return name;
->  
->  	*(end + 1) = '\0';
-> -	len = strlen(link) + strlen(name) + 1;
->  
-> -	resolved = kmalloc(len, GFP_KERNEL);
-> +	resolved = kasprintf(GFP_KERNEL, "%s%s", link, name);
->  	if (resolved == NULL) {
->  		n = -ENOMEM;
->  		goto out_free;
->  	}
->  
-> -	sprintf(resolved, "%s%s", link, name);
->  	__putname(name);
->  	kfree(link);
->  	return resolved;
-> @@ -921,18 +919,16 @@ static int hostfs_fill_sb_common(struct super_block *sb, void *d, int silent)
->  	sb->s_d_op = &simple_dentry_operations;
->  	sb->s_maxbytes = MAX_LFS_FILESIZE;
->  
-> -	/* NULL is printed as <NULL> by sprintf: avoid that. */
-> +	/* NULL is printed as '(null)' by printf(): avoid that. */
->  	if (req_root == NULL)
->  		req_root = "";
->  
->  	err = -ENOMEM;
->  	sb->s_fs_info = host_root_path =
-> -		kmalloc(strlen(root_ino) + strlen(req_root) + 2, GFP_KERNEL);
-> +		kasprintf(GFP_KERNEL, "%s/%s", root_ino, req_root);
->  	if (host_root_path == NULL)
->  		goto out;
->  
-> -	sprintf(host_root_path, "%s/%s", root_ino, req_root);
-> -
->  	root_inode = new_inode(sb);
->  	if (!root_inode)
->  		goto out;
-> -- 
-> 2.25.1
-> 
+diff --git a/arch/um/drivers/vector_user.c b/arch/um/drivers/vector_user.c
+index ddcd917be0af..aa28e9eecb7b 100644
+--- a/arch/um/drivers/vector_user.c
++++ b/arch/um/drivers/vector_user.c
+@@ -221,8 +221,7 @@ static struct vector_fds *user_init_tap_fds(struct arglist *ifspec)
+ 	return result;
+ tap_cleanup:
+ 	printk(UM_KERN_ERR "user_init_tap: init failed, error %d", fd);
+-	if (result != NULL)
+-		kfree(result);
++	kfree(result);
+ 	return NULL;
+ }
 
--- 
-With Best Regards,
-Andy Shevchenko
+@@ -266,8 +265,7 @@ static struct vector_fds *user_init_hybrid_fds(struct arglist *ifspec)
+ 	return result;
+ hybrid_cleanup:
+ 	printk(UM_KERN_ERR "user_init_hybrid: init failed");
+-	if (result != NULL)
+-		kfree(result);
++	kfree(result);
+ 	return NULL;
+ }
 
+@@ -344,10 +342,8 @@ static struct vector_fds *user_init_unix_fds(struct arglist *ifspec, int id)
+ unix_cleanup:
+ 	if (fd >= 0)
+ 		os_close_file(fd);
+-	if (remote_addr != NULL)
+-		kfree(remote_addr);
+-	if (result != NULL)
+-		kfree(result);
++	kfree(remote_addr);
++	kfree(result);
+ 	return NULL;
+ }
+
+@@ -382,8 +378,7 @@ static struct vector_fds *user_init_raw_fds(struct arglist *ifspec)
+ 	return result;
+ raw_cleanup:
+ 	printk(UM_KERN_ERR "user_init_raw: init failed, error %d", err);
+-	if (result != NULL)
+-		kfree(result);
++	kfree(result);
+ 	return NULL;
+ }
+
+--
+2.26.0
 
 
 _______________________________________________
