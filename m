@@ -2,73 +2,74 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DFD0C197091
-	for <lists+linux-um@lfdr.de>; Sun, 29 Mar 2020 23:40:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 74119197094
+	for <lists+linux-um@lfdr.de>; Sun, 29 Mar 2020 23:41:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CF7GujlIFNkpwGNam3H69XadfhDfiGatp1boKgjJXpI=; b=HQ7leYO9bdHCd+
-	mVHRcbLkK6ueBjOgfZ2+Oi1fcyvQh/H34XJOl8owDAl/yOB+kNAYwtQpT5ay4cy6I3lfN8L5fwqpn
-	COYf8uCTjMPtZ7mqcAhl1TpCw8Qh/GI24Qzbzt9b3oRb+lLVrQa5OqHIZVnlg0Wmcrb2p8WSJQd+I
-	CgGrG12y4oJY+La57UEOLci+D8WSF0oy2dBIIQdqo2h70zpoXUB/rfkdzktW8Eu2b9RrxlFra/+nr
-	g7JM0t28zMpSOiHWNJLknDL/PEEjexTuD0TJcuPWodZ8y7dmB8RfAZUp310CLMhXx4Fl3l3gZbMzK
-	lG1b9pscI9UDhY/faeNA==;
+	List-Owner; bh=OdqYa/A3PRNa+sMld5LzGt+s7qlOZuZgUGReQUD34Lg=; b=KNVIpO8vruNfnK
+	dQtuyUPmJqq65RJGgbAWL4bFsA0NjPugprh/Duj0vlO4AH77w1KCbtUkbq8D87osWN82Qy955aQh5
+	MDBmTgpsHhjltGM56KBjp+QoJCc63snALxrrsSyff+pUy4b4z0CKOCWXsNVbNkbLObXp3CtHLSEVy
+	ExMdHnTlBuJYrpz41WPyEp+IOAkPuAF1wk+rU2NG4ao06h2SQf8SJe3g7DFSIb3QEvwmQHG3iNDCu
+	js4uJwDju/pWsUheHzDzgNnoIWQiGlG7E5FEzvZwFxTWo69KdsJfJWspGc5GSCPaCeU/U2OiX/iWF
+	m6NPbXpcyE/qlosRz8mQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jIffW-0001fU-8l; Sun, 29 Mar 2020 21:40:34 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1jIfgd-0001ua-GH; Sun, 29 Mar 2020 21:41:43 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jIffT-0001f6-LV
- for linux-um@lists.infradead.org; Sun, 29 Mar 2020 21:40:32 +0000
-Received: by mail-wr1-x442.google.com with SMTP id s1so18854724wrv.5
- for <linux-um@lists.infradead.org>; Sun, 29 Mar 2020 14:40:31 -0700 (PDT)
+ id 1jIfgb-0001u7-8M
+ for linux-um@lists.infradead.org; Sun, 29 Mar 2020 21:41:42 +0000
+Received: by mail-wm1-x344.google.com with SMTP id f74so8349517wmf.0
+ for <linux-um@lists.infradead.org>; Sun, 29 Mar 2020 14:41:40 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=AgmROX3BkKzlgBc4NFWPQwQ8h8d52JCY0V2IOQ/owaI=;
- b=qlyA4T0q4+SSHWrTFaEcJlORmZU3pRQPkEvp5F/+HEtsi5tpLFRS5PID3Ae7GG+qB9
- eP2zfS+OHM2Q11dDi/UTDHU0ChOytMBfa9+3uCmWYIkyMuhuwzPJ5kTbVsd1G9NCNqDo
- BwxcGxm9qerV09Wm6ZVEyH4dyKz6Pw2xsfrLVHp2TD9JsJg4vSwsw5Kn/YrAeRE/toMR
- utWmoK9E/IGZjLiMe2sbe0FEPEjdqdF4CAc99VYUNAl/Xr7b6PyOdewihnJcIm0SLT/A
- V9YiCZZ0GEx5J0cBWsET1u7QxNv8D3ddXFUHyt8dd2w5U68Q8zNCxTpxGV6udmEonNTW
- hUTg==
+ :cc; bh=5Am6MQZe72IkQbz+igLTEEyX0AXnZ3Ned/hNiOH0Ey8=;
+ b=TUI+WBkKyQvyWlClI3qStG1njdKrwTh2FS9WZhvHo0Eu84kPXivXhrGnAmQHqa/nbn
+ vk2ee2ycWjvb5W34gx3L27+rUzEIsYM3C2U9Cjw7EZoWoH3byyADEB52utqvO1Z3rUn+
+ x8JhkjvbSHd3BfILlGU5uirJxICDj+ZbcrIVK6liv7xfx29hRoROMzgGvYs7wb8Mi23T
+ Lf9Xy2hgpSDiAMp1Fn/b5mvxfG0utcWaYouPodpv2F75sJ2/AMVXzFKTjgsjaR7DmPhz
+ 3IAmae77o4WI/c5xybHsDIMw1LMVVp6+W08SkemKT2ZkqvO4ps1mtED/Mzx9gf2JGFM6
+ EwTw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=AgmROX3BkKzlgBc4NFWPQwQ8h8d52JCY0V2IOQ/owaI=;
- b=kuS6bkqecgkku0dqfLY2nGurrTASecWxt9Ehd1EL27BJn2dOJiXJxp/v2pA4ky+/pz
- rRdgCKXke/z968Rskcc+iMQ7t0O+TL3Ct5WQxEEpMv7fqfvjbmktupSl69LGSwuPb12c
- hV2UTqhQcmExg0gQ5deigk9o5oy69y52anco3ZzuOJjtUotLP9Fl5ZbchwosqR2v33Y1
- a+vl8zpuv58UQAyp6/W35Vu+A0n/h+O7VmS4anjXbmkyblGEHpoy7krqqdDx0LihQ4G1
- 5rTS14y9rwULsjp1hp3TO4WrC48Nz8XTq0aQfn4Ff2Li0JE3vRAUvYDzfHqKgTNEVe+8
- Eb1Q==
-X-Gm-Message-State: ANhLgQ3M/YAjQLH2holvaRakyhUldxLmBY0MFt3+HQm98uVUhtca7W4c
- PENu+Sd3boW+OG1LNyMxNl7+rm5E6pnHVGiCGgE=
-X-Google-Smtp-Source: ADFU+vsa3r9uz8suX398A2w7vjHl4H5qnIB3+tO4GIRUd/dfrUpEG+GwxbUMUQtY4clxTGn7JJBDV5I/zAk8s49ys9k=
-X-Received: by 2002:a5d:4a4d:: with SMTP id v13mr10858278wrs.85.1585518030514; 
- Sun, 29 Mar 2020 14:40:30 -0700 (PDT)
+ bh=5Am6MQZe72IkQbz+igLTEEyX0AXnZ3Ned/hNiOH0Ey8=;
+ b=cq4Cz855g+BIrC9fldpPTS4F/u2zPaTr4E7LjZXVoeWS0KDHOXfT19SqPt+JdR22gr
+ 9euKbNJmrUM/dR5S5tMtO5yCUWtnMbXPXGix3SODCd01ok2th3z4AnhnHACUnBhy1imX
+ g9r5MVDU4Sajftw9nzCH4B7Q4Cw0kGGiE0ggDfG9GHlg/Mvi8efiFr+QvLFGhrQZA987
+ bLqD5Hmhl/4i4PjSQzv600O24KL+fZtUJ59MMCUss609KBbPMiT/2CYYv4odJktc/aIJ
+ OtNtgTKCRKBA57jg/ImnmANFPolfEwfvtLXMDX5DQ4lDCFstEF4jJkl389QcHMQ1QJMD
+ 9cxw==
+X-Gm-Message-State: ANhLgQ0eC63eOs55uhQrgbLRK2kvNyxk+WPHBh2AavhpBHVhXoSOVnKd
+ DRDsdbBDCNr2gdTx9rDmr4kCcE08MITvRqpNJqI=
+X-Google-Smtp-Source: ADFU+vtrwRQ6BfChwf6D0caegIXYg+eHMkn7lJ+tQiDBelWCutxy+Nkel0RLYiLIZ6TOt3P3fhr9IC6aD+3Xu7dklPA=
+X-Received: by 2002:a1c:2e10:: with SMTP id u16mr9437124wmu.143.1585518099817; 
+ Sun, 29 Mar 2020 14:41:39 -0700 (PDT)
 MIME-Version: 1.0
-References: <20200317004507.1513370-1-krisman@collabora.com>
-In-Reply-To: <20200317004507.1513370-1-krisman@collabora.com>
+References: <1584466534-13248-1-git-send-email-alan.maguire@oracle.com>
+ <2295c218-74a6-d785-f4b1-2046ee91503a@cambridgegreys.com>
+In-Reply-To: <2295c218-74a6-d785-f4b1-2046ee91503a@cambridgegreys.com>
 From: Richard Weinberger <richard.weinberger@gmail.com>
-Date: Sun, 29 Mar 2020 23:40:19 +0200
-Message-ID: <CAFLxGvzGo8CPbH1NAo_d2NYHaJDZjYEELz=dufKtTwcBkZif_A@mail.gmail.com>
-Subject: Re: [PATCH 0/2] fixes to the hypervisor ubd thread
-To: Gabriel Krisman Bertazi <krisman@collabora.com>
+Date: Sun, 29 Mar 2020 23:41:28 +0200
+Message-ID: <CAFLxGvypQCHnnuRi8RC15wL3yJ7yBJiUQGMHG8MRoPeNA6pAPA@mail.gmail.com>
+Subject: Re: [PATCH] arch/um: falloc.h needs to be directly included for older
+ libc
+To: Anton Ivanov <anton.ivanov@cambridgegreys.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200329_144031_705292_EDEE2660 
-X-CRM114-Status: UNSURE (   9.33  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200329_144141_298004_A011395D 
+X-CRM114-Status: GOOD (  15.46  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -92,28 +93,61 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: Richard Weinberger <richard@nod.at>, Jeff Dike <jdike@addtoit.com>,
+Cc: Arnd Bergmann <arnd@arndb.de>, "Berg, Johannes" <johannes.berg@intel.com>,
+ Richard Weinberger <richard@nod.at>, Jeff Dike <jdike@addtoit.com>,
  linux-um <linux-um@lists.infradead.org>, LKML <linux-kernel@vger.kernel.org>,
- kernel@collabora.com, Anton Ivanov <anton.ivanov@cambridgegreys.com>
+ erelx.geron@intel.com, alex.dewar@gmx.co.uk,
+ Alan Maguire <alan.maguire@oracle.com>,
+ Brendan Higgins <brendanhiggins@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Tue, Mar 17, 2020 at 1:45 AM Gabriel Krisman Bertazi
-<krisman@collabora.com> wrote:
+On Fri, Mar 20, 2020 at 4:58 PM Anton Ivanov
+<anton.ivanov@cambridgegreys.com> wrote:
 >
-> Hi,
 >
-> While debugging a somewhat related issue, I ran into two issues I
-> believe can cause the hypervisor to write garbage to the pipe.
 >
-> This was find by visual inspection and is only slightly tested.  It
-> seems to partially some the problems my test case shows.
+> On 17/03/2020 17:35, Alan Maguire wrote:
+> > When building UML with glibc 2.17 installed, compilation
+> > of arch/um/os-Linux/file.c fails due to failure to find
+> > FALLOC_FL_PUNCH_HOLE and FALLOC_FL_KEEP_SIZE definitions.
+> >
+> > It appears that /usr/include/bits/fcntl-linux.h (indirectly
+> > included by /usr/include/fcntl.h) does not include falloc.h
+> > with an older glibc, whereas a more up-to-date version
+> > does.
+> >
+> > Adding the direct include to file.c resolves the issue
+> > and does not cause problems for more recent glibc.
+> >
+> > Fixes: 50109b5a03b4 ("um: Add support for DISCARD in the UBD Driver")
+> > Cc: Brendan Higgins <brendanhiggins@google.com>
+> > Signed-off-by: Alan Maguire <alan.maguire@oracle.com>
+> > ---
+> >   arch/um/os-Linux/file.c | 1 +
+> >   1 file changed, 1 insertion(+)
+> >
+> > diff --git a/arch/um/os-Linux/file.c b/arch/um/os-Linux/file.c
+> > index fbda105..5c819f8 100644
+> > --- a/arch/um/os-Linux/file.c
+> > +++ b/arch/um/os-Linux/file.c
+> > @@ -8,6 +8,7 @@
+> >   #include <errno.h>
+> >   #include <fcntl.h>
+> >   #include <signal.h>
+> > +#include <linux/falloc.h>
+> >   #include <sys/ioctl.h>
+> >   #include <sys/mount.h>
+> >   #include <sys/socket.h>
+> >
 >
-> Please, let me know what you think
+> Acked-By: Anton Ivanov <anton.ivanov@cambridgegreys.com>
 
-Both patches make sense. Thanks for fixing, applied.
+Applied, thanks!
+
+BTW: Anton & Brendan, thanks a lot for reviewing all these patches!
 
 -- 
 Thanks,
