@@ -2,61 +2,61 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EFBA11975EB
-	for <lists+linux-um@lfdr.de>; Mon, 30 Mar 2020 09:44:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 85C31197681
+	for <lists+linux-um@lfdr.de>; Mon, 30 Mar 2020 10:32:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=t5+u1hXWLxlooQu8dDoHGQgbYMQLFTIONEFHGLcgXE0=; b=WTK/Kc4+jD2h7A
-	F3v8iCM4ntr53oNLHFqTP/oyp9JqAWbQWqQmTxlI9Lw+0q8GWpEd5vHZ0q1MiK+Apv+4AhMKoCe9i
-	yZ3mc1iouA99IkEV6MVIU01qP8EjSRfuLv6bDFGv6GdMa4RU4bJd3wg5VaUJDC7CsEpIM/qekDbUJ
-	Xb3b20TeJ5Jr35FNPjFB02Q6HPN1oXQbfXr4+84kEspjbE+X/f1fPyq1vjBIiNbFY3pk+thnjN00R
-	EZWw1kSEywh3EMHpQUsPJTR2dI0md9VmCHoAEbm5jAOmQrbeKXSyCe1o6+f7II6qJTKkU1TZcPYeP
-	dodfjcGm+7QnlseCQ3DA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=2fD/qVautWnbFzIhhimXLKjxTMTXY4yTKGAXvAtzQME=; b=DyY73OcGg0jfcw/HxjeFXTkQ2
+	jJwmo2K91orGWkX4Z0pnHebypIMF6fSRFZBx/i0m+ThGK7Fz+E3hTUjMErjuhr665jgH1FzHDS0Qz
+	M30EmO8qNgR2S+C1lf0T46l7W8BH+P3n/M5//ZupMICYNGxR3o/vK+O+RqpQkntfXkKHSSznIVLB2
+	uE9kq2eyPkYSxyMEXZVqzFIwZWMjx8PTtX3FdFsgyCw9UQ/b31wb5bSU+Rrb19eBtmY+o+YsG2I0G
+	w8/4fFIBk+HH94an+tGUnCvB2tdVU5UfmMqJjQweZBivAmBRVN1m7Y3IJEEUxRKuwKNPYUzOHvxVV
+	ZRiYXJysA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jIp5k-0007St-HF; Mon, 30 Mar 2020 07:44:16 +0000
-Received: from s3.sipsolutions.net ([2a01:4f8:191:4433::2]
- helo=sipsolutions.net)
+	id 1jIpqN-00026z-Oy; Mon, 30 Mar 2020 08:32:27 +0000
+Received: from ivanoab7.miniserver.com ([37.128.132.42]
+ helo=www.kot-begemot.co.uk)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jIp5h-0007SJ-Jg
- for linux-um@lists.infradead.org; Mon, 30 Mar 2020 07:44:15 +0000
-Received: by sipsolutions.net with esmtpsa
- (TLS1.3:ECDHE_SECP256R1__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
- (Exim 4.93) (envelope-from <johannes@sipsolutions.net>)
- id 1jIp5V-005JU9-00; Mon, 30 Mar 2020 09:44:01 +0200
-Message-ID: <2cee72779294550a3ad143146283745b5cccb5fc.camel@sipsolutions.net>
-Subject: Re: [PATCH] UML: add support for KASAN under x86_64
-From: Johannes Berg <johannes@sipsolutions.net>
-To: Dmitry Vyukov <dvyukov@google.com>
-Date: Mon, 30 Mar 2020 09:43:58 +0200
-In-Reply-To: <CACT4Y+YzM5bwvJ=yryrz1_y=uh=NX+2PNu4pLFaqQ2BMS39Fdg@mail.gmail.com>
- (sfid-20200320_161845_514535_9A0BEF71)
-References: <20200226004608.8128-1-trishalfonso@google.com>
- <CAKFsvULd7w21T_nEn8QiofQGMovFBmi94dq2W_-DOjxf5oD-=w@mail.gmail.com>
- <4b8c1696f658b4c6c393956734d580593b55c4c0.camel@sipsolutions.net>
- <674ad16d7de34db7b562a08b971bdde179158902.camel@sipsolutions.net>
- <CACT4Y+bdxmRmr57JO_k0whhnT2BqcSA=Jwa5M6=9wdyOryv6Ug@mail.gmail.com>
- <ded22d68e623d2663c96a0e1c81d660b9da747bc.camel@sipsolutions.net>
- <CACT4Y+YzM5bwvJ=yryrz1_y=uh=NX+2PNu4pLFaqQ2BMS39Fdg@mail.gmail.com>
- (sfid-20200320_161845_514535_9A0BEF71)
-User-Agent: Evolution 3.34.4 (3.34.4-1.fc31) 
+ id 1jIpqK-00025w-Ic
+ for linux-um@lists.infradead.org; Mon, 30 Mar 2020 08:32:26 +0000
+Received: from tun252.jain.kot-begemot.co.uk ([192.168.18.6]
+ helo=jain.kot-begemot.co.uk)
+ by www.kot-begemot.co.uk with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.92) (envelope-from <anton.ivanov@kot-begemot.co.uk>)
+ id 1jIpqC-0004cx-KC; Mon, 30 Mar 2020 08:32:16 +0000
+Received: from jain.kot-begemot.co.uk ([192.168.3.3])
+ by jain.kot-begemot.co.uk with esmtp (Exim 4.92)
+ (envelope-from <anton.ivanov@kot-begemot.co.uk>)
+ id 1jIpqA-0001mg-3F; Mon, 30 Mar 2020 09:32:16 +0100
+Subject: Re: use-after-free warning on ubd driver
+To: Alba Mendez <me@alba.sh>, linux-um@lists.infradead.org
+References: <21b6c95a288df7db77e5f9757040162fa5c4cd40.camel@alba.sh>
+From: Anton Ivanov <anton.ivanov@kot-begemot.co.uk>
+Message-ID: <83ce61f7-186f-1323-c657-9d9bc453f65d@kot-begemot.co.uk>
+Date: Mon, 30 Mar 2020 09:32:14 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
+In-Reply-To: <21b6c95a288df7db77e5f9757040162fa5c4cd40.camel@alba.sh>
+Content-Language: en-US
+X-Spam-Score: -1.0
+X-Spam-Score: -1.0
+X-Clacks-Overhead: GNU Terry Pratchett
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200330_004413_648918_D367843A 
-X-CRM114-Status: UNSURE (   9.67  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.4 (/)
+X-CRM114-CacheID: sfid-20200330_013224_616965_2A1F2542 
+X-CRM114-Status: GOOD (  15.60  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.4 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.4 KHOP_HELO_FCRDNS       Relay HELO differs from its IP's reverse DNS
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,45 +68,131 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: Patricia Alfonso <trishalfonso@google.com>,
- Richard Weinberger <richard@nod.at>, Jeff Dike <jdike@addtoit.com>,
- Brendan Higgins <brendanhiggins@google.com>,
- LKML <linux-kernel@vger.kernel.org>, kasan-dev <kasan-dev@googlegroups.com>,
- linux-um@lists.infradead.org, David Gow <davidgow@google.com>,
- Andrey Ryabinin <aryabinin@virtuozzo.com>, anton.ivanov@cambridgegreys.com
-Content-Type: text/plain; charset="us-ascii"
+Cc: axboe@kernel.dk, hch@lst.de
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Fri, 2020-03-20 at 16:18 +0100, Dmitry Vyukov wrote:
+
+
+On 28/03/2020 17:57, Alba Mendez wrote:
+> Hello! I'm new to kernel development, so apologies if this is a known
+> issue / silly question.
 > 
-> > Wait ... Now you say 0x7fbfffc000, but that is almost fine? I think you
-> > confused the values - because I see, on userspace, the following:
+> I'm playing around with UML and I keep getting a use-after-free on
+> (apparently?) ubd, see trace below. I can reproduce by starting up the
+> kernel with a 100MB device:
 > 
-> Oh, sorry, I copy-pasted wrong number. I meant 0x7fff8000. 
+> $ fallocate -l 100M blk
+> $ ./linux mem=150M ubdb=blk rootfstype=hostfs init=/sbin/bash
+> 
+> And then, inside:
+> $ dd if=/dev/zero of=/dev/ubdb
+> 
+> Before dd finishes, most of the time I get this trace.
+> Is this normal? Kernel is unmodified & built with x86_64_defconfig.
+> 
+> This seems to have been introduced at ecb0a83e319, but the trace was a
+> bit different at that time.
 
-Right, ok.
+This looks like something in the storage stack itself.
 
-> Then I would expect 0x1000 0000 0000 to work, but you say it doesn't...
+If I read that trace right, what you see is a use-after free somewhere around the various qos bits in the bio that is part of the disk request and it is happening somewhere in the storage stack.
 
-So it just occurred to me - as I was mentioning this whole thing to
-Richard - that there's probably somewhere some check about whether some
-space is userspace or not.
+I will look at it later today (if I manage to dig myself from under other stuff that has snowed me under).
 
-I'm beginning to think that we shouldn't just map this outside of the
-kernel memory system, but properly treat it as part of the memory that's
-inside. And also use KASAN_VMALLOC.
+In the meantime, I have cc-ed Jens and Christoph.
 
-We can probably still have it at 0x7fff8000, just need to make sure we
-actually map it? I tried with vm_area_add_early() but it didn't really
-work once you have vmalloc() stuff...
+A.
 
-I dunno.
+> 
+> Kind regards,
+> Alba
+> 
+> 
+> ------------[ cut here ]------------
+> WARNING: CPU: 0 PID: 0 at lib/refcount.c:28
+> refcount_warn_saturate+0x13f/0x141
+> refcount_t: underflow; use-after-free.
+> Modules linked in:
+> CPU: 0 PID: 0 Comm: swapper Not tainted 5.6.0-rc7-01120-g83fd69c93340
+> #1
+> Stack:
+>   603eeef0 602dcddc 00000009 603eef60
+>   00000000 6a140380 603eef00 602dce21
+>   603eef40 60038105 603eef68 603eef70
+> Call Trace:
+>   [<60068389>] ? printk+0x0/0x94
+>   [<601dfa85>] ? blk_queue_max_discard_sectors+0x0/0xd
+>   [<6001d2e6>] show_stack+0x13b/0x155
+>   [<602dcddc>] ? dump_stack_print_info+0xdf/0xe8
+>   [<602dce21>] dump_stack+0x2a/0x2c
+>   [<60038105>] __warn+0xf4/0x11d
+>   [<600385bd>] warn_slowpath_fmt+0xd1/0xdf
+>   [<601f16e8>] ? __rq_qos_done_bio+0x0/0x2f
+>   [<600384ec>] ? warn_slowpath_fmt+0x0/0xdf
+>   [<600d1f9b>] ? kmem_cache_free+0x60/0x67
+>   [<6007203c>] ? raw_read_seqcount_begin.constprop.0+0x0/0x15
+>   [<6002f5aa>] ? os_nsecs+0x1d/0x2b
+>   [<601ff8e0>] refcount_warn_saturate+0x13f/0x141
+>   [<601e3df1>] refcount_sub_and_test.constprop.0+0x32/0x3a
+>   [<601e4a45>] blk_mq_free_request+0xf6/0x112
+>   [<601e4b6d>] __blk_mq_end_request+0x10c/0x114
+>   [<60028e4e>] ubd_intr+0xb5/0x169
+>   [<60069168>] __handle_irq_event_percpu+0x34/0x10c
+>   [<6001d3a5>] ? timer_read+0x10/0x1c
+>   [<60069266>] handle_irq_event_percpu+0x26/0x69
+>   [<600692cf>] handle_irq_event+0x26/0x34
+>   [<600692a9>] ? handle_irq_event+0x0/0x34
+>   [<6006c783>] ? unmask_irq+0x0/0x37
+>   [<6006cde3>] handle_edge_irq+0xbc/0xd6
+>   [<60068a87>] generic_handle_irq+0x21/0x29
+>   [<6001ba4c>] do_IRQ+0x39/0x54
+>   [<6001bb0e>] sigio_handler+0xa7/0x111
+>   [<6002ea30>] sig_handler_common+0xa6/0xbc
+>   [<6001d40c>] ? timer_handler+0x0/0x48
+>   [<6002edb2>] ? block_signals+0x0/0x11
+>   [<6002eaa2>] ? timer_real_alarm_handler+0x5c/0x5e
+>   [<601fc982>] ? find_next_bit+0x1b/0x1d
+>   [<6006fc37>] ? __next_timer_interrupt+0x78/0xd0
+>   [<60070b65>] ? arch_local_irq_save+0x22/0x29
+>   [<60071422>] ? hrtimer_get_next_event+0x59/0x61
+>   [<6002edb2>] ? block_signals+0x0/0x11
+>   [<6002ee3f>] unblock_signals+0x7c/0xd7
+>   [<600376cd>] ? kernel_thread+0x0/0x4e
+>   [<6001c594>] arch_cpu_idle+0x54/0x5b
+>   [<6002edb2>] ? block_signals+0x0/0x11
+>   [<602ef012>] default_idle_call+0x32/0x34
+>   [<6005a29c>] do_idle+0xaa/0x127
+>   [<602ec910>] ? schedule+0x99/0xdd
+>   [<6005a1f2>] ? do_idle+0x0/0x127
+>   [<6005a56d>] cpu_startup_entry+0x1e/0x20
+>   [<6005a54f>] ? cpu_startup_entry+0x0/0x20
+>   [<6005005f>] ? find_task_by_pid_ns+0x0/0x2d
+>   [<602ebe05>] rest_init+0xc2/0xc7
+>   [<6002ee9a>] ? get_signals+0x0/0xa
+>   [<602e5904>] ? strlen+0x0/0x11
+>   [<600016bc>] arch_call_rest_init+0x10/0x12
+>   [<60001c7a>] start_kernel+0x5b7/0x5c6
+>   [<600035e6>] start_kernel_proc+0x49/0x4d
+>   [<60065c27>] ? kmsg_dump_register+0x70/0x78
+>   [<6001c05c>] new_thread_handler+0x81/0xb2
+>   [<6000359b>] ? kmsg_dumper_stdout_init+0x1a/0x1c
+>   [<6001ecb5>] uml_finishsetup+0x54/0x59
+> 
+> ---[ end trace 521c0be003ad0a13 ]---
+> 
+> 
+> _______________________________________________
+> linux-um mailing list
+> linux-um@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-um
+> 
 
-johannes
-
-
+-- 
+Anton R. Ivanov
+https://www.kot-begemot.co.uk/
 
 _______________________________________________
 linux-um mailing list
