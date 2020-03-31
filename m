@@ -2,80 +2,86 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 47B5119872F
-	for <lists+linux-um@lfdr.de>; Tue, 31 Mar 2020 00:13:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4826F198A0A
+	for <lists+linux-um@lfdr.de>; Tue, 31 Mar 2020 04:38:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Subject:To:From:Message-ID:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+v4q7LucDL95qdlP0A1pLzJZ6K2AkD5c9Xn5zLhRs2A=; b=Cf73jL2vcVrL+O
-	7DjNqFBOBZ+SJQyzWLvq9STVS6Q02CP7KGI6YGo44HkKUUyNEuc2D99wZxmlnRNlqCr/z5+9OPhdN
-	1T5N5CWEEKQOYHngw2y9qdCxpQyoh4hb3lnv7ujNhQ9qlBN1207Fhh+PCY4DMsyLTDH/SHLepzinE
-	5usaJbus6wNF/FMkvomPtoKUKWSWPRch4tRAyQ8D8Hxejz7vDGkUJUjwDzm94EerlOIZQEpRcTh53
-	W1ZS75N/Oe3XGlau+qeUKEADPaaG+3axImVBYK5p/Q/ORMqm0UvcOX50OLtb4uPwtPMS8VrCxTPSx
-	VUs3x3VTr3G/hi0XDirQ==;
+	List-Owner; bh=O0i1Uf57XqEYnaT8a4FiB3DGq26sqotwgiWn+PDvwjg=; b=jHmJsPo6Mz1tSR
+	SC5PbMl9Y4zQ3xHXLxjf2a8lRz+Fx8dU8tmnXLXhR5+UTLuw4e33iQXCqa2kO+hYhY0+P38oynafy
+	kFH+MlH9QGYI+1tAehW40GZLQpI/CHiZiqFggSe/z2Giscg4MRGtIs+AQcD+iC4UorDbLb1ltInVz
+	Cq8aIOKWWBwGmpcxZjPyeofxekwOJ8u/xcQBMKP9j251xEVadfYjTV0HsaO4Wlr2vM7LY/Zaxm3/T
+	1vu9YrT6DJiQgLXDtnn1Gz8OTa9DqVjb2sO1gXAQFoMJ6SInqB86ruCKCQmWRRuwYFItCb9h/p9gG
+	1y7Tgi0BkQvBqxw+PlqA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJ2ey-0003mk-S6; Mon, 30 Mar 2020 22:13:32 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1jJ6n9-0006s0-EI; Tue, 31 Mar 2020 02:38:15 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJ2eJ-00039n-Tu
- for linux-um@lists.infradead.org; Mon, 30 Mar 2020 22:12:54 +0000
-Received: by mail-wm1-x341.google.com with SMTP id c187so497797wme.1
- for <linux-um@lists.infradead.org>; Mon, 30 Mar 2020 15:12:51 -0700 (PDT)
+ id 1jJ6n6-0006r7-Ln
+ for linux-um@lists.infradead.org; Tue, 31 Mar 2020 02:38:14 +0000
+Received: by mail-pf1-x444.google.com with SMTP id k15so4478396pfh.6
+ for <linux-um@lists.infradead.org>; Mon, 30 Mar 2020 19:38:11 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=L38ZufUAeeWqGX3EMWl9gTrNlkwDK5WSvnGnXqaOY4c=;
- b=EjdirZ7oYqjE1/6bUUj1QakLJh+mphM2G3TJ+JY4GTI95XicMIEE6DooKZ4Lg/9qj+
- rRacN2UPTVt49/zglWtuvOdK0vfBmlyB4skljcWnk+wfc5N2XmMWUtvIxv9Fl5tNN7Z7
- LYHcFW/nJLH9R12Vo7FqBRcEawN1m9vps49c3ThcMAOwwyz+kEEdpld8RpnjXwuqrdNg
- DewNW6RnmJmNQJ1d3G2lOHOoXPfUpZZcDlo49GICjsxgA3IqHRlwPuJ1Wb/EhVqa3Ih5
- SZqrEyLsvs5iuNkLDP4H7aZVlIimIajVNX5shIybIsq/DEz4bpM1M9A+QpheS6FbpKxv
- VUkw==
+ h=date:message-id:from:to:cc:subject:in-reply-to:references
+ :user-agent:mime-version;
+ bh=flZxqn5EyqTevSwFMF7D5Y8OM06DVGUHbu2b6k5ECT8=;
+ b=ECFHY/KsBUGLdilUOnq61TWd36EQLF9QGO6L3JA/Orf/2JlgmfwGjBYx+lu/uaIVgD
+ oXCFbqnKsMM3iFTyb2A9lWhdho4lewUtabAoPXGjRED2H6YxG6rDvTLwatD0wyjMaLc8
+ 20/vB0Y3hPULCH/knsJl0/bVzqsBCWN9Q2lZ8v7QsNpo+aJMOzlGEWUR3rta8hafudRg
+ 3BxOaWqYsmaebA1GGtPj1hEXhgRMPCzuuR6vCzBCwJgYNg2OHmf6mYNxNEgqubt/0VLr
+ AJvmhNHreP4VRQ/NZ1p1LtN+eFfKaZ8pL/DpoQKzC6uibhgkBQfKhAC458qWodxRCBsk
+ RFoA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=L38ZufUAeeWqGX3EMWl9gTrNlkwDK5WSvnGnXqaOY4c=;
- b=PMHW/4tGa7gZv2sdGyHmQfwWzjAjmBXrtfvMxI5Pza/QhllRl78dNeTtsM+5L4xGUt
- bhQyIP/tOQq4dXm7q7HulkNtMWAsvK9QSVbry4MZmCrHyb+V9tuzofhO/l3MShRixV1R
- UROIagbJEVi50Tc5Emxne33FaXcTX+ezbp/j7y6zqk5KmF/1mQ5hweeEVugiCs1tHIXB
- nITRkomUMnY8WZpWxqWwIzuVwz2/iZr4mTzjYFaG1PjRDcH1+7mHRi5I/IPfUIkIe2JO
- Ns84l4PTwAxmxjmg5no9hhEx6asRzXOFfgNOYsko48djjZah/SPM3/ntGMwLs8DWzn1g
- DMnw==
-X-Gm-Message-State: ANhLgQ0LMI+Oo9hEI6k+zeoeZO1p6dcwb7JSpiobaUk8pxBzurFIAHx0
- rn0+PHmfxChrWd2oj1hfMy5BnzFdoCccBReBtZw=
-X-Google-Smtp-Source: ADFU+vsjAb67I2NV3ssiFq/RQxkrswg3Qlu0QTr/npjhyZXQiwL16smG26uxTQO6toQ0jENCHPUOhrdFpX5Y0L7lt64=
-X-Received: by 2002:a05:600c:257:: with SMTP id
- 23mr207008wmj.155.1585606370369; 
- Mon, 30 Mar 2020 15:12:50 -0700 (PDT)
-MIME-Version: 1.0
+ h=x-gm-message-state:date:message-id:from:to:cc:subject:in-reply-to
+ :references:user-agent:mime-version;
+ bh=flZxqn5EyqTevSwFMF7D5Y8OM06DVGUHbu2b6k5ECT8=;
+ b=pFmz4y9xU0CCdAhF5DEDt5e4Z19qepYLr4Gw5uNqSZB3MxsvTnobMab7PDvHzQnafK
+ nwiLcgAPc+hLx1NcF28ocaI86h2JY+yDNYVUL7yOvh3L4xc0PP1X7kUIXZmvVcleB/an
+ ng0KQ9A6LYLcYFRASPR5C74pPEovO2GK30IvAC6+94HhW/JfYlUK6yR1g/vKMVsOjXfX
+ G/ehODBj8oVU93xjjwm65S6FsXvcuJtrm+Rw+kbsjNgrCUNprsCZkK70r0M0M/p1nPMA
+ E66B9H0EcBjjJYjt5d6obCo8PCd3lOBEE4jRwvvES/5ye3ZCs6g7n6c9fEhUYKtj8H19
+ zFZQ==
+X-Gm-Message-State: ANhLgQ3WYUwCyy2wXDFffdv2HAxeGW6aR/DXxuqMwW+8zw5ms3JEFP8v
+ reD4Zepmfaza6nI9aWgsJ9E=
+X-Google-Smtp-Source: ADFU+vu9sUGvXVhs/m0wBHBJOjW4RloYe8cBFnrOHE9g1tqQ5bfUTM0LOFAq1hFbqPaLJR/sqhazrg==
+X-Received: by 2002:aa7:8f22:: with SMTP id y2mr16234089pfr.300.1585622291086; 
+ Mon, 30 Mar 2020 19:38:11 -0700 (PDT)
+Received: from earth-mac.local.gmail.com
+ (219x123x138x129.ap219.ftth.ucom.ne.jp. [219.123.138.129])
+ by smtp.gmail.com with ESMTPSA id m68sm735095pjb.0.2020.03.30.19.38.08
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Mon, 30 Mar 2020 19:38:10 -0700 (PDT)
+Date: Tue, 31 Mar 2020 11:38:07 +0900
+Message-ID: <m25zelxn8w.wl-thehajime@gmail.com>
+From: Hajime Tazaki<thehajime@gmail.com>
+To: johannes@sipsolutions.net
+Subject: Re: [RFC v4 23/25] um lkl: add UML network driver for lkl
+In-Reply-To: <b2a730a4bcafb13cb1b29a637f8f8449cf3521d6.camel@sipsolutions.net>
 References: <cover.1585579244.git.thehajime@gmail.com>
- <dca6ea7260830a03c060f57e6ab9961f16ad55ed.1585579244.git.thehajime@gmail.com>
- <a84f3d7bcddbaa6125349c4bcdec6e3e07d6b783.camel@sipsolutions.net>
-In-Reply-To: <a84f3d7bcddbaa6125349c4bcdec6e3e07d6b783.camel@sipsolutions.net>
-From: Richard Weinberger <richard.weinberger@gmail.com>
-Date: Tue, 31 Mar 2020 00:12:38 +0200
-Message-ID: <CAFLxGvyFqXZSmMcD_=o81AHLzdM_u2iH8h412w7VZrxON7Ohig@mail.gmail.com>
-Subject: Re: [RFC v4 02/25] um lkl: architecture skeleton for Linux kernel
- library
-To: Johannes Berg <johannes@sipsolutions.net>
+ <0f087b36ad579eeb8062b12e9e61566d9b5b18ac.1585579244.git.thehajime@gmail.com>
+ <b2a730a4bcafb13cb1b29a637f8f8449cf3521d6.camel@sipsolutions.net>
+User-Agent: Wanderlust/2.15.9 (Almost Unreal) Emacs/25.3 Mule/6.0
+ (HANACHIRUSATO)
+MIME-Version: 1.0 (generated by SEMI-EPG 1.14.7 - "Harue")
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200330_151252_142116_F1CAFD6E 
-X-CRM114-Status: GOOD (  31.91  )
+X-CRM114-CacheID: sfid-20200330_193812_737037_D31F86F6 
+X-CRM114-Status: GOOD (  12.37  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [richard.weinberger[at]gmail.com]
+ provider [thehajime[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -84,6 +90,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ 0.0 TO_NO_BRKTS_FROM_MSSP  Multiple header formatting problems
+ 0.0 FROM_MISSP_FREEMAIL    From misspaced + freemail provider
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,128 +103,95 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-Arch <linux-arch@vger.kernel.org>, Yuan Liu <liuyuan@google.com>,
- Levente Kurusa <levex@linux.com>, Matthieu Coudron <mattator@gmail.com>,
- Conrad Meyer <cem@freebsd.org>, Octavian Purdila <tavi.purdila@gmail.com>,
- Lai Jiangshan <jiangshanlai@gmail.com>, Jens Staal <staal1978@gmail.com>,
- Motomu Utsumi <motomuman@gmail.com>, linux-um <linux-um@lists.infradead.org>,
- Akira Moroo <retrage01@gmail.com>, Petros Angelatos <petrosagg@gmail.com>,
- "Edison M . Castro" <edisonmcastro@hotmail.com>, Xiao Jia <xiaoj@google.com>,
- Mark Stillwell <mark@stillwell.me>, Patrick Collins <pscollins@google.com>,
- linux-kernel-library@freelists.org, Pierre-Hugues Husson <phh@phh.me>,
- Michael Zimmermann <sigmaepsilon92@gmail.com>,
- Luca Dariz <luca.dariz@gmail.com>, Hajime Tazaki <thehajime@gmail.com>
+Cc: tavi.purdila@gmail.com, linux-kernel-library@freelists.org,
+ retrage01@gmail.com, linux-um@lists.infradead.org, linux-arch@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-Johannes, Hajime,
 
-On Mon, Mar 30, 2020 at 11:53 PM Johannes Berg
-<johannes@sipsolutions.net> wrote:
->
-> On Mon, 2020-03-30 at 23:45 +0900, Hajime Tazaki wrote:
-> > From: Octavian Purdila <tavi.purdila@gmail.com>
-> >
-> > Adds the LKL Kconfig, vmlinux linker script, basic architecture
-> > headers and miscellaneous basic functions or stubs such as
-> > dump_stack(), show_regs() and cpuinfo proc ops.
-> >
-> > The headers we introduce in this patch are simple wrappers to the
-> > asm-generic headers or stubs for things we don't support, such as
-> > ptrace, DMA, signals, ELF handling and low level processor operations.
-> >
-> > The kernel configuration is automatically updated to reflect the
-> > endianness of the host, 64bit support or the output format for
-> > vmlinux's linker script. We do this by looking at the ld's default
-> > output format.
->
-> Can you elaborate what the plan is here?
->
-> I mean, you're not actually "unifying" anything with ARCH=um, you're
-> just basically splitting ARCH=um into ARCH=um-um and ARCH=um-lkl or
-> something. Is there much point?
->
-> Even the basic underlying building blocks are _very_ different, e.g. in
-> UML the host interface is just a bunch of functions that must be
-> implemented (os_*()), while you have a "struct lkl_host_operations". If
-> we can't even unify at that trivial level, is there any point in it at
-> all? I'm not even really sure what those ops are used for - are all of
-> those things that the *application* using LKL necessarily must provide?
->
-> Similarly with the IRQ routing mechanism - two completely different
-> concepts. Where's the "unifying"?
->
-> Ultimately, I can see two ways this goes:
->
-> 1) We give up, and get ARCH=lkl, sharing just (some of) the drivers
->    while moving them into the right drivers/somewhere/ place. Even that
->    looks somewhat awkward looking at the later patches in this set, but
->    seems like that at *least* should be done.
+Thanks for the comments, Johannes.
 
-Yeah, this would be a goal.
-UML and LKL are quite different but they should share at least their userspace
-drivers.
-I also don't mind if we don't share every driver at the beginning but
-it should be
-a feasible goal for the future.
+On Tue, 31 Mar 2020 06:31:15 +0900,
+Johannes Berg wrote:
+> 
+> 
+> > +++ b/arch/um/lkl/include/asm/irq.h
+> > @@ -2,6 +2,9 @@
+> >  #ifndef _ASM_LKL_IRQ_H
+> >  #define _ASM_LKL_IRQ_H
+> >  
+> > +/* pull UML's definitions */
+> > +#include "../../../include/asm/irq.h"
+> 
+> This is _really_ ugly.
 
-> 2) Ideally, instead, we actually unify: LKL grows support for userspace
->    processes using UML infrastructure, the "in-kernel" IRQ mechanisms
->    are unified, UML stuff moves into lkl-ops, and the UML binary
->    basically becomes a user of the LKL library to start everything up.
->    There may be some bits remaining that are just not interesting (e.g.
->    some drivers you don't care about would continue to make direct calls
->    to the user side instead of lkl-ops, and then they're just not
->    compatible with lkl, only with the uml special case of lkl), but then
->    things are clean.
+Hmm, in previous patchset (until v3), I was using the worse approach
+(I thought) to avoid this include.
 
-A few months ago I though this is doable but now I'm not so sure anymore.
++KBUILD_CFLAGS  += -DTIMER_IRQ=0 -DUBD_IRQ=4 -DUM_ETH_IRQ=5 -DLAST_IRQ=15
 
->
-> Now, of course it seems like (2) would actually be better - LKL would
-> actually get support for userspace processes using UML's tricks, most of
-> the code is unified, and even LKL's users can take advantage of new
-> things. At the same time, all of the duplication is avoided.
->
-> However, I just don't know if it's actually _possible_ to do that
-> though. Conceptually, it seems like it should be - why shouldn't a
-> library be able to spawn other userspace processes - I mean, it's not
-> really in the model that LKL really _wants_ since it's supposed to offer
-> the syscall API, but you could make a "bool run_normal_init" or
-> something in the lkl-ops for the user of the library to determine what
-> should happen, right?
->
-> However, there clearly are huge differences between LKL and UML in all
-> respects, and I don't know if this wouldn't conflict with the library
-> model, e.g. there may be linker issues etc. Or maybe the specific UML
-> interrupt handling is required in UML and cannot be done in LKL (but
-> then perhaps it could be put into the hypothetical UML-application vs.
-> UML-the-LKL-library?)
->
->
-> Ultimately, personally I think it's going to have to be one or the other
-> of those two options though, I don't really see much value in what
-> you're doing here in the patchset now. This way just messes up
-> everything, it's not clear what's UML and what's LKL, and they're
-> intertwined with ifdefs everywhere; just look at where you have to add
-> ifdefs in patch 23 - how would anyone later understand which part gets
-> compiled for which of them?
->
-> johannes
->
-> PS: actually having something like lkl-ops in UML would've been nice
-> also for my "time-travel" work, since it neatly abstracts the timers
-> out. I do wonder a bit about the overhead of jumping through function
-> pointers all the time though, it may be worth rethinking that overall
-> anyway!
+And I thought the current way is better than before.
 
-Agreed. UML can also learn from LKL. :-)
 
--- 
-Thanks,
-//richard
+> > +#if defined(__linux) && (defined(__i386) || defined(__x86_64))
+> > +#include <os.h>
+> > +#endif
+> > +void *um_os_signal(int signum, void *handler);
+> 
+> and arguably those random declarations you're sprinkling are worse.
+
+It means that those are only used when UML drivers (net, block) are
+enabled, which are only available on Intel/linux hosts.  OTOH,
+UMMODE_LIB _will_ support non-Intel/Linux hosts in the future thus,
+this ifdefs exist.
+
+> > @@ -181,6 +196,11 @@ void init_IRQ(void)
+> >  	for (i = 0; i < NR_IRQS; i++)
+> >  		irq_set_chip_and_handler(i, &dummy_irq_chip, handle_simple_irq);
+> >  
+> > +#if defined(__linux) && (defined(__i386) || defined(__x86_64))
+> 
+> What's with all those ifdefs with this condition?
+
+Same as above.
+but I agree that the ifdefs are cryptic; I'll try to make it more
+understandable if I use ifdefs.
+
+> > +++ b/tools/lkl/lib/um/um_glue.c
+> > @@ -0,0 +1,39 @@
+> > +// SPDX-License-Identifier: GPL-2.0
+> > +#include <stdio.h>
+> > +#include <stdlib.h>
+> > +#include <string.h>
+> > +#include <unistd.h>
+> > +#include <errno.h>
+> > +
+> > +
+> > +
+> > +char lkl_um_devs[4096];
+> > +
+> > +/* from sigio.c */
+> > +void maybe_sigio_broken(int fd, int read)
+> > +{
+> > +}
+> > +
+> > +/* from process.c */
+> > +int os_getpid(void)
+> > +{
+> > +	return getpid();
+> > +}
+> 
+> All of this really is quite ugly - are you sure it's needed for just the
+> vector network driver??
+
+Those are needed when we use UML_NET or BLK_DEV_UBD is enabled.  I was
+trying to minimize those glue code as much as possible; I need another
+try to check if we can remove more or eliminate completely by other
+ways.
+
+-- Hajime
 
 _______________________________________________
 linux-um mailing list
