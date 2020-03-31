@@ -2,39 +2,55 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 40091198D45
-	for <lists+linux-um@lfdr.de>; Tue, 31 Mar 2020 09:44:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1BFE2199BDA
+	for <lists+linux-um@lfdr.de>; Tue, 31 Mar 2020 18:39:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=v41Be9rAvazqSSprFmJ14HNZOPx9pZE/mTmA7xgjy6g=; b=o+tE+HZsLJ9kVu
-	kB2PRXjKmIb2c2v1BaKNcAJ22ErTKjnBTmDBkqBP/ifRLl+LqM4dlna6c55GQPptSncBGxf0dWFBD
-	h8Uoxl1uV0qDBUsf4C9CaLREeTJ+RR/CwPwBvyrGnrUYWUvZUxeXsSLloRbJyk46/bhledcqFMbMX
-	3uI2GKgSIWqK+Hkj3TXQsGJuW81lIQMNeS/QuQmlhFbj+68GEtklh0LNP7dwzNp1+sR4Fqh5n+AT0
-	B+15HY4tH6/QD7oBOUxztgqMHE8dtqTJpfogkjtM86k4Cwj8+AvpWBkDt7TJPCpNHqgEyM3QNSbO4
-	dpXj3lpmVV2YpwrRkZyQ==;
+	List-Owner; bh=v0PcxFJw207NEoe38HmriKcKmKyFDkGaJjeHRRt0o+4=; b=h5sEuFAXZbGMG8
+	J1k5yBA5i9k1z6JsUgLA01zkgtA49V3o8kLmFIJLzrh2JTtfV8d44s+9mTLfxqOki2a2UHaZV7VO2
+	NNrQfzuBHmdMS5zgRwi9GNTLrTlM/0PjhTQGcr208ZSlnx6Co9ADnO4gIrlO+3aidC5x/QN82wXHX
+	ak0Q4tCeYdWs7PB9ojq0KIL9pXpAODgfKQxneHHL+S9qUEEJG21/MMgSmzlDGFum0y+JIzp+jOK3T
+	Lbaozmcbzgf9bzK7XNpYsmJrLwkUqa2A0ZrjjD3uHtCBp68cK8s41HxhkWo/tIFrn4w7kDAkz6UfQ
+	7ynQ7pMBF6ofJJKwQuhw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJBZH-0003Ep-7m; Tue, 31 Mar 2020 07:44:15 +0000
-Received: from s3.sipsolutions.net ([2a01:4f8:191:4433::2]
- helo=sipsolutions.net)
+	id 1jJJvP-0003ce-7o; Tue, 31 Mar 2020 16:39:39 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJBZF-0003Dp-2w
- for linux-um@lists.infradead.org; Tue, 31 Mar 2020 07:44:14 +0000
-Received: by sipsolutions.net with esmtpsa
- (TLS1.3:ECDHE_SECP256R1__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
- (Exim 4.93) (envelope-from <johannes@sipsolutions.net>)
- id 1jJBZ3-008Kx7-9S; Tue, 31 Mar 2020 09:44:01 +0200
-Message-ID: <19cf82d3c3d76ad62a47beee162fa9ff768a3a01.camel@sipsolutions.net>
-Subject: Re: [PATCH] UML: add support for KASAN under x86_64
-From: Johannes Berg <johannes@sipsolutions.net>
-To: David Gow <davidgow@google.com>
-Date: Tue, 31 Mar 2020 09:43:59 +0200
-In-Reply-To: <CABVgOSnz2heYvXytvhwA3RO_3dX=8vKrC+b8a6GLZV8eD3Fcow@mail.gmail.com>
- (sfid-20200331_081511_061239_730E62F6)
+ id 1jJJvM-0003bs-7J
+ for linux-um@lists.infradead.org; Tue, 31 Mar 2020 16:39:37 +0000
+Received: by mail-wm1-x344.google.com with SMTP id a81so3548836wmf.5
+ for <linux-um@lists.infradead.org>; Tue, 31 Mar 2020 09:39:34 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=QgoMF0cL9ZUADYdGprv6AZfHS2idq4rpQGViQrbTh3g=;
+ b=MOyCc4PgavB5gSASpI6clKEFNY8K2buCcld4kUOHT2U6+ZQD2QBLgweg819jEBdBmH
+ 3B9tDDscrZBDI4FwQuUuqfjtvh/MpztQ9r8K3LEqBZcOaSxJKvQSfcPYIF9azVlNiLbz
+ tZmwU4/gZX2ta8YRKxbZdzOAyUVZaSHjXVx2q2W4Ua+HLIgmzpHsU+tejH9k/rNScbFv
+ 9wfBwW3l4EVy/+GM/Rb4eRtSonYmvPKq9PAvjlzVq5lUsw+7+RYt3c0Fq34dWNp2i8TA
+ 0lcLJZlx0N4M0KVXGD6kjXWagBLecurFWWNfg7DyVUj76MCGtAZB869ZvlLV340LEuyR
+ L5mg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=QgoMF0cL9ZUADYdGprv6AZfHS2idq4rpQGViQrbTh3g=;
+ b=hAWvbxGX7rnWd7PPA1j4Pfb4w6BnfIMMlqDDTWBF00kIDzKDwJZosMrTBXRY09CgHk
+ xMmTTjhX/gRUR0btJ6sukAkzcNoxFZsEXJezalTHdSjt3xLsW2B+0Lu2DrATbKPfG20v
+ ciLayaCVGzzASx7HeH9TApn37JoCRKcJgJNXLXNpOI6M1PMKuN5lRGzNYNJ98jEtk5/O
+ 6BisqwzC2tfKR62imP6u/h+Jjith7/6YibPdSLdADGuj6awMffsefFGji6yUwlWO4T2n
+ aF5zfaVMVOTtaGOOERr7HqU0jM0n+4qgKfT7TtA//CjJ8/3bh5CJLJG3TtkDMs+xiJT9
+ rKMg==
+X-Gm-Message-State: ANhLgQ1GgtzuzMFOgtupHUBGtrsq+MfXSLq76tNRh6bL/1p1XCSWy7X5
+ CrgRhJqBH1Qgh7CCYytPkn+ZdK08MylA5JqRybMGHQ==
+X-Google-Smtp-Source: ADFU+vvhJPSVd5yxnSsDuvriYVo33KEBmUD4VOfuBWlib7JCT2jIdpNHf/MvE4O71XY1jLiZ7wL2mWmFGr62DUp1Pxw=
+X-Received: by 2002:a1c:62c5:: with SMTP id w188mr4444781wmb.112.1585672772708; 
+ Tue, 31 Mar 2020 09:39:32 -0700 (PDT)
+MIME-Version: 1.0
 References: <20200226004608.8128-1-trishalfonso@google.com>
  <CAKFsvULd7w21T_nEn8QiofQGMovFBmi94dq2W_-DOjxf5oD-=w@mail.gmail.com>
  <4b8c1696f658b4c6c393956734d580593b55c4c0.camel@sipsolutions.net>
@@ -45,21 +61,38 @@ References: <20200226004608.8128-1-trishalfonso@google.com>
  <2cee72779294550a3ad143146283745b5cccb5fc.camel@sipsolutions.net>
  <CACT4Y+YhwJK+F7Y7NaNpAwwWR-yZMfNevNp_gcBoZ+uMJRgsSA@mail.gmail.com>
  <a51643dbff58e16cc91f33273dbc95dded57d3e6.camel@sipsolutions.net>
- <CABVgOSnz2heYvXytvhwA3RO_3dX=8vKrC+b8a6GLZV8eD3Fcow@mail.gmail.com>
- (sfid-20200331_081511_061239_730E62F6)
-User-Agent: Evolution 3.34.4 (3.34.4-1.fc31) 
-MIME-Version: 1.0
+In-Reply-To: <a51643dbff58e16cc91f33273dbc95dded57d3e6.camel@sipsolutions.net>
+From: Patricia Alfonso <trishalfonso@google.com>
+Date: Tue, 31 Mar 2020 09:39:21 -0700
+Message-ID: <CAKFsvULjkQ7T6QhspHg87nnDpo-VW1qg2M3jJGB+NcwTQNeXGQ@mail.gmail.com>
+Subject: Re: [PATCH] UML: add support for KASAN under x86_64
+To: Johannes Berg <johannes@sipsolutions.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200331_004413_128231_B8506DC7 
-X-CRM114-Status: GOOD (  14.01  )
-X-Spam-Score: 0.4 (/)
+X-CRM114-CacheID: sfid-20200331_093936_290754_E6C1263B 
+X-CRM114-Status: GOOD (  25.73  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.4 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.4 KHOP_HELO_FCRDNS       Relay HELO differs from its IP's reverse DNS
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,45 +104,95 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: Patricia Alfonso <trishalfonso@google.com>,
- Richard Weinberger <richard@nod.at>, Jeff Dike <jdike@addtoit.com>,
+Cc: Richard Weinberger <richard@nod.at>, Jeff Dike <jdike@addtoit.com>,
  Brendan Higgins <brendanhiggins@google.com>,
  LKML <linux-kernel@vger.kernel.org>, kasan-dev <kasan-dev@googlegroups.com>,
- linux-um <linux-um@lists.infradead.org>,
+ linux-um@lists.infradead.org, David Gow <davidgow@google.com>,
  Andrey Ryabinin <aryabinin@virtuozzo.com>, Dmitry Vyukov <dvyukov@google.com>,
- Anton Ivanov <anton.ivanov@cambridgegreys.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+ anton.ivanov@cambridgegreys.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-T24gTW9uLCAyMDIwLTAzLTMwIGF0IDIzOjE0IC0wNzAwLCBEYXZpZCBHb3cgd3JvdGU6Cj4gCj4g
-SSBzcGVudCBhIGxpdHRsZSB0aW1lIHBsYXlpbmcgYXJvdW5kIHdpdGggdGhpcywgYW5kIHdhcyBh
-YmxlIHRvIGdldAo+IG1hYzgwMjExIAoKbWFjODAyMTEsIG9yIG1hYzgwMjExLWh3c2ltPyBJIGNh
-biBsb2FkIGEgZmV3IG1vZHVsZXMsIGJ1dCB0aGVuIGl0CmNyYXNoZXMgb24gc2F5IHRoZSB0aGly
-ZCAodXN1YWxseSwgYnV0IHdobyBrbm93cyB3aGF0IHRoaXMgZGVwZW5kcyBvbikuCgo+IGxvYWRp
-bmcgaWYgSSBmb3JjZS1lbmFibGVkIENPTkZJR19LQVNBTl9WTUFMTE9DIChhbG9uZ3NpZGUKPiBi
-dW1waW5nIHVwIHRoZSBzaGFkb3cgbWVtb3J5IGFkZHJlc3MpLgoKTm90IHN1cmUgSSB0cmllZCB0
-aGF0IGNvbWJpbmF0aW9uIHRob3VnaC4KCj4gVGhlIHRlc3QtYnBmIG1vZHVsZSB3YXMgc3RpbGwg
-ZmFpbGluZywgdGhvdWdoIOKAlCB3aGljaCBtYXkgb3IgbWF5IG5vdAo+IGhhdmUgYmVlbiByZWxh
-dGVkIHRvIGhvdyBicGYgdXNlcyB2bWFsbG9jKCkuCgpJIHRoaW5rIEkgZ290IHNvbWUgdHJvdWJs
-ZSBhbHNvIHdpdGgganVzdCBzdGFjayB1bndpbmRpbmcgYW5kIG90aGVyCnJhbmRvbSB0aGluZ3Mg
-ZmF1bHRpbmcgaW4gdGhlIHZtYWxsb2MgYW5kL29yIHNoYWRvdyBzcGFjZSAuLi4KCj4gSSBkbyBs
-aWtlIHRoZSBpZGVhIG9mIHRyeWluZyB0byBwdXNoIHRoZSBzaGFkb3cgbWVtb3J5IGFsbG9jYXRp
-b24KPiB0aHJvdWdoIFVNTCdzIFBURSBjb2RlLCBidXQgY29uZmVzcyB0byBub3QgdW5kZXJzdGFu
-ZGluZyBpdAo+IHBhcnRpY3VsYXJseSB3ZWxsLiAKCk1lIG5laXRoZXIuIEkganVzdCBub3RpY2Vk
-IHRoYXQgYWxsIHRoZSB2bWFsbG9jIGFuZCBrYXNhbi12bWFsbG9jIGRvIGFsbAp0aGUgUFRFIGhh
-bmRsaW5nLCBzbyB0aGluZ3MgbWlnaHQgZWFzaWx5IGNsYXNoIGlmIHlvdSBoYXZlCkNPTkZJR19L
-QVNBTl9WTUFMTE9DLCB3aGljaCB3ZSBkbyB3YW50IGV2ZW50dWFsbHkuCgo+IEkgaW1hZ2luZSBp
-dCdkIHJlcXVpcmUgcHVzaGluZyB0aGUgS0FTQU4KPiBpbml0aWFsaXNhdGlvbiBiYWNrIHVudGls
-IGFmdGVyIGluaXRfcGh5c21lbSwgYW5kIGhhdmluZyB0aGUgc2hhZG93Cj4gbWVtb3J5IGJlIGJh
-Y2tlZCBieSB0aGUgcGh5c21lbSBmaWxlPyBVbmxlc3MgdGhlcmUncyBhIGNsZXZlciB3YXkgb2YK
-PiBhbGxvY2F0aW5nIHRoZSBzaGFkb3cgbWVtb3J5IGVhcmx5LCBhbmQgdGhlbiBob29raW5nIGl0
-IGludG8gdGhlIHBhZ2UKPiB0YWJsZXMvZXRjIHdoZW4gdGhvc2UgYXJlIGluaXRpYWxpc2VkIChh
-a2luIHRvIGhvdyBvbiB4ODYgdGhlcmUncyBhCj4gc2VwYXJhdGUgZWFybHkgc2hhZG93IG1lbW9y
-eSBzdGFnZSB3aGlsZSB0aGluZ3MgYXJlIHN0aWxsIGJlaW5nIHNldAo+IHVwLCBtYXliZT8pCgpQ
-cmV0dHkgc3VyZSB3ZSBzaG91bGQgYmUgYWJsZSB0byBob29rIGl0IHVwIGxhdGVyLCBidXQgSSBo
-YXZlbid0IHJlYWxseQpkdWcgZGVlcGx5IHlldC4KCmpvaGFubmVzCgoKX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtdW0gbWFpbGluZyBsaXN0Cmxp
-bnV4LXVtQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFp
-bG1hbi9saXN0aW5mby9saW51eC11bQo=
+On Mon, Mar 30, 2020 at 1:41 AM Johannes Berg <johannes@sipsolutions.net> wrote:
+>
+> On Mon, 2020-03-30 at 10:38 +0200, Dmitry Vyukov wrote:
+> > On Mon, Mar 30, 2020 at 9:44 AM Johannes Berg <johannes@sipsolutions.net> wrote:
+> > > On Fri, 2020-03-20 at 16:18 +0100, Dmitry Vyukov wrote:
+> > > > > Wait ... Now you say 0x7fbfffc000, but that is almost fine? I think you
+> > > > > confused the values - because I see, on userspace, the following:
+> > > >
+> > > > Oh, sorry, I copy-pasted wrong number. I meant 0x7fff8000.
+> > >
+> > > Right, ok.
+> > >
+> > > > Then I would expect 0x1000 0000 0000 to work, but you say it doesn't...
+> > >
+> > > So it just occurred to me - as I was mentioning this whole thing to
+> > > Richard - that there's probably somewhere some check about whether some
+> > > space is userspace or not.
+> > >
+
+Yeah, it seems the "Kernel panic - not syncing: Segfault with no mm",
+"Kernel mode fault at addr...", and "Kernel tried to access user
+memory at addr..." errors all come from segv() in
+arch/um/kernel/trap.c due to what I think is this type of check
+whether the address is
+in userspace or not.
+
+> > > I'm beginning to think that we shouldn't just map this outside of the
+> > > kernel memory system, but properly treat it as part of the memory that's
+> > > inside. And also use KASAN_VMALLOC.
+> > >
+> > > We can probably still have it at 0x7fff8000, just need to make sure we
+> > > actually map it? I tried with vm_area_add_early() but it didn't really
+> > > work once you have vmalloc() stuff...
+> >
+
+What x86 does when KASAN_VMALLOC is disabled is make all vmalloc
+region accesses succeed by default
+by using the early shadow memory to have completely unpoisoned and
+unpoisonable read-only pages for all of vmalloc (which includes
+modules). When KASAN_VMALLOC is enabled in x86, the shadow memory is not
+allocated for the vmalloc region at startup. New chunks of shadow
+memory are allocated and unpoisoned every time there's a vmalloc()
+call. A similar thing might have to be done here by mprotect()ing
+the vmalloc space as read only, unpoisoned without KASAN_VMALLOC. This
+issue here is that
+kasan_init runs so early in the process that the vmalloc region for
+uml is not setup yet.
+
+
+> > But we do mmap it, no? See kasan_init() -> kasan_map_memory() -> mmap.
+>
+> Of course. But I meant inside the UML PTE system. We end up *unmapping*
+> it when loading modules, because it overlaps vmalloc space, and then we
+> vfree() something again, and unmap it ... because of the overlap.
+>
+> And if it's *not* in the vmalloc area, then the kernel doesn't consider
+> it valid, and we seem to often just fault when trying to determine
+> whether it's valid kernel memory or not ... Though I'm not really sure I
+> understand the failure part of this case well yet.
+>
+
+I have been testing this issue in a multitude of ways and have only
+been getting more confused. It's still very unclear where exactly the
+problem occurs, mostly because the errors I found most frequently were
+reported in segv(), but the stack traces never contained segv.
+
+Does anyone know if/how UML determines if memory being accessed is
+kernel or user memory?
+
+> johannes
+>
+
+
+--
+Best,
+Patricia
+
+_______________________________________________
+linux-um mailing list
+linux-um@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-um
