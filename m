@@ -2,100 +2,63 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3708A19BBE1
-	for <lists+linux-um@lfdr.de>; Thu,  2 Apr 2020 08:45:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7E0ED19BCF8
+	for <lists+linux-um@lfdr.de>; Thu,  2 Apr 2020 09:44:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Subject:To:From:Message-ID:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hE3A0wwICo1ypRB8Z5e3aIQH9hGtBDilIhhRYWsjvkA=; b=fH18vHRB3rwyaa
-	V9lbZImeKDlxRFo6nwCTxD42v2SnhI5TayfKi6aSJqwwVyq4KXtAUTUDBtA5zXz3/TPY2xuWb+QkV
-	lizyTTLg03JOK7UN6JERqoLskP2Aq82/+QRTWYmrKmE/iD7aDtKoqrNzszJrwPpM8KuswEH+hi9W3
-	MCXJ+Tf3RhewSTdNeYkfP3Ap/8JgAIlLie7gzVPc/fHtzOdnVTcU+s2+DusrQmOGZsHj58C1szGQ5
-	NHO7yi1Bhfx5hrYFRAwPoOBk7rfw6TQ+u785O+Dt3gNdZ0QAFuLY3sJ7OvjMuY8updb3Oaog3KDqN
-	G8joZbGkApYWEwlYouXg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=YpEg6hrTMC8zVSBFHAJyl0kWQsUVZODttjp4fQHiDcc=; b=MoPxB6yKRMNDvD1pBMTZnf6sl
+	OQTHBhnJRp5mx+0HZL83viD/mS7qXjjGA1rFLmQfksNXQkLm9w5zeI1w4Q88jLLTc7tzqwPK4AJYJ
+	GF9tefp20QZ9jWfk+kYZkxXpzdbqICcCujoq5ZD50eAWTnvTPwX+GipAErLn8/VdeGKXuC92QPCIh
+	sCsHJcgTjBfTWjMI4ddUIJozpuCwq/e3ISaLoXzOAJg2A3KSrVcUq0gbpJ5mEW0oayF0yNGSfOAxw
+	VMVFI1bDAvcSJEaaPswK2JMXdWRzFqesYgrN4xo2V2uFGZ17VnTUBLLbM/NB1EZq8mmNTuwuaBKd6
+	4dgn+ay+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJtay-0000ZB-Hb; Thu, 02 Apr 2020 06:44:56 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1jJuWq-0001pY-Al; Thu, 02 Apr 2020 07:44:44 +0000
+Received: from ivanoab7.miniserver.com ([37.128.132.42]
+ helo=www.kot-begemot.co.uk)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJtav-0000Yb-7t
- for linux-um@lists.infradead.org; Thu, 02 Apr 2020 06:44:55 +0000
-Received: by mail-pf1-x441.google.com with SMTP id f206so1294506pfa.10
- for <linux-um@lists.infradead.org>; Wed, 01 Apr 2020 23:44:52 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:message-id:from:to:cc:subject:in-reply-to:references
- :user-agent:mime-version;
- bh=S4SlQ3e+EZ6SDaUiakB1CPyQmRVNGf9vc9KaHceq+BU=;
- b=ic6Zuf81nmEyqySK7chhogXXgcva9iEtBkp//7BP6obgEDp8l5crUTzEZA81lmjLLN
- 9QTQlMXxLzWGOEs15bhq9/QR9nbqB37vLS9ED/zKaQf8YCHm2I8MEd1cJypO0QKCD20A
- ogK9zjFWOkdDCxrh8brrqnDD7N3YTGTMbBqrgxdAwxRsJIJOZ4Lvz0loM3xdSpLTXjKj
- dAC1XuFD3rYkiLswW9MRzbV35/ZTmhjINDuhvaMtNVcwNWqAXBGSgDtSDhHRER1mcWQ1
- AMXt75uluOG6L0JT6NzkSpx5fEUr8WkHnqT9uCiLJg/N8ZI7zQxdkjgDBLWWMMWcZLQ7
- nZKw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:message-id:from:to:cc:subject:in-reply-to
- :references:user-agent:mime-version;
- bh=S4SlQ3e+EZ6SDaUiakB1CPyQmRVNGf9vc9KaHceq+BU=;
- b=DdM+EN+cUvcvHh/NbsZB8TM+4znxeHwvtJHgVhtl7Z77gk8pr09CVFjv3NBz964jyn
- aLX8p0R0t/VmyFDsb0BHym+faC/JSbkyEL7BuWJbhzT+IeBfpu9++khEc8ltq3vK1atI
- pRoedIycTA7uP1KYo3L5yVzsPTDFxN+GJn/BBEVVs+KIUWYEx4eNNCdH209cDaBaOH5v
- uR7ZAWp+waJ+e999mcAZ26J+NYFZOU762owx8Gk0ei4QEBX7s7DFEWJLkApsdHjKo1fl
- PO6wdnBWqxZnIgDpq3IbXORjRxT4sdcN4zPrZqBfkz0z6XQ/aat+7kah1BeMhLwU9lSa
- JzOg==
-X-Gm-Message-State: AGi0PuauffKBZMM0ea0GZTo8MWyCOHJNMpWnQnTgyRhcD/1U6YxJhi0F
- KphiAvFIRE5nAiRkaOOJwQI=
-X-Google-Smtp-Source: APiQypKWnAnuPOUFIUEXQ209MjGkBtq7cBbciDB6ElIZlkUhrjLYc5oIpt0nx76x9C5LkA0kHuhDig==
-X-Received: by 2002:aa7:9a47:: with SMTP id x7mr1684845pfj.29.1585809891764;
- Wed, 01 Apr 2020 23:44:51 -0700 (PDT)
-Received: from earth-mac.local.gmail.com
- (219x123x138x129.ap219.ftth.ucom.ne.jp. [219.123.138.129])
- by smtp.gmail.com with ESMTPSA id o3sm2710651pgk.21.2020.04.01.23.44.45
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 01 Apr 2020 23:44:50 -0700 (PDT)
-Date: Thu, 02 Apr 2020 15:44:44 +0900
-Message-ID: <m2tv22wfmr.wl-thehajime@gmail.com>
-From: Hajime Tazaki<thehajime@gmail.com>
-To: johannes@sipsolutions.net
-Subject: Re: [RFC v4 02/25] um lkl: architecture skeleton for Linux kernel
- library
-In-Reply-To: <ba2199bd17b6457c97305f6688b13ed36e7feac3.camel@sipsolutions.net>
-References: <cover.1585579244.git.thehajime@gmail.com>
- <dca6ea7260830a03c060f57e6ab9961f16ad55ed.1585579244.git.thehajime@gmail.com>
- <a84f3d7bcddbaa6125349c4bcdec6e3e07d6b783.camel@sipsolutions.net>
- <CAFLxGvyFqXZSmMcD_=o81AHLzdM_u2iH8h412w7VZrxON7Ohig@mail.gmail.com>
- <m21rp9xaqt.wl-thehajime@gmail.com>
- <ba2199bd17b6457c97305f6688b13ed36e7feac3.camel@sipsolutions.net>
-User-Agent: Wanderlust/2.15.9 (Almost Unreal) Emacs/25.3 Mule/6.0
- (HANACHIRUSATO)
-MIME-Version: 1.0 (generated by SEMI-EPG 1.14.7 - "Harue")
+ id 1jJuWn-0001lK-An
+ for linux-um@lists.infradead.org; Thu, 02 Apr 2020 07:44:42 +0000
+Received: from tun252.jain.kot-begemot.co.uk ([192.168.18.6]
+ helo=jain.kot-begemot.co.uk)
+ by www.kot-begemot.co.uk with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.92) (envelope-from <anton.ivanov@cambridgegreys.com>)
+ id 1jJuWe-0000zk-E2; Thu, 02 Apr 2020 07:44:32 +0000
+Received: from jain.kot-begemot.co.uk ([192.168.3.3])
+ by jain.kot-begemot.co.uk with esmtp (Exim 4.92)
+ (envelope-from <anton.ivanov@cambridgegreys.com>)
+ id 1jJuWc-0004Bp-1R; Thu, 02 Apr 2020 08:44:32 +0100
+Subject: Re: [PATCH] um: add include: memset() and memcpy() are in <string.h>
+To: Zach van Rijn <me@zv.io>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
+References: <a1f6271e7c72e49fd863efc4b7126be6598fd4f6.camel@zv.io>
+From: Anton Ivanov <anton.ivanov@cambridgegreys.com>
+Message-ID: <26235042-02c6-04ae-42ec-4d1f393975d8@cambridgegreys.com>
+Date: Thu, 2 Apr 2020 08:44:29 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.6.0
+MIME-Version: 1.0
+In-Reply-To: <a1f6271e7c72e49fd863efc4b7126be6598fd4f6.camel@zv.io>
+Content-Language: en-US
+X-Spam-Score: -1.0
+X-Spam-Score: -1.0
+X-Clacks-Overhead: GNU Terry Pratchett
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200401_234453_308833_9D7D3FD1 
-X-CRM114-Status: GOOD (  45.57  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200402_004441_376155_E5D0C75D 
+X-CRM114-Status: GOOD (  12.86  )
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [thehajime[at]gmail.com]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 TO_NO_BRKTS_FROM_MSSP  Multiple header formatting problems
- 0.0 FROM_MISSP_FREEMAIL    From misspaced + freemail provider
+ 0.3 KHOP_HELO_FCRDNS       Relay HELO differs from its IP's reverse DNS
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -107,274 +70,44 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, levex@linux.com, mattator@gmail.com,
- cem@freebsd.org, richard.weinberger@gmail.com, linux-um@lists.infradead.org,
- staal1978@gmail.com, motomuman@gmail.com, jiangshanlai@gmail.com,
- retrage01@gmail.com, petrosagg@gmail.com, tavi.purdila@gmail.com,
- mark@stillwell.me, linux-kernel-library@freelists.org,
- edisonmcastro@hotmail.com, pscollins@google.com, phh@phh.me,
- sigmaepsilon92@gmail.com, luca.dariz@gmail.com, liuyuan@google.com
-Content-Type: text/plain; charset="us-ascii"
+Cc: Richard Weinberger <richard@nod.at>, Jeff Dike <jdike@addtoit.com>,
+ linux-um@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
 
-Hello,
 
-# dropped an address from Cc as it's not reachable.
-
-On Wed, 01 Apr 2020 05:16:58 +0900,
-Johannes Berg wrote:
-
-> > > For the step 1, we put LKL as one of UMMODE in order to make less effort to
-> > > integrate (make ARCH=um UMMODE=library).  The modification to existing UML
-> > > code is trying to be minimized.
+On 01/04/2020 22:30, Zach van Rijn wrote:
+> These two functions are otherwise unknown to the pedantic compiler.
+> Include the correct header to enable the build to succeed.
 > 
-> > The current step (1 in the milestone) tries to cover this goal:
-> > splitting ARCH=um into UMMODE_KERNEL and UMMODE_LIB.
+> Signed-off-by: Zach van Rijn <me@zv.io>
+> ---
+>   arch/um/os-Linux/file.c | 1 +
+>   1 file changed, 1 insertion(+)
 > 
-> So maybe we're doing this backwards?
-> 
-> I mean ... you're trying to minimize the UML code changes, while I'm
-> sort of arguing for maximizing them, to achieve a cleaner split.
-
-I see the point.
-
-> In a sense, I think if this is to happen, then we're in it for the long
-> haul. Meaning that we don't actually need all of this working
-> immediately.
-> 
-> So I think conceptually we should answer the questions that I raised
-> below first (basically a kind of "can it be done?" question), and then
-> work towards that goal? IMHO.
-
-okay, agree.
-
-> > > > 1) We give up, and get ARCH=lkl, sharing just (some of) the drivers
-> > > >    while moving them into the right drivers/somewhere/ place. Even that
-> > > >    looks somewhat awkward looking at the later patches in this set, but
-> > > >    seems like that at *least* should be done.
-> > > 
-> > > Yeah, this would be a goal.
-> > > UML and LKL are quite different but they should share at least their userspace
-> > > drivers.
-> > > I also don't mind if we don't share every driver at the beginning but
-> > > it should be
-> > > a feasible goal for the future.
-> > 
-> > Sharing drivers code is also included in this patchset, step 2 in the
-> > milestone.
-> > 
-> > I was thinking that implementing os_*() functions with lkl_host_ops
-> > would be the further goal (e.g., step 3 or 4).
-> 
-> Personally, I think this is backwards. That step is the actually
-> *interesting* part, because if this turns out not to be possible, then
-> we should pick option (1) instead of trying to do option (2), failing,
-> and leaving the code a mess (at least personally I think that after this
-> patchset, the code is kinda a mess with all the ifdefs, duplication,
-> etc.) Yes, I know you're in this for the long haul, but still - it'd be
-> a shame to have to do that.
-> 
-> So in a sense, I myself would actually prefer to have an LKL _without_
-> drivers, but integrated well with UML, over the one that you have now.
-
-LKL without drivers might be nothing, but let's see if this will end a
-clean, and minimal viable patchset.
-
-> > > > 2) Ideally, instead, we actually unify: LKL grows support for userspace
-> > > >    processes using UML infrastructure, the "in-kernel" IRQ mechanisms
-> > > >    are unified, UML stuff moves into lkl-ops, and the UML binary
-> > > >    basically becomes a user of the LKL library to start everything up.
-> > > >    There may be some bits remaining that are just not interesting (e.g.
-> > > >    some drivers you don't care about would continue to make direct calls
-> > > >    to the user side instead of lkl-ops, and then they're just not
-> > > >    compatible with lkl, only with the uml special case of lkl), but then
-> > > >    things are clean.
-> > > 
-> > > A few months ago I though this is doable but now I'm not so sure anymore.
-> > 
-> > For the part of (2) which Johannes pointed out (I mean the part "UML
-> > stuff moves into lkl-ops"), I become to think that implementing os_*()
-> > functions using lkl_host_ops would be also interesting if those
-> > re-implementation makes the glue code eliminated.
-> > 
-> > I'll work on that.
-> 
-> Don't go too fast :-)
-> 
-> I really think that this only makes sense if we can also share much of
-> the other code, e.g. the interrupt processing, thread model, etc. If we
-> just share the lkl ops underneath, and then end up implementing two IRQ
-> models and all on top of those, IMHO we've won nothing.
-> 
-> So I (at least) really see it as a choice between these two options:
-> 
-> 1) add LKL as arch/lkl/ and share the drivers, but not the arch code
-> 
-> 2) really unify LKL and UML, and have them share the arch code, and make
->    UML a special case of LKL, but not in the sense that it has vastly
->    different arch code (like special interrupt handling, etc.)
-
-1) is not an option; we discussed this before not to have similar
-archs in different directories.
-
-# Richard, correct me if I'm wrong.
-
-2) may be doable, the followings would be the list of things what we need:
-- unify the driver codes
-- unify interrupt handling, need to be x86/linux-independent
-- unify thread model (i.e., struct thread_info)
-- unify code scheduling  (e.g., __switch_to())
-- unify memory management (mmu v.s. nommu)
-- unify host interface (os_*() v.s. lkl_host_ops)
-- support multiple syscall handlings (ptrace-based interception,
-  direct func call, etc)
-- (may still miss something..)
-
-Those are actually the list of differences between UML and LKL.
-And each item is inter-related: interrupt handling depends on how the
-code/thread is executed, thread implementation interacts with memory
-management, etc.
-
-Thus for instance, unifying IRQ mechanism may involve several points
-of the above list to be reorganized/reimplemented UML code to support
-the library mode.  I thought this makes broader changes to UML, which
-I was trying to avoid in v4 patch.
-
-> Now, you allude to the fact that UML is pretty much x86 only, and
-> perhaps that's a point where we can do (2) but only support userspace
-> programs on x86, or such?
-
-x86/linux only (LKL also has x86/win32 support).
-
-> I don't know where the host architecture
-> actually comes in much in UML, and where that may or may not be the case
-> in LKL.
-> 
-> > For the other part of (2), I agree that your definition of the
-> > unification will be the best and final goal of this integration.
-> 
-> Fair, but the problem is that we have to decide *now* whether it's
-> actually possible or not. If not, then IMHO it's a bad choice to even
-> put LKL under arch/um/.
-> 
-> > But, especially the support for UML userspace processes in LKL is not
-> > easy as far as I can see
-> 
-> OK, I'll bite - why not? I mean, what's different enough in LKL and UML
-> to make this "not easy"?
-> 
-> I'm not trying to paint you into a corner here with that, I'm just
-> trying to understand the innards of LKL better. I have a _bit_ of a
-> grasp of the UML internals by now, but of course not LKL.
-> 
-> So where do they differ? Conceptually, they seem very similar, but the
-> details actually are different.
+> diff --git a/arch/um/os-Linux/file.c b/arch/um/os-Linux/file.c
+> index 26ecbd64c409..044836ad7392 100644
+> --- a/arch/um/os-Linux/file.c
+> +++ b/arch/um/os-Linux/file.c
+> @@ -6,6 +6,7 @@
+>   #include <stdio.h>
+>   #include <unistd.h>
+>   #include <stdlib.h>
+> +#include <string.h>
+>   #include <errno.h>
+>   #include <fcntl.h>
+>   #include <signal.h>
 > 
 
-The differences (and also conflicts) between UML and LKL are pretty
-much the unification list of above 2).
+Acked-By: Anton Ivanov <anton.ivanov@cambridgegreys.com>
 
-The current LKL design assumes that there is only a single
-process/application (but can have multiple threads) in a single LKL
-kernel instance.
-
-This assumption makes the design simple in several places of the
-kernel:
-
-- no memory protection across multiple users/processes needed
-- no address space separation between user- and kernel-code
-
-as a result, userspace code can directly call syscalls as function
-calls.
-
-This part is needed to expand more to support multiple processes
-running/spawned (as UML does), which I mentioned the current LKL
-doesn't have.
-
-> But I have the same question on e.g. the IRQ model. I mean, OK, I
-> understand that LKL started from a different base and all, but is it
-> actually *necessary* for LKL to have a different IRQ model? Or is that
-> "just" intertia?
-
-As for the interrupt handling, the currently LKL's interrupt is
-triggered by the function call (lkl_trigger_irq or equivalent) while
-UML's one is triggered by fd notification (epoll).
-# LKL actually uses fd events but encapsulates into the lkl_host_ops.
-
-So now we have three options for interrupt handling:
-- use UML IRQ model in LKL (and UML)
-- use LKL IRQ model in UML (and LKL)
-- use two IRQ models (the current v4 patch)
-
-I gave up to take the 1st approach as it drops host-independent
-characteristics of LKL, thus took 3rd approach.  So to answer your
-question, yes, it was needed to have a different IRQ model.
-
-But maybe I should try the 2nd approach as well to avoid duplication.
-I will conduct another experiment if this sounds the right direction.
-
-> > Or the title of the cover letter is somehow overstatement: instead,
-> > "Minimum integration of UML with LKL" or something like this would be
-> > better ?
-> 
-> Heh, well, doesn't really matter?
->
-> But again, there are a few different aspects here:
->  - what's technically feasible
->  - what this patchset achieves
->  - where we want to be in the end
-> 
-> I think right now these are diverging enough that we can't even answer
-> that last question, much less find the road to get there.
-
-I think the option 2) is the final goal.
-
-> > Since the patchset of LKL is relatively huge, I was trying to make a
-> > minimum patchset for the first step.  Because having #ifdefs and glue
-> > code makes existing arch/um code untouched, I took this way to make
-> > the patchset as small as possible.
-> > 
-> > But if this is not the case, I will look for the other way and touch
-> > arch/um code to fit the current LKL implementation.
-> > 
-> > What do you think ?
-> 
-> I think that'd be fine, if indeed that's what we want to do.
-> 
-> I really think we're beating around the bush, and need to first figure
-> out the technical differences between UML and LKL and decide between the
-> options (1) and (2) above. Maybe there's a compromise there somewhere,
-> where some small bits of code still _are_ different, but IMHO having two
-> (IRQ, thread, memory) models, two host interfaces (lkl-ops vs. os_*
-> functions), even two include/asm/ source trees (and so on) is not
-> appropriate.
-> 
-> This may take some patches, and some experimentation. I'd leave drivers
-> out of this initially - you should be able to test LKL with something
-> simpler, right? The API surface is basically the syscall interface as
-> functions, so you can start the library and call something simple
-> initially? Though I guess you need some driver for the IRQ model to make
-> sense, etc.
-
-okay.
-
-> And like I said before, that decision will frame everything else. I
-> really don't think we can make significant progress here without having
-> decided whether this is possible.
->
-> Perhaps UML *can* become a "special case" of LKL, with a special API
-> function (that's not part of the syscall surface) to "boot(cmdline)" or
-> something. But if it can't, and has to remain as separated as the two
-> are today, I would argue we're better off just not calling them the same
-> architecture.
-
-I agree with this if the unification has all completed.
-
-Thanks,
--- Hajime
+-- 
+Anton R. Ivanov
+Cambridgegreys Limited. Registered in England. Company Number 10273661
+https://www.cambridgegreys.com/
 
 _______________________________________________
 linux-um mailing list
