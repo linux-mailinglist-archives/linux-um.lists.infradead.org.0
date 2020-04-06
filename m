@@ -2,51 +2,89 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BEA5219EDA2
-	for <lists+linux-um@lfdr.de>; Sun,  5 Apr 2020 21:34:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A8B4619FBC2
+	for <lists+linux-um@lfdr.de>; Mon,  6 Apr 2020 19:38:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=CQ1ryUDo5+ctFbKFCFSoSJcaEKk1Pmvn8QTZD7agQ1o=; b=FoRj0cYQ9r7eLD
-	BdvUFPGIh0DpjZHzcbEmI1PpFEfhwueWTP1lleSwTwnPRcGvsoCdRLgKSTq0UMZd9XWnclIaKB1q8
-	dVDTPJnV8lUuZdIwaVFTlykESa1rGF2sqVGkGMkHu5Q1zlNItDMRUn9c23I3tBMKWmO01ysVHK1iz
-	owuPcM3RoKAOV9cYkQqJc11xKuws5RrhEGdXeZ0gIlDQrOpqA5TteRgS+toNFItie0MwJ0EYKXftp
-	mLAP+izFUHhP4m+9IPpJOImX6NrBueoJ2JIOQlKweJFhjUCn3Xnb1HTymGhoXWI0DYHK6dl7gBhBy
-	GfW98WdkHZ/wt2PRc/FA==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=k/Zk7N609W4P8PfIuzdPUzUbrfDKoUX+68ka7TruqCE=; b=rCSFXs3OAQ2dc+
+	VDlZvYn2bC/Pz+rKtS3PU/a0ES+ag00QFD7l1Dn1GUtHgTB7i/QD1b826ptiQZvwm1kKOAYBFn9jo
+	6Qt4J/hiyNJ5afz+A3oIGkD/S7JILpxaPTg1FBR1PXqUQVM+MyISwlOwt8NWM/t+8sOBO1mwVG5T7
+	zH6pm4r04cIdHngGyJRHzcrcmx4Bb69uplLfEKlSM2tthPpS1Hyz/Hs6xVo/I5T62I7kIk9/LVtxJ
+	MVjL0Caad1nmaALHOqBGV6euqAiKTWUlClOyi+guXRgSXOVJmaog8/J+Q0fcom9a+9WTxpBjSg310
+	QCW2cVis30HZBwaV123w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLB25-0000yA-T7; Sun, 05 Apr 2020 19:34:13 +0000
-Received: from s3.sipsolutions.net ([2a01:4f8:191:4433::2]
- helo=sipsolutions.net)
+	id 1jLVhE-0005rZ-SS; Mon, 06 Apr 2020 17:38:04 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLB22-0000wr-8f
- for linux-um@lists.infradead.org; Sun, 05 Apr 2020 19:34:11 +0000
-Received: by sipsolutions.net with esmtpsa
- (TLS1.3:ECDHE_X25519__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
- (Exim 4.93) (envelope-from <johannes@sipsolutions.net>)
- id 1jLB1w-007Y3L-VV; Sun, 05 Apr 2020 21:34:05 +0200
-From: Johannes Berg <johannes@sipsolutions.net>
-To: linux-um@lists.infradead.org
-Subject: [PATCH] arch: um: fix xor.h include
-Date: Sun,  5 Apr 2020 21:33:57 +0200
-Message-Id: <20200405213357.b6ce1024b276.I7c370e20580d3122c58df5727ee2d6fb53545576@changeid>
-X-Mailer: git-send-email 2.25.1
+ id 1jLVhC-0005r5-AU
+ for linux-um@lists.infradead.org; Mon, 06 Apr 2020 17:38:03 +0000
+Received: by mail-pf1-x444.google.com with SMTP id v23so70670pfm.1
+ for <linux-um@lists.infradead.org>; Mon, 06 Apr 2020 10:37:59 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=NW0JbksvCosxLplDqnlolxe+HgJ+Wkffm9g3BGVBVPA=;
+ b=vvhOCEdFhNmW3PtwMBWoKOvf6VeBuPs0aZ/l9aUV5s3hKrN7lznw+sXtv/fC7Xxk68
+ MkFBcSZtZjpfQsMqEQjlM799lbXRFWTirvCcvpQIuVsx/sgs+JtVg1zik/10u9twPqNV
+ lyRGzA9xUteNDZ2p7iWjiIO3i0kn6eHiFif7IXQofbgBZt5lznRNxxymBFAuiS1TW2CG
+ ASrdf68sfmkUB1uWyJ0zd0K5itr4b6J7IqjoLVrISx3gGX78mnSIxoz17a2oI0se8EyI
+ 44dgewQI6NNfRL4B/uVme6z9d39jUy8zMtXVzj9S3kSdtkf3q7uSHZ5VOOGrebw3R1hc
+ pP/Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=NW0JbksvCosxLplDqnlolxe+HgJ+Wkffm9g3BGVBVPA=;
+ b=NDhBSo0gccA0ykq4+ZmI4WndTT+TGDQBGWk5PSFu8NVq1MXdWG/0H07QWJQVaHhETd
+ ViwhC3mBqp2RfCRxjz/bNppt7qhQi99V/0b+h/Obi3BFaNWJAGYwnKaAXKvlWDQ0Snkf
+ ULbINzuZ1ATYhwGTtPmK74QppT/RnLCc/9LylL/yPVxj2WmX+11dw3DVsXiErORa7+3C
+ cO/RkeeS2bJnNeyKPPbiVP2u/s4saNdFQ+ZRq0WKjqmAPbz8YRxj3DwzAAoeG+LJ5Dxh
+ 9oLVY5nUeuvmrY81mwBuioRMnPp/V1j+l+O70h/+yqo/zaq02m7DJ6fQr96ICl1P5nBB
+ 9wsQ==
+X-Gm-Message-State: AGi0PuaZnKLTBUfDAeWkYT+w9uBa1sI6aG+ezgd9S3zvOwJlCcyWIBMu
+ saOYYOPLEE1vmc1ggqVZp+vPykHrYGsAe2ERrzAmwg==
+X-Google-Smtp-Source: APiQypJxF0Kj+zKMUsy133YvJhgpE1phMmaPlFg+jdsoa4XYzBCoXjyJnz0iWI5+c+awC7y5yRzsrKqYja9xuObdiwI=
+X-Received: by 2002:a63:ff59:: with SMTP id s25mr198012pgk.159.1586194678808; 
+ Mon, 06 Apr 2020 10:37:58 -0700 (PDT)
 MIME-Version: 1.0
+References: <20200405213357.b6ce1024b276.I7c370e20580d3122c58df5727ee2d6fb53545576@changeid>
+In-Reply-To: <20200405213357.b6ce1024b276.I7c370e20580d3122c58df5727ee2d6fb53545576@changeid>
+From: Brendan Higgins <brendanhiggins@google.com>
+Date: Mon, 6 Apr 2020 10:37:49 -0700
+Message-ID: <CAFd5g47m5JHV19FjCgSt=FKWYjG3vUQSJ3oa125xD1cYMH8bww@mail.gmail.com>
+Subject: Re: [PATCH] arch: um: fix xor.h include
+To: Johannes Berg <johannes@sipsolutions.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200405_123410_302354_709EAF33 
-X-CRM114-Status: UNSURE (   7.67  )
+X-CRM114-CacheID: sfid-20200406_103802_400906_F14BEB65 
+X-CRM114-Status: UNSURE (   6.08  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.4 (/)
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.4 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.4 KHOP_HELO_FCRDNS       Relay HELO differs from its IP's reverse DNS
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -58,39 +96,27 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: Thomas Meyer <thomas@m3y3r.de>, Johannes Berg <johannes.berg@intel.com>
+Cc: linux-um <linux-um@lists.infradead.org>,
+ Johannes Berg <johannes.berg@intel.com>, Thomas Meyer <thomas@m3y3r.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-From: Johannes Berg <johannes.berg@intel.com>
+On Sun, Apr 5, 2020 at 12:34 PM Johannes Berg <johannes@sipsolutions.net> wrote:
+>
+> From: Johannes Berg <johannes.berg@intel.com>
+>
+> Two independent changes here ended up going into the tree
+> one after another, without a necessary rename, fix that.
+>
+> Reported-by: Thomas Meyer <thomas@m3y3r.de>
+> Fixes: f185063bff91 ("um: Move timer-internal.h to non-shared")
+> Signed-off-by: Johannes Berg <johannes.berg@intel.com>
 
-Two independent changes here ended up going into the tree
-one after another, without a necessary rename, fix that.
+Reviewed-by: Brendan Higgins <brendanhiggins@google.com>
 
-Reported-by: Thomas Meyer <thomas@m3y3r.de>
-Fixes: f185063bff91 ("um: Move timer-internal.h to non-shared")
-Signed-off-by: Johannes Berg <johannes.berg@intel.com>
----
- arch/um/include/asm/xor.h | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/arch/um/include/asm/xor.h b/arch/um/include/asm/xor.h
-index 7a3208c47cfc..36b33d62a35d 100644
---- a/arch/um/include/asm/xor.h
-+++ b/arch/um/include/asm/xor.h
-@@ -1,6 +1,6 @@
- /* SPDX-License-Identifier: GPL-2.0 */
- #include <asm-generic/xor.h>
--#include <shared/timer-internal.h>
-+#include <linux/time-internal.h>
- 
- /* pick an arbitrary one - measuring isn't possible with inf-cpu */
- #define XOR_SELECT_TEMPLATE(x)	\
--- 
-2.25.1
-
+Seems pretty straightforward to me.
 
 _______________________________________________
 linux-um mailing list
