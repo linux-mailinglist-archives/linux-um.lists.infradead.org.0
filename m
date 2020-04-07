@@ -2,89 +2,62 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A8B4619FBC2
-	for <lists+linux-um@lfdr.de>; Mon,  6 Apr 2020 19:38:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D14891A0DD5
+	for <lists+linux-um@lfdr.de>; Tue,  7 Apr 2020 14:38:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=k/Zk7N609W4P8PfIuzdPUzUbrfDKoUX+68ka7TruqCE=; b=rCSFXs3OAQ2dc+
-	VDlZvYn2bC/Pz+rKtS3PU/a0ES+ag00QFD7l1Dn1GUtHgTB7i/QD1b826ptiQZvwm1kKOAYBFn9jo
-	6Qt4J/hiyNJ5afz+A3oIGkD/S7JILpxaPTg1FBR1PXqUQVM+MyISwlOwt8NWM/t+8sOBO1mwVG5T7
-	zH6pm4r04cIdHngGyJRHzcrcmx4Bb69uplLfEKlSM2tthPpS1Hyz/Hs6xVo/I5T62I7kIk9/LVtxJ
-	MVjL0Caad1nmaALHOqBGV6euqAiKTWUlClOyi+guXRgSXOVJmaog8/J+Q0fcom9a+9WTxpBjSg310
-	QCW2cVis30HZBwaV123w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Subject:Message-ID:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=e0V33T3e9a+v1tUATDqi2IrcONy+cXa60eIdwiVju1s=; b=EoA8PA5AGi2Koo
+	qzNkq8/ROhYdRVUBMIzhmkl0TjFY3tQcLQcwDNm0Odwb0tZadCOGXT3VaaolAw1Fg2QQKn0HRePpY
+	UODHj1virNRdYvpoFIlJuhhVpMvSOdocjJdDGRbIDDvPx33R23IWPBuJezg1ohtW5/YeCh3+4gNzW
+	huUJsSwgAoCT/LrFYs1iP9C00xABWf9VDDLueBf1MDGcDc8e/P6uZkwpy2ICG/irEcg5IM6uVJzFS
+	Z60rFikh6JZD+puljHb95iWW5DHIvRuCG5GX9NM3AAXughq/AL48db+/oAi2h23Zik7YXTmvWT45n
+	wwb3N6lLYnuu4L6wapWg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLVhE-0005rZ-SS; Mon, 06 Apr 2020 17:38:04 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1jLnUZ-0007Cb-Bk; Tue, 07 Apr 2020 12:38:11 +0000
+Received: from lithops.sigma-star.at ([195.201.40.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLVhC-0005r5-AU
- for linux-um@lists.infradead.org; Mon, 06 Apr 2020 17:38:03 +0000
-Received: by mail-pf1-x444.google.com with SMTP id v23so70670pfm.1
- for <linux-um@lists.infradead.org>; Mon, 06 Apr 2020 10:37:59 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=NW0JbksvCosxLplDqnlolxe+HgJ+Wkffm9g3BGVBVPA=;
- b=vvhOCEdFhNmW3PtwMBWoKOvf6VeBuPs0aZ/l9aUV5s3hKrN7lznw+sXtv/fC7Xxk68
- MkFBcSZtZjpfQsMqEQjlM799lbXRFWTirvCcvpQIuVsx/sgs+JtVg1zik/10u9twPqNV
- lyRGzA9xUteNDZ2p7iWjiIO3i0kn6eHiFif7IXQofbgBZt5lznRNxxymBFAuiS1TW2CG
- ASrdf68sfmkUB1uWyJ0zd0K5itr4b6J7IqjoLVrISx3gGX78mnSIxoz17a2oI0se8EyI
- 44dgewQI6NNfRL4B/uVme6z9d39jUy8zMtXVzj9S3kSdtkf3q7uSHZ5VOOGrebw3R1hc
- pP/Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=NW0JbksvCosxLplDqnlolxe+HgJ+Wkffm9g3BGVBVPA=;
- b=NDhBSo0gccA0ykq4+ZmI4WndTT+TGDQBGWk5PSFu8NVq1MXdWG/0H07QWJQVaHhETd
- ViwhC3mBqp2RfCRxjz/bNppt7qhQi99V/0b+h/Obi3BFaNWJAGYwnKaAXKvlWDQ0Snkf
- ULbINzuZ1ATYhwGTtPmK74QppT/RnLCc/9LylL/yPVxj2WmX+11dw3DVsXiErORa7+3C
- cO/RkeeS2bJnNeyKPPbiVP2u/s4saNdFQ+ZRq0WKjqmAPbz8YRxj3DwzAAoeG+LJ5Dxh
- 9oLVY5nUeuvmrY81mwBuioRMnPp/V1j+l+O70h/+yqo/zaq02m7DJ6fQr96ICl1P5nBB
- 9wsQ==
-X-Gm-Message-State: AGi0PuaZnKLTBUfDAeWkYT+w9uBa1sI6aG+ezgd9S3zvOwJlCcyWIBMu
- saOYYOPLEE1vmc1ggqVZp+vPykHrYGsAe2ERrzAmwg==
-X-Google-Smtp-Source: APiQypJxF0Kj+zKMUsy133YvJhgpE1phMmaPlFg+jdsoa4XYzBCoXjyJnz0iWI5+c+awC7y5yRzsrKqYja9xuObdiwI=
-X-Received: by 2002:a63:ff59:: with SMTP id s25mr198012pgk.159.1586194678808; 
- Mon, 06 Apr 2020 10:37:58 -0700 (PDT)
+ id 1jLnUV-00079S-9C
+ for linux-um@lists.infradead.org; Tue, 07 Apr 2020 12:38:09 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by lithops.sigma-star.at (Postfix) with ESMTP id 93DF36094C4B;
+ Tue,  7 Apr 2020 14:37:55 +0200 (CEST)
+Received: from lithops.sigma-star.at ([127.0.0.1])
+ by localhost (lithops.sigma-star.at [127.0.0.1]) (amavisd-new, port 10032)
+ with ESMTP id 21QNlY7B4jTl; Tue,  7 Apr 2020 14:37:55 +0200 (CEST)
+Received: from localhost (localhost [127.0.0.1])
+ by lithops.sigma-star.at (Postfix) with ESMTP id 07A6061A702F;
+ Tue,  7 Apr 2020 14:37:55 +0200 (CEST)
+Received: from lithops.sigma-star.at ([127.0.0.1])
+ by localhost (lithops.sigma-star.at [127.0.0.1]) (amavisd-new, port 10026)
+ with ESMTP id wQQN5T5b7pal; Tue,  7 Apr 2020 14:37:54 +0200 (CEST)
+Received: from lithops.sigma-star.at (lithops.sigma-star.at [195.201.40.130])
+ by lithops.sigma-star.at (Postfix) with ESMTP id DC0C96089348;
+ Tue,  7 Apr 2020 14:37:54 +0200 (CEST)
+Date: Tue, 7 Apr 2020 14:37:54 +0200 (CEST)
+From: Richard Weinberger <richard@nod.at>
+To: torvalds <torvalds@linux-foundation.org>
+Message-ID: <1397520880.91813.1586263074756.JavaMail.zimbra@nod.at>
+Subject: [GIT PULL] UML changes for v5.7-rc1
 MIME-Version: 1.0
-References: <20200405213357.b6ce1024b276.I7c370e20580d3122c58df5727ee2d6fb53545576@changeid>
-In-Reply-To: <20200405213357.b6ce1024b276.I7c370e20580d3122c58df5727ee2d6fb53545576@changeid>
-From: Brendan Higgins <brendanhiggins@google.com>
-Date: Mon, 6 Apr 2020 10:37:49 -0700
-Message-ID: <CAFd5g47m5JHV19FjCgSt=FKWYjG3vUQSJ3oa125xD1cYMH8bww@mail.gmail.com>
-Subject: Re: [PATCH] arch: um: fix xor.h include
-To: Johannes Berg <johannes@sipsolutions.net>
+X-Originating-IP: [195.201.40.130]
+X-Mailer: Zimbra 8.8.12_GA_3807 (ZimbraWebClient - FF68 (Linux)/8.8.12_GA_3809)
+Thread-Index: yMW6DVf/Myb6Ix/xFJbxllyqgiGnhg==
+Thread-Topic: UML changes for v5.7-rc1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200406_103802_400906_F14BEB65 
-X-CRM114-Status: UNSURE (   6.08  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20200407_053807_614558_C6272291 
+X-CRM114-Status: GOOD (  10.13  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,26 +70,108 @@ List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
 Cc: linux-um <linux-um@lists.infradead.org>,
- Johannes Berg <johannes.berg@intel.com>, Thomas Meyer <thomas@m3y3r.de>
+ linux-kernel <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Sun, Apr 5, 2020 at 12:34 PM Johannes Berg <johannes@sipsolutions.net> wrote:
->
-> From: Johannes Berg <johannes.berg@intel.com>
->
-> Two independent changes here ended up going into the tree
-> one after another, without a necessary rename, fix that.
->
-> Reported-by: Thomas Meyer <thomas@m3y3r.de>
-> Fixes: f185063bff91 ("um: Move timer-internal.h to non-shared")
-> Signed-off-by: Johannes Berg <johannes.berg@intel.com>
+Linus,
 
-Reviewed-by: Brendan Higgins <brendanhiggins@google.com>
+The following changes since commit 16fbf79b0f83bc752cee8589279f1ebfe57b3b6e:
 
-Seems pretty straightforward to me.
+  Linux 5.6-rc7 (2020-03-22 18:31:56 -0700)
+
+are available in the Git repository at:
+
+  git://git.kernel.org/pub/scm/linux/kernel/git/rw/uml.git tags/for-linus-5.7-rc1
+
+for you to fetch changes up to 4a7c46247f9c620c0390a15cb00b6ef9576b9c23:
+
+  um: Remove some unnecessary NULL checks in vector_user.c (2020-03-29 23:56:47 +0200)
+
+----------------------------------------------------------------
+This pull request contains the following changes for UML:
+
+- New mode for time travel, external via virtio
+- Fixes for ubd to make sure no requests can get lost
+- Fixes for vector networking
+- Allow CONFIG_STATIC_LINK only when possible
+- Minor cleanups and fixes
+
+----------------------------------------------------------------
+Alan Maguire (1):
+      um: falloc.h needs to be directly included for older libc
+
+Alex Dewar (1):
+      um: Remove some unnecessary NULL checks in vector_user.c
+
+Andy Shevchenko (2):
+      um: Don't use console_drivers directly
+      hostfs: Use kasprintf() instead of fixed buffer formatting
+
+Brendan Higgins (1):
+      um: Make CONFIG_STATIC_LINK actually static
+
+David Gow (1):
+      um: Fix overlapping ELF segments when statically linked
+
+Gabriel Krisman Bertazi (2):
+      um: ubd: Prevent buffer overrun on command completion
+      um: ubd: Retry buffer read on any kind of error
+
+Johannes Berg (6):
+      um: Move timer-internal.h to non-shared
+      um: time-travel: Rewrite as an event scheduler
+      um: virtio: Implement VHOST_USER_PROTOCOL_F_INBAND_NOTIFICATIONS
+      um: Implement time-travel=ext
+      um: Implement ndelay/udelay in time-travel mode
+      um: Implement cpu_relax() as ndelay(1) for time-travel
+
+Krzysztof Kozlowski (1):
+      um: Cleanup CONFIG_IOSCHED_CFQ
+
+Leon Romanovsky (2):
+      um: Don't overwrite ethtool driver version
+      um: Delete never executed timer
+
+Sjoerd Simons (1):
+      um: vector: Avoid NULL ptr deference if transport is unset
+
+Wen Yang (1):
+      um: Fix len of file in create_pid_file
+
+ arch/um/Kconfig                         |   9 +-
+ arch/um/configs/i386_defconfig          |   2 +-
+ arch/um/configs/x86_64_defconfig        |   2 +-
+ arch/um/drivers/Kconfig                 |   3 +
+ arch/um/drivers/net_kern.c              |  13 -
+ arch/um/drivers/ubd_kern.c              |  12 +-
+ arch/um/drivers/vector_kern.c           |   5 +-
+ arch/um/drivers/vector_user.c           |  15 +-
+ arch/um/drivers/vhost_user.h            |  12 +-
+ arch/um/drivers/virtio_uml.c            | 153 +++++++--
+ arch/um/include/asm/Kbuild              |   1 -
+ arch/um/include/asm/delay.h             |  30 ++
+ arch/um/include/linux/time-internal.h   |  84 +++++
+ arch/um/include/shared/os.h             |   1 +
+ arch/um/include/shared/timer-internal.h |  76 -----
+ arch/um/kernel/kmsg_dump.c              |   9 +-
+ arch/um/kernel/process.c                |  39 +--
+ arch/um/kernel/skas/syscall.c           |   5 +-
+ arch/um/kernel/time.c                   | 538 ++++++++++++++++++++++++++++++--
+ arch/um/kernel/uml.lds.S                |   2 +-
+ arch/um/os-Linux/file.c                 |  31 ++
+ arch/um/os-Linux/time.c                 |   1 -
+ arch/um/os-Linux/umid.c                 |   5 +-
+ arch/x86/um/asm/processor.h             |  12 +-
+ fs/hostfs/hostfs_kern.c                 |  12 +-
+ include/uapi/linux/um_timetravel.h      | 128 ++++++++
+ 26 files changed, 986 insertions(+), 214 deletions(-)
+ create mode 100644 arch/um/include/asm/delay.h
+ create mode 100644 arch/um/include/linux/time-internal.h
+ delete mode 100644 arch/um/include/shared/timer-internal.h
+ create mode 100644 include/uapi/linux/um_timetravel.h
 
 _______________________________________________
 linux-um mailing list
