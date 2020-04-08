@@ -2,65 +2,94 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6908F1A171B
-	for <lists+linux-um@lfdr.de>; Tue,  7 Apr 2020 23:02:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C7DE91A1F5F
+	for <lists+linux-um@lfdr.de>; Wed,  8 Apr 2020 13:05:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Reply-To:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Cc:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=y2AyFF6Zusp/3J9PbKXBi7gZmy/2/0Twuz7ssVC5Y54=; b=O9gV2gaxXYBiuD4BcDyUVt/62
-	eetD01OLgpIuXunCsiFkigYPjWhgSgbAn6U5nutG3AZXYlepfTsb4BSoMAb91tisEEDDj2FuPcmlH
-	JvnWFFwBbbAMzYTEWaAL4FgR30aYXU/Td940tW7qRl0FW4yHJBNZMmCL7EMhBREkISITyx7d7bfhp
-	Fx3V+NiMmmJpI6BB0LtKNVHXayFVy6rUevCj8MJqPOQr4GUwIazXGmN28XNATkJDN9LrNfmLBAnwk
-	kJynaK6brB6RRyaQnrlvWYvkkhm2UHR843KN6+7C1PwM9qmyZjbVeHhDw0w9S4uhuTZ2Eh4fMKiNc
-	SG036OvAg==;
+	 bh=Bmegb3yIHP6Kfi9jemi3iOy22lRPuuyTLqUpZoMCYr8=; b=AA0uyGCQWsrGsRwTAjlxkrMBu
+	A6JH2irNAze46BfjxitURsRzlMmbIOmqaAghPO+ddntT/U4gk7CgxIh+pzu3n0/s+wrvsl+SYI18k
+	Tr5pUcDgwPcWm+kcyUejsfOJFRYNKBw38gN5x0YA6bfXSnR1f6qmvIdXbb1t+cXWerzO3R75Zcng9
+	hloQUdTtXRysa+rh1M46Oe9dxCNOoluuLbFHfyT6beOfP5AGbOh8zgu8m8k66mGRd4xml04FlLHLq
+	rLfo4n2h+rOmce1x4tOO4MW+LMWD1mam4pB9BlqM4QQs8OqEvO6enJcQBSPRl57305zWufZSf8A2p
+	OMInuyB4w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLvMY-0003vk-C5; Tue, 07 Apr 2020 21:02:26 +0000
-Received: from ivanoab7.miniserver.com ([37.128.132.42]
- helo=www.kot-begemot.co.uk)
+	id 1jM8Vz-0007sK-M7; Wed, 08 Apr 2020 11:05:03 +0000
+Received: from mail-oi1-x242.google.com ([2607:f8b0:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLvMU-0003uC-OU
- for linux-um@lists.infradead.org; Tue, 07 Apr 2020 21:02:24 +0000
-Received: from tun252.jain.kot-begemot.co.uk ([192.168.18.6]
- helo=jain.kot-begemot.co.uk)
- by www.kot-begemot.co.uk with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.92) (envelope-from <anton.ivanov@cambridgegreys.com>)
- id 1jLvMN-0007JY-1U; Tue, 07 Apr 2020 21:02:15 +0000
-Received: from sleer.kot-begemot.co.uk ([192.168.3.72])
- by jain.kot-begemot.co.uk with esmtps
- (TLS1.3:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
- (envelope-from <anton.ivanov@cambridgegreys.com>)
- id 1jLvMK-000872-Hp; Tue, 07 Apr 2020 22:02:14 +0100
-Subject: Re: [PATCH] um: add a generic "fd" vector transport
-To: =?UTF-8?Q?Marc-Andr=c3=a9_Lureau?= <marcandre.lureau@redhat.com>,
+ id 1jM8Vx-0007XE-0G
+ for linux-um@lists.infradead.org; Wed, 08 Apr 2020 11:05:02 +0000
+Received: by mail-oi1-x242.google.com with SMTP id r21so4289725oij.11
+ for <linux-um@lists.infradead.org>; Wed, 08 Apr 2020 04:04:57 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=researchut.com; s=google;
+ h=message-id:subject:from:reply-to:to:date:in-reply-to:references
+ :organization:user-agent:mime-version;
+ bh=okor/q6dO5FOx6vWnql0Us4g8FHCVj5bq4WkFOKFEQs=;
+ b=MT4Cj8mj2eTMLQyaK/oIZk74cYZmhHr0UXx/7mUsRnxaRMzDoqUDPFjIDjH3PU4Z8+
+ m9W2I8AvdImNqx0/kkIHcD6uWHJO0P2xubq4fwWnnaNabts0imIREn+pCgyj8NBN1y0a
+ y+QOPDPqdfS84TfA4rIKjHUBwlqrUN4sB65Tw=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:message-id:subject:from:reply-to:to:date
+ :in-reply-to:references:organization:user-agent:mime-version;
+ bh=okor/q6dO5FOx6vWnql0Us4g8FHCVj5bq4WkFOKFEQs=;
+ b=liGLvpl0K+PUFdD16D7/Lonw2gMl2pwDeewRMiIsk9LxRz0so+TEaP1hAgQbi8VJnx
+ EjbH8O78rC0iCgyrg+MqAWklI0MJ2Vr5pHbxyY33gYiKdYS/WNfyzsk+0d35Krn0QiTr
+ dtCsXXsFL6k8pgotsuP6mvZjeImhDPEsghVR/Rvp+CiqivfHhGylEhlpRUBDOh/hOy9v
+ jD13XvX/FFWaalqhXarweq16YFN2vu8/qJixT/87VTFiBQznTz0yUSwLojuu8CixoJ96
+ kWY+WX02s4pr+LRDdi/flFEj4WsbNoHI54N2a6LULi2vhIXKqdxBBsKt660jtuUXFTZs
+ TKTQ==
+X-Gm-Message-State: AGi0PuZb205cKJwnbPGuYb8fCRJPS2cGRtK9bmkPjeaDDa2g3i1ZGbey
+ GD/qzihYaBBFf7omtUTKZltwxIAgGpJkHg==
+X-Google-Smtp-Source: APiQypKSDXujnWS3SBD90HcziZ6oINbFzVoRTOshOhXyvToua9/Vpm3+BnQaYDufSIcIZfBvbgsyLg==
+X-Received: by 2002:a17:90a:af8c:: with SMTP id
+ w12mr4597569pjq.37.1586343526413; 
+ Wed, 08 Apr 2020 03:58:46 -0700 (PDT)
+Received: from priyasi.researchut.com ([157.45.142.17])
+ by smtp.gmail.com with ESMTPSA id d206sm16343153pfd.160.2020.04.08.03.58.45
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 08 Apr 2020 03:58:45 -0700 (PDT)
+Received: from localhost (localhost [IPv6:::1])
+ by priyasi.researchut.com (Postfix) with ESMTP id 263C9C8EAC1;
+ Wed,  8 Apr 2020 16:28:42 +0530 (IST)
+Message-ID: <ac5e36bea0200b8613849ef529d84de54b3afe70.camel@researchut.com>
+Subject: Re: Documentation for UML Vector network
+From: Ritesh Raj Sarraf <rrs@researchut.com>
+To: Anton Ivanov <anton.ivanov@kot-begemot.co.uk>, 
  linux-um@lists.infradead.org
-References: <20200407202853.1791218-1-marcandre.lureau@redhat.com>
-From: Anton Ivanov <anton.ivanov@cambridgegreys.com>
-Organization: Cambridge Greys
-Message-ID: <8a6dced2-886f-f8bd-aff9-3793f418cb0e@cambridgegreys.com>
-Date: Tue, 7 Apr 2020 22:02:12 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
+Date: Wed, 08 Apr 2020 16:28:41 +0530
+In-Reply-To: <f64a6f99-8e20-9825-75eb-358054935807@kot-begemot.co.uk>
+References: <7c37a3f7310c0be2202ada464e31c2d4d424c502.camel@researchut.com>
+ <32d50bed-cfdb-288a-181c-e186143c8169@kot-begemot.co.uk>
+ <44b7a3a49731dfabe9cdfbeb281ad9470e71b625.camel@researchut.com>
+ <c6774e9e-7811-cbbb-eea5-83e5045b59e9@kot-begemot.co.uk>
+ <41e0199cf2ad126bca3047d18e14493ab903bbe6.camel@researchut.com>
+ <f64a6f99-8e20-9825-75eb-358054935807@kot-begemot.co.uk>
+Organization: RESEARCHUT
+User-Agent: Evolution 3.36.1-1 
 MIME-Version: 1.0
-In-Reply-To: <20200407202853.1791218-1-marcandre.lureau@redhat.com>
-Content-Language: en-US
-X-Spam-Score: -1.0
-X-Spam-Score: -1.0
-X-Clacks-Overhead: GNU Terry Pratchett
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200407_140222_796399_333287BE 
-X-CRM114-Status: GOOD (  20.28  )
-X-Spam-Score: 0.4 (/)
+X-CRM114-CacheID: sfid-20200408_040501_044832_1DB7CFBD 
+X-CRM114-Status: UNSURE (   7.04  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.4 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:242 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.4 KHOP_HELO_FCRDNS       Relay HELO differs from its IP's reverse DNS
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ 0.1 DKIM_INVALID           DKIM or DK signature exists, but is not valid
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,72 +101,79 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: joerd.simons@collabora.co.uk, richard@nod.at, jdike@addtoit.com,
- linux-kernel@vger.kernel.org, alex.dewar@gmx.co.uk
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Reply-To: rrs@researchut.com
+Content-Type: multipart/mixed; boundary="===============8449422858286707650=="
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-T24gMDcvMDQvMjAyMCAyMToyOCwgTWFyYy1BbmRyw6kgTHVyZWF1IHdyb3RlOgo+IExlYXJuIHRv
-IHRha2UgYSBwcmUtb3BlbmVkIGZpbGUtZGVzY3JpcHRvciBmb3IgdmVjdG9yIElPLgo+IAo+IElu
-c3RlYWQgb2YgdGVhY2hpbmcgdGhlIGRyaXZlciB0byBvcGVuIGEgRkQgaW4gbXVsdGlwbGUgd2F5
-cywgaXQgY2FuCj4gcmVseSBvbiBtYW5hZ2VtZW50IGxheWVyIHRvIGRvIGl0IG9uIGl0cyBiZWhh
-bGYuIEZvciBleGFtcGxlLCB0aGlzCj4gYWxsb3dzIGluaGVyaXRpbmcgYSBwcmVjb25maWd1cmVk
-IGRldmljZSBmZCBvciBhIHNpbXBsZSBzb2NrZXRwYWlyKCkKPiBzZXR1cCwgd2l0aG91dCBmdXJ0
-aGVyIGFyZ3VtZW50cywgcHJpdmlsZWdlcyBvciBzeXN0ZW0gYWNjZXNzIGJ5IFVNTC4KPiAKPiBT
-aWduZWQtb2ZmLWJ5OiBNYXJjLUFuZHLDqSBMdXJlYXUgPG1hcmNhbmRyZS5sdXJlYXVAcmVkaGF0
-LmNvbT4KPiAtLS0KPiAgIGFyY2gvdW0vZHJpdmVycy92ZWN0b3JfdXNlci5jIHwgNTkgKysrKysr
-KysrKysrKysrKysrKysrKysrKysrKysrKysrKysKPiAgIDEgZmlsZSBjaGFuZ2VkLCA1OSBpbnNl
-cnRpb25zKCspCj4gCj4gZGlmZiAtLWdpdCBhL2FyY2gvdW0vZHJpdmVycy92ZWN0b3JfdXNlci5j
-IGIvYXJjaC91bS9kcml2ZXJzL3ZlY3Rvcl91c2VyLmMKPiBpbmRleCAyOWZhZTA0NTZhZGUuLjQ1
-YzE1NTBkYmIzNyAxMDA2NDQKPiAtLS0gYS9hcmNoL3VtL2RyaXZlcnMvdmVjdG9yX3VzZXIuYwo+
-ICsrKyBiL2FyY2gvdW0vZHJpdmVycy92ZWN0b3JfdXNlci5jCj4gQEAgLTI5LDYgKzI5LDcgQEAK
-PiAgICNpbmNsdWRlIDxuZXRkYi5oPgo+ICAgI2luY2x1ZGUgPHN0ZGxpYi5oPgo+ICAgI2luY2x1
-ZGUgPG9zLmg+Cj4gKyNpbmNsdWRlIDxsaW1pdHMuaD4KPiAgICNpbmNsdWRlIDx1bV9tYWxsb2Mu
-aD4KPiAgICNpbmNsdWRlICJ2ZWN0b3JfdXNlci5oIgo+ICAgCj4gQEAgLTQyLDYgKzQzLDkgQEAK
-PiAgICNkZWZpbmUgVFJBTlNfUkFXICJyYXciCj4gICAjZGVmaW5lIFRSQU5TX1JBV19MRU4gc3Ry
-bGVuKFRSQU5TX1JBVykKPiAgIAo+ICsjZGVmaW5lIFRSQU5TX0ZEICJmZCIKPiArI2RlZmluZSBU
-UkFOU19GRF9MRU4gc3RybGVuKFRSQU5TX0ZEKQo+ICsKPiAgICNkZWZpbmUgVk5FVF9IRFJfRkFJ
-TCAiY291bGQgbm90IGVuYWJsZSB2bmV0IGhlYWRlcnMgb24gZmQgJWQiCj4gICAjZGVmaW5lIFRV
-Tl9HRVRfRl9GQUlMICJ0YXByYXc6IFRVTkdFVEZFQVRVUkVTIGZhaWxlZDogJXMiCj4gICAjZGVm
-aW5lIEwyVFBWM19CSU5EX0ZBSUwgImwydHB2M19vcGVuIDogY291bGQgbm90IGJpbmQgc29ja2V0
-IGVycj0laSIKPiBAQCAtMzQ3LDYgKzM1MSw1OSBAQCBzdGF0aWMgc3RydWN0IHZlY3Rvcl9mZHMg
-KnVzZXJfaW5pdF91bml4X2ZkcyhzdHJ1Y3QgYXJnbGlzdCAqaWZzcGVjLCBpbnQgaWQpCj4gICAJ
-cmV0dXJuIE5VTEw7Cj4gICB9Cj4gICAKPiArc3RhdGljIGludCBzdHJ0b2ZkKGNvbnN0IGNoYXIg
-Km5wdHIpCj4gK3sKPiArCWxvbmcgZmQ7Cj4gKwljaGFyICplbmRwdHI7Cj4gKwo+ICsJaWYgKG5w
-dHIgPT0gTlVMTCkKPiArCQlyZXR1cm4gLTE7Cj4gKwo+ICsJZXJybm8gPSAwOwo+ICsJZmQgPSBz
-dHJ0b2wobnB0ciwgJmVuZHB0ciwgMTApOwo+ICsJaWYgKG5wdHIgPT0gZW5kcHRyIHx8Cj4gKwkJ
-ZXJybm8gIT0gMCB8fAo+ICsJCSplbmRwdHIgIT0gJ1wwJyB8fAo+ICsJCWZkIDwgMCB8fAo+ICsJ
-CWZkID4gSU5UX01BWCkgewo+ICsJCXJldHVybiAtMTsKPiArCX0KPiArCXJldHVybiBmZDsKPiAr
-fQo+ICsKPiArc3RhdGljIHN0cnVjdCB2ZWN0b3JfZmRzICp1c2VyX2luaXRfZmRfZmRzKHN0cnVj
-dCBhcmdsaXN0ICppZnNwZWMpCj4gK3sKPiArCWludCBmZCA9IC0xOwo+ICsJY2hhciAqZmRhcmcg
-PSBOVUxMOwo+ICsJc3RydWN0IHZlY3Rvcl9mZHMgKnJlc3VsdCA9IE5VTEw7Cj4gKwo+ICsJZmRh
-cmcgPSB1bWxfdmVjdG9yX2ZldGNoX2FyZyhpZnNwZWMsICJmZCIpOwo+ICsJZmQgPSBzdHJ0b2Zk
-KGZkYXJnKTsKPiArCWlmIChmZCA9PSAtMSkgewo+ICsJCXByaW50ayhVTV9LRVJOX0VSUiAiZmQg
-b3BlbjogYmFkIG9yIG1pc3NpbmcgZmQgYXJndW1lbnQiKTsKPiArCQlnb3RvIGZkX2NsZWFudXA7
-Cj4gKwl9Cj4gKwo+ICsJcmVzdWx0ID0gdW1sX2ttYWxsb2Moc2l6ZW9mKHN0cnVjdCB2ZWN0b3Jf
-ZmRzKSwgVU1fR0ZQX0tFUk5FTCk7Cj4gKwlpZiAocmVzdWx0ID09IE5VTEwpIHsKPiArCQlwcmlu
-dGsoVU1fS0VSTl9FUlIgImZkIG9wZW46IGFsbG9jYXRpb24gZmFpbGVkIik7Cj4gKwkJZ290byBm
-ZF9jbGVhbnVwOwo+ICsJfQo+ICsKPiArCXJlc3VsdC0+cnhfZmQgPSBmZDsKPiArCXJlc3VsdC0+
-dHhfZmQgPSBmZDsKPiArCXJlc3VsdC0+cmVtb3RlX2FkZHJfc2l6ZSA9IDA7Cj4gKwlyZXN1bHQt
-PnJlbW90ZV9hZGRyID0gTlVMTDsKPiArCXJldHVybiByZXN1bHQ7Cj4gKwo+ICtmZF9jbGVhbnVw
-Ogo+ICsJaWYgKGZkID49IDApCj4gKwkJb3NfY2xvc2VfZmlsZShmZCk7Cj4gKwlpZiAocmVzdWx0
-ICE9IE5VTEwpCj4gKwkJa2ZyZWUocmVzdWx0KTsKPiArCXJldHVybiBOVUxMOwo+ICt9Cj4gKwo+
-ICAgc3RhdGljIHN0cnVjdCB2ZWN0b3JfZmRzICp1c2VyX2luaXRfcmF3X2ZkcyhzdHJ1Y3QgYXJn
-bGlzdCAqaWZzcGVjKQo+ICAgewo+ICAgCWludCByeGZkID0gLTEsIHR4ZmQgPSAtMTsKPiBAQCAt
-NTc4LDYgKzYzNSw4IEBAIHN0cnVjdCB2ZWN0b3JfZmRzICp1bWxfdmVjdG9yX3VzZXJfb3BlbigK
-PiAgIAkJcmV0dXJuIHVzZXJfaW5pdF9zb2NrZXRfZmRzKHBhcnNlZCwgSURfTDJUUFYzKTsKPiAg
-IAlpZiAoc3RybmNtcCh0cmFuc3BvcnQsIFRSQU5TX0JFU1MsIFRSQU5TX0JFU1NfTEVOKSA9PSAw
-KQo+ICAgCQlyZXR1cm4gdXNlcl9pbml0X3VuaXhfZmRzKHBhcnNlZCwgSURfQkVTUyk7Cj4gKwlp
-ZiAoc3RybmNtcCh0cmFuc3BvcnQsIFRSQU5TX0ZELCBUUkFOU19GRF9MRU4pID09IDApCj4gKwkJ
-cmV0dXJuIHVzZXJfaW5pdF9mZF9mZHMocGFyc2VkKTsKPiAgIAlyZXR1cm4gTlVMTDsKPiAgIH0K
-PiAgIAo+IAoKV2Ugc2hvdWxkIGFsc28gY29udHJvbCBlbmFibGUvZGlzYWJsZSBvZiByZWN2L3Nl
-bmRtbXNnIGFzIGFuIG9wdGlvbiBoZXJlLgoKSXQgY2FuIGJlIG1hZGUgZ2VuZXJpYyBhbmQgYmUg
-ZmVkIGludG8gZ2V0X3RyYW5zcG9ydF9vcHRpb25zKCkgaW4gCnZlY3Rvcl9rZXJuLmMgYXMgYW4g
-b3ZlcnJpZGUuCgotLSAKQW50b24gUi4gSXZhbm92CkNhbWJyaWRnZWdyZXlzIExpbWl0ZWQuIFJl
-Z2lzdGVyZWQgaW4gRW5nbGFuZC4gQ29tcGFueSBOdW1iZXIgMTAyNzM2NjEKaHR0cHM6Ly93d3cu
-Y2FtYnJpZGdlZ3JleXMuY29tLwoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX18KbGludXgtdW0gbWFpbGluZyBsaXN0CmxpbnV4LXVtQGxpc3RzLmluZnJhZGVh
-ZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC11
-bQo=
+
+--===============8449422858286707650==
+Content-Type: multipart/signed; micalg="pgp-sha512";
+	protocol="application/pgp-signature"; boundary="=-JL+Rn6kqvrQxq5UgDRhJ"
+
+
+--=-JL+Rn6kqvrQxq5UgDRhJ
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+On Tue, 2020-04-07 at 17:36 +0100, Anton Ivanov wrote:
+>=20
+> I am happy to handle proposed changes as pull requests.
+
+Thank you for following up on this one. There's one item I felt could
+be expanded. I created a PR for it on the Github repo.
+
+I felt this was worth documenting because UML's prime selling point is
+that it can run as a normal user.
+
+https://github.com/kot-begemot-uk/uml-howto-v2/pull/1
+
+
+Thanks,
+Ritesh
+
+--=20
+Ritesh Raj Sarraf
+RESEARCHUT - http://www.researchut.com
+"Necessity is the mother of invention."
+
+--=-JL+Rn6kqvrQxq5UgDRhJ
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEEQCVDstmIVAB/Yn02pjpYo/LhdWkFAl6NrmEACgkQpjpYo/Lh
+dWn3vQ/+L7kRhk4JMshq8LkBv6/TnhSE56l8FqFJRNl43L4LpoL665f8x7MCysiy
+UIge5n/FTbTa9D55mj9WlDpT1JEzBIgGWmt2Ly79v4HofaJggdX4gA2Tdvl2ipld
+0dZ0U7GafLtcw1tfD5ReCF83TcLQu7wU+2r99NgJQbbqSLY2UJ8vVtaIzy95vCeL
+H3ll7UUDq0ooHyWSNPFcxzM2li0uBNss/+yGEoGyQbAoaiStlaqN6jV50nFuYsJa
+nynqy2UsYGpxH84syTV5ZZwaERUXiQHCFCvZcQLQidHOosKKUKw/43UK6OQ/FvmR
+IMOBsKjro3gqK435AWX+ilbS9jOzmciX02aW809q5Mk1qL1I53o5UpDf/oUP3NxM
+6EHV09dNaxcT6Kn8zfSDI8ynGnaSnsy0mv6IwiBncbuJvub+ekRP9UR+9msqPu3h
+GCmqo9FXuaoFUvABVz/r27kkrWkL/4eA37XDVDO7wzq+cZgYJjcc9X5zh3k0Voyd
+cTxTonavf0SMI8OYAMPFoVOaec8NgYDormsBoVkTN4E2UJ4UEKgCMqt2mDkv9eKs
+3vwtApzl+GuOw/UGHYbA10E2G5+CVJbyWQ9Y4w4XC3odH7QuAmh4EEAkxDKEzKBu
+dxe/hKt6fWHIqyp5byDa5H7ZuQVlTJN6EBeGG0MoEf7K8HBjSYM=
+=vrlW
+-----END PGP SIGNATURE-----
+
+--=-JL+Rn6kqvrQxq5UgDRhJ--
+
+
+
+--===============8449422858286707650==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+linux-um mailing list
+linux-um@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-um
+
+--===============8449422858286707650==--
+
+
