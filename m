@@ -2,46 +2,39 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 428161A2236
-	for <lists+linux-um@lfdr.de>; Wed,  8 Apr 2020 14:40:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8D3181A226C
+	for <lists+linux-um@lfdr.de>; Wed,  8 Apr 2020 14:59:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NQAL+j3YkrsdirVR4JkIs7PZsq61bNgOfCJb3zyvAFY=; b=e4r4wQkd6WFWCV
-	KAISIpBUVrxfgb7snJa22txaPvdXkNp+FKDoudOIw98LDzi80Vq1EROkUKq8D4c1LLU9sKMRGt8IK
-	uAi+0dbP+ser+uTz/yEbBtkfLhCdzm9IqBgkjLR2EbEeUtTtFhxoUdDYal6+eWBcK29x6zS/DQGEl
-	eEihiF4BMdyZSoKj6Bfvus3ZxHk7i3olnH3EmMbG0SUzD6DnYv181fJ6Qqy9cgFdHOnNz9XNAowLe
-	0CSbYENlh8BF0SmhaH6qR/Va1r+ne1iVUjG6varncZDfmbv1EyPSBxHH2cl3Wy9D/tLgqpyk0mfR8
-	G9ED/357DTjrPGcoqRow==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=vLlXlyI5rTvPZa+Ab+/THqJ2Qh3HUEMaxColPsdbf+A=; b=mqjmU5SGWNB13ynQ6eq1H9WEc
+	KXWBP5WxfSKyVRwhjwZbTDEI/0xIItAHmQ20LJLd1zt9+g1HGuAWEo1CyNfwTik8wj+Cv92oGl8AJ
+	Uge88Bn4dkS9+iEOvVovhEbqs7HGHodYJZKwD6iJYSn12yz5txNi4R7eZzkN4RALRze6h1vnw24WB
+	dvLcVHkEkNdZVYEA29v1lo1aIwg2x3gr5fbBkLQCFwWFTL7sfPnJsnoAQhFKIj5osruZoaoz6BGW1
+	siQcOiGKc2Ocm8XrdbL/JBJO0spQnewmnvhB5FFioi+S7QCo/zKUrZ79uvSz3gyzrD21zXTWZYzD8
+	9QGfW8t/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMA0J-0005z4-Ti; Wed, 08 Apr 2020 12:40:27 +0000
-Received: from mail-ot1-f65.google.com ([209.85.210.65])
+	id 1jMAIn-0007Xq-T2; Wed, 08 Apr 2020 12:59:33 +0000
+Received: from ivanoab7.miniserver.com ([37.128.132.42]
+ helo=www.kot-begemot.co.uk)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMA0G-0005xz-L8
- for linux-um@lists.infradead.org; Wed, 08 Apr 2020 12:40:26 +0000
-Received: by mail-ot1-f65.google.com with SMTP id x11so6599954otp.6
- for <linux-um@lists.infradead.org>; Wed, 08 Apr 2020 05:40:22 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=cc/NZg0N+NEE2M4Hm55SRxg0t2CG8zKY9U0qGv0JVQ0=;
- b=GzDGdyI6C//5np3rZJSj2b6ZTQHAHd14pJuYZikG6sneeoJZ4gmKhzNbOVUuitOhFm
- mvZYeWYIEOrcy73vNOH6STMc6IglakaL4VCzMl4jZBnQC6TM5zkFT9r0iS+1b3dQ/HqL
- 9+X0SJjayruXlPZkQIu85HilTPkdGuc+MlAP4pgRtk234sl47b8kym8INHwHDrbE53jW
- i2ZoryErh/HHRyoYCRO+lz8rkdQqEY44bHAPHfRujxI5SQf6HXhxX3lZP6usq5x2DQ+j
- ZuHrKGBLsi98DCWpzyefbkGu0S2Hm31lPjrahnH1qe12OFnGswPiyS2XBQitPcQ0gSmE
- AXLQ==
-X-Gm-Message-State: AGi0PubrTB2mwLisuctBYN000D3K4Zcrz+R2jjliEXbC1yGpWF+AsBmr
- QyaLK8Z0U6wOvzRaduBXXYQnoZaWOTuSglsAb8Q=
-X-Google-Smtp-Source: APiQypLo1EWZ2b7VuBSACNsCllOVuz6os8aRMGod71XHvVcBlle0X/mbnyGsnihnH6XvkQ+E/VQRpLxoIa2XNdkCImA=
-X-Received: by 2002:a9d:7590:: with SMTP id s16mr5434794otk.250.1586349622145; 
- Wed, 08 Apr 2020 05:40:22 -0700 (PDT)
-MIME-Version: 1.0
+ id 1jMAIk-0007Ww-O2
+ for linux-um@lists.infradead.org; Wed, 08 Apr 2020 12:59:32 +0000
+Received: from tun252.jain.kot-begemot.co.uk ([192.168.18.6]
+ helo=jain.kot-begemot.co.uk)
+ by www.kot-begemot.co.uk with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.92) (envelope-from <anton.ivanov@kot-begemot.co.uk>)
+ id 1jMAIg-0001yB-I7; Wed, 08 Apr 2020 12:59:26 +0000
+Received: from jain.kot-begemot.co.uk ([192.168.3.3])
+ by jain.kot-begemot.co.uk with esmtp (Exim 4.92)
+ (envelope-from <anton.ivanov@kot-begemot.co.uk>)
+ id 1jMAIe-0006Th-1f; Wed, 08 Apr 2020 13:59:26 +0100
+Subject: Re: Documentation for UML Vector network
+To: Geert Uytterhoeven <geert@linux-m68k.org>, rrs@researchut.com
 References: <7c37a3f7310c0be2202ada464e31c2d4d424c502.camel@researchut.com>
  <32d50bed-cfdb-288a-181c-e186143c8169@kot-begemot.co.uk>
  <44b7a3a49731dfabe9cdfbeb281ad9470e71b625.camel@researchut.com>
@@ -49,33 +42,28 @@ References: <7c37a3f7310c0be2202ada464e31c2d4d424c502.camel@researchut.com>
  <41e0199cf2ad126bca3047d18e14493ab903bbe6.camel@researchut.com>
  <f64a6f99-8e20-9825-75eb-358054935807@kot-begemot.co.uk>
  <ac5e36bea0200b8613849ef529d84de54b3afe70.camel@researchut.com>
-In-Reply-To: <ac5e36bea0200b8613849ef529d84de54b3afe70.camel@researchut.com>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Wed, 8 Apr 2020 14:40:10 +0200
-Message-ID: <CAMuHMdWTOg9MR73qUEFtDB4fsV0Q1Li4+ZH+cQCfzxwXw2jBtg@mail.gmail.com>
-Subject: Re: Documentation for UML Vector network
-To: rrs@researchut.com
+ <CAMuHMdWTOg9MR73qUEFtDB4fsV0Q1Li4+ZH+cQCfzxwXw2jBtg@mail.gmail.com>
+From: Anton Ivanov <anton.ivanov@kot-begemot.co.uk>
+Message-ID: <aeefc761-30ea-e753-8d58-eb180e372d24@kot-begemot.co.uk>
+Date: Wed, 8 Apr 2020 13:59:23 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.6.0
+MIME-Version: 1.0
+In-Reply-To: <CAMuHMdWTOg9MR73qUEFtDB4fsV0Q1Li4+ZH+cQCfzxwXw2jBtg@mail.gmail.com>
+Content-Language: en-US
+X-Spam-Score: -1.0
+X-Spam-Score: -1.0
+X-Clacks-Overhead: GNU Terry Pratchett
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200408_054024_692380_4D343695 
-X-CRM114-Status: GOOD (  10.79  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200408_055930_780554_F30E721D 
+X-CRM114-Status: GOOD (  12.96  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.65 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.65 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [geert.uytterhoeven[at]gmail.com]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,43 +75,47 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: linux-um <linux-um@lists.infradead.org>,
- Anton Ivanov <anton.ivanov@kot-begemot.co.uk>
-Content-Type: text/plain; charset="us-ascii"
+Cc: linux-um <linux-um@lists.infradead.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-Hi Ritesh,
 
-On Wed, Apr 8, 2020 at 1:05 PM Ritesh Raj Sarraf <rrs@researchut.com> wrote:
-> On Tue, 2020-04-07 at 17:36 +0100, Anton Ivanov wrote:
-> > I am happy to handle proposed changes as pull requests.
+On 08/04/2020 13:40, Geert Uytterhoeven wrote:
+> Hi Ritesh,
 >
-> Thank you for following up on this one. There's one item I felt could
-> be expanded. I created a PR for it on the Github repo.
+> On Wed, Apr 8, 2020 at 1:05 PM Ritesh Raj Sarraf <rrs@researchut.com> wrote:
+>> On Tue, 2020-04-07 at 17:36 +0100, Anton Ivanov wrote:
+>>> I am happy to handle proposed changes as pull requests.
+>> Thank you for following up on this one. There's one item I felt could
+>> be expanded. I created a PR for it on the Github repo.
+>>
+>> I felt this was worth documenting because UML's prime selling point is
+>> that it can run as a normal user.
+>>
+>> https://github.com/kot-begemot-uk/uml-howto-v2/pull/1
+>> Netowrk configuration privilege
+> Network
+
+Thanks.
+
 >
-> I felt this was worth documenting because UML's prime selling point is
-> that it can run as a normal user.
+> And then there's slirp...
+
+I know... it is something I need to figure out on how to do with the vector framework.
+
+The patch proposed yesterday to add a generic fd transport goes half-way to fix that, all it needs is sorting out the helper to do the actual slirp processing.
+
 >
-> https://github.com/kot-begemot-uk/uml-howto-v2/pull/1
-
-> Netowrk configuration privilege
-
-Network
-
-And then there's slirp...
-
-Gr{oetje,eeting}s,
-
-                        Geert
-
+> Gr{oetje,eeting}s,
+>
+>                          Geert
+>
 -- 
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+Anton R. Ivanov
+https://www.kot-begemot.co.uk/
 
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
 
 _______________________________________________
 linux-um mailing list
