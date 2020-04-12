@@ -2,50 +2,50 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EE71C1A6023
-	for <lists+linux-um@lfdr.de>; Sun, 12 Apr 2020 21:50:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 98FFF1A6026
+	for <lists+linux-um@lfdr.de>; Sun, 12 Apr 2020 21:51:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ErsRRXGI/IQ/FanxN61Pf8J8cFxEeIexQAhGk/MTR3I=; b=Y3gcNfYukJbwHy
-	uHnV+z26e/D4eKII0SoWze0oZ4zVQhabZuFA0NgWDXMtLx5t+wdqjl1+3OhAtOlSS9dbpkielZOC6
-	FK35GVKPyiYQW/rRS3NspNvxNI/kGIG1ZNjkHb2qM/2uEnXwVnYvjE1fEdmwbp5Oi9KiuzLvEGYKj
-	DuhVHcwuiSzSua8dlNT2PV0k4eAZjhpNNQVGxVdI8axYf9uZtdIM0c3hgGBiw/Kiln1uwyLYSGwxC
-	ff0CcELLsqCV9bymVvWFOtqOx3sJW3EyWAqL3rTI9Li3SliY3Tg0m37abiHG1YX40ZtUn0Hwj3F2Q
-	7oguhDO75Bi11g50YDyQ==;
+	List-Owner; bh=3/NefiXYBwwF03BSPe9Sc0/7n6UZbcdquuK1fOVPQTw=; b=RVwIvUO5DwUHMx
+	l/tQq18t+Xv8XXgnts1paG65Ip++Sn0cdEKACf05JmZ0oDvXyYTRCnUd+bMHXtOXGUCUob0thB6yG
+	Buk1edIBPwyezvs5lXU7GPSTrGK1O9bqK5ZqY+2B8geLm8AO8PUdKxDXnvjkZiJkRyFOowkd2WNq5
+	e4f2dzfenuCx8fzq1ZHyv3etUOSDUFy7Z/evA6gFBOL4qwnAP7cXoRT5Qhvoi6yoqkqxoq6ZRRc7h
+	hMAfeaA8YeQ2ZKQS0nhg60oCN/NTaBNf1OLTllcO0su9GOl1IIP2yKvP9QKC0XJqK7TP/6xVGxwXv
+	1CXwx0HoQL9Setv9EMsw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jNid6-0003XD-0H; Sun, 12 Apr 2020 19:50:56 +0000
+	id 1jNidK-0003dt-W4; Sun, 12 Apr 2020 19:51:10 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jNid0-0003Tv-MG; Sun, 12 Apr 2020 19:50:52 +0000
+ id 1jNidF-0003af-3U; Sun, 12 Apr 2020 19:51:06 +0000
 Received: from aquarius.haifa.ibm.com (nesher1.haifa.il.ibm.com [195.110.40.7])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7A6E62072D;
- Sun, 12 Apr 2020 19:50:36 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id E669B20767;
+ Sun, 12 Apr 2020 19:50:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586721050;
- bh=OywmGjN0YkpD4PeATHQLeZwZ6vCeABR7jWidYZOWKII=;
+ s=default; t=1586721064;
+ bh=cH4vss3qNJhXJIvzb7q7Wn734fkKg4X+RTrGl6ZaiYo=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=K17ugq281XlFMkMsNMLUH8vmdaytq7PErQpZ57JI0OypyejZ5V6JVOenwh2lNyz7c
- HJL1aCghNf8EpGRi72ZtOEPk50iIdsyQcYsVPaUoiY2GzAtCOtNHdFaVrYkz72OXAu
- lOdJ+/zDjmBcCstUFcUxU1Y2BvjEcUpUUqGfqh28=
+ b=0BIupA64kGu1HlizFpI+N3TJZ6L2DTl8AS8X7g5LMT+FinwBM0R2+MIXVl+iucOw0
+ DmEuHX6++bSA1sSCKakWnnnIhYbIXa+zgWCkmCjU5hRMIxfstrJlNHA1+lPxJ/ZYRj
+ 826ySKimGemZ4wU66yRDOC9pA0DPDqgsPxKeZ/Mo=
 From: Mike Rapoport <rppt@kernel.org>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH 06/21] alpha: simplify detection of memory zone boundaries
-Date: Sun, 12 Apr 2020 22:48:44 +0300
-Message-Id: <20200412194859.12663-7-rppt@kernel.org>
+Subject: [PATCH 07/21] arm: simplify detection of memory zone boundaries
+Date: Sun, 12 Apr 2020 22:48:45 +0300
+Message-Id: <20200412194859.12663-8-rppt@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200412194859.12663-1-rppt@kernel.org>
 References: <20200412194859.12663-1-rppt@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200412_125050_766248_C7677DB8 
-X-CRM114-Status: GOOD (  10.82  )
+X-CRM114-CacheID: sfid-20200412_125105_180978_B57DD9F1 
+X-CRM114-Status: GOOD (  13.24  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -124,46 +124,104 @@ detection.
 
 Signed-off-by: Mike Rapoport <rppt@linux.ibm.com>
 ---
- arch/alpha/mm/numa.c | 18 ++++--------------
- 1 file changed, 4 insertions(+), 14 deletions(-)
+ arch/arm/mm/init.c | 66 +++++-----------------------------------------
+ 1 file changed, 7 insertions(+), 59 deletions(-)
 
-diff --git a/arch/alpha/mm/numa.c b/arch/alpha/mm/numa.c
-index a24cd13e71cb..5ad6087de1d6 100644
---- a/arch/alpha/mm/numa.c
-+++ b/arch/alpha/mm/numa.c
-@@ -202,8 +202,7 @@ setup_memory(void *kernel_end)
+diff --git a/arch/arm/mm/init.c b/arch/arm/mm/init.c
+index 054be44d1cdb..4e43455fab84 100644
+--- a/arch/arm/mm/init.c
++++ b/arch/arm/mm/init.c
+@@ -92,18 +92,6 @@ EXPORT_SYMBOL(arm_dma_zone_size);
+  */
+ phys_addr_t arm_dma_limit;
+ unsigned long arm_dma_pfn_limit;
+-
+-static void __init arm_adjust_dma_zone(unsigned long *size, unsigned long *hole,
+-	unsigned long dma_size)
+-{
+-	if (size[0] <= dma_size)
+-		return;
+-
+-	size[ZONE_NORMAL] = size[0] - dma_size;
+-	size[ZONE_DMA] = dma_size;
+-	hole[ZONE_NORMAL] = hole[0];
+-	hole[ZONE_DMA] = 0;
+-}
+ #endif
  
- void __init paging_init(void)
+ void __init setup_dma_zone(const struct machine_desc *mdesc)
+@@ -121,56 +109,16 @@ void __init setup_dma_zone(const struct machine_desc *mdesc)
+ static void __init zone_sizes_init(unsigned long min, unsigned long max_low,
+ 	unsigned long max_high)
  {
--	unsigned int    nid;
--	unsigned long   zones_size[MAX_NR_ZONES] = {0, };
-+	unsigned long   max_zone_pfn[MAX_NR_ZONES] = {0, };
- 	unsigned long	dma_local_pfn;
+-	unsigned long zone_size[MAX_NR_ZONES], zhole_size[MAX_NR_ZONES];
+-	struct memblock_region *reg;
+-
+-	/*
+-	 * initialise the zones.
+-	 */
+-	memset(zone_size, 0, sizeof(zone_size));
++	unsigned long max_zone_pfn[MAX_NR_ZONES] = { 0 };
+ 
+-	/*
+-	 * The memory size has already been determined.  If we need
+-	 * to do anything fancy with the allocation of this memory
+-	 * to the zones, now is the time to do it.
+-	 */
+-	zone_size[0] = max_low - min;
+-#ifdef CONFIG_HIGHMEM
+-	zone_size[ZONE_HIGHMEM] = max_high - max_low;
++#ifdef CONFIG_ZONE_DMA
++	max_zone_pfn[ZONE_DMA] = min(arm_dma_pfn_limit, max_low);
+ #endif
+-
+-	/*
+-	 * Calculate the size of the holes.
+-	 *  holes = node_size - sum(bank_sizes)
+-	 */
+-	memcpy(zhole_size, zone_size, sizeof(zhole_size));
+-	for_each_memblock(memory, reg) {
+-		unsigned long start = memblock_region_memory_base_pfn(reg);
+-		unsigned long end = memblock_region_memory_end_pfn(reg);
+-
+-		if (start < max_low) {
+-			unsigned long low_end = min(end, max_low);
+-			zhole_size[0] -= low_end - start;
+-		}
++	max_zone_pfn[ZONE_NORMAL] = max_low;
+ #ifdef CONFIG_HIGHMEM
+-		if (end > max_low) {
+-			unsigned long high_start = max(start, max_low);
+-			zhole_size[ZONE_HIGHMEM] -= end - high_start;
+-		}
++	max_zone_pfn[ZONE_HIGHMEM] = max_high;
+ #endif
+-	}
+-
+-#ifdef CONFIG_ZONE_DMA
+-	/*
+-	 * Adjust the sizes according to any special requirements for
+-	 * this machine type.
+-	 */
+-	if (arm_dma_zone_size)
+-		arm_adjust_dma_zone(zone_size, zhole_size,
+-			arm_dma_zone_size >> PAGE_SHIFT);
+-#endif
+-
+-	free_area_init_node(0, zone_size, min, zhole_size);
++	free_area_init(max_zone_pfn);
+ }
+ 
+ #ifdef CONFIG_HAVE_ARCH_PFN_VALID
+@@ -306,7 +254,7 @@ void __init bootmem_init(void)
+ 	sparse_init();
  
  	/*
-@@ -215,19 +214,10 @@ void __init paging_init(void)
+-	 * Now free the memory - free_area_init_node needs
++	 * Now free the memory - free_area_init needs
+ 	 * the sparse mem_map arrays initialized by sparse_init()
+ 	 * for memmap_init_zone(), otherwise all PFNs are invalid.
  	 */
- 	dma_local_pfn = virt_to_phys((char *)MAX_DMA_ADDRESS) >> PAGE_SHIFT;
- 
--	for_each_online_node(nid) {
--		unsigned long start_pfn = NODE_DATA(nid)->node_start_pfn;
--		unsigned long end_pfn = start_pfn + NODE_DATA(nid)->node_present_pages;
-+	max_zone_pfn[ZONE_DMA] = dma_local_pfn;
-+	max_zone_pfn[ZONE_NORMAL] = max_pfn;
- 
--		if (dma_local_pfn >= end_pfn - start_pfn)
--			zones_size[ZONE_DMA] = end_pfn - start_pfn;
--		else {
--			zones_size[ZONE_DMA] = dma_local_pfn;
--			zones_size[ZONE_NORMAL] = (end_pfn - start_pfn) - dma_local_pfn;
--		}
--		node_set_state(nid, N_NORMAL_MEMORY);
--		free_area_init_node(nid, zones_size, start_pfn, NULL);
--	}
-+	free_area_init(max_zone_pfn);
- 
- 	/* Initialize the kernel's ZERO_PGE. */
- 	memset((void *)ZERO_PGE, 0, PAGE_SIZE);
 -- 
 2.25.1
 
