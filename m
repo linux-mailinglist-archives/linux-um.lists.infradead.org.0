@@ -2,61 +2,73 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6FC011A991F
-	for <lists+linux-um@lfdr.de>; Wed, 15 Apr 2020 11:39:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 121A31A9CB4
+	for <lists+linux-um@lfdr.de>; Wed, 15 Apr 2020 13:38:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=4F7tmFr27rOyleg3yaW7S0PfcRyxp4VRDCNmtSmUj+4=; b=RG7GjSD6XEgsQ2x6eFPcARRFw
-	Ii475rfLWPr3+kRNfJUeQa1xgAEsKNCMUUWSTJL36roMSHnNgCNqOc5nE7NoH/CZ9I/fJjfcqiK3U
-	TNF/MxWXCOfcIyjGmNmXKANkfyp7iWPapFkdvz8rw6SVZwHhYuIbmvP2bJgYzSwRJ2jBxwYPH9XVH
-	WXMpkmcF5+DisaDRicHhITRSqfKzPtGsU//JtWsH9/kw4YOkME1oVRcLHEFiEGqGB8hlW5vh9GLx3
-	DcoFPc0zRaER2qa/pHWPJyO/G3KU5JpIP9J9G285+v+p9bXz48AOyh5QwwyaRXVjJhbP/ZyClszeU
-	4rwcWUlIw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=JWzPAsd+NUNgDN/I3sTg4KP/e3edIXpDGo78EwPQX9k=; b=gKkOaRODDvcxJT
+	0x95FacuzdP35XBzdKDke5GZ6tHUbDOEo6eJEqSKQG/HW+U0S1DcxC6xqKOOX9KW5fv7gs6Bkw0Ph
+	ouB60j21rtRBoo4F+HP5IrNlR5mYat4N7EHPH6t3ZgCNvZdFm71vjc1MTGSqRthU7B2yeHP0b6+d0
+	chvhEPevIptSYOFzmGHftJx+vM/SlOlgKYfrNksukFpUtrmoEUVM9KucD9HW+4blILtGFcHPQJX2m
+	g2qWQQEbCxELZZbbO1bLjqDvyl5JrOJ2gnm5Ek88eBvIr5zEN50ZNKnumNUQr9B0gC2GyYuMt9HSR
+	7zpTLDI6M20lYS8IpIBg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOeWR-0008BN-0d; Wed, 15 Apr 2020 09:39:55 +0000
-Received: from ivanoab7.miniserver.com ([37.128.132.42]
- helo=www.kot-begemot.co.uk)
+	id 1jOgND-0002wL-2D; Wed, 15 Apr 2020 11:38:31 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOeWN-0008AM-4P
- for linux-um@lists.infradead.org; Wed, 15 Apr 2020 09:39:52 +0000
-Received: from tun252.jain.kot-begemot.co.uk ([192.168.18.6]
- helo=jain.kot-begemot.co.uk)
- by www.kot-begemot.co.uk with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.92) (envelope-from <anton.ivanov@kot-begemot.co.uk>)
- id 1jOeWG-0004b4-2g; Wed, 15 Apr 2020 09:39:44 +0000
-Received: from jain.kot-begemot.co.uk ([192.168.3.3])
- by jain.kot-begemot.co.uk with esmtp (Exim 4.92)
- (envelope-from <anton.ivanov@kot-begemot.co.uk>)
- id 1jOeW9-0001HK-7n; Wed, 15 Apr 2020 10:39:42 +0100
-Subject: Re: [PATCH] um: syscall.c: include <asm/unistd.h>
-To: Johannes Berg <johannes@sipsolutions.net>, linux-um@lists.infradead.org
-References: <20200415095152.85794f817f97.I289cb72f130c19e850d70eacca9e68eb84832600@changeid>
-From: Anton Ivanov <anton.ivanov@kot-begemot.co.uk>
-Message-ID: <b7157cb3-ee7d-ac91-c755-ace63d617460@kot-begemot.co.uk>
-Date: Wed, 15 Apr 2020 10:39:37 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
+ id 1jOgKh-0000T0-3m
+ for linux-um@lists.infradead.org; Wed, 15 Apr 2020 11:35:56 +0000
+Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
+ [73.47.72.35])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 037D820768;
+ Wed, 15 Apr 2020 11:35:53 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1586950554;
+ bh=SyGAg3rZ9yeFpLXHikAhy4J0bskyUaj9d3sDPWmGY00=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=lPrr7iYX4PjCcNxW6z300H9gFKc1/cn95fpky/uvmwxObjnGjHHkX2oMM96NDO7RO
+ r+d8BJbZEiSGX1HikV2o3sLEv024gYrSpIdgU7PiojO7/GdNHVcAL19RGktqQLYrMM
+ USIYjS8k4p4sFB3+uwP3e4y5gBTVRo/EMqhJB/zE=
+From: Sasha Levin <sashal@kernel.org>
+To: linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org
+Subject: [PATCH AUTOSEL 5.6 060/129] um: ubd: Prevent buffer overrun on
+ command completion
+Date: Wed, 15 Apr 2020 07:33:35 -0400
+Message-Id: <20200415113445.11881-60-sashal@kernel.org>
+X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20200415113445.11881-1-sashal@kernel.org>
+References: <20200415113445.11881-1-sashal@kernel.org>
 MIME-Version: 1.0
-In-Reply-To: <20200415095152.85794f817f97.I289cb72f130c19e850d70eacca9e68eb84832600@changeid>
-Content-Language: en-US
-X-Spam-Score: -1.0
-X-Spam-Score: -1.0
-X-Clacks-Overhead: GNU Terry Pratchett
+X-stable: review
+X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_023951_172255_250939CC 
-X-CRM114-Status: GOOD (  12.43  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200415_043555_186728_F41AE8F1 
+X-CRM114-Status: GOOD (  10.85  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,46 +80,51 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: Johannes Berg <johannes.berg@intel.com>
+Cc: Martyn Welch <martyn.welch@collabora.com>,
+ Richard Weinberger <richard@nod.at>, linux-um@lists.infradead.org,
+ Gabriel Krisman Bertazi <krisman@collabora.com>,
+ Sasha Levin <sashal@kernel.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
+From: Gabriel Krisman Bertazi <krisman@collabora.com>
 
+[ Upstream commit 6e682d53fc1ef73a169e2a5300326cb23abb32ee ]
 
-On 15/04/2020 08:51, Johannes Berg wrote:
-> From: Johannes Berg <johannes.berg@intel.com>
-> 
-> Without CONFIG_SECCOMP, we don't get this include recursively
-> through the existing includes, thus failing the build on not
-> having __NR_syscall_max defined. Add the necessary include to
-> fix this.
-> 
-> Signed-off-by: Johannes Berg <johannes.berg@intel.com>
-> ---
->   arch/um/kernel/skas/syscall.c | 1 +
->   1 file changed, 1 insertion(+)
-> 
-> diff --git a/arch/um/kernel/skas/syscall.c b/arch/um/kernel/skas/syscall.c
-> index 0a12d5a09217..3d91f89fd852 100644
-> --- a/arch/um/kernel/skas/syscall.c
-> +++ b/arch/um/kernel/skas/syscall.c
-> @@ -11,6 +11,7 @@
->   #include <sysdep/ptrace_user.h>
->   #include <sysdep/syscalls.h>
->   #include <linux/time-internal.h>
-> +#include <asm/unistd.h>
->   
->   void handle_syscall(struct uml_pt_regs *r)
->   {
-> 
+On the hypervisor side, when completing commands and the pipe is full,
+we retry writing only the entries that failed, by offsetting
+io_req_buffer, but we don't reduce the number of bytes written, which
+can cause a buffer overrun of io_req_buffer, and write garbage to the
+pipe.
 
-Acked-By: Anton Ivanov <anton.ivanov@cambridgegreys.com>
+Cc: Martyn Welch <martyn.welch@collabora.com>
+Signed-off-by: Gabriel Krisman Bertazi <krisman@collabora.com>
+Signed-off-by: Richard Weinberger <richard@nod.at>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
+---
+ arch/um/drivers/ubd_kern.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
+diff --git a/arch/um/drivers/ubd_kern.c b/arch/um/drivers/ubd_kern.c
+index 247f95da057b5..eca45ad2166c9 100644
+--- a/arch/um/drivers/ubd_kern.c
++++ b/arch/um/drivers/ubd_kern.c
+@@ -1607,7 +1607,9 @@ int io_thread(void *arg)
+ 		written = 0;
+ 
+ 		do {
+-			res = os_write_file(kernel_fd, ((char *) io_req_buffer) + written, n);
++			res = os_write_file(kernel_fd,
++					    ((char *) io_req_buffer) + written,
++					    n - written);
+ 			if (res >= 0) {
+ 				written += res;
+ 			}
 -- 
-Anton R. Ivanov
-https://www.kot-begemot.co.uk/
+2.20.1
+
 
 _______________________________________________
 linux-um mailing list
