@@ -2,56 +2,56 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7B7781A9DD3
-	for <lists+linux-um@lfdr.de>; Wed, 15 Apr 2020 13:50:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 44F0B1A9DF1
+	for <lists+linux-um@lfdr.de>; Wed, 15 Apr 2020 13:51:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0iIyic/QsbOXKhvKfdJD6oXWw8oic6ZFKk363zIyusw=; b=SJMnhj/rDqVEzA
-	EDXu3z/UF1zWID50w2L64myhTXTMfwbuuzIG1eYqkSKGQ7ezNhgS6Ma0TJKMK2isbOpLHbfYxOyeP
-	ZPqVEgV8msXZJYClVYFIa/Avk9F12wFN15iWEtjFWjTneCtSP7vvxYGYLFqmEXw/GyUBlSFgnSQXz
-	fdAIWRVvPBsGXW2VU+QOhURM8v8W5d4egDCCT/6yin8lnMmIY4JT+Nyvcle5NiEINYr6eFtgMbPQG
-	LjwU1zlEPm3w3l8Aj1JDK0etIWRwo41p61oHsS2rNOJLh6eU1HRiM18f4rkyMuQAI2HU+nOWmJnYi
-	a6sfEUPbsygoUkiwuw/w==;
+	List-Owner; bh=bFtYt+Qirr19ardGlT+VWpcHw/yB5abfxQLU/pG9paM=; b=HUfDFaEyVbCJxI
+	pU6qAy6bxANg9K/kuDKQruFRut9DcbXqcfTZHAJYfUjgAOxdmC9zx2KYdhz3pjCC+utw6Dh1Z0WwW
+	bpBYegRL10wMTVynxVnxKnCrVrA842F3XyuriS8fD5Z9yaZqtEMs4q62crHNUczWSHtT9LownPMQL
+	vlw653GqdVwFfQbIPmYZT6zp0IN26A6SbUQ9aMAyJJn9KTCyHCr497LEkqiNY55kbw7SIMU/bGRuc
+	kqpesmFhS4aSWi5KluACfm0QHILFxujWrzlrIDwmcq/CsM5yY3hcxSuX4UfRjAcSdXkkct6+FyK8U
+	D3qbxNqMAkitt1LxCR8g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOgYm-0002ka-44; Wed, 15 Apr 2020 11:50:28 +0000
+	id 1jOgZF-0003D6-GF; Wed, 15 Apr 2020 11:50:57 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOgUV-0004c2-I4
- for linux-um@lists.infradead.org; Wed, 15 Apr 2020 11:46:05 +0000
+ id 1jOgV7-0005Cs-3s
+ for linux-um@lists.infradead.org; Wed, 15 Apr 2020 11:46:43 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 60DB120737;
- Wed, 15 Apr 2020 11:46:01 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 171FF21655;
+ Wed, 15 Apr 2020 11:46:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586951162;
- bh=/irDkQP3S01BEZbw9nCn3Y6bK2sKx+ShTIuFgYre9FA=;
+ s=default; t=1586951200;
+ bh=lzAr4ppCgdjZHX3lpnDUbHFj+hcvIzVExwUEm8K4/hI=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=xH/16CtBIt5TywnLvU/8PXAOD8PvFC6hoMXCM+EM3zxC/npcaC/WdYMkLVZlbnjrH
- tC+MwVzBbJmWOmzHDUtPIcy2xh8M6Aexqy7ieQ+uCoQ/Q7lW8R4BzucuXsn5IzubW2
- LN0+d0AQQgBsdHBtonF1o8sOxdgEB1NCOu1c/P1w=
+ b=zcC296suW7zJDNEHdPAsUUqUQYPJXGwj1Eu4zFrNgeq3LK+S1RO+6splXAYfJk69+
+ 4cpbwaR9VbO58CpRJu59DrDFobe7mvcTAG27Lf5pnwreIta5NDrXf82OaM4/JBkZcH
+ dHne8I3pIh0FSouTfgpDKLHR94F0WNWeM2BiQ8SI=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 67/84] um: falloc.h needs to be directly included
- for older libc
-Date: Wed, 15 Apr 2020 07:44:24 -0400
-Message-Id: <20200415114442.14166-67-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 15/40] um: ubd: Prevent buffer overrun on command
+ completion
+Date: Wed, 15 Apr 2020 07:45:58 -0400
+Message-Id: <20200415114623.14972-15-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200415114442.14166-1-sashal@kernel.org>
-References: <20200415114442.14166-1-sashal@kernel.org>
+In-Reply-To: <20200415114623.14972-1-sashal@kernel.org>
+References: <20200415114623.14972-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200415_044603_719653_3A34ACA6 
-X-CRM114-Status: GOOD (  10.16  )
+X-CRM114-CacheID: sfid-20200415_044641_323548_1AEC2BD8 
+X-CRM114-Status: GOOD (  10.74  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,54 +80,48 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, linux-um@lists.infradead.org,
- Brendan Higgins <brendanhiggins@google.com>,
- Richard Weinberger <richard@nod.at>, Alan Maguire <alan.maguire@oracle.com>,
- Anton Ivanov <anton.ivanov@cambridgegreys.com>
+Cc: Martyn Welch <martyn.welch@collabora.com>,
+ Richard Weinberger <richard@nod.at>, linux-um@lists.infradead.org,
+ Gabriel Krisman Bertazi <krisman@collabora.com>,
+ Sasha Levin <sashal@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-From: Alan Maguire <alan.maguire@oracle.com>
+From: Gabriel Krisman Bertazi <krisman@collabora.com>
 
-[ Upstream commit 35f3401317a3b26aa01fde8facfd320f2628fdcc ]
+[ Upstream commit 6e682d53fc1ef73a169e2a5300326cb23abb32ee ]
 
-When building UML with glibc 2.17 installed, compilation
-of arch/um/os-Linux/file.c fails due to failure to find
-FALLOC_FL_PUNCH_HOLE and FALLOC_FL_KEEP_SIZE definitions.
+On the hypervisor side, when completing commands and the pipe is full,
+we retry writing only the entries that failed, by offsetting
+io_req_buffer, but we don't reduce the number of bytes written, which
+can cause a buffer overrun of io_req_buffer, and write garbage to the
+pipe.
 
-It appears that /usr/include/bits/fcntl-linux.h (indirectly
-included by /usr/include/fcntl.h) does not include falloc.h
-with an older glibc, whereas a more up-to-date version
-does.
-
-Adding the direct include to file.c resolves the issue
-and does not cause problems for more recent glibc.
-
-Fixes: 50109b5a03b4 ("um: Add support for DISCARD in the UBD Driver")
-Cc: Brendan Higgins <brendanhiggins@google.com>
-Signed-off-by: Alan Maguire <alan.maguire@oracle.com>
-Reviewed-by: Brendan Higgins <brendanhiggins@google.com>
-Acked-By: Anton Ivanov <anton.ivanov@cambridgegreys.com>
+Cc: Martyn Welch <martyn.welch@collabora.com>
+Signed-off-by: Gabriel Krisman Bertazi <krisman@collabora.com>
 Signed-off-by: Richard Weinberger <richard@nod.at>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/um/os-Linux/file.c | 1 +
- 1 file changed, 1 insertion(+)
+ arch/um/drivers/ubd_kern.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
-diff --git a/arch/um/os-Linux/file.c b/arch/um/os-Linux/file.c
-index 5133e3afb96f7..3996937e2c0dd 100644
---- a/arch/um/os-Linux/file.c
-+++ b/arch/um/os-Linux/file.c
-@@ -8,6 +8,7 @@
- #include <errno.h>
- #include <fcntl.h>
- #include <signal.h>
-+#include <linux/falloc.h>
- #include <sys/ioctl.h>
- #include <sys/mount.h>
- #include <sys/socket.h>
+diff --git a/arch/um/drivers/ubd_kern.c b/arch/um/drivers/ubd_kern.c
+index 83c470364dfb3..748bd0921dfff 100644
+--- a/arch/um/drivers/ubd_kern.c
++++ b/arch/um/drivers/ubd_kern.c
+@@ -1574,7 +1574,9 @@ int io_thread(void *arg)
+ 		written = 0;
+ 
+ 		do {
+-			res = os_write_file(kernel_fd, ((char *) io_req_buffer) + written, n);
++			res = os_write_file(kernel_fd,
++					    ((char *) io_req_buffer) + written,
++					    n - written);
+ 			if (res >= 0) {
+ 				written += res;
+ 			} else {
 -- 
 2.20.1
 
