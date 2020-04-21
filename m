@@ -2,73 +2,73 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9A4F21B1BD1
-	for <lists+linux-um@lfdr.de>; Tue, 21 Apr 2020 04:24:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9DFAD1B1CDB
+	for <lists+linux-um@lfdr.de>; Tue, 21 Apr 2020 05:31:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9ENyyq9SvS9ru14SLNHXff/dA29aVL90kLt4TADCFOY=; b=YfcMV54nsT9V4U
-	zd+0p4g8KM8av34deV3f4YPuYhVrVvuZpXXvp7U2h4B/nJn+MeN+5h0kyz6tF4NiW796zv/nS20GX
-	b72J2GhxMjpdrrkpYXy3g0HUxUJ3AyxBPAIH0IOmoiia5SrJ+5G4HibRZLKXIYRZf5JdcxKES0cVL
-	fLpsPZk3XtHqb+ApYrT80npTfRY3m94hRm4Xl+DisEHWCQrntTTOWtRHMExb+O45RwBDKU+ncG6kb
-	OsNbUvX/66DbmixIHE8HVyynGOucowh5LY2XEWraPIUGW0l7za8TZxIjxjN/5bKlQgEKmFzkeQF0o
-	jfwYbFmSus4a3/EEM6vg==;
+	List-Owner; bh=ySVKimueSgJnUGOBg20LPcdTqAvLEtSLbxYs4WOsHNc=; b=NmfxG37SC2do0f
+	XH6nulXWIwUSTh8dlowR54I0/MLyKIjPaGVtLN98HVmbH4GgxV73LiD124IvzNYvEgLlukDvZE3W4
+	8cJl4/8VG1mrcugodPuA8Baslyn6zyZMVCVZ92+hZ3ZxsBaiZKgdJQBAMXlkn8jNNfQfdDGHZKog0
+	hmTyUirCQiXxRgdXNxKbLzcFC6Uk+FaeyZ5fG8tmFZer0O6Zbp+sacLR9mZcbGwoE9UFvCQCH4hqL
+	eqqhJCneqHoPPPOENiEF/gTerE+CiR51RBvK4biPqcAzutn0Vh95ki5UCBR7uLWXkPT25IDSNjgFA
+	tnPWpDWajguL+4tnbQVQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQiam-00010a-VQ; Tue, 21 Apr 2020 02:24:56 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
+	id 1jQjdI-0003ww-88; Tue, 21 Apr 2020 03:31:36 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
  helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQiai-0000wP-Lq
- for linux-um@lists.infradead.org; Tue, 21 Apr 2020 02:24:54 +0000
+ id 1jQjdF-0003uc-3o
+ for linux-um@lists.infradead.org; Tue, 21 Apr 2020 03:31:34 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1587435891;
+ s=mimecast20190719; t=1587439891;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
  in-reply-to:in-reply-to:references:references;
- bh=Muw3THJhE6mXPlOA/UgJHfU1SluTy1QDua9Qwu1ZGDs=;
- b=XXSVI5Cq37yKPDozfUi0gD1xbtoD0ciu2OJxxToV9ZvL9Lkibn/kTf5uktPc/FpR5yhUGk
- HakzJwbt16FkiRhK7sitMPiOvG5ozH8EphNOqLPf05L8RSkH17B6pZO9WIt/jok2qoOlAG
- cRGgCZD2B4YDf+ZPXSwRO6OHyvWyKGk=
+ bh=I6ayHxPbaOI5Fcwe26HcjPMTYNR5WARmXXyKaOmZqFE=;
+ b=iimVI4IjSwRBDA966YawB4ZXEtKFLVks8GKQxAWOfSFyBzzWyl0HAxqNSlx7jhqdqeSeqb
+ hpunnkJi0sKhyWnZqZCQExAqZEP2cVBbJyYqFgbvJDXNDfpaWSzTglkk2aOpAQP1j7+R+Q
+ KLjphq9pQTQEnlznYiLGaNx+ZMY/Vv8=
 Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
  [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-249-M7FU_cShM9S7GfjktLA04w-1; Mon, 20 Apr 2020 22:24:48 -0400
-X-MC-Unique: M7FU_cShM9S7GfjktLA04w-1
-Received: from smtp.corp.redhat.com (int-mx04.intmail.prod.int.phx2.redhat.com
- [10.5.11.14])
+ us-mta-318-BiPXbTKWPV-aZttl4iUkcg-1; Mon, 20 Apr 2020 23:31:29 -0400
+X-MC-Unique: BiPXbTKWPV-aZttl4iUkcg-1
+Received: from smtp.corp.redhat.com (int-mx07.intmail.prod.int.phx2.redhat.com
+ [10.5.11.22])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id C109A107ACC9;
- Tue, 21 Apr 2020 02:24:41 +0000 (UTC)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 806271005509;
+ Tue, 21 Apr 2020 03:31:22 +0000 (UTC)
 Received: from localhost (ovpn-12-34.pek2.redhat.com [10.72.12.34])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id 470B65DA76;
- Tue, 21 Apr 2020 02:24:37 +0000 (UTC)
-Date: Tue, 21 Apr 2020 10:24:35 +0800
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 088171001B09;
+ Tue, 21 Apr 2020 03:31:17 +0000 (UTC)
+Date: Tue, 21 Apr 2020 11:31:14 +0800
 From: Baoquan He <bhe@redhat.com>
 To: Mike Rapoport <rppt@kernel.org>
 Subject: Re: [PATCH 02/21] mm: make early_pfn_to_nid() and related defintions
  close to each other
-Message-ID: <20200421022435.GP4247@MiWiFi-R3L-srv>
+Message-ID: <20200421033114.GA29658@MiWiFi-R3L-srv>
 References: <20200412194859.12663-1-rppt@kernel.org>
  <20200412194859.12663-3-rppt@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
 In-Reply-To: <20200412194859.12663-3-rppt@kernel.org>
 User-Agent: Mutt/1.10.1 (2018-07-13)
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.14
+X-Scanned-By: MIMEDefang 2.84 on 10.5.11.22
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200420_192452_789895_45919D9E 
-X-CRM114-Status: GOOD (  21.07  )
+X-CRM114-CacheID: sfid-20200420_203133_233330_D81C73CD 
+X-CRM114-Status: GOOD (  20.59  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.211.31.120 listed in list.dnswl.org]
+ no trust [205.139.110.120 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -155,9 +155,6 @@ On 04/12/20 at 10:48pm, Mike Rapoport wrote:
 > +	BUILD_BUG_ON(IS_ENABLED(CONFIG_NUMA));
 >  	return 0;
 >  }
-
-It's better to make a separate patch to drop __early_pfn_to_nid() here.
-
 >  #else
 > diff --git a/include/linux/mmzone.h b/include/linux/mmzone.h
 > index 1b9de7d220fb..7b5b6eba402f 100644
@@ -184,23 +181,10 @@ It's better to make a separate patch to drop __early_pfn_to_nid() here.
 > --- a/mm/page_alloc.c
 > +++ b/mm/page_alloc.c
 > @@ -1504,6 +1504,31 @@ void __free_pages_core(struct page *page, unsigned int order)
-
-#if defined(CONFIG_HAVE_ARCH_EARLY_PFN_TO_NID) || \
-        defined(CONFIG_HAVE_MEMBLOCK_NODE_MAP)
-
-This is the upper layer of ifdeffery scope.
 >  
 >  static struct mminit_pfnnid_cache early_pfnnid_cache __meminitdata;
 >  
 > +#ifndef CONFIG_HAVE_ARCH_EARLY_PFN_TO_NID
-
-Moving __early_pfn_to_nid() here makes the upper layer of ifdeferry
-scope a little werid. But seems no better way to optimize it.
-
-Otherwise, this patch looks good to me.
-
-Reviewed-by: Baoquan He <bhe@redhat.com>
-
 > +
 > +/*
 > + * Required by SPARSEMEM. Given a PFN, return what node the PFN is on.
@@ -233,6 +217,11 @@ Reviewed-by: Baoquan He <bhe@redhat.com>
 >  }
 >  
 > -#ifdef CONFIG_HAVE_MEMBLOCK_NODE_MAP
+
+Here it's apparently removing CONFIG_HAVE_MEMBLOCK_NODE_MAP too early,
+it should be done in patch 3, and its #end is kept there. I just found
+it when I almost became dizzy in reviewing patch 3.
+
 > -#ifndef CONFIG_HAVE_ARCH_EARLY_PFN_TO_NID
 > -
 > -/*
