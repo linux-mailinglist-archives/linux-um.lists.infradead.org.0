@@ -2,87 +2,54 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C7D471B8497
-	for <lists+linux-um@lfdr.de>; Sat, 25 Apr 2020 10:19:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 130421B84A1
+	for <lists+linux-um@lfdr.de>; Sat, 25 Apr 2020 10:26:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=6CuFrYwqnoL4plD2gEOtdeCOnlAYj9562ZUfUYHbJp4=; b=uVZryeAElgYId5
-	r9t/8ypgFHsPJv9eXT02ncsg+Ncl/NhByrq4ptrJ6hjX6fJHhMrqE1yEFiq3VZcwQu7Lhsp+kCpB/
-	iDBxzt3+w+94xhBPgpe5tm8SQIc7y1xPqUL/HQfEFoEpkeksOs9Sms/C6je8HAKzHLlBmOkyR1zsg
-	h9lizuw3XiprA7xM4HsS5Q6AzHXuBCtEZz7az/7Ksw/0iYYBNXOFjTO6ov8lLd8KlNgMesPPREcG4
-	nxOI3vVyGZmZ2hM9mrmnJhhLedoSNcHC36Srk9EyDEyxxW+csfbULczP/jZT/ZJwRKtYSWLB8LOFZ
-	vvSOyxCmo//vBY7RYrVA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=be5vW2JFy93QI1qdbMVYirfZbGXOrixEdNfbidcFFWQ=; b=Kv63f7eWthdUkT
+	oXaCz5EsDXvFw+Ssp/+WeiGXxKbwIFhy8f4atraHulMzB9n7XeCsHjBqXDfuI3Ene7qnVlMUCNWsG
+	VDwFs9QjiQNzjCi9rKCUHLelwl5uxAQY8pbgDEDBm9PvNSxyrjkNLMLXVd5TJ1HJqp2jmVGQ5DRSQ
+	oe6BCyR5MkZ89LIFWc3Ajy2PAgqAO40gO9vVGjTFMb9OopZM13P8jnmMUrU58pa9HaJ4Czc0BHAVI
+	mUwMhO1XdimQbKYLDMrgraXrIKtBTBWIbRGz0zUkz9nLbeKhLYYdiM2rQqjDovSrCbyjyXMFvgctY
+	8DAASbuvtYFBqHVnyBVA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSG1g-0007Ip-Ii; Sat, 25 Apr 2020 08:19:04 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1jSG8d-000574-Jv; Sat, 25 Apr 2020 08:26:15 +0000
+Received: from s3.sipsolutions.net ([2a01:4f8:191:4433::2]
+ helo=sipsolutions.net)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jSG1c-0007HP-GU
- for linux-um@lists.infradead.org; Sat, 25 Apr 2020 08:19:02 +0000
-Received: by mail-wr1-x443.google.com with SMTP id d17so14252596wrg.11
- for <linux-um@lists.infradead.org>; Sat, 25 Apr 2020 01:18:58 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=cloudflare.com; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=nUPMA4GPI+NhhHj8s9smGxNaL+f7/GtxGGadrxRFCuA=;
- b=PIo3DTs31b/zRjB7BgiYsADl9emSvQLhOStAb/JVKzqEif5SQrOZ1nnXi5C/2rP+AV
- zFdFzLPJHfg2Ji3qYZz/Noad+PK2//bFVins9Rb4D+Leivrph18/z+LheeEAo0LM60Y8
- XSjlY7ny/mrmoINOMcvfO2SRj2mFKitzUMzbI=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=nUPMA4GPI+NhhHj8s9smGxNaL+f7/GtxGGadrxRFCuA=;
- b=aie3xIcipHe4dTGQCZD+ARcOGyBnOKIK6f5shqa/PUQJRtVEOGprhcQv5a/A5EszK+
- mqT3iWcRGDdYw9kWw+FB4rTwwnekQkbi3v4IbGQ5qV3BBKJXStFqhoT6JbTOIYr/IbVP
- NV5Vq73ZmxxLBaA3Z/A+HQn8gCTWOLBHn2tafJD7cfpt5CUWWMQDpsavL+U04uNvHyXH
- uMQqSag/VxhdpQg5YIDyvaYR47wKcdKltergaDbIeuSMLjvOf/VY4D4iSjpYhLdT/ObR
- Tm630LqcaV8RLjP3FN9j54KjsrpyvUGtIYvz/lWKeEcHXueM7R7YCWZR3D/UMg9aracw
- I2ww==
-X-Gm-Message-State: AGi0PuYQn+GF0RO+ki/PN+La96H7p1+VZ1E6tls/gnesA2Y+Kd4B460X
- Fq3J5kbNBo329mkXWU9quxoDFg==
-X-Google-Smtp-Source: APiQypJ4vDHHtPr+GKZiZDT60aVFI95xMZuKwqJDHcy+nG7Ys0q2gTy6OBwpildjyrVbkuHpTD+L/A==
-X-Received: by 2002:adf:e3ca:: with SMTP id k10mr17101088wrm.53.1587802737556; 
- Sat, 25 Apr 2020 01:18:57 -0700 (PDT)
-Received: from localhost.localdomain ([88.144.89.159])
- by smtp.gmail.com with ESMTPSA id s18sm12233777wra.94.2020.04.25.01.18.56
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 25 Apr 2020 01:18:56 -0700 (PDT)
-From: Ignat Korchagin <ignat@cloudflare.com>
-To: jdike@addtoit.com, richard@nod.at, anton.ivanov@cambridgegreys.com,
- linux-um@lists.infradead.org
-Subject: [PATCH] um: Fix typo in vector driver transport option definition
-Date: Sat, 25 Apr 2020 09:18:42 +0100
-Message-Id: <20200425081842.4365-1-ignat@cloudflare.com>
-X-Mailer: git-send-email 2.20.1
+ id 1jSG8b-000566-2p
+ for linux-um@lists.infradead.org; Sat, 25 Apr 2020 08:26:14 +0000
+Received: by sipsolutions.net with esmtpsa
+ (TLS1.3:ECDHE_SECP256R1__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
+ (Exim 4.93) (envelope-from <johannes@sipsolutions.net>)
+ id 1jSG8T-00G7g6-5s; Sat, 25 Apr 2020 10:26:05 +0200
+Message-ID: <b86f5469f9b888942b7a6f9862ec98c909121375.camel@sipsolutions.net>
+Subject: Re: [PATCH] um: Fix "time-internal.h" include in xor.h
+From: Johannes Berg <johannes@sipsolutions.net>
+To: David Gow <davidgow@google.com>, Anton Ivanov
+ <anton.ivanov@cambridgegreys.com>, Richard Weinberger <richard@nod.at>
+Date: Sat, 25 Apr 2020 10:26:04 +0200
+In-Reply-To: <20200425042814.132920-1-davidgow@google.com>
+References: <20200425042814.132920-1-davidgow@google.com>
+User-Agent: Evolution 3.34.4 (3.34.4-1.fc31) 
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200425_011900_551647_4717133C 
-X-CRM114-Status: UNSURE (   8.33  )
+X-CRM114-CacheID: sfid-20200425_012613_124737_EEC92E6C 
+X-CRM114-Status: UNSURE (   8.12  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.3 KHOP_HELO_FCRDNS       Relay HELO differs from its IP's reverse DNS
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,35 +61,37 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: trivial@kernel.org, Ignat Korchagin <ignat@cloudflare.com>
+Cc: linux-um@lists.infradead.org, linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-No big problem as "raw" and "gre" have the same length, but could go wrong if
-they don't in the future.
+On Fri, 2020-04-24 at 21:28 -0700, David Gow wrote:
+> It looks like the wrong header was included in xor.h, breaking make
+> allyesconfig on UML (or, more specifically, kunit.py run --alltests).
+> 
+> ----------------------
+> In file included from crypto/xor.c:17:
+> ./arch/um/include/asm/xor.h:3:10: fatal error: shared/timer-internal.h: No such file or directory
+>     3 | #include <shared/timer-internal.h>
+>       |          ^~~~~~~~~~~~~~~~~~~~~~~~~
+> ----------------------
+> 
+> Replacing this with "linux/time-internal.h" builds fine.
+> 
+> Fixes: d65197ad5249 ("um: fix time-travel=inf-cpu with xor/raid6")
 
-Signed-off-by: Ignat Korchagin <ignat@cloudflare.com>
----
- arch/um/drivers/vector_user.h | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+Yeah, sorry about that. Some patches overlapped here, i.e. were pending
+from separate branches I had.
 
-diff --git a/arch/um/drivers/vector_user.h b/arch/um/drivers/vector_user.h
-index 91f35b266aba..d29d5fdd98fa 100644
---- a/arch/um/drivers/vector_user.h
-+++ b/arch/um/drivers/vector_user.h
-@@ -17,7 +17,7 @@
- #define TRANS_TAP_LEN strlen(TRANS_TAP)
- 
- #define TRANS_GRE "gre"
--#define TRANS_GRE_LEN strlen(TRANS_RAW)
-+#define TRANS_GRE_LEN strlen(TRANS_GRE)
- 
- #define TRANS_L2TPV3 "l2tpv3"
- #define TRANS_L2TPV3_LEN strlen(TRANS_L2TPV3)
--- 
-2.20.1
+I sent Richard a fix quite about three weeks ago:
+
+https://patchwork.ozlabs.org/project/linux-um/patch/20200405213357.b6ce1024b276.I7c370e20580d3122c58df5727ee2d6fb53545576@changeid/
+
+but I guess he hasn't applied it yet.
+
+johannes
 
 
 _______________________________________________
