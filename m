@@ -2,66 +2,70 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D5A971B84E1
-	for <lists+linux-um@lfdr.de>; Sat, 25 Apr 2020 10:49:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D11431B87C7
+	for <lists+linux-um@lfdr.de>; Sat, 25 Apr 2020 18:50:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Subject:References:
-	In-Reply-To:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZNA9J6bPDkdsCOmooffdwH6PcXeEqtGsYouD4B2daoo=; b=hoxvZ5lci1lfvm
-	iXjmgqaJMF2gTF4qPjKm49q3/1riT0Zo9A43w59YE0yy0kh/h302Xicec8K58gtE6enmRxJxir3gf
-	D4/R+OCLqZQrmCOOFJs+MtaH/1OMCZJjGEKQbt9WllagW8ntW1nsMNlgh6MNzjUReBZnA8wCWxFbN
-	slw4Y7yVITUZanbd43qLP41xwntINQiGMJ5hr7TnIAjtyu76UGo8VlLX8zCdsD5HbaYeKlCIScLGJ
-	9G32zzWa8ru3tbnMxn+U9A2wUNZkH88wNrquPcWKQqLc/xglcFWOB6bg4hQcvBal5ARA70Nh3KWOg
-	cvwhPS0nwcOWlTW5WciA==;
+	List-Owner; bh=l++Ww7sJwwlMNloo+hGU8nv/iqKe5v7JCOKblyEONlQ=; b=nkK5Bu8Vs671r1
+	lEKT/u86iKGGTVcPjwxEMAPjakXputBA3u0v9eVWeWuLfduccJFjPQHbDXzCFYkIGwVB3CRaJcRc5
+	KUTNqRv6cSDXDGJDexEbwnD5zvohOPV17N1vkrMmv1cjPAao3B5RuPzrc9qenzOHxuyMl0oP9DcS1
+	P0JzjtSyf4k8aclEyFTQaDnMN5ojLIDxp/VWcIeEqFEpW9V9Qt89TdB7ZInOEsuBjX8MsN3Sm1tic
+	53aLuqYNvPnZ+TKPNaUzWg4x/n3HIHwsGKRvoTgr8dsbiP9PI+kg2cKePiXG4wo9iE46kR7S2csR8
+	ZUp/lp8ZAnAwNgZXrBEw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSGVN-0003co-AQ; Sat, 25 Apr 2020 08:49:45 +0000
-Received: from lithops.sigma-star.at ([195.201.40.130])
+	id 1jSO0M-0007uH-J2; Sat, 25 Apr 2020 16:50:14 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jSGVI-0003aV-D8
- for linux-um@lists.infradead.org; Sat, 25 Apr 2020 08:49:43 +0000
-Received: from localhost (localhost [127.0.0.1])
- by lithops.sigma-star.at (Postfix) with ESMTP id 31955608311C;
- Sat, 25 Apr 2020 10:49:30 +0200 (CEST)
-Received: from lithops.sigma-star.at ([127.0.0.1])
- by localhost (lithops.sigma-star.at [127.0.0.1]) (amavisd-new, port 10032)
- with ESMTP id 8xViT_4CWA4e; Sat, 25 Apr 2020 10:49:29 +0200 (CEST)
-Received: from localhost (localhost [127.0.0.1])
- by lithops.sigma-star.at (Postfix) with ESMTP id DEA3861A7014;
- Sat, 25 Apr 2020 10:49:28 +0200 (CEST)
-Received: from lithops.sigma-star.at ([127.0.0.1])
- by localhost (lithops.sigma-star.at [127.0.0.1]) (amavisd-new, port 10026)
- with ESMTP id mWtVVDGsOz3j; Sat, 25 Apr 2020 10:49:28 +0200 (CEST)
-Received: from lithops.sigma-star.at (lithops.sigma-star.at [195.201.40.130])
- by lithops.sigma-star.at (Postfix) with ESMTP id B9C0B608311C;
- Sat, 25 Apr 2020 10:49:28 +0200 (CEST)
-Date: Sat, 25 Apr 2020 10:49:28 +0200 (CEST)
-From: Richard Weinberger <richard@nod.at>
-To: Johannes Berg <johannes@sipsolutions.net>
-Message-ID: <557123184.155536.1587804568614.JavaMail.zimbra@nod.at>
-In-Reply-To: <b86f5469f9b888942b7a6f9862ec98c909121375.camel@sipsolutions.net>
-References: <20200425042814.132920-1-davidgow@google.com>
- <b86f5469f9b888942b7a6f9862ec98c909121375.camel@sipsolutions.net>
-Subject: Re: [PATCH] um: Fix "time-internal.h" include in xor.h
+ id 1jSO0E-0006Xu-1o; Sat, 25 Apr 2020 16:50:07 +0000
+Received: from kernel.org (unknown [77.127.79.140])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1798F206CD;
+ Sat, 25 Apr 2020 16:49:51 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1587833404;
+ bh=0Sl4Z11RVRGJbUzY+39FiW21eIIyUSJn8sRyWLPh1QE=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=IHfCSB7lAtP8F/QOkzrMVovSds6GmLQXIYGNDyiWwar0dzDHihTkIxxJ4pzqN8dgI
+ 7dZgKIyfVdwKPgmTvqMYetG92FlxubtA/kMLwHHTJZYJXQvWWxFhfOf1YllMgm6pNJ
+ zD7n7cmGOJK81H7mitUpRubrKW286wNtPWLOyYuU=
+Date: Sat, 25 Apr 2020 19:49:47 +0300
+From: Mike Rapoport <rppt@kernel.org>
+To: David Hildenbrand <david@redhat.com>
+Subject: Re: [PATCH 15/21] mm: memmap_init: iterate over memblock regions
+ rather that check each PFN
+Message-ID: <20200425164947.GH14260@kernel.org>
+References: <20200412194859.12663-1-rppt@kernel.org>
+ <20200412194859.12663-16-rppt@kernel.org>
+ <9143538a-4aaa-ca1d-9c8f-72ac949cf593@redhat.com>
 MIME-Version: 1.0
-X-Originating-IP: [195.201.40.130]
-X-Mailer: Zimbra 8.8.12_GA_3807 (ZimbraWebClient - FF68 (Linux)/8.8.12_GA_3809)
-Thread-Topic: Fix "time-internal.h" include in xor.h
-Thread-Index: xqvJN+eh3NmyhE7yiAAl00GWkgit3Q==
+Content-Disposition: inline
+In-Reply-To: <9143538a-4aaa-ca1d-9c8f-72ac949cf593@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200425_014940_591635_3A2C130B 
-X-CRM114-Status: UNSURE (   5.18  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200425_095006_149675_A05E7FA3 
+X-CRM114-Status: GOOD (  18.68  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,40 +77,103 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: linux-um <linux-um@lists.infradead.org>,
- linux-kernel <linux-kernel@vger.kernel.org>, davidgow <davidgow@google.com>,
- anton ivanov <anton.ivanov@cambridgegreys.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Rich Felker <dalias@libc.org>, linux-ia64@vger.kernel.org,
+ linux-doc@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, Michal Hocko <mhocko@kernel.org>,
+ "James E.J. Bottomley" <James.Bottomley@hansenpartnership.com>,
+ Max Filippov <jcmvbkbc@gmail.com>, Guo Ren <guoren@kernel.org>,
+ linux-csky@vger.kernel.org, linux-parisc@vger.kernel.org,
+ sparclinux@vger.kernel.org, linux-hexagon@vger.kernel.org,
+ linux-riscv@lists.infradead.org, Mike Rapoport <rppt@linux.ibm.com>,
+ Greg Ungerer <gerg@linux-m68k.org>, linux-arch@vger.kernel.org,
+ linux-s390@vger.kernel.org, linux-snps-arc@lists.infradead.org,
+ linux-c6x-dev@linux-c6x.org, Baoquan He <bhe@redhat.com>,
+ Jonathan Corbet <corbet@lwn.net>, linux-sh@vger.kernel.org,
+ Michael Ellerman <mpe@ellerman.id.au>, Helge Deller <deller@gmx.de>,
+ x86@kernel.org, Russell King <linux@armlinux.org.uk>,
+ Ley Foon Tan <ley.foon.tan@intel.com>,
+ Yoshinori Sato <ysato@users.sourceforge.jp>,
+ Geert Uytterhoeven <geert@linux-m68k.org>,
+ linux-arm-kernel@lists.infradead.org, Mark Salter <msalter@redhat.com>,
+ Matt Turner <mattst88@gmail.com>, linux-mips@vger.kernel.org,
+ uclinux-h8-devel@lists.sourceforge.jp, linux-xtensa@linux-xtensa.org,
+ linux-alpha@vger.kernel.org, linux-um@lists.infradead.org,
+ linux-m68k@lists.linux-m68k.org, Tony Luck <tony.luck@intel.com>,
+ Greentime Hu <green.hu@gmail.com>, Paul Walmsley <paul.walmsley@sifive.com>,
+ Stafford Horne <shorne@gmail.com>, Guan Xuetao <gxt@pku.edu.cn>,
+ Hoan Tran <Hoan@os.amperecomputing.com>, Michal Simek <monstr@monstr.eu>,
+ Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
+ Brian Cain <bcain@codeaurora.org>, Nick Hu <nickhu@andestech.com>,
+ linux-mm@kvack.org, Vineet Gupta <vgupta@synopsys.com>,
+ linux-kernel@vger.kernel.org, openrisc@lists.librecores.org,
+ Richard Weinberger <richard@nod.at>, Andrew Morton <akpm@linux-foundation.org>,
+ linuxppc-dev@lists.ozlabs.org, "David S. Miller" <davem@davemloft.net>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-LS0tLS0gVXJzcHLDvG5nbGljaGUgTWFpbCAtLS0tLQo+IFZvbjogIkpvaGFubmVzIEJlcmciIDxq
-b2hhbm5lc0BzaXBzb2x1dGlvbnMubmV0Pgo+IEFuOiAiZGF2aWRnb3ciIDxkYXZpZGdvd0Bnb29n
-bGUuY29tPiwgImFudG9uIGl2YW5vdiIgPGFudG9uLml2YW5vdkBjYW1icmlkZ2VncmV5cy5jb20+
-LCAicmljaGFyZCIgPHJpY2hhcmRAbm9kLmF0Pgo+IENDOiAibGludXgtdW0iIDxsaW51eC11bUBs
-aXN0cy5pbmZyYWRlYWQub3JnPiwgImxpbnV4LWtlcm5lbCIgPGxpbnV4LWtlcm5lbEB2Z2VyLmtl
-cm5lbC5vcmc+Cj4gR2VzZW5kZXQ6IFNhbXN0YWcsIDI1LiBBcHJpbCAyMDIwIDEwOjI2OjA0Cj4g
-QmV0cmVmZjogUmU6IFtQQVRDSF0gdW06IEZpeCAidGltZS1pbnRlcm5hbC5oIiBpbmNsdWRlIGlu
-IHhvci5oCgo+IE9uIEZyaSwgMjAyMC0wNC0yNCBhdCAyMToyOCAtMDcwMCwgRGF2aWQgR293IHdy
-b3RlOgo+PiBJdCBsb29rcyBsaWtlIHRoZSB3cm9uZyBoZWFkZXIgd2FzIGluY2x1ZGVkIGluIHhv
-ci5oLCBicmVha2luZyBtYWtlCj4+IGFsbHllc2NvbmZpZyBvbiBVTUwgKG9yLCBtb3JlIHNwZWNp
-ZmljYWxseSwga3VuaXQucHkgcnVuIC0tYWxsdGVzdHMpLgo+PiAKPj4gLS0tLS0tLS0tLS0tLS0t
-LS0tLS0tLQo+PiBJbiBmaWxlIGluY2x1ZGVkIGZyb20gY3J5cHRvL3hvci5jOjE3Ogo+PiAuL2Fy
-Y2gvdW0vaW5jbHVkZS9hc20veG9yLmg6MzoxMDogZmF0YWwgZXJyb3I6IHNoYXJlZC90aW1lci1p
-bnRlcm5hbC5oOiBObyBzdWNoCj4+IGZpbGUgb3IgZGlyZWN0b3J5Cj4+ICAgICAzIHwgI2luY2x1
-ZGUgPHNoYXJlZC90aW1lci1pbnRlcm5hbC5oPgo+PiAgICAgICB8ICAgICAgICAgIF5+fn5+fn5+
-fn5+fn5+fn5+fn5+fn5+fn4KPj4gLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQo+PiAKPj4gUmVwbGFj
-aW5nIHRoaXMgd2l0aCAibGludXgvdGltZS1pbnRlcm5hbC5oIiBidWlsZHMgZmluZS4KPj4gCj4+
-IEZpeGVzOiBkNjUxOTdhZDUyNDkgKCJ1bTogZml4IHRpbWUtdHJhdmVsPWluZi1jcHUgd2l0aCB4
-b3IvcmFpZDYiKQo+IAo+IFllYWgsIHNvcnJ5IGFib3V0IHRoYXQuIFNvbWUgcGF0Y2hlcyBvdmVy
-bGFwcGVkIGhlcmUsIGkuZS4gd2VyZSBwZW5kaW5nCj4gZnJvbSBzZXBhcmF0ZSBicmFuY2hlcyBJ
-IGhhZC4KPiAKPiBJIHNlbnQgUmljaGFyZCBhIGZpeCBxdWl0ZSBhYm91dCB0aHJlZSB3ZWVrcyBh
-Z286Cj4gCj4gaHR0cHM6Ly9wYXRjaHdvcmsub3psYWJzLm9yZy9wcm9qZWN0L2xpbnV4LXVtL3Bh
-dGNoLzIwMjAwNDA1MjEzMzU3LmI2Y2UxMDI0YjI3Ni5JN2MzNzBlMjA1ODBkMzEyMmM1OGRmNTcy
-N2VlMmQ2ZmI1MzU0NTU3NkBjaGFuZ2VpZC8KPiAKPiBidXQgSSBndWVzcyBoZSBoYXNuJ3QgYXBw
-bGllZCBpdCB5ZXQuCgpUaGF0J3MgcmlnaHQuIEknbGwgcHJlcGFyZSBhIFBSIHdpdGggZml4ZXMg
-c29vbi4KClRoYW5rcywKLy9yaWNoYXJkCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fXwpsaW51eC11bSBtYWlsaW5nIGxpc3QKbGludXgtdW1AbGlzdHMuaW5m
-cmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xp
-bnV4LXVtCg==
+On Fri, Apr 24, 2020 at 09:22:32AM +0200, David Hildenbrand wrote:
+> On 12.04.20 21:48, Mike Rapoport wrote:
+> > From: Baoquan He <bhe@redhat.com>
+> > 
+> > When called during boot the memmap_init_zone() function checks if each PFN
+> > is valid and actually belongs to the node being initialized using
+> > early_pfn_valid() and early_pfn_in_nid().
+> > 
+> > Each such check may cost up to O(log(n)) where n is the number of memory
+> > banks, so for large amount of memory overall time spent in early_pfn*()
+> > becomes substantial.
+> > 
+> > Since the information is anyway present in memblock, we can iterate over
+> > memblock memory regions in memmap_init() and only call memmap_init_zone()
+> > for PFN ranges that are know to be valid and in the appropriate node.
+> > 
+> > Signed-off-by: Baoquan He <bhe@redhat.com>
+> > Signed-off-by: Mike Rapoport <rppt@linux.ibm.com>
+> > ---
+> >  mm/page_alloc.c | 26 ++++++++++++++++----------
+> >  1 file changed, 16 insertions(+), 10 deletions(-)
+> > 
+> > diff --git a/mm/page_alloc.c b/mm/page_alloc.c
+> > index 7f6a3081edb8..c43ce8709457 100644
+> > --- a/mm/page_alloc.c
+> > +++ b/mm/page_alloc.c
+> > @@ -5995,14 +5995,6 @@ void __meminit memmap_init_zone(unsigned long size, int nid, unsigned long zone,
+> >  		 * function.  They do not exist on hotplugged memory.
+> >  		 */
+> 
+> After this change, the comment above is stale. the "holes in boot-time
+> mem_map" are handled by the caller now AFAIKs.
+
+Right, will update in v2.
+Thanks!
+
+> >  		if (context == MEMMAP_EARLY) {
+> > -			if (!early_pfn_valid(pfn)) {
+> > -				pfn = next_pfn(pfn);
+> > -				continue;
+> > -			}
+> > -			if (!early_pfn_in_nid(pfn, nid)) {
+> > -				pfn++;
+> > -				continue;
+> > -			}
+> >  			if (overlap_memmap_init(zone, &pfn))
+> >  				continue;
+> >  			if (defer_init(nid, pfn, end_pfn))
+> 
+> 
+> -- 
+> Thanks,
+> 
+> David / dhildenb
+> 
+
+-- 
+Sincerely yours,
+Mike.
+
+_______________________________________________
+linux-um mailing list
+linux-um@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-um
