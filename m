@@ -2,53 +2,48 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D11431B87C7
-	for <lists+linux-um@lfdr.de>; Sat, 25 Apr 2020 18:50:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E41B31BDB7C
+	for <lists+linux-um@lfdr.de>; Wed, 29 Apr 2020 14:12:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=l++Ww7sJwwlMNloo+hGU8nv/iqKe5v7JCOKblyEONlQ=; b=nkK5Bu8Vs671r1
-	lEKT/u86iKGGTVcPjwxEMAPjakXputBA3u0v9eVWeWuLfduccJFjPQHbDXzCFYkIGwVB3CRaJcRc5
-	KUTNqRv6cSDXDGJDexEbwnD5zvohOPV17N1vkrMmv1cjPAao3B5RuPzrc9qenzOHxuyMl0oP9DcS1
-	P0JzjtSyf4k8aclEyFTQaDnMN5ojLIDxp/VWcIeEqFEpW9V9Qt89TdB7ZInOEsuBjX8MsN3Sm1tic
-	53aLuqYNvPnZ+TKPNaUzWg4x/n3HIHwsGKRvoTgr8dsbiP9PI+kg2cKePiXG4wo9iE46kR7S2csR8
-	ZUp/lp8ZAnAwNgZXrBEw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=EK6xogUM3pZoX7fOJaKqxTY3b1mmnw9sFUBP4VfxPdY=; b=VYLvJOUCqtlNCx
+	2clA45Hzc8GgKQrKg8hFOo3FkpN5KmVsWZcsX3uhRm9QUwNVJAMr5qJ5BjzTFUYVf6aZO4mEK8rq0
+	tQ/TLmMzz23iXlXiXBxavB8vufL6IaZOD8o1l49B9GtdylO1X6Hd1CltEjFZQewXL5RYy2v0wE1EQ
+	IXkrWRabhPJAjwCBhM1ZGfQPQID9HVoxVLv4V2p3fJqSd37typuoOvqwyaqCPNSUC25j+5z+42TiF
+	0g98XC1iuPlnR36qe5xVgR5eGO1ZduLeffY9xGo6vUqd+eMm1hRRR7dv92jBzh9i2Fw+H2Av0CS4X
+	UNP0w/ubsKABmb4gVBpA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSO0M-0007uH-J2; Sat, 25 Apr 2020 16:50:14 +0000
+	id 1jTlZW-0007ly-Kn; Wed, 29 Apr 2020 12:12:14 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jSO0E-0006Xu-1o; Sat, 25 Apr 2020 16:50:07 +0000
-Received: from kernel.org (unknown [77.127.79.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ id 1jTlZP-0007hi-8M; Wed, 29 Apr 2020 12:12:08 +0000
+Received: from aquarius.haifa.ibm.com (nesher1.haifa.il.ibm.com [195.110.40.7])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1798F206CD;
- Sat, 25 Apr 2020 16:49:51 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 04AE12087E;
+ Wed, 29 Apr 2020 12:11:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1587833404;
- bh=0Sl4Z11RVRGJbUzY+39FiW21eIIyUSJn8sRyWLPh1QE=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=IHfCSB7lAtP8F/QOkzrMVovSds6GmLQXIYGNDyiWwar0dzDHihTkIxxJ4pzqN8dgI
- 7dZgKIyfVdwKPgmTvqMYetG92FlxubtA/kMLwHHTJZYJXQvWWxFhfOf1YllMgm6pNJ
- zD7n7cmGOJK81H7mitUpRubrKW286wNtPWLOyYuU=
-Date: Sat, 25 Apr 2020 19:49:47 +0300
+ s=default; t=1588162326;
+ bh=CFoz4ZQtC45vozRHIJrum+IyiIDDM2pB0vein0HN77Q=;
+ h=From:To:Cc:Subject:Date:From;
+ b=hgnMSCWznOV11pnvEM4YfvU+8wv88/ZeNbJu8KMC6K7gkkHInG7wntWOoWVIDBdtt
+ ND0rc8rLqnEbT7tOFkRyD1b9ylk7tlkBvyPKex6XEtZa/Pteq/zSxb4B7MATB4kD7L
+ pDJlFv/WqLPqmQTU05lR7ezlA4acIUyPiaMeu5No=
 From: Mike Rapoport <rppt@kernel.org>
-To: David Hildenbrand <david@redhat.com>
-Subject: Re: [PATCH 15/21] mm: memmap_init: iterate over memblock regions
- rather that check each PFN
-Message-ID: <20200425164947.GH14260@kernel.org>
-References: <20200412194859.12663-1-rppt@kernel.org>
- <20200412194859.12663-16-rppt@kernel.org>
- <9143538a-4aaa-ca1d-9c8f-72ac949cf593@redhat.com>
+To: linux-kernel@vger.kernel.org
+Subject: [PATCH v2 00/20] mm: rework free_area_init*() funcitons 
+Date: Wed, 29 Apr 2020 15:11:06 +0300
+Message-Id: <20200429121126.17989-1-rppt@kernel.org>
+X-Mailer: git-send-email 2.26.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <9143538a-4aaa-ca1d-9c8f-72ac949cf593@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200425_095006_149675_A05E7FA3 
-X-CRM114-Status: GOOD (  18.68  )
+X-CRM114-CacheID: sfid-20200429_051207_341046_D8684961 
+X-CRM114-Status: GOOD (  14.41  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -58,13 +53,13 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -80,32 +75,32 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
 Cc: Rich Felker <dalias@libc.org>, linux-ia64@vger.kernel.org,
  linux-doc@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
  Heiko Carstens <heiko.carstens@de.ibm.com>, Michal Hocko <mhocko@kernel.org>,
- "James E.J. Bottomley" <James.Bottomley@hansenpartnership.com>,
+ "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>,
  Max Filippov <jcmvbkbc@gmail.com>, Guo Ren <guoren@kernel.org>,
  linux-csky@vger.kernel.org, linux-parisc@vger.kernel.org,
  sparclinux@vger.kernel.org, linux-hexagon@vger.kernel.org,
  linux-riscv@lists.infradead.org, Mike Rapoport <rppt@linux.ibm.com>,
  Greg Ungerer <gerg@linux-m68k.org>, linux-arch@vger.kernel.org,
- linux-s390@vger.kernel.org, linux-snps-arc@lists.infradead.org,
- linux-c6x-dev@linux-c6x.org, Baoquan He <bhe@redhat.com>,
- Jonathan Corbet <corbet@lwn.net>, linux-sh@vger.kernel.org,
- Michael Ellerman <mpe@ellerman.id.au>, Helge Deller <deller@gmx.de>,
- x86@kernel.org, Russell King <linux@armlinux.org.uk>,
- Ley Foon Tan <ley.foon.tan@intel.com>,
+ linux-s390@vger.kernel.org, linux-c6x-dev@linux-c6x.org,
+ Baoquan He <bhe@redhat.com>, Jonathan Corbet <corbet@lwn.net>,
+ linux-sh@vger.kernel.org, Michael Ellerman <mpe@ellerman.id.au>,
+ Helge Deller <deller@gmx.de>, x86@kernel.org,
+ Russell King <linux@armlinux.org.uk>, Ley Foon Tan <ley.foon.tan@intel.com>,
  Yoshinori Sato <ysato@users.sourceforge.jp>,
  Geert Uytterhoeven <geert@linux-m68k.org>,
  linux-arm-kernel@lists.infradead.org, Mark Salter <msalter@redhat.com>,
- Matt Turner <mattst88@gmail.com>, linux-mips@vger.kernel.org,
+ Matt Turner <mattst88@gmail.com>, linux-snps-arc@lists.infradead.org,
  uclinux-h8-devel@lists.sourceforge.jp, linux-xtensa@linux-xtensa.org,
  linux-alpha@vger.kernel.org, linux-um@lists.infradead.org,
  linux-m68k@lists.linux-m68k.org, Tony Luck <tony.luck@intel.com>,
- Greentime Hu <green.hu@gmail.com>, Paul Walmsley <paul.walmsley@sifive.com>,
- Stafford Horne <shorne@gmail.com>, Guan Xuetao <gxt@pku.edu.cn>,
- Hoan Tran <Hoan@os.amperecomputing.com>, Michal Simek <monstr@monstr.eu>,
+ Qian Cai <cai@lca.pw>, Greentime Hu <green.hu@gmail.com>,
+ Paul Walmsley <paul.walmsley@sifive.com>, Stafford Horne <shorne@gmail.com>,
+ Guan Xuetao <gxt@pku.edu.cn>, Hoan Tran <Hoan@os.amperecomputing.com>,
+ Michal Simek <monstr@monstr.eu>,
  Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
  Brian Cain <bcain@codeaurora.org>, Nick Hu <nickhu@andestech.com>,
  linux-mm@kvack.org, Vineet Gupta <vgupta@synopsys.com>,
- linux-kernel@vger.kernel.org, openrisc@lists.librecores.org,
+ linux-mips@vger.kernel.org, openrisc@lists.librecores.org,
  Richard Weinberger <richard@nod.at>, Andrew Morton <akpm@linux-foundation.org>,
  linuxppc-dev@lists.ozlabs.org, "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
@@ -113,65 +108,129 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Fri, Apr 24, 2020 at 09:22:32AM +0200, David Hildenbrand wrote:
-> On 12.04.20 21:48, Mike Rapoport wrote:
-> > From: Baoquan He <bhe@redhat.com>
-> > 
-> > When called during boot the memmap_init_zone() function checks if each PFN
-> > is valid and actually belongs to the node being initialized using
-> > early_pfn_valid() and early_pfn_in_nid().
-> > 
-> > Each such check may cost up to O(log(n)) where n is the number of memory
-> > banks, so for large amount of memory overall time spent in early_pfn*()
-> > becomes substantial.
-> > 
-> > Since the information is anyway present in memblock, we can iterate over
-> > memblock memory regions in memmap_init() and only call memmap_init_zone()
-> > for PFN ranges that are know to be valid and in the appropriate node.
-> > 
-> > Signed-off-by: Baoquan He <bhe@redhat.com>
-> > Signed-off-by: Mike Rapoport <rppt@linux.ibm.com>
-> > ---
-> >  mm/page_alloc.c | 26 ++++++++++++++++----------
-> >  1 file changed, 16 insertions(+), 10 deletions(-)
-> > 
-> > diff --git a/mm/page_alloc.c b/mm/page_alloc.c
-> > index 7f6a3081edb8..c43ce8709457 100644
-> > --- a/mm/page_alloc.c
-> > +++ b/mm/page_alloc.c
-> > @@ -5995,14 +5995,6 @@ void __meminit memmap_init_zone(unsigned long size, int nid, unsigned long zone,
-> >  		 * function.  They do not exist on hotplugged memory.
-> >  		 */
-> 
-> After this change, the comment above is stale. the "holes in boot-time
-> mem_map" are handled by the caller now AFAIKs.
+From: Mike Rapoport <rppt@linux.ibm.com>
 
-Right, will update in v2.
-Thanks!
+Hi,
 
-> >  		if (context == MEMMAP_EARLY) {
-> > -			if (!early_pfn_valid(pfn)) {
-> > -				pfn = next_pfn(pfn);
-> > -				continue;
-> > -			}
-> > -			if (!early_pfn_in_nid(pfn, nid)) {
-> > -				pfn++;
-> > -				continue;
-> > -			}
-> >  			if (overlap_memmap_init(zone, &pfn))
-> >  				continue;
-> >  			if (defer_init(nid, pfn, end_pfn))
-> 
-> 
-> -- 
-> Thanks,
-> 
-> David / dhildenb
-> 
+After the discussion [1] about removal of CONFIG_NODES_SPAN_OTHER_NODES and
+CONFIG_HAVE_MEMBLOCK_NODE_MAP options, I took it a bit further and updated
+the node/zone initialization. 
 
--- 
+Since all architectures have memblock, it is possible to use only the newer
+version of free_area_init_node() that calculates the zone and node
+boundaries based on memblock node mapping and architectural limits on
+possible zone PFNs. 
+
+The architectures that still determined zone and hole sizes can be switched
+to the generic code and the old code that took those zone and hole sizes
+can be simply removed.
+
+And, since it all started from the removal of
+CONFIG_NODES_SPAN_OTHER_NODES, the memmap_init() is now updated to iterate
+over memblocks and so it does not need to perform early_pfn_to_nid() query
+for every PFN.
+
+v2 changes:
+* move deletion of one of '#ifdef CONFIG_HAVE_MEMBLOCK_NODE_MAP' from
+  patch 2 to patch 3 where it should have been from the beginning
+* drop patch that introduced a free_area_init_memoryless_node() wrapper
+  for free_area_init_node()
+* remove unused next_pfn(), thanks Qian
+* drop stale comment in memmap_init_zone(), as per David
+
+--
 Sincerely yours,
 Mike.
+
+[1] https://lore.kernel.org/lkml/1585420282-25630-1-git-send-email-Hoan@os.amperecomputing.com
+
+Baoquan He (1):
+  mm: memmap_init: iterate over memblock regions rather that check each PFN
+
+Mike Rapoport (19):
+  mm: memblock: replace dereferences of memblock_region.nid with API calls
+  mm: make early_pfn_to_nid() and related defintions close to each other
+  mm: remove CONFIG_HAVE_MEMBLOCK_NODE_MAP option
+  mm: free_area_init: use maximal zone PFNs rather than zone sizes
+  mm: use free_area_init() instead of free_area_init_nodes()
+  alpha: simplify detection of memory zone boundaries
+  arm: simplify detection of memory zone boundaries
+  arm64: simplify detection of memory zone boundaries for UMA configs
+  csky: simplify detection of memory zone boundaries
+  m68k: mm: simplify detection of memory zone boundaries
+  parisc: simplify detection of memory zone boundaries
+  sparc32: simplify detection of memory zone boundaries
+  unicore32: simplify detection of memory zone boundaries
+  xtensa: simplify detection of memory zone boundaries
+  mm: remove early_pfn_in_nid() and CONFIG_NODES_SPAN_OTHER_NODES
+  mm: free_area_init: allow defining max_zone_pfn in descending order
+  mm: clean up free_area_init_node() and its helpers
+  mm: simplify find_min_pfn_with_active_regions()
+  docs/vm: update memory-models documentation
+
+ .../vm/numa-memblock/arch-support.txt         |  34 ---
+ Documentation/vm/memory-model.rst             |   9 +-
+ arch/alpha/mm/init.c                          |  16 +-
+ arch/alpha/mm/numa.c                          |  22 +-
+ arch/arc/mm/init.c                            |  36 +--
+ arch/arm/mm/init.c                            |  66 +----
+ arch/arm64/Kconfig                            |   1 -
+ arch/arm64/mm/init.c                          |  56 +---
+ arch/arm64/mm/numa.c                          |   9 +-
+ arch/c6x/mm/init.c                            |   8 +-
+ arch/csky/kernel/setup.c                      |  26 +-
+ arch/h8300/mm/init.c                          |   6 +-
+ arch/hexagon/mm/init.c                        |   6 +-
+ arch/ia64/Kconfig                             |   1 -
+ arch/ia64/mm/contig.c                         |   2 +-
+ arch/ia64/mm/discontig.c                      |   2 +-
+ arch/m68k/mm/init.c                           |   6 +-
+ arch/m68k/mm/mcfmmu.c                         |   9 +-
+ arch/m68k/mm/motorola.c                       |  15 +-
+ arch/m68k/mm/sun3mmu.c                        |  10 +-
+ arch/microblaze/Kconfig                       |   1 -
+ arch/microblaze/mm/init.c                     |   2 +-
+ arch/mips/Kconfig                             |   1 -
+ arch/mips/loongson64/numa.c                   |   2 +-
+ arch/mips/mm/init.c                           |   2 +-
+ arch/mips/sgi-ip27/ip27-memory.c              |   2 +-
+ arch/nds32/mm/init.c                          |  11 +-
+ arch/nios2/mm/init.c                          |   8 +-
+ arch/openrisc/mm/init.c                       |   9 +-
+ arch/parisc/mm/init.c                         |  22 +-
+ arch/powerpc/Kconfig                          |  10 -
+ arch/powerpc/mm/mem.c                         |   2 +-
+ arch/riscv/Kconfig                            |   1 -
+ arch/riscv/mm/init.c                          |   2 +-
+ arch/s390/Kconfig                             |   1 -
+ arch/s390/mm/init.c                           |   2 +-
+ arch/sh/Kconfig                               |   1 -
+ arch/sh/mm/init.c                             |   2 +-
+ arch/sparc/Kconfig                            |  10 -
+ arch/sparc/mm/init_64.c                       |   2 +-
+ arch/sparc/mm/srmmu.c                         |  21 +-
+ arch/um/kernel/mem.c                          |  12 +-
+ arch/unicore32/include/asm/memory.h           |   2 +-
+ arch/unicore32/include/mach/memory.h          |   6 +-
+ arch/unicore32/kernel/pci.c                   |  14 +-
+ arch/unicore32/mm/init.c                      |  43 +--
+ arch/x86/Kconfig                              |  10 -
+ arch/x86/mm/init.c                            |   2 +-
+ arch/x86/mm/numa.c                            |   8 +-
+ arch/xtensa/mm/init.c                         |   8 +-
+ include/linux/memblock.h                      |   8 +-
+ include/linux/mm.h                            |  28 +-
+ include/linux/mmzone.h                        |  11 +-
+ mm/Kconfig                                    |   3 -
+ mm/memblock.c                                 |  19 +-
+ mm/memory_hotplug.c                           |   4 -
+ mm/page_alloc.c                               | 278 ++++++------------
+ 57 files changed, 243 insertions(+), 667 deletions(-)
+ delete mode 100644 Documentation/features/vm/numa-memblock/arch-support.txt
+
+-- 
+2.26.1
+
 
 _______________________________________________
 linux-um mailing list
