@@ -2,77 +2,97 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 685441C0DE0
-	for <lists+linux-um@lfdr.de>; Fri,  1 May 2020 07:45:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 139B61C2E66
+	for <lists+linux-um@lfdr.de>; Sun,  3 May 2020 19:41:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gHTnX6Bxsxq9MhOBduQsXnvCYbpHM4XOQCED62PnLCE=; b=TK3nUW4OBm+Y11
-	N6vqzLs6E+ctO1H/l3oiNltnHYF0xq9Hl/98COnmDQPbXcSKwcx4PPvcYDlAER9/+E2s5h/G79K73
-	RR295B/c/6OLYQjSp51caDwYjjp69hu9UoC1P9C/aU8jG6mZwdNwlQITuBdpPVpbC4xEujCd+LwRG
-	i+uk6RWaLn0HosgSPs+A1VuZ/I8hdNTxfTi0MihXQnHIpIkgA/8Z5Q4KXDcwXgNG9TNIRqZxa92J7
-	76m9sjs25KsluVn6acDhv7BGnx+xhrH1CVY3Fk2mtPQa0R4tu+ORE7sYOlaMK185eEqnuiy5Zt5Zj
-	an09meVgudf2yYJOWRyA==;
+	List-Owner; bh=3zDIeylmAv4BbwooUXKCpdYfciL2Gd6s7iiv1ShfBo0=; b=KrVGGVT7qjzx3F
+	sRe+4qG9MkpLY4L/E4Oy44Ij3fklSJQiv3JFgMFiaR0yAA+WWw20mA+o/IDqt8qYwWyjcA64Swzx7
+	YwUIkSwEaQP+pS1yzGLRUPcAZ1PW51IPxt9rluuujZtbZxIi6ip3iNFKpPXWbRTCE2ufbOX0uWDbU
+	Uf1YkRpcAVtQ6C3A21my8DdbPT8JxKwtciyNPlIJfIM/niKR2/VLqaGrN5FoUrvPE5369eToCcKwv
+	M5teo5Wn70RYPaLsrH/lVD3SHhBzHjkuSR3XoYjGzL4xzLyc8flR57IMElsuqHcBk1Vk1OsFZcarG
+	MygrN7KREgmL4P2quSOw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUOU1-00006l-HY; Fri, 01 May 2020 05:45:09 +0000
-Received: from conssluserg-04.nifty.com ([210.131.2.83])
+	id 1jVIca-0000UZ-Sj; Sun, 03 May 2020 17:41:44 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUOTy-0007FY-Ez
- for linux-um@lists.infradead.org; Fri, 01 May 2020 05:45:08 +0000
-Received: from mail-vs1-f49.google.com (mail-vs1-f49.google.com
- [209.85.217.49]) (authenticated)
- by conssluserg-04.nifty.com with ESMTP id 0415iglV011355
- for <linux-um@lists.infradead.org>; Fri, 1 May 2020 14:44:43 +0900
-DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-04.nifty.com 0415iglV011355
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
- s=dec2015msa; t=1588311883;
- bh=qfzL0paOa0xcAfnxB0duAvkGtJs8i6sMQdMbhTy6L1E=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=tGdfOpm84vZIVVXFKw+09PgUAKGrYX2WJmG9HuxOWdPysRD8jUmP3deVWXFTN5swV
- 3Hrx7CdoLi5xwlZ3IHrMCw9vsy3DmchXGvLedpCe3Q0QGW0RF2r63Jv+eM5CZxyo9H
- LTLFu7d/AzieOR9v00F15Z5ZsCt3nbcXscHpAT7U/F9h4Mx07a+QuVgEtbQ8PmwQev
- uW3dsLz51WCZdKO/sF/TIt5X4MX91arEDqS7xgC1YRFRq/Kf+2DDPFjzh2se9abfV4
- emkzKetMuJNWSbf4p5H97Oqlci+eabwymqiSzSZ59rMrLyEoohqQU2NaXLfsekiQXG
- UnAwOF4r602Aw==
-X-Nifty-SrcIP: [209.85.217.49]
-Received: by mail-vs1-f49.google.com with SMTP id x136so5755652vsx.2
- for <linux-um@lists.infradead.org>; Thu, 30 Apr 2020 22:44:43 -0700 (PDT)
-X-Gm-Message-State: AGi0PubYtj/Z3Xp0QvEVz9QENlFth7d9PEbzNGWBSvGfaaMp0mcISYDQ
- /TcPyCVHBiIoMXZp1dNGXC1agqzNIxVPmQ9blsw=
-X-Google-Smtp-Source: APiQypICSQsHjOgrB5HvgYBUa1hOiGuyrfu4TBLWjt6h9s22CPEZ6zD/HNLA61XgUUFrv8BY+cPNxy95N3kJPPeTAJU=
-X-Received: by 2002:a05:6102:3c7:: with SMTP id
- n7mr2106127vsq.179.1588311882097; 
- Thu, 30 Apr 2020 22:44:42 -0700 (PDT)
+ id 1jVIcW-0000Sl-S1; Sun, 03 May 2020 17:41:42 +0000
+Received: by mail-pf1-x443.google.com with SMTP id v63so4393472pfb.10;
+ Sun, 03 May 2020 10:41:40 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=sender:date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=E/mr9ZyjU5f7Vr/0eufu9euRQzca2mWViEzdzXjAhKM=;
+ b=rAOPFuXgQJ2mpINJ4bZeTHDkrsZEQFsbwUGlrvdK6kp/tJs9EcLfnaWFpQLaMjvlTN
+ PpGRnjbVlR/AVFM9AVMPY1HNoRLD+rgpHPyTxpKKlbrj05rCKcKZtY2qpz5bcSW3rVBO
+ IocR5gWdH3gQT2RwWqhl/NTjprRC2CBth012R+d19kLQzVIHkQC7ljzq6SUBEAwz0CS8
+ BnEP6HirMkFO0ICbg+hSwf+E0KnuOsGeUCXZA18VmuCvpAorlqiIGznMmafOkyr6R+Rc
+ Q2PQDp8BGjLWDFmIAM1Oj/Qg5ff8e5fmuTqOOSGH41UE65MVi0GaoynoX/HwzIYTjpMy
+ UfXQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
+ :references:mime-version:content-disposition:in-reply-to:user-agent;
+ bh=E/mr9ZyjU5f7Vr/0eufu9euRQzca2mWViEzdzXjAhKM=;
+ b=J4BzmFjGkg8WXvV/Q2K45+Edx2SqJou0+YyRc1DZh994PMl4g+C8LvUK1x8AXm/tM+
+ QinLZxtKsHrfz+KtWJRIPnYTiUDfslHpkJWqzCOPcognehKjqUaa49Kw+Av/RRiZfaU0
+ TeuevbwfH7lDz9MnpaV/47P7v12yjFxu2/ENqrYK3kVSOZpIoYsba0d/jAqNxJYfmAAV
+ EfZkrXpSBk0uliAz+kpwlzzmF0+9oNukiWRzASTv7ZrHLYxBemfzN1jmgLup+vmBpIDr
+ NtIOo4YJFHYl27lZz79HIdYRKYDOZ0TtccfZGIT/czKIg8dXbrHnCUXSlMZXBtFrzeme
+ Jnqg==
+X-Gm-Message-State: AGi0PuYaRmlEH+hNaqk9Xuh5DAZ5OkAgAbQyA9ZiMzVk1z63ki2aawFZ
+ bQWdL/fJjNdr+kjZ4sDzUXg=
+X-Google-Smtp-Source: APiQypKe5f9UYzoGgygyTvemhYSAj5fxly1sdtXiMOKzeUqRJYW2ZGXxYUOZH0ANd9Z0qgzTnrAvVw==
+X-Received: by 2002:aa7:9093:: with SMTP id i19mr13366500pfa.152.1588527699823; 
+ Sun, 03 May 2020 10:41:39 -0700 (PDT)
+Received: from localhost ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
+ by smtp.gmail.com with ESMTPSA id q97sm4982611pjb.7.2020.05.03.10.41.38
+ (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
+ Sun, 03 May 2020 10:41:39 -0700 (PDT)
+Date: Sun, 3 May 2020 10:41:38 -0700
+From: Guenter Roeck <linux@roeck-us.net>
+To: Mike Rapoport <rppt@kernel.org>
+Subject: Re: [PATCH v2 17/20] mm: free_area_init: allow defining max_zone_pfn
+ in descending order
+Message-ID: <20200503174138.GA114085@roeck-us.net>
+References: <20200429121126.17989-1-rppt@kernel.org>
+ <20200429121126.17989-18-rppt@kernel.org>
 MIME-Version: 1.0
-References: <20200417180455.1174340-1-masahiroy@kernel.org>
-In-Reply-To: <20200417180455.1174340-1-masahiroy@kernel.org>
-From: Masahiro Yamada <masahiroy@kernel.org>
-Date: Fri, 1 May 2020 14:44:06 +0900
-X-Gmail-Original-Message-ID: <CAK7LNAQNwHW8=UQPCs7D=bEx2qKwfoNxVVMmHiOwmPy3j4aaGQ@mail.gmail.com>
-Message-ID: <CAK7LNAQNwHW8=UQPCs7D=bEx2qKwfoNxVVMmHiOwmPy3j4aaGQ@mail.gmail.com>
-Subject: Re: [PATCH] um: do not evaluate compiler's library path when cleaning
-To: Jeff Dike <jdike@addtoit.com>, Richard Weinberger <richard@nod.at>,
- Anton Ivanov <anton.ivanov@cambridgegreys.com>,
- linux-um@lists.infradead.org
+Content-Disposition: inline
+In-Reply-To: <20200429121126.17989-18-rppt@kernel.org>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_224506_745395_48437948 
-X-CRM114-Status: GOOD (  14.23  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20200503_104140_925621_E17DD97B 
+X-CRM114-Status: UNSURE (   9.33  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.6 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (0.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [210.131.2.83 listed in list.dnswl.org]
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [groeck7[at]gmail.com]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [groeck7[at]gmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,68 +104,106 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: Johannes Berg <johannes.berg@intel.com>,
- Linux Kbuild mailing list <linux-kbuild@vger.kernel.org>,
- Erel Geron <erelx.geron@intel.com>, Nick Desaulniers <ndesaulniers@google.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Alex Dewar <alex.dewar@gmx.co.uk>,
- Nathan Chancellor <natechancellor@gmail.com>
+Cc: Rich Felker <dalias@libc.org>, linux-ia64@vger.kernel.org,
+ linux-doc@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, x86@kernel.org,
+ Michal Hocko <mhocko@kernel.org>,
+ "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>,
+ Max Filippov <jcmvbkbc@gmail.com>, Guo Ren <guoren@kernel.org>,
+ Ley Foon Tan <ley.foon.tan@intel.com>, sparclinux@vger.kernel.org,
+ linux-riscv@lists.infradead.org, Greg Ungerer <gerg@linux-m68k.org>,
+ linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
+ linux-c6x-dev@linux-c6x.org, Baoquan He <bhe@redhat.com>,
+ Jonathan Corbet <corbet@lwn.net>, linux-hexagon@vger.kernel.org,
+ Helge Deller <deller@gmx.de>, linux-sh@vger.kernel.org,
+ Russell King <linux@armlinux.org.uk>, linux-csky@vger.kernel.org,
+ Mike Rapoport <rppt@linux.ibm.com>, Geert Uytterhoeven <geert@linux-m68k.org>,
+ Hoan Tran <Hoan@os.amperecomputing.com>, Mark Salter <msalter@redhat.com>,
+ Matt Turner <mattst88@gmail.com>, linux-snps-arc@lists.infradead.org,
+ uclinux-h8-devel@lists.sourceforge.jp, linux-xtensa@linux-xtensa.org,
+ Nick Hu <nickhu@andestech.com>, linux-alpha@vger.kernel.org,
+ linux-um@lists.infradead.org, linux-mips@vger.kernel.org,
+ Richard Weinberger <richard@nod.at>, linux-m68k@lists.linux-m68k.org,
+ Thomas Bogendoerfer <tsbogend@alpha.franken.de>, Qian Cai <cai@lca.pw>,
+ Greentime Hu <green.hu@gmail.com>, Paul Walmsley <paul.walmsley@sifive.com>,
+ Stafford Horne <shorne@gmail.com>, Guan Xuetao <gxt@pku.edu.cn>,
+ linux-arm-kernel@lists.infradead.org, Michal Simek <monstr@monstr.eu>,
+ Tony Luck <tony.luck@intel.com>, Yoshinori Sato <ysato@users.sourceforge.jp>,
+ linux-parisc@vger.kernel.org, linux-mm@kvack.org,
+ Vineet Gupta <vgupta@synopsys.com>, Brian Cain <bcain@codeaurora.org>,
+ linux-kernel@vger.kernel.org, openrisc@lists.librecores.org,
+ Michael Ellerman <mpe@ellerman.id.au>,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
+ "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Sat, Apr 18, 2020 at 3:06 AM Masahiro Yamada <masahiroy@kernel.org> wrote:
->
-> Since commit a83e4ca26af8 ("kbuild: remove cc-option switch from
-> -Wframe-larger-than="), 'make ARCH=um clean' emits an error message
-> as follows:
->
->   $ make ARCH=um clean
->   gcc: error: missing argument to '-Wframe-larger-than='
->
-> We do not care compiler flags when cleaning.
->
-> Use the '=' operator for lazy expansion because we do not use
-> LDFLAGS_pcap.o or LDFLAGS_vde.o when cleaning.
->
-> While I was here, I removed the redundant -r option because it
-> already exists in the recipe.
->
-> Fixes: a83e4ca26af8 ("kbuild: remove cc-option switch from -Wframe-larger-than=")
-> Signed-off-by: Masahiro Yamada <masahiroy@kernel.org>
-> ---
->
->  arch/um/drivers/Makefile | 4 ++--
->  1 file changed, 2 insertions(+), 2 deletions(-)
->
-> diff --git a/arch/um/drivers/Makefile b/arch/um/drivers/Makefile
-> index a290821e355c..2a249f619467 100644
-> --- a/arch/um/drivers/Makefile
-> +++ b/arch/um/drivers/Makefile
-> @@ -18,9 +18,9 @@ ubd-objs := ubd_kern.o ubd_user.o
->  port-objs := port_kern.o port_user.o
->  harddog-objs := harddog_kern.o harddog_user.o
->
-> -LDFLAGS_pcap.o := -r $(shell $(CC) $(KBUILD_CFLAGS) -print-file-name=libpcap.a)
-> +LDFLAGS_pcap.o = $(shell $(CC) $(KBUILD_CFLAGS) -print-file-name=libpcap.a)
->
-> -LDFLAGS_vde.o := -r $(shell $(CC) $(CFLAGS) -print-file-name=libvdeplug.a)
-> +LDFLAGS_vde.o = $(shell $(CC) $(CFLAGS) -print-file-name=libvdeplug.a)
->
->  targets := pcap_kern.o pcap_user.o vde_kern.o vde_user.o
->
-> --
-> 2.25.1
->
+Hi,
 
+On Wed, Apr 29, 2020 at 03:11:23PM +0300, Mike Rapoport wrote:
+> From: Mike Rapoport <rppt@linux.ibm.com>
+> 
+> Some architectures (e.g. ARC) have the ZONE_HIGHMEM zone below the
+> ZONE_NORMAL. Allowing free_area_init() parse max_zone_pfn array even it is
+> sorted in descending order allows using free_area_init() on such
+> architectures.
+> 
+> Add top -> down traversal of max_zone_pfn array in free_area_init() and use
+> the latter in ARC node/zone initialization.
+> 
+> Signed-off-by: Mike Rapoport <rppt@linux.ibm.com>
 
-Applied to linux-kbuild.
+This patch causes my microblazeel qemu boot test in linux-next to fail.
+Reverting it fixes the problem.
 
+qemu command line:
 
--- 
-Best Regards
-Masahiro Yamada
+qemu-system-microblazeel -M petalogix-ml605 -m 256 \
+	-kernel arch/microblaze/boot/linux.bin -no-reboot \
+	-initrd rootfs.cpio \
+	-append 'panic=-1 slub_debug=FZPUA rdinit=/sbin/init console=ttyS0,115200' \
+	-monitor none -serial stdio -nographic
+
+initrd:
+	https://github.com/groeck/linux-build-test/blob/master/rootfs/microblazeel/rootfs.cpio.gz
+configuration:
+	https://github.com/groeck/linux-build-test/blob/master/rootfs/microblazeel/qemu_microblazeel_ml605_defconfig
+
+Bisect log is below.
+
+Guenter
+
+---
+# bad: [fb9d670f57e3f6478602328bbbf71138be06ca4f] Add linux-next specific files for 20200501
+# good: [6a8b55ed4056ea5559ebe4f6a4b247f627870d4c] Linux 5.7-rc3
+git bisect start 'HEAD' 'v5.7-rc3'
+# good: [068b80b68a670f0b17288c8a3d1ee751f35162ab] Merge remote-tracking branch 'drm/drm-next'
+git bisect good 068b80b68a670f0b17288c8a3d1ee751f35162ab
+# good: [46c70fc6a3ac35cd72ddad248dcbe4eee716d2a5] Merge remote-tracking branch 'drivers-x86/for-next'
+git bisect good 46c70fc6a3ac35cd72ddad248dcbe4eee716d2a5
+# good: [f39c4ad479a2f005f972a2b941b40efa6b9c9349] Merge remote-tracking branch 'rpmsg/for-next'
+git bisect good f39c4ad479a2f005f972a2b941b40efa6b9c9349
+# bad: [165d3ee0162fe28efc2c8180176633e33515df15] ipc-convert-ipcs_idr-to-xarray-update
+git bisect bad 165d3ee0162fe28efc2c8180176633e33515df15
+# good: [001f1d211ed2ed0f005838dc4390993930bbbd69] mm: remove early_pfn_in_nid() and CONFIG_NODES_SPAN_OTHER_NODES
+git bisect good 001f1d211ed2ed0f005838dc4390993930bbbd69
+# bad: [aaad7401bd32f10c1d591dd886b3a9b9595c6d77] mm/vmsan: fix some typos in comment
+git bisect bad aaad7401bd32f10c1d591dd886b3a9b9595c6d77
+# bad: [09f9d0ab1fbed85623b283995aa7a7d78daa1611] khugepaged: allow to collapse PTE-mapped compound pages
+git bisect bad 09f9d0ab1fbed85623b283995aa7a7d78daa1611
+# bad: [c942fc8a3e5088407bc32d94f554bab205175f8a] mm/vmstat.c: do not show lowmem reserve protection information of empty zone
+git bisect bad c942fc8a3e5088407bc32d94f554bab205175f8a
+# bad: [b29358d269ace3826d8521bea842fc2984cfc11b] mm/page_alloc.c: rename free_pages_check() to check_free_page()
+git bisect bad b29358d269ace3826d8521bea842fc2984cfc11b
+# bad: [be0fb591a1f1df20a00c8f023f9ca4891f177b0d] mm: simplify find_min_pfn_with_active_regions()
+git bisect bad be0fb591a1f1df20a00c8f023f9ca4891f177b0d
+# bad: [c17422a008d36dcf3e9f51469758c5762716cb0a] mm: rename free_area_init_node() to free_area_init_memoryless_node()
+git bisect bad c17422a008d36dcf3e9f51469758c5762716cb0a
+# bad: [51a2f644fd020d5f090044825c388444d11029d5] mm: free_area_init: allow defining max_zone_pfn in descending order
+git bisect bad 51a2f644fd020d5f090044825c388444d11029d5
+# first bad commit: [51a2f644fd020d5f090044825c388444d11029d5] mm: free_area_init: allow defining max_zone_pfn in descending order
 
 _______________________________________________
 linux-um mailing list
