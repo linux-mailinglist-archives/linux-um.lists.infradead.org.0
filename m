@@ -2,68 +2,71 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2D9C81C3411
-	for <lists+linux-um@lfdr.de>; Mon,  4 May 2020 10:08:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1452B1C3EB6
+	for <lists+linux-um@lfdr.de>; Mon,  4 May 2020 17:39:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NV/phMvBb2L7djK/wHxA2093E8nZ+PmUKtzeV3etS8M=; b=uJccJW6q0eeo2O
-	mIC7kEK7OPzj+fCld9yaissZusgU4TnJh0y3U+D/gdJQR/9X8TVsJd6/e2aLeV9+Qf/GL7URq71Vx
-	LyfWSvwRg1A36K8j22S2oKce9wwrBAtRVyZnvS8wHov6qTUSh+1H0g6VVTBCod/ZIZFl/936u6r7c
-	+rJB+cv4pBYQ7FilwMYIfTq+KFLeigpW8nQwcdIuIqiWiKDanvwSUClBu40Aaau6kMos4uMxiEtWv
-	9zYoz7j48ps4OHh1Cqnu3AAp/6nVIBKnGXrvPUehBj7pZ1GKOgdyveAB5TpOhew6mPcrc7UF6Khyq
-	YJvptGMo+NpBFPWKMVfg==;
+	List-Owner; bh=8VyaLHQJlvo6XktEyIv0KOXl1IzyILiZcIUWTlx+2XI=; b=ZEKpkh/3aUqgPX
+	ThkVqnoz9fEi3Z95OvlNZs7wBnjEl3rsDfJG1cI0r8Evi13abYAoc8riQgpVnCj4Eqbi9okMBfM22
+	6oydy/3z/yLDsX8kxJP2i/F2ndOXI3pLnlsoSHhV/4wmEBO4RxANfnDuRUghT+DHKEfKXZhRulBds
+	DEwp7fg991x/KyHMSQRX+OS1l1SD5gRla9PioV5WywXd4lU4+UQymvtUj9UDJsfraPnO0Qbrm/4ka
+	CNndyUtI+to2Hi7bzFsvXEYG3JmjmoPAX+655pVtM8l7zVHh6zSywwFnzY23oslVg19nTaRMtWVLQ
+	NIR/7CbUr/aammK4ay5g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVW9O-0006dH-Gg; Mon, 04 May 2020 08:08:30 +0000
-Received: from conuserg-12.nifty.com ([210.131.2.79])
+	id 1jVdBn-00033W-58; Mon, 04 May 2020 15:39:27 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVW9L-0006cJ-Pj
- for linux-um@lists.infradead.org; Mon, 04 May 2020 08:08:29 +0000
-Received: from oscar.flets-west.jp (softbank126090202047.bbtec.net
- [126.90.202.47]) (authenticated)
- by conuserg-12.nifty.com with ESMTP id 044888nC016007;
- Mon, 4 May 2020 17:08:09 +0900
-DKIM-Filter: OpenDKIM Filter v2.10.3 conuserg-12.nifty.com 044888nC016007
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
- s=dec2015msa; t=1588579690;
- bh=/3yLFIULZ1ttgr4BZxxnZusRx1L5wNRo4hrlgq8nx6w=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=M2ktfTiajg/232fM8veJ6jJiv2ERK4Vm4vgfn5RKF5lWcyF40PphFeJaa5qaXSZ+x
- KiIbJF2Fvpsi+cTiHtngdCjpJtzPe0wKhoBfgbcEoSmuufsscudbQG0C3c5VTtTyU/
- ZuVVOFPVZI5DURTI918FTQiEwGTeLqMTuo7dDRR6qjRUzgMPY0RTXFjr4pt3ZUGmbO
- 2XhJYFQgZllbJZSp1u0oZHhPxMRvbsjfnpJ6EP9dIl0Sr812a6gGqgiBJDZX4Evixe
- 32d4i6L37trku0gQVsDYBmmBivZbsQwFsP37zEzYiYn+sQrchjRnAI4a6C/LulOWVA
- UGLiHA35euOKQ==
-X-Nifty-SrcIP: [126.90.202.47]
-From: Masahiro Yamada <masahiroy@kernel.org>
-To: linux-kbuild@vger.kernel.org
-Subject: [PATCH 2/2] kbuild: remove {CLEAN,MRPROPER,DISTCLEAN}_DIRS
-Date: Mon,  4 May 2020 17:08:07 +0900
-Message-Id: <20200504080807.126396-2-masahiroy@kernel.org>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20200504080807.126396-1-masahiroy@kernel.org>
-References: <20200504080807.126396-1-masahiroy@kernel.org>
+ id 1jVdBi-00030U-Ak; Mon, 04 May 2020 15:39:24 +0000
+Received: from kernel.org (unknown [87.71.57.30])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id BB3FF206D7;
+ Mon,  4 May 2020 15:39:07 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1588606761;
+ bh=K3AQD4/kSurqTKgiy9tnhsUhrYGtu7oPwWRQzafMBDk=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=r4eFD/8M6rkpVhWGJCM/XtjuL/CEeeN7FuJSwVNx6NS+9s41kdKOpAfrpyLGuvIjw
+ Dsuxy71lGNPG6A1BQVCQEZ5Cg17/+/r+5sTXhGv9TOpm3Ji63adplTBcIG0ncWkgZc
+ n7BzNcKe3WYWVs/gQPxwA3v+UREC5VfAHR93vTCo=
+Date: Mon, 4 May 2020 18:39:01 +0300
+From: Mike Rapoport <rppt@kernel.org>
+To: Guenter Roeck <linux@roeck-us.net>
+Subject: Re: [PATCH v2 17/20] mm: free_area_init: allow defining max_zone_pfn
+ in descending order
+Message-ID: <20200504153901.GM14260@kernel.org>
+References: <20200429121126.17989-1-rppt@kernel.org>
+ <20200429121126.17989-18-rppt@kernel.org>
+ <20200503174138.GA114085@roeck-us.net>
+ <20200503184300.GA154219@roeck-us.net>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200503184300.GA154219@roeck-us.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200504_010828_069219_6123EFC5 
-X-CRM114-Status: UNSURE (   7.18  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20200504_083922_413940_962DECD3 
+X-CRM114-Status: GOOD (  20.60  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [210.131.2.79 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,128 +78,197 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: Michal Marek <michal.lkml@markovi.net>, Richard Weinberger <richard@nod.at>,
- Masahiro Yamada <masahiroy@kernel.org>, linux-um@lists.infradead.org,
- linux-kernel@vger.kernel.org, Jeff Dike <jdike@addtoit.com>,
- Anton Ivanov <anton.ivanov@cambridgegreys.com>
+Cc: Rich Felker <dalias@libc.org>, linux-ia64@vger.kernel.org,
+ linux-doc@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, x86@kernel.org,
+ Michal Hocko <mhocko@kernel.org>,
+ "James E.J. Bottomley" <James.Bottomley@hansenpartnership.com>,
+ Max Filippov <jcmvbkbc@gmail.com>, Guo Ren <guoren@kernel.org>,
+ Ley Foon Tan <ley.foon.tan@intel.com>, sparclinux@vger.kernel.org,
+ linux-riscv@lists.infradead.org, Greg Ungerer <gerg@linux-m68k.org>,
+ linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
+ linux-c6x-dev@linux-c6x.org, Baoquan He <bhe@redhat.com>,
+ Jonathan Corbet <corbet@lwn.net>, linux-hexagon@vger.kernel.org,
+ Helge Deller <deller@gmx.de>, linux-sh@vger.kernel.org,
+ Russell King <linux@armlinux.org.uk>, linux-csky@vger.kernel.org,
+ Mike Rapoport <rppt@linux.ibm.com>, Geert Uytterhoeven <geert@linux-m68k.org>,
+ Hoan Tran <Hoan@os.amperecomputing.com>, Mark Salter <msalter@redhat.com>,
+ Matt Turner <mattst88@gmail.com>, linux-snps-arc@lists.infradead.org,
+ uclinux-h8-devel@lists.sourceforge.jp, linux-xtensa@linux-xtensa.org,
+ Nick Hu <nickhu@andestech.com>, linux-alpha@vger.kernel.org,
+ linux-um@lists.infradead.org, linux-mips@vger.kernel.org,
+ Richard Weinberger <richard@nod.at>, linux-m68k@lists.linux-m68k.org,
+ Thomas Bogendoerfer <tsbogend@alpha.franken.de>, Qian Cai <cai@lca.pw>,
+ Greentime Hu <green.hu@gmail.com>, Paul Walmsley <paul.walmsley@sifive.com>,
+ Stafford Horne <shorne@gmail.com>, Guan Xuetao <gxt@pku.edu.cn>,
+ linux-arm-kernel@lists.infradead.org, Michal Simek <monstr@monstr.eu>,
+ Tony Luck <tony.luck@intel.com>, Yoshinori Sato <ysato@users.sourceforge.jp>,
+ linux-parisc@vger.kernel.org, linux-mm@kvack.org,
+ Vineet Gupta <vgupta@synopsys.com>, Brian Cain <bcain@codeaurora.org>,
+ linux-kernel@vger.kernel.org, openrisc@lists.librecores.org,
+ Michael Ellerman <mpe@ellerman.id.au>,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
+ "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-Merge {CLEAN,MRPROPER,DISTCLEAN}_DIRS into {CLEAN,MRPROPER,DISTCLEAN}_FILES
-because the difference is just the -r option passed to the 'rm' command.
+On Sun, May 03, 2020 at 11:43:00AM -0700, Guenter Roeck wrote:
+> On Sun, May 03, 2020 at 10:41:38AM -0700, Guenter Roeck wrote:
+> > Hi,
+> > 
+> > On Wed, Apr 29, 2020 at 03:11:23PM +0300, Mike Rapoport wrote:
+> > > From: Mike Rapoport <rppt@linux.ibm.com>
+> > > 
+> > > Some architectures (e.g. ARC) have the ZONE_HIGHMEM zone below the
+> > > ZONE_NORMAL. Allowing free_area_init() parse max_zone_pfn array even it is
+> > > sorted in descending order allows using free_area_init() on such
+> > > architectures.
+> > > 
+> > > Add top -> down traversal of max_zone_pfn array in free_area_init() and use
+> > > the latter in ARC node/zone initialization.
+> > > 
+> > > Signed-off-by: Mike Rapoport <rppt@linux.ibm.com>
+> > 
+> > This patch causes my microblazeel qemu boot test in linux-next to fail.
+> > Reverting it fixes the problem.
+> > 
+> The same problem is seen with s390 emulations.
 
-Do likewise as commit 1634f2bfdb84 ("kbuild: remove clean-dirs syntax").
+Yeah, this patch breaks some others as well :(
 
-Signed-off-by: Masahiro Yamada <masahiroy@kernel.org>
----
+My assumption that max_zone_pfn defines architectural limit for maximal
+PFN that can belong to a zone was over-optimistic. Several arches
+actually do that, but others do
 
- Makefile         | 22 ++++++----------------
- arch/um/Makefile |  2 +-
- 2 files changed, 7 insertions(+), 17 deletions(-)
+	max_zone_pfn[ZONE_DMA] = MAX_DMA_PFN;
+	max_zone_pfn[ZONE_NORMAL] = max_pfn;
 
-diff --git a/Makefile b/Makefile
-index ffd80afcd0bb..8a7c931cc0d9 100644
---- a/Makefile
-+++ b/Makefile
-@@ -1389,14 +1389,14 @@ endif # CONFIG_MODULES
- # make distclean Remove editor backup files, patch leftover files and the like
+where MAX_DMA_PFN is build-time constrain and max_pfn is run time limit
+for the current system.
+
+So, when max_pfn is lower than MAX_DMA_PFN, the free_init_area() will
+consider max_zone_pfn as descending and will wrongly calculate zone
+extents.
+
+That said, instead of trying to create a generic way to special case
+ARC, I suggest to simply use the below patch instead.
+
+diff --git a/arch/arc/mm/init.c b/arch/arc/mm/init.c
+index 41eb9be1653c..386959bac3d2 100644
+--- a/arch/arc/mm/init.c
++++ b/arch/arc/mm/init.c
+@@ -77,6 +77,11 @@ void __init early_init_dt_add_memory_arch(u64 base, u64 size)
+ 		base, TO_MB(size), !in_use ? "Not used":"");
+ }
  
- # Directories & files removed with 'make clean'
--CLEAN_DIRS  += include/ksym
--CLEAN_FILES += modules.builtin modules.builtin.modinfo modules.nsdeps
-+CLEAN_FILES += include/ksym \
-+	       modules.builtin modules.builtin.modinfo modules.nsdeps
++bool arch_has_descending_max_zone_pfns(void)
++{
++	return true;
++}
++
+ /*
+  * First memory setup routine called from setup_arch()
+  * 1. setup swapper's mm @init_mm
+diff --git a/mm/page_alloc.c b/mm/page_alloc.c
+index b990e9734474..114f0e027144 100644
+--- a/mm/page_alloc.c
++++ b/mm/page_alloc.c
+@@ -7307,6 +7307,15 @@ static void check_for_memory(pg_data_t *pgdat, int nid)
+ 	}
+ }
  
- # Directories & files removed with 'make mrproper'
--MRPROPER_DIRS  += include/config include/generated          \
-+MRPROPER_FILES += include/config include/generated          \
- 		  arch/$(SRCARCH)/include/generated .tmp_objdiff \
--		  debian/ snap/ tar-install/
--MRPROPER_FILES += .config .config.old .version \
-+		  debian snap tar-install \
-+		  .config .config.old .version \
- 		  Module.symvers \
- 		  signing_key.pem signing_key.priv signing_key.x509	\
- 		  x509.genkey extra_certificates signing_key.x509.keyid	\
-@@ -1404,12 +1404,10 @@ MRPROPER_FILES += .config .config.old .version \
- 		  *.spec
++/*
++ * Some architecturs, e.g. ARC may have ZONE_HIGHMEM below ZONE_NORMAL. For
++ * such cases we allow max_zone_pfn sorted in the descending order
++ */
++bool __weak arch_has_descending_max_zone_pfns(void)
++{
++	return false;
++}
++
+ /**
+  * free_area_init - Initialise all pg_data_t and zone data
+  * @max_zone_pfn: an array of max PFNs for each zone
+@@ -7324,7 +7333,7 @@ void __init free_area_init(unsigned long *max_zone_pfn)
+ {
+ 	unsigned long start_pfn, end_pfn;
+ 	int i, nid, zone;
+-	bool descending = false;
++	bool descending;
  
- # Directories & files removed with 'make distclean'
--DISTCLEAN_DIRS  +=
- DISTCLEAN_FILES += tags TAGS cscope* GPATH GTAGS GRTAGS GSYMS
+ 	/* Record where the zone boundaries are */
+ 	memset(arch_zone_lowest_possible_pfn, 0,
+@@ -7333,14 +7342,7 @@ void __init free_area_init(unsigned long *max_zone_pfn)
+ 				sizeof(arch_zone_highest_possible_pfn));
  
- # clean - Delete most, but leave enough to build external modules
- #
--clean: rm-dirs  := $(CLEAN_DIRS)
- clean: rm-files := $(CLEAN_FILES)
- 
- PHONY += archclean vmlinuxclean
-@@ -1422,7 +1420,6 @@ clean: archclean vmlinuxclean
- 
- # mrproper - Delete all generated files, including .config
- #
--mrproper: rm-dirs  := $(wildcard $(MRPROPER_DIRS))
- mrproper: rm-files := $(wildcard $(MRPROPER_FILES))
- mrproper-dirs      := $(addprefix _mrproper_,scripts)
- 
-@@ -1431,18 +1428,15 @@ $(mrproper-dirs):
- 	$(Q)$(MAKE) $(clean)=$(patsubst _mrproper_%,%,$@)
- 
- mrproper: clean $(mrproper-dirs)
--	$(call cmd,rmdirs)
- 	$(call cmd,rmfiles)
- 
- # distclean
- #
--distclean: rm-dirs  := $(wildcard $(DISTCLEAN_DIRS))
- distclean: rm-files := $(wildcard $(DISTCLEAN_FILES))
- 
- PHONY += distclean
- 
- distclean: mrproper
--	$(call cmd,rmdirs)
- 	$(call cmd,rmfiles)
- 	@find $(srctree) $(RCS_FIND_IGNORE) \
- 		\( -name '*.orig' -o -name '*.rej' -o -name '*~' \
-@@ -1732,7 +1726,6 @@ $(clean-dirs):
- 	$(Q)$(MAKE) $(clean)=$(patsubst _clean_%,%,$@)
- 
- clean: $(clean-dirs)
--	$(call cmd,rmdirs)
- 	$(call cmd,rmfiles)
- 	@find $(if $(KBUILD_EXTMOD), $(KBUILD_EXTMOD), .) $(RCS_FIND_IGNORE) \
- 		\( -name '*.[aios]' -o -name '*.ko' -o -name '.*.cmd' \
-@@ -1827,11 +1820,8 @@ tools/%: FORCE
- 	$(Q)mkdir -p $(objtree)/tools
- 	$(Q)$(MAKE) LDFLAGS= MAKEFLAGS="$(tools_silent) $(filter --j% -j,$(MAKEFLAGS))" O=$(abspath $(objtree)) subdir=tools -C $(srctree)/tools/ $*
- 
--quiet_cmd_rmdirs = $(if $(wildcard $(rm-dirs)),CLEAN   $(wildcard $(rm-dirs)))
--      cmd_rmdirs = rm -rf $(rm-dirs)
+ 	start_pfn = find_min_pfn_with_active_regions();
 -
- quiet_cmd_rmfiles = $(if $(wildcard $(rm-files)),CLEAN   $(wildcard $(rm-files)))
--      cmd_rmfiles = rm -f $(rm-files)
-+      cmd_rmfiles = rm -rf $(rm-files)
+-	/*
+-	 * Some architecturs, e.g. ARC may have ZONE_HIGHMEM below
+-	 * ZONE_NORMAL. For such cases we allow max_zone_pfn sorted in the
+-	 * descending order
+-	 */
+-	if (MAX_NR_ZONES > 1 && max_zone_pfn[0] > max_zone_pfn[1])
+-		descending = true;
++	descending = arch_has_descending_max_zone_pfns();
  
- # Run depmod only if we have System.map and depmod is executable
- quiet_cmd_depmod = DEPMOD  $(KERNELRELEASE)
-diff --git a/arch/um/Makefile b/arch/um/Makefile
-index 275f5ffdf6f0..3f27aa3ec0a6 100644
---- a/arch/um/Makefile
-+++ b/arch/um/Makefile
-@@ -140,7 +140,7 @@ export CFLAGS_vmlinux := $(LINK-y) $(LINK_WRAPS) $(LD_FLAGS_CMDLINE)
- # When cleaning we don't include .config, so we don't include
- # TT or skas makefiles and don't clean skas_ptregs.h.
- CLEAN_FILES += linux x.i gmon.out
--MRPROPER_DIRS += arch/$(SUBARCH)/include/generated
-+MRPROPER_FILES += arch/$(SUBARCH)/include/generated
- 
- archclean:
- 	@find . \( -name '*.bb' -o -name '*.bbg' -o -name '*.da' \
--- 
-2.25.1
+ 	for (i = 0; i < MAX_NR_ZONES; i++) {
+ 		if (descending)
 
+> Guenter
+> 
+> > qemu command line:
+> > 
+> > qemu-system-microblazeel -M petalogix-ml605 -m 256 \
+> > 	-kernel arch/microblaze/boot/linux.bin -no-reboot \
+> > 	-initrd rootfs.cpio \
+> > 	-append 'panic=-1 slub_debug=FZPUA rdinit=/sbin/init console=ttyS0,115200' \
+> > 	-monitor none -serial stdio -nographic
+> > 
+> > initrd:
+> > 	https://github.com/groeck/linux-build-test/blob/master/rootfs/microblazeel/rootfs.cpio.gz
+> > configuration:
+> > 	https://github.com/groeck/linux-build-test/blob/master/rootfs/microblazeel/qemu_microblazeel_ml605_defconfig
+> > 
+> > Bisect log is below.
+> > 
+> > Guenter
+> > 
+> > ---
+> > # bad: [fb9d670f57e3f6478602328bbbf71138be06ca4f] Add linux-next specific files for 20200501
+> > # good: [6a8b55ed4056ea5559ebe4f6a4b247f627870d4c] Linux 5.7-rc3
+> > git bisect start 'HEAD' 'v5.7-rc3'
+> > # good: [068b80b68a670f0b17288c8a3d1ee751f35162ab] Merge remote-tracking branch 'drm/drm-next'
+> > git bisect good 068b80b68a670f0b17288c8a3d1ee751f35162ab
+> > # good: [46c70fc6a3ac35cd72ddad248dcbe4eee716d2a5] Merge remote-tracking branch 'drivers-x86/for-next'
+> > git bisect good 46c70fc6a3ac35cd72ddad248dcbe4eee716d2a5
+> > # good: [f39c4ad479a2f005f972a2b941b40efa6b9c9349] Merge remote-tracking branch 'rpmsg/for-next'
+> > git bisect good f39c4ad479a2f005f972a2b941b40efa6b9c9349
+> > # bad: [165d3ee0162fe28efc2c8180176633e33515df15] ipc-convert-ipcs_idr-to-xarray-update
+> > git bisect bad 165d3ee0162fe28efc2c8180176633e33515df15
+> > # good: [001f1d211ed2ed0f005838dc4390993930bbbd69] mm: remove early_pfn_in_nid() and CONFIG_NODES_SPAN_OTHER_NODES
+> > git bisect good 001f1d211ed2ed0f005838dc4390993930bbbd69
+> > # bad: [aaad7401bd32f10c1d591dd886b3a9b9595c6d77] mm/vmsan: fix some typos in comment
+> > git bisect bad aaad7401bd32f10c1d591dd886b3a9b9595c6d77
+> > # bad: [09f9d0ab1fbed85623b283995aa7a7d78daa1611] khugepaged: allow to collapse PTE-mapped compound pages
+> > git bisect bad 09f9d0ab1fbed85623b283995aa7a7d78daa1611
+> > # bad: [c942fc8a3e5088407bc32d94f554bab205175f8a] mm/vmstat.c: do not show lowmem reserve protection information of empty zone
+> > git bisect bad c942fc8a3e5088407bc32d94f554bab205175f8a
+> > # bad: [b29358d269ace3826d8521bea842fc2984cfc11b] mm/page_alloc.c: rename free_pages_check() to check_free_page()
+> > git bisect bad b29358d269ace3826d8521bea842fc2984cfc11b
+> > # bad: [be0fb591a1f1df20a00c8f023f9ca4891f177b0d] mm: simplify find_min_pfn_with_active_regions()
+> > git bisect bad be0fb591a1f1df20a00c8f023f9ca4891f177b0d
+> > # bad: [c17422a008d36dcf3e9f51469758c5762716cb0a] mm: rename free_area_init_node() to free_area_init_memoryless_node()
+> > git bisect bad c17422a008d36dcf3e9f51469758c5762716cb0a
+> > # bad: [51a2f644fd020d5f090044825c388444d11029d5] mm: free_area_init: allow defining max_zone_pfn in descending order
+> > git bisect bad 51a2f644fd020d5f090044825c388444d11029d5
+> > # first bad commit: [51a2f644fd020d5f090044825c388444d11029d5] mm: free_area_init: allow defining max_zone_pfn in descending order
+
+-- 
+Sincerely yours,
+Mike.
 
 _______________________________________________
 linux-um mailing list
