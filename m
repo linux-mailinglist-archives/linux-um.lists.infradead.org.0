@@ -2,98 +2,68 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B00011C2E8F
-	for <lists+linux-um@lfdr.de>; Sun,  3 May 2020 20:43:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2D9C81C3411
+	for <lists+linux-um@lfdr.de>; Mon,  4 May 2020 10:08:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ktR1x26QU5ILfovj0MIeM/08y6kvVcO6KXJuvANxDvU=; b=Cag2wxlHFB2bha
-	wabM9gFd33E6XvAljbugfyH5yO8SeDCf/A7gIEkcSlHId4Qmg4PO36ejCmSf6on6J/GS3Xz0M2zSz
-	OVOwyFUmNu4qZPgxxG92absfueGEclc3wd8C1zWhChwO23g5Z2GbnLcf00aj7TAQOAm8gAHaDF3ia
-	ipcANFXG4njEOM4Qz/fkRfJy15MemecQCz77kS9m4EtoWTw6q2+g+kEMxWRxLzB5K990a/4ZFi8F0
-	WMuyMSmzL6lzFrAdR6MmuBKUbxfp0I4fzNOT+VB2PTsXg9jjviH+JUPW8VB3xUJx5axmuC0R1xkog
-	YU2UhaLQO/1N1sZsL7gw==;
+	List-Owner; bh=NV/phMvBb2L7djK/wHxA2093E8nZ+PmUKtzeV3etS8M=; b=uJccJW6q0eeo2O
+	mIC7kEK7OPzj+fCld9yaissZusgU4TnJh0y3U+D/gdJQR/9X8TVsJd6/e2aLeV9+Qf/GL7URq71Vx
+	LyfWSvwRg1A36K8j22S2oKce9wwrBAtRVyZnvS8wHov6qTUSh+1H0g6VVTBCod/ZIZFl/936u6r7c
+	+rJB+cv4pBYQ7FilwMYIfTq+KFLeigpW8nQwcdIuIqiWiKDanvwSUClBu40Aaau6kMos4uMxiEtWv
+	9zYoz7j48ps4OHh1Cqnu3AAp/6nVIBKnGXrvPUehBj7pZ1GKOgdyveAB5TpOhew6mPcrc7UF6Khyq
+	YJvptGMo+NpBFPWKMVfg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVJaB-0004ge-AO; Sun, 03 May 2020 18:43:19 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1jVW9O-0006dH-Gg; Mon, 04 May 2020 08:08:30 +0000
+Received: from conuserg-12.nifty.com ([210.131.2.79])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVJZy-0004eE-VT; Sun, 03 May 2020 18:43:16 +0000
-Received: by mail-pl1-x644.google.com with SMTP id x10so223027plr.4;
- Sun, 03 May 2020 11:43:02 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=wvVr5SRWd1uM2iASOWr26/V96EQuni36LaEArjGu2yc=;
- b=tHOaBm8EnptFt30keOnpprn8KhxKNzh6R0uPpyb1/rQuektkLELMWaypzeGcgTIVgR
- 3UFfvYWgiSmpZIhlFEQKqcyjKBxg1/t8/Y2FUk1xkUzRlVrfCGGvoEU11LVkySVMmyw+
- ek2h6QxLoNqNQKleOx6DiipBVGyOAGrtp6ZywnFwrPRZjfybS8wRFPnhztpi6OcGeJY2
- Mkmm5rfuXuxkHuwSdMuxQQ2FgTzlOjtkfOXkgQCsQIcNy4lzW0PJuB4I6iZREr3IhRcZ
- PUk2AVK6p55JTc4UcjBV5jf88EeIcXzGksAaHrFL4PFooS/sx52k9C7zwPTzsAmmBZiN
- k9Sg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
- :references:mime-version:content-disposition:in-reply-to:user-agent;
- bh=wvVr5SRWd1uM2iASOWr26/V96EQuni36LaEArjGu2yc=;
- b=kOOqRIx0YOriMCf/pTYp89QuCMFnYCVl94Q2JNnLkrp78w4/GGIM7DfyOSRxK2lBP/
- bQ8wJTQqPPNAAM2jpkzhaWAYuWIiQRZRL8dzd5IfCw4MI/pAhqIB99OsMKOSIm7MLTgx
- UZ8cPuh2e3fetdAaeE+2pOOOg6XGn4kzdLOUk6R5iBsQYLg0rEfh2CGgzmOk1RnixD9Y
- Yh6Q2HuhXj+ybZ5m8arEQdfafZWMdHYBArwx/muw8Z05o6chzJpgDyjyH9jZLfOYU0SH
- hksEFBlwYq1+b6XlK3Ys/u60FDfCIowN2WLVrVR+PQB84WO6w41s6PPIO2cztRtaTmq8
- c4fA==
-X-Gm-Message-State: AGi0PubC0uD6mBOKDgfJg5g+vOCTllzY8EO++DYNO5eUrgTi4oFG7fSA
- a5C/xEx5GPJkTF+drne3jl8=
-X-Google-Smtp-Source: APiQypLgkse+/uISWA8vmmT+25UVnwu7GijQSoPFykENXegkn7VLCF7eLD/Cy4r98zb82iwUanJgAA==
-X-Received: by 2002:a17:902:ed4a:: with SMTP id
- y10mr14093460plb.227.1588531382473; 
- Sun, 03 May 2020 11:43:02 -0700 (PDT)
-Received: from localhost ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
- by smtp.gmail.com with ESMTPSA id x18sm7016715pfi.22.2020.05.03.11.43.01
- (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
- Sun, 03 May 2020 11:43:01 -0700 (PDT)
-Date: Sun, 3 May 2020 11:43:00 -0700
-From: Guenter Roeck <linux@roeck-us.net>
-To: Mike Rapoport <rppt@kernel.org>
-Subject: Re: [PATCH v2 17/20] mm: free_area_init: allow defining max_zone_pfn
- in descending order
-Message-ID: <20200503184300.GA154219@roeck-us.net>
-References: <20200429121126.17989-1-rppt@kernel.org>
- <20200429121126.17989-18-rppt@kernel.org>
- <20200503174138.GA114085@roeck-us.net>
+ id 1jVW9L-0006cJ-Pj
+ for linux-um@lists.infradead.org; Mon, 04 May 2020 08:08:29 +0000
+Received: from oscar.flets-west.jp (softbank126090202047.bbtec.net
+ [126.90.202.47]) (authenticated)
+ by conuserg-12.nifty.com with ESMTP id 044888nC016007;
+ Mon, 4 May 2020 17:08:09 +0900
+DKIM-Filter: OpenDKIM Filter v2.10.3 conuserg-12.nifty.com 044888nC016007
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
+ s=dec2015msa; t=1588579690;
+ bh=/3yLFIULZ1ttgr4BZxxnZusRx1L5wNRo4hrlgq8nx6w=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=M2ktfTiajg/232fM8veJ6jJiv2ERK4Vm4vgfn5RKF5lWcyF40PphFeJaa5qaXSZ+x
+ KiIbJF2Fvpsi+cTiHtngdCjpJtzPe0wKhoBfgbcEoSmuufsscudbQG0C3c5VTtTyU/
+ ZuVVOFPVZI5DURTI918FTQiEwGTeLqMTuo7dDRR6qjRUzgMPY0RTXFjr4pt3ZUGmbO
+ 2XhJYFQgZllbJZSp1u0oZHhPxMRvbsjfnpJ6EP9dIl0Sr812a6gGqgiBJDZX4Evixe
+ 32d4i6L37trku0gQVsDYBmmBivZbsQwFsP37zEzYiYn+sQrchjRnAI4a6C/LulOWVA
+ UGLiHA35euOKQ==
+X-Nifty-SrcIP: [126.90.202.47]
+From: Masahiro Yamada <masahiroy@kernel.org>
+To: linux-kbuild@vger.kernel.org
+Subject: [PATCH 2/2] kbuild: remove {CLEAN,MRPROPER,DISTCLEAN}_DIRS
+Date: Mon,  4 May 2020 17:08:07 +0900
+Message-Id: <20200504080807.126396-2-masahiroy@kernel.org>
+X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20200504080807.126396-1-masahiroy@kernel.org>
+References: <20200504080807.126396-1-masahiroy@kernel.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200503174138.GA114085@roeck-us.net>
-User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200503_114315_276078_F96191FE 
-X-CRM114-Status: GOOD (  13.46  )
-X-Spam-Score: 0.6 (/)
+X-CRM114-CacheID: sfid-20200504_010828_069219_6123EFC5 
+X-CRM114-Status: UNSURE (   7.18  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.6 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
- [list.dnswl.org]
+ no trust [210.131.2.79 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [groeck7[at]gmail.com]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [groeck7[at]gmail.com]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,111 +75,128 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: Rich Felker <dalias@libc.org>, linux-ia64@vger.kernel.org,
- linux-doc@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
- Heiko Carstens <heiko.carstens@de.ibm.com>, x86@kernel.org,
- Michal Hocko <mhocko@kernel.org>,
- "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>,
- Max Filippov <jcmvbkbc@gmail.com>, Guo Ren <guoren@kernel.org>,
- Ley Foon Tan <ley.foon.tan@intel.com>, sparclinux@vger.kernel.org,
- linux-riscv@lists.infradead.org, Greg Ungerer <gerg@linux-m68k.org>,
- linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
- linux-c6x-dev@linux-c6x.org, Baoquan He <bhe@redhat.com>,
- Jonathan Corbet <corbet@lwn.net>, linux-hexagon@vger.kernel.org,
- Helge Deller <deller@gmx.de>, linux-sh@vger.kernel.org,
- Russell King <linux@armlinux.org.uk>, linux-csky@vger.kernel.org,
- Mike Rapoport <rppt@linux.ibm.com>, Geert Uytterhoeven <geert@linux-m68k.org>,
- Hoan Tran <Hoan@os.amperecomputing.com>, Mark Salter <msalter@redhat.com>,
- Matt Turner <mattst88@gmail.com>, linux-snps-arc@lists.infradead.org,
- uclinux-h8-devel@lists.sourceforge.jp, linux-xtensa@linux-xtensa.org,
- Nick Hu <nickhu@andestech.com>, linux-alpha@vger.kernel.org,
- linux-um@lists.infradead.org, linux-mips@vger.kernel.org,
- Richard Weinberger <richard@nod.at>, linux-m68k@lists.linux-m68k.org,
- Thomas Bogendoerfer <tsbogend@alpha.franken.de>, Qian Cai <cai@lca.pw>,
- Greentime Hu <green.hu@gmail.com>, Paul Walmsley <paul.walmsley@sifive.com>,
- Stafford Horne <shorne@gmail.com>, Guan Xuetao <gxt@pku.edu.cn>,
- linux-arm-kernel@lists.infradead.org, Michal Simek <monstr@monstr.eu>,
- Tony Luck <tony.luck@intel.com>, Yoshinori Sato <ysato@users.sourceforge.jp>,
- linux-parisc@vger.kernel.org, linux-mm@kvack.org,
- Vineet Gupta <vgupta@synopsys.com>, Brian Cain <bcain@codeaurora.org>,
- linux-kernel@vger.kernel.org, openrisc@lists.librecores.org,
- Michael Ellerman <mpe@ellerman.id.au>,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
- "David S. Miller" <davem@davemloft.net>
+Cc: Michal Marek <michal.lkml@markovi.net>, Richard Weinberger <richard@nod.at>,
+ Masahiro Yamada <masahiroy@kernel.org>, linux-um@lists.infradead.org,
+ linux-kernel@vger.kernel.org, Jeff Dike <jdike@addtoit.com>,
+ Anton Ivanov <anton.ivanov@cambridgegreys.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Sun, May 03, 2020 at 10:41:38AM -0700, Guenter Roeck wrote:
-> Hi,
-> 
-> On Wed, Apr 29, 2020 at 03:11:23PM +0300, Mike Rapoport wrote:
-> > From: Mike Rapoport <rppt@linux.ibm.com>
-> > 
-> > Some architectures (e.g. ARC) have the ZONE_HIGHMEM zone below the
-> > ZONE_NORMAL. Allowing free_area_init() parse max_zone_pfn array even it is
-> > sorted in descending order allows using free_area_init() on such
-> > architectures.
-> > 
-> > Add top -> down traversal of max_zone_pfn array in free_area_init() and use
-> > the latter in ARC node/zone initialization.
-> > 
-> > Signed-off-by: Mike Rapoport <rppt@linux.ibm.com>
-> 
-> This patch causes my microblazeel qemu boot test in linux-next to fail.
-> Reverting it fixes the problem.
-> 
-The same problem is seen with s390 emulations.
+Merge {CLEAN,MRPROPER,DISTCLEAN}_DIRS into {CLEAN,MRPROPER,DISTCLEAN}_FILES
+because the difference is just the -r option passed to the 'rm' command.
 
-Guenter
+Do likewise as commit 1634f2bfdb84 ("kbuild: remove clean-dirs syntax").
 
-> qemu command line:
-> 
-> qemu-system-microblazeel -M petalogix-ml605 -m 256 \
-> 	-kernel arch/microblaze/boot/linux.bin -no-reboot \
-> 	-initrd rootfs.cpio \
-> 	-append 'panic=-1 slub_debug=FZPUA rdinit=/sbin/init console=ttyS0,115200' \
-> 	-monitor none -serial stdio -nographic
-> 
-> initrd:
-> 	https://github.com/groeck/linux-build-test/blob/master/rootfs/microblazeel/rootfs.cpio.gz
-> configuration:
-> 	https://github.com/groeck/linux-build-test/blob/master/rootfs/microblazeel/qemu_microblazeel_ml605_defconfig
-> 
-> Bisect log is below.
-> 
-> Guenter
-> 
-> ---
-> # bad: [fb9d670f57e3f6478602328bbbf71138be06ca4f] Add linux-next specific files for 20200501
-> # good: [6a8b55ed4056ea5559ebe4f6a4b247f627870d4c] Linux 5.7-rc3
-> git bisect start 'HEAD' 'v5.7-rc3'
-> # good: [068b80b68a670f0b17288c8a3d1ee751f35162ab] Merge remote-tracking branch 'drm/drm-next'
-> git bisect good 068b80b68a670f0b17288c8a3d1ee751f35162ab
-> # good: [46c70fc6a3ac35cd72ddad248dcbe4eee716d2a5] Merge remote-tracking branch 'drivers-x86/for-next'
-> git bisect good 46c70fc6a3ac35cd72ddad248dcbe4eee716d2a5
-> # good: [f39c4ad479a2f005f972a2b941b40efa6b9c9349] Merge remote-tracking branch 'rpmsg/for-next'
-> git bisect good f39c4ad479a2f005f972a2b941b40efa6b9c9349
-> # bad: [165d3ee0162fe28efc2c8180176633e33515df15] ipc-convert-ipcs_idr-to-xarray-update
-> git bisect bad 165d3ee0162fe28efc2c8180176633e33515df15
-> # good: [001f1d211ed2ed0f005838dc4390993930bbbd69] mm: remove early_pfn_in_nid() and CONFIG_NODES_SPAN_OTHER_NODES
-> git bisect good 001f1d211ed2ed0f005838dc4390993930bbbd69
-> # bad: [aaad7401bd32f10c1d591dd886b3a9b9595c6d77] mm/vmsan: fix some typos in comment
-> git bisect bad aaad7401bd32f10c1d591dd886b3a9b9595c6d77
-> # bad: [09f9d0ab1fbed85623b283995aa7a7d78daa1611] khugepaged: allow to collapse PTE-mapped compound pages
-> git bisect bad 09f9d0ab1fbed85623b283995aa7a7d78daa1611
-> # bad: [c942fc8a3e5088407bc32d94f554bab205175f8a] mm/vmstat.c: do not show lowmem reserve protection information of empty zone
-> git bisect bad c942fc8a3e5088407bc32d94f554bab205175f8a
-> # bad: [b29358d269ace3826d8521bea842fc2984cfc11b] mm/page_alloc.c: rename free_pages_check() to check_free_page()
-> git bisect bad b29358d269ace3826d8521bea842fc2984cfc11b
-> # bad: [be0fb591a1f1df20a00c8f023f9ca4891f177b0d] mm: simplify find_min_pfn_with_active_regions()
-> git bisect bad be0fb591a1f1df20a00c8f023f9ca4891f177b0d
-> # bad: [c17422a008d36dcf3e9f51469758c5762716cb0a] mm: rename free_area_init_node() to free_area_init_memoryless_node()
-> git bisect bad c17422a008d36dcf3e9f51469758c5762716cb0a
-> # bad: [51a2f644fd020d5f090044825c388444d11029d5] mm: free_area_init: allow defining max_zone_pfn in descending order
-> git bisect bad 51a2f644fd020d5f090044825c388444d11029d5
-> # first bad commit: [51a2f644fd020d5f090044825c388444d11029d5] mm: free_area_init: allow defining max_zone_pfn in descending order
+Signed-off-by: Masahiro Yamada <masahiroy@kernel.org>
+---
+
+ Makefile         | 22 ++++++----------------
+ arch/um/Makefile |  2 +-
+ 2 files changed, 7 insertions(+), 17 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index ffd80afcd0bb..8a7c931cc0d9 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1389,14 +1389,14 @@ endif # CONFIG_MODULES
+ # make distclean Remove editor backup files, patch leftover files and the like
+ 
+ # Directories & files removed with 'make clean'
+-CLEAN_DIRS  += include/ksym
+-CLEAN_FILES += modules.builtin modules.builtin.modinfo modules.nsdeps
++CLEAN_FILES += include/ksym \
++	       modules.builtin modules.builtin.modinfo modules.nsdeps
+ 
+ # Directories & files removed with 'make mrproper'
+-MRPROPER_DIRS  += include/config include/generated          \
++MRPROPER_FILES += include/config include/generated          \
+ 		  arch/$(SRCARCH)/include/generated .tmp_objdiff \
+-		  debian/ snap/ tar-install/
+-MRPROPER_FILES += .config .config.old .version \
++		  debian snap tar-install \
++		  .config .config.old .version \
+ 		  Module.symvers \
+ 		  signing_key.pem signing_key.priv signing_key.x509	\
+ 		  x509.genkey extra_certificates signing_key.x509.keyid	\
+@@ -1404,12 +1404,10 @@ MRPROPER_FILES += .config .config.old .version \
+ 		  *.spec
+ 
+ # Directories & files removed with 'make distclean'
+-DISTCLEAN_DIRS  +=
+ DISTCLEAN_FILES += tags TAGS cscope* GPATH GTAGS GRTAGS GSYMS
+ 
+ # clean - Delete most, but leave enough to build external modules
+ #
+-clean: rm-dirs  := $(CLEAN_DIRS)
+ clean: rm-files := $(CLEAN_FILES)
+ 
+ PHONY += archclean vmlinuxclean
+@@ -1422,7 +1420,6 @@ clean: archclean vmlinuxclean
+ 
+ # mrproper - Delete all generated files, including .config
+ #
+-mrproper: rm-dirs  := $(wildcard $(MRPROPER_DIRS))
+ mrproper: rm-files := $(wildcard $(MRPROPER_FILES))
+ mrproper-dirs      := $(addprefix _mrproper_,scripts)
+ 
+@@ -1431,18 +1428,15 @@ $(mrproper-dirs):
+ 	$(Q)$(MAKE) $(clean)=$(patsubst _mrproper_%,%,$@)
+ 
+ mrproper: clean $(mrproper-dirs)
+-	$(call cmd,rmdirs)
+ 	$(call cmd,rmfiles)
+ 
+ # distclean
+ #
+-distclean: rm-dirs  := $(wildcard $(DISTCLEAN_DIRS))
+ distclean: rm-files := $(wildcard $(DISTCLEAN_FILES))
+ 
+ PHONY += distclean
+ 
+ distclean: mrproper
+-	$(call cmd,rmdirs)
+ 	$(call cmd,rmfiles)
+ 	@find $(srctree) $(RCS_FIND_IGNORE) \
+ 		\( -name '*.orig' -o -name '*.rej' -o -name '*~' \
+@@ -1732,7 +1726,6 @@ $(clean-dirs):
+ 	$(Q)$(MAKE) $(clean)=$(patsubst _clean_%,%,$@)
+ 
+ clean: $(clean-dirs)
+-	$(call cmd,rmdirs)
+ 	$(call cmd,rmfiles)
+ 	@find $(if $(KBUILD_EXTMOD), $(KBUILD_EXTMOD), .) $(RCS_FIND_IGNORE) \
+ 		\( -name '*.[aios]' -o -name '*.ko' -o -name '.*.cmd' \
+@@ -1827,11 +1820,8 @@ tools/%: FORCE
+ 	$(Q)mkdir -p $(objtree)/tools
+ 	$(Q)$(MAKE) LDFLAGS= MAKEFLAGS="$(tools_silent) $(filter --j% -j,$(MAKEFLAGS))" O=$(abspath $(objtree)) subdir=tools -C $(srctree)/tools/ $*
+ 
+-quiet_cmd_rmdirs = $(if $(wildcard $(rm-dirs)),CLEAN   $(wildcard $(rm-dirs)))
+-      cmd_rmdirs = rm -rf $(rm-dirs)
+-
+ quiet_cmd_rmfiles = $(if $(wildcard $(rm-files)),CLEAN   $(wildcard $(rm-files)))
+-      cmd_rmfiles = rm -f $(rm-files)
++      cmd_rmfiles = rm -rf $(rm-files)
+ 
+ # Run depmod only if we have System.map and depmod is executable
+ quiet_cmd_depmod = DEPMOD  $(KERNELRELEASE)
+diff --git a/arch/um/Makefile b/arch/um/Makefile
+index 275f5ffdf6f0..3f27aa3ec0a6 100644
+--- a/arch/um/Makefile
++++ b/arch/um/Makefile
+@@ -140,7 +140,7 @@ export CFLAGS_vmlinux := $(LINK-y) $(LINK_WRAPS) $(LD_FLAGS_CMDLINE)
+ # When cleaning we don't include .config, so we don't include
+ # TT or skas makefiles and don't clean skas_ptregs.h.
+ CLEAN_FILES += linux x.i gmon.out
+-MRPROPER_DIRS += arch/$(SUBARCH)/include/generated
++MRPROPER_FILES += arch/$(SUBARCH)/include/generated
+ 
+ archclean:
+ 	@find . \( -name '*.bb' -o -name '*.bbg' -o -name '*.da' \
+-- 
+2.25.1
+
 
 _______________________________________________
 linux-um mailing list
