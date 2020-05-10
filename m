@@ -2,33 +2,32 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0BD191CC934
-	for <lists+linux-um@lfdr.de>; Sun, 10 May 2020 10:04:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 317EC1CC936
+	for <lists+linux-um@lfdr.de>; Sun, 10 May 2020 10:04:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=K9uzLyaGDVcwZWvumUMYcnGjX8wVFAO8C1TGfnaUK7I=; b=OEzo22Pn+A0unu
-	pAsKV3lj2mIEPCz4+ask1+iGiNOE9XRAkI8jT/G1o4Fxn5yN5WOq9Ui7ygm7qdhcvlaMIhj0+ZJgo
-	Cm2b2OfFjrE39TKiulLPnyIxVnTvXfp+RMZDPgtENT7Y2F6ffT9ctn6MUzrqSZA8UYbHvIIDtWq3P
-	pifVhm27WlI4wILmpWwPQUrUBamgONNvkkEh1flYmEHl00jdy3sgqHF1cmVyk5G5bMHBRacbZDbSy
-	PZD0OLMPELxN+0F+llEGQp5vhRoDji4bTkFZxz9x+GNuPNO/cHmSbXjxHb44T3k+NSkU/bQYCbsbD
-	tTdWsIIAzVsIVUUhw6+w==;
+	List-Owner; bh=3UoVzlyxZgNvfys5uWXvyOIo9kRlRzo43PX3Mk6Gruo=; b=en+oJkrhIj2BmW
+	/2qeMG4htt765QS5aUs+V8g0/QgDwpHkIuQb+Zf8AR+5i88BeG9DiMSp1MdnjsDl6tTuIk4mGLD4s
+	00z4yOXwlpM5z9//i3jOS2KEDxUhOEYcps6XR05vMLUbqSu9y3TsNX/Vm/XK0AozTnTWOPvOtM9vJ
+	punO83Gk8J5oqtZFLQlj5fpO1iKqw0ATswlU69jdgT6zepcIF1/Loa2YpLoLoTpd/HOqZw8ZliF1a
+	dCM4KbkjUTy6Klvtg6ratJmzaugdrxjWTm1Ca4GwisFmNXzArpnMMoaodFryaOSs3FajvHeaG86IF
+	izEeh0fEyH8HBuryx/vg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jXgx1-0004CR-Is; Sun, 10 May 2020 08:04:43 +0000
+	id 1jXgx2-0004EW-O3; Sun, 10 May 2020 08:04:44 +0000
 Received: from [2001:4bb8:180:9d3f:c70:4a89:bc61:2] (helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jXgp6-00018O-FJ; Sun, 10 May 2020 07:56:32 +0000
+ id 1jXgp9-0001Bf-B4; Sun, 10 May 2020 07:56:35 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Andrew Morton <akpm@linux-foundation.org>, Arnd Bergmann <arnd@arndb.de>,
  Roman Zippel <zippel@linux-m68k.org>
-Subject: [PATCH 25/31] arm: rename flush_cache_user_range to
- flush_icache_user_range
-Date: Sun, 10 May 2020 09:55:04 +0200
-Message-Id: <20200510075510.987823-26-hch@lst.de>
+Subject: [PATCH 26/31] m68k: implement flush_icache_user_range
+Date: Sun, 10 May 2020 09:55:05 +0200
+Message-Id: <20200510075510.987823-27-hch@lst.de>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <20200510075510.987823-1-hch@lst.de>
 References: <20200510075510.987823-1-hch@lst.de>
@@ -59,46 +58,55 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-flush_icache_user_range will be the name for a generic primitive.
-Move the arm name so that arm already has an implementation.
+Rename the current flush_icache_range to flush_icache_user_range as
+per commit ae92ef8a4424 ("PATCH] flush icache in correct context") there
+seems to be an assumption that it operates on user addresses.  Add a
+flush_icache_range around it that for now is a no-op.
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
 ---
- arch/arm/include/asm/cacheflush.h | 4 ++--
- arch/arm/kernel/traps.c           | 2 +-
- 2 files changed, 3 insertions(+), 3 deletions(-)
+ arch/m68k/include/asm/cacheflush_mm.h | 2 ++
+ arch/m68k/mm/cache.c                  | 7 ++++++-
+ 2 files changed, 8 insertions(+), 1 deletion(-)
 
-diff --git a/arch/arm/include/asm/cacheflush.h b/arch/arm/include/asm/cacheflush.h
-index c78e14fcfb5df..2e24e765e6d3a 100644
---- a/arch/arm/include/asm/cacheflush.h
-+++ b/arch/arm/include/asm/cacheflush.h
-@@ -258,11 +258,11 @@ extern void flush_cache_page(struct vm_area_struct *vma, unsigned long user_addr
- #define flush_cache_dup_mm(mm) flush_cache_mm(mm)
+diff --git a/arch/m68k/include/asm/cacheflush_mm.h b/arch/m68k/include/asm/cacheflush_mm.h
+index 95376bf84faa5..1ac55e7b47f01 100644
+--- a/arch/m68k/include/asm/cacheflush_mm.h
++++ b/arch/m68k/include/asm/cacheflush_mm.h
+@@ -257,6 +257,8 @@ static inline void __flush_page_to_ram(void *vaddr)
+ extern void flush_icache_user_page(struct vm_area_struct *vma, struct page *page,
+ 				    unsigned long addr, int len);
+ extern void flush_icache_range(unsigned long address, unsigned long endaddr);
++extern void flush_icache_user_range(unsigned long address,
++		unsigned long endaddr);
  
- /*
-- * flush_cache_user_range is used when we want to ensure that the
-+ * flush_icache_user_range is used when we want to ensure that the
-  * Harvard caches are synchronised for the user space address range.
-  * This is used for the ARM private sys_cacheflush system call.
-  */
--#define flush_cache_user_range(s,e)	__cpuc_coherent_user_range(s,e)
-+#define flush_icache_user_range(s,e)	__cpuc_coherent_user_range(s,e)
+ static inline void copy_to_user_page(struct vm_area_struct *vma,
+ 				     struct page *page, unsigned long vaddr,
+diff --git a/arch/m68k/mm/cache.c b/arch/m68k/mm/cache.c
+index 99057cd5ff7f1..7915be3a09712 100644
+--- a/arch/m68k/mm/cache.c
++++ b/arch/m68k/mm/cache.c
+@@ -73,7 +73,7 @@ static unsigned long virt_to_phys_slow(unsigned long vaddr)
  
- /*
-  * Perform necessary cache operations to ensure that data previously
-diff --git a/arch/arm/kernel/traps.c b/arch/arm/kernel/traps.c
-index 1e70e7227f0ff..316a7687f8133 100644
---- a/arch/arm/kernel/traps.c
-+++ b/arch/arm/kernel/traps.c
-@@ -566,7 +566,7 @@ __do_cache_op(unsigned long start, unsigned long end)
- 		if (fatal_signal_pending(current))
- 			return 0;
+ /* Push n pages at kernel virtual address and clear the icache */
+ /* RZ: use cpush %bc instead of cpush %dc, cinv %ic */
+-void flush_icache_range(unsigned long address, unsigned long endaddr)
++void flush_icache_user_range(unsigned long address, unsigned long endaddr)
+ {
+ 	if (CPU_IS_COLDFIRE) {
+ 		unsigned long start, end;
+@@ -104,6 +104,11 @@ void flush_icache_range(unsigned long address, unsigned long endaddr)
+ 			      : "di" (FLUSH_I));
+ 	}
+ }
++
++void flush_icache_range(unsigned long address, unsigned long endaddr)
++{
++	flush_icache_user_range(address, endaddr);
++}
+ EXPORT_SYMBOL(flush_icache_range);
  
--		ret = flush_cache_user_range(start, start + chunk);
-+		ret = flush_icache_user_range(start, start + chunk);
- 		if (ret)
- 			return ret;
- 
+ void flush_icache_user_page(struct vm_area_struct *vma, struct page *page,
 -- 
 2.26.2
 
