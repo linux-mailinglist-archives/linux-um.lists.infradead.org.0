@@ -2,32 +2,32 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 20F121CC91A
-	for <lists+linux-um@lfdr.de>; Sun, 10 May 2020 10:01:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1F56F1CC918
+	for <lists+linux-um@lfdr.de>; Sun, 10 May 2020 10:01:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1WfZ3JxUZ69K/7mUlT3HCWPXr3MCF/XSM9w6g32NEJM=; b=Z039L6MzYHjiHx
-	mIdz5EvAXNug/tAjqqTZipE5suCQABxXwRSCe4Jj/B5KyAQi7OGCMJCwkMg3ng65B88AZeCjbS8S0
-	AoIEG4UQI9RnDa7Usk3MpyhiHcCV1t46RdN2Ks4bPFFnWdDkkd9uKxDJelBs+pr+2npj5Q3mziBdb
-	iX1XpRVCy9UsZXYx7UDh1on2QGfjxGDDtzLciLQUp5ruBCGs13IosBZERPdSmeQo9X2lHu0y7nlyc
-	crvLWxWeZpKgCnRu49Z1YfkG3K2E6oYn9CGFiPonys2emuHDg2+65C/Xmn5UwqtOasReWGEu1jhGs
-	zb/o0kN1pEL+qbRtsY+Q==;
+	List-Owner; bh=P+Hn+qcn6/hHMWlkw30SS4ta2A89dmvPD++bocj89Wg=; b=D+YjU0poo8xvCo
+	olXyGQoQD/mscp7OlpXrdDSQU/tXTIXVjrs/ajScY8Ao5kCiHuvTd7G8Srsj7Fbg/A+CDGKU594yg
+	FE9jKZfmoKUT7NAuZE38gKjr34PboS5/IkKUyp3lRU7k9CBLuSwjlMOA0LH4N4k8ANGJbrekwtVcT
+	WUNZvTiy0q4ellBkoo7slIvJgRXZWiwTrIa8qHeUJEHueu9mW2o0foAD143Dw0ItjLh0GUeafNehW
+	85m50CSWsngrCRXlERyy/IRTjzyqE/KaaxFy6y/u+YTx2rt8Y1irbYyQcsDbM6HKPQJY1T0WPWnRY
+	ZCSciRr1Bnty8Z3c+yzQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jXguI-0000w1-92; Sun, 10 May 2020 08:01:54 +0000
+	id 1jXguE-0000rI-MC; Sun, 10 May 2020 08:01:50 +0000
 Received: from [2001:4bb8:180:9d3f:c70:4a89:bc61:2] (helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jXgod-0000KS-GW; Sun, 10 May 2020 07:56:03 +0000
+ id 1jXgog-0000NJ-Vl; Sun, 10 May 2020 07:56:07 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Andrew Morton <akpm@linux-foundation.org>, Arnd Bergmann <arnd@arndb.de>,
  Roman Zippel <zippel@linux-m68k.org>
-Subject: [PATCH 16/31] m68knommu: use asm-generic/cacheflush.h
-Date: Sun, 10 May 2020 09:54:55 +0200
-Message-Id: <20200510075510.987823-17-hch@lst.de>
+Subject: [PATCH 17/31] openrisc: use asm-generic/cacheflush.h
+Date: Sun, 10 May 2020 09:54:56 +0200
+Message-Id: <20200510075510.987823-18-hch@lst.de>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <20200510075510.987823-1-hch@lst.de>
 References: <20200510075510.987823-1-hch@lst.de>
@@ -58,51 +58,56 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-m68knommu needs almost no cache flushing routines of its own.  Rely on
+OpenRISC needs almost no cache flushing routines of its own.  Rely on
 asm-generic/cacheflush.h for the defaults.
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
 ---
- arch/m68k/include/asm/cacheflush_no.h | 19 ++-----------------
- 1 file changed, 2 insertions(+), 17 deletions(-)
+ arch/openrisc/include/asm/cacheflush.h | 31 +++++---------------------
+ 1 file changed, 6 insertions(+), 25 deletions(-)
 
-diff --git a/arch/m68k/include/asm/cacheflush_no.h b/arch/m68k/include/asm/cacheflush_no.h
-index 11e9a9dcbfb24..2731f07e7be8c 100644
---- a/arch/m68k/include/asm/cacheflush_no.h
-+++ b/arch/m68k/include/asm/cacheflush_no.h
-@@ -9,25 +9,8 @@
- #include <asm/mcfsim.h>
- 
- #define flush_cache_all()			__flush_cache_all()
--#define flush_cache_mm(mm)			do { } while (0)
--#define flush_cache_dup_mm(mm)			do { } while (0)
--#define flush_cache_range(vma, start, end)	do { } while (0)
--#define flush_cache_page(vma, vmaddr)		do { } while (0)
- #define flush_dcache_range(start, len)		__flush_dcache_all()
--#define ARCH_IMPLEMENTS_FLUSH_DCACHE_PAGE 0
--#define flush_dcache_page(page)			do { } while (0)
--#define flush_dcache_mmap_lock(mapping)		do { } while (0)
--#define flush_dcache_mmap_unlock(mapping)	do { } while (0)
- #define flush_icache_range(start, len)		__flush_icache_all()
--#define flush_icache_page(vma,pg)		do { } while (0)
--#define flush_icache_user_range(vma,pg,adr,len)	do { } while (0)
--#define flush_cache_vmap(start, end)		do { } while (0)
--#define flush_cache_vunmap(start, end)		do { } while (0)
--
--#define copy_to_user_page(vma, page, vaddr, dst, src, len) \
--	memcpy(dst, src, len)
--#define copy_from_user_page(vma, page, vaddr, dst, src, len) \
--	memcpy(dst, src, len)
- 
- void mcf_cache_push(void);
- 
-@@ -98,4 +81,6 @@ static inline void cache_clear(unsigned long paddr, int len)
- 	__clear_cache_all();
+diff --git a/arch/openrisc/include/asm/cacheflush.h b/arch/openrisc/include/asm/cacheflush.h
+index 79d5d7753fe4b..74d1fce4e8839 100644
+--- a/arch/openrisc/include/asm/cacheflush.h
++++ b/arch/openrisc/include/asm/cacheflush.h
+@@ -62,31 +62,12 @@ static inline void flush_dcache_page(struct page *page)
+ 	clear_bit(PG_dc_clean, &page->flags);
  }
  
+-/*
+- * Other interfaces are not required since we do not have virtually
+- * indexed or tagged caches. So we can use the default here.
+- */
+-#define flush_cache_all()				do { } while (0)
+-#define flush_cache_mm(mm)				do { } while (0)
+-#define flush_cache_dup_mm(mm)				do { } while (0)
+-#define flush_cache_range(vma, start, end)		do { } while (0)
+-#define flush_cache_page(vma, vmaddr, pfn)		do { } while (0)
+-#define flush_dcache_mmap_lock(mapping)			do { } while (0)
+-#define flush_dcache_mmap_unlock(mapping)		do { } while (0)
+-#define flush_icache_range(start, end)			do { } while (0)
+-#define flush_icache_page(vma, pg)			do { } while (0)
+-#define flush_icache_user_range(vma, pg, adr, len)	do { } while (0)
+-#define flush_cache_vmap(start, end)			do { } while (0)
+-#define flush_cache_vunmap(start, end)			do { } while (0)
+-
+-#define copy_to_user_page(vma, page, vaddr, dst, src, len)           \
+-	do {                                                         \
+-		memcpy(dst, src, len);                               \
+-		if (vma->vm_flags & VM_EXEC)                         \
+-			sync_icache_dcache(page);                    \
+-	} while (0)
++#define flush_icache_user_range(vma, page, addr, len)	\
++do {							\
++	if (vma->vm_flags & VM_EXEC)			\
++		sync_icache_dcache(page);		\
++} while (0)
+ 
+-#define copy_from_user_page(vma, page, vaddr, dst, src, len)         \
+-	memcpy(dst, src, len)
 +#include <asm-generic/cacheflush.h>
-+
- #endif /* _M68KNOMMU_CACHEFLUSH_H */
+ 
+ #endif /* __ASM_CACHEFLUSH_H */
 -- 
 2.26.2
 
