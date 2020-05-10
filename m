@@ -2,32 +2,32 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 26EF41CC92B
-	for <lists+linux-um@lfdr.de>; Sun, 10 May 2020 10:03:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 404B91CC92D
+	for <lists+linux-um@lfdr.de>; Sun, 10 May 2020 10:03:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zR5AZYNsMHFxxkbeT+JmxcS1CaCKYcHwCJuEN7ix/Kw=; b=mkv0MqMZLjpgup
-	8oFBTerplSsu27WuiorlkXf3rmjGMbUFfBYUl9k7e/I5TZVHjxtBUPGBPaM7KwH0eI9ahlhz16Flq
-	SWdZTtW9iG3IV5KVLA13TlHORXMjzbnm4kUHS4RCTmqPOFvNE3/D4g0ELmXJWMaei/P/JDMYUS1fQ
-	YTEUo1xPXQwufhXhguXt5vB3uMda4KCqHmjVOWSSu/UGl6LdxQkmcBCxTxkZ38NKO45IJF9GqT7zA
-	vFuibrYGd/DUZ7183QEpY/YR1ZwdA4kUKH0DLVWWdtDrztJpW7kXcGoDf0Eq8pkVctO3QV3LFmZ8g
-	RTsYP0AgzGJfvdg+JO9w==;
+	List-Owner; bh=OgAUiI5GuQzBEH+3pclrTC+zIlJsv6Bib7oIcf4Lz6o=; b=n7WQuWP/KBTsnf
+	+s3HaQsi06zfyabMy+nLUrA85VUo7IIlur3bz1Mece4JtnV1dNbp49IH6Jt/JlO4cwPn7z6TCjTlI
+	NWSxgU0Zn78W8aFSHf9Xf6Xfi1hb2I0R1iiAg25V1lM9UTs5hJAAnl1aXFoeAGUfauBE3NMnFkcV6
+	ttcgkni/NuKj6WTCMXZtxtMsn427ZGotLQm/WjlFek3QNa1DPrYaApqIBJFrqYNkziI/5X2Z2BSqP
+	hxRGFWiTD8mdGGSvx28AMcVv9bZ8EoK+to2RYBGXzCrQYmiAgb9xyejg2VGffPYqpo9uPbUJmuTR3
+	AyhorrAXL15W8NhplM5g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jXgvw-00032g-JF; Sun, 10 May 2020 08:03:36 +0000
+	id 1jXgw0-00038t-VW; Sun, 10 May 2020 08:03:40 +0000
 Received: from [2001:4bb8:180:9d3f:c70:4a89:bc61:2] (helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jXgox-0000p5-5E; Sun, 10 May 2020 07:56:23 +0000
+ id 1jXgp0-0000ty-7N; Sun, 10 May 2020 07:56:26 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Andrew Morton <akpm@linux-foundation.org>, Arnd Bergmann <arnd@arndb.de>,
  Roman Zippel <zippel@linux-m68k.org>
-Subject: [PATCH 22/31] asm-generic: add a flush_icache_user_range stub
-Date: Sun, 10 May 2020 09:55:01 +0200
-Message-Id: <20200510075510.987823-23-hch@lst.de>
+Subject: [PATCH 23/31] sh: implement flush_icache_user_range
+Date: Sun, 10 May 2020 09:55:02 +0200
+Message-Id: <20200510075510.987823-24-hch@lst.de>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <20200510075510.987823-1-hch@lst.de>
 References: <20200510075510.987823-1-hch@lst.de>
@@ -58,29 +58,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-Define flush_icache_user_range to flush_icache_range unless the
-architecture provides its own implementation.
+The SuperH implementation of flush_icache_range seems to be able to
+cope with user addresses.  Just define flush_icache_user_range to
+flush_icache_range.
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
 ---
- include/asm-generic/cacheflush.h | 4 ++++
- 1 file changed, 4 insertions(+)
+ arch/sh/include/asm/cacheflush.h | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/include/asm-generic/cacheflush.h b/include/asm-generic/cacheflush.h
-index 2c9686fefb715..907fa5d164944 100644
---- a/include/asm-generic/cacheflush.h
-+++ b/include/asm-generic/cacheflush.h
-@@ -66,6 +66,10 @@ static inline void flush_icache_range(unsigned long start, unsigned long end)
- }
- #endif
- 
-+#ifndef flush_icache_user_range
+diff --git a/arch/sh/include/asm/cacheflush.h b/arch/sh/include/asm/cacheflush.h
+index b932e42ef0284..fe7400079b97b 100644
+--- a/arch/sh/include/asm/cacheflush.h
++++ b/arch/sh/include/asm/cacheflush.h
+@@ -46,6 +46,7 @@ extern void flush_cache_range(struct vm_area_struct *vma,
+ #define ARCH_IMPLEMENTS_FLUSH_DCACHE_PAGE 1
+ extern void flush_dcache_page(struct page *page);
+ extern void flush_icache_range(unsigned long start, unsigned long end);
 +#define flush_icache_user_range flush_icache_range
-+#endif
-+
- #ifndef flush_icache_page
- static inline void flush_icache_page(struct vm_area_struct *vma,
- 				     struct page *page)
+ extern void flush_icache_page(struct vm_area_struct *vma,
+ 				 struct page *page);
+ extern void flush_cache_sigtramp(unsigned long address);
 -- 
 2.26.2
 
