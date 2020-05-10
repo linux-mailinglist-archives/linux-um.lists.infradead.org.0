@@ -2,33 +2,33 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3A4F61CC7F6
-	for <lists+linux-um@lfdr.de>; Sun, 10 May 2020 09:56:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D5D3A1CC827
+	for <lists+linux-um@lfdr.de>; Sun, 10 May 2020 09:56:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ercynNMWV3vcVcG1KMNYHwHpuYSckeutu/HBxwYGEPQ=; b=fpOkV28qyUEO1/
-	2WzKivb1BnurpDoyTjRPew4mzZqVf8PyVeykQWLr0TgIq73BoUuR8Z2qZiQrDtyRrch9bFTcv1UC1
-	DLqNp0AJce3jqmeCz3U2QonlWriZ/AHOwzBINDoQm7ePsj4sE9qSPpnO0pLjhPCyVdR8oOLzmPTpw
-	6X/6u3q0l7s/+qnCPU4icZLbLavffcEM3oluwkjx+hJRc8lLDGvu58ailKBJ6ybJSVQolKqSTp1kx
-	roAhFHzdbhD5c+16mcr0hKqt+jhb9iScWfbaElwwRKdCgbQv/rZhdgRHxDqWbK8nQsIDMdesByGd4
-	X/NMuORwd0xsnfHqu9+g==;
+	List-Owner; bh=gh2MexpNFUUnZOMCr5E12G/PgMl1eY0M7QEo23cEelQ=; b=uddBsBzgpyHQ1k
+	UXXeTwyRUyjbvsIqbahmd5Lg0kY00FXkSHXE9VbRzymcksLrQjqi+NH0dWjYTsm3sNkRgrW/9turK
+	BjWD9LHCdB18XR3iDtLAoQ/LTjhvY7mrVn4ytvEmB1FFTb/7K2kNA6m4MXKrb5BhdXihlTLpwxrGc
+	caOLCQB3Gr2uU0wi3zsArMQjzcvDZZ3bRNHTEg4iYunYwXUS1LrllX9GuD3d2hkkKjc7epptIHrJe
+	B3Z98j7sutY91phANETq6TbPeUcXi55yC7kBBUYNBm7TlN/Vzbx6lDTAGFndLnNZ+7KKz7qzprp+P
+	rjTSssuZqZj3Nrm1xjvw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jXgoj-0000Wt-MC; Sun, 10 May 2020 07:56:09 +0000
+	id 1jXgpH-0001Ja-Iu; Sun, 10 May 2020 07:56:43 +0000
 Received: from [2001:4bb8:180:9d3f:c70:4a89:bc61:2] (helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jXgns-0007pB-5z; Sun, 10 May 2020 07:55:16 +0000
+ id 1jXgnv-0007po-1j; Sun, 10 May 2020 07:55:19 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Andrew Morton <akpm@linux-foundation.org>, Arnd Bergmann <arnd@arndb.de>,
  Roman Zippel <zippel@linux-m68k.org>
-Subject: [PATCH 01/31] arm: fix the flush_icache_range arguments in
- set_fiq_handler
-Date: Sun, 10 May 2020 09:54:40 +0200
-Message-Id: <20200510075510.987823-2-hch@lst.de>
+Subject: [PATCH 02/31] arm64: fix the flush_icache_range arguments in
+ machine_kexec
+Date: Sun, 10 May 2020 09:54:41 +0200
+Message-Id: <20200510075510.987823-3-hch@lst.de>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <20200510075510.987823-1-hch@lst.de>
 References: <20200510075510.987823-1-hch@lst.de>
@@ -59,29 +59,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-The arguments passed look bogus, try to fix them to something that seems
-to make sense.
+The second argument is the end "pointer", not the length.
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
 ---
- arch/arm/kernel/fiq.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ arch/arm64/kernel/machine_kexec.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/arch/arm/kernel/fiq.c b/arch/arm/kernel/fiq.c
-index cd1234c103fcd..98ca3e3fa8471 100644
---- a/arch/arm/kernel/fiq.c
-+++ b/arch/arm/kernel/fiq.c
-@@ -98,8 +98,8 @@ void set_fiq_handler(void *start, unsigned int length)
+diff --git a/arch/arm64/kernel/machine_kexec.c b/arch/arm64/kernel/machine_kexec.c
+index 8e9c924423b4e..a0b144cfaea71 100644
+--- a/arch/arm64/kernel/machine_kexec.c
++++ b/arch/arm64/kernel/machine_kexec.c
+@@ -177,6 +177,7 @@ void machine_kexec(struct kimage *kimage)
+ 	 * the offline CPUs. Therefore, we must use the __* variant here.
+ 	 */
+ 	__flush_icache_range((uintptr_t)reboot_code_buffer,
++			     (uintptr_t)reboot_code_buffer +
+ 			     arm64_relocate_new_kernel_size);
  
- 	memcpy(base + offset, start, length);
- 	if (!cache_is_vipt_nonaliasing())
--		flush_icache_range((unsigned long)base + offset, offset +
--				   length);
-+		flush_icache_range((unsigned long)base + offset,
-+				   (unsigned long)base + offset + length);
- 	flush_icache_range(0xffff0000 + offset, 0xffff0000 + offset + length);
- }
- 
+ 	/* Flush the kimage list and its buffers. */
 -- 
 2.26.2
 
