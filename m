@@ -2,36 +2,36 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 013831CFE23
-	for <lists+linux-um@lfdr.de>; Tue, 12 May 2020 21:20:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2D0AF1CFE35
+	for <lists+linux-um@lfdr.de>; Tue, 12 May 2020 21:24:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Djql3ZbiSENUD+mqS5FjikDRVpR5X8ZiFIjeOFzH+uc=; b=DNXYh6DQmivpf8
-	UReHOqTtYXLNmFm2e8FmcOoOp/kPMI9SuUM5gfugJoKdCzsUSx7/g+k9cTDKpRF38UFti59c4DGs7
-	vURVdxXUVHZg9sAJ0qmppTIAyn8KC2KxtTLAbidsyrQKYsbZVPrcCv4ATvsmqKNTDpNC7TN2JRYLd
-	TJQ2O39/olOumNoix9FC37YGDLtKBQlYuMdIz+bViW+esDyUEIc835Wwv0GXSXjP0SeQmmBTw0CoN
-	aV3pAiFrZ+aX3/k2n0l0GNjW3pc1t+Nlzsmubbf15VGvxwRcbJgBAevA0+CyjzxOPXm9gWmY/+m2/
-	9oAk2SgA/1vELCgDcvHA==;
+	List-Owner; bh=vFRe2O1TT++RG7UT4MTvFJ0PkfIw2hVoTH3Th6yPkEw=; b=GZW0r7QgTEzGk8
+	bn10STjnwc3gxXzp6/wdEW6fv/ruuxHXjLAMAXrSpZBmsYDEkEPA47eLKr4bDj7uFSLTs0pHHCezX
+	+mUag5/Tkq8+tLkUjnpTTaN2wjsF4H6Br5E91PF2XkvsifXsw2hVNA+yz+Gh+BkDBbdjOTFaG0jNv
+	LratdfSTEb0O7ZFwL+Avctiau3nB4EwqEKmd6d4T6JMu2QGFQ8H7UK15dznsQuidAIJFArw7Q7pS8
+	rpDp3ZRsnSQJwLLHlvtreGIMPsfPyax/cXaeM4JeAaSV9BWoJCRRLh7y3lJhwkgvqb+2n06l99I8z
+	9J0ocVzEh93uz9sk9R0A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYaS5-0001F5-JF; Tue, 12 May 2020 19:20:29 +0000
+	id 1jYaWD-00028v-AI; Tue, 12 May 2020 19:24:45 +0000
 Received: from willy by bombadil.infradead.org with local (Exim 4.92.3 #3 (Red
- Hat Linux)) id 1jYaRp-00018p-Bh; Tue, 12 May 2020 19:20:13 +0000
-Date: Tue, 12 May 2020 12:20:13 -0700
+ Hat Linux)) id 1jYaW9-00026f-44; Tue, 12 May 2020 19:24:41 +0000
+Date: Tue, 12 May 2020 12:24:41 -0700
 From: Matthew Wilcox <willy@infradead.org>
 To: Mike Rapoport <rppt@kernel.org>
-Subject: Re: [PATCH 03/12] mm: reorder includes after introduction of
- linux/pgtable.h
-Message-ID: <20200512192013.GY16070@bombadil.infradead.org>
+Subject: Re: [PATCH 08/12] mm: pgtable: add shortcuts for accessing kernel
+ PMD and PTE
+Message-ID: <20200512192441.GZ16070@bombadil.infradead.org>
 References: <20200512184422.12418-1-rppt@kernel.org>
- <20200512184422.12418-4-rppt@kernel.org>
+ <20200512184422.12418-9-rppt@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200512184422.12418-4-rppt@kernel.org>
+In-Reply-To: <20200512184422.12418-9-rppt@kernel.org>
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,24 +78,20 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Tue, May 12, 2020 at 09:44:13PM +0300, Mike Rapoport wrote:
-> diff --git a/arch/alpha/kernel/proto.h b/arch/alpha/kernel/proto.h
-> index a093cd45ec79..701a05090141 100644
-> --- a/arch/alpha/kernel/proto.h
-> +++ b/arch/alpha/kernel/proto.h
-> @@ -2,8 +2,6 @@
->  #include <linux/interrupt.h>
->  #include <linux/io.h>
+On Tue, May 12, 2020 at 09:44:18PM +0300, Mike Rapoport wrote:
+> +++ b/include/linux/pgtable.h
+> @@ -28,6 +28,24 @@
+>  #define USER_PGTABLES_CEILING	0UL
+>  #endif
 >  
-> -#include <linux/pgtable.h>
-> -
->  /* Prototypes of functions used across modules here in this directory.  */
->  
->  #define vucp	volatile unsigned char  *
+> +/* FIXME: */
 
-Looks like your script has a bug if linux/pgtable.h is the last include
-in the file?
+Fix you what?  Add documentation?
 
+> +static inline pmd_t *pmd_off(struct mm_struct *mm, unsigned long va)
+> +{
+> +	return pmd_offset(pud_offset(p4d_offset(pgd_offset(mm, va), va), va), va);
+> +}
 
 _______________________________________________
 linux-um mailing list
