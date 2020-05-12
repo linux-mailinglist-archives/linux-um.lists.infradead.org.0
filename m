@@ -2,55 +2,75 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 92E741CE0B3
-	for <lists+linux-um@lfdr.de>; Mon, 11 May 2020 18:38:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C0B541CEC2B
+	for <lists+linux-um@lfdr.de>; Tue, 12 May 2020 06:47:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Dz2MenEMQ2sRgYeg/4Fk6+zMd+3qNdrh2uQ/LaS873w=; b=MWcJfdAisY8SJ6
-	SdcBeHGwfAH86WEWku770vowEQRpd5aIhpgLhLm+w5e1JzjMAZqtxOYn8TUkHQgFlTY9VwN1GCf9S
-	eTmTpn2fKQ8wyrF8yk7/hfDDQkUeWh16ET4i+tIzQcgol2UUN9lprtJRH2KmuDDMRuZxC3eQ2lZ+6
-	e4A12Wcix3VimoKPfm6yZT1v6OSIATzJ6LOl7+gvrqNAD2gxxjqSsiW0dGQGoACDONbkwUNbMaFiK
-	5oaFWZzEaYe4Z/D7SjkIzLjpTsnxBc4I/t7UPkAvLrpDNnMc1y7R5fX20OQzFsQko0eZjtLneJy/S
-	CMhboFgBDBWC+05DKw3w==;
+	List-Owner; bh=ICQbcdbJklYptyxk74qKkHlYRdS/EU2O1py7MrEN1yM=; b=uwaRRVtQPTSkIt
+	6YRdHfcJ/Ol6daT0JT3zh5xWssWQoKsAo48gYzKyVgCz1U1k4xMdx/aZlXmfQw0OseY0kYcUzjgDR
+	+5hx++i/gB7+aNYdgiDsEwjpS2fjihq0sVgyNmpoCjSZ6zt3G4hAWDasbNFc8vtzKsd3lqnS6AZn3
+	weXrvgT2ak87bZ9zh5olr309LO8Gzsx24T5xvQkBWIbb0qZhedd1F7gx0THNp2lKzUlUYE7woNB0e
+	1OCawSmiPm8jGu9omXRBFBdiapwK5DifMDVrfo6ce02qpWm/Vs8PRouABodwP8BSr6wVnAaADUtbW
+	h8XIlz2lv8KDSxBmMcNA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYBRS-0000zp-TA; Mon, 11 May 2020 16:38:10 +0000
-Received: from verein.lst.de ([213.95.11.211])
+	id 1jYMpK-0000uh-VT; Tue, 12 May 2020 04:47:34 +0000
+Received: from conssluserg-05.nifty.com ([210.131.2.90])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYBR8-0000Xi-KW; Mon, 11 May 2020 16:37:52 +0000
-Received: by verein.lst.de (Postfix, from userid 2407)
- id C9A7568CEE; Mon, 11 May 2020 18:37:45 +0200 (CEST)
-Date: Mon, 11 May 2020 18:37:44 +0200
-From: Christoph Hellwig <hch@lst.de>
-To: Geert Uytterhoeven <geert@linux-m68k.org>
-Subject: Re: [PATCH 31/31] module: move the set_fs hack for
- flush_icache_range to m68k
-Message-ID: <20200511163744.GB32228@lst.de>
-References: <20200510075510.987823-1-hch@lst.de>
- <20200510075510.987823-32-hch@lst.de>
- <CAMuHMdU_OxNoKfO=i903kx0mgk0-i2h4u2ase3m9_dn6oFh_5g@mail.gmail.com>
- <20200511151120.GA28634@lst.de>
- <CAMuHMdW1S91i3x0unNcJnypHse7ifynGb4dZcVhJaemR3GH1Pg@mail.gmail.com>
+ id 1jYMpI-0000tc-5a
+ for linux-um@lists.infradead.org; Tue, 12 May 2020 04:47:33 +0000
+Received: from mail-vk1-f171.google.com (mail-vk1-f171.google.com
+ [209.85.221.171]) (authenticated)
+ by conssluserg-05.nifty.com with ESMTP id 04C4lBnl027144
+ for <linux-um@lists.infradead.org>; Tue, 12 May 2020 13:47:11 +0900
+DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-05.nifty.com 04C4lBnl027144
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
+ s=dec2015msa; t=1589258832;
+ bh=tWGwfGztD2z/RvAz3neBmOayn6cuxuG3PSxa/ZcJpbg=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=mOGHPmCDEdoqZsFvVYBBiKqPCcLq8N98UujriisSvYXJh5xucv8wuMmdWE0Vs/W65
+ LMwlSc+NnuJfHXV+zSzIsRxYdOKGu3IkpL/YGF0Q8doKiRXzdQs7Jr41MkFFWrnXH1
+ J2evvqyowN3Shtr7y6qza4qUOHG56Si9gP8tRhiv8SyljnZ+kgFXZCSNL343j/UWqi
+ XK3iCTpceYQUWM7Rg6aMjlB+XjC7YVPKh45V0UNKEMoESO/5IfZckBgKaFyNtnNXPX
+ l+KBU6WDocbUQqK5+h+Ew6HFo+IZZxXnQ4YGrquT2ROu+IjQ2R6egpkq2oqaDUyLrF
+ tT+/kMXuyWMLw==
+X-Nifty-SrcIP: [209.85.221.171]
+Received: by mail-vk1-f171.google.com with SMTP id 134so1973716vky.2
+ for <linux-um@lists.infradead.org>; Mon, 11 May 2020 21:47:11 -0700 (PDT)
+X-Gm-Message-State: AOAM533138sRhWVIiyANTjaPt48cHsQ2WLfslJI7XFfSEWhHD32rnH2q
+ LSQT2XUU6/ULiiXvxu61GGKMJtOLSyplalnqQd0=
+X-Google-Smtp-Source: ABdhPJx9Bfa6MksNEoRe5t9wT2eICKX2B4d/8RFu+auloS9KsDHXOcvEkbuAo18ovUl5UV0ud/EQm9lTrtowvLXmDjU=
+X-Received: by 2002:a1f:2e16:: with SMTP id u22mr6840176vku.12.1589258830441; 
+ Mon, 11 May 2020 21:47:10 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAMuHMdW1S91i3x0unNcJnypHse7ifynGb4dZcVhJaemR3GH1Pg@mail.gmail.com>
-User-Agent: Mutt/1.5.17 (2007-11-01)
+References: <20200504080807.126396-1-masahiroy@kernel.org>
+ <20200504080807.126396-2-masahiroy@kernel.org>
+In-Reply-To: <20200504080807.126396-2-masahiroy@kernel.org>
+From: Masahiro Yamada <masahiroy@kernel.org>
+Date: Tue, 12 May 2020 13:46:34 +0900
+X-Gmail-Original-Message-ID: <CAK7LNAQmcUZtyYXiwPc8qet9harwtsFWUVXbznLHuYAO=VCG9w@mail.gmail.com>
+Message-ID: <CAK7LNAQmcUZtyYXiwPc8qet9harwtsFWUVXbznLHuYAO=VCG9w@mail.gmail.com>
+Subject: Re: [PATCH 2/2] kbuild: remove {CLEAN,MRPROPER,DISTCLEAN}_DIRS
+To: Linux Kbuild mailing list <linux-kbuild@vger.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200511_093750_977193_E9E9B4F8 
-X-CRM114-Status: GOOD (  18.16  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200511_214732_443188_C03CA786 
+X-CRM114-Status: GOOD (  12.92  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [213.95.11.211 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ no trust [210.131.2.90 listed in list.dnswl.org]
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,175 +82,141 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-ia64@vger.kernel.org" <linux-ia64@vger.kernel.org>,
- Linux-sh list <linux-sh@vger.kernel.org>, Roman Zippel <zippel@linux-m68k.org>,
- "open list:BROADCOM NVRAM DRIVER" <linux-mips@vger.kernel.org>,
- Linux MM <linux-mm@kvack.org>, sparclinux <sparclinux@vger.kernel.org>,
- linux-riscv@lists.infradead.org, Christoph Hellwig <hch@lst.de>,
- Linux-Arch <linux-arch@vger.kernel.org>, linux-c6x-dev@linux-c6x.org,
- "open list:QUALCOMM HEXAGON..." <linux-hexagon@vger.kernel.org>,
- the arch/x86 maintainers <x86@kernel.org>,
- "open list:TENSILICA XTENSA PORT \(xtensa\)" <linux-xtensa@linux-xtensa.org>,
- Arnd Bergmann <arnd@arndb.de>, Jessica Yu <jeyu@kernel.org>,
- linux-um <linux-um@lists.infradead.org>,
- linux-m68k <linux-m68k@lists.linux-m68k.org>,
- Openrisc <openrisc@lists.librecores.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Michal Simek <monstr@monstr.eu>,
+Cc: Michal Marek <michal.lkml@markovi.net>, Richard Weinberger <richard@nod.at>,
+ Jeff Dike <jdike@addtoit.com>, linux-um@lists.infradead.org,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- alpha <linux-alpha@vger.kernel.org>,
- Linux FS Devel <linux-fsdevel@vger.kernel.org>,
- Andrew Morton <akpm@linux-foundation.org>,
- linuxppc-dev <linuxppc-dev@lists.ozlabs.org>
+ Anton Ivanov <anton.ivanov@cambridgegreys.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Mon, May 11, 2020 at 05:24:30PM +0200, Geert Uytterhoeven wrote:
-> > Btw, do you know what part of flush_icache_range relied on set_fs?
-> > Do any of the m68k maintainers have an idea how to handle that in
-> > a nicer way when we can split the implementations?
-> 
-> arch/m68k/mm/cache.c:virt_to_phys_slow()
-> 
-> All instructions that look up addresses in the page tables look at the
-> source/destination function codes (SFC/DFC) to know if they have to use
-> the supervisor or user page tables.
-> So the actual implementation is the same: set_fs() merely configures
-> SFC/DFC, to select the address space to use.
+On Mon, May 4, 2020 at 5:08 PM Masahiro Yamada <masahiroy@kernel.org> wrote:
+>
+> Merge {CLEAN,MRPROPER,DISTCLEAN}_DIRS into {CLEAN,MRPROPER,DISTCLEAN}_FILES
+> because the difference is just the -r option passed to the 'rm' command.
+>
+> Do likewise as commit 1634f2bfdb84 ("kbuild: remove clean-dirs syntax").
+>
+> Signed-off-by: Masahiro Yamada <masahiroy@kernel.org>
 
-So instead of the magic instructions could we use the normal kernel
-virt to phys helpers instead of switching the addresses space?  Something
-like this patch on top of the series:
+Applied to linux-kbuild.
 
-diff --git a/arch/m68k/mm/cache.c b/arch/m68k/mm/cache.c
-index 5ecb3310e8745..5a861a14c1e69 100644
---- a/arch/m68k/mm/cache.c
-+++ b/arch/m68k/mm/cache.c
-@@ -71,47 +71,87 @@ static unsigned long virt_to_phys_slow(unsigned long vaddr)
- 	return 0;
- }
- 
--/* Push n pages at kernel virtual address and clear the icache */
--/* RZ: use cpush %bc instead of cpush %dc, cinv %ic */
--void flush_icache_user_range(unsigned long address, unsigned long endaddr)
-+static inline void coldfire_flush_icache_range(unsigned long start,
-+		unsigned long end)
- {
--	if (CPU_IS_COLDFIRE) {
--		unsigned long start, end;
--		start = address & ICACHE_SET_MASK;
--		end = endaddr & ICACHE_SET_MASK;
--		if (start > end) {
--			flush_cf_icache(0, end);
--			end = ICACHE_MAX_ADDR;
--		}
--		flush_cf_icache(start, end);
--	} else if (CPU_IS_040_OR_060) {
--		address &= PAGE_MASK;
--
--		do {
--			asm volatile ("nop\n\t"
--				      ".chip 68040\n\t"
--				      "cpushp %%bc,(%0)\n\t"
--				      ".chip 68k"
--				      : : "a" (virt_to_phys_slow(address)));
--			address += PAGE_SIZE;
--		} while (address < endaddr);
--	} else {
--		unsigned long tmp;
--		asm volatile ("movec %%cacr,%0\n\t"
--			      "orw %1,%0\n\t"
--			      "movec %0,%%cacr"
--			      : "=&d" (tmp)
--			      : "di" (FLUSH_I));
-+	start &= ICACHE_SET_MASK;
-+	end &= ICACHE_SET_MASK;
-+
-+	if (start > end) {
-+		flush_cf_icache(0, end);
-+		end = ICACHE_MAX_ADDR;
- 	}
-+	flush_cf_icache(start, end);
-+}
-+
-+static inline void mc68040_flush_icache_user_range(unsigned long start,
-+		unsigned long end)
-+{
-+	start &= PAGE_MASK;
-+
-+	do {
-+		asm volatile ("nop\n\t"
-+			      ".chip 68040\n\t"
-+			      "cpushp %%bc,(%0)\n\t"
-+			      ".chip 68k"
-+			      : : "a" (virt_to_phys_slow(start)));
-+		start += PAGE_SIZE;
-+	} while (start < end);
-+}
-+
-+static inline void mc68020_flush_icache_range(unsigned long start,
-+		unsigned long end)
-+{
-+	unsigned long tmp;
-+
-+	asm volatile ("movec %%cacr,%0\n\t"
-+		      "orw %1,%0\n\t"
-+		      "movec %0,%%cacr"
-+		      : "=&d" (tmp)
-+		      : "di" (FLUSH_I));
-+}
-+
-+void flush_icache_user_range(unsigned long start, unsigned long end)
-+{
-+	if (CPU_IS_COLDFIRE)
-+		coldfire_flush_icache_range(start, end);
-+	else if (CPU_IS_040_OR_060)
-+		mc68040_flush_icache_user_range(start, end);
-+	else
-+		mc68020_flush_icache_range(start, end);
- }
- 
--void flush_icache_range(unsigned long address, unsigned long endaddr)
-+static inline void mc68040_flush_icache_range(unsigned long start,
-+		unsigned long end)
- {
--	mm_segment_t old_fs = get_fs();
-+	start &= PAGE_MASK;
-+
-+	do {
-+		void *vaddr = (void *)start;
-+		phys_addr_t paddr;
-+
-+		if (is_vmalloc_addr(vaddr))
-+			paddr = page_to_phys(vmalloc_to_page(vaddr));
-+		else
-+			paddr = virt_to_phys(vaddr);
-+
-+		asm volatile ("nop\n\t"
-+			      ".chip 68040\n\t"
-+			      "cpushp %%bc,(%0)\n\t"
-+			      ".chip 68k"
-+			      : : "a" (paddr));
-+		start += PAGE_SIZE;
-+	} while (start < end);
-+}
- 
--	set_fs(KERNEL_DS);
--	flush_icache_user_range(address, endaddr);
--	set_fs(old_fs);
-+void flush_icache_range(unsigned long start, unsigned long end)
-+{
-+	if (CPU_IS_COLDFIRE)
-+		coldfire_flush_icache_range(start, end);
-+	else if (CPU_IS_040_OR_060)
-+		mc68040_flush_icache_range(start, end);
-+	else
-+		mc68020_flush_icache_range(start, end);
- }
- EXPORT_SYMBOL(flush_icache_range);
- 
+
+
+
+> ---
+>
+>  Makefile         | 22 ++++++----------------
+>  arch/um/Makefile |  2 +-
+>  2 files changed, 7 insertions(+), 17 deletions(-)
+>
+> diff --git a/Makefile b/Makefile
+> index ffd80afcd0bb..8a7c931cc0d9 100644
+> --- a/Makefile
+> +++ b/Makefile
+> @@ -1389,14 +1389,14 @@ endif # CONFIG_MODULES
+>  # make distclean Remove editor backup files, patch leftover files and the like
+>
+>  # Directories & files removed with 'make clean'
+> -CLEAN_DIRS  += include/ksym
+> -CLEAN_FILES += modules.builtin modules.builtin.modinfo modules.nsdeps
+> +CLEAN_FILES += include/ksym \
+> +              modules.builtin modules.builtin.modinfo modules.nsdeps
+>
+>  # Directories & files removed with 'make mrproper'
+> -MRPROPER_DIRS  += include/config include/generated          \
+> +MRPROPER_FILES += include/config include/generated          \
+>                   arch/$(SRCARCH)/include/generated .tmp_objdiff \
+> -                 debian/ snap/ tar-install/
+> -MRPROPER_FILES += .config .config.old .version \
+> +                 debian snap tar-install \
+> +                 .config .config.old .version \
+>                   Module.symvers \
+>                   signing_key.pem signing_key.priv signing_key.x509     \
+>                   x509.genkey extra_certificates signing_key.x509.keyid \
+> @@ -1404,12 +1404,10 @@ MRPROPER_FILES += .config .config.old .version \
+>                   *.spec
+>
+>  # Directories & files removed with 'make distclean'
+> -DISTCLEAN_DIRS  +=
+>  DISTCLEAN_FILES += tags TAGS cscope* GPATH GTAGS GRTAGS GSYMS
+>
+>  # clean - Delete most, but leave enough to build external modules
+>  #
+> -clean: rm-dirs  := $(CLEAN_DIRS)
+>  clean: rm-files := $(CLEAN_FILES)
+>
+>  PHONY += archclean vmlinuxclean
+> @@ -1422,7 +1420,6 @@ clean: archclean vmlinuxclean
+>
+>  # mrproper - Delete all generated files, including .config
+>  #
+> -mrproper: rm-dirs  := $(wildcard $(MRPROPER_DIRS))
+>  mrproper: rm-files := $(wildcard $(MRPROPER_FILES))
+>  mrproper-dirs      := $(addprefix _mrproper_,scripts)
+>
+> @@ -1431,18 +1428,15 @@ $(mrproper-dirs):
+>         $(Q)$(MAKE) $(clean)=$(patsubst _mrproper_%,%,$@)
+>
+>  mrproper: clean $(mrproper-dirs)
+> -       $(call cmd,rmdirs)
+>         $(call cmd,rmfiles)
+>
+>  # distclean
+>  #
+> -distclean: rm-dirs  := $(wildcard $(DISTCLEAN_DIRS))
+>  distclean: rm-files := $(wildcard $(DISTCLEAN_FILES))
+>
+>  PHONY += distclean
+>
+>  distclean: mrproper
+> -       $(call cmd,rmdirs)
+>         $(call cmd,rmfiles)
+>         @find $(srctree) $(RCS_FIND_IGNORE) \
+>                 \( -name '*.orig' -o -name '*.rej' -o -name '*~' \
+> @@ -1732,7 +1726,6 @@ $(clean-dirs):
+>         $(Q)$(MAKE) $(clean)=$(patsubst _clean_%,%,$@)
+>
+>  clean: $(clean-dirs)
+> -       $(call cmd,rmdirs)
+>         $(call cmd,rmfiles)
+>         @find $(if $(KBUILD_EXTMOD), $(KBUILD_EXTMOD), .) $(RCS_FIND_IGNORE) \
+>                 \( -name '*.[aios]' -o -name '*.ko' -o -name '.*.cmd' \
+> @@ -1827,11 +1820,8 @@ tools/%: FORCE
+>         $(Q)mkdir -p $(objtree)/tools
+>         $(Q)$(MAKE) LDFLAGS= MAKEFLAGS="$(tools_silent) $(filter --j% -j,$(MAKEFLAGS))" O=$(abspath $(objtree)) subdir=tools -C $(srctree)/tools/ $*
+>
+> -quiet_cmd_rmdirs = $(if $(wildcard $(rm-dirs)),CLEAN   $(wildcard $(rm-dirs)))
+> -      cmd_rmdirs = rm -rf $(rm-dirs)
+> -
+>  quiet_cmd_rmfiles = $(if $(wildcard $(rm-files)),CLEAN   $(wildcard $(rm-files)))
+> -      cmd_rmfiles = rm -f $(rm-files)
+> +      cmd_rmfiles = rm -rf $(rm-files)
+>
+>  # Run depmod only if we have System.map and depmod is executable
+>  quiet_cmd_depmod = DEPMOD  $(KERNELRELEASE)
+> diff --git a/arch/um/Makefile b/arch/um/Makefile
+> index 275f5ffdf6f0..3f27aa3ec0a6 100644
+> --- a/arch/um/Makefile
+> +++ b/arch/um/Makefile
+> @@ -140,7 +140,7 @@ export CFLAGS_vmlinux := $(LINK-y) $(LINK_WRAPS) $(LD_FLAGS_CMDLINE)
+>  # When cleaning we don't include .config, so we don't include
+>  # TT or skas makefiles and don't clean skas_ptregs.h.
+>  CLEAN_FILES += linux x.i gmon.out
+> -MRPROPER_DIRS += arch/$(SUBARCH)/include/generated
+> +MRPROPER_FILES += arch/$(SUBARCH)/include/generated
+>
+>  archclean:
+>         @find . \( -name '*.bb' -o -name '*.bbg' -o -name '*.da' \
+> --
+> 2.25.1
+>
+
+
+-- 
+Best Regards
+Masahiro Yamada
 
 _______________________________________________
 linux-um mailing list
