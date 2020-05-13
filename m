@@ -2,35 +2,36 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B83AC1D1A28
-	for <lists+linux-um@lfdr.de>; Wed, 13 May 2020 18:01:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 070CF1D1A29
+	for <lists+linux-um@lfdr.de>; Wed, 13 May 2020 18:01:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VNqa31lE5FoigXy+2B4b4g3IO5dN8MTXSCvzgdf+tQ8=; b=LFS75Cxc/Ja5LQ
-	exuohpSROQN/h43An8cHlWPLasC388WCr/PQFPZelo0qBTiyxH72YksTAOBx/jArmh3szWbU+5nw8
-	Hli8GxNGZkFiv0aIfqa/hO/qPceQkEbeBTAfwDxeIyF2bcZDJUqOJ5QKjnIfXc1M7sjvnkgJhTppk
-	x1CwHd3+hVyuRax1opr1n/091uuptqvP9FwWzFOA7LsVARGIoPiaHa0kS5krNg5r300pe6fYVSzus
-	2hBEnMM89rhEks0T74r8smiPcRF0EaK36VRCho91oAS2QcIsZqOLLELS24sJAS641afiiuwAnWkuz
-	DvkgRdbOHvpAaOx5gXEA==;
+	List-Owner; bh=bSVtW4FXQHlkPrucsrtSESnt6Vov74m+nND1JbUO9G0=; b=jcrwfp92BERPuP
+	2SnZbkmKBRTf7Is3mbOg5KYGNf/xAlOeMLXR+X6G9wJkygk4p6r0wyDAG/yfgHzgYWb/uNV40VK84
+	376OrdNhhpNnmcpEE4ZJza3NuwZgZmxa8ndHsiK4d+Nq84gIG23uspT2mgzKdAo9h3GucIGO7vvtO
+	wFl62E8dHqO9kdXXlcuFyyvmYrMH919ysB7gPlGO6WruRF8dyFJpAScHjso8Vteu1zXGInmZ/R0SQ
+	Mi2aYg601Wbj2IlNjN0xzZT3/StR/1Z0NL+cwmBy6mMHle8VrV4Arzr/WuX3gj50rzp+K2G/f8Vrv
+	WPVGTkgYtI8lvEQpWcSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYtoq-0004zI-4U; Wed, 13 May 2020 16:01:16 +0000
+	id 1jYtot-00050l-A8; Wed, 13 May 2020 16:01:19 +0000
 Received: from [2001:4bb8:180:9d3f:c70:4a89:bc61:2] (helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYtoo-0004xT-UQ; Wed, 13 May 2020 16:01:15 +0000
+ id 1jYtor-0004zS-Kn; Wed, 13 May 2020 16:01:18 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: x86@kernel.org, Alexei Starovoitov <ast@kernel.org>,
  Daniel Borkmann <daniel@iogearbox.net>,
  Masami Hiramatsu <mhiramat@kernel.org>,
  Linus Torvalds <torvalds@linux-foundation.org>,
  Andrew Morton <akpm@linux-foundation.org>
-Subject: [PATCH 13/18] maccess: move user access routines together
-Date: Wed, 13 May 2020 18:00:33 +0200
-Message-Id: <20200513160038.2482415-14-hch@lst.de>
+Subject: [PATCH 14/18] maccess: allow architectures to provide kernel probing
+ directly
+Date: Wed, 13 May 2020 18:00:34 +0200
+Message-Id: <20200513160038.2482415-15-hch@lst.de>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <20200513160038.2482415-1-hch@lst.de>
 References: <20200513160038.2482415-1-hch@lst.de>
@@ -54,149 +55,110 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-Move kernel access vs user access routines together to ease upcoming
-ifdefs.
+Provide alternative versions of probe_kernel_read, probe_kernel_write
+and strncpy_from_kernel_unsafe that don't need set_fs magic, but instead
+use arch hooks that are modelled after unsafe_{get,put}_user to access
+kernel memory in an exception safe way.
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
 ---
- mm/maccess.c | 110 +++++++++++++++++++++++++--------------------------
- 1 file changed, 55 insertions(+), 55 deletions(-)
+ mm/maccess.c | 76 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 76 insertions(+)
 
 diff --git a/mm/maccess.c b/mm/maccess.c
-index 05c44d490b4e3..9773e2253b495 100644
+index 9773e2253b495..e9efe2f98e34a 100644
 --- a/mm/maccess.c
 +++ b/mm/maccess.c
-@@ -47,34 +47,6 @@ long probe_kernel_read(void *dst, const void *src, size_t size)
- }
- EXPORT_SYMBOL_GPL(probe_kernel_read);
- 
--/**
-- * probe_user_read(): safely attempt to read from a user-space location
-- * @dst: pointer to the buffer that shall take the data
-- * @src: address to read from. This must be a user address.
-- * @size: size of the data chunk
-- *
-- * Safely read from user address @src to the buffer at @dst. If a kernel fault
-- * happens, handle that and return -EFAULT.
-- */
--long probe_user_read(void *dst, const void __user *src, size_t size)
--{
--	long ret = -EFAULT;
--	mm_segment_t old_fs = get_fs();
--
--	set_fs(USER_DS);
--	if (access_ok(src, size)) {
--		pagefault_disable();
--		ret = __copy_from_user_inatomic(dst, src, size);
--		pagefault_enable();
--	}
--	set_fs(old_fs);
--
--	if (ret)
--		return -EFAULT;
--	return 0;
--}
--EXPORT_SYMBOL_GPL(probe_user_read);
--
- /**
-  * probe_kernel_write(): safely attempt to write to a location
-  * @dst: address to write to
-@@ -100,33 +72,6 @@ long probe_kernel_write(void *dst, const void *src, size_t size)
- 	return 0;
+@@ -12,6 +12,81 @@ bool __weak probe_kernel_read_allowed(void *dst, const void *unsafe_src,
+ 	return true;
  }
  
--/**
-- * probe_user_write(): safely attempt to write to a user-space location
-- * @dst: address to write to
-- * @src: pointer to the data that shall be written
-- * @size: size of the data chunk
-- *
-- * Safely write to address @dst from the buffer at @src.  If a kernel fault
-- * happens, handle that and return -EFAULT.
-- */
--long probe_user_write(void __user *dst, const void *src, size_t size)
--{
--	long ret = -EFAULT;
--	mm_segment_t old_fs = get_fs();
--
--	set_fs(USER_DS);
--	if (access_ok(dst, size)) {
--		pagefault_disable();
--		ret = __copy_to_user_inatomic(dst, src, size);
--		pagefault_enable();
--	}
--	set_fs(old_fs);
--
--	if (ret)
--		return -EFAULT;
--	return 0;
--}
--
++#ifdef HAVE_ARCH_PROBE_KERNEL
++
++#define probe_kernel_read_loop(dst, src, len, type, err_label)		\
++	while (len >= sizeof(type)) {					\
++		arch_kernel_read(dst, src, type, err_label);		\
++		dst += sizeof(type);					\
++		src += sizeof(type);					\
++		len -= sizeof(type);					\
++	}
++
++long probe_kernel_read(void *dst, const void *src, size_t size)
++{
++	if (!probe_kernel_read_allowed(dst, src, size))
++		return -EFAULT;
++
++	pagefault_disable();
++	probe_kernel_read_loop(dst, src, size, u64, Efault);
++	probe_kernel_read_loop(dst, src, size, u32, Efault);
++	probe_kernel_read_loop(dst, src, size, u16, Efault);
++	probe_kernel_read_loop(dst, src, size, u8, Efault);
++	pagefault_enable();
++	return 0;
++Efault:
++	pagefault_enable();
++	return -EFAULT;
++}
++EXPORT_SYMBOL_GPL(probe_kernel_read);
++
++#define probe_kernel_write_loop(dst, src, len, type, err_label)		\
++	while (len >= sizeof(type)) {					\
++		arch_kernel_write(dst, src, type, err_label);		\
++		dst += sizeof(type);					\
++		src += sizeof(type);					\
++		len -= sizeof(type);					\
++	}
++
++long probe_kernel_write(void *dst, const void *src, size_t size)
++{
++	pagefault_disable();
++	probe_kernel_write_loop(dst, src, size, u64, Efault);
++	probe_kernel_write_loop(dst, src, size, u32, Efault);
++	probe_kernel_write_loop(dst, src, size, u16, Efault);
++	probe_kernel_write_loop(dst, src, size, u8, Efault);
++	pagefault_enable();
++	return 0;
++Efault:
++	pagefault_enable();
++	return -EFAULT;
++}
++
++long strncpy_from_kernel_unsafe(char *dst, const void *unsafe_addr, long count)
++{
++	const void *src = unsafe_addr;
++
++	if (unlikely(count <= 0))
++		return 0;
++	if (!probe_kernel_read_allowed(dst, unsafe_addr, count))
++		return -EFAULT;
++
++	pagefault_disable();
++	do {
++		arch_kernel_read(dst, src, u8, Efault);
++		dst++;
++		src++;
++	} while (dst[-1] && src - unsafe_addr < count);
++	pagefault_enable();
++
++	dst[-1] = '\0';
++	return src - unsafe_addr;
++Efault:
++	pagefault_enable();
++	dst[-1] = '\0';
++	return -EFAULT;
++}
++#else /* HAVE_ARCH_PROBE_KERNEL */
  /**
-  * strncpy_from_kernel_nofault: - Copy a NUL terminated string from unsafe
-  *				 address.
-@@ -170,6 +115,61 @@ long strncpy_from_kernel_nofault(char *dst, const void *unsafe_addr, long count)
+  * probe_kernel_read(): safely attempt to read from kernel-space
+  * @dst: pointer to the buffer that shall take the data
+@@ -114,6 +189,7 @@ long strncpy_from_kernel_nofault(char *dst, const void *unsafe_addr, long count)
+ 
  	return ret ? -EFAULT : src - unsafe_addr;
  }
++#endif /* HAVE_ARCH_PROBE_KERNEL */
  
-+/**
-+ * probe_user_read(): safely attempt to read from a user-space location
-+ * @dst: pointer to the buffer that shall take the data
-+ * @src: address to read from. This must be a user address.
-+ * @size: size of the data chunk
-+ *
-+ * Safely read from user address @src to the buffer at @dst. If a kernel fault
-+ * happens, handle that and return -EFAULT.
-+ */
-+long probe_user_read(void *dst, const void __user *src, size_t size)
-+{
-+	long ret = -EFAULT;
-+	mm_segment_t old_fs = get_fs();
-+
-+	set_fs(USER_DS);
-+	if (access_ok(src, size)) {
-+		pagefault_disable();
-+		ret = __copy_from_user_inatomic(dst, src, size);
-+		pagefault_enable();
-+	}
-+	set_fs(old_fs);
-+
-+	if (ret)
-+		return -EFAULT;
-+	return 0;
-+}
-+EXPORT_SYMBOL_GPL(probe_user_read);
-+
-+/**
-+ * probe_user_write(): safely attempt to write to a user-space location
-+ * @dst: address to write to
-+ * @src: pointer to the data that shall be written
-+ * @size: size of the data chunk
-+ *
-+ * Safely write to address @dst from the buffer at @src.  If a kernel fault
-+ * happens, handle that and return -EFAULT.
-+ */
-+long probe_user_write(void __user *dst, const void *src, size_t size)
-+{
-+	long ret = -EFAULT;
-+	mm_segment_t old_fs = get_fs();
-+
-+	set_fs(USER_DS);
-+	if (access_ok(dst, size)) {
-+		pagefault_disable();
-+		ret = __copy_to_user_inatomic(dst, src, size);
-+		pagefault_enable();
-+	}
-+	set_fs(old_fs);
-+
-+	if (ret)
-+		return -EFAULT;
-+	return 0;
-+}
-+
  /**
-  * strncpy_from_user_nofault: - Copy a NUL terminated string from unsafe user
-  *				address.
+  * probe_user_read(): safely attempt to read from a user-space location
 -- 
 2.26.2
 
