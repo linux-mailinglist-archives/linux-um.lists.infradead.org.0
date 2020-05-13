@@ -2,72 +2,65 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B5DD21D22E5
-	for <lists+linux-um@lfdr.de>; Thu, 14 May 2020 01:21:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 15AF41D22F6
+	for <lists+linux-um@lfdr.de>; Thu, 14 May 2020 01:24:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Message-Id:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xpw4RI8SEC5g1G6vztlNBoDTeUK1kfxnbuzSBffPPng=; b=WnGKPBDe2gw0Px
-	tNugyK6jkV2XWTD96dgizXcqmervd7mIofBCAU4+wFkCksR7lMgBQRuhsgoGWLD+QXD7UF7dD2/sS
-	RxTIOH5en5tRo4xIw6MCOQ7GwkmeZyLySkHRgPcOYbTwVV5YvhG10Q0Z4ClN2T/7gpCzIJdioifdw
-	fb8NdXHdti7OfLdxjK+lLqAAhco2P4Gpk9dDZp+WOztLB1or2usUmsAtqXxeIAzKzO6AGNkWN6iEk
-	8SHfET+qPUHcoRMbVIjES84jQ/GpfQDJhb59g+V0XzO0TKoPieKBP89jLzPUguDQ45nnvOgN6l6VN
-	vVJ7G/YNU8uxs9nPeezg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=LJdRyURz1UfhP30GV2DQqbUhCp9AmHnmx15W/2iMh6I=; b=JvU1qJz7ZxPe5D7BNYe1CUQJE
+	dJiXwLODVtliVj5VnuRURKXsRbNg17up7MdplIZspP+NgV+yod3osiWd+Q6BBMwrhc588UOhyW9xb
+	iIEfcELg6oKW6W6Dp6QCSagS654YHcH1pFZoX7wznA35KKquXDu+OdclcNkZiVNTk3kSZjVyoXZ5t
+	7DEuD1JWGwh1R6YKvKpefV1HcpIYjDyj6B5OOyiV3lBVQDkQO17tcp1E7F/5hiivRxJp0zqN7rnr8
+	crQ2XKtQmjb4+tGRgq8vYaSdALqYWiIYErZcXjvjEx8z9zHiiRdqzlKxd8cQBSSzZ/JitKrf9iKKf
+	ukAxVb7HA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZ0gS-0008BX-Vi; Wed, 13 May 2020 23:21:04 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jZ0jh-0008RV-GB; Wed, 13 May 2020 23:24:25 +0000
+Received: from www62.your-server.de ([213.133.104.62])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZ0gP-0008B0-Vh
- for linux-um@lists.infradead.org; Wed, 13 May 2020 23:21:03 +0000
-Received: from devnote2 (NE2965lan1.rev.em-net.ne.jp [210.141.244.193])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E88B0205ED;
- Wed, 13 May 2020 23:20:57 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1589412060;
- bh=YDpY+oFCkFIHw2paw3aSACA9Hw6Wo+2HjdFDzhL6e38=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=VY6ReKk0+WrAeE5ZcMXyCwAji3tlYNb/nbD2ggy3exjFLZEjT+0+pc5M2WrrXmQH0
- JQWCoAo25rOLn65XcG+voP2CL/K9HMF/5jLJiguZCbvKj7Ig9RkfxHptSOAPl7eg+4
- c+G4ppBlY+/44iQvxYyUGGeiJfjGc2UNIDz5ZKPs=
-Date: Thu, 14 May 2020 08:20:54 +0900
-From: Masami Hiramatsu <mhiramat@kernel.org>
-To: Daniel Borkmann <daniel@iogearbox.net>
+ id 1jZ0jf-0008R7-40
+ for linux-um@lists.infradead.org; Wed, 13 May 2020 23:24:24 +0000
+Received: from sslproxy06.your-server.de ([78.46.172.3])
+ by www62.your-server.de with esmtpsa (TLSv1.2:DHE-RSA-AES256-GCM-SHA384:256)
+ (Exim 4.89_1) (envelope-from <daniel@iogearbox.net>)
+ id 1jZ0jb-0000nW-H0; Thu, 14 May 2020 01:24:19 +0200
+Received: from [178.196.57.75] (helo=pc-9.home)
+ by sslproxy06.your-server.de with esmtpsa (TLSv1.3:TLS_AES_256_GCM_SHA384:256)
+ (Exim 4.92) (envelope-from <daniel@iogearbox.net>)
+ id 1jZ0jb-0007qv-2t; Thu, 14 May 2020 01:24:19 +0200
 Subject: Re: [PATCH 11/18] maccess: remove strncpy_from_unsafe
-Message-Id: <20200514082054.f817721ce196f134e6820644@kernel.org>
-In-Reply-To: <0c1a7066-b269-9695-b94a-bb5f4f20ebd8@iogearbox.net>
+To: Linus Torvalds <torvalds@linux-foundation.org>
 References: <20200513160038.2482415-1-hch@lst.de>
  <20200513160038.2482415-12-hch@lst.de>
  <CAHk-=wj=u+nttmd1huNES2U=9nePtmk7WgR8cMLCYS8wc=rhdA@mail.gmail.com>
  <20200513192804.GA30751@lst.de>
  <0c1a7066-b269-9695-b94a-bb5f4f20ebd8@iogearbox.net>
-X-Mailer: Sylpheed 3.5.1 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
-Mime-Version: 1.0
+ <CAHk-=wiivWJ70PotzCK-j7K4Y612NJBA2d+iN6Rz-bfMxCpwjQ@mail.gmail.com>
+From: Daniel Borkmann <daniel@iogearbox.net>
+Message-ID: <2a03633b-419d-643f-b787-ca1520e2229b@iogearbox.net>
+Date: Thu, 14 May 2020 01:24:18 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
+MIME-Version: 1.0
+In-Reply-To: <CAHk-=wiivWJ70PotzCK-j7K4Y612NJBA2d+iN6Rz-bfMxCpwjQ@mail.gmail.com>
+Content-Language: en-US
+X-Authenticated-Sender: daniel@iogearbox.net
+X-Virus-Scanned: Clear (ClamAV 0.102.2/25811/Wed May 13 14:11:53 2020)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_162102_064106_78905C0D 
-X-CRM114-Status: GOOD (  22.67  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200513_162423_163055_E40B42B4 
+X-CRM114-Status: GOOD (  16.35  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [213.133.104.62 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,78 +77,52 @@ Cc: bpf@vger.kernel.org, linux-parisc@vger.kernel.org,
  linux-um <linux-um@lists.infradead.org>, Alexei Starovoitov <ast@kernel.org>,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
  Linux-MM <linux-mm@kvack.org>, Masami Hiramatsu <mhiramat@kernel.org>,
- Andrew Morton <akpm@linux-foundation.org>,
- Linus Torvalds <torvalds@linux-foundation.org>, Christoph Hellwig <hch@lst.de>
-Content-Type: text/plain; charset="us-ascii"
+ Andrew Morton <akpm@linux-foundation.org>, bgregg@netflix.com,
+ Christoph Hellwig <hch@lst.de>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Thu, 14 May 2020 00:36:28 +0200
-Daniel Borkmann <daniel@iogearbox.net> wrote:
-
-> On 5/13/20 9:28 PM, Christoph Hellwig wrote:
-> > On Wed, May 13, 2020 at 12:11:27PM -0700, Linus Torvalds wrote:
-> >> On Wed, May 13, 2020 at 9:01 AM Christoph Hellwig <hch@lst.de> wrote:
-> >>>
-> >>> +static void bpf_strncpy(char *buf, long unsafe_addr)
-> >>> +{
-> >>> +       buf[0] = 0;
-> >>> +       if (strncpy_from_kernel_nofault(buf, (void *)unsafe_addr,
-> >>> +                       BPF_STRNCPY_LEN))
-> >>> +               strncpy_from_user_nofault(buf, (void __user *)unsafe_addr,
-> >>> +                               BPF_STRNCPY_LEN);
-> >>> +}
-> >>
-> >> This seems buggy when I look at it.
-> >>
-> >> It seems to think that strncpy_from_kernel_nofault() returns an error code.
-> >>
-> >> Not so, unless I missed where you changed the rules.
-> > 
-> > I didn't change the rules, so yes, this is wrong.
-> > 
-> >> Also, I do wonder if we shouldn't gate this on TASK_SIZE, and do the
-> >> user trial first. On architectures where this thing is valid in the
-> >> first place (ie kernel and user addresses are separate), the test for
-> >> address size would allow us to avoid a pointless fault due to an
-> >> invalid kernel access to user space.
-> >>
-> >> So I think this function should look something like
-> >>
-> >>    static void bpf_strncpy(char *buf, long unsafe_addr)
-> >>    {
-> >>            /* Try user address */
-> >>            if (unsafe_addr < TASK_SIZE) {
-> >>                    void __user *ptr = (void __user *)unsafe_addr;
-> >>                    if (strncpy_from_user_nofault(buf, ptr, BPF_STRNCPY_LEN) >= 0)
-> >>                            return;
-> >>            }
-> >>
-> >>            /* .. fall back on trying kernel access */
-> >>            buf[0] = 0;
-> >>            strncpy_from_kernel_nofault(buf, (void *)unsafe_addr,
-> >> BPF_STRNCPY_LEN);
-> >>    }
-> >>
-> >> or similar. No?
-> > 
-> > So on say s390 TASK_SIZE_USUALLy is (-PAGE_SIZE), which means we'd alway
-> > try the user copy first, which seems odd.
-> > 
-> > I'd really like to here from the bpf folks what the expected use case
-> > is here, and if the typical argument is kernel or user memory.
+On 5/14/20 1:03 AM, Linus Torvalds wrote:
+> On Wed, May 13, 2020 at 3:36 PM Daniel Borkmann <daniel@iogearbox.net> wrote:
+>>
+>> It's used for both.
 > 
-> It's used for both. Given this is enabled on pretty much all program types, my
-> assumption would be that usage is still more often on kernel memory than user one.
+> Daniel, BPF real;ly needs to make up its mind about that.
+> 
+> You *cannot* use ti for both.
+> 
+> Yes, it happens to work on x86 and some other architectures.
+> 
+> But on other architectures, the exact same pointer value can be a
+> kernel pointer or a user pointer.
 
-For trace_kprobe.c current order (kernel -> user fallback) is preferred
-because it has another function dedicated for user memory.
+Right, it has the same issue as with the old probe helper. I was merely stating that
+there are existing users (on x86) out there that use it this way, even though broken
+generally.
 
-Thank you,
+>> Given this is enabled on pretty much all program types, my
+>> assumption would be that usage is still more often on kernel memory than user one.
+> 
+> You need to pick one.
+> 
+> If you know it is a user pointer, use strncpy_from_user() (possibly
+> with disable_pagefault() aka strncpy_from_user_nofault()).
+> 
+> And if you know it is a kernel pointer, use strncpy_from_unsafe() (aka
+> strncpy_from_kernel_nofault()).
+> 
+> You really can't pick the "randomly one or the other guess what I mean " option.
 
--- 
-Masami Hiramatsu <mhiramat@kernel.org>
+My preference would be to have %s, %sK, %sU for bpf_trace_printk() where the latter two
+result in an explicit strncpy_from_kernel_nofault() or strncpy_from_user_nofault()
+choice while the %s is converted as per your suggestion and it would still allow for a
+grace period to convert existing users to the new variants, similar with what we did on
+the bpf_probe_read_kernel() and bpf_probe_read_user() helpers to get this sorted out.
+
+Thanks,
+Daniel
 
 _______________________________________________
 linux-um mailing list
