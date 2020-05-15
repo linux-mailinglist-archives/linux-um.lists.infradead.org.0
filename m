@@ -2,32 +2,32 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BEF851D50F2
-	for <lists+linux-um@lfdr.de>; Fri, 15 May 2020 16:39:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 83DDA1D518D
+	for <lists+linux-um@lfdr.de>; Fri, 15 May 2020 16:41:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TRsCOF66LM+P7i8IDQUDgg7jCUPyClXp/JcD0Hvm+14=; b=r1qi3l9r0iRBr5
-	Pp3NlhArO7DjGfGnVP7jyYZ2yXsy+PEQF6vjRT1l5MbRMOuDsWCZYhq9xK9ZKBX7UEAHe0WU8iDdb
-	KNoL5VsKOSyZvH0s7+7oUsMiXjf/WT/uV5yBNciBazYsrhlwWM9sgmk+s6lIe1IHUvUvk3XBYgc9g
-	6qk0p/7VnCPA+3Xk+44zUGTSR97Jzo2hf0HE8x+9Cwpi8JchGJVmLxFXIG3JDSWsoyPB1Gazl8LmL
-	OUOZqLPSqJ1s3zfQsWyIDo2HBpQJvpP2qX42cnPHvJEM63/8tyHjGCHr51euaPoQL1XBjX2AyFSJB
-	zWY3VD8xc+qVppjkkEgA==;
+	List-Owner; bh=jsDLGqsLa0jHb+aoLNZi5CFPwn/QVsNp73Q7OVlLxho=; b=YUK3sqZmHozt+J
+	zzIyXO76qWdD2ryS/7rYABQWdUT0eYXOJuS1Lfrg3BAumM43QGDfBB5Gl2eyLNFkMVuZoIbZFhXmX
+	33WDKRQyEnesphHL8LQZmBVXpmVLMIbLxky4jO+6pEtZv5T1gwxRU/wXhuk6+gT8q3auxNIuKtBOc
+	RG5AUdzuse5jKBkT3rvWPWB4AEKRN8293VkrCrZ3zNPg31c5oy+2mjpnYoWpfxkuejkA2MguJnx5k
+	ryjDEGnA/EaYoC/G3qFs+ZiBA+fu3s/2uX8i2sHsAH7Z9+6DosF0+t7T8xCJo+qNqmtk/fnAfUMCb
+	ExsoYRhdo4V9uK2eJCwA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZbV9-0006zy-BS; Fri, 15 May 2020 14:39:51 +0000
+	id 1jZbWF-0002Bu-7B; Fri, 15 May 2020 14:40:59 +0000
 Received: from [2001:4bb8:188:1506:c70:4a89:bc61:2] (helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZbSN-0003tD-KK; Fri, 15 May 2020 14:37:00 +0000
+ id 1jZbSQ-0003wV-8r; Fri, 15 May 2020 14:37:02 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Andrew Morton <akpm@linux-foundation.org>, Arnd Bergmann <arnd@arndb.de>,
  Roman Zippel <zippel@linux-m68k.org>
-Subject: [PATCH 04/29] unicore32: remove flush_cache_user_range
-Date: Fri, 15 May 2020 16:36:21 +0200
-Message-Id: <20200515143646.3857579-5-hch@lst.de>
+Subject: [PATCH 05/29] asm-generic: fix the inclusion guards for cacheflush.h
+Date: Fri, 15 May 2020 16:36:22 +0200
+Message-Id: <20200515143646.3857579-6-hch@lst.de>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <20200515143646.3857579-1-hch@lst.de>
 References: <20200515143646.3857579-1-hch@lst.de>
@@ -58,33 +58,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-flush_cache_user_range is an ARMism not used by any generic or unicore32
-specific code.
+cacheflush.h uses a somewhat to generic include guard name that clashes
+with various arch files.  Use a more specific one.
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
 ---
- arch/unicore32/include/asm/cacheflush.h | 8 --------
- 1 file changed, 8 deletions(-)
+ include/asm-generic/cacheflush.h | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
-diff --git a/arch/unicore32/include/asm/cacheflush.h b/arch/unicore32/include/asm/cacheflush.h
-index dc8c0b41538f8..9393ca4047e93 100644
---- a/arch/unicore32/include/asm/cacheflush.h
-+++ b/arch/unicore32/include/asm/cacheflush.h
-@@ -132,14 +132,6 @@ extern void flush_cache_page(struct vm_area_struct *vma,
+diff --git a/include/asm-generic/cacheflush.h b/include/asm-generic/cacheflush.h
+index cac7404b2bdd2..906277492ec59 100644
+--- a/include/asm-generic/cacheflush.h
++++ b/include/asm-generic/cacheflush.h
+@@ -1,6 +1,6 @@
+ /* SPDX-License-Identifier: GPL-2.0 */
+-#ifndef __ASM_CACHEFLUSH_H
+-#define __ASM_CACHEFLUSH_H
++#ifndef _ASM_GENERIC_CACHEFLUSH_H
++#define _ASM_GENERIC_CACHEFLUSH_H
  
- #define flush_cache_dup_mm(mm) flush_cache_mm(mm)
+ /* Keep includes the same across arches.  */
+ #include <linux/mm.h>
+@@ -109,4 +109,4 @@ static inline void flush_cache_vunmap(unsigned long start, unsigned long end)
+ 	memcpy(dst, src, len)
+ #endif
  
--/*
-- * flush_cache_user_range is used when we want to ensure that the
-- * Harvard caches are synchronised for the user space address range.
-- * This is used for the UniCore private sys_cacheflush system call.
-- */
--#define flush_cache_user_range(vma, start, end) \
--	__cpuc_coherent_user_range((start) & PAGE_MASK, PAGE_ALIGN(end))
--
- /*
-  * Perform necessary cache operations to ensure that data previously
-  * stored within this range of addresses can be executed by the CPU.
+-#endif /* __ASM_CACHEFLUSH_H */
++#endif /* _ASM_GENERIC_CACHEFLUSH_H */
 -- 
 2.26.2
 
