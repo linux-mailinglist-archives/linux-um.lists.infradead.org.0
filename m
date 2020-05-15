@@ -2,37 +2,65 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DCF991D525D
-	for <lists+linux-um@lfdr.de>; Fri, 15 May 2020 16:48:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2E8421D5B3D
+	for <lists+linux-um@lfdr.de>; Fri, 15 May 2020 23:12:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Message-Id:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WuPOF+uNSXC/HPNWJQmXYOwv5eRe5QjD7ZPhSIipb0M=; b=XO2/frTjq00We/
-	GxS0c60YB84HQZVzXp6d2raxJ3Y302SQ6KDIjjsmrwWBFKEEHIjgdmDv2gbVTeeo8Zzc3/vbqWlCC
-	g9XgeWLp84g6eEtoDocPRu1zVFRZO+lCA8sYa9rcbcobaObgaSk6rcgVW8AmXaRXnzvV58NMd4F/k
-	SDUeiTGOUhKyc3C0fgwFYOOfhWxGHy+ruJGabe7dlYqYSBRHaF0GoiJPGQWb1b/2rxQpOHFI/Ry2b
-	LC4em87dScpusJ0v7OUGCkbatfxMfVoGs2v3qI+r5p4DIN2eEu3sHa+l1Z/uWQglJi3As3WQZRarJ
-	BJ2xf2LM71VQP+sP8Eqg==;
+	List-Owner; bh=ogHtuizwqFx2gwqMVUwVMrjAWh5DWzJEhqThbLvTEc8=; b=jdyz8O7L1wSd6z
+	Rkx1pVIHf5NV1CxmAsF1+/ql+QU6/p/3urSGrKxIdxthQmji7oMNFWX+QtONddQ3eg7+x/uk9tKxY
+	G0cs7363ogimkTAxxZhQubCK3/1IxRnqRzFCsEuCBIHBVb9S1k4nFxcyeAZcqwb9NVUJ2aAhZKwzx
+	m463d742X3yKmuH7CU1HFW4TgN3AaYFzxvQmPBLkGmr1q22PyCxP6NQEPrs06xagFcuOpeV02WdQb
+	0VIY87muh4w+Vf90MrJae8tTqtzRInP6z33MUNUb+TyVDdZ53787tZ3kPItjabnhr/lDZIWbzP2KA
+	TFvIgk0Zlc0e1Xjlkcwg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZbd5-0004Cv-Kk; Fri, 15 May 2020 14:48:03 +0000
-Received: from [2001:4bb8:188:1506:c70:4a89:bc61:2] (helo=localhost)
- by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZbTb-0005KV-FH; Fri, 15 May 2020 14:38:15 +0000
-From: Christoph Hellwig <hch@lst.de>
-To: Andrew Morton <akpm@linux-foundation.org>, Arnd Bergmann <arnd@arndb.de>,
- Roman Zippel <zippel@linux-m68k.org>
-Subject: [PATCH 29/29] module: move the set_fs hack for flush_icache_range to
- m68k
-Date: Fri, 15 May 2020 16:36:46 +0200
-Message-Id: <20200515143646.3857579-30-hch@lst.de>
-X-Mailer: git-send-email 2.26.2
-In-Reply-To: <20200515143646.3857579-1-hch@lst.de>
-References: <20200515143646.3857579-1-hch@lst.de>
-MIME-Version: 1.0
+	id 1jZhcy-0008D2-N3; Fri, 15 May 2020 21:12:20 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jZhcu-0008Ak-Ft; Fri, 15 May 2020 21:12:17 +0000
+Received: from localhost.localdomain (c-73-231-172-41.hsd1.ca.comcast.net
+ [73.231.172.41])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 658E2205CB;
+ Fri, 15 May 2020 21:12:12 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1589577135;
+ bh=UmRPGOLdKmuTI3Qv0jzWmP0JQ6FJlc6TDky71yMCXsw=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=nxT0Ssf9yY8pLVLUEFt5SAsZlyL5o6RvbYcpe/Ogb/hZ+Ibv3VYpsIHopMwIvk69A
+ +v0QRtIwEwpLk0FCwhPrY/meT71ffNnp97a68i1ipAlCz7NidwUH9DVZrUpfKzkMPS
+ TuSlq3nyhe5fsuqvT1isjduKVkMQeXc1Kt6J9V7M=
+Date: Fri, 15 May 2020 14:12:11 -0700
+From: Andrew Morton <akpm@linux-foundation.org>
+To: Mike Rapoport <rppt@kernel.org>
+Subject: Re: [PATCH v2 00/12] mm: consolidate definitions of page table
+ accessors
+Message-Id: <20200515141211.653db07a4e7142107a57cf24@linux-foundation.org>
+In-Reply-To: <20200514170327.31389-1-rppt@kernel.org>
+References: <20200514170327.31389-1-rppt@kernel.org>
+X-Mailer: Sylpheed 3.5.1 (GTK+ 2.24.31; x86_64-pc-linux-gnu)
+Mime-Version: 1.0
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20200515_141216_567331_A35B7D6D 
+X-CRM114-Status: GOOD (  13.02  )
+X-Spam-Score: -5.0 (-----)
+X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
+ Content analysis details:   (-5.0 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -44,78 +72,80 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
- linux-mips@vger.kernel.org, linux-mm@kvack.org, sparclinux@vger.kernel.org,
- linux-riscv@lists.infradead.org, linux-arch@vger.kernel.org,
- linux-c6x-dev@linux-c6x.org, linux-hexagon@vger.kernel.org, x86@kernel.org,
- Geert Uytterhoeven <geert@linux-m68k.org>, linux-xtensa@linux-xtensa.org,
- linux-alpha@vger.kernel.org, linux-um@lists.infradead.org,
- linux-m68k@lists.linux-m68k.org, openrisc@lists.librecores.org,
- linux-arm-kernel@lists.infradead.org, Michal Simek <monstr@monstr.eu>,
- linux-kernel@vger.kernel.org, Jessica Yu <jeyu@kernel.org>,
- linux-fsdevel@vger.kernel.org, linuxppc-dev@lists.ozlabs.org
+Cc: linux-m68k@vger.kernel.org, Rich Felker <dalias@libc.org>,
+ linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, linux-mips@vger.kernel.org,
+ Max Filippov <jcmvbkbc@gmail.com>, Guo Ren <guoren@kernel.org>,
+ Matthew Wilcox <willy@infradead.org>, sparclinux@vger.kernel.org,
+ linux-hexagon@vger.kernel.org, linux-riscv@lists.infradead.org,
+ Vincent Chen <deanbo422@gmail.com>, Will Deacon <will@kernel.org>,
+ Greg Ungerer <gerg@linux-m68k.org>, linux-arch@vger.kernel.org,
+ linux-s390@vger.kernel.org, linux-c6x-dev@linux-c6x.org,
+ Brian Cain <bcain@codeaurora.org>, Michael Ellerman <mpe@ellerman.id.au>,
+ Helge Deller <deller@gmx.de>, x86@kernel.org,
+ Russell King <linux@armlinux.org.uk>, Ley Foon Tan <ley.foon.tan@intel.com>,
+ Mike Rapoport <rppt@linux.ibm.com>, Ingo Molnar <mingo@redhat.com>,
+ Geert Uytterhoeven <geert@linux-m68k.org>, linux-parisc@vger.kernel.org,
+ Mark Salter <msalter@redhat.com>, Matt Turner <mattst88@gmail.com>,
+ linux-snps-arc@lists.infradead.org, linux-xtensa@linux-xtensa.org,
+ Arnd Bergmann <arnd@arndb.de>, linux-alpha@vger.kernel.org,
+ linux-um@lists.infradead.org, Tony Luck <tony.luck@intel.com>,
+ Borislav Petkov <bp@alien8.de>, Greentime Hu <green.hu@gmail.com>,
+ Paul Walmsley <paul.walmsley@sifive.com>, Stafford Horne <shorne@gmail.com>,
+ linux-csky@vger.kernel.org, Guan Xuetao <gxt@pku.edu.cn>,
+ linux-arm-kernel@lists.infradead.org, Chris Zankel <chris@zankel.net>,
+ Michal Simek <monstr@monstr.eu>,
+ Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
+ Yoshinori Sato <ysato@users.sourceforge.jp>, Nick Hu <nickhu@andestech.com>,
+ linux-mm@kvack.org, Vineet Gupta <vgupta@synopsys.com>,
+ linux-kernel@vger.kernel.org, openrisc@lists.librecores.org,
+ Thomas Gleixner <tglx@linutronix.de>, Richard Weinberger <richard@nod.at>,
+ linuxppc-dev@lists.ozlabs.org, "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-flush_icache_range generally operates on kernel addresses, but for some
-reason m68k needed a set_fs override.  Move that into the m68k code
-insted of keeping it in the module loader.
+On Thu, 14 May 2020 20:03:15 +0300 Mike Rapoport <rppt@kernel.org> wrote:
 
-Signed-off-by: Christoph Hellwig <hch@lst.de>
-Reviewed-by: Geert Uytterhoeven <geert@linux-m68k.org>
-Acked-by: Geert Uytterhoeven <geert@linux-m68k.org>
----
- arch/m68k/mm/cache.c | 4 ++++
- kernel/module.c      | 8 --------
- 2 files changed, 4 insertions(+), 8 deletions(-)
+> The low level page table accessors (pXY_index(), pXY_offset()) are
+> duplicated across all architectures and sometimes more than once. For
+> instance, we have 31 definition of pgd_offset() for 25 supported
+> architectures.
+> 
+> Most of these definitions are actually identical and typically it boils
+> down to, e.g. 
+> 
+> static inline unsigned long pmd_index(unsigned long address)
+> {
+>         return (address >> PMD_SHIFT) & (PTRS_PER_PMD - 1);
+> }
+> 
+> static inline pmd_t *pmd_offset(pud_t *pud, unsigned long address)
+> {
+>         return (pmd_t *)pud_page_vaddr(*pud) + pmd_index(address);
+> }
+> 
+> These definitions can be shared among 90% of the arches provided XYZ_SHIFT,
+> PTRS_PER_XYZ and xyz_page_vaddr() are defined.
+> 
+> For architectures that really need a custom version there is always
+> possibility to override the generic version with the usual ifdefs magic.
+> 
+> These patches introduce include/linux/pgtable.h that replaces
+> include/asm-generic/pgtable.h and add the definitions of the page table
+> accessors to the new header.
 
-diff --git a/arch/m68k/mm/cache.c b/arch/m68k/mm/cache.c
-index 7915be3a09712..5ecb3310e8745 100644
---- a/arch/m68k/mm/cache.c
-+++ b/arch/m68k/mm/cache.c
-@@ -107,7 +107,11 @@ void flush_icache_user_range(unsigned long address, unsigned long endaddr)
- 
- void flush_icache_range(unsigned long address, unsigned long endaddr)
- {
-+	mm_segment_t old_fs = get_fs();
-+
-+	set_fs(KERNEL_DS);
- 	flush_icache_user_range(address, endaddr);
-+	set_fs(old_fs);
- }
- EXPORT_SYMBOL(flush_icache_range);
- 
-diff --git a/kernel/module.c b/kernel/module.c
-index 646f1e2330d2b..b1673ed49594f 100644
---- a/kernel/module.c
-+++ b/kernel/module.c
-@@ -3312,12 +3312,6 @@ static int check_module_license_and_versions(struct module *mod)
- 
- static void flush_module_icache(const struct module *mod)
- {
--	mm_segment_t old_fs;
--
--	/* flush the icache in correct context */
--	old_fs = get_fs();
--	set_fs(KERNEL_DS);
--
- 	/*
- 	 * Flush the instruction cache, since we've played with text.
- 	 * Do it before processing of module parameters, so the module
-@@ -3329,8 +3323,6 @@ static void flush_module_icache(const struct module *mod)
- 				   + mod->init_layout.size);
- 	flush_icache_range((unsigned long)mod->core_layout.base,
- 			   (unsigned long)mod->core_layout.base + mod->core_layout.size);
--
--	set_fs(old_fs);
- }
- 
- int __weak module_frob_arch_sections(Elf_Ehdr *hdr,
--- 
-2.26.2
+hm,
 
+>  712 files changed, 684 insertions(+), 2021 deletions(-)
+
+big!
+
+There's a lot of stuff going on at present (I suspect everyone is
+sitting at home coding up a storm).  However this all merged up fairly
+cleanly, haven't tried compiling it yet.
 
 _______________________________________________
 linux-um mailing list
