@@ -2,32 +2,32 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 26C331D51DA
-	for <lists+linux-um@lfdr.de>; Fri, 15 May 2020 16:41:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 69BBB1D51F3
+	for <lists+linux-um@lfdr.de>; Fri, 15 May 2020 16:41:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=so2hhtTJ/LTrB2Q09rGDnWqAvg07tYP9CiqEVnPqzm8=; b=a/ym5kKl8dyoNN
-	jSzHvA/h6trIIdLTH7VMeglDWoV5SsRvP6nBVTHMm+YTgq9IK8sGEEJA2osuWAVcLY1XxURxJ+Zfr
-	Cdb+fLK6kZEYYuzdi0d8BrQlj8t3bSr6OQsZApIwMj4Uny6Ofr1wGb3SqmoPWKJu8NtIGqkQXpncR
-	kkLQBX2/D+fN/RqsFgR1VV4SGIlYJrRl4CfwMlAppvWZ0vMqwGyQJvgmwfkg4rRF+/9i5eb0VSYOM
-	fQyDtx2kC4I9uNgQLr+JJmSEkQD5rKnqcPTpXhhmTCLtSy/DD/wlK4OvNGM+qvBjWl4J1qsUc6x9f
-	sIN+IFuSK7/04ut3PTog==;
+	List-Owner; bh=16lv/Yv0CB5OrJvDkMoO6CYDbWqKR6hsvFZZH52gkw4=; b=HW0RG68tZ56l7T
+	35PLUyzMoUjTmojc3mPWRZf6Pgk3qH0kJesqIRBbaySUVV0yKUz/vtvsep9mxovSCR/foyQl9mHYj
+	Q1xC9ClLY2pDai8zGdKogPKPcCB+mNma1xid7PaZ+Yex34VsbE7G5ZZZ+a4PXCZrM2fpc8dNiU9rf
+	vxMxpOKJ8DcGIstICf6MN/oDYO/I+LkOWlUXapzqmT6e08PcUViOczF0vGTGmbAed/ueJtPxTr3yb
+	YibpBFnEYsu8St+z2OhyAKdnL2SNXwTu9IlLZmmUE+kJi23y0veKXzb5PAwaIRrQJJa8ZS8pO8gCk
+	1hlo1jfXA4x8N/Bo6e4w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZbWl-0002u6-5T; Fri, 15 May 2020 14:41:31 +0000
+	id 1jZbXA-0003TA-Pu; Fri, 15 May 2020 14:41:56 +0000
 Received: from [2001:4bb8:188:1506:c70:4a89:bc61:2] (helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZbSS-0003yz-QR; Fri, 15 May 2020 14:37:05 +0000
+ id 1jZbSW-00041m-AW; Fri, 15 May 2020 14:37:08 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Andrew Morton <akpm@linux-foundation.org>, Arnd Bergmann <arnd@arndb.de>,
  Roman Zippel <zippel@linux-m68k.org>
-Subject: [PATCH 06/29] asm-generic: don't include <linux/mm.h> in cacheflush.h
-Date: Fri, 15 May 2020 16:36:23 +0200
-Message-Id: <20200515143646.3857579-7-hch@lst.de>
+Subject: [PATCH 07/29] asm-generic: improve the flush_dcache_page stub
+Date: Fri, 15 May 2020 16:36:24 +0200
+Message-Id: <20200515143646.3857579-8-hch@lst.de>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <20200515143646.3857579-1-hch@lst.de>
 References: <20200515143646.3857579-1-hch@lst.de>
@@ -58,79 +58,44 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-This seems to lead to some crazy include loops when using
-asm-generic/cacheflush.h on more architectures, so leave it
-to the arch header for now.
+There is a magic ARCH_IMPLEMENTS_FLUSH_DCACHE_PAGE cpp symbol that
+guards non-stub availability of flush_dcache_pagge.  Use that to
+check if flush_dcache_pagg is implemented.
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
 ---
- arch/um/include/asm/tlb.h         | 2 ++
- arch/x86/include/asm/cacheflush.h | 2 ++
- drivers/nvdimm/pmem.c             | 3 ++-
- include/asm-generic/cacheflush.h  | 3 ---
- 4 files changed, 6 insertions(+), 4 deletions(-)
+ include/asm-generic/cacheflush.h | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
-diff --git a/arch/um/include/asm/tlb.h b/arch/um/include/asm/tlb.h
-index 70ee603839006..ff9c62828962c 100644
---- a/arch/um/include/asm/tlb.h
-+++ b/arch/um/include/asm/tlb.h
-@@ -2,6 +2,8 @@
- #ifndef __UM_TLB_H
- #define __UM_TLB_H
- 
-+#include <linux/mm.h>
-+
- #include <asm/tlbflush.h>
- #include <asm-generic/cacheflush.h>
- #include <asm-generic/tlb.h>
-diff --git a/arch/x86/include/asm/cacheflush.h b/arch/x86/include/asm/cacheflush.h
-index 63feaf2a5f93d..b192d917a6d0b 100644
---- a/arch/x86/include/asm/cacheflush.h
-+++ b/arch/x86/include/asm/cacheflush.h
-@@ -2,6 +2,8 @@
- #ifndef _ASM_X86_CACHEFLUSH_H
- #define _ASM_X86_CACHEFLUSH_H
- 
-+#include <linux/mm.h>
-+
- /* Caches aren't brain-dead on the intel. */
- #include <asm-generic/cacheflush.h>
- #include <asm/special_insns.h>
-diff --git a/drivers/nvdimm/pmem.c b/drivers/nvdimm/pmem.c
-index 2df6994acf836..55282a6217407 100644
---- a/drivers/nvdimm/pmem.c
-+++ b/drivers/nvdimm/pmem.c
-@@ -7,7 +7,6 @@
-  * Copyright (c) 2015, Boaz Harrosh <boaz@plexistor.com>.
-  */
- 
--#include <asm/cacheflush.h>
- #include <linux/blkdev.h>
- #include <linux/hdreg.h>
- #include <linux/init.h>
-@@ -25,6 +24,8 @@
- #include <linux/dax.h>
- #include <linux/nd.h>
- #include <linux/backing-dev.h>
-+#include <linux/mm.h>
-+#include <asm/cacheflush.h>
- #include "pmem.h"
- #include "pfn.h"
- #include "nd.h"
 diff --git a/include/asm-generic/cacheflush.h b/include/asm-generic/cacheflush.h
-index 906277492ec59..bf9bb83e9fc8d 100644
+index bf9bb83e9fc8d..bbbb4d4ef6516 100644
 --- a/include/asm-generic/cacheflush.h
 +++ b/include/asm-generic/cacheflush.h
-@@ -2,9 +2,6 @@
+@@ -2,8 +2,6 @@
  #ifndef _ASM_GENERIC_CACHEFLUSH_H
  #define _ASM_GENERIC_CACHEFLUSH_H
  
--/* Keep includes the same across arches.  */
--#include <linux/mm.h>
+-#define ARCH_IMPLEMENTS_FLUSH_DCACHE_PAGE 0
 -
- #define ARCH_IMPLEMENTS_FLUSH_DCACHE_PAGE 0
- 
  /*
+  * The cache doesn't need to be flushed when TLB entries change when
+  * the cache is mapped to physical memory, not virtual memory
+@@ -42,12 +40,14 @@ static inline void flush_cache_page(struct vm_area_struct *vma,
+ }
+ #endif
+ 
+-#ifndef flush_dcache_page
++#ifndef ARCH_IMPLEMENTS_FLUSH_DCACHE_PAGE
+ static inline void flush_dcache_page(struct page *page)
+ {
+ }
++#define ARCH_IMPLEMENTS_FLUSH_DCACHE_PAGE 0
+ #endif
+ 
++
+ #ifndef flush_dcache_mmap_lock
+ static inline void flush_dcache_mmap_lock(struct address_space *mapping)
+ {
 -- 
 2.26.2
 
