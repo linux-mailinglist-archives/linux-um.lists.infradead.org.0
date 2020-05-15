@@ -2,33 +2,36 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 039FE1D50E3
-	for <lists+linux-um@lfdr.de>; Fri, 15 May 2020 16:37:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 31FCA1D50E6
+	for <lists+linux-um@lfdr.de>; Fri, 15 May 2020 16:38:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Fgd44etCM7QzX2kb+zGUQBJnaVQzY+9FclhNtHKl5Co=; b=WLw1KNtzLsEFfY
-	rTJRVZOGW4FTXxanCQkIkiq9U3IBJYhcvRkI3mPGvooFwTYrfzvgVvHjhMNT/VCrjNQR0JfyYIJzG
-	pYgC4R5ikCxaFIP/lN4JhcyH7esAsTMYel/Zaqvyp/f8cz56ufKosQy883RFyNuJE8ZP/YL1Vl45N
-	LxQFyAbpZw4raWe22a+RoqJUrZ5dhnaN4maQgWBsVXL9m7ZgU63cQRsMVOlBBGZ45hcN94sk2cdin
-	sY04ymQ9Fvi+iMqLWw59xNl0lUoxeIqkQ/BRhRqYGJGimD5Srx9R+O3bb68IHBeU4ZA5MnhX+/Z+9
-	zxFCuDOp9b3SzHInhBxg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ercynNMWV3vcVcG1KMNYHwHpuYSckeutu/HBxwYGEPQ=; b=hOD2Q3dF1RTIbP
+	Us6aim54sqnNVsbQZYncU/bGo+vs3auyNIFiJhhB55J8FJctwsYBx2E8R5ocNX9cn45CMgda7jWJ6
+	vT3YKjuwpMvyOdUmkWmgcqJS5ElnTsoZ7CDh9Yjq820V8hEaBhZw1L998P8Xc4cFDL7hESjZeuY3Q
+	9g7THJ4jkJHu3VT7eJDuGWtNCJGCCfCCsHnCxdBF7S6BWHIydNSLSrYFZj95b1I3H0fpuvS/KqY0T
+	bX2Iry95w4TqxUyoI9CT+gEHTTScZMbxlZViCVO9DOvJniaxnq0TSfg6BpCcbvQNib9uztVEIFn64
+	ZJLKPRF2gM4jM+8zZY9Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZbT6-0004sW-Ff; Fri, 15 May 2020 14:37:44 +0000
+	id 1jZbTH-00051g-Br; Fri, 15 May 2020 14:37:55 +0000
 Received: from [2001:4bb8:188:1506:c70:4a89:bc61:2] (helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZbSC-0003n6-BC; Fri, 15 May 2020 14:36:49 +0000
+ id 1jZbSF-0003nT-QU; Fri, 15 May 2020 14:36:52 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Andrew Morton <akpm@linux-foundation.org>, Arnd Bergmann <arnd@arndb.de>,
  Roman Zippel <zippel@linux-m68k.org>
-Subject: sort out the flush_icache_range mess v2
-Date: Fri, 15 May 2020 16:36:17 +0200
-Message-Id: <20200515143646.3857579-1-hch@lst.de>
+Subject: [PATCH 01/29] arm: fix the flush_icache_range arguments in
+ set_fiq_handler
+Date: Fri, 15 May 2020 16:36:18 +0200
+Message-Id: <20200515143646.3857579-2-hch@lst.de>
 X-Mailer: git-send-email 2.26.2
+In-Reply-To: <20200515143646.3857579-1-hch@lst.de>
+References: <20200515143646.3857579-1-hch@lst.de>
 MIME-Version: 1.0
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -56,42 +59,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-Hi all,
+The arguments passed look bogus, try to fix them to something that seems
+to make sense.
 
-flush_icache_range is mostly used for kernel address, except for the following
-cases:
+Signed-off-by: Christoph Hellwig <hch@lst.de>
+---
+ arch/arm/kernel/fiq.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
- - the nommu brk and mmap implementations,
- - the read_code helper that is only used for binfmt_flat, binfmt_elf_fdpic,
-   and binfmt_aout including the broken ia32 compat version
- - binfmt_flat itself,
+diff --git a/arch/arm/kernel/fiq.c b/arch/arm/kernel/fiq.c
+index cd1234c103fcd..98ca3e3fa8471 100644
+--- a/arch/arm/kernel/fiq.c
++++ b/arch/arm/kernel/fiq.c
+@@ -98,8 +98,8 @@ void set_fiq_handler(void *start, unsigned int length)
+ 
+ 	memcpy(base + offset, start, length);
+ 	if (!cache_is_vipt_nonaliasing())
+-		flush_icache_range((unsigned long)base + offset, offset +
+-				   length);
++		flush_icache_range((unsigned long)base + offset,
++				   (unsigned long)base + offset + length);
+ 	flush_icache_range(0xffff0000 + offset, 0xffff0000 + offset + length);
+ }
+ 
+-- 
+2.26.2
 
-none of which really are used by a typical MMU enabled kernel, as a.out can
-only be build for alpha and m68k to start with.
-
-But strangely enough commit ae92ef8a4424 ("PATCH] flush icache in correct
-context") added a "set_fs(KERNEL_DS)" around the flush_icache_range call
-in the module loader, because apparently m68k assumed user pointers.
-
-This series first cleans up the cacheflush implementations, largely by
-switching as much as possible to the asm-generic version after a few
-preparations, then moves the misnamed current flush_icache_user_range to
-a new name, to finally introduce a real flush_icache_user_range to be used
-for the above use cases to flush the instruction cache for a userspace
-address range.  The last patch then drops the set_fs in the module code
-and moves it into the m68k implementation.
-
-A git tree is available here:
-
-    git://git.infradead.org/users/hch/misc.git flush_icache_range.2
-
-Gitweb:
-
-    http://git.infradead.org/users/hch/misc.git/shortlog/refs/heads/flush_icache_range.2
-
-Changes since v1:
- - fix pmem.c compilation on some s390 configs
- - drop two patches picked up by the arch maintainers
 
 _______________________________________________
 linux-um mailing list
