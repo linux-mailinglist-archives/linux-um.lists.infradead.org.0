@@ -2,55 +2,89 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6C11D1D7C63
-	for <lists+linux-um@lfdr.de>; Mon, 18 May 2020 17:09:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C16721D8614
+	for <lists+linux-um@lfdr.de>; Mon, 18 May 2020 20:23:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yKAbfhi41Iz/4uDU+SpBIJ0fPMwHubYDJVUxsuBG8xM=; b=PwMk+ljZK/eHLh
-	7NBP+41CkYF2Dev5b76vDcBzHBqRcNXYGTq3hNwb/+7sYKQWQT1f/+uQ6XJDqUUfqXK+CW548Yq5D
-	cu4wQUi52JlVrOGTcmB7ABWbLPGEABTInXm644BQ0Emk8IGv0l8suA19Km/GmP0BSFw4EsRyjT+SW
-	jXF9Tcsk4azs7F34iFqgdyemr2Hmls5BOxE1nBgfbMyao/cpSkoGC6Nzspac1wOAnNnaU78e0vDMe
-	e6Ym45iw5ZIyv3NqBUPh4RJWw/A58et8ovNSUiLsrxHg6b/yuY9uxvpkRXT/HUP6pv45/uRL+eQxP
-	XOAb7XXScTWTu7oZr86A==;
+	List-Owner; bh=+ygAbDa2cRf/7dBrhQZgmFZu1oXBMD4iqweVfsk5XPk=; b=PVBT/8IqpsThfG
+	3XsE8FKUh9h/Lt9/Bu0BQjyNjRPxJRNcbtR1LEchSV9/5k2s+IZg2tQeRHvl8j6DgYF67LIF4Y1Ie
+	kDv8RwoSGZz5AAjHHTTSrnfqeSzCoUz5UEwwVy+g2vvg5YR4zPyoaTYpCgy6ykHZcJHbcd7CSeRMZ
+	Zy2N6AEq0ocpSy+MIG+mfCOR3c57gOAsiHMEDbmn/Zj5HEW1OI3qbZhDCekTxx0TdVkSZAHPz2Rqu
+	hXISzrv9n78PC9a9ROvzzWC9nghhL6DKXv2gPu3nG53z73gJbPlgeb6eMkwc2heK6ct6gGCPMjo1w
+	8RzzvrLvEnD/2vXqd6Bw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jahO9-000106-H6; Mon, 18 May 2020 15:09:09 +0000
-Received: from verein.lst.de ([213.95.11.211])
+	id 1jakPq-0005ny-Cf; Mon, 18 May 2020 18:23:06 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jahO6-0000yZ-O3
- for linux-um@lists.infradead.org; Mon, 18 May 2020 15:09:08 +0000
-Received: by verein.lst.de (Postfix, from userid 2407)
- id 27D5268B02; Mon, 18 May 2020 17:09:04 +0200 (CEST)
-Date: Mon, 18 May 2020 17:09:03 +0200
-From: Christoph Hellwig <hch@lst.de>
-To: Masami Hiramatsu <mhiramat@kernel.org>
-Subject: Re: [PATCH 14/18] maccess: allow architectures to provide kernel
- probing directly
-Message-ID: <20200518150903.GD8871@lst.de>
-References: <20200513160038.2482415-1-hch@lst.de>
- <20200513160038.2482415-15-hch@lst.de>
- <20200516124259.5b68a4e1d4670efa1397a1e0@kernel.org>
+ id 1jakPn-0005mB-Ao
+ for linux-um@lists.infradead.org; Mon, 18 May 2020 18:23:04 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1589826181;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=bgUgYOhXHVrOhAbBYxlnYyhMzdekwGrXn9fI5GzJacU=;
+ b=aO0gEs3gguCIaK2BWL5X5EtHk8V5AxDuXSocAJRaBoX+Cdcg5OR01t6ima7+V8KRYywfTt
+ 0+Stv4mN4+nI4/R6OmGw1oRjk3ZxLpjOJT4U6/UeCB1QdvLxl0lgco67CySOi9A4OfABZI
+ 18/n6pWJo84PKezvNlXH//SOLx3Rc7U=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-266-kVRrudnWNEOZ64966nyy_Q-1; Mon, 18 May 2020 14:20:52 -0400
+X-MC-Unique: kVRrudnWNEOZ64966nyy_Q-1
+Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
+ [10.5.11.23])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 428731005510;
+ Mon, 18 May 2020 18:20:48 +0000 (UTC)
+Received: from ovpn-115-234.rdu2.redhat.com (ovpn-115-234.rdu2.redhat.com
+ [10.10.115.234])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 6AF23398;
+ Mon, 18 May 2020 18:20:43 +0000 (UTC)
+Message-ID: <5260142047d0339e00d4a74865c2f0b7511c89f6.camel@redhat.com>
+Subject: Re: [PATCH 10/29] c6x: use asm-generic/cacheflush.h
+From: Mark Salter <msalter@redhat.com>
+To: Christoph Hellwig <hch@lst.de>, Andrew Morton
+ <akpm@linux-foundation.org>,  Arnd Bergmann <arnd@arndb.de>, Roman Zippel
+ <zippel@linux-m68k.org>
+Date: Mon, 18 May 2020 14:20:42 -0400
+In-Reply-To: <20200515143646.3857579-11-hch@lst.de>
+References: <20200515143646.3857579-1-hch@lst.de>
+ <20200515143646.3857579-11-hch@lst.de>
+Organization: Red Hat, Inc
+User-Agent: Evolution 3.36.2 (3.36.2-1.fc32) 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200516124259.5b68a4e1d4670efa1397a1e0@kernel.org>
-User-Agent: Mutt/1.5.17 (2007-11-01)
+X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_080906_929488_34085E3F 
-X-CRM114-Status: UNSURE (   9.93  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200518_112303_544033_AD9265F7 
+X-CRM114-Status: GOOD (  13.54  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [213.95.11.211 listed in list.dnswl.org]
+ no trust [205.139.110.120 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [205.139.110.120 listed in wl.mailspike.net]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,30 +96,76 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: linux-parisc@vger.kernel.org, Daniel Borkmann <daniel@iogearbox.net>,
- netdev@vger.kernel.org, x86@kernel.org, linux-um@lists.infradead.org,
- Alexei Starovoitov <ast@kernel.org>, linux-kernel@vger.kernel.org,
- linux-mm@kvack.org, bpf@vger.kernel.org,
- Andrew Morton <akpm@linux-foundation.org>,
- Linus Torvalds <torvalds@linux-foundation.org>, Christoph Hellwig <hch@lst.de>
+Cc: linux-arch@vger.kernel.org, linux-xtensa@linux-xtensa.org,
+ Michal Simek <monstr@monstr.eu>, linux-alpha@vger.kernel.org,
+ linux-ia64@vger.kernel.org, linux-c6x-dev@linux-c6x.org,
+ linux-sh@vger.kernel.org, linux-hexagon@vger.kernel.org, x86@kernel.org,
+ linux-um@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-mips@vger.kernel.org, linux-mm@kvack.org,
+ linux-m68k@lists.linux-m68k.org, openrisc@lists.librecores.org,
+ Jessica Yu <jeyu@kernel.org>, sparclinux@vger.kernel.org,
+ linux-fsdevel@vger.kernel.org, linux-riscv@lists.infradead.org,
+ linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Sat, May 16, 2020 at 12:42:59PM +0900, Masami Hiramatsu wrote:
-> > Provide alternative versions of probe_kernel_read, probe_kernel_write
-> > and strncpy_from_kernel_unsafe that don't need set_fs magic, but instead
-> > use arch hooks that are modelled after unsafe_{get,put}_user to access
-> > kernel memory in an exception safe way.
+On Fri, 2020-05-15 at 16:36 +0200, Christoph Hellwig wrote:
+> C6x needs almost no cache flushing routines of its own.  Rely on
+> asm-generic/cacheflush.h for the defaults.
 > 
-> This patch seems to introduce new implementation of probe_kernel_read/write()
-> and strncpy_from_kernel_unsafe(), but also drops copy_from/to_kernel_nofault()
-> and strncpy_from_kernel_nofault() if HAVE_ARCH_PROBE_KERNEL is defined.
-> In the result, this cause a link error with BPF and kprobe events.
+> Signed-off-by: Christoph Hellwig <hch@lst.de>
+> ---
+>  arch/c6x/include/asm/cacheflush.h | 19 +------------------
+>  1 file changed, 1 insertion(+), 18 deletions(-)
+> 
+> diff --git a/arch/c6x/include/asm/cacheflush.h b/arch/c6x/include/asm/cacheflush.h
+> index 4540b40475e6c..10922d528de6d 100644
+> --- a/arch/c6x/include/asm/cacheflush.h
+> +++ b/arch/c6x/include/asm/cacheflush.h
+> @@ -16,21 +16,6 @@
+>  #include <asm/page.h>
+>  #include <asm/string.h>
+>  
+> -/*
+> - * virtually-indexed cache management (our cache is physically indexed)
+> - */
+> -#define flush_cache_all()			do {} while (0)
+> -#define flush_cache_mm(mm)			do {} while (0)
+> -#define flush_cache_dup_mm(mm)			do {} while (0)
+> -#define flush_cache_range(mm, start, end)	do {} while (0)
+> -#define flush_cache_page(vma, vmaddr, pfn)	do {} while (0)
+> -#define flush_cache_vmap(start, end)		do {} while (0)
+> -#define flush_cache_vunmap(start, end)		do {} while (0)
+> -#define ARCH_IMPLEMENTS_FLUSH_DCACHE_PAGE 0
+> -#define flush_dcache_page(page)			do {} while (0)
+> -#define flush_dcache_mmap_lock(mapping)		do {} while (0)
+> -#define flush_dcache_mmap_unlock(mapping)	do {} while (0)
+> -
+>  /*
+>   * physically-indexed cache management
+>   */
+> @@ -49,14 +34,12 @@ do {								  \
+>  			(unsigned long) page_address(page) + PAGE_SIZE)); \
+>  } while (0)
+>  
+> -
+>  #define copy_to_user_page(vma, page, vaddr, dst, src, len) \
+>  do {						     \
+>  	memcpy(dst, src, len);			     \
+>  	flush_icache_range((unsigned) (dst), (unsigned) (dst) + (len)); \
+>  } while (0)
+>  
+> -#define copy_from_user_page(vma, page, vaddr, dst, src, len) \
+> -	memcpy(dst, src, len)
+> +#include <asm-generic/cacheflush.h>
+>  
+>  #endif /* _ASM_C6X_CACHEFLUSH_H */
 
-That was just a bug as I didn't commit the changes to switch everything
-to _nofault and remove _unsafe entirely, sorry.
+Acked-by: Mark Salter <msalter@redhat.com>
+
+
 
 _______________________________________________
 linux-um mailing list
