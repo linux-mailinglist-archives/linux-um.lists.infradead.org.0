@@ -2,36 +2,35 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5CAA11D981C
-	for <lists+linux-um@lfdr.de>; Tue, 19 May 2020 15:45:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9D3561D981D
+	for <lists+linux-um@lfdr.de>; Tue, 19 May 2020 15:45:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TRLnVv/VOdQBnZ3Ig383g8aunF54Z3kbnz4OV4FtQgE=; b=QUxXtiv78wLe5s
-	hxdjcd5rBWK729I1H6tN+X+gcyBN28F9I8QGca18IciETBnZXc6lORJ7nptP8ViINwZ5Lc0KLAN5Q
-	e2I3j6VSbrZ9TatiTSK7miUqueh/782ac5BNzlVrFWRDogvqYfJXRlWgYA0MuNa/0RWkRDrluaNk4
-	G1jj9Qx/fHlOpGhbrCHv5l/J9fQ00k3VHHMKUw3ohbJNjTrxjiMhru+RKPsplstYBpHkU/10OMf+H
-	I8doXqz94vwW12ZBUQY0eUOUZNHrpi0MX0jkRArHWscZ/udtI2CUr+5z6KC3d0+1rHF0FXVkj2GvP
-	OtqMn7Z5nMmFj4wVl6GA==;
+	List-Owner; bh=gbs2ifcIGSMaDEa5We8UhmvBrXhX8DfrEkDKIKWTCKA=; b=cxz50BPVPkkx0p
+	yZVbuzIwSJ6NhEpn7E0+7MzDvdTyx4EcstysglIJX2+k0Uxaf19UAlDJyB1kyXxVwnt6I7l9d1o19
+	os8US6dxElSWpU5seqU5tJQiTIhSnzLmYOVC2Tbmxr1hwO2S8Q40PTMjxbOte/M8i4YcxiKtJc0QN
+	LOrW6+0ayK++KBXxP0qJGagikTCooRtpT84W3ZBnA1QNTU6zVz7zIDvvyP5rOUSgdMjTkmIAPECVa
+	snnymOxIo03fviLSRdDWNWsuCw+5THJuX428yjszV/QJ08BQaE+Y6Sw229E2qW57LS3Z2zkOjQB6c
+	LWQkl9/dpP07M9wLLD8Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jb2YD-00010c-EK; Tue, 19 May 2020 13:44:57 +0000
+	id 1jb2YF-00011t-On; Tue, 19 May 2020 13:44:59 +0000
 Received: from [2001:4bb8:188:1506:c70:4a89:bc61:2] (helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jb2YB-0000zu-5c; Tue, 19 May 2020 13:44:55 +0000
+ id 1jb2YE-00010U-3c; Tue, 19 May 2020 13:44:58 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: x86@kernel.org, Alexei Starovoitov <ast@kernel.org>,
  Daniel Borkmann <daniel@iogearbox.net>,
  Masami Hiramatsu <mhiramat@kernel.org>,
  Linus Torvalds <torvalds@linux-foundation.org>,
  Andrew Morton <akpm@linux-foundation.org>
-Subject: [PATCH 01/20] maccess: unexport probe_kernel_write and
- probe_user_write
-Date: Tue, 19 May 2020 15:44:30 +0200
-Message-Id: <20200519134449.1466624-2-hch@lst.de>
+Subject: [PATCH 02/20] maccess: remove various unused weak aliases
+Date: Tue, 19 May 2020 15:44:31 +0200
+Message-Id: <20200519134449.1466624-3-hch@lst.de>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <20200519134449.1466624-1-hch@lst.de>
 References: <20200519134449.1466624-1-hch@lst.de>
@@ -55,33 +54,95 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-These two functions are not used by any modular code.
+maccess tends to define lots of underscore prefixed symbols that then
+have other weak aliases.  But except for two cases they are never
+actually used, so remove them.
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
 ---
- mm/maccess.c | 2 --
- 1 file changed, 2 deletions(-)
+ include/linux/uaccess.h |  3 ---
+ mm/maccess.c            | 19 +++----------------
+ 2 files changed, 3 insertions(+), 19 deletions(-)
 
+diff --git a/include/linux/uaccess.h b/include/linux/uaccess.h
+index 67f016010aad5..a2c606a403745 100644
+--- a/include/linux/uaccess.h
++++ b/include/linux/uaccess.h
+@@ -324,7 +324,6 @@ extern long __probe_kernel_read(void *dst, const void *src, size_t size);
+  * happens, handle that and return -EFAULT.
+  */
+ extern long probe_user_read(void *dst, const void __user *src, size_t size);
+-extern long __probe_user_read(void *dst, const void __user *src, size_t size);
+ 
+ /*
+  * probe_kernel_write(): safely attempt to write to a location
+@@ -336,7 +335,6 @@ extern long __probe_user_read(void *dst, const void __user *src, size_t size);
+  * happens, handle that and return -EFAULT.
+  */
+ extern long notrace probe_kernel_write(void *dst, const void *src, size_t size);
+-extern long notrace __probe_kernel_write(void *dst, const void *src, size_t size);
+ 
+ /*
+  * probe_user_write(): safely attempt to write to a location in user space
+@@ -348,7 +346,6 @@ extern long notrace __probe_kernel_write(void *dst, const void *src, size_t size
+  * happens, handle that and return -EFAULT.
+  */
+ extern long notrace probe_user_write(void __user *dst, const void *src, size_t size);
+-extern long notrace __probe_user_write(void __user *dst, const void *src, size_t size);
+ 
+ extern long strncpy_from_unsafe(char *dst, const void *unsafe_addr, long count);
+ extern long strncpy_from_unsafe_strict(char *dst, const void *unsafe_addr,
 diff --git a/mm/maccess.c b/mm/maccess.c
-index 3ca8d97e50106..cf21e604f78cb 100644
+index cf21e604f78cb..4e7f3b6eb05ae 100644
 --- a/mm/maccess.c
 +++ b/mm/maccess.c
-@@ -121,7 +121,6 @@ long __probe_kernel_write(void *dst, const void *src, size_t size)
+@@ -79,11 +79,7 @@ EXPORT_SYMBOL_GPL(probe_kernel_read);
+  * Safely read from user address @src to the buffer at @dst. If a kernel fault
+  * happens, handle that and return -EFAULT.
+  */
+-
+-long __weak probe_user_read(void *dst, const void __user *src, size_t size)
+-    __attribute__((alias("__probe_user_read")));
+-
+-long __probe_user_read(void *dst, const void __user *src, size_t size)
++long probe_user_read(void *dst, const void __user *src, size_t size)
+ {
+ 	long ret = -EFAULT;
+ 	mm_segment_t old_fs = get_fs();
+@@ -106,11 +102,7 @@ EXPORT_SYMBOL_GPL(probe_user_read);
+  * Safely write to address @dst from the buffer at @src.  If a kernel fault
+  * happens, handle that and return -EFAULT.
+  */
+-
+-long __weak probe_kernel_write(void *dst, const void *src, size_t size)
+-    __attribute__((alias("__probe_kernel_write")));
+-
+-long __probe_kernel_write(void *dst, const void *src, size_t size)
++long probe_kernel_write(void *dst, const void *src, size_t size)
+ {
+ 	long ret;
+ 	mm_segment_t old_fs = get_fs();
+@@ -131,11 +123,7 @@ long __probe_kernel_write(void *dst, const void *src, size_t size)
+  * Safely write to address @dst from the buffer at @src.  If a kernel fault
+  * happens, handle that and return -EFAULT.
+  */
+-
+-long __weak probe_user_write(void __user *dst, const void *src, size_t size)
+-    __attribute__((alias("__probe_user_write")));
+-
+-long __probe_user_write(void __user *dst, const void *src, size_t size)
++long probe_user_write(void __user *dst, const void *src, size_t size)
+ {
+ 	long ret = -EFAULT;
+ 	mm_segment_t old_fs = get_fs();
+@@ -171,7 +159,6 @@ long __probe_user_write(void __user *dst, const void *src, size_t size)
+  * probing memory on a user address range where strncpy_from_unsafe_user() is
+  * supposed to be used instead.
+  */
+-
+ long __weak strncpy_from_unsafe(char *dst, const void *unsafe_addr, long count)
+     __attribute__((alias("__strncpy_from_unsafe")));
  
- 	return ret;
- }
--EXPORT_SYMBOL_GPL(probe_kernel_write);
- 
- /**
-  * probe_user_write(): safely attempt to write to a user-space location
-@@ -148,7 +147,6 @@ long __probe_user_write(void __user *dst, const void *src, size_t size)
- 
- 	return ret;
- }
--EXPORT_SYMBOL_GPL(probe_user_write);
- 
- /**
-  * strncpy_from_unsafe: - Copy a NUL terminated string from unsafe address.
 -- 
 2.26.2
 
