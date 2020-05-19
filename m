@@ -2,83 +2,83 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B56481D9C84
-	for <lists+linux-um@lfdr.de>; Tue, 19 May 2020 18:26:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B86FD1D9CD9
+	for <lists+linux-um@lfdr.de>; Tue, 19 May 2020 18:34:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=E8AbJSF6Pl94XE0dfdlJiqP4P3SpQr59PXHKM9kw0uM=; b=WCGFeSpzQNjaVP
-	3g73snUNyPCQqNEGs+SIkdGKtIzrtCpNgkBv/7TNvKrAKfgOuw0R0EW/dKJjpwi79eS+X3R9A3XVj
-	+6LKXeCwTVJlXyEGxfg4V8mYSR7DkMxx69jhwvaoz4gAK3T2qnInXqh63r2nQaijlWNpv38Pkiioo
-	QnNWUTiMGvJ+8h4lB9GZq/WJdtCg4A0WKG3mfBW8fEK/yUcN+xsbvlQJI9E972LzTpRfHTKl8Xx4N
-	jDSXLqzAdGEHwlXvc8tRpmFTWo0VMge+BURdg+rhLCRBFWZifK5rmpNtWoznoqqRj5zLi8wyC1AOW
-	+s8tjnEMIqOhuxLWdjrA==;
+	List-Owner; bh=d3bxguv2EHcMcPgLpWux+I/rCewBCiUmXQXzp67TuDc=; b=oWsW2CQclyft8Q
+	vfxsJY+xegeB5fI5zslTMdHaA2ipTejXuqdGbSfmYxr7FvHbvT0h+rD8R8nbDGaGJyOWei1pWaKK/
+	MMibZs8kbJTmDDMEBE1SqLTpToT9j7jth9DUsA7JcINGca1OMoMMOLwN97vlYiTCSY+zc+g6aojfo
+	EH8wyP6A3Cez6w6MoOT5z+86krDEr83N4xejJ7JyuKHPfY6w0A+kHdtLJBBM8GY9bj3l/WVIV3SNT
+	PKYKjnLiAs9+tAIp5S54sLrskRLu9yNcemp4IoEMtqQq2G+6t0aNS4hv05LCPk1bBU+2ypkIGDezs
+	dFodX+11D0PmSbzUdOeQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jb54Q-0003kI-1n; Tue, 19 May 2020 16:26:22 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1jb5Bs-00025E-Tx; Tue, 19 May 2020 16:34:05 +0000
+Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jb54N-0003jX-Sf
- for linux-um@lists.infradead.org; Tue, 19 May 2020 16:26:21 +0000
-Received: by mail-lj1-x241.google.com with SMTP id l15so12648lje.9
- for <linux-um@lists.infradead.org>; Tue, 19 May 2020 09:26:18 -0700 (PDT)
+ id 1jb5BH-0001WY-Mf
+ for linux-um@lists.infradead.org; Tue, 19 May 2020 16:33:29 +0000
+Received: by mail-lj1-x242.google.com with SMTP id k5so371985lji.11
+ for <linux-um@lists.infradead.org>; Tue, 19 May 2020 09:33:27 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=linux-foundation.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=dhbRZ27gTq3LlamCeWaOIagumkyuEgHdNj01JBr2vyU=;
- b=a8S6FimrljQCYdqdMRjHudj5xuwSAYeW17sDBke8Wp/wO6Vv10u9cXvAcweW0ZSEYT
- O3hXN68ol8TooTR2xUI2YNd5y+PctNRhxhENJnhmYB+aBitMMtqsXQFMvUY86xEYH5PA
- jFICERjG8bgZGMW0GbVN6qDt50ZsFp9Lq9zCI=
+ :cc; bh=TFvy+u64rADS0X9wXPVDcnjojb1U9iWCN3n097gO97s=;
+ b=KITgpUd5bP2WD+I3Ft3adLmt6MH7MS4MFJexni61RXcXlzD9Gqjwa8Lmdkq9TYyfqS
+ KL4aFjs9x04ZYvGYs2IsxZG5dgyhwKLIBJrjoMKhrn6xZPweQeBnKjN1RmntmQCr96TY
+ jycjBR645lH/xqU7rOHokwZ9wup3usfS+9Z3A=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=dhbRZ27gTq3LlamCeWaOIagumkyuEgHdNj01JBr2vyU=;
- b=SDIEZP9gch1lBUk9ZwpWqFIzWQzNf1DaHrzjXBFcCusAQ8iBW09Oxq/oY7pdCAP0D0
- d57uRucq9afWlYk8SkJVgC6EyUBijsN4xYOurYvJGfRgzucC5e7ITJiO3CscMpqjxVbe
- J6VxPHML1sgFnpVO07e/GYgHV5D3K+VqPULKJxTQLxygTMDw4bhqPMnkEeBs1/jAPwv0
- csRZlINOZK15PidAZY3TbI55i0Gz0TDPzV9YGB3JOoIdjGnYwQRvyjmGe6bkxqpHMFm/
- HxLRRRW/N+UaxubbtH7na2DL1g2GWtxQpJrwTJEkksF6qGz0c7E/wegbvBHFoS19OoDR
- jZLA==
-X-Gm-Message-State: AOAM530lsNb0pUKReUxjK6TKP5CkwK27DVMhNNJcghPDvF4CGwTies0r
- 78MDNjhyNCmwQp2gKU+kGgy7WHQmbQo=
-X-Google-Smtp-Source: ABdhPJzThQH0useu23SKJu20+7xXloJX9FK7g/KO6xyFkYqClhEJ5t2QDmomHqup52764mm1e4v+TA==
-X-Received: by 2002:a2e:8186:: with SMTP id e6mr147352ljg.252.1589905575450;
- Tue, 19 May 2020 09:26:15 -0700 (PDT)
-Received: from mail-lj1-f177.google.com (mail-lj1-f177.google.com.
- [209.85.208.177])
- by smtp.gmail.com with ESMTPSA id n3sm64185ljg.6.2020.05.19.09.26.13
+ bh=TFvy+u64rADS0X9wXPVDcnjojb1U9iWCN3n097gO97s=;
+ b=hv7QC1CBPcGic5NnhEuMFWn8ZmrDkfTFHcyz2G6WaGcQcCllPk4gY97lBIHYMCSwEl
+ VJ0Iob1fwYYB7qgNmjP9CP5Q6Wi/mgMq841Tp9c1GFqBKJSRr0wvlGFtWwktCWsW6tVf
+ neegml5Pkd7Gwp0Lyas+aFrFtG011vbeCDgN8SYa4azp1ZGj4LUiJ5XbcBf4lnlh9+Zc
+ llDqGKETfJRalgZYWZy2s6RwcuSYaUEMu/M9MqA44K0MtdiiRXtVlAPipRMFulx5KA52
+ GVeMGdU8IK3G7PhCUEvGEnokho15kkb1SpE9PWNngy8xqxfS1a04iVJPx3r6QeXx0JDl
+ fiAA==
+X-Gm-Message-State: AOAM5317Ax/rfJee4tYpobywAM176D9C3ZVnC+/jSzxaO5MsOxjCAvL4
+ JFx6XUpadWYaBeSEFjJwZvrmef2LCFI=
+X-Google-Smtp-Source: ABdhPJzSA7ZYNxdvUddrFdrM1K0EJ46XFowT0V5HKQJGVaggyoo6SVx5sWFyCZec60QCwSN8Vic9Mw==
+X-Received: by 2002:a2e:b178:: with SMTP id a24mr170662ljm.268.1589906005043; 
+ Tue, 19 May 2020 09:33:25 -0700 (PDT)
+Received: from mail-lj1-f179.google.com (mail-lj1-f179.google.com.
+ [209.85.208.179])
+ by smtp.gmail.com with ESMTPSA id z16sm10558492lfq.18.2020.05.19.09.33.22
  for <linux-um@lists.infradead.org>
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 19 May 2020 09:26:14 -0700 (PDT)
-Received: by mail-lj1-f177.google.com with SMTP id o14so400996ljp.4
- for <linux-um@lists.infradead.org>; Tue, 19 May 2020 09:26:13 -0700 (PDT)
-X-Received: by 2002:a05:651c:1183:: with SMTP id
- w3mr128485ljo.265.1589905573160; 
- Tue, 19 May 2020 09:26:13 -0700 (PDT)
+ Tue, 19 May 2020 09:33:22 -0700 (PDT)
+Received: by mail-lj1-f179.google.com with SMTP id k5so371784lji.11
+ for <linux-um@lists.infradead.org>; Tue, 19 May 2020 09:33:22 -0700 (PDT)
+X-Received: by 2002:a2e:9641:: with SMTP id z1mr145949ljh.201.1589906002260;
+ Tue, 19 May 2020 09:33:22 -0700 (PDT)
 MIME-Version: 1.0
 References: <20200519134449.1466624-1-hch@lst.de>
- <20200519134449.1466624-13-hch@lst.de>
-In-Reply-To: <20200519134449.1466624-13-hch@lst.de>
+ <20200519134449.1466624-14-hch@lst.de>
+In-Reply-To: <20200519134449.1466624-14-hch@lst.de>
 From: Linus Torvalds <torvalds@linux-foundation.org>
-Date: Tue, 19 May 2020 09:25:57 -0700
-X-Gmail-Original-Message-ID: <CAHk-=whE_C2JF0ywF09iMBWtquEfMM3aSxCeLrb5S75EdHr1JA@mail.gmail.com>
-Message-ID: <CAHk-=whE_C2JF0ywF09iMBWtquEfMM3aSxCeLrb5S75EdHr1JA@mail.gmail.com>
-Subject: Re: [PATCH 12/20] maccess: remove strncpy_from_unsafe
+Date: Tue, 19 May 2020 09:33:06 -0700
+X-Gmail-Original-Message-ID: <CAHk-=wjg6v1NU31ku2aAMfX7Yu0oDKRvKeBJVGZFQB7AjcwhAA@mail.gmail.com>
+Message-ID: <CAHk-=wjg6v1NU31ku2aAMfX7Yu0oDKRvKeBJVGZFQB7AjcwhAA@mail.gmail.com>
+Subject: Re: [PATCH 13/20] maccess: always use strict semantics for
+ probe_kernel_read
 To: Christoph Hellwig <hch@lst.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200519_092619_930334_0C972B6D 
-X-CRM114-Status: GOOD (  10.94  )
+X-CRM114-CacheID: sfid-20200519_093327_844435_55FB8656 
+X-CRM114-Status: GOOD (  10.67  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:242 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -113,63 +113,40 @@ Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
 On Tue, May 19, 2020 at 6:45 AM Christoph Hellwig <hch@lst.de> wrote:
 >
+> +
 > +       if (IS_ENABLED(CONFIG_ARCH_HAS_NON_OVERLAPPING_ADDRESS_SPACE) &&
 > +           compat && (unsigned long)unsafe_ptr < TASK_SIZE)
-> +               ret = strncpy_from_user_nofault(dst, user_ptr, size);
+> +               ret = probe_user_read(dst, user_ptr, size);
 > +       else
-> +               ret = strncpy_from_kernel_nofault(dst, unsafe_ptr, size);
+> +               ret = probe_kernel_read(dst, unsafe_ptr, size);
+...
+> -               ret = probe_kernel_read(&c, (u8 *)addr + len, 1);
+> +               if (IS_ENABLED(CONFIG_ARCH_HAS_NON_OVERLAPPING_ADDRESS_SPACE) &&
+> +                   (unsigned long)addr < TASK_SIZE) {
+> +                       ret = probe_user_read(&c,
+> +                               (__force u8 __user *)addr + len, 1);
+> +               } else {
+> +                       ret = probe_kernel_read(&c, (u8 *)addr + len, 1);
+> +               }
+...
+> +       if (IS_ENABLED(CONFIG_ARCH_HAS_NON_OVERLAPPING_ADDRESS_SPACE) &&
+> +           (unsigned long)src < TASK_SIZE) {
+> +               return probe_user_read(dest, (__force const void __user *)src,
+> +                               size);
 
-These conditionals are completely illegible.
+If you can't make the conditional legible and fit on a single line and
+make it obvious _why_ you have that conditional, just use a helper
+function.
 
-That's true in the next patch too.
+Either for just the conditional itself, or for the whole operation.
+And at least for the bpf case, since you want the whole operation for
+that error handling and clearing of the result buffer anyway, I
+suspect it would be cleaner to have that kind of
+"bpf_copy_legacy_nofault()" function or whatever.
 
-Stop using "IS_ENABLED(config)" to make very complex conditionals.
+(And see previous email why I dislike that "compat" naming in the bpf case)
 
-A clear #ifdef is much better if the alternative is a conditional that
-is completely impossible to actually understand and needs multiple
-lines to read.
-
-If you made this a simple helper (called "bpf_strncpy_from_unsafe()"
-with that "compat" flag, perhaps?), it would be much more legible as
-
-  /*
-   * Big comment goes here about the compat behavior and
-   * non-overlapping address spaces and ambiguous pointers.
-   */
-  static long bpf_strncpy_from_legacy(void *dest, const void
-*unsafe_ptr, long size, bool legacy)
-  {
-  #ifdef CONFIG_ARCH_HAS_NON_OVERLAPPING_ADDRESS_SPACE
-        if (legacy && addr < TASK_SIZE)
-            return strncpy_from_user_nofault(dst, (const void __user
-*) unsafe_ptr, size);
-  #endif
-
-        return strncpy_from_kernel_nofault(dst, unsafe_ptr, size);
-  }
-
-and then you'd just use
-
-        if (bpf_strncpy_from_unsafe(dst, unsafe_ptr, size, compat) < 0)
-                memset(dst, 0, size);
-
-and avoid any complicated conditionals, goto's, and make the code much
-easier to understand thanks to having a big comment about the legacy
-case.
-
-In fact, separately I'd probably want that "compat" naming to be
-scrapped entirely in that file.
-
-"compat" generally means something very specific and completely
-different in the kernel: it's the "I'm a 32-bit binary on a 64-bit
-kernel" compatibility case.
-
-Here, it's literally "BPF legacy behavior", not that kind of "compat" thing.
-
-But that renaming is separate, although I'd start the ball rolling
-with that "bpf_strncpy_from_legacy()" helper.
-
-                Linus
+                    Linus
 
 _______________________________________________
 linux-um mailing list
