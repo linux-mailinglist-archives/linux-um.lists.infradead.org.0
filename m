@@ -2,82 +2,86 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F3BF91D9CE6
-	for <lists+linux-um@lfdr.de>; Tue, 19 May 2020 18:35:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7D4861D9CF0
+	for <lists+linux-um@lfdr.de>; Tue, 19 May 2020 18:36:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RyOOfy2AU8ousLpWbdnAsuc5lTNu2AFdIIQ3JrLerJ8=; b=j3c+pS5I7zOX1q
-	uGEKCTntRApg4b7cjFMxrVRtyAzNIyR2nWBo8bHtLEfiAsD+MYzuN41EhAtJKaR8HiZ964U9RHStK
-	crS5yYtvi9vtrtIWqHEZdrWtwqtIO2AfNpX43Zm8IQR8+nqMGkqeLsmW94evwy1f3g4yNgWvy0arz
-	2VmMpTzvP24MV65Urje1QdaqpMUR0Oylj4xNd1Jx0JzoM8RDbzKevMMk1IurrSfjtjve6YtoPrHPd
-	CXQcRQADVYHt0ynS0a1buIhsoxD4yQXTFOBayf3V3yqZAST/7v+IisXwRa8OK/oFXmx45UUS3ar84
-	jtZyNiGTWbtBrcqLjnbA==;
+	List-Owner; bh=1pg0GH6yfqULM+bVKz3bJr26HZU2dwbB3ODwdT54t14=; b=cWjkmJ8BhKv0Oa
+	oOs+UIO3vACaIt4TrSGVnopPdYQi9P/SMeULlz4waS52/mwsKFq0tbazMngFDBHJHDfcW9Xb54NFI
+	AIzSW4K/GVfRb++J81t/AQa1FXnsdk3WSymam1elGW55j6/jQgwQTb2kEDtN4wEoovN1JOsDvRq8r
+	lQUx3gAdMZjSH6TVFJkHpdhLHmApQUTUIcHWUfJHjOUHoUMc/bBMZJJwqs74LqkoFBOelGWubO2hh
+	yTXtxD8EIZAq2tFB7AkYQs7hStZ6/WwglhUu2V4OkdW/zLFEwvj7dpNMYykNWx/NCwcaHr6eG/2uO
+	7At4oryCuLtwJePBabsA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jb5D2-0004gz-CD; Tue, 19 May 2020 16:35:16 +0000
-Received: from mail-lj1-x22b.google.com ([2a00:1450:4864:20::22b])
+	id 1jb5EN-0004qa-6V; Tue, 19 May 2020 16:36:39 +0000
+Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jb5Cy-0004J0-Pt
- for linux-um@lists.infradead.org; Tue, 19 May 2020 16:35:13 +0000
-Received: by mail-lj1-x22b.google.com with SMTP id g1so406482ljk.7
- for <linux-um@lists.infradead.org>; Tue, 19 May 2020 09:35:10 -0700 (PDT)
+ id 1jb5EK-0004pr-SC
+ for linux-um@lists.infradead.org; Tue, 19 May 2020 16:36:38 +0000
+Received: by mail-lf1-x141.google.com with SMTP id h26so68950lfg.6
+ for <linux-um@lists.infradead.org>; Tue, 19 May 2020 09:36:36 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=linux-foundation.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=54tiBIP0EU7n2aZj7YIONdjaPqjtzHIpQK/HSrYUxTM=;
- b=BKlafAkH7UQm8tvxZZNMBXFgkeIFjR+sjrqKcA5zu8XfgLo2XsHzCIggLB+hau5PqY
- bXm4UtHx7/hgToK6wSRtXVRYfkosw2PzhwIv8qXaSb+oYyfc0spNrlQZmy04cFyxd8aX
- 2/kuksBERD9XsYiDJcDnbRjB+/bFhGsJeMkcs=
+ :cc; bh=Z16ZFiLRHWlE76l/Nnyd5FZZ2VSBLxmf0lz5LDCxbPs=;
+ b=UORYpGfRWpAQPT7Eim9FPjPnn5GKxiDiyP2S+AQw0QYKUVeSC2Y2buNVi8EbpRkorO
+ IcT1mnMe0MchbGIuyrDccORk12Xm6v8WUDLE8lpsgynSHzLIn9GW5XFMJoAg1fWLV4X4
+ DbGGa/kxryZV9vtywESRiuCWoDlSmVvuwa5YA=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=54tiBIP0EU7n2aZj7YIONdjaPqjtzHIpQK/HSrYUxTM=;
- b=azKTfjYGverL3W+JJTNltUfve1PjHxQxp1tSfQWWr8O2j7VCm7qMiOi/z0WPeW+ITn
- uzWWzDl/Dac5F8BRmMsdAfqaEe4tC8aMyA8yb4A0zpTdp5EHKp49+jr0XhzoiRO/YATY
- 29GZs7+ETPmJvSrsQyzFZlhDomb1fC8VDsR4TQWYX8X2BB8MpXyT4AvQkxAmVfaG9Uhy
- DdsaPp+kPZWGZSWMQnFUCHsZG+YaCKEtKdy68fciPzMrqWO8f3EkT60gS1s7GSO24qTU
- g4JWV3AhldlgJ58G+hBiGCYKTykOBTCpDbRhExBbjrf/MPKjppnmtUwrGi3RMJLV1K1G
- vQOQ==
-X-Gm-Message-State: AOAM531CPsMbf0dAmsXAr4mjRCUOyOOk2Kpr7EVd8S3H43Craz327f+0
- rvlEBthdCejZAtENrlIt6b6X+D6nsnU=
-X-Google-Smtp-Source: ABdhPJwtx15s4l/0ITANJEeB2/EX1PlPPj2C5wIzeAJVX2ZKJ3MeWmIu8LF4weR2L9APv0apuEh/xw==
-X-Received: by 2002:a2e:89cf:: with SMTP id c15mr152630ljk.149.1589906107427; 
- Tue, 19 May 2020 09:35:07 -0700 (PDT)
-Received: from mail-lf1-f44.google.com (mail-lf1-f44.google.com.
- [209.85.167.44])
- by smtp.gmail.com with ESMTPSA id y20sm70889lji.31.2020.05.19.09.35.06
+ bh=Z16ZFiLRHWlE76l/Nnyd5FZZ2VSBLxmf0lz5LDCxbPs=;
+ b=ebt4oD9DZFf0wCdLxp8ecSHFsZ4RobURR84PQ1xar6Tn6kHB+BGjK9mUSAWuwfbGkU
+ RyZTQox9SFBBye33mZMnuZN5BwXw8AYteo0YkhWjuB126D+BV84utnIyxfOc/8qMlSMD
+ QJg6FDUwXBNzHSwAg4ViCJ09R7TJxyM1P9UREU0CC46qtR/HGNbDOl4rhe2hScHhbV0r
+ FanRNsuZgScsSIxwAUwWU0pM8RQ+v9a2eK3RRENrezHB7+vVtPJ2AuXz5nIr6bI4P1df
+ KQO32xbG7q7S4pUw8aXpR3/2SmQ7uXA3M3jyMZA+1Y8bC+EQod6eyeoUThb0VtbGASDh
+ wBbw==
+X-Gm-Message-State: AOAM530ED+5En45CmbfTGQKF8ScJli22BCJiste4hfwoZed07uTd6Ede
+ wHhKS+YL/vMi0p7JVHlY+RJaw3STKB8=
+X-Google-Smtp-Source: ABdhPJzM4MXpUR7meOCCeS3LikBY2hzd+knRaZdFnpCvo2xlvL9IlGu2tuxCQLrDAZhL0sPdwQlhPg==
+X-Received: by 2002:a19:4895:: with SMTP id
+ v143mr11483562lfa.193.1589906193881; 
+ Tue, 19 May 2020 09:36:33 -0700 (PDT)
+Received: from mail-lj1-f173.google.com (mail-lj1-f173.google.com.
+ [209.85.208.173])
+ by smtp.gmail.com with ESMTPSA id a15sm72247ljn.72.2020.05.19.09.36.32
  for <linux-um@lists.infradead.org>
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 19 May 2020 09:35:06 -0700 (PDT)
-Received: by mail-lf1-f44.google.com with SMTP id x22so76396lfd.4
- for <linux-um@lists.infradead.org>; Tue, 19 May 2020 09:35:06 -0700 (PDT)
-X-Received: by 2002:ac2:5a4c:: with SMTP id r12mr1549357lfn.10.1589906105818; 
- Tue, 19 May 2020 09:35:05 -0700 (PDT)
+ Tue, 19 May 2020 09:36:32 -0700 (PDT)
+Received: by mail-lj1-f173.google.com with SMTP id g1so411112ljk.7
+ for <linux-um@lists.infradead.org>; Tue, 19 May 2020 09:36:32 -0700 (PDT)
+X-Received: by 2002:a05:651c:1183:: with SMTP id
+ w3mr156059ljo.265.1589906191917; 
+ Tue, 19 May 2020 09:36:31 -0700 (PDT)
 MIME-Version: 1.0
 References: <20200519134449.1466624-1-hch@lst.de>
-In-Reply-To: <20200519134449.1466624-1-hch@lst.de>
+ <20200519134449.1466624-12-hch@lst.de>
+ <CAHk-=wjm3HQy_awVX-WyF6KrSuE1pcFRaNX_XhiLKkBUFUZBtQ@mail.gmail.com>
+ <20200519161418.GA26545@lst.de>
+In-Reply-To: <20200519161418.GA26545@lst.de>
 From: Linus Torvalds <torvalds@linux-foundation.org>
-Date: Tue, 19 May 2020 09:34:49 -0700
-X-Gmail-Original-Message-ID: <CAHk-=whj0zVP-ErHcqGNrM0-bZ+TvSFAwpEd+pKFadZeFXj5PA@mail.gmail.com>
-Message-ID: <CAHk-=whj0zVP-ErHcqGNrM0-bZ+TvSFAwpEd+pKFadZeFXj5PA@mail.gmail.com>
-Subject: Re: clean up and streamline probe_kernel_* and friends v3
+Date: Tue, 19 May 2020 09:36:15 -0700
+X-Gmail-Original-Message-ID: <CAHk-=wjcmfe__pphtjGzLMJ2kFN0ZTRZQJQVunRxL+9E2Xki=Q@mail.gmail.com>
+Message-ID: <CAHk-=wjcmfe__pphtjGzLMJ2kFN0ZTRZQJQVunRxL+9E2Xki=Q@mail.gmail.com>
+Subject: Re: [PATCH 11/20] bpf: factor out a bpf_trace_copy_string helper
 To: Christoph Hellwig <hch@lst.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200519_093512_840897_C2E00FBB 
-X-CRM114-Status: UNSURE (   8.16  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200519_093636_913152_FE2F6AAC 
+X-CRM114-Status: GOOD (  11.47  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:22b listed in]
+ no trust [2a00:1450:4864:20:0:0:0:141 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -110,14 +114,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Tue, May 19, 2020 at 6:44 AM Christoph Hellwig <hch@lst.de> wrote:
+On Tue, May 19, 2020 at 9:14 AM Christoph Hellwig <hch@lst.de> wrote:
 >
->  - rebased on 5.7-rc6 with the bpf trace format string changes
+> I don't think we need it as the case of
+>
+>         case 'a':
+>         case 'b':
+>                 do_stuff();
+>                 break;
+>
+> has always been fine even with the fallthough warnings.  And the
+> rest of the stuff gets removed by cpp..
 
-Other than the critique about illegible conditionals in the result
-when doing that bpf/trace conversion, I like it.
+You're right. I read it as a fallthrough because as a human it looks
+like there's code in there between, but yeah, the compiler won't
+actually ever see it.
 
-                  Linus
+So scratch that objection.
+
+              Linus
 
 _______________________________________________
 linux-um mailing list
