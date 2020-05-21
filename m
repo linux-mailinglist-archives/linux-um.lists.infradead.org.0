@@ -2,36 +2,35 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 210A51DD130
-	for <lists+linux-um@lfdr.de>; Thu, 21 May 2020 17:23:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1A7011DD132
+	for <lists+linux-um@lfdr.de>; Thu, 21 May 2020 17:23:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FS5v+wfocETc1JhlmTjqPsYSfYEZi2n3RpVzffxUCzg=; b=jZjOgSkLgJJxVp
-	SaFdeXWPXf03r5zuhxqNCoqfwTV/D2K+WpV/wQeD6xbXlkGFmkjIBm77fQL6csNUTfLY99S0zPrIW
-	gIe7eQoBjT+Ph2o3P2rdWVKGQdVyrL9/y6ZCOqsF17Ws3aIEP/clQeJalFmCP/BHwFKzSyZiXLuJF
-	g1Ldty8hJ0hzbZRkMdwcGKk5daeRlWE6WYPgDUpChBlsDUOivAcanDhQ1hjEeN6OWm+dexMNgfASV
-	2aij0DlDPUqrSMCb4Hs2TaRJ0uasWcja0/Rsp/NhvkJh6bolskabDhZgNscMWP4F1u1YDeLjWLovl
-	KtRbyQ/vpCCKxLDPI/Qg==;
+	List-Owner; bh=Jwli+wYFkNqC+25LjqLk77/9F1/5N4usPHR+Gt7vT2s=; b=Xo6LJDMCIzH3R+
+	vHKXuEybcB+wh8Ex+U6zIctFgKydDVyty2KCJp7uMpLAoyW4S/HuqmQam7VrezMpuiFti+rE/u9vh
+	i3NtI3bK44OTr4wg5lEO31B01gMW44vuMztVwfFI76v1T8wO66RWH5QwgK80JwXLia+/KUbFNcEf5
+	cfDOM9dz6lMb8mvmUAPGlSgkfYvgWaORoZmUX+Z0hZiCqqn8RtZsG2FZZJ0iKpDnbEK00LbPqdSfP
+	TueeCW7X7VLziOHL7Zl4C/KGWu1zMdlxu+RIfPWb1duF5JCwctbEoR/4DpUwTWLKJgCXcj62G86Cg
+	+K0rBP1/xpQG8glfo7jg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbn2h-0004OD-57; Thu, 21 May 2020 15:23:31 +0000
+	id 1jbn2j-0004PZ-Ev; Thu, 21 May 2020 15:23:33 +0000
 Received: from [2001:4bb8:18c:5da7:c70:4a89:bc61:2] (helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbn2e-0004Jj-1M; Thu, 21 May 2020 15:23:28 +0000
+ id 1jbn2h-0004NA-0e; Thu, 21 May 2020 15:23:31 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: x86@kernel.org, Alexei Starovoitov <ast@kernel.org>,
  Daniel Borkmann <daniel@iogearbox.net>,
  Masami Hiramatsu <mhiramat@kernel.org>,
  Linus Torvalds <torvalds@linux-foundation.org>,
  Andrew Morton <akpm@linux-foundation.org>
-Subject: [PATCH 08/23] maccess: rename strnlen_unsafe_user to
- strnlen_user_nofault
-Date: Thu, 21 May 2020 17:22:46 +0200
-Message-Id: <20200521152301.2587579-9-hch@lst.de>
+Subject: [PATCH 09/23] maccess: remove probe_read_common and probe_write_common
+Date: Thu, 21 May 2020 17:22:47 +0200
+Message-Id: <20200521152301.2587579-10-hch@lst.de>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <20200521152301.2587579-1-hch@lst.de>
 References: <20200521152301.2587579-1-hch@lst.de>
@@ -55,64 +54,125 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-This matches the naming of strnlen_user, and also makes it more clear
-what the function is supposed to do.
+Each of the helpers has just two callers, which also different in
+dealing with kernel or userspace pointers.  Just open code the logic
+in the callers.
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
 ---
- include/linux/uaccess.h     | 2 +-
- kernel/trace/trace_kprobe.c | 2 +-
- mm/maccess.c                | 4 ++--
- 3 files changed, 4 insertions(+), 4 deletions(-)
+ mm/maccess.c | 63 ++++++++++++++++++++++++----------------------------
+ 1 file changed, 29 insertions(+), 34 deletions(-)
 
-diff --git a/include/linux/uaccess.h b/include/linux/uaccess.h
-index 134ff9c1c151b..d8366f8468664 100644
---- a/include/linux/uaccess.h
-+++ b/include/linux/uaccess.h
-@@ -315,7 +315,7 @@ long strncpy_from_kernel_nofault(char *dst, const void *unsafe_addr,
- extern long __strncpy_from_unsafe(char *dst, const void *unsafe_addr, long count);
- long strncpy_from_user_nofault(char *dst, const void __user *unsafe_addr,
- 		long count);
--extern long strnlen_unsafe_user(const void __user *unsafe_addr, long count);
-+long strnlen_user_nofault(const void __user *unsafe_addr, long count);
- 
- /**
-  * probe_kernel_address(): safely attempt to read from a location
-diff --git a/kernel/trace/trace_kprobe.c b/kernel/trace/trace_kprobe.c
-index d600f41fda1ca..4325f9e7fadaa 100644
---- a/kernel/trace/trace_kprobe.c
-+++ b/kernel/trace/trace_kprobe.c
-@@ -1221,7 +1221,7 @@ fetch_store_strlen_user(unsigned long addr)
- {
- 	const void __user *uaddr =  (__force const void __user *)addr;
- 
--	return strnlen_unsafe_user(uaddr, MAX_STRING_SIZE);
-+	return strnlen_user_nofault(uaddr, MAX_STRING_SIZE);
- }
- 
- /*
 diff --git a/mm/maccess.c b/mm/maccess.c
-index c8748c2809096..e783ebfccd542 100644
+index e783ebfccd542..31cf6604e7fff 100644
 --- a/mm/maccess.c
 +++ b/mm/maccess.c
-@@ -258,7 +258,7 @@ long strncpy_from_user_nofault(char *dst, const void __user *unsafe_addr,
+@@ -6,30 +6,6 @@
+ #include <linux/mm.h>
+ #include <linux/uaccess.h>
+ 
+-static __always_inline long
+-probe_read_common(void *dst, const void __user *src, size_t size)
+-{
+-	long ret;
+-
+-	pagefault_disable();
+-	ret = __copy_from_user_inatomic(dst, src, size);
+-	pagefault_enable();
+-
+-	return ret ? -EFAULT : 0;
+-}
+-
+-static __always_inline long
+-probe_write_common(void __user *dst, const void *src, size_t size)
+-{
+-	long ret;
+-
+-	pagefault_disable();
+-	ret = __copy_to_user_inatomic(dst, src, size);
+-	pagefault_enable();
+-
+-	return ret ? -EFAULT : 0;
+-}
+-
+ /**
+  * probe_kernel_read(): safely attempt to read from any location
+  * @dst: pointer to the buffer that shall take the data
+@@ -69,10 +45,15 @@ long __probe_kernel_read(void *dst, const void *src, size_t size)
+ 	mm_segment_t old_fs = get_fs();
+ 
+ 	set_fs(KERNEL_DS);
+-	ret = probe_read_common(dst, (__force const void __user *)src, size);
++	pagefault_disable();
++	ret = __copy_from_user_inatomic(dst, (__force const void __user *)src,
++			size);
++	pagefault_enable();
+ 	set_fs(old_fs);
+ 
+-	return ret;
++	if (ret)
++		return -EFAULT;
++	return 0;
+ }
+ EXPORT_SYMBOL_GPL(probe_kernel_read);
+ 
+@@ -91,11 +72,16 @@ long probe_user_read(void *dst, const void __user *src, size_t size)
+ 	mm_segment_t old_fs = get_fs();
+ 
+ 	set_fs(USER_DS);
+-	if (access_ok(src, size))
+-		ret = probe_read_common(dst, src, size);
++	if (access_ok(src, size)) {
++		pagefault_disable();
++		ret = __copy_from_user_inatomic(dst, src, size);
++		pagefault_enable();
++	}
+ 	set_fs(old_fs);
+ 
+-	return ret;
++	if (ret)
++		return -EFAULT;
++	return 0;
+ }
+ EXPORT_SYMBOL_GPL(probe_user_read);
+ 
+@@ -114,10 +100,14 @@ long probe_kernel_write(void *dst, const void *src, size_t size)
+ 	mm_segment_t old_fs = get_fs();
+ 
+ 	set_fs(KERNEL_DS);
+-	ret = probe_write_common((__force void __user *)dst, src, size);
++	pagefault_disable();
++	ret = __copy_to_user_inatomic((__force void __user *)dst, src, size);
++	pagefault_enable();
+ 	set_fs(old_fs);
+ 
+-	return ret;
++	if (ret)
++		return -EFAULT;
++	return 0;
  }
  
  /**
-- * strnlen_unsafe_user: - Get the size of a user string INCLUDING final NUL.
-+ * strnlen_user_nofault: - Get the size of a user string INCLUDING final NUL.
-  * @unsafe_addr: The string to measure.
-  * @count: Maximum count (including NUL)
-  *
-@@ -273,7 +273,7 @@ long strncpy_from_user_nofault(char *dst, const void __user *unsafe_addr,
-  * Unlike strnlen_user, this can be used from IRQ handler etc. because
-  * it disables pagefaults.
-  */
--long strnlen_unsafe_user(const void __user *unsafe_addr, long count)
-+long strnlen_user_nofault(const void __user *unsafe_addr, long count)
- {
+@@ -135,11 +125,16 @@ long probe_user_write(void __user *dst, const void *src, size_t size)
  	mm_segment_t old_fs = get_fs();
- 	int ret;
+ 
+ 	set_fs(USER_DS);
+-	if (access_ok(dst, size))
+-		ret = probe_write_common(dst, src, size);
++	if (access_ok(dst, size)) {
++		pagefault_disable();
++		ret = __copy_to_user_inatomic(dst, src, size);
++		pagefault_enable();
++	}
+ 	set_fs(old_fs);
+ 
+-	return ret;
++	if (ret)
++		return -EFAULT;
++	return 0;
+ }
+ 
+ /**
 -- 
 2.26.2
 
