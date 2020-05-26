@@ -2,53 +2,60 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6D5551E1B10
-	for <lists+linux-um@lfdr.de>; Tue, 26 May 2020 08:13:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 752AA1E280D
+	for <lists+linux-um@lfdr.de>; Tue, 26 May 2020 19:12:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7YgJghSEP22VuhWUsn5ULB4Oxli6pjVCe2WNn2yHeDY=; b=uGk2NFG74jMO3C
-	KeukFHt/UTkBhmUCrOT62sgUJSvNGPWkrrGptV7zPH5B2sm5ubBAzxl/dVIZKEFomoZ4QI1D+DfG0
-	FbxrwhcxjA7oM90c/43Av8PPIIX1y6pObnq/JIItU5i4nlNott5iy/Lt9jxmoC7a4gdiL6hJi097B
-	iX1HeH5DtvqnTSrM82xP9515Y7X9u3YDxdDuDIW7wPRRt7gA97ellAQ0f2yJvh7cQwlGhieYU2R+X
-	+cFmFcoBq1YhIAmabCW8QY0d0zX65LfMKA90GWFxuhIlvnaHSc+YCCxuWVOf9anonK6bFxU2xAKb2
-	Kcuv6PDo34Sy6f9ujDCA==;
+	List-Owner; bh=TFqTXUWklLwBgqpljqjTs54WW3EcZSic29F4XvQ630I=; b=q35vo5USJYjG28
+	IxQOpZqP5cSnl4uHctN/pClw+s28MNiefVoRJJBF7dt5S5wllr/PaeCY7Yrwrv0IOX9RGpEm5QLDD
+	PKbQ26b2zw/q2ytnWIv9VzbDtYORLokVWvumCNrQvGWuPeCM/92IbZNWsoV0XycZzB2w4FBS7+WL2
+	OEHQSzaWbeKClzQOGCFkX1qry3Q4LQhL7Zn7PF7QlsbfZjS+d0FFGA3Yq+BanYUyTdFLbBILffSb+
+	/CI/0F8/yRH2Y7LaDwNbaOTN6iy8fvF1n+WamxDvkPAsEYsbME4cqoGvS44mTku8FLY4Mzmka8uu3
+	oiIgE8mbZBdOzt7zR+jw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdSpz-0001lP-Dy; Tue, 26 May 2020 06:13:19 +0000
-Received: from verein.lst.de ([213.95.11.211])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdSpv-0001k9-St
- for linux-um@lists.infradead.org; Tue, 26 May 2020 06:13:17 +0000
-Received: by verein.lst.de (Postfix, from userid 2407)
- id BE22268BEB; Tue, 26 May 2020 08:13:09 +0200 (CEST)
-Date: Tue, 26 May 2020 08:13:09 +0200
-From: Christoph Hellwig <hch@lst.de>
-To: Andrew Morton <akpm@linux-foundation.org>
-Subject: Re: clean up and streamline probe_kernel_* and friends v4
-Message-ID: <20200526061309.GA15549@lst.de>
-References: <20200521152301.2587579-1-hch@lst.de>
- <20200525151912.34b20b978617e2893e484fa3@linux-foundation.org>
+	id 1jdd7g-0001Pv-3F; Tue, 26 May 2020 17:12:16 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jdd7c-0001NM-2a; Tue, 26 May 2020 17:12:13 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9F5431FB;
+ Tue, 26 May 2020 10:12:09 -0700 (PDT)
+Received: from gaia (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 05C163F52E;
+ Tue, 26 May 2020 10:12:01 -0700 (PDT)
+Date: Tue, 26 May 2020 18:11:59 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Mike Rapoport <rppt@kernel.org>
+Subject: Re: [PATCH v2 03/20] mm: remove CONFIG_HAVE_MEMBLOCK_NODE_MAP option
+Message-ID: <20200526171159.GJ17051@gaia>
+References: <20200429121126.17989-1-rppt@kernel.org>
+ <20200429121126.17989-4-rppt@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200525151912.34b20b978617e2893e484fa3@linux-foundation.org>
-User-Agent: Mutt/1.5.17 (2007-11-01)
+In-Reply-To: <20200429121126.17989-4-rppt@kernel.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200525_231316_085781_3F1ECD9A 
-X-CRM114-Status: UNSURE (   8.46  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200526_101212_242507_A3BCE95B 
+X-CRM114-Status: GOOD (  15.46  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [213.95.11.211 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 1.2 SUBJ_OBFU_PUNCT_MANY   Punctuation-obfuscated Subject: header
+ 0.7 SUBJ_OBFU_PUNCT_FEW    Possible punctuation-obfuscated Subject:
+ header
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,36 +67,77 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: linux-parisc@vger.kernel.org, Daniel Borkmann <daniel@iogearbox.net>,
- netdev@vger.kernel.org, x86@kernel.org, linux-um@lists.infradead.org,
- Alexei Starovoitov <ast@kernel.org>, linux-kernel@vger.kernel.org,
- linux-mm@kvack.org, Masami Hiramatsu <mhiramat@kernel.org>,
- bpf@vger.kernel.org, Linus Torvalds <torvalds@linux-foundation.org>,
- Christoph Hellwig <hch@lst.de>
+Cc: Rich Felker <dalias@libc.org>, linux-ia64@vger.kernel.org,
+ linux-doc@vger.kernel.org, Heiko Carstens <heiko.carstens@de.ibm.com>,
+ Michal Hocko <mhocko@kernel.org>,
+ "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>,
+ Max Filippov <jcmvbkbc@gmail.com>, Guo Ren <guoren@kernel.org>,
+ linux-csky@vger.kernel.org, linux-parisc@vger.kernel.org,
+ sparclinux@vger.kernel.org, linux-hexagon@vger.kernel.org,
+ linux-riscv@lists.infradead.org, Mike Rapoport <rppt@linux.ibm.com>,
+ Greg Ungerer <gerg@linux-m68k.org>, linux-arch@vger.kernel.org,
+ linux-s390@vger.kernel.org, linux-snps-arc@lists.infradead.org,
+ linux-c6x-dev@linux-c6x.org, Baoquan He <bhe@redhat.com>,
+ Jonathan Corbet <corbet@lwn.net>, linux-sh@vger.kernel.org,
+ Michael Ellerman <mpe@ellerman.id.au>, Helge Deller <deller@gmx.de>,
+ x86@kernel.org, Russell King <linux@armlinux.org.uk>,
+ Ley Foon Tan <ley.foon.tan@intel.com>,
+ Yoshinori Sato <ysato@users.sourceforge.jp>,
+ Geert Uytterhoeven <geert@linux-m68k.org>,
+ linux-arm-kernel@lists.infradead.org, Mark Salter <msalter@redhat.com>,
+ Matt Turner <mattst88@gmail.com>, linux-mips@vger.kernel.org,
+ uclinux-h8-devel@lists.sourceforge.jp, linux-xtensa@linux-xtensa.org,
+ linux-alpha@vger.kernel.org, linux-um@lists.infradead.org,
+ linux-m68k@lists.linux-m68k.org, Tony Luck <tony.luck@intel.com>,
+ Qian Cai <cai@lca.pw>, Greentime Hu <green.hu@gmail.com>,
+ Paul Walmsley <paul.walmsley@sifive.com>, Stafford Horne <shorne@gmail.com>,
+ Guan Xuetao <gxt@pku.edu.cn>, Hoan Tran <Hoan@os.amperecomputing.com>,
+ Michal Simek <monstr@monstr.eu>,
+ Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
+ Brian Cain <bcain@codeaurora.org>, Nick Hu <nickhu@andestech.com>,
+ linux-mm@kvack.org, Vineet Gupta <vgupta@synopsys.com>,
+ linux-kernel@vger.kernel.org, openrisc@lists.librecores.org,
+ Richard Weinberger <richard@nod.at>, Andrew Morton <akpm@linux-foundation.org>,
+ linuxppc-dev@lists.ozlabs.org, "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On Mon, May 25, 2020 at 03:19:12PM -0700, Andrew Morton wrote:
-> hm.  Applying linux-next to this series generates a lot of rejects against
-> powerpc:
+On Wed, Apr 29, 2020 at 03:11:09PM +0300, Mike Rapoport wrote:
+> From: Mike Rapoport <rppt@linux.ibm.com>
 > 
-> -rw-rw-r-- 1 akpm akpm  493 May 25 15:06 arch/powerpc/kernel/kgdb.c.rej
-> -rw-rw-r-- 1 akpm akpm 6461 May 25 15:06 arch/powerpc/kernel/trace/ftrace.c.rej
-> -rw-rw-r-- 1 akpm akpm  447 May 25 15:06 arch/powerpc/mm/fault.c.rej
-> -rw-rw-r-- 1 akpm akpm  623 May 25 15:06 arch/powerpc/perf/core-book3s.c.rej
-> -rw-rw-r-- 1 akpm akpm 1408 May 25 15:06 arch/riscv/kernel/patch.c.rej
+> The CONFIG_HAVE_MEMBLOCK_NODE_MAP is used to differentiate initialization
+> of nodes and zones structures between the systems that have region to node
+> mapping in memblock and those that don't.
 > 
-> the arch/powerpc/kernel/trace/ftrace.c ones aren't very trivial.
+> Currently all the NUMA architectures enable this option and for the
+> non-NUMA systems we can presume that all the memory belongs to node 0 and
+> therefore the compile time configuration option is not required.
 > 
-> It's -rc7.  Perhaps we should park all this until 5.8-rc1?
+> The remaining few architectures that use DISCONTIGMEM without NUMA are
+> easily updated to use memblock_add_node() instead of memblock_add() and
+> thus have proper correspondence of memblock regions to NUMA nodes.
+> 
+> Still, free_area_init_node() must have a backward compatible version
+> because its semantics with and without CONFIG_HAVE_MEMBLOCK_NODE_MAP is
+> different. Once all the architectures will use the new semantics, the
+> entire compatibility layer can be dropped.
+> 
+> To avoid addition of extra run time memory to store node id for
+> architectures that keep memblock but have only a single node, the node id
+> field of the memblock_region is guarded by CONFIG_NEED_MULTIPLE_NODES and
+> the corresponding accessors presume that in those cases it is always 0.
+> 
+> Signed-off-by: Mike Rapoport <rppt@linux.ibm.com>
+> ---
+>  .../vm/numa-memblock/arch-support.txt         |  34 ------
+>  arch/alpha/mm/numa.c                          |   4 +-
+>  arch/arm64/Kconfig                            |   1 -
 
-As this is a pre-condition for the set_fs removal I'd really like to
-get the actual changes in.  All these conflicts seem to be about the
-last three cleanup patches just doing renaming, so can we just skip
-those three for now?  Then we can do the rename right after 5.8-rc1
-when we have the least chances for conflicts.
+For arm64:
+
+Acked-by: Catalin Marinas <catalin.marinas@arm.com>
 
 _______________________________________________
 linux-um mailing list
