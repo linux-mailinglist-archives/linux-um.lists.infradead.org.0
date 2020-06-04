@@ -2,65 +2,51 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 80B1A1EB882
-	for <lists+linux-um@lfdr.de>; Tue,  2 Jun 2020 11:28:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E70DD1EE359
+	for <lists+linux-um@lfdr.de>; Thu,  4 Jun 2020 13:23:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:MIME-Version:From:Date:
-	Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From
-	:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=aeqCKWu0/83/cXY5yRUijUxrOVde7KOIATTNXd+birw=; b=hFwkxv3OXXoCmO
-	H2GO0WHIHtXvEEWukD73crxTYPE4RpNcfAINGRGpw8v4F2v7C2vtXEf2cDlIWcnyA8Jce0cfQlyHg
-	lLA+Ka3cTY9Zzcx58EaTeYo8q5ukjGBpCkiBZ5VG0fUTt1O9tFQitNDZFPd/QpAIr3GF1hqHTvsdM
-	sPgNF+Z97oe6VI4sYpXMM+AnGl9xwQ5wFhwfwb5mSFdej/AxA66H1Q5TFEn38sLLWtXNxTmNhZR8x
-	me//Mr8bdrtTHILkVVuYz17GPX+3Zvp1pB69TJcSCMgxHEAdEBtsF+Hmh83ZQgEEBjfzOn9f5g2CK
-	cgKFOCsAgQSfwM2cODgw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=VhbLzxY8HjdkyirxqCYmovkKU8EGvOnIwJdi4Ui0MV0=; b=l0bHSF3NPyGV2Q
+	llt6xjBtp55YRsQoVh/y5q/gUfSlAeZIRX7Aa7sSQh68aw+GhURH/kXGf5koif8pGHx/z+pWtSt/p
+	91pU4w5sNXUIdfN4JYx2oQkvDutOephpL0AhKxeioGxPfBEfiRghl+Q7DdFjI5tggTaJ4I0AYQrZn
+	+imubL/PkOBb78twPcMaaylSgumeOSPLw+XWZrkSLaKOdsD0VnwFy6rMGADzxxrdVKXbiwz0iQbCt
+	Cmp34Vf2zL5LAADqxi2a9Gvv2SPnah+K5uxCyAwvGUjYcMUOaZSI0gCztRiXL1Mk94mDS7OnJlqGC
+	jQAf+0Fxylcy92QSbTGA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jg3De-000792-Al; Tue, 02 Jun 2020 09:28:26 +0000
-Received: from mail.cn.fujitsu.com ([183.91.158.132] helo=heian.cn.fujitsu.com)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jg3Db-00077z-WB
- for linux-um@lists.infradead.org; Tue, 02 Jun 2020 09:28:25 +0000
-X-IronPort-AV: E=Sophos;i="5.73,463,1583164800"; d="scan'208";a="93653934"
-Received: from unknown (HELO cn.fujitsu.com) ([10.167.33.5])
- by heian.cn.fujitsu.com with ESMTP; 02 Jun 2020 17:28:13 +0800
-Received: from G08CNEXMBPEKD06.g08.fujitsu.local (unknown [10.167.33.206])
- by cn.fujitsu.com (Postfix) with ESMTP id 05E134BCC8A5
- for <linux-um@lists.infradead.org>; Tue,  2 Jun 2020 17:28:12 +0800 (CST)
-Received: from [10.167.220.69] (10.167.220.69) by
- G08CNEXMBPEKD06.g08.fujitsu.local (10.167.33.206) with Microsoft SMTP Server
- (TLS) id 15.0.1497.2; Tue, 2 Jun 2020 17:28:12 +0800
-Message-ID: <5ED61BAA.5080203@cn.fujitsu.com>
-Date: Tue, 2 Jun 2020 17:28:10 +0800
-From: Xiao Yang <yangx.jy@cn.fujitsu.com>
-User-Agent: Mozilla/5.0 (Windows; U; Windows NT 6.2; zh-CN;
- rv:1.9.2.18) Gecko/20110616 Thunderbird/3.1.11
+	id 1jgny8-0002kC-Dw; Thu, 04 Jun 2020 11:23:32 +0000
+Received: from s3.sipsolutions.net ([2a01:4f8:191:4433::2]
+ helo=sipsolutions.net)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jgny5-0002Yj-5c
+ for linux-um@lists.infradead.org; Thu, 04 Jun 2020 11:23:30 +0000
+Received: by sipsolutions.net with esmtpsa
+ (TLS1.3:ECDHE_X25519__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
+ (Exim 4.93) (envelope-from <johannes@sipsolutions.net>)
+ id 1jgny0-009HpX-2U; Thu, 04 Jun 2020 13:23:24 +0200
+From: Johannes Berg <johannes@sipsolutions.net>
+To: linux-um@lists.infradead.org
+Subject: [PATCH] um: change sigio_spinlock to a mutex
+Date: Thu,  4 Jun 2020 13:23:17 +0200
+Message-Id: <20200604132317.75a2f85a7e52.Ifa9c62fa63625d4685383003e6a5d6c27d7b4e45@changeid>
+X-Mailer: git-send-email 2.26.2
 MIME-Version: 1.0
-To: <linux-um@lists.infradead.org>
-Subject: Fwd: How to avoid a lot of './arch/um/include/uapi: No such file
- or directory' warnings
-X-Originating-IP: [10.167.220.69]
-X-ClientProxiedBy: G08CNEXCHPEKD05.g08.fujitsu.local (10.167.33.203) To
- G08CNEXMBPEKD06.g08.fujitsu.local (10.167.33.206)
-X-yoursite-MailScanner-ID: 05E134BCC8A5.AD3DA
-X-yoursite-MailScanner: Found to be clean
-X-yoursite-MailScanner-From: yangx.jy@cn.fujitsu.com
-X-Spam-Status: No
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200602_022824_217872_C75D90B5 
-X-CRM114-Status: UNSURE (   6.62  )
+X-CRM114-CacheID: sfid-20200604_042329_207319_A61512F7 
+X-CRM114-Status: UNSURE (   8.56  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [183.91.158.132 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.4 KHOP_HELO_FCRDNS       Relay HELO differs from its IP's reverse DNS
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,55 +58,83 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="gb2312"
-Content-Transfer-Encoding: base64
+Cc: Johannes Berg <johannes.berg@intel.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-Q2M6IGxpbnV4LXVtQGxpc3RzLmluZnJhZGVhZC5vcmcKCkhpLAoKSSBnb3QgYSBsb3Qgb2YgJy4v
-YXJjaC91bS9pbmNsdWRlL3VhcGk6IE5vIHN1Y2ggZmlsZSBvciBkaXJlY3RvcnknCndhcm5pbmdz
-IHdoZW4gYnVpbGRpbmcga2VybmVsIHdpdGggdW0gYXJjaDoKLS0tLS0tLS0tLS0tLS0tLS0tLS0t
-LS0tLS0tLS0tLS0tLS0tLS0tLS0tLQpyb290QHVidW50dTE4On4vbGludXgtbmV4dCMgbWFrZSBX
-PTEgQVJDSD11bSBhbGxtb2Rjb25maWcKLi4uCnJvb3RAdWJ1bnR1MTg6fi9saW51eC1uZXh0IyBt
-YWtlIFc9MSBBUkNIPXVtIHByZXBhcmUKLi4uCiAgVVBEICAgICBpbmNsdWRlL2dlbmVyYXRlZC9h
-c20tb2Zmc2V0cy5oCiAgQ0FMTCAgICBzY3JpcHRzL2NoZWNrc3lzY2FsbHMuc2gKY2MxOiB3YXJu
-aW5nOiAuL2FyY2gvdW0vaW5jbHVkZS91YXBpOiBObyBzdWNoIGZpbGUgb3IgZGlyZWN0b3J5Clst
-V21pc3NpbmctaW5jbHVkZS1kaXJzXQogIENBTEwgICAgc2NyaXB0cy9hdG9taWMvY2hlY2stYXRv
-bWljcy5zaAouLi4Kcm9vdEB1YnVudHUxODp+L2xpbnV4LW5leHQjIG1ha2UgVz0xIEFSQ0g9dW0g
-bW9kdWxlc19wcmVwYXJlCi4uLgogIENDICAgICAgc2NyaXB0cy9tb2QvZW1wdHkubwpjYzE6IHdh
-cm5pbmc6IC4vYXJjaC91bS9pbmNsdWRlL3VhcGk6IE5vIHN1Y2ggZmlsZSBvciBkaXJlY3RvcnkK
-Wy1XbWlzc2luZy1pbmNsdWRlLWRpcnNdCiAgTUtFTEYgICBzY3JpcHRzL21vZC9lbGZjb25maWcu
-aAogIEhPU1RDQyAgc2NyaXB0cy9tb2QvbW9kcG9zdC5vCiAgQ0MgICAgICBzY3JpcHRzL21vZC9k
-ZXZpY2V0YWJsZS1vZmZzZXRzLnMKY2MxOiB3YXJuaW5nOiAuL2FyY2gvdW0vaW5jbHVkZS91YXBp
-OiBObyBzdWNoIGZpbGUgb3IgZGlyZWN0b3J5ClstV21pc3NpbmctaW5jbHVkZS1kaXJzXQogIEhP
-U1RDQyAgc2NyaXB0cy9tb2QvZmlsZTJhbGlhcy5vCiAgSE9TVENDICBzY3JpcHRzL21vZC9zdW12
-ZXJzaW9uLm8KICBIT1NUTEQgIHNjcmlwdHMvbW9kL21vZHBvc3QKICBDQyAgICAgIGtlcm5lbC9i
-b3VuZHMucwpjYzE6IHdhcm5pbmc6IC4vYXJjaC91bS9pbmNsdWRlL3VhcGk6IE5vIHN1Y2ggZmls
-ZSBvciBkaXJlY3RvcnkKWy1XbWlzc2luZy1pbmNsdWRlLWRpcnNdCiAgQ0MgICAgICBhcmNoL3Vt
-L2tlcm5lbC9hc20tb2Zmc2V0cy5zCmNjMTogd2FybmluZzogLi9hcmNoL3VtL2luY2x1ZGUvdWFw
-aTogTm8gc3VjaCBmaWxlIG9yIGRpcmVjdG9yeQpbLVdtaXNzaW5nLWluY2x1ZGUtZGlyc10KSW4g
-ZmlsZSBpbmNsdWRlZCBmcm9tIC4vaW5jbHVkZS9saW51eC91YWNjZXNzLmg6MTE6MCwKICAgICAg
-ICAgICAgICAgICBmcm9tIC4vaW5jbHVkZS9saW51eC9jcnlwdG8uaDoyMSwKICAgICAgICAgICAg
-ICAgICBmcm9tIC4vYXJjaC94ODYvdW0vc2hhcmVkL3N5c2RlcC9rZXJuZWwtb2Zmc2V0cy5oOjUs
-CiAgICAgICAgICAgICAgICAgZnJvbSBhcmNoL3VtL2tlcm5lbC9hc20tb2Zmc2V0cy5jOjE6Ci4v
-YXJjaC91bS9pbmNsdWRlL2FzbS91YWNjZXNzLmg6IEluIGZ1bmN0aW9uIKGuX19hY2Nlc3Nfb2uh
-rzoKLi9hcmNoL3VtL2luY2x1ZGUvYXNtL3VhY2Nlc3MuaDoxNzoyOTogd2FybmluZzogY29tcGFy
-aXNvbiBvZiB1bnNpZ25lZApleHByZXNzaW9uID49IDAgaXMgYWx3YXlzIHRydWUgWy1XdHlwZS1s
-aW1pdHNdCiAgICAoKCh1bnNpZ25lZCBsb25nKSAoYWRkcikgPj0gRklYQUREUl9VU0VSX1NUQVJU
-KSAmJiBcCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXgouL2FyY2gvdW0vaW5jbHVkZS9h
-c20vdWFjY2Vzcy5oOjQ1OjM6IG5vdGU6IGluIGV4cGFuc2lvbiBvZiBtYWNybwqhrl9fYWNjZXNz
-X29rX3ZzeXNjYWxsoa8KICAgX19hY2Nlc3Nfb2tfdnN5c2NhbGwoYWRkciwgc2l6ZSkgfHwKICAg
-Xn5+fn5+fn5+fn5+fn5+fn5+fn4KSW4gZmlsZSBpbmNsdWRlZCBmcm9tIGFyY2gvdW0va2VybmVs
-L2FzbS1vZmZzZXRzLmM6MTowOgouL2FyY2gveDg2L3VtL3NoYXJlZC9zeXNkZXAva2VybmVsLW9m
-ZnNldHMuaDogQXQgdG9wIGxldmVsOgouL2FyY2gveDg2L3VtL3NoYXJlZC9zeXNkZXAva2VybmVs
-LW9mZnNldHMuaDo5OjY6IHdhcm5pbmc6IG5vIHByZXZpb3VzCnByb3RvdHlwZSBmb3Igoa5mb2+h
-ryBbLVdtaXNzaW5nLXByb3RvdHlwZXNdCiB2b2lkIGZvbyh2b2lkKQogICAgICBefn4KICBDQUxM
-ICAgIHNjcmlwdHMvY2hlY2tzeXNjYWxscy5zaApjYzE6IHdhcm5pbmc6IC4vYXJjaC91bS9pbmNs
-dWRlL3VhcGk6IE5vIHN1Y2ggZmlsZSBvciBkaXJlY3RvcnkKWy1XbWlzc2luZy1pbmNsdWRlLWRp
-cnNdCi4uLgpyb290QHVidW50dTE4On4vbGludXgtbmV4dCMgbWFrZSBXPTEgQVJDSD11bQouLi4K
-LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQoKSXMgdGhlcmUgYW55
-IHdheSB0byBhdm9pZCB0aGUgc2FtZSB3YXJuaW5ncz8gU29ycnksIEkgYW0gbm90IGZhbWlsaWFy
-CndpdGggdGhlIGtidWlsZCBvZiB1bSBhcmNoLgoKQmVzdCBSZWdhcmRzLApYaWFvIFlhbmcKCgoK
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtdW0g
-bWFpbGluZyBsaXN0CmxpbnV4LXVtQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmlu
-ZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC11bQo=
+From: Johannes Berg <johannes.berg@intel.com>
+
+Lockdep complains at boot:
+
+=============================
+[ BUG: Invalid wait context ]
+5.7.0-05093-g46d91ecd597b #98 Not tainted
+-----------------------------
+swapper/1 is trying to lock:
+0000000060931b98 (&desc[i].request_mutex){+.+.}-{3:3}, at: __setup_irq+0x11d/0x623
+other info that might help us debug this:
+context-{4:4}
+1 lock held by swapper/1:
+ #0: 000000006074fed8 (sigio_spinlock){+.+.}-{2:2}, at: sigio_lock+0x1a/0x1c
+stack backtrace:
+CPU: 0 PID: 1 Comm: swapper Not tainted 5.7.0-05093-g46d91ecd597b #98
+Stack:
+ 7fa4fab0 6028dfd1 0000002a 6008bea5
+ 7fa50700 7fa50040 7fa4fac0 6028e016
+ 7fa4fb50 6007f6da 60959c18 00000000
+Call Trace:
+ [<60023a0e>] show_stack+0x13b/0x155
+ [<6028e016>] dump_stack+0x2a/0x2c
+ [<6007f6da>] __lock_acquire+0x515/0x15f2
+ [<6007eb50>] lock_acquire+0x245/0x273
+ [<6050d9f1>] __mutex_lock+0xbd/0x325
+ [<6050dc76>] mutex_lock_nested+0x1d/0x1f
+ [<6008e27e>] __setup_irq+0x11d/0x623
+ [<6008e8ed>] request_threaded_irq+0x169/0x1a6
+ [<60021eb0>] um_request_irq+0x1ee/0x24b
+ [<600234ee>] write_sigio_irq+0x3b/0x76
+ [<600383ca>] sigio_broken+0x146/0x2e4
+ [<60020bd8>] do_one_initcall+0xde/0x281
+
+Because we hold sigio_spinlock and then get into requesting
+an interrupt with a mutex.
+
+Change the spinlock to a mutex to avoid that.
+
+Signed-off-by: Johannes Berg <johannes.berg@intel.com>
+---
+ arch/um/kernel/sigio.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/arch/um/kernel/sigio.c b/arch/um/kernel/sigio.c
+index 10c99e058fca..d1cffc2a7f21 100644
+--- a/arch/um/kernel/sigio.c
++++ b/arch/um/kernel/sigio.c
+@@ -35,14 +35,14 @@ int write_sigio_irq(int fd)
+ }
+ 
+ /* These are called from os-Linux/sigio.c to protect its pollfds arrays. */
+-static DEFINE_SPINLOCK(sigio_spinlock);
++static DEFINE_MUTEX(sigio_mutex);
+ 
+ void sigio_lock(void)
+ {
+-	spin_lock(&sigio_spinlock);
++	mutex_lock(&sigio_mutex);
+ }
+ 
+ void sigio_unlock(void)
+ {
+-	spin_unlock(&sigio_spinlock);
++	mutex_unlock(&sigio_mutex);
+ }
+-- 
+2.26.2
+
+
+_______________________________________________
+linux-um mailing list
+linux-um@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-um
