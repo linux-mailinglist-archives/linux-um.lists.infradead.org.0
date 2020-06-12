@@ -2,91 +2,90 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 96FFF1F78DE
-	for <lists+linux-um@lfdr.de>; Fri, 12 Jun 2020 15:46:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 68F341F7D73
+	for <lists+linux-um@lfdr.de>; Fri, 12 Jun 2020 21:20:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:
 	In-Reply-To:Date:References:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=r50l1E+kNNw1fhXEQObw6Wi98pR1gdHQAwBXsmelkKQ=; b=WzAkaAJp/sgBJ2
-	Rx7+naATqZYhbx8PHQotn4sZ00PMTaysdYiBK1KDwk5s1nFVYhm5HaJAYwNMpKpcq5+6AHLiZyOf9
-	dtdA8RD5XrNinplK5ytfunYIuHITP1Lt8QAVIx90dgrastPb+yPKf713uGL96ZoCS6WqtR3Q9Iajh
-	ZESALGLyFuumusggNc53wS3Y+6gNHL0rwWyNcA4oiP9xfyr1Mb9vt1xao/OpMf5t3Pzq5AdWZtFA3
-	WGyLC8bJFvPtdOoHeykIvQPAHpNRkdQaky20rnsn5Cr+QZ6GAidLHReZe2achkXdFM+i9pi44XCfr
-	kXcV6s2uJsxDZtU7CVmw==;
+	List-Owner; bh=syPmDLPqXY4n6s4b0SchyuJfCJZCIEMj3nqSyqZAXHI=; b=ILTBh4XCD2x1D4
+	Kd8y2jRgTd/uMqFN+mL8l1PDNRDowt9w2vvuzEiSzAiW5jdoz3vzZPcikNF3AaReoS3e6bbBGTSNa
+	WrsYz24fmdO068jvgjNEZt05TYLyzuPMuSVKelDi5QpRxqGJVghRJS/ZKIj5TtYdL4xQLD52LpgI6
+	SX/+JDYPQdVSzmGQl2YokRrXWDk11YlpT0RtTyNpMCPGBGkMwJIwdp2Eh4jaewe+/7nn+0jd7NAKA
+	2rrB+Xnr2c/TBHmeF82NCdfCLs1NcDmhbd5N3nrgBbp8IHLt33qMZdDnVlvxyHogt93UcLHmt7H/P
+	zId6uoQ1lp+UNUJfYx4A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjk10-0007U7-3b; Fri, 12 Jun 2020 13:46:38 +0000
+	id 1jjpE1-00074H-2s; Fri, 12 Jun 2020 19:20:25 +0000
 Received: from out02.mta.xmission.com ([166.70.13.232])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjk0w-0007Sy-4V
- for linux-um@lists.infradead.org; Fri, 12 Jun 2020 13:46:36 +0000
-Received: from in01.mta.xmission.com ([166.70.13.51])
+ id 1jjpDx-00073e-Sv
+ for linux-um@lists.infradead.org; Fri, 12 Jun 2020 19:20:23 +0000
+Received: from in02.mta.xmission.com ([166.70.13.52])
  by out02.mta.xmission.com with esmtps
  (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.90_1)
  (envelope-from <ebiederm@xmission.com>)
- id 1jjk0O-0007fD-33; Fri, 12 Jun 2020 07:46:00 -0600
+ id 1jjpDl-0004PN-Dk; Fri, 12 Jun 2020 13:20:09 -0600
 Received: from ip68-227-160-95.om.om.cox.net ([68.227.160.95]
- helo=x220.xmission.com) by in01.mta.xmission.com with esmtpsa
+ helo=x220.xmission.com) by in02.mta.xmission.com with esmtpsa
  (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.87)
  (envelope-from <ebiederm@xmission.com>)
- id 1jjk0L-0004fP-TX; Fri, 12 Jun 2020 07:45:59 -0600
+ id 1jjpDd-0006RR-MZ; Fri, 12 Jun 2020 13:20:09 -0600
 From: ebiederm@xmission.com (Eric W. Biederman)
 To: syzbot <syzbot+7d2debdcdb3cb93c1e5e@syzkaller.appspotmail.com>
 References: <000000000000d788c905a7dfa3f4@google.com>
-Date: Fri, 12 Jun 2020 08:41:47 -0500
+Date: Fri, 12 Jun 2020 14:15:51 -0500
 In-Reply-To: <000000000000d788c905a7dfa3f4@google.com> (syzbot's message of
  "Fri, 12 Jun 2020 02:24:11 -0700")
-Message-ID: <87sgf0pfj8.fsf@x220.int.ebiederm.org>
+Message-ID: <87mu58p02g.fsf@x220.int.ebiederm.org>
 User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1 (gnu/linux)
 MIME-Version: 1.0
-X-XM-SPF: eid=1jjk0L-0004fP-TX; ; ; mid=<87sgf0pfj8.fsf@x220.int.ebiederm.org>;
- ; ; hst=in01.mta.xmission.com; ; ; ip=68.227.160.95; ; ;
+X-XM-SPF: eid=1jjpDd-0006RR-MZ; ; ; mid=<87mu58p02g.fsf@x220.int.ebiederm.org>;
+ ; ; hst=in02.mta.xmission.com; ; ; ip=68.227.160.95; ; ;
  frm=ebiederm@xmission.com; ; ; spf=neutral
-X-XM-AID: U2FsdGVkX1+0CvU5+l3YqM/V9aMzCZld73bktWH3TsA=
+X-XM-AID: U2FsdGVkX19vy/8HlHfqiCxlfZY83od+GSsaBZEU8Is=
 X-SA-Exim-Connect-IP: 68.227.160.95
 X-SA-Exim-Mail-From: ebiederm@xmission.com
-X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on sa06.xmission.com
-X-Spam-Level: ******
-X-Spam-Status: No, score=6.1 required=8.0 tests=ALL_TRUSTED,BAYES_50,
- DCC_CHECK_NEGATIVE,FVGT_m_MULTI_ODD,LotsOfNums_01,SORTED_RECIPS,
- T_TM2_M_HEADER_IN_MSG,XMGappySubj_01,XMGappySubj_02,XMSubLong
- autolearn=disabled version=3.4.2
+X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on sa01.xmission.com
+X-Spam-Level: ***
+X-Spam-Status: No, score=3.5 required=8.0 tests=ALL_TRUSTED,BAYES_50,
+ DCC_CHECK_NEGATIVE,LotsOfNums_01,NO_DNS_FOR_FROM,SORTED_RECIPS,
+ T_TM2_M_HEADER_IN_MSG autolearn=disabled version=3.4.2
+X-Spam-Virus: No
 X-Spam-Report: * -1.0 ALL_TRUSTED Passed through trusted hosts only via SMTP
  *  0.8 BAYES_50 BODY: Bayes spam probability is 40 to 60%
- *      [score: 0.5000] *  0.5 XMGappySubj_01 Very gappy subject
- *  1.0 XMGappySubj_02 Gappier still
- *  0.7 XMSubLong Long Subject
+ *      [score: 0.4825]
  *  2.5 SORTED_RECIPS Recipient list is sorted by address
- *  1.2 LotsOfNums_01 BODY: Lots of long strings of numbers
  *  0.0 T_TM2_M_HEADER_IN_MSG BODY: No description available.
+ *  1.2 LotsOfNums_01 BODY: Lots of long strings of numbers
  * -0.0 DCC_CHECK_NEGATIVE Not listed in DCC
- *      [sa06 0; Body=1 Fuz1=1 Fuz2=1]
- *  0.4 FVGT_m_MULTI_ODD Contains multiple odd letter combinations
-X-Spam-DCC: ; sa06 0; Body=1 Fuz1=1 Fuz2=1 
-X-Spam-Combo: ******;syzbot
+ *      [sa01 0; Body=1 Fuz1=1 Fuz2=1]
+ *  0.0 NO_DNS_FOR_FROM DNS: Envelope sender has no MX or A DNS records
+X-Spam-DCC: ; sa01 0; Body=1 Fuz1=1 Fuz2=1 
+X-Spam-Combo: ***;syzbot
  <syzbot+7d2debdcdb3cb93c1e5e@syzkaller.appspotmail.com>
 X-Spam-Relay-Country: 
-X-Spam-Timing: total 1362 ms - load_scoreonly_sql: 0.07 (0.0%),
- signal_user_changed: 12 (0.9%), b_tie_ro: 10 (0.8%), parse: 1.54
- (0.1%), extract_message_metadata: 27 (2.0%), get_uri_detail_list: 7
- (0.5%), tests_pri_-1000: 29 (2.2%), tests_pri_-950: 1.32 (0.1%),
- tests_pri_-900: 1.06 (0.1%), tests_pri_-90: 112 (8.2%), check_bayes:
- 110 (8.1%), b_tokenize: 20 (1.5%), b_tok_get_all: 16 (1.2%),
- b_comp_prob: 4.7 (0.3%), b_tok_touch_all: 64 (4.7%), b_finish: 0.87
- (0.1%), tests_pri_0: 1165 (85.6%), check_dkim_signature: 0.62 (0.0%),
- check_dkim_adsp: 3.1 (0.2%), poll_dns_idle: 0.49 (0.0%), tests_pri_10:
- 2.1 (0.2%), tests_pri_500: 7 (0.5%), rewrite_mail: 0.00 (0.0%)
-Subject: Re: KASAN: use-after-free Write in
- fsnotify_detach_connector_from_object
+X-Spam-Timing: total 7251 ms - load_scoreonly_sql: 0.03 (0.0%),
+ signal_user_changed: 3.9 (0.1%), b_tie_ro: 2.8 (0.0%), parse: 0.68
+ (0.0%), extract_message_metadata: 12 (0.2%), get_uri_detail_list: 1.77
+ (0.0%), tests_pri_-1000: 2.7 (0.0%), tests_pri_-950: 0.97 (0.0%),
+ tests_pri_-900: 0.84 (0.0%), tests_pri_-90: 139 (1.9%), check_bayes:
+ 138 (1.9%), b_tokenize: 8 (0.1%), b_tok_get_all: 8 (0.1%),
+ b_comp_prob: 1.97 (0.0%), b_tok_touch_all: 117 (1.6%), b_finish: 0.72
+ (0.0%), tests_pri_0: 6340 (87.4%), check_dkim_signature: 0.39 (0.0%),
+ check_dkim_adsp: 6008 (82.9%), poll_dns_idle: 6742 (93.0%),
+ tests_pri_10: 2.6 (0.0%), tests_pri_500: 746 (10.3%), rewrite_mail:
+ 0.00 (0.0%)
+Subject: [PATCH] proc: Use new_inode not new_inode_pseudo
 X-Spam-Flag: No
 X-SA-Exim-Version: 4.2.1 (built Thu, 05 May 2016 13:38:54 -0600)
-X-SA-Exim-Scanned: Yes (on in01.mta.xmission.com)
+X-SA-Exim-Scanned: Yes (on in02.mta.xmission.com)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200612_064634_226390_508FDE82 
-X-CRM114-Status: GOOD (  14.53  )
+X-CRM114-CacheID: sfid-20200612_122021_933780_EEF42398 
+X-CRM114-Status: UNSURE (   9.98  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 1.8 (+)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (1.8 points)
@@ -124,178 +123,88 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-syzbot <syzbot+7d2debdcdb3cb93c1e5e@syzkaller.appspotmail.com> writes:
 
-> Hello,
->
-> syzbot found the following crash on:
->
-> HEAD commit:    7ae77150 Merge tag 'powerpc-5.8-1' of git://git.kernel.org..
-> git tree:       upstream
-> console output: https://syzkaller.appspot.com/x/log.txt?x=120b26c1100000
-> kernel config:  https://syzkaller.appspot.com/x/.config?x=d195fe572fb15312
-> dashboard link: https://syzkaller.appspot.com/bug?extid=7d2debdcdb3cb93c1e5e
-> compiler:       gcc (GCC) 9.0.0 20181231 (experimental)
-> syz repro:      https://syzkaller.appspot.com/x/repro.syz?x=1724b246100000
-> C reproducer:   https://syzkaller.appspot.com/x/repro.c?x=14ceb3de100000
->
-> The bug was bisected to:
+Recently syzbot reported that unmounting proc when there is an ongoing
+inotify watch on the root directory of proc could result in a use
+after free when the watch is removed after the unmount of proc
+when the watcher exits.
 
-That bisection can not be correct.  The commit only added code, and the
-code that was added is not in any of the call traces.  Further
-the failure on the final commit was different than the other commits
-in your bisection.
+Commit 69879c01a0c3 ("proc: Remove the now unnecessary internal mount
+of proc") made it easier to unmount proc and allowed syzbot to see the
+problem, but looking at the code it has been around for a long time.
 
-I will believe commit 69879c01a0c3f70e0887cfb4d9ff439814361e46 ("proc:
-Remove the now unnecessary internal mount of proc") is the point at
-which things start failing for your reproducer.  That is the change
-that makes it possible to actually unmount proc, and for it's super
-block to be freed.
+Looking at the code the fsnotify watch should have been removed by
+fsnotify_sb_delete in generic_shutdown_super.  Unfortunately the inode
+was allocated with new_inode_pseudo instead of new_inode so the inode
+was not on the sb->s_inodes list.  Which prevented
+fsnotify_unmount_inodes from finding the inode and removing the watch
+as well as made it so the "VFS: Busy inodes after unmount" warning
+could not find the inodes to warn about them.
 
-Now I don't know why fsnotify is holding on after a filesystem has been
-unmounted.  At first glance this looks like a bug in inotify.
+Make all of the inodes in proc visible to generic_shutdown_super,
+and fsnotify_sb_delete by using new_inode instead of new_inode_pseudo.
+The only functional difference is that new_inode places the inodes
+on the sb->s_inodes list.
 
-It looks like your reproducer is doing:
+I wrote a small test program and I can verify that without changes it
+can trigger this issue, and by replacing new_inode_pseudo with
+new_inode the issues goes away.
 
-	mkdir ./file
-        mount -t proc ./file
-        inotify_init()
-        inotify_add_watch(./file, ...);
-        umount(./file)
-        ...
-        exit(0);
-        <kaboom>
+Cc: stable@vger.kernel.org
+Link: https://lkml.kernel.org/r/000000000000d788c905a7dfa3f4@google.com
+Reported-by: syzbot+7d2debdcdb3cb93c1e5e@syzkaller.appspotmail.com
+Fixes: 0097875bd415 ("proc: Implement /proc/thread-self to point at the directory of the current thread")
+Fixes: 021ada7dff22 ("procfs: switch /proc/self away from proc_dir_entry")
+Fixes: 51f0885e5415 ("vfs,proc: guarantee unique inodes in /proc")
+Signed-off-by: "Eric W. Biederman" <ebiederm@xmission.com>
+---
+ fs/proc/inode.c       | 2 +-
+ fs/proc/self.c        | 2 +-
+ fs/proc/thread_self.c | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
 
-Then after the exit inotify is falling over because the filesystem has
-already been unmounted.
+diff --git a/fs/proc/inode.c b/fs/proc/inode.c
+index f40c2532c057..28d6105e908e 100644
+--- a/fs/proc/inode.c
++++ b/fs/proc/inode.c
+@@ -617,7 +617,7 @@ const struct inode_operations proc_link_inode_operations = {
+ 
+ struct inode *proc_get_inode(struct super_block *sb, struct proc_dir_entry *de)
+ {
+-	struct inode *inode = new_inode_pseudo(sb);
++	struct inode *inode = new_inode(sb);
+ 
+ 	if (inode) {
+ 		inode->i_ino = de->low_ino;
+diff --git a/fs/proc/self.c b/fs/proc/self.c
+index ca5158fa561c..72cd69bcaf4a 100644
+--- a/fs/proc/self.c
++++ b/fs/proc/self.c
+@@ -43,7 +43,7 @@ int proc_setup_self(struct super_block *s)
+ 	inode_lock(root_inode);
+ 	self = d_alloc_name(s->s_root, "self");
+ 	if (self) {
+-		struct inode *inode = new_inode_pseudo(s);
++		struct inode *inode = new_inode(s);
+ 		if (inode) {
+ 			inode->i_ino = self_inum;
+ 			inode->i_mtime = inode->i_atime = inode->i_ctime = current_time(inode);
+diff --git a/fs/proc/thread_self.c b/fs/proc/thread_self.c
+index ac284f409568..a553273fbd41 100644
+--- a/fs/proc/thread_self.c
++++ b/fs/proc/thread_self.c
+@@ -43,7 +43,7 @@ int proc_setup_thread_self(struct super_block *s)
+ 	inode_lock(root_inode);
+ 	thread_self = d_alloc_name(s->s_root, "thread-self");
+ 	if (thread_self) {
+-		struct inode *inode = new_inode_pseudo(s);
++		struct inode *inode = new_inode(s);
+ 		if (inode) {
+ 			inode->i_ino = thread_self_inum;
+ 			inode->i_mtime = inode->i_atime = inode->i_ctime = current_time(inode);
+-- 
+2.20.1
 
-Can anyone who is more familiar with inotify/fsnotify give a clue why
-the unmount of the filesystem is not clearing the watch?
-
-Is it a generic bug or is there something proc is not doing?
-
-Eric
-
-
-> commit 76313c70c52f930af4afd21684509ca52297ea71
-> Author: Eric W. Biederman <ebiederm@xmission.com>
-> Date:   Wed Feb 19 16:37:15 2020 +0000
->
->     uml: Create a private mount of proc for mconsole
->
-> bisection log:  https://syzkaller.appspot.com/x/bisect.txt?x=117c4912100000
-> final crash:    https://syzkaller.appspot.com/x/report.txt?x=137c4912100000
-> console output: https://syzkaller.appspot.com/x/log.txt?x=157c4912100000
->
-> IMPORTANT: if you fix the bug, please add the following tag to the commit:
-> Reported-by: syzbot+7d2debdcdb3cb93c1e5e@syzkaller.appspotmail.com
-> Fixes: 76313c70c52f ("uml: Create a private mount of proc for mconsole")
->
-> ==================================================================
-> BUG: KASAN: use-after-free in atomic64_inc include/asm-generic/atomic-instrumented.h:1049 [inline]
-> BUG: KASAN: use-after-free in atomic_long_inc include/asm-generic/atomic-long.h:160 [inline]
-> BUG: KASAN: use-after-free in fsnotify_detach_connector_from_object+0x25e/0x380 fs/notify/mark.c:185
-> Write of size 8 at addr ffff88809fd7e7c0 by task syz-executor972/8021
->
-> CPU: 1 PID: 8021 Comm: syz-executor972 Not tainted 5.7.0-syzkaller #0
-> Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 01/01/2011
-> Call Trace:
->  __dump_stack lib/dump_stack.c:77 [inline]
->  dump_stack+0x188/0x20d lib/dump_stack.c:118
->  print_address_description.constprop.0.cold+0xd3/0x413 mm/kasan/report.c:383
->  __kasan_report mm/kasan/report.c:513 [inline]
->  kasan_report.cold+0x1f/0x37 mm/kasan/report.c:530
->  check_memory_region_inline mm/kasan/generic.c:186 [inline]
->  check_memory_region+0x141/0x190 mm/kasan/generic.c:192
->  atomic64_inc include/asm-generic/atomic-instrumented.h:1049 [inline]
->  atomic_long_inc include/asm-generic/atomic-long.h:160 [inline]
->  fsnotify_detach_connector_from_object+0x25e/0x380 fs/notify/mark.c:185
->  fsnotify_put_mark+0x367/0x580 fs/notify/mark.c:250
->  fsnotify_clear_marks_by_group+0x33f/0x490 fs/notify/mark.c:764
->  fsnotify_destroy_group+0xc9/0x300 fs/notify/group.c:61
->  inotify_release+0x33/0x40 fs/notify/inotify/inotify_user.c:271
->  __fput+0x33e/0x880 fs/file_table.c:281
->  task_work_run+0xf4/0x1b0 kernel/task_work.c:123
->  exit_task_work include/linux/task_work.h:22 [inline]
->  do_exit+0xb3f/0x2de0 kernel/exit.c:806
->  do_group_exit+0x125/0x340 kernel/exit.c:904
->  __do_sys_exit_group kernel/exit.c:915 [inline]
->  __se_sys_exit_group kernel/exit.c:913 [inline]
->  __x64_sys_exit_group+0x3a/0x50 kernel/exit.c:913
->  do_syscall_64+0xf6/0x7d0 arch/x86/entry/common.c:295
->  entry_SYSCALL_64_after_hwframe+0x49/0xb3
-> RIP: 0033:0x445448
-> Code: Bad RIP value.
-> RSP: 002b:00007ffe48521018 EFLAGS: 00000246 ORIG_RAX: 00000000000000e7
-> RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 0000000000445448
-> RDX: 0000000000000000 RSI: 000000000000003c RDI: 0000000000000000
-> RBP: 00000000004cca90 R08: 00000000000000e7 R09: ffffffffffffffd0
-> R10: 00007ffe48521060 R11: 0000000000000246 R12: 0000000000000001
-> R13: 00000000006e0340 R14: 0000000000000007 R15: 000000000000002d
->
-> Allocated by task 8026:
->  save_stack+0x1b/0x40 mm/kasan/common.c:48
->  set_track mm/kasan/common.c:56 [inline]
->  __kasan_kmalloc mm/kasan/common.c:494 [inline]
->  __kasan_kmalloc.constprop.0+0xbf/0xd0 mm/kasan/common.c:467
->  kmem_cache_alloc_trace+0x153/0x7d0 mm/slab.c:3551
->  kmalloc include/linux/slab.h:555 [inline]
->  kzalloc include/linux/slab.h:669 [inline]
->  alloc_super+0x52/0x9d0 fs/super.c:203
->  sget_fc+0x13f/0x790 fs/super.c:530
->  vfs_get_super+0x6d/0x2d0 fs/super.c:1186
->  vfs_get_tree+0x89/0x2f0 fs/super.c:1547
->  do_new_mount fs/namespace.c:2874 [inline]
->  do_mount+0x1306/0x1b40 fs/namespace.c:3199
->  __do_sys_mount fs/namespace.c:3409 [inline]
->  __se_sys_mount fs/namespace.c:3386 [inline]
->  __x64_sys_mount+0x18f/0x230 fs/namespace.c:3386
->  do_syscall_64+0xf6/0x7d0 arch/x86/entry/common.c:295
->  entry_SYSCALL_64_after_hwframe+0x49/0xb3
->
-> Freed by task 23:
->  save_stack+0x1b/0x40 mm/kasan/common.c:48
->  set_track mm/kasan/common.c:56 [inline]
->  kasan_set_free_info mm/kasan/common.c:316 [inline]
->  __kasan_slab_free+0xf7/0x140 mm/kasan/common.c:455
->  __cache_free mm/slab.c:3426 [inline]
->  kfree+0x109/0x2b0 mm/slab.c:3757
->  process_one_work+0x965/0x16a0 kernel/workqueue.c:2268
->  worker_thread+0x96/0xe20 kernel/workqueue.c:2414
->  kthread+0x388/0x470 kernel/kthread.c:268
->  ret_from_fork+0x24/0x30 arch/x86/entry/entry_64.S:351
->
-> The buggy address belongs to the object at ffff88809fd7e000
->  which belongs to the cache kmalloc-4k of size 4096
-> The buggy address is located 1984 bytes inside of
->  4096-byte region [ffff88809fd7e000, ffff88809fd7f000)
-> The buggy address belongs to the page:
-> page:ffffea00027f5f80 refcount:1 mapcount:0 mapping:0000000000000000 index:0x0 head:ffffea00027f5f80 order:1 compound_mapcount:0
-> flags: 0xfffe0000010200(slab|head)
-> raw: 00fffe0000010200 ffffea000247aa88 ffffea000242ef08 ffff8880aa002000
-> raw: 0000000000000000 ffff88809fd7e000 0000000100000001 0000000000000000
-> page dumped because: kasan: bad access detected
->
-> Memory state around the buggy address:
->  ffff88809fd7e680: fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb
->  ffff88809fd7e700: fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb
->>ffff88809fd7e780: fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb
->                                            ^
->  ffff88809fd7e800: fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb
->  ffff88809fd7e880: fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb
-> ==================================================================
->
->
-> ---
-> This bug is generated by a bot. It may contain errors.
-> See https://goo.gl/tpsmEJ for more information about syzbot.
-> syzbot engineers can be reached at syzkaller@googlegroups.com.
->
-> syzbot will keep track of this bug report. See:
-> https://goo.gl/tpsmEJ#status for how to communicate with syzbot.
-> For information about bisection process see: https://goo.gl/tpsmEJ#bisection
-> syzbot can test patches for this bug, for details see:
-> https://goo.gl/tpsmEJ#testing-patches
 
 _______________________________________________
 linux-um mailing list
