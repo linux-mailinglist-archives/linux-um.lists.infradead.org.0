@@ -2,74 +2,57 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 072771F875B
-	for <lists+linux-um@lfdr.de>; Sun, 14 Jun 2020 09:03:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 54CAC1F8CBD
+	for <lists+linux-um@lfdr.de>; Mon, 15 Jun 2020 05:54:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Subject:References:To:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=GVuSV5oBBoyFSwLTZ5mZvb2x3NeXKWVXMzXPjSAPt7E=; b=FVJw8dAr5c0EYma8Zkg34UfrB
-	IYYiMEkH7itHb54I/3qR+jh8P6aTQfzBzhcUXKM4vwpuemI663I+qE3qD64ZUgWiSXa6zubuWDRvY
-	qd/Fd6M6lYA8viw1mUnMSDHOnMYpt0U5QvYTqjoAxEFpv+/UB1MU9VWpIfXfh+bshzJEVHi1W/fFd
-	v6GrW/v7DWLIr3J2bfenF9a/Mu8YXBW1+InrvvEuLX6P+mJi9VLb0HK6MAugpTyJ8rKQTjV+Ilsdx
-	/R6YyrCqE42aba2ri/cJ5/M/B3yzvv+wRxb40OEDIAnfhHQKI5txOOHy1d5iutOiCa2ovgFMQy97U
-	GovDVoahg==;
+	 bh=Xzhc1WPYSpRHWqlcyF6jBxxCzjjrxzFpOhKUbe+E6T8=; b=QafGjfD5RWsTMGzyPZV+ViV6R
+	lYHJujtEOVrbA7tpdU9a9tN/El4DGLaKyeqxOwdPy2WWdf6r95Q0HWU8iRJxPdZa86hpKXM+9mlNW
+	LAzuhv8wjBJVIA4u95VV+uNGQ/eclib6fuFI+En/CRtPb8PgFE59TM70LsalXd3pnhBUikRF6uQ7f
+	SVjmG1hFrNzPvaZnGCwlhsDEg8rnvAUW6m4VEBjW/BRyVrCXr+ej3x6oU0rfwZO4Ke3LN8IDhFwVO
+	MctqiXq/3Y7jhePScfYlVY8j9n1++IyLkdYEQiQUHs3MY7IoGxqMfUE2zTPHOdowgMCIseQ0P/ill
+	gpaWiAPdA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkMgE-00060y-Pq; Sun, 14 Jun 2020 07:03:46 +0000
-Received: from ivanoab7.miniserver.com ([37.128.132.42]
- helo=www.kot-begemot.co.uk)
+	id 1jkgCL-0001YY-8i; Mon, 15 Jun 2020 03:54:13 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkMgA-00060M-UE
- for linux-um@lists.infradead.org; Sun, 14 Jun 2020 07:03:44 +0000
-Received: from tun252.jain.kot-begemot.co.uk ([192.168.18.6]
- helo=jain.kot-begemot.co.uk)
- by www.kot-begemot.co.uk with esmtps (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.92) (envelope-from <anton.ivanov@cambridgegreys.com>)
- id 1jkMI9-0000V4-Ik; Sun, 14 Jun 2020 06:38:53 +0000
-Received: from sleer.kot-begemot.co.uk ([192.168.3.72])
- by jain.kot-begemot.co.uk with esmtps
- (TLS1.3:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
- (envelope-from <anton.ivanov@cambridgegreys.com>)
- id 1jkMI7-0007NR-F6; Sun, 14 Jun 2020 07:38:53 +0100
-Subject: Re: [PATCH] Fix null pointer dereference in vector_user_bpf
-To: Gaurav Singh <gaurav1086@gmail.com>, Jeff Dike <jdike@addtoit.com>,
- Richard Weinberger <richard@nod.at>, Alexei Starovoitov <ast@kernel.org>,
- Daniel Borkmann <daniel@iogearbox.net>, Martin KaFai Lau <kafai@fb.com>,
- Song Liu <songliubraving@fb.com>, Yonghong Song <yhs@fb.com>,
- Andrii Nakryiko <andriin@fb.com>, John Fastabend <john.fastabend@gmail.com>,
- KP Singh <kpsingh@chromium.org>, Alex Dewar <alex.dewar@gmx.co.uk>,
- =?UTF-8?Q?Marc-Andr=c3=a9_Lureau?= <marcandre.lureau@redhat.com>,
- "open list:USER-MODE LINUX (UML)" <linux-um@lists.infradead.org>,
- open list <linux-kernel@vger.kernel.org>,
- "open list:BPF (Safe dynamic programs and tools)" <netdev@vger.kernel.org>,
- "open list:BPF (Safe dynamic programs and tools)" <bpf@vger.kernel.org>
-References: <20200614012001.18468-1-gaurav1086@gmail.com>
-From: Anton Ivanov <anton.ivanov@cambridgegreys.com>
-Organization: Cambridge Greys
-Message-ID: <39158d22-9997-32ef-c599-7e6a98988a38@cambridgegreys.com>
-Date: Sun, 14 Jun 2020 07:38:51 +0100
+ id 1jkgCG-0001VO-PH; Mon, 15 Jun 2020 03:54:10 +0000
+Received: from [10.44.0.192] (unknown [103.48.210.53])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 291D120768;
+ Mon, 15 Jun 2020 03:53:45 +0000 (UTC)
+To: rppt@kernel.org
+References: <20200412194859.12663-5-rppt@kernel.org>
+Subject: Re: [PATCH 04/21] mm: free_area_init: use maximal zone PFNs rather
+ than zone sizes
+From: Greg Ungerer <gerg@linux-m68k.org>
+Message-ID: <f53e68db-ed81-6ef6-5087-c7246d010ea2@linux-m68k.org>
+Date: Mon, 15 Jun 2020 13:53:42 +1000
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.9.0
+ Thunderbird/68.8.0
 MIME-Version: 1.0
-In-Reply-To: <20200614012001.18468-1-gaurav1086@gmail.com>
+In-Reply-To: <20200412194859.12663-5-rppt@kernel.org>
 Content-Language: en-US
-X-Spam-Score: -1.0
-X-Spam-Score: -1.0
-X-Clacks-Overhead: GNU Terry Pratchett
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200614_000342_971030_C9937AB3 
-X-CRM114-Status: GOOD (  15.63  )
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20200614_205408_857711_7A2755E7 
+X-CRM114-Status: GOOD (  15.51  )
+X-Spam-Score: -4.8 (----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (-4.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.3 KHOP_HELO_FCRDNS       Relay HELO differs from its IP's reverse DNS
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,49 +64,167 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
+Cc: dalias@libc.org, linux-ia64@vger.kernel.org, linux-doc@vger.kernel.org,
+ catalin.marinas@arm.com, heiko.carstens@de.ibm.com, x86@kernel.org,
+ linux-mips@vger.kernel.org, James.Bottomley@HansenPartnership.com,
+ jcmvbkbc@gmail.com, guoren@kernel.org, linux-csky@vger.kernel.org,
+ sparclinux@vger.kernel.org, linux-riscv@lists.infradead.org,
+ linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
+ linux-c6x-dev@linux-c6x.org, bcain@codeaurora.org, corbet@lwn.net,
+ mpe@ellerman.id.au, linux-hexagon@vger.kernel.org, deller@gmx.de,
+ linux-sh@vger.kernel.org, linux@armlinux.org.uk, ley.foon.tan@intel.com,
+ rppt@linux.ibm.com, ysato@users.sourceforge.jp, geert@linux-m68k.org,
+ linux-arm-kernel@lists.infradead.org, msalter@redhat.com, mattst88@gmail.com,
+ linux-snps-arc@lists.infradead.org, uclinux-h8-devel@lists.sourceforge.jp,
+ linux-xtensa@linux-xtensa.org, nickhu@andestech.com,
+ linux-um@lists.infradead.org, richard@nod.at, linux-m68k@lists.linux-m68k.org,
+ openrisc@lists.librecores.org, green.hu@gmail.com, paul.walmsley@sifive.com,
+ shorne@gmail.com, mhocko@kernel.org, gxt@pku.edu.cn,
+ Hoan@os.amperecomputing.com, monstr@monstr.eu, tony.luck@intel.com,
+ bhe@redhat.com, linux-parisc@vger.kernel.org, linux-mm@kvack.org,
+ vgupta@synopsys.com, linux-kernel@vger.kernel.org, linux-alpha@vger.kernel.org,
+ akpm@linux-foundation.org, tsbogend@alpha.franken.de,
+ linuxppc-dev@lists.ozlabs.org, davem@davemloft.net
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-On 14/06/2020 02:19, Gaurav Singh wrote:
-> The bpf_prog is being checked for !NULL after uml_kmalloc
-> but later its used directly for example:
-> bpf_prog->filter = bpf and is also later returned upon
-> success. Fix this, do a NULL check and return right away.
-> 
-> Signed-off-by: Gaurav Singh <gaurav1086@gmail.com>
-> ---
->   arch/um/drivers/vector_user.c | 8 +++++---
->   1 file changed, 5 insertions(+), 3 deletions(-)
-> 
-> diff --git a/arch/um/drivers/vector_user.c b/arch/um/drivers/vector_user.c
-> index c4a0f26b2824..0e6d6717bf73 100644
-> --- a/arch/um/drivers/vector_user.c
-> +++ b/arch/um/drivers/vector_user.c
-> @@ -789,10 +789,12 @@ void *uml_vector_user_bpf(char *filename)
->   		return false;
->   	}
->   	bpf_prog = uml_kmalloc(sizeof(struct sock_fprog), UM_GFP_KERNEL);
-> -	if (bpf_prog != NULL) {
-> -		bpf_prog->len = statbuf.st_size / sizeof(struct sock_filter);
-> -		bpf_prog->filter = NULL;
-> +	if (bpf_prog == NULL) {
-> +		printk(KERN_ERR "Failed to allocate bpf prog buffer");
-> +		return NULL;
->   	}
-> +	bpf_prog->len = statbuf.st_size / sizeof(struct sock_filter);
-> +	bpf_prog->filter = NULL;
->   	ffd = os_open_file(filename, of_read(OPENFLAGS()), 0);
->   	if (ffd < 0) {
->   		printk(KERN_ERR "Error %d opening bpf file", -errno);
-> 
+Hi Mike,
 
-Acked-By: Anton Ivanov <anton.ivanov@cambridgegreys.com>
--- 
-Anton R. Ivanov
-Cambridgegreys Limited. Registered in England. Company Number 10273661
-https://www.cambridgegreys.com/
+From: Mike Rapoport <rppt@linux.ibm.com>
+> Currently, architectures that use free_area_init() to initialize memory map
+> and node and zone structures need to calculate zone and hole sizes. We can
+> use free_area_init_nodes() instead and let it detect the zone boundaries
+> while the architectures will only have to supply the possible limits for
+> the zones.
+> 
+> Signed-off-by: Mike Rapoport <rppt@linux.ibm.com>
+
+This is causing some new warnings for me on boot on at least one non-MMU m68k target:
+
+...
+NET: Registered protocol family 17
+BUG: Bad page state in process swapper  pfn:20165
+page:41fe0ca0 refcount:0 mapcount:1 mapping:00000000 index:0x0
+flags: 0x0()
+raw: 00000000 00000100 00000122 00000000 00000000 00000000 00000000 00000000
+page dumped because: nonzero mapcount
+CPU: 0 PID: 1 Comm: swapper Not tainted 5.8.0-rc1-00001-g3a38f8a60c65-dirty #1
+Stack from 404c9ebc:
+         404c9ebc 4029ab28 4029ab28 40088470 41fe0ca0 40299e21 40299df1 404ba2a4
+         00020165 00000000 41fd2c10 402c7ba0 41fd2c04 40088504 41fe0ca0 40299e21
+         00000000 40088a12 41fe0ca0 41fe0ca4 0000020a 00000000 00000001 402ca000
+         00000000 41fe0ca0 41fd2c10 41fd2c10 00000000 00000000 402b2388 00000001
+         400a0934 40091056 404c9f44 404c9f44 40088db4 402c7ba0 00000001 41fd2c04
+         41fe0ca0 41fd2000 41fe0ca0 40089e02 4026ecf4 40089e4e 41fe0ca0 ffffffff
+Call Trace:
+         [<40088470>] 0x40088470
+  [<40088504>] 0x40088504
+  [<40088a12>] 0x40088a12
+  [<402ca000>] 0x402ca000
+  [<400a0934>] 0x400a0934
+
+         [<40091056>] 0x40091056
+  [<40088db4>] 0x40088db4
+  [<40089e02>] 0x40089e02
+  [<4026ecf4>] 0x4026ecf4
+  [<40089e4e>] 0x40089e4e
+
+         [<4008ca26>] 0x4008ca26
+  [<4004adf8>] 0x4004adf8
+  [<402701ec>] 0x402701ec
+  [<4008f25e>] 0x4008f25e
+  [<400516f4>] 0x400516f4
+
+         [<4026eec0>] 0x4026eec0
+  [<400224f0>] 0x400224f0
+  [<402ca000>] 0x402ca000
+  [<4026eeda>] 0x4026eeda
+  [<40020b00>] 0x40020b00
+...
+
+Lots more of them.
+
+...
+BUG: Bad page state in process swapper  pfn:201a0
+page:41fe1400 refcount:0 mapcount:1 mapping:00000000 index:0x0
+flags: 0x0()
+raw: 00000000 00000100 00000122 00000000 00000000 00000000 00000000 00000000
+page dumped because: nonzero mapcount
+CPU: 0 PID: 1 Comm: swapper Tainted: G    B             5.8.0-rc1-00001-g3a38f8a60c65-dirty #1
+Stack from 404c9ebc:
+         404c9ebc 4029ab28 4029ab28 40088470 41fe1400 40299e21 40299df1 404ba2a4
+         000201a0 00000000 41fd2c10 402c7ba0 41fd2c04 40088504 41fe1400 40299e21
+         00000000 40088a12 41fe1400 41fe1404 0000020a 0000003b 00000001 40340000
+         00000000 41fe1400 41fd2c10 41fd2c10 00000000 00000000 41fe13e0 40022826
+         00000044 404c9f44 404c9f44 404c9f44 40088db4 402c7ba0 00000001 41fd2c04
+         41fe1400 41fd2000 41fe1400 40089e02 4026ecf4 40089e4e 41fe1400 ffffffff
+Call Trace:
+         [<40088470>] 0x40088470
+  [<40088504>] 0x40088504
+  [<40088a12>] 0x40088a12
+  [<40022826>] 0x40022826
+  [<40088db4>] 0x40088db4
+
+         [<40089e02>] 0x40089e02
+  [<4026ecf4>] 0x4026ecf4
+  [<40089e4e>] 0x40089e4e
+  [<4008ca26>] 0x4008ca26
+  [<4004adf8>] 0x4004adf8
+
+         [<402701ec>] 0x402701ec
+  [<4008f25e>] 0x4008f25e
+  [<400516f4>] 0x400516f4
+  [<4026eec0>] 0x4026eec0
+  [<400224f0>] 0x400224f0
+
+         [<402ca000>] 0x402ca000
+  [<4026eeda>] 0x4026eeda
+  [<40020b00>] 0x40020b00
+Freeing unused kernel memory: 648K
+This architecture does not have kernel memory protection.
+Run /init as init process
+...
+
+System boots pretty much as normal through user space after this.
+Seems to be fully operational despite all those BUGONs.
+
+Specifically this is a M5208EVB target (arch/m68k/configs/m5208evb).
+
+
+[snip]
+> diff --git a/arch/m68k/mm/init.c b/arch/m68k/mm/init.c
+> index b88d510d4fe3..6d3147662ff2 100644
+> --- a/arch/m68k/mm/init.c
+> +++ b/arch/m68k/mm/init.c
+> @@ -84,7 +84,7 @@ void __init paging_init(void)
+>  	 * page_alloc get different views of the world.
+>  	 */
+>  	unsigned long end_mem = memory_end & PAGE_MASK;
+> -	unsigned long zones_size[MAX_NR_ZONES] = { 0, };
+> +	unsigned long max_zone_pfn[MAX_NR_ZONES] = { 0, };
+>  
+>  	high_memory = (void *) end_mem;
+>  
+> @@ -98,8 +98,8 @@ void __init paging_init(void)
+>  	 */
+>  	set_fs (USER_DS);
+>  
+> -	zones_size[ZONE_DMA] = (end_mem - PAGE_OFFSET) >> PAGE_SHIFT;
+> -	free_area_init(zones_size);
+> +	max_zone_pfn[ZONE_DMA] = end_mem >> PAGE_SHIFT;
+> +	free_area_init(max_zone_pfn);
+
+This worries me a little. On this target PAGE_OFFSET will be non-0.
+
+Thoughts?
+
+Regards
+Greg
+
+
+
 
 _______________________________________________
 linux-um mailing list
