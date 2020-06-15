@@ -2,59 +2,59 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3BB8D1F8F3C
-	for <lists+linux-um@lfdr.de>; Mon, 15 Jun 2020 09:18:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BCDE91F9011
+	for <lists+linux-um@lfdr.de>; Mon, 15 Jun 2020 09:38:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=U4B3fPAL/fiqH2pQfVx5oMviWjzVWKGviBIAmhgH6SQ=; b=SB0eZPp4fRT4Q+RVVAUQW+TZW
-	9B2RN+cNLANWRfKl1JeYewur2d2ojUuWCXMH6EcWYtwOAP3UzygO72DOTjYtIsLtUyPtajgNgpaDZ
-	kYbEl2Xt66yAQo6Vdo8+2Kv2nt0fWAQ8nCmf0kSS65K5U59YIzRbawnxgZlRxgzytD3GLAkA10nRY
-	fs7aHDhy+OQmx3dC/4kfZiewGVKVaNpXixebTiL6MpgXbA8KzAWinyBoCD5wlK040oyxeQBLVdzQh
-	dHOFOIxAvdnSNwqKxEBYAaWb+TebjaeEgtzFM7FEmtNMZQ2DumXLBLk0EYUGWlsvx1DxkKpOqruNQ
-	AGO9/uUjA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=DjbsyCVdRJDX4u2lx0R45AWL/ys+SkgJgsg86zYl6dY=; b=jM+TlQnrjPyDux
+	37kIsbe8XQn7/I1dNq8ecLwJXB1kOowl0AaF0aRWpK0RZw97lra9LpbRkelaRVF9LI5I/Fg+MSfMJ
+	uN4zzww8jWgNmy+fF3crlmm9mk9WPGIVH400jITYuiTzwNvEoIi8wZenXfQJqjh9vs12FaJBEandL
+	FexoqP73JJ7DMlUjFMjmEOJcpct7cK5FH3xAJni5WZYDGmHqGoxt4An8DgHMxtZSuqeDdPwAdwSIC
+	lZYAMGtWc8QCosKoXjz8ZXme0CaZ3Fw2zLo7BtrWFlSy42Z8/Vi7+e4vO/lMz0gU/1w54vkGTUsYK
+	Lhe9E16kD7OW2wSXNsoA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkjNY-0000YJ-O0; Mon, 15 Jun 2020 07:18:00 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jkjhc-0007mL-U3; Mon, 15 Jun 2020 07:38:44 +0000
+Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkjNQ-0000Tw-Nu; Mon, 15 Jun 2020 07:17:54 +0000
-Received: from [10.44.0.192] (unknown [103.48.210.53])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id DFCCF206D7;
- Mon, 15 Jun 2020 07:17:31 +0000 (UTC)
-Subject: Re: [PATCH 04/21] mm: free_area_init: use maximal zone PFNs rather
- than zone sizes
-To: Mike Rapoport <rppt@kernel.org>
-References: <20200412194859.12663-5-rppt@kernel.org>
- <f53e68db-ed81-6ef6-5087-c7246d010ea2@linux-m68k.org>
- <20200615062234.GA7882@kernel.org>
-From: Greg Ungerer <gerg@linux-m68k.org>
-Message-ID: <24563231-ed19-6f4f-617e-4d6bfc7553e4@linux-m68k.org>
-Date: Mon, 15 Jun 2020 17:17:28 +1000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.8.0
+ id 1jkjha-0007lG-0a
+ for linux-um@lists.infradead.org; Mon, 15 Jun 2020 07:38:43 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx2.suse.de (Postfix) with ESMTP id C138FAE39;
+ Mon, 15 Jun 2020 07:38:42 +0000 (UTC)
+Received: by quack2.suse.cz (Postfix, from userid 1000)
+ id E64861E1289; Mon, 15 Jun 2020 09:38:36 +0200 (CEST)
+Date: Mon, 15 Jun 2020 09:38:36 +0200
+From: Jan Kara <jack@suse.cz>
+To: "Eric W. Biederman" <ebiederm@xmission.com>
+Subject: Re: [PATCH] proc: Use new_inode not new_inode_pseudo
+Message-ID: <20200615073836.GD9449@quack2.suse.cz>
+References: <000000000000d788c905a7dfa3f4@google.com>
+ <87mu58p02g.fsf@x220.int.ebiederm.org>
 MIME-Version: 1.0
-In-Reply-To: <20200615062234.GA7882@kernel.org>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <87mu58p02g.fsf@x220.int.ebiederm.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_001752_829019_68DD8F4F 
-X-CRM114-Status: GOOD (  21.53  )
-X-Spam-Score: -4.8 (----)
+X-CRM114-CacheID: sfid-20200615_003842_349462_F946560A 
+X-CRM114-Status: GOOD (  22.41  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-4.8 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [195.135.220.15 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,115 +66,113 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: dalias@libc.org, linux-ia64@vger.kernel.org, linux-doc@vger.kernel.org,
- catalin.marinas@arm.com, heiko.carstens@de.ibm.com, x86@kernel.org,
- linux-mips@vger.kernel.org, James.Bottomley@hansenpartnership.com,
- jcmvbkbc@gmail.com, guoren@kernel.org, linux-csky@vger.kernel.org,
- sparclinux@vger.kernel.org, linux-riscv@lists.infradead.org,
- linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
- linux-c6x-dev@linux-c6x.org, bcain@codeaurora.org, corbet@lwn.net,
- mpe@ellerman.id.au, linux-hexagon@vger.kernel.org, deller@gmx.de,
- linux-sh@vger.kernel.org, linux@armlinux.org.uk, ley.foon.tan@intel.com,
- rppt@linux.ibm.com, ysato@users.sourceforge.jp, geert@linux-m68k.org,
- linux-arm-kernel@lists.infradead.org, msalter@redhat.com, mattst88@gmail.com,
- linux-snps-arc@lists.infradead.org, uclinux-h8-devel@lists.sourceforge.jp,
- linux-xtensa@linux-xtensa.org, nickhu@andestech.com,
- linux-um@lists.infradead.org, richard@nod.at, linux-m68k@lists.linux-m68k.org,
- openrisc@lists.librecores.org, green.hu@gmail.com, paul.walmsley@sifive.com,
- shorne@gmail.com, mhocko@kernel.org, gxt@pku.edu.cn,
- Hoan@os.amperecomputing.com, monstr@monstr.eu, tony.luck@intel.com,
- bhe@redhat.com, linux-parisc@vger.kernel.org, linux-mm@kvack.org,
- vgupta@synopsys.com, linux-kernel@vger.kernel.org, linux-alpha@vger.kernel.org,
- akpm@linux-foundation.org, tsbogend@alpha.franken.de,
- linuxppc-dev@lists.ozlabs.org, davem@davemloft.net
+Cc: jack@suse.cz, mareklindner@neomailbox.ch, amir73il@gmail.com, a@unstable.cc,
+ sven@narfation.org, anton.ivanov@cambridgegreys.com, sfr@canb.auug.org.au,
+ syzbot <syzbot+7d2debdcdb3cb93c1e5e@syzkaller.appspotmail.com>,
+ kuba@kernel.org, adobriyan@gmail.com, syzkaller-bugs@googlegroups.com,
+ jdike@addtoit.com, linux-um@lists.infradead.org, sw@simonwunderlich.de,
+ netdev@vger.kernel.org, b.a.t.m.a.n@lists.open-mesh.org,
+ linux-kernel@vger.kernel.org, richard@nod.at, linux-fsdevel@vger.kernel.org,
+ alex.dewar@gmx.co.uk, akpm@linux-foundation.org, davem@davemloft.net
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-Hi Mike,
-
-On 15/6/20 4:22 pm, Mike Rapoport wrote:
-> On Mon, Jun 15, 2020 at 01:53:42PM +1000, Greg Ungerer wrote:
->> From: Mike Rapoport <rppt@linux.ibm.com>
->>> Currently, architectures that use free_area_init() to initialize memory map
->>> and node and zone structures need to calculate zone and hole sizes. We can
->>> use free_area_init_nodes() instead and let it detect the zone boundaries
->>> while the architectures will only have to supply the possible limits for
->>> the zones.
->>>
->>> Signed-off-by: Mike Rapoport <rppt@linux.ibm.com>
->>
->> This is causing some new warnings for me on boot on at least one non-MMU m68k target:
+On Fri 12-06-20 14:15:51, Eric W. Biederman wrote:
 > 
-> There were a couple of changes that cause this. The free_area_init()
-> now relies on memblock data and architectural limits for zone sizes
-> rather than on explisit pfns calculated by the arch code. I've update
-> motorola variant and missed coldfire. Angelo sent a fix for mcfmmu.c
-> [1] and I've updated it to include nommu as well
+> Recently syzbot reported that unmounting proc when there is an ongoing
+> inotify watch on the root directory of proc could result in a use
+> after free when the watch is removed after the unmount of proc
+> when the watcher exits.
 > 
-> [1] https://lore.kernel.org/linux-m68k/20200614225119.777702-1-angelo.dureghello@timesys.com
+> Commit 69879c01a0c3 ("proc: Remove the now unnecessary internal mount
+> of proc") made it easier to unmount proc and allowed syzbot to see the
+> problem, but looking at the code it has been around for a long time.
 > 
->>From 55b8523df2a5c4565b132c0691990f0821040fec Mon Sep 17 00:00:00 2001
-> From: Angelo Dureghello <angelo.dureghello@timesys.com>
-> Date: Mon, 15 Jun 2020 00:51:19 +0200
-> Subject: [PATCH] m68k: fix registration of memory regions with memblock
+> Looking at the code the fsnotify watch should have been removed by
+> fsnotify_sb_delete in generic_shutdown_super.  Unfortunately the inode
+> was allocated with new_inode_pseudo instead of new_inode so the inode
+> was not on the sb->s_inodes list.  Which prevented
+> fsnotify_unmount_inodes from finding the inode and removing the watch
+> as well as made it so the "VFS: Busy inodes after unmount" warning
+> could not find the inodes to warn about them.
 > 
-> Commit 3f08a302f533 ("mm: remove CONFIG_HAVE_MEMBLOCK_NODE_MAP option")
-> introduced assumption that UMA systems have their memory at node 0 and
-> updated most of them, but it forgot nommu and coldfire variants of m68k.
+> Make all of the inodes in proc visible to generic_shutdown_super,
+> and fsnotify_sb_delete by using new_inode instead of new_inode_pseudo.
+> The only functional difference is that new_inode places the inodes
+> on the sb->s_inodes list.
 > 
-> The later change in free area initialization in commit fa3354e4ea39 ("mm:
-> free_area_init: use maximal zone PFNs rather than zone sizes") exposed that
-> and caused a lot of "BUG: Bad page state in process swapper" reports.
-
-Even with this patch applied I am still seeing the same messages.
-
-Regards
-Greg
-
-
-
-> Using memblock_add_node() with nid = 0 to register memory banks solves the
-> problem.
+> I wrote a small test program and I can verify that without changes it
+> can trigger this issue, and by replacing new_inode_pseudo with
+> new_inode the issues goes away.
 > 
-> Fixes: 3f08a302f533 ("mm: remove CONFIG_HAVE_MEMBLOCK_NODE_MAP option")
-> Fixes: fa3354e4ea39 ("mm: free_area_init: use maximal zone PFNs rather than zone sizes")
-> Signed-off-by: Angelo Dureghello <angelo.dureghello@timesys.com>
-> Co-developed-by: Mike Rapoport <rppt@linux.ibm.com>
-> Signed-off-by: Mike Rapoport <rppt@linux.ibm.com>
+> Cc: stable@vger.kernel.org
+> Link: https://lkml.kernel.org/r/000000000000d788c905a7dfa3f4@google.com
+> Reported-by: syzbot+7d2debdcdb3cb93c1e5e@syzkaller.appspotmail.com
+> Fixes: 0097875bd415 ("proc: Implement /proc/thread-self to point at the directory of the current thread")
+> Fixes: 021ada7dff22 ("procfs: switch /proc/self away from proc_dir_entry")
+> Fixes: 51f0885e5415 ("vfs,proc: guarantee unique inodes in /proc")
+> Signed-off-by: "Eric W. Biederman" <ebiederm@xmission.com>
+
+Thanks for analysing this! I agree with the analysis and the patch looks
+good to me. You can add:
+
+Reviewed-by: Jan Kara <jack@suse.cz>
+
+								Honza
+
 > ---
->   arch/m68k/kernel/setup_no.c | 2 +-
->   arch/m68k/mm/mcfmmu.c       | 2 +-
->   2 files changed, 2 insertions(+), 2 deletions(-)
+>  fs/proc/inode.c       | 2 +-
+>  fs/proc/self.c        | 2 +-
+>  fs/proc/thread_self.c | 2 +-
+>  3 files changed, 3 insertions(+), 3 deletions(-)
 > 
-> diff --git a/arch/m68k/kernel/setup_no.c b/arch/m68k/kernel/setup_no.c
-> index e779b19e0193..0c4589a39ba9 100644
-> --- a/arch/m68k/kernel/setup_no.c
-> +++ b/arch/m68k/kernel/setup_no.c
-> @@ -138,7 +138,7 @@ void __init setup_arch(char **cmdline_p)
->   	pr_debug("MEMORY -> ROMFS=0x%p-0x%06lx MEM=0x%06lx-0x%06lx\n ",
->   		 __bss_stop, memory_start, memory_start, memory_end);
->   
-> -	memblock_add(memory_start, memory_end - memory_start);
-> +	memblock_add_node(memory_start, memory_end - memory_start, 0);
->   
->   	/* Keep a copy of command line */
->   	*cmdline_p = &command_line[0];
-> diff --git a/arch/m68k/mm/mcfmmu.c b/arch/m68k/mm/mcfmmu.c
-> index 29f47923aa46..7d04210d34f0 100644
-> --- a/arch/m68k/mm/mcfmmu.c
-> +++ b/arch/m68k/mm/mcfmmu.c
-> @@ -174,7 +174,7 @@ void __init cf_bootmem_alloc(void)
->   	m68k_memory[0].addr = _rambase;
->   	m68k_memory[0].size = _ramend - _rambase;
->   
-> -	memblock_add(m68k_memory[0].addr, m68k_memory[0].size);
-> +	memblock_add_node(m68k_memory[0].addr, m68k_memory[0].size, 0);
->   
->   	/* compute total pages in system */
->   	num_pages = PFN_DOWN(_ramend - _rambase);
+> diff --git a/fs/proc/inode.c b/fs/proc/inode.c
+> index f40c2532c057..28d6105e908e 100644
+> --- a/fs/proc/inode.c
+> +++ b/fs/proc/inode.c
+> @@ -617,7 +617,7 @@ const struct inode_operations proc_link_inode_operations = {
+>  
+>  struct inode *proc_get_inode(struct super_block *sb, struct proc_dir_entry *de)
+>  {
+> -	struct inode *inode = new_inode_pseudo(sb);
+> +	struct inode *inode = new_inode(sb);
+>  
+>  	if (inode) {
+>  		inode->i_ino = de->low_ino;
+> diff --git a/fs/proc/self.c b/fs/proc/self.c
+> index ca5158fa561c..72cd69bcaf4a 100644
+> --- a/fs/proc/self.c
+> +++ b/fs/proc/self.c
+> @@ -43,7 +43,7 @@ int proc_setup_self(struct super_block *s)
+>  	inode_lock(root_inode);
+>  	self = d_alloc_name(s->s_root, "self");
+>  	if (self) {
+> -		struct inode *inode = new_inode_pseudo(s);
+> +		struct inode *inode = new_inode(s);
+>  		if (inode) {
+>  			inode->i_ino = self_inum;
+>  			inode->i_mtime = inode->i_atime = inode->i_ctime = current_time(inode);
+> diff --git a/fs/proc/thread_self.c b/fs/proc/thread_self.c
+> index ac284f409568..a553273fbd41 100644
+> --- a/fs/proc/thread_self.c
+> +++ b/fs/proc/thread_self.c
+> @@ -43,7 +43,7 @@ int proc_setup_thread_self(struct super_block *s)
+>  	inode_lock(root_inode);
+>  	thread_self = d_alloc_name(s->s_root, "thread-self");
+>  	if (thread_self) {
+> -		struct inode *inode = new_inode_pseudo(s);
+> +		struct inode *inode = new_inode(s);
+>  		if (inode) {
+>  			inode->i_ino = thread_self_inum;
+>  			inode->i_mtime = inode->i_atime = inode->i_ctime = current_time(inode);
+> -- 
+> 2.20.1
 > 
+-- 
+Jan Kara <jack@suse.com>
+SUSE Labs, CR
 
 _______________________________________________
 linux-um mailing list
