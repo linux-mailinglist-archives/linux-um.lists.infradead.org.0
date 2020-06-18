@@ -2,92 +2,66 @@ Return-Path: <linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-um@lfdr.de
 Delivered-To: lists+linux-um@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4FDE21FA346
-	for <lists+linux-um@lfdr.de>; Tue, 16 Jun 2020 00:16:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9F9511FDCDB
+	for <lists+linux-um@lfdr.de>; Thu, 18 Jun 2020 03:23:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xoOtAXqy38hirjKOlrMzPsBNQWTpmn5Pgrl0VPRgQeI=; b=YXS7dJxuS5K4Dj
-	3DdAgjGOUl+5viS/QpbFQ2RYd/B2gbaY8D4OB+EIt8hEyVMm/Zr/UuEjeL8ytdJyznTtM/b0OI6y7
-	ThxZCxgeb8ETmwWQAUf72/Q0gytwAVMxJOt4sALFs+KW169XTLGs9wQ79kOlXfPizQAIkuBV/b8Y8
-	ucF8HtsaoEnkIg08cgTIfVTkd0Bf7+NgTUVRrSRxBvDLRWp7nwpLSVtOEcpiiToUgCEwq6dbBTEtS
-	iFPSZDhggVUXl7nazu9ToYi2o9D20iWPaOcsez6mOYlvLKBasQDFU3dxbGxusmuBIieyitqyEuFlU
-	CCodVVjvu0Gci/JZ/6Ig==;
+	List-Owner; bh=ry2QV3eAz07fddRGflCzD3dj5BFdlDY52MLo7JQSem0=; b=BazuVSuc8MgueQ
+	u0CjhntnOjPTgS5HFCwGg1KJS9Ea7TdiW8lIRP9Z/+nGJQYgw0qfqmetxLM3F35EDhNFJjtgy4Cf5
+	h9gj43gc/y7g5gzZaLVSbYr7oWciqp+75M0oOs+q21PV8grSKDbBjvIjUW3T5dYs2TQYShgYh0rz1
+	gBMIQ2yy2NDgIbXPaxBom1NXkrlttF0HAutqGcEr9u3R5ilzDow31XJ6lXptA36jIBcwEVN1St3sT
+	YikU0XiZW2CdvUSNjst3op0AKpTmUsKXQmv/+JBV0I7KUSfcsZwMJ9ZkvnIaTI3PS37mrFYtuBr/B
+	1dxpmlOfOmVMYN5xaisw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jkxOu-0008FJ-A4; Mon, 15 Jun 2020 22:16:20 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
- helo=us-smtp-1.mimecast.com)
+	id 1jljH0-0006jp-Q4; Thu, 18 Jun 2020 01:23:22 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jkxOr-0008El-Gq
- for linux-um@lists.infradead.org; Mon, 15 Jun 2020 22:16:18 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1592259375;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=JzPNsEqfmCz68HTb30cqD8DxFLmMqEZzWOV3nPixDso=;
- b=ULgXUJpXcsgoXLV9Ny1iSE2QKHxNXlNrrFfN8wzUeY4kh0DJOgdgYh/ckYeS8KJKiiDZc9
- ECawuMMtS72JPWOZTTo1kJ2GbiPduCIcpXaKrCTZA+oSUvbV+HWW2/GGhgKbSHlZRwH76x
- UPdHYC+0cm4aI1n722DMwsL8OuuW17Q=
-Received: from mail-qk1-f197.google.com (mail-qk1-f197.google.com
- [209.85.222.197]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-339-HdGuo7GfMeiCFO567V7yUA-1; Mon, 15 Jun 2020 18:16:11 -0400
-X-MC-Unique: HdGuo7GfMeiCFO567V7yUA-1
-Received: by mail-qk1-f197.google.com with SMTP id d187so15408361qke.4
- for <linux-um@lists.infradead.org>; Mon, 15 Jun 2020 15:16:11 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=JzPNsEqfmCz68HTb30cqD8DxFLmMqEZzWOV3nPixDso=;
- b=mNaXTIpxc+1uW5lINNAEb+VDzkStF4MEeh9/h1rjXlVNpsJO3usu0VIkzDjj0sXAu7
- xx7HmbMLrTlqwR4PsW4oE6tUv+TsOrIK9JWb9LwSGPmlgTggdkmgbhSroK6DACsBQrjw
- m/teCsZ/Ywngf4JCnqwM/Maf1X4+2zoGBSBFz4vDA+zBH0FZxvbB58hE8HGTte6Dsa4N
- sT7tBWJEk0D4MwyG0p1Z4cgEGVHEWuRtKtcuXF7gYBGkYXDuwhWUm6XSkl+AdcmUvOoO
- s5hGJI4+9BDe1sOhL/bg4zurUulohjJQM9V1UY1XUOeLycFfcTRZ+JljCKi3/tBNwZ8y
- c5Sg==
-X-Gm-Message-State: AOAM533C8pl55JhIvIUoNHMahNEWuOFnyi6Ib4cHTs9+WGV1nEc6STQh
- RL3NsW6099wcFpgxlOqkrPU7ye9xgz6g/gaCEWH6d0JgnkK8i5sboLDKwEKFj+ThT6wsevkrV7W
- R8PkmXi9YhYdkDXDXCBwykNu+
-X-Received: by 2002:ac8:2b98:: with SMTP id m24mr18158630qtm.7.1592259371455; 
- Mon, 15 Jun 2020 15:16:11 -0700 (PDT)
-X-Google-Smtp-Source: ABdhPJxjWHjA14T4Y4WZBmEAu49NUsGG1HATDJAyvaPb65GPWGK47SLWF39nWaQ5Lrof2QgDYc778A==
-X-Received: by 2002:ac8:2b98:: with SMTP id m24mr18158603qtm.7.1592259371221; 
- Mon, 15 Jun 2020 15:16:11 -0700 (PDT)
-Received: from xz-x1.hitronhub.home ([2607:9880:19c0:32::2])
- by smtp.gmail.com with ESMTPSA id w13sm12351509qkb.91.2020.06.15.15.16.09
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 15 Jun 2020 15:16:10 -0700 (PDT)
-From: Peter Xu <peterx@redhat.com>
-To: linux-kernel@vger.kernel.org
-Subject: [PATCH 01/25] mm/um: Fix extra accounting for page fault retries
-Date: Mon, 15 Jun 2020 18:15:43 -0400
-Message-Id: <20200615221607.7764-2-peterx@redhat.com>
-X-Mailer: git-send-email 2.26.2
-In-Reply-To: <20200615221607.7764-1-peterx@redhat.com>
-References: <20200615221607.7764-1-peterx@redhat.com>
+ id 1jlj6H-0001sd-0z
+ for linux-um@lists.infradead.org; Thu, 18 Jun 2020 01:12:18 +0000
+Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
+ [73.47.72.35])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id BB20221924;
+ Thu, 18 Jun 2020 01:12:15 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1592442736;
+ bh=ste0z3yUk+LG1qt3/ESUU8jN0ibjLxgrmCIBBS5yR60=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=spS7tZXzjyxJUIWK829iDEK4uVxtqsMOPr3Yu0xq6ZJN7RLBmjl4HPnIObvYK8nup
+ CwjsBoGuqDocSl3+H3EnjbAJur/TC8hNm6Ot98SwFJH+/2bEVDEh4uoW81WM11sYd4
+ m/TuQvnWks/n7NQD6BwpPsygzoHbpVwTX8sKlr5Q=
+From: Sasha Levin <sashal@kernel.org>
+To: linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org
+Subject: [PATCH AUTOSEL 5.7 191/388] um: do not evaluate compiler's library
+ path when cleaning
+Date: Wed, 17 Jun 2020 21:04:48 -0400
+Message-Id: <20200618010805.600873-191-sashal@kernel.org>
+X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20200618010805.600873-1-sashal@kernel.org>
+References: <20200618010805.600873-1-sashal@kernel.org>
 MIME-Version: 1.0
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
+X-stable: review
+X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200615_151617_700791_ED4A1BA6 
-X-CRM114-Status: GOOD (  10.93  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200617_181217_254592_0875E335 
+X-CRM114-Status: UNSURE (   8.96  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.211.31.120 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [207.211.31.120 listed in wl.mailspike.net]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -95,7 +69,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-um@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -108,77 +81,59 @@ List-Post: <mailto:linux-um@lists.infradead.org>
 List-Help: <mailto:linux-um-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-um>,
  <mailto:linux-um-request@lists.infradead.org?subject=subscribe>
-Cc: Andrea Arcangeli <aarcange@redhat.com>, Richard Weinberger <richard@nod.at>,
- Jeff Dike <jdike@addtoit.com>, linux-um@lists.infradead.org, peterx@redhat.com,
- Andrew Morton <akpm@linux-foundation.org>,
- Linus Torvalds <torvalds@linux-foundation.org>,
- Gerald Schaefer <gerald.schaefer@de.ibm.com>,
- Anton Ivanov <anton.ivanov@cambridgegreys.com>
+Cc: Sasha Levin <sashal@kernel.org>, Masahiro Yamada <masahiroy@kernel.org>,
+ linux-um@lists.infradead.org, Nathan Chancellor <natechancellor@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-um" <linux-um-bounces@lists.infradead.org>
 Errors-To: linux-um-bounces+lists+linux-um=lfdr.de@lists.infradead.org
 
-When page fault retried, we should only do the accounting once rather than once
-for each page fault retry.
+From: Masahiro Yamada <masahiroy@kernel.org>
 
-CC: Jeff Dike <jdike@addtoit.com>
-CC: Richard Weinberger <richard@nod.at>
-CC: Anton Ivanov <anton.ivanov@cambridgegreys.com>
-CC: linux-um@lists.infradead.org
-Signed-off-by: Peter Xu <peterx@redhat.com>
+[ Upstream commit 7e49afc03212010d0ee27532a75cfeb0125bd868 ]
+
+Since commit a83e4ca26af8 ("kbuild: remove cc-option switch from
+-Wframe-larger-than="), 'make ARCH=um clean' emits an error message
+as follows:
+
+  $ make ARCH=um clean
+  gcc: error: missing argument to '-Wframe-larger-than='
+
+We do not care compiler flags when cleaning.
+
+Use the '=' operator for lazy expansion because we do not use
+LDFLAGS_pcap.o or LDFLAGS_vde.o when cleaning.
+
+While I was here, I removed the redundant -r option because it
+already exists in the recipe.
+
+Fixes: a83e4ca26af8 ("kbuild: remove cc-option switch from -Wframe-larger-than=")
+Signed-off-by: Masahiro Yamada <masahiroy@kernel.org>
+Reviewed-by: Nathan Chancellor <natechancellor@gmail.com>
+Tested-by: Nathan Chancellor <natechancellor@gmail.com> [build]
+Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/um/kernel/trap.c | 13 +++++++------
- 1 file changed, 7 insertions(+), 6 deletions(-)
+ arch/um/drivers/Makefile | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/arch/um/kernel/trap.c b/arch/um/kernel/trap.c
-index 8f18cf56b3dd..d162168490d1 100644
---- a/arch/um/kernel/trap.c
-+++ b/arch/um/kernel/trap.c
-@@ -34,6 +34,7 @@ int handle_page_fault(unsigned long address, unsigned long ip,
- 	pte_t *pte;
- 	int err = -EFAULT;
- 	unsigned int flags = FAULT_FLAG_DEFAULT;
-+	vm_fault_t fault, major = 0;
+diff --git a/arch/um/drivers/Makefile b/arch/um/drivers/Makefile
+index a290821e355c..2a249f619467 100644
+--- a/arch/um/drivers/Makefile
++++ b/arch/um/drivers/Makefile
+@@ -18,9 +18,9 @@ ubd-objs := ubd_kern.o ubd_user.o
+ port-objs := port_kern.o port_user.o
+ harddog-objs := harddog_kern.o harddog_user.o
  
- 	*code_out = SEGV_MAPERR;
+-LDFLAGS_pcap.o := -r $(shell $(CC) $(KBUILD_CFLAGS) -print-file-name=libpcap.a)
++LDFLAGS_pcap.o = $(shell $(CC) $(KBUILD_CFLAGS) -print-file-name=libpcap.a)
  
-@@ -73,9 +74,8 @@ int handle_page_fault(unsigned long address, unsigned long ip,
- 	}
+-LDFLAGS_vde.o := -r $(shell $(CC) $(CFLAGS) -print-file-name=libvdeplug.a)
++LDFLAGS_vde.o = $(shell $(CC) $(CFLAGS) -print-file-name=libvdeplug.a)
  
- 	do {
--		vm_fault_t fault;
--
- 		fault = handle_mm_fault(vma, address, flags);
-+		major |= fault & VM_FAULT_MAJOR;
+ targets := pcap_kern.o pcap_user.o vde_kern.o vde_user.o
  
- 		if ((fault & VM_FAULT_RETRY) && fatal_signal_pending(current))
- 			goto out_nosemaphore;
-@@ -92,10 +92,6 @@ int handle_page_fault(unsigned long address, unsigned long ip,
- 			BUG();
- 		}
- 		if (flags & FAULT_FLAG_ALLOW_RETRY) {
--			if (fault & VM_FAULT_MAJOR)
--				current->maj_flt++;
--			else
--				current->min_flt++;
- 			if (fault & VM_FAULT_RETRY) {
- 				flags |= FAULT_FLAG_TRIED;
- 
-@@ -103,6 +99,11 @@ int handle_page_fault(unsigned long address, unsigned long ip,
- 			}
- 		}
- 
-+		if (major)
-+			current->maj_flt++;
-+		else
-+			current->min_flt++;
-+
- 		pgd = pgd_offset(mm, address);
- 		p4d = p4d_offset(pgd, address);
- 		pud = pud_offset(p4d, address);
 -- 
-2.26.2
+2.25.1
 
 
 _______________________________________________
